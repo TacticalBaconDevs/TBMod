@@ -1,0 +1,68 @@
+﻿// ######################################
+// # Description vom TacticalBacon [TB] #
+// # von Willi "shukari" Graff          #
+// ######################################
+// https://community.bistudio.com/wiki/Description.ext
+
+// Infos
+onLoadName = "NAME DEINER MISSION";
+onLoadMission = "TacticalBacon | <t color='#32CD32'>''NAME DEINER MISSION''</t> - tacticalbacon.de/ - ts3.tacticalbacon.de - kontakt@tacticalbacon.de";
+loadScreen = "\TBMod_main\pics\logo.paa";
+overviewPicture = "\TBMod_main\pics\logo.paa";
+author = "DEIN NAME [TacticalBacon]"; // das [TacticalBacon] MUSS immer hinter deinem Namen stehen für den Mod
+
+//skipLobby = 1;
+
+respawn = 3;
+respawnDelay = 0.01;
+//respawnVehicleDelay = 5;
+respawnDialog = 0;
+//respawnOnStart = -1;
+//respawnButton = 0;
+enableTeamSwitch = 0;
+
+minPlayerDistance = 100;
+wreckManagerMode = 1;
+wreckLimit = 5;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 600;
+corpseManagerMode = 1;
+corpseLimit = 15;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+
+forceRotorLibSimulation = 0;
+enableDebugConsole[] = {"76561198029318101"}; //enableDebugConsole = 1;
+enableTargetDebug = 1;
+joinUnassigned = 1;
+disabledAI = 1;
+briefing = 1;
+debriefing = 1;
+scriptedPlayer = 1;
+
+allowFunctionsLog = 0;
+showSquadRadar = 0;
+saving = 0;
+
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 100;
+};
+
+class CfgRemoteExec
+{
+	class Functions {mode=2; jip=1;};
+	class Commands {mode=2; jip=1;};
+};
+
+class CfgDebriefingSections
+{
+	class acex_killTracker
+	{
+		title = "Acex Killed Events";
+		variable = "acex_killTracker_outputText";
+	};
+};

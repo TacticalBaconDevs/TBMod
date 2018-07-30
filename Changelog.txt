@@ -1,0 +1,90 @@
+### 1.0.8 & 1.0.9 (12.07.18)
+- TB Arsenal
+    - Mörsermunition im Arsenal
+    - Anpassungen und Optimierungen
+    - Breaching Charge nun im Arsenal (sprengt geschlossene Türen auf)
+    - LiveMonitor (by Chris) nun im Arsenal für Sanitäter (zeigt Puls und andere wichtige Daten an)
+    - Piloten stecken G-Kräfte nun besser weg (60% Effektreduktion)
+    - interne Truppführer/Ausbilder/Generalstab Whitelist aktualisiert (Barrets usw.)
+    - BW-Arsenal
+        - Gruppenscharfschütze
+            - zwei G3 nun freigeschaltet
+            - Leupold Optic neu
+        - Unterstützungsschütze
+            - MG3 im Arsenal
+            - erstmal nur 50 Patronengurte (demnächst 100/200)
+    - USA-Arsenal
+        - alle
+            - MP5 und Pistolen (plus jeweils dessen Attachments) hinzugefügt (demnächst Ergänzungen)
+        - Munitionsträger
+            - Optimierungen und nun wirklich alle Munitionsarten der anderen Rollen verfügbar
+- TB Ausbildung (zurückgezogen)
+    - dieses Modul hat vor zwei Monaten eine Mission von Makuro geschrottet,
+        es wurde lange nicht genutzt und wird vorerst nicht weiter entwickelt
+- TB Items (by Chris)
+    - LiveMonitor hinzugefügt
+    - einige Ausgaben angepasst nach Feedback von Eric
+- TB Main
+    - unter 3den -> Attribute -> Allgemein neue TB Werte
+        - extremes Sanisystem einstellbar (nur mit Genehmigung für Missions zu verwenden)
+            - Sanitäter und Ärzte unterscheiden sich und nur Ärzte können erste Hilfesetzs verwenden
+        - CrashHelfer ist hier ausschaltbar, nicht empfohlen
+        - Shootgun DoorbreachSystem anstellbar
+        - RecoilSystem Koeffizent einstellbar, TB Recoil anpassbar
+    - Flares (40mm, 20mm, 82mm) sind nun, wenn @BASE Mod nicht läuft 1.000.000 Mal heller
+    - Schilder für Briefingbereich, Truppsammelpunkte, Waffenausgaben usw.
+    - Schauspielersystem integriert
+    - eigenes virtuelles Garagensystem (demnächst öffentlich benutzbar)
+    - Logo nun nicht mehr im MainCore, sondern per Pfad -> "\TBMod_main\pics\logo.paa" im Editorattribut zu setzen
+    - extreme Optimierungen und Struckturänderungen
+- TB Nachschub
+    - MP5 Nachschub (demnächst mehr)
+    - Pistolen Munition erweitert (neue Pistole)
+- TB zusatzStuff
+    - NUN verfügbar: LV Militarize Modul
+        - kann per Trigger aktiviert werden
+        - dynamische Simulation
+        - endlich gehts auch
+        - interne Probleme behoben
+    - ganz
+    - ehrlich
+    - zuviel
+    - rumgeskripte
+    - und
+    - rumexperimentiere
+    - für fucking ein Modul bis jetzt -.-
+    
+
+
+### 1.0.7 (09.04.18)
+- TB Arsenal
+	- TB Arsenal auf Ace3 Arsenal komplett umgestellt
+	- Speichern der Ausrüstung nun über das Arsenalsystem
+	- viele Funktionen intern optimiert
+	- Rollen werden nur noch beim Custom Arsenal geblocket
+		-> Custom und ein anderes Arsenal sind nun möglich
+	- Custom Rollennamen sind änderbar
+	- Arsenalkiste verschwindet wenn im Arsenal, damit man mehr sehen kann
+	- G3 ins BW Arsenal eingefügt für den Gruppenscharfschützen
+	- StandartLayouts optimiert
+- TB Building
+	- Pionier Bauzeiten halbiert
+	- ResourcenTruck und ReparaturTrucks haben nun andere Kurzel
+- TB Main
+	- SafeStart aus Missionsettings entfernt
+	- UpDown Skript ist nun in den Einheiten als Attribut einstellbar
+	- Zeus Optimierungen
+	- Teleportschild Optimierungen
+	- Fox & Foxy Rufnamen hinzugefügt
+	- unter Spezial2 viele neue Rufnamen hinzugefügt
+	- EXPERIMENTELL: Shotguns können mit Slugmunition und wenn man näher als 5m von einer verschlossenen
+		Tür entfernt steht, diese aufschießen
+	- FPS Manager implementiert, aber default aus
+	- CrashHelfer wieder aktiv
+	- Alive TB Zeus Modul optimiert & crash gefixt
+	- Zeus Nachschubabwurf gefixt und BW Nachschub ist nun auch verfügbar
+	- Flares aus UGL 40mm, 20mm und 82mm Mörsern sind nun zweite Sonnen, Leben ewig und fliegen langsamer
+- TB Nachschub
+	- mehr Bandagen in der Sanikiste
+	- für alle Gruppenaufklärer Waffen und Munition in der USA Munitionskiste
+	

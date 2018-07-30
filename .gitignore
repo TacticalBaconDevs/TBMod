@@ -1,0 +1,11 @@
+*.zip
+*.rar
+*.dll
+*.exe
+*.bat
+*.cmd
+*.dll
+
+/#localStuff
+/.vscode
+
