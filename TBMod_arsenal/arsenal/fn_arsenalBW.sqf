@@ -177,7 +177,8 @@ private _allgemein_visiere = [
 	"HLC_Optic_G36Export15x",
 	"HLC_Optic_G36Export15x2d",
 	"HLC_Optic_G36Export35x",
-	"HLC_Optic_G36Export35x2d"
+	"HLC_Optic_G36Export35x2d",
+	"BWA3_optic_NSV600" //  Zusatz zum ZO4x30
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -304,6 +305,11 @@ private _dmr_munition = [
 	"BWA3_10Rnd_762x51_G28_SD",
 	"BWA3_10Rnd_762x51_G28_AP",
 	"BWA3_10Rnd_762x51_G28_LR",
+	"BWA3_20Rnd_762x51_G28",  //G27
+	"BWA3_20Rnd_762x51_G28_Tracer",  //G27
+	"BWA3_20Rnd_762x51_G28_Tracer_Dim",  //G27
+	"BWA3_20Rnd_762x51_G28_SD",  //G27
+	"BWA3_20Rnd_762x51_G28_AP",  //G27
 	"hlc_20rnd_762x51_b_G3",
 	"hlc_20rnd_762x51_Mk316_G3",
 	"hlc_20rnd_762x51_barrier_G3",
@@ -549,10 +555,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			// Weapons
 			"BWA3_G28_Assault",
 			"BWA3_G28_Standard",
+			"BWA3_G27",
+			"BWA3_G27_Tan",
 			"hlc_rifle_g3sg1ris",
 			"hlc_rifle_g3sg1",
 			// ### Visiere
 			"BWA3_optic_Shortdot",
+			"BWA3_optic_20x50"
 			"hlc_optic_accupoint_g3",
 			//"hlc_optic_PVS4G3",
 			//"hlc_optic_STANAGZF_G3",
@@ -692,9 +701,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 		[
 			// Gewehre
 			"BWA3_G82",
+
 			"BWA3_MP7",
 			// ### Visiere
 			"BWA3_optic_24x72",
+			"BWA3_optic_20x50",
 			// ### Geschützzubehör
 			"BWA3_muzzle_snds_MP7",
 
@@ -720,7 +731,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"ACE_ATragMX",
 			"ACE_Kestrel4500",
 			"ACE_RangeCard",
-			"Laserbatteries"
+			"Laserbatteries",
+			"BWA3_optic_NSV80"
 		]
 	};
 
