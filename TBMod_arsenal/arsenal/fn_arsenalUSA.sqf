@@ -1026,6 +1026,7 @@ _items append (switch (_rolle) do
 		_allgemein_uniformen +
 		_allgemein_westen +
 		_allgemein_kopfbedeckung +
+		_gepaeck_mittel +
 		[
 			// Handwaffen
 			"ACE_VMH3",
