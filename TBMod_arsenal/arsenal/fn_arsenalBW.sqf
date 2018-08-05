@@ -305,11 +305,11 @@ private _dmr_munition = [
 	"BWA3_10Rnd_762x51_G28_SD",
 	"BWA3_10Rnd_762x51_G28_AP",
 	"BWA3_10Rnd_762x51_G28_LR",
-	"BWA3_20Rnd_762x51_G28",  //G27
-	"BWA3_20Rnd_762x51_G28_Tracer",  //G27
-	"BWA3_20Rnd_762x51_G28_Tracer_Dim",  //G27
-	"BWA3_20Rnd_762x51_G28_SD",  //G27
-	"BWA3_20Rnd_762x51_G28_AP",  //G27
+	"BWA3_20Rnd_762x51_G28",  //G27  und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_Tracer",  //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_Tracer_Dim",  //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_SD",  //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_AP",  //G27 und G28 Patrol
 	"hlc_20rnd_762x51_b_G3",
 	"hlc_20rnd_762x51_Mk316_G3",
 	"hlc_20rnd_762x51_barrier_G3",
@@ -561,7 +561,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"hlc_rifle_g3sg1",
 			// ### Visiere
 			"BWA3_optic_Shortdot",
-			"BWA3_optic_20x50"
+			"BWA3_optic_20x50",
 			"hlc_optic_accupoint_g3",
 			//"hlc_optic_PVS4G3",
 			//"hlc_optic_STANAGZF_G3",
