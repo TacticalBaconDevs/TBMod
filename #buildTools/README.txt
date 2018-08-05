@@ -1,7 +1,7 @@
 PBO BAUEN
 1. Wenn der TBMod in eurem Arma3 Mod Ordner bereits vorhanden ist, einfach diesen duplizieren
     und in TBMod_dev umbennenen
-2. dann den Pfad vom /TBMod/addons Ordner kopieren
+2. dann den Pfad vom /TBMod_dev/addons Ordner kopieren
 3. nun die Datein aus dem #buildTools im git in den übergeordeten Ordner ziehen (Hauptordner)
 4. die Datein "pbo_alle.bat" und "pbo_einzeln.bat" mit Notepad++ öffnen
 5. jeweils in den beiden Datein den "SET armaFolder" mit dem kopierten aus Punkt zwei ersetzen
