@@ -133,14 +133,11 @@ private _allgemein = [
 
 private _allgemein_gewehre = [
 	// Gewehr
-    "hlc_rifle_G36MLIC",
     "hlc_rifle_G36A1",
 	"hlc_rifle_G36C",
-    "hlc_rifle_G36CMLIC",
     "hlc_rifle_G36CV",
     "hlc_rifle_G36CTac",
     "hlc_rifle_G36E1",
-    "hlc_rifle_G36KMLIC",
 	"hlc_rifle_G36KA1KSK",
     "hlc_rifle_G36KA1",
     "hlc_rifle_G36KE1",
@@ -277,7 +274,6 @@ private _grenadier_gewehr = [
 	"hlc_rifle_G36A1AG36",
 	"hlc_rifle_G36E1AG36",
 	"HLC_Rifle_G36KSKAG36",
-	"hlc_rifle_G36MLIAG36",
 	"hlc_rifle_G36VAG36"
 ];
 
