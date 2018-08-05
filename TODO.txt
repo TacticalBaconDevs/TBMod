@@ -5,7 +5,6 @@
 	x _milGroup nicht benötigt
 	- taschen lampen
 		- t8 gesedet
-- HK G36K-MLI(C) ist eine 6,5mm Waffe.
 - screenshot mode MORDL
 	- hexagons
 	- hint tfar (mini thing)
