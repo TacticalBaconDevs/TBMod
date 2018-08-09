@@ -16,7 +16,7 @@ _objectfound = lineIntersects [ eyepos player , eyePos player vectorAdd (_ray ve
 if(!_objectfound) exitWith {hint "No Hitbox found"};
 if(_source == _target) exitWith {hint "Can't attach Vehicle to itself"};
 _attached_Vehicle = _source getvariable['TB_Rope_attached_Vehicle',objNull];
-if(_attached_Vehicle != objNull && _attached_Vehicle!=_target) exitWith {hint "Es kann nur ein Fahrzeug beladen werden"};
+if(!isNull _attached_Vehicle && _attached_Vehicle!=_target) exitWith {hint "Es kann nur ein Fahrzeug beladen werden"};
 
 _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
 if(_selection == "") exitWith {hint "Helikopter besitzt kein Slingload"};
@@ -36,6 +36,8 @@ ropeCreate [_source, _selection, _target, _target worldToModel ASLtoATL _postoAt
 
 _source setVariable['TB_Rope_attached_Vehicle',_target,true];
 
-if((getMass _target)>12000) then {_target setVariable['TB_Rope_original_Mass',getMass _target,true],_target];_target setMass 12000;};
+if((getMass _target)>12000) then {
+	_target setVariable ['TB_Rope_original_Mass',getMass _target,true];
+	_target setMass 12000;};
 player setVariable["TB_Rope_source",objNull];
 hint "attached";

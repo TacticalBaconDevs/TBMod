@@ -38,6 +38,7 @@ class CfgFunctions
 			class calculateAttachPoint {};
 			class attach {};
 			class detach {};
+			class addAttachAction {};
 		};
 		
 		class gcam
