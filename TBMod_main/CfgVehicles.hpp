@@ -71,22 +71,35 @@ class CfgVehicles
                     displayName = "Cut Rope"; \
                     condition = "(count ropes _target )!=0"; \
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
-                    statement = "{ropeDestroy _x;} forEach (ropes _target)"; \
+                    statement = "[_target] call TB_fnc_detach"; \
                 }; \
             }; \
         }
 
-        #define ADD_ADV_Sling_Attach class ACE_Actions \
-        { \
-            class UserActions \
+        #define ADD_ADV_Sling2 class ACE_SelfActions \
             { \
-                class attach_Rope \
+                class cut_Rope \
                 { \
-                    displayName = "Attach Rope"; \
-                    radius = 10\
-                    condition = "!isNull (player getvariable['TB_Rope_source',objNull])"; \
-                    statement = "params ['_target', '_caller', '_actionId', '_arguments'];[_target] call TB_fnc_attach;"; \
+                    displayName = "Cut Rope"; \
+                    condition = "(count ropes _target )!=0"; \
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
+                    statement = "[_target] call TB_fnc_detach"; \
                 }; \
+        }
+
+
+    #define ADD_ADV_Sling_Attach class UserActions \
+        { \
+            class attach_Rope \
+            { \
+                displayName = "Attach Rope"; \
+                radius = 10;\
+                onlyForPlayer = 1;\
+                position = "";\
+                shortcut = "";\
+                showWindow = 1;\
+                condition = "!isNull (player getvariable['TB_Rope_source',objNull])"; \
+                statement = "systemChat str this;[this] call TB_fnc_attach;"; \
             }; \
         }
 	
@@ -681,34 +694,36 @@ class CfgVehicles
 		modelSides[] = {6};
 	};
     //#########################ADV-Slingload##################
-    class LandVehicle;
-    class Car: LandVehicle
+    class Car;
+    class Car_F: Car
     {
-       ADD_ADV_Sling_Attach; 
-    };
-    
-    class Tank: LandVehicle
-    {
-        ADD_ADV_Sling_Attach; 
-    };
-
-    class Motorcycle: LandVehicle {
-        ADD_ADV_Sling_Attach; 
+        ADD_ADV_Sling_Attach;
     };
     
     class Air;
     class Helicopter: Air
     {
-        ADD_ADV_Sling_Attach;
+        ADD_ADV_Sling2;
         ADD_ADV_Sling;
-    };
-    
-    class Plane: Air {
-        ADD_ADV_Sling_Attach; 
+        ADD_ADV_Sling_Attach;
     };
 
     class Ship;
     class Ship_F: Ship
+    {
+        ADD_ADV_Sling_Attach;
+    };
+
+    class Plane;
+    class Plane_Base_F: Plane
+    {
+        ADD_ADV_Sling_Attach;
+    };
+
+    
+    
+    class Thing;
+    class ThingX: Thing
     {
        ADD_ADV_Sling_Attach; 
     };

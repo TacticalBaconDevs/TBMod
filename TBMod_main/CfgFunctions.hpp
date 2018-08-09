@@ -37,6 +37,7 @@ class CfgFunctions
 			class persistence {};
 			class calculateAttachPoint {};
 			class attach {};
+			class detach {};
 		};
 		
 		class gcam
