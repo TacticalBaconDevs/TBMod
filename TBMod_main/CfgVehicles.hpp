@@ -37,6 +37,58 @@ class CfgVehicles
 		displayName = "NAME (klein)"; \
 		hiddenSelectionsTextures[] = {"\TBMod_main\pics\NAME.paa"}; \
     }
+
+    #define ADD_ADV_Sling class ACE_Actions \
+        { \
+            class ACE_MainActions \
+            { \
+                class get_Rope \
+                { \
+                    displayName = "Get Rope"; \
+                    condition = "isNull (player getvariable['TB_Rope_source',objNull])"; \
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+                    statement = "player setVariable['TB_Rope_source',_target]"; \
+                }; \
+                class store_Rope \
+                { \
+                    displayName = "Store Rope"; \
+                    condition = "!isNull (player getvariable['TB_Rope_source',objNull])"; \
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+                    statement = "player setVariable['TB_Rope_source',objNull]"; \
+                }; \
+                class cut_Rope \
+                { \
+                    displayName = "Cut Rope"; \
+                    condition = "(count ropes _target )!=0"; \
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
+                    statement = "{ropeDestroy _x;} forEach (ropes _target)"; \
+                }; \
+            }; \
+            class ACE_SelfActions \
+            { \
+                class cut_Rope \
+                { \
+                    displayName = "Cut Rope"; \
+                    condition = "(count ropes _target )!=0"; \
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
+                    statement = "{ropeDestroy _x;} forEach (ropes _target)"; \
+                }; \
+            }; \
+        }
+
+        #define ADD_ADV_Sling_Attach class ACE_Actions \
+        { \
+            class UserActions \
+            { \
+                class attach_Rope \
+                { \
+                    displayName = "Attach Rope"; \
+                    radius = 10\
+                    condition = "!isNull (player getvariable['TB_Rope_source',objNull])"; \
+                    statement = "params ['_target', '_caller', '_actionId', '_arguments'];[_target] call TB_fnc_attach;"; \
+                }; \
+            }; \
+        }
 	
 	// ###################### Boards ######################	
 	class Land_MapBoard_F;
@@ -628,4 +680,36 @@ class CfgVehicles
 	class C_IDAP_Man_Base_F: Civilian_F {
 		modelSides[] = {6};
 	};
+    //#########################ADV-Slingload##################
+    class LandVehicle;
+    class Car: LandVehicle
+    {
+       ADD_ADV_Sling_Attach; 
+    };
+    
+    class Tank: LandVehicle
+    {
+        ADD_ADV_Sling_Attach; 
+    };
+
+    class Motorcycle: LandVehicle {
+        ADD_ADV_Sling_Attach; 
+    };
+    
+    class Air;
+    class Helicopter: Air
+    {
+        ADD_ADV_Sling_Attach;
+        ADD_ADV_Sling;
+    };
+    
+    class Plane: Air {
+        ADD_ADV_Sling_Attach; 
+    };
+
+    class Ship;
+    class Ship_F: Ship
+    {
+       ADD_ADV_Sling_Attach; 
+    };
 };
