@@ -35,10 +35,6 @@ class CfgFunctions
             class schauspieler {};
             class miscStuff {};
             class persistence {};
-            class calculateAttachPoint {};
-            class attach {};
-            class detach {};
-            class addAttachAction {};
         };
         
         class gcam

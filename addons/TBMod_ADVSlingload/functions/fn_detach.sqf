@@ -1,15 +1,15 @@
 /*
-	Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-	Detatach a Vehicle that was attached
-	
+    Detatach a Vehicle that was attached
+    
     Arguments:
-	0: Target <OBJECT>
-	
+    0: Target <OBJECT>
+    
     Return Value:
-	None
+    None
 */
 params ["_target"];
 
