@@ -20,16 +20,16 @@ TB_Items_fnc_lm_keyRefresh = {
 
         systemChat format["Refresh time changed to %1s", TB_Item_liveMonitor_update]
     };
-	
-	false
+    
+    false
 };
 TB_Items_fnc_lm_keyClose = {
     if (!isNil {uiNamespace getVariable 'TB_Item_liveMonitor_display'}) then 
     {
         call TB_Items_fnc_lm_remove;
     };
-	
-	false
+    
+    false
 };
 
 [

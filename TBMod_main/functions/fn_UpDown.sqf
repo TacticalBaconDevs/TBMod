@@ -37,10 +37,10 @@ waitUntil
     _dude setUnitPos ([_stanceStart, _stanceDef] select ((unitPos _dude == _stanceStart) || getSuppression _dude > 0.1));
     
     uiSleep (3 + (random 7));
-	
+    
     if (isNull (_dude findNearestEnemy _dude)) then {_iterations = _iterations + 1};
-	
-	alive _dude && _iterations < 8 && _time < diag_tickTime
+    
+    alive _dude && _iterations < 8 && _time < diag_tickTime
 };
 
 if (alive _dude) then

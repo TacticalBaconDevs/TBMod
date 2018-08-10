@@ -1,5 +1,5 @@
 ﻿/*
-	Author: Willi "shukari" Graff
+    Author: Willi "shukari" Graff
 */
 waitUntil {!isNull player && time > 0};
 

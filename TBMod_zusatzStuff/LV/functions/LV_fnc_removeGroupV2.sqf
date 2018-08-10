@@ -7,21 +7,21 @@ private["_grp"];
 _grp = _this select 0;
 
 {
-	if(vehicle _x != _x)then
-	{
-		_veh = vehicle _x;		
-		{
+    if(vehicle _x != _x)then
+    {
+        _veh = vehicle _x;        
+        {
             //getting rid of the frikkin gunners!
-			_x assignAsDriver _veh;
-			unassignVehicle _x;
-			moveOut _x;
-			_x setPos [0,0,0];
-			deleteVehicle _x;
-		}forEach crew _veh;
-		deleteVehicle _veh;	
-	}
-	else
-	{
-		deleteVehicle _x;
-	};
+            _x assignAsDriver _veh;
+            unassignVehicle _x;
+            moveOut _x;
+            _x setPos [0,0,0];
+            deleteVehicle _x;
+        }forEach crew _veh;
+        deleteVehicle _veh;    
+    }
+    else
+    {
+        deleteVehicle _x;
+    };
 }forEach units _grp;

@@ -1,5 +1,5 @@
 /*
-	Author: Willi "shukari" Graff
+    Author: Willi "shukari" Graff
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 
@@ -43,7 +43,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
     if (TB_mission_tpw_soap) then {
         call TB_fnc_tpw_core;
         
-		tpw_soap_active = true;
+        tpw_soap_active = true;
         [
             1,      // Ambient sounds volume (0-2)
             1,      // Music volume (0-2)
@@ -54,7 +54,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
             0,      // Number of user supplied sound files in @TPW_MODS\sounds. 0 = no user sounds
             0,      // Region specific sounds. 0 = autodetect, 1 = Greek, 2 = Mideast, 3 = Fijian, 4 = French, 5 = Russian, 6 = Polyglot
             6,      // 0 = no traffic sounds, 20 = very loud
-            1       // Chainsaw volume (0-2)	
+            1       // Chainsaw volume (0-2)    
         ] spawn compile preprocessFileLineNumbers "\TBMod_zusatzStuff\tpw\tpw_soap.sqf";
     };
 };

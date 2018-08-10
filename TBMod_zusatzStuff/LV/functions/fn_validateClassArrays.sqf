@@ -2,5 +2,5 @@
 params [["_input", [], [[]]]];
 
 _input select {
-	_x != "" && isClass (configFile >> "CfgVehicles" >> _x)
+    _x != "" && isClass (configFile >> "CfgVehicles" >> _x)
 };

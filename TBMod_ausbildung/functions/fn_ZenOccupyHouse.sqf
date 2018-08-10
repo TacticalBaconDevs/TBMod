@@ -38,9 +38,9 @@ _deleteOver = _this param [7, false, [true]];
 
 // keine HC Gruppen
 {
-	private _unit = _x;
-	_unit setVariable ["acex_headless_blacklist", true, true];
-	(group _unit) setVariable ["acex_headless_blacklist", true, true];
+    private _unit = _x;
+    _unit setVariable ["acex_headless_blacklist", true, true];
+    (group _unit) setVariable ["acex_headless_blacklist", true, true];
 }
 forEach _units;
 
@@ -108,37 +108,37 @@ _Zen_ArrayShuffle = {
 
 if (_buildingRadius isEqualType objNull) then
 {
-	_buildingsArray = [_buildingRadius];
+    _buildingsArray = [_buildingRadius];
 }
 else
 {
-	if (_buildingRadius < 0) then {
-		_buildingsArray0 = nearestObjects [_center, ["house"], 20];
-		_buildingsArray1 = nearestObjects [_center, ["building"], 20];
-		
-		if (!(_buildingsArray0 isEqualTo []) && !(_buildingsArray1 isEqualTo [])) then
-		{
-			_buildingsArray0 = _buildingsArray0 select 0;
-			_buildingsArray1 = _buildingsArray1 select 0;
-			
-			if (_buildingsArray0 distance _center < _buildingsArray1 distance _center) then
-			{
-				_buildingsArray = [_buildingsArray0];
-			}
-			else
-			{
-				_buildingsArray = [_buildingsArray1];
-			};
-		}
-		else
-		{
-			_buildingsArray = [nearestBuilding _center];
-		};
-	} else {
-		_buildingsArray0 = nearestObjects [_center, ["house"], _buildingRadius];
-		_buildingsArray1 = nearestObjects [_center, ["building"], _buildingRadius];
-		_buildingsArray = _buildingsArray0 arrayIntersect _buildingsArray1;
-	};
+    if (_buildingRadius < 0) then {
+        _buildingsArray0 = nearestObjects [_center, ["house"], 20];
+        _buildingsArray1 = nearestObjects [_center, ["building"], 20];
+        
+        if (!(_buildingsArray0 isEqualTo []) && !(_buildingsArray1 isEqualTo [])) then
+        {
+            _buildingsArray0 = _buildingsArray0 select 0;
+            _buildingsArray1 = _buildingsArray1 select 0;
+            
+            if (_buildingsArray0 distance _center < _buildingsArray1 distance _center) then
+            {
+                _buildingsArray = [_buildingsArray0];
+            }
+            else
+            {
+                _buildingsArray = [_buildingsArray1];
+            };
+        }
+        else
+        {
+            _buildingsArray = [nearestBuilding _center];
+        };
+    } else {
+        _buildingsArray0 = nearestObjects [_center, ["house"], _buildingRadius];
+        _buildingsArray1 = nearestObjects [_center, ["building"], _buildingRadius];
+        _buildingsArray = _buildingsArray0 arrayIntersect _buildingsArray1;
+    };
 };
 
 if (count _buildingsArray == 0) exitWith {
@@ -303,14 +303,14 @@ if (_doMove) then {
 
 _unUsedUnits = [];
 for "_i" from _unitIndex to (count _units - 1) step 1 do {
-	if (_deleteOver) then
-	{
-		deleteVehicle (_units select _i);
-	}
-	else
-	{
-		_unUsedUnits pushBack (_units select _i);
-	};
+    if (_deleteOver) then
+    {
+        deleteVehicle (_units select _i);
+    }
+    else
+    {
+        _unUsedUnits pushBack (_units select _i);
+    };
     
 };
 

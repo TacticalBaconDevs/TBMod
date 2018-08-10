@@ -23,8 +23,8 @@ while{true}do{
   }forEach _deleteThese;
   
   {
-	_grp = _x;
-	if(({alive _x}count units _grp)==0)then{deleteGroup _grp;};
+    _grp = _x;
+    if(({alive _x}count units _grp)==0)then{deleteGroup _grp;};
   }forEach allGroups;
   
   sleep 50;

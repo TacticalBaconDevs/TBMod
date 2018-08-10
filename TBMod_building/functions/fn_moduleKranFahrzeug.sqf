@@ -1,5 +1,5 @@
 /*
-	Author: Willi "shukari" Graff
+    Author: Willi "shukari" Graff
 */
 params ["_logic", "", "_activated"];
 
@@ -13,11 +13,11 @@ if !(_activated) exitWith {};
 
 if (_mouseOverType != "OBJECT") then
 {
-	systemChat "Kranfahrzeug muss ein Objekt sein!";
+    systemChat "Kranfahrzeug muss ein Objekt sein!";
 }
 else
 {
-	_mouseOverUnit setVariable ["TBMod_Building_Cranwagen", true, true];
+    _mouseOverUnit setVariable ["TBMod_Building_Cranwagen", true, true];
 };
 
 true

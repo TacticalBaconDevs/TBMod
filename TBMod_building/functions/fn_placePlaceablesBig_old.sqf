@@ -1,29 +1,29 @@
 /*
-* 	Author: KokaKolaA3
-* 	Modified: Willi "shukari" Graff
+*     Author: KokaKolaA3
+*     Modified: Willi "shukari" Graff
 * 
-* 	Place an object big infront of the ACE_player and organise all ACE3 settings
+*     Place an object big infront of the ACE_player and organise all ACE3 settings
 *
-* 	Arguments:
-* 		0: Objectclassnamen <ARRAY>
-*		1: Tool <STRING>
-* 		2: Simulation <BOOL> (optional, default: true)
-* 		3: AttachPoint <ARRAY> (optional, default: [0, 1.5, 0])
-* 		4: [Zeit zum Aufbauen, Resourcen] <ARRAY> [<SCALAR>, <SCALAR>] (optional, default: [20, 250])
-* 		5: braucht Kranfahrzeug <BOOL> (optional, default: false)
+*     Arguments:
+*         0: Objectclassnamen <ARRAY>
+*        1: Tool <STRING>
+*         2: Simulation <BOOL> (optional, default: true)
+*         3: AttachPoint <ARRAY> (optional, default: [0, 1.5, 0])
+*         4: [Zeit zum Aufbauen, Resourcen] <ARRAY> [<SCALAR>, <SCALAR>] (optional, default: [20, 250])
+*         5: braucht Kranfahrzeug <BOOL> (optional, default: false)
 *
-* 	Return Value:
-* 	None
+*     Return Value:
+*     None
 *
 */
 params [
-	"_readyObj",
-	["_tool", false],
-	["_sim", true],
-	["_attachPos", -1],
-	["_zusatz", [20, 250]],
-	["_kran", false],
-	["_spiegeln", false]
+    "_readyObj",
+    ["_tool", false],
+    ["_sim", true],
+    ["_attachPos", -1],
+    ["_zusatz", [20, 250]],
+    ["_kran", false],
+    ["_spiegeln", false]
 ];
 _zusatz params ["", "_resourcen"];
 
@@ -49,8 +49,8 @@ private _readyObj = createVehicle [_readyObj, [0, 0, 0], [], 0, "NONE"];
 
 if (_attachPos == -1) then
 {
-	private _bbr = boundingBoxReal _readyObj;
-	_attachPos = (abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2 + 2;
+    private _bbr = boundingBoxReal _readyObj;
+    _attachPos = (abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2 + 2;
 };
 
 [_readyObj, true, [0, _attachPos, 0], _specialDir] remoteExec ["ace_dragging_fnc_setCarryable", -2, true];
@@ -61,32 +61,32 @@ _readyObj setVariable ["ace_dragging_carryDirection", _specialDir, true];
 
 [_this, _readyObj, _attachPos] spawn
 {
-	params ["_thisArgs", "_readyObj"];
-	_thisArgs params [
-		"",
-		["_tool", false],
-		"",
-		"",
-		["_zusatz", [20, 250]]
-	];
-	
-	waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
-	
-	private _bbr = boundingBoxReal _readyObj;
-	private _range = ((abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2) max ((abs (((_bbr select 1) select 0) - ((_bbr select 0) select 0))) / 2);
-	
-	private _beforeObj = [_readyObj, "TB_baustelle", [], false] call TB_fnc_replace;
-	_beforeObj setVariable ['placeables_inBuilding', true, true];
-	_beforeObj setVariable ['placeables_buildingReady', [typeOf _readyObj, _tool, _zusatz], true];
-	_beforeObj setVariable ['placeables_range', _range, true];
-	
-	// _pos = getPos _beforeObj;
-	// _pos set [2, 0];
-	// [_beforeObj, true] remoteExecCall ["enableSimulationGlobal", 2];
-	// _beforeObj setPos _pos;
-	// [_beforeObj, false] remoteExecCall ["enableSimulationGlobal", 2];
+    params ["_thisArgs", "_readyObj"];
+    _thisArgs params [
+        "",
+        ["_tool", false],
+        "",
+        "",
+        ["_zusatz", [20, 250]]
+    ];
+    
+    waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
+    
+    private _bbr = boundingBoxReal _readyObj;
+    private _range = ((abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2) max ((abs (((_bbr select 1) select 0) - ((_bbr select 0) select 0))) / 2);
+    
+    private _beforeObj = [_readyObj, "TB_baustelle", [], false] call TB_fnc_replace;
+    _beforeObj setVariable ['placeables_inBuilding', true, true];
+    _beforeObj setVariable ['placeables_buildingReady', [typeOf _readyObj, _tool, _zusatz], true];
+    _beforeObj setVariable ['placeables_range', _range, true];
+    
+    // _pos = getPos _beforeObj;
+    // _pos set [2, 0];
+    // [_beforeObj, true] remoteExecCall ["enableSimulationGlobal", 2];
+    // _beforeObj setPos _pos;
+    // [_beforeObj, false] remoteExecCall ["enableSimulationGlobal", 2];
 
-	
-	[_beforeObj, false] remoteExec ["ace_dragging_fnc_setCarryable", -2, true];
-	[_beforeObj, false] remoteExec ["ace_dragging_fnc_setDraggable", -2, true];
+    
+    [_beforeObj, false] remoteExec ["ace_dragging_fnc_setCarryable", -2, true];
+    [_beforeObj, false] remoteExec ["ace_dragging_fnc_setDraggable", -2, true];
 };

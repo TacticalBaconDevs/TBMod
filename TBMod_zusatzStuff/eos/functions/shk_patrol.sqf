@@ -7,12 +7,12 @@
   Version 0.22
   Author: Shuko (shuko@quakenet, miika@miikajarvinen.fi)
   http://forums.bistudio.com/showthread.php?163496-SHK_Patrol
-	Modified for EOS by Bangabob
-	
+    Modified for EOS by Bangabob
+    
 Requires SHK_POS.sqf
   Required Parameters:
     0 Object or Group     The patrolling unit
-	1 Marker Name
+    1 Marker Name
 */
 DEBUG = false;
 
@@ -27,7 +27,7 @@ switch (typename _this) do {
   case (typename []): {
     _grp = _this select 0;
     if (typename _grp == typename objNull) then {_grp = group _grp};
-	if (count _this > 1) then {_marker = _this select 1};
+    if (count _this > 1) then {_marker = _this select 1};
   };
 };
 
@@ -46,8 +46,8 @@ if (_slack < 20) then {_slack = 20};
 private ["_a","_p"];
 while {count _wps < _cnt} do {
 if (surfaceiswater (getpos(leader _grp)) ) then {
-	_p = [_mkr,true] call SHK_pos;}else{_p = [_mkr,true] call SHK_pos;
-	};
+    _p = [_mkr,true] call SHK_pos;}else{_p = [_mkr,true] call SHK_pos;
+    };
     _wps set [count _wps, _p];
 };
 

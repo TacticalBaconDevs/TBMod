@@ -21,11 +21,11 @@ EXAMPLE CALL - BASTION
  null=[["M1","M2","M3"],[PATROL GROUPS,SIZE OF GROUPS],[LIGHT VEHICLES,SIZE OF CARGO],[ARMOURED VEHICLES],[HELICOPTERS,SIZE OF HELICOPTER CARGO],[FACTION,MARKERTYPE,SIDE,HEIGHTLIMIT,DEBUG],[INITIAL PAUSE, NUMBER OF WAVES, DELAY BETWEEN WAVES, INTEGRATE EOS, SHOW HINTS]] call Bastion_Spawn;
 */
 
-VictoryColor="colorGreen";	// Colour of marker after completion
-hostileColor="colorRed";	// Default colour when enemies active
-bastionColor="colorOrange";	// Colour for bastion marker
-EOS_DAMAGE_MULTIPLIER=1;	// 1 is default
-EOS_KILLCOUNTER=false;		// Counts killed units
+VictoryColor="colorGreen";    // Colour of marker after completion
+hostileColor="colorRed";    // Default colour when enemies active
+bastionColor="colorOrange";    // Colour for bastion marker
+EOS_DAMAGE_MULTIPLIER=1;    // 1 is default
+EOS_KILLCOUNTER=false;        // Counts killed units
 
 
 null = [["BAS_zone_1"],[3,1],[1,1],[0],[1,2],[0,1,EAST,false,false],[120,2,240,TRUE,FALSE]] call Bastion_Spawn;

@@ -1,11 +1,11 @@
 ﻿/*
-	Author: Willi "shukari" Graff
+    Author: Willi "shukari" Graff
 */
 params ["_target", "_item"];
 
 if (_target getVariable ['TBMod_Nachschub_kisten', -1] != -1) then
 {
-	_target setVariable ['TBMod_Nachschub_kisten', (_target getVariable ['TBMod_Nachschub_kisten', 0]) - 1, true];
+    _target setVariable ['TBMod_Nachschub_kisten', (_target getVariable ['TBMod_Nachschub_kisten', 0]) - 1, true];
 };
 
 private _obj = createVehicle [_item, [0, 0, 0], [], 0, 'NONE'];

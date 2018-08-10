@@ -19,26 +19,26 @@ while { alive _unit }do{
     };
 
     _bPoss = [];
-	_i = 0;
-	while { ((_building buildingPos _i) select 0) != 0 } do {
-    		_bPoss set [count (_bPoss), (_building buildingPos _i)];
-		_i = _i + 1;
-	};
-	_i2 = 0;
-    	while{_i2 < (count _bPoss)}do{
-			_newPos = (floor(random(count _bPoss)));
-        	_newPos = _bPoss select _newPos;
-        	waitUntil {unitReady _unit || _unit distance _newPos < 2};
-        	_unit doMove _newPos;
-			_break = _unit getVariable "breakPatrol";
-			if(!isNil("_break"))exitWith{};
-        	waitUntil {unitReady _unit || _unit distance _newPos < 2};
-        	sleep 5 + random 25;
-			_break = _unit getVariable "breakPatrol";
-			if(!isNil("_break"))exitWith{};
-        	_i2 = _i2 + 1;
-    	};
-	_break = _unit getVariable "breakPatrol";
-	if(!isNil("_break"))exitWith{};
+    _i = 0;
+    while { ((_building buildingPos _i) select 0) != 0 } do {
+            _bPoss set [count (_bPoss), (_building buildingPos _i)];
+        _i = _i + 1;
+    };
+    _i2 = 0;
+        while{_i2 < (count _bPoss)}do{
+            _newPos = (floor(random(count _bPoss)));
+            _newPos = _bPoss select _newPos;
+            waitUntil {unitReady _unit || _unit distance _newPos < 2};
+            _unit doMove _newPos;
+            _break = _unit getVariable "breakPatrol";
+            if(!isNil("_break"))exitWith{};
+            waitUntil {unitReady _unit || _unit distance _newPos < 2};
+            sleep 5 + random 25;
+            _break = _unit getVariable "breakPatrol";
+            if(!isNil("_break"))exitWith{};
+            _i2 = _i2 + 1;
+        };
+    _break = _unit getVariable "breakPatrol";
+    if(!isNil("_break"))exitWith{};
 };
 

@@ -1,5 +1,5 @@
 /*
-	Author: Willi "shukari" Graff
+    Author: Willi "shukari" Graff
 */
 params ["_logic", "", "_activated"];
 
@@ -11,8 +11,8 @@ if !(_activated) exitWith {};
 if !(canSuspend) exitWith {_this spawn TB_fnc_moduleNachschubAbwurf};
 
 private _dialogResult = ["Nachschubmenge", [
-		["Nachschubmenge", "", "2000", true]
-	]] call Ares_fnc_showChooseDialog;
+        ["Nachschubmenge", "", "2000", true]
+    ]] call Ares_fnc_showChooseDialog;
 if (_dialogResult isEqualTo []) exitWith {};
 _dialogResult params ["_menge"];
 
@@ -23,11 +23,11 @@ if (_menge < 0 || _menge > 10000) exitWith {systemChat "Menge muss zwischen 0-10
 
 if (_mouseOverType != "OBJECT") then
 {
-	systemChat "Resoucenfahrzeug muss ein Objekt sein!";
+    systemChat "Resoucenfahrzeug muss ein Objekt sein!";
 }
 else
 {
-	_mouseOverUnit setVariable ["TBMod_Building_PlaceablesCargo", _menge, true];
+    _mouseOverUnit setVariable ["TBMod_Building_PlaceablesCargo", _menge, true];
 };
 
 true

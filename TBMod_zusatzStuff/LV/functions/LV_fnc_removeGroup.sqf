@@ -7,6 +7,6 @@ private["_grp"];
 _grp = _this select 0;
 if(isNil("_grp"))exitWith{};
 {
-	if(vehicle _x != _x)then{deleteVehicle (vehicle _x);};
-	deleteVehicle _x;
+    if(vehicle _x != _x)then{deleteVehicle (vehicle _x);};
+    deleteVehicle _x;
 }forEach units _grp;

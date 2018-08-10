@@ -1,29 +1,29 @@
 /*
-* 	Author: KokaKolaA3
-* 	Modified: Willi "shukari" Graff
+*     Author: KokaKolaA3
+*     Modified: Willi "shukari" Graff
 * 
-* 	Place an object big infront of the ACE_player and organise all ACE3 settings
+*     Place an object big infront of the ACE_player and organise all ACE3 settings
 *
-* 	Arguments:
-* 		0: Objectclassnamen <ARRAY>
-*		1: Tool <STRING>
-* 		2: Simulation <BOOL> (optional, default: true)
-* 		3: AttachPoint <ARRAY> (optional, default: [0, 1.5, 0])
-* 		4: [Zeit zum Aufbauen, Resourcen] <ARRAY> [<SCALAR>, <SCALAR>] (optional, default: [20, 250])
-* 		5: braucht Kranfahrzeug <BOOL> (optional, default: false)
+*     Arguments:
+*         0: Objectclassnamen <ARRAY>
+*        1: Tool <STRING>
+*         2: Simulation <BOOL> (optional, default: true)
+*         3: AttachPoint <ARRAY> (optional, default: [0, 1.5, 0])
+*         4: [Zeit zum Aufbauen, Resourcen] <ARRAY> [<SCALAR>, <SCALAR>] (optional, default: [20, 250])
+*         5: braucht Kranfahrzeug <BOOL> (optional, default: false)
 *
-* 	Return Value:
-* 	None
+*     Return Value:
+*     None
 *
 */
 params [
-	"_readyObj",
-	["_tool", false],
-	["_sim", true],
-	["_attachPos", -1],
-	["_zusatz", [20, 250]],
-	["_kran", false],
-	["_spiegeln", false]
+    "_readyObj",
+    ["_tool", false],
+    ["_sim", true],
+    ["_attachPos", -1],
+    ["_zusatz", [20, 250]],
+    ["_kran", false],
+    ["_spiegeln", false]
 ];
 _zusatz params ["_zeit", "_resourcen"];
 
@@ -52,8 +52,8 @@ _obj setDir _specialDir;
 
 if (_attachPos == -1) then
 {
-	private _bbr = boundingBoxReal _obj;
-	_attachPos = (abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2 + 2;
+    private _bbr = boundingBoxReal _obj;
+    _attachPos = (abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2 + 2;
 };
 
 private _pos = player modelToWorld [0, _attachPos, 0];
@@ -67,41 +67,41 @@ waitUntil {_obj distance2D _pos < 5};
 [ACE_player, _obj] call ace_dragging_fnc_startCarry;
 
 private _nichtgebaut = {
-		(_this select 0) params ["_obj", "_truck", "_resourcen"];
-		
-		_truck setVariable ["TBMod_Building_PlaceablesCargo", (_truck getVariable ["TBMod_Building_PlaceablesCargo", 0]) + _resourcen, true];
-		
-		[ACE_player, "", 1] call ace_common_fnc_doAnimation;
-		deleteVehicle _obj;
-	};
+        (_this select 0) params ["_obj", "_truck", "_resourcen"];
+        
+        _truck setVariable ["TBMod_Building_PlaceablesCargo", (_truck getVariable ["TBMod_Building_PlaceablesCargo", 0]) + _resourcen, true];
+        
+        [ACE_player, "", 1] call ace_common_fnc_doAnimation;
+        deleteVehicle _obj;
+    };
 
 [_obj, _zeit, _sim, _truck, _resourcen, _nichtgebaut, _safeGewicht] spawn
 {
-	params ["_obj", "_zeit", "_sim", "_truck", "_resourcen", "_nichtgebaut", "_safeGewicht"];
-	
-	waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
-	[_obj, false] call ace_dragging_fnc_setCarryable;
-	missionNamespace setVariable ["ACE_maxWeightCarry", _safeGewicht];
-	
-	if (!_sim) then
-	{
-		_obj enableSimulation false;
-		[_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
-	};
-	
-	[_obj, true] remoteExecCall ["hideObjectGlobal", 2];
-	
-	[ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation;
+    params ["_obj", "_zeit", "_sim", "_truck", "_resourcen", "_nichtgebaut", "_safeGewicht"];
+    
+    waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
+    [_obj, false] call ace_dragging_fnc_setCarryable;
+    missionNamespace setVariable ["ACE_maxWeightCarry", _safeGewicht];
+    
+    if (!_sim) then
+    {
+        _obj enableSimulation false;
+        [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
+    };
+    
+    [_obj, true] remoteExecCall ["hideObjectGlobal", 2];
+    
+    [ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation;
 
-	[_zeit, [ _obj, _truck, _resourcen], {
-		(_this select 0) params ["_obj", "_truck", "_resourcen"];
-		
-		[ACE_player, "", 1] call ace_common_fnc_doAnimation;
-		
-		[_obj, false] remoteExecCall ["hideObjectGlobal", 2];
-		
-		if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
-		TB_persistent_buildings pushBack [_obj, true];
-		publicVariable "TB_persistent_buildings";
-	}, _nichtgebaut, localize "STR_PLACE_Build"] call ace_common_fnc_progressBar;
+    [_zeit, [ _obj, _truck, _resourcen], {
+        (_this select 0) params ["_obj", "_truck", "_resourcen"];
+        
+        [ACE_player, "", 1] call ace_common_fnc_doAnimation;
+        
+        [_obj, false] remoteExecCall ["hideObjectGlobal", 2];
+        
+        if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
+        TB_persistent_buildings pushBack [_obj, true];
+        publicVariable "TB_persistent_buildings";
+    }, _nichtgebaut, localize "STR_PLACE_Build"] call ace_common_fnc_progressBar;
 };

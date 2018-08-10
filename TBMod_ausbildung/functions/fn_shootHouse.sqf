@@ -1,5 +1,5 @@
 ﻿/*
-	Author: Willi "shukari" Graff
+    Author: Willi "shukari" Graff
 */
 params ["_shoothouse","_garnision","_unitPoses","_zone"];
 // private _shoothouse = "stadt"; 
@@ -18,59 +18,59 @@ uiSleep 0.11;
 
 if (_var) then 
 { 
-	{
-		private _add = 0;
-		private _obj = if (_x isEqualType objNull) then {_x} else {_add = 6; _x select 0};
-		
-		private _group = createGroup east; 
-		for "_i" from 1 to (_add + 2 + random 3) do 
-		{ 
-			private _unit = _group createUnit [selectRandom _units, [0,0,0], [], 0, "CAN_COLLIDE"]; 
-			_allUnits pushBack _unit;
-			_unit addeventhandler ["FiredNear",{[_this select 0, ["Up", "Middle"]] spawn TB_fnc_UpDown}];
-		};
+    {
+        private _add = 0;
+        private _obj = if (_x isEqualType objNull) then {_x} else {_add = 6; _x select 0};
+        
+        private _group = createGroup east; 
+        for "_i" from 1 to (_add + 2 + random 3) do 
+        { 
+            private _unit = _group createUnit [selectRandom _units, [0,0,0], [], 0, "CAN_COLLIDE"]; 
+            _allUnits pushBack _unit;
+            _unit addeventhandler ["FiredNear",{[_this select 0, ["Up", "Middle"]] spawn TB_fnc_UpDown}];
+        };
 
-		// _group setBehaviour "SAFE";
-		// _group setCombatMode "YELLOW";
-		// _group setSpeedMode "LIMITED";
+        // _group setBehaviour "SAFE";
+        // _group setCombatMode "YELLOW";
+        // _group setSpeedMode "LIMITED";
 
-		[getPos _obj, units _group, _obj, true, true, false, false, true] call TB_fnc_ZenOccupyHouse; 
-	} 
-	forEach _garnision; 
+        [getPos _obj, units _group, _obj, true, true, false, false, true] call TB_fnc_ZenOccupyHouse; 
+    } 
+    forEach _garnision; 
 
-	{ 
-		private _add = 0;
-		private _obj = if (_x isEqualType objNull) then {_x} else {_add = 4; _x select 0};
-	
-		private _group = createGroup east; 
-		for "_i" from 1 to (_add + 3 + random 3) do 
-		{ 
-			private _unit = _group createUnit [selectRandom _units, [0,0,0], [], 0, "CAN_COLLIDE"]; 
-			_unit setPos (getPos _obj); 
-			_allUnits pushBack _unit;
-		}; 
+    { 
+        private _add = 0;
+        private _obj = if (_x isEqualType objNull) then {_x} else {_add = 4; _x select 0};
+    
+        private _group = createGroup east; 
+        for "_i" from 1 to (_add + 3 + random 3) do 
+        { 
+            private _unit = _group createUnit [selectRandom _units, [0,0,0], [], 0, "CAN_COLLIDE"]; 
+            _unit setPos (getPos _obj); 
+            _allUnits pushBack _unit;
+        }; 
 
-		[_group, getPos _obj, 30, nil, nil, "SAFE", nil, "LIMITED", nil, nil, [5, 10, 15]] call CBA_fnc_taskPatrol; 
-	} 
-	forEach _unitPoses;
-	
-	_allUnits = _allUnits - [objNull];
+        [_group, getPos _obj, 30, nil, nil, "SAFE", nil, "LIMITED", nil, nil, [5, 10, 15]] call CBA_fnc_taskPatrol; 
+    } 
+    forEach _unitPoses;
+    
+    _allUnits = _allUnits - [objNull];
 
-	null = [_zone,_shoothouse] spawn
-	{
-		params ["_zone","_shoothouse"];
-		waitUntil {
-				private _allUnits = missionNamespace getVariable ["shoothouse_units_" + _shoothouse, []];
-				{deleteVehicle _x} forEach (_allUnits - (_allUnits inAreaArray _zone));
-				_allUnits = _allUnits - [objNull];
-				
-				private _empty = (0 == {alive _x} count _allUnits);
-				if (_empty) then {(format ["Shoothouse %1 wird ist vollständig erobert!", toUpper _shoothouse]) remoteExecCall ["systemChat"]};
-				
-				uiSleep 0.1;
-				(missionNamespace getVariable ["shoothouse_" + _shoothouse, true]) || _empty
-			};
-	};
+    null = [_zone,_shoothouse] spawn
+    {
+        params ["_zone","_shoothouse"];
+        waitUntil {
+                private _allUnits = missionNamespace getVariable ["shoothouse_units_" + _shoothouse, []];
+                {deleteVehicle _x} forEach (_allUnits - (_allUnits inAreaArray _zone));
+                _allUnits = _allUnits - [objNull];
+                
+                private _empty = (0 == {alive _x} count _allUnits);
+                if (_empty) then {(format ["Shoothouse %1 wird ist vollständig erobert!", toUpper _shoothouse]) remoteExecCall ["systemChat"]};
+                
+                uiSleep 0.1;
+                (missionNamespace getVariable ["shoothouse_" + _shoothouse, true]) || _empty
+            };
+    };
 };
 
 missionNamespace setVariable ["shoothouse_units_" + _shoothouse, _allUnits]; 

@@ -1,7 +1,7 @@
 ﻿/*
-	Author: Willi "shukari" Graff
-	
-	Aufgerufen durch: fn_changeRolle
+    Author: Willi "shukari" Graff
+    
+    Aufgerufen durch: fn_changeRolle
 */
 params ["_ammoBox"];
 
@@ -34,11 +34,11 @@ ACE_player setVariable ["TB_arsenalCargo", _tbCargo];
 
 // Arsenale syncen
 {
-	if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ['ace_arsenal_virtualItems', []]))}) then
-	{
-		_x setVariable ['ace_arsenal_virtualItems', _tbCargo];
-	};
-	
-	false;
+    if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ['ace_arsenal_virtualItems', []]))}) then
+    {
+        _x setVariable ['ace_arsenal_virtualItems', _tbCargo];
+    };
+    
+    false;
 }
 count (entities (typeOf _ammoBox));
