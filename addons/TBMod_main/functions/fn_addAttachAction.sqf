@@ -1,18 +1,18 @@
 /*
-	Author: Eric Ruhland
-	Add AAttach Action to vehicle
-	Parameter:
-	1: Target
-	Rückgabe:
-	   
+    Author: Eric Ruhland
+    Add AAttach Action to vehicle
+    Parameter:
+    1: Target
+    Rückgabe:
+       
 */
 params["_target"];
 _target addAction  
-	[ 
+    [ 
     "Attach Rope",  
     {
-    	(_this select 0) call TB_fnc_attach;
-   	}, 
+        (_this select 0) call TB_fnc_attach;
+       }, 
     [], 
     1.5,  
     true,  

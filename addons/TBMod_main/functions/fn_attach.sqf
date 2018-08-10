@@ -1,10 +1,10 @@
 /*
-	Author: Eric Ruhland
-	Berechnet den außeren Punkt eines Object innerhalb der Sicht
-	Parameter:
-	1: Target
-	Rückgabe:
-	   
+    Author: Eric Ruhland
+    Berechnet den außeren Punkt eines Object innerhalb der Sicht
+    Parameter:
+    1: Target
+    Rückgabe:
+       
 */
 params ["_target"]; 
 systemChat str _target;
@@ -39,6 +39,6 @@ ropeCreate [_source, _selection, _target, _target worldToModel ASLtoATL _postoAt
 _source setVariable['TB_Rope_attached_Vehicle',_target,true];
 _target setVariable ['TB_Rope_original_Mass',getMass _target,true];
 if((getMass _target)>12000) then {
-	_target setMass 12000;};
+    _target setMass 12000;};
 player setVariable["TB_Rope_source",objNull];
 systemChat "Attached vehicle";
