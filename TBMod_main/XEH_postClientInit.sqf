@@ -22,49 +22,13 @@
 ] call CBA_fnc_addClassEventHandler;
 
 
-["Car", 
+{[_x, 
  "init", 
   {(_this select 0) call TB_fnc_addAttachAction;}, 
   true, 
   [], 
   true
-] call CBA_fnc_addClassEventHandler;
-
-
-["Plane", 
- "init", 
-  {(_this select 0) call TB_fnc_addAttachAction;}, 
-  true, 
-  [], 
-  true
-] call CBA_fnc_addClassEventHandler;
-
-
-["Helicopter", 
- "init", 
-  {(_this select 0) call TB_fnc_addAttachAction;}, 
-  true, 
-  [], 
-  true
-] call CBA_fnc_addClassEventHandler;
-
-
-["Ship", 
- "init", 
-  {(_this select 0) call TB_fnc_addAttachAction;}, 
-  true, 
-  [], 
-  true
-] call CBA_fnc_addClassEventHandler;
-
-
-["Thing", 
- "init", 
-  {(_this select 0) call TB_fnc_addAttachAction;}, 
-  true, 
-  [], 
-  true
-] call CBA_fnc_addClassEventHandler;
+] call CBA_fnc_addClassEventHandler;} forEach ["Car","Helicopter","Ship","Thing"];
 
 if !(call TB_fnc_isTBMission) exitWith {};
 
