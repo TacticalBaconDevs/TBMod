@@ -9,7 +9,7 @@
     "init", 
     {
         private _getaction = ["Get Rope", "Get Rope", "", {player setVariable ['TB_Rope_source', _target]}, {isNull (player getVariable ['TB_Rope_source', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _storeaction = ["Store Rope", "Store Rope", "", {player setVariable ['TB_Rope_source', objNull]}, {!isNull (player getVariable ['TB_Rope_source', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _storeaction = ["Store Rope", "Store Rope", "", {player setVariable ['TB_Rope_source', nil]}, {!isNull (player getVariable ['TB_Rope_source', objNull])}] call ace_interact_menu_fnc_createAction;
         private _cutaction = ["Cut Rope", "Cut Rope", "", {_target call TB_fnc_detach}, {!((ropes _target) isEqualTo [])}] call ace_interact_menu_fnc_createAction;
         
         [_this select 0, 0, ["ACE_MainActions"], _getaction] call ace_interact_menu_fnc_addActionToObject;

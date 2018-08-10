@@ -48,6 +48,6 @@ _source setVariable ['TB_Rope_attachedVehicle', _target, true];
 _target setVariable ['TB_Rope_original_Mass', getMass _target, true];
 
 if (getMass _target > 12000) then {_target setMass 12000};
-player setVariable ["TB_Rope_source", objNull];
+player setVariable ["TB_Rope_source", nil];
 
 systemChat "Attached vehicle";

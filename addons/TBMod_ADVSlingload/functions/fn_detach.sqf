@@ -20,6 +20,6 @@ private _originalMass = _attachedVehicle getVariable ['TB_Rope_originalMass', 0]
 if (_originalMass != 0) then {hint "Setting mass"; _attachedVehicle setMass _originalMass;};
 {ropeDestroy _x} forEach (ropes _target);
 
-_attachedVehicle setVariable ['TB_Rope_originalMass', objNull, true];
-_target setVariable ['TB_Rope_attachedVehicle', objNull, true];
+_attachedVehicle setVariable ['TB_Rope_originalMass', nil, true];
+_target setVariable ['TB_Rope_attachedVehicle', nil, true];
 systemChat "Detached vehicle";
