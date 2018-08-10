@@ -37,9 +37,8 @@ systemChat str (_target worldToModel ASLtoATL _postoAttach);
 ropeCreate [_source, _selection, _target, _target worldToModel ASLtoATL _postoAttach, 20]; 
 
 _source setVariable['TB_Rope_attached_Vehicle',_target,true];
-
+_target setVariable ['TB_Rope_original_Mass',getMass _target,true];
 if((getMass _target)>12000) then {
-	_target setVariable ['TB_Rope_original_Mass',getMass _target,true];
 	_target setMass 12000;};
 player setVariable["TB_Rope_source",objNull];
 systemChat "Attached vehicle";
