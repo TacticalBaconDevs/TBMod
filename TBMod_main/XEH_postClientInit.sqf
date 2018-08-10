@@ -28,7 +28,7 @@
   true, 
   [], 
   true
-] call CBA_fnc_addClassEventHandler;} forEach ["Car","Helicopter","Ship","Thing"];
+] call CBA_fnc_addClassEventHandler;} forEach ["Car","Helicopter","Ship","Tank","Thing"];
 
 if !(call TB_fnc_isTBMission) exitWith {};
 
