@@ -13,14 +13,14 @@ if (_skills isEqualType 0) then {
 };
 
 {
-    _x setSkill ["aimingAccuracy", _skillArray#0];
-    _x setSkill ["aimingShake", _skillArray#1];
-    _x setSkill ["aimingSpeed", _skillArray#2];
-    _x setSkill ["spotDistance", _skillArray#3];
-    _x setSkill ["spotTime", _skillArray#4];
-    _x setSkill ["courage", _skillArray#5];
-    _x setSkill ["commanding", _skillArray#6];
-    _x setSkill ["general", _skillArray#7];
-    _x setSkill ["endurance", _skillArray#8];
-    _x setSkill ["reloadspeed", _skillArray#9];
+    _x setSkill ["aimingAccuracy", _skillArray select 0];
+    _x setSkill ["aimingShake", _skillArray select 1];
+    _x setSkill ["aimingSpeed", _skillArray select 2];
+    _x setSkill ["spotDistance", _skillArray select 3];
+    _x setSkill ["spotTime", _skillArray select 4];
+    _x setSkill ["courage", _skillArray select 5];
+    _x setSkill ["commanding", _skillArray select 6];
+    _x setSkill ["general", _skillArray select 7];
+    _x setSkill ["endurance", _skillArray select 8];
+    _x setSkill ["reloadspeed", _skillArray select 9];
 } forEach units _group;

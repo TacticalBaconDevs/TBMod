@@ -21,19 +21,19 @@ while {_roads isEqualTo []} do {
 };
 
 private _pos1 = nil;
-if ((_roads#0) distance _pos < 200) then {
-    _pos = getPos (_roads#0);
+if ((_roads select 0) distance _pos < 200) then {
+    _pos = getPos (_roads select 0);
     _pos1 = [_pos, 0, 25, 5, 0, 1, 0] call BIS_fnc_findSafePos;
 } else {
     _pos1 = [_pos, 0, 200, 5, 0, 1, 0] call BIS_fnc_findSafePos;
 };
-_pos = [_pos1#0, _pos1#1, 0];
+_pos = [_pos1 select 0, _pos1 select 1, 0];
 
 _vehicle = createVehicle [_veh, [0,0,0], [], 0, "NONE"];
 _vehicle setPos _pos;
 
 _vehicle allowDamage false;
-if ((vectorUp _vehicle)#2 != 0) then {_vehicle setvectorup [0, 0, 0]};
+if ((vectorUp _vehicle) select 2 != 0) then {_vehicle setvectorup [0, 0, 0]};
 _vehicle allowDamage true;
 
 [_vehicle, _grp] call BIS_fnc_spawnCrew;

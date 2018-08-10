@@ -11,7 +11,7 @@ player addEventHandler ["FIRED", {
     if (TB_recoilCoef == -1) exitWith {player removeEventHandler ["FIRED", _thisEventHandler]};
     params ["", "_weapon"];
     
-    if (TB_cacheType isEqualTo [] || {TB_cacheType # 0 != _weapon}) then {TB_cacheType = [_weapon, ([currentWeapon player] call BIS_fnc_itemType)#1]};
+    if (TB_cacheType isEqualTo [] || {TB_cacheType select 0 != _weapon}) then {TB_cacheType = [_weapon, ([currentWeapon player] call BIS_fnc_itemType) select 1]};
     TB_cacheType params ["", "_wType", "_time"];
     
     if (_time >= diag_tickTime) exitWith {};
