@@ -8,9 +8,9 @@
     "Helicopter", 
     "init", 
     {
-        private _getaction = ["Get Rope", "Get Rope", "", {player setVariable ['TB_Rope_source', _target]}, {isNull (player getVariable ['TB_Rope_source', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _storeaction = ["Store Rope", "Store Rope", "", {player setVariable ['TB_Rope_source', nil]}, {!isNull (player getVariable ['TB_Rope_source', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _cutaction = ["Cut Rope", "Cut Rope", "", {_target call TB_fnc_detach}, {!((ropes _target) isEqualTo [])}] call ace_interact_menu_fnc_createAction;
+        private _getaction = ["Get Rope", "Get Rope", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _storeaction = ["Store Rope", "Store Rope", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _cutaction = ["Cut Rope", "Cut Rope", "", {_target call TB_fnc_detach}, {!isNull (_target getVariable ['TB_Rope_attachedVehicle', objNull])}] call ace_interact_menu_fnc_createAction;
         
         [_this select 0, 0, ["ACE_MainActions"], _getaction] call ace_interact_menu_fnc_addActionToObject;
         [_this select 0, 0, ["ACE_MainActions"], _storeaction] call ace_interact_menu_fnc_addActionToObject;
@@ -33,3 +33,13 @@
     ] call CBA_fnc_addClassEventHandler;
 }
 forEach ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Thing"];
+
+
+private _addActions = {
+        if (0 == {((player actionParams _x) select 0) isEqualTo "Drop Rope"} count (actionIDs player)) then {
+            player addAction ["Drop Rope", {call TB_fnc_dropRope;}, nil, 0.3, false, false, "" , "!isNull (player getVariable ['TB_Rope_helper', objNull])"]; 
+        };
+    };
+    
+    call _addActions;
+    player addEventHandler ["Respawn", _addActions];

@@ -15,13 +15,13 @@ params ["_target"];
 
 _target addAction [
     "Attach Rope",
-    {[_this select 0] call TB_fnc_attach},
+    {[_this select 0,player getVariable ['TB_Rope_helper', objNull]] call TB_fnc_attach},
     [],
     1.5,
     true,
     true,
     "",
-    "!isNull (player getVariable ['TB_Rope_source', objNull])",
+    "!isNull (player getVariable ['TB_Rope_helper', objNull])",
     10,
     false,
     "",

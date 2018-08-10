@@ -3,19 +3,19 @@
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-    Berechnet den außeren Punkt eines Object innerhalb der Sicht
+    Befestigt ein Object
     
     Arguments:
     0: Target <OBJECT>
-    
+    1: Helper <OBJECT>
     Return Value:
     None
 */
-params ["_target"]; 
-systemChat str _target;
+params ["_target", "_helper"]; 
+systemChat format ["DEBUG: target %1  helper %2", _target, _helper];
 
-private _source = player getVariable ['TB_Rope_source', objNull];
-
+private _rope = _helper getVariable ['TB_Rope_rope', objNull];
+private _source = _rope getVariable ['TB_Rope_Source', objNull];
 // Sanity Checks
 if (isNull _source) exitWith {hint "Source nicht gefunden"};
 if (isNull _target) exitWith {hint "Target nicht gefunden"};
@@ -42,8 +42,12 @@ systemChat str _selection;
 systemChat str _target;
 systemChat str (_target worldToModel ASLtoATL _posToAttach);
 
-ropeCreate [_source, _selection, _target, _target worldToModel ASLtoATL _posToAttach, 20]; 
+detach _helper;
+[_target,  _target worldToModel ASLtoATL _posToAttach, [0, 0, -1]] ropeAttachTo _rope;
+deleteVehicle _helper;
 
+_rope setVariable ['TB_Rope_helper', nil, true];
+player setVariable ['TB_Rope_helper', nil];
 _source setVariable ['TB_Rope_attachedVehicle', _target, true];
 _target setVariable ['TB_Rope_original_Mass', getMass _target, true];
 

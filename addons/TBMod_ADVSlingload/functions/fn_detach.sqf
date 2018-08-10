@@ -18,7 +18,14 @@ if (_attachedVehicle == objNull) exitWith {hint "Es ist kein Fahrzeug verbunden"
 
 private _originalMass = _attachedVehicle getVariable ['TB_Rope_originalMass', 0];
 if (_originalMass != 0) then {hint "Setting mass"; _attachedVehicle setMass _originalMass;};
-{ropeDestroy _x} forEach (ropes _target);
+{
+	_helper = _x getVariable ['TB_Rope_helper',objNull];
+	if(!isNull _helper) then{
+		detach _helper;
+		deleteVehicle _helper;
+	};
+	ropeDestroy _x;
+} forEach (ropes _target);
 
 _attachedVehicle setVariable ['TB_Rope_originalMass', nil, true];
 _target setVariable ['TB_Rope_attachedVehicle', nil, true];
