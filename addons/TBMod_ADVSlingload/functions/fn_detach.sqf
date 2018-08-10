@@ -1,15 +1,15 @@
 /*
-	Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-	Detatach a Vehicle that was attached
-	
+    Detatach a Vehicle that was attached
+    
     Arguments:
-	0: Target <OBJECT>
-	
+    0: Target <OBJECT>
+    
     Return Value:
-	None
+    None
 */
 params ["_target"];
 
@@ -19,12 +19,12 @@ if (_attachedVehicle == objNull) exitWith {hint "Es ist kein Fahrzeug verbunden"
 private _originalMass = _attachedVehicle getVariable ['TB_Rope_originalMass', 0];
 if (_originalMass != 0) then {hint "Setting mass"; _attachedVehicle setMass _originalMass;};
 {
-	_helper = _x getVariable ['TB_Rope_helper',objNull];
-	if(!isNull _helper) then{
-		detach _helper;
-		deleteVehicle _helper;
-	};
-	ropeDestroy _x;
+    _helper = _x getVariable ['TB_Rope_helper',objNull];
+    if(!isNull _helper) then{
+        detach _helper;
+        deleteVehicle _helper;
+    };
+    ropeDestroy _x;
 } forEach (ropes _target);
 
 _attachedVehicle setVariable ['TB_Rope_originalMass', nil, true];
