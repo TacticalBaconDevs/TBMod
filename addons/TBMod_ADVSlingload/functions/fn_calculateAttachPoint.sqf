@@ -26,8 +26,7 @@ while {_max - _min >= 0.1} do
     private _intersect1 = lineIntersects [_startPos, _testpos1, player];
     private _intersect2 = lineIntersects [_testpos1, _testpos2, player];
     
-    if (_intersect1 /*&& !_intersect2*/) then {_max = _testDistance}; // zweimal das gleich, egal wie _intersect2 ist immer max
-    //if (_intersect1 && _intersect2) then {_max = _testDistance};
+    if (_intersect1) then {_max = _testDistance};
     if (!_intersect1 && _intersect2) then {_min = _testDistance};
     if (!_intersect1 && !_intersect2) exitWith {false};
 };
