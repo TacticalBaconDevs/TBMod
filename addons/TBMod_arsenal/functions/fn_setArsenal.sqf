@@ -3,7 +3,7 @@
     
     Aufgerufen durch: fn_changeRolle
 */
-params ["_ammoBox"];
+params ["_ammoBox", ["_rolle", ""]];
 
 if (isNull _ammoBox) exitWith {};
 
@@ -20,6 +20,43 @@ private _allItems = call (switch (_type) do
     case "VANILLA-BLUE": {TB_fnc_arsenalVANILLA};
     default {hint "Schwerer Fehler #200"};
 });
+
+// MEDIC STUFF
+_allItems append [
+    // Medic Stuff BASIC
+    "ACE_fieldDressing",
+    "ACE_morphine",
+    
+    // Medic Stuff ADV
+    // "ACE_packingBandage",
+    "ACE_elasticBandage",
+    "ACE_quikclot",
+    "ACE_tourniquet"
+];
+
+if (_rolle in ["sani", "arzt", "pilot"]) then
+{
+    _allItems append [
+        "ACE_bodyBag",
+        "ACE_epinephrine",
+        "ACE_bloodIV",
+        "ACE_bloodIV_500",
+        "ACE_bloodIV_250",
+        
+        // Medic Stuff ADV
+        "ACE_atropine",
+        // "ACE_salineIV",
+        // "ACE_salineIV_500",
+        // "ACE_salineIV_250",
+        // "ACE_plasmaIV",
+        // "ACE_plasmaIV_500",
+        // "ACE_plasmaIV_250",
+        "ACE_personalAidKit",
+        "ACE_surgicalKit"
+    ];
+};
+
+[_allItems] call TB_fnc_whitelist;
 
 ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];
 

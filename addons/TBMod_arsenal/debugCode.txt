@@ -1,0 +1,16 @@
+// getValues for Vests
+private _resultset = [];
+{
+    _resultset pushBack _x;
+    private _value = (([[configfile >> "CfgWeapons" >> _x], ["passthrough", "armor", "maximumload"]] call BIS_fnc_configExtremes) select 1);
+    _value = _value apply {if (_x < 1) then {parseNumber ((_x * 100) toFixed 0)} else {_x}};
+    _resultset pushBack _value;
+} forEach [
+    "rhsusf_mbav_medic", 
+    "rhsusf_mbav_mg", 
+    "rhsusf_mbav_grenadier", 
+    "rhsusf_mbav_rifleman", 
+    "rhsusf_mbav_light", 
+    "rhsusf_mbav"
+];
+_resultset;

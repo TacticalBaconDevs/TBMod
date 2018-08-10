@@ -85,13 +85,29 @@ class CfgSettings
 
 class CfgMods
 {
-    class TBMod
+    class Mod_Base;
+    class TBMod : Mod_Base
     {
-        dir = "@TBMod";
-        name = "TacticalBacon Mod";
-        picture = "A3\Ui_f\data\Logos\arma3_expansion_alpha_ca";
-        hidePicture = "true";
-        hideName = "true";
+        author = "shukari";
+        
+        picture = "\TBMod_main\pics\logo.paa";
+        logo = "\TBMod_main\pics\logo.paa";
+		logoOver = "\TBMod_main\pics\logo.paa";
+		logoSmall = "\TBMod_main\pics\logo.paa";
+        
+        dlcColor[] = {0,0,0,1};
+		fieldManualTopicAndHint[] = {};
+        
+        hidePicture = 0;
+        hideName = 0;
+        
+		tooltip = "TBMod";
+		tooltipOwned = "TBMod";
+		name = "TacticalBacon Mod";
+		overview = "Mod of the Group of Tacticalbacon.de";
+		
+		dir = "TBMod";
+        
         actionName = "Website";
         action = "http://tacticalbacon.de/";
         description = "TacticalBacon Mod";

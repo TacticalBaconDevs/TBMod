@@ -319,9 +319,65 @@ private _allgemein_uniformen = [
     "rhs_uniform_cu_ucp",
     "rhs_uniform_FROG01_d",
     "rhs_uniform_FROG01_wd",
-    "rhs_uniform_g3_mc"
+    "rhs_uniform_g3_mc",
+    
+    // experimentell
+    "rhs_uniform_g3_blk",
+    "rhs_uniform_g3_m81",
+    "rhs_uniform_g3_rgr",
+    "rhs_uniform_g3_tan"
 ];
 
+/*
+    ["passthrough", "armor", "maximumload"]
+    
+    MBAV
+    "rhsusf_mbav_medic",[56,49,160],
+    "rhsusf_mbav_mg",[56,49,160],
+    "rhsusf_mbav_grenadier",[56,49,150],
+    "rhsusf_mbav_rifleman",[56,49,140],
+    "rhsusf_mbav_light",[56,49,100],
+    "rhsusf_mbav",[54,45,20],
+    
+    IOTV
+    "rhsusf_iotv_ucp_SAW",[56,49,150],
+    "rhsusf_iotv_ucp_Squadleader",[56,49,150],
+    "rhsusf_iotv_ucp_Teamleader",[56,49,150],
+    "rhsusf_iotv_ucp_Grenadier",[56,49,140],
+    "rhsusf_iotv_ucp_Rifleman",[56,49,140],
+    "rhsusf_iotv_ucp_Repair",[56,49,120],
+    "rhsusf_iotv_ucp_Medic",[56,49,120],
+    "rhsusf_iotv_ucp",[54,45,20],
+    
+    "rhsusf_iotv_ocp_SAW",
+    "rhsusf_iotv_ocp_Squadleader",
+    "rhsusf_iotv_ocp_Teamleader",
+    "rhsusf_iotv_ocp_Grenadier",
+    "rhsusf_iotv_ocp_Rifleman",
+    "rhsusf_iotv_ocp_Repair",
+    "rhsusf_iotv_ocp_Medic",
+    "rhsusf_iotv_ocp",
+    
+    SPC
+    "rhsusf_spc_iar",[68,56,160],
+    "rhsusf_spc_teamleader",[66,56,160]
+    "rhsusf_spc_patchless_radio",[66,56,140],
+    "rhsusf_spc_rifleman",[66,56,140],
+    "rhsusf_spc_squadleader",[66,56,140],
+    "rhsusf_spc_mg",[68,56,120],
+    "rhsusf_spc_corpsman",[66,56,120],
+    "rhsusf_spc_patchless",[68,56,100],
+    "rhsusf_spc_light",[68,56,100],
+    "rhsusf_spc_crewman",[68,56,80],
+    "rhsusf_spc_marksman",[66,56,80],
+    "rhsusf_spc",[66,53,20],
+    
+    SPCS
+    "rhsusf_spcs_ocp",[66,53,140],
+    "rhsusf_spcs_ocp_rifleman",[66,53,140],
+    "rhsusf_spcs_ucp",[66,53,140],
+    "rhsusf_spcs_ucp_rifleman",[66,53,140]
+*/
 private _allgemein_westen = [
     "rhsusf_iotv_ocp",
     "rhsusf_iotv_ucp",
@@ -601,22 +657,28 @@ _items append (switch (_rolle) do
         [
             // Weste
             "rhsusf_iotv_ocp_Squadleader",
+            "rhsusf_iotv_ocp_Teamleader",
             "rhsusf_iotv_ucp_Squadleader",
+            "rhsusf_iotv_ucp_Teamleader",
             "rhsusf_mbav_grenadier",
             "rhsusf_spc_squadleader",
             "rhsusf_spc_teamleader",
 
             // Gepäck
-            "B_UAV_01_backpack_F",
+            //"B_UAV_01_backpack_F",
 
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
+            "rhsusf_lrf_Vector21",
+            "ACE_MX2A", // Thermal EXPERIMENTELL
+            //"ACE_VectorDay",
+            "ACE_Vector", // Tag/Nacht Version
 
             // Items
-            "B_UavTerminal",
-            "ACE_UAVBattery",
+            //"B_UavTerminal",
+            //"ACE_UAVBattery",
             "Laserbatteries"
         ]
     };
@@ -1142,60 +1204,4 @@ _items append (switch (_rolle) do
     default {hint "Schwerer Fehler #100"};
 });
 
-
-// #################################################################
-// MEDIC STUFF (nichts ÄNDERN!!!)
-// Sollte das Mediclvl advanced sein werden die anderen Sachen für alle auch noch hinzugefügt
-// #################################################################
-_items append [
-    // Medic Stuff BASIC
-    "ACE_fieldDressing",
-    "ACE_morphine"
-];
-
-if (ace_medical_level >= 2) then
-{
-    _items append [
-        // Medic Stuff ADV
-        // "ACE_packingBandage",
-        "ACE_elasticBandage",
-        "ACE_quikclot",
-        "ACE_tourniquet"
-    ];
-};
-
-if (_rolle in ["sani", "arzt", "pilot"]) then
-{
-    _items append [
-        "ACE_bodyBag",
-        "ACE_epinephrine",
-        "ACE_bloodIV",
-        "ACE_bloodIV_500",
-        "ACE_bloodIV_250"
-    ];
-
-    if (ace_medical_level >= 2) then
-    {
-        _items append [
-            // Medic Stuff ADV
-            "ACE_atropine",
-            // "ACE_salineIV",
-            // "ACE_salineIV_500",
-            // "ACE_salineIV_250",
-            // "ACE_plasmaIV",
-            // "ACE_plasmaIV_500",
-            // "ACE_plasmaIV_250",
-            "ACE_personalAidKit",
-            "ACE_surgicalKit"
-        ];
-    };
-};
-
-_items = _items arrayIntersect _items;
-
-if ((ACE_player getVariable ["TB_arsenalType", ""]) == "USA") then {TB_allowedItems = ([_items] call TB_fnc_whitelist) apply {toLower _x}};
-
-// Basicsystem loadouts aus adv laden
-if (ace_medical_level < 2) then {TB_allowedItems = TB_allowedItems append ["ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_atropine","ACE_personalAidKit","ACE_surgicalKit"]};
-
-+_items
+_items arrayIntersect _items
