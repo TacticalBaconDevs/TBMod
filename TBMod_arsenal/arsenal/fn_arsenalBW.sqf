@@ -301,11 +301,11 @@ private _dmr_munition = [
 	"BWA3_10Rnd_762x51_G28_SD",
 	"BWA3_10Rnd_762x51_G28_AP",
 	"BWA3_10Rnd_762x51_G28_LR",
-	"BWA3_20Rnd_762x51_G28",  //G27  und G28 Patrol
-	"BWA3_20Rnd_762x51_G28_Tracer",  //G27 und G28 Patrol
-	"BWA3_20Rnd_762x51_G28_Tracer_Dim",  //G27 und G28 Patrol
-	"BWA3_20Rnd_762x51_G28_SD",  //G27 und G28 Patrol
-	"BWA3_20Rnd_762x51_G28_AP",  //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28",            //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_Tracer",     //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_SD",         //G27 und G28 Patrol
+	"BWA3_20Rnd_762x51_G28_AP",         //G27 und G28 Patrol
 	"hlc_20rnd_762x51_b_G3",
 	"hlc_20rnd_762x51_Mk316_G3",
 	"hlc_20rnd_762x51_barrier_G3",
@@ -549,21 +549,25 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"BWA3_Vest_Marksman_Tropen",
 
 			// Weapons
-			"BWA3_G28_Assault",
-			"BWA3_G28_Standard",
 			"BWA3_G27",
 			"BWA3_G27_Tan",
+            "BWA3_G28_Assault",
+			"BWA3_G28_Standard",
 			"hlc_rifle_g3sg1ris",
 			"hlc_rifle_g3sg1",
 			// ### Visiere
-			"BWA3_optic_Shortdot",
-			"BWA3_optic_20x50",
+            "hlc_optic_VOMZ3d",         // x3.5
+            "hlc_optic_ZF95Base",       // x6
+			"BWA3_optic_Shortdot",      // x8
+            "hlc_optic_LeupoldM3A",     // x10
+            "hlc_optic_LeupoldM3A_G3",  // x10
+			"BWA3_optic_20x50",         // x20
 			"hlc_optic_accupoint_g3",
 			//"hlc_optic_PVS4G3",
 			//"hlc_optic_STANAGZF_G3",
 			//"hlc_optic_STANAGZF2D_G3",
 			//"hlc_optic_ZF95_g3",
-			"hlc_optic_LeupoldM3A_G3",
+			
 			//"HLC_Optic_ZFSG1",
 			// ### Schalli
 			"hlc_muzzle_300blk_KAC",
