@@ -5,6 +5,16 @@ PBO BAUEN
 3. nun die Datein aus dem #buildTools im git in den übergeordeten Ordner ziehen (Hauptordner)
 4. die Datein "pbo_alle.bat" und "pbo_einzeln.bat" mit Notepad++ öffnen
 5. jeweils in den beiden Datein den "SET armaFolder" mit dem kopierten aus Punkt zwei ersetzen
+6. nun auf der Website https://armaservices.maverick-applications.com/Products/MikerosDosTools/FileBrowserFree
+    die folgenden Sachen downloaden und installieren:
+        - DeOgg.*****.Installer.exe
+        - DePbo.*****.Installer.exe
+        - DeRap.*****.Installer.exe
+        - DeRoad.******.Installer.exe
+        - ExtractPbo.*****.Installer.exe
+        - MakePbo.*****.Installer.exe
+        - pboProject.*****.Installer.exe
+        - Rapify.*****.Installer.exe
 
 
 BATCHES
