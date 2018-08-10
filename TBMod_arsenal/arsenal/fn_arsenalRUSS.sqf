@@ -1,35 +1,63 @@
-﻿/*
+/*
 	Author: Willi "shukari" Graff
 */
 
 // Hier kommen alle Items rein die ALLE Rollen haben
 _items = [
 	// Uniform
-	"U_O_Wetsuit",
 	"rhs_uniform_emr_patchless",
 	"rhs_uniform_vdv_emr_des",
 	"rhs_uniform_flora_patchless",
 	"rhs_uniform_mflora_patchless",
+	"rhs_uniform_gorka_r_g",
+	"rhs_uniform_gorka_r_y",
 
 	// Head
-	"H_Booniehat_tan",
-	"H_HelmetB_desert",
-	"H_Booniehat_mcamo",
-	"rhs_fieldcap",
-	"rhs_Booniehat_flora",
-	"rhs_Booniehat_digi",
-	"rhs_beanie",
-	"rhs_beanie_green",
-	"rhs_6b27m_digi",
 	"rhs_6b26_green",
+	"rhs_6b26_bala_green",
+	"rhs_6b26_ess_green",
+	"rhs_6b26_ess_bala_green",
+	"rhs_6b26",1],["rhs_6b26_bala",
+	"rhs_6b26_ess",
+	"rhs_6b26_ess_bala",
 	"rhs_6b27m",
+	"rhs_6b27m_ess",
+	"rhs_6b27m_bala",
+	"rhs_6b27m_ess_bala",
+	"rhs_6b47",
+	"rhs_6b47_bala",
+	"rhs_6b47_ess",
+	"rhs_6b47_ess_bala",
 	"rhs_6b27m_ml",
+	"rhs_6b27m_ml_ess",
+	"rhs_6b27m_ml_bala",
+	"rhs_6b27m_ml_ess_bala",
+	"rhs_6b27m_ml",
+	"rhs_fieldcap_helm_digi",
+	"rhs_fieldcap",
+	"rhs_beret_mp1",
+	"rhs_beret_mp2",
+	"rhs_beret_vdv3",
+	"rhs_beret_vdv1",
+	"rhs_beret_vdv2",
+	"rhs_beret_milp",
+	"rhs_Booniehat_digi",
+	"rhs_Booniehat_flora",
+	"rhs_fieldcap_digi2",
+	
 	
 	//Googles
-	"G_O_Diving",
-	"rhs_balaclava1_olive",
 	"rhs_balaclava",
+	"rhs_balaclava1_olive",
 	"rhs_scarf",
+	//Googles (vanilla)
+	"G_Bandanna_shades",
+	"G_Balaclava_oli",
+	"G_Balaclava_blk",
+	"G_Bandanna_tan",
+	"G_Bandanna_beast",
+	"G_Bandanna_blk",
+	"G_Bandanna_oli",	
 
 	// Items
 	"ACE_CableTie",
@@ -59,29 +87,22 @@ _items = [
 	"ACE_EntrenchingTool",
 	"ACE_Sandbag_empty",
 	"ACE_SpraypaintBlack",
-	"ACE_UAVBattery",
 	"ACE_HuntIR_M203",
 	"AMP_Breaching_Charge_Mag",
-	
-	// Neu
-	"G_Bandanna_oli",
-	"G_Lowprofile",
-	"G_Bandanna_blk",
 	"MiniGrenade",
 
 	// Vesten
 	"rhs_6b23_digi_6sh92",
 	"rhs_6b23_ML_6sh92",
 	"rhs_vydra_3m",
-	"V_HarnessOGL_gry",
-	"V_HarnessO_gry",
-	"V_RebreatherIR",
+	"rhs_6b13_Flora_6sh92";
+	"rhs_6b23_6sh116_od",
+	"rhs_6b23_6sh116_vog_flora",
+	"rhs_6b23_ML_6sh92_vog_headset",
 	
 	// Nachtsicht
-	"NVGoggles_OPFOR",
-	"NVGoggles",
-	"NVGoggles_INDEP",
 	"ACE_NVG_Gen4",
+	"rhs_1PN138",
 	
 	// Visiere
 	"rhs_acc_1p78",
@@ -93,7 +114,6 @@ _items = [
 	"rhs_acc_ekp1",
 
 	// Gewehre
-	"arifle_SDAR_F",
 	"rhs_weap_ak74m_desert",
 	"rhs_weap_ak74m_2mag",
 	"rhs_weap_ak74m_2mag_camo",
@@ -106,6 +126,9 @@ _items = [
 	"rhs_weap_asval",
 	"rhs_weap_pya",
 	"rhs_weap_makarov_pmm",
+	"rhs_weap_asval_grip",
+	"rhs_weap_ak74",
+	"rhs_weap_ak74m_fullplum",
 	
 	// Raketenwerfer
 	"rhs_weap_rpg26",
@@ -117,20 +140,16 @@ _items = [
 	"rhs_weap_rsp30_white",
 	
 	// Backpacks
-	"B_AssaultPack_blk",
 	"rhs_assault_umbts",
-	"B_AssaultPack_mcamo",
-	"B_TacticalPack_mcamo",
 	"rhs_assault_umbts_engineer_empty",
 	"rhs_sidor",
 	"TFAR_mr3000",
 	"TFAR_mr3000_rhs",
 	"TFAR_mr3000_bwmod_tropen",
+	"B_TacticalPack_mcamo",
 	"B_Parachute", //"ACE_NonSteerableParachute",
 	
 	// Mags
-	"30Rnd_556x45_Stanag",
-	"20Rnd_556x45_UW_mag",
 	"rhs_20rnd_9x39mm_SP5",
 	"ACE_M84",
 	"rhs_20rnd_9x39mm_SP6",
@@ -143,8 +162,11 @@ _items = [
 	"rhs_mag_9x19_17",
 	"rhs_mag_9x18_12_57N181S",
 	"rhs_rpg26_mag",
+	"rhs_30Rnd_762x39mm",
 	// Neu
 	"10Rnd_93x64_DMR_05_Mag",
+	"rhs_30Rnd_762x39mm",
+	"rhs_5Rnd_338lapua_t5000",
 	
 	// Mags Grena
 	"rhs_VG40OP_white",
@@ -189,7 +211,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 		[
 			"ACE_UAVBattery",
 			"O_UavTerminal",
-			"ACE_UAVBattery",
 			"Laserdesignator_03",
 			
 			"rhs_6b23_rifleman",
@@ -216,7 +237,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_6b23_ML_medic",
 
 			// Items
-			"TB_Item_liveMonitor"
+			"TB_Item_liveMonitor",
+			
+			// Backpacks
+			"B_Kitbag_sgg",
+			"B_Kitbag_mcamo",
+			"B_Kitbag_cbr",
+			"B_Kitbag_rgr"
 		]
 	};
 	
@@ -239,8 +266,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_6b23_6sh92_radio",
 			"rhs_6b23_digi_6sh92_radio",
 			
+			//Vesten
+			"rhs_6b13_Flora_6sh92_vog",
+			
 			// Weapons
-			"rhs_weap_ak74m_gp25"
+			"rhs_weap_ak74m_gp25",
+			"rhs_weap_ak103_gp25",
+			"rhs_weap_akm_gp25",
+			
 		]
 	};
 	
@@ -289,7 +322,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_tsh4_ess_bala",
 			"rhs_uniform_df15",
 			"rhs_vest_commander",
-			"rhs_tsh4",	
+			"rhs_tsh4",
+			"rhs_zsh7a_mike_green_alt",
+			"rhs_zsh7a_mike_alt",
+			"rhs_zsh7a_mike",
+			"rhs_zsh7a_mike_green",			
+			
+			//uniformen
+			"rhs_uniform_df15",
+			"rhs_uniform_df15_tan",
 			
 			// Items
 			"ToolKit"
@@ -298,7 +339,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 	
 	case "rifle":
 	{
-		[
+		[	
+			//?? Was ist das ??
 			"rhs_6b23_rifleman",
 			"rhs_6b23_digi_rifleman",
 			"rhs_6b23_ML_rifleman"
@@ -316,18 +358,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"ACE_Vector",
 			
 			//Neu
-			"muzzle_snds_93mmg",
-			"acc_pointer_IR",
-			"optic_DMS",
-			"bipod_02_F_blk",
+			"muzzle_snds_93mmg",,
 			"muzzle_snds_93mmg_tan",
-			"bipod_02_F_hex",
-			"bipod_02_F_tan",
+			"rhs_acc_dh520x56",
 			
 			// Weapons
-			"srifle_DMR_05_blk_F",
-			"srifle_DMR_05_hex_F",
-			"srifle_DMR_05_tan_f"
+			"rhs_weap_t5000"
 		]
 	};
 	
@@ -341,9 +377,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"ACE_Kestrel4500",
 			"ACE_RangeCard",
 			"Laserdesignator_03",
-			"ACE_Vector",
-			"lerca_1200_black",
-			"lerca_1200_tan"
+			"ACE_Vector"
 		]
 	};
 	
@@ -356,11 +390,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"ACE_DeadManSwitch",
 			"ToolKit",
 			
+			//Vesten
+			"rhs_6b13_Flora_6sh92_vog",
+			
 			// Minensucher
 			"ACE_VMH3",
 			"ACE_VMM3",
 			
 			// Mags
+			"rhsusf_m112_mag",
 			"DemoCharge_Remote_Mag",
 			"rhs_mine_pmn2_mag",
 			"rhs_mine_tm62m_mag"
@@ -381,7 +419,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 		[
 			"ACE_UAVBattery",
 			"O_UavTerminal",
-			"ACE_UAVBattery",
 			"Laserdesignator_03",
 			
 			// Backpacks
