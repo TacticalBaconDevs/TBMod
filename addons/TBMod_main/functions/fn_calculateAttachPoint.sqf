@@ -1,11 +1,11 @@
 /*
-	Author: Eric Ruhland
-	Berechnet den außeren Punkt eines Object innerhalb der Sicht
-	Parameter:
-	1: Player
-	2: searchvector  vectorNormalized ((positionCameraToWorld [0,0,0.6]) vectorDiff (positionCameraToWorld [0,0,0]))
-	Rückgabe:
-	   Position
+    Author: Eric Ruhland
+    Berechnet den außeren Punkt eines Object innerhalb der Sicht
+    Parameter:
+    1: Player
+    2: searchvector  vectorNormalized ((positionCameraToWorld [0,0,0.6]) vectorDiff (positionCameraToWorld [0,0,0]))
+    Rückgabe:
+       Position
 */
 params ["_player", "_searchvector"];
 
@@ -21,16 +21,16 @@ _testpos2 = _startpos vectorAdd (_searchvector vectorMultiply _max );
 _intersect1 = lineIntersects [ _startpos , _testpos1, player];
 _intersect2 = lineIntersects [ _testpos1 ,_testpos2 , player];
 if (_intersect1 && !_intersect2) then {
-	_max = _testdistance;
+    _max = _testdistance;
 };
 if (!_intersect1 && _intersect2) then {
-	_min = _testdistance;
+    _min = _testdistance;
 };
 if (_intersect1 && _intersect2) then {
-	_max = _testdistance;
+    _max = _testdistance;
 };
 if (!_intersect1 && !_intersect2) exitWith {
-	false;
+    false;
 };
 };
 _result = _startpos vectorAdd (_searchvector vectorMultiply (_max+_min)/2);
