@@ -8,3 +8,4 @@ MakePbo.exe -A -B -D -X=*.txt,*.dep,*.cpp,*.bak,*.png,*.log,*.pew,*.ini,*.rar ad
 MakePbo.exe -A -B -D -X=*.txt,*.dep,*.cpp,*.bak,*.png,*.log,*.pew,*.ini,*.rar addons\TBMod_building %armaFolder%
 MakePbo.exe -U -A -B -D -X=*.txt,*.dep,*.cpp,*.bak,*.png,*.log,*.pew,*.ini,*.rar addons\TBMod_items %armaFolder%
 MakePbo.exe -U -A -B -D -X=*.txt,*.dep,*.cpp,*.bak,*.png,*.log,*.pew,*.ini,*.rar addons\TBMod_zusatzStuff %armaFolder%
+MakePbo.exe -U -A -B -D -X=*.txt,*.dep,*.cpp,*.bak,*.png,*.log,*.pew,*.ini,*.rar addons\TBMod_ADVSlingload %armaFolder%
