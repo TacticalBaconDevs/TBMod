@@ -11,10 +11,13 @@
     None
 */
 
-_helper =  player getVariable ["TB_Rope_helper", objNull];
-if (isNull _helper) exitWith{hint "No Helper found"};
+private _helper =  player getVariable ["TB_Rope_helper", objNull];
+private _helpergravity = _helper getVariable ['TB_Rope_helpergravity', objNull];
+//Sanity Checks
+if (isNull _helper || isNull _helpergravity) exitWith{systemChat format ["ERROR(dropRope): _helper %1  _helpergravity %2 ", _helper, _helpergravity]};
+	
 player setVariable ['TB_Rope_helper', nil];
-detach _helper;
-_helperpos = getPos _helper;
-_helper setPos [_helperpos select 0, _helperpos select 1, 0.1];
+
+detach _helpergravity;
+
 _helper setVariable ["TB_Rope_is_carry", false, true];

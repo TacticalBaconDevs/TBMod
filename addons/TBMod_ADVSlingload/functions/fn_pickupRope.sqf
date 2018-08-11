@@ -13,27 +13,37 @@
     None
 */
 params["_target", "_fromGround"];
-
-if (isNull _target) exitWith {hint "Target nicht gefunden"};
+//Sanity Checks
+if (isNull _target) exitWith {systemChat format ["ERROR(pickupRope): _target %1  _fromGround %2 ", _target, _fromGround]};
 if (!alive _target) exitWith {hint "Was zerstört ist sollte nicht benutzt werden"};
 
 if (_fromGround) then //_target = helper
 {
-    _target attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
+    private _helpergravity = _target getVariable ['TB_Rope_helpergravity', objNull];
+    _helpergravity attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
+    
     _target setVariable ["TB_Rope_is_carry", true, true];
     player setVariable ["TB_Rope_helper", _target];
 
 } else  //_target = helicopter
 {
-    _helper = createVehicle ["Land_HelipadEmpty_F", position player, [], 0, "CAN_COLLIDE"];
+    private _helper = createVehicle ["Land_HelipadEmpty_F", position player, [], 0, "CAN_COLLIDE"];
+    private _helpergravity = createVehicle ["Land_Can_V1_F", position player, [], 0, "CAN_COLLIDE"]; //TODO unsichtbar machen @shukari
+
+    private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
+    if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _source]};
+
     private _pickupaction = ["Pickup Rope", "Pickup Rope", "", {[_target, true] call TB_fnc_pickupRope;}, {!(_target getVariable ["TB_Rope_is_carry", false])}] call ace_interact_menu_fnc_createAction;
     [_helper, 0, [], _pickupaction] call ace_interact_menu_fnc_addActionToObject;
-    _helper attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
-    _rope = ropeCreate [_target, "slingload0", _helper, [0, 0, 0], 20];
+
+    _helper attachTo [_helpergravity, [0, 0, 0]];
+    _helpergravity attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
+    private _rope = ropeCreate [_target, _selection, _helpergravity, [0, 0, 0], 20];
+    
     player setVariable ["TB_Rope_helper", _helper];
     _helper setVariable ["TB_Rope_rope", _rope, true];
     _helper setVariable ["TB_Rope_is_carry", true, true];
+    _helper setVariable ["TB_Rope_helpergravity", _helpergravity, true];
     _rope setVariable ["TB_Rope_helper", _helper, true];
     _rope setVariable ["TB_Rope_Source", _target, true];
-    //addeventhandler
 }
