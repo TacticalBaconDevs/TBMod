@@ -17,7 +17,8 @@ _items = [
     "rhs_6b26_bala_green",
     "rhs_6b26_ess_green",
     "rhs_6b26_ess_bala_green",
-    "rhs_6b26",1],["rhs_6b26_bala",
+    "rhs_6b26",
+    "rhs_6b26_bala",
     "rhs_6b26_ess",
     "rhs_6b26_ess_bala",
     "rhs_6b27m",
@@ -95,7 +96,7 @@ _items = [
     "rhs_6b23_digi_6sh92",
     "rhs_6b23_ML_6sh92",
     "rhs_vydra_3m",
-    "rhs_6b13_Flora_6sh92";
+    "rhs_6b13_Flora_6sh92",
     "rhs_6b23_6sh116_od",
     "rhs_6b23_6sh116_vog_flora",
     "rhs_6b23_ML_6sh92_vog_headset",
@@ -272,8 +273,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weapons
             "rhs_weap_ak74m_gp25",
             "rhs_weap_ak103_gp25",
-            "rhs_weap_akm_gp25",
-            
+            "rhs_weap_akm_gp25"
         ]
     };
     
@@ -339,8 +339,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "rifle":
     {
-        [    
-            //?? Was ist das ??
+        [
             "rhs_6b23_rifleman",
             "rhs_6b23_digi_rifleman",
             "rhs_6b23_ML_rifleman"
@@ -358,7 +357,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_Vector",
             
             //Neu
-            "muzzle_snds_93mmg",,
+            "muzzle_snds_93mmg",
             "muzzle_snds_93mmg_tan",
             "rhs_acc_dh520x56",
             
@@ -445,62 +444,4 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     default {hint "Schwerer Fehler #100"};
 });
 
-
-// #################################################################
-// MEDIC STUFF (nichts ÄNDERN!!!)
-// Sollte das Mediclvl advanced sein werden die anderen Sachen für alle auch noch hinzugefügt
-// #################################################################
-_items append [
-    // Medic Stuff BASIC
-    "ACE_fieldDressing",
-    "ACE_morphine"
-];
-
-if (ace_medical_level >= 2) then
-{
-    _items append [
-        // Medic Stuff ADV
-        // "ACE_packingBandage",
-        "ACE_elasticBandage",
-        "ACE_quikclot",
-        "ACE_tourniquet"
-    ];
-};
-
-if ((ACE_player getVariable ["TB_rolle", ""]) in ["sani", "arzt", "pilot"]) then
-{
-    _items append [
-        "ACE_bodyBag",
-        "ACE_epinephrine",
-        "ACE_bloodIV",
-        "ACE_bloodIV_500",
-        "ACE_bloodIV_250"
-    ];
-    
-    if (ace_medical_level >= 2) then
-    {
-        _items append [
-            // Medic Stuff ADV
-            "ACE_atropine",
-            // "ACE_salineIV",
-            // "ACE_salineIV_500",
-            // "ACE_salineIV_250",
-            // "ACE_plasmaIV",
-            // "ACE_plasmaIV_500",
-            // "ACE_plasmaIV_250",
-            "ACE_personalAidKit",
-            "ACE_surgicalKit",
-            
-            "DaXp_ACE_Defibrillator"
-        ];
-    };
-};
-
-_items = _items arrayIntersect _items;
-
-if ((ACE_player getVariable ["TB_arsenalType", ""]) == "RUSS") then {TB_allowedItems = ([_items] call TB_fnc_whitelist) apply {toLower _x}};
-
-// Basicsystem loadouts aus adv laden
-if (ace_medical_level < 2) then {TB_allowedItems = TB_allowedItems append ["ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_atropine","ACE_personalAidKit","ACE_surgicalKit","DaXp_ACE_Defibrillator"]};
-
-_items
+_items arrayIntersect _items

@@ -18,9 +18,9 @@ if (isNull _target) then {
     }
     forEach vehicles;
     
-    [_target] call TB_fnc_setArsenal;
+    [_target, _rolle] call TB_fnc_setArsenal;
 } else {
-    [_target] call TB_fnc_setArsenal;
+    [_target, _rolle] call TB_fnc_setArsenal;
 };
 
 systemChat format ["Du bist nun: %1 (%2)", [_rolle] call TB_fnc_getRollenName, _arsenalType];
