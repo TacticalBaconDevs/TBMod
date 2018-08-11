@@ -12,7 +12,7 @@
 */
 
 _helper =  player getVariable ["TB_Rope_helper", objNull];
-if(isNull _helper) exitWith{hint "No Helper found"};
+if (isNull _helper) exitWith{hint "No Helper found"};
 player setVariable ['TB_Rope_helper', nil];
 detach _helper;
 _helperpos = getPos _helper;

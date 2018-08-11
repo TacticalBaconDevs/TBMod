@@ -17,7 +17,7 @@ params["_target", "_fromGround"];
 if (isNull _target) exitWith {hint "Target nicht gefunden"};
 if (!alive _target) exitWith {hint "Was zerstört ist sollte nicht benutzt werden"};
 
-if(_fromGround) then //_target = helper
+if (_fromGround) then //_target = helper
 {
     _target attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
     _target setVariable ["TB_Rope_is_carry", true, true];
