@@ -14,7 +14,7 @@
 */
 params ["_player", "_searchVector"];
 //Sanity Checks
-if (isNull _player || isNull _searchVector) exitWith {systemChat format ["ERROR(calculateAttachPoint): _player %1  _searchVector %2 ", _player, _searchVector]};
+if (isNull _player) exitWith {systemChat format ["ERROR(calculateAttachPoint): _player %1  _searchVector %2 ", _player, _searchVector]};
 
 private _startPos = eyepos _player; 
 private _min = 0; 
