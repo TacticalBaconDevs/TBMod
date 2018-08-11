@@ -12,7 +12,6 @@
     None
 */
 params ["_target", "_helper"]; 
-systemChat format ["DEBUG: target %1  helper %2", _target, _helper];
 
 private _rope = _helper getVariable ['TB_Rope_rope', objNull];
 private _source = _rope getVariable ['TB_Rope_Source', objNull];
@@ -47,7 +46,8 @@ deleteVehicle _helpergravity;
 detach _helper;
 deleteVehicle _helper;
 
-[_target,  _target worldToModel ASLtoATL _posToAttach, [0, 0, -1]] ropeAttachTo _rope;
+["TB_Rope_attachto", [_target, _target worldToModel ASLtoATL _posToAttach, _rope], _rope] call CBA_fnc_targetEvent;
+//[_target,  _target worldToModel ASLtoATL _posToAttach, [0, 0, -1]] ropeAttachTo _rope;
 
 
 _rope setVariable ['TB_Rope_helper', nil, true];
@@ -57,5 +57,3 @@ _target setVariable ['TB_Rope_original_Mass', getMass _target, true];
 
 if (getMass _target > 12000) then {_target setMass 12000};
 player setVariable ["TB_Rope_source", nil];
-
-systemChat "Attached vehicle";

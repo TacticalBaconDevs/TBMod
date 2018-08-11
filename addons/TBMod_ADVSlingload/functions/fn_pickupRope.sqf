@@ -33,8 +33,9 @@ if (_fromGround) then //_target = helper
     private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
     if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _source]};
 
-    private _pickupaction = ["Pickup Rope", "Pickup Rope", "", {[_target, true] call TB_fnc_pickupRope;}, {!(_target getVariable ["TB_Rope_is_carry", false])}] call ace_interact_menu_fnc_createAction;
-    [_helper, 0, [], _pickupaction] call ace_interact_menu_fnc_addActionToObject;
+    //[[_helper, 0, [], TB_Rope_PickupAction],[]] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
+    //[_helper, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global
+    ["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
 
     _helper attachTo [_helpergravity, [0, 0, 0]];
     _helpergravity attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
