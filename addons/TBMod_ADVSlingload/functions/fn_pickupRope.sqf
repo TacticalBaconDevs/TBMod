@@ -30,7 +30,7 @@ if (_fromGround) then //_target = helper
     private _helper = createVehicle ["Land_HelipadEmpty_F", position player, [], 0, "CAN_COLLIDE"];
     private _helpergravity = createVehicle ["Land_Can_V1_F", position player, [], 0, "CAN_COLLIDE"]; //TODO unsichtbar machen @shukari
 
-    private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
+    private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "slingLoadMemoryPoint");
     if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _source]};
 
     //[[_helper, 0, [], TB_Rope_PickupAction],[]] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
