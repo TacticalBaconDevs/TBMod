@@ -19,7 +19,7 @@ if (!alive _target) exitWith {hint "Was zerstört ist sollte nicht benutzt werde
 
 if(_fromGround) then //_target = helper
 {
-    _target attachTo [player, [-0.02,-0.04,-0.0], "righthandmiddle1"];
+    _target attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
     _target setVariable ["TB_Rope_is_carry", true, true];
     player setVariable ["TB_Rope_helper", _target];
 
@@ -32,7 +32,7 @@ if(_fromGround) then //_target = helper
     _rope = ropeCreate [_target, "slingload0", _helper, [0, 0, 0], 20];
     player setVariable ["TB_Rope_helper", _helper];
     _helper setVariable ["TB_Rope_rope", _rope, true];
-    _helper setVariable ["TB_Rope_is_carry",true, true];
+    _helper setVariable ["TB_Rope_is_carry", true, true];
     _rope setVariable ["TB_Rope_helper", _helper, true];
     _rope setVariable ["TB_Rope_Source", _target, true];
     //addeventhandler
