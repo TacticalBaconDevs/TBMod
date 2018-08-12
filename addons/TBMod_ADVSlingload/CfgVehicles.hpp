@@ -7,7 +7,7 @@ class CfgVehicles
 {
     class ReammoBox_F;
 
-    class TB_Rope_InvisableObject: ReammoBox_F
+    class TB_Rope_InvisibleObject: ReammoBox_F
     {
         displayName = "Unsichtbares Object";
         //author = "Eric Ruhland";

@@ -11,12 +11,12 @@
     None
 */
 
-private _helper =  player getVariable ["TB_Rope_helper", objNull];
+private _helper =  ACE_player getVariable ["TB_Rope_helper", objNull];
 private _idPFH = _helper getVariable ['TB_Rope_idPFH', -1];
 //Sanity Checks
-if (isNull _helper) exitWith{systemChat format ["ERROR(dropRope): _helper %1", _helper]};
+if (isNull _helper) then{systemChat format ["ERROR(dropRope): _helper %1", _helper]};
 
-player setVariable ['TB_Rope_helper', nil];
+ACE_player setVariable ['TB_Rope_helper', nil];
 
 if (_idPFH==-1) then 
     {hint "Why was no PFH assigned"}

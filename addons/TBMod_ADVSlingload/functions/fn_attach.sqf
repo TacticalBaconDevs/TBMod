@@ -22,7 +22,7 @@ if (!alive _source || !alive _target) exitWith {hint "Was zerstört ist sollte n
 if (_idPFH==-1) then {hint "Why was no PFH assigned"};
 private _ray = vectorNormalized ((positionCameraToWorld [0, 0, 0.6]) vectorDiff (positionCameraToWorld [0, 0, 0]));
 
-private _objectfound = lineIntersects [eyepos player, (eyePos player) vectorAdd (_ray vectorMultiply 4), player];
+private _objectfound = lineIntersects [eyepos ACE_player, (eyePos ACE_player) vectorAdd (_ray vectorMultiply 4), ACE_player];
 if (!_objectfound) exitWith {systemChat format ["ERROR(attach):no Hitbox _source %1  _target %2 _helper %3", _source, _target, _helper]};
 if (_source == _target) exitWith {hint "Warum versuchst du das?"};
 
@@ -32,8 +32,8 @@ if (!isNull _attachedVehicle && _attachedVehicle != _target) exitWith {hint "Es 
 private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
 if (_selection == "") exitWith {systemChat format ["ERROR(attach): no Slingloadposition found on _source %1   ", _source]};
 
-private _posToAttach = [player, _ray] call TB_fnc_calculateAttachPoint; 
-private _sourcepos = ATLtoASL (_source modelToWorld (_source selectionPosition _selection));
+private _posToAttach = ASLToATL [ACE_player, _ray] call TB_fnc_calculateAttachPoint; 
+private _sourcepos = (_source modelToWorld (_source selectionPosition _selection));
 
 // Sanity Check
 if ((_posToAttach distance _sourcepos) > 20) exitWith {hint "Seil ist zu kurz"};
@@ -55,9 +55,9 @@ deleteVehicle _helper;
 
 
 _rope setVariable ['TB_Rope_helper', nil, true];
-player setVariable ['TB_Rope_helper', nil];
+ACE_player setVariable ['TB_Rope_helper', nil];
 _source setVariable ['TB_Rope_attachedVehicle', _target, true];
 _target setVariable ['TB_Rope_original_Mass', getMass _target, true];
 
 if (getMass _target > 12000) then {_target setMass 12000};
-player setVariable ["TB_Rope_source", nil];
+ACE_player setVariable ["TB_Rope_source", nil];

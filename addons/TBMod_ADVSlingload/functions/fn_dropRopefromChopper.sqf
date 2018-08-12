@@ -21,7 +21,7 @@ private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "
 if (_selection == "") exitWith {systemChat format ["ERROR(dropRopefromChopper): no Slingloadposition found on _target %1   ", _target]};
 
 private _posSlingload = _target modelToWorld (_target selectionPosition _selection);
-private _helper = createVehicle ["TB_Rope_InvisableObject", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+private _helper = createVehicle ["TB_Rope_InvisibleObject", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 
 _helper setPos [_posSlingload select 0, _posSlingload select 1, (_posSlingload select 2) - 1];
 

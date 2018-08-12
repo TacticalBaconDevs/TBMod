@@ -24,26 +24,26 @@ if (_fromGround) then //_target = helper
     private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
     if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _source]};
     
-    _target attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
+    _target attachTo [ACE_player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
     
     _target setVariable ["TB_Rope_is_carry", true, true];
-    player setVariable ["TB_Rope_helper", _target];
+    ACE_player setVariable ["TB_Rope_helper", _target];
     [_source, _selection, _target] call TB_fnc_startRopeinHandsPFH;
 } else  //_target = helicopter
 {
-    private _helper = createVehicle ["TB_Rope_InvisableObject", position player, [], 0, "CAN_COLLIDE"];
+    private _helper = createVehicle ["TB_Rope_InvisibleObject", position ACE_player, [], 0, "CAN_COLLIDE"];
 
     private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "slingLoadMemoryPoint");
-    if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _source]};
+    if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _target]};
 
     //[[_helper, 0, [], TB_Rope_PickupAction], []] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
     //[_helper, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global
     ["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
 
-    _helper attachTo [player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
+    _helper attachTo [ACE_player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
     private _rope = ropeCreate [_target, _selection, _helper, [0, 0, 0], 20];
     
-    player setVariable ["TB_Rope_helper", _helper];
+    ACE_player setVariable ["TB_Rope_helper", _helper];
     _helper setVariable ["TB_Rope_rope", _rope, true];
     _helper setVariable ["TB_Rope_is_carry", true, true];
     _rope setVariable ["TB_Rope_helper", _helper, true];

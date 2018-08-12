@@ -8,8 +8,8 @@
     "Helicopter", 
     "init", 
     {
-        private _getaction = ["Get Rope", "Get Rope", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _storeaction = ["Store Rope", "Store Rope", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _getaction = ["Get Rope", "Get Rope", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _storeaction = ["Store Rope", "Store Rope", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
         private _cutaction = ["Cut Rope", "Cut Rope", "", {_target call TB_fnc_detach}, {!isNull (_target getVariable ['TB_Rope_attachedVehicle', objNull])}] call ace_interact_menu_fnc_createAction;
         private _dropaction = ["Drop Rope", "Drop Rope", "", {_target call TB_fnc_dropRopefromChopper}, {!isTouchingGround _target}] call ace_interact_menu_fnc_createAction;
         
@@ -36,8 +36,8 @@
 }
 forEach ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Thing"];
 
-private _dropaction = ["Drop Rope", "Drop Rope", "", {call TB_fnc_dropRope;}, {!isNull (player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _dropaction] call ace_interact_menu_fnc_addActionToObject;
+private _dropaction = ["Drop Rope", "Drop Rope", "", {call TB_fnc_dropRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+[ACE_player, 1, ["ACE_SelfActions"], _dropaction] call ace_interact_menu_fnc_addActionToObject;
 
 TB_Rope_PickupAction = ["Pickup Rope", "Pickup Rope", "", {[_target, true] call TB_fnc_pickupRope;}, {!(_target getVariable ["TB_Rope_is_carry", false])}, {}, [], [0, 0, 0.2], 2] call ace_interact_menu_fnc_createAction;
 
