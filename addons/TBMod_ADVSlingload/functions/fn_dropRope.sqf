@@ -20,10 +20,10 @@ if (isNull _helper || isNull _helpergravity) exitWith{systemChat format ["ERROR(
 player setVariable ['TB_Rope_helper', nil];
 
 if (_idPFH==-1) then 
-	{hint "Why was no PFH assigned"}
+    {hint "Why was no PFH assigned"}
 else 
 {
-	[_idPFH] call CBA_fnc_removePerFrameHandler;
+    [_idPFH] call CBA_fnc_removePerFrameHandler;
 };
 _helper setVariable ['TB_Rope_idPFH', nil];
 

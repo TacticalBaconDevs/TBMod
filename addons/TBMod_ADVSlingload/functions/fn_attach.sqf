@@ -41,10 +41,10 @@ if ((_posToAttach distance _sourcepos) > 20) exitWith {hint "Seil ist zu kurz"};
 
 systemChat format ["DEBUG(attach): _source %1  _selection %2 _target %3 _attachoffset %4", _source, _selection, _target, (_target worldToModel ASLtoATL _posToAttach)];
 if (_idPFH==-1) then 
-	{hint "Why was no PFH assigned"}
+    {hint "Why was no PFH assigned"}
 else 
 {
-	[_idPFH] call CBA_fnc_removePerFrameHandler;
+    [_idPFH] call CBA_fnc_removePerFrameHandler;
 };
 _helper setVariable ['TB_Rope_idPFH', nil];
 detach _helpergravity;
