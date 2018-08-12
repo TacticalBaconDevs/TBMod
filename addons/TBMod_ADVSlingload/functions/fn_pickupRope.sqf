@@ -41,7 +41,7 @@ if (_fromGround) then //_target = helper
     ["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
 
     _helper attachTo [ACE_player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
-    private _rope = ropeCreate [_target, _selection, _helper, [0, 0, 0], 20];
+    private _rope = ropeCreate [_target, _selection, _helper, [0, 0, 0], 22];
     
     ACE_player setVariable ["TB_Rope_helper", _helper];
     _helper setVariable ["TB_Rope_rope", _rope, true];

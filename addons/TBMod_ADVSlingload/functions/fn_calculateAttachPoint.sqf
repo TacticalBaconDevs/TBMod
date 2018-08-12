@@ -12,11 +12,11 @@
     Return Value:
     Position
 */
-params ["_ACE_player", "_searchVector"];
+params ["_player", "_searchVector"];
 //Sanity Checks
-if (isNull _ACE_player) exitWith {systemChat format ["ERROR(calculateAttachPoint): _ACE_player %1  _searchVector %2 ", _ACE_player, _searchVector]};
+if (isNull _player) exitWith {systemChat format ["ERROR(calculateAttachPoint): _ACE_player %1  _searchVector %2 ", _player, _searchVector]};
 
-private _startPos = eyepos _ACE_player; 
+private _startPos = eyepos _player; 
 private _min = 0; 
 private _max = 4; 
 
