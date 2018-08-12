@@ -48,7 +48,11 @@ class CfgPatches
             "tfar_core",
 
             // 3rd PartyMods
+            "achilles_language_f",
+            "achilles_data_f_ares",
+            "achilles_data_f_achilles",
             "achilles_functions_f_achilles",
+            "achilles_settings_f",
             "3denEnhanced"
         };
     };
