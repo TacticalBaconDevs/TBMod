@@ -12,10 +12,9 @@
 */
 
 private _helper =  player getVariable ["TB_Rope_helper", objNull];
-private _helpergravity = _helper getVariable ['TB_Rope_helpergravity', objNull];
 private _idPFH = _helper getVariable ['TB_Rope_idPFH', -1];
 //Sanity Checks
-if (isNull _helper || isNull _helpergravity) exitWith{systemChat format ["ERROR(dropRope): _helper %1  _helpergravity %2 ", _helper, _helpergravity]};
+if (isNull _helper) exitWith{systemChat format ["ERROR(dropRope): _helper %1", _helper]};
 
 player setVariable ['TB_Rope_helper', nil];
 
@@ -27,6 +26,6 @@ else
 };
 _helper setVariable ['TB_Rope_idPFH', nil];
 
-detach _helpergravity;
+detach _helper;
 
 _helper setVariable ["TB_Rope_is_carry", false, true];

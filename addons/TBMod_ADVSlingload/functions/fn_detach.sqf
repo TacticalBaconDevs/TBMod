@@ -23,10 +23,6 @@ if (_originalMass != 0) then {hint "Setting mass"; _attachedVehicle setMass _ori
 {
     _helper = _x getVariable ['TB_Rope_helper', objNull];
     if (!isNull _helper) then{
-        private _helpergravity = _helper getVariable ['TB_Rope_helpergravity', objNull];
-        
-        detach _helpergravity;
-        deleteVehicle _helpergravity;
         detach _helper;
         deleteVehicle _helper;
     };

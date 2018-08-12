@@ -15,16 +15,15 @@ params ["_target", "_helper"];
 
 private _rope = _helper getVariable ['TB_Rope_rope', objNull];
 private _source = _rope getVariable ['TB_Rope_Source', objNull];
-private _helpergravity = _helper getVariable ['TB_Rope_helpergravity', objNull];
 private _idPFH = _helper getVariable ['TB_Rope_idPFH', -1];
 // Sanity Checks
-if (isNull _source || isNull _target || isNull _helper || isNull _helpergravity) exitWith {systemChat format ["ERROR(attach): _source %1  _target %2 _helper %3 _helpergravity %4", _source, _target, _helper, _helpergravity]};
+if (isNull _source || isNull _target || isNull _helper) exitWith {systemChat format ["ERROR(attach): _source %1  _target %2 _helper %3", _source, _target, _helper]};
 if (!alive _source || !alive _target) exitWith {hint "Was zerstört ist sollte nicht benutzt werden"};
 if (_idPFH==-1) then {hint "Why was no PFH assigned"};
 private _ray = vectorNormalized ((positionCameraToWorld [0, 0, 0.6]) vectorDiff (positionCameraToWorld [0, 0, 0]));
 
 private _objectfound = lineIntersects [eyepos player, (eyePos player) vectorAdd (_ray vectorMultiply 4), player];
-if (!_objectfound) exitWith {systemChat format ["ERROR(attach):no Hitbox _source %1  _target %2 _helper %3 _helpergravity %4", _source, _target, _helper, _helpergravity]};
+if (!_objectfound) exitWith {systemChat format ["ERROR(attach):no Hitbox _source %1  _target %2 _helper %3", _source, _target, _helper]};
 if (_source == _target) exitWith {hint "Warum versuchst du das?"};
 
 private _attachedVehicle = _source getVariable ['TB_Rope_attachedVehicle', objNull];
@@ -47,8 +46,7 @@ else
     [_idPFH] call CBA_fnc_removePerFrameHandler;
 };
 _helper setVariable ['TB_Rope_idPFH', nil];
-detach _helpergravity;
-deleteVehicle _helpergravity;
+
 detach _helper;
 deleteVehicle _helper;
 
