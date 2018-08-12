@@ -1,0 +1,45 @@
+
+"airFriction","audibleFire","caliber","deflecting","hit","typicalSpeed","visibleFire"
+"rhs_ammo_556x45_M855_Ball",
+"rhs_ammo_556x45_M855A1_Ball",
+"rhs_ammo_556x45_Mk262_Ball",
+"rhs_ammo_556x45_Mk318_Ball"
+
+"rhs_ammo_556x45_M855_Ball",[-0.00076,7,0.44,21,9,920,3],
+"rhs_ammo_556x45_M855A1_Ball",[-0.000772,7,0.65,21,9,960,3],
+"rhs_ammo_556x45_Mk262_Ball",[-0.00066,5,0.677,15,10.3,838.2,2.5],
+"rhs_ammo_556x45_Mk318_Ball",[-0.00076,5.5,0.64,17,9.55,950,3]
+
+
+rhs_ammo_556x45_Mk262_Ball -> SpezialAmmo, aber langsam und schwer
+rhs_ammo_556x45_Mk318_Ball -> DMR Muni, für weit
+
+
+Wenigsten abbremsen
+rhs_ammo_556x45_Mk262_Ball
+rhs_ammo_556x45_M855_Ball && rhs_ammo_556x45_Mk318_Ball
+rhs_ammo_556x45_M855A1_Ball
+
+wenigsten Hör bar
+rhs_ammo_556x45_Mk262_Ball
+rhs_ammo_556x45_Mk318_Ball
+rhs_ammo_556x45_M855_Ball && rhs_ammo_556x45_M855A1_Ball
+
+größtes Caliber
+rhs_ammo_556x45_Mk262_Ball
+rhs_ammo_556x45_M855A1_Ball
+rhs_ammo_556x45_Mk318_Ball
+rhs_ammo_556x45_M855_Ball
+
+meisten Damage on hit
+rhs_ammo_556x45_Mk262_Ball
+rhs_ammo_556x45_Mk318_Ball
+rhs_ammo_556x45_M855_Ball && rhs_ammo_556x45_M855A1_Ball
+
+wenigsten sichtbar
+rhs_ammo_556x45_Mk262_Ball
+<Rest>
+
+
+
+

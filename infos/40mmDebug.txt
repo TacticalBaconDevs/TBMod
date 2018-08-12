@@ -1,0 +1,25 @@
+1Rnd_HE_Grenade_shell
+ammo = "G_40mm_HE";
+
+rhs_mag_M397_HET
+ammo = "rhs_ammo_m397";
+
+rhs_mag_M433_HEDP
+ammo = "rhsusf_40mm_HEDP";
+
+rhs_mag_M441_HE
+ammo = "rhsusf_40mm_HE";
+
+"G_40mm_HE",
+"rhsusf_40mm_HE",
+"rhsusf_40mm_HEDP",
+"rhs_ammo_m397",
+
+"caliber","hit","indirectHit","indirectHitRange","ace_frag_metal","ace_frag_charge"
+
+
+"G_40mm_HE",[2,80,8,6,200,32],
+"rhsusf_40mm_HE",[2,20,5,10.7,200,32],
+"rhsusf_40mm_HEDP",[2,20,5,3.6,200,32],
+"rhs_ammo_m397",[2,20,5,10.7,200,32]
+

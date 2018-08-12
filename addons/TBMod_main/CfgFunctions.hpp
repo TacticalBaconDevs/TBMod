@@ -46,11 +46,11 @@ class CfgFunctions
     
     // REPLACEMENT
     class Achilles
-	{
-		class ui_f_eventHandler
-		{
-			class onDisplayCuratorLoad {file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";};
+    {
+        class ui_f_eventHandler
+        {
+            class onDisplayCuratorLoad {file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";};
             class RscDisplayCurator {file = "\TBMod_main\replacement\fn_RscDisplayCurator.sqf";};
-		};
+        };
     };
 };

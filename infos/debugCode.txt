@@ -1,0 +1,47 @@
+// getValues for Vests
+private _resultset = [];
+{
+    _resultset pushBack _x;
+    private _value = (([[configfile >> "CfgWeapons" >> _x], ["passthrough", "armor", "maximumload"]] call BIS_fnc_configExtremes) select 1);
+    _value = _value apply {if (_x < 1) then {parseNumber ((_x * 100) toFixed 0)} else {_x}};
+    _resultset pushBack _value;
+} forEach [
+    "rhsusf_mbav_medic", 
+    "rhsusf_mbav_mg", 
+    "rhsusf_mbav_grenadier", 
+    "rhsusf_mbav_rifleman", 
+    "rhsusf_mbav_light", 
+    "rhsusf_mbav"
+];
+_resultset;
+
+
+// getValues for Unterlauf40mm
+private _resultset = []; 
+{ 
+    _resultset pushBack _x; 
+    private _value = (([[configfile >> "CfgAmmo" >> _x], ["caliber","hit","indirectHit","indirectHitRange","ace_frag_metal","ace_frag_charge"]] call BIS_fnc_configExtremes) select 1); 
+    _value = _value apply {if (_x < 1) then {parseNumber ((_x * 100) toFixed 0)} else {_x}}; 
+    _resultset pushBack _value; 
+} forEach [ 
+    "G_40mm_HE", 
+    "rhsusf_40mm_HE", 
+    "rhsusf_40mm_HEDP", 
+    "rhs_ammo_m397"
+]; 
+_resultset;
+
+// getValues for Ammo
+private _resultset = []; 
+{ 
+    _resultset pushBack _x; 
+    private _value = (([[configfile >> "CfgAmmo" >> _x], ["airFriction","audibleFire","caliber","deflecting","hit","typicalSpeed","visibleFire"]] call BIS_fnc_configExtremes) select 1); 
+    _resultset pushBack _value; 
+} forEach [ 
+    "rhs_ammo_556x45_M855_Ball", 
+"rhs_ammo_556x45_M855A1_Ball", 
+"rhs_ammo_556x45_Mk262_Ball", 
+"rhs_ammo_556x45_Mk318_Ball"
+]; 
+_resultset;
+

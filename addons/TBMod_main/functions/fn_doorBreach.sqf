@@ -24,3 +24,11 @@ player addEventHandler ["FIRED", {
         };
     };
 }];
+
+["CAManBase", "HandleDamage", {
+    params ["_unit", "", "", "", "_projectile"];
+    
+    if (_projectile == "rhsusf_40mm_Practice") then {
+        [_unit, [2, 0] select (isPlayer _unit), [5, 2] select (isPlayer _unit)] spawn rhs_fnc_flashbang_effect;
+    };
+}] call CBA_fnc_addClassEventHandler;

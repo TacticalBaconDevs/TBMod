@@ -101,6 +101,7 @@
                     ADD_SUPPLY(MoerserMunnitionFlare,TB_supply_all_mortarAmmoFlare);
                     ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
+                    ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
                 };
         
                 class usa

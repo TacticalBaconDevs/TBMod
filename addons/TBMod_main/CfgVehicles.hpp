@@ -243,7 +243,7 @@ class CfgVehicles
         functionPriority = 1;
         isGlobal = 1;
         isTriggerActivated = 0;
-        curatorCanAttach = 1;
+        curatorCanAttach = 0;
         
         function = "ace_common_fnc_dummy";
         author = "shukari";

@@ -20,8 +20,8 @@ class CfgPatches
                 "TB_flag_fob",
                 "TB_zeus_base",
                 "TB_zeus_nachschubAbwurf",
-                "TB_zeus_disableVCOM",
-                "TB_zeus_activateALIVE"
+                "TB_zeus_disablePath",
+                "TB_zeus_prioSichtbarkeit"
             };
         ammo[] = {
                 "FlareBase",
@@ -147,6 +147,11 @@ class Extended_PreInit_EventHandlers
 #include "CfgEditorCategories.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgAmmo.hpp"
+
+// CBA STUFF
+cba_settings_whitelist[] = {"76561198029318101", "admin"};
+enableTargetDebug = 1;
+enableDebugConsole[] = {"76561198029318101"};
 
 class RscDisplayGarage;
 class TB_RscDisplayGarage: RscDisplayGarage
