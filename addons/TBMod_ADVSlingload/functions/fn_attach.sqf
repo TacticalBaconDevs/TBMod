@@ -16,11 +16,11 @@ params ["_target", "_helper"];
 private _rope = _helper getVariable ['TB_Rope_rope', objNull];
 private _source = _rope getVariable ['TB_Rope_Source', objNull];
 private _helpergravity = _helper getVariable ['TB_Rope_helpergravity', objNull];
-
+private _idPFH = _helper getVariable ['TB_Rope_idPFH', -1];
 // Sanity Checks
 if (isNull _source || isNull _target || isNull _helper || isNull _helpergravity) exitWith {systemChat format ["ERROR(attach): _source %1  _target %2 _helper %3 _helpergravity %4", _source, _target, _helper, _helpergravity]};
 if (!alive _source || !alive _target) exitWith {hint "Was zerstört ist sollte nicht benutzt werden"};
-
+if (_idPFH==-1) then {hint "Why was no PFH assigned"};
 private _ray = vectorNormalized ((positionCameraToWorld [0, 0, 0.6]) vectorDiff (positionCameraToWorld [0, 0, 0]));
 
 private _objectfound = lineIntersects [eyepos player, (eyePos player) vectorAdd (_ray vectorMultiply 4), player];
@@ -40,7 +40,13 @@ private _sourcepos = ATLtoASL (_source modelToWorld (_source selectionPosition _
 if ((_posToAttach distance _sourcepos) > 20) exitWith {hint "Seil ist zu kurz"};
 
 systemChat format ["DEBUG(attach): _source %1  _selection %2 _target %3 _attachoffset %4", _source, _selection, _target, (_target worldToModel ASLtoATL _posToAttach)];
-
+if (_idPFH==-1) then 
+	{hint "Why was no PFH assigned"}
+else 
+{
+	[_idPFH] call CBA_fnc_removePerFrameHandler;
+};
+_helper setVariable ['TB_Rope_idPFH', nil];
 detach _helpergravity;
 deleteVehicle _helpergravity;
 detach _helper;

@@ -19,6 +19,7 @@ class CfgFunctions
             class putBackRope {};
             class dropRope {};
             class dropRopefromChopper {};
+            class startRopeinHandsPFH {};
         };
     };
 };

@@ -27,7 +27,7 @@ private _helpergravity = createVehicle ["Land_Can_V1_F", [0, 0, 0], [], 0, "CAN_
 _helpergravity setPos [_posSlingload select 0, _posSlingload select 1, (_posSlingload select 2) - 1];
 _helper attachTo [_helpergravity, [0, 0, 0]];
 
-//[[_helper, 0, [], TB_Rope_PickupAction],[]] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
+//[[_helper, 0, [], TB_Rope_PickupAction], []] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
 //[, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global
 ["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
 private _rope = ropeCreate [_target, _selection, _helpergravity, [0, 0, 0], 1];
