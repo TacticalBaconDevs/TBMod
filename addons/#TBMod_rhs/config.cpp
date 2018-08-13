@@ -9,9 +9,9 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
         
-        weapons[] = {};
+        weapons[] = {"rhs_weap_m4a1_changeMode1","rhs_weap_m4a1_changeMode2","rhs_weap_m4a1_weaponRecoil1", "rhs_weap_m4a1_sway1"};
         units[] = {};
-        ammo[] = {};
+        ammo[] = {"G_40mm_Smoke","G_40mm_SmokeBlue","G_40mm_SmokeRed"};
         
         requiredVersion = 1.84;
         requiredAddons[] = {
