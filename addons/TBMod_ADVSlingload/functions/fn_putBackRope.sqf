@@ -17,8 +17,18 @@ private _helpergravity = _helper getVariable ['TB_Rope_helpergravity', objNull];
 private _rope = _helper getVariable ['TB_Rope_rope', objNull];
 //Sanity Checks
 if (isNull _helper || isNull _rope) exitWith { systemChat format ["ERROR(putBackRope): _helper %1 _rope %2", _helper, _rope]};
-if (!alive _helper || !alive _rope) exitWith { hint "Was zerstört ist sollte nicht benutzt werden"; systemChat format ["DEBUG(putBackRope): _helper %1 _rope %3", alive _helper, alive _rope]};
+if (!alive _helper || !alive _rope) exitWith { systemChat format ["DEBUG(putBackRope): Wie konnten die Items zerstört werden _helper %1 _rope %3", alive _helper, alive _rope]};
 
+private _idPFH = ACE_player getVariable ['TB_Rope_idPFH', -1];
+if (_idPFH==-1) then 
+{
+    systemChat format ["ERROR(dropRope): no idPFH assigned _helper %1", _helper];
+} else 
+{
+    [_idPFH] call CBA_fnc_removePerFrameHandler;
+};
+
+ACE_player setVariable ['TB_Rope_idPFH', nil];
 ACE_player setVariable ['TB_Rope_helper', nil, true];
 
 detach _helper;

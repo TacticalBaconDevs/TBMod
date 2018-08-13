@@ -15,7 +15,7 @@
 params["_target", "_fromGround"];
 //Sanity Checks
 if (isNull _target) exitWith {systemChat format ["ERROR(pickupRope): _target %1  _fromGround %2 ", _target, _fromGround]};
-if (!alive _target) exitWith {hint "Was zerstört ist sollte nicht benutzt werden"};
+if (!alive _target) exitWith {systemChat format ["Ziel ist zerstört"]};
 
 if (_fromGround) then //_target = helper
 {
@@ -34,7 +34,7 @@ if (_fromGround) then //_target = helper
     private _helper = createVehicle ["TB_Rope_InvisibleObject", position ACE_player, [], 0, "CAN_COLLIDE"];
 
     private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "slingLoadMemoryPoint");
-    if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1   ", _target]};
+    if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _target %1   ", _target]};
 
     //[[_helper, 0, [], TB_Rope_PickupAction], []] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
     //[_helper, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global

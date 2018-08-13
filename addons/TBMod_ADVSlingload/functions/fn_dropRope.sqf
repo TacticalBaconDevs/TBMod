@@ -23,7 +23,6 @@ if (_idPFH==-1) then
     systemChat format ["ERROR(dropRope): no idPFH assigned _helper %1", _helper];
 } else 
 {
-    systemChat format ["DEBUG(dropRope): idPFH is %1", _idPFH];
     [_idPFH] call CBA_fnc_removePerFrameHandler;
 };
 ACE_player setVariable ['TB_Rope_idPFH', nil];
