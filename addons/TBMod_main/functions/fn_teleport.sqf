@@ -32,7 +32,7 @@ if (_obj isKindOf "Man") then
     else
     {
         player setDir ((getDir _obj) + (10 - random 20));
-        player setposASL (AGLtoASL (_obj modelToWorld [0, -1, 0]));
+        player setPosASL (AGLtoASL (_obj modelToWorld [0, -1, 0]));
     };
 }
 else
@@ -40,7 +40,7 @@ else
     if (_obj isKindOf "TB_spezial_fobBase") then
     {
         player setDir ((getDir _obj) + (10 - random 20));
-        player setposASL (AGLtoASL (_obj modelToWorld [0, -2, 0]));
+        player setPosASL (AGLtoASL (_obj modelToWorld [0, -2, 0]));
     }
     else
     {
