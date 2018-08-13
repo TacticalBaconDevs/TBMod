@@ -15,6 +15,11 @@ class CfgFunctions
             class attach {};
             class detach {};
             class addAttachAction {};
+            class pickupRope {};
+            class putBackRope {};
+            class dropRope {};
+            class dropRopefromChopper {};
+            class startRopeinHandsPFH {};
         };
     };
 };

@@ -1,0 +1,1 @@
+Die Datein "pbo_alle.bat" und "pbo_einzeln.bat" in den übergeordneten Ordner ziehen, fertig!
