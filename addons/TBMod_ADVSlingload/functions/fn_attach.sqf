@@ -8,6 +8,7 @@
     Arguments:
     0: Target <OBJECT>
     1: Helper <OBJECT>
+    
     Return Value:
     None
 */
@@ -39,8 +40,10 @@ if ((_posToAttach distance _sourcepos) > 20) exitWith {systemChat "Seil ist zu k
 
 systemChat format ["DEBUG(attach): _source %1  _selection %2 _target %3 _attachoffset %4", _source, _selection, _target, (_target worldToModel _posToAttach)];
 if (_idPFH==-1) then 
-{systemChat format ["ERROR(dropRope): no idPFH assigned _helper %1", _helper];
-} else 
+{
+    systemChat format ["ERROR(dropRope): no idPFH assigned _helper %1", _helper];
+}
+else
 {
     [_idPFH] call CBA_fnc_removePerFrameHandler;
 };
@@ -51,7 +54,6 @@ deleteVehicle _helper;
 
 ["TB_Rope_attachto", [_target, _target worldToModel _posToAttach, _rope], _rope] call CBA_fnc_targetEvent;
 //[_target,  _target worldToModel ASLtoATL _posToAttach, [0, 0, -1]] ropeAttachTo _rope;
-
 
 _rope setVariable ['TB_Rope_helper', nil, true];
 ACE_player setVariable ['TB_Rope_helper', nil];
