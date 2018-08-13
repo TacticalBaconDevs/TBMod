@@ -4,10 +4,11 @@
 params ["_logic", "", "_activated"];
 
 private _pos = getPos _logic;
+private _local = local _logic;
 deleteVehicle _logic;
 
-if !(local _logic) exitWith {};
-if !(_activated) exitWith {};
+if !(_local) exitWith {true};
+if !(_activated) exitWith {true};
 
 private _nachschubsKisten = ["### ALLE ###", "TB_supply_all_medic", "TB_supply_all_funk", "TB_supply_all_mortar", "TB_supply_all_mortarAmmo", "TB_supply_all_misc", "TB_supply_all_mp5",
         "### USA ###", "TB_supply_usa_ammo", "TB_supply_usa_ammoSmall", "TB_supply_usa_grena", "TB_supply_usa_unterlauf", "TB_supply_usa_spezial", "TB_supply_usa_launcher", "TB_supply_usa_launcherAmmo", "TB_supply_usa_notfallm4", "TB_supply_usa_night",
@@ -23,7 +24,7 @@ _dialogResult params ["_id", "_alt"];
 
 private _classname = _nachschubsKisten select _ID;
 
-if (_classname select [0, 3] == "###") exitWith {systemChat "Bitte wähle eine Kiste aus, keine Kategorie!"};
+if (_classname select [0, 3] == "###") exitWith {systemChat "Bitte wähle eine Kiste aus, keine Kategorie!"; true};
 
 private _parachute = createVehicle ["B_Parachute_02_F", [0, 0, 0], [], 0, 'FLY'];
 private _supplyBox = createVehicle [_nachschubsKisten select _ID, [0, 0, 0], [], 0, "FLY"];

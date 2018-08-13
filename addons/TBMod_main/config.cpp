@@ -20,8 +20,8 @@ class CfgPatches
                 "TB_flag_fob",
                 "TB_zeus_base",
                 "TB_zeus_nachschubAbwurf",
-                "TB_zeus_disableVCOM",
-                "TB_zeus_activateALIVE"
+                "TB_zeus_disablePath",
+                "TB_zeus_prioSichtbarkeit"
             };
         ammo[] = {
                 "FlareBase",
@@ -48,7 +48,11 @@ class CfgPatches
             "tfar_core",
 
             // 3rd PartyMods
+            "achilles_language_f",
+            "achilles_data_f_ares",
+            "achilles_data_f_achilles",
             "achilles_functions_f_achilles",
+            "achilles_settings_f",
             "3denEnhanced"
         };
     };
@@ -85,13 +89,29 @@ class CfgSettings
 
 class CfgMods
 {
-    class TBMod
+    class Mod_Base;
+    class TBMod : Mod_Base
     {
-        dir = "@TBMod";
+        author = "shukari";
+        
+        picture = "\TBMod_main\pics\logo.paa";
+        logo = "\TBMod_main\pics\logo.paa";
+        logoOver = "\TBMod_main\pics\logo.paa";
+        logoSmall = "\TBMod_main\pics\logo.paa";
+        
+        dlcColor[] = {0,0,0,1};
+        fieldManualTopicAndHint[] = {};
+        
+        hidePicture = 0;
+        hideName = 0;
+        
+        tooltip = "TBMod";
+        tooltipOwned = "TBMod";
         name = "TacticalBacon Mod";
-        picture = "A3\Ui_f\data\Logos\arma3_expansion_alpha_ca";
-        hidePicture = "true";
-        hideName = "true";
+        overview = "Mod of the Group of Tacticalbacon.de";
+        
+        dir = "TBMod";
+        
         actionName = "Website";
         action = "http://tacticalbacon.de/";
         description = "TacticalBacon Mod";
@@ -127,6 +147,11 @@ class Extended_PreInit_EventHandlers
 #include "CfgEditorCategories.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgAmmo.hpp"
+
+// CBA STUFF
+cba_settings_whitelist[] = {"76561198029318101", "admin"};
+enableTargetDebug = 1;
+enableDebugConsole[] = {"76561198029318101"};
 
 class RscDisplayGarage;
 class TB_RscDisplayGarage: RscDisplayGarage

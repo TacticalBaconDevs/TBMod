@@ -16,3 +16,9 @@
 -> Person direkt anschauen und davorstehen (Name zwischen den "" ändern) - LOKAL ausführen:
 	cursorTarget setGroupIdGlobal ["Alpha"];
 
+
+### Als Tier spawnen
+-> LOKAL ausführen - TIER außer Fische -> https://community.bistudio.com/wiki/Arma_3_CfgVehicles_Animals
+_tier = createAgent ["Fin_random_F", getPos player, [], 5, "CAN_COLLIDE"]; _tier setVariable ["BIS_fnc_animalBehaviour_disable", true];
+BACK = player; selectPlayer _tier;
+-> wieder zurück lokal: selectPlayer BACK

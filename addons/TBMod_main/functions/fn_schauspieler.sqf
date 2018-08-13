@@ -42,17 +42,15 @@ if (str player in ["schauspieler1", "schauspieler2", "schauspieler3", "schauspie
         };
     };
     
-    private _addActions = {
-        if (0 == {((player actionParams _x) select 0) isEqualTo "Arsenal"} count (actionIDs player)) then {
-            player addAction ["Arsenal", {[player, player, true] call ace_arsenal_fnc_openBox}, nil, 0.3, false, false]; //["Open",true] spawn BIS_fnc_arsenal
-            player addAction ["Garage", {
-                _vehicle = createVehicle ["Land_HelipadEmpty_F", player getPos [10, getDir player], [], 0, "CAN_COLLIDE"]; 
-                ["Open", [true, _vehicle]] call RHS_fnc_garage;
-            }, nil, 0.1, false, false];
-            player onMapSingleClick "if (_alt && _shift) then {(vehicle player) setPosATL _pos}";
-        };
-    };
     
-    call _addActions;
-    player addEventHandler ["Respawn", _addActions];
+    ["Arsenal", {[player, player, true] call ace_arsenal_fnc_openBox}, nil, 0.3, false, false] call CBA_fnc_addPlayerAction; //["Open",true] spawn BIS_fnc_arsenal
+    ["Garage", {
+        _vehicle = createVehicle ["Land_HelipadEmpty_F", player getPos [10, getDir player], [], 0, "CAN_COLLIDE"]; 
+        ["Open", [true, _vehicle]] call RHS_fnc_garage;
+    }, nil, 0.1, false, false] call CBA_fnc_addPlayerAction;
+    
+    addMissionEventHandler ["MapSingleClick", {
+        params ["_units", "_pos", "_alt", "_shift"];
+        if (_alt && _shift) then {(vehicle player) setPosATL _pos}
+    }];
 };

@@ -91,5 +91,5 @@ if (_architecture != "x64") then
     nil, 
     nil, 
     nil, 
-    4 
+    2.5 
 ] call ace_interact_menu_fnc_createAction, true] call ace_interact_menu_fnc_addActionToClass;
