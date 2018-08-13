@@ -31,4 +31,5 @@ private _idPFH = [{
         systemChat "Dropped Rope";
     }
 }, 0, [_source, _selection, _helper]] call cba_fnc_addPerFrameHandler;
+
 ACE_player setVariable ["TB_Rope_idPFH", _idPFH];
