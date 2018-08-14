@@ -1,5 +1,13 @@
-// configfile >> "CfgMagazines" >> "UGL_FlareWhite_F"
-// configfile >> "CfgAmmo" >> "F_40mm_White"
+# define ADD_PRECISE_SMOKE(TYPE) class TYPE; \
+    class TYPE##_precise : TYPE \
+    { \
+        simulation = "shotSmoke"; \
+        deflecting = 0; \
+        deflectionSlowDown = 0.1; \
+        deflectionDirDistribution = 0; \
+        timeToLive = 120; \
+    }
+
 class CfgAmmo
 {
     class FlareCore;
@@ -37,4 +45,13 @@ class CfgAmmo
         timeToLive = 1000;
         coefGravity = 0.3;
     };
+    
+    // Vanilla
+    ADD_PRECISE_SMOKE(G_40mm_Smoke);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeBlue);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeGreen);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeOrange);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokePurple);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeRed);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeYellow);
 };

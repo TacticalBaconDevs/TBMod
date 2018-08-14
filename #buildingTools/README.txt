@@ -1,1 +1,1 @@
-Die Datein "pbo_alle.bat" und "pbo_einzeln.bat" in den übergeordneten Ordner ziehen, fertig!
+https://github.com/shukari/TBMod/wiki/PBOs-bauen
