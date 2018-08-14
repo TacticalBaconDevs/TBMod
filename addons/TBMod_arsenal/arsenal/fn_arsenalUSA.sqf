@@ -490,7 +490,12 @@ private _grenadier_munition = [
     "rhs_mag_m715_Green",
     "rhs_mag_m716_yellow",
     
-    "ACE_HuntIR_M203"
+    "ACE_HuntIR_M203",
+    
+    "rhs_mag_m713_Red_precise",
+    "rhs_mag_m714_White_precise",
+    "rhs_mag_m715_Green_precise",
+    "rhs_mag_m716_Yellow_precise"
 ];
 
 private _dmr_munition = [
