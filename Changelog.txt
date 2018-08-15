@@ -27,6 +27,7 @@
         - neues Standardfernglas
         - neue Standard Loadouts
         - MörserStuff entfernt, die Nachschubskiste hat alles
+        - experimentelle Ferngläser für Truppführer, Thermalfernglas und Tag/Nacht-Vector
     - medizinsche Materialien werden nun anders hinzugefügt
 - TB Main
     - Entschärfungsabstand von 4m auf 2.5m verringert
@@ -43,8 +44,9 @@
         - FlashHider/MuzzleBreak verringern den Rückstoß stark, aber nur im EinzelfeuerModus
         - System optimiert
 - TB Nachschub
-    - USA Munitionskiste hinzugefügt
+    - Allgemeine Munitionskisten hinzugefügt
         - MP5
+    - USA Munitionskiste hinzugefügt
         - Javalin
         - MAAWS
         - SMAW
