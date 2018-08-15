@@ -116,6 +116,9 @@
                     ADD_SUPPLY(Spezial,TB_supply_usa_spezial);
                     ADD_SUPPLY(Werfer,TB_supply_usa_launcher);
                     ADD_SUPPLY(WerferMunition,TB_supply_usa_launcherAmmo);
+                    ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
+                    ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
+                    ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
                     ADD_SUPPLY(NotfallM4,TB_supply_usa_notfallm4);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                 };
