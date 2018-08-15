@@ -1,7 +1,13 @@
 ### 1.1.0 (??.09.18)
 - TB ADVSlingLoad
     - Author: Eric
-    - <hier schreibt Eric ein paar Infos rein>
+    - Seile müssen einzeln am Fahrzeug befestigt werden 
+    - Seile kann man fallen lassen und wieder aufheben
+    - Seile haben eine Länge von 20m
+    - Seile können von Bodentruppen dem Helikopter entnommen und zurück gepackt werden
+    - Seile können vom Helikopter abgelassen werden
+    - Bei angehängten Fahrzeugen, wird das Gewicht auf 12T verringert
+    - Ermöglicht es Fahrzeuge die bisher nicht hochgehoben werden konnten hochzuheben (Boote, LKW, SPZ, Helikopter, Flugzeuge, etc.)
 - TB Arsenal
     - direkt beim Rollenwechsel wird das Arsenal geöffnet
     - Russische Arsenal wurde von BenZockt aktualisiert
@@ -55,6 +61,10 @@
             - nun vier statt zwei HEDP Werfer
         - WerferMunition
             - jeweils drei statt zwei MAAWS HEAT und SMAW HEAA
+    - BW Munitionskisten geändert
+        - G82 SD Magazine durch allgemeine ausgetauscht.
+    - BW Munitionskiste hinzugefügt
+        - G27/G28 E3 Munition hinzugefügt
 - TB RHS
     - neuer Mod der RHS Sachen für unsere Bedürfnisse verändert
     - Definition der normalen AIM Smokes
