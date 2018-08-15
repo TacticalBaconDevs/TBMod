@@ -40,7 +40,7 @@ class CfgMagazines
     };
     
     class rhs_mag_m716_Yellow;
-    class rhs_mag_m716_Yellow_precise : rhs_mag_m713_Red
+    class rhs_mag_m716_Yellow_precise : rhs_mag_m716_Yellow
     {
         ammo = "rhs_40mm_smoke_yellow_precise";
         author = "TBMod";
