@@ -139,23 +139,22 @@ private _allgemein = [
 
 private _allgemein_magazine = [
     // M855 vs. M855A1 -> https://www.americanrifleman.org/wp-content/uploads/2014/05/Comparison-Chart.jpg
-    //"rhs_mag_30Rnd_556x45_M855_Stanag",
-    //"rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",
-    //"rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Green",
-    //"rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Yellow",
-    //"rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Orange",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer",
-    //"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow",
-    //"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Orange",
-    "rhs_mag_30Rnd_556x45_Mk318_Stanag",
-    "rhs_mag_30Rnd_556x45_Mk262_Stanag",
+    "rhs_mag_30Rnd_556x45_M855A1_PMAG",
+    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan",
+    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
+    "rhs_mag_30Rnd_556x45_Mk262_PMAG",
+    "rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan",
+    "rhs_mag_30Rnd_556x45_Mk318_PMAG",
+    "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+    
+    // Schrot
     "rhsusf_5Rnd_00Buck",
     "rhsusf_5Rnd_Slug",
     "rhsusf_8Rnd_00Buck",
     "rhsusf_8Rnd_Slug",
+    
+    // MP5
     "hlc_30Rnd_9x19_B_MP5",
     "hlc_30Rnd_9x19_GD_MP5",
     "hlc_30Rnd_9x19_SD_MP5"
@@ -513,23 +512,24 @@ private _dmr_munition = [
 ];
 
 private _mg_munition = [
-    "rhsusf_50Rnd_762x51",
-    "rhsusf_50Rnd_762x51_m61_ap",
+    // 7.72
     "rhsusf_50Rnd_762x51_m62_tracer",
+    "rhsusf_50Rnd_762x51_m61_ap",
     "rhsusf_50Rnd_762x51_m80a1epr",
-    "rhsusf_50Rnd_762x51_m993",
-    "rhsusf_100Rnd_762x51",
-    "rhsusf_100Rnd_762x51_m61_ap",
+
     "rhsusf_100Rnd_762x51_m62_tracer",
+    "rhsusf_100Rnd_762x51_m61_ap",
     "rhsusf_100Rnd_762x51_m80a1epr",
-    "rhs_200rnd_556x45_M_SAW",
-    "rhs_200rnd_556x45_B_SAW",
-    "rhs_200rnd_556x45_T_SAW",
-    "rhsusf_100Rnd_556x45_M855_soft_pouch",
-    "rhsusf_200Rnd_556x45_M855_soft_pouch",
-    "rhsusf_100Rnd_556x45_soft_pouch",
-    "rhsusf_200Rnd_556x45_soft_pouch",
-    "rhsusf_100Rnd_556x45_M200_soft_pouch"
+    
+    // 5.56
+    "rhs_mag_100Rnd_556x45_M855A1_cmag",
+    "rhs_mag_100Rnd_556x45_M855A1_cmag_mixed",
+    "rhs_mag_100Rnd_556x45_Mk262_cmag",
+    "rhs_mag_100Rnd_556x45_Mk318_cmag",
+    //"rhsusf_100Rnd_556x45_soft_pouch",
+    //"rhsusf_100Rnd_556x45_mixed_soft_pouch",
+    "rhsusf_200Rnd_556x45_box",
+    "rhsusf_200rnd_556x45_mixed_box"
 ];
 
 private _pilot_munition = [
@@ -631,6 +631,10 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Teamleader",
             "rhsusf_mbav_mg",
             "rhsusf_spc_teamleader",
+            "rhsusf_spcs_ocp_squadleader",
+            "rhsusf_spcs_ocp_teamleader",
+            "rhsusf_spcs_ucp_squadleader",
+            "rhsusf_spcs_ucp_teamleader",
 
             // Gepäck
             //"B_UAV_01_backpack_F",
@@ -671,6 +675,8 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Medic",
             "rhsusf_mbav_Medic",
             "rhsusf_spc_iar",
+            "rhsusf_spcs_ocp_medic",
+            "rhsusf_spcs_ucp_medic",
 
             // Item
             "TB_Item_liveMonitor"
@@ -697,6 +703,8 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Medic",
             "rhsusf_mbav_Medic",
             "rhsusf_spc_iar",
+            "rhsusf_spcs_ocp_medic",
+            "rhsusf_spcs_ucp_medic",
 
             // Kopfbedeckung
             "rhsusf_cvc_green_helmet",
@@ -731,7 +739,9 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ocp_Grenadier",
             "rhsusf_iotv_ucp_Grenadier",
             "rhsusf_mbav_Grenadier",
-            "rhsusf_spc_rifleman"
+            "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_grenadier",
+            "rhsusf_spcs_ucp_grenadier"
         ]
     };
 
@@ -762,24 +772,38 @@ _items append (switch (_rolle) do
             "rhs_weap_sr25_wd",
             "rhs_weap_sr25_ec",
             // ### Visiere
-            "rhsusf_acc_ELCAN",
-            "rhsusf_acc_ELCAN_ard",
-            "rhsusf_acc_SpecterDR",
-            "rhsusf_acc_SpecterDR_OD",
-            "rhsusf_acc_SpecterDR_D",
-            "rhsusf_acc_SpecterDR_A",
+            "rhsusf_acc_su230a",
+            "rhsusf_acc_su230a_c",
+            "rhsusf_acc_su230a_mrds",
+            "rhsusf_acc_su230a_mrds_c",
+            "rhsusf_acc_m8541_low",
+            "rhsusf_acc_m8541_low_d",
+            "rhsusf_acc_m8541_low_wd",
+            "rhsusf_acc_leupoldmk4",
+            "rhsusf_acc_leupoldmk4_d",
+            "rhsusf_acc_leupoldmk4_wd",
             "rhsusf_acc_ACOG_MDO",
             // ### Geschützzubehör
-            "rhsusf_acc_sr25S",
+            "rhsusf_acc_sr25s",
+            "rhsusf_acc_sr25s_d",
+            "rhsusf_acc_sr25s_wd",
+            "rhsusf_acc_m24_muzzlehider_black",
+            "rhsusf_acc_m24_muzzlehider_d",
+            "rhsusf_acc_m24_muzzlehider_wd",
+            "rhsusf_acc_m24_silencer_black",
+            "rhsusf_acc_m24_silencer_d",
+            "rhsusf_acc_m24_silencer_wd",
             // ### Zweibein
             "rhsusf_acc_harris_swivel",
 
             // Westen
-            "rhsusf_spc_marksman",
-            "rhsusf_spc_rifleman",
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_mbav_rifleman",
+            "rhsusf_spc_marksman",
+            "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_rifleman",
+            "rhsusf_spcs_ucp_rifleman",
 
             // Spezial
             "ACE_Yardage450",
@@ -804,14 +828,12 @@ _items append (switch (_rolle) do
             // Gewehre
             "rhs_weap_m240B_CAP",
             "rhs_weap_m249_pip_L",
-            "rhs_weap_m249_pip_L_para",
-            "rhs_weap_m249_pip_L_vfg",
-            "rhs_weap_m249_pip_S",
-            "rhs_weap_m249_pip_S_para",
-            "rhs_weap_m249_pip_S_vfg",
-            "rhs_weap_m249_pip",
-            //"rhs_weap_m27iar",        // TODO: Munition fehlt
-            //"rhs_weap_m27iar_grip",
+            //"rhs_weap_m249_pip_L_para",
+            //"rhs_weap_m249_pip_L_vfg",
+            //"rhs_weap_m249_pip_S",
+            //"rhs_weap_m249_pip_S_para",
+            //"rhs_weap_m249_pip_S_vfg",
+            //"rhs_weap_m27iar",
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
 
@@ -819,7 +841,9 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ocp_SAW",
             "rhsusf_iotv_ucp_SAW",
             "rhsusf_mbav_mg",
-            "rhsusf_spc_iar"
+            "rhsusf_spc_iar",
+            "rhsusf_spcs_ocp_machinegunner",
+            "rhsusf_spcs_ucp_machinegunner"
         ]
     };
 
@@ -849,7 +873,9 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ocp_SAW",
             "rhsusf_iotv_ucp_SAW",
             "rhsusf_mbav_mg",
-            "rhsusf_spc_iar"
+            "rhsusf_spc_iar",
+            "rhsusf_spcs_ocp_machinegunner",
+            "rhsusf_spcs_ucp_machinegunner"
         ]
     };
 
@@ -983,11 +1009,12 @@ _items append (switch (_rolle) do
             "U_B_T_FullGhillie_tna_F",
 
             // Westen
-            "rhsusf_spc_marksman",
-            "rhsusf_spc_rifleman",
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_mbav_rifleman",
+            "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_sniper",
+            "rhsusf_spcs_ucp_sniper",
 
             // Ferngläser
             "lerca_1200_black",
@@ -1033,6 +1060,8 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Grenadier",
             "rhsusf_mbav_Grenadier",
             "rhsusf_spc_iar",
+            "rhsusf_spcs_ocp_sniper",
+            "rhsusf_spcs_ucp_sniper",
 
             // Ferngläser
             "lerca_1200_black",
@@ -1078,6 +1107,8 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_rifleman",
+            "rhsusf_spcs_ucp_rifleman",
 
             // Items
             "ACE_Clacker",
@@ -1132,7 +1163,9 @@ _items append (switch (_rolle) do
             "rhsusf_mbav_mg",
             "rhsusf_iotv_ucp_SAW",
             "rhsusf_iotv_ocp_SAW",
-            "rhsusf_spc_iar"
+            "rhsusf_spc_iar",
+            "rhsusf_spcs_ocp_saw",
+            "rhsusf_spcs_ucp_saw"
         ]
     };
 
@@ -1163,6 +1196,8 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_rifleman",
+            "rhsusf_spcs_ucp_rifleman",
 
             // Items
             "B_UavTerminal",
@@ -1196,6 +1231,8 @@ _items append (switch (_rolle) do
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_rifleman",
+            "rhsusf_spcs_ucp_rifleman",
 
             // Items
             "ACE_DefusalKit",
