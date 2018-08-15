@@ -58,7 +58,7 @@ private _allgemein = [
     "rhsusf_Rhino",
 
     // Ferngläser
-    "Binocular",
+    "m24_bino", //"Binocular",
     "Leupold_Mk4",
 
     // Karte
@@ -79,36 +79,36 @@ private _allgemein = [
 
     // Items
     // ### Sprays
-    "ACE_SpraypaintBlue",
-    "ACE_SpraypaintGreen",
-    "ACE_SpraypaintRed",
-    "ACE_SpraypaintBlack",
+    //"ACE_SpraypaintBlue",
+    //"ACE_SpraypaintGreen",
+    //"ACE_SpraypaintRed",
+    //"ACE_SpraypaintBlack",
     // ### Lampe
     "ACE_Chemlight_Shield",
-    "ACE_Flashlight_XL50",
+    //"ACE_Flashlight_XL50",
     "ACE_Flashlight_KSF1",
-    "ACE_Flashlight_MX991",
+    //"ACE_Flashlight_MX991",
     // ### Items
-    "ACE_RangeTable_82mm",
+    //"ACE_RangeTable_82mm",
     "ACE_MapTools",
     "ACE_CableTie",
     "ACE_IR_Strobe_Item",
     "ACE_HuntIR_monitor",
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
-    "ACE_microDAGR",
+    //"ACE_microDAGR",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
-    "ACE_Chemlight_Orange",
-    "ACE_Chemlight_HiOrange",
+    //"ACE_Chemlight_Orange",
+    //"ACE_Chemlight_HiOrange",
     "ACE_Chemlight_HiRed",
-    "ACE_Chemlight_White",
+    //"ACE_Chemlight_White",
     "ACE_Chemlight_HiWhite",
-    "Chemlight_blue",
-    "Chemlight_yellow",
-    "Chemlight_green",
-    "Chemlight_red",
+    //"Chemlight_blue",
+    //"Chemlight_yellow",
+    //"Chemlight_green",
+    //"Chemlight_red",
     // ### BuildingItems
     "TB_building_item_RoadBarrier_F",
     "TB_building_item_RoadCone_F",
@@ -120,20 +120,16 @@ private _allgemein = [
     "TB_building_item_Land_SandbagBarricade_01_hole_F",
     // ### Granaten
     "SmokeShell",
-    "SmokeShellYellow",
+    //"SmokeShellYellow",
     "SmokeShellRed",
     "SmokeShellGreen",
-    "SmokeShellPurple",
+    //"SmokeShellPurple",
     "SmokeShellBlue",
-    "SmokeShellOrange",
+    //"SmokeShellOrange",
     "rhs_mag_mk84",
     //"ACE_M84",
     "rhs_mag_mk3a2",
     "rhs_mag_m67",
-    // ### Mörsermunition
-    "ACE_1Rnd_82mm_Mo_HE",
-    "ACE_1Rnd_82mm_Mo_Smoke",
-    "ACE_1Rnd_82mm_Mo_Illum",
     "AMP_Breaching_Charge_Mag"
 ];
 
@@ -516,18 +512,13 @@ private _mg_munition = [
     "rhsusf_50Rnd_762x51_m62_tracer",
     "rhsusf_50Rnd_762x51_m61_ap",
     "rhsusf_50Rnd_762x51_m80a1epr",
-
     "rhsusf_100Rnd_762x51_m62_tracer",
     "rhsusf_100Rnd_762x51_m61_ap",
     "rhsusf_100Rnd_762x51_m80a1epr",
     
     // 5.56
-    "rhs_mag_100Rnd_556x45_M855A1_cmag",
-    "rhs_mag_100Rnd_556x45_M855A1_cmag_mixed",
-    "rhs_mag_100Rnd_556x45_Mk262_cmag",
-    "rhs_mag_100Rnd_556x45_Mk318_cmag",
-    //"rhsusf_100Rnd_556x45_soft_pouch",
-    //"rhsusf_100Rnd_556x45_mixed_soft_pouch",
+    "rhsusf_100Rnd_556x45_soft_pouch",
+    "rhsusf_100Rnd_556x45_mixed_soft_pouch",
     "rhsusf_200Rnd_556x45_box",
     "rhsusf_200rnd_556x45_mixed_box"
 ];
