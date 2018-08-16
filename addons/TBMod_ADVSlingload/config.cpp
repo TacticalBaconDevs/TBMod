@@ -24,5 +24,13 @@ class Extended_PostInit_EventHandlers
     };
 };
 
+class Extended_PreInit_EventHandlers
+{
+    class TBMod_ADVSlingload
+    {
+        Init = "call compile preprocessFileLineNumbers '\TBMod_ADVSlingload\XEH_preInit.sqf'";
+    };
+};
+
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
