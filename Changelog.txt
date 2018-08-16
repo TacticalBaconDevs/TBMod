@@ -1,4 +1,5 @@
-### 1.1.0 (??.09.18)
+### 1.1.0 (16.08.18)
+INFO: Dieser Release wurde möglich gemacht durch: Eric, Eron und BenZockt
 - TB ADVSlingLoad
     - Author: Eric
     - Seile müssen einzeln am Fahrzeug befestigt werden 
@@ -29,6 +30,7 @@
         - neue Standard Loadouts
         - MörserStuff entfernt, die Nachschubskiste hat alles
         - experimentelle Ferngläser für Truppführer, Thermalfernglas und Tag/Nacht-Vector
+        - einige unnötige Bauitems wurden entfernt, sind noch in der Nachschubskisten "BauKiste" drin
     - medizinsche Materialien werden nun anders hinzugefügt
 - TB Main
     - Entschärfungsabstand von 4m auf 2.5m verringert

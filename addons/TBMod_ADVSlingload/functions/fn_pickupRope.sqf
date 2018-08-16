@@ -15,7 +15,7 @@
 params ["_target", "_fromGround"];
 
 //Sanity Checks
-if (isNull _target) exitWith {systemChat format ["ERROR(pickupRope): _target %1  _fromGround %2 ", _target, _fromGround]};
+if (isNull _target) exitWith {systemChat format ["ERROR(pickupRope): _target %1 _fromGround %2 ", _target, _fromGround]};
 if (!alive _target) exitWith {systemChat "Ziel ist zerstört"};
 
 if (_fromGround) then //_target = helper

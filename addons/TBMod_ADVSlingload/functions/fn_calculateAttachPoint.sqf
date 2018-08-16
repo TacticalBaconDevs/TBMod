@@ -13,7 +13,8 @@
     Position
 */
 params ["_player", "_searchVector"];
-//Sanity Checks
+
+// Sanity Checks
 if (isNull _player) exitWith {systemChat format ["ERROR(calculateAttachPoint): _ACE_player %1  _searchVector %2 ", _player, _searchVector]};
 
 private _startPos = eyepos _player; 

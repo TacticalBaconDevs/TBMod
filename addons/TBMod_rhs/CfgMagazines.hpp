@@ -26,6 +26,8 @@ class CfgMagazines
         descriptionShort = "Type: AIM Smoke Round - White<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
         displayName = "M714A White Smoke Round";
         displaynameshort = "White AIM Smoke";
+        
+        mass = 15; //5
     };
     
     class rhs_mag_m715_Green;
@@ -37,6 +39,8 @@ class CfgMagazines
         descriptionShort = "Type: AIM Smoke Round - Green<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
         displayName = "M715A Green Smoke Round";
         displaynameshort = "Green AIM Smoke";
+        
+        mass = 15; //5
     };
     
     class rhs_mag_m716_Yellow;
@@ -48,5 +52,7 @@ class CfgMagazines
         descriptionShort = "Type: AIM Smoke Round - Yellow<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
         displayName = "M716A Yellow Smoke Round";
         displaynameshort = "Yellow AIM Smoke";
+        
+        mass = 15; //5
     };
 };

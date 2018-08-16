@@ -14,7 +14,7 @@
 
 params ["_target"];
 
-//Sanity Checks
+// Sanity Checks
 if (isNull _target) exitWith {systemChat format ["ERROR(dropRopefromChopper): no Target"]};
 if (!alive _target) exitWith {systemChat "Was zerstört ist sollte nicht benutzt werden"};
 
