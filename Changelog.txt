@@ -8,6 +8,7 @@
     - Seile können vom Helikopter abgelassen werden
     - Bei angehängten Fahrzeugen, wird das Gewicht auf 12T verringert
     - Ermöglicht es Fahrzeuge die bisher nicht hochgehoben werden konnten hochzuheben (Boote, LKW, SPZ, Helikopter, Flugzeuge, etc.)
+    - Vanilla Slingload kann ausgeschalten werden
 - TB Arsenal
     - direkt beim Rollenwechsel wird das Arsenal geöffnet
     - Russische Arsenal wurde von BenZockt aktualisiert
