@@ -19,7 +19,6 @@ if !(call TB_fnc_isTBMission) exitWith {};
         [_this select 0, 1, ["ACE_SelfActions"], _cutaction] call ace_interact_menu_fnc_addActionToObject;
         [_this select 0, 1, ["ACE_SelfActions"], _dropaction] call ace_interact_menu_fnc_addActionToObject;
 
-
         (_this select 0) addEventHandler ["RopeAttach", {
             params ["_object1", "_rope", "_object2"];
             if (TB_enableVanillaSlingload) exitWith {};
@@ -34,7 +33,6 @@ if !(call TB_fnc_isTBMission) exitWith {};
             };
 
         }];
-
     }, 
     true, 
     [], 
