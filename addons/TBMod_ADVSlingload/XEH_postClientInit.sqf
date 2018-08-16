@@ -31,7 +31,6 @@ if !(call TB_fnc_isTBMission) exitWith {};
                     systemChat format ["Vanilla Slingload wurde ausgeschalten"];
                 };
             };
-
         }];
     }, 
     true, 
