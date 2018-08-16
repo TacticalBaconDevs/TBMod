@@ -19,14 +19,14 @@ private _idPFH = [{
     params ["_args", "_idPFH"];
     _args params ["_source", "_selection", "_helper"];
 
-
-
     private _posACE_player = ASLtoAGL (getPosASL ACE_player);
     private _sourcepos = _source modelToWorld (_source selectionPosition _selection);
     private _playerPFH = ACE_player getVariable ["TB_Rope_idPFH", -1];
+    
     if (_playerPFH != _idPFH || isNull _helper) exitWith {
-      [_idPFH] call CBA_fnc_removePerFrameHandler;
+        [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
+    
     if !(
         alive ACE_player 
         && {!(ACE_player getVariable ["ACE_isUnconscious", false])}
@@ -37,6 +37,6 @@ private _idPFH = [{
         call TB_fnc_dropRope;
         systemChat "Dropped Rope";
     }
-}, 0, [_source, _selection, _helper]] call cba_fnc_addPerFrameHandler;
+}, 0, [_source, _selection, _helper]] call CBA_fnc_addPerFrameHandler;
 
 ACE_player setVariable ["TB_Rope_idPFH", _idPFH];
