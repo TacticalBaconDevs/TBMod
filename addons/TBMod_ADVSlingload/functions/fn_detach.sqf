@@ -13,18 +13,17 @@
 */
 params ["_target"];
 
-
-
-//Sanity Checks
+// Sanity Checks
 if (isNull _target) exitWith {systemChat format ["ERROR(detach): Es gab kein Ziel"]};
 
 private _attachedVehicle = _target getVariable ['TB_Rope_attachedVehicle', objNull];
-//if (isNull _attachedVehicle) exitWith {systemChat format ["ERROR(Detach): Es war kein angehängtes Ziel gespeichert"]};
-if (!isNull _attachedVehicle) then {
+// if (isNull _attachedVehicle) exitWith {systemChat format ["ERROR(Detach): Es war kein angehängtes Ziel gespeichert"]};
+if (!isNull _attachedVehicle) then
+{
     private _originalMass = _attachedVehicle getVariable ['TB_Rope_original_Mass', 0];
     if (_originalMass != 0) then {_attachedVehicle setMass _originalMass};
-        _attachedVehicle setVariable ['TB_Rope_original_Mass', nil, true];
-        _target setVariable ['TB_Rope_attachedVehicle', nil, true];
+    _attachedVehicle setVariable ['TB_Rope_original_Mass', nil, true];
+     _target setVariable ['TB_Rope_attachedVehicle', nil, true];
 };
 
 {
