@@ -5,7 +5,10 @@ class CfgPatches
         author = "Eric Ruhland";
         authorUrl = "tacticalbacon.de";
         
-        weapons[] = {};
+        weapons[] =
+        {
+            "TB_weap_taser",
+        };
         units[] = {};
         ammo[] = {};
         

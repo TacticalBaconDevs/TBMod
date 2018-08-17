@@ -7,8 +7,8 @@
 
 class CfgAmmo
 {
-    class rhs_ammo_45ACP_MHP;
-    class tb_ammo_taser : rhs_ammo_45ACP_MHP
+    class B_45ACP_Ball;
+    class TB_ammo_taser : B_45ACP_Ball
     {
         hit = 0;
     };
