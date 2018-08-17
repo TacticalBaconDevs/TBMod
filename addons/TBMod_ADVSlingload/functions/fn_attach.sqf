@@ -38,7 +38,7 @@ private _sourcepos = (_source modelToWorld (_source selectionPosition _selection
 // Sanity Check
 if ((_posToAttach distance _sourcepos) > 20) exitWith {systemChat "Seil ist zu kurz"};
 
-systemChat format ["DEBUG(attach): _source %1  _selection %2 _target %3 _attachoffset %4", _source, _selection, _target, (_target worldToModel _posToAttach)];
+//systemChat format ["DEBUG(attach): _source %1  _selection %2 _target %3 _attachoffset %4", _source, _selection, _target, (_target worldToModel _posToAttach)];
 if (_idPFH==-1) then 
 {
     systemChat format ["ERROR(dropRope): no idPFH assigned _helper %1", _helper];

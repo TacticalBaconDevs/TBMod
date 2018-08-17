@@ -32,7 +32,7 @@ private _idPFH = [{
         && (_posACE_player distance _sourcepos) < 21
     ) exitWith
     {
-        systemChat format ["DEBUG(startRopeinHandsPFH) alive %1 isuncouncios %2 isinVehicle %3 distance %4 distancecheck %5", alive ACE_player, (ACE_player getVariable ["ACE_isUnconscious", false]), ACE_player != vehicle ACE_player, _posACE_player distance _sourcepos, (_posACE_player distance _sourcepos) > 20];
+        //systemChat format ["DEBUG(startRopeinHandsPFH) alive %1 isuncouncios %2 isinVehicle %3 distance %4 distancecheck %5", alive ACE_player, (ACE_player getVariable ["ACE_isUnconscious", false]), ACE_player != vehicle ACE_player, _posACE_player distance _sourcepos, (_posACE_player distance _sourcepos) > 20];
         call TB_fnc_dropRope;
         systemChat "Dropped Rope";
     };
