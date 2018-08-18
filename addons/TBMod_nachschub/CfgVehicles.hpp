@@ -113,7 +113,7 @@
                     ADD_SUPPLY(KleinMunition,TB_supply_usa_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_usa_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_usa_unterlauf);
-                    ADD_SUPPLY(Spezial,TB_supply_usa_spezial);
+                    ADD_SUPPLY(SpezialMunition,TB_supply_usa_spezial);
                     ADD_SUPPLY(Werfer,TB_supply_usa_launcher);
                     ADD_SUPPLY(WerferMunition,TB_supply_usa_launcherAmmo);
                     ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
@@ -132,7 +132,7 @@
                     ADD_SUPPLY(KleinMunition,TB_supply_bw_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_bw_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_bw_unterlauf);
-                    ADD_SUPPLY(Spezial,TB_supply_bw_spezial);
+                    ADD_SUPPLY(SpezialMunition,TB_supply_bw_spezial);
                     ADD_SUPPLY(Werfer,TB_supply_bw_launcher);
                     ADD_SUPPLY(WerferMunition,TB_supply_bw_launcherAmmo);
                     ADD_SUPPLY(NotfallG36,TB_supply_bw_notfallg36);
