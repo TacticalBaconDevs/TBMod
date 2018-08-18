@@ -13,8 +13,5 @@ class CfgMagazines
         descriptionShort = "Taser Magazine<br />Rounds: 2<br />Used in: M1911A1";
         displayName = "Taser Magazine";
         displaynameshort = "Taser Magazine";
-        
     };
-    
-    
 };
