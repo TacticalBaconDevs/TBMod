@@ -83,9 +83,11 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,10);
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,10);
         
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,3);  // DMR7.62
-        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,3);   // DMR7.62
-        MACRO_ADDMAGAZINE(rhsusf_10Rnd_762x51_m118_special_Mag,3);  // DMR7.62
+        // DMR7.62
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,15);
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,15);
+        //MACRO_ADDMAGAZINE(rhsusf_10Rnd_762x51_m118_special_Mag,15); // nicht zuviel, dann halt nur 5 statt 10 Schuss
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,15);
     };
 };
 
