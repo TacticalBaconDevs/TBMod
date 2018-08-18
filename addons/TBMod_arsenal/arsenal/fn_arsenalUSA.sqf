@@ -497,17 +497,22 @@ private _grenadier_munition = [
 
 private _dmr_munition = [
     "rhsusf_20Rnd_762x51_m118_special_Mag",
-    "rhsusf_20Rnd_762x51_m993_Mag",
     "rhsusf_20Rnd_762x51_m62_Mag",
+    "rhsusf_20Rnd_762x51_m993_Mag",
     "rhsusf_5Rnd_762x51_m118_special_Mag",
-    "rhsusf_5Rnd_762x51_m993_Mag",
     "rhsusf_5Rnd_762x51_m62_Mag",
+    "rhsusf_5Rnd_762x51_m993_Mag",
     "rhsusf_10Rnd_762x51_m118_special_Mag",
-    "rhsusf_10Rnd_762x51_m993_Mag",
     "rhsusf_10Rnd_762x51_m62_Mag",
+    "rhsusf_10Rnd_762x51_m993_Mag",
     "rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
     "rhsusf_20Rnd_762x51_SR25_m62_Mag",
     "rhsusf_20Rnd_762x51_SR25_m993_Mag"
+    
+    // verfügbar aber nicht in Benutzung m40A5
+    //rhsusf_5Rnd_762x51_AICS_m118_special_Mag
+    //rhsusf_5Rnd_762x51_AICS_m62_Mag
+    //rhsusf_5Rnd_762x51_AICS_m993_Mag
 ];
 
 private _mg_munition = [
