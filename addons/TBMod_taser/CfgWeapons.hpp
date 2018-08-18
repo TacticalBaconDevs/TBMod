@@ -4,7 +4,10 @@
 */
 class CfgWeapons
 {
-    class hgun_Pistol_heavy_01_F;
+    class Pistol_Base_F;
+    class hgun_Pistol_heavy_01_F : Pistol_Base_F {
+        class Single;
+    };
     class TB_weap_taser : hgun_Pistol_heavy_01_F
     {
         author = "TBMod";
@@ -15,7 +18,7 @@ class CfgWeapons
             "tb_mag_taser"
         };
         
-        class Single {
+        class Single : Single {
             sounds[] = {"StandardSound", "SilencedSound"};
             class BaseSoundModeType {
                 closure1[] = {"A3\Sounds_F\arsenal\weapons\Pistols\4-Five\closure_4_Five_01", 0.316228, 1, 10};
