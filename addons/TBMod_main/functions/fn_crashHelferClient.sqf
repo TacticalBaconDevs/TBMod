@@ -3,7 +3,6 @@
 */
 params [["_input", false, [false]]];
 
-if (isNil "TB_crashHelfer") then {TB_crashHelfer = true};
 if (!TB_crashHelfer && _input) then {TB_crashHelfer = true};
 if (!TB_crashHelfer) exitWith {};
 

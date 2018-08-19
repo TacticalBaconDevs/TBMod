@@ -3,7 +3,6 @@
 */
 params [["_input", false, [false]]];
 
-if (isNil "TB_addArztRolle") then {TB_addArztRolle = false};
 if (!TB_addArztRolle && _input) then {TB_addArztRolle = true};
 if (!TB_addArztRolle) exitWith {};
 

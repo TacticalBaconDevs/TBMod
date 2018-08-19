@@ -21,4 +21,5 @@ enableSaving [false, false];
     [] call TB_fnc_extremMedicMode;
     [] call TB_fnc_schauspieler;
     [] spawn TB_fnc_miscStuff;
+    [] call TB_fnc_advSimulationMgr;
 }] call CBA_fnc_addEventHandler;
