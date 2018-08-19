@@ -7,8 +7,7 @@ ace_microdagr_settingUseMils = true;
 TB_lvl3 = ["76561198029318101", /* shukari */
             "76561198053478498", /* Sponst */
             "76561198040057152", /* Culli */
-            "76561198047437015", /* BeLink */
-            "76561198127241859" /* Eric */];
+            "76561198047437015" /* BeLink */];
 TB_lvl2 = ["76561198066861232" /* Darky */];
 
 // Von [14.JgKp]Ben@Arms
