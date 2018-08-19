@@ -10,7 +10,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
  		{
  			systemChat _this;
  		};
- 	};
+ 	}
 ] call CBA_fnc_addEventHandler;
 
 
