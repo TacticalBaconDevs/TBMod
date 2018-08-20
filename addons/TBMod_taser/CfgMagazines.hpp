@@ -10,7 +10,7 @@ class CfgMagazines
         ammo = "TB_ammo_taser";
         author = "TBMod";
         count = 2;
-        descriptionShort = "Taser Magazine<br />Rounds: 2<br />Used in: M1911A1";
+        descriptionShort = "Taser Magazine<br />Rounds: 2<br />Used in: Taser";
         displayName = "Taser Magazine";
         displaynameshort = "Taser Magazine";
     };
