@@ -18,7 +18,6 @@ forEach [
     ["rhsusf_acc_sf3p556", 1.25]    //1.25
 ];
 
-TB_recoilCoef = 1;
 TB_cacheWeaponType = ([currentWeapon player] call BIS_fnc_itemType) select 1;
 TB_recoilFreeze = -1;
 

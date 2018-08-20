@@ -22,5 +22,4 @@ enableSaving [false, false];
 
 if !(call TB_fnc_isTBMission) exitWith {};
 
-TB_crashHelfer = true;
 if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
