@@ -91,5 +91,13 @@ if (_architecture != "x64") then
     nil, 
     nil, 
     nil, 
-    2.5 
+    3 
 ] call ace_interact_menu_fnc_createAction, true] call ace_interact_menu_fnc_addActionToClass;
+
+if (isNil "TB_funkAnim") then {TB_funkAnim = true};
+["TB_funkAnim", "OnTangent", {
+    params ["_unit", "_activRadio", "_isLR", "_additional", "_buttonDown"];
+    
+    if (!TB_funkAnim) exitWith {};
+    player playActionNow (if (_buttonDown) then {(["tb_radioSR", "tb_radioLR"] select _isLR)} else {"tb_radioStop"});
+}, Player] call TFAR_fnc_addEventHandler;

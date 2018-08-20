@@ -148,6 +148,7 @@ class Extended_PreInit_EventHandlers
 #include "CfgFactionClasses.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
+#include "Animations.hpp"
 
 // CBA STUFF
 cba_settings_whitelist[] = {"76561198029318101", "admin"};

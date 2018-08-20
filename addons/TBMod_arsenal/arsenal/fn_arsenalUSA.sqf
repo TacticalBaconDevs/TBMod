@@ -928,6 +928,7 @@ _items append (switch (_rolle) do
             "rhsusf_hgu56p_usa",
             "rhsusf_hgu56p_visor_usa",
             "RHS_jetpilot_usaf",
+            "rhsusf_ihadss",
             
             // Uniform
             "U_B_PilotCoveralls",
