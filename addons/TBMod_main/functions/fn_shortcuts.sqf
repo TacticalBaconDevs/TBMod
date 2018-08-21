@@ -42,18 +42,16 @@ waitUntil {!isNull (findDisplay 46)};
         if (isNull _zeusModule) then {
             if (!isNull (getAssignedCuratorLogic player)) exitWith {systemChat "Du hast bereits einen Zeus!"};
             
-            ["TB_informAdminsandZeus", format["%1 wurde zum Zeus", profileName]] call CBA_fnc_globalEvent;
             ["TB_addZeus", player] call CBA_fnc_serverEvent;
-            systemChat "Zeus erstellt";
             _ret = true;
         }
         else
         {
-            ["TB_informAdminsandZeus", format["%1 ist kein Zeus mehr", profileName]] call CBA_fnc_globalEvent;
             deleteVehicle _zeusModule;
             player setVariable ["TB_Admin_Zeus", nil];
+            ["TB_informAdminsandZeus", format["%1 ist kein Zeus mehr", profileName]] call CBA_fnc_globalEvent;
             systemChat "Zeus gelöscht";
-             _ret = true;
+            _ret = true;
         };
     };
     

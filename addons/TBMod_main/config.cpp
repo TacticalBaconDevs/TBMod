@@ -170,4 +170,13 @@ class TB_RscDisplayGarage: RscDisplayGarage
 class cfgScriptPaths
 {
     TB_Main = "\TBMod_main\functions\";
+    TB_replacement = "\TBMod_main\replacement\";
+};
+class RscDisplayCurator
+{
+    idd = 312;
+    onLoad = "[_this select 0] call Achilles_fnc_onDisplayCuratorLoad;";
+    onUnload = "[_this select 0] call Achilles_fnc_onDisplayCuratorUnload;";
+    scriptName = "RscDisplayCurator";
+    scriptPath = "TB_replacement";
 };

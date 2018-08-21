@@ -75,6 +75,7 @@ if (_architecture != "x64") then
             player setDir _dir;
             player setPos _pos;
         }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+        
         forceRespawn player;
     };
 } forEach allCurators;
@@ -101,3 +102,13 @@ if (isNil "TB_funkAnim") then {TB_funkAnim = true};
     if (!TB_funkAnim) exitWith {};
     player playActionNow (if (_buttonDown) then {(["tb_radioSR", "tb_radioLR"] select _isLR)} else {"tb_radioStop"});
 }, Player] call TFAR_fnc_addEventHandler;
+
+// AddZeus
+[
+    "TB_informAdminsandZeus",
+    {
+        params ["_msg"];
+        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
+            (getPlayerUID player) in TB_lvl3) then {systemChat _msg};
+    }
+] call CBA_fnc_addEventHandler;
