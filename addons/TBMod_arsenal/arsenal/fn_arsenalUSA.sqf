@@ -291,6 +291,8 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
     "hlc_pistol_P226R_357Combat",
+    "TB_weap_taser",
+    "TB_weap_CoolererTaser",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
     "hlc_muzzle_Octane9",
@@ -306,7 +308,9 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
     "hlc_12Rnd_357SIG_B_P226",
-    "hlc_12Rnd_357SIG_JHP_P226"
+    "hlc_12Rnd_357SIG_JHP_P226",
+    "TB_mag_taser",
+    "TB_mag_taser2"
 ];
 
 private _allgemein_uniformen = [

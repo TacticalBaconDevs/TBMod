@@ -36,7 +36,7 @@ if !(_find isEqualTo []) then
     if (_id == 0) then
     {
         player setDir _dir;
-        player setPos _pos;
+        player setPosASL _pos;
     };
     
     if (_id == 1) then
@@ -45,7 +45,7 @@ if !(_find isEqualTo []) then
         {
             systemChat "Nicht möglich, keine lebenden Personen zum Teleporten da, zurück zur alten Pos!";
             player setDir _dir;
-            player setPos _pos;
+            player setPosASL _pos;
         };
     };
     

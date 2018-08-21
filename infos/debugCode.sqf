@@ -3,8 +3,8 @@
     Developed by http://tacticalbacon.de
 */
 // vergleiche configs
-private _first = configfile >> "CfgGesturesMale" >> "States" >> "kka3_Radio01";
-private _second = configfile >> "CfgGesturesMale" >> "States" >> "tb_radio1";
+private _first = configfile >> "CfgGesturesMale" >> "States" >> "tb_radioSR";
+private _second = configfile >> "CfgGesturesMale" >> "States" >> "tb_radioLR";
 private _attribute = [];
 diag_log format ["### Vergleich -> %1 | %2 ###", configName _first, configName _second];
 {_attribute pushBackUnique (configName _x)} forEach (configProperties [_first, "true", true]);

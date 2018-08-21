@@ -22,4 +22,5 @@ enableSaving [false, false];
     [] call TB_fnc_schauspieler;
     [] spawn TB_fnc_miscStuff;
     [] call TB_fnc_advSimulationMgr;
+    [] call TB_fnc_addZeus;
 }] call CBA_fnc_addEventHandler;

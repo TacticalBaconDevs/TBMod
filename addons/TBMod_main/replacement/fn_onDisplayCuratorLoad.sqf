@@ -25,10 +25,11 @@
 #define ALL_ADD_SIDE_IDCS        [IDC_RSCDISPLAYCURATOR_SIDEOPFOR, IDC_RSCDISPLAYCURATOR_SIDEBLUFOR, IDC_RSCDISPLAYCURATOR_SIDEINDEPENDENT, IDC_RSCDISPLAYCURATOR_SIDECIVILIAN, IDC_RSCDISPLAYCURATOR_SIDEEMPTY]
 
 // execute vanilla display curator function
+["onLoad",_this,"RscDisplayCurator","TB_replacement"] call (uinamespace getvariable "BIS_fnc_initDisplay");
 //["onLoad",_this,"RscDisplayCurator","CuratorDisplays"] call (uinamespace getvariable "BIS_fnc_initDisplay");
 
-RscDisplayCurator_script = Achilles_fnc_RscDisplayCurator;
-["onLoad", [_this select 0]] call RscDisplayCurator_script;
+//RscDisplayCurator_script = Achilles_fnc_RscDisplayCurator;
+//["onLoad", [_this select 0]] call RscDisplayCurator_script;
 
 // custom stacked curator display event handler
 ["Achilles_onLoadCuratorInterface", _this, player] call CBA_fnc_targetEvent;

@@ -1,3 +1,24 @@
+### 1.1.1 (21.08.18)
+- TB Arsenal
+    - USA Arsenal
+        - Gruppenaufklärer Munition fehlte
+        - IHADSS Helm für AH-64D Piloten
+        - zwei neue Taserpistolen + Munition
+- TB Nachschub
+    - USA Nachschub
+        - es heißt nun SpezialMunition statt Spezial
+            - es gibt nun 15 statt 3 Magazine
+- TB Main
+    - Zeus repariert
+    - der Zeus kann vom Genstab wieder wären des Spiels erstellt werden ALT + ENDE
+    - Magie wenn man LR und SR funkt
+    - enige Anpassungen für den Flugzeugträger fürs setzen der Position
+- TB Taser
+    - neuer Mod der zwei Taserpistolen hinzufügt
+    - warten auf euer Feedback
+    - Trolling damit wird, wenn nicht abgesprochen mit einem Strike bestraft
+
+
 ### 1.1.0 (16.08.18)
 INFO: Dieser Release wurde möglich gemacht durch: Eric, Eron und BenZockt
 - TB ADVSlingLoad

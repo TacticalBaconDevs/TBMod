@@ -10,8 +10,8 @@ addMissionEventHandler ["HandleDisconnect",
 {
     params ["_unit", "", "_uid", ""];
     
-    private _pos = getPos _unit;
-    _pos set [2, 0.5];
+    private _pos = getPosASL _unit;
+    _pos set [2, (_pos select 2) + 0.5];
     
     private _array = [
             _uid,

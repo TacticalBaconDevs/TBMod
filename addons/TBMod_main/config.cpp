@@ -6,9 +6,9 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
-        version = 1.1.0;
-        versionStr = "1.1.0";
-        versionAr[] = {1,1,0};
+        version = 1.1.1;
+        versionStr = "1.1.1";
+        versionAr[] = {1,1,1};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -170,4 +170,13 @@ class TB_RscDisplayGarage: RscDisplayGarage
 class cfgScriptPaths
 {
     TB_Main = "\TBMod_main\functions\";
+    TB_replacement = "\TBMod_main\replacement\";
+};
+class RscDisplayCurator
+{
+    idd = 312;
+    onLoad = "[_this select 0] call Achilles_fnc_onDisplayCuratorLoad;";
+    onUnload = "[_this select 0] call Achilles_fnc_onDisplayCuratorUnload;";
+    scriptName = "RscDisplayCurator";
+    scriptPath = "TB_replacement";
 };
