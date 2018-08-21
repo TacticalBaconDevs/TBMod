@@ -6,9 +6,9 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
-        version = 1.1.0;
-        versionStr = "1.1.0";
-        versionAr[] = {1,1,0};
+        version = 1.1.1;
+        versionStr = "1.1.1";
+        versionAr[] = {1,1,1};
         versionDesc = "TBMod";
         versionAct = "";
 
