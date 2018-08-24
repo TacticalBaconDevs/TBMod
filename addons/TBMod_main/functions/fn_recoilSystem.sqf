@@ -56,7 +56,7 @@ TB_recoilID = ["ace_firedPlayer", {
         if (_silencer != "" && {!(toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"])}) then {_recoil = _recoil - 0.1};
         
         // Grip
-        if (_bipod != "" && _bipod != "rhsusf_acc_harris_bipod") then {_recoil = _recoil - 0.1};
+        if (_bipod != "" && !_deploy && _bipod != "rhsusf_acc_harris_bipod") then {_recoil = _recoil - 0.1};
     };
     
     if (_weapon == handgunWeapon _unit) then
@@ -66,6 +66,7 @@ TB_recoilID = ["ace_firedPlayer", {
         if (_silencer != "") then {_recoil = _recoil - 0.1};
     };
     
+    TB_debug_recoil = _recoil;
     _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
     
     TB_recoilFreeze = diag_tickTime + 2;
