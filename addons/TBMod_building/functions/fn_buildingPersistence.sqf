@@ -8,7 +8,7 @@ if !(_number in [1,2,3,4,5]) exitWith {systemChat "Wähle einen Slot zwischen 1-
 // getten
 if (_save) then
 {
-    if (isNil "TB_persistent_buildings") exitWith {systemChat "Nichts zum Dauerspeichern verfügbar!"};
+    if (isNil "TB_persistent_buildings") exitWith {profileNamespace setVariable [format ["TB_persistent_buildings_%1", _number], []]; systemChat "Nichts zum Dauerspeichern verfügbar!";};
     private _array = [];
     
     {
@@ -20,7 +20,7 @@ if (_save) then
     
     profileNamespace setVariable [format ["TB_persistent_buildings_%1", _number], _array];
     
-    systemChat format ["Es wurde alles in Slot %1 gespeichert!", _number];
+    systemChat format ["(TBMod_building) Es wurde alles in Slot %1 gespeichert!", _number];
 }
 else //laden
 {
@@ -87,5 +87,5 @@ else //laden
     
     publicVariable "TB_persistent_buildings";
     
-    systemChat format ["Es wurde alles aus Slot %1 geladen!", _number];
+    systemChat format ["(TBMod_building) Es wurde alles aus Slot %1 geladen!", _number];
 };
