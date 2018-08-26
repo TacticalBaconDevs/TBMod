@@ -258,36 +258,36 @@ if (_save) then {
     uiSleep 2;
     //Teleport players
     {
-        private _find = [TB_disconnectCache, getPlayerUID player] call BIS_fnc_findNestedElement;
+        private _find = [TB_disconnectCache, getPlayerUID _x] call BIS_fnc_findNestedElement;
         if !(_find isEqualTo []) then
         {
             (TB_disconnectCache select (_find select 0)) params ["_uid", "_gear", "_pos", "_dir", "_arsenalType", "_rolle", "_group", "_team"];
     
-            [player] joinSilent _group;
+            [_x] joinSilent _group;
     
             if !(_rolle isEqualTo "" || _arsenalType isEqualTo "") then {
-                player setVariable ["TB_arsenalType", _arsenalType, true];
+                _x setVariable ["TB_arsenalType", _arsenalType, true];
                 [[_rolle, _arsenalType, objNull, false],[]] remoteExec ["TB_fnc_changeRolle",_x];
                 //[_rolle, _arsenalType, objNull, false] call TB_fnc_changeRolle;//TODO locality
             };
 
-            player setUnitLoadout _gear;
+            _x setUnitLoadout _gear;
     
     
-            player setVariable ["TB_team", _team, true];
-            player assignTeam _team;    
+            _x setVariable ["TB_team", _team, true];
+            _x assignTeam _team;    
     
-            //player allowDamage false;//TODO locality
-            [player, false] remoteExec ["allowDamage", _x];
+            //_x allowDamage false;//TODO locality
+            [_x, false] remoteExec ["allowDamage", _x];
 
-            player setDir _dir;
-            player setPosASL _pos;
+            _x setDir _dir;
+            _x setPosASL _pos;
     
             _x spawn
             {
                 uiSleep 10;
-                [player, true] remoteExec ["allowDamage", _this];
-                //player allowDamage true;//TODO locality
+                [_x, true] remoteExec ["allowDamage", _this];
+                //_x allowDamage true;//TODO locality
             };
         };
     } forEach allPlayers;
