@@ -286,7 +286,7 @@ if (_save) then {
             _x spawn
             {
                 uiSleep 10;
-                [_x, true] remoteExec ["allowDamage", _this];
+                [_this, true] remoteExec ["allowDamage", _this];
                 //_x allowDamage true;//TODO locality
             };
         };
