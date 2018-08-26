@@ -10,33 +10,6 @@ if (isNil "_save") exitWith {
     profileNamespace setVariable [format ["TB_persistence_%1", _number], nil];
 };
 
-TB_fnc_cargo = {
-    params ["_save", "_vehicle", "_value"];
-    
-    if (_save) then {
-        [
-            getBackpackCargo _vehicle,
-            getItemCargo _vehicle,
-            getMagazineCargo _vehicle,
-            getWeaponCargo _vehicle
-        ]
-    } else {
-        _value params ["_backpack", "_item", "_mags", "_items"];
-        {
-            _vehicle addBackpackCargoGlobal [_x, (_backpack select 1) select _forEachIndex];
-        } forEach (_backpack select 0);
-        {
-            _vehicle addItemCargoGlobal [_x, (_item select 1) select _forEachIndex];
-        } forEach (_item select 0);
-        {
-            _vehicle addMagazineCargoGlobal [_x, (_mags select 1) select _forEachIndex];
-        } forEach (_mags select 0);
-        {
-            _vehicle addItemCargoGlobal [_x, (_items select 1) select _forEachIndex];
-        } forEach (_items select 0);
-    };
-};
-
 if (_save) then {
 
 
@@ -77,7 +50,9 @@ if (_save) then {
         TB_disconnectCache,
         [],     // Markers
         [],     // Vehicles
-        []      // Objects
+        [],     // Objects
+        [],     // Named Vehicles
+        []      // Named Objects
     ];
 
 
@@ -99,12 +74,10 @@ if (_save) then {
         };
     } forEach allMapMarkers;
 
-    private _blacklist = [];
 
     {
 
         private _veh = _x;
-        _blacklist pushBackUnique (typeOf _veh);
         private _ammo = [];
         private _pylonMags = [];
         {
@@ -126,10 +99,41 @@ if (_save) then {
             fuel _veh,
             [side _veh, (crew _veh) apply {typeOf _x}]
         ];
-    } forEach vehicles;
+    } forEach (vehicles select {str _x find "p3d" != -1});  //unnamed
 
     {
-        if(isnil {_x getVariable "TB_building_addInfos"} && !((typeOf _x) in _blacklist)) then{// TB_building exclude //Double Objects removal from vehicles
+
+        private _veh = _x;
+        private _ammo = [];
+        private _pylonMags = [];
+        {
+            _pylonMags pushBack (getText (configFile >> "CfgVehicles" >> (typeOf _veh) >> "Components" >> "TransportPylonsComponent" >> "Pylons" >> (configName _x) >> "attachment"));
+        } forEach (configProperties [configFile >> "CfgVehicles" >> (typeOf _veh) >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]);
+
+        {
+            if !((_x select 0) in _pylonMags) then {_ammo pushBack [_x select 0, _x select 2, _x select 1]};
+        } forEach (magazinesAllTurrets _x);
+        
+        (_saveArray select 4) pushBack [
+            typeOf _veh,
+            getPosASL _veh,
+            getDir _veh,
+            [true, _veh] call TB_fnc_cargo,
+            (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _veh] call TB_fnc_cargo]},
+            if ((getAllHitPointsDamage _veh) isEqualTo []) then {[]} else {[(getAllHitPointsDamage _veh) select 0, (getAllHitPointsDamage _veh) select 2]},
+            _ammo,
+            fuel _veh,
+            [side _veh, (crew _veh) apply {typeOf _x}],
+            str _x
+        ];
+    } forEach (vehicles select {str _x find "p3d" == -1}); //named
+
+    private _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {str _x find "p3d" != -1 && !(_x in vehicles)};
+    _objectarray = _objectarray apply {[(getPosASL _X) select 2, _x]};
+    _objectarray sort true;
+    _objectarray= _objectarray apply {_x select 1};
+    {
+        if(isnil {_x getVariable "TB_building_addInfos"} && !(_x in vehicles)) then{// TB_building exclude //Double Objects removal from vehicles
             (_saveArray select 3) pushBack [
                 typeOf _x,
                 getPosASL _x,
@@ -137,8 +141,24 @@ if (_save) then {
                 simulationEnabled _x
             ];
         };
-    } forEach ((allMissionObjects "Thing") + (allMissionObjects "Static"));
-    
+    } forEach _objectarray;
+
+    _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {str _x find "p3d" == -1 && !(_x in vehicles)};
+    _objectarray = _objectarray apply {[(getPosASL _X) select 2, _x]};
+    _objectarray sort true;
+    _objectarray= _objectarray apply {_x select 1};
+    {
+        if(isnil {_x getVariable "TB_building_addInfos"} && !(_x in vehicles)) then{// TB_building exclude //Double Objects removal from vehicles
+            (_saveArray select 5) pushBack [
+                typeOf _x,
+                getPosASL _x,
+                getDir _x,
+                simulationEnabled _x,
+                str _x
+            ];
+        };
+    } forEach _objectarray;
+
     profileNamespace setVariable [format ["TB_persistence_%1", _number], _saveArray];
     systemChat format ["(TBMod_main) Es wurde alles in Slot %1 gespeichert!", _number];
 
@@ -151,9 +171,9 @@ if (_save) then {
             deleteVehicle _x;
         } forEach (crew _x);
         deleteVehicle _x;
-    } forEach vehicles;
+    } forEach (vehicles select {str _x find "p3d" != -1});
 
-    {deleteVehicle _x} forEach ((allMissionObjects "Thing") + (allMissionObjects "Static"));
+    {deleteVehicle _x} forEach (((allMissionObjects "Static") + (allMissionObjects "Thing")) select {str _x find "p3d" != -1 && !(_x in vehicles)});
     {
         if ((_x select [0, 13]) == "_USER_DEFINED") then {
             deleteMarker _x;
@@ -177,7 +197,90 @@ if (_save) then {
         _newMarker setMarkerText _text;
     } forEach (_loadArray select 1);
     
+    uiSleep 2;
+
+    {
+        _x params ["_classname", "_pos", "_dir", "_sim"];
+        
+        private _obj = createVehicle [_classname, [0, 0, 0], [], 0, "CAN_COLLIDE"];
+        
+        _obj setDir _dir;
+        _obj setPosASL _pos;
+
+        if (!_sim) then
+        {
+            _obj enableSimulation false;
+            [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
+        };
+
+        // Medic
+        if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F"]) then
+        {
+            _obj setVariable ["ace_medical_isMedicalFacility", true, true];
+        };
+        
+        // Antenne
+        if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
+        {
+            [_obj, 10000] call TFAR_antennas_fnc_initRadioTower;
+        };
+        
+        // Antenne
+        if ((typeOf _obj) in ["Land_BarGate_F"]) then
+        {
+            [_obj, false] remoteExecCall ["allowDamage", _obj];
+        };
+        
+        // Repair
+        if ((typeOf _obj) in ["B_Slingload_01_Repair_F"]) then
+        {
+            _obj enableRopeAttach false;
+        };
+        
+    } forEach (_loadArray select 3);
     
+    uiSleep 2;
+
+    {
+        _x params ["_classname", "_pos", "_dir", "_sim", "_name"];
+        
+       private _obj = missionNamespace getVariable [_name, objNull];
+        
+        _obj setDir _dir;
+        _obj setPosASL _pos;
+
+        if (!_sim) then
+        {
+            _obj enableSimulation false;
+            [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
+        };
+
+        // Medic
+        if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F"]) then
+        {
+            _obj setVariable ["ace_medical_isMedicalFacility", true, true];
+        };
+        
+        // Antenne
+        if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
+        {
+            [_obj, 10000] call TFAR_antennas_fnc_initRadioTower;
+        };
+        
+        // Antenne
+        if ((typeOf _obj) in ["Land_BarGate_F"]) then
+        {
+            [_obj, false] remoteExecCall ["allowDamage", _obj];
+        };
+        
+        // Repair
+        if ((typeOf _obj) in ["B_Slingload_01_Repair_F"]) then
+        {
+            _obj enableRopeAttach false;
+        };
+        
+    } forEach (_loadArray select 5);
+
     uiSleep 2;
     {
         _x params ["_class", "_pos", "_dir", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew"];
@@ -215,45 +318,43 @@ if (_save) then {
         } forEach (_crew select 1);
     } forEach (_loadArray select 2);
 
+    uiSleep 2;
     {
-        _x params ["_classname", "_pos", "_dir", "_sim"];
+        _x params ["_class", "_pos", "_dir", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew", "_name"];
         
-        private _obj = createVehicle [_classname, [0, 0, 0], [], 0, "NONE"];
+        private _vehicle = missionNamespace getVariable [_name, objNull];
+        _vehicle setDir _dir;
+        _vehicle setPosASL _pos;
+        [false, _vehicle, _vanillaCargo] call TB_fnc_cargo;
         
-        _obj setDir _dir;
-        _obj setPosASL _pos;
+        {
+            private _ammoChest = createVehicle [_x select 0, [0,0,0], [], 0, "CAN_COLLIDE"];
+            _ammoChest attachTo [_vehicle, [0,0,-100]];
+            [false, _ammoChest, _x select 1] call TB_fnc_cargo;
+            
+            [_ammoChest, _vehicle, true] call ace_cargo_fnc_loadItem;
+        } forEach _aceCargo;
+        
+        if !(_dmg isEqualTo []) then {
+            {
+                _vehicle setHitPointDamage [_x, (_dmg select 1) select _forEachIndex];
+            } forEach (_dmg select 0);
+        };
+        
+        {
+            _vehicle setMagazineTurretAmmo _x;
+        } forEach _ammo;
 
-        if (!_sim) then
+        _vehicle setFuel _fuel;
+        
+        private _grp = grpNull;
         {
-            _obj enableSimulation false;
-            [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
-        };
+            if (isNull _grp) then {_grp = createGroup (_crew select 0)};
+            private _unit = _grp createUnit [_x, [0,0,0], [], 0, "CAN_COLLIDE"];
+            _unit moveInAny _vehicle;
+        } forEach (_crew select 1);
+    } forEach (_loadArray select 4); //Named Vehicles
 
-        // Medic
-        if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F"]) then
-        {
-            _obj setVariable ["ace_medical_isMedicalFacility", true, true];
-        };
-        
-        // Antenne
-        if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
-        {
-            [_obj, 10000] call TFAR_antennas_fnc_initRadioTower;
-        };
-        
-        // Antenne
-        if ((typeOf _obj) in ["Land_BarGate_F"]) then
-        {
-            [_obj, false] remoteExecCall ["allowDamage", _obj];
-        };
-        
-        // Repair
-        if ((typeOf _obj) in ["B_Slingload_01_Repair_F"]) then
-        {
-            _obj enableRopeAttach false;
-        };
-        
-    } forEach (_loadArray select 3);
 
     uiSleep 2;
     //Teleport players
@@ -267,7 +368,7 @@ if (_save) then {
     
             if !(_rolle isEqualTo "" || _arsenalType isEqualTo "") then {
                 _x setVariable ["TB_arsenalType", _arsenalType, true];
-                [[_rolle, _arsenalType, objNull, false],[]] remoteExec ["TB_fnc_changeRolle",_x];
+                [_rolle, _arsenalType, objNull, false] remoteExec ["TB_fnc_changeRolle",_x];
                 //[_rolle, _arsenalType, objNull, false] call TB_fnc_changeRolle;//TODO locality
             };
 

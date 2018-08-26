@@ -36,6 +36,7 @@ class CfgFunctions
             class miscStuff {};
             class persistence {};
             class advSimulationMgr {};
+            class cargo {};
         };
         
         class gcam
