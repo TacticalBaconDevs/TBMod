@@ -54,4 +54,19 @@ class CfgFunctions
             //class RscDisplayCurator {file = "\TBMod_main\replacement\fn_RscDisplayCurator.sqf";};
         };
     };
+    
+    // REPLACEMENT - Experiment
+    class A3_Modules
+    {
+        tag = "BIS";
+        project = "arma3";
+        
+        class Environment
+        {
+            class moduleEditTerrainObject
+            {
+                file = "\TBMod_main\replacement\init.sqf";
+            };
+        };
+    };
 };

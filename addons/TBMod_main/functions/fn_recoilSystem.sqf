@@ -39,12 +39,12 @@ TB_recoilID = ["ace_firedPlayer", {
     private _deploy = isWeaponDeployed _unit;
     
     // Spezielle WaffenStats
-    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([2, 0] select _deploy)};
-    if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {_recoil = _recoil - 1};
+    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([3, 1.5] select _deploy)};
+    if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {_recoil = _recoil - 0.5};
     
     // Externe Einflüsse
-    if (isWeaponRested _unit) then {_recoil = _recoil - 0.3};
-    if (_deploy) then {_recoil = _recoil - 0.6};
+    if (isWeaponRested _unit) then {_recoil = _recoil - 0.1};
+    if (_deploy) then {_recoil = _recoil - 0.2};
     
     // Waffen Einflüsse
     if (_weapon == primaryWeapon _unit) then
@@ -52,21 +52,22 @@ TB_recoilID = ["ace_firedPlayer", {
         (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
         
         // silencer
-        if (_mode == "Single" && {toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"]}) then {_recoil = _recoil - 0.6};
-        if (_silencer != "" && {!(toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"])}) then {_recoil = _recoil - 0.4};
+        if (_mode == "Single" && {toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"]}) then {_recoil = _recoil - 0.2};
+        if (_silencer != "" && {!(toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"])}) then {_recoil = _recoil - 0.1};
         
         // Grip
-        if (_bipod != "" && _bipod != "rhsusf_acc_harris_bipod") then {_recoil = _recoil - 0.5};
+        if (_bipod != "" && !_deploy && _bipod != "rhsusf_acc_harris_bipod") then {_recoil = _recoil - 0.1};
     };
     
     if (_weapon == handgunWeapon _unit) then
     {
         (handgunItems _unit) params ["_silencer", "", "", "_bipod"];
         
-        if (_silencer != "") then {_recoil = _recoil - 0.3};
+        if (_silencer != "") then {_recoil = _recoil - 0.1};
     };
     
-    _unit setUnitRecoilCoefficient (_recoil * TB_recoilCoef);
+    TB_debug_recoil = _recoil;
+    _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
     
     TB_recoilFreeze = diag_tickTime + 2;
 }] call CBA_fnc_addEventHandler;
