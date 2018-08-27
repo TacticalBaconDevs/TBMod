@@ -36,6 +36,8 @@ class CfgFunctions
             class miscStuff {};
             class persistence {};
             class advSimulationMgr {};
+            class sitAI {};
+            class animationAI {};
         };
         
         class gcam
