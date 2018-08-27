@@ -99,7 +99,7 @@ if (_save) then {
             fuel _veh,
             [side _veh, (crew _veh) apply {typeOf _x}]
         ];
-    } forEach (vehicles select {str _x find "p3d" != -1});  //unnamed
+    } forEach (vehicles select {vehicleVarName _x == ""});  //unnamed
 
     {
 
@@ -124,16 +124,16 @@ if (_save) then {
             _ammo,
             fuel _veh,
             [side _veh, (crew _veh) apply {typeOf _x}],
-            str _x
+            vehicleVarName _x
         ];
-    } forEach (vehicles select {str _x find "p3d" == -1}); //named
+    } forEach (vehicles select {vehicleVarName _x != ""}); //named
 
-    private _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {str _x find "p3d" != -1 && !(_x in vehicles)};
+    private _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {vehicleVarName _x == "" && !(_x in vehicles)};
     _objectarray = _objectarray apply {[(getPosASL _X) select 2, _x]};
     _objectarray sort true;
     _objectarray= _objectarray apply {_x select 1};
     {
-        if(isnil {_x getVariable "TB_building_addInfos"} && !(_x in vehicles)) then{// TB_building exclude //Double Objects removal from vehicles
+        if(isnil {_x getVariable "TB_building_addInfos"}) then{// TB_building exclude //Double Objects removal from vehicles
             (_saveArray select 3) pushBack [
                 typeOf _x,
                 getPosASL _x,
@@ -143,18 +143,18 @@ if (_save) then {
         };
     } forEach _objectarray;
 
-    _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {str _x find "p3d" == -1 && !(_x in vehicles)};
+    _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {vehicleVarName _x != ""  && !(_x in vehicles)};
     _objectarray = _objectarray apply {[(getPosASL _X) select 2, _x]};
     _objectarray sort true;
     _objectarray= _objectarray apply {_x select 1};
     {
-        if(isnil {_x getVariable "TB_building_addInfos"} && !(_x in vehicles)) then{// TB_building exclude //Double Objects removal from vehicles
+        if(isnil {_x getVariable "TB_building_addInfos"}) then{// TB_building exclude 
             (_saveArray select 5) pushBack [
                 typeOf _x,
                 getPosASL _x,
                 getDir _x,
                 simulationEnabled _x,
-                str _x
+                vehicleVarName _x
             ];
         };
     } forEach _objectarray;
@@ -165,15 +165,30 @@ if (_save) then {
     [true, _number] spawn TB_fnc_buildingPersistence;
 } else {
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _number], [[], [], [], []]];
-    
+    private _tempSimulationdisabled = [];
+
     {
         {
             deleteVehicle _x;
         } forEach (crew _x);
         deleteVehicle _x;
-    } forEach (vehicles select {str _x find "p3d" != -1});
+    } forEach (vehicles select {vehicleVarName _x == ""});
 
-    {deleteVehicle _x} forEach (((allMissionObjects "Static") + (allMissionObjects "Thing")) select {str _x find "p3d" != -1 && !(_x in vehicles)});
+    {
+        if (simulationEnabled _x) then {
+            [_x, false] remoteExecCall ["enableSimulationGlobal", 2];
+            _tempSimulationdisabled pushBack _x;
+        };
+    } forEach (vehicles select {vehicleVarName _x != ""});
+
+    {
+        if (simulationEnabled _x) then {
+            [_x, false] remoteExecCall ["enableSimulationGlobal", 2];
+            _tempSimulationdisabled pushBack _x;
+        };
+    } forEach (((allMissionObjects "Static") + (allMissionObjects "Thing")) select {vehicleVarName _x != "" && !(_x in vehicles)});
+
+    {deleteVehicle _x} forEach (((allMissionObjects "Static") + (allMissionObjects "Thing")) select {vehicleVarName _x == "" && !(_x in vehicles)});
     {
         if ((_x select [0, 13]) == "_USER_DEFINED") then {
             deleteMarker _x;
@@ -209,7 +224,6 @@ if (_save) then {
 
         if (!_sim) then
         {
-            _obj enableSimulation false;
             [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
         };
 
@@ -251,7 +265,6 @@ if (_save) then {
 
         if (!_sim) then
         {
-            _obj enableSimulation false;
             [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
         };
 
@@ -285,8 +298,9 @@ if (_save) then {
     {
         _x params ["_class", "_pos", "_dir", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew"];
         
-        private _vehicle = createVehicle [_class, [0,0,0], [], 0, "CAN_COLLIDE"];
+        private _vehicle = createVehicle [_class, [0,0,1000], [], 0, "CAN_COLLIDE"];
         _vehicle setDir _dir;
+        
         _vehicle setPosASL _pos;
         [false, _vehicle, _vanillaCargo] call TB_fnc_cargo;
         
@@ -324,6 +338,10 @@ if (_save) then {
         
         private _vehicle = missionNamespace getVariable [_name, objNull];
         _vehicle setDir _dir;
+        if(_vehicle in _tempSimulationdisabled) then {
+            _pos set [2, (_pos select 2) + 0.5];
+        };
+        
         _vehicle setPosASL _pos;
         [false, _vehicle, _vanillaCargo] call TB_fnc_cargo;
         
@@ -355,6 +373,11 @@ if (_save) then {
         } forEach (_crew select 1);
     } forEach (_loadArray select 4); //Named Vehicles
 
+    uiSleep 2;
+
+    {
+        [_x, true] remoteExecCall ["enableSimulationGlobal", 2];
+    } forEach _tempSimulationdisabled;
 
     uiSleep 2;
     //Teleport players
