@@ -10,9 +10,6 @@ private _mode = param [0,"",[""]];
 private _input = param [1,[],[[]]];
 private _module = _input param [0,objNull,[objNull]];
 
-diag_log format ["DEBUG-START1 -> %1", _this];
-diag_log format ["DEBUG-START2 -> %1 - %2", profileName, clientOwner];
-
 /*
 if (_mode != "eh_draw3d") then
 {
@@ -181,21 +178,15 @@ switch _mode do
 
         if (!is3DEN) then
         {
-            diag_log format ["DEBUG-(!is3DEN)1 -> %1", _this];
-        
             //get parent buidling
             private _building = ["getBuilding",[_module]] call bis_fnc_moduleEditTerrainObject;
             if (isNull _building) exitWith {};
-            diag_log format ["DEBUG-(!is3DEN)2 -> %1", _building];
-
+            
             //set door states
             private _doorFlags = ["decodeDoorFlags",[_module]] call bis_fnc_moduleEditTerrainObject;
             _building setVariable ["#doorFlags", _doorFlags];
-            diag_log format ["DEBUG-(!is3DEN)3 -> %1", _doorFlags];
-
+            
             {
-                diag_log format ["DEBUG-(!is3DEN)4 -> %1", [_building,_forEachIndex,_x]];
-
                 _building setVariable [format ["bis_disabled_door_%1", _forEachIndex + 1], [0,1,0] select _x, true];
                 [_building, [format ["door_%1_sound_source", _forEachIndex + 1], [0,0,1] select _x, true]] remoteExec ["animateSource"];
                 _building animateSource [format ["door_%1_noSound_source", _forEachIndex + 1], [0,0,1] select _x, true];
@@ -504,8 +495,6 @@ switch _mode do
 
     case "getBuilding":
     {
-        diag_log format ["DEBUG-getBuilding1 -> %1", _this];
-        
         private _filter = _module getVariable ["#filter",0];
         private _filterFlags = _filter call bis_fnc_decodeFlags2;
         private _objectMapTypes = [];
@@ -518,20 +507,19 @@ switch _mode do
         }
         forEach _filterFlags;
 
-        diag_log format ["DEBUG-getBuilding2 -> %1", _objectMapTypes];
         if (count _objectMapTypes == 0) exitWith {objNull};
 
         private _buildings = nearestTerrainObjects [_module,_objectMapTypes,DISTANCE_DETECTION,true,true];
-        diag_log format ["DEBUG-getBuilding3 -> %1", _buildings];
+        
         //get nearest building in DISTANCE_DETECTION that is not hidden
         _buildings = _buildings select {_x distance2D _module < DISTANCE_DETECTION};
-        diag_log format ["DEBUG-getBuilding4 -> %1", _buildings];
+        
         //filter out buildings that are already managed by other 'EditTerrainObject' modules
         _buildings = _buildings select {_m = GET_OBJVAR(_x,"#managedBy",objNull); isNull _m || {_module == _m}};
-        diag_log format ["DEBUG-getBuilding5 -> %1", _buildings];
+        
         //use 1st object
         private _selected = _buildings param [0,objNull];
-        diag_log format ["DEBUG-getBuilding6 -> %1", _selected];
+        
         _selected
     };
 
