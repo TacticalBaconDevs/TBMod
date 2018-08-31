@@ -39,7 +39,7 @@ class CfgFunctions
             class cargo {};
             class sitAI {};
             class animationAI {};
-
+            class clearCache {};
         };
         
         class gcam
