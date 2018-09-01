@@ -1,5 +1,5 @@
 /*
-  SHK_pos - Random position generator for Arma 2
+  TB_EOS_fnc_shk_pos - Random position generator for Arma 2
   Author: Shuko (IRC: shuko@quakenet, Email: miika@miikajarvinen.fi)
   Version: 0.1
   
@@ -8,8 +8,8 @@
     Water             Boolean             Allow position on water? Optional, default is false.
   
   Usage examples:
-    myPos = ["markerName"] execvm "SHK_pos.sqf";
-    myPos = ["myMarker1",true] execvm "SHK_pos.sqf";
+    myPos = ["markerName"] execvm "TB_EOS_fnc_shk_pos.sqf";
+    myPos = ["myMarker1",true] execvm "TB_EOS_fnc_shk_pos.sqf";
     
   Parameters for relative position:
     Point of Origin   Position array      The position from which direction and distance is calculated from.
@@ -30,14 +30,14 @@
       If no integer is given, solution 1 is used by default.
   
   Usage examples:
-    myPos = [getpos player,random 360,200,true] execvm "SHK_pos.sqf";
-    myPos = [getmarkerpos "myMarker",125,random 500] execvm "SHK_pos.sqf";
-    myPos = [getpos player,random 360,[200,500],false,2] execvm "SHK_pos.sqf";
+    myPos = [getpos player,random 360,200,true] execvm "TB_EOS_fnc_shk_pos.sqf";
+    myPos = [getmarkerpos "myMarker",125,random 500] execvm "TB_EOS_fnc_shk_pos.sqf";
+    myPos = [getpos player,random 360,[200,500],false,2] execvm "TB_EOS_fnc_shk_pos.sqf";
   
   Example of creating multiple positions:
-    SHK_pos = compile preprocessfile "SHK_pos.sqf";
+    TB_EOS_fnc_shk_pos = compile preprocessfile "TB_EOS_fnc_shk_pos.sqf";
     for "_i" from 0 to 500 do {
-      _p = [getpos player,random 360,random 1000] call SHK_pos;
+      _p = [getpos player,random 360,random 1000] call TB_EOS_fnc_shk_pos;
       if (count _p > 0) then {
         call compile format ["
         _m%1 = createMarker[""mySpot%1"",[_p select 0,_p select 1]];

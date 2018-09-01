@@ -4,5 +4,5 @@
 class CfgFunctions
 {
     #include "LV\CfgFunctions.hpp"
-    //#include "eos\CfgFunctions.hpp"
+    #include "eos\CfgFunctions.hpp"
 };

@@ -1,0 +1,2 @@
+- server nicht mehr logic
+- EOS_DAMAGE_MULTIPLIER weg1

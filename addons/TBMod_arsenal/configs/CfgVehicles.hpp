@@ -15,7 +15,7 @@ class CfgVehicles
             displayName = ""; \
             condition = "!('ROLLEN_NAME' in TB_blacklistRollen)"; \
             modifierFunction = "[_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname"; \
-            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;"; \
+            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle"; \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define MAKE_PUBLIC(D_NAME,A_TYPE) displayName = #D_NAME; \
