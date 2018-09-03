@@ -1,2 +1,1 @@
-- server nicht mehr logic
-- EOS_DAMAGE_MULTIPLIER weg1
+- Heli und LKW nicht dem Fahrzeug hinterherlaufen

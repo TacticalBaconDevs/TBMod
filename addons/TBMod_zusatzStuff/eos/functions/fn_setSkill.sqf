@@ -1,6 +1,6 @@
 params ["_grp", "_skillArray"];
 
-private _skillset = server getVariable _skillArray;
+private _skillset = tb_server getVariable _skillArray;
 {
     private _unit = _x;
     {

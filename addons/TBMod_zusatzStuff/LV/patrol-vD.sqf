@@ -82,7 +82,7 @@ while {alive _unit} do {
                     _bPoss = [];
                     _i = 0;
                     while { ((_building buildingPos _i) select 0) != 0 } do {
-                        _bPoss set [count (_bPoss), (_building buildingPos _i)];
+                        _bPoss pushBack (_building buildingPos _i);
                         _i = _i + 1;
                     };
                     //hint format["%1",(count _bPoss)];
