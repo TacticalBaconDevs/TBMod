@@ -3,6 +3,6 @@
 */
 class CfgFunctions
 {
-    #include "LV\CfgFunctions.hpp"
-    //#include "eos\CfgFunctions.hpp"
+    // #include "LV\CfgFunctions.hpp"
+    #include "eos\CfgFunctions.hpp"
 };

@@ -94,7 +94,7 @@ if isserver then {
   {
     private ["_i","_p"];
     for [{_i = 0;_p = _x buildingpos _i},{str _p != "[0,0,0]"},{_i = _i + 1;_p = _x buildingpos _i}] do {
-      _bpos set [count _bpos,_p];
+      _bpos pushBack _p;
     };
   } foreach (nearestObjects [_opos, ["Building"], _rad]);
 
@@ -116,7 +116,7 @@ if isserver then {
       _max = (_this select 4) select 1;
       {
         _h = _x select 2;
-        if (_h >= _min && _h <= _max) then { _tmp set [count _tmp,_x] };
+        if (_h >= _min && _h <= _max) then {_tmp pushBack _x};
       } foreach _bpos;
       _bpos = _tmp;
     };
@@ -140,7 +140,7 @@ if isserver then {
         case 2: { _ind = count _bpos - count _taken - 1 }; // roof first
       };
       if !(_ind in _taken) exitwith {
-        _taken set [count _taken,_ind];
+        _taken pushBack _ind;
         _pos = _bpos select _ind;
         _dir = ((_pos select 0) - (_opos select 0)) atan2 ((_pos select 1) - (_opos select 1));
         if (_dir < 0) then {_dir = _dir + 360};
@@ -182,7 +182,7 @@ if (count _this > 7) then {
     
     for "_i" from 0 to (_portition - 1) do {
       _u = _men select _i;
-      _hidden set [count _hidden, _u];
+      _hidden pushBack  _u;
     };
 
     SHK_BuildingPos_EH = [true,_hidden];

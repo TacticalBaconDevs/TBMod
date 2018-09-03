@@ -409,7 +409,7 @@ tpw_soap_fnc_mosquescan =
         _mosque = _nearhouses select _i;
         if (["osque",str typeof _mosque] call BIS_fnc_inString) then 
             {
-            _nearmosques set [count _nearmosques,_mosque];
+            _nearmosques pushBack _mosque;
             };
         };
     _nearmosques = [_nearmosques,[],{player distance _x},"ASCEND"] call BIS_fnc_sortBy;
