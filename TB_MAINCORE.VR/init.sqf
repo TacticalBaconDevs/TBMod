@@ -49,27 +49,25 @@ TB_blacklistRollen = [];
     false
 }
 count ["lead","grena","sani","mg","spreng","aaat","trag","dmr","pilot","sniper","spotter","jtac","arzt","rifle","pionier"];
-if (count TB_blacklistRollen == 15) then {
-    TB_blacklistRollen = [];
+if (count TB_blacklistRollen == 15) then {TB_blacklistRollen = []};
     
 /* Eigende Namen für die Rollen, einfach den Namen zwischen den "" ändern, beachte,
     einige Rollen haben festgeschriebene Fähigkeiten!    
 */
-    TB_customName = [
-            "Truppführer",             //lead
-            "Grenadier",             //grena
-            "Kampfsanitäter",         //sani -> feste Sanifähigkeiten
-            "Unterstützungsschütze", //mg
-            "Sprengmeister",         //spreng -> feste Pionierfähigkeit
-            "Anti-Fahrzeug",         //aaat -> feste höhere Inventartragefähigkeit
-            "Munitionsträger",         //trag -> feste hohe Kistentragekraft, höhere Inventartragefähigkeit
-            "Gruppenaufklärer",     //dmr
-            "Pilot",                 //pilot -> feste Sanifähigkeiten, Pionierfähigkeit, hohe Kistentragekraft
-            "AufklärerSniper",         //sniper
-            "AufklärerSpotter",     //spotter
-            "DrohnenOP",             //jtac
-            "Arzt",                 //arzt -> feste Sanifähigkeiten
-            "Schütze",                 //rifle
-            "Pionier"                 //pionier -> feste Pionierfähigkeit, hohe Kistentragekraft, höhere Inventartragefähigkeit
-        ];
-};
+TB_customName = [
+    "Truppführer",             //lead
+    "Grenadier",             //grena
+    "Kampfsanitäter",         //sani -> feste Sanifähigkeiten
+    "Unterstützungsschütze", //mg
+    "Sprengmeister",         //spreng -> feste Pionierfähigkeit
+    "Anti-Fahrzeug",         //aaat -> feste höhere Inventartragefähigkeit
+    "Munitionsträger",         //trag -> feste hohe Kistentragekraft, höhere Inventartragefähigkeit
+    "Gruppenaufklärer",     //dmr
+    "Pilot",                 //pilot -> feste Sanifähigkeiten, Pionierfähigkeit, hohe Kistentragekraft
+    "AufklärerSniper",         //sniper
+    "AufklärerSpotter",     //spotter
+    "DrohnenOP",             //jtac
+    "Arzt",                 //arzt -> feste Sanifähigkeiten
+    "Schütze",                 //rifle
+    "Pionier"                 //pionier -> feste Pionierfähigkeit, hohe Kistentragekraft, höhere Inventartragefähigkeit
+];

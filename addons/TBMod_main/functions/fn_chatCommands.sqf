@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 
 systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";

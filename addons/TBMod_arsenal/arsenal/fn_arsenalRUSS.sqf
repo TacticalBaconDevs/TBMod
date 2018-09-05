@@ -1,5 +1,5 @@
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 
 // Hier kommen alle Items rein die ALLE Rollen haben

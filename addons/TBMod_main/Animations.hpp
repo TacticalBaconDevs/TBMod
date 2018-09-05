@@ -44,11 +44,13 @@ class CfgGesturesMale
         {
             file = "a3\anims_f_bootcamp\data\anim\sdr\cts\acts_kore_talkingoverradio_loop.rtm";
             speed = 0.1339;
+            looped = 1;
         };
         class tb_radioLR : tb_base
         {
             file = "a3\anims_f_epa\data\anim\sdr\cts\custom\a_in\acts_listeningtoradioloop.rtm";
             speed = 0.1622;
+            looped = 1;
         };
         class tb_radioStop : tb_base
         {

@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
     
     Aufgerufen durch: fn_changeRolle
 */

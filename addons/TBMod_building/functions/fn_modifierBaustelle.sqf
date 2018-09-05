@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params ["_args", "_target"];
 _args params ["", "", "", "_actionData"];

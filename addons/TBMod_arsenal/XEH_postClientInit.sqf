@@ -1,5 +1,5 @@
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 
 // initalisiert die TB Rolle nach dem spawnen

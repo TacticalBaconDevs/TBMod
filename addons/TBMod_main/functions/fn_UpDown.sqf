@@ -1,7 +1,7 @@
 // *****************************************************
 // ** JBOY_UpDown.sqf
 // ** Version 1.1
-// ** by JohnnyBoy, optimised by Willi "shukari" Graff
+// ** by JohnnyBoy, optimised by shukari
 // *****************************************************
 // [this] spawn TB_fnc_UpDown;
 // this addeventhandler ["FiredNear", {[_this select 0, ["UP", "MIDDLE"]] spawn TB_fnc_UpDown}];

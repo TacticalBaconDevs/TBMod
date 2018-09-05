@@ -123,7 +123,7 @@ tpw_core_fnc_grabciv =
             _cfgName = configName (_cfg select _i);
             if ( (_cfgName isKindOf "camanbase") && {getNumber ((_cfg select _i) >> "scope") == 2} && {[_str,str _cfgname] call BIS_fnc_inString}) then 
                 {
-                tpw_core_civs set [count tpw_core_civs,_cfgname];
+                tpw_core_civs pushBack _cfgname;
                 };
             };
         };        
@@ -139,7 +139,7 @@ tpw_core_fnc_grabciv =
                 _cfgName = configName (_cfg select _i);
                 if ( (_cfgName isKindOf "camanbase") && {getNumber ((_cfg select _i) >> "scope") == 2} && {[_str,str _cfgname] call BIS_fnc_inString}) then 
                     {
-                    tpw_core_civs set [count tpw_core_civs,_cfgname];
+                    tpw_core_civs pushBack _cfgname;
                     };
                 };
             };    
@@ -160,8 +160,7 @@ tpw_core_fnc_grabfemciv =
             _cfgName = configName (_cfg select _i);
             if ( (_cfgName isKindOf "camanbase") && {getNumber ((_cfg select _i) >> "scope") == 2} && {[_str,str _cfgname] call BIS_fnc_inString} && {!(["soldier",str _cfgname] call BIS_fnc_inString)}) then 
                 {
-                tpw_core_civs set [count tpw_core_civs,_cfgname];
-                tpw_core_civs set [count tpw_core_civs,_cfgname];
+                tpw_core_civs pushBack _cfgname;
                 };
             };
         };
@@ -180,7 +179,7 @@ tpw_core_fnc_grabidapciv =
             _cfgName = configName (_cfg select _i);
             if ( (_cfgName isKindOf "camanbase") && {getNumber ((_cfg select _i) >> "scope") == 2} && {[_str,str _cfgname] call BIS_fnc_inString} && {!(["soldier",str _cfgname] call BIS_fnc_inString)}) then 
                 {
-                tpw_core_civs set [count tpw_core_civs,_cfgname];
+                tpw_core_civs pushBack _cfgname;
                 };
             };
         };

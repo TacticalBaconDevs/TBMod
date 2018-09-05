@@ -1,6 +1,6 @@
 #include "\TBMod_main\defineDIKCodes.inc"
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 

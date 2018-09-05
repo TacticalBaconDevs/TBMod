@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
     Zuständiger fürs USA Arsenal: shukari
 */
 

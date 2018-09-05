@@ -1,5 +1,5 @@
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 private _arsenalType = ACE_player getVariable ['TB_arsenalType', ''];
 private _rolle = ACE_player getVariable ['TB_rolle', ''];

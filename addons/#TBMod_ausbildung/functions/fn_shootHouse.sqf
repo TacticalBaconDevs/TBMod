@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params ["_shoothouse","_garnision","_unitPoses","_zone"];
 // private _shoothouse = "stadt"; 

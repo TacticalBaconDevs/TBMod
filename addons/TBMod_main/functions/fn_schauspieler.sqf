@@ -1,5 +1,5 @@
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 if (str player in ["schauspieler1", "schauspieler2", "schauspieler3", "schauspieler4", "schauspieler5", "schauspieler6"]) then {
     [] spawn

@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
     
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 enableEnvironment [false, true];
 enableSaving [false, false];
