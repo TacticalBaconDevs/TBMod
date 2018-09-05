@@ -810,9 +810,16 @@ _items append (switch (_rolle) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
+            
+            // Ferngläser
+            "ACE_Yardage450",
+            "lerca_1200_black",
+            "lerca_1200_tan",
+            "rhsusf_lrf_Vector21",
+            //"ACE_VectorDay",
+            "ACE_Vector", // Tag/Nacht Version
 
             // Spezial
-            "ACE_Yardage450",
             "ACE_RangeCard"
         ]
     };
