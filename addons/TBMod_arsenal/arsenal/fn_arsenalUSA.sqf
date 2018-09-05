@@ -170,7 +170,6 @@ private _allgemein_gewehre = [
     "rhs_weap_m16a4_carryhandle",
     "rhs_weap_m16a4_carryhandle_pmag",
     "rhs_weap_m16a4_pmag",
-    "rhs_weap_m16a4_pmag",
     "rhs_weap_m4",
     "rhs_weap_m4_carryhandle_mstock",
     "rhs_weap_m4_carryhandle",
@@ -467,6 +466,10 @@ private _grenadier_gewehr = [
     "rhs_weap_m4a1_M203s_wd",
     "rhs_weap_mk18_m320",
     "hlc_smg_9mmar",
+    
+    // Test nicht UGLs
+    "rhs_weap_mk18",
+    "rhs_weap_m4a1_carryhandle",
     // ### Handfeuerwaffe
     "rhs_weap_M320"
 ];
