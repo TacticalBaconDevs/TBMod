@@ -9,12 +9,10 @@
         shukari
 
     Info:
-    Überschreibt den unitPool aus der Mod mit der eigenen
-    Wenn UnitPool aus der Mod verwendet werden will, dann diese Datei löschen oder umbennen.
-    Case 0 ist hier derzeit nur exemplarisch ausgefüllt.
+        0-10 können selber definiert werden, alles größer 10 ist vom Mod
     
-    Der TBMod unitPool hat derzeit folgene Faction:
-    - keine
+    Der TBMod hat derzeit folgene Factions:
+        11 - Russland (Standard im Modul)
 */
 private ["_InfPool","_ArmPool","_MotPool","_ACHPool","_CHPool","_stPool","_shipPool","_diverPool","_crewPool","_heliCrew"];
 
