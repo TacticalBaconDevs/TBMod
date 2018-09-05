@@ -1,41 +1,55 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
-params ["_save", "_number", ["_dontAddToArray", false]];
+params [
+        ["_save", false, [false]],
+        ["_number", 0, [0]],
+        ["_dontAddToArray", false, [false]]
+    ];
 
-if !(_number in [1,2,3,4,5]) exitWith {systemChat "Wähle einen Slot zwischen 1-5"};
+if (!isServer) exitWith {"[TBMod_building] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
+if !(_number in [1,2,3,4,5]) exitWith {"[TBMod_building] Wähle einen Slot zwischen 1-5" remoteExecCall ["systemChat"]};
 
-// getten
 if (_save) then
 {
-    if (isNil "TB_persistent_buildings") exitWith {systemChat "Nichts zum Dauerspeichern verfügbar!"};
+    if (isNil "TB_persistent_buildings") exitWith {"[TBMod_building] Nichts zum Dauerspeichern verfügbar!" remoteExecCall ["systemChat"]};
     private _array = [];
     
     {
         _x params ["_obj", "_big"];
-        if (!isNil "_obj" && {!isNull _obj}) then {_array pushBack [_big, typeOf _obj, getPos _obj, getDir _obj, simulationEnabled _obj, _obj getVariable ["TB_building_addInfos", []]]};
-        false;
+        
+        if (!isNil "_obj" && {!isNull _obj}) then
+        {
+            _array pushBack [
+                    _big,
+                    typeOf _obj,
+                    getPosASL _obj,
+                    getDir _obj,
+                    simulationEnabled _obj,
+                    _obj getVariable ["TB_building_addInfos", []]
+                ];
+        };
     }
-    count TB_persistent_buildings;
+    forEach TB_persistent_buildings;
     
     profileNamespace setVariable [format ["TB_persistent_buildings_%1", _number], _array];
-    
-    systemChat format ["Es wurde alles in Slot %1 gespeichert!", _number];
+    (format ["[TBMod_building] Es wurde alles in Slot %1 gespeichert!", _number]) remoteExecCall ["systemChat"];
 }
 else //laden
 {
     private _array = profileNamespace getVariable [format ["TB_persistent_buildings_%1", _number], []];
     
-    if (_array isEqualTo []) exitWith {systemChat "Nichts zum Laden verfügbar!"};
+    if (_array isEqualTo []) exitWith {"[TBMod_building] Nichts zum Laden verfügbar!" remoteExecCall ["systemChat"]};
     if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
     
     {
         _x params ["_big", "_classname", "_pos", "_dir", "_sim", "_addInfos"];
         
-        private _obj = createVehicle [_classname, [0, 0, 0], [], 0, "NONE"];
+        private _obj = createVehicle [_classname, [0,0,0], [], 0, "CAN_COLLIDE"];
         
         _obj setDir _dir;
-        _obj setPos _pos;
+        _obj setPosASL _pos;
         
         private _params = [_obj];
         _params append _addInfos;
@@ -49,11 +63,7 @@ else //laden
             _params spawn TB_fnc_initItem;
         };
         
-        if (!_sim) then
-        {
-            _obj enableSimulation false;
-            [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
-        };
+        if (!_sim) then {_obj enableSimulationGlobal false};
         
         if (!_dontAddToArray) then {TB_persistent_buildings pushBack [_obj, _big]};
         
@@ -66,13 +76,15 @@ else //laden
         // Antenne
         if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
         {
-            [_obj, 10000] call TFAR_antennas_fnc_initRadioTower;
+            // wait for TFAR FIX
+            //[_obj, 10000] call TFAR_antennas_fnc_initRadioTower;
         };
         
         // Antenne
         if ((typeOf _obj) in ["Land_BarGate_F"]) then
         {
-            [_obj, false] remoteExecCall ["allowDamage", _obj];
+            _obj allowDamage false;
+            _obj addEventHandler {0};
         };
         
         // Repair
@@ -80,12 +92,9 @@ else //laden
         {
             _obj enableRopeAttach false;
         };
-        
-        false;
     }
-    count _array;
+    forEach _array;
     
     publicVariable "TB_persistent_buildings";
-    
-    systemChat format ["Es wurde alles aus Slot %1 geladen!", _number];
+    (format ["[TBMod_building] Es wurde alles aus Slot %1 geladen!", _number]) remoteExecCall ["systemChat"];
 };
