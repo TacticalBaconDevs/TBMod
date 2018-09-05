@@ -5,3 +5,5 @@
 - Apache 20mm und ALQ CM konnten überladen werden. aka satt einem Magazin 1200 Schuss gibt es jetzt eins mit 1200Schuss und 3 weitere.
     - ALQ CM hat statt 120s pro Magazin über 1300s pro Magazin. Alle Magazine könnten noch weiter aufgefüllt werden.
     - name wird nicht angezeigt
+-Mod muss zu Serverside Mod umgebaut werden
+-Funktion muss zu Client übertragen werden.
