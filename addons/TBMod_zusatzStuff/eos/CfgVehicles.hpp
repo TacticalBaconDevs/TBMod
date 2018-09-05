@@ -35,7 +35,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport, (Wahrscheinlichkeit in Prozent)]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -91,9 +91,9 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_settings";
             displayName = "Settings";
-            tooltip = "[FACTION, MARKERTYPE]";
+            tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
             typeName = "STRING";
-            defaultValue = "[0, 0]";
+            defaultValue = "[11, 0]";
         };
         class sichtbar: Checkbox
         {
@@ -135,7 +135,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5]";
+            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -183,9 +183,9 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_settings";
             displayName = "Settings";
-            tooltip = "[FACTION, MARKERTYPE]";
+            tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
             typeName = "STRING";
-            defaultValue = "[0, 0]";
+            defaultValue = "[11, 0]";
         };
         class bastionSettings: Edit
         {

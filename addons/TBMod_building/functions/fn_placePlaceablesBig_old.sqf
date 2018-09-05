@@ -1,6 +1,6 @@
 /*
 *     Author: KokaKolaA3
-*     Modified: Willi "shukari" Graff
+*     Modified: shukari
 * 
 *     Place an object big infront of the ACE_player and organise all ACE3 settings
 *

@@ -1,6 +1,6 @@
 ﻿#include "\TBMod_main\defineDIKCodes.inc"
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 waitUntil {!isNull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {

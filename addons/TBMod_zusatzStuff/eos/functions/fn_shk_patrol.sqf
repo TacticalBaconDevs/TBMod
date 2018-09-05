@@ -7,6 +7,7 @@
     Author: Shuko (shuko@quakenet, miika@miikajarvinen.fi)
     http://forums.bistudio.com/showthread.php?163496-SHK_Patrol
     Modified for EOS by Bangabob
+    MODIFIED BY: shukari [TacticalBacon.de]
     
     Requires TB_EOS_fnc_shk_pos.sqf
     Required Parameters:

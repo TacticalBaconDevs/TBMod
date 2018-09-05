@@ -1,3 +1,13 @@
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+    
+    Author:
+        bangabob ( https://forums.bohemia.net/forums/topic/144150-enemy-occupation-system-eos/ )
+  
+    Complete rewrite and modification:
+        shukari
+*/
 if (!isServer) exitWith {};
 
 params [
@@ -67,7 +77,7 @@ _basActivated setTriggerStatements [_actCond, "", ""];
 _mkr setMarkerColor bastionColor;
 _mkr setMarkerAlpha _mAN;    
     
-waituntil {triggerActivated _basActivated};
+waitUntil {triggerActivated _basActivated};
 _mkr setMarkerColor bastionColor;
 _mkr setMarkerAlpha _mAH;
 
@@ -215,7 +225,7 @@ forEach _cGrp;
 }
 forEach _bGrp;    
 
-waituntil {triggerActivated _bastActive};    
+waitUntil {triggerActivated _bastActive};    
 
 for "_counter" from 1 to _timeout do
 {
@@ -273,7 +283,7 @@ else
     };
 };
     
-waituntil {getMarkerColor _mkr == "colorblack" || getMarkerColor _mkr == VictoryColor || getMarkerColor _mkr == hostileColor || !triggerActivated  _bastActive};
+waitUntil {getMarkerColor _mkr == "colorblack" || getMarkerColor _mkr == VictoryColor || getMarkerColor _mkr == hostileColor || !triggerActivated  _bastActive};
     
 {_x call CBA_fnc_deleteEntity} forEach _aGroup;
 

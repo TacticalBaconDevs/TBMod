@@ -1,3 +1,13 @@
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+    
+    Author:
+        bangabob (https://forums.bohemia.net/forums/topic/144150-enemy-occupation-system-eos/)
+  
+    Complete rewrite and modification:
+        shukari
+*/
 params ["_grp", "_skillArray"];
 
 private _skillset = tb_server getVariable _skillArray;

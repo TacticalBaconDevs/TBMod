@@ -2,6 +2,7 @@
   TB_EOS_fnc_shk_pos - Random position generator for Arma 2
   Author: Shuko (IRC: shuko@quakenet, Email: miika@miikajarvinen.fi)
   Version: 0.1
+  MODIFIED BY: shukari [TacticalBacon.de]
   
   Parameters for marker area based position:
     Area              String              Marker to define area from which the position is taken.

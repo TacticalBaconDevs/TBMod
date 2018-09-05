@@ -1,3 +1,13 @@
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+    
+    Author:
+        CBA ( https://github.com/CBATeam/CBA_A3 )
+        
+    Info:
+        the macro FILE_EXISTS as function
+*/
 params ["_file"];
 
 private _return = false;
