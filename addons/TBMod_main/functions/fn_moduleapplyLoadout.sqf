@@ -16,7 +16,7 @@ private _units = if (isNull _unit) then
 }
 else
 {
-    units group _unit;
+    units _unit;
 };
 if (isNil "_units") exitWith {};
 if (_units isEqualTo []) exitWith {hint "Keine Einheiten ausgewählt"};
@@ -26,7 +26,8 @@ if (_loadouts isEqualTo []) exitWith {hint "Keine Loadouts gespeichert"};
 private _choices = [];
 {
     _choices pushBack (_x select 0);
-} forEach _loadouts;
+} 
+forEach _loadouts;
 
 private _result = 
 [ 
@@ -38,7 +39,8 @@ private _result =
 
 if (_result isEqualTo []) exitWith{};
 
-private _loadout =  (_loadouts select (_result select 0) select 1);
+private _loadout =  _loadouts select (_result select 0) select 1;
 {
     _x setUnitLoadout _loadout;
-} forEach _units;
+} 
+forEach _units;

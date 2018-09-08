@@ -21,7 +21,8 @@ class CfgPatches
                 "TB_zeus_base",
                 "TB_zeus_nachschubAbwurf",
                 "TB_zeus_disablePath",
-                "TB_zeus_prioSichtbarkeit"
+                "TB_zeus_prioSichtbarkeit",
+                "TB_zeus_ApplyLoadout"
             };
         ammo[] = {
                 "FlareBase",

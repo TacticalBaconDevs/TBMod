@@ -269,12 +269,12 @@ class CfgVehicles
         displayName = "PrioSichtbarkeit";
         function = "TB_fnc_modulePrioSichtbarkeit";
     };
-    class TB_zeus_applyLoadout : TB_zeus_base
+    class TB_zeus_ApplyLoadout : TB_zeus_base
     {
         curatorCanAttach = 1;
         scopeCurator = 2;
-        displayName = "ApplyLoadout";
-        function = "TB_fnc_moduleapplyLoadout";
+        displayName = "Apply Loadout";
+        function = "TB_fnc_moduleApplyLoadout";
     };
     
     
