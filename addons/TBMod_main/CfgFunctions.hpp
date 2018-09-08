@@ -40,6 +40,7 @@ class CfgFunctions
             class sitAI {};
             class animationAI {};
             class clearCache {};
+            class moduleapplyLoadout {};
         };
         
         class gcam
