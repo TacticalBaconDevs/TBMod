@@ -257,7 +257,6 @@ class CfgVehicles
     };
     class TB_zeus_disablePath : TB_zeus_base
     {
-        scope = 2;
         scopeCurator = 2;
         curatorCanAttach = 1;
         displayName = "DisablePath 4 Group";
@@ -269,7 +268,13 @@ class CfgVehicles
         displayName = "PrioSichtbarkeit";
         function = "TB_fnc_modulePrioSichtbarkeit";
     };
-    class TB_zeus_ApplyLoadout : TB_zeus_base
+    class TB_zeus_handleAsPlayerMedical : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "HandlePlayerAsMedical";
+        function = "TB_fnc_moduleHandleAsPlayerMedical";
+    };
+    class TB_zeus_applyLoadout : TB_zeus_base
     {
         curatorCanAttach = 1;
         scopeCurator = 2;

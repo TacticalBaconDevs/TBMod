@@ -27,4 +27,5 @@ enableSaving [false, false];
     //[] call TB_fnc_advSimulationMgr;
     
     TB_init_done = true;
+    publicVariableServer "TB_init_done";
 }] call CBA_fnc_addEventHandler;

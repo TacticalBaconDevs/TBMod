@@ -1,4 +1,7 @@
 ﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+    
     Author: shukari
 */
 params ["_logic", "", "_activated"];
@@ -12,10 +15,6 @@ if !(_local) exitWith {true};
 if !(_activated) exitWith {true};
 if (isNull _unit) exitWith {true};
 
-{
-    [_x, "PATH"] remoteExec ["disableAI", _x];
-    doStop _x;
-}
-forEach (units _unit);
+_unit setVariable ["ace_medical_enableUnconsciousnessAI", 2, true];
 
 true

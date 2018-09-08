@@ -76,6 +76,7 @@ if (_architecture != "x64") then
             player setPos _pos;
         }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
         
+        systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
         forceRespawn player;
     };
 } forEach allCurators;

@@ -3,22 +3,15 @@
     Developed by http://tacticalbacon.de
 */
 // looped anims fürs eden attribut
-private _ausgabe = "";
-{_ausgabe = _ausgabe + "class "+ _x +"
-{
-    text = '"+ _x +"';
-    data = '"+ _x +"';
-};
-";} forEach (((configProperties [configfile >> "CfgMovesMaleSdr" >> "States"]) select {((configName _x) find "Acts_" != -1) && getNumber (_x >> "looped") == 1}) apply {configName _x});
-_ausgabe
-
 private _ausgabe = ""; 
+private _array = ((configProperties [configfile >> "CfgMovesMaleSdr" >> "States"]) select {((configName _x) find "Acts_" != -1) && getNumber (_x >> "looped") == 1}) apply {configName _x};
+_array sort true;
 {_ausgabe = _ausgabe + "class "+ _x +" 
 { 
     text = "+ _x +"; 
     data = "+ _x +"; 
 }; 
-";} forEach (((configProperties [configfile >> "CfgMovesMaleSdr" >> "States"]) select {((configName _x) find "Acts_" != -1) && getNumber (_x >> "looped") == 1}) apply {configName _x}); 
+";} forEach _array; 
 _ausgabe
 
 
