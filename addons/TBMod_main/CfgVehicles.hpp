@@ -274,6 +274,13 @@ class CfgVehicles
         displayName = "HandlePlayerAsMedical";
         function = "TB_fnc_moduleHandleAsPlayerMedical";
     };
+    class TB_zeus_applyLoadout : TB_zeus_base
+    {
+        curatorCanAttach = 1;
+        scopeCurator = 2;
+        displayName = "Apply Loadout";
+        function = "TB_fnc_moduleApplyLoadout";
+    };
     
     
     // ###################### Schilder ######################
