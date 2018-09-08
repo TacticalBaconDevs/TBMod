@@ -15,6 +15,7 @@ if (isNull _unit) exitWith {true};
 {
     [_x, "PATH"] remoteExec ["disableAI", _x];
     doStop _x;
-} forEach (units _unit);
+}
+forEach (units _unit);
 
 true
