@@ -23,7 +23,8 @@ class CfgPatches
                 "TB_zeus_disablePath",
                 "TB_zeus_prioSichtbarkeit",
                 "TB_zeus_handleAsPlayerMedical",
-                "TB_zeus_applyLoadout"
+                "TB_zeus_applyLoadout",
+                "TB_zeus_handleAsPlayerMedical"
             };
         ammo[] = {
                 "FlareBase",
