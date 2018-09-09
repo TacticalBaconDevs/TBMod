@@ -168,7 +168,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _cGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
         if (_cSize + (_cSizeIncrease * _playerCount) > 0) then
         {
-            private _cargoGrp = [_cGroup select 0, (_cSize + (_cSizeIncrease * _playerCount), _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_cGroup select 0, _cSize + (_cSizeIncrease * _playerCount), _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         };
 
