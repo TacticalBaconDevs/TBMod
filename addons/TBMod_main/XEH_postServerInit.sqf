@@ -44,3 +44,5 @@ if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
         };
     }
 ] call CBA_fnc_addEventHandler;
+
+["CBA_loadingScreenDone", {TB_init_done = true}] call CBA_fnc_addEventHandler;

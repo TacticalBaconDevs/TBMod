@@ -40,6 +40,9 @@ class CfgFunctions
             class sitAI {};
             class animationAI {};
             class clearCache {};
+            class keysForAI {};
+            class moduleHandleAsPlayerMedical {};
+            class moduleApplyLoadout {};
         };
         
         class gcam
