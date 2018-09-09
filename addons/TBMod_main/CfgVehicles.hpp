@@ -271,6 +271,7 @@ class CfgVehicles
     class TB_zeus_handleAsPlayerMedical : TB_zeus_base
     {
         scopeCurator = 2;
+        curatorCanAttach = 1;
         displayName = "HandlePlayerAsMedical";
         function = "TB_fnc_moduleHandleAsPlayerMedical";
     };

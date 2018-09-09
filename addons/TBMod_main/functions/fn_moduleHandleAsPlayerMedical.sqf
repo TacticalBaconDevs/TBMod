@@ -15,6 +15,17 @@ if !(_local) exitWith {true};
 if !(_activated) exitWith {true};
 if (isNull _unit) exitWith {true};
 
-_unit setVariable ["ace_medical_enableUnconsciousnessAI", 2, true];
+{
+    _x params ["_key", "_value"];
+    _unit setVariable ["ace_medical_"+ _key, _value, true];
+}
+forEach [
+        ["enableUnconsciousnessAI", 2],
+        ["preventInstaDeath", true],
+        ["amountOfReviveLives", 5],
+        ["enableRevive", 2]
+    ];
+
+systemChat "[TBMod_main] HandleAsPlayerMedical: KI wird nun als Spieler behandelt!";
 
 true
