@@ -19,7 +19,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_hausInf";
             displayName = "Hausgruppen";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -27,7 +27,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_patrolInf";
             displayName = "Patrouille";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };

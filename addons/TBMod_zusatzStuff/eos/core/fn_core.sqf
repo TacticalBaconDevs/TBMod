@@ -7,6 +7,7 @@
   
     Complete rewrite and modification:
         shukari
+        Eric Ruhland
 */
 if (!isServer) exitWith {};
 
@@ -16,6 +17,8 @@ params [
         "_b",
         "_c",
         "_d",
+        "_e",
+        "_f",
         "_settings",
         ["_heightLimit", false],
         ["_cache", false]
@@ -26,15 +29,13 @@ private _mPos = markerPos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _mkrAgl = markerDir _mkr;
 
-_a params ["_aGrps", "_aSize"];
-private _aMin = _aSize select 0;
+_a params ["_aGrps", "_aSize", "_aGrpsIncrease", "_aSizeIncrease"];
+_b params ["_bGrps", "_bSize", "_bGrpsIncrease", "_bSizeIncrease"];
+_c params ["_cGrps", "_cSize", "_cGrpsIncrease", "_cSizeIncrease"];
 
-_b params ["_bGrps", "_bSize"];
-private _bMin = _bSize select 0;
-
-_c params ["_cGrps", "_cSize"];
-
-_d params ["_dGrps", "_eGrps", "_fGrps", "_fSize"];
+_d params ["_dGrps", "_dGrpsIncrease"];
+_e params ["_eGrps", "_eGrpsIncrease"];
+_f params ["_fGrps", "_fSize", "_fGrpsIncrease", "_fSizeIncrease"];
 
 _settings params ["_faction", "_mA", "_distance", "_side"];
 
@@ -101,20 +102,18 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     // SPAWN HOUSE PATROLS
     private _aGrp = [];
-    for "_counter" from 1 to _aGrps do
+    for "_counter" from 1 to (_aGrps + (_aGrpsIncrease * count allPlayers)) do
     {
     
         if (_cache) then
         {
             private _cacheGrp = format ["HP%1", _counter];
-            private _units = _eosActivated getVariable [_cacheGrp, 0];    
-            _aSize = [_units, _units];
-            _aMin = _aSize select 0;
+            _aSize = _eosActivated getVariable [_cacheGrp, _aSize + (_aSizeIncrease * count allPlayers)];    
         };
         
-        if (_aMin > 0) then
+        if (_aSize + (_aSizeIncrease * count allPlayers) > 0) then
         {
-            private _aGroup = [_mPos, _aSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
+            private _aGroup = [_mPos, _aSize, _aSizeIncrease, _faction, _side] call TB_EOS_fnc_spawnGroup;    
             
             if (!surfaceIsWater _mPos) then
             {
@@ -132,20 +131,18 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     // SPAWN PATROLS
     private _bGrp = [];
-    for "_counter" from 1 to _bGrps do
+    for "_counter" from 1 to (_bGrps + (_bGrpsIncrease * count allPlayers)) do
     {
         if (_cache) then
         {
             private _cacheGrp = format ["PA%1", _counter];
-            private _units = _eosActivated getVariable _cacheGrp;    
-            _bSize = [_units, _units];
-            _bMin = _bSize select 0;
+             _bSize = _eosActivated getVariable [_cacheGrp, _bSize + (_bSizeIncrease * count allPlayers)];   
         };
 
-        if (_bMin > 0) then
+        if (_bSize + (_bSizeIncrease * count allPlayers) > 0) then
         {    
             private _pos = [_mkr, true] call TB_EOS_fnc_shk_pos;            
-            private _bGroup = [_pos, _bSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
+            private _bGroup = [_pos, _bSize, _bSizeIncrease, _faction, _side] call TB_EOS_fnc_spawnGroup;
             [_bGroup, _mkr] call TB_EOS_fnc_shk_patrol;
             
             [_bGroup,"INFskill"] call TB_EOS_fnc_setSkill;
@@ -155,7 +152,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
     //SPAWN LIGHT VEHICLES
     private _cGrp = [];
-    for "_counter" from 1 to _cGrps do
+    for "_counter" from 1 to (_cGrps + (_cGrpsIncrease * count allPlayers)) do
     {
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         
@@ -168,9 +165,9 @@ if (getMarkerColor _mkr != "ColorBlack") then
         };
 
         private _cGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
-        if ((_cSize select 0) > 0) then
+        if (_cSize + (_cSizeIncrease * count allPlayers) > 0) then
         {
-            private _cargoGrp = [_cGroup select 0, _cSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_cGroup select 0, _cSize, _cSizeIncrease, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         };
 
@@ -182,7 +179,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN ARMOURED VEHICLES
     private _dGrp = [];
-    for "_counter" from 1 to _dGrps do
+    for "_counter" from 1 to (_dGrps + (_dGrpsIncrease * count allPlayers)) do
     {
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         private _vehType = if (surfaceiswater _newpos) then {8} else {2};
@@ -197,7 +194,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN STATIC PLACEMENTS
     private _eGrp = [];
-    for "_counter" from 1 to _eGrps do
+    for "_counter" from 1 to (_eGrps + (_eGrpsIncrease * count allPlayers)) do
     {
         if (surfaceIsWater _mPos) exitwith {};
         
@@ -210,16 +207,16 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN CHOPPER
     private _fGrp = [];
-    for "_counter" from 1 to _fGrps do
+    for "_counter" from 1 to (_fGrps + (_fGrpsIncrease * count allPlayers)) do
     {
-        private _vehType = if ((_fSize select 0) > 0) then {4} else {3};
+        private _vehType = if (_fSize + (_fSizeIncrease * count allPlayers) > 0) then {4} else {3};
         
         private _newpos = [markerpos _mkr, 3000, random 360] call BIS_fnc_relPos;    
         private _fGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
         
-        if ((_fSize select 0) > 0) then
+        if (_fSize + (_fSizeIncrease * count allPlayers) > 0) then
         {
-            private _cargoGrp = [_fGroup select 0, _fSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_fGroup select 0, _fSize,_fSizeIncrease ,_side, _faction, 9] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
             _fGroup pushBack _cargoGrp;
             [_mkr, _fGroup] spawn TB_EOS_fnc_transportUnload;
@@ -355,10 +352,12 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {    
         [
             _mkr,
-            [_aGrps, _aSize],
-            [_bGrps, _bSize],
-            [_cGrps, _cSize],
-            [_dGrps, _eGrps, _fGrps, _fSize],
+            _a,
+            _b,
+            _c,
+            _d,
+            _e,
+            _f
             _settings,
             _heightLimit,
             true

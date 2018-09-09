@@ -13,14 +13,13 @@ if (!isServer) exitWith {};
 params [
         "_vehicle",
         "_grpSize",
+        "_grpSizeIncrease",
         "_side",
         "_faction",
         "_cargoType"
     ];
 
-_grpSize params ["_grpMin", "_grpMax"];
-private _r = floor (random (_grpMax - _grpMin));
-private _grpSize = _r + _grpMin;
+_grpSize = _grpSize + (_grpSizeIncrease * count allPlayers);
 
 private _cargoPool = [_faction, _cargoType] call TB_EOS_fnc_unitPools;
 private _emptySeats = _vehicle emptyPositions "cargo";
