@@ -101,19 +101,20 @@ if (getMarkerColor _mkr != "ColorBlack") then
     if (getMarkerColor _mkr != VictoryColor) then {_mkr setMarkerAlpha _mAH};
 
     // SPAWN HOUSE PATROLS
+    private _playerCount = count allPlayers;
     private _aGrp = [];
-    for "_counter" from 1 to (_aGrps + (_aGrpsIncrease * count allPlayers)) do
+    for "_counter" from 1 to (_aGrps + (_aGrpsIncrease * _playerCount)) do
     {
     
         if (_cache) then
         {
             private _cacheGrp = format ["HP%1", _counter];
-            _aSize = _eosActivated getVariable [_cacheGrp, _aSize + (_aSizeIncrease * count allPlayers)];    
+            _aSize = _eosActivated getVariable [_cacheGrp, _aSize + (_aSizeIncrease * _playerCount)];    
         };
         
-        if (_aSize + (_aSizeIncrease * count allPlayers) > 0) then
+        if (_aSize + (_aSizeIncrease * _playerCount) > 0) then
         {
-            private _aGroup = [_mPos, _aSize, _aSizeIncrease, _faction, _side] call TB_EOS_fnc_spawnGroup;    
+            private _aGroup = [_mPos, _aSize + (_aSizeIncrease * _playerCount), _faction, _side] call TB_EOS_fnc_spawnGroup;    
             
             if (!surfaceIsWater _mPos) then
             {
@@ -131,18 +132,18 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     // SPAWN PATROLS
     private _bGrp = [];
-    for "_counter" from 1 to (_bGrps + (_bGrpsIncrease * count allPlayers)) do
+    for "_counter" from 1 to (_bGrps + (_bGrpsIncrease * _playerCount)) do
     {
         if (_cache) then
         {
             private _cacheGrp = format ["PA%1", _counter];
-             _bSize = _eosActivated getVariable [_cacheGrp, _bSize + (_bSizeIncrease * count allPlayers)];   
+             _bSize = _eosActivated getVariable [_cacheGrp, _bSize + (_bSizeIncrease * _playerCount)];   
         };
 
-        if (_bSize + (_bSizeIncrease * count allPlayers) > 0) then
+        if (_bSize + (_bSizeIncrease * _playerCount) > 0) then
         {    
             private _pos = [_mkr, true] call TB_EOS_fnc_shk_pos;            
-            private _bGroup = [_pos, _bSize, _bSizeIncrease, _faction, _side] call TB_EOS_fnc_spawnGroup;
+            private _bGroup = [_pos, _bSize + (_bSizeIncrease * _playerCount), _faction, _side] call TB_EOS_fnc_spawnGroup;
             [_bGroup, _mkr] call TB_EOS_fnc_shk_patrol;
             
             [_bGroup,"INFskill"] call TB_EOS_fnc_setSkill;
@@ -152,7 +153,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
     //SPAWN LIGHT VEHICLES
     private _cGrp = [];
-    for "_counter" from 1 to (_cGrps + (_cGrpsIncrease * count allPlayers)) do
+    for "_counter" from 1 to (_cGrps + (_cGrpsIncrease * _playerCount)) do
     {
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         
@@ -165,9 +166,9 @@ if (getMarkerColor _mkr != "ColorBlack") then
         };
 
         private _cGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
-        if (_cSize + (_cSizeIncrease * count allPlayers) > 0) then
+        if (_cSize + (_cSizeIncrease * _playerCount) > 0) then
         {
-            private _cargoGrp = [_cGroup select 0, _cSize, _cSizeIncrease, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_cGroup select 0, (_cSize + (_cSizeIncrease * _playerCount), _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         };
 
@@ -179,7 +180,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN ARMOURED VEHICLES
     private _dGrp = [];
-    for "_counter" from 1 to (_dGrps + (_dGrpsIncrease * count allPlayers)) do
+    for "_counter" from 1 to (_dGrps + (_dGrpsIncrease * _playerCount)) do
     {
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         private _vehType = if (surfaceiswater _newpos) then {8} else {2};
@@ -194,7 +195,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN STATIC PLACEMENTS
     private _eGrp = [];
-    for "_counter" from 1 to (_eGrps + (_eGrpsIncrease * count allPlayers)) do
+    for "_counter" from 1 to (_eGrps + (_eGrpsIncrease * _playerCount)) do
     {
         if (surfaceIsWater _mPos) exitwith {};
         
@@ -207,16 +208,16 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN CHOPPER
     private _fGrp = [];
-    for "_counter" from 1 to (_fGrps + (_fGrpsIncrease * count allPlayers)) do
+    for "_counter" from 1 to (_fGrps + (_fGrpsIncrease * _playerCount)) do
     {
-        private _vehType = if (_fSize + (_fSizeIncrease * count allPlayers) > 0) then {4} else {3};
+        private _vehType = if (_fSize + (_fSizeIncrease * _playerCount) > 0) then {4} else {3};
         
         private _newpos = [markerpos _mkr, 3000, random 360] call BIS_fnc_relPos;    
         private _fGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
         
-        if (_fSize + (_fSizeIncrease * count allPlayers) > 0) then
+        if (_fSize + (_fSizeIncrease * _playerCount) > 0) then
         {
-            private _cargoGrp = [_fGroup select 0, _fSize,_fSizeIncrease ,_side, _faction, 9] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_fGroup select 0, _fSize + (_fSizeIncrease * _playerCount, _side, _faction, 9] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
             _fGroup pushBack _cargoGrp;
             [_mkr, _fGroup] spawn TB_EOS_fnc_transportUnload;

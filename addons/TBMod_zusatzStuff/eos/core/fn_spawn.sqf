@@ -46,12 +46,12 @@ waitUntil {!isNil "tb_server" && {!isNull tb_server}};
     
     [
         _x,
-        [_HPgroupArray],
-        [_PAgroupArray],
-        [_LVgroupArray],
+        _HPgroupArray,
+        _PAgroupArray,
+        _LVgroupArray,
         [_AVehGroups, _AVGroupsIncrease], 
         [_SVehGroups, _SVGroupsIncrease], 
-        [_CHgroupArray],
+        _CHgroupArray,
         _settings
     ] spawn TB_EOS_fnc_core;
 }
