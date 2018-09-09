@@ -10,7 +10,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
     class AttributeValues
     {
         isRectangle = 0;
-        size3[] = {200,200,-1};
+        size3[] = {300,300,-1};
     };
     
     class Attributes: AttributesBase
