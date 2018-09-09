@@ -35,7 +35,7 @@ if (player getVariable ["TBMod_main_enableschauspieler",false]) then {
                     _marker setMarkerSizeLocal [0.75,0.75];
                     _markers pushBack _marker;
                     _vehicles pushBack (vehicle _x);
-                }; 
+                };
             }
             forEach allUnits;
             
@@ -45,11 +45,11 @@ if (player getVariable ["TBMod_main_enableschauspieler",false]) then {
     };
     
     private _actionschauspieler = ["Schauspieler", "Schauspieler", "", {}, {true}] call ace_interact_menu_fnc_createAction;
-    private _actionarsenal = ["Arsenal", "Arsenal", "", {[player, player, true] call ace_arsenal_fnc_openBox},{true}] call ace_interact_menu_fnc_createAction;
+    private _actionarsenal = ["Arsenal", "Arsenal", "", {[player, player, true] call ace_arsenal_fnc_openBox}, {true}] call ace_interact_menu_fnc_createAction;
     private _actiongarage = ["Garage", "Garage", "",{
         _vehicle = createVehicle ["Land_HelipadEmpty_F", player getPos [10, getDir player], [], 0, "CAN_COLLIDE"]; 
         ["Open", [true, _vehicle]] call RHS_fnc_garage;
-    },{true}] call ace_interact_menu_fnc_createAction;
+    }, {true}] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions"], _actionschauspieler] call ace_interact_menu_fnc_addActionToObject;
     [player, 1, ["ACE_SelfActions", "Schauspieler"], _actionarsenal] call ace_interact_menu_fnc_addActionToObject;
     [player, 1, ["ACE_SelfActions", "Schauspieler"], _actiongarage] call ace_interact_menu_fnc_addActionToObject;
