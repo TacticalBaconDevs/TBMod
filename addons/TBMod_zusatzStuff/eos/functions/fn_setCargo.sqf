@@ -22,6 +22,7 @@ params [
 private _cargoPool = [_faction, _cargoType] call TB_EOS_fnc_unitPools;
 private _emptySeats = _vehicle emptyPositions "cargo";
 private _grp = createGroup _side;
+_grpSize = round (_grpSize);
 
 if (_emptySeats > 0) then
 {

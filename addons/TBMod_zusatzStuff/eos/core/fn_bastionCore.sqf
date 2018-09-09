@@ -106,7 +106,7 @@ if (_pause > 0 and !_initialLaunch) then
 private _playerCount = count allPlayers;
 // SPAWN PATROLS        
 private _aGroup = [];
-for "_counter" from 1 to _PAGrps + (_PAGrpsIncrease * _playerCount) do
+for "_counter" from 1 to round (_PAGrps + (_PAGrpsIncrease * _playerCount)) do
 {
     private _pos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
     private _grp = [_pos, _PASize + (_PASizeIncrease * _playerCount), _faction, _side] call TB_EOS_fnc_spawnGroup;    
@@ -115,7 +115,7 @@ for "_counter" from 1 to _PAGrps + (_PAGrpsIncrease * _playerCount) do
 
 // SPAWN LIGHT VEHICLES        
 private _bGrp = [];
-for "_counter" from 1 to _LVehGrps + (_LVehGrpsIncrease * _LVehGrpsIncrease) do
+for "_counter" from 1 to round (_LVehGrps + (_LVehGrpsIncrease * _LVehGrpsIncrease)) do
 {
     private _newpos = [_mPos, _placement + 200, random 360] call BIS_fnc_relPos;
     
@@ -142,7 +142,7 @@ for "_counter" from 1 to _LVehGrps + (_LVehGrpsIncrease * _LVehGrpsIncrease) do
 
 // SPAWN ARMOURED VEHICLES
 private _cGrp = [];
-for "_counter" from 1 to _AVehGrps + (_AVehGrpsIncrease * _playerCount) do
+for "_counter" from 1 to round (_AVehGrps + (_AVehGrpsIncrease * _playerCount)) do
 {
     private _newpos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
@@ -154,7 +154,7 @@ for "_counter" from 1 to _AVehGrps + (_AVehGrpsIncrease * _playerCount) do
 
 // SPAWN HELICOPTERS        
 private _fGrp = [];
-for "_counter" from 1 to _CHVehGrps + (_CHVehGrpsIncrease * _playerCount) do
+for "_counter" from 1 to round (_CHVehGrps + (_CHVehGrpsIncrease * _playerCount)) do
 {
     private _vehType = if ((_fSize select 0) > 0) then {4} else {3};
     private _newpos = [markerPos _mkr, 1500, random 360] call BIS_fnc_relPos;
@@ -245,7 +245,7 @@ for "_counter" from 1 to _timeout do
         if (_eosZone) then {
             if (_hints) then {hint "Zone verloren, sie wurde besetzt!"};
         
-            [
+            [//TODO ka was ich damit anfangen soll
                 _mkr,
                 [_PApatrols, _PAgroupSize],
                 [_PApatrols, _PAgroupSize],
@@ -274,10 +274,10 @@ else
         if (_hints) then {hint "Feindliche Verstärkung ist auf dem Weg."};
         [
             _mkr,
-            [_PApatrols, _PAgroupSize],
-            [_LVehGroups, _LVgroupSize],
-            [_AVehGroups],
-            [_CHGroups, _fSize],
+            _PAgroupArray,
+            _LVgroupArray,
+            [_AVehGroups, _AVGroupsIncrease],
+            _CHgroupArray,
             _settings,
             [_pause, _waves, _timeout, _eosZone, _hints],
             true

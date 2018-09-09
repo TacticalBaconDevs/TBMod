@@ -20,7 +20,7 @@ params [
 private _pool = [_faction, parseNumber (surfaceiswater _pos)] call TB_EOS_fnc_unitPools;
 private _grp = createGroup _side;
 
-for "_i" from 1 to _grpSize do
+for "_i" from 1 to round (_grpSize) do
 {
     _grp createUnit [selectRandom _pool, _pos, [], 6, "FORM"];
 };

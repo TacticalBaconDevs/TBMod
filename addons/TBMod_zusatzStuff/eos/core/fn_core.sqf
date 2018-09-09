@@ -103,7 +103,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
     // SPAWN HOUSE PATROLS
     private _playerCount = count allPlayers;
     private _aGrp = [];
-    for "_counter" from 1 to (_aGrps + (_aGrpsIncrease * _playerCount)) do
+    for "_counter" from 1 to round ((_aGrps + (_aGrpsIncrease * _playerCount))) do
     {
     
         if (_cache) then
@@ -132,7 +132,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     // SPAWN PATROLS
     private _bGrp = [];
-    for "_counter" from 1 to (_bGrps + (_bGrpsIncrease * _playerCount)) do
+    for "_counter" from 1 to round ((_bGrps + (_bGrpsIncrease * _playerCount))) do
     {
         if (_cache) then
         {
@@ -153,7 +153,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
     //SPAWN LIGHT VEHICLES
     private _cGrp = [];
-    for "_counter" from 1 to (_cGrps + (_cGrpsIncrease * _playerCount)) do
+    for "_counter" from 1 to round ((_cGrps + (_cGrpsIncrease * _playerCount))) do
     {
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         
@@ -180,7 +180,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN ARMOURED VEHICLES
     private _dGrp = [];
-    for "_counter" from 1 to (_dGrps + (_dGrpsIncrease * _playerCount)) do
+    for "_counter" from 1 to round ((_dGrps + (_dGrpsIncrease * _playerCount))) do
     {
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         private _vehType = if (surfaceiswater _newpos) then {8} else {2};
@@ -195,7 +195,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN STATIC PLACEMENTS
     private _eGrp = [];
-    for "_counter" from 1 to (_eGrps + (_eGrpsIncrease * _playerCount)) do
+    for "_counter" from 1 to round ((_eGrps + (_eGrpsIncrease * _playerCount))) do
     {
         if (surfaceIsWater _mPos) exitwith {};
         
@@ -208,7 +208,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
     //SPAWN CHOPPER
     private _fGrp = [];
-    for "_counter" from 1 to (_fGrps + (_fGrpsIncrease * _playerCount)) do
+    for "_counter" from 1 to round ((_fGrps + (_fGrpsIncrease * _playerCount))) do
     {
         private _vehType = if (_fSize + (_fSizeIncrease * _playerCount) > 0) then {4} else {3};
         
