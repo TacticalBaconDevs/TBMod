@@ -157,6 +157,24 @@ class Cfg3DEN
                     // };
                 };
             };
+            class TBMod_main_schauspieler
+            {
+                displayName = "TB Schauspieler";
+                collapsed = 1;
+                class Attributes
+                {
+                    class TBMod_main_enableschauspieler
+                    {
+                        displayName = "Schauspieler";
+                        tooltip = "Wenn aktiviert, besitzt Spieler Schauspielerrechte.";
+                        property = "TBMod_main_enableschauspieler";
+                        control = "Checkbox";
+                        expression = "if (!is3DEN) then {_this setVariable ['TBMod_main_enableschauspieler', _value, true]}";
+                        condition = "objectControllable";
+                        defaultValue = "false";
+                    };
+                };
+            };
         };
     };
     
