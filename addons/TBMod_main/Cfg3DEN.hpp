@@ -91,7 +91,7 @@ class Cfg3DEN
             
             class TBMod_main_ki_actions
             {
-                displayName = "TB KI-Aktionen";
+                displayName = "TB Aktionen";
                 collapsed = 1;
                 
                 class Attributes
@@ -138,6 +138,17 @@ class Cfg3DEN
  
                         condition = "objectControllable";
                     };
+
+                    class TBMod_main_enableschauspieler
+                    {
+                        displayName = "Schauspieler";
+                        tooltip = "Wenn aktiviert, besitzt Spieler Schauspielerrechte.";
+                        property = "TBMod_main_enableschauspieler";
+                        control = "Checkbox";
+                        expression = "if (!is3DEN && _value) then {_this setVariable ['TBMod_main_enableschauspieler', _value, true]}";
+                        condition = "objectControllable";
+                        defaultValue = "false";
+                    };
                     
                     // TODO
                     // class TBMod_main_kiDeckung
@@ -155,24 +166,6 @@ class Cfg3DEN
                         // unique = 0;
                         // condition = "objectControllable";
                     // };
-                };
-            };
-            class TBMod_main_schauspieler
-            {
-                displayName = "TB Schauspieler";
-                collapsed = 1;
-                class Attributes
-                {
-                    class TBMod_main_enableschauspieler
-                    {
-                        displayName = "Schauspieler";
-                        tooltip = "Wenn aktiviert, besitzt Spieler Schauspielerrechte.";
-                        property = "TBMod_main_enableschauspieler";
-                        control = "Checkbox";
-                        expression = "if (!is3DEN) then {_this setVariable ['TBMod_main_enableschauspieler', _value, true]}";
-                        condition = "objectControllable";
-                        defaultValue = "false";
-                    };
                 };
             };
         };
