@@ -16,37 +16,19 @@ params [
         ["_infantry", [], [[]]],
         ["_LVeh", [], [[]]],
         ["_AVeh", [], [[]]],
-        ["_SVeh", [], [[]]],
+        ["_CHVeh", [], [[]]],
         ["_settings", [], [[]]],
         ["_basSettings", [], [[]]]
     ];
 
-_infantry params [["_PApatrols", 0, [0]], ["_PAgroupSize", 0, [0]]];
-_LVeh params [["_LVehGroups", 0, [0]], ["_LVgroupSize", 0, [0]]];
-_AVeh params [["_AVehGroups", 0, [0]]];
-_SVeh params [["_CHGroups", 0, [0]], ["_CHgroupSize", 0, [0]]];
+_infantry params ["_papatrols", "_pagroupSize", ["_paPatrolsIncrease", 0], ["_paGroupSizeIncrease", 0]];
+_LVeh params ["_lvvehGroups", "_lvgroupSize", ["_lvGroupsIncrease", 0], ["_lvGroupSizeIncrease", 0]];
+_AVeh params ["_AVehGroups", ["_AVGroupsIncrease", 0]];
+_CHVeh params ["_chGroups", "_chgroupSize", ["_chGroupsIncrease", 0], ["_chGroupSizeIncrease", 0]];
 
-private _PAgroupArray = [1, 1];
-if (_PAgroupSize == 1) then {_PAgroupArray = [2 ,4]};
-if (_PAgroupSize == 2) then {_PAgroupArray = [4, 8]};
-if (_PAgroupSize == 3) then {_PAgroupArray = [8, 12]};
-if (_PAgroupSize == 4) then {_PAgroupArray = [12, 16]};
-if (_PAgroupSize == 5) then {_PAgroupArray = [16, 20]};
-
-
-private _LVgroupArray = [1, 1];
-if (_LVgroupSize == 1) then {_LVgroupArray = [2, 4]};
-if (_LVgroupSize == 2) then {_LVgroupArray = [4, 8]};
-if (_LVgroupSize == 3) then {_LVgroupArray = [8, 12]};
-if (_LVgroupSize == 4) then {_LVgroupArray = [12, 16]};
-if (_LVgroupSize == 5) then {_LVgroupArray = [16, 20]};
-
-private _CHgroupArray = [0, 0];
-if (_CHgroupSize == 1) then {_CHgroupArray = [2, 4]};
-if (_CHgroupSize == 2) then {_CHgroupArray = [4, 8]};
-if (_CHgroupSize == 3) then {_CHgroupArray = [8, 12]};
-if (_CHgroupSize == 4) then {_CHgroupArray = [12, 16]};
-if (_CHgroupSize == 5) then {_CHgroupArray = [16, 20]};
+private _PAgroupArray = [_paPatrols, _paGroupSize, _paPatrolsIncrease, _paGroupSizeIncrease];
+private _LVgroupArray = [_lvPatrols, _lvGroupSize, _lvPatrolsIncrease, _lvGroupSizeIncrease];
+private _CHgroupArray = [_chGroups, _chgroupSize, _chGroupsIncrease, _chGroupSizeIncrease];
 
 waitUntil {!isNil "tb_server" && {!isNull tb_server}};
 
@@ -57,10 +39,10 @@ waitUntil {!isNil "tb_server" && {!isNull tb_server}};
     
     [
         _x,
-        [_PApatrols, _PAgroupArray],
-        [_LVehGroups, _LVgroupArray],
-        [_AVehGroups],
-        [_CHGroups, _CHgroupArray],
+        _PAgroupArray,
+        _LVgroupArray,
+        [_AVehGroups, _AVGroupsIncrease],
+        _CHgroupArray,
         _settings,
         _basSettings
     ] spawn TB_EOS_fnc_bastionCore;

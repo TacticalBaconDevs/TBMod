@@ -11,13 +11,13 @@
 if (!isServer) exitWith {};
 
 params [
-        ["_mkr", "", [""]],
-        ["_infantry", [], [[]]],
-        ["_LVeh", [], [[]]],
-        ["_AVeh", [], [[]]],
-        ["_SVeh", [], [[]]],
-        ["_settings", [], [[]]],
-        ["_basSettings", [], [[]]],
+        "_mkr",
+        "_infantry",
+        "_LVeh",
+        "_AVeh",
+        "_CHVeh",
+        "_settings",
+        "_basSettings",
         ["_initialLaunch", false, [false]]
     ];
 
@@ -26,10 +26,11 @@ private _mPos = markerpos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _mkrAgl = markerDir _mkr;
 
-_infantry params [["_PApatrols", 0, [0]], ["_PAgroupSize", [], [[]]]];
-_LVeh params [["_LVehGroups", 0, [0]], ["_LVgroupSize", [], [[]]]];
-_AVeh params [["_AVehGroups", 0, [0]]];
-_SVeh params [["_CHGroups", 0, [0]], ["_fSize", [], [[]]]];
+_infantry params ["_PAGrps", "_PASize", "_PAGrpsIncrease", "_PASizeIncrease"];
+_LVeh params ["_LVehGrps", "_LVehSize", "_LVehGrpsIncrease", "_LVehSizeIncrease"];
+_CHVeh params ["_CHVehGrps", "_CHVehSize", "_CHVehGrpsIncrease", "_CHVehSizeIncrease"];
+_AVeh params ["_AVehGrps", "_AVehGrpsIncrease"];
+
 _settings params [["_faction", 0, [0]], ["_mA", 0, [0]], ["_side", EAST, [sideUnknown]], ["_heightLimit", false, [false]], ["_placementRadius", 500, [0]]];
 _basSettings params [["_pause", 0, [0]], ["_waves", 0, [0]], ["_timeout", 0, [0]], ["_eosZone", false, [false]], ["_hints", false, [false]]];
 
@@ -102,18 +103,19 @@ if (_pause > 0 and !_initialLaunch) then
     };
 };
 
+private _playerCount = count allPlayers;
 // SPAWN PATROLS        
 private _aGroup = [];
-for "_counter" from 1 to _PApatrols do
+for "_counter" from 1 to _PAGrps + (_PAGrpsIncrease * _playerCount) do
 {
     private _pos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
-    private _grp = [_pos, _PAgroupSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
+    private _grp = [_pos, _PASize + (_PASizeIncrease * _playerCount), _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _aGroup pushBack _grp;
 };    
 
 // SPAWN LIGHT VEHICLES        
 private _bGrp = [];
-for "_counter" from 1 to _LVehGroups do
+for "_counter" from 1 to _LVehGrps + (_LVehGrpsIncrease * _LVehGrpsIncrease) do
 {
     private _newpos = [_mPos, _placement + 200, random 360] call BIS_fnc_relPos;
     
@@ -127,9 +129,9 @@ for "_counter" from 1 to _LVehGroups do
     
     private _bGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;                    
     
-    if ((_LVgroupSize select 0) > 0) then
+    if (_LVSize + (_LVehSizeIncrease * _playerCount) > 0) then
     {
-        private _cargoGrp = [_bGroup select 0, _LVgroupSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+        private _cargoGrp = [_bGroup select 0, _LVSize + (_LVehSizeIncrease * _playerCount), _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
         [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         _bGroup pushBack _cargoGrp;
     };
@@ -140,7 +142,7 @@ for "_counter" from 1 to _LVehGroups do
 
 // SPAWN ARMOURED VEHICLES
 private _cGrp = [];
-for "_counter" from 1 to _AVehGroups do
+for "_counter" from 1 to _AVehGrps + (_AVehGrpsIncrease * _playerCount) do
 {
     private _newpos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
@@ -152,7 +154,7 @@ for "_counter" from 1 to _AVehGroups do
 
 // SPAWN HELICOPTERS        
 private _fGrp = [];
-for "_counter" from 1 to _CHGroups do
+for "_counter" from 1 to _CHVehGrps + (_CHVehGrpsIncrease * _playerCount) do
 {
     private _vehType = if ((_fSize select 0) > 0) then {4} else {3};
     private _newpos = [markerPos _mkr, 1500, random 360] call BIS_fnc_relPos;
@@ -160,9 +162,9 @@ for "_counter" from 1 to _CHGroups do
     private _fGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
     _fGrp pushBack _fGroup;
     
-    if ((_fSize select 0) > 0) then
+    if (_CHVehSize + (_CHVehSizeIncrease * _playerCount) > 0) then
     {
-        private _cargoGrp = [_fGroup select 0, _fSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+        private _cargoGrp = [_fGroup select 0, _CHVehSize + (_CHVehSizeIncrease * _playerCount), _side, _faction, 9] call TB_EOS_fnc_setCargo;
         [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         
         _fGroup pushBack _cargoGrp;

@@ -10,7 +10,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
     class AttributeValues
     {
         isRectangle = 0;
-        size3[] = {300,300,-1};
+        size3[] = {200,200,-1};
     };
     
     class Attributes: AttributesBase
@@ -35,7 +35,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -43,7 +43,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_armorVeh";
             displayName = "Schwere Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0]";
         };
@@ -51,7 +51,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_statics";
             displayName = "Statische Geschütze";
-            tooltip = "[ANZAHL der Gruppen, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0]";
         };
@@ -59,7 +59,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_helis";
             displayName = "Helikopter";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -118,7 +118,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
     class AttributeValues
     {
         isRectangle = 0;
-        size3[] = {300,300,-1};
+        size3[] = {200,200,-1};
     };
     
     class Attributes: AttributesBase
@@ -127,7 +127,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_patrolInf";
             displayName = "Patrouille";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -135,7 +135,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -143,7 +143,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_armorVeh";
             displayName = "Schwere Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0]";
         };
@@ -151,7 +151,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_helis";
             displayName = "Helikopter";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
