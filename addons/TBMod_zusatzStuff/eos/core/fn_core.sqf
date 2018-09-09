@@ -217,7 +217,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
         if (_fSize + (_fSizeIncrease * _playerCount) > 0) then
         {
-            private _cargoGrp = [_fGroup select 0, _fSize + (_fSizeIncrease * _playerCount, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_fGroup select 0, _fSize + (_fSizeIncrease * _playerCount), _side, _faction, 9] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
             _fGroup pushBack _cargoGrp;
             [_mkr, _fGroup] spawn TB_EOS_fnc_transportUnload;
