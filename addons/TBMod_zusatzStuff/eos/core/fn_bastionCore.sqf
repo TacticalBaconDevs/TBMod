@@ -30,10 +30,10 @@ _infantry params [["_PApatrols", 0, [0]], ["_PAgroupSize", [], [[]]]];
 _LVeh params [["_LVehGroups", 0, [0]], ["_LVgroupSize", [], [[]]]];
 _AVeh params [["_AVehGroups", 0, [0]]];
 _SVeh params [["_CHGroups", 0, [0]], ["_fSize", [], [[]]]];
-_settings params [["_faction", 0, [0]], ["_mA", 0, [0]], ["_side", EAST, [sideUnknown]], ["_heightLimit", false, [false]]];
+_settings params [["_faction", 0, [0]], ["_mA", 0, [0]], ["_side", EAST, [sideUnknown]], ["_heightLimit", false, [false]], ["_placementRadius", 500, [0]]];
 _basSettings params [["_pause", 0, [0]], ["_waves", 0, [0]], ["_timeout", 0, [0]], ["_eosZone", false, [false]], ["_hints", false, [false]]];
 
-private _placement = (_mkrX max _mkrY) + 500;
+private _placement = (_mkrX max _mkrY) + _placementRadius;
 
 private _mAH = 1;
 private _mAN = 0.5;

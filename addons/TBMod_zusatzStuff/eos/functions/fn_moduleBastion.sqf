@@ -2,8 +2,7 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
     
-    Author:
-        shukari
+    Author: shukari
 */
 params [
         ["_mode", "", [""]],
@@ -34,6 +33,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     private _settings = _logic getVariable ["settings", [0, 0]];
     _settings pushBack (_logic getVariable ["side", EAST]);
     _settings pushBack (_logic getVariable ["heightCheck", true]);
+    _settings pushBack (_logic getVariable ["activRadius", 500]);
     
     [
         [_marker],
