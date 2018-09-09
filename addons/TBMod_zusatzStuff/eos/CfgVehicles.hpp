@@ -75,7 +75,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_side";
             displayName = "Seite";
-            tooltip = "Seite des Markers";
+            tooltip = "Seite des Markers (EAST, WEST, INDEPENDENT, CIVILIAN)";
             typeName = "STRING";
             defaultValue = "EAST";
         };
@@ -125,7 +125,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
     {
         class patrolInf: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_patrolInf";
+            property = "TB_zusatz_eos_bastionZone_patrolInf";
             displayName = "Patrouille";
             tooltip = "[ANZAHL der Gruppen, Größe 1-5]";
             typeName = "STRING";
@@ -133,7 +133,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class lightVeh: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_lightVeh";
+            property = "TB_zusatz_eos_bastionZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
             tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
             typeName = "STRING";
@@ -141,7 +141,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class armorVeh: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_armorVeh";
+            property = "TB_zusatz_eos_bastionZone_armorVeh";
             displayName = "Schwere Fahrzeuge";
             tooltip = "[ANZAHL der Gruppen]";
             typeName = "STRING";
@@ -149,7 +149,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class helis: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_helis";
+            property = "TB_zusatz_eos_bastionZone_helis";
             displayName = "Helikopter";
             tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
             typeName = "STRING";
@@ -157,23 +157,23 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class activRadius: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_activRadius";
-            displayName = "Aktivierungsabstand";
-            tooltip = "Wird zudätzlich zur Markergröße genommen zum Start der Spawns";
+            property = "TB_zusatz_eos_bastionZone_activRadius";
+            displayName = "KI-SpawnAbstand";
+            tooltip = "Wird zusätzlich zur Markergröße genommen zum Erstellen der KI";
             typeName = "NUMBER";
             defaultValue = "500";
         };
         class side: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_side";
+            property = "TB_zusatz_eos_bastionZone_side";
             displayName = "Seite";
-            tooltip = "Seite des Markers";
+            tooltip = "Seite des Markers (EAST, WEST, INDEPENDENT, CIVILIAN)";
             typeName = "STRING";
             defaultValue = "EAST";
         };
         class heightCheck: Checkbox
         {
-            property = "TB_zusatz_eos_normaleZone_heightCheck";
+            property = "TB_zusatz_eos_bastionZone_heightCheck";
             displayName = "Nur Soldaten lösen aus";
             tooltip = "Keine Helikopter, nur unter Spieler unter 5m lösen aus";
             typeName = "BOOL";
@@ -181,7 +181,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class settings: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_settings";
+            property = "TB_zusatz_eos_bastionZone_settings";
             displayName = "Settings";
             tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
             typeName = "STRING";
@@ -189,7 +189,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class bastionSettings: Edit
         {
-            property = "TB_zusatz_eos_normaleZone_bastionSettings";
+            property = "TB_zusatz_eos_bastionZone_bastionSettings";
             displayName = "Bastion Settings";
             tooltip = "[PAUSE bis Begin, Wellenanzahl, Zeit zwischen Wellen, Besetzen wenn zurückerobert, Hinweise anzeigen]";
             typeName = "STRING";
@@ -197,7 +197,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         };
         class sichtbar: Checkbox
         {
-            property = "TB_zusatz_eos_normaleZone_sichtbar";
+            property = "TB_zusatz_eos_bastionZone_sichtbar";
             displayName = "Marker sichtbar";
             tooltip = "Zeigt den EOS Marker an";
             typeName = "BOOL";

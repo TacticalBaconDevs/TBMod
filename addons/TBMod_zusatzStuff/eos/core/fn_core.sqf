@@ -39,7 +39,7 @@ _d params ["_dGrps", "_eGrps", "_fGrps", "_fSize"];
 _settings params ["_faction", "_mA", "_distance", "_side"];
 
 private _civZone = false;
-private _enemyFaction="east";
+private _enemyFaction = "east";
 if (_side == WEST) then {_enemyFaction = "west"};
 if (_side == INDEPENDENT) then {_enemyFaction = "GUER"};
 if (_side == CIVILIAN) then {_enemyFaction = "civ"; _civZone = true};
@@ -214,7 +214,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {
         private _vehType = if ((_fSize select 0) > 0) then {4} else {3};
         
-        private _newpos = [markerpos _mkr, 1500, random 360] call BIS_fnc_relPos;    
+        private _newpos = [markerpos _mkr, 3000, random 360] call BIS_fnc_relPos;    
         private _fGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
         
         if ((_fSize select 0) > 0) then
