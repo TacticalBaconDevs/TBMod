@@ -91,9 +91,9 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_settings";
             displayName = "Settings";
-            tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
+            tooltip = "[FACTION] | Factions: 11->Russland";
             typeName = "STRING";
-            defaultValue = "[11, 0]";
+            defaultValue = "[11]";
         };
         class sichtbar: Checkbox
         {
@@ -118,7 +118,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
     class AttributeValues
     {
         isRectangle = 0;
-        size3[] = {200,200,-1};
+        size3[] = {300,300,-1};
     };
     
     class Attributes: AttributesBase
@@ -183,9 +183,9 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_settings";
             displayName = "Settings";
-            tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
+            tooltip = "[FACTION] | Factions: 11->Russland";
             typeName = "STRING";
-            defaultValue = "[11, 0]";
+            defaultValue = "[11]";
         };
         class bastionSettings: Edit
         {

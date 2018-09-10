@@ -30,21 +30,38 @@ private _maxTurrents = 3;
     
     if (_currentPosition select 0 == "driver") then
     {
-        _unit = _grp createUnit [_vehicleType select 1, [0,0,0], [], 0, "CAN_COLLIDE"];                    
+        private _unit = _grp createUnit [_vehicleType select 1, [0,0,0], [], 0, "CAN_COLLIDE"];                    
         _unit assignAsDriver _vehicle;
-        _unit moveInDriver _vehicle;
-        _vehCrew pushBack _unit;
+        
+        if (_unit moveInAny _vehicle) then
+        {
+            _vehCrew pushBack _unit;
+        }
+        else
+        {
+            deleteVehicle _unit;
+        };
     };
 
     if (_currentPosition select 0 == "turret" && _maxTurrents > 0) then
     {
-        _unit = _grp createUnit [_vehicleType select 1, [0,0,0], [], 0, "CAN_COLLIDE"];
+        private _unit = _grp createUnit [_vehicleType select 1, [0,0,0], [], 0, "CAN_COLLIDE"];
         _unit assignAsGunner _vehicle;
-        _unit moveInTurret [_vehicle, _currentPosition select 1];
-        _vehCrew pushBack _unit;
-        _maxTurrents = _maxTurrents - 1;
+        
+        if (_unit moveInAny _vehicle) then
+        {
+            _vehCrew pushBack _unit;
+            _maxTurrents = _maxTurrents - 1;
+        }
+        else
+        {
+            deleteVehicle _unit;
+        };
     };
 }
 foreach _vehPositions;
+
+_grp allowFleeing 0;
+[_vehicle, true] remoteExecCall ["engineOn", _vehicle];
 
 [_vehicle, _vehCrew, _grp]

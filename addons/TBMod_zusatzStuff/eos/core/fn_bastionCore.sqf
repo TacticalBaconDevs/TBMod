@@ -12,10 +12,10 @@ if (!isServer) exitWith {};
 
 params [
         "_mkr",
-        "_infantry",
-        "_LVeh",
-        "_AVeh",
-        "_CHVeh",
+        "_patrolInf",
+        "_lightVeh",
+        "_armorVeh",
+        "_helis",
         "_settings",
         "_basSettings",
         ["_initialLaunch", false, [false]]
@@ -26,47 +26,41 @@ private _mPos = markerpos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _mkrAgl = markerDir _mkr;
 
-_infantry params ["_PAGrps", "_PASize", "_PAGrpsIncrease", "_PASizeIncrease"];
-_LVeh params ["_LVehGrps", "_LVehSize", "_LVehGrpsIncrease", "_LVehSizeIncrease"];
-_CHVeh params ["_CHVehGrps", "_CHVehSize", "_CHVehGrpsIncrease", "_CHVehSizeIncrease"];
-_AVeh params ["_AVehGrps", "_AVehGrpsIncrease"];
+_patrolInf params ["_piGroups", "_piSize", "_piGroupsIncrease", "_piSizeIncrease"];
+_lightVeh params ["_lvGroups", "_lvSize", "_lvGroupsIncrease", "_lvSizeIncrease"];
+_armorVeh params ["_avGroups", "_avGroupsIncrease"];
+_helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
 
-_settings params [["_faction", 0, [0]], ["_mA", 0, [0]], ["_side", EAST, [sideUnknown]], ["_heightLimit", false, [false]], ["_placementRadius", 500, [0]]];
-_basSettings params [["_pause", 0, [0]], ["_waves", 0, [0]], ["_timeout", 0, [0]], ["_eosZone", false, [false]], ["_hints", false, [false]]];
+_settings params ["_faction", "_side", "_heightLimit", "_placementRadius"];
+_basSettings params ["_pause", "_waves", "_timeout", "_eosZone", "_hints"];
 
 private _placement = (_mkrX max _mkrY) + _placementRadius;
-
-private _mAH = 1;
-private _mAN = 0.5;
-if (_mA == 1) then {_mAH = 0; _mAN = 0;};
-if (_mA == 2) then {_mAH = 0.5; _mAN = 0.5;};
 
 private _enemyFaction = "east";
 if (_side == WEST) then {_enemyFaction = "west"};
 if (_side == INDEPENDENT) then {_enemyFaction = "GUER"};
 if (_side == CIVILIAN) then {_enemyFaction = "civ"};
 
-private _actCond = "";
-if (isMultiplayer) then
+private _actCond = if (isMultiplayer) then
 {
     if (_heightLimit) then 
     {
-        _actCond = "{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 5} count playableunits > 0";
+        "{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 5} count playableunits > 0"
     }
     else 
     {
-        _actCond = "{vehicle _x in thisList && isplayer _x} count playableunits > 0";
+        "{vehicle _x in thisList && isplayer _x} count playableunits > 0"
     };
 }
 else
 {
     if (_heightLimit) then 
     {
-        _actCond = "{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 5} count allUnits > 0";
+        "{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 5} count allUnits > 0"
     }
     else
     {
-        _actCond = "{vehicle _x in thisList && isplayer _x} count allUnits > 0";
+        "{vehicle _x in thisList && isplayer _x} count allUnits > 0"
     };
 };
 
@@ -75,12 +69,9 @@ _basActivated setTriggerArea [_mkrX, _mkrY, _mkrAgl, false];
 _basActivated setTriggerActivation ["ANY", "PRESENT", true]; 
 _basActivated setTriggerStatements [_actCond, "", ""]; 
 
-_mkr setMarkerColor bastionColor;
-_mkr setMarkerAlpha _mAN;    
-    
+_mkr setMarkerColor "ColorOrange";
+
 waitUntil {triggerActivated _basActivated};
-_mkr setMarkerColor bastionColor;
-_mkr setMarkerAlpha _mAH;
 
 private _bastActive = createTrigger ["EmptyDetector", _mPos]; 
 _bastActive setTriggerArea [_mkrX, _mkrY, _mkrAgl, false]; 
@@ -103,19 +94,24 @@ if (_pause > 0 and !_initialLaunch) then
     };
 };
 
-private _playerCount = count allPlayers;
+private _playerCount = count (call CBA_fnc_players);
+
 // SPAWN PATROLS        
-private _aGroup = [];
-for "_counter" from 1 to round (_PAGrps + (_PAGrpsIncrease * _playerCount)) do
+private _piZoneGroups = [];
+_piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
+_piSize = round (_piSize + (_piSizeIncrease * _playerCount));
+for "_counter" from 1 to _piGroups do
 {
     private _pos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
-    private _grp = [_pos, _PASize + (_PASizeIncrease * _playerCount), _faction, _side] call TB_EOS_fnc_spawnGroup;    
-    _aGroup pushBack _grp;
+    private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
+    _piZoneGroups pushBack _piGroup;
 };    
 
 // SPAWN LIGHT VEHICLES        
-private _bGrp = [];
-for "_counter" from 1 to round (_LVehGrps + (_LVehGrpsIncrease * _LVehGrpsIncrease)) do
+private _lvZoneGroups = [];
+_lvGroups = round (_lvGroups + (_lvGroupsIncrease * _playerCount));
+_lvSize = round (_lvSize + (_lvSizeIncrease * _playerCount));
+for "_counter" from 1 to _lvGroups do
 {
     private _newpos = [_mPos, _placement + 200, random 360] call BIS_fnc_relPos;
     
@@ -127,55 +123,59 @@ for "_counter" from 1 to round (_LVehGrps + (_LVehGrpsIncrease * _LVehGrpsIncrea
         _cargoType = 10;
     };
     
-    private _bGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;                    
+    private _lvGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;                    
     
-    if (_LVSize + (_LVehSizeIncrease * _playerCount) > 0) then
+    if (_lvSize > 0) then
     {
-        private _cargoGrp = [_bGroup select 0, _LVSize + (_LVehSizeIncrease * _playerCount), _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+        private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
         [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-        _bGroup pushBack _cargoGrp;
+        _lvGroup pushBack _cargoGrp;
     };
 
-    [_bGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
-    _bGrp pushBack _bGroup;
+    [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
+    _lvZoneGroups pushBack _lvGroup;
 };
 
 // SPAWN ARMOURED VEHICLES
-private _cGrp = [];
-for "_counter" from 1 to round (_AVehGrps + (_AVehGrpsIncrease * _playerCount)) do
+private _avZoneGroups = [];
+_avGroups = round (_avGroups + (_avGroupsIncrease * _playerCount));
+for "_counter" from 1 to _avGroups do
 {
     private _newpos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
-    private _cGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+    private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
     
-    [_cGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;    
-    _cGrp pushBack _cGroup;
+    [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;    
+    _avZoneGroups pushBack _avGroup;
 };
 
 // SPAWN HELICOPTERS        
-private _fGrp = [];
-for "_counter" from 1 to round (_CHVehGrps + (_CHVehGrpsIncrease * _playerCount)) do
+private _hZoneGroups = [];
+_hGroups = round (_hGroups + (_hGroupsIncrease * _playerCount));
+_hSize = round (_hSize + (_hSizeIncrease * _playerCount));
+for "_counter" from 1 to _hGroups do
 {
-    private _vehType = if ((_fSize select 0) > 0) then {4} else {3};
-    private _newpos = [markerPos _mkr, 1500, random 360] call BIS_fnc_relPos;
+    private _vehType = if (_hSize > 0) then {4} else {3};
+    private _newpos = [markerPos _mkr, _placement + 1000, random 360] call BIS_fnc_relPos;
     
-    private _fGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
-    _fGrp pushBack _fGroup;
+    private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
     
-    if (_CHVehSize + (_CHVehSizeIncrease * _playerCount) > 0) then
+    if (_hSize > 0) then
     {
-        private _cargoGrp = [_fGroup select 0, _CHVehSize + (_CHVehSizeIncrease * _playerCount), _side, _faction, 9] call TB_EOS_fnc_setCargo;
+        private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
         [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         
-        _fGroup pushBack _cargoGrp;
-        [_mkr, _fGroup] spawn TB_EOS_fnc_transportUnload;
+        _hGroup pushBack _cargoGrp;
+        [_mkr, _hGroup] spawn TB_EOS_fnc_transportUnload;
     }
     else
     {
-        _wp1 = (_fGroup select 2) addWaypoint [markerPos _mkr, 0];  
-        _wp1 setWaypointSpeed "FULL";  
+        _wp1 = (_hGroup select 2) addWaypoint [markerPos _mkr, 0];  
+        _wp1 setWaypointSpeed "FULL";
         _wp1 setWaypointType "SAD";
     };
+    
+    _hZoneGroups pushBack _hGroup;
 };
 
 // ADD WAYPOINTS
@@ -183,149 +183,151 @@ for "_counter" from 1 to round (_CHVehGrps + (_CHVehGrpsIncrease * _playerCount)
     private _getToMarker = _x addWaypoint [_mPos, 0];
     _getToMarker setWaypointType "SAD";
     _getToMarker setWaypointSpeed "NORMAL";
-    _getToMarker setWaypointBehaviour "AWARE"; 
+    _getToMarker setWaypointBehaviour "AWARE";
     _getToMarker setWaypointFormation "NO CHANGE";
 }
-forEach _aGroup;
+forEach _piZoneGroups;
+
+{
+    _x params ["_vehicle", "_vehCrew", "_piGroup", "_cargoGrp"];
+
+    private _pos = [_mPos, _mkrX + 50, random 360] call BIS_fnc_relPos;
+    private _getToMarker = (_x select 2) addWaypoint [_pos, 0];
+    _getToMarker setWaypointType "TR UNLOAD";
+    _getToMarker setWaypointSpeed "NORMAL";
+    _getToMarker setWaypointBehaviour "AWARE";
+    _getToMarker setWaypointFormation "NO CHANGE";
+
+    private _wp = _cargoGrp addWaypoint [_mPos, 10];
+    _wp setWaypointType "SAD";
+    _wp setWaypointSpeed "NORMAL";
+    _wp setWaypointBehaviour "AWARE";
+    _wp setWaypointFormation "NO CHANGE";
+
+    _wp = (_x select 2) addWaypoint [_mPos, 1];
+    _wp setWaypointType "SAD";
+    _wp setWaypointSpeed "NORMAL";
+    _wp setWaypointBehaviour "AWARE";
+    _wp setWaypointFormation "NO CHANGE";
+}
+forEach _lvZoneGroups;
 
 {
     private _getToMarker = (_x select 2) addWaypoint [_mPos, 0];
     _getToMarker setWaypointType "MOVE";
     _getToMarker setWaypointSpeed "NORMAL";
-    _getToMarker setWaypointBehaviour "AWARE"; 
+    _getToMarker setWaypointBehaviour "AWARE";
     _getToMarker setWaypointFormation "NO CHANGE";
-    
+
     _getToMarker = (_x select 2) addWaypoint [_mPos, 0];
     _getToMarker setWaypointType "SAD";
     _getToMarker setWaypointSpeed "NORMAL";
-    _getToMarker setWaypointBehaviour "AWARE"; 
+    _getToMarker setWaypointBehaviour "AWARE";
     _getToMarker setWaypointFormation "NO CHANGE";
 }
-forEach _cGrp;
+forEach _avZoneGroups;
 
-{
-    _x params ["_vehicle", "_vehCrew", "_grp", "_cargoGrp"];
-    
-    private _pos = [_mPos, _mkrX + 50, random 360] call BIS_fnc_relPos;
-    private _getToMarker = (_x select 2) addWaypoint [_pos, 0];
-    _getToMarker setWaypointType "TR UNLOAD";
-    _getToMarker setWaypointSpeed "NORMAL";
-    _getToMarker setWaypointBehaviour "AWARE"; 
-    _getToMarker setWaypointFormation "NO CHANGE";
-    
-    private _wp = _cargoGrp addWaypoint [_mPos, 10];
-    _wp setWaypointType "SAD";
-    _wp setWaypointSpeed "NORMAL";
-    _wp setWaypointBehaviour "AWARE"; 
-    _wp setWaypointFormation "NO CHANGE";
-    
-    _wp = (_x select 2) addWaypoint [_mPos, 1];
-    _wp setWaypointType "SAD";
-    _wp setWaypointSpeed "NORMAL";
-    _wp setWaypointBehaviour "AWARE"; 
-    _wp setWaypointFormation "NO CHANGE";
-}
-forEach _bGrp;    
 
-waitUntil {triggerActivated _bastActive};    
+waitUntil {triggerActivated _bastActive};
 
 for "_counter" from 1 to _timeout do
 {
     if (_hints) then
     {
-        if (_waves > 1) then {hint format ["Nächste Welle in ETA : %1",(_timeout - _counter)];};
+        if (_waves > 1) then {hint format ["Nächste Welle in ETA: %1", _timeout - _counter]};
     };
     uiSleep 1;
     
     if (!triggerActivated _bastActive || getMarkerColor _mkr == "colorblack") exitwith 
     {
-        _mkr setMarkerColor hostileColor;
-        _mkr setMarkerAlpha _mAN;
+        _mkr setMarkerColor "ColorRed";
         
-        if (_eosZone) then {
+        if (_eosZone) then
+        {
             if (_hints) then {hint "Zone verloren, sie wurde besetzt!"};
         
-            [//TODO ka was ich damit anfangen soll
+            [
                 _mkr,
-                [_PApatrols, _PAgroupSize],
-                [_PApatrols, _PAgroupSize],
-                [_LVehGroups, _LVgroupSize],
-                [_AVehGroups, 0, 0, 0],
-                [_faction, _mA, 350, _side]
+                _patrolInf,
+                [_piGroups/2, _piSize/2, _piGroupsIncrease/2, _piSizeIncrease/2],
+                _lightVeh,
+                _armorVeh,
+                [1, 0.1],       // Statics
+                _helis,
+                [_faction, 350, _side, _heightLimit]
             ] spawn TB_EOS_fnc_core;
         };
         
         _waves = 0;
-    };                
+    };
 };
 
 _waves = _waves - 1;
     
 if (triggerActivated _bastActive && triggerActivated _bastClear && (_waves < 1)) then
 {
-    if (_hints) then  {hint "Keine feindliche Verstärkung mehr."};
-    _mkr setMarkerColor VictoryColor;
-    _mkr setMarkerAlpha _mAN;
+    if (_hints) then  {hint "Keine feindliche Verstärkung mehr"};
+    _mkr setMarkerColor "ColorGreen";
 }
 else
 {
     if (_waves >= 1) then
     {
-        if (_hints) then {hint "Feindliche Verstärkung ist auf dem Weg."};
+        if (_hints) then {hint "Feindliche Verstärkung ist auf dem Weg"};
         [
             _mkr,
-            _PAgroupArray,
-            _LVgroupArray,
-            [_AVehGroups, _AVGroupsIncrease],
-            _CHgroupArray,
+            _patrolInf,
+            _lightVeh,
+            _armorVeh,
+            _helis,
             _settings,
-            [_pause, _waves, _timeout, _eosZone, _hints],
+            _basSettings,
             true
         ] spawn TB_EOS_fnc_bastionCore;
     };
 };
     
-waitUntil {getMarkerColor _mkr == "colorblack" || getMarkerColor _mkr == VictoryColor || getMarkerColor _mkr == hostileColor || !triggerActivated  _bastActive};
+waitUntil {getMarkerColor _mkr == "colorblack" || getMarkerColor _mkr == "ColorGreen" || getMarkerColor _mkr == "ColorRed" || !triggerActivated  _bastActive};
     
-{_x call CBA_fnc_deleteEntity} forEach _aGroup;
+{_x call CBA_fnc_deleteEntity} forEach _piZoneGroups;
 
-if (count _cGrp > 0) then 
-{                
+if (count _lvZoneGroups > 0) then
+{
+    {
+        _x params ["_vehicle", "_crew", "_grp", "_cargoGrp"];
+
+        _crew call CBA_fnc_deleteEntity;
+        if (vehicle player != _vehicle) then {_vehicle call CBA_fnc_deleteEntity};
+        _grp call CBA_fnc_deleteEntity;
+        if (!isNil "_cargoGrp") then {_cargoGrp call CBA_fnc_deleteEntity};
+    }
+    forEach _lvZoneGroups;
+};
+
+if (count _avZoneGroups > 0) then
+{
     {
         _x params ["_vehicle", "_crew", "_grp"];
 
-        _crew call CBA_fnc_deleteEntity;       
-        if (vehicle player != _vehicle) then {_vehicle call CBA_fnc_deleteEntity};                                                
+        _crew call CBA_fnc_deleteEntity;
+        if (vehicle player != _vehicle) then {_vehicle call CBA_fnc_deleteEntity};
         _grp call CBA_fnc_deleteEntity;
     }
-    forEach _cGrp;
-};
-
-if (count _bGrp > 0) then 
-{                
-    {
-        _x params ["_vehicle", "_crew", "_grp", "_cargoGrp"];
-
-        _crew call CBA_fnc_deleteEntity;       
-        if (vehicle player != _vehicle) then {_vehicle call CBA_fnc_deleteEntity};                                                
-        _grp call CBA_fnc_deleteEntity;
-        _cargoGrp call CBA_fnc_deleteEntity;
-    }
-    forEach _bGrp;
+    forEach _avZoneGroups;
 };
 
 // CACHE HELICOPTER TRANSPORT
-if (count _fGrp > 0) then 
-{            
+if (count _hZoneGroups > 0) then 
+{
     {
         _x params ["_vehicle", "_crew", "_grp", "_cargoGrp"];
         
-        _crew call CBA_fnc_deleteEntity;       
-        if (vehicle player != _vehicle) then {_vehicle call CBA_fnc_deleteEntity};                                                
+        _crew call CBA_fnc_deleteEntity;
+        if (vehicle player != _vehicle) then {_vehicle call CBA_fnc_deleteEntity};
         _grp call CBA_fnc_deleteEntity;
-        _cargoGrp call CBA_fnc_deleteEntity;
+        if (!isNil "_cargoGrp") then {_cargoGrp call CBA_fnc_deleteEntity};
     }
-    forEach _fGrp;
+    forEach _hZoneGroups;
 };    
 
 deleteVehicle _bastActive;

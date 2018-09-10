@@ -18,19 +18,20 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     // Konverter String to Array
     {
         private _value = _logic getVariable _x;
-        if (!isNil "_value") then {_logic setVariable [_x, call compile _value]};
+        if (!isNil "_value" && _value isEqualType "") then {_logic setVariable [_x, call compile _value]};
     }
     forEach ["patrolInf", "lightVeh", "armorVeh", "helis", "side", "settings", "bastionSettings"];
     
-    (_logic getVariable ["objectarea", []]) params [["_w", 200], ["_h", 200]];
+    (_logic getVariable ["objectarea", []]) params [["_w", 300], ["_h", 300]];
     // private _radius = _w min _h;
     
     private _marker = createMarker [format ["tb_eosBast_%1", random 999999], getPos _logic];
     _marker setMarkerSize [_w, _h];
     _marker setMarkerDir (getDir _logic);
+    _marker setMarkerAlpha 0.8;
     if (_logic getVariable ["sichtbar", false]) then {_marker setMarkerShape "ELLIPSE"};
     
-    private _settings = _logic getVariable ["settings", [0, 0]];
+    private _settings = _logic getVariable ["settings", [0]];
     _settings pushBack (_logic getVariable ["side", EAST]);
     _settings pushBack (_logic getVariable ["heightCheck", true]);
     _settings pushBack (_logic getVariable ["activRadius", 500]);
