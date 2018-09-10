@@ -75,9 +75,27 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_side";
             displayName = "Seite";
-            tooltip = "Seite des Markers (EAST, WEST, INDEPENDENT, CIVILIAN)";
+            tooltip = "Seite der Zone";
             typeName = "STRING";
-            defaultValue = "EAST";
+            class values {
+                class EAST {
+                    name = "ROT (EAST)";
+                    value = "EAST";
+                    default = 1;
+                };
+                class WEST {
+                    name = "Blau (WEST)";
+                    value = "WEST";
+                };
+                class INDEPENDENT {
+                    name = "Grün (INDEPENDENT)";
+                    value = "INDEPENDENT";
+                };
+                class CIVILIAN {
+                    name = "Violett (CIVILIAN)";
+                    value = "CIVILIAN";
+                };
+            };
         };
         class heightCheck: Checkbox
         {
@@ -100,6 +118,14 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
             property = "TB_zusatz_eos_normaleZone_sichtbar";
             displayName = "Marker sichtbar";
             tooltip = "Zeigt den EOS Marker an";
+            typeName = "BOOL";
+            defaultValue = "false";
+        };
+        class heliAbspringen: Checkbox
+        {
+            property = "TB_zusatz_eos_normaleZone_heliAbspringen";
+            displayName = "Heli Absprung";
+            tooltip = "Lässt die Einheiten nicht landen, sondern per Fallschirm abwerfen";
             typeName = "BOOL";
             defaultValue = "false";
         };
@@ -161,15 +187,33 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             displayName = "KI-SpawnAbstand";
             tooltip = "Wird zusätzlich zur Markergröße genommen zum Erstellen der KI";
             typeName = "NUMBER";
-            defaultValue = "500";
+            defaultValue = "0";
         };
         class side: Edit
         {
             property = "TB_zusatz_eos_bastionZone_side";
             displayName = "Seite";
-            tooltip = "Seite des Markers (EAST, WEST, INDEPENDENT, CIVILIAN)";
+            tooltip = "Seite der Zone";
             typeName = "STRING";
-            defaultValue = "EAST";
+            class values {
+                class EAST {
+                    name = "ROT (EAST)";
+                    value = "EAST";
+                    default = 1;
+                };
+                class WEST {
+                    name = "Blau (WEST)";
+                    value = "WEST";
+                };
+                class INDEPENDENT {
+                    name = "Grün (INDEPENDENT)";
+                    value = "INDEPENDENT";
+                };
+                class CIVILIAN {
+                    name = "Violett (CIVILIAN)";
+                    value = "CIVILIAN";
+                };
+            };
         };
         class heightCheck: Checkbox
         {
@@ -200,6 +244,14 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             property = "TB_zusatz_eos_bastionZone_sichtbar";
             displayName = "Marker sichtbar";
             tooltip = "Zeigt den EOS Marker an";
+            typeName = "BOOL";
+            defaultValue = "false";
+        };
+        class heliAbspringen: Checkbox
+        {
+            property = "TB_zusatz_eos_normaleZone_heliAbspringen";
+            displayName = "Heli Absprung";
+            tooltip = "Lässt die Einheiten nicht landen, sondern per Fallschirm abwerfen";
             typeName = "BOOL";
             defaultValue = "false";
         };

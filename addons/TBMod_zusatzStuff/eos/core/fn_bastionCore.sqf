@@ -31,10 +31,11 @@ _lightVeh params ["_lvGroups", "_lvSize", "_lvGroupsIncrease", "_lvSizeIncrease"
 _armorVeh params ["_avGroups", "_avGroupsIncrease"];
 _helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
 
-_settings params ["_faction", "_side", "_heightLimit", "_placementRadius"];
+_settings params ["_faction", "_side", "_heightLimit", "_placementRadius", "_parachuteJump"];
 _basSettings params ["_pause", "_waves", "_timeout", "_eosZone", "_hints"];
 
-private _placement = (_mkrX max _mkrY) + _placementRadius;
+private _radius = _mkrX max _mkrY;
+private _placement = _radius + _placementRadius;
 
 private _enemyFaction = "east";
 if (_side == WEST) then {_enemyFaction = "west"};
@@ -102,7 +103,7 @@ _piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
 _piSize = round (_piSize + (_piSizeIncrease * _playerCount));
 for "_counter" from 1 to _piGroups do
 {
-    private _pos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
+    private _pos = [_mPos, _radius + 200, random 360] call BIS_fnc_relPos;
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _piZoneGroups pushBack _piGroup;
 };    
@@ -113,7 +114,7 @@ _lvGroups = round (_lvGroups + (_lvGroupsIncrease * _playerCount));
 _lvSize = round (_lvSize + (_lvSizeIncrease * _playerCount));
 for "_counter" from 1 to _lvGroups do
 {
-    private _newpos = [_mPos, _placement + 200, random 360] call BIS_fnc_relPos;
+    private _newpos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
     
     private _vehType = 7;
     private _cargoType = 9;
@@ -166,7 +167,7 @@ for "_counter" from 1 to _hGroups do
         [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
         
         _hGroup pushBack _cargoGrp;
-        [_mkr, _hGroup] spawn TB_EOS_fnc_transportUnload;
+        [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
     }
     else
     {

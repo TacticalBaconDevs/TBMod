@@ -35,6 +35,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     _settings pushBack (_logic getVariable ["side", EAST]);
     _settings pushBack (_logic getVariable ["heightCheck", true]);
     _settings pushBack (_logic getVariable ["activRadius", 500]);
+    _settings pushBack (_logic getVariable ["heliAbspringen", false]);
     
     [
         [_marker],

@@ -20,7 +20,7 @@ params [
         ["_armorVeh", [], [[]]],
         ["_statics", [], [[]]],
         ["_helis", [], [[]]],
-        ["_settings", [], [[]], 4]
+        ["_settings", [], [[]], 5]
     ];
 
 _hausInf params ["_hiGroups", "_hiSize", ["_hiGroupsIncrease", 0], ["_hiSizeIncrease", 0]];

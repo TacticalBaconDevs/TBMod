@@ -17,7 +17,7 @@ params [
         ["_lightVeh", [], [[]]],
         ["_armorVeh", [], [[]]],
         ["_helis", [], [[]]],
-        ["_settings", [], [[]], 4],
+        ["_settings", [], [[]], 5],
         ["_basSettings", [], [[]], 5]
     ];
 _patrolInf params ["_piGroups", "_piSize", ["_piGroupsIncrease", 0], ["_piSizeIncrease", 0]];

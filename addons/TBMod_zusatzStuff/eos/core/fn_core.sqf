@@ -35,7 +35,7 @@ _armorVeh params ["_avGroups", "_avGroupsIncrease"];
 _statics params ["_stGroups", "_stGroupsIncrease"];
 _helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
 
-_settings params ["_faction", "_distance", "_side", ["_heightLimit", false]];
+_settings params ["_faction", "_distance", "_side", ["_heightLimit", false], "_parachuteJump"];
 
 private _civZone = false;
 private _enemyFaction = "east";
@@ -234,7 +234,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
             private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
             [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
             _hGroup pushBack _cargoGrp;
-            [_mkr, _hGroup] spawn TB_EOS_fnc_transportUnload;
+            [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
         }
         else
         {
