@@ -27,3 +27,14 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     } forEach allCurators;
     systemChat ("Aktive Zeus: "+ _zeusNames);
 }, "all"] call CBA_fnc_registerChatCommand;
+
+["safe", {
+    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
+    {
+        switch (_this select 0) do {
+            case "on" : {[true] remoteExec ["TB_fnc_safe"]};
+            case "off": {[false] remoteExec ["TB_fnc_safe"]};
+            default { systemChat "#safe on/off"; };
+        };
+    };
+}, "all"] call CBA_fnc_registerChatCommand;
