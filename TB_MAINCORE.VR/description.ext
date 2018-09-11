@@ -6,7 +6,7 @@
 
 // Infos
 onLoadName = "NAME DEINER MISSION";
-onLoadMission = "TacticalBacon | <t color='#32CD32'>''NAME DEINER MISSION''</t> - tacticalbacon.de/ - ts3.tacticalbacon.de - kontakt@tacticalbacon.de";
+onLoadMission = "TacticalBacon | <t color='#32CD32'>''NAME DEINER MISSION''</t> - tacticalbacon.de - ts3.tacticalbacon.de - kontakt@tacticalbacon.de";
 loadScreen = "\TBMod_main\pics\logo.paa";
 overviewPicture = "\TBMod_main\pics\logo.paa";
 author = "DEIN NAME [TacticalBacon]"; // das [TacticalBacon] MUSS immer hinter deinem Namen stehen für den Mod
