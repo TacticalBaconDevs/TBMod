@@ -57,7 +57,10 @@ else
         // publicVariable "TB_jip_safe";
     // };
     
-    if (!isNil "TB_safeInfo") then {terminate TB_safeInfo};
+    if (!isNil "TB_safeInfo") then {
+        terminate TB_safeInfo;
+        TB_safeInfo = nil;
+    };
     
     systemChat "[SafeStart] Deine Munition ist nun wieder tödlich!";
 };
