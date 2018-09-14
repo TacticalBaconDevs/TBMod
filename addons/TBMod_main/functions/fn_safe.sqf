@@ -57,7 +57,8 @@ else
         // publicVariable "TB_jip_safe";
     // };
     
-    if (!isNil "TB_safeInfo") then {
+    if (!isNil "TB_safeInfo") then
+    {
         terminate TB_safeInfo;
         TB_safeInfo = nil;
     };
