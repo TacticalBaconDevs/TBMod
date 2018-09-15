@@ -22,16 +22,17 @@ if (_parachuteJump) then
 {
     _wp1 setWaypointType "SCRIPTED";
     _wp1 setWaypointScript "\achilles\functions_f_achilles\scripts\fn_wpParadrop.sqf";
+    waitUntil {sleep 1; ({(vehicle _x) == _veh} count (units _cargoGrp))==0};
 }
 else
 {
     _wp1 setWaypointSpeed "FULL";  
     _wp1 setWaypointType "TR UNLOAD";
     _wp1 setWaypointStatements ["true", "(vehicle this) LAND 'GET OUT';"]; 
+    waitUntil {sleep 1; _vehicle distance2D _pad < 40};
+    _cargoGrp leaveVehicle _vehicle;
+    waitUntil {sleep 1; ({(vehicle _x) == _veh} count (units _cargoGrp))==0};
 };
-
-waitUntil {_vehicle distance2D _pad < 40};
-_cargoGrp leaveVehicle _vehicle;
 
 [_cargoGrp, _mkr] call TB_EOS_fnc_shk_patrol;
 
