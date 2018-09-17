@@ -1,5 +1,5 @@
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 
 // initalisiert die TB Rolle nach dem spawnen
@@ -14,5 +14,5 @@ if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};
 
 ["ace_arsenal_displayOpened", {
     if (!isNil "TB_arsenal_kiste") then {TB_arsenal_kiste hideObject true};
-    (ace_arsenal_virtualItems select 2) append ["ACE_1Rnd_82mm_Mo_HE", "ACE_1Rnd_82mm_Mo_Smoke", "ACE_1Rnd_82mm_Mo_Illum"];
+    //(ace_arsenal_virtualItems select 2) append ["ACE_1Rnd_82mm_Mo_HE", "ACE_1Rnd_82mm_Mo_Smoke", "ACE_1Rnd_82mm_Mo_Illum"];
 }] call CBA_fnc_addEventHandler;

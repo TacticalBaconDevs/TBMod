@@ -243,7 +243,7 @@ class CfgVehicles
         functionPriority = 1;
         isGlobal = 1;
         isTriggerActivated = 0;
-        curatorCanAttach = 1;
+        curatorCanAttach = 0;
         
         function = "ace_common_fnc_dummy";
         author = "shukari";
@@ -257,7 +257,6 @@ class CfgVehicles
     };
     class TB_zeus_disablePath : TB_zeus_base
     {
-        scope = 2;
         scopeCurator = 2;
         curatorCanAttach = 1;
         displayName = "DisablePath 4 Group";
@@ -268,6 +267,20 @@ class CfgVehicles
         scopeCurator = 2;
         displayName = "PrioSichtbarkeit";
         function = "TB_fnc_modulePrioSichtbarkeit";
+    };
+    class TB_zeus_handleAsPlayerMedical : TB_zeus_base
+    {
+        scopeCurator = 2;
+        curatorCanAttach = 1;
+        displayName = "HandlePlayerAsMedical";
+        function = "TB_fnc_moduleHandleAsPlayerMedical";
+    };
+    class TB_zeus_applyLoadout : TB_zeus_base
+    {
+        curatorCanAttach = 1;
+        scopeCurator = 2;
+        displayName = "Apply Loadout";
+        function = "TB_fnc_moduleApplyLoadout";
     };
     
     

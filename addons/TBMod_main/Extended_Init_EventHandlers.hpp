@@ -1,8 +1,8 @@
 class Extended_Init_EventHandlers
 {
-    class Car
+    class LandVehicle
     {
-        class TB_main_removeCargoCar
+        class TB_main_removeCargo
         {
             Init = "params ['_vehicle']; if !(_vehicle getVariable ['TB_main_disableCargoCleanup', false]) then {clearBackpackCargoGlobal _vehicle; clearItemCargoGlobal _vehicle; clearMagazineCargoGlobal _vehicle; clearWeaponCargoGlobal _vehicle;};";
         };
@@ -10,7 +10,7 @@ class Extended_Init_EventHandlers
     
     class Air
     {
-        class TB_main_removeCargoAir
+        class TB_main_removeCargo
         {
             Init = "params ['_vehicle']; if !(_vehicle getVariable ['TB_main_disableCargoCleanup', false]) then {clearBackpackCargoGlobal _vehicle; clearItemCargoGlobal _vehicle; clearMagazineCargoGlobal _vehicle; clearWeaponCargoGlobal _vehicle;};";
         };
@@ -18,7 +18,7 @@ class Extended_Init_EventHandlers
     
     class Ship
     {
-        class TB_main_removeCargoShip
+        class TB_main_removeCargo
         {
             Init = "params ['_vehicle']; if !(_vehicle getVariable ['TB_main_disableCargoCleanup', false]) then {clearBackpackCargoGlobal _vehicle; clearItemCargoGlobal _vehicle; clearMagazineCargoGlobal _vehicle; clearWeaponCargoGlobal _vehicle;};";
         };

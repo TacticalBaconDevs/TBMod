@@ -1,11 +1,11 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 
 systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["help", {
     systemChat ("TB-Mod Version: "+ getText (configfile >> "CfgPatches" >> "TBMod_main" >> "versionStr"));
-    systemChat "#tasten, #rechte, #zeus";
+    systemChat "#tasten, #rechte, #zeus, #safe";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
@@ -23,7 +23,32 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["zeus", {
     private _zeusNames = "";
     {
-        _zeusNames = format ["%1%2, ", _zeusNames, name getAssignedCuratorUnit _x];
-    } forEach allCurators;
+        if (!isNull (getAssignedCuratorUnit _x)) then {_zeusNames = format ["%1%2, ", _zeusNames, name getAssignedCuratorUnit _x]};
+    }
+    forEach allCurators;
+    
     systemChat ("Aktive Zeus: "+ _zeusNames);
+}, "all"] call CBA_fnc_registerChatCommand;
+
+["safe", {
+    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
+    {
+        switch (_this select 0) do {
+            case 1:
+            {
+                [true] remoteExec ["TB_fnc_safe"];
+                systemChat "SafeStart wurde global aktiviert!";
+            };
+            case 0:
+            {
+                [false] remoteExec ["TB_fnc_safe"];
+                systemChat "SafeStart wurde global deaktiviert!";
+            };
+            default
+            {
+                systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil "TB_safeInfo")];
+                [isNil "TB_safeInfo"] remoteExec ["TB_fnc_safe"];
+            };
+        };
+    };
 }, "all"] call CBA_fnc_registerChatCommand;

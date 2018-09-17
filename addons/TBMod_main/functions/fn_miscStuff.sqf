@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 ace_microdagr_settingUseMils = true;
 
@@ -75,6 +75,8 @@ if (_architecture != "x64") then
             player setDir _dir;
             player setPos _pos;
         }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+        
+        systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
         forceRespawn player;
     };
 } forEach allCurators;
@@ -91,5 +93,23 @@ if (_architecture != "x64") then
     nil, 
     nil, 
     nil, 
-    4 
+    3 
 ] call ace_interact_menu_fnc_createAction, true] call ace_interact_menu_fnc_addActionToClass;
+
+if (isNil "TB_funkAnim") then {TB_funkAnim = true};
+["TB_funkAnim", "OnTangent", {
+    params ["_unit", "_activRadio", "_isLR", "_additional", "_buttonDown"];
+    
+    if (!TB_funkAnim) exitWith {};
+    player playActionNow (if (_buttonDown) then {(["tb_radioSR", "tb_radioLR"] select _isLR)} else {"tb_radioStop"});
+}, Player] call TFAR_fnc_addEventHandler;
+
+// AddZeus
+[
+    "TB_informAdminsandZeus",
+    {
+        params ["_msg"];
+        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
+            (getPlayerUID player) in TB_lvl3) then {systemChat _msg};
+    }
+] call CBA_fnc_addEventHandler;

@@ -1,30 +1,73 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params [["_input", false, [false]]];
 
 if (TB_recoilCoef == -1 && _input) then {TB_recoilCoef = 1};
 if (TB_recoilCoef == -1) exitWith {};
 
-TB_cacheType = [];
-player addEventHandler ["FIRED", {
-    if (TB_recoilCoef == -1) exitWith {player removeEventHandler ["FIRED", _thisEventHandler]};
-    params ["", "_weapon"];
+{
+    ace_overheating_cacheSilencerData setVariable _x;
+}
+forEach [
+    ["rhsusf_acc_nt4_black", 4],    //2.4
+    ["rhsusf_acc_nt4_tan", 4],      //2.4
+    ["rhsusf_acc_rotex5_tan", 4],   //2.4
+    ["rhsusf_acc_rotex5_grey", 4],  //2.4
+    ["rhsusf_acc_sfmb556", 1.25],   //1.25
+    ["rhsusf_acc_sf3p556", 1.25]    //1.25
+];
+
+TB_cacheWeaponType = ([currentWeapon player] call BIS_fnc_itemType) select 1;
+TB_recoilFreeze = -1;
+
+["weapon", {
+    params ["_unit", "_newWeapon"];
     
-    if (TB_cacheType isEqualTo [] || {TB_cacheType select 0 != _weapon}) then {TB_cacheType = [_weapon, ([currentWeapon player] call BIS_fnc_itemType) select 1]};
-    TB_cacheType params ["", "_wType", "_time"];
+    TB_cacheWeaponType = ([_newWeapon] call BIS_fnc_itemType) select 1;
+}] call CBA_fnc_addPlayerEventHandler;
+
+TB_recoilID = ["ace_firedPlayer", {
+    if (TB_recoilCoef == -1) exitWith {["ace_firedPlayer", TB_recoilID] call CBA_fnc_removePlayerEventHandler};
+    params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
     
-    if (_time >= diag_tickTime) exitWith {};
+    if (toLower _weapon in ["throw", "put"]) exitWith {};
+    if (TB_recoilFreeze >= diag_tickTime) exitWith {};
+    if (vehicle _unit != _unit) exitWith {_unit setUnitRecoilCoefficient 0};
     
-    private _deploy = isWeaponDeployed player;
-    private _recoil = getCustomAimCoef player;
+    private _recoil = getCustomAimCoef _unit;
+    private _deploy = isWeaponDeployed _unit;
     
-    if (_wType isEqualTo "MachineGun") then {_recoil = _recoil + ([2, 0] select _deploy)};
-    if (_wType isEqualTo "SniperRifle" && {_deploy}) then {_recoil = _recoil - 1};
-    if (isWeaponRested player) then {_recoil = _recoil - 0.3};
-    if (_deploy) then {_recoil = _recoil - 0.6};
+    // Spezielle WaffenStats
+    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([3, 1.5] select _deploy)};
+    if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {_recoil = _recoil - 0.5};
     
-    player setUnitRecoilCoefficient _recoil;
+    // Externe Einflüsse
+    if (isWeaponRested _unit) then {_recoil = _recoil - 0.1};
+    if (_deploy) then {_recoil = _recoil - 0.2};
     
-    TB_cacheType set [2, diag_tickTime + 2];
-}];
+    // Waffen Einflüsse
+    if (_weapon == primaryWeapon _unit) then
+    {
+        (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
+        
+        // silencer
+        if (_mode == "Single" && {toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"]}) then {_recoil = _recoil - 0.2};
+        if (_silencer != "" && {!(toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"])}) then {_recoil = _recoil - 0.1};
+        
+        // Grip
+        if (_bipod != "" && !_deploy && _bipod != "rhsusf_acc_harris_bipod") then {_recoil = _recoil - 0.1};
+    };
+    
+    if (_weapon == handgunWeapon _unit) then
+    {
+        (handgunItems _unit) params ["_silencer", "", "", "_bipod"];
+        
+        if (_silencer != "") then {_recoil = _recoil - 0.1};
+    };
+    
+    TB_debug_recoil = _recoil;
+    _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
+    
+    TB_recoilFreeze = diag_tickTime + 2;
+}] call CBA_fnc_addEventHandler;

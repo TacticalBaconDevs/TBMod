@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params ["_mode"];
 if (isDedicated) exitWith {};
@@ -17,19 +17,18 @@ if (isDedicated) exitWith {};
 
 if (_mode) then
 {
-    
-    if (isNil "BBQC_FiredMan") then
+    if (isNil "TB_FiredMan") then
     {
-        BBQC_FiredMan = player addEventHandler ["FiredMan", {
+        TB_FiredMan = player addEventHandler ["FiredMan", {
             params ["", "_weapon", "", "", "_ammo", "", "_obj"];
             (format ["[SafeStart] %1 hat mit %2 geschossen!", profileName, [_weapon] call TB_fnc_displayName]) remoteExecCall ["systemChat"];
             deleteVehicle _obj;
         }];
     };
     
-    if (isNil "BBQC_firedPlayer") then
+    if (isNil "TB_firedPlayer") then
     {
-        BBQC_firedPlayer = ["ace_firedPlayer", {
+        TB_firedPlayer = ["ace_firedPlayer", {
             if (_weapon == "Throw") then {
                 (format ["[SafeStart] %1 hat mit %2 geworfen!", profileName, [_ammo] call TB_fnc_displayName]) remoteExecCall ["systemChat"];
                 deleteVehicle _projectile;
@@ -43,14 +42,14 @@ if (_mode) then
         // publicVariable "TB_jip_safe";
     // };
     
-    if (isNil "BBQC_safeInfo") then {BBQC_safeInfo = [] spawn {waitUntil {uiSleep 60; systemChat format ["[SafeStart] ist immer noch aktiv!"]; false}}};
+    if (isNil "TB_safeInfo") then {TB_safeInfo = [] spawn {waitUntil {uiSleep 60; systemChat format ["[SafeStart] ist immer noch aktiv!"]; false}}};
     
     systemChat "[SafeStart] Deine Munition wurde aus Sicherheitsgründen durch Luft ersetzt!";
 }
 else
 {
-    if (!isNil "BBQC_FiredMan") then {player removeEventHandler ["FiredMan", BBQC_FiredMan]};
-    if (!isNil "BBQC_firedPlayer") then {["ace_firedPlayer", BBQC_firedPlayer] call CBA_fnc_removeEventHandler};
+    if (!isNil "TB_FiredMan") then {player removeEventHandler ["FiredMan", TB_FiredMan]};
+    if (!isNil "TB_firedPlayer") then {["ace_firedPlayer", TB_firedPlayer] call CBA_fnc_removeEventHandler};
     
     // if (TB_jip_safe) then
     // {
@@ -58,7 +57,7 @@ else
         // publicVariable "TB_jip_safe";
     // };
     
-    if (!isNil "BBQC_safeInfo") then {terminate BBQC_safeInfo};
+    if (!isNil "TB_safeInfo") then {terminate TB_safeInfo};
     
     systemChat "[SafeStart] Deine Munition ist nun wieder tödlich!";
 };

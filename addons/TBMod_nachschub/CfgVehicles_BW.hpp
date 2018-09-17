@@ -8,6 +8,7 @@ class TB_supply_bw_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
         MACRO_ADDMAGAZINE(BWA3_200Rnd_556x45,2);
         MACRO_ADDMAGAZINE(BWA3_10Rnd_762x51_G28,4);
         MACRO_ADDMAGAZINE(hlc_20rnd_762x51_T_G3,4);
+        MACRO_ADDMAGAZINE(BWA3_20Rnd_762x51_G28,4);    //G27 Munition
     };
 };
 
@@ -54,7 +55,7 @@ class TB_supply_bw_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
     
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(BWA3_10Rnd_127x99_G82_SD,10);
+        MACRO_ADDMAGAZINE(BWA3_10Rnd_127x99_G82,10);
         MACRO_ADDMAGAZINE(BWA3_10Rnd_127x99_G82_AP,5);
     };
 };

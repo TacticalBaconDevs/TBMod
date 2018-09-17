@@ -147,7 +147,7 @@ tpw_civ_fnc_civspawn =
     _civ setvariable ["tpw_civ_anim",_move];
     
     //Add it to the array of civs for this player
-    tpw_civ_civarray set [count tpw_civ_civarray,_civ];
+    tpw_civ_civarray pushBack _civ;
     
     // Random uniform if using BIS civs
     if (["c_man",str _civtype] call BIS_fnc_inString) then
@@ -220,9 +220,9 @@ tpw_civ_fnc_nearciv =
                 if ((count _owner > 0) && !(player in _owner)) exitwith
                     {
                     _shareflag = 1;
-                    _owner set [count _owner,player]; // add player as another owner of this civ
+                    _owner pushBack player; // add player as another owner of this civ
                     _x setvariable ["tpw_civ_owner",_owner,true]; // update ownership
-                    tpw_civ_civarray set [count tpw_civ_civarray,_x]; // add this civ to the array of civs for this player
+                    tpw_civ_civarray pushBack _x; // add this civ to the array of civs for this player
                     };
                 };
             } count allunits;

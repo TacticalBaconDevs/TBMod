@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params [["_input", false, [false]]];
 
@@ -24,3 +24,14 @@ player addEventHandler ["FIRED", {
         };
     };
 }];
+
+//["CAManBase", "HitPart", {
+//    {
+//        _x params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
+//        
+//        if (typeOf _projectile == "rhsusf_40mm_Practice") then {
+//            [_target, [2, 0] select (isPlayer _target), [5, 2] select (isPlayer _target)] remoteExec ["rhs_fnc_flashbang_effect", _target];
+//        };
+//    }
+//    forEach _this;
+//}] call CBA_fnc_addClassEventHandler;

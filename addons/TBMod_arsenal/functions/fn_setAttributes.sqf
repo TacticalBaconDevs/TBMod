@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params ["_rolle"];
 
@@ -7,7 +7,6 @@ params ["_rolle"];
 // Wichtige Eigenschaften der Rollen setzen
 // #################################################################
 // Sanitäter / Arzt / Pilot
-if (isNil "TB_addArztRolle") then {TB_addArztRolle = false};
 if (isNil "TB_origin_medicClass") then {TB_origin_medicClass = ACE_player getVariable ["ace_medical_medicClass", 0]};
 if (TB_origin_medicClass == 0) then
 {

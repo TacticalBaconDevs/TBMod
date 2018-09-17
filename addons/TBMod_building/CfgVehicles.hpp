@@ -33,7 +33,7 @@
                 class truck_getFuel \
                 { \
                     displayName = "Tank abfragen"; \
-                    condition = "alive _target"; \
+                    condition = "alive _target && locked _target < 2"; \
                     icon = "\z\ace\addons\refuel\ui\icon_refuel_interact.paa"; \
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
                     statement = "[_target] call TB_fnc_getFuel"; \

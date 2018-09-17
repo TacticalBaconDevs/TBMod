@@ -35,12 +35,44 @@ class CfgFunctions
             class schauspieler {};
             class miscStuff {};
             class persistence {};
+            class advSimulationMgr {};
+            class cargo {};
+            class sitAI {};
+            class animationAI {};
+            class clearCache {};
+            class keysForAI {};
+            class moduleHandleAsPlayerMedical {};
+            class moduleApplyLoadout {};
         };
         
         class gcam
         {
             file = "\TBMod_main\gcam";
             class showGCAM {};
+        };
+    };
+    
+    // REPLACEMENT
+    class Achilles
+    {
+        class ui_f_eventHandler
+        {
+            class onDisplayCuratorLoad {file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";};
+        };
+    };
+    
+    // REPLACEMENT - Experiment
+    class A3_Modules
+    {
+        tag = "BIS";
+        project = "arma3";
+        
+        class Environment
+        {
+            class moduleEditTerrainObject
+            {
+                file = "\TBMod_main\replacement\init.sqf";
+            };
         };
     };
 };

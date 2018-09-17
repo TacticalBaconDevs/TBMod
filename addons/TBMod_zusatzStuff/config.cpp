@@ -28,16 +28,11 @@ class Extended_PostInit_EventHandlers
 {
     class TBMod_zusatzStuff
     {
-        clientInit = "call compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postClientInit.sqf'";
+        // clientInit = "call compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postClientInit.sqf'";
         serverInit = "call compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postServerInit.sqf'";
-    };
-    class TBMod_zusatzStuff_eos
-    {
-        //init = "call compile preprocessFileLineNumbers '\TBMod_zusatzStuff\eos\XEH_postInit.sqf'";
     };
 };
 
 #include "CfgVehicles.hpp"
 #include "CfgFunctions.hpp"
 #include "Cfg3DEN.hpp"
-#include "LV\config_aissp.hpp"

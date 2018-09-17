@@ -6,9 +6,9 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
-        version = 1.1.0;
-        versionStr = "1.1.0";
-        versionAr[] = {1,1,0};
+        version = 1.1.1;
+        versionStr = "1.1.1";
+        versionAr[] = {1,1,1};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -20,8 +20,11 @@ class CfgPatches
                 "TB_flag_fob",
                 "TB_zeus_base",
                 "TB_zeus_nachschubAbwurf",
-                "TB_zeus_disableVCOM",
-                "TB_zeus_activateALIVE"
+                "TB_zeus_disablePath",
+                "TB_zeus_prioSichtbarkeit",
+                "TB_zeus_handleAsPlayerMedical",
+                "TB_zeus_applyLoadout",
+                "TB_zeus_handleAsPlayerMedical"
             };
         ammo[] = {
                 "FlareBase",
@@ -48,7 +51,11 @@ class CfgPatches
             "tfar_core",
 
             // 3rd PartyMods
+            "achilles_language_f",
+            "achilles_data_f_ares",
+            "achilles_data_f_achilles",
             "achilles_functions_f_achilles",
+            "achilles_settings_f",
             "3denEnhanced"
         };
     };
@@ -143,6 +150,13 @@ class Extended_PreInit_EventHandlers
 #include "CfgEditorCategories.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgAmmo.hpp"
+#include "CfgMagazines.hpp"
+#include "Animations.hpp"
+
+// CBA STUFF
+cba_settings_whitelist[] = {"76561198029318101", "admin"};
+enableTargetDebug = 1;
+enableDebugConsole[] = {"76561198029318101"};
 
 class RscDisplayGarage;
 class TB_RscDisplayGarage: RscDisplayGarage
@@ -159,4 +173,13 @@ class TB_RscDisplayGarage: RscDisplayGarage
 class cfgScriptPaths
 {
     TB_Main = "\TBMod_main\functions\";
+    TB_replacement = "\TBMod_main\replacement\";
+};
+class RscDisplayCurator
+{
+    idd = 312;
+    onLoad = "[_this select 0] call Achilles_fnc_onDisplayCuratorLoad;";
+    onUnload = "[_this select 0] call Achilles_fnc_onDisplayCuratorUnload;";
+    scriptName = "RscDisplayCurator";
+    scriptPath = "TB_replacement";
 };

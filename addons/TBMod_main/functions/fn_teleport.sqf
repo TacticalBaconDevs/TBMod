@@ -1,5 +1,5 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 params [
         ["_obj", objNull, [objNull]],
@@ -26,13 +26,13 @@ if (_obj isKindOf "Man") then
         {
             "Das Fahrzeug beim Teleportspieler ist voll, warte etwas!" remoteExecCall ["systemChat", _obj];
             uiSleep 5;
-            _this spawn BBQC_fnc_teleport;
+            _this spawn TB_fnc_teleport;
         };
     }
     else
     {
         player setDir ((getDir _obj) + (10 - random 20));
-        player setPos (_obj modelToWorld [0, -1, 0]);
+        player setPosASL (AGLtoASL (_obj modelToWorld [0, -1, 0]));
     };
 }
 else
@@ -40,7 +40,7 @@ else
     if (_obj isKindOf "TB_spezial_fobBase") then
     {
         player setDir ((getDir _obj) + (10 - random 20));
-        player setPos (_obj modelToWorld [0, -2, 0]);
+        player setPosASL (AGLtoASL (_obj modelToWorld [0, -2, 0]));
     }
     else
     {

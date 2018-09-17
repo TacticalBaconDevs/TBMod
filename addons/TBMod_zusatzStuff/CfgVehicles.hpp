@@ -33,6 +33,6 @@ class CfgVehicles
         is3DEN = 1;
     };
     
-    #include "LV\CfgVehicles.hpp"
-    //#include "eos\CfgVehicles.hpp"
+    // #include "LV\CfgVehicles.hpp"
+    #include "eos\CfgVehicles.hpp"
 };

@@ -1,5 +1,8 @@
 /*
-    Author: Willi "shukari" Graff
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+    
+    Author: shukari
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 

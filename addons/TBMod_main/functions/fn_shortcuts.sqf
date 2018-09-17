@@ -1,6 +1,6 @@
 ﻿#include "\TBMod_main\defineDIKCodes.inc"
 /*
-    Author: Willi "shukari" Graff
+    Author: shukari
 */
 waitUntil {!isNull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
@@ -38,24 +38,21 @@ waitUntil {!isNull (findDisplay 46)};
     // ALT + STRG
     if (_code == DIK_END && {_alt}) then
     {
-        systemChat "DEAKTIVIERTE FUNKTION!";
-        // if (isNil "ace_zeus_zeus") exitWith {
-            // if (!isNull (getAssignedCuratorLogic player)) exitWith {systemChat "Du hast bereits einen Zeus!"};
+        private _zeusModule = player getVariable ["TB_Admin_Zeus", objNull];
+        if (isNull _zeusModule) then {
+            if (!isNull (getAssignedCuratorLogic player)) exitWith {systemChat "Du hast bereits einen Zeus!"};
             
-            // ["ace_zeus_zeusCreatedInfoAdmins", profileName] call CBA_fnc_globalEvent;
-            // ace_zeus_zeus = objNull;
-            // ["ace_zeus_createZeus", ACE_player] call CBA_fnc_serverEvent;
-            // systemChat "Zeus erstellt";
-            // _ret = true;
-        // };
-        
-        // if (!isNil "ace_zeus_zeus" && {!isNull ace_zeus_zeus}) exitWith {
-            // ["ace_zeus_zeusDeletedInfoAdmins", profileName] call CBA_fnc_globalEvent;
-            // deleteVehicle ace_zeus_zeus;
-            // ace_zeus_zeus = nil;
-            // systemChat "Zeus gelöscht";
-            // _ret = true;
-        // };
+            ["TB_addZeus", player] call CBA_fnc_serverEvent;
+            _ret = true;
+        }
+        else
+        {
+            deleteVehicle _zeusModule;
+            player setVariable ["TB_Admin_Zeus", nil];
+            ["TB_informAdminsandZeus", format["%1 ist kein Zeus mehr", profileName]] call CBA_fnc_globalEvent;
+            systemChat "Zeus gelöscht";
+            _ret = true;
+        };
     };
     
     _ret;

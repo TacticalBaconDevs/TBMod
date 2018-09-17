@@ -1,24 +1,39 @@
-params ["_target", "_type", "_spawn"];
+params ["_target", "_spawn", "_classes"];
 
-private _action = ["autoGarage", ["Flugzeug", "Fahrzeuggarage"] select (_type == "auto"), "", {
-        (_this select 2) params ["_target", "_type", "_spawn"];
+for "_i" from 0 to 5 do {
+    private _result = [];
+    
+    if (_i < count _classes) then {
+        {
+            _result pushBack (getText (configFile >> "cfgVehicles" >> _x >> "model"));
+            _result pushBack ([configFile >> "cfgVehicles" >> _x]);
+        }
+        forEach (_classes select _i);
+    };
+    
+    _classes set [_i, _result];
+};
+
+private _action = ["tbGarage", "Garage", "", {
+        (_this select 2) params ["_target", "_spawn", "_classes"];
         BIS_fnc_garage_center = _spawn;
         
         private _vehiclesOnPoint = nearestObjects [_spawn, ["Car", "Tank", "Air", "Ship"], 10];
         
+        //if (count _vehiclesOnPoint > 0) then {
+        //    private _veh = _vehiclesOnPoint select 0;
+        //    diag_log format ["### DEBUG11: veh#0 -> %1", typeOf _veh];
+        //    missionnamespace setvariable ["BIS_fnc_garage_center", _veh];
+        //    missionnamespace setvariable ["bis_fnc_garage_centerType", typeOf _veh];
+        //    missionnamespace setvariable ["BIS_fnc_arsenal_center", _veh];
+        //};
+        
         if (count _vehiclesOnPoint > 0) then {
-            private _veh = _vehiclesOnPoint select 0;
-            diag_log format ["### DEBUG11: veh#0 -> %1", typeOf _veh];
-            missionnamespace setvariable ["BIS_fnc_garage_center", _veh];
-            missionnamespace setvariable ["bis_fnc_garage_centerType", typeOf _veh];
-            missionnamespace setvariable ["BIS_fnc_arsenal_center", _veh];
+            {deleteVehicle _x} forEach _vehiclesOnPoint;
         };
         
-        // if (count _vehiclesOnPoint > 1) then {
-            // {deleteVehicle _x} forEach _vehiclesOnPoint;
-        // };
-        
-        BIS_fnc_garage_data = (if (_type == "auto") then {
+        BIS_fnc_garage_data = _classes;
+        /*BIS_fnc_garage_data = (if (_type == "auto") then {
             uiNamespace setVariable ["bis_fnc_garage_defaultClass", "rhsusf_m1025_w_m2"];
             [
                 //CAR
@@ -38,16 +53,16 @@ private _action = ["autoGarage", ["Flugzeug", "Fahrzeuggarage"] select (_type ==
                     "\rhsusf\addons\rhsusf_m113\m113a3_m2",[configFile >> "cfgVehicles" >> "rhsusf_m113_usarmy"],
                     "\rhsusf\addons\rhsusf_m113\m113a3_unarmed",[configFile >> "cfgVehicles" >> "rhsusf_m113_usarmy_unarmed"]
                 ],
-                [],        //HELIS
-                [],        //PLANES
-                [],        //NAVAL
-                []        //STATICS
+                [],         //HELIS
+                [],         //PLANES
+                [],         //NAVAL
+                []          //STATICS
             ]
         } else {
             uiNamespace setVariable ["bis_fnc_garage_defaultClass", "RHS_MELB_MH6M"];
             [
-                [],        //CAR
-                [],        //ARMOR
+                [],         //CAR
+                [],         //ARMOR
                 //HELIS
                 [
                     "\rhsusf\addons\rhsusf_a2port_air\ah64\ah64d",[configFile >> "cfgVehicles" >> "RHS_AH64D_wd"],
@@ -58,11 +73,11 @@ private _action = ["autoGarage", ["Flugzeug", "Fahrzeuggarage"] select (_type ==
                     "rhsusf\addons\rhsusf_melb\melb.p3d:RHS_MELB_MH6M",[configFile >> "cfgVehicles" >> "RHS_MELB_MH6M"],
                     "rhsusf\addons\rhsusf_melb\melb.p3d",[configFile >> "cfgVehicles" >> "RHS_MELB_H6M"]
                 ],
-                [],        //PLANES
-                [],        //NAVAL
+                [],         //PLANES
+                [],         //NAVAL
                 []
             ]
-        });
+        });*/
         
         missionnamespace setvariable ["BIS_fnc_garage_data",BIS_fnc_garage_data];
         missionnamespace setvariable ["BIS_fnc_garage_center",BIS_fnc_garage_center];

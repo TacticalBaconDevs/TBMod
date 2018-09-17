@@ -101,6 +101,7 @@
                     ADD_SUPPLY(MoerserMunnitionFlare,TB_supply_all_mortarAmmoFlare);
                     ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
+                    ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
                 };
         
                 class usa
@@ -112,9 +113,12 @@
                     ADD_SUPPLY(KleinMunition,TB_supply_usa_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_usa_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_usa_unterlauf);
-                    ADD_SUPPLY(Spezial,TB_supply_usa_spezial);
+                    ADD_SUPPLY(SpezialMunition,TB_supply_usa_spezial);
                     ADD_SUPPLY(Werfer,TB_supply_usa_launcher);
                     ADD_SUPPLY(WerferMunition,TB_supply_usa_launcherAmmo);
+                    ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
+                    ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
+                    ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
                     ADD_SUPPLY(NotfallM4,TB_supply_usa_notfallm4);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                 };
@@ -128,7 +132,7 @@
                     ADD_SUPPLY(KleinMunition,TB_supply_bw_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_bw_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_bw_unterlauf);
-                    ADD_SUPPLY(Spezial,TB_supply_bw_spezial);
+                    ADD_SUPPLY(SpezialMunition,TB_supply_bw_spezial);
                     ADD_SUPPLY(Werfer,TB_supply_bw_launcher);
                     ADD_SUPPLY(WerferMunition,TB_supply_bw_launcherAmmo);
                     ADD_SUPPLY(NotfallG36,TB_supply_bw_notfallg36);
