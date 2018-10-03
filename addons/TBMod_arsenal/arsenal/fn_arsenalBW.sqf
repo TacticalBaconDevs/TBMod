@@ -157,15 +157,18 @@ private _allgemein_magazine = [
 ];
 
 private _allgemein_visiere = [
-    "BWA3_optic_Aimpoint",
+    "BWA3_optic_MicroT2",
+    "BWA3_optic_MicroT1",
+    "BWA3_optic_CompM2",
+    "BWA3_optic_CompM2_tan",
     "BWA3_optic_EOTech",
-    "BWA3_optic_EOTech_tan",
-    "BWA3_optic_EOTech_tan_Mag_On",
-    "BWA3_optic_EOTech_tan_Mag_Off",
+    "BWA3_optic_EOTech_sand",
+    "BWA3_optic_EOTech_sand_Mag_On",
+    "BWA3_optic_EOTech_sand_Mag_Off",
     "BWA3_optic_EOTech_Mag_On",
     "BWA3_optic_EOTech_Mag_Off",
     "BWA3_optic_RSAS",
-    "BWA3_optic_ZO4x30_Single",
+    //"BWA3_optic_ZO4x30_Single", keine Ahnung was das neue ist
     "BWA3_optic_ZO4x30",
     "HLC_Optic_G36Dualoptic15x",
     "HLC_Optic_G36Dualoptic15x2d",
@@ -561,7 +564,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_optic_PMII_ShortdotCC_pip",
             "hlc_optic_LeupoldM3A",     // x10
             "hlc_optic_LeupoldM3A_G3",  // x10
-            "BWA3_optic_20x50",         // x20
+            "BWA3_optic_PMII_DMR",         // x20
             "hlc_optic_accupoint_g3",
             //"hlc_optic_PVS4G3",
             //"hlc_optic_STANAGZF_G3",
@@ -642,7 +645,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weapons
             "BWA3_MP7",
             // ### Geschützzubehör
-            "BWA3_muzzle_snds_MP7",
+            "BWA3_muzzle_snds_Rotex_II",
 
             // Uniforms
             "BWA3_Uniform_Helipilot",
@@ -702,10 +705,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             "BWA3_MP7",
             // ### Visiere
-            "BWA3_optic_24x72",
-            "BWA3_optic_20x50",
+            "BWA3_optic_Hensoldt",
+            "BWA3_optic_PMII_DMR",
             // ### Geschützzubehör
-            "BWA3_muzzle_snds_MP7",
+            "BWA3_muzzle_snds_Rotex_II",
 
             // Uniforms
             "BWA3_Uniform_Ghillie_Tropen",
@@ -755,7 +758,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehre
             "BWA3_MP7",
             // ### Geschützzubehör
-            "BWA3_muzzle_snds_MP7",
+            "BWA3_muzzle_snds_Rotex_II",
 
             // Uniforms
             "BWA3_Uniform_Ghillie_Tropen",
