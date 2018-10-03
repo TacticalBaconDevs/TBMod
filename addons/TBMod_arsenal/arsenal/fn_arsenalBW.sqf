@@ -17,9 +17,9 @@ private _allgemein = [
     // "TFAR_rt1523g_big_rhs",
 
     // Gesichtsbedeckung
-    "BWA3_G_Combat_Clear",
-    "BWA3_G_Combat_Orange",
-    "BWA3_G_Combat_Black",
+    "BWA3_G_Combat_clear",
+    "BWA3_G_Combat_orange",
+    "BWA3_G_Combat_black",
     // ### Vanilla
     //"rhs_googles_orange",
     //"rhs_googles_yellow",
@@ -206,8 +206,8 @@ private _allgemein_raketenwerfer = [
     "BWA3_optic_CarlGustav",
     "BWA3_optic_NSA80",
     // ### Munition
-    "BWA3_PzF3_Tandem",
-    "BWA3_RGW90_HH"
+    //"BWA3_PzF3_Tandem", ist dies ncht in AAAT
+    //"BWA3_RGW90_HH" ist dies ncht in AAAT
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -215,10 +215,13 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_P2A1",
     "BWA3_P8",
     // ### Munition
-    "BWA3_Flare_Illum",
-    "BWA3_Flare_White",
-    "BWA3_Flare_Green",
-    "BWA3_Flare_Red",
+    "BWA3_1Rnd_Flare_Singlestar_White",
+    "BWA3_1Rnd_Flare_Singlestar_Green",
+    "BWA3_1Rnd_Flare_Singlestar_Red",
+    "BWA3_1Rnd_Flare_Illum",
+    "BWA3_1Rnd_Flare_Multistar_White",
+    "BWA3_1Rnd_Flare_Multistar_Green",
+    "BWA3_1Rnd_Flare_Multistar_Red",
     "BWA3_15Rnd_9x19_P8",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
@@ -242,8 +245,8 @@ private _allgemein_uniformen = [
 private _allgemein_westen = [
     "BWA3_Vest_Fleck",
     "BWA3_Vest_Tropen",
-    "BWA3_Vest_Rifleman1_Fleck",
-    "BWA3_Vest_Rifleman1_Tropen",
+    "BWA3_Vest_Rifleman_Fleck",
+    "BWA3_Vest_Rifleman_Tropen",
     "BWA3_Vest_JPC_Rifleman_Fleck",
     "BWA3_Vest_JPC_Rifleman_Tropen",
     "BWA3_Vest_JPC_Radioman_Fleck",
@@ -260,8 +263,6 @@ private _allgemein_kopfbedeckung = [
     "BWA3_OpsCore_Fleck_Camera",
     "BWA3_OpsCore_Fleck_Patch",
     "BWA3_OpsCore_Fleck",
-    "BWA3_OpsCore_Schwarz_Camera",
-    "BWA3_OpsCore_Schwarz",
     "BWA3_OpsCore_Tropen_Camera",
     "BWA3_OpsCore_Tropen_Patch",
     "BWA3_OpsCore_Tropen"
@@ -298,11 +299,12 @@ private _dmr_munition = [
     "BWA3_10Rnd_762x51_G28_SD",
     "BWA3_10Rnd_762x51_G28_AP",
     "BWA3_10Rnd_762x51_G28_LR",
-    "BWA3_20Rnd_762x51_G28",            //G27 und G28 Patrol
-    "BWA3_20Rnd_762x51_G28_Tracer",     //G27 und G28 Patrol
-    "BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
-    "BWA3_20Rnd_762x51_G28_SD",         //G27 und G28 Patrol
-    "BWA3_20Rnd_762x51_G28_AP",         //G27 und G28 Patrol
+    "BWA3_20Rnd_762x51_G28",
+    "BWA3_20Rnd_762x51_G28_Tracer",
+    "BWA3_20Rnd_762x51_G28_Tracer_Dim",
+    "BWA3_20Rnd_762x51_G28_AP",
+    "BWA3_20Rnd_762x51_G28_SD",
+
     "hlc_20rnd_762x51_b_G3",
     "hlc_20rnd_762x51_Mk316_G3",
     "hlc_20rnd_762x51_barrier_G3",
@@ -313,8 +315,10 @@ private _dmr_munition = [
 ];
 
 private _mg_munition = [
-    "BWA3_200Rnd_556x45",
-    "BWA3_200Rnd_556x45_Tracer",
+    "BWA3_30Rnd_556x45_G36",
+    "BWA3_30Rnd_556x45_G36_Tracer",
+    //"BWA3_B_556x45_Ball_SD",
+    //"BWA3_B_556x45_Ball_AP",
     "hlc_100rnd_556x45_EPR_G36",
     "hlc_100rnd_556x45_M_G36",
     "hlc_100rnd_556x45_Mdim_G36",
@@ -333,9 +337,9 @@ private _sniper_munition = [
     "BWA3_10Rnd_127x99_G82",
     "BWA3_10Rnd_127x99_G82_Tracer",
     "BWA3_10Rnd_127x99_G82_Tracer_Dim",
-    "BWA3_10Rnd_127x99_G82_SD",
     "BWA3_10Rnd_127x99_G82_AP",
     "BWA3_10Rnd_127x99_G82_AP_Tracer",
+    "BWA3_10Rnd_127x99_G82_SD",
     "BWA3_10Rnd_127x99_G82_Raufoss",
     "BWA3_10Rnd_127x99_G82_Raufoss_Tracer",
     "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim"
@@ -343,14 +347,13 @@ private _sniper_munition = [
 
 private _aaat_munition = [
     "BWA3_Fliegerfaust_Mag",
-    "BWA3_ammo_Penetrator_CarlGustav_HEAT",
-    "BWA3_R_CarlGustav_HEAT",
-    "BWA3_R_CarlGustav_HE",
-    "BWA3_R_CarlGustav_HEDP",
-    "BWA3_R_CarlGustav_Smoke",
-    "BWA3_R_CarlGustav_Illum",
-    "BWA3_R_PzF3_Tandem",
-    "BWA3_R_RGW90_HH"
+    "BWA3_CarlGustav_HEAT",
+    "BWA3_CarlGustav_HE",
+    "BWA3_CarlGustav_HEDP",
+    "BWA3_CarlGustav_Smoke",
+    "BWA3_CarlGustav_Illum",
+    "BWA3_PzF3_Tandem",
+    "BWA3_RGW90_HH"
 ];
 
 private _gepaeck_mittel = [
@@ -492,8 +495,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Kopfbedeckung
             "BWA3_CrewmanKSK_Fleck_Headset",
             "BWA3_CrewmanKSK_Fleck",
-            "BWA3_CrewmanKSK_Schwarz_Headset",
-            "BWA3_CrewmanKSK_Schwarz",
             "BWA3_CrewmanKSK_Tropen_Headset",
             "BWA3_CrewmanKSK_Tropen",
 
@@ -550,13 +551,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_G27",
             "BWA3_G27_tan",
             "BWA3_G28",
-            "BWA3_G28_Standard",
+            "BWA3_G28_Patrol",
             "hlc_rifle_g3sg1ris",
             "hlc_rifle_g3sg1",
             // ### Visiere
             "hlc_optic_VOMZ3d",         // x3.5
             "hlc_optic_ZF95Base",       // x6
-            "BWA3_optic_Shortdot",      // x8
+            "BWA3_optic_PMII_ShortdotCC",     
+            "BWA3_optic_PMII_ShortdotCC_pip",
             "hlc_optic_LeupoldM3A",     // x10
             "hlc_optic_LeupoldM3A_G3",  // x10
             "BWA3_optic_20x50",         // x20
@@ -597,8 +599,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "hlc_lmg_MG3", // MG3 nur 50 Schuss
 
             // Weste
-            "BWA3_Vest_Autorifleman_Tropen",
-            "BWA3_Vest_Autorifleman_Fleck"
+            "BWA3_Vest_MachineGunner_Tropen",
+            "BWA3_Vest_MachineGunner_Fleck"
         ]
     };
 
@@ -650,8 +652,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Kopfbedeckung
             "BWA3_CrewmanKSK_Fleck_Headset",
             "BWA3_CrewmanKSK_Fleck",
-            "BWA3_CrewmanKSK_Schwarz_Headset",
-            "BWA3_CrewmanKSK_Schwarz",
             "BWA3_CrewmanKSK_Tropen_Headset",
             "BWA3_CrewmanKSK_Tropen",
             "BWA3_Knighthelm",
@@ -851,7 +851,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_Fliegerfaust",
             "BWA3_CarlGustav",
             // ### Visiere
-            "BWA3_optic_CarlGustaf"
+            "BWA3_CarlGustav_Optic"
         ]
     };
 
@@ -908,8 +908,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Kopfbedeckung
             "BWA3_CrewmanKSK_Fleck_Headset",
             "BWA3_CrewmanKSK_Fleck",
-            "BWA3_CrewmanKSK_Schwarz_Headset",
-            "BWA3_CrewmanKSK_Schwarz",
             "BWA3_CrewmanKSK_Tropen_Headset",
             "BWA3_CrewmanKSK_Tropen",
 
