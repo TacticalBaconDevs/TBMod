@@ -200,13 +200,13 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_raketenwerfer = [
-    "BWA3_Pzf3",
+    "BWA3_PzF3",
     "BWA3_RGW90",
     // ### Visiere
-    "BWA3_optic_CarlGustaf",
+    "BWA3_optic_CarlGustav",
     "BWA3_optic_NSA80",
     // ### Munition
-    "BWA3_Pzf3_IT",
+    "BWA3_PzF3_Tandem",
     "BWA3_RGW90_HH"
 ];
 
@@ -215,13 +215,10 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_P2A1",
     "BWA3_P8",
     // ### Munition
-    "BWA3_1Rnd_Flare_Illum",
-    "BWA3_1Rnd_Flare_Singlestar_White",
-    "BWA3_1Rnd_Flare_Singlestar_Green",
-    "BWA3_1Rnd_Flare_Singlestar_Red",
-    "BWA3_1Rnd_Flare_Multistar_White",
-    "BWA3_1Rnd_Flare_Multistar_Green",
-    "BWA3_1Rnd_Flare_Multistar_Red",
+    "BWA3_Flare_Illum",
+    "BWA3_Flare_White",
+    "BWA3_Flare_Green",
+    "BWA3_Flare_Red",
     "BWA3_15Rnd_9x19_P8",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
@@ -231,15 +228,15 @@ private _allgemein_handfeuerwaffen = [
 
 private _allgemein_uniformen = [
     "BWA3_Uniform_Fleck",
-    "BWA3_Uniform2_Fleck",
     "BWA3_Uniform_Tropen",
+    "BWA3_Uniform_tee_Fleck",
+    "BWA3_Uniform_tee_Tropen",
+    "BWA3_Uniform_sleeves_Fleck",
+    "BWA3_Uniform_sleeves_Tropen",
+    "BWA3_Uniform2_Fleck",
     "BWA3_Uniform2_Tropen",
-    "BWA3_Uniform_idz_Fleck",
-    "BWA3_Uniform3_idz_Fleck",
-    "BWA3_Uniform2_idz_Fleck",
-    "BWA3_Uniform_idz_Tropen",
-    "BWA3_Uniform3_idz_Tropen",
-    "BWA3_Uniform2_idz_Tropen"
+    "BWA3_Uniform2_sleeves_Fleck",
+    "BWA3_Uniform2_sleeves_Tropen",
 ];
 
 private _allgemein_westen = [
@@ -346,13 +343,14 @@ private _sniper_munition = [
 
 private _aaat_munition = [
     "BWA3_Fliegerfaust_Mag",
-    "BWA3_CarlGustaf_Illum",
-    "BWA3_CarlGustaf_HE",
-    "BWA3_CarlGustaf_HEAT",
-    "BWA3_CarlGustaf_HEDP",
-    "BWA3_CarlGustaf_Smoke",
-    "BWA3_Pzf3_IT",
-    "BWA3_RGW90_HH"
+    "BWA3_ammo_Penetrator_CarlGustav_HEAT",
+    "BWA3_R_CarlGustav_HEAT",
+    "BWA3_R_CarlGustav_HE",
+    "BWA3_R_CarlGustav_HEDP",
+    "BWA3_R_CarlGustav_Smoke",
+    "BWA3_R_CarlGustav_Illum",
+    "BWA3_R_PzF3_Tandem",
+    "BWA3_R_RGW90_HH"
 ];
 
 private _gepaeck_mittel = [
@@ -550,8 +548,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Weapons
             "BWA3_G27",
-            "BWA3_G27_Tan",
-            "BWA3_G28_Assault",
+            "BWA3_G27_tan",
+            "BWA3_G28",
             "BWA3_G28_Standard",
             "hlc_rifle_g3sg1ris",
             "hlc_rifle_g3sg1",
@@ -712,8 +710,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Uniforms
             "BWA3_Uniform_Ghillie_Tropen",
             "BWA3_Uniform_Ghillie_Fleck",
-            "BWA3_Uniform_Ghillie_idz_Fleck",
-            "BWA3_Uniform_Ghillie_idz_Tropen",
+            "BWA3_Uniform2_Ghillie_Fleck",
+            "BWA3_Uniform2_Ghillie_Tropen",
 
             // Westen
             "BWA3_Vest_Marksman_Tropen",
@@ -762,8 +760,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Uniforms
             "BWA3_Uniform_Ghillie_Tropen",
             "BWA3_Uniform_Ghillie_Fleck",
-            "BWA3_Uniform_Ghillie_idz_Fleck",
-            "BWA3_Uniform_Ghillie_idz_Tropen",
+            "BWA3_Uniform2_Ghillie_Fleck",
+            "BWA3_Uniform2_Ghillie_Tropen",
 
             // Westen
             "BWA3_Vest_Marksman_Tropen",
@@ -851,7 +849,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Raketenwerfer
             "BWA3_Fliegerfaust",
-            "BWA3_CarlGustaf",
+            "BWA3_CarlGustav",
             // ### Visiere
             "BWA3_optic_CarlGustaf"
         ]
