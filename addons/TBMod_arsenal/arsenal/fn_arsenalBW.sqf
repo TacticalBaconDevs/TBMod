@@ -261,8 +261,8 @@ private _allgemein_kopfbedeckung = [
     "BWA3_Booniehat_Tropen",
     "BWA3_M92_Fleck",
     "BWA3_M92_Tropen",
-    "BWA3_MICH_Fleck",
-    "BWA3_MICH_Tropen",
+    //"BWA3_MICH_Fleck", nicht gefunden
+    //"BWA3_MICH_Tropen", nicht gefunden
     "BWA3_OpsCore_Fleck_Camera",
     "BWA3_OpsCore_Fleck_Patch",
     "BWA3_OpsCore_Fleck",
