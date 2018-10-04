@@ -61,7 +61,7 @@ _result = [];
 {
     private _text = toLower (configName _x);
     
-    if (_text find "bwa" != -1 ) then {
+    if (_text find "bwa" != -1) then {
         _result pushBack (configName _x);
     };
 }
