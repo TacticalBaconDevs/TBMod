@@ -65,5 +65,5 @@ _result = [];
         _result pushBack (configName _x);
     };
 }
-forEach (("true" configClasses (configfile >> "CfgWeapons")) + ("true" configClasses (configfile >> "CfgMagazines")) + ("true" configClasses (configfile >> "CfgGlasses")) + ("true" configClasses (configfile >> "CfgVehicles"))); //serverName
+forEach (("true" configClasses (configfile >> "CfgWeapons")) + ("true" configClasses (configfile >> "CfgMagazines")) + ("true" configClasses (configfile >> "CfgGlasses")) + ("true" configClasses (configfile >> "CfgVehicles")));
 _result;

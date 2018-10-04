@@ -209,8 +209,8 @@ private _allgemein_raketenwerfer = [
     "BWA3_optic_CarlGustav",
     "BWA3_optic_NSA80",
     // ### Munition
-    //"BWA3_PzF3_Tandem", ist dies ncht in AAAT
-    //"BWA3_RGW90_HH" ist dies ncht in AAAT
+    "BWA3_PzF3_Tandem",
+    "BWA3_RGW90_HH"
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -242,7 +242,7 @@ private _allgemein_uniformen = [
     "BWA3_Uniform2_Fleck",
     "BWA3_Uniform2_Tropen",
     "BWA3_Uniform2_sleeves_Fleck",
-    "BWA3_Uniform2_sleeves_Tropen",
+    "BWA3_Uniform2_sleeves_Tropen"
 ];
 
 private _allgemein_westen = [
@@ -302,11 +302,11 @@ private _dmr_munition = [
     "BWA3_10Rnd_762x51_G28_SD",
     "BWA3_10Rnd_762x51_G28_AP",
     "BWA3_10Rnd_762x51_G28_LR",
-    "BWA3_20Rnd_762x51_G28",
-    "BWA3_20Rnd_762x51_G28_Tracer",
-    "BWA3_20Rnd_762x51_G28_Tracer_Dim",
-    "BWA3_20Rnd_762x51_G28_AP",
-    "BWA3_20Rnd_762x51_G28_SD",
+    "BWA3_20Rnd_762x51_G28", //G27 und G28 Patrol
+    "BWA3_20Rnd_762x51_G28_Tracer", //G27 und G28 Patrol
+    "BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
+    "BWA3_20Rnd_762x51_G28_AP", //G27 und G28 Patrol
+    "BWA3_20Rnd_762x51_G28_SD", //G27 und G28 Patrol
 
     "hlc_20rnd_762x51_b_G3",
     "hlc_20rnd_762x51_Mk316_G3",
@@ -560,8 +560,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Visiere
             "hlc_optic_VOMZ3d",         // x3.5
             "hlc_optic_ZF95Base",       // x6
-            "BWA3_optic_PMII_ShortdotCC",     
-            "BWA3_optic_PMII_ShortdotCC_pip",
+            "BWA3_optic_PMII_ShortdotCC", //x8
             "hlc_optic_LeupoldM3A",     // x10
             "hlc_optic_LeupoldM3A_G3",  // x10
             "BWA3_optic_PMII_DMR",         // x20
