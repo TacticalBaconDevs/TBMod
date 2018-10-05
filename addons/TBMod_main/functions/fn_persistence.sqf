@@ -236,7 +236,7 @@ else // load
         
         private _grp = grpNull;
         {
-            if (isNull _grp) then {_grp = createGroup (_crew select 0)};
+            if (isNull _grp) then {_grp = createGroup [_crew select 0, true]};
             private _unit = _grp createUnit [_x, [0,0,0], [], 0, "CAN_COLLIDE"];
             _unit moveInAny _vehicle;
         }

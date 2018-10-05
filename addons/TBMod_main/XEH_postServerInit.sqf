@@ -34,7 +34,7 @@ if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
         {
             params ["_player"];
             
-            private _moderatorModule = (createGroup sideLogic) createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+            private _moderatorModule = (createGroup [sideLogic, true]) createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
             _moderatorModule addCuratorEditableObjects [vehicles + allUnits, true];
             _player assignCurator _moderatorModule;
             _player setVariable ["TB_Admin_Zeus", _moderatorModule, true];

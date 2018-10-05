@@ -10,6 +10,8 @@
 */
 params ["_grp", "_skillArray"];
 
+if (isNull _grp) exitWith {};
+
 private _skillset = tb_server getVariable _skillArray;
 {
     private _unit = _x;
