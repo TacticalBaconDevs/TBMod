@@ -7,7 +7,7 @@ class CfgPatches
         
         weapons[] =
         {
-            "TB_weap_taser",
+            "TB_weap_taser"
         };
         units[] = {};
         ammo[] = {};

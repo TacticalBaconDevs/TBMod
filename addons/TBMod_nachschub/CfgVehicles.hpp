@@ -102,6 +102,7 @@
                     ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
                     ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
+                    ADD_SUPPLY(Minenkiste,TB_supply_all_mines);
                 };
         
                 class usa
@@ -177,8 +178,8 @@
             
             MACRO_ADDITEM(ACE_tourniquet,10);
             
-            MACRO_ADDITEM(ACE_salineIV_500,10);
-            MACRO_ADDITEM(ACE_salineIV,5);
+            MACRO_ADDITEM(ACE_bloodIV_500,10);
+            MACRO_ADDITEM(ACE_bloodIV,5);
             
             MACRO_ADDITEM(ACE_morphine,20);
             MACRO_ADDITEM(ACE_epinephrine,10);
@@ -334,7 +335,25 @@
             MACRO_ADDMAGAZINE(hlc_30Rnd_10mm_JHP_MP5,20);
         };
     };
+
+    class TB_supply_all_mines : WRAPPER_NAME(Box_NATO_Ammo_F)
+    {
+        PUBLIC_NAME("Minenkiste");
     
+        class TransportItems
+        {
+            MACRO_ADDITEM(DemoCharge_Remote_Mag,10);
+            MACRO_ADDITEM(SatchelCharge_Remote_Mag,5);
+            MACRO_ADDITEM(AMP_Breaching_Charge_Mag,10);
+
+            MACRO_ADDITEM(SLAMDirectionalMine_Wire_Mag,5);
+            MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
+            MACRO_ADDITEM(APERSMine_Range_Mag,5);
+            MACRO_ADDITEM(ACE_M26_Clacker,5);
+            MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
+        };
+    };
+
     // ###################### USA #########################
     #include "CfgVehicles_USA.hpp"
     
