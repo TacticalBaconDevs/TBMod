@@ -346,13 +346,11 @@
             MACRO_ADDITEM(SatchelCharge_Remote_Mag,10);
             MACRO_ADDITEM(AMP_Breaching_Charge_Mag,10);
 
-
             MACRO_ADDITEM(SLAMDirectionalMine_Wire_Mag,5);
             MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
             MACRO_ADDITEM(ACE_M26_Clacker,5);
             MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
-
         };
     };
 
