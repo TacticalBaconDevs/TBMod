@@ -178,8 +178,8 @@
             
             MACRO_ADDITEM(ACE_tourniquet,10);
             
-            MACRO_ADDITEM(ACE_salineIV_500,10);
-            MACRO_ADDITEM(ACE_salineIV,5);
+            MACRO_ADDITEM(ACE_bloodIV_500,10);
+            MACRO_ADDITEM(ACE_bloodIV,5);
             
             MACRO_ADDITEM(ACE_morphine,20);
             MACRO_ADDITEM(ACE_epinephrine,10);

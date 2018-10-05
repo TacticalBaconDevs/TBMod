@@ -4,30 +4,42 @@
 */
 class CfgWeapons
 {
-    class arifle_MX_Base_F;
-    class rhs_weap_m4_Base : arifle_MX_Base_F
-    {
-        class M203_GL
-        {
-            magazines[] += {
-                "3Rnd_Smoke_Grenade_shell_precise",
-                "rhs_mag_m713_Red_precise",
-                "rhs_mag_m714_White_precise",
-                "rhs_mag_m715_Green_precise",
-                "rhs_mag_m716_Yellow_precise"
-            };
-        };
-        class M320_GL
-        {
-            magazines[] += {
-                "3Rnd_Smoke_Grenade_shell_precise",
-                "rhs_mag_m713_Red_precise",
-                "rhs_mag_m714_White_precise",
-                "rhs_mag_m715_Green_precise",
-                "rhs_mag_m716_Yellow_precise"
-            };
-        };
-    };
+    // class arifle_MX_Base_F;
+    // class rhs_weap_m4_Base : arifle_MX_Base_F
+    // {
+        // class M203_GL
+        // {
+            // magazines[] += {
+                // "3Rnd_Smoke_Grenade_shell_precise",
+                // "rhs_mag_m713_Red_precise",
+                // "rhs_mag_m714_White_precise",
+                // "rhs_mag_m715_Green_precise",
+                // "rhs_mag_m716_Yellow_precise"
+            // };
+        // };
+        // class M320_GL
+        // {
+            // magazines[] += {
+                // "3Rnd_Smoke_Grenade_shell_precise",
+                // "rhs_mag_m713_Red_precise",
+                // "rhs_mag_m714_White_precise",
+                // "rhs_mag_m715_Green_precise",
+                // "rhs_mag_m716_Yellow_precise"
+            // };
+        // };
+    // };
+    
+    // class Pistol_Base_F;
+    // class rhs_weap_M320_Base_F : Pistol_Base_F
+    // {
+        // magazines[] += {
+            // "3Rnd_Smoke_Grenade_shell_precise",
+            // "rhs_mag_m713_Red_precise",
+            // "rhs_mag_m714_White_precise",
+            // "rhs_mag_m715_Green_precise",
+            // "rhs_mag_m716_Yellow_precise"
+        // };
+    // };
     
     
     // class rhs_weap_m4a1 : rhs_weap_m4_Base
