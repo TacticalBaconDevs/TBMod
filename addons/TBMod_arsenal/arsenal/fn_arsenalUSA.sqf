@@ -818,6 +818,7 @@ _items append (switch (_rolle) do
             "rhsusf_lrf_Vector21",
             //"ACE_VectorDay",
             "ACE_Vector", // Tag/Nacht Version
+            "ACE_Kestrel4500",
 
             // Spezial
             "ACE_RangeCard"
