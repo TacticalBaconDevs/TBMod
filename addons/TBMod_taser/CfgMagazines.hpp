@@ -9,23 +9,11 @@ class CfgMagazines
     {
         ammo = "TB_ammo_taser";
         author = "TBMod";
-        count = 1; //2
+        count = 3;
         initSpeed = 50;
-        descriptionShort = "Taser Magazin<br />Rounds: 1<br />Benutzt in: Taser";
-        displayName = "Taser Magazine";
-        displaynameshort = "Taser Magazine";
-    };
-    
-    class 6Rnd_45ACP_Cylinder;
-    class TB_mag_taser2 : 6Rnd_45ACP_Cylinder
-    {
-        ammo = "TB_ammo_taser";
-        author = "TBMod";
-        count = 1; //2
-        initSpeed = 50;
-        mass = 20;
-        descriptionShort = "CoolererTaser Magazin<br />Rounds: 1<br />Benutzt in: CoolererTaser";
-        displayName = "CoolererTaser Magazine";
-        displaynameshort = "CoolererTaser Magazine";
+        descriptionShort = "Taser Magazin<br />Rounds: 3<br />Benutzt in: Taser";
+        displayName = "Taser Magazin";
+        displaynameshort = "Taser Magazin";
+        mass = 21; // 7
     };
 };

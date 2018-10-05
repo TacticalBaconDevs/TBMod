@@ -57,7 +57,7 @@ force force ace_cookoff_ammoCookoffDuration = 0.6;
 force force ace_cookoff_enable = true;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
-force force ace_cookoff_probabilityCoef = 0.80;
+force force ace_cookoff_probabilityCoef = 0.8;
 
 // ACE Einheitenwechsel
 force force ace_switchunits_enableSafeZone = true;
@@ -74,7 +74,7 @@ force force ace_advanced_fatigue_enableStaminaBar = true;
 force force ace_advanced_fatigue_loadFactor = 0.5;
 force force ace_advanced_fatigue_performanceFactor = 2;
 force force ace_advanced_fatigue_recoveryFactor = 2.5;
-force force ace_advanced_fatigue_swayFactor = 0.25;
+force force ace_advanced_fatigue_swayFactor = 0.8;
 force force ace_advanced_fatigue_terrainGradientFactor = 0.4;
 
 // ACE Erweiterte Ballistik
@@ -389,6 +389,10 @@ force force STHud_Settings_Occlusion = true;
 force force STHud_Settings_RemoveDeadViaProximity = false;
 force force STHud_Settings_SquadBar = true;
 
+// TBMod
+force force TB_enableAdvSimulationManager = false;
+force force TB_enableVanillaSlingload = false;
+
 // TFAR - Allgemeine Einstellungen
 force force TFAR_AICanHearPlayer = true;
 force force TFAR_AICanHearSpeaker = true;
@@ -408,9 +412,9 @@ force force TFAR_SameSRFrequenciesForSide = true;
 force force TFAR_setting_defaultFrequencies_lr_east = "70,71,72,73,74,75,76,77,78,79";
 force force TFAR_setting_defaultFrequencies_lr_independent = "70,71,72,73,74,75,76,77,78,79";
 force force TFAR_setting_defaultFrequencies_lr_west = "70,71,72,73,74,75,76,77,78,79";
-force force TFAR_setting_defaultFrequencies_sr_east = "51,52,53,54,55,60,61,62";
-force force TFAR_setting_defaultFrequencies_sr_independent = "51,52,53,54,55,60,61,62";
-force force TFAR_setting_defaultFrequencies_sr_west = "51,52,53,54,55,60,61,62";
+force force TFAR_setting_defaultFrequencies_sr_east = "50,51,52,53,54,60,61,62";
+force force TFAR_setting_defaultFrequencies_sr_independent = "50,51,52,53,54,60,61,62";
+force force TFAR_setting_defaultFrequencies_sr_west = "50,51,52,53,54,60,61,62";
 force force TFAR_setting_DefaultRadio_Airborne_east = "TFAR_mr6000l";
 force force TFAR_setting_DefaultRadio_Airborne_Independent = "TFAR_anarc164";
 force force TFAR_setting_DefaultRadio_Airborne_West = "TFAR_anarc210";
