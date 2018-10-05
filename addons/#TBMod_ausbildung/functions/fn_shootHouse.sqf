@@ -22,7 +22,7 @@ if (_var) then
         private _add = 0;
         private _obj = if (_x isEqualType objNull) then {_x} else {_add = 6; _x select 0};
         
-        private _group = createGroup east; 
+        private _group = createGroup [east, true]; 
         for "_i" from 1 to (_add + 2 + random 3) do 
         { 
             private _unit = _group createUnit [selectRandom _units, [0,0,0], [], 0, "CAN_COLLIDE"]; 
@@ -42,7 +42,7 @@ if (_var) then
         private _add = 0;
         private _obj = if (_x isEqualType objNull) then {_x} else {_add = 4; _x select 0};
     
-        private _group = createGroup east; 
+        private _group = createGroup [east, true]; 
         for "_i" from 1 to (_add + 3 + random 3) do 
         { 
             private _unit = _group createUnit [selectRandom _units, [0,0,0], [], 0, "CAN_COLLIDE"]; 

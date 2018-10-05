@@ -19,7 +19,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_hausInf";
             displayName = "Hausgruppen";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -27,7 +27,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_patrolInf";
             displayName = "Patrouille";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -35,7 +35,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -43,7 +43,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_armorVeh";
             displayName = "Schwere Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0]";
         };
@@ -51,7 +51,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_statics";
             displayName = "Statische Geschütze";
-            tooltip = "[ANZAHL der Gruppen, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0]";
         };
@@ -59,7 +59,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_helis";
             displayName = "Helikopter";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport, (Wahrscheinlichkeit in Prozent)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -71,13 +71,31 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
             typeName = "NUMBER";
             defaultValue = "500";
         };
-        class side: Edit
+        class side: Combo
         {
             property = "TB_zusatz_eos_normaleZone_side";
             displayName = "Seite";
-            tooltip = "Seite des Markers (EAST, WEST, INDEPENDENT, CIVILIAN)";
+            tooltip = "Seite der Zone";
             typeName = "STRING";
-            defaultValue = "EAST";
+            class values {
+                class EAST {
+                    name = "ROT (EAST)";
+                    value = "EAST";
+                    default = 1;
+                };
+                class WEST {
+                    name = "Blau (WEST)";
+                    value = "WEST";
+                };
+                class INDEPENDENT {
+                    name = "Grün (INDEPENDENT)";
+                    value = "INDEPENDENT";
+                };
+                class CIVILIAN {
+                    name = "Violett (CIVILIAN)";
+                    value = "CIVILIAN";
+                };
+            };
         };
         class heightCheck: Checkbox
         {
@@ -91,15 +109,23 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_normaleZone_settings";
             displayName = "Settings";
-            tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
+            tooltip = "[FACTION] | Factions: 11->Russland";
             typeName = "STRING";
-            defaultValue = "[11, 0]";
+            defaultValue = "[11]";
         };
         class sichtbar: Checkbox
         {
             property = "TB_zusatz_eos_normaleZone_sichtbar";
             displayName = "Marker sichtbar";
             tooltip = "Zeigt den EOS Marker an";
+            typeName = "BOOL";
+            defaultValue = "false";
+        };
+        class heliAbspringen: Checkbox
+        {
+            property = "TB_zusatz_eos_normaleZone_heliAbspringen";
+            displayName = "Heli Absprung";
+            tooltip = "Lässt die Einheiten nicht landen, sondern per Fallschirm abwerfen";
             typeName = "BOOL";
             defaultValue = "false";
         };
@@ -127,7 +153,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_patrolInf";
             displayName = "Patrouille";
-            tooltip = "[ANZAHL der Gruppen, Größe 1-5]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -135,7 +161,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_lightVeh";
             displayName = "Leichte Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler, (Größen Erhöhung pro Spieler))]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -143,7 +169,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_armorVeh";
             displayName = "Schwere Fahrzeuge";
-            tooltip = "[ANZAHL der Gruppen]";
+            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0]";
         };
@@ -151,7 +177,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_helis";
             displayName = "Helikopter";
-            tooltip = "[ANZAHL der Gruppen, 1-5 Anzahl Leute Transport]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -163,13 +189,31 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             typeName = "NUMBER";
             defaultValue = "500";
         };
-        class side: Edit
+        class side: Combo
         {
             property = "TB_zusatz_eos_bastionZone_side";
             displayName = "Seite";
-            tooltip = "Seite des Markers (EAST, WEST, INDEPENDENT, CIVILIAN)";
+            tooltip = "Seite der Zone";
             typeName = "STRING";
-            defaultValue = "EAST";
+            class values {
+                class EAST {
+                    name = "ROT (EAST)";
+                    value = "EAST";
+                    default = 1;
+                };
+                class WEST {
+                    name = "Blau (WEST)";
+                    value = "WEST";
+                };
+                class INDEPENDENT {
+                    name = "Grün (INDEPENDENT)";
+                    value = "INDEPENDENT";
+                };
+                class CIVILIAN {
+                    name = "Violett (CIVILIAN)";
+                    value = "CIVILIAN";
+                };
+            };
         };
         class heightCheck: Checkbox
         {
@@ -183,9 +227,9 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_settings";
             displayName = "Settings";
-            tooltip = "[FACTION, MARKERTYPE] | Factions: 11->Russland";
+            tooltip = "[FACTION] | Factions: 11->Russland";
             typeName = "STRING";
-            defaultValue = "[11, 0]";
+            defaultValue = "[11]";
         };
         class bastionSettings: Edit
         {
@@ -193,13 +237,21 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             displayName = "Bastion Settings";
             tooltip = "[PAUSE bis Begin, Wellenanzahl, Zeit zwischen Wellen, Besetzen wenn zurückerobert, Hinweise anzeigen]";
             typeName = "STRING";
-            defaultValue = "[30, 3, 300, true, false]";
+            defaultValue = "[30, 3, 600, true, false]";
         };
         class sichtbar: Checkbox
         {
             property = "TB_zusatz_eos_bastionZone_sichtbar";
             displayName = "Marker sichtbar";
             tooltip = "Zeigt den EOS Marker an";
+            typeName = "BOOL";
+            defaultValue = "false";
+        };
+        class heliAbspringen: Checkbox
+        {
+            property = "TB_zusatz_eos_normaleZone_heliAbspringen";
+            displayName = "Heli Absprung";
+            tooltip = "Lässt die Einheiten nicht landen, sondern per Fallschirm abwerfen";
             typeName = "BOOL";
             defaultValue = "false";
         };

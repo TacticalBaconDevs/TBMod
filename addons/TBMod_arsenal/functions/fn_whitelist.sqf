@@ -19,7 +19,7 @@ _items append (switch (getPlayerUID player) do
     case "76561198074489907": {["G_Goggles_VR"]}; // Mordl
     case "76561198139487000": {[]}; // HerrPinguin
     case "76561198089664421": {[]}; // Jaleck
-    case "76561198127241859": {[]}; // Eric
+    case "76561198127241859": {["G_Tactical_Clear", "LOP_H_Beanie_mtp", "H_Watchcap_blk", "rhs_xmas_antlers" /*Wieso git es überhaupt sowas*/, "H_WirelessEarpiece_F"]}; // Eric
     
     default {[]};
 });

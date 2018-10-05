@@ -3,11 +3,11 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
     PUBLIC_NAME_CAT("Munition",USA);
     
     class TransportMagazines
-    {
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG,15);     // Standart GewehrMag
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,15);
-        MACRO_ADDMAGAZINE(rhsusf_200rnd_556x45_mixed_box,4);        // MGMag5.56
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,4);       // MGMag7.62
+    { 
+        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,40);  // Standart GewehrMag
+        MACRO_ADDMAGAZINE(rhsusf_200rnd_556x45_mixed_box,3);                // MGMag5.56
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,6);               // MGMag7.62
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,10);             // DMRMag7.62
     };
 };
 
@@ -87,7 +87,7 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
         MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,15);
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,15);
         //MACRO_ADDMAGAZINE(rhsusf_10Rnd_762x51_m118_special_Mag,15); // nicht zuviel, dann halt nur 5 statt 10 Schuss
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,15);
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,10);
     };
 };
 

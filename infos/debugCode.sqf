@@ -56,4 +56,14 @@ private _resultset = [];
 ];
 _resultset;
 
-
+//get all weapons with name
+_result = [];
+{
+    private _text = toLower (configName _x);
+    
+    if (_text find "bwa" != -1) then {
+        _result pushBack (configName _x);
+    };
+}
+forEach (("true" configClasses (configfile >> "CfgWeapons")) + ("true" configClasses (configfile >> "CfgMagazines")) + ("true" configClasses (configfile >> "CfgGlasses")) + ("true" configClasses (configfile >> "CfgVehicles")));
+_result;
