@@ -44,7 +44,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
         _logic getVariable ["armorVeh", [0]],
         _logic getVariable ["helis", [0, 0]],
         _settings,
-        _logic getVariable ["bastionSettings", [30, 3, 300, true, false]]
+        _logic getVariable ["bastionSettings", [30, 3, 600, true, false]]
     ] spawn TB_EOS_fnc_bastionSpawn;
 };
 

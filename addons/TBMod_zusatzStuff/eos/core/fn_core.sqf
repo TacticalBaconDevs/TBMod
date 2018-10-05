@@ -166,17 +166,20 @@ if (getMarkerColor _mkr != "ColorBlack") then
         };
 
         private _lvGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
-        if (_lvSize > 0) then
+        if !(_lvGroup isEqualTo []) then
         {
-            private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
-            [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-            _lvGroup pushBack _cargoGrp;
-        };
+            if (_lvSize > 0) then
+            {
+                private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
+                _lvGroup pushBack _cargoGrp;
+            };
 
-        [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
-        [_lvGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
-        
-        _lvZoneGroups pushBack _lvGroup;
+            [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
+            [_lvGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
+            
+            _lvZoneGroups pushBack _lvGroup;
+        };
     };
 
     // SPAWN ARMOURED VEHICLES
@@ -192,10 +195,13 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
         private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
         
-        [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;
-        [_avGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
+        if !(_avGroup isEqualTo []) then
+        {
+            [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;
+            [_avGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
         
-        _avZoneGroups pushBack _avGroup;
+            _avZoneGroups pushBack _avGroup;
+        };
     };
 
     // SPAWN STATIC PLACEMENTS
@@ -210,9 +216,12 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         private _stGroup = [_newpos, _side, _faction, 5] call TB_EOS_fnc_spawnVehicle;
-        [_stGroup select 2, "STAskill"] call TB_EOS_fnc_setSkill;
-        
-        _stZoneGroups pushBack _stGroup;
+
+        if !(_stGroup isEqualTo []) then
+        {
+            [_stGroup select 2, "STAskill"] call TB_EOS_fnc_setSkill;
+            _stZoneGroups pushBack _stGroup;
+        };
     };
 
     // SPAWN CHOPPER
@@ -229,22 +238,25 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _newpos = [markerpos _mkr, 3000, random 360] call BIS_fnc_relPos;    
         private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
         
-        if (_hSize > 0) then
+        if !(_hGroup isEqualTo []) then
         {
-            private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
-            [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-            _hGroup pushBack _cargoGrp;
-            [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
-        }
-        else
-        {
-            private _wp1 = (_hGroup select 2) addWaypoint [markerPos _mkr, 0];  
-            _wp1 setWaypointSpeed "FULL";  
-            _wp1 setWaypointType "SAD";
+            if (_hSize > 0) then
+            {
+                private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
+                _hGroup pushBack _cargoGrp;
+                [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
+            }
+            else
+            {
+                private _wp1 = (_hGroup select 2) addWaypoint [markerPos _mkr, 0];  
+                _wp1 setWaypointSpeed "FULL";  
+                _wp1 setWaypointType "SAD";
+            };
+            
+            [_hGroup select 2, "AIRskill"] call TB_EOS_fnc_setSkill;
+            _hZoneGroups pushBack _hGroup;
         };
-        
-        [_hGroup select 2, "AIRskill"] call TB_EOS_fnc_setSkill;
-        _hZoneGroups pushBack _hGroup;
     };
 
     // SPAWN ALT TRIGGERS

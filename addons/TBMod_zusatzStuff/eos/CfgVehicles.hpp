@@ -71,7 +71,7 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
             typeName = "NUMBER";
             defaultValue = "500";
         };
-        class side: Edit
+        class side: Combo
         {
             property = "TB_zusatz_eos_normaleZone_side";
             displayName = "Seite";
@@ -177,7 +177,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_helis";
             displayName = "Helikopter";
-            tooltip = "[ANZAHL der Gruppen, (Gruppenanzahl pro Spieler)]";
+            tooltip = "[ANZAHL der Gruppen, Größe, (Gruppenanzahl pro Spieler)]";
             typeName = "STRING";
             defaultValue = "[0, 0]";
         };
@@ -187,9 +187,9 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             displayName = "KI-SpawnAbstand";
             tooltip = "Wird zusätzlich zur Markergröße genommen zum Erstellen der KI";
             typeName = "NUMBER";
-            defaultValue = "0";
+            defaultValue = "500";
         };
-        class side: Edit
+        class side: Combo
         {
             property = "TB_zusatz_eos_bastionZone_side";
             displayName = "Seite";
@@ -237,7 +237,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             displayName = "Bastion Settings";
             tooltip = "[PAUSE bis Begin, Wellenanzahl, Zeit zwischen Wellen, Besetzen wenn zurückerobert, Hinweise anzeigen]";
             typeName = "STRING";
-            defaultValue = "[30, 3, 300, true, false]";
+            defaultValue = "[30, 3, 600, true, false]";
         };
         class sichtbar: Checkbox
         {

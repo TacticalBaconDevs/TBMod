@@ -18,20 +18,29 @@ params [
         "_cargoType"
     ];
 
-
+private _grp = grpNull;
 private _cargoPool = [_faction, _cargoType] call TB_EOS_fnc_unitPools;
+if (_cargoPool isEqualTo []) exitWith {_grp};
+
 private _emptySeats = _vehicle emptyPositions "cargo";
-private _grp = createGroup _side;
-_grpSize = round (_grpSize);
 
 if (_emptySeats > 0) then
 {
+    _grpSize = round _grpSize;
     if (_grpSize > _emptySeats) then {_grpSize = _emptySeats};
 
+    _grp = createGroup [_side, true];
+    private _unit = objNull;
     for "_i" from 1 to _grpSize do
     {                    
-        private _unit = _grp createUnit [selectRandom _cargoPool, [0,0,0], [], 0, "CAN_COLLIDE"];
-        _unit moveInAny _vehicle;
+        _unit = _grp createUnit [selectRandom _cargoPool, [0,0,0], [], 0, "CAN_COLLIDE"];
+        _unit assignAsCargoIndex [_vehicle, _i - 1];
+        _unit moveInCargo _vehicle;
+        
+        // _unit moveInCargo _vehicle;
+        // _unit assignAsCargo _vehicle;
+        
+        if (_vehicle getCargoIndex _unit == -1) exitWith {deleteVehicle _unit};
     };
 };
 

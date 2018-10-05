@@ -103,7 +103,7 @@ _piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
 _piSize = round (_piSize + (_piSizeIncrease * _playerCount));
 for "_counter" from 1 to _piGroups do
 {
-    private _pos = [_mPos, _radius + 200, random 360] call BIS_fnc_relPos;
+    private _pos = [_mPos, _radius + ((100 max (_placement / 4)) min 700), random 360] call BIS_fnc_relPos;
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _piZoneGroups pushBack _piGroup;
 };    
@@ -126,15 +126,18 @@ for "_counter" from 1 to _lvGroups do
     
     private _lvGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;                    
     
-    if (_lvSize > 0) then
+    if !(_lvGroup isEqualTo []) then 
     {
-        private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
-        [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-        _lvGroup pushBack _cargoGrp;
-    };
+        if (_lvSize > 0) then
+        {
+            private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+            [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
+            _lvGroup pushBack _cargoGrp;
+        };
 
-    [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
-    _lvZoneGroups pushBack _lvGroup;
+        [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
+        _lvZoneGroups pushBack _lvGroup;
+    };
 };
 
 // SPAWN ARMOURED VEHICLES
@@ -146,8 +149,11 @@ for "_counter" from 1 to _avGroups do
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
     private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
     
-    [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;    
-    _avZoneGroups pushBack _avGroup;
+    if !(_avGroup isEqualTo []) then
+    {
+        [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;    
+        _avZoneGroups pushBack _avGroup;
+    };
 };
 
 // SPAWN HELICOPTERS        
@@ -161,22 +167,27 @@ for "_counter" from 1 to _hGroups do
     
     private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
     
-    if (_hSize > 0) then
+    if !(_hGroup isEqualTo []) then
     {
-        private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
-        [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
+        if (_hSize > 0) then
+        {
+            private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+            if (!isNull _cargoGrp) then
+            {
+                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
+                _hGroup pushBack _cargoGrp;
+                [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
+            };
+        }
+        else
+        {
+            _wp1 = (_hGroup select 2) addWaypoint [markerPos _mkr, 0];  
+            _wp1 setWaypointSpeed "FULL";
+            _wp1 setWaypointType "SAD";
+        };
         
-        _hGroup pushBack _cargoGrp;
-        [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
-    }
-    else
-    {
-        _wp1 = (_hGroup select 2) addWaypoint [markerPos _mkr, 0];  
-        _wp1 setWaypointSpeed "FULL";
-        _wp1 setWaypointType "SAD";
+        _hZoneGroups pushBack _hGroup;
     };
-    
-    _hZoneGroups pushBack _hGroup;
 };
 
 // ADD WAYPOINTS
@@ -199,17 +210,20 @@ forEach _piZoneGroups;
     _getToMarker setWaypointBehaviour "AWARE";
     _getToMarker setWaypointFormation "NO CHANGE";
 
-    private _wp = _cargoGrp addWaypoint [_mPos, 10];
-    _wp setWaypointType "SAD";
-    _wp setWaypointSpeed "NORMAL";
-    _wp setWaypointBehaviour "AWARE";
-    _wp setWaypointFormation "NO CHANGE";
+    if (!isNull _cargoGrp) then
+    {
+        private _wp = _cargoGrp addWaypoint [_mPos, 10];
+        _wp setWaypointType "SAD";
+        _wp setWaypointSpeed "NORMAL";
+        _wp setWaypointBehaviour "AWARE";
+        _wp setWaypointFormation "NO CHANGE";
 
-    _wp = (_x select 2) addWaypoint [_mPos, 1];
-    _wp setWaypointType "SAD";
-    _wp setWaypointSpeed "NORMAL";
-    _wp setWaypointBehaviour "AWARE";
-    _wp setWaypointFormation "NO CHANGE";
+        _wp = (_x select 2) addWaypoint [_mPos, 1];
+        _wp setWaypointType "SAD";
+        _wp setWaypointSpeed "NORMAL";
+        _wp setWaypointBehaviour "AWARE";
+        _wp setWaypointFormation "NO CHANGE";
+    };
 }
 forEach _lvZoneGroups;
 

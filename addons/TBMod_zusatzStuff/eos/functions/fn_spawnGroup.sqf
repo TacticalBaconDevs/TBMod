@@ -18,7 +18,7 @@ params [
     ];
 
 private _pool = [_faction, parseNumber (surfaceiswater _pos)] call TB_EOS_fnc_unitPools;
-private _grp = createGroup _side;
+private _grp = createGroup [_side, true];
 
 for "_i" from 1 to round (_grpSize) do
 {
