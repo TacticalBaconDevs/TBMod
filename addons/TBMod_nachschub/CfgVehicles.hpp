@@ -343,7 +343,7 @@
         class TransportItems
         {
             MACRO_ADDITEM(DemoCharge_Remote_Mag,10);
-            MACRO_ADDITEM(SatchelCharge_Remote_Mag,10);
+            MACRO_ADDITEM(SatchelCharge_Remote_Mag,5);
             MACRO_ADDITEM(AMP_Breaching_Charge_Mag,10);
 
             MACRO_ADDITEM(SLAMDirectionalMine_Wire_Mag,5);

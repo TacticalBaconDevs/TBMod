@@ -22,7 +22,7 @@ class CfgWeapons
         class WeaponSlotsInfo : WeaponSlotsInfo
         {
             mass = 42; // 21
-        }
+        };
         
         class Single : Single
         {
