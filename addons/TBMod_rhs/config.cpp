@@ -9,7 +9,7 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
         
-        weapons[] = {"rhs_weap_m4a1_changeMode1","rhs_weap_m4a1_changeMode2","rhs_weap_m4a1_weaponRecoil1", "rhs_weap_m4a1_sway1"};
+        weapons[] = {};
         units[] = {};
         
         requiredVersion = 1.84;
@@ -24,6 +24,7 @@ class CfgPatches
 
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
-#include "CfgRecoils.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgWeapons.hpp"
+#include "CfgMagazineWells.hpp"
+// #include "CfgWeapons.hpp"
+// #include "CfgRecoils.hpp"
