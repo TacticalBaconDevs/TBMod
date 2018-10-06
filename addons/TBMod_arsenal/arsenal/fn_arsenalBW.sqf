@@ -576,7 +576,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_Yardage450",
-            "ACE_RangeCard"
+            "ACE_RangeCard",
+            //"ACE_VectorDay",
+            "ACE_Vector", // Tag/Nacht Version
+            "ACE_Kestrel4500"
         ]
     };
 
