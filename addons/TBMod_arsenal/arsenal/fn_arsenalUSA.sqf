@@ -1,8 +1,9 @@
 ﻿/*
-    Author: shukari
-    Zuständiger fürs USA Arsenal: shukari
-*/
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 
+    Author: shukari
+*/
 private _allgemein = [
     // Gepäck
     "rhsusf_assault_eagleaiii_coy",

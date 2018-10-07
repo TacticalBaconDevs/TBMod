@@ -1,6 +1,8 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
+
+    Author: shukari, Eric Ruhland
 */
 params [
         ["_save", false, [false]],
