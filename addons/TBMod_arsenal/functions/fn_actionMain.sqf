@@ -27,9 +27,9 @@ TB_arsenal_kiste = _target;
 
 // ThemenArsenale Rollen blockieren
 private _type = _player getVariable ["TB_arsenalType", ""];
-TB_blacklistRollen_main = [];
+TB_blacklistRollen_themen = [];
 if (_type == "Themen") then
 {
     private _patches = configfile >> "CfgPatches";
-    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_main = ["jtac", "sniper", "spotter"]};
+    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter"]};
 };
