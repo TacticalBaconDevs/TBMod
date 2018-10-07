@@ -6,7 +6,7 @@
 */
 class RscTitles 
 {
-    #include "UI\common.hpp"
-    #include "UI\common_EditorWrapper.hpp"
-    #include "UI\liveMonitor.hpp"
+    #include "..\UI\common.hpp"
+    #include "..\UI\common_EditorWrapper.hpp"
+    #include "..\UI\liveMonitor.hpp"
 };
