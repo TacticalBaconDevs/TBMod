@@ -2,7 +2,7 @@ class CfgPatches
 {
     class TBMod_ADVSlingload
     {
-        name = "TBMod Arsenal";
+        name = "TBMod Erweiteres Slingload";
         
         author = "Eric Ruhland";
         
