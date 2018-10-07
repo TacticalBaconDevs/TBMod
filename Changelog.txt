@@ -1,3 +1,38 @@
+### 1.1.2 (??.??.18)
+Fixes:
+    - Funktion addZeus entfernt
+    - Taser AI/Spieler Unterscheidung
+    - createSupply Position (Man kann nun nicht mehr auf dem Flugzeugträger von Kisten erschlagen werden)
+    - Maincore Fix
+    - HC Fix
+    - BW Classname Änderungen im Arsenal überarbeitet
+
+Hinzugefügt:
+    - Ki-Eden-Aktionen (Hinsetzen und Loopanimationen)
+    - Security Addon
+    - Schlüssel-Ki Modul
+    - VIP HandleasPlayerMedical Modul
+    - ApplyLoadout Modul
+    - Safestart, hidegroup, setgroup Chatbefehl
+    - Extemes Sanisystem Fix
+    - Anti-Verwackel für bestimmte Klassen
+    - Minen-Kiste hinzugefügt
+
+Geändert:
+    - EOS System optimiert sowie verbessert
+    - Recoilsystem verbessert
+    - Persistence System stark verbessert
+    - USA Standartausrüstung erneuert
+    - Schauspielersystem nun in den EdenMissionAttrbut TB-Einstellungen
+    - Safestart Anpassung
+    - init.sqf Anleitung erneuert
+    - Blut statt Kochsalz im Nachschub
+    - M320 kann nun AIM Smokes verschießen
+    - USA Munitionkiste verändert
+    - Startfrequenz SW angepasst
+    - Munition wird Magazinweise nachgeladen
+
+
 ### 1.1.1 (21.08.18)
 - TB Arsenal
     - USA Arsenal
