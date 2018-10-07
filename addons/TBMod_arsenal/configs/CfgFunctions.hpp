@@ -29,6 +29,8 @@
             class arsenalRUSS {};
             class arsenalBW {};
             class arsenalVANILLA {};
+            class arsenalThemen {};
+            class arsenalUSAVietnam {};
         };
     };
 };

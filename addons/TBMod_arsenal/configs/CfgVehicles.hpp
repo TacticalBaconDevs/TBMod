@@ -5,6 +5,7 @@ class CfgVehicles
         class rolle##ROLLEN_NAME \
         { \
             displayName = ""; \
+            condition = "!('ROLLEN_NAME' in TB_blacklistRollen_main)"; \
             modifierFunction = "[_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname"; \
             statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;"; \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
@@ -107,30 +108,26 @@ class CfgVehicles
     class TB_arsenal_usa : TB_arsenal_base
     {
         MAKE_PUBLIC(USA,USA);
-        
-        // hiddenSelectionsTextures[] = {"\a3\Supplies_F_Orange\Ammoboxes\Data\supplydrop_idap_co.paa"};
-        // a3\weapons_f\ammoboxes\data\supplydrop_co.paa
     };
     
     class TB_arsenal_vanilla : TB_arsenal_base
     {
         MAKE_PUBLIC(Vanilla,VANILLA-BLUE);
-        
-        // hiddenSelectionsTextures[] = {"\a3\Supplies_F_Orange\Ammoboxes\Data\supplydrop_idap_co.paa"};
     };
     
     class TB_arsenal_bw : TB_arsenal_base
     {
         MAKE_PUBLIC(Bundeswehr,BW);
-        
-        // hiddenSelectionsTextures[] = {"\a3\Supplies_F_Orange\Ammoboxes\Data\supplydrop_idap_co.paa"};
     };
     
     class TB_arsenal_russ : TB_arsenal_base
     {
         MAKE_PUBLIC(Russland,RUSS);
-        
-        // hiddenSelectionsTextures[] = {"\a3\Supplies_F_Orange\Ammoboxes\Data\supplydrop_idap_co.paa"};
+    };
+    
+    class TB_arsenal_themen : TB_arsenal_base
+    {
+        MAKE_PUBLIC(Themen,Themen);
     };
     
     

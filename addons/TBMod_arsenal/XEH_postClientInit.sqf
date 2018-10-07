@@ -7,6 +7,7 @@
 
 // Variablen
 if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};
+if (isNil "TB_blacklistRollen_main") then {TB_blacklistRollen_main = []};
 
 ["ace_arsenal_displayClosed", {
     if (!isNil "TB_arsenal_kiste") then {TB_arsenal_kiste hideObject false};

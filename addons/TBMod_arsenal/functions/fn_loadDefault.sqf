@@ -96,6 +96,11 @@ if (_arsenalType == "VANILLA-BLUE") then
     ACE_player setUnitLoadout [_layout, true];
 };
 
+if (_arsenalType == "Themen") then
+{
+    ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
+};
+
 if (_arsenalType == "CUSTOM") then
 {
     if (isNil "TB_fnc_customLayout") then

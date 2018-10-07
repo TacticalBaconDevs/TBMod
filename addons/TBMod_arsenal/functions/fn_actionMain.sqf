@@ -24,3 +24,12 @@ if (!isNil {_tbCargo} && {!(_tbCargo isEqualTo (_target getVariable ['ace_arsena
 };
 
 TB_arsenal_kiste = _target;
+
+// ThemenArsenale Rollen blockieren
+private _type = _player getVariable ["TB_arsenalType", ""];
+TB_blacklistRollen_main = [];
+if (_type == "Themen") then
+{
+    private _patches = configfile >> "CfgPatches";
+    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_main = ["jtac", "sniper", "spotter"]};
+};
