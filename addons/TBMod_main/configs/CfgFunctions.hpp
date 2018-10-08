@@ -35,7 +35,6 @@ class CfgFunctions
             class schauspieler {};
             class miscStuff {};
             class persistence {};
-            class advSimulationMgr {};
             class cargo {};
             class sitAI {};
             class animationAI {};

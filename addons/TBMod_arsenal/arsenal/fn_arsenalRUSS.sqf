@@ -1,7 +1,9 @@
 /*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
     Author: shukari
 */
-
 // Hier kommen alle Items rein die ALLE Rollen haben
 _items = [
     // Uniform

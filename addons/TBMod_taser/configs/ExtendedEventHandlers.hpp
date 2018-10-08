@@ -2,12 +2,12 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 
-    Author: shukari
+    Author: Eric Ruhland
 */
 class Extended_PostInit_EventHandlers
 {
-    class TBMod_arsenal
+    class TBMod_taser
     {
-        clientInit = "call compile preprocessFileLineNumbers '\TBMod_arsenal\XEH_postClientInit.sqf'";
+        init = "call compile preprocessFileLineNumbers '\TBMod_taser\XEH_postInit.sqf'";
     };
 };

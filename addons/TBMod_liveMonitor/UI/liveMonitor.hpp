@@ -120,8 +120,8 @@ class TB_liveMonitor_gui
                         class text_bloodlost: TB_RscStructuredText
                         {
                             idc = 9103;
-
-                            text = "keine Info";
+                          
+                            text = "Verloren: keine Info";
 
                             font = "PuristaSemiBold";
                             size = 0.04;
@@ -235,7 +235,7 @@ class TB_liveMonitor_gui
                         class txtClose: TB_RscStructuredText
                         {
                             idc = -1;
-                            text = "Close";
+                            text = "Schließen";
                             x = 0.0825;
                             y = 0.375;
                             w = 0.14;

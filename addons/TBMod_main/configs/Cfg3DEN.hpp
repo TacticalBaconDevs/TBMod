@@ -88,7 +88,6 @@ class Cfg3DEN
                 };
             };
 
-            
             class TBMod_main_ki_actions
             {
                 displayName = "TB Aktionen";

@@ -1,7 +1,9 @@
 /*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
     Author: shukari
 */
-
 // initalisiert die TB Rolle nach dem spawnen
 [] spawn TB_fnc_waitUntilLoaded;
 

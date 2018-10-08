@@ -1,4 +1,10 @@
-﻿class CfgVehicles
+﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: shukari
+*/
+class CfgVehicles
 {
     // ###################### Makros ######################
     #define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \

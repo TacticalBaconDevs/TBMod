@@ -2,15 +2,13 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
-
 class CfgVehicles
 {
     class ReammoBox_F;
-
     class TB_Rope_InvisibleObject: ReammoBox_F
     {
         displayName = "Unsichtbares Object";
-        //author = "Eric Ruhland";
+        author = "Eric Ruhland";
         
         scope = 1;
         scopeCurator = 1;

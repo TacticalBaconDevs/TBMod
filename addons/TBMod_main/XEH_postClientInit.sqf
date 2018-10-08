@@ -9,11 +9,11 @@ if !(call TB_fnc_isTBMission) exitWith {};
 enableEnvironment [false, true];
 enableSaving [false, false];
 
-["CBA_XEH_loadingScreenEnded", {
-    params ["_loadingScreen"];
-    diag_log format ["CBA_XEH_loadingScreenEnded: %1", _loadingScreen];
-    //CBA_XEH_expectedLoadingScreens
-}] call CBA_fnc_addEventHandler;
+// ["CBA_XEH_loadingScreenEnded", {
+    // params ["_loadingScreen"];
+    // diag_log format ["CBA_XEH_loadingScreenEnded: %1", _loadingScreen];
+    // //CBA_XEH_expectedLoadingScreens
+// }] call CBA_fnc_addEventHandler;
 
 ["CBA_loadingScreenDone", {
     [] call TB_fnc_doorBreach;
@@ -24,7 +24,6 @@ enableSaving [false, false];
     [] call TB_fnc_extremMedicMode;
     [] call TB_fnc_schauspieler;
     [] spawn TB_fnc_miscStuff;
-    //[] call TB_fnc_advSimulationMgr;
     
     TB_init_done = true;
     publicVariableServer "TB_init_done";

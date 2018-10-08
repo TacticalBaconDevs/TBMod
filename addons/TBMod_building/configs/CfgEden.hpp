@@ -1,4 +1,11 @@
-﻿// https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
+﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: shukari
+    
+    https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
+*/
 class Cfg3DEN
 {
     class Object

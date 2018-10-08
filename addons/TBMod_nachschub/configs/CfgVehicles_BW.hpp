@@ -1,3 +1,9 @@
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: shukari
+*/
 class TB_supply_bw_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
     PUBLIC_NAME_CAT("Munition",BW);

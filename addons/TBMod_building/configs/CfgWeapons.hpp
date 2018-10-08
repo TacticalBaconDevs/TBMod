@@ -1,3 +1,9 @@
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: shukari
+*/
 #define ADD_ITEM(OBJECT,MODEL_NAME,GEWICHT) class TB_building_item_##OBJECT : TB_itemcore \
     { \
         scope = 2; \
