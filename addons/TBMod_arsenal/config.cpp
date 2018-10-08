@@ -2,9 +2,9 @@ class CfgPatches
 {
     class TBMod_arsenal
     {
-        addonRootClass = "TBMod_main";
-        requiredAddons[] = {"TBMod_main"};
-
+        name = "TBMod Arsenal";
+        
+        weapons[] = {};
         units[] = {
             "TB_arsenal_base",
             "TB_arsenal_usa",
@@ -14,9 +14,14 @@ class CfgPatches
             "TB_arsenal_themen",
             "TB_arsenal_predefined_custom"
         };
+        ammo[] = {};
+        
+        requiredAddons[] = {"TBMod_main"};
+        addonRootClass = "TBMod_main";
     };
 };
 
+// Configs
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\Cfg3DEN.hpp"

@@ -1,11 +1,9 @@
-// class Extended_PreInit_EventHandlers
-// {
-//     class TBMod_arsenal
-//     {
-//         init = "call compile preProcessFileLineNumbers '\TBMod_arsenal\XEH_preInit.sqf'";
-//     };
-// };
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 
+    Author: shukari
+*/
 class Extended_PostInit_EventHandlers
 {
     class TBMod_arsenal

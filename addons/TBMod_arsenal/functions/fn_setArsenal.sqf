@@ -1,6 +1,9 @@
 ﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
     Author: shukari
-    
+
     Aufgerufen durch: fn_changeRolle
 */
 params ["_ammoBox", ["_rolle", ""]];

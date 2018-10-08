@@ -11,7 +11,6 @@
     Return Value:
     None
 */
-
 params ["_target"];
 
 // Sanity Checks
