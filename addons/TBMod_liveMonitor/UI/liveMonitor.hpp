@@ -120,7 +120,7 @@ class TB_liveMonitor_gui
                         class text_bloodlost: TB_RscStructuredText
                         {
                             idc = 9103;
-
+                          
                             text = "Verloren: keine Info";
 
                             font = "PuristaSemiBold";

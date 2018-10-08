@@ -41,7 +41,7 @@ TB_liveMonitor_pefhID = [{
                 TB_liveMonitor_ace_heartrate = _heartRate_player + (TB_liveMonitor_unit getVariable "ace_medical_heartrate");
                 TB_liveMonitor_ace_bloodvolume = TB_liveMonitor_unit getVariable "ace_medical_bloodvolume";
                 TB_liveMonitor_ace_bloodpressure = TB_liveMonitor_unit getVariable "ace_medical_bloodpressure";
-                TB_liveMonitor_ace_bloodpressure = [round ((TB_liveMonitor_ace_bloodpressure select 0) + floor(random[-3, 0, 3])), round ((TB_liveMonitor_ace_bloodpressure select 1) + floor(random[-3, 0, 3]))]
+                TB_liveMonitor_ace_bloodpressure = [round ((TB_liveMonitor_ace_bloodpressure select 0) + floor (random [-3, 0, 3])), round ((TB_liveMonitor_ace_bloodpressure select 1) + floor (random [-3, 0, 3]))]
             } else {
                 TB_liveMonitor_ace_heartrate = 0;
                 TB_liveMonitor_ace_bloodvolume = 100;
@@ -51,6 +51,7 @@ TB_liveMonitor_pefhID = [{
             private _text1 = parseText str (round TB_liveMonitor_ace_heartrate);
             private _text2 = parseText format["%1/%2", TB_liveMonitor_ace_bloodpressure select 0, TB_liveMonitor_ace_bloodpressure select 1];
             private _text3 = parseText format["Verlust: - %1ml", round (floor((100 - TB_liveMonitor_ace_bloodvolume) * 1428.57143 / 1000) * 10)];
+
 
             (_displayCtrl displayCtrl 9101) ctrlSetStructuredText _text1;
             (_displayCtrl displayCtrl 9102) ctrlSetStructuredText _text2;
