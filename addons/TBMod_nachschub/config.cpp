@@ -16,3 +16,5 @@ class CfgPatches
 // Configs
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgFunctions.hpp"
+#include "configs\CfgEditorCategories.hpp"
+#include "configs\CfgEditorSubcategories.hpp"

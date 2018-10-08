@@ -36,6 +36,8 @@ class CfgVehicles
         author = "shukari"; \
         ace_cargo_canLoad = 1; \
         ace_cargo_size = 1; \
+        ace_dragging_canCarry = 1; \
+        ace_dragging_canDrag = 1; \
         editorCategory = "EdCat_TB_MainCat_supply"; \
         editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
         scope = 1; \
@@ -365,7 +367,4 @@ class CfgVehicles
     
     // ###################### BW #########################
     #include "CfgVehicles_BW.hpp"
-    
-    // #################### Themen #######################
-    #include "CfgVehicles_THEMEN.hpp"
 };
