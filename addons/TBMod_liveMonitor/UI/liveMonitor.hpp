@@ -74,7 +74,6 @@ class TB_liveMonitor_gui
                             y = 0.04;
                             w = 0.2125;
                             h = 0.3;
-                                    
                         };
 
                         class text_Heartrate: TB_RscStructuredText
@@ -121,7 +120,7 @@ class TB_liveMonitor_gui
                         {
                             idc = 9103;
 
-                            text = "Verloren: keine Info";
+                            text = "keine Info";
 
                             font = "PuristaSemiBold";
                             size = 0.04;
