@@ -121,7 +121,7 @@ class TB_liveMonitor_gui
                         {
                             idc = 9103;
 
-                            text = "Verloren: keine Info";
+                            text = "keine Info";
 
                             font = "PuristaSemiBold";
                             size = 0.04;
@@ -235,7 +235,7 @@ class TB_liveMonitor_gui
                         class txtClose: TB_RscStructuredText
                         {
                             idc = -1;
-                            text = "Schließen";
+                            text = "Close";
                             x = 0.0825;
                             y = 0.375;
                             w = 0.14;
