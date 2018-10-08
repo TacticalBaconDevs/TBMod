@@ -1,16 +1,20 @@
-﻿class TB_Item_liveMonitor
+﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: Chris 'Taranis'
+*/
+class TB_liveMonitor_gui
 {
     idd = -1;
     duration = 10e10;
     movingEnable = 0;
     fadein = 0;
     fadeout = 0;
-    name = "TB_Item_liveMonitor";
-    onLoad = "uiNamespace setVariable ['TB_Item_liveMonitor_display', _this select 0]; call TB_Items_fnc_lm_loop";
+    name = "TB_liveMonitor_gui";
+    onLoad = "uiNamespace setVariable ['TB_liveMonitor_display', _this select 0]; call TB_liveMonitor_fnc_loop";
     
-    class controlsBackground 
-    {
-    };
+    class controlsBackground {};
     
     class controls 
     {
@@ -29,7 +33,7 @@
                 {
                     idc = -1;
 
-                    text = "\TBMod_items\pictures\liveMonitorBackground.paa";
+                    text = "\TBMod_liveMonitor\pictures\liveMonitorBackground.paa";
 
                     x = 0;
                     y = 0;
@@ -64,7 +68,7 @@
                         {    
                             idc = -1;
 
-                            text = "\TBMod_items\pictures\heartline.paa";
+                            text = "\TBMod_liveMonitor\pictures\heartline.paa";
 
                             x = 0.2125;
                             y = 0.04;
@@ -117,7 +121,7 @@
                         {
                             idc = 9103;
 
-                            text = "Lost: no info";
+                            text = "keine Info";
 
                             font = "PuristaSemiBold";
                             size = 0.04;
@@ -159,7 +163,7 @@
                                 {
                                     idc = 9111;
 
-                                    text = "\TBMod_items\pictures\heartbeat.paa";
+                                    text = "\TBMod_liveMonitor\pictures\heartbeat.paa";
 
                                     x = 0.2125;
                                     y = 0;
@@ -222,7 +226,7 @@
                         class picClose: TB_RscPicture
                         {
                             idc = -1;
-                            text = "\TBMod_items\pictures\Arrow_Down.paa";
+                            text = "\TBMod_liveMonitor\pictures\Arrow_Down.paa";
                             x = 0.025;
                             y = 0.36;
                             w = 0.075;
@@ -250,7 +254,7 @@
                         class picCheck: TB_RscPicture
                         {
                             idc = -1;
-                            text = "\TBMod_items\pictures\Arrow_Up.paa";
+                            text = "\TBMod_liveMonitor\pictures\Arrow_Up.paa";
                             x = 0.35;
                             y = 0.36;
                             w = 0.075;
@@ -260,7 +264,7 @@
                         class txtCheck: TB_RscStructuredText
                         {
                             idc = -1;
-                            text = "Refresh";
+                            text = "Neuladen";
                             x = 0.2475;
                             y = 0.3625;
                             w = 0.1;

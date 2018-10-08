@@ -1,4 +1,10 @@
-﻿class TB_RscScrollBar
+﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: Chris 'Taranis'
+*/
+class TB_RscScrollBar
 {
     color[] = {1,1,1,0.6};
     colorActive[] = {1,1,1,1};

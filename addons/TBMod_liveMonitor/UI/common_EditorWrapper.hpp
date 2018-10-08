@@ -1,6 +1,9 @@
-﻿///////////////////////////////////////////////////////////////////////////
-/// Base Classes Wrapped to Altis Life
-///////////////////////////////////////////////////////////////////////////
+﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
+    Author: Chris 'Taranis'
+*/
 class RscText : TB_RscText
 {
     
