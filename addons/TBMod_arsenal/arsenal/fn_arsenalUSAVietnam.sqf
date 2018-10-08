@@ -4,22 +4,7 @@
 
 private _allgemein = [
     // Gepäck
-    "UNS_Alice_3",
-    "UNS_Alice_5",
-    "UNS_Alice_6",
-    "UNS_Alice_F1",
-    "UNS_Alice_F2",
-    "UNS_TROP_R3",
-    "UNS_USMC_E4",
-    "UNS_USMC_R1",
     "UNS_BA22_Para",
-    // ### LR-Funke
-    "UNS_SF_RTO",
-    "UNS_ARMY_RTO",
-    "UNS_ARMY_RTO2",
-    "UNS_Alice_FR",
-    "UNS_USMC_RTO",
-    "UNS_USMC_RTO2",
     
     // Gesichtsbedeckung
     "UNS_Bandana_A",
@@ -65,6 +50,12 @@ private _allgemein = [
 private _allgemein_magazine = [
     "uns_30Rnd_556x45_Stanag",
     "uns_30Rnd_556x45_Stanag_T",
+    "uns_thompsonmag_20",
+    "uns_thompsonmag_20_NT",
+    "uns_thompsonmag_20_T",
+    "uns_m1carbinemag_NT",
+    "uns_m1carbinemag",
+    "uns_m1carbinemag_T",
     
     // Schrot
     "uns_12gaugemag_6",
@@ -79,7 +70,9 @@ private _allgemein_gewehre = [
     "uns_xm177e1",
     "uns_xm177e2",
     "uns_model12",
-    "uns_m1897"
+    "uns_m1897",
+    "uns_thompson",
+    "uns_m1carbine"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
@@ -88,7 +81,8 @@ private _allgemein_visiere = [
 ];
 
 private _allgemein_befestigungsschiene = [
-    "uns_b_m7"
+    "uns_b_m7",
+    "uns_b_m4"
 ];
 
 private _allgemein_geschuetzzubehoer = [
@@ -109,6 +103,7 @@ private _allgemein_raketenwerfer = [
 
 private _allgemein_handfeuerwaffen = [
     "uns_m1911",
+    "uns_bhp",
     // ### Munition
     "uns_m1911mag"
 ];
@@ -172,8 +167,8 @@ private _grenadier_munition = [
 ];
 
 private _dmr_munition = [
-    "uns_smlemag",
-    "uns_smlemag_T",
+    "uns_springfieldmag",
+    "uns_springfieldmag_T",
     "uns_m1garandmag",
     "uns_m1garandmag_T"
 ];
@@ -202,11 +197,26 @@ private _aaat_munition = [
 ];
 
 private _gepaeck_mittel = [
-    
+    // Gepäck
+    "UNS_Alice_3",
+    "UNS_Alice_5",
+    "UNS_Alice_6",
+    "UNS_Alice_F1",
+    "UNS_Alice_F2",
+    "UNS_TROP_R3",
+    "UNS_USMC_E4",
+    "UNS_USMC_R1",
+    "UNS_BA22_Para"
 ];
 
-private _gepaeck_gross = [
-    
+private _gepaeck_lr = [
+    // ### LR-Funke
+    "UNS_SF_RTO",
+    "UNS_ARMY_RTO",
+    "UNS_ARMY_RTO2",
+    "UNS_Alice_FR",
+    "UNS_USMC_RTO",
+    "UNS_USMC_RTO2"
 ];
 
 private _items = [];
@@ -234,8 +244,8 @@ private _items = [];
 // _pilot_munition                    - Piloten MP7 Munition
 // _sniper_munition                    - Sniper munition
 // _aaat_munition                    - AtiTank Munition
-// _gepaeck_mittel                    - Seesack
-// _gepaeck_gross                    - Carryall
+// _gepaeck_mittel                    - rucksäcke
+// _gepaeck_lr                   - LRs
 
 private _rolle = ACE_player getVariable ["TB_rolle", ""];
 _items append (switch (_rolle) do
@@ -255,6 +265,7 @@ _items append (switch (_rolle) do
         _allgemein_kopfbedeckung +
         _grenadier_gewehr +
         _grenadier_munition +
+        _gepaeck_lr +
         [
             // Kopfbedeckung
             "UNS_Beret_5",
@@ -352,18 +363,13 @@ _items append (switch (_rolle) do
         _dmr_munition +
         [
             // Gewehre
-            "uns_smle",
             "uns_m1garand",
+            "uns_m1903",
             // ### Visiere
-            "uns_o_smle_3x",
+            "uns_o_unertl8x",
             "uns_o_m84",
             // Befestigungsschiene
-            "b_smle_1937",
-            "uns_b_m1",
-            
-            // Spezial
-            "ACE_Kestrel4500",
-            "ACE_RangeCard"
+            "uns_b_m1"
         ]
     };
 
@@ -409,7 +415,7 @@ _items append (switch (_rolle) do
         _sniper_munition    +
         _aaat_munition +
         _gepaeck_mittel +
-        _gepaeck_gross +
+        _gepaeck_lr +
         [        
             // Weste
             "UNS_M1956_LRRP1",
@@ -426,6 +432,7 @@ _items append (switch (_rolle) do
         _allgemein_uniformen +
         _allgemein_westen +
         _pilot_munition +
+        _gepaeck_lr +
         [
             // Gewehr
             "uns_m2carbine_shorty_p",
@@ -555,7 +562,6 @@ _items append (switch (_rolle) do
         _allgemein_kopfbedeckung +
         _aaat_munition +
         _gepaeck_mittel +
-        _gepaeck_gross +
         [
             // Raketenwerfer
             "uns_m20_bazooka"

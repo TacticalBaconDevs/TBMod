@@ -359,4 +359,7 @@
     
     // ###################### BW #########################
     #include "CfgVehicles_BW.hpp"
+    
+    // #################### Themen #######################
+    #include "CfgVehicles_THEMEN.hpp"
 };

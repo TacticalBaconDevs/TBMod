@@ -24,7 +24,7 @@ class CfgVehicles
             displayName = ""; \
             condition = "!('ROLLEN_NAME' in TB_blacklistRollen_themen)"; \
             modifierFunction = "[_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname"; \
-            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle"; \
+            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;"; \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define MAKE_PUBLIC(D_NAME,A_TYPE) displayName = #D_NAME; \
@@ -142,6 +142,8 @@ class CfgVehicles
         {
             class ACE_MainActions : ACE_MainActions
             {
+                class openArsenal : openArsenal {};
+                
                 class rollen : rollen
                 {
                     ADD_ROLLE_THEMEN(lead);
@@ -171,6 +173,8 @@ class CfgVehicles
         {
             class ACE_MainActions : ACE_MainActions
             {
+                class openArsenal : openArsenal {};
+                
                 class rollen : rollen
                 {
                     ADD_ROLLE_CUSTOM(lead);
