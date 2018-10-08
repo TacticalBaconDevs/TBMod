@@ -51,11 +51,5 @@ TB_liveMonitor_isActive = false;
         false // andere Tasten nicht überschreiben
     },
     {},
-    //TODO: Etwas merkwürdigt
-    //[
-    //    [DIK_DOWN, [false, false, false]]
-    //]
-
     [DIK_DOWN, [false, false, false]]
-
 ] call CBA_fnc_addKeybind;
