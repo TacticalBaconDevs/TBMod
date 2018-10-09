@@ -21,8 +21,10 @@ private _allgemein = [
     "UNS_Scarf_PL",
     "UNS_Scarf_Red",
     "UNS_Scarf_ARVN",
+    "UNS_Band_H",
     // ### Vanilla
     "G_Aviator",
+    "G_Tactical_Clear",
 
     // Karte
     "ItemMap",
@@ -132,6 +134,12 @@ private _allgemein_kopfbedeckung = [
     "UNS_M1_6A",
     "UNS_M1_7A",
     "UNS_M1_1B",
+    "UNS_M1_9A",
+    "UNS_M1_10_vkm",
+    "UNS_M1_6_nyg",
+    "UNS_M1_6_Outnow",
+    "UNS_M1_7_lby",
+    "UNS_M1_7_baby",
     "UNS_M1_PBR"
 ];
 
@@ -273,7 +281,13 @@ _items append (switch (_rolle) do
             "UNS_Beret_3",
             "UNS_Beret_B",
             "UNS_Beret_AVAB",
-        
+            
+            // Uniform
+            "UNS_ARMY_BDU_USA_BDU_Earlymaj",
+            
+            // Weste
+            "UNS_M1956_S3",
+
             // Kommunikation
             "uns_ItemRadio_PRC25_TFAR",
 
@@ -299,6 +313,9 @@ _items append (switch (_rolle) do
         [
             // Rucksack
             "UNS_ARMY_MED",
+
+            // Weste 
+            "UNS_M1956_S2",
             
             // Item
             "TB_Item_liveMonitor"
@@ -322,6 +339,9 @@ _items append (switch (_rolle) do
         [
             // Rucksack
             "UNS_ARMY_MED",
+
+            // Weste 
+            "UNS_M1956_S2",
 
             // Item
             "TB_Item_liveMonitor"
@@ -391,7 +411,11 @@ _items append (switch (_rolle) do
             "uns_bar",
             "uns_m1919a6",
             "uns_m60grip",
-            "uns_m60"
+            "uns_m60support",
+            "uns_m60",
+
+            // Weste
+            "UNS_M1956_M15"
         ]
     };
 
@@ -609,7 +633,10 @@ _items append (switch (_rolle) do
             "ACE_DefusalKit",
             "ToolKit",
             "UNS_TrapKit",
-            "ACE_wirecutter"
+            "ACE_wirecutter",
+
+            // Rucksack
+            "UNS_Alice_LRP2"
         ]
     };
 
