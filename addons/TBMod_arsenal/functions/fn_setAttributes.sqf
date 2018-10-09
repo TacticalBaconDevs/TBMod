@@ -1,4 +1,7 @@
 ﻿/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+
     Author: shukari
 */
 params ["_rolle"];
@@ -22,7 +25,7 @@ if (TB_origin_medicClass == 0) then
     };
 };
 
-// Enigneer / Pilot / Pionier
+// Sanitäter - Enigneer / Pilot / Pionier
 if (isNil "TB_origin_IsEngineer") then {TB_origin_IsEngineer = ACE_player getVariable ["ACE_IsEngineer", 0]};
 if (TB_origin_IsEngineer == 0) then
 {
@@ -40,13 +43,18 @@ if (TB_origin_IsEngineer == 0) then
     };
 };
 
-// Pilot / Muniträger / Pionier
+// erhöhte Kistentragefähigkeit - Pilot / Muniträger / Pionier
 if (isNil "TB_origin_maxWeightCarry") then {TB_origin_maxWeightCarry = ACE_maxWeightCarry};
 ACE_maxWeightCarry = [TB_origin_maxWeightCarry, TB_origin_maxWeightCarry * 4] select (_rolle in ["pilot", "trag", "pionier"]);
 
-// AntiTank / Muniträger  / Pionier
+// erhöhte LoadAusdauer - AntiTank / Muniträger  / Pionier
 if (isNil "TB_origin_loadFactor") then {TB_origin_loadFactor = ace_advanced_fatigue_LoadFactor};
 ace_advanced_fatigue_LoadFactor = [TB_origin_loadFactor, TB_origin_loadFactor / 2] select (_rolle in ["aaat", "trag", "pionier"]);
+
+// erhöhter Anti-Verwackler - AntiTank / Muniträger  / Pionier / Unterstützungsschütze 
+if (isNil "TB_origin_swayFactor") then {TB_origin_swayFactor = ace_advanced_fatigue_swayFactor};
+ace_advanced_fatigue_swayFactor = [TB_origin_swayFactor, TB_origin_swayFactor / 2] select (_rolle in ["aaat", "trag", "pionier", "mg"]);
+
 
 // Pilot
 if (_rolle == "pilot") then {ACE_player setVariable ["ACE_GForceCoef", 0.4, true]};

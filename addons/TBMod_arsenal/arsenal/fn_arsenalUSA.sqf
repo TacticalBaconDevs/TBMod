@@ -1,8 +1,9 @@
 ﻿/*
-    Author: shukari
-    Zuständiger fürs USA Arsenal: shukari
-*/
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 
+    Author: shukari
+*/
 private _allgemein = [
     // Gepäck
     "rhsusf_assault_eagleaiii_coy",
@@ -12,17 +13,26 @@ private _allgemein = [
     "rhsusf_falconii_mc",
     "B_Parachute",
     // ### LR-Funke
-    "TFAR_rt1523g",
-    "TFAR_rt1523g_big",
-    "TFAR_rt1523g_big_bwmod",
-    "TFAR_rt1523g_big_bwmod_tropen",
-    "TFAR_rt1523g_big_rhs",
-    "TFAR_rt1523g_black",
-    "TFAR_rt1523g_bwmod",
-    "TFAR_rt1523g_fabric",
-    "TFAR_rt1523g_green",
-    "TFAR_rt1523g_rhs",
-    "TFAR_rt1523g_sage",
+    //"TFAR_rt1523g",
+    //"TFAR_rt1523g_big",
+    //"TFAR_rt1523g_big_bwmod",
+    //"TFAR_rt1523g_big_bwmod_tropen",
+    //"TFAR_rt1523g_big_rhs",
+    //"TFAR_rt1523g_black",
+    //"TFAR_rt1523g_bwmod",
+    //"TFAR_rt1523g_fabric",
+    //"TFAR_rt1523g_green",
+    //"TFAR_rt1523g_rhs",
+    //"TFAR_rt1523g_sage",
+    // OPXT
+    "OPXT_blk_1523", // schwarz
+    "OPXT_aor1_1523", // sand
+    "OPXT_oga_1523", // grün
+    "OPXT_scorpion_1523",
+    "OPXT_m81_1523",
+    "OPXT_multicam_1523",
+    "OPXT_at_au_1523", // grau1
+    "OPXT_ogag_1523", //grau2
 
     // Gesichtsbedeckung
     "rhs_googles_orange",
@@ -818,6 +828,7 @@ _items append (switch (_rolle) do
             "rhsusf_lrf_Vector21",
             //"ACE_VectorDay",
             "ACE_Vector", // Tag/Nacht Version
+            "ACE_Kestrel4500",
 
             // Spezial
             "ACE_RangeCard"

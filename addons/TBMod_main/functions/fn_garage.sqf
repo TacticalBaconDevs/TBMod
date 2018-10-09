@@ -96,7 +96,7 @@ switch _mode do {
         //setstatvalue ["MarkVirtualVehicleInspection",1];
 
         with missionnamespace do {
-            BIS_fnc_arsenal_group = creategroup side group player;
+            BIS_fnc_arsenal_group = creategroup [side (group player), true];
             BIS_fnc_arsenal_center = missionnamespace getvariable ["BIS_fnc_garage_center",player];
         };
 

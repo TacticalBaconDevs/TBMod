@@ -127,7 +127,7 @@ tpw_civ_fnc_civspawn =
     _civtype = tpw_core_civs select (floor (random (count tpw_core_civs)));
 
     //Spawn civ into empty group
-    _sqname = creategroup [civilian,true];
+    _sqname = creategroup [civilian, true];
     _civ = _sqname createUnit [_civtype,_spawnpos, [], 0, "FORM"]; 
     _civ switchmove "";
     _civ enablesimulation false;

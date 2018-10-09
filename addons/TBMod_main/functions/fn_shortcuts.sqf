@@ -1,4 +1,4 @@
-﻿#include "\TBMod_main\defineDIKCodes.inc"
+﻿#include "\a3\editor_f\Data\Scripts\dikCodes.h"
 /*
     Author: shukari
 */

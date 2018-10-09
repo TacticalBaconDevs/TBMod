@@ -1,11 +1,9 @@
 /*
-    Wenn vordefiniertes Custom DefaultLayout nutzen.
-    Die Layouts können im Spiel über die Debugconsole unten über eins der Ansehens
-    Eingabefelder ausgelesen werden, dafür mit dem Gear ausrüsten als Spieler und dann
-    den Command eingeben:
-        getUnitLoadout player
-    Ein Feld darunter kommt nun eine große Ausgabe. In das Feld mit der Ausgabe klicken
-    und mit STRG+A und STRG+C alles kopieren.
+    In Arma:
+    Im Hauptmenü auf "Tutorials" klicken, dann "ACE-ARSENAL" nun alles ausrüsten.
+    Wenn du alles ausgerüstet hast, unten auf "EXPORTIEREN" klicken.
+    
+    Diese Datei:
     Nun beim jeweiligen CASE der Rolle zB lead (Truppführer usw.) die leeren >>> [] <<<
     markieren und STRG+V drücken.
     Sollten die leeren eckingen Klammern stehen bleiben wird diese Rolle nicht angeboten.
