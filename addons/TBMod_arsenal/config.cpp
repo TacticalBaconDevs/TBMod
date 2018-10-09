@@ -11,6 +11,7 @@ class CfgPatches
             "TB_arsenal_vanilla",
             "TB_arsenal_bw",
             "TB_arsenal_russ",
+            "TB_arsenal_themen",
             "TB_arsenal_predefined_custom"
         };
         ammo[] = {};
@@ -25,3 +26,4 @@ class CfgPatches
 #include "configs\CfgVehicles.hpp"
 #include "configs\Cfg3DEN.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
+#include "configs\CfgEditorSubcategories.hpp"

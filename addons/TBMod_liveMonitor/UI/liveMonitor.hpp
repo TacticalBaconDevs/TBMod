@@ -74,7 +74,6 @@ class TB_liveMonitor_gui
                             y = 0.04;
                             w = 0.2125;
                             h = 0.3;
-                                    
                         };
 
                         class text_Heartrate: TB_RscStructuredText
@@ -235,7 +234,7 @@ class TB_liveMonitor_gui
                         class txtClose: TB_RscStructuredText
                         {
                             idc = -1;
-                            text = "Close";
+                            text = "Schließen";
                             x = 0.0825;
                             y = 0.375;
                             w = 0.14;
