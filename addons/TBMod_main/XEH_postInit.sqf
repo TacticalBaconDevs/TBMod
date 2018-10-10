@@ -6,13 +6,10 @@
 */
 
 [
-{
     {
-       if ((units _x) equals []) then {
-            deleteGroup _x;
-        };
-    } forEach allGroups;
-},
-1800,
-[]
+        {
+           if ((units _x) equals []) then {deleteGroup _x};
+        } forEach allGroups;
+    },
+    1800
 ] call CBA_fnc_addPerFrameHandler;
