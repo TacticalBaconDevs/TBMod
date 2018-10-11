@@ -20,10 +20,8 @@ if (!isNil {_tbCargo} && {!(_tbCargo isEqualTo (_target getVariable ['ace_arsena
         {
             _x setVariable ['ace_arsenal_virtualItems', _tbCargo];
         };
-        
-        false;
     }
-    count (entities (typeOf _target));
+    forEach (entities (typeOf _target));
 };
 
 TB_arsenal_kiste = _target;

@@ -74,7 +74,6 @@ class TB_liveMonitor_gui
                             y = 0.04;
                             w = 0.2125;
                             h = 0.3;
-                                    
                         };
 
                         class text_Heartrate: TB_RscStructuredText

@@ -8,7 +8,8 @@
 [] spawn TB_fnc_waitUntilLoaded;
 
 // Variablen
-if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};
+if (isNil "TB_blacklistRollen_custom") then {TB_blacklistRollen_custom = []};
+if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
 
 ["ace_arsenal_displayClosed", {
     if (!isNil "TB_arsenal_kiste") then {TB_arsenal_kiste hideObject false};

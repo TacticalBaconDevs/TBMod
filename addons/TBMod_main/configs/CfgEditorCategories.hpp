@@ -4,9 +4,4 @@ class CfgEditorCategories
     {
         displayName = "#TB - MainStuff";
     };
-    
-    class EdCat_TB_MainCat_supply
-    {
-        displayName = "#TB - Nachschub";
-    };
 };
