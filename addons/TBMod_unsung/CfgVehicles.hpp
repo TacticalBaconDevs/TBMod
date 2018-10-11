@@ -97,7 +97,7 @@ class CfgVehicles
     WRAPPER(uns_trap_box);          // sehr kleine Munitionskiste
     WRAPPER(uns_medcrate);          // Medickarton
     WRAPPER(uns_resupply_crate_NVA);// große grüne Munitionskiste
-    WRAPPER(uns_81mmammobox_US);    // mittlere Munitionskiste
+    //WRAPPER(uns_81mmammobox_US);  // mittlere Munitionskiste - NUR MODEL
     WRAPPER(uns_HMGammobox_US);     // mini Munitionsbox
     WRAPPER(uns_US_Ordnance);       // längliche Munitionskiste
     WRAPPER(uns_HiddenAmmoBox_small1);// flache Munitionskiste
@@ -141,9 +141,10 @@ class CfgVehicles
         };
     };
     
-    class TB_supply_themen_usaVietnam_unterlauf : WRAPPER_NAME(uns_81mmammobox_US)
+    class TB_supply_themen_usaVietnam_unterlauf : WRAPPER_NAME(uns_resupply_crate_NVA) // model von uns_81mmammobox_US
     {
         PUBLIC_NAME_CAT("Unterlauf",Themen_USAVietnam);
+        model = "\uns_ammo\US\uns_US_ammo_Mortar.p3d";
         
         class TransportMagazines
         {

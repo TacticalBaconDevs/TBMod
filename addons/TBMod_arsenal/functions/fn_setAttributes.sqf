@@ -15,7 +15,7 @@ if (TB_origin_medicClass == 0) then
 {
     if (_rolle in ["sani", "arzt", "pilot"]) then
     {
-        ACE_player setVariable ["ace_medical_medicClass", [2, 1] select (TB_addArztRolle && (_rolle == "sani")), true];
+        ACE_player setVariable ["ace_medical_medicClass", [2, 1] select (_rolle == "sani"), true];
         ACE_player setUnitTrait ["medic", true];
     }
     else

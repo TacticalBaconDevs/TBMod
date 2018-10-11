@@ -29,7 +29,7 @@ class Cfg3DEN
                             tooltip = "Arzt kann nur noch EHK verwenden usw. GENEMIGUNGSPFLICHTIG!";
                             property = "TB_main_mission_extremMedic";
                             control = "Checkbox";
-                            expression = "if (!is3DEN) then {TB_addArztRolle = _value; publicVariable 'TB_addArztRolle'};";
+                            expression = "if (!is3DEN) then {TB_extremSanisystem = _value; publicVariable 'TB_extremSanisystem'};";
                             defaultValue = "false";
                         };
                         class TB_mission_crashHelfer

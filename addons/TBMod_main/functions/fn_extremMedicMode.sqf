@@ -3,8 +3,8 @@
 */
 params [["_input", false, [false]]];
 
-if (!TB_addArztRolle && _input) then {TB_addArztRolle = true};
-if (!TB_addArztRolle) exitWith {};
+if (!TB_extremSanisystem && _input) then {TB_extremSanisystem = true};
+if (!TB_extremSanisystem) exitWith {};
 
 ace_medical_enableOverdosing = true;
 ace_medical_bleedingCoefficient = 0.6;
