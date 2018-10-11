@@ -4,6 +4,7 @@ class Extended_PostInit_EventHandlers
     {
         clientInit = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_postClientInit.sqf'";
         serverInit = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_postServerInit.sqf'";
+        init = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_postInit.sqf'";
     };
 };
 

@@ -281,7 +281,7 @@ _items append (switch (_rolle) do
             "UNS_Beret_3",
             "UNS_Beret_B",
             "UNS_Beret_AVAB",
-            
+
             // Uniform
             "UNS_ARMY_BDU_USA_BDU_Earlymaj",
             
