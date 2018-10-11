@@ -56,7 +56,10 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         // "ACE_plasmaIV_500",
         // "ACE_plasmaIV_250",
         "ACE_personalAidKit",
-        "ACE_surgicalKit"
+        "ACE_surgicalKit",
+
+        // Deffi
+        "adv_aceCPR_AED"
     ];
 };
 

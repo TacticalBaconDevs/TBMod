@@ -11,6 +11,7 @@ enableSaving [false, false];
 
 if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
 
+// Zeus im Spiel erstellen
 [
     "TB_addZeus",
     {
@@ -28,5 +29,15 @@ if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
         };
     }
 ] call CBA_fnc_addEventHandler;
+
+// Leere Gruppen löschen
+[
+    {
+        {
+           if ((units _x) isEqualTo []) then {[_x] call CBA_fnc_deleteEntity};
+        } forEach allGroups;
+    },
+    1800
+] call CBA_fnc_addPerFrameHandler;
 
 ["CBA_loadingScreenDone", {TB_init_done = true}] call CBA_fnc_addEventHandler;
