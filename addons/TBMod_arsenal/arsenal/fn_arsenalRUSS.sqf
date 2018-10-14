@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 
-    Author: shukari
+    Author: shukari, mordl
 */
 // Hier kommen alle Items rein die ALLE Rollen haben
 _items = [
@@ -212,7 +212,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "lead":
     {
         [
-            "ACE_UAVBattery",
+			"ACE_UAVBattery",
             "O_UavTerminal",
             "Laserdesignator_03",
             
@@ -290,7 +290,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_digi_sniper",
             "rhs_6b23_ML_sniper",
             "rhs_acc_tgpv",
-            
+			
             // Weapons
             "rhs_weap_svdp",
             "rhs_weap_svdp_wd",
