@@ -48,6 +48,9 @@ _items = [
     "V_PlateCarrierSpec_tna_F",
     "V_PlateCarrierSpec_mtp",
     "V_PlateCarrierSpec_blk",
+    "V_PlateCarrier2_rgr_noflag_F",
+    "V_PlateCarrier2_blk",
+    "V_PlateCarrier2_tna_F",
     "V_HarnessO_brn",
     "V_HarnessO_gry",
     
@@ -73,6 +76,28 @@ _items = [
     "TFAR_rt1523g_big_bwmod",
     "TFAR_rt1523g_big_bwmod_tropen",
     "TFAR_rt1523g_big_rhs",
+    //schwarz
+    "OPXT_blk_1523",
+    "OPXT_blk_210",
+    "OPXT_blk_117",
+    //tropen
+    "OPXT_at_ix_1523",
+    "OPXT_at_ix_210",
+    "OPXT_at_ix_117",
+    "OPXT_at_fg_1523",
+    "OPXT_at_fg_210",
+    "OPXT_at_fg_117",
+    "OPXT_multicamt_1523",
+    "OPXT_multicamt_210",
+    "OPXT_multicamt_117",
+    //MTP+Multicam
+    "OPXT_scorpion_1523",
+    "OPXT_scorpion_210",
+    "OPXT_scorpion_117",
+    "OPXT_multicam_1523",
+    "OPXT_multicam_210",
+    "OPXT_multicam_117",
+    "OPXT_wht_1523",
     
     // SR-Funke
     "TFAR_anprc152",
@@ -105,12 +130,17 @@ _items = [
     "ACE_HuntIR_M203",
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
+    "ACE_microDAGR",
     
     // Weapons
     "hgun_Pistol_heavy_01_F",
     "hgun_P07_F",
     "arifle_MX_F",
     "arifle_MX_Black_F",
+    "arifle_MX_khk_F",
+    "arifle_SPAR_01_blk_F",
+    "arifle_SPAR_01_snd_F",
+    "arifle_SPAR_01_khk_F",
     
     // Visiere
     "optic_ACO_grn_smg",
@@ -147,6 +177,12 @@ _items = [
     "30Rnd_65x39_caseless_mag_Tracer",
     "100Rnd_65x39_caseless_mag",
     "100Rnd_65x39_caseless_mag_Tracer",
+    "30Rnd_556x45_Stanag_Tracer_Red",
+    "30Rnd_556x45_Stanag_Tracer_Green",
+    "30Rnd_556x45_Stanag_Tracer_Yellow",
+    "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
+    "ACE_30Rnd_556x45_Stanag_Mk218_mag",
+    "ACE_30Rnd_556x45_Stanag_Mk318_mag",
     "11Rnd_45ACP_Mag",
     "30Rnd_9x21_Mag",
     "30Rnd_9x21_Mag_SMG_02",
@@ -213,6 +249,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weapons
             "arifle_MX_GL_F",
             "arifle_MX_GL_Black_F",
+            "arifle_MX_GL_khk_F",
+            "arifle_SPAR_01_GL_blk_F",
+            "arifle_SPAR_01_GL_snd_F",
+            "arifle_SPAR_01_GL_khk_F",
             
             // Items
             "B_UavTerminal",
@@ -242,6 +282,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weapons
             "arifle_MX_GL_F",
             "arifle_MX_GL_Black_F"
+            "arifle_MX_GL_khk_F",
+            "arifle_SPAR_01_GL_blk_F",
+            "arifle_SPAR_01_GL_snd_F",
+            "arifle_SPAR_01_GL_khk_F"
         ]
     };
     
@@ -251,6 +295,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weapons
             "arifle_MXM_F",
             "arifle_MXM_Black_F",
+            "arifle_MXM_khk_F",
+            "srifle_EBR_F",
+            "arifle_SPAR_03_blk_F",
+            "arifle_SPAR_03_snd_F",
+            "arifle_SPAR_03_khk_F",
+            "srifle_DMR_06_olive_F",
+            "srifle_DMR_06_camo_F",
+
+            //Magazine
+            "20Rnd_762x51_Mag",
+            "ACE_20Rnd_762x51_Mag_Tracer",
             
             //Attachments
             "optic_DMS"
@@ -262,7 +317,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Weapons
             "arifle_MX_SW_F",
-            "arifle_MX_SW_Black_F"
+            "arifle_MX_SW_Black_F",
+            "arifle_MX_SW_khk_F",
+            "arifle_SPAR_02_blk_F",
+            "arifle_SPAR_02_snd_F",
+            "arifle_SPAR_02_khk_F",
+
+            //Magazine
+            "150Rnd_556x45_Drum_Mag_Tracer_F",
+            "200Rnd_556x45_Box_Tracer_F",
+            "200Rnd_556x45_Box_Tracer_Red_F"
         ]
     };
     
@@ -425,6 +489,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // AT
             "launch_NLAW_F",
             "launch_RPG32_F",
+            "launch_MRAWS_green_rail_F",    
+            "launch_MRAWS_olive_rail_F",
+            "launch_MRAWS_sand_rail_F",
+            "launch_MRAWS_green_F",         //kann Entfernung messen (ungelenkt)
+            "launch_MRAWS_olive_F",
+            "launch_MRAWS_sand_F",
+            "launch_O_Vorona_brown_F",      //kabelgelenkt
+            "launch_O_Vorona_green_F",
             "RPG32_F",
             "RPG32_HE_F",
             "launch_B_Titan_F",
