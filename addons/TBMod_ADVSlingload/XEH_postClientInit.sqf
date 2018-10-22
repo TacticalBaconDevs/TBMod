@@ -26,9 +26,10 @@ if !(call TB_fnc_isTBMission) exitWith {};
 
             if (typeOf _object2 != "TB_Rope_InvisibleObject") then {
                 private _source = _rope getVariable ["TB_Rope_Source", objNull];
-                if(isNull _source) then {
-                    ropeDestroy _rope;
-                    systemChat format ["Vanilla Slingload wurde ausgeschalten"];
+                if (isNull _source) then {
+                    // TODO collidiert mit ACE Fastroping... hat beim Abseilen mein Seil gelöscht
+                    //ropeDestroy _rope;
+                    //systemChat format ["Vanilla Slingload wurde ausgeschalten"];
                 };
             };
         }];
