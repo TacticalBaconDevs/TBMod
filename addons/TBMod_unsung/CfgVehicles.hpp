@@ -1,11 +1,20 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgVehicles
 {
+    // ###################### Fries ######################
+    class Helicopter;
+    class uns_UH1D_base : Helicopter
+    {
+        ace_fastroping_enabled = 1;
+        ace_fastroping_onCut = "ace_fastroping_fnc_onCutCommon";
+        ace_fastroping_onPrepare = "ace_fastroping_fnc_onPrepareCommon";
+        ace_fastroping_ropeOrigins[] = {{1.166, 0.79, -0.01}, {-1.166, 0.79, -0.01}};
+    };
+    
+    
     // ###################### Makros ######################
     #define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
             weapon = #WEAPON; \
