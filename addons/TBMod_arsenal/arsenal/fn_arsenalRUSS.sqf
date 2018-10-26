@@ -21,11 +21,9 @@ _items = [
     "rhs_6b27m_ml_bala",
     "rhs_6b27m_ml_ess_bala",
     "rhs_6b27m_ml",
-    "rhs_fieldcap",
     "rhs_beret_mp2",
     "rhs_beret_vdv3",
     "rhs_beret_milp",
-    "rhs_Booniehat_flora",
     
     
     //Googles
@@ -49,14 +47,12 @@ _items = [
     "ACE_SpraypaintBlue",
     "ACE_Flashlight_KSF1",
     "ACE_EntrenchingTool",
+	"TB_building_item_Land_BagFence_Long_F",
+    "TB_building_item_Land_BagFence_Round_F",
 
     // Vesten
-    "rhs_6b23_digi_6sh92",
     "rhs_6b23_ML_6sh92",
-    "rhs_vydra_3m",
     "rhs_6b13_Flora_6sh92",
-    "rhs_6b23_6sh116_od",
-    "rhs_6b23_6sh116_vog_flora",
     "rhs_6b23_ML_6sh92_vog_headset",
     
     // Nachtsicht
@@ -86,9 +82,6 @@ _items = [
   
     // Backpacks
     "rhs_assault_umbts",
-    "rhs_assault_umbts_engineer_empty",
-    "rhs_sidor",
-    "B_Parachute", //"ACE_NonSteerableParachute",
     
     // Mags
     "ACE_M84",
@@ -147,23 +140,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
     {
-        [
-			"ACE_UAVBattery",
-            "O_UavTerminal",
-            "Laserdesignator_03",
-            
+        [   
+            // Westen        
             "rhs_6b23_rifleman",
-            "rhs_6b23_digi_rifleman",
             "rhs_6b23_ML_rifleman",
-            
-            "rhs_6b23_6sh92_radio",
-            "rhs_6b23_digi_6sh92_radio",
+            "rhs_6b23_6sh92_radio",				
             
             // Weapons
             "rhs_weap_ak74m_gp25",
             
             // Backpacks
-            "O_UAV_01_backpack_F"
+			
+			//Items
+			"Binocular"
         ]
     };
     
@@ -172,16 +161,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Westen
             "rhs_6b23_medic",
-            "rhs_6b23_digi_medic",
             "rhs_6b23_ML_medic",
 
             // Items
             "TB_Item_liveMonitor",
             
             // Backpacks
-            "B_Kitbag_sgg",
             "B_Kitbag_mcamo",
-            "B_Kitbag_cbr",
             "B_Kitbag_rgr"
         ]
     };
@@ -191,7 +177,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Westen
             "rhs_6b23_medic",
-            "rhs_6b23_digi_medic",
             "rhs_6b23_ML_medic",
 
             // Items
@@ -203,7 +188,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [
             "rhs_6b23_6sh92_radio",
-            "rhs_6b23_digi_6sh92_radio",
             
             //Vesten
             "rhs_6b13_Flora_6sh92_vog",
@@ -219,11 +203,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [
             "rhs_acc_pso1m2",
-            "rhs_6b27m_digi_bala",
             "rhs_6b27m_bala",
             "rhs_6b27m_ml_bala",
             "rhs_6b23_sniper",
-            "rhs_6b23_digi_sniper",
             "rhs_6b23_ML_sniper",
             "rhs_acc_tgpv",
 			
@@ -246,7 +228,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [
             "rhs_6b23_rifleman",
-            "rhs_6b23_digi_rifleman",
             "rhs_6b23_ML_rifleman"
         ]
     };
@@ -259,11 +240,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_tsh4_ess",
             "rhs_tsh4_ess_bala",
             "rhs_vest_commander",
-            "rhs_tsh4",
-            "rhs_zsh7a_mike_green_alt",
-            "rhs_zsh7a_mike_alt",
-            "rhs_zsh7a_mike",
-            "rhs_zsh7a_mike_green",            
+            "rhs_tsh4",       
             
             //uniformen
             "rhs_uniform_gorka_r_g",
@@ -278,7 +255,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [
             "rhs_6b23_rifleman",
-            "rhs_6b23_digi_rifleman",
             "rhs_6b23_ML_rifleman"
         ]
     };
@@ -286,7 +262,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "sniper":
     {
         [
-            "Laserdesignator_03",
+            "V",
             "ACE_Tripod",
             "ACE_Kestrel4500",
             "ACE_ATragMX",
@@ -312,7 +288,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_SpottingScope",
             "ACE_Kestrel4500",
             "ACE_RangeCard",
-            "Laserdesignator_03",
+            "Binocular",
             "ACE_Vector"
         ]
     };
@@ -332,7 +308,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
             
             // Mags
-            "DemoCharge_Remote_Mag",
             "rhs_mine_pmn2_mag",
             "rhs_mine_tm62m_mag"
         ]
