@@ -118,30 +118,17 @@ _items = [
 
     // Gewehre
     "rhs_weap_ak74m_desert",
-    "rhs_weap_ak74m_2mag",
-    "rhs_weap_ak74m_2mag_camo",
-    "rhs_weap_ak74m_camo_folded",
-    "rhs_weap_ak74m_folded",
-    "rhs_weap_ak74m_desert_folded",
     "rhs_weap_ak74m_camo",
     "rhs_weap_ak74m",
     "rhs_weap_ak105",
-    "rhs_weap_asval",
     "rhs_weap_pya",
     "rhs_weap_makarov_pmm",
-    "rhs_weap_asval_grip",
     "rhs_weap_ak74",
     "rhs_weap_ak74m_fullplum",
     
     // Raketenwerfer
     "rhs_weap_rpg26",
-    "rhs_weap_rpg26_used",
-    
-    // Flares
-    "rhs_weap_rsp30_green",
-    "rhs_weap_rsp30_red",
-    "rhs_weap_rsp30_white",
-    
+  
     // Backpacks
     "rhs_assault_umbts",
     "rhs_assault_umbts_engineer_empty",
@@ -153,9 +140,7 @@ _items = [
     "B_Parachute", //"ACE_NonSteerableParachute",
     
     // Mags
-    "rhs_20rnd_9x39mm_SP5",
     "ACE_M84",
-    "rhs_20rnd_9x39mm_SP6",
     "rhs_30Rnd_545x39_AK",
     "SmokeShell",
     "SmokeShellYellow",
