@@ -8,7 +8,7 @@
 _items = [
     // Uniform
     "rhs_uniform_flora_patchless",
-    "rhs_uniform_mflora_patchless",
+    "rhs_uniform_flora_patchless_alt",
 
 
     // Head
@@ -16,11 +16,10 @@ _items = [
     "rhs_6b26_bala",
     "rhs_6b26_ess",
     "rhs_6b26_ess_bala",
-    "rhs_6b27m_ml",
-    "rhs_6b27m_ml_ess",
-    "rhs_6b27m_ml_bala",
-    "rhs_6b27m_ml_ess_bala",
-    "rhs_6b27m_ml",
+    "rhs_6b27m_green",
+    "rhs_6b27m_green_bala",
+    "rhs_6b27m_green_ess",
+    "rhs_6b27m_green_ess_bala",
     "rhs_beret_mp2",
     "rhs_beret_vdv3",
     "rhs_beret_milp",
@@ -82,6 +81,7 @@ _items = [
   
     // Backpacks
     "rhs_assault_umbts",
+	"OPXT_multicamt_117",
     
     // Mags
     "ACE_M84",
