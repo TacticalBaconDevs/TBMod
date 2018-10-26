@@ -7,92 +7,48 @@
 // Hier kommen alle Items rein die ALLE Rollen haben
 _items = [
     // Uniform
-    "rhs_uniform_emr_patchless",
-    "rhs_uniform_vdv_emr_des",
     "rhs_uniform_flora_patchless",
     "rhs_uniform_mflora_patchless",
-    "rhs_uniform_gorka_r_g",
-    "rhs_uniform_gorka_r_y",
+
 
     // Head
-    "rhs_6b26_green",
-    "rhs_6b26_bala_green",
-    "rhs_6b26_ess_green",
-    "rhs_6b26_ess_bala_green",
     "rhs_6b26",
     "rhs_6b26_bala",
     "rhs_6b26_ess",
     "rhs_6b26_ess_bala",
-    "rhs_6b27m",
-    "rhs_6b27m_ess",
-    "rhs_6b27m_bala",
-    "rhs_6b27m_ess_bala",
-    "rhs_6b47",
-    "rhs_6b47_bala",
-    "rhs_6b47_ess",
-    "rhs_6b47_ess_bala",
     "rhs_6b27m_ml",
     "rhs_6b27m_ml_ess",
     "rhs_6b27m_ml_bala",
     "rhs_6b27m_ml_ess_bala",
     "rhs_6b27m_ml",
-    "rhs_fieldcap_helm_digi",
     "rhs_fieldcap",
-    "rhs_beret_mp1",
     "rhs_beret_mp2",
     "rhs_beret_vdv3",
-    "rhs_beret_vdv1",
-    "rhs_beret_vdv2",
     "rhs_beret_milp",
-    "rhs_Booniehat_digi",
     "rhs_Booniehat_flora",
-    "rhs_fieldcap_digi2",
     
     
     //Googles
-    "rhs_balaclava",
-    "rhs_balaclava1_olive",
     "rhs_scarf",
     //Googles (vanilla)
     "G_Bandanna_shades",
     "G_Balaclava_oli",
     "G_Balaclava_blk",
     "G_Bandanna_tan",
-    "G_Bandanna_beast",
-    "G_Bandanna_blk",
-    "G_Bandanna_oli",    
+    "G_Bandanna_beast",  
 
     // Items
     "ACE_CableTie",
-    "ACE_IR_Strobe_Item",
-    "ACE_EarPlugs",
-    "ACE_Altimeter",
-    "ACE_wirecutter",
-    "ACE_Flashlight_XL50",
     "ACE_acc_pointer_green",
     "ACE_acc_pointer_green_IR",
     "ACE_MapTools",
-    "ACE_RangeTable_82mm",
-    "ACE_Sandbag_empty",
-    "MCC_multiTool",
-    "Binocular",
-    "ItemGPS",
     "ItemWatch",
     "ItemCompass",
     "ItemMap",
     "TFAR_fadak",
     "ACE_SpraypaintBlue",
-    "ACE_SpraypaintGreen",
-    "ACE_HuntIR_monitor",
     "ACE_Flashlight_KSF1",
-    "ACE_Flashlight_MX991",
-    "ACE_SpraypaintRed",
     "ACE_EntrenchingTool",
-    "ACE_Sandbag_empty",
-    "ACE_SpraypaintBlack",
-    "ACE_HuntIR_M203",
-    "AMP_Breaching_Charge_Mag",
-    "MiniGrenade",
 
     // Vesten
     "rhs_6b23_digi_6sh92",
@@ -104,7 +60,6 @@ _items = [
     "rhs_6b23_ML_6sh92_vog_headset",
     
     // Nachtsicht
-    "ACE_NVG_Gen4",
     "rhs_1PN138",
     
     // Visiere
@@ -133,10 +88,6 @@ _items = [
     "rhs_assault_umbts",
     "rhs_assault_umbts_engineer_empty",
     "rhs_sidor",
-    "TFAR_mr3000",
-    "TFAR_mr3000_rhs",
-    "TFAR_mr3000_bwmod_tropen",
-    "B_TacticalPack_mcamo",
     "B_Parachute", //"ACE_NonSteerableParachute",
     
     // Mags
@@ -307,7 +258,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_tsh4_bala",
             "rhs_tsh4_ess",
             "rhs_tsh4_ess_bala",
-            "rhs_uniform_df15",
             "rhs_vest_commander",
             "rhs_tsh4",
             "rhs_zsh7a_mike_green_alt",
@@ -316,8 +266,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_zsh7a_mike_green",            
             
             //uniformen
-            "rhs_uniform_df15",
-            "rhs_uniform_df15_tan",
+            "rhs_uniform_gorka_r_g",
+            "rhs_uniform_gorka_r_y",
             
             // Items
             "ToolKit"
@@ -370,10 +320,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "spreng":
     {
         [
-            "ACE_Clacker",
+		    "ACE_Clacker"
             "ACE_DefusalKit",
-            "ACE_wirecutter",
-            "ACE_DeadManSwitch",
             "ToolKit",
             
             //Vesten
@@ -384,7 +332,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
             
             // Mags
-            "rhsusf_m112_mag",
             "DemoCharge_Remote_Mag",
             "rhs_mine_pmn2_mag",
             "rhs_mine_tm62m_mag"
@@ -398,19 +345,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_rpg7",
             "rhs_weap_igla"
         ]
-    };
-    
-    case "jtac":
-    {
-        [
-            "ACE_UAVBattery",
-            "O_UavTerminal",
-            "Laserdesignator_03",
-            
-            // Backpacks
-            "O_UAV_01_backpack_F"
-        ]
-    };
+    }; 
     
     case "pionier":
     {
@@ -418,7 +353,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "MineDetector",
             //"MCC_multiTool",
-            "ACE_wirecutter",
             "ACE_DefusalKit",
             "ToolKit",
             
