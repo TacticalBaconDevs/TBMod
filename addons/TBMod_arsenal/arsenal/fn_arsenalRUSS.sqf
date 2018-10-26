@@ -320,7 +320,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "spreng":
     {
         [
-		    "ACE_Clacker"
+		    "ACE_Clacker",
             "ACE_DefusalKit",
             "ToolKit",
             
