@@ -56,8 +56,13 @@ _items = [
     "rhs_acc_dtk",
     "rhs_acc_dtk4short",
     "rhs_acc_pkas",
-    "rhs_acc_1p63",
     "rhs_acc_ekp1",
+	"rhs_acc_pgs64_74un",
+	"rhs_acc_dtkakm",
+	"rhs_acc_1p78",
+	"rhs_acc_ekp8_02",
+	"rhs_acc_nita",
+	"rhs_acc_pbs4",
 	
 	// Pistolen
 	//"rhs_weap_6p53",
@@ -80,12 +85,12 @@ _items = [
     
     // Mags Gewehre
 	"rhs_30Rnd_545x39_7N22_plum_AK",
-    //"rhs_30Rnd_545x39_AK_plum_green",
+    "rhs_30Rnd_545x39_AK_plum_green",
 
 	
 	// Mags Pistolen
 	//"rhs_18rnd_9x21mm_7N29",
-	"rhs_weap_pb_6p9",
+	"rhs_mag_9x18_8_57N181S"
     
     // Mags Grena
     "rhs_VG40OP_white",
@@ -102,7 +107,7 @@ _items = [
 	
     // Mags mg
 	"rhs_75Rnd_762x39mm",
-	//"rhs_75Rnd_762x39mm_tracer",
+	"rhs_75Rnd_762x39mm_tracer",
 	
 	// Mags mp
 	"rhs_mag_9x19mm_7n31_44",
