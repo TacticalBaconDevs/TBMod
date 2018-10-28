@@ -52,6 +52,7 @@ _items = [
     "rhs_acc_dtk4short",
 	"rhs_acc_dtk1983",
     "rhs_acc_dtkakm",
+	"rhs_acc_pgs64_74un",
  
     // Scopes
     "rhs_acc_pkas",
@@ -73,9 +74,6 @@ _items = [
 	"rhs_mag_rgo",
 	"rhs_mag_rdg2_black",
 	"rhs_mag_rdg2_white",
-  
-    // Backpacks
-    "rhs_assault_umbts",
     
     // Mags Gewehre
 	"rhs_30Rnd_545x39_7N22_plum_AK",
@@ -160,8 +158,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_aks74n",			
 
             // Items
-            "TB_Item_liveMonitor",
-			"Binocular",			
+            "TB_Item_liveMonitor",			
             
             // Backpacks
             "B_TacticalPack_oli"
@@ -270,6 +267,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             
             // Items
             "ToolKit",
+			"Binocular",			
 			
 			// Backpacks
 			"OPXT_ogao_210",
