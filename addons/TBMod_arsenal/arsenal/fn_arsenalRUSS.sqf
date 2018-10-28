@@ -239,7 +239,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
 		    // Westen
             "rhs_6b23_rifleman",
-            "rhs_6b23_ML_rifleman",
+            "rhs_6b23_ML_rifleman"
 			
 			// Backpacks
 			//"OPXT_multicamt_1523"
