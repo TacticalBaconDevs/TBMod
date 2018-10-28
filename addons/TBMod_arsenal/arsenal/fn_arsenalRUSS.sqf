@@ -378,7 +378,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [
             // Items
-            "ToolKit"
+            "ToolKit",
 	        "TB_building_item_Land_BagFence_Long_F",
             "TB_building_item_Land_BagFence_Round_F"			
             
