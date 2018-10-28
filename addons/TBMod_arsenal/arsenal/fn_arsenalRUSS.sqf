@@ -46,8 +46,6 @@ _items = [
     "ACE_SpraypaintBlue",
     "ACE_Flashlight_KSF1",
     "ACE_EntrenchingTool",
-	"TB_building_item_Land_BagFence_Long_F",
-    "TB_building_item_Land_BagFence_Round_F",
     
     // Nachtsicht
     "rhs_1PN138",
@@ -169,7 +167,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Backpacks
             "B_Kitbag_mcamo",
             "B_Kitbag_rgr",
-			"OPXT_multicamt_117"
+			//"OPXT_multicamt_117"
         ]
     };
     
@@ -187,7 +185,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
 			
 			// Backpacks
-			"OPXT_multicamt_1523"
+			//"OPXT_multicamt_1523"
         ]
     };
     
@@ -224,7 +222,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_acc_pso1m2",
 			
 			// Backpacks
-			"OPXT_multicamt_117"
+			//"OPXT_multicamt_117"
         ]
     };
     
@@ -244,7 +242,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_rifleman",
 			
 			// Backpacks
-			"OPXT_multicamt_1523"
+			//"OPXT_multicamt_1523"
         ]
     };
     
@@ -290,25 +288,25 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_fieldcap_khk",
 			"rhs_fieldcap_vsr",
 			
-		    // Uniforms
-			"rhs_uniform_gorka_r_y",
-			"rhs_uniform_gorka_r_g",
+            // Items
+            "ACE_Tripod",
+            "ACE_Kestrel4500",
+            "ACE_ATragMX",
+            "ACE_RangeCard",			
+						
+            // Mods
+            "muzzle_snds_93mmg",
+            "muzzle_snds_93mmg_tan",
+            "rhs_acc_dh520x56",			
 			
 			// Vests
 			"rhs_6sh92_vsr",
 			"rhs_6sh92_digi",
 			
-            // Items
-            "ACE_Tripod",
-            "ACE_Kestrel4500",
-            "ACE_ATragMX",
-            "ACE_RangeCard",
-            
-            // Mods
-            "muzzle_snds_93mmg",
-            "muzzle_snds_93mmg_tan",
-            "rhs_acc_dh520x56",
-            
+		    // Uniforms
+			"rhs_uniform_gorka_r_y",
+			"rhs_uniform_gorka_r_g",
+                     
             // Weapons
             "rhs_weap_t5000"
         ]
@@ -381,6 +379,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Items
             "ToolKit"
+	        "TB_building_item_Land_BagFence_Long_F",
+            "TB_building_item_Land_BagFence_Round_F",			
             
         ]
     };
