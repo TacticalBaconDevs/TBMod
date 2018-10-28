@@ -135,8 +135,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [   
             // Vests        
-            "rhs_6b23_rifleman",
-            "rhs_6b23_ML_rifleman",
+            "rhs_6b23_ML_6sh92_radio",
             "rhs_6b23_6sh92_radio",				
             
             // Weapons
@@ -145,7 +144,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			// Backpacks
 		    "OPXT_multicamt_117",
 			
-			//Items
+			// Items
 			"Binocular"
         ]
     };
@@ -193,8 +192,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [          
             // Vests
-            "rhs_6b13_Flora_6sh92_vog",
-            "rhs_6b23_6sh92_radio",			
+            "rhs_6b23_6sh92_vog",
+            "rhs_6b23_ML_6sh92_vog",			
             
             // Weapons
             "rhs_weap_aks74_gp25",
@@ -208,8 +207,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         [
             // Vests
-            "rhs_6b27m_bala",
-            "rhs_6b27m_ml_bala",
             "rhs_6b23_sniper",
             "rhs_6b23_ML_sniper",
 
@@ -229,6 +226,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "mg":
     {
         [
+		    // Vests
+			"rhs_6b23_rifleman",
+			"rhs_6b23_ML_rifleman",
+		
             // Weapons
             "rhs_weap_pm63"
         ]
@@ -237,9 +238,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "trag":
     {
         [
-		    // Westen
-            "rhs_6b23_rifleman",
-            "rhs_6b23_ML_rifleman"
+		    // Vests
+            "rhs_6b23_vydra_3m",
+            "rhs_6b23_ML_vydra_3m"
 			
 			// Backpacks
 			//"OPXT_multicamt_1523"
@@ -249,17 +250,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "pilot":
     {
         [
-            // Westen
-            "rhs_tsh4_bala",
-            "rhs_tsh4_ess",
-            "rhs_tsh4_ess_bala",
-            "rhs_vest_commander",
-            "rhs_tsh4",       
+            // Vests
+			"rhs_6sh92_vsr",
+			"rhs_6sh92_digi",       
 			
 			// Weapons
             "rhs_weap_pp2000",
 			
-            //uniformen
+            // Uniforms
             "rhs_uniform_gorka_r_g",
             "rhs_uniform_gorka_r_y",
             
@@ -351,7 +349,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ToolKit",
             
             // Vests
-            "rhs_6b13_Flora_6sh92_vog",
+            "rhs_6b23_6sh92_vog",
+			"rhs_6b23_ML_6sh92_vog",
             
             // Minensucher
             "ACE_VMH3",
@@ -368,6 +367,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "aaat":
     {
         [
+		    // Vests
+			"rhs_6b23_vydra_3m",
+			"rhs_6b23_ML_vydra_3m",
+			
             // Weapons
             "rhs_weap_rpg7",
             "rhs_weap_igla"
@@ -377,6 +380,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "pionier":
     {
         [
+		    // Vests
+			"rhs_6b23_engineer",
+			"rhs_6b23_ML_engineer",
+			
             // Items
             "ToolKit",
 	        "TB_building_item_Land_BagFence_Long_F",
