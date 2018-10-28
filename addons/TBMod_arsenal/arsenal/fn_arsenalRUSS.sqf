@@ -166,7 +166,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             
             // Backpacks
             "B_Kitbag_mcamo",
-            "B_Kitbag_rgr",
+            "B_Kitbag_rgr"
 			//"OPXT_multicamt_117"
         ]
     };
@@ -182,10 +182,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_weap_aks74u",
 
             // Items
-            "TB_Item_liveMonitor"
+            "TB_Item_liveMonitor",
 			
 			// Backpacks
-			//"OPXT_multicamt_1523"
+			"OPXT_multicamt_1523"
         ]
     };
     
@@ -219,7 +219,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_svds",
 			
 			// Mods
-			"rhs_acc_pso1m2",
+			"rhs_acc_pso1m2"
 			
 			// Backpacks
 			//"OPXT_multicamt_117"
@@ -380,7 +380,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ToolKit"
 	        "TB_building_item_Land_BagFence_Long_F",
-            "TB_building_item_Land_BagFence_Round_F",			
+            "TB_building_item_Land_BagFence_Round_F"			
             
         ]
     };
