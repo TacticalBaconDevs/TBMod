@@ -50,16 +50,15 @@ _items = [
     // Nachtsicht
     "rhs_1PN138",
 
-	// Mods
+	// Muzzle Mods
     "rhs_acc_dtk",
     "rhs_acc_dtk4short",
+	"rhs_acc_dtk1983",
+    "rhs_acc_dtkakm",
+ 
+    // Scopes
     "rhs_acc_pkas",
     "rhs_acc_ekp1",
-	"rhs_acc_pgs64_74un",
-	"rhs_acc_dtkakm",
-	"rhs_acc_1p78",
-	"rhs_acc_ekp8_02",
-	"rhs_acc_nita",
 	"rhs_acc_pbs4",
 	
 	// Pistolen
@@ -139,7 +138,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_6sh92_radio",				
             
             // Weapons
-            "rhs_weap_aks74un",
+			"rhs_weap_aks74n",
+			"rhs_weap_ak74n",
+			
+		    // Scopes
+            "rhs_acc_nita",
+            "rhs_acc_1p78",		
 			
 			// Backpacks
 		    "OPXT_multicamt_117",
@@ -157,15 +161,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_medic",
 			
 			// Weapons
-			"rhs_weap_aks74n",
-			"rhs_weap_ak74n",
+            "rhs_weap_aks74",			
 
             // Items
             "TB_Item_liveMonitor",
+			"Binocular",			
             
             // Backpacks
-            "B_Kitbag_mcamo",
-            "B_Kitbag_rgr"
+            "B_TacticalPack_oli"
 			//"OPXT_multicamt_117"
         ]
     };
@@ -178,7 +181,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_medic",
 			
 			// Weapons
-			"rhs_weap_aks74u",
+			"rhs_weap_aks74un",
 
             // Items
             "TB_Item_liveMonitor",
@@ -191,15 +194,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "grena":
     {
         [          
+		    // Backpacks 
+			"rhs_assault_umbts",
+		    
             // Vests
             "rhs_6b23_6sh92_vog",
             "rhs_6b23_ML_6sh92_vog",			
             
             // Weapons
-            "rhs_weap_aks74_gp25",
-			"rhs_weap_ak74_gp25"
-			
-			// Backpacks
+            "rhs_weap_aks74n_gp25",
+			"rhs_weap_ak74n_gp25"
         ]
     };
     
@@ -210,15 +214,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_sniper",
             "rhs_6b23_ML_sniper",
 
-            // Waffen
+            // Waeapons
             "rhs_weap_svdp",
             "rhs_weap_svdp_wd",
             "rhs_weap_svds",
 			
 			// Mods
-			"rhs_acc_pso1m2"
+			"rhs_acc_pso1m2",
 			
 			// Backpacks
+			"rhs_assault_umbts"
 			//"OPXT_multicamt_117"
         ]
     };
@@ -231,7 +236,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_6b23_ML_rifleman",
 		
             // Weapons
-            "rhs_weap_pm63"
+            "rhs_weap_pm63",
+			
+			// Backpacks
+			"B_TacticalPack_oli"
         ]
     };
     
@@ -240,9 +248,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
 		    // Vests
             "rhs_6b23_vydra_3m",
-            "rhs_6b23_ML_vydra_3m"
+            "rhs_6b23_ML_vydra_3m",
+			
+			// Weapons
+			"rhs_weap_aks74un",	
 			
 			// Backpacks
+			"B_Carryall_oli"
 			//"OPXT_multicamt_1523"
         ]
     };
@@ -273,9 +285,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "rifle":
     {
         [
+		    // Backpacks
+			"rhs_assault_umbts",
+		
 		    // Vests
             "rhs_6b23_rifleman",
-            "rhs_6b23_ML_rifleman"
+            "rhs_6b23_ML_rifleman",
+			
+		    // Scopes
+            "rhs_acc_nita",
+            "rhs_acc_1p78",
+			
+            // Weapons
+			"rhs_weap_ak74n"	
+		
         ]
     };
     
@@ -306,7 +329,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_uniform_gorka_r_g",
                      
             // Weapons
-            "rhs_weap_t5000"
+            "rhs_weap_t5000",
+			
+			// Backpacks
+			"rhs_sidor"
         ]
     };
     
@@ -324,6 +350,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			// Vests
 			"rhs_6sh92_vsr_headset",
 			"rhs_6sh92_digi",
+			
+			// Weapons
+			"rhs_weap_ak74n",
+			
+			// Scopes
+            "rhs_acc_nita",
+            "rhs_acc_1p78",
 		
 		    // Items
             "ACE_ATragMX",
@@ -346,32 +379,47 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 		    // Items
 		    "ACE_Clacker",
             "ACE_DefusalKit",
-            "ToolKit",
             
             // Vests
             "rhs_6b23_6sh92_vog",
 			"rhs_6b23_ML_6sh92_vog",
+			
+			// Weapons
+			"rhs_weap_ak74n",
+			
+			// Scopes w/ magnifier
+            "rhs_acc_nita",
+            "rhs_acc_1p78",
             
             // Minensucher
             "ACE_VMH3",
             "ACE_VMM3",
             
             // Explosives
-            "rhs_mine_pmn2_mag",
-            "rhs_mine_tm62m_mag"
+			"DemoCharge_Remote_Mag",
+			//"SatchelCharge_Remote_Mag",
+            "ATMine_Range_Mag",
+            "APERSTripMine_Wire_Mag",
 			
 			// Backpacks
+			"B_TacticalPack_oli"
         ]
     };
     
     case "aaat":
     {
         [
+		    // Backpacks
+			"rhs_rpg_empty",
+			
 		    // Vests
 			"rhs_6b23_vydra_3m",
 			"rhs_6b23_ML_vydra_3m",
 			
             // Weapons
+            "rhs_weap_aks74un",
+			
+			// Launchers
             "rhs_weap_rpg7",
             "rhs_weap_igla"
         ]
@@ -380,9 +428,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "pionier":
     {
         [
+		    // Backpacks
+			"B_TacticalPack_oli",
+			
 		    // Vests
 			"rhs_6b23_engineer",
 			"rhs_6b23_ML_engineer",
+			
+			// Weapons
+            "rhs_weap_aks74n",
 			
             // Items
             "ToolKit",
