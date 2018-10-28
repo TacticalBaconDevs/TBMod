@@ -27,12 +27,9 @@ _items = [
     
     //Googles
     "rhs_scarf",
-    //Googles (vanilla)
-    "G_Bandanna_shades",
-    "G_Balaclava_oli",
-    "G_Balaclava_blk",
-    "G_Bandanna_tan",
-    "G_Bandanna_beast",  
+    "rhs_balaclava1_olive", 
+	"G_Bandanna_khk",
+	"G_Bandanna_oli",
 
     // Items
     "ACE_CableTie",
@@ -62,8 +59,8 @@ _items = [
 	"rhs_acc_pbs4",
 	
 	// Pistolen
-	//"rhs_weap_6p53",
-    "rhs_weap_makarov_pmm",
+	"rhs_weap_6p53",
+    //"rhs_weap_makarov_pmm", Munitionsbug
 	"rhs_weap_pb_6p9",
     
     // Raketenwerfer
@@ -86,8 +83,8 @@ _items = [
 
 	
 	// Mags Pistolen
-	//"rhs_18rnd_9x21mm_7N29",
-	"rhs_mag_9x18_8_57N181S",
+	"rhs_18rnd_9x21mm_7N29",
+	"rhs_mag_9x18_8_57N181S", 
     
     // Mags Grena
     "rhs_VG40OP_white",
@@ -138,7 +135,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_6sh92_radio",				
             
             // Weapons
-			"rhs_weap_aks74n",
 			"rhs_weap_ak74n",
 			
 		    // Scopes
@@ -161,7 +157,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_medic",
 			
 			// Weapons
-            "rhs_weap_aks74",			
+            "rhs_weap_aks74n",			
 
             // Items
             "TB_Item_liveMonitor",
@@ -202,7 +198,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_6sh92_vog",			
             
             // Weapons
-            "rhs_weap_aks74n_gp25",
+            //"rhs_weap_aks74n_gp25",
 			"rhs_weap_ak74n_gp25"
         ]
     };
@@ -217,7 +213,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Waeapons
             "rhs_weap_svdp",
             "rhs_weap_svdp_wd",
-            "rhs_weap_svds",
 			
 			// Mods
 			"rhs_acc_pso1m2",
