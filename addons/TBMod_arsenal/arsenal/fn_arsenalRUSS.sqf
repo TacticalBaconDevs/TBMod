@@ -88,7 +88,7 @@ _items = [
 	
 	// Mags Pistolen
 	//"rhs_18rnd_9x21mm_7N29",
-	"rhs_mag_9x18_8_57N181S"
+	"rhs_mag_9x18_8_57N181S",
     
     // Mags Grena
     "rhs_VG40OP_white",
@@ -182,7 +182,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_weap_aks74u",
 
             // Items
-
+            "TB_Item_liveMonitor"
 			
 			// Backpacks
 			//"OPXT_multicamt_1523"
