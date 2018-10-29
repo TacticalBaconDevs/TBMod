@@ -416,7 +416,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"rhs_6b23_ML_vydra_3m",
 			
             // Weapons
-            "rhs_weap_aks74un",
+            "rhs_weap_aks74n",
 			
 			// Launchers
             "rhs_weap_rpg7",
