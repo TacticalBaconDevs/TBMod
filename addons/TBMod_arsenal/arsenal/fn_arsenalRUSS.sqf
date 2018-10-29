@@ -10,11 +10,7 @@ _items = [
     "rhs_uniform_flora_patchless",
     "rhs_uniform_flora_patchless_alt",
 
-
-
-    
-    
-    //Googles
+   //Googles
     "rhs_scarf",
     "rhs_balaclava1_olive", 
 	"G_Bandanna_khk",
@@ -93,34 +89,38 @@ _items = [
 	// Mags mp
 	"rhs_mag_9x19mm_7n31_44",
     
-    // Mörser Rounds
+    // Mörser Rounds???
     "ACE_1Rnd_82mm_Mo_HE",
     "ACE_1Rnd_82mm_Mo_Smoke",
     "ACE_1Rnd_82mm_Mo_Illum",
     
     // Mags aa/at
-    "rhs_rpg7_PG7VL_mag",
-    "rhs_mag_9k38_rocket",
-    "rhs_rpg7_PG7VR_mag",
-    "rhs_rpg7_OG7V_mag",
-    "rhs_rpg7_TBG7V_mag"
+    //"rhs_rpg7_PG7VL_mag",
+    //"rhs_mag_9k38_rocket",
+    //"rhs_rpg7_PG7VR_mag",
+    //"rhs_rpg7_OG7V_mag",
+    //"rhs_rpg7_TBG7V_mag", Antiinfantriemunition
+    "rhs_rpg7_PG7V_mag"
 ];
 
 private _front_kopfbedeckung = [
     // Head
-    "rhs_6b26",
-    "rhs_6b26_bala",
-    "rhs_6b26_ess",
-    "rhs_6b26_ess_bala",
+    "rhs_6b26_green",
+    "rhs_6b26_bala_green",
+    "rhs_6b26_ess_green",
+    "rhs_6b26_ess_bala_green",
     "rhs_6b27m_green",
     "rhs_6b27m_green_bala",
     "rhs_6b27m_green_ess",
     "rhs_6b27m_green_ess_bala",
     "rhs_beret_mp2",
-    "rhs_beret_vdv3",
     "rhs_beret_milp"
 ];
-	
+
+private _scopes_enhanced = [
+    "rhs_acc_nita",
+    "rhs_acc_1p78"
+];	
 // #################################################################
 // LAYOUTS
 // Ab hier sind Items nur noch für die bestimmten Rollen
@@ -131,6 +131,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "lead":
     {   
 	    _front_kopfbedeckung +
+		_scopes_enhanced +
         [   
             // Vests        
             "rhs_6b23_ML_6sh92_radio",
@@ -138,10 +139,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             
             // Weapons
 			"rhs_weap_ak74n",
-			
-		    // Scopes
-            "rhs_acc_nita",
-            "rhs_acc_1p78",		
 			
 			// Backpacks
 		    "OPXT_multicamt_117",
@@ -219,7 +216,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_svdp",
             "rhs_weap_svdp_wd",
 			
-			// Mods
+			// Scopes
 			"rhs_acc_pso1m2",
 			
 			// Backpacks
@@ -286,6 +283,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"Binocular",			
 			
 			// Backpacks
+			"rhs_sidor",
 			"OPXT_ogao_210"			
         ]
     };
@@ -293,6 +291,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "rifle":
     {
 	    _front_kopfbedeckung +
+		_scopes_enhanced +
         [
 		    // Backpacks
 			"rhs_assault_umbts",
@@ -300,10 +299,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 		    // Vests
             "rhs_6b23_rifleman",
             "rhs_6b23_ML_rifleman",
-			
-		    // Scopes
-            "rhs_acc_nita",
-            "rhs_acc_1p78",
 			
             // Weapons
 			"rhs_weap_ak74n"	
@@ -347,6 +342,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "spotter":
     {
+	    _scopes_enhanced +
         [
 		    // Head
 			"rhs_fieldcap_khk",
@@ -362,10 +358,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			
 			// Weapons
 			"rhs_weap_ak74n",
-			
-			// Scopes
-            "rhs_acc_nita",
-            "rhs_acc_1p78",
 		
 		    // Items
             "ACE_ATragMX",
@@ -384,6 +376,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "spreng":
     {
 	    _front_kopfbedeckung +
+		_scopes_enhanced +
         [   
 		    // Items
 		    "ACE_Clacker",
@@ -395,10 +388,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			
 			// Weapons
 			"rhs_weap_ak74n",
-			
-			// Scopes
-            "rhs_acc_nita",
-            "rhs_acc_1p78",
             
             // Minensucher
             "ACE_VMH3",
@@ -431,7 +420,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			
 			// Launchers
             "rhs_weap_rpg7",
-            "rhs_weap_igla"
+            //"rhs_weap_igla"
+			
+			// Scopes
+			"rhs_acc_pgo7v"
         ]
     }; 
     
