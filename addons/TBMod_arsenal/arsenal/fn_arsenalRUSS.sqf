@@ -11,18 +11,7 @@ _items = [
     "rhs_uniform_flora_patchless_alt",
 
 
-    // Head
-    "rhs_6b26",
-    "rhs_6b26_bala",
-    "rhs_6b26_ess",
-    "rhs_6b26_ess_bala",
-    "rhs_6b27m_green",
-    "rhs_6b27m_green_bala",
-    "rhs_6b27m_green_ess",
-    "rhs_6b27m_green_ess_bala",
-    "rhs_beret_mp2",
-    "rhs_beret_vdv3",
-    "rhs_beret_milp",
+
     
     
     //Googles
@@ -117,7 +106,21 @@ _items = [
     "rhs_rpg7_TBG7V_mag"
 ];
 
-
+private _front_kopfbedeckung = [
+    // Head
+    "rhs_6b26",
+    "rhs_6b26_bala",
+    "rhs_6b26_ess",
+    "rhs_6b26_ess_bala",
+    "rhs_6b27m_green",
+    "rhs_6b27m_green_bala",
+    "rhs_6b27m_green_ess",
+    "rhs_6b27m_green_ess_bala",
+    "rhs_beret_mp2",
+    "rhs_beret_vdv3",
+    "rhs_beret_milp"
+];
+	
 // #################################################################
 // LAYOUTS
 // Ab hier sind Items nur noch für die bestimmten Rollen
@@ -126,7 +129,8 @@ _items = [
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
-    {
+    {   
+	    _front_kopfbedeckung +
         [   
             // Vests        
             "rhs_6b23_ML_6sh92_radio",
@@ -149,6 +153,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "sani":
     {
+	    _front_kopfbedeckung +
         [
             // Vests
             "rhs_6b23_medic",
@@ -168,6 +173,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "arzt":
     {
+	    _front_kopfbedeckung +
         [		 
             // Vests
             "rhs_6b23_medic",
@@ -186,6 +192,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "grena":
     {
+	    _front_kopfbedeckung +
         [          
 		    // Backpacks 
 			"rhs_assault_umbts",
@@ -202,6 +209,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "dmr":
     {
+	    _front_kopfbedeckung +
         [
             // Vests
             "rhs_6b23_sniper",
@@ -222,6 +230,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "mg":
     {
+	    _front_kopfbedeckung +
         [
 		    // Vests
 			"rhs_6b23_rifleman",
@@ -237,6 +246,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "trag":
     {
+	    _front_kopfbedeckung +
         [
 		    // Vests
             "rhs_6b23_vydra_3m",
@@ -254,6 +264,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "pilot":
     {
         [
+		    // Head
+			"rhs_tsh4",
+			"rhs_tsh4_bala",
+			"rhs_tsh4_ess",
+			"rhs_tsh4_ess_bala",
+		
             // Vests
 			"rhs_6sh92_vsr",
 			"rhs_6sh92_digi",       
@@ -270,13 +286,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			"Binocular",			
 			
 			// Backpacks
-			"OPXT_ogao_210",
-			"OPXT_oga_210"			
+			"OPXT_ogao_210"			
         ]
     };
     
     case "rifle":
     {
+	    _front_kopfbedeckung +
         [
 		    // Backpacks
 			"rhs_assault_umbts",
@@ -361,13 +377,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Binocular",
 			
 			// Backpacks
-            "OPXT_oga_1523",
 			"OPXT_ogao_1523"
         ]
     };
     
     case "spreng":
     {
+	    _front_kopfbedeckung +
         [   
 		    // Items
 		    "ACE_Clacker",
@@ -380,7 +396,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 			// Weapons
 			"rhs_weap_ak74n",
 			
-			// Scopes w/ magnifier
+			// Scopes
             "rhs_acc_nita",
             "rhs_acc_1p78",
             
@@ -401,6 +417,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "aaat":
     {
+	    _front_kopfbedeckung +
         [
 		    // Backpacks
 			"rhs_rpg_empty",
@@ -420,6 +437,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     
     case "pionier":
     {
+	    _front_kopfbedeckung +
         [
 		    // Backpacks
 			"B_TacticalPack_oli",
