@@ -11,9 +11,6 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
         
-        weapons[] = {};
-        units[] = {};
-        
         requiredVersion = 1.84;
         requiredAddons[] = {
             "TBMod_main",

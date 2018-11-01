@@ -118,8 +118,8 @@ if (_save) then
             [side _veh, (crew _veh) apply {typeOf _x}]
         ];
         
-        if (vehicleVarName _veh == "") then {_array pushBack (vehicleVarName _x)};
-            
+        if (vehicleVarName _veh != "") then {_array pushBack (vehicleVarName _x)};
+        
         (_saveArray select 3) pushBack _array;
     }
     forEach vehicles;

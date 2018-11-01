@@ -4,10 +4,6 @@ class CfgPatches
     {
         name = "TBMod ZusätzlicherStuff";
         
-        weapons[] = {};
-        units[] = {};
-        ammo[] = {};
-        
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
     };

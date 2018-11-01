@@ -7,8 +7,6 @@ class CfgPatches
         author = "Eric Ruhland";
         
         weapons[] = {"TB_weap_taser"};
-        units[] = {};
-        ammo[] = {};
         
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
