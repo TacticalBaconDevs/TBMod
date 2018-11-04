@@ -11,7 +11,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
         private _getaction = ["Get Rope", "Get Rope", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
         private _storeaction = ["Store Rope", "Store Rope", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
         private _cutaction = ["Cut Rope", "Cut Rope", "", {_target call TB_fnc_detach}, {! ((ropes _target) isEqualTo [])}] call ace_interact_menu_fnc_createAction;
-        private _dropaction = ["Drop Rope", "Drop Rope", "", {_target call TB_fnc_dropRopefromChopper}, {!isTouchingGround _target}] call ace_interact_menu_fnc_createAction;
+        private _dropaction = ["Drop Rope", "Drop Rope", "", {_target call TB_fnc_dropRopefromChopper}, {!isTouchingGround _target && (driver _target) == ACE_Player}] call ace_interact_menu_fnc_createAction;
         
         [_this select 0, 0, ["ACE_MainActions"], _getaction] call ace_interact_menu_fnc_addActionToObject;
         [_this select 0, 0, ["ACE_MainActions"], _storeaction] call ace_interact_menu_fnc_addActionToObject;
