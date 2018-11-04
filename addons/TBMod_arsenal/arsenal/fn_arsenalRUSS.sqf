@@ -13,8 +13,8 @@ _items = [
    //Googles
     "rhs_scarf",
     "rhs_balaclava1_olive", 
-	"G_Bandanna_khk",
-	"G_Bandanna_oli",
+    "G_Bandanna_khk",
+    "G_Bandanna_oli",
 
     // Items
     "ACE_CableTie",
@@ -32,42 +32,42 @@ _items = [
     // Nachtsicht
     "rhs_1PN138",
 
-	// Muzzle Mods
+    // Muzzle Mods
     "rhs_acc_dtk",
     "rhs_acc_dtk4short",
-	"rhs_acc_dtk1983",
+    "rhs_acc_dtk1983",
     "rhs_acc_dtkakm",
-	"rhs_acc_pgs64_74un",
+    "rhs_acc_pgs64_74un",
  
     // Scopes
     "rhs_acc_pkas",
     "rhs_acc_ekp1",
-	"rhs_acc_pbs4",
-	
-	// Pistolen
-	"rhs_weap_6p53",
+    "rhs_acc_pbs4",
+    
+    // Pistolen
+    "rhs_weap_6p53",
     //"rhs_weap_makarov_pmm", Munitionsbug
-	"rhs_weap_pb_6p9",
+    "rhs_weap_pb_6p9",
     
     // Raketenwerfer
     "rhs_weap_rpg26",
-	
-	// Granaten
-	"rhs_mag_zarya2",
-	"rhs_mag_rgd5",
-	"rhs_mag_rgn",
-	"rhs_mag_rgo",
-	"rhs_mag_rdg2_black",
-	"rhs_mag_rdg2_white",
+    
+    // Granaten
+    "rhs_mag_zarya2",
+    "rhs_mag_rgd5",
+    "rhs_mag_rgn",
+    "rhs_mag_rgo",
+    "rhs_mag_rdg2_black",
+    "rhs_mag_rdg2_white",
     
     // Mags Gewehre
-	"rhs_30Rnd_545x39_7N22_plum_AK",
+    "rhs_30Rnd_545x39_7N22_plum_AK",
     "rhs_30Rnd_545x39_AK_plum_green",
 
-	
-	// Mags Pistolen
-	"rhs_18rnd_9x21mm_7N29",
-	"rhs_mag_9x18_8_57N181S", 
+    
+    // Mags Pistolen
+    "rhs_18rnd_9x21mm_7N29",
+    "rhs_mag_9x18_8_57N181S", 
     
     // Mags Grena
     "rhs_VG40OP_white",
@@ -81,13 +81,13 @@ _items = [
     // Mags Marks
     "rhs_10Rnd_762x54mmR_7N1",
     "rhs_5Rnd_338lapua_t5000",    
-	
+    
     // Mags mg
-	"rhs_75Rnd_762x39mm",
-	"rhs_75Rnd_762x39mm_tracer",
-	
-	// Mags mp
-	"rhs_mag_9x19mm_7n31_44",
+    "rhs_75Rnd_762x39mm",
+    "rhs_75Rnd_762x39mm_tracer",
+    
+    // Mags mp
+    "rhs_mag_9x19mm_7n31_44",
     
     // Mörser Rounds???
     "ACE_1Rnd_82mm_Mo_HE",
@@ -120,7 +120,7 @@ private _front_kopfbedeckung = [
 private _scopes_enhanced = [
     "rhs_acc_nita",
     "rhs_acc_1p78"
-];	
+];    
 // #################################################################
 // LAYOUTS
 // Ab hier sind Items nur noch für die bestimmten Rollen
@@ -130,83 +130,83 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
     {   
-	    _front_kopfbedeckung +
-		_scopes_enhanced +
+        _front_kopfbedeckung +
+        _scopes_enhanced +
         [   
             // Vests        
             "rhs_6b23_ML_6sh92_radio",
-            "rhs_6b23_6sh92_radio",				
+            "rhs_6b23_6sh92_radio",                
             
             // Weapons
-			"rhs_weap_ak74n",
-			
-			// Backpacks
-		    "OPXT_multicamt_117",
-			
-			// Items
-			"Binocular"
+            "rhs_weap_ak74n",
+            
+            // Backpacks
+            "OPXT_multicamt_117",
+            
+            // Items
+            "Binocular"
         ]
     };
     
     case "sani":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [
             // Vests
             "rhs_6b23_medic",
             "rhs_6b23_ML_medic",
-			
-			// Weapons
-            "rhs_weap_aks74n",			
+            
+            // Weapons
+            "rhs_weap_aks74n",            
 
             // Items
-            "TB_Item_liveMonitor",			
+            "TB_Item_liveMonitor",            
             
             // Backpacks
             "B_TacticalPack_oli"
-			//"OPXT_multicamt_117"
+            //"OPXT_multicamt_117"
         ]
     };
     
     case "arzt":
     {
-	    _front_kopfbedeckung +
-        [		 
+        _front_kopfbedeckung +
+        [         
             // Vests
             "rhs_6b23_medic",
             "rhs_6b23_ML_medic",
-			
-			// Weapons
-			"rhs_weap_aks74un",
+            
+            // Weapons
+            "rhs_weap_aks74un",
 
             // Items
             "TB_Item_liveMonitor",
-			
-			// Backpacks
-			"OPXT_multicamt_1523"
+            
+            // Backpacks
+            "OPXT_multicamt_1523"
         ]
     };
     
     case "grena":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [          
-		    // Backpacks 
-			"rhs_assault_umbts",
-		    
+            // Backpacks 
+            "rhs_assault_umbts",
+            
             // Vests
             "rhs_6b23_6sh92_vog",
-            "rhs_6b23_ML_6sh92_vog",			
+            "rhs_6b23_ML_6sh92_vog",            
             
             // Weapons
             //"rhs_weap_aks74n_gp25",
-			"rhs_weap_ak74n_gp25"
+            "rhs_weap_ak74n_gp25"
         ]
     };
     
     case "dmr":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [
             // Vests
             "rhs_6b23_sniper",
@@ -215,151 +215,151 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Waeapons
             "rhs_weap_svdp",
             "rhs_weap_svdp_wd",
-			
-			// Scopes
-			"rhs_acc_pso1m2",
-			
-			// Backpacks
-			"rhs_assault_umbts"
-			//"OPXT_multicamt_117"
+            
+            // Scopes
+            "rhs_acc_pso1m2",
+            
+            // Backpacks
+            "rhs_assault_umbts"
+            //"OPXT_multicamt_117"
         ]
     };
     
     case "mg":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [
-		    // Vests
-			"rhs_6b23_rifleman",
-			"rhs_6b23_ML_rifleman",
-		
+            // Vests
+            "rhs_6b23_rifleman",
+            "rhs_6b23_ML_rifleman",
+        
             // Weapons
             "rhs_weap_pm63",
-			
-			// Backpacks
-			"B_TacticalPack_oli"
+            
+            // Backpacks
+            "B_TacticalPack_oli"
         ]
     };
     
     case "trag":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [
-		    // Vests
+            // Vests
             "rhs_6b23_vydra_3m",
             "rhs_6b23_ML_vydra_3m",
-			
-			// Weapons
-			"rhs_weap_aks74un",	
-			
-			// Backpacks
-			"B_Carryall_oli"
-			//"OPXT_multicamt_1523"
+            
+            // Weapons
+            "rhs_weap_aks74un",    
+            
+            // Backpacks
+            "B_Carryall_oli"
+            //"OPXT_multicamt_1523"
         ]
     };
     
     case "pilot":
     {
         [
-		    // Head
-			"rhs_tsh4",
-			"rhs_tsh4_bala",
-			"rhs_tsh4_ess",
-			"rhs_tsh4_ess_bala",
-		
+            // Head
+            "rhs_tsh4",
+            "rhs_tsh4_bala",
+            "rhs_tsh4_ess",
+            "rhs_tsh4_ess_bala",
+        
             // Vests
-			"rhs_6sh92_vsr",
-			"rhs_6sh92_digi",       
-			
-			// Weapons
+            "rhs_6sh92_vsr",
+            "rhs_6sh92_digi",       
+            
+            // Weapons
             "rhs_weap_pp2000",
-			
+            
             // Uniforms
             "rhs_uniform_gorka_r_g",
             "rhs_uniform_gorka_r_y",
             
             // Items
             "ToolKit",
-			"Binocular",			
-			
-			// Backpacks
-			"rhs_sidor",
-			"OPXT_ogao_210"			
+            "Binocular",            
+            
+            // Backpacks
+            "rhs_sidor",
+            "OPXT_ogao_210"            
         ]
     };
     
     case "rifle":
     {
-	    _front_kopfbedeckung +
-		_scopes_enhanced +
+        _front_kopfbedeckung +
+        _scopes_enhanced +
         [
-		    // Backpacks
-			"rhs_assault_umbts",
-		
-		    // Vests
+            // Backpacks
+            "rhs_assault_umbts",
+        
+            // Vests
             "rhs_6b23_rifleman",
             "rhs_6b23_ML_rifleman",
-			
+            
             // Weapons
-			"rhs_weap_ak74n"	
-		
+            "rhs_weap_ak74n"    
+        
         ]
     };
     
     case "sniper":
     {
         [
-		    // Head
-			"rhs_fieldcap_khk",
-			"rhs_fieldcap_vsr",
-			
+            // Head
+            "rhs_fieldcap_khk",
+            "rhs_fieldcap_vsr",
+            
             // Items
             "ACE_Tripod",
             "ACE_Kestrel4500",
             "ACE_ATragMX",
-            "ACE_RangeCard",			
-						
+            "ACE_RangeCard",            
+                        
             // Mods
             "muzzle_snds_93mmg",
             "muzzle_snds_93mmg_tan",
-            "rhs_acc_dh520x56",			
-			
-			// Vests
-			"rhs_6sh92_vsr",
-			"rhs_6sh92_digi",
-			
-		    // Uniforms
-			"rhs_uniform_gorka_r_y",
-			"rhs_uniform_gorka_r_g",
+            "rhs_acc_dh520x56",            
+            
+            // Vests
+            "rhs_6sh92_vsr",
+            "rhs_6sh92_digi",
+            
+            // Uniforms
+            "rhs_uniform_gorka_r_y",
+            "rhs_uniform_gorka_r_g",
                      
             // Weapons
             "rhs_weap_t5000",
-			
-			// Backpacks
-			"rhs_sidor"
+            
+            // Backpacks
+            "rhs_sidor"
         ]
     };
     
     case "spotter":
     {
-	    _scopes_enhanced +
+        _scopes_enhanced +
         [
-		    // Head
-			"rhs_fieldcap_khk",
-			"rhs_fieldcap_vsr",
-			
-		    // Uniforms
-			"rhs_uniform_gorka_r_y",
-			"rhs_uniform_gorka_r_g",
-			
-			// Vests
-			"rhs_6sh92_vsr_headset",
-			"rhs_6sh92_digi",
-			
-			// Weapons
-			"rhs_weap_ak74n",
-		
-		    // Items
+            // Head
+            "rhs_fieldcap_khk",
+            "rhs_fieldcap_vsr",
+            
+            // Uniforms
+            "rhs_uniform_gorka_r_y",
+            "rhs_uniform_gorka_r_g",
+            
+            // Vests
+            "rhs_6sh92_vsr_headset",
+            "rhs_6sh92_digi",
+            
+            // Weapons
+            "rhs_weap_ak74n",
+        
+            // Items
             "ACE_ATragMX",
             "ACE_Tripod",
             "ACE_RangeTable_82mm",
@@ -367,84 +367,84 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_Kestrel4500",
             "ACE_RangeCard",
             "Binocular",
-			
-			// Backpacks
-			"OPXT_ogao_1523"
+            
+            // Backpacks
+            "OPXT_ogao_1523"
         ]
     };
     
     case "spreng":
     {
-	    _front_kopfbedeckung +
-		_scopes_enhanced +
+        _front_kopfbedeckung +
+        _scopes_enhanced +
         [   
-		    // Items
-		    "ACE_Clacker",
+            // Items
+            "ACE_Clacker",
             "ACE_DefusalKit",
             
             // Vests
             "rhs_6b23_6sh92_vog",
-			"rhs_6b23_ML_6sh92_vog",
-			
-			// Weapons
-			"rhs_weap_ak74n",
+            "rhs_6b23_ML_6sh92_vog",
+            
+            // Weapons
+            "rhs_weap_ak74n",
             
             // Minensucher
             "ACE_VMH3",
             "ACE_VMM3",
             
             // Explosives
-			"DemoCharge_Remote_Mag",
-			//"SatchelCharge_Remote_Mag",
+            "DemoCharge_Remote_Mag",
+            //"SatchelCharge_Remote_Mag",
             "ATMine_Range_Mag",
             "APERSTripMine_Wire_Mag",
-			
-			// Backpacks
-			"B_TacticalPack_oli"
+            
+            // Backpacks
+            "B_TacticalPack_oli"
         ]
     };
     
     case "aaat":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [
-		    // Backpacks
-			"rhs_rpg_empty",
-			
-		    // Vests
-			"rhs_6b23_vydra_3m",
-			"rhs_6b23_ML_vydra_3m",
-			
+            // Backpacks
+            "rhs_rpg_empty",
+            
+            // Vests
+            "rhs_6b23_vydra_3m",
+            "rhs_6b23_ML_vydra_3m",
+            
             // Weapons
             "rhs_weap_aks74n",
-			
-			// Launchers
+            
+            // Launchers
             "rhs_weap_rpg7",
             //"rhs_weap_igla"
-			
-			// Scopes
-			"rhs_acc_pgo7v"
+            
+            // Scopes
+            "rhs_acc_pgo7v"
         ]
     }; 
     
     case "pionier":
     {
-	    _front_kopfbedeckung +
+        _front_kopfbedeckung +
         [
-		    // Backpacks
-			"B_TacticalPack_oli",
-			
-		    // Vests
-			"rhs_6b23_engineer",
-			"rhs_6b23_ML_engineer",
-			
-			// Weapons
+            // Backpacks
+            "B_TacticalPack_oli",
+            
+            // Vests
+            "rhs_6b23_engineer",
+            "rhs_6b23_ML_engineer",
+            
+            // Weapons
             "rhs_weap_aks74n",
-			
+            
             // Items
             "ToolKit",
-	        "TB_building_item_Land_BagFence_Long_F",
-            "TB_building_item_Land_BagFence_Round_F"			
+            "TB_building_item_Land_BagFence_Long_F",
+            "TB_building_item_Land_BagFence_Round_F"            
             
         ]
     };
