@@ -3,7 +3,7 @@
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-    Creates a Rope with no end attached
+    Creates a Lastenseil with no end attached
     
     Arguments:
     0: Target <OBJECT>

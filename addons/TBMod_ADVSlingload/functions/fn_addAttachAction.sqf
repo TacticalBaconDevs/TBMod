@@ -14,7 +14,7 @@
 params ["_target"];
 
 _target addAction [
-    "Attach Rope",
+    "Lastenseil anbringen",
     {[_this select 0, ACE_player getVariable ['TB_Rope_helper', objNull]] call TB_fnc_attach},
     [],
     1.5,

@@ -3,7 +3,7 @@
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-    Creates a Rope with no end attached
+    Creates a Lastenseil with no end attached
     
     Arguments:
     0: Source <OBJECT>
@@ -34,7 +34,7 @@ private _idPFH = [{
     {
         //systemChat format ["DEBUG(startRopeinHandsPFH) alive %1 isuncouncios %2 isinVehicle %3 distance %4 distancecheck %5", alive ACE_player, (ACE_player getVariable ["ACE_isUnconscious", false]), ACE_player != vehicle ACE_player, _posACE_player distance _sourcepos, (_posACE_player distance _sourcepos) > 20];
         call TB_fnc_dropRope;
-        systemChat "Dropped Rope";
+        systemChat "Dropped Lastenseil";
     };
 }, 0, [_source, _selection, _helper]] call CBA_fnc_addPerFrameHandler;
 
