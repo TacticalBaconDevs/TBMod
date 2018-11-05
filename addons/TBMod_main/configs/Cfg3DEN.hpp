@@ -126,7 +126,7 @@ class Cfg3DEN
                     class TBMod_main_keys
                     {
                         displayName = "Schlüssel für das Auto";
-                        tooltip = "Gibt der KI mehere Schlüssel für Fahrzeuge, muss der Variablenname sein ([\"car1\",\"car2\"])!";
+                        tooltip = "Gibt der KI mehere Schlüssel für Fahrzeuge, muss der Variablenname sein! ( Bsp.: [""car1"",""car2""]  )";
                         property = "TBMod_main_keys";
                         control = "Edit";
                         typeName = "STRING";
