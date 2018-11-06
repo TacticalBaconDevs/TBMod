@@ -86,7 +86,7 @@ else //laden
         if ((typeOf _obj) in ["Land_BarGate_F"]) then
         {
             _obj allowDamage false;
-            _obj addEventHandler {0};
+            _obj addEventHandler ["HandleDamage", {0}];
         };
         
         // Repair
