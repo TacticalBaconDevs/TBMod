@@ -6,7 +6,8 @@ class CfgPatches
 
         requiredAddons[] = {
             "TBMod_nachschub",
-            "uns_main"
+            "uns_main",
+            "tfar_core"
         };
         addonRootClass = "TBMod_nachschub";
     };
