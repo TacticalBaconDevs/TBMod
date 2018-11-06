@@ -15,6 +15,33 @@ class CfgVehicles
     };
     
     
+    // ###################### TFAR ######################
+    // class ReammoBox;
+    // class TFAR_Bag_Base : ReammoBox
+    // {
+        // tf_range = 2000;
+    // };
+    // class UNS_Alice_F1;
+    // class UNS_ARMY_RTO : UNS_Alice_F1
+    // {
+        // tf_range = 2000;
+    // };
+    // class UNS_Alice_FR : UNS_Alice_F1
+    // {
+        // tf_range = 2000;
+    // };
+    
+    // class TFAR_anarc210: TFAR_Bag_Base
+    // {
+        // tf_range = 4000;
+    // };
+    // class Land;
+    // class LandVehicle: Land
+    // {
+        // tf_range = 4000;
+    // };
+    
+    
     // ###################### Makros ######################
     #define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
             weapon = #WEAPON; \
@@ -77,9 +104,30 @@ class CfgVehicles
         {
             class ACE_MainActions
             {
-                class allgemein;
-                class usa;
-                class bw;
+                class allgemein
+                {
+                    displayName = "Allgemein";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    
+                    ADD_SUPPLY(LeereKiste,TB_supply_empty);
+                    ADD_SUPPLY(Sanikiste,TB_supply_all_medic);
+                    ADD_SUPPLY(Ersatzreifen,ACE_Wheel);
+                    ADD_SUPPLY(Ersatzkette,ACE_Track);
+                    ADD_SUPPLY(Moerserkit,TB_supply_all_mortar);
+                    ADD_SUPPLY(MoerserMunnition,TB_supply_all_mortarAmmo);
+                    ADD_SUPPLY(MoerserMunnitionHE,TB_supply_all_mortarAmmoHE);
+                    ADD_SUPPLY(MoerserMunnitionRauch,TB_supply_all_mortarAmmoSmoke);
+                    ADD_SUPPLY(MoerserMunnitionFlare,TB_supply_all_mortarAmmoFlare);
+                    ADD_SUPPLY(BauKiste,TB_supply_all_building);
+                    
+                    delete TB_supply_all_funk;
+                    delete TB_supply_all_misc;
+                    delete TB_supply_all_mp5;
+                    delete TB_supply_all_mines;
+                    delete TB_supply_all_hmg;
+                };
+                delete usa;
+                delete bw;
                 
                 class themen_usaVietnam
                 {
@@ -90,8 +138,8 @@ class CfgVehicles
                     ADD_SUPPLY(KleinMunition,TB_supply_themen_usaVietnam_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_themen_usaVietnam_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_themen_usaVietnam_unterlauf);
-                    // ADD_SUPPLY(SpezialMunition,TB_supply_bw_spezial);
-                    // ADD_SUPPLY(Werfer,TB_supply_bw_launcher);
+                    ADD_SUPPLY(MGMunition,TB_supply_themen_usaVietnam_mgammo);
+                    ADD_SUPPLY(Werfer,TB_supply_themen_usaVietnam_launcher);
                     // ADD_SUPPLY(WerferMunition,TB_supply_bw_launcherAmmo);
                     // ADD_SUPPLY(NotfallG36,TB_supply_bw_notfallg36);
                     // ADD_SUPPLY(NachtKiste,TB_supply_bw_night);
@@ -110,7 +158,60 @@ class CfgVehicles
     WRAPPER(uns_HMGammobox_US);     // mini Munitionsbox
     WRAPPER(uns_US_Ordnance);       // längliche Munitionskiste
     WRAPPER(uns_HiddenAmmoBox_small1);// flache Munitionskiste
-    WRAPPER(Box_NATO_WpsSpecial_F);
+    
+    // ################### OVERRIDES ########################
+    
+    class WRAPPER_NAME(Box_NATO_Ammo_F);
+    class WRAPPER_NAME(Box_NATO_Support_F);
+    class WRAPPER_NAME(Box_NATO_WpsSpecial_F);
+    class WRAPPER_NAME(Box_NATO_Equip_F);
+    
+    class TB_supply_empty: WRAPPER_NAME(Box_NATO_Ammo_F)
+    {
+        model = "\uns_ammo\US\uns_US_Launchers.p3d";
+    };
+    
+    class TB_supply_all_medic : WRAPPER_NAME(Box_NATO_Support_F)
+    {
+        model = "\uns_ammo\US\uns_US_medical.p3d";
+    };
+    
+    class TB_supply_all_mortar : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Ammo_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Ammo_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_Ammo_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_Ammo_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    class TB_supply_all_hmg : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Equip_F)
+    {
+        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
+    };
+    
+    // ######################################################
         
     class TB_supply_themen_usaVietnam_ammo : WRAPPER_NAME(uns_resupply_crate_NVA)
     {
@@ -172,4 +273,33 @@ class CfgVehicles
             MACRO_ADDMAGAZINE(uns_40mm_green,4);
         };
     };
+    
+    class TB_supply_themen_usaVietnam_mgammo : WRAPPER_NAME(uns_resupply_crate_NVA)
+    {
+        PUBLIC_NAME_CAT("MG Munnition",Themen_USAVietnam);
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(uns_barmag_T,20);
+            MACRO_ADDMAGAZINE(uns_100Rnd_m1919,4);
+            MACRO_ADDMAGAZINE(uns_m60mag,4);
+        };
+    };
+    
+    class TB_supply_themen_usaVietnam_launcher : WRAPPER_NAME(uns_US_Ordnance)
+    {
+        PUBLIC_NAME_CAT("Werfer",Themen_USAVietnam);
+        
+        class TransportWeapons
+        {
+            MACRO_ADDWEAPON(uns_m72,2);
+        };
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(uns_m72rocket,2);
+            MACRO_ADDMAGAZINE(uns_M30_smoke_mag,10);
+        };
+    };
+    
 };
