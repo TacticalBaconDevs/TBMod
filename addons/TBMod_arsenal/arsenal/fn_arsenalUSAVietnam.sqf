@@ -289,7 +289,7 @@ _items append (switch (_rolle) do
             "UNS_M1956_S3",
 
             // Kommunikation
-            "uns_ItemRadio_PRC25_TFAR",
+            //"uns_ItemRadio_PRC25_TFAR",
 
             // Ferngläser
             "uns_binocular_army"
@@ -389,7 +389,10 @@ _items append (switch (_rolle) do
             "uns_o_unertl8x",
             "uns_o_m84",
             // Befestigungsschiene
-            "uns_b_m1"
+            "uns_b_m1",
+            
+            // Ferngläser
+            "uns_binocular_army"
         ]
     };
 
