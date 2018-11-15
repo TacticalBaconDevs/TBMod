@@ -66,60 +66,20 @@ class CfgAmmo
 
 class TB_SmokeWhiteEffect
 {
-   class TB_SmokeWhite
-   {
-        simulation = "particles";   //type of simulation - particles or light
-        type = "Default";           //name of PE's class defined in CfgCloudlets or light's class defined in CfgLights
-        position[] = {0, 0, 0};     //position related to the default position or memorypoint
-        intensity = 1;
-        angle = 0;
-        angleVar = 360;
-        animationSpeed[] = {1};
-        animationSpeedCoef = 1;
-        blockAIVisibility = 1;
-        circleVelocity[] = {0,0,0};
-        color[] = {[1,1,1,1],[1,1,1,0]};
-        colorCoef[] = {"colorR","colorG","colorB","colorA"};
-        colorVar[] = {0,0,0,0.35};
-        interval = 0.14;
-        lifeTime = 4;
-        lifeTimeVar = 0.5;
-        MoveVelocityVar[] = {0.2,0.2,0.2};
-        rotationVelocityVar = 20;
-        rubbing = 0.3;
-        size[] = {0.3,3};
-        sizeCoef = 1;
-        sizeVar = 0.5;
-        timerPeriod = 1;
-        volume = 7.9;
-        weight = 10.1;
-    };
    class SmokeShell
    {
-         simulation = "particles";   //type of simulation - particles or light
-        type = "SmokeShellWhite";           //name of PE's class defined in CfgCloudlets or light's class defined in CfgLights
-        position[] = {0, 0, 0};     //position related to the default position or memorypoint
+        simulation = "particles";  
+        type = "SmokeShellWhite";          
         intensity = 1;
-        angle = 0;
-        angleVar = 360;
-        animationSpeed[] = {1};
-        animationSpeedCoef = 1;
-        blockAIVisibility = 1;
-        circleVelocity[] = {0,0,0};
-        color[] = {[1,1,1,1],[1,1,1,0]};
-        colorCoef[] = {"colorR","colorG","colorB","colorA"};
-        colorVar[] = {0,0,0,0.35};
-        interval = 0.14;
-        lifeTime = 4;
-        lifeTimeVar = 0.5;
-        MoveVelocityVar[] = {0.2,0.2,0.2};
-        rotationVelocityVar = 20;
-        rubbing = 0.3;
-        size[] = {0.3,3};
-        sizeCoef = 1;
-        sizeVar = 0.5;
-        timerPeriod = 1;
-        volume = 7.9;
-        weight = 10.1;
+        smokeSizeCoef = 0;
+        smokeIntervalCoef = 0;
+        smokeGenMinDist = 0;
+        smokeGenMaxDist = 2000;
+        lifeTime = 20;
+        size[] = {12,20};
+        positionVar[] = {20,0.05,20};
+        interval = 0.0008;
+        MoveVelocityVar[] = {1,1,1};
    };
+   
 };
