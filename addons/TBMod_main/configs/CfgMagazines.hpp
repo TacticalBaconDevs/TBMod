@@ -12,4 +12,29 @@ class CfgMagazines
         
         mass = 36; //12
     };
+
+    class SmokeShell;
+    class TB_SmokeShell : SmokeShell
+    {
+        ammo = "TB_SmokeShell";
+    
+        author = "TBMod";
+        
+        displayName = "Instant";
+        displayNameShort = "Instant";
+        descriptionShort = "Instant";
+    };
+};
+
+class CfgWeapons
+{
+    class GrenadeLauncher;
+    class Throw: GrenadeLauncher {
+        muzzles[] += {"TB_InstantSmoke"};
+
+        class ThrowMuzzle;
+        class TB_InstantSmoke: ThrowMuzzle {
+            magazines[] = {"TB_SmokeShell"};
+        };
+    };
 };
