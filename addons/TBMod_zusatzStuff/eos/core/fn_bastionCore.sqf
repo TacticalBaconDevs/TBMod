@@ -103,7 +103,7 @@ _piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
 _piSize = round (_piSize + (_piSizeIncrease * _playerCount));
 for "_counter" from 1 to _piGroups do
 {
-    private _pos = [_mPos, _radius + ((100 max (_placement / 4)) min 700), random 360] call BIS_fnc_relPos;
+    private _pos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _piZoneGroups pushBack _piGroup;
 };    
@@ -114,7 +114,7 @@ _lvGroups = round (_lvGroups + (_lvGroupsIncrease * _playerCount));
 _lvSize = round (_lvSize + (_lvSizeIncrease * _playerCount));
 for "_counter" from 1 to _lvGroups do
 {
-    private _newpos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
+    private _newpos = [_mPos, _placement + 500, random 360] call BIS_fnc_relPos;
     
     private _vehType = 7;
     private _cargoType = 9;
@@ -145,7 +145,7 @@ private _avZoneGroups = [];
 _avGroups = round (_avGroups + (_avGroupsIncrease * _playerCount));
 for "_counter" from 1 to _avGroups do
 {
-    private _newpos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
+    private _newpos = [_mPos, _placement + 700, random 360] call BIS_fnc_relPos;
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
     private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
     

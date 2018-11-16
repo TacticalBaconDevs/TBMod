@@ -185,7 +185,7 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         {
             property = "TB_zusatz_eos_bastionZone_activRadius";
             displayName = "KI-SpawnAbstand";
-            tooltip = "Wird zusätzlich zur Markergröße genommen zum Erstellen der KI";
+            tooltip = "Wird zusätzlich zur Markergröße genommen zum Erstellen der KI (Abstand=KI, +500=CAR, +600=Panzer, +1000=Air)";
             typeName = "NUMBER";
             defaultValue = "500";
         };
