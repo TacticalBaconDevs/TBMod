@@ -27,7 +27,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
             if (typeOf _object2 != "TB_Rope_InvisibleObject") then {
                 private _source = _rope getVariable ["TB_Rope_Source", objNull];
                 if (isNull _source) then {
-                    if (((vehicle ACE_player) getVariable ["ace_fastroping_deploymentstage",0])==0) then {
+                    if (((vehicle ACE_player) getVariable ["ace_fastroping_deploymentstage", 0]) == 0) then {
                          //Überprüfung ob Slingload ausgefahren
                         ropeDestroy _rope;
                         systemChat "Vanilla Slingload wurde ausgeschalten";
