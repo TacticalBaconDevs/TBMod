@@ -9,7 +9,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
     "init", 
     {
         private _getaction = ["Lastenseil nehmen", "Lastenseil nehmen", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _storeaction = ["Lastenseil zurück packen", "Lastenseil zurück packen", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _storeaction = ["Lastenseil zurÃ¼ck packen", "Lastenseil zurÃ¼ck packen", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
         private _cutaction = ["Lastenseil abtrennen", "Lastenseil abtrennen", "", {_target call TB_fnc_detach}, {! ((ropes _target) isEqualTo [])}] call ace_interact_menu_fnc_createAction;
         private _dropaction = ["Lastenseil fallenlassen", "Lastenseil fallenlassen", "", {_target call TB_fnc_dropRopefromChopper}, {!isTouchingGround _target && (driver _target) == ACE_Player}] call ace_interact_menu_fnc_createAction;
         
@@ -28,9 +28,9 @@ if !(call TB_fnc_isTBMission) exitWith {};
                 private _source = _rope getVariable ["TB_Rope_Source", objNull];
                 if (isNull _source) then {
                     if (((vehicle ACE_player) getVariable ["ace_fastroping_deploymentstage",0])==0) then {
-                         //Überprüfung ob Slingload ausgefahren
+                         //ÃœberprÃ¼fung ob Slingload ausgefahren
                         ropeDestroy _rope;
-                        systemChat format ["Vanilla Slingload wurde ausgeschalten"];
+                        systemChat "Vanilla Slingload wurde ausgeschalten";
                     }
                    
                 };
