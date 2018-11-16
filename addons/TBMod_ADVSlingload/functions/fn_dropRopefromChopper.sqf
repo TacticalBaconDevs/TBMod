@@ -3,7 +3,7 @@
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-    Creates a Rope with no end attached
+    Creates a Lastenseil with no end attached
     
     Arguments:
     0: Target <OBJECT>
@@ -29,7 +29,8 @@ _helper setPos [_posSlingload select 0, _posSlingload select 1, (_posSlingload s
 //[, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global
 ["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
 private _rope = ropeCreate [_target, _selection, _helper, [0, 0, 0], 1];
-ropeUnwind [_rope, 3, 22];
+//ropeUnwind [_rope, 3, 22];
+[[_rope, 3, 22]] remoteExecCall ["ropeUnwind", _target];
 
 _helper setVariable ["TB_Rope_rope", _rope, true];
 _helper setVariable ["TB_Rope_is_carry", false, true];
