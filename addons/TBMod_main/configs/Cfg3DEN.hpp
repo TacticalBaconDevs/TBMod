@@ -126,14 +126,14 @@ class Cfg3DEN
                     class TBMod_main_keys
                     {
                         displayName = "Schlüssel für das Auto";
-                        tooltip = "Gibt der KI einen Schlüssel für das Auto, muss der Variablenname sein!";
+                        tooltip = "Gibt der KI Schlüssel für mehrere Fahrzeuge, muss der Variablenname sein! ( Bsp.: [""car1"",""car2""]  )";
                         property = "TBMod_main_keys";
                         control = "Edit";
                         typeName = "STRING";
  
-                        expression = "if (!is3DEN && _value != '') then {[_this, _value] spawn TB_fnc_keysForAI}";
+                        expression = "if (!is3DEN && _value != '[]' && _value != '') then {[_this, _value] spawn TB_fnc_keysForAI}";
  
-                        defaultValue = "''";
+                        defaultValue = "[]";
  
                         condition = "objectControllable";
                     };

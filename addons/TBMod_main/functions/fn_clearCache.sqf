@@ -9,3 +9,5 @@ for "_i" from 1 to 5 do
     profileNamespace setVariable [format ["TB_persistent_buildings_%1", _i], nil];
     profileNamespace setVariable [format ["TB_persistence_%1", _i], nil];
 };
+
+profileNamespace setVariable ["TB_umziehen", nil];

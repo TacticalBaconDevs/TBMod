@@ -123,5 +123,5 @@ if (_arsenalType == "CUSTOM") then
 
 if (_arsenalType == "RUSS") then
 {
-    systemChat "Russische Layout hat keine DefaultLayouts!";
+    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_flora_patchless",[["ACE_fieldDressing",10],["ACE_quikclot",10],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",1]]],[],[],"rhs_beret_milp","",[],["","","","","",""]], true];
 };

@@ -55,7 +55,7 @@ _items = [
     "V_HarnessO_gry",
     
     // Backpacks
-    "B_Parachute", //"ACE_NonSteerableParachute",
+    "B_Parachute",
     "ACE_TacticalLadder_Pack",
     "B_AssaultPack_rgr",
     "B_AssaultPack_tna_F",
@@ -281,7 +281,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Weapons
             "arifle_MX_GL_F",
+<<<<<<< HEAD
             "arifle_MX_GL_Black_F"
+=======
+            "arifle_MX_GL_Black_F",
+>>>>>>> remotes/originShukari/master
             "arifle_MX_GL_khk_F",
             "arifle_SPAR_01_GL_blk_F",
             "arifle_SPAR_01_GL_snd_F",
@@ -323,7 +327,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_02_snd_F",
             "arifle_SPAR_02_khk_F",
 
+<<<<<<< HEAD
             //Magazine
+=======
+            // Magazine
+>>>>>>> remotes/originShukari/master
             "150Rnd_556x45_Drum_Mag_Tracer_F",
             "200Rnd_556x45_Box_Tracer_F",
             "200Rnd_556x45_Box_Tracer_Red_F"
