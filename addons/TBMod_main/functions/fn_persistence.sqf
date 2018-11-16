@@ -1,6 +1,11 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
+    
+    ToDo:
+    - Unsung Minen sind CfgAmmos auf dem Boden
+        - zu finden per Default das ist dan aber alle CfgWeapons (allMissionObjects "Default")
+    - minen werden als Modul gesetzt... die Mine ist eine _ammo und das Modul der sichtbare Bubble
 */
 params [
         ["_save", false, [false]],
@@ -118,8 +123,8 @@ if (_save) then
             [side _veh, (crew _veh) apply {typeOf _x}]
         ];
         
-        if (vehicleVarName _veh == "") then {_array pushBack (vehicleVarName _x)};
-            
+        if (vehicleVarName _veh != "") then {_array pushBack (vehicleVarName _x)};
+        
         (_saveArray select 3) pushBack _array;
     }
     forEach vehicles;

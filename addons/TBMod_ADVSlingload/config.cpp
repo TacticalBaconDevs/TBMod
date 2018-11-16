@@ -6,10 +6,6 @@ class CfgPatches
         
         author = "Eric Ruhland";
         
-        weapons[] = {};
-        units[] = {};
-        ammo[] = {};
-        
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
     };

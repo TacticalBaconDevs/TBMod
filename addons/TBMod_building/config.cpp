@@ -4,12 +4,10 @@ class CfgPatches
     {
         name = "TBMod Bauen";
         
-        weapons[] = {};
         units[] = {
             "TB_zeus_ressourcenFahrzeug",
             "TB_zeus_kranFahrzeug"
         };
-        ammo[] = {};
         
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";

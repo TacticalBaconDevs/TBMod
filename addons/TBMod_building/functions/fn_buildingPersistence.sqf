@@ -15,7 +15,7 @@ if !(_number in [1,2,3,4,5]) exitWith {"[TBMod_building] Wähle einen Slot zwisc
 
 if (_save) then
 {
-    if (isNil "TB_persistent_buildings") exitWith {"[TBMod_building] Nichts zum Dauerspeichern verfügbar!" remoteExecCall ["systemChat"]};
+    if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
     private _array = [];
     
     {
@@ -86,7 +86,7 @@ else //laden
         if ((typeOf _obj) in ["Land_BarGate_F"]) then
         {
             _obj allowDamage false;
-            _obj addEventHandler {0};
+            _obj addEventHandler ["HandleDamage", {0}];
         };
         
         // Repair

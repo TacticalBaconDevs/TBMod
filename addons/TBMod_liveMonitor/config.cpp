@@ -6,9 +6,7 @@ class CfgPatches
         
         author = "Chris";
         
-        units[] = {};
         weapons[] = {"TB_liveMonitor_monitor"};
-        ammo[] = {};
         
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
