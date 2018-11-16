@@ -30,7 +30,7 @@ _helper setPos [_posSlingload select 0, _posSlingload select 1, (_posSlingload s
 ["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
 private _rope = ropeCreate [_target, _selection, _helper, [0, 0, 0], 1];
 //ropeUnwind [_rope, 3, 22];
-[[_rope, 3, 22]] remoteExec ["ropeUnwind", _target];
+[[_rope, 3, 22]] remoteExecCall ["ropeUnwind", _target];
 
 _helper setVariable ["TB_Rope_rope", _rope, true];
 _helper setVariable ["TB_Rope_is_carry", false, true];
