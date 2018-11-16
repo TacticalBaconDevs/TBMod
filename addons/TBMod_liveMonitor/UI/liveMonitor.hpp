@@ -234,7 +234,7 @@ class TB_liveMonitor_gui
                         class txtClose: TB_RscStructuredText
                         {
                             idc = -1;
-                            text = "Schließen";
+                            text = "Close";
                             x = 0.0825;
                             y = 0.375;
                             w = 0.14;
