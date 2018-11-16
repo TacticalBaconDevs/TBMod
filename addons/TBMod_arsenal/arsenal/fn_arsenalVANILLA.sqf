@@ -130,7 +130,6 @@ _items = [
     "ACE_HuntIR_M203",
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
-    "ACE_microDAGR",
     
     // Weapons
     "hgun_Pistol_heavy_01_F",
