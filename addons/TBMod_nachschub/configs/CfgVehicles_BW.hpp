@@ -73,14 +73,14 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     class TransportWeapons
     {
         MACRO_ADDWEAPON(BWA3_RGW90,2);
-        MACRO_ADDWEAPON(BWA3_CarlGustaf,1);
+        MACRO_ADDWEAPON(BWA3_CarlGustav,1);
         MACRO_ADDWEAPON(BWA3_Fliegerfaust,1);
     };
     
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(BWA3_RGW90_HH,2);
-        MACRO_ADDMAGAZINE(BWA3_CarlGustaf_HEAT,1);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEAT,1);
         MACRO_ADDMAGAZINE(BWA3_Fliegerfaust_Mag,1);
     };
 };
@@ -92,7 +92,7 @@ class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(BWA3_RGW90_HH,2);
-        MACRO_ADDMAGAZINE(BWA3_CarlGustaf_HEAT,2);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEAT,2);
         MACRO_ADDMAGAZINE(BWA3_Fliegerfaust_Mag,2);
     };
 };

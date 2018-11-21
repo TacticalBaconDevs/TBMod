@@ -8,10 +8,10 @@ if !(call TB_fnc_isTBMission) exitWith {};
     "Helicopter", 
     "init", 
     {
-        private _getaction = ["Get Rope", "Get Rope", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _storeaction = ["Store Rope", "Store Rope", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
-        private _cutaction = ["Cut Rope", "Cut Rope", "", {_target call TB_fnc_detach}, {! ((ropes _target) isEqualTo [])}] call ace_interact_menu_fnc_createAction;
-        private _dropaction = ["Drop Rope", "Drop Rope", "", {_target call TB_fnc_dropRopefromChopper}, {!isTouchingGround _target}] call ace_interact_menu_fnc_createAction;
+        private _getaction = ["Lastenseil nehmen", "Lastenseil nehmen", "", {[_target, false] call TB_fnc_pickupRope;}, {isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _storeaction = ["Lastenseil zurück packen", "Lastenseil zurück packen", "", {[_target] call TB_fnc_putBackRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+        private _cutaction = ["Lastenseil abtrennen", "Lastenseil abtrennen", "", {_target call TB_fnc_detach}, {! ((ropes _target) isEqualTo [])}] call ace_interact_menu_fnc_createAction;
+        private _dropaction = ["Lastenseil fallenlassen", "Lastenseil fallenlassen", "", {_target call TB_fnc_dropRopefromChopper}, {!isTouchingGround _target && (driver _target) == ACE_Player}] call ace_interact_menu_fnc_createAction;
         
         [_this select 0, 0, ["ACE_MainActions"], _getaction] call ace_interact_menu_fnc_addActionToObject;
         [_this select 0, 0, ["ACE_MainActions"], _storeaction] call ace_interact_menu_fnc_addActionToObject;
@@ -26,9 +26,13 @@ if !(call TB_fnc_isTBMission) exitWith {};
 
             if (typeOf _object2 != "TB_Rope_InvisibleObject") then {
                 private _source = _rope getVariable ["TB_Rope_Source", objNull];
-                if(isNull _source) then {
-                    ropeDestroy _rope;
-                    systemChat format ["Vanilla Slingload wurde ausgeschalten"];
+                if (isNull _source) then {
+                    if (((vehicle ACE_player) getVariable ["ace_fastroping_deploymentstage", 0]) == 0) then {
+                         //Überprüfung ob Slingload ausgefahren
+                        ropeDestroy _rope;
+                        systemChat "Vanilla Slingload wurde ausgeschalten";
+                    }
+                   
                 };
             };
         }];
@@ -50,9 +54,9 @@ if !(call TB_fnc_isTBMission) exitWith {};
 }
 forEach ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Thing"];
 
-private _dropaction = ["Drop Rope", "Drop Rope", "", {call TB_fnc_dropRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
+private _dropaction = ["Lastenseil fallenlassen", "Lastenseil fallenlassen", "", {call TB_fnc_dropRope;}, {!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])}] call ace_interact_menu_fnc_createAction;
 [ACE_player, 1, ["ACE_SelfActions"], _dropaction] call ace_interact_menu_fnc_addActionToObject;
 
-TB_Rope_PickupAction = ["Pickup Rope", "Pickup Rope", "", {[_target, true] call TB_fnc_pickupRope;}, {(!(_target getVariable ["TB_Rope_is_carry", false])) && (isNull (ACE_player getVariable ["TB_Rope_helper", objNull])) }, {}, [], [0, 0, 0.2], 2] call ace_interact_menu_fnc_createAction;
+TB_Rope_PickupAction = ["Lastenseil aufnehmen", "Lastenseil aufnehmen", "", {[_target, true] call TB_fnc_pickupRope;}, {(!(_target getVariable ["TB_Rope_is_carry", false])) && (isNull (ACE_player getVariable ["TB_Rope_helper", objNull])) }, {}, [], [0, 0, 0.2], 2] call ace_interact_menu_fnc_createAction;
 
 ["TB_Rope_addPickupAction", {[_this select 0, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject}] call CBA_fnc_addEventHandler;
