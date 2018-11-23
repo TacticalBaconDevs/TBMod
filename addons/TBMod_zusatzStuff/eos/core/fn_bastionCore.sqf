@@ -46,24 +46,27 @@ private _actCond = if (isMultiplayer) then
 {
     if (_heightLimit) then 
     {
-        "{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 5} count playableunits > 0"
+        "{vehicle _x in thisList && isPlayer _x && ((getPosATL _x) select 2) < 5} count playableUnits > 0"
     }
     else 
     {
-        "{vehicle _x in thisList && isplayer _x} count playableunits > 0"
+        "{vehicle _x in thisList && isPlayer _x} count playableUnits > 0"
     };
 }
 else
 {
     if (_heightLimit) then 
     {
-        "{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 5} count allUnits > 0"
+        "{vehicle _x in thisList && isPlayer _x && ((getPosATL _x) select 2) < 5} count allUnits > 0"
     }
     else
     {
-        "{vehicle _x in thisList && isplayer _x} count allUnits > 0"
+        "{vehicle _x in thisList && isPlayer _x} count allUnits > 0"
     };
 };
+
+// TODO -> Watermode als Einstellung
+if (isNil "TB_waterMode") then {TB_waterMode = 1};
 
 private _basActivated = createTrigger ["EmptyDetector", _mPos]; 
 _basActivated setTriggerArea [_mkrX, _mkrY, _mkrAgl, false];
@@ -73,6 +76,10 @@ _basActivated setTriggerStatements [_actCond, "", ""];
 _mkr setMarkerColor "ColorOrange";
 
 waitUntil {triggerActivated _basActivated};
+
+// TODO Setting machen
+if (isNil "TB_dauerZone") then {TB_dauerZone = false};
+_actCond = _actCond + " && !TB_dauerZone";
 
 private _bastActive = createTrigger ["EmptyDetector", _mPos]; 
 _bastActive setTriggerArea [_mkrX, _mkrY, _mkrAgl, false]; 
@@ -103,7 +110,9 @@ _piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
 _piSize = round (_piSize + (_piSizeIncrease * _playerCount));
 for "_counter" from 1 to _piGroups do
 {
-    private _pos = [_mPos, _placement, random 360] call BIS_fnc_relPos;
+    private _default = _mPos getPos [_placement, random 360];
+    private _pos = [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _piZoneGroups pushBack _piGroup;
 };    
@@ -114,7 +123,9 @@ _lvGroups = round (_lvGroups + (_lvGroupsIncrease * _playerCount));
 _lvSize = round (_lvSize + (_lvSizeIncrease * _playerCount));
 for "_counter" from 1 to _lvGroups do
 {
-    private _newpos = [_mPos, _placement + 500, random 360] call BIS_fnc_relPos;
+    private _spezicalPlacement = _placement + 500;
+    private _default = _mPos getPos [_spezicalPlacement, random 360];
+    private _newpos = [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
     
     private _vehType = 7;
     private _cargoType = 9;
@@ -145,7 +156,10 @@ private _avZoneGroups = [];
 _avGroups = round (_avGroups + (_avGroupsIncrease * _playerCount));
 for "_counter" from 1 to _avGroups do
 {
-    private _newpos = [_mPos, _placement + 700, random 360] call BIS_fnc_relPos;
+    private _spezicalPlacement = _placement + 700;
+    private _default = _mPos getPos [_spezicalPlacement, random 360];
+    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
     private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
     
@@ -162,9 +176,11 @@ _hGroups = round (_hGroups + (_hGroupsIncrease * _playerCount));
 _hSize = round (_hSize + (_hSizeIncrease * _playerCount));
 for "_counter" from 1 to _hGroups do
 {
-    private _vehType = if (_hSize > 0) then {4} else {3};
-    private _newpos = [markerPos _mkr, _placement + 1000, random 360] call BIS_fnc_relPos;
+    private _spezicalPlacement = _placement + 1000;
+    private _default = _mPos getPos [_spezicalPlacement, random 360];
+    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
     
+    private _vehType = if (_hSize > 0) then {4} else {3};
     private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
     
     if !(_hGroup isEqualTo []) then
