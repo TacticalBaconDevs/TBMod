@@ -652,6 +652,9 @@ _items append (switch (_rolle) do
             "rhsusf_spcs_ucp_squadleader",
             "rhsusf_spcs_ucp_teamleader",
 
+            // Waffen
+            "rhs_weap_m4a1_d",
+
             // Gepäck
             //"B_UAV_01_backpack_F",
 

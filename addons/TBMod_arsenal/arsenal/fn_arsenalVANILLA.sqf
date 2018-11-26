@@ -141,6 +141,8 @@ _items = [
     "arifle_SPAR_01_blk_F",
     "arifle_SPAR_01_snd_F",
     "arifle_SPAR_01_khk_F",
+    "tb_weap_taser",
+
     
     // Visiere
     "optic_ACO_grn_smg",
@@ -157,6 +159,10 @@ _items = [
     "optic_MRCO",
     "optic_NVS",
     "optic_MRD",
+    "optic_holosight_khk_f",
+    "optic_holosight",
+    "optic_yorris",
+    
     
     // Attachments
     "acc_flashlight",
@@ -171,12 +177,22 @@ _items = [
     "muzzle_snds_acp",
     "ACE_muzzle_mzls_smg_02",
     "muzzle_snds_L",
+    "muzzle_snds_m",
+    "muzzle_snds_m_khk_f",
+    "muzzle_snds_m_snd_f",
+    "muzzle_snds_h_mg_blk_f",
+    "muzzle_snds_h_mg",
+    "muzzle_snds_h_mg_khk_f",
+    "muzzle_snds_b_khk_f",
+    "muzzle_snds_b_snd_f",
+    "muzzle_snds_b",
+    "bipod_02_f_mtp",
+    "bipod_02_f_snd",
+    "bipod_02_f_blk",
 
     // Mags
     "30Rnd_65x39_caseless_mag",
     "30Rnd_65x39_caseless_mag_Tracer",
-    "100Rnd_65x39_caseless_mag",
-    "100Rnd_65x39_caseless_mag_Tracer",
     "30Rnd_556x45_Stanag_Tracer_Red",
     "30Rnd_556x45_Stanag_Tracer_Green",
     "30Rnd_556x45_Stanag_Tracer_Yellow",
@@ -216,6 +232,7 @@ _items = [
     "UGL_FlareRed_F",
     "UGL_FlareYellow_F",
     "UGL_FlareCIR_F",
+    "TB_mag_taser",
     
     // Mörser Rounds
     "ACE_1Rnd_82mm_Mo_HE",
@@ -238,14 +255,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
     {
-        [
-            // Backpacks
-            "B_UAV_01_backpack_F",
-            "B_Bergen_dgtl_F",
-            "B_Bergen_hex_F",
-            "B_Bergen_mcamo_F",
-            "B_Bergen_tna_F",
-            
+        [            
             // Weapons
             "arifle_MX_GL_F",
             "arifle_MX_GL_Black_F",
@@ -281,11 +291,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Weapons
             "arifle_MX_GL_F",
-<<<<<<< HEAD
-            "arifle_MX_GL_Black_F"
-=======
             "arifle_MX_GL_Black_F",
->>>>>>> remotes/originShukari/master
             "arifle_MX_GL_khk_F",
             "arifle_SPAR_01_GL_blk_F",
             "arifle_SPAR_01_GL_snd_F",
@@ -326,15 +332,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_02_blk_F",
             "arifle_SPAR_02_snd_F",
             "arifle_SPAR_02_khk_F",
+            "LMG_03_F",
 
-<<<<<<< HEAD
-            //Magazine
-=======
             // Magazine
->>>>>>> remotes/originShukari/master
             "150Rnd_556x45_Drum_Mag_Tracer_F",
             "200Rnd_556x45_Box_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_Red_F"
+            "200Rnd_556x45_Box_Tracer_Red_F",
+            "100Rnd_65x39_caseless_mag_Tracer"
         ]
     };
     
@@ -345,7 +349,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "B_Bergen_dgtl_F",
             "B_Bergen_hex_F",
             "B_Bergen_mcamo_F",
-            "B_Bergen_tna_F"
+            "B_Bergen_tna_F",
+
+            // Magazine
+            "150Rnd_556x45_Drum_Mag_Tracer_F",
+            "200Rnd_556x45_Box_Tracer_F",
+            "200Rnd_556x45_Box_Tracer_Red_F",
+
+            //AT
+            "Vorona_HEAT",
+            "Vorona_HE",
+            "MRAWS_HEAT_F",
+            "MRAWS_HE_F"
         ]
     };
     
@@ -513,7 +528,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "launch_B_Titan_short_F",
             "launch_I_Titan_short_F",
             "Titan_AT",
-            "Titan_AP"
+            "Titan_AP",
+
+            // Magazine
+            "Vorona_HEAT",
+            "Vorona_HE",
+            "MRAWS_HEAT_F",
+            "MRAWS_HE_F"
+
+
         ]
     };
     
