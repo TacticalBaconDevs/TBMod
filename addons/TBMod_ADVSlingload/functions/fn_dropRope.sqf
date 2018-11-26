@@ -3,7 +3,7 @@
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-    Drops currently hold Rope
+    Drops currently hold Lastenseil
     
     Arguments:
 

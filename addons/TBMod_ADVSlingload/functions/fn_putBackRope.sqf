@@ -3,7 +3,7 @@
     Developed by http://tacticalbacon.de
     
     Author: Eric Ruhland
-    Returns Rope to Chopper
+    Returns Lastenseil to Chopper
     
     Arguments:
     0: Target <OBJECT>
