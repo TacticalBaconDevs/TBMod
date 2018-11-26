@@ -31,12 +31,9 @@ TB_extensionQueue = [];
 // ServerFPS
 TB_sf = [diag_fps, diag_fpsmin];
 [{
-    if (diag_frameNo % 16 == 0) then
-    {
-        TB_sf params ["_diag_fps", "_diag_fpsmin"];
-        TB_sf = [(_diag_fps + diag_fps) / 2, (_diag_fpsmin + diag_fpsmin) / 2];
-    };
-}] call CBA_fnc_addPerFrameHandler;
+    TB_sf params ["_diag_fps", "_diag_fpsmin"];
+    TB_sf = [(_diag_fps + diag_fps) / 2, (_diag_fpsmin + diag_fpsmin) / 2];
+}, 1] call CBA_fnc_addPerFrameHandler;
 
 [{
     private _slValue = TB_sf;

@@ -21,13 +21,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["zeus", {
-    private _zeusNames = "";
-    {
-        if (!isNull (getAssignedCuratorUnit _x)) then {_zeusNames = format ["%1%2, ", _zeusNames, name getAssignedCuratorUnit _x]};
-    }
-    forEach allCurators;
-    
-    systemChat ("Aktive Zeus: "+ _zeusNames);
+    systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name _x}) joinString ", "];
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["safe", {
