@@ -24,8 +24,8 @@ private _first = configfile >> "CfgGesturesMale" >> "States" >> "tb_radioSR";
 private _second = configfile >> "CfgGesturesMale" >> "States" >> "tb_radioLR";
 private _attribute = [];
 diag_log format ["### Vergleich -> %1 | %2 ###", configName _first, configName _second];
-{_attribute pushBackUnique (toLower(configName _x))} forEach (configProperties [_first, "true", true]);
-{_attribute pushBackUnique (toLower(configName _x))} forEach (configProperties [_second, "true", true]);
+{_attribute pushBackUnique (toLower (configName _x))} forEach (configProperties [_first, "true", true]);
+{_attribute pushBackUnique (toLower (configName _x))} forEach (configProperties [_second, "true", true]);
 {
     private _valueFirst = (_first >> _x) call BIS_fnc_getCfgData;
     private _valueSecond = (_second >> _x) call BIS_fnc_getCfgData;
