@@ -1,8 +1,6 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params ["_items"];
 
@@ -22,6 +20,9 @@ _items append (switch (getPlayerUID player) do
     case "76561198074489907": {["G_Goggles_VR"]}; // Mordl
     case "76561198139487000": {[]}; // HerrPinguin
     case "76561198089664421": {[]}; // Jaleck
+    case "76561197986271628": {[]}; // Nimrod
+    case "76561198049880123": {[]}; // Eron
+    case "76561198203984875": {[]}; // TimeToPlay
     case "76561198127241859": {["G_Tactical_Clear", "LOP_H_Beanie_mtp", "H_Watchcap_blk", "rhs_xmas_antlers" /*Wieso git es überhaupt sowas*/, "H_WirelessEarpiece_F"]}; // Eric
     
     default {[]};
@@ -45,7 +46,10 @@ private _truppfuehrer = [
         "76561198074489907",
         "76561198139487000",
         "76561198089664421",
-        "76561198127241859"
+        "76561198127241859",
+        "76561197986271628",
+        "76561198049880123",
+        "76561198203984875"
     ] + _ausbilder;
 
 // Generalstabs Whitelist
