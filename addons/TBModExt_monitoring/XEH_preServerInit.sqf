@@ -6,6 +6,8 @@ if !(call TB_fnc_isTBMission) exitWith {};
 //if !(isDedicated) exitWith {};
 //if (getMissionConfigValue ["performanceTest", 0] != 1) exitWith {};
 
+"TBModExt_Monitoring" callExtension missionName;
+
 TB_extensionQueue = [];
 
 // EndlossCode in Scheduled Enviroment

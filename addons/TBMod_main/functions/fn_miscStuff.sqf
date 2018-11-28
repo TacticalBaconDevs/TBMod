@@ -153,12 +153,12 @@ if (isNil "TB_funkAnim") then {TB_funkAnim = true};
         }
         else
         {
-            if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]};
+            if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
         };
     }
     else
     {
         if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
-        if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]};
+        if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
     };
 }, 10] call CBA_fnc_addPerFrameHandler;
