@@ -56,8 +56,8 @@ class TB_supply_nato_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(MRAWS_HEAT_F,5);
-        MACRO_ADDMAGAZINE(Vorona_HEAT,5);
+        MACRO_ADDMAGAZINE(MRAWS_HEAT_F,4);
+        MACRO_ADDMAGAZINE(Vorona_HEAT,4);
         MACRO_ADDMAGAZINE(Titan_AA,3);
         MACRO_ADDMAGAZINE(Titan_AT,2);
     };
