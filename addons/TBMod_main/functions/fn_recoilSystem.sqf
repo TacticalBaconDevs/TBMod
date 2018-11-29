@@ -33,9 +33,9 @@ TB_recoilID = ["ace_firedPlayer", {
     
     if (toLower _weapon in ["throw", "put"]) exitWith {};
     if (TB_recoilFreeze >= diag_tickTime) exitWith {};
-    if (vehicle _unit != _unit) exitWith {_unit setUnitRecoilCoefficient 0};
+    if (vehicle _unit != _unit) exitWith {_unit setUnitRecoilCoefficient 0.1};
     
-    private _recoil = getCustomAimCoef _unit;
+    private _recoil = (getCustomAimCoef _unit) + TB_recoilStart;
     private _deploy = isWeaponDeployed _unit;
     
     // Spezielle WaffenStats
