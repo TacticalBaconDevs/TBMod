@@ -7,20 +7,19 @@
 
 class TB_supply_nato_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
-        PUBLIC_NAME_CAT("Munition",NATO);
+    PUBLIC_NAME_CAT("Munition",NATO);
 
-
-        class TransportMagazines
-        {
-            MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,15);
-            MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,15);
-            MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,15);
-            MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,15);
-            MACRO_ADDMAGAZINE(200Rnd_556x45_Box_Tracer_Red_F,5);
-            MACRO_ADDMAGAZINE(150Rnd_556x45_Drum_Mag_Tracer_F,5);
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,20);
-
-        };
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,15);
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,15);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,15);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,15);
+        MACRO_ADDMAGAZINE(200Rnd_556x45_Box_Tracer_Red_F,5);
+        MACRO_ADDMAGAZINE(150Rnd_556x45_Drum_Mag_Tracer_F,5);
+        MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,20);
+    };
+};
 
 class TB_supply_nato_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
 {
