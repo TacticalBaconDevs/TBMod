@@ -19,4 +19,8 @@ class CfgEditorSubcategories
     {
         displayName = "NATO";
     };
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> eda90b982c0d8e0011d8cbfc1ce104a4f2f283c3
