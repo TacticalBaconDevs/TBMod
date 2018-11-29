@@ -67,3 +67,15 @@ _result = [];
 }
 forEach (("true" configClasses (configfile >> "CfgWeapons")) + ("true" configClasses (configfile >> "CfgMagazines")) + ("true" configClasses (configfile >> "CfgGlasses")) + ("true" configClasses (configfile >> "CfgVehicles")));
 _result;
+
+
+// spectator
+[ 
+    ["Spectator", { 
+        [allPlayers, allUnits - allPlayers] call ace_spectator_fnc_updateUnits; 
+        [[west], [east,civilian,independent]] call ace_spectator_fnc_updateSides; 
+        [[1,2,0], []] call ace_spectator_fnc_updateCameraModes; 
+        [[-2,-1,0], []] call ace_spectator_fnc_updateVisionModes; 
+        [true, false, false] call ace_spectator_fnc_setSpectator; 
+    }, nil, 0, false, true, ""] 
+] call CBA_fnc_addPlayerAction;

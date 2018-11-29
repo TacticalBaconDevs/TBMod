@@ -12,7 +12,8 @@ TB_lvl2 = ["76561198066861232" /* Darky */];
 
 // Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {[] spawn {
-    private _zerschneider = createVehicle ['Land_ClutterCutter_medium_F', player modeltoworld [0,2.7,0], [], 0, "can_collide"];
+    private _zerschneider = createVehicle ["Land_ClutterCutter_medium_F", player modeltoworld [0, 2.7, 0], [], 0, "CAN_COLLIDE"];
+    uiSleep 2;
     deleteVehicle _zerschneider;
 }}, {true}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _grasAction] call ace_interact_menu_fnc_addActionToObject;
@@ -113,3 +114,51 @@ if (isNil "TB_funkAnim") then {TB_funkAnim = true};
             (getPlayerUID player) in TB_lvl3) then {systemChat _msg};
     }
 ] call CBA_fnc_addEventHandler;
+
+// FPS Infos
+[{
+    if (TB_fpsMonitor) then
+    {
+        player setVariable ["TB_clientFPS", floor diag_fps, true];
+        
+        if (player in (call BIS_fnc_listCuratorPlayers)) then
+        {
+            if (isNil "TB_fpsMonitor_id") then
+            {
+                TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+                    {
+                        if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
+                        {
+                            private _playerFPS = _x getVariable ["TB_clientFPS", -1];
+                            
+                            drawIcon3D
+                            [
+                                "",
+                                [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
+                                ASLToAGL getPosASL _x,
+                                1,
+                                2,
+                                0,
+                                format ["FPS: %1", _playerFPS],
+                                0,
+                                [0.03, 0.05] select (_playerFPS < 20),
+                                "PuristaMedium",
+                                "center"
+                            ];
+                        };
+                    }
+                    forEach allPlayers;
+                }];
+            };
+        }
+        else
+        {
+            if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]};
+        };
+    }
+    else
+    {
+        if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
+        if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]};
+    };
+}, 10] call CBA_fnc_addPerFrameHandler;
