@@ -19,3 +19,4 @@ class CfgEditorSubcategories
     {
         displayName = "NATO";
     };
+};
