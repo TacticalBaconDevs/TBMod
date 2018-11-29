@@ -11,13 +11,13 @@ class TB_supply_nato_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,15);
-        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,15);
-        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,15);
-        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,15);
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,13);
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,13);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,13);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,13);
         MACRO_ADDMAGAZINE(200Rnd_556x45_Box_Tracer_Red_F,5);
         MACRO_ADDMAGAZINE(150Rnd_556x45_Drum_Mag_Tracer_F,5);
-        MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,20);
+        MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
     };
 };
 
