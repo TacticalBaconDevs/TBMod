@@ -52,7 +52,7 @@ class TB_supply_nato_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
 
 class TB_supply_nato_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
-    PUBLIC_NAME_CAT("Werfer Munition",NATO);
+    PUBLIC_NAME_CAT("WerferMunition",NATO);
     
     class TransportMagazines
     {
