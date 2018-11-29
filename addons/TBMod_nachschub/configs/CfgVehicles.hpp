@@ -117,6 +117,7 @@ class CfgVehicles
                 {
                     displayName = "USA";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_usa')) > 0";
                     
                     ADD_SUPPLY(Munition,TB_supply_usa_ammo);
                     ADD_SUPPLY(KleinMunition,TB_supply_usa_ammoSmall);
@@ -136,6 +137,7 @@ class CfgVehicles
                 {
                     displayName = "BW";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_bw')) > 0";
                     
                     ADD_SUPPLY(Munition,TB_supply_bw_ammo);
                     ADD_SUPPLY(KleinMunition,TB_supply_bw_ammoSmall);

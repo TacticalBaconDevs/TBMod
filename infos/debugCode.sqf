@@ -56,6 +56,7 @@ private _resultset = [];
 ];
 _resultset;
 
+
 //get all weapons with name
 _result = [];
 {
