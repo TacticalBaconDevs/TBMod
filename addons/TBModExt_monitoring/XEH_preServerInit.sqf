@@ -3,46 +3,34 @@
     Developed by http://tacticalbacon.de
 */
 if !(call TB_fnc_isTBMission) exitWith {};
-if !(isDedicated) exitWith {};
-if (getMissionConfigValue ["performanceTest", 0] != 1) exitWith {};
+//if !(isDedicated) exitWith {};
+//if (getMissionConfigValue ["performanceTest", 0] != 1) exitWith {};
 
 "TBModExt_Monitoring" callExtension missionName;
 
 TB_extensionQueue = [];
+if (isNil "TB_intervall") then {TB_intervall = 60};
 
-// EndlossCode in Scheduled Enviroment
-// Scriptlag Check
-[] spawn {
-    TB_sl = 0; // kurzer Name
-    
-    [{
-        private _slValue = TB_sl;
-        TB_sl = 0;
-        
-        TB_extensionQueue pushBack ["scriptlag", _slValue];
-    }, 10] call CBA_fnc_addPerFrameHandler;
-    
-    waitUntil
-    {
-        TB_sl = TB_sl + 1;
-        false;
-    };
-};
+// Scriptlag Check - EndlossCode in Scheduled Enviroment
+//TB_sl = 0;
+//[] spawn {waitUntil {TB_sl = TB_sl + 1; false}};
 
-
-// ServerFPS
-TB_sf = [diag_fps, diag_fpsmin];
-[{
-    TB_sf params ["_diag_fps", "_diag_fpsmin"];
-    TB_sf = [(_diag_fps + diag_fps) / 2, (_diag_fpsmin + diag_fpsmin) / 2];
-}, 5] call CBA_fnc_addPerFrameHandler;
 
 [{
-    private _slValue = TB_sf;
-    TB_sf = [diag_fps, diag_fpsmin];
+    //TB_extensionQueue pushBack ["scriptlag", TB_sl]; TB_sl = 0;
+    TB_extensionQueue pushBack ["fps", diag_fps];
+    TB_extensionQueue pushBack ["minfps", diag_fpsMin];
     
-    TB_extensionQueue pushBack ["fps", TB_sf];
-}, 10] call CBA_fnc_addPerFrameHandler;
+    TB_extensionQueue pushBack ["allKI", {!isPlayer _x} count allUnits];
+    TB_extensionQueue pushBack ["simKI", {!isPlayer _x && simulationEnabled _x} count allUnits];
+    TB_extensionQueue pushBack ["allVehicles", count vehicles];
+    TB_extensionQueue pushBack ["simVehicles", {simulationEnabled _x} count vehicles];
+    TB_extensionQueue pushBack ["allEntities", count (entities [[], [], true, true])];
+    TB_extensionQueue pushBack ["simEntities", {simulationEnabled _x} count (entities [[], [], true, true])];
+    
+    TB_extensionQueue pushBack ["activeScripts", (diag_activeScripts select 0) + (diag_activeScripts select 1) + (diag_activeScripts select 2) + (diag_activeScripts select 3)];
+    TB_extensionQueue pushBack ["activeSQF", count diag_activeSQFScripts];
+}, TB_intervall] call CBA_fnc_addPerFrameHandler;
 
 
 // FSM CPS
@@ -53,9 +41,7 @@ execFSM "\TBModExt_monitoring\monitor.fsm";
 [{
     if !(TB_extensionQueue isEqualTo []) then
     {
-        private _value = TB_extensionQueue;
+        "TBModExt_Monitoring" callExtension ["sendQueue", TB_extensionQueue];
         TB_extensionQueue = [];
-        
-        "TBModExt_Monitoring" callExtension ["sendQueue", _value];
     };
-}, 10] call CBA_fnc_addPerFrameHandler;
+}, TB_intervall] call CBA_fnc_addPerFrameHandler;
