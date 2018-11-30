@@ -122,21 +122,25 @@ class CfgVehicles
     class TB_arsenal_usa : TB_arsenal_base
     {
         MAKE_PUBLIC(USA,USA);
+        hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_USA.paa"};
     };
     
     class TB_arsenal_vanilla : TB_arsenal_base
     {
         MAKE_PUBLIC(Vanilla,VANILLA-BLUE);
+        hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
     };
     
     class TB_arsenal_bw : TB_arsenal_base
     {
         MAKE_PUBLIC(Bundeswehr,BW);
+        hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_Bw.paa"};
     };
     
     class TB_arsenal_russ : TB_arsenal_base
     {
         MAKE_PUBLIC(Russland,RUSS);
+        hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_Russland.paa"};
     };
     
     // ###################### SpezialArsenale ######################
