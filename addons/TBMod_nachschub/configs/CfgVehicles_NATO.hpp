@@ -11,13 +11,13 @@ class TB_supply_nato_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,15);
-        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,15);
-        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,15);
-        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,15);
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,13);
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,13);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,13);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,13);
         MACRO_ADDMAGAZINE(200Rnd_556x45_Box_Tracer_Red_F,5);
         MACRO_ADDMAGAZINE(150Rnd_556x45_Drum_Mag_Tracer_F,5);
-        MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,20);
+        MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
     };
 };
 
@@ -52,17 +52,14 @@ class TB_supply_nato_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
 
 class TB_supply_nato_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
-    PUBLIC_NAME_CAT("Werfer Munition",NATO);
+    PUBLIC_NAME_CAT("WerferMunition",NATO);
     
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(MRAWS_HEAT_F,4);
-        MACRO_ADDMAGAZINE(MRAWS_HE_F,2);
         MACRO_ADDMAGAZINE(Vorona_HEAT,4);
-        MACRO_ADDMAGAZINE(Vorona_HE,2);
-        MACRO_ADDMAGAZINE(Titan_AA,2);
+        MACRO_ADDMAGAZINE(Titan_AA,3);
         MACRO_ADDMAGAZINE(Titan_AT,2);
-        MACRO_ADDMAGAZINE(Titan_AP,2);
     };
 };
 
