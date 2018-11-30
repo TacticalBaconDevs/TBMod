@@ -363,23 +363,25 @@ class CfgVehicles
     
     
     // ###################### TFAR RADIOS leichter ######################
+    #define ADD_OVERRIDE(NAME,PARENT,LOAD,MASSE) class NAME : PARENT \
+    { \
+        maximumLoad = LOAD; \
+        mass = MASSE; \
+    }
     class TFAR_Bag_Base;
-    class TFAR_rt1523g: TFAR_Bag_Base
-    {
-        maximumLoad = 80; // 50
-        mass = 15; // 80
-    };
-    class TFAR_rt1523g_big: TFAR_rt1523g
-    {
-        maximumLoad = 160; // 160
-        mass = 30; // 160
-    };
-    class TFAR_rt1523g_sage: TFAR_rt1523g
-    {
-        maximumLoad = 117; // 100
-        mass = 22; // 120
-    };
+    ADD_OVERRIDE(TFAR_rt1523g,TFAR_Bag_Base,129,25); // 50, 80 - 5,16 - Russen kleines LR
+    ADD_OVERRIDE(tf_rt1523g,TFAR_rt1523g,129,25);
+    ADD_OVERRIDE(OPXT_aor1_117,tf_rt1523g,129,25);
     
+    ADD_OVERRIDE(TFAR_rt1523g_big,TFAR_rt1523g,160,30); // 160, 160 - 5,3 - USA großes LR
+    ADD_OVERRIDE(tf_rt1523g_big,TFAR_rt1523g_big,160,30);
+    ADD_OVERRIDE(OPXT_aor1_1523,tf_rt1523g_big,160,30);
+    
+    ADD_OVERRIDE(TFAR_rt1523g_sage,TFAR_rt1523g,160,30); // 100, 120 - 5,3
+    ADD_OVERRIDE(tf_rt1523g_sage,TFAR_rt1523g_sage,160,30);
+    
+    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50; 
+    // OPXT_rf7800m: tf_anarc210 - maximumLoad = 300; mass = 60;
     
     // ###################### No Uniform ######################
     class Civilian;
