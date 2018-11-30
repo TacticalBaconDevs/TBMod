@@ -3,6 +3,8 @@
     Developed by http://tacticalbacon.de
 */
 if !(call TB_fnc_isTBMission) exitWith {};
+
+// Derzeit wegen lokaler Tests deaktiviert, im Echtbetrieb wieder anmachen
 //if !(isDedicated) exitWith {};
 //if (getMissionConfigValue ["performanceTest", 0] != 1) exitWith {};
 
