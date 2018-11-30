@@ -14,4 +14,9 @@ class CfgEditorSubcategories
     {
         displayName = "BW";
     };
+
+    class EdSubcat_TB_Supply_nato
+    {
+        displayName = "NATO";
+    };
 };

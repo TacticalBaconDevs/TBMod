@@ -147,6 +147,19 @@ class CfgVehicles
                     ADD_SUPPLY(NotfallG36,TB_supply_bw_notfallg36);
                     ADD_SUPPLY(NachtKiste,TB_supply_bw_night);
                 };
+
+                class nato
+                {
+                    displayName = "NATO";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_vanilla')) > 0";
+                    
+                    ADD_SUPPLY(Munition,TB_supply_nato_ammo);
+                    ADD_SUPPLY(Granaten,TB_supply_nato_grena);
+                    ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
+                    ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
+                    ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
+                };
                 
                 class packBack
                 {
@@ -362,9 +375,12 @@ class CfgVehicles
         };
     };
 
-    // ###################### USA #########################
+    // ###################### USA ########################
     #include "CfgVehicles_USA.hpp"
     
     // ###################### BW #########################
     #include "CfgVehicles_BW.hpp"
+    // ###################### NATO #######################
+
+    #include "CfgVehicles_NATO.hpp"
 };
