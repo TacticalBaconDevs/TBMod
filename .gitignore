@@ -8,3 +8,4 @@
 
 /#localStuff
 /.vscode
+/#buildingTools/*.bat

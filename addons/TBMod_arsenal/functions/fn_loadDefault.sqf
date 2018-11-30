@@ -84,7 +84,12 @@ if (_arsenalType == "VANILLA-BLUE") then
 
 if (_arsenalType == "Themen") then
 {
-    ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_morphine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
+    if (isClass (_patches >> "uns_main")) exitWith
+    {
+        ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_morphine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
+    };
+    
+    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_flora_patchless",[["ACE_fieldDressing",10],["ACE_quikclot",10],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",1]]],[],[],"rhs_beret_milp","",[],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
 };
 
 if (_arsenalType == "CUSTOM") then
@@ -123,5 +128,5 @@ if (_arsenalType == "CUSTOM") then
 
 if (_arsenalType == "RUSS") then
 {
-    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_flora_patchless",[["ACE_fieldDressing",10],["ACE_quikclot",10],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",1]]],[],[],"rhs_beret_milp","",[],["","","","","",""]], true];
+    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_emr_patchless",[["ACE_quikclot",15],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_EntrenchingTool",1]]],[],[],"rhs_fieldcap_digi","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
 };

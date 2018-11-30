@@ -53,6 +53,9 @@ class CfgPatches
 
             // TFAR
             "tfar_core",
+            // Reskins
+            "OPXT_TFAR",
+            "opxt_tfar_backpacks",
 
             // 3rd PartyMods
             "achilles_language_f",
