@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
 ace_microdagr_settingUseMils = true;
 
@@ -9,6 +10,7 @@ TB_lvl3 = ["76561198029318101", /* shukari */
             "76561198040057152", /* Culli */
             "76561198047437015" /* BeLink */];
 TB_lvl2 = ["76561198066861232" /* Darky */];
+if (isMultiplayerSolo || isServer) then {TB_lvl3 pushBack "_SP_PLAYER_"};
 
 // Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {[] spawn {

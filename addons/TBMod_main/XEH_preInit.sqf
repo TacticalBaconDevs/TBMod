@@ -1,8 +1,6 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-    
-    Author: shukari
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 
@@ -15,12 +13,18 @@ if (isNil "TB_recoilStart") then {TB_recoilStart = 0.75};
 if (isNil "TB_fpsMonitor_client") then {TB_fpsMonitor_client = true};
 if (isNil "TB_fpsMonitor_zeus") then {TB_fpsMonitor_zeus = true};
 
-// HeadlessClient - setGroupOwner Fix
 ["CAManBase", "Local", {
     params ["_entity", "_isLocal"];
     
-    if (_isLocal && ((getUnitLoadout _entity) isEqualTo [[],[],[],[],[],[],"","",[],["","","","","",""]])) then
+    // HeadlessClient - setGroupOwner Fix
+    if (_isLocal && (uniform _entity) isEqualTo "") then //((getUnitLoadout _entity) isEqualTo [[],[],[],[],[],[],"","",[],["","","","","",""]])
     {
         _entity setUnitLoadout (getUnitLoadout (typeOf _entity));
     };
+    
+    // UGL Limiter
+    //if () then
+    //{
+        // TODO: ingame tests
+    //};
 }] call CBA_fnc_addClassEventHandler;
