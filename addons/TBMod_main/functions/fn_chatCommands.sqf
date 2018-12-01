@@ -24,6 +24,14 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name _x}) joinString ", "];
 }, "all"] call CBA_fnc_registerChatCommand;
 
+["fps", {
+    if (player in (call BIS_fnc_listCuratorPlayers)) then
+    {
+        TB_fpsMonitor_zeus = !TB_fpsMonitor_zeus;
+        systemChat format ["Zeus-FPS ist nun %1aktiviert!", ["de", ""] select TB_fpsMonitor_zeus];
+    };
+}, "all"] call CBA_fnc_registerChatCommand;
+
 ["safe", {
     if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
     {

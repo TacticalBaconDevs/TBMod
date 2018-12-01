@@ -117,11 +117,18 @@ if (isNil "TB_funkAnim") then {TB_funkAnim = true};
 
 // FPS Infos
 [{
-    if (TB_fpsMonitor) then
+    if (TB_fpsMonitor_client) then
     {
         player setVariable ["TB_clientFPS", floor diag_fps, true];
-        
-        if (player in (call BIS_fnc_listCuratorPlayers)) then
+    }
+    else
+    {
+        if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
+    };
+    
+    if (TB_fpsMonitor_zeus) then
+    {
+        if (player in (call BIS_fnc_listCuratorPlayers) && {!isNull (findDisplay 312)}) then
         {
             if (isNil "TB_fpsMonitor_id") then
             {
@@ -158,7 +165,6 @@ if (isNil "TB_funkAnim") then {TB_funkAnim = true};
     }
     else
     {
-        if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
         if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
     };
-}, 10] call CBA_fnc_addPerFrameHandler;
+}, 5] call CBA_fnc_addPerFrameHandler;
