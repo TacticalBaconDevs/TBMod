@@ -16,18 +16,27 @@ class Cfg3DEN
         {
             class AttributeCategories
             {
-                // class TB_main_missionVars
-                // {
-                    // collapsed = 0;
-                    // displayName = "TB Missionwerte";
+                class TB_main_missionVars
+                {
+                    collapsed = 0;
+                    displayName = "TB Missionwerte";
                     
-                    // class Attributes
-                    // {
+                    class Attributes
+                    {
+                        class TB_mission_inkognitoSystem
+                        {
+                            displayName = "InkognitoSystem";
+                            tooltip = "Man kann zwei Loadouts haben, zivil und militär.";
+                            property = "TB_mission_inkognitoSystem";
+                            control = "Checkbox";
+                            expression = "if (!is3DEN) then {TB_inkognitoSystem = _value; publicVariable 'TB_inkognitoSystem'};";
+                            defaultValue = "false";
+                        };
                         // class TB_mission_extremMedic
                         // {
                             // displayName = "extremes Sanisystem";
                             // tooltip = "Arzt kann nur noch EHK verwenden usw. GENEMIGUNGSPFLICHTIG!";
-                            // property = "TB_main_mission_extremMedic";
+                            // property = "TB_mission_extremMedic";
                             // control = "Checkbox";
                             // expression = "if (!is3DEN) then {TB_extremSanisystem = _value; publicVariable 'TB_extremSanisystem'};";
                             // defaultValue = "false";
@@ -61,8 +70,8 @@ class Cfg3DEN
                             // validate = "number";
                             // typeName = "NUMBER";
                         // };
-                    // };
-                // };
+                    };
+                };
             };
         };
     };

@@ -25,7 +25,7 @@ class CfgFunctions
             class insertChildrenGruppen {};
             class garage {};
             class garageGUI {};
-            class extremMedicMode {};
+            class inkognitoSystem {};
             class doorBreach {};
             class recoilSystem {};
             class crashHelferClient {};
