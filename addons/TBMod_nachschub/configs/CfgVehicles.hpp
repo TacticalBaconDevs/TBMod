@@ -397,5 +397,5 @@ class CfgVehicles
     // ###################### NATO #######################
     #include "CfgVehicles_NATO.hpp"
     // ###################### RUSS #######################
-    #include "CfgVegicles_RUSS.hpp"
+    #include "CfgVehicles_RUSS.hpp"
 };
