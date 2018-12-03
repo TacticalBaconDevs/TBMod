@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 
-    Author: shukari, IDarky
+    Author: IDarky
 */
 class TB_supply_russ_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
