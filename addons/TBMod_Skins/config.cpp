@@ -32,5 +32,5 @@ class CfgPatches
 // Configs
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
-#include "configs/CfgEditorCategories.hpp"
-#include "configs/CfgEditorSubcategories.hpp"
+#include "configs\CfgEditorCategories.hpp"
+#include "configs\CfgEditorSubcategories.hpp"
