@@ -16,6 +16,7 @@ class cfgWeapons
         displayName = "SEK Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
+        
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -32,6 +33,7 @@ class cfgWeapons
         displayName = "Kommissar Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
+        
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -48,6 +50,7 @@ class cfgWeapons
         displayName = "Rekruten Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
+        
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -64,6 +67,7 @@ class cfgWeapons
         displayName = "Präsidenten Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_universal_F.p3d";
+        
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -72,16 +76,10 @@ class cfgWeapons
             mass = 40;
         };
     };
-    
-    
-    
 };
 
-
-
-///////////////////////////////////7
+///////////////////////////////////
 /*
-
 class CfgWeapons
 {
     class Uniform_Base;
@@ -92,6 +90,7 @@ class CfgWeapons
         displayName = "G3 M81/Green";
         author = "DArky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
+        
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -101,7 +100,6 @@ class CfgWeapons
         };
     };
     
-    
     class TB_Uniform_SEK: Uniform_Base
     {
         displayName = "SEK Uniform";
@@ -109,8 +107,6 @@ class CfgWeapons
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
         hiddenSelections[] = {"camo"};
         picture = "\TBMod_Skins\pictures\polizei_sek.paa";
-        
-        
     };
     
     class U_B_CTRG_1;
