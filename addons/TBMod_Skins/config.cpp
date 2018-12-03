@@ -6,10 +6,12 @@ class CfgPatches
         
         author = "Eric";
         
-        weapons[] = {"TB_Uniform_SEK_U",
-                     "TB_Uniform_Kommissar_U",
-                     "TB_Uniform_Polizist_U",
-                     "TB_Uniform_presi_U"};
+        weapons[] = {
+            "TB_Uniform_SEK_U",
+            "TB_Uniform_Kommissar_U",
+            "TB_Uniform_Polizist_U",
+            "TB_Uniform_presi_U"
+        };
         
         vehicles[] = {
             "TB_Uniform_Sek",
@@ -32,4 +34,3 @@ class CfgPatches
 #include "configs\CfgWeapons.hpp"
 #include "configs/CfgEditorCategories.hpp"
 #include "configs/CfgEditorSubcategories.hpp"
-
