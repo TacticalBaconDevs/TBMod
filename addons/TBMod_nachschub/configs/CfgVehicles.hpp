@@ -176,6 +176,7 @@ class CfgVehicles
                     ADD_SUPPLY(WerferMunition,TB_supply_russ_launcherAmmo);
                     ADD_SUPPLY(NachtKiste,TB_supply_russ_night);
                 };
+                
                 class packBack
                 {
                     displayName = "Kiste zurückpacken";
@@ -390,12 +391,9 @@ class CfgVehicles
         };
     };
 
-    // ###################### USA ########################
+    // ###################### Fraktionskisten ########################
     #include "CfgVehicles_USA.hpp"
-    // ###################### BW #########################
     #include "CfgVehicles_BW.hpp"
-    // ###################### NATO #######################
     #include "CfgVehicles_NATO.hpp"
-    // ###################### RUSS #######################
     #include "CfgVehicles_RUSS.hpp"
 };
