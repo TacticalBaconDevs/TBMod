@@ -82,7 +82,12 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
     {
         if (_this select 0 == "") exitWith {systemChat "Kein Name wurde angegeben!"};
-        systemChat format ["Gruppe %1 heißt nun %2!", groupId group cursorObject, _this select 0];
+        
+        private _unit = cursorObject;
+        if (isPlayer _unit) then {_unit = objNull};
+        if (!isNull _unit) then {_unit = player};
+        
+        systemChat format ["Gruppe %1 heißt nun %2!", groupId (group player), _this select 0];
         (group cursorObject) setGroupIdGlobal [_this select 0];
     };
 }, "all"] call CBA_fnc_registerChatCommand;
