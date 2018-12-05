@@ -35,7 +35,7 @@ _armorVeh params ["_avGroups", "_avGroupsIncrease"];
 _statics params ["_stGroups", "_stGroupsIncrease"];
 _helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
 
-_settings params ["_faction", "_distance", "_side", ["_heightLimit", false], "_parachuteJump"];
+_settings params ["_faction", "_distance", "_side", ["_heightLimit", false], "_parachuteJump", "_helicopterHeight", "_angriffsRichtungHeli"];
 
 private _civZone = false;
 private _enemyFaction = "east";
@@ -87,6 +87,9 @@ waitUntil {triggerActivated _eosActivated};
 
 if (getMarkerColor _mkr != "ColorBlack") then
 {
+    _angriffsRichtungHeli params ["_baseDirHeli", "_randomDirHeli"];
+    _randomDirHeli = 5 max _randomDirHeli min 360;
+    private _attackDirHeli = _baseDirHeli + ((random (_randomDirHeli * 2)) - _randomDirHeli);
     private _playerCount = count (call CBA_fnc_players);
     
     // SPAWN HOUSE PATROLS
@@ -235,8 +238,8 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {
         private _vehType = if (_hSize > 0) then {4} else {3};
         
-        private _newpos = [markerpos _mkr, 3000, random 360] call BIS_fnc_relPos;    
-        private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
+        private _newpos = [markerpos _mkr, 3000, _attackDirHeli] call BIS_fnc_relPos;    
+        private _hGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;    
         
         if !(_hGroup isEqualTo []) then
         {
@@ -254,6 +257,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
                 _wp1 setWaypointType "SAD";
             };
             
+            (_hGroup select 0) flyInHeight _helicopterHeight;
             [_hGroup select 2, "AIRskill"] call TB_EOS_fnc_setSkill;
             _hZoneGroups pushBack _hGroup;
         };
