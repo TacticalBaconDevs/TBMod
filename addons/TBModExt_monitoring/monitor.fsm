@@ -4,8 +4,8 @@
 item0[] = {"START",0,250,-59.068329,-205.029190,30.931671,-155.029190,0.000000,"START"};
 item1[] = {"_",8,218,-58.132935,-138.972412,31.867065,-88.972412,0.000000,""};
 item2[] = {"cps_check",2,250,-57.158752,-71.236877,32.841263,-21.236877,0.000000,"cps check"};
-item3[] = {"reset",4,218,70.814934,-71.390854,160.814941,-21.390854,0.000000,"reset"};
-item4[] = {"loop",4,4314,-186.440948,-71.390823,-96.440948,-21.390823,1.000000,"loop"};
+item3[] = {"reset",4,4314,70.814934,-71.390854,160.814941,-21.390854,0.000000,"reset"};
+item4[] = {"loop",4,218,-186.440948,-71.390823,-96.440948,-21.390823,1.000000,"loop"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
@@ -25,7 +25,7 @@ class FSM
                 {
                         name = "START";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_nextRun = diag_tickTime + 5;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_nextRun = diag_tickTime + TB_intervall;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -71,7 +71,7 @@ class FSM
                                         to="cps_check";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_nextRun < diag_tickTime"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"_nextRun = diag_tickTime + 5;" \n
+                                        action=/*%FSM<ACTION""">*/"_nextRun = diag_tickTime + TB_intervall;" \n
                                          "" \n
                                          "TB_extensionQueue pushBack [""cps"", _cps];" \n
                                          "_cps = 0;"/*%FSM</ACTION""">*/;

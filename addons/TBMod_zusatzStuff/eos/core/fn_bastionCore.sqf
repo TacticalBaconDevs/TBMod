@@ -8,7 +8,8 @@
     Complete rewrite and modification:
         shukari
 */
-if (!isServer) exitWith {};
+if (!isServer) exitWith {{"[TBMod_zusatzStuff] EOS-BASTION: nur auf Server ausführen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
+if (!canSuspend) exitWith {{"[TBMod_zusatzStuff] EOS-BASTION: nur per spawn aufrufen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
 
 params [
         "_mkr",
@@ -26,12 +27,12 @@ private _mPos = markerpos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _mkrAgl = markerDir _mkr;
 
-_patrolInf params ["_piGroups", "_piSize", "_piGroupsIncrease", "_piSizeIncrease"];
-_lightVeh params ["_lvGroups", "_lvSize", "_lvGroupsIncrease", "_lvSizeIncrease"];
-_armorVeh params ["_avGroups", "_avGroupsIncrease"];
-_helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
+_patrolInf params ["_piGroups", "_piSize", ["_piGroupsIncrease", 0], ["_piSizeIncrease", 0]];
+_lightVeh params ["_lvGroups", "_lvSize", ["_lvGroupsIncrease", 0], ["_lvSizeIncrease", 0]];
+_armorVeh params ["_avGroups", ["_avGroupsIncrease", 0]];
+_helis params ["_hGroups", "_hSize", ["_hGroupsIncrease", 0], ["_hSizeIncrease", 0]];
 
-_settings params ["_faction", "_side", "_heightLimit", "_placementRadius", "_parachuteJump"];
+_settings params ["_faction", "_side", "_heightLimit", "_placementRadius", "_parachuteJump", "_helicopterHeight", "_angriffsRichtung", "_angriffsRichtungHeli"];
 _basSettings params ["_pause", "_waves", "_timeout", "_eosZone", "_hints"];
 
 private _radius = _mkrX max _mkrY;
@@ -102,6 +103,10 @@ if (_pause > 0 and !_initialLaunch) then
     };
 };
 
+_angriffsRichtung params ["_baseDir", "_randomDir"];
+_randomDir = 10 max _randomDir min 360;
+_angriffsRichtungHeli params ["_baseDirHeli", "_randomDirHeli"];
+_randomDirHeli = 10 max _randomDirHeli min 360;
 private _playerCount = count (call CBA_fnc_players);
 
 // SPAWN PATROLS        
@@ -110,8 +115,8 @@ _piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
 _piSize = round (_piSize + (_piSizeIncrease * _playerCount));
 for "_counter" from 1 to _piGroups do
 {
-    private _default = _mPos getPos [_placement, random 360];
-    private _pos = [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_placement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
+    private _pos = [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findRandomPos;
 
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _piZoneGroups pushBack _piGroup;
@@ -124,8 +129,8 @@ _lvSize = round (_lvSize + (_lvSizeIncrease * _playerCount));
 for "_counter" from 1 to _lvGroups do
 {
     private _spezicalPlacement = _placement + 500;
-    private _default = _mPos getPos [_spezicalPlacement, random 360];
-    private _newpos = [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_spezicalPlacement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
+    private _newpos = [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findRandomPos;
     
     private _vehType = 7;
     private _cargoType = 9;
@@ -142,11 +147,9 @@ for "_counter" from 1 to _lvGroups do
         if (_lvSize > 0) then
         {
             private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
-            [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-            _lvGroup pushBack _cargoGrp;
+            if (!isNull _cargoGrp) then {_lvGroup pushBack _cargoGrp};
         };
 
-        [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
         _lvZoneGroups pushBack _lvGroup;
     };
 };
@@ -157,17 +160,13 @@ _avGroups = round (_avGroups + (_avGroupsIncrease * _playerCount));
 for "_counter" from 1 to _avGroups do
 {
     private _spezicalPlacement = _placement + 700;
-    private _default = _mPos getPos [_spezicalPlacement, random 360];
-    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_spezicalPlacement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
+    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findRandomPos;
     
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
     private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
     
-    if !(_avGroup isEqualTo []) then
-    {
-        [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;    
-        _avZoneGroups pushBack _avGroup;
-    };
+    if !(_avGroup isEqualTo []) then {_avZoneGroups pushBack _avGroup};
 };
 
 // SPAWN HELICOPTERS        
@@ -177,11 +176,11 @@ _hSize = round (_hSize + (_hSizeIncrease * _playerCount));
 for "_counter" from 1 to _hGroups do
 {
     private _spezicalPlacement = _placement + 1000;
-    private _default = _mPos getPos [_spezicalPlacement, random 360];
-    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_spezicalPlacement, _baseDirHeli + ((random (_randomDirHeli * 2)) - _randomDirHeli)];
+    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtungHeli] call TB_EOS_fnc_findRandomPos;
     
     private _vehType = if (_hSize > 0) then {4} else {3};
-    private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
+    private _hGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;    
     
     if !(_hGroup isEqualTo []) then
     {
@@ -190,7 +189,6 @@ for "_counter" from 1 to _hGroups do
             private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
             if (!isNull _cargoGrp) then
             {
-                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
                 _hGroup pushBack _cargoGrp;
                 [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
             };
@@ -202,6 +200,7 @@ for "_counter" from 1 to _hGroups do
             _wp1 setWaypointType "SAD";
         };
         
+        (_hGroup select 0) flyInHeight _helicopterHeight;
         _hZoneGroups pushBack _hGroup;
     };
 };

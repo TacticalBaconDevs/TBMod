@@ -1,11 +1,12 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
 
 systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["help", {
     systemChat ("TB-Mod Version: "+ getText (configfile >> "CfgPatches" >> "TBMod_main" >> "versionStr"));
-    systemChat "#tasten, #rechte, #zeus, #safe, #hideGroup, #setGroup";
+    systemChat "#tasten, #rechte, #zeus, #safe, #hideGroup, #setGroup, #fps";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
@@ -22,6 +23,16 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 
 ["zeus", {
     systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name _x}) joinString ", "];
+}, "all"] call CBA_fnc_registerChatCommand;
+
+["fps", {
+    if (player in (call BIS_fnc_listCuratorPlayers)) then
+    {
+        TB_fpsMonitor_zeus = !TB_fpsMonitor_zeus;
+        systemChat format ["Zeus-FPS ist nun %1aktiviert!", ["de", ""] select TB_fpsMonitor_zeus];
+    } else {
+        systemChat "Dieser Befehl ist nur für ZeusSpieler relevant!";
+    };
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["safe", {
@@ -74,7 +85,12 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
     {
         if (_this select 0 == "") exitWith {systemChat "Kein Name wurde angegeben!"};
-        systemChat format ["Gruppe %1 heißt nun %2!", groupId group cursorObject, _this select 0];
+        
+        private _unit = cursorObject;
+        if (isPlayer _unit) then {_unit = objNull};
+        if (!isNull _unit) then {_unit = player};
+        
+        systemChat format ["Gruppe %1 heißt nun %2!", groupId (group player), _this select 0];
         (group cursorObject) setGroupIdGlobal [_this select 0];
     };
 }, "all"] call CBA_fnc_registerChatCommand;
