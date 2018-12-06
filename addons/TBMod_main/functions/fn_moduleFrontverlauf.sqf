@@ -14,13 +14,6 @@ _input params [
 
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {
-    // Konverter String to Array
-    // {
-        // private _value = _logic getVariable _x;
-        // if (!isNil "_value" && _value isEqualType "") then {_logic setVariable [_x, call compile _value]};
-    // }
-    // forEach [];
-    
     private _gridSize = _logic getVariable ["gridSize", 100];
     (getPos _logic) params ["_posX", "_posY"];
     (_logic getVariable ["objectarea", []]) params [["_width", 500], ["_height", 500]];
@@ -81,10 +74,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         private _trg = createTrigger ["EmptyDetector", _pos];
         _trg setTriggerArea [_gridHalb, _gridHalb, 0, true];
         _trg setTriggerActivation ["ANY", "PRESENT", true];
-        _trg setTriggerStatements ["this", format ["
-            private _list = thisList select {_x isKindOf 'CAManBase'};
-            if (_list isEqualTo []) exitWith {};
-            
+        _trg setTriggerStatements ["this && !((thisList select {_x isKindOf 'CAManBase'}) isEqualTo [])", format ["
             private _array = [
                 [west countSide _list, 'colorBLUFOR'],
                 [east countSide _list, 'colorOPFOR'],
@@ -94,9 +84,14 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
             
             _array sort false;
             
+            if (((_array select 0) select 0) == 0) exitWith {
+                '%1' setMarkerColor %3;
+                '%1' setMarkerAlpha ((%2 - 0.1) max 0.1);
+            };
+            
             '%1' setMarkerColor ((_array select 0) select 1);
             '%1' setMarkerAlpha %2;
-        ", _markerName, (_gridAlpha + 0.1) min 1], ""];
+        ", _markerName, (_gridAlpha + 0.1) min 1, _unknowColor], ""];
         _trg setTriggerTimeout _timeoutArray;
     }
     forEach (_markers inAreaArray _area);
