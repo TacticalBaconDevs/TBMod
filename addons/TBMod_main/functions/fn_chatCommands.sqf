@@ -5,7 +5,7 @@
 systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["help", {
     systemChat ("TB-Mod Version: "+ getText (configfile >> "CfgPatches" >> "TBMod_main" >> "versionStr"));
-    systemChat "#tasten, #rechte, #zeus, #safe, #hideGroup, #setGroup";
+    systemChat "#tasten, #rechte, #zeus, #safe, #hideGroup, #setGroup, #fps";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
@@ -29,6 +29,8 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     {
         TB_fpsMonitor_zeus = !TB_fpsMonitor_zeus;
         systemChat format ["Zeus-FPS ist nun %1aktiviert!", ["de", ""] select TB_fpsMonitor_zeus];
+    } else {
+        systemChat "Dieser Befehl ist nur für ZeusSpieler relevant!";
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 

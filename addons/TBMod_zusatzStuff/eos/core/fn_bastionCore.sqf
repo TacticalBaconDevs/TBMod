@@ -8,7 +8,11 @@
     Complete rewrite and modification:
         shukari
 */
-if (!isServer) exitWith {};
+if (!isServer) exitWith {{"[TBMod_zusatzStuff] EOS-BASTION: nur auf Server ausführen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
+if (!canSuspend) exitWith {{"[TBMod_zusatzStuff] EOS-BASTION: nur per spawn aufrufen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
+
+diag_log format ["AUSGABE2: %1", _this];
+systemChat format ["AUSGABE2: %1", _this];
 
 params [
         "_mkr",
@@ -26,10 +30,10 @@ private _mPos = markerpos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _mkrAgl = markerDir _mkr;
 
-_patrolInf params ["_piGroups", "_piSize", "_piGroupsIncrease", "_piSizeIncrease"];
-_lightVeh params ["_lvGroups", "_lvSize", "_lvGroupsIncrease", "_lvSizeIncrease"];
-_armorVeh params ["_avGroups", "_avGroupsIncrease"];
-_helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
+_patrolInf params ["_piGroups", "_piSize", ["_piGroupsIncrease", 0], ["_piSizeIncrease", 0]];
+_lightVeh params ["_lvGroups", "_lvSize", ["_lvGroupsIncrease", 0], ["_lvSizeIncrease", 0]];
+_armorVeh params ["_avGroups", ["_avGroupsIncrease", 0]];
+_helis params ["_hGroups", "_hSize", ["_hGroupsIncrease", 0], ["_hSizeIncrease", 0]];
 
 _settings params ["_faction", "_side", "_heightLimit", "_placementRadius", "_parachuteJump", "_helicopterHeight", "_angriffsRichtung", "_angriffsRichtungHeli"];
 _basSettings params ["_pause", "_waves", "_timeout", "_eosZone", "_hints"];
@@ -148,11 +152,9 @@ for "_counter" from 1 to _lvGroups do
         if (_lvSize > 0) then
         {
             private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
-            [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-            _lvGroup pushBack _cargoGrp;
+            if (!isNull _cargoGrp) then {_lvGroup pushBack _cargoGrp};
         };
 
-        [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
         _lvZoneGroups pushBack _lvGroup;
     };
 };
@@ -169,11 +171,7 @@ for "_counter" from 1 to _avGroups do
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
     private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
     
-    if !(_avGroup isEqualTo []) then
-    {
-        [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;    
-        _avZoneGroups pushBack _avGroup;
-    };
+    if !(_avGroup isEqualTo []) then {_avZoneGroups pushBack _avGroup};
 };
 
 // SPAWN HELICOPTERS        
@@ -196,7 +194,6 @@ for "_counter" from 1 to _hGroups do
             private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
             if (!isNull _cargoGrp) then
             {
-                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
                 _hGroup pushBack _cargoGrp;
                 [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
             };
