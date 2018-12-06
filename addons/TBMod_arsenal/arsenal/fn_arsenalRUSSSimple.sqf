@@ -157,7 +157,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_medic",
             
             // Weapons
-            "rhs_weap_aks74n"           
+            "rhs_weap_aks74n",           
             
             // Backpacks
             "B_TacticalPack_oli"
@@ -174,7 +174,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_medic",
             
             // Weapons
-            "rhs_weap_aks74un"
+            "rhs_weap_aks74un",
             
             // Backpacks
             "OPXT_multicamt_1523"
