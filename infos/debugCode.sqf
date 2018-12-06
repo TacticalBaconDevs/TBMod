@@ -82,7 +82,6 @@ _result;
 ] call CBA_fnc_addPlayerAction;
 
 
-
 //Weapon Ammo Analysis extreme (json)
 diag_log text "[";
 {
