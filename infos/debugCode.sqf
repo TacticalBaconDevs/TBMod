@@ -80,3 +80,44 @@ _result;
         [true, false, false] call ace_spectator_fnc_setSpectator; 
     }, nil, 0, false, true, ""] 
 ] call CBA_fnc_addPlayerAction;
+
+
+//Weapon Ammo Analysis extreme (json)
+diag_log text "[";
+{
+    diag_log text "  {";
+    diag_log text format ["    ""type"":""%1"",",_x];
+    diag_log text "    ""weapons"":[";
+    _weap = "((configName (_x)) isKindof ['"+_x+"', configFile >> 'cfgWeapons']) && (getText (_x >> 'displayName') != '')" configClasses (configFile >> "cfgWeapons"); 
+    {
+        if (count (getArray(_x >> "magazines"))!=0) then
+        {
+            diag_log text "      {";
+            diag_log text format ["        ""weaponclass"":""%1"",", configName _x];
+            diag_log text format ["        ""weaponname"":""%1"",", ((getText (_x >> 'displayName')) splitString """" joinString "")];
+            diag_log text "        ""mags"": [";
+            {
+                _magclass = (configFile >> "CfgMagazines" >> _x);
+                _ammoclass = (configFile >> "CfgAmmo" >> getText(_magclass >> "ammo"));
+                diag_log text "          {";
+                 //ammo = "B_338_NM_Ball";   "    ""weaponclass"":""%1"",",
+                diag_log text format ["            ""magclass"":""%1"",", configName _magclass];
+                diag_log text format ["            ""ammoname"":""%1"",", configName _ammoclass];
+                {
+                    diag_log text format ["          ""%1"":""%2"",", _x, (_ammoclass >> _x) call BIS_fnc_getCfgData];
+                } forEach ["ACE_caliber","ACE_bulletMass","ACE_muzzleVelocities","indirectHit","indirectHitRange","hit","caliber"];
+                diag_log text "            ""dummy"":""false""";
+                diag_log text "          },";
+            }forEach (getArray(_x >> "magazines"));
+            diag_log text "          {""dummy"":""false""}";
+            diag_log text "        ]";
+            diag_log text "      },";
+        };
+    }
+    forEach _weap;
+    diag_log text "      {""dummy"":""false""}";
+    diag_log text "    ]";
+    diag_log text "    },";
+} forEach ["Pistol","Rifle"];
+diag_log text "  {""dummy"":""false""}";
+diag_log text "]";

@@ -162,6 +162,20 @@ class CfgVehicles
                     ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
                 };
+
+                class russ
+                {
+                    displayName = "RUSS";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_russ')) > 0";
+                    
+                    ADD_SUPPLY(Munition,TB_supply_russ_ammo);
+                    ADD_SUPPLY(Granaten,TB_supply_russ_grena);
+                    ADD_SUPPLY(Unterlauf,TB_supply_russ_unterlauf);
+                    ADD_SUPPLY(EinwegWerfer,TB_supply_russ_Einweg);
+                    ADD_SUPPLY(WerferMunition,TB_supply_russ_launcherAmmo);
+                    ADD_SUPPLY(NachtKiste,TB_supply_russ_night);
+                };
                 
                 class packBack
                 {
@@ -377,12 +391,9 @@ class CfgVehicles
         };
     };
 
-    // ###################### USA ########################
+    // ###################### Fraktionskisten ########################
     #include "CfgVehicles_USA.hpp"
-    
-    // ###################### BW #########################
     #include "CfgVehicles_BW.hpp"
-    // ###################### NATO #######################
-
     #include "CfgVehicles_NATO.hpp"
+    #include "CfgVehicles_RUSS.hpp"
 };
