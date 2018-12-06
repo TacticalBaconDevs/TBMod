@@ -11,9 +11,6 @@
 if (!isServer) exitWith {{"[TBMod_zusatzStuff] EOS-BASTION: nur auf Server ausführen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
 if (!canSuspend) exitWith {{"[TBMod_zusatzStuff] EOS-BASTION: nur per spawn aufrufen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
 
-diag_log format ["AUSGABE2: %1", _this];
-systemChat format ["AUSGABE2: %1", _this];
-
 params [
         "_mkr",
         "_patrolInf",
@@ -107,11 +104,9 @@ if (_pause > 0 and !_initialLaunch) then
 };
 
 _angriffsRichtung params ["_baseDir", "_randomDir"];
-_randomDir = 5 max _randomDir min 360;
-private _attackDir = _baseDir + ((random (_randomDir * 2)) - _randomDir);
+_randomDir = 10 max _randomDir min 360;
 _angriffsRichtungHeli params ["_baseDirHeli", "_randomDirHeli"];
-_randomDirHeli = 5 max _randomDirHeli min 360;
-private _attackDirHeli = _baseDirHeli + ((random (_randomDirHeli * 2)) - _randomDirHeli);
+_randomDirHeli = 10 max _randomDirHeli min 360;
 private _playerCount = count (call CBA_fnc_players);
 
 // SPAWN PATROLS        
@@ -120,8 +115,8 @@ _piGroups = round (_piGroups + (_piGroupsIncrease * _playerCount));
 _piSize = round (_piSize + (_piSizeIncrease * _playerCount));
 for "_counter" from 1 to _piGroups do
 {
-    private _default = _mPos getPos [_placement, _attackDir];
-    private _pos = [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_placement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
+    private _pos = [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findRandomPos;
 
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;    
     _piZoneGroups pushBack _piGroup;
@@ -134,8 +129,8 @@ _lvSize = round (_lvSize + (_lvSizeIncrease * _playerCount));
 for "_counter" from 1 to _lvGroups do
 {
     private _spezicalPlacement = _placement + 500;
-    private _default = _mPos getPos [_spezicalPlacement, _attackDir];
-    private _newpos = [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_spezicalPlacement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
+    private _newpos = [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findRandomPos;
     
     private _vehType = 7;
     private _cargoType = 9;
@@ -165,8 +160,8 @@ _avGroups = round (_avGroups + (_avGroupsIncrease * _playerCount));
 for "_counter" from 1 to _avGroups do
 {
     private _spezicalPlacement = _placement + 700;
-    private _default = _mPos getPos [_spezicalPlacement, _attackDir];
-    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_spezicalPlacement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
+    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findRandomPos;
     
     private _vehType = if (surfaceiswater _newpos) then {8} else {2};
     private _avGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
@@ -181,8 +176,8 @@ _hSize = round (_hSize + (_hSizeIncrease * _playerCount));
 for "_counter" from 1 to _hGroups do
 {
     private _spezicalPlacement = _placement + 1000;
-    private _default = _mPos getPos [_spezicalPlacement, _attackDirHeli];
-    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]]] call BIS_fnc_findSafePos;
+    private _default = _mPos getPos [_spezicalPlacement, _baseDirHeli + ((random (_randomDirHeli * 2)) - _randomDirHeli)];
+    private _newpos = [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtungHeli] call TB_EOS_fnc_findRandomPos;
     
     private _vehType = if (_hSize > 0) then {4} else {3};
     private _hGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;    

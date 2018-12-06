@@ -12,9 +12,6 @@
 if (!isServer) exitWith {{"[TBMod_zusatzStuff] EOS-ZONE: nur auf Server ausführen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
 if (!canSuspend) exitWith {{"[TBMod_zusatzStuff] EOS-ZONE: nur per spawn aufrufen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
 
-diag_log format ["AUSGABE1: %1", _this];
-systemChat format ["AUSGABE1: %1", _this];
-
 params [
         "_mkr",
         "_hausInf",
@@ -91,9 +88,6 @@ waitUntil {triggerActivated _eosActivated};
 
 if (getMarkerColor _mkr != "ColorBlack") then
 {
-    _angriffsRichtungHeli params ["_baseDirHeli", "_randomDirHeli"];
-    _randomDirHeli = 5 max _randomDirHeli min 360;
-    private _attackDirHeli = _baseDirHeli + ((random (_randomDirHeli * 2)) - _randomDirHeli);
     private _playerCount = count (call CBA_fnc_players);
     
     // SPAWN HOUSE PATROLS
@@ -221,6 +215,8 @@ if (getMarkerColor _mkr != "ColorBlack") then
     };
 
     // SPAWN CHOPPER
+    _angriffsRichtungHeli params ["_baseDirHeli", "_randomDirHeli"];
+    _randomDirHeli = 10 max _randomDirHeli min 360;
     private _hZoneGroups = [];
     if (!_cache) then
     {
@@ -231,8 +227,8 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {
         private _vehType = if (_hSize > 0) then {4} else {3};
         
-        private _newpos = [markerpos _mkr, 3000, _attackDirHeli] call BIS_fnc_relPos;    
-        private _hGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;    
+        private _newpos = [markerpos _mkr, 3000 + ((random 500) - 250), _baseDirHeli + ((random _randomDirHeli) - (_randomDirHeli / 2))] call BIS_fnc_relPos;    
+        private _hGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
         
         if !(_hGroup isEqualTo []) then
         {

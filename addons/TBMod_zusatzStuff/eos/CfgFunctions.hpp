@@ -28,5 +28,6 @@ class TBMod_zusatzStuff_LV
         class shk_buildingpos {};
         class transportUnload {};
         class fileExists {};
+        class findRandomPos {};
     };
 };
