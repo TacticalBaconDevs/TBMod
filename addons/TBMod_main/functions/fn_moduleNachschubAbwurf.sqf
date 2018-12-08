@@ -3,13 +3,13 @@
 */
 params ["_logic", "", "_activated"];
 
+if !(local _logic) exitWith {true};
 private _pos = getPos _logic;
-private _local = local _logic;
 deleteVehicle _logic;
-
-if !(_local) exitWith {true};
 if !(_activated) exitWith {true};
+if (isNull _unit) exitWith {true};
 
+// TODO: automatisch generieren
 private _nachschubsKisten = ["### ALLE ###", "TB_supply_all_medic", "TB_supply_all_funk", "TB_supply_all_mortar", "TB_supply_all_mortarAmmo", "TB_supply_all_misc", "TB_supply_all_mp5",
         "### USA ###", "TB_supply_usa_ammo", "TB_supply_usa_ammoSmall", "TB_supply_usa_grena", "TB_supply_usa_unterlauf", "TB_supply_usa_spezial", "TB_supply_usa_launcher", "TB_supply_usa_launcherAmmo", "TB_supply_usa_javlinAmmo", "TB_supply_usa_MAAWSAmmo", "TB_supply_usa_SMAWAmmo", "TB_supply_usa_notfallm4", "TB_supply_usa_night",
         "### BW ###", "TB_supply_bw_ammo", "TB_supply_bw_ammoSmall", "TB_supply_bw_grena", "TB_supply_bw_unterlauf", "TB_supply_bw_spezial", "TB_supply_bw_launcher", "TB_supply_bw_launcherAmmo", "TB_supply_bw_notfallg36", "TB_supply_bw_night"];

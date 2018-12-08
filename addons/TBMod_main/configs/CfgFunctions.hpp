@@ -25,7 +25,7 @@ class CfgFunctions
             class insertChildrenGruppen {};
             class garage {};
             class garageGUI {};
-            class extremMedicMode {};
+            class inkognitoSystem {};
             class doorBreach {};
             class recoilSystem {};
             class crashHelferClient {};
@@ -42,6 +42,7 @@ class CfgFunctions
             class keysForAI {};
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
+            class moduleFrontverlauf {};
         };
         
         class gcam
@@ -56,7 +57,10 @@ class CfgFunctions
     {
         class ui_f_eventHandler
         {
-            class onDisplayCuratorLoad {file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";};
+            class onDisplayCuratorLoad
+            {
+                file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";
+            };
         };
     };
     

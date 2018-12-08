@@ -129,6 +129,22 @@ class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
             typeName = "BOOL";
             defaultValue = "false";
         };
+        class helicopterHeight: Edit
+        {
+            property = "TB_zusatz_eos_normaleZone_helicopterHeight";
+            displayName = "Flughöhe der Helis";
+            tooltip = "Wie hoch über dem Boden sollen die Helis fliegen!";
+            typeName = "NUMBER";
+            defaultValue = "500";
+        };
+        class angriffsRichtungHeli: Edit
+        {
+            property = "TB_zusatz_eos_normaleZone_angriffsRichtungHeli";
+            displayName = "Angriffsrichtung Helis";
+            tooltip = "Aus welcher Richtung sollen die Helis angreifen. (Angabe in 360 Grad Angabe, [RICHTUNG, RANDOM])";
+            typeName = "STRING";
+            defaultValue = "[0, 360]";
+        };
     };
 };
 
@@ -254,6 +270,30 @@ class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
             tooltip = "Lässt die Einheiten nicht landen, sondern per Fallschirm abwerfen";
             typeName = "BOOL";
             defaultValue = "false";
+        };
+        class helicopterHeight: Edit
+        {
+            property = "TB_zusatz_eos_normaleZone_helicopterHeight";
+            displayName = "Flughöhe der Helis";
+            tooltip = "Wie hoch über dem Boden sollen die Helis fliegen!";
+            typeName = "NUMBER";
+            defaultValue = "500";
+        };
+        class angriffsRichtung: Edit
+        {
+            property = "TB_zusatz_eos_normaleZone_angriffsRichtung";
+            displayName = "Angriffsrichtung Bodentruppen";
+            tooltip = "Aus welcher Richtung sollen die Bodentruppen angreifen. (Angabe in 360 Grad Angabe, [RICHTUNG, RANDOM])";
+            typeName = "STRING";
+            defaultValue = "[0, 360]";
+        };
+        class angriffsRichtungHeli: Edit
+        {
+            property = "TB_zusatz_eos_normaleZone_angriffsRichtungHeli";
+            displayName = "Angriffsrichtung Helis";
+            tooltip = "Aus welcher Richtung sollen die Helis angreifen. (Angabe in 360 Grad Angabe, [RICHTUNG, RANDOM])";
+            typeName = "STRING";
+            defaultValue = "[0, 360]";
         };
     };
 };

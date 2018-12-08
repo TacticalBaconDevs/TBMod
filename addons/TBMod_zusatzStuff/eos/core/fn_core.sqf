@@ -9,7 +9,8 @@
         shukari
         Eric Ruhland
 */
-if (!isServer) exitWith {};
+if (!isServer) exitWith {{"[TBMod_zusatzStuff] EOS-ZONE: nur auf Server ausführen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
+if (!canSuspend) exitWith {{"[TBMod_zusatzStuff] EOS-ZONE: nur per spawn aufrufen" remoteExecCall [_x]} forEach ["systemChat", "diag_log"]};
 
 params [
         "_mkr",
@@ -28,14 +29,14 @@ private _mPos = markerPos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _mkrAgl = markerDir _mkr;
 
-_hausInf params ["_hiGroups", "_hiSize", "_hiGroupsIncrease", "_hiSizeIncrease"];
-_patrolInf params ["_piGroups", "_piSize", "_piGroupsIncrease", "_piSizeIncrease"];
-_lightVeh params ["_lvGroups", "_lvSize", "_lvGroupsIncrease", "_lvSizeIncrease"];
-_armorVeh params ["_avGroups", "_avGroupsIncrease"];
-_statics params ["_stGroups", "_stGroupsIncrease"];
-_helis params ["_hGroups", "_hSize", "_hGroupsIncrease", "_hSizeIncrease"];
+_hausInf params ["_hiGroups", "_hiSize", ["_hiGroupsIncrease", 0], ["_hiSizeIncrease", 0]];
+_patrolInf params ["_piGroups", "_piSize", ["_piGroupsIncrease", 0], ["_piSizeIncrease", 0]];
+_lightVeh params ["_lvGroups", "_lvSize", ["_lvGroupsIncrease", 0], ["_lvSizeIncrease", 0]];
+_armorVeh params ["_avGroups", ["_avGroupsIncrease", 0]];
+_statics params ["_stGroups", ["_stGroupsIncrease", 0]];
+_helis params ["_hGroups", "_hSize", ["_hGroupsIncrease", 0], ["_hSizeIncrease", 0]];
 
-_settings params ["_faction", "_distance", "_side", ["_heightLimit", false], "_parachuteJump"];
+_settings params ["_faction", "_distance", "_side", "_heightLimit", "_parachuteJump", "_helicopterHeight", "_angriffsRichtungHeli"];
 
 private _civZone = false;
 private _enemyFaction = "east";
@@ -45,7 +46,7 @@ if (_side == CIVILIAN) then {_enemyFaction = "civ"; _civZone = true};
 
 // INITIATE ZONE
 private _trig = format ["EOSTrigger%1", _mkr];
-private _eosActivated = tb_server getVariable [_trig, objNull];
+private _eosActivated = missionNamespace getVariable [_trig, objNull];
 if (!_cache) then
 {
     private _actCond = if (isMultiplayer) then
@@ -77,7 +78,7 @@ if (!_cache) then
     _eosActivated setTriggerTimeout [1, 1, 1, true];
     _eosActivated setTriggerStatements [_actCond, "", ""];
 
-    tb_server setVariable [_trig, _eosActivated];
+    missionNamespace setVariable [_trig, _eosActivated];
 };
 
 if (getMarkerColor _mkr != "ColorGreen") then {_mkr setMarkerColor "ColorRed"};
@@ -116,7 +117,6 @@ if (getMarkerColor _mkr != "ColorBlack") then
                 [_hiGroup, _mkr] call TB_EOS_fnc_shk_patrol;
             };
             
-            [_hiGroup, "INFskill"] call TB_EOS_fnc_setSkill;
             _hiZoneGroups pushBack _hiGroup;
         };
     };
@@ -141,7 +141,6 @@ if (getMarkerColor _mkr != "ColorBlack") then
             private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
             [_piGroup, _mkr] call TB_EOS_fnc_shk_patrol;
             
-            [_piGroup,"INFskill"] call TB_EOS_fnc_setSkill;
             _piZoneGroups pushBack _piGroup;
         };
     };    
@@ -171,13 +170,10 @@ if (getMarkerColor _mkr != "ColorBlack") then
             if (_lvSize > 0) then
             {
                 private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
-                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-                _lvGroup pushBack _cargoGrp;
+                if (!isNull _cargoGrp) then {_lvGroup pushBack _cargoGrp};
             };
 
-            [_lvGroup select 2, "LIGskill"] call TB_EOS_fnc_setSkill;
             [_lvGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
-            
             _lvZoneGroups pushBack _lvGroup;
         };
     };
@@ -197,9 +193,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         
         if !(_avGroup isEqualTo []) then
         {
-            [_avGroup select 2, "ARMskill"] call TB_EOS_fnc_setSkill;
             [_avGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
-        
             _avZoneGroups pushBack _avGroup;
         };
     };
@@ -217,14 +211,12 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _newpos = [_mkr, 50] call TB_EOS_fnc_findSafePos;
         private _stGroup = [_newpos, _side, _faction, 5] call TB_EOS_fnc_spawnVehicle;
 
-        if !(_stGroup isEqualTo []) then
-        {
-            [_stGroup select 2, "STAskill"] call TB_EOS_fnc_setSkill;
-            _stZoneGroups pushBack _stGroup;
-        };
+        if !(_stGroup isEqualTo []) then {_stZoneGroups pushBack _stGroup};
     };
 
     // SPAWN CHOPPER
+    _angriffsRichtungHeli params ["_baseDirHeli", "_randomDirHeli"];
+    _randomDirHeli = 10 max _randomDirHeli min 360;
     private _hZoneGroups = [];
     if (!_cache) then
     {
@@ -235,17 +227,19 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {
         private _vehType = if (_hSize > 0) then {4} else {3};
         
-        private _newpos = [markerpos _mkr, 3000, random 360] call BIS_fnc_relPos;    
-        private _hGroup = [_newpos, _side, _faction, _vehType, "FLY"] call TB_EOS_fnc_spawnVehicle;    
+        private _newpos = [markerpos _mkr, 3000 + ((random 500) - 250), _baseDirHeli + ((random _randomDirHeli) - (_randomDirHeli / 2))] call BIS_fnc_relPos;    
+        private _hGroup = [_newpos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
         
         if !(_hGroup isEqualTo []) then
         {
             if (_hSize > 0) then
             {
                 private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
-                [_cargoGrp, "INFskill"] call TB_EOS_fnc_setSkill;
-                _hGroup pushBack _cargoGrp;
-                [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
+                if (!isNull _cargoGrp) then
+                {
+                    _hGroup pushBack _cargoGrp;
+                    [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
+                };
             }
             else
             {
@@ -254,7 +248,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
                 _wp1 setWaypointType "SAD";
             };
             
-            [_hGroup select 2, "AIRskill"] call TB_EOS_fnc_setSkill;
+            (_hGroup select 0) flyInHeight _helicopterHeight;
             _hZoneGroups pushBack _hGroup;
         };
     };
