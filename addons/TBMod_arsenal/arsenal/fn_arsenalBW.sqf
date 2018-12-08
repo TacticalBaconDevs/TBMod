@@ -13,39 +13,25 @@ private _allgemein = [
     "BWA3_FieldPack_Tropen",
     "B_Parachute",
     // ### LR-Funke
+    // "TFAR_rt1523g_big_bwmod",
+    // "TFAR_rt1523g_big_bwmod_tropen",
     // "TFAR_rt1523g_big",
-    "TFAR_rt1523g_big_bwmod",
-    "TFAR_rt1523g_big_bwmod_tropen",
     // "TFAR_rt1523g_big_rhs",
+    "OPXT_blk_1523",    // schwarz
+    "OPXT_aor1_1523",   // sand
+    "OPXT_oga_1523",    // grün
+    "OPXT_scorpion_1523",
+    "OPXT_m81_1523",
+    "OPXT_multicam_1523",
+    "OPXT_at_au_1523",  // grau1
+    "OPXT_ogag_1523",   //grau2
 
     // Gesichtsbedeckung
     "BWA3_G_Combat_clear",
     "BWA3_G_Combat_orange",
     "BWA3_G_Combat_black",
     // ### Vanilla
-    //"rhs_googles_orange",
-    //"rhs_googles_yellow",
-    //"rhs_googles_clear",
-    //"rhs_googles_black",
-    "G_Bandanna_shades",
-    "G_Bandanna_beast",
-    "G_Bandanna_tan",
-    "G_Bandanna_khk",
-    "G_Bandanna_oli",
-    "G_Bandanna_aviator",
-    "G_Bandanna_blk",
-    "G_Bandanna_sport",
-    "G_Combat",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Shades_Black",
-    "G_Balaclava_combat",
-    "G_Balaclava_lowprofile",
-    "G_Balaclava_oli",
-    "G_Balaclava_blk",
-    "G_Tactical_Clear",
-    "G_Tactical_Black",
+    "G_Aviator",
 
     // Nachtsichtgeräte
     "ACE_NVG_Gen4",
@@ -72,65 +58,51 @@ private _allgemein = [
 
     // Items
     // ### Sprays
-    "ACE_SpraypaintBlue",
-    "ACE_SpraypaintGreen",
-    "ACE_SpraypaintRed",
-    "ACE_SpraypaintBlack",
+    //"ACE_SpraypaintBlue",
+    //"ACE_SpraypaintGreen",
+    //"ACE_SpraypaintRed",
+    //"ACE_SpraypaintBlack",
     // ### Lampe
     "ACE_Chemlight_Shield",
-    "ACE_Flashlight_XL50",
+    //"ACE_Flashlight_XL50",
     "ACE_Flashlight_KSF1",
-    "ACE_Flashlight_MX991",
+    //"ACE_Flashlight_MX991",
     // ### Items
     "ACE_RangeTable_82mm",
     "ACE_MapTools",
     "ACE_CableTie",
-    "ACE_IR_Strobe_Item",
+    //"ACE_IR_Strobe_Item",
     "ACE_HuntIR_monitor",
     "ACE_EntrenchingTool",
-    "ACE_Sandbag_empty",
+    //"ACE_Sandbag_empty",
     "ACE_SpareBarrel",
-    "ACE_microDAGR",
+    //"ACE_microDAGR",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
-    "ACE_Chemlight_Orange",
-    "ACE_Chemlight_HiOrange",
     "ACE_Chemlight_HiRed",
-    "ACE_Chemlight_White",
     "ACE_Chemlight_HiWhite",
-    "Chemlight_blue",
-    "Chemlight_yellow",
-    "Chemlight_green",
-    "Chemlight_red",
     // ### BuildingItems
-    "TB_building_item_RoadBarrier_F",
-    "TB_building_item_RoadCone_F",
-    "TB_building_item_Land_PortableLight_single_F",
-    "TB_building_item_Land_Pallet_vertical_F",
     "TB_building_item_Land_BagFence_Long_F",
     "TB_building_item_Land_BagFence_Round_F",
     "TB_building_item_ace_concertinawirecoil",
-    "TB_building_item_Land_SandbagBarricade_01_hole_F",
+    //"TB_building_item_RoadBarrier_F",
+    //"TB_building_item_RoadCone_F",
+    //"TB_building_item_Land_PortableLight_single_F",
+    //"TB_building_item_Land_Pallet_vertical_F",
+    //"TB_building_item_Land_SandbagBarricade_01_hole_F",
     // ### Granaten
     "SmokeShell",
-    "SmokeShellYellow",
+    //"SmokeShellYellow",
     "SmokeShellRed",
     "SmokeShellGreen",
-    "SmokeShellPurple",
+    //"SmokeShellPurple",
     "SmokeShellBlue",
-    "SmokeShellOrange",
+    //"SmokeShellOrange",
     "BWA3_DM51A1",
-    //"rhs_mag_mk84",
     "ACE_M84",
-    //"rhs_mag_mk3a2",
-    //"rhs_mag_m67",
-    // ### Mörsermunition
-    "ACE_1Rnd_82mm_Mo_HE",
-    "ACE_1Rnd_82mm_Mo_Smoke",
-    "ACE_1Rnd_82mm_Mo_Illum",
-    "AMP_Breaching_Charge_Mag",
-    "TB_Item_liveMonitor"
+    // ### Spreng
+    "AMP_Breaching_Charge_Mag"
 ];
 
 private _allgemein_gewehre = [
@@ -465,10 +437,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_Kitbag_Fleck_Medic",
             "BWA3_Kitbag_Tropen_Medic",
             "BWA3_TacticalPack_Fleck_Medic",
-            "BWA3_TacticalPack_Tropen_Medic",
-
-            // Items
-            "TB_Item_liveMonitor"
+            "BWA3_TacticalPack_Tropen_Medic"
         ]
     };
 
@@ -506,10 +475,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Uniform
             "BWA3_Uniform_Helipilot",
             "BWA3_Uniform_Crew_Fleck",
-            "BWA3_Uniform_Crew_Tropen",
-
-            // Items
-            "TB_Item_liveMonitor"
+            "BWA3_Uniform_Crew_Tropen"
         ]
     };
 

@@ -34,8 +34,9 @@ if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
 [
     {
         {
-           if ((units _x) isEqualTo []) then {[_x] call CBA_fnc_deleteEntity};
-        } forEach allGroups;
+            if ((units _x) isEqualTo []) then {[_x] call CBA_fnc_deleteEntity};
+        }
+        forEach allGroups;
     },
     1800
 ] call CBA_fnc_addPerFrameHandler;

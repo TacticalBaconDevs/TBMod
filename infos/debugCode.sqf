@@ -24,8 +24,8 @@ private _first = configfile >> "CfgGesturesMale" >> "States" >> "tb_radioSR";
 private _second = configfile >> "CfgGesturesMale" >> "States" >> "tb_radioLR";
 private _attribute = [];
 diag_log format ["### Vergleich -> %1 | %2 ###", configName _first, configName _second];
-{_attribute pushBackUnique (configName _x)} forEach (configProperties [_first, "true", true]);
-{_attribute pushBackUnique (configName _x)} forEach (configProperties [_second, "true", true]);
+{_attribute pushBackUnique (toLower (configName _x))} forEach (configProperties [_first, "true", true]);
+{_attribute pushBackUnique (toLower (configName _x))} forEach (configProperties [_second, "true", true]);
 {
     private _valueFirst = (_first >> _x) call BIS_fnc_getCfgData;
     private _valueSecond = (_second >> _x) call BIS_fnc_getCfgData;
@@ -56,6 +56,7 @@ private _resultset = [];
 ];
 _resultset;
 
+
 //get all weapons with name
 _result = [];
 {
@@ -67,3 +68,56 @@ _result = [];
 }
 forEach (("true" configClasses (configfile >> "CfgWeapons")) + ("true" configClasses (configfile >> "CfgMagazines")) + ("true" configClasses (configfile >> "CfgGlasses")) + ("true" configClasses (configfile >> "CfgVehicles")));
 _result;
+
+
+// spectator
+[ 
+    ["Spectator", { 
+        [allPlayers, allUnits - allPlayers] call ace_spectator_fnc_updateUnits; 
+        [[west], [east,civilian,independent]] call ace_spectator_fnc_updateSides; 
+        [[1,2,0], []] call ace_spectator_fnc_updateCameraModes; 
+        [[-2,-1,0], []] call ace_spectator_fnc_updateVisionModes; 
+        [true, false, false] call ace_spectator_fnc_setSpectator; 
+    }, nil, 0, false, true, ""] 
+] call CBA_fnc_addPlayerAction;
+
+
+//Weapon Ammo Analysis extreme (json)
+diag_log text "[";
+{
+    diag_log text "  {";
+    diag_log text format ["    ""type"":""%1"",",_x];
+    diag_log text "    ""weapons"":[";
+    _weap = "((configName (_x)) isKindof ['"+_x+"', configFile >> 'cfgWeapons']) && (getText (_x >> 'displayName') != '')" configClasses (configFile >> "cfgWeapons"); 
+    {
+        if (count (getArray(_x >> "magazines"))!=0) then
+        {
+            diag_log text "      {";
+            diag_log text format ["        ""weaponclass"":""%1"",", configName _x];
+            diag_log text format ["        ""weaponname"":""%1"",", ((getText (_x >> 'displayName')) splitString """" joinString "")];
+            diag_log text "        ""mags"": [";
+            {
+                _magclass = (configFile >> "CfgMagazines" >> _x);
+                _ammoclass = (configFile >> "CfgAmmo" >> getText(_magclass >> "ammo"));
+                diag_log text "          {";
+                 //ammo = "B_338_NM_Ball";   "    ""weaponclass"":""%1"",",
+                diag_log text format ["            ""magclass"":""%1"",", configName _magclass];
+                diag_log text format ["            ""ammoname"":""%1"",", configName _ammoclass];
+                {
+                    diag_log text format ["          ""%1"":""%2"",", _x, (_ammoclass >> _x) call BIS_fnc_getCfgData];
+                } forEach ["ACE_caliber","ACE_bulletMass","ACE_muzzleVelocities","indirectHit","indirectHitRange","hit","caliber"];
+                diag_log text "            ""dummy"":""false""";
+                diag_log text "          },";
+            }forEach (getArray(_x >> "magazines"));
+            diag_log text "          {""dummy"":""false""}";
+            diag_log text "        ]";
+            diag_log text "      },";
+        };
+    }
+    forEach _weap;
+    diag_log text "      {""dummy"":""false""}";
+    diag_log text "    ]";
+    diag_log text "    },";
+} forEach ["Pistol","Rifle"];
+diag_log text "  {""dummy"":""false""}";
+diag_log text "]";

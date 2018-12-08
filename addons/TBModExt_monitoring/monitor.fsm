@@ -1,0 +1,89 @@
+/*%FSM<COMPILE "F:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, TBMod CPSCheck">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,-59.068329,-205.029190,30.931671,-155.029190,0.000000,"START"};
+item1[] = {"_",8,218,-58.132935,-138.972412,31.867065,-88.972412,0.000000,""};
+item2[] = {"cps_check",2,250,-57.158752,-71.236877,32.841263,-21.236877,0.000000,"cps check"};
+item3[] = {"reset",4,4314,70.814934,-71.390854,160.814941,-21.390854,0.000000,"reset"};
+item4[] = {"loop",4,218,-186.440948,-71.390823,-96.440948,-21.390823,1.000000,"loop"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {3,2};
+link5[] = {4,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,12,6316128,1,-243.836441,195.692963,275.361755,-305.079071,942,1244,1};
+window[] = {2,-1,-1,-1,-1,1085,156,1596,156,3,960};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "TBMod CPSCheck";
+        class States
+        {
+                /*%FSM<STATE "START">*/
+                class START
+                {
+                        name = "START";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_nextRun = diag_tickTime + TB_intervall;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="cps_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_cps = 0;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "cps_check">*/
+                class cps_check
+                {
+                        name = "cps_check";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_cps = _cps + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "loop">*/
+                                class loop
+                                {
+                                        itemno = 4;
+                                        priority = 1.000000;
+                                        to="cps_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_nextRun >= diag_tickTime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "reset">*/
+                                class reset
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="cps_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_nextRun < diag_tickTime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_nextRun = diag_tickTime + TB_intervall;" \n
+                                         "" \n
+                                         "TB_extensionQueue pushBack [""cps"", _cps];" \n
+                                         "_cps = 0;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="START";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

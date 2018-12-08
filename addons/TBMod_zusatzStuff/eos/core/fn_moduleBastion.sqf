@@ -20,7 +20,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
         private _value = _logic getVariable _x;
         if (!isNil "_value" && _value isEqualType "") then {_logic setVariable [_x, call compile _value]};
     }
-    forEach ["patrolInf", "lightVeh", "armorVeh", "helis", "side", "settings", "bastionSettings"];
+    forEach ["patrolInf", "lightVeh", "armorVeh", "helis", "side", "settings", "bastionSettings", "angriffsRichtung", "angriffsRichtungHeli"];
     
     (_logic getVariable ["objectarea", []]) params [["_w", 300], ["_h", 300]];
     // private _radius = _w min _h;
@@ -36,16 +36,19 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     _settings pushBack (_logic getVariable ["heightCheck", true]);
     _settings pushBack (_logic getVariable ["activRadius", 500]);
     _settings pushBack (_logic getVariable ["heliAbspringen", false]);
+    _settings pushBack (_logic getVariable ["helicopterHeight", 500]);
+    _settings pushBack (_logic getVariable ["angriffsRichtung", [0, 360]]);
+    _settings pushBack (_logic getVariable ["angriffsRichtungHeli", [0, 360]]);
     
     [
-        [_marker],
+        _marker,
         _logic getVariable ["patrolInf", [0, 0]],
         _logic getVariable ["lightVeh", [0, 0]],
         _logic getVariable ["armorVeh", [0]],
         _logic getVariable ["helis", [0, 0]],
         _settings,
         _logic getVariable ["bastionSettings", [30, 3, 600, true, false]]
-    ] spawn TB_EOS_fnc_bastionSpawn;
+    ] spawn TB_EOS_fnc_bastionCore;
 };
 
 true

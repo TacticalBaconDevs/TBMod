@@ -11,9 +11,9 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
-        version = 1.1.3;
-        versionStr = "1.1.3";
-        versionAr[] = {1,1,3};
+        version = 1.2.0;
+        versionStr = "1.2.0";
+        versionAr[] = {1,2,0};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -37,7 +37,7 @@ class CfgPatches
             "Flare_82mm_AMOS_White"
         };
 
-        requiredVersion = 1.82;
+        requiredVersion = 1.84;
         requiredAddons[] = {
             // Arma3
             "A3_Data_F_Tank_Loadorder",
@@ -53,6 +53,9 @@ class CfgPatches
 
             // TFAR
             "tfar_core",
+            // Reskins
+            "OPXT_TFAR",
+            "opxt_tfar_backpacks",
 
             // 3rd PartyMods
             "achilles_language_f",

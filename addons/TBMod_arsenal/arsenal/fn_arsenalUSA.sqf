@@ -2,37 +2,25 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 
-    Author: shukari
+    Ansprechpartner: shukari
 */
 private _allgemein = [
     // Gepäck
-    "rhsusf_assault_eagleaiii_coy",
+    "rhsusf_assault_eagleaiii_coy", // maximumLoad = 160; mass = 20; Quotient = 8
     "rhsusf_assault_eagleaiii_ocp",
     "rhsusf_assault_eagleaiii_ucp",
-    "rhsusf_falconii_coy",
+    "rhsusf_falconii_coy",          // maximumLoad = 160; mass = 20; Quotient = 8
     "rhsusf_falconii_mc",
     "B_Parachute",
     // ### LR-Funke
-    //"TFAR_rt1523g",
-    //"TFAR_rt1523g_big",
-    //"TFAR_rt1523g_big_bwmod",
-    //"TFAR_rt1523g_big_bwmod_tropen",
-    //"TFAR_rt1523g_big_rhs",
-    //"TFAR_rt1523g_black",
-    //"TFAR_rt1523g_bwmod",
-    //"TFAR_rt1523g_fabric",
-    //"TFAR_rt1523g_green",
-    //"TFAR_rt1523g_rhs",
-    //"TFAR_rt1523g_sage",
-    // OPXT
-    "OPXT_blk_1523", // schwarz
-    "OPXT_aor1_1523", // sand
-    "OPXT_oga_1523", // grün
+    "OPXT_blk_1523",    // schwarz
+    "OPXT_aor1_1523",   // sand
+    "OPXT_oga_1523",    // grün
     "OPXT_scorpion_1523",
     "OPXT_m81_1523",
     "OPXT_multicam_1523",
-    "OPXT_at_au_1523", // grau1
-    "OPXT_ogag_1523", //grau2
+    "OPXT_at_au_1523",  // grau1
+    "OPXT_ogag_1523",   //grau2
 
     // Gesichtsbedeckung
     "rhs_googles_orange",
@@ -68,7 +56,7 @@ private _allgemein = [
     "rhsusf_Rhino",
 
     // Ferngläser
-    "m24_bino", //"Binocular",
+    "m24_bino",
     "Leupold_Mk4",
 
     // Karte
@@ -88,58 +76,38 @@ private _allgemein = [
     "ACE_Altimeter",
 
     // Items
-    // ### Sprays
-    //"ACE_SpraypaintBlue",
-    //"ACE_SpraypaintGreen",
-    //"ACE_SpraypaintRed",
-    //"ACE_SpraypaintBlack",
     // ### Lampe
     "ACE_Chemlight_Shield",
-    //"ACE_Flashlight_XL50",
     "ACE_Flashlight_KSF1",
-    //"ACE_Flashlight_MX991",
     // ### Items
-    //"ACE_RangeTable_82mm",
     "ACE_MapTools",
     "ACE_CableTie",
-    "ACE_IR_Strobe_Item",
-    "ACE_HuntIR_monitor",
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
-    //"ACE_microDAGR",
+    //"ACE_IR_Strobe_Item",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
-    //"ACE_Chemlight_Orange",
-    //"ACE_Chemlight_HiOrange",
     "ACE_Chemlight_HiRed",
-    //"ACE_Chemlight_White",
     "ACE_Chemlight_HiWhite",
-    //"Chemlight_blue",
-    //"Chemlight_yellow",
-    //"Chemlight_green",
-    //"Chemlight_red",
     // ### BuildingItems
+    "TB_building_item_Land_BagFence_Long_F",
+    "TB_building_item_Land_BagFence_Round_F",
+    "TB_building_item_ace_concertinawirecoil",
     //"TB_building_item_RoadBarrier_F",
     //"TB_building_item_RoadCone_F",
     //"TB_building_item_Land_PortableLight_single_F",
     //"TB_building_item_Land_Pallet_vertical_F",
-    "TB_building_item_Land_BagFence_Long_F",
-    "TB_building_item_Land_BagFence_Round_F",
-    "TB_building_item_ace_concertinawirecoil",
     //"TB_building_item_Land_SandbagBarricade_01_hole_F",
     // ### Granaten
     "SmokeShell",
-    //"SmokeShellYellow",
     "SmokeShellRed",
     "SmokeShellGreen",
-    //"SmokeShellPurple",
     "SmokeShellBlue",
-    //"SmokeShellOrange",
     "rhs_mag_mk84",
-    //"ACE_M84",
     "rhs_mag_mk3a2",
     "rhs_mag_m67",
+    // ### Sprengstoff
     "AMP_Breaching_Charge_Mag"
 ];
 
@@ -300,8 +268,7 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
     "hlc_pistol_P226R_357Combat",
-    "TB_weap_taser",
-    "TB_weap_CoolererTaser",
+    "tb_weap_taser",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
     "hlc_muzzle_Octane9",
@@ -318,8 +285,7 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_mag_17Rnd_9x19_FMJ",
     "hlc_12Rnd_357SIG_B_P226",
     "hlc_12Rnd_357SIG_JHP_P226",
-    "TB_mag_taser",
-    "TB_mag_taser2"
+    "TB_mag_taser"
 ];
 
 private _allgemein_uniformen = [
@@ -577,14 +543,14 @@ private _aaat_munition = [
 ];
 
 private _gepaeck_mittel = [
-    "B_Kitbag_cbr",
+    "B_Kitbag_cbr",     // maximumLoad = 280; mass = 50; Quotient = 5,6
     "B_Kitbag_sgg",
     "B_Kitbag_rgr",
     "B_Kitbag_mcamo"
 ];
 
 private _gepaeck_gross = [
-    "B_Carryall_cbr",
+    "B_Carryall_cbr",   // maximumLoad = 320; mass = 60; Quotient = 5,3
     "B_Carryall_ocamo",
     "B_Carryall_khk",
     "B_Carryall_mcamo",
@@ -652,6 +618,9 @@ _items append (switch (_rolle) do
             "rhsusf_spcs_ucp_squadleader",
             "rhsusf_spcs_ucp_teamleader",
 
+            // Waffen
+            "rhs_weap_m4a1_d",
+
             // Gepäck
             //"B_UAV_01_backpack_F",
 
@@ -667,6 +636,7 @@ _items append (switch (_rolle) do
             // Items
             //"B_UavTerminal",
             //"ACE_UAVBattery",
+            "ACE_HuntIR_monitor",
             "Laserbatteries"
         ]
     };
@@ -692,10 +662,7 @@ _items append (switch (_rolle) do
             "rhsusf_mbav_Medic",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
-            "rhsusf_spcs_ucp_medic",
-
-            // Item
-            "TB_Item_liveMonitor"
+            "rhsusf_spcs_ucp_medic"
         ]
     };
 
@@ -728,10 +695,7 @@ _items append (switch (_rolle) do
             "rhsusf_cvc_green_ess",
             "rhsusf_cvc_helmet",
             "rhsusf_cvc_alt_helmet",
-            "rhsusf_cvc_ess",
-
-            // Item
-            "TB_Item_liveMonitor"
+            "rhsusf_cvc_ess"
         ]
     };
 
@@ -757,7 +721,10 @@ _items append (switch (_rolle) do
             "rhsusf_mbav_Grenadier",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_grenadier",
-            "rhsusf_spcs_ucp_grenadier"
+            "rhsusf_spcs_ucp_grenadier",
+            
+            // Items
+            "ACE_HuntIR_monitor"
         ]
     };
 
@@ -1101,6 +1068,7 @@ _items append (switch (_rolle) do
             "ACE_Kestrel4500",
             "ACE_RangeCard",
             "Laserbatteries",
+            "ACE_HuntIR_monitor",
             // ### Minen
             "APERSTripMine_Wire_Mag",
             "APERSBoundingMine_Range_Mag",
@@ -1127,7 +1095,7 @@ _items append (switch (_rolle) do
             "ACE_VMH3",
             "ACE_VMM3",
             
-            // Vesten
+            // Westen
             "rhsusf_mbav_rifleman",
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",
@@ -1226,7 +1194,6 @@ _items append (switch (_rolle) do
 
             // Items
             "B_UavTerminal",
-            "ITC_Land_B_UAV_AR2i",
             "ACE_UAVBattery",
             "Laserbatteries"
         ]
@@ -1251,7 +1218,7 @@ _items append (switch (_rolle) do
             "ACE_VMH3",
             "ACE_VMM3",
             
-            // Vesten
+            // Weste
             "rhsusf_mbav_rifleman",
             "rhsusf_iotv_ucp_Rifleman",
             "rhsusf_iotv_ocp_Rifleman",

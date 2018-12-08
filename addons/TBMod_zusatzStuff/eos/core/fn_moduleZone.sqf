@@ -1,8 +1,6 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-    
-    Author: shukari
 */
 params [
         ["_mode", "", [""]],
@@ -20,7 +18,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
         private _value = _logic getVariable _x;
         if (!isNil "_value" && _value isEqualType "") then {_logic setVariable [_x, call compile _value]};
     }
-    forEach ["hausInf", "patrolInf", "lightVeh", "armorVeh", "statics", "helis", "side", "settings"];
+    forEach ["hausInf", "patrolInf", "lightVeh", "armorVeh", "statics", "helis", "side", "settings", "angriffsRichtungHeli"];
     
     (_logic getVariable ["objectarea", []]) params [["_w", 300], ["_h", 300]];
     // private _radius = _w min _h;
@@ -36,9 +34,11 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     _settings pushBack (_logic getVariable ["side", EAST]);
     _settings pushBack (_logic getVariable ["heightCheck", true]);
     _settings pushBack (_logic getVariable ["heliAbspringen", false]);
+    _settings pushBack (_logic getVariable ["helicopterHeight", 500]);
+    _settings pushBack (_logic getVariable ["angriffsRichtungHeli", [0, 360]]);
     
     [
-        [_marker],
+        _marker,
         _logic getVariable ["hausInf", [0, 0]],
         _logic getVariable ["patrolInf", [0, 0]],
         _logic getVariable ["lightVeh", [0, 0]],
@@ -46,7 +46,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
         _logic getVariable ["statics", [0]],
         _logic getVariable ["helis", [0, 0]],
         _settings
-    ] spawn TB_EOS_fnc_spawn;
+    ] spawn TB_EOS_fnc_core;
 };
 
 true

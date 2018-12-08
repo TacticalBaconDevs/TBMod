@@ -2,20 +2,12 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 
-    Author: shukari
+    Ansprechpartner: IDarky
 */
-// Hier kommen alle Items rein die ALLE Rollen haben
-_items = [
-    // Head
-    "H_HelmetSpecB",
-    "H_HelmetSpecB_paint1",
-    "H_HelmetSpecB_sand",
-    "H_HelmetSpecB_snakeskin",
-    "H_HelmetSpecB_blk",
-    "H_HelmetB_Enh_tna_F",
-    "H_HelmetSpecB_paint2",
-
-    // Goggles
+// Mengen definierung
+private _allgemein = [
+    
+    // Gesichtsbedeckung
     "G_Bandanna_shades",
     "G_Bandanna_beast",
     "G_Bandanna_tan",
@@ -35,73 +27,51 @@ _items = [
     "G_Balaclava_blk",
     "G_Tactical_Clear",
     "G_Tactical_Black",
-    
-    // Uniforms
-    "U_B_CTRG_1",
-    "U_B_CTRG_2",
-    "U_B_CTRG_Soldier_urb_1_F",
-    "U_B_CTRG_Soldier_F",
-    "U_B_CombatUniform_mcam",
-    
-    // Vests
-    "V_PlateCarrierSpec_rgr",
-    "V_PlateCarrierSpec_tna_F",
-    "V_PlateCarrierSpec_mtp",
-    "V_PlateCarrierSpec_blk",
-    "V_PlateCarrier2_rgr_noflag_F",
-    "V_PlateCarrier2_blk",
-    "V_PlateCarrier2_tna_F",
-    "V_HarnessO_brn",
-    "V_HarnessO_gry",
-    
-    // Backpacks
-    "B_Parachute",
+
+    //Pistolen + Munition
+    "hgun_Pistol_heavy_01_F",
+    "hgun_P07_F",
+    "hgun_P07_khk_F",
+    "tb_weap_taser",
+    "16Rnd_9x21_green_Mag",
+    "TB_mag_taser",
+    "11Rnd_45ACP_Mag",
+
+
+    //Rucksäcke
     "ACE_TacticalLadder_Pack",
-    "B_AssaultPack_rgr",
-    "B_AssaultPack_tna_F",
-    "B_AssaultPack_mcamo",
-    "B_AssaultPack_blk",
-    "B_AssaultPack_cbr",
-    //"B_AssaultPack_sgg",
-    //"B_AssaultPack_dgtl",
-    //"B_AssaultPack_ocamo",
-    //"B_AssaultPack_khk",
     "B_Kitbag_cbr",
     "B_Kitbag_sgg",
     "B_Kitbag_rgr",
     "B_Kitbag_mcamo",
-    
-    // LR-Funke
-    "TFAR_rt1523g_big",
-    "TFAR_rt1523g_big_bwmod",
-    "TFAR_rt1523g_big_bwmod_tropen",
-    "TFAR_rt1523g_big_rhs",
-    //schwarz
-    "OPXT_blk_1523",
-    "OPXT_blk_210",
-    "OPXT_blk_117",
-    //tropen
-    "OPXT_at_ix_1523",
-    "OPXT_at_ix_210",
-    "OPXT_at_ix_117",
-    "OPXT_at_fg_1523",
-    "OPXT_at_fg_210",
-    "OPXT_at_fg_117",
-    "OPXT_multicamt_1523",
-    "OPXT_multicamt_210",
-    "OPXT_multicamt_117",
-    //MTP+Multicam
-    "OPXT_scorpion_1523",
-    "OPXT_scorpion_210",
-    "OPXT_scorpion_117",
-    "OPXT_multicam_1523",
-    "OPXT_multicam_210",
-    "OPXT_multicam_117",
-    "OPXT_wht_1523",
-    
-    // SR-Funke
-    "TFAR_anprc152",
-    
+    "B_Parachute",
+
+    // Attachments
+    "acc_flashlight",
+    "ACE_acc_pointer_green",
+    "ACE_acc_pointer_green_IR",
+    "ACE_muzzle_mzls_H",
+    "muzzle_snds_H",
+    "muzzle_snds_H_snd_F",
+    "bipod_01_F_snd",
+    "bipod_01_F_blk",
+    "ACE_muzzle_mzls_smg_01",
+    "muzzle_snds_acp",
+    "ACE_muzzle_mzls_smg_02",
+    "muzzle_snds_L",
+    "muzzle_snds_m",
+    "muzzle_snds_m_khk_f",
+    "muzzle_snds_m_snd_f",
+    "muzzle_snds_h_mg_blk_f",
+    "muzzle_snds_h_mg",
+    "muzzle_snds_h_mg_khk_f",
+    "muzzle_snds_b_khk_f",
+    "muzzle_snds_b_snd_f",
+    "muzzle_snds_b",
+    "bipod_02_f_mtp",
+    "bipod_02_f_snd",
+    "bipod_02_f_blk",
+
     // Items
     "ACE_NVG_Gen4",
     "ACE_CableTie",
@@ -130,17 +100,7 @@ _items = [
     "ACE_HuntIR_M203",
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
-    
-    // Weapons
-    "hgun_Pistol_heavy_01_F",
-    "hgun_P07_F",
-    "arifle_MX_F",
-    "arifle_MX_Black_F",
-    "arifle_MX_khk_F",
-    "arifle_SPAR_01_blk_F",
-    "arifle_SPAR_01_snd_F",
-    "arifle_SPAR_01_khk_F",
-    
+
     // Visiere
     "optic_ACO_grn_smg",
     "optic_ACO_grn_smg",
@@ -156,35 +116,11 @@ _items = [
     "optic_MRCO",
     "optic_NVS",
     "optic_MRD",
-    
-    // Attachments
-    "acc_flashlight",
-    "ACE_acc_pointer_green",
-    "ACE_acc_pointer_green_IR",
-    "ACE_muzzle_mzls_H",
-    "muzzle_snds_H",
-    "muzzle_snds_H_snd_F",
-    "bipod_01_F_snd",
-    "bipod_01_F_blk",
-    "ACE_muzzle_mzls_smg_01",
-    "muzzle_snds_acp",
-    "ACE_muzzle_mzls_smg_02",
-    "muzzle_snds_L",
+    "optic_holosight_khk_f",
+    "optic_holosight",
+    "optic_yorris",
 
-    // Mags
-    "30Rnd_65x39_caseless_mag",
-    "30Rnd_65x39_caseless_mag_Tracer",
-    "100Rnd_65x39_caseless_mag",
-    "100Rnd_65x39_caseless_mag_Tracer",
-    "30Rnd_556x45_Stanag_Tracer_Red",
-    "30Rnd_556x45_Stanag_Tracer_Green",
-    "30Rnd_556x45_Stanag_Tracer_Yellow",
-    "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
-    "ACE_30Rnd_556x45_Stanag_Mk218_mag",
-    "ACE_30Rnd_556x45_Stanag_Mk318_mag",
-    "11Rnd_45ACP_Mag",
-    "30Rnd_9x21_Mag",
-    "30Rnd_9x21_Mag_SMG_02",
+    //Granaten
     "HandGrenade",
     "MiniGrenade",
     "SmokeShell",
@@ -194,6 +130,8 @@ _items = [
     "SmokeShellPurple",
     "SmokeShellBlue",
     "SmokeShellOrange",
+
+    //Unterlaufgranten
     "1Rnd_HE_Grenade_shell",
     "1Rnd_Smoke_Grenade_shell",
     "1Rnd_SmokeRed_Grenade_shell",
@@ -215,17 +153,104 @@ _items = [
     "UGL_FlareRed_F",
     "UGL_FlareYellow_F",
     "UGL_FlareCIR_F",
-    
-    // Mörser Rounds
-    "ACE_1Rnd_82mm_Mo_HE",
-    "ACE_1Rnd_82mm_Mo_Smoke",
-    "ACE_1Rnd_82mm_Mo_Illum",
-    
+
+    // SR-Funke
+    "TFAR_anprc152",
+
     // Diving
     "G_B_Diving",
     "U_B_Wetsuit",
-    "V_RebreatherB"
+    "V_RebreatherB",
+
+    // Mörser Rounds
+    "ACE_1Rnd_82mm_Mo_HE",
+    "ACE_1Rnd_82mm_Mo_Smoke",
+    "ACE_1Rnd_82mm_Mo_Illum"
 ];
+
+private _allgemein_Uniform = [
+    "U_B_CTRG_1",
+    "U_B_CTRG_2",
+    "U_B_CTRG_3",
+    "U_B_CTRG_Soldier_urb_1_F",
+    "U_B_CTRG_Soldier_urb_2_F",
+    "U_B_CTRG_Soldier_urb_3_F",
+    "U_B_CTRG_Soldier_F",
+    "U_B_CTRG_Soldier_2_F",
+    "U_B_CTRG_Soldier_3_F",
+    "U_B_CombatUniform_mcam",
+    "U_B_CombatUniform_mcam_tshirt",
+    "U_B_CombatUniform_mcam_vest",
+    "U_B_T_Soldier_F",
+    "U_B_T_Soldier_AR_F",
+    "U_B_T_Soldier_SL_F"
+];
+    
+private _allgemein_Westen = [
+    "V_PlateCarrierSpec_rgr",
+    "V_PlateCarrierSpec_tna_F",
+    "V_PlateCarrierSpec_mtp",
+    "V_PlateCarrierSpec_blk",
+    "V_PlateCarrier2_rgr_noflag_F",
+    "V_PlateCarrier2_blk",
+    "V_PlateCarrier2_tna_F"
+];
+
+private _LR = [
+    //schwarz
+    "OPXT_blk_1523",
+    //tropen
+    "OPXT_at_ix_1523",
+    "OPXT_at_fg_1523",
+    "OPXT_multicamt_1523",
+    //MTP+Multicam
+    "OPXT_scorpion_1523",
+    "OPXT_multicam_1523",
+    "OPXT_wht_1523"
+
+];
+
+private _allgemein_Helm = [  
+    // Head
+    "H_HelmetSpecB",
+    "H_HelmetSpecB_paint1",
+    "H_HelmetSpecB_sand",
+    "H_HelmetSpecB_snakeskin",
+    "H_HelmetSpecB_blk",
+    "H_HelmetB_Enh_tna_F",
+    "H_HelmetSpecB_paint2"
+];
+
+private _allgemein_Waffen = [
+    "arifle_MX_F",
+    "arifle_MX_Black_F",
+    "arifle_MX_khk_F",
+    "arifle_SPAR_01_blk_F",
+    "arifle_SPAR_01_snd_F",
+    "arifle_SPAR_01_khk_F"    
+];
+
+private _allgemein_Magazine = [
+    "30Rnd_65x39_caseless_mag",
+    "30Rnd_65x39_caseless_mag_Tracer",
+    "30Rnd_556x45_Stanag_Tracer_Red",
+    "30Rnd_556x45_Stanag_Tracer_Green",
+    "30Rnd_556x45_Stanag_Tracer_Yellow",
+    "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
+    "ACE_30Rnd_556x45_Stanag_Mk218_mag",
+    "ACE_30Rnd_556x45_Stanag_Mk318_mag"
+];
+
+private _allgemein_WaffeGL = [
+    "arifle_MX_GL_F",
+    "arifle_MX_GL_Black_F",
+    "arifle_MX_GL_khk_F",
+    "arifle_SPAR_01_GL_blk_F",
+    "arifle_SPAR_01_GL_snd_F",
+    "arifle_SPAR_01_GL_khk_F"
+
+];
+
 
 
 // #################################################################
@@ -236,23 +261,14 @@ _items = [
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
-    {
-        [
-            // Backpacks
-            "B_UAV_01_backpack_F",
-            "B_Bergen_dgtl_F",
-            "B_Bergen_hex_F",
-            "B_Bergen_mcamo_F",
-            "B_Bergen_tna_F",
-            
-            // Weapons
-            "arifle_MX_GL_F",
-            "arifle_MX_GL_Black_F",
-            "arifle_MX_GL_khk_F",
-            "arifle_SPAR_01_GL_blk_F",
-            "arifle_SPAR_01_GL_snd_F",
-            "arifle_SPAR_01_GL_khk_F",
-            
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Magazine +
+        _allgemein_WaffeGL +
+        [ 
             // Items
             "B_UavTerminal",
             "ACE_UAVBattery",
@@ -262,34 +278,51 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
     
     case "sani":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
         [
             "TB_Item_liveMonitor"
         ]
     };
     
     case "arzt":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
+        _LR +
         [
             "TB_Item_liveMonitor"
         ]
     };
     
     case "grena":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Magazine +
+        _allgemein_WaffeGL +
         [
-            // Weapons
-            "arifle_MX_GL_F",
-            "arifle_MX_GL_Black_F",
-            "arifle_MX_GL_khk_F",
-            "arifle_SPAR_01_GL_blk_F",
-            "arifle_SPAR_01_GL_snd_F",
-            "arifle_SPAR_01_GL_khk_F"
         ]
     };
     
     case "dmr":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Magazine +
         [
             // Weapons
             "arifle_MXM_F",
@@ -304,7 +337,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             //Magazine
             "20Rnd_762x51_Mag",
-            "ACE_20Rnd_762x51_Mag_Tracer",
             
             //Attachments
             "optic_DMS"
@@ -312,7 +344,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
     
     case "mg":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
         [
             // Weapons
             "arifle_MX_SW_F",
@@ -321,39 +357,82 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_02_blk_F",
             "arifle_SPAR_02_snd_F",
             "arifle_SPAR_02_khk_F",
+            "LMG_03_F",
 
             // Magazine
             "150Rnd_556x45_Drum_Mag_Tracer_F",
             "200Rnd_556x45_Box_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_Red_F"
+            "200Rnd_556x45_Box_Tracer_Red_F",
+            "100Rnd_65x39_caseless_mag_Tracer"
         ]
     };
     
     case "trag":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
         [
             // Backpack
-            "B_Bergen_dgtl_F",
-            "B_Bergen_hex_F",
-            "B_Bergen_mcamo_F",
-            "B_Bergen_tna_F"
+            "B_Carryall_cbr",
+            "B_Carryall_ocamo",
+            "B_Carryall_khk",
+            "B_Carryall_mcamo",
+            "B_Carryall_oli",
+            "B_Carryall_oucamo",
+
+            // Magazine
+            "150Rnd_556x45_Drum_Mag_Tracer_F",
+            "200Rnd_556x45_Box_Tracer_F",
+            "200Rnd_556x45_Box_Tracer_Red_F",
+            "20Rnd_762x51_Mag",
+
+            //AT
+            "Vorona_HEAT",
+            "Vorona_HE",
+            "MRAWS_HEAT_F",
+            "MRAWS_HE_F"
         ]
     };
     
     case "pilot":
-    {
+    {   
+        _allgemein +
+        _LR +
         [
             // Head
             "H_HelmetCrew_I",
+            "H_PilotHelmetFighter_B",
+            "H_CrewHelmetHeli_B",
 
             // Goggles
             "G_Aviator",
             
             // Uniforms
             "U_B_HeliPilotCoveralls",
-            
+
+            // Westen 
+            "V_DeckCrew_blue_F",
+            "V_DeckCrew_brown_F",
+            "V_DeckCrew_yellow_F",
+            "V_DeckCrew_green_F",
+            "V_DeckCrew_red_F",
+            "V_DeckCrew_violet_F",
+            "V_DeckCrew_white_F",
+
             // Weapons
             "SMG_02_F",
+            "SMG_01_F",
+            "SMG_05_F",
+            "hgun_PDW2000_F",
+            
+            // Magazine
+            "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
+            "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+            "30Rnd_9x21_Yellow_Mag",
             
             // Items
             "ToolKit"
@@ -361,19 +440,30 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
     
     case "rifle":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
         [
             
         ]
     };
     
     case "sniper":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Westen +
+        _LR +
         [
             // Uniforms
             "U_B_FullGhillie_sard",
             "U_B_FullGhillie_ard",
             "U_B_FullGhillie_lsh",
+            "U_B_GhillieSuit",
 
             // Items
             "ACE_RangeTable_82mm",
@@ -390,14 +480,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ace_gunbag",
             "ace_gunbag_Tan",
             
-            // Weapons
+            // Waffen
             "srifle_GM6_F",
             "srifle_GM6_ghex_F",
             "srifle_GM6_camo_F",
+            "srifle_LRR_F",
+            "srifle_LRR_camo_F",
             
-            // Mags
+            // Magazine 
             "5Rnd_127x108_Mag",
             "5Rnd_127x108_APDS_Mag",
+            "7Rnd_408_Mag",
+            "ACE_7Rnd_408_305gr_Mag",
             
             // Attachments
             "optic_LRPS",
@@ -412,12 +506,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
     
     case "spotter":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Westen +
+        _allgemein_Magazine +
+        _allgemein_WaffeGL +
+        _LR +
         [
             // Uniforms
             "U_B_FullGhillie_sard",
             "U_B_FullGhillie_ard",
             "U_B_FullGhillie_lsh",
+            "U_B_GhillieSuit",
 
             // Items
             "ACE_RangeTable_82mm",
@@ -430,34 +531,34 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserbatteries",
             "ACE_Vector",
             
-            // Waffen
-            "arifle_MX_GL_F",
-            "arifle_MX_GL_Black_F",
-            
-            // Mags
+            // Magazine
             "5Rnd_127x108_Mag",
             "5Rnd_127x108_APDS_Mag",
+            "7Rnd_408_Mag",
+            "ACE_7Rnd_408_305gr_Mag",
             
             // Waffenbag
             "ace_gunbag",
-            "ace_gunbag_Tan",
-            
-            // Mags
-            "APERSTripMine_Wire_Mag",
-            "APERSBoundingMine_Range_Mag",
-            "APERSMine_Range_Mag"
+            "ace_gunbag_Tan"
         ]
     };
     
     case "spreng":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
         [
-            // Vests
-            "V_PlateCarrierGL_mtp",
-            "V_PlateCarrierGL_tna_F",
-            "V_PlateCarrierGL_rgr",
-            "V_PlateCarrierGL_blk",
-            
+            // Westen
+           "V_EOD_olive_F",
+           "V_EOD_coyote_F",
+           "V_PlateCarrierGL_tna_F",
+           "V_PlateCarrierGL_mtp",
+           "V_PlateCarrierGL_blk",
+           "V_PlateCarrierGL_rgr",
+
             // Items
             "MineDetector",
             "ACE_wirecutter",
@@ -471,7 +572,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMH3",
             "ACE_VMM3",
             
-            // Mags
+            // Minen
             "ATMine_Range_Mag",
             "APERSMine_Range_Mag",
             "APERSBoundingMine_Range_Mag",
@@ -483,7 +584,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
     
     case "aaat":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
         [
             // AT
             "launch_NLAW_F",
@@ -504,12 +611,27 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "launch_B_Titan_short_F",
             "launch_I_Titan_short_F",
             "Titan_AT",
-            "Titan_AP"
+            "Titan_AP",
+
+            // Magazine
+            "Vorona_HEAT",
+            "Vorona_HE",
+            "MRAWS_HEAT_F",
+            "MRAWS_HE_F"
+
+
         ]
     };
     
     case "jtac":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_WaffeGL +
+        _allgemein_Magazine +
+        _LR +
         [
             // Backpacks
             "B_UAV_01_backpack_F",
@@ -523,7 +645,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
     
     case "pionier":
-    {
+    {   
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
         [
             // Items
             "MineDetector",
@@ -531,6 +658,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_wirecutter",
             "ACE_DefusalKit",
             "ToolKit",
+
+            // Westen
+            "V_EOD_olive_F",
+            "V_EOD_coyote_F",
+            "V_PlateCarrierGL_tna_F",
+            "V_PlateCarrierGL_mtp",
+            "V_PlateCarrierGL_blk",
+            "V_PlateCarrierGL_rgr",
             
             // Minensucher
             "ACE_VMH3",
