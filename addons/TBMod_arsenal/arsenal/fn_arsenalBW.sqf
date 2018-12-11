@@ -191,6 +191,7 @@ private _allgemein_handfeuerwaffen = [
     // Handfeuerwaffen
     "BWA3_P2A1",
     "BWA3_P8",
+    "hlc_pistol_P226R_Combat",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -200,10 +201,15 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_1Rnd_Flare_Multistar_Green",
     "BWA3_1Rnd_Flare_Multistar_Red",
     "BWA3_15Rnd_9x19_P8",
+    "hlc_15Rnd_9x19_B_P226",
+    "hlc_15Rnd_9x19_JHP_P226",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
-    "BWA3_acc_LLM01_flash"
+    "BWA3_acc_LLM01_flash",
+    "hlc_optic_docter_cadex",
+    "hlc_acc_dbalpl_fl",
+    "muzzle_snds_l"
 ];
 
 private _allgemein_uniformen = [
@@ -270,11 +276,6 @@ private _grenadier_munition = [
 ];
 
 private _dmr_munition = [
-    "BWA3_10Rnd_762x51_G28",
-    "BWA3_10Rnd_762x51_G28_Tracer",
-    "BWA3_10Rnd_762x51_G28_Tracer_Dim",
-    "BWA3_10Rnd_762x51_G28_SD",
-    "BWA3_10Rnd_762x51_G28_AP",
     "BWA3_10Rnd_762x51_G28_LR",
     "BWA3_20Rnd_762x51_G28", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer", //G27 und G28 Patrol
@@ -311,15 +312,12 @@ private _pilot_munition = [
 ];
 
 private _sniper_munition = [
-    "BWA3_10Rnd_127x99_G82",
-    "BWA3_10Rnd_127x99_G82_Tracer",
-    "BWA3_10Rnd_127x99_G82_Tracer_Dim",
-    "BWA3_10Rnd_127x99_G82_AP",
-    "BWA3_10Rnd_127x99_G82_AP_Tracer",
     "BWA3_10Rnd_127x99_G82_SD",
     "BWA3_10Rnd_127x99_G82_Raufoss",
     "BWA3_10Rnd_127x99_G82_Raufoss_Tracer",
-    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim"
+    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim",
+    "hlc_5rnd_300WM_T_AWM",
+    "hlc_5rnd_300WM_FMJ_AWM"
 ];
 
 private _aaat_munition = [
@@ -519,26 +517,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_Vest_Marksman_Tropen",
 
             // Weapons
-            "BWA3_G27",
-            "BWA3_G27_tan",
-            "BWA3_G28",
             "BWA3_G28_Patrol",
             "hlc_rifle_g3sg1ris",
-            "hlc_rifle_g3sg1",
             // ### Visiere
-            "hlc_optic_VOMZ3d",         // x3.5
-            "hlc_optic_ZF95Base",       // x6
-            "BWA3_optic_PMII_ShortdotCC", //x8
-            "hlc_optic_LeupoldM3A",     // x10
-            "hlc_optic_LeupoldM3A_G3",  // x10
-            "BWA3_optic_PMII_DMR",         // x20
-            "hlc_optic_accupoint_g3",
-            //"hlc_optic_PVS4G3",
-            //"hlc_optic_STANAGZF_G3",
-            //"hlc_optic_STANAGZF2D_G3",
-            //"hlc_optic_ZF95_g3",
-            
-            //"HLC_Optic_ZFSG1",
+            "BWA3_optic_PMII_ShortdotCC",   //x8 
+            "optic_ams",                    // x8.8 Vanilla
+                        
             // ### Schalli
             "hlc_muzzle_300blk_KAC",
 
@@ -672,11 +656,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "BWA3_G82",
-
+            "hlc_rifle_awMagnum_FDE_ghillie",
+            "hlc_rifle_awMagnum_FDE",
             "BWA3_MP7",
+
             // ### Visiere
-            "BWA3_optic_Hensoldt",
-            "BWA3_optic_PMII_DMR",
+            "bwa3_optic_m5xi_msr",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
 
