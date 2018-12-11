@@ -276,7 +276,6 @@ private _grenadier_munition = [
 ];
 
 private _dmr_munition = [
-    "BWA3_10Rnd_762x51_G28_LR",
     "BWA3_20Rnd_762x51_G28", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
@@ -522,7 +521,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Visiere
             "BWA3_optic_PMII_ShortdotCC",   //x8 
             "optic_ams",                    // x8.8 Vanilla
-                        
+            
             // ### Schalli
             "hlc_muzzle_300blk_KAC",
 
