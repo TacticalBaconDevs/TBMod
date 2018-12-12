@@ -24,7 +24,7 @@ private _classname = TB_nachschubsKisten select _ID;
 if (_classname select [0, 3] == "###") exitWith {systemChat "Bitte wähle eine Kiste aus, keine Kategorie!"; true};
 
 private _parachute = createVehicle ["B_Parachute_02_F", [0, 0, 0], [], 0, 'FLY'];
-private _supplyBox = createVehicle [TB_nachschubsKisten select _ID, [0, 0, 0], [], 0, "FLY"];
+private _supplyBox = createVehicle [_classname, [0, 0, 0], [], 0, "FLY"];
 
 if (_windKorrektur == 1) then
 {
