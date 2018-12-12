@@ -39,7 +39,7 @@ TB_recoilID = ["ace_firedPlayer", {
     private _deploy = isWeaponDeployed _unit;
     
     // Spezielle WaffenStats
-    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([2, 1] select _deploy)};
+    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([2.5, 1] select _deploy)};
     if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {_recoil = _recoil - 0.5};
     
     // Externe Einflüsse
