@@ -37,17 +37,14 @@ _naschschubConfigs sort false;
 TB_nachschubsKisten = [];
 private _lastOrderNr = -1;
 {
-    _x params ["_order", "_name"];
+    _x params ["_order"];
     
     if (_lastOrderNr != _order) then
     {
         _lastOrderNr = _order;
         TB_nachschubsKisten pushBackUnique (format ["### %1 ###",getText (configFile >> 'CfgEditorSubcategories' >> getText ((_x select 2) >> 'editorSubcategory') >> "displayName")]);
-        TB_nachschubsKisten pushBackUnique _name;
-    }
-    else
-    {
-        TB_nachschubsKisten pushBackUnique _name;
     };
+    
+    TB_nachschubsKisten pushBackUnique (_x select 1);
 }
 forEach _naschschubConfigs;
