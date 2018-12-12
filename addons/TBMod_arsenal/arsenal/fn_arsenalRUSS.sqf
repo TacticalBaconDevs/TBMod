@@ -55,21 +55,21 @@ private _allgemein = [
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
     "ACE_Chemlight_HiRed",
-    "ACE_Chemlight_HiWhite",
+    //"ACE_Chemlight_HiWhite",
+    "ACE_Chemlight_HiBlue",
+    "ACE_Chemlight_HiGreen",
+    "ACE_Chemlight_UltraHiOrange",
     // ### BuildingItems
     "TB_building_item_Land_BagFence_Long_F",
     "TB_building_item_Land_BagFence_Round_F",
     "TB_building_item_ace_concertinawirecoil",
     // ### Granaten
-    "SmokeShellBlue",
-    "rhs_GRD40_Red",
-    "rhs_GRD40_White",
-    "rhs_GRD40_Green",
-    "rhs_GDM40",
-    "rhs_mag_mk84",
-    "rhs_mag_mk3a2",
+    "rhs_mag_rgn",
+    "rhs_mag_rgo",
+    "rhs_mag_zarya2",       // Stunnade
     "rhs_mag_rdg2_black",
     "rhs_mag_rdg2_white",
+    "rhs_mag_nspd",         // orange smoke
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag"
 ];
@@ -90,6 +90,7 @@ private _allgemein_gewehre = [
 _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
+    "rhs_acc_1p29",
     "rhs_acc_pkas",
     "rhs_acc_ekp8_02",
     "rhs_acc_1p78",
@@ -112,8 +113,8 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_raketenwerfer = [
-    "rhs_weap_rpg26",
-    "rhs_weap_rshg2"
+    "rhs_weap_rpg26",   // is a disposable anti-tank rocket launcher designed to destroy light armored targets
+    "rhs_weap_rshg2"    // is a disposable assault rocket launcher designed for destroying infantry hidden in cover. It uses thermobaric warhead which is deadly within range of 12meters
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -177,20 +178,19 @@ private _grenadier_munition = [
     "rhs_GRD40_Green",
     "rhs_GRD40_Red",
     "rhs_GRD40_White",
-    "rhs_VG40SZ",
-    "rhs_VG40TB",
-    "rhs_VOG25",
-    "rhs_VOG25P"
+    "rhs_VG40SZ",       // flashbang
+    "rhs_VG40TB",       // thermobaric grenade (dead zone is 3 m wide, after safe)
+    "rhs_VOG25",        // HE
+    "rhs_VOG25P"        // HE jumping grenade
 ];
 
 private _dmr_munition = [
-    "rhs_10Rnd_763x54mmR_7N14",
-    "rhs_10Rnd_763x54mmR_7N1"
+    "rhs_10Rnd_762x54mmR_7N14"
 ];
 
 private _mg_munition = [
-    "rhs_75Rnd_762x39mm_tracer",
-    "rhs_75Rnd_762x39mm"
+    "rhs_100Rnd_762x54mmR_green",
+    "rhs_100Rnd_762x54mmR_7N26"
 ];
 
 private _pilot_munition = [
@@ -203,12 +203,13 @@ private _sniper_munition = [
 ];
 
 private _aaat_munition = [
-    "rhs_rpg7_type69_airburst_mag",
-    "rhs_rpg7_TBG7V_mag",
+    //"rhs_rpg7_type69_airburst_mag",// schlechter Effekt
+    "rhs_rpg7_OG7V_mag",
+    //"rhs_rpg7_TBG7V_mag",         // kein deutlich besserer Effekt, vll zuviel des guten
     "rhs_rpg7_PG7VR_mag",
-    "rhs_rpg7_PG7V_mag",
+    //"rhs_rpg7_PG7V_mag",          // schlechte PG7VL Variante
     "rhs_rpg7_PG7VL_mag",
-    "rhs_mag_9k38_rocket"
+    "rhs_mag_9k38_rocket"           // AA-Rocket
 ];
 
 private _gepaeck_mittel = [
@@ -387,9 +388,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _mg_munition +
         [
             // Gewehr
-            "rhs_weap_pm63",
-            "rhs_weap_ak103_zenitco01_b33",
-            // TODO MGS
+            "rhs_weap_pkp",
             
             // Weste
             "rhs_6b13_EMR_6sh92_vog",

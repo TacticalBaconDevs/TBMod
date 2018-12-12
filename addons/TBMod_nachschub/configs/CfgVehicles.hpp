@@ -129,7 +129,7 @@ class CfgVehicles
                     ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
                     ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
                     ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
-                    ADD_SUPPLY(NotfallM4,TB_supply_usa_notfallm4);
+                    ADD_SUPPLY(NotfallWaffen,TB_supply_usa_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                 };
         
@@ -170,10 +170,13 @@ class CfgVehicles
                     condition = "(count (entities 'TB_arsenal_russ')) > 0";
                     
                     ADD_SUPPLY(Munition,TB_supply_russ_ammo);
+                    ADD_SUPPLY(KleinMunition,TB_supply_russ_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_russ_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_russ_unterlauf);
-                    ADD_SUPPLY(EinwegWerfer,TB_supply_russ_Einweg);
+                    ADD_SUPPLY(SpezialMunition,TB_supply_russ_spezial);
+                    ADD_SUPPLY(Werfer,TB_supply_russ_launcher);
                     ADD_SUPPLY(WerferMunition,TB_supply_russ_launcherAmmo);
+                    ADD_SUPPLY(NotfallWaffen,TB_supply_russ_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_russ_night);
                 };
                 
