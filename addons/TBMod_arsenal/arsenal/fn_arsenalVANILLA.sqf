@@ -251,7 +251,7 @@ private _allgemein_WaffeGL = [
 
 ];
 
-
+private _items = [];
 
 // #################################################################
 // LAYOUTS
@@ -268,6 +268,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Magazine +
         _allgemein_WaffeGL +
+        _LR +
         [ 
             // Items
             "B_UavTerminal",
@@ -285,6 +286,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _LR +
         [
             "TB_Item_liveMonitor"
         ]
@@ -651,6 +653,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Uniform +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _LR +
         [
             // Items
             "MineDetector",

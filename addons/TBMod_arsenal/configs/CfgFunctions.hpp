@@ -38,6 +38,7 @@ class CfgFunctions
             class arsenalThemen {};
             class arsenalUSAVietnam {};
             class arsenalRUSSSimple {};
+            class arsenalVANILLACOP {};
         };
     };
 };

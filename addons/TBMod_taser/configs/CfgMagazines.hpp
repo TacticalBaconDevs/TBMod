@@ -16,6 +16,6 @@ class CfgMagazines
         descriptionShort = "Taser Magazin<br />Rounds: 3<br />Benutzt in: Taser";
         displayName = "Taser Magazin";
         displaynameshort = "Taser Magazin";
-        mass = 21; // 7
+        mass = 14; // 7
     };
 };
