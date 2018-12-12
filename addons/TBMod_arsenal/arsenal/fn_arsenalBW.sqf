@@ -276,7 +276,10 @@ private _grenadier_munition = [
 ];
 
 private _dmr_munition = [
+<<<<<<< HEAD
     "BWA3_10Rnd_762x51_G28_LR",
+=======
+>>>>>>> bb3099583c8236f38cf6d778b91f9570600d4488
     "BWA3_20Rnd_762x51_G28", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
@@ -312,7 +315,14 @@ private _pilot_munition = [
 ];
 
 private _sniper_munition = [
+<<<<<<< HEAD
     "7Rnd_408_Mag",
+=======
+    "BWA3_10Rnd_127x99_G82_SD",
+    "BWA3_10Rnd_127x99_G82_Raufoss",
+    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer",
+    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim",
+>>>>>>> bb3099583c8236f38cf6d778b91f9570600d4488
     "hlc_5rnd_300WM_T_AWM",
     "hlc_5rnd_300WM_FMJ_AWM"
 ];
@@ -519,7 +529,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Visiere
             "BWA3_optic_PMII_ShortdotCC",   //x8 
             "optic_ams",                    // x8.8 Vanilla
+<<<<<<< HEAD
                         
+=======
+            
+>>>>>>> bb3099583c8236f38cf6d778b91f9570600d4488
             // ### Schalli
             "hlc_muzzle_300blk_KAC",
 
@@ -652,8 +666,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _pilot_munition +
         [
             // Gewehre
+<<<<<<< HEAD
             "srifle_LRR_F",
             "srifle_LRR_tna_F",
+=======
+            "BWA3_G82",
+>>>>>>> bb3099583c8236f38cf6d778b91f9570600d4488
             "hlc_rifle_awMagnum_FDE_ghillie",
             "hlc_rifle_awMagnum_FDE",
             "BWA3_MP7",
