@@ -1,19 +1,27 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params ["_args", ""];
 _args params ["_target", "_player", "_params", "_actionData"];
 
 // ThemenArsenale Rollen blockieren
-private _type = _player getVariable ["TB_arsenalType", ""];
 TB_blacklistRollen_themen = [];
-if (_type == "Themen") then
+if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
 {
-    private _patches = configfile >> "CfgPatches";
-    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter", "rifle"]};
+    private _side = side ACE_player;
+
+    if (_side == blufor) exitWith
+    {
+        private _patches = configfile >> "CfgPatches";
+        if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter", "rifle"]};
+        
+        // Vanilla-COP
+        TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
+        TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+    };
+    
+    // if (_side == opfor) exitWith {};
 };
 
 private _rolle = _player getVariable ["TB_rolle", ""];

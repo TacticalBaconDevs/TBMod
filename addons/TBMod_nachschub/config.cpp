@@ -4,7 +4,10 @@ class CfgPatches
     {
         name = "TBMod Nachschub";
         
-        requiredAddons[] = {"TBMod_main"};
+        requiredAddons[] = {
+            "TBMod_main",
+            "TBMod_Skins"
+        };
         addonRootClass = "TBMod_main";
     };
 };

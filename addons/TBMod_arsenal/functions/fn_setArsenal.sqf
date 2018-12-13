@@ -1,10 +1,6 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
-
-    Aufgerufen durch: fn_changeRolle
 */
 params ["_ammoBox", ["_rolle", ""]];
 
@@ -21,7 +17,6 @@ private _allItems = call (switch (_type) do
     case "RUSS": {TB_fnc_arsenalRUSS};
     case "BW": {TB_fnc_arsenalBW};
     case "VANILLA-BLUE": {TB_fnc_arsenalVANILLA};
-    case "VANILLA-COP": {TB_fnc_arsenalVANILLACOP};
     case "Themen": {TB_fnc_arsenalThemen};
     default {hint "Schwerer Fehler #200"};
 });

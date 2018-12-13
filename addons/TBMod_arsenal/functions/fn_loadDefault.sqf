@@ -1,13 +1,11 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 private _arsenalType = ACE_player getVariable ['TB_arsenalType', ''];
 private _rolle = ACE_player getVariable ['TB_rolle', ''];
 
-if (_arsenalType == "USA") then
+if (_arsenalType == "USA") exitWith
 {
     private _layout = switch (_rolle) do
     {
@@ -32,31 +30,12 @@ if (_arsenalType == "USA") then
     ACE_player setUnitLoadout [_layout, true];
 };
 
-if (_arsenalType == "BW") then
+if (_arsenalType == "BW") exitWith
 {
-    private _layout = switch (_rolle) do
-    {
-        case "lead": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "grena": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "sani": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "mg": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "spreng": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "aaat": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "trag": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "dmr": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "pilot": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "sniper": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "spotter": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "jtac": {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "rifle" : {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "pionier" : {[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        default {[]};
-    };
-    
-    ACE_player setUnitLoadout [_layout, true];
+    ACE_player setUnitLoadout [[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
 };
 
-if (_arsenalType == "VANILLA-BLUE") then
+if (_arsenalType == "VANILLA-BLUE") exitWith
 {
     private _layout = switch (_rolle) do
     {
@@ -81,32 +60,35 @@ if (_arsenalType == "VANILLA-BLUE") then
     ACE_player setUnitLoadout [_layout, true];
 };
 
-if (_arsenalType == "VANILLA-COP") then
+if (_arsenalType == "RUSS") exitWith
 {
-    private _layout = switch (_rolle) do
-    {
-        case "lead": {[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "sani": {[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "dmr": {[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "rifle": {[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        case "pilot": {[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-        default {[]};
-    };
-    
-    ACE_player setUnitLoadout [_layout, true];
+    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_emr_patchless",[["ACE_quikclot",15],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_EntrenchingTool",1]]],[],[],"rhs_fieldcap_digi","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
 };
 
-if (_arsenalType == "Themen") then
+if (_arsenalType == "Themen") exitWith
 {
-    if (isClass (_patches >> "uns_main")) exitWith
+    private _side = side ACE_player;
+    
+    if (_side == blufor) exitWith
     {
-        ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_morphine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
+        private _patches = configfile >> "CfgPatches";
+        if (isClass (_patches >> "uns_main")) exitWith
+        {
+            ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_morphine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
+        };
+        
+        // Vanilla-COP
+        ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
     };
     
-    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_flora_patchless",[["ACE_fieldDressing",10],["ACE_quikclot",10],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",1]]],[],[],"rhs_beret_milp","",[],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
+    if (_side == opfor) exitWith
+    {
+        // RussSimple
+        ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_flora_patchless",[["ACE_fieldDressing",10],["ACE_quikclot",10],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",1]]],[],[],"rhs_beret_milp","",[],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
+    };
 };
 
-if (_arsenalType == "CUSTOM") then
+if (_arsenalType == "CUSTOM") exitWith
 {
     if (isNil "TB_fnc_customLayout") then
     {
@@ -138,9 +120,4 @@ if (_arsenalType == "CUSTOM") then
     private _layout = [_rolle] call TB_fnc_customLayout;
     
     ACE_player setUnitLoadout [_layout, true];
-};
-
-if (_arsenalType == "RUSS") then
-{
-    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_emr_patchless",[["ACE_quikclot",15],["ACE_tourniquet",4],["ACE_morphine",5],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_EntrenchingTool",1]]],[],[],"rhs_fieldcap_digi","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
 };

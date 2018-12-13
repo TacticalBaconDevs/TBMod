@@ -4,21 +4,20 @@
 
     Ansprechpartner: IDarky
 */
-// Mengen definierung
 private _allgemein = [
-    
     // Gesichtsbedeckung
     "G_Balaclava_blk",
     "G_Balaclava_TI_blk_F",
     "G_Bandanna_beast",
 
-    //Pistolen + Munition
+    // Pistolen + Munition
     "tb_weap_taser",
     "TB_mag_taser",
 
-
-    //Rucksäcke
+    // Rucksäcke
     "B_LegStrapBag_black_F",
+    // ### LR-Funke
+    "OPXT_blk_1523", // schwarz 
 
     // Attachments
     "acc_flashlight_pistol",
@@ -62,7 +61,7 @@ private _allgemein = [
     "optic_holosight",
     "optic_yorris",
 
-    //Granaten
+    // Granaten
     "SmokeShell",
     "SmokeShellGreen",
     "SmokeShellBlue",
@@ -79,11 +78,6 @@ private _allgemein_Uniform = [
     
 private _allgemein_Westen = [
     "V_PlateCarrier1_blk"
-];
-
-private _LR = [
-    //schwarz
-    "OPXT_blk_1523"
 ];
 
 private _allgemein_Helm = [  
@@ -117,7 +111,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Magazine +
         _allgemein_Waffen +
-        _LR +
         [ 
             // Items
             "B_UavTerminal",
@@ -136,7 +129,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-            "TB_Item_liveMonitor",
             "B_Messenger_Black_F"
         ]
     };
@@ -150,7 +142,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _allgemein_Waffen +
         [
-            //Attachments
+            // Attachments
             "optic_DMS"
         ]
     };
@@ -175,7 +167,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
-        _LR +
         [
             // Head
             "H_PilotHelmetHeli_B",

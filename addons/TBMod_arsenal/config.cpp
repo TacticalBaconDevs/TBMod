@@ -14,7 +14,10 @@ class CfgPatches
             "TB_arsenal_predefined_custom"
         };
         
-        requiredAddons[] = {"TBMod_main"};
+        requiredAddons[] = {
+            "TBMod_main",
+            "TBMod_Skins"
+        };
         addonRootClass = "TBMod_main";
     };
 };
