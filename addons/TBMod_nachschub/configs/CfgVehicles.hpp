@@ -78,6 +78,11 @@ class CfgVehicles
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
         
+        hiddenSelectionsTextures[] = {
+            "\TBMod_Skins\pictures\statics\TB_vorratslager_signs.paa",
+            "\TBMod_Skins\pictures\statics\TB_vorratslager.paa"
+        };
+        
         class TransportItems {};
         class TransportMagazines {};
         class TransportWeapons {};

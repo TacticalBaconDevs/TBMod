@@ -587,8 +587,7 @@ private _items = [];
 // _gepaeck_mittel                    - Seesack
 // _gepaeck_gross                    - Carryall
 
-private _rolle = ACE_player getVariable ["TB_rolle", ""];
-_items append (switch (_rolle) do
+_items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
     {
