@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params ["_logic", "", "_activated"];
 
@@ -7,7 +8,6 @@ if !(local _logic) exitWith {true};
 private _pos = getPos _logic;
 deleteVehicle _logic;
 if !(_activated) exitWith {true};
-if (isNull _unit) exitWith {true};
 
 if (isNil "TB_featureType") then
 {

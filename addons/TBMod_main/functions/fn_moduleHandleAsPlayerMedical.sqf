@@ -6,6 +6,7 @@ params ["_logic", "", "_activated"];
 
 if !(local _logic) exitWith {true};
 private _pos = getPos _logic;
+private _unit = attachedTo _logic;
 deleteVehicle _logic;
 if !(_activated) exitWith {true};
 if (isNull _unit) exitWith {true};
