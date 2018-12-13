@@ -36,7 +36,6 @@ private _generalstab = [
     ];
 
 private _ausbilder = [
-        "76561198032526435",
         "76561198083373558",
         "76561198066861232"
     ] + _generalstab;

@@ -130,6 +130,12 @@ class CfgVehicles
         MAKE_PUBLIC(Vanilla,VANILLA-BLUE);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
     };
+
+    class TB_arsenal_vanillacop : TB_arsenal_base
+    {
+        MAKE_PUBLIC(VanillaCop,VANILLA-COP);
+        hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
+    };
     
     class TB_arsenal_bw : TB_arsenal_base
     {
