@@ -162,9 +162,9 @@ class TB_supply_usa_SMAWAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_usa_notfallm4 : WRAPPER_NAME(Box_NATO_Wps_F)
+class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 {
-    PUBLIC_NAME_CAT("NotfallM4",USA);
+    PUBLIC_NAME_CAT("NotfallWaffen",USA);
     
     class TransportWeapons
     {
