@@ -8,7 +8,9 @@
 #define addCategory(EDITORSUB) editorCategory = "EdCat_TB_Skins"; \
             editorSubcategory = EdSubcat_TB_Skins_##EDITORSUB; \
             faction = "BLU_F"; \
-            side = 1
+            side = 1;\
+            scope = 2;\
+            scopeCurator = 2
 
 class CfgVehicles
 {    
