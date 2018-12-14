@@ -18,6 +18,7 @@ private _allItems = call (switch (_type) do
     case "BW": {TB_fnc_arsenalBW};
     case "VANILLA": {TB_fnc_arsenalVANILLA};
     case "Themen": {TB_fnc_arsenalThemen};
+    case "SWOPReb": {TB_fnc_arsenalSWOPRebuplik}; // only for crash help
     default {hint "Schwerer Fehler #200"; []};
 });
 
