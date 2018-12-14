@@ -127,7 +127,7 @@ class CfgVehicles
     
     class TB_arsenal_vanilla : TB_arsenal_base
     {
-        MAKE_PUBLIC(Vanilla,VANILLA-BLUE);
+        MAKE_PUBLIC(Vanilla,VANILLA);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
     };
 

@@ -16,9 +16,9 @@ private _allItems = call (switch (_type) do
     case "USA": {TB_fnc_arsenalUSA};
     case "RUSS": {TB_fnc_arsenalRUSS};
     case "BW": {TB_fnc_arsenalBW};
-    case "VANILLA-BLUE": {TB_fnc_arsenalVANILLA};
+    case "VANILLA": {TB_fnc_arsenalVANILLA};
     case "Themen": {TB_fnc_arsenalThemen};
-    default {hint "Schwerer Fehler #200"};
+    default {hint "Schwerer Fehler #200"; []};
 });
 
 // MEDIC STUFF

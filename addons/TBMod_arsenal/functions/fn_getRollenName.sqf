@@ -10,11 +10,11 @@ if (_shortName isEqualTo "") exitWith {""};
 private _arsenalType = ACE_player getVariable ["TB_arsenalType", ""];
 
 private _return = "FEHLER_#204";
-if (_arsenalType in ["CUSTOM", "Themen"]) exitWith
+if (_arsenalType in ["CUSTOM", "Themen"]) then
 {
     private _varName = format ["TB_customName%1", ["_themen", ""] select (_arsenalType == "CUSTOM")];
-    private _missionVar = missionNamespace getVariable _varName;
-    if (isNil "_missionVar") exitWith {};
+    private _missionVar = missionNamespace getVariable [_varName, []];
+    if (_missionVar isEqualTo []) exitWith {};
     
     _return = _missionVar select (switch (_shortName) do {
         case "lead": {0};
