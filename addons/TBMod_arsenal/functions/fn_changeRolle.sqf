@@ -1,12 +1,10 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params ["_rolle", "_arsenalType", "_target", ["_loadGear", true]];
 
-ACE_player setVariable ['TB_rolle', _rolle, true];
+ACE_player setVariable ["TB_rolle", _rolle, true];
 [_rolle] call TB_fnc_setAttributes;
 
 // CrashHelper
@@ -14,7 +12,7 @@ if (isNull _target) then {
     if (_arsenalType in ["", "CUSTOM"]) exitWith {};
     
     {
-        if (_arsenalType == getText (configFile >> "CfgVehicles" >> typeOf _x >> "arsenalType")) exitWith
+        if (_arsenalType isEqualTo getText (configFile >> "CfgVehicles" >> typeOf _x >> "arsenalType")) exitWith
         {
             _target = _x;
         };
