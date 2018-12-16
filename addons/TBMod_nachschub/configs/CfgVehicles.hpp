@@ -78,8 +78,9 @@ class CfgVehicles
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
         
+        //hiddenSelections[] = {"Camo_Signs","Camo"};
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\statics\TB_vorratslager_signs.paa",
+            "",
             "\TBMod_Skins\pictures\statics\TB_vorratslager.paa"
         };
         

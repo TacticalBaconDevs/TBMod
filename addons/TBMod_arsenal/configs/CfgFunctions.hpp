@@ -36,9 +36,15 @@ class CfgFunctions
             class arsenalBW {};
             class arsenalVANILLA {};
             class arsenalThemen {};
+        };
+        
+        class arsenalThemen
+        {
+            file = "\TBMod_arsenal\arsenal\themen";
             class arsenalUSAVietnam {};
             class arsenalRUSSSimple {};
             class arsenalVANILLACOP {};
+            class arsenalSWOPRebuplik {};
         };
     };
 };

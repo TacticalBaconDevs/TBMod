@@ -9,10 +9,19 @@ if !(call TB_fnc_isTBMission) exitWith {};
 enableEnvironment [false, true];
 enableSaving [false, false];
 
+//CBA_XEH_expectedLoadingScreens
+// ["CBA_XEH_loadingScreenStarted", {
+    // params ["_loadingScreen"];
+    // private _msg = format ["CBA_XEH_loadingScreenStarted: %1", _loadingScreen];
+    // diag_log _msg;
+    // systemChat _msg;
+// }] call CBA_fnc_addEventHandler;
+
 // ["CBA_XEH_loadingScreenEnded", {
     // params ["_loadingScreen"];
-    // diag_log format ["CBA_XEH_loadingScreenEnded: %1", _loadingScreen];
-    // //CBA_XEH_expectedLoadingScreens
+    // private _msg = format ["CBA_XEH_loadingScreenEnded: %1", _loadingScreen];
+    // diag_log _msg;
+    // systemChat _msg;
 // }] call CBA_fnc_addEventHandler;
 
 ["CBA_loadingScreenDone", {
