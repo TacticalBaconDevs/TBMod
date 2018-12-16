@@ -1,24 +1,21 @@
 ﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params ["_args", ""];
 _args params ["_target", "_player", "_params", "_actionData"];
 
 if !([_target] call TB_fnc_isArsenalType) exitWith {};
 
-private _tbCargo = ACE_player getVariable 'TB_arsenalCargo';
-
-if (!isNil {_tbCargo} && {!(_tbCargo isEqualTo (_target getVariable ['ace_arsenal_virtualItems', []]))}) then
+private _tbCargo = ACE_player getVariable ["TB_arsenalCargo", []];
+if (!(_tbCargo isEqualTo []) && {!(_tbCargo isEqualTo (_target getVariable ["ace_arsenal_virtualItems", []]))}) then
 {
-    _target setVariable ['ace_arsenal_virtualItems', _tbCargo];
+    _target setVariable ["ace_arsenal_virtualItems", _tbCargo];
     
     {
-        if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ['ace_arsenal_virtualItems', []]))}) then
+        if (!(_x isEqualTo _target) && [_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
         {
-            _x setVariable ['ace_arsenal_virtualItems', _tbCargo];
+            _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
         };
     }
     forEach (entities (typeOf _target));

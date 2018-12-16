@@ -1,9 +1,9 @@
-/*
+﻿/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
-private _arsenalType = ACE_player getVariable ['TB_arsenalType', ''];
-private _rolle = ACE_player getVariable ['TB_rolle', ''];
+private _arsenalType = ACE_player getVariable ["TB_arsenalType", ""];
+private _rolle = ACE_player getVariable ["TB_rolle", ""];
 
 if (_arsenalType == "USA") exitWith
 {
@@ -35,7 +35,7 @@ if (_arsenalType == "BW") exitWith
     ACE_player setUnitLoadout [[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",3],["ACE_Flashlight_KSF1",1],["ACE_MapTools",1]]],["BWA3_Vest_Fleck",[["ACE_EntrenchingTool",1],["SmokeShell",5,1],["BWA3_DM51A1",5,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
 };
 
-if (_arsenalType == "VANILLA-BLUE") exitWith
+if (_arsenalType == "VANILLA") exitWith
 {
     private _layout = switch (_rolle) do
     {
@@ -67,16 +67,19 @@ if (_arsenalType == "RUSS") exitWith
 
 if (_arsenalType == "Themen") exitWith
 {
-    private _side = side ACE_player;
+    private _patches = configfile >> "CfgPatches";
+    if (isClass (_patches >> "uns_main")) exitWith
+    {
+        ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_morphine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
+    };
+    if (isClass (_patches >> "SWOP_Main")) exitWith
+    {
+        ACE_player setUnitLoadout [[[],[],[],["SWOP_Clonetrooper_501_F_CombatUniform",[["ACE_tourniquet",4],["ACE_EntrenchingTool",1],["ACE_morphine",5],["ACE_CableTie",2],["ACE_quikclot",15]]],["SWOP_Clonetrooper_501_armor",[]],["SWOP_InvisBag",[]],"SWOP_Cloneofficer_capM","",["ElectroBinocularsW_F","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]], true];
+    };
     
+    private _side = side ACE_player;
     if (_side == blufor) exitWith
     {
-        private _patches = configfile >> "CfgPatches";
-        if (isClass (_patches >> "uns_main")) exitWith
-        {
-            ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_morphine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
-        };
-        
         // Vanilla-COP
         ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
     };

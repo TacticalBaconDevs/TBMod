@@ -43,6 +43,7 @@ class CfgFunctions
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
             class moduleFrontverlauf {};
+            class debug {};
         };
         
         class gcam
