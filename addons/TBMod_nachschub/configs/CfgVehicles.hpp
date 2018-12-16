@@ -115,6 +115,7 @@ class CfgVehicles
                     ADD_SUPPLY(MoerserMunnitionFlare,TB_supply_all_mortarAmmoFlare);
                     ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
+                    ADD_SUPPLY(SaniBaukiste,TB_supply_all_medicbuilding);
                     ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
                     ADD_SUPPLY(Minenkiste,TB_supply_all_mines);
                 };
@@ -202,6 +203,7 @@ class CfgVehicles
     WRAPPER(Box_NATO_Ammo_F);
     WRAPPER(Box_NATO_Wps_F);
     WRAPPER(Box_NATO_Equip_F); // sehr groß
+    WRAPPER(Box_IDAP_Equip_F);
     WRAPPER(Box_NATO_WpsLaunch_F);
     WRAPPER(Box_NATO_Grenades_F);
     WRAPPER(Box_NATO_AmmoOrd_F);
@@ -365,6 +367,20 @@ class CfgVehicles
             MACRO_ADDITEM(TB_building_item_Land_BagFence_Round_F,4);
             MACRO_ADDITEM(TB_building_item_ace_concertinawirecoil,10);
             MACRO_ADDITEM(TB_building_item_Land_SandbagBarricade_01_hole_F,4);
+        };
+    };
+
+    class TB_supply_all_medicbuilding : WRAPPER_NAME(Box_IDAP_Equip_F)
+    {
+        PUBLIC_NAME("SaniBauKiste");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_building_item_Land_MedicalTent_01_white_generic_open_F,1);
+            MACRO_ADDITEM(TB_building_item_Land_MedicalTent_01_floor_light_F,1);
+            MACRO_ADDITEM(TB_building_item_Land_Stretcher_01_F,6);
+            MACRO_ADDITEM(TB_building_item_Land_IntravenStand_01_2bags_F,6);
+            MACRO_ADDITEM(TB_building_item_Land_PortableLight_double_F,2);
         };
     };
     

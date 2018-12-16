@@ -2,6 +2,51 @@
 <Project name="TB_buildings">
 	<Package name="TB_buildings">
 		<Container name="TB_buildings">
+			<Key ID="STR_PLACE_Land_IntravenStand_01_2bags_F">
+				<Original>Platziere Salineständer</Original>
+				<German>Platziere Salineständer</German>
+			</Key>
+			<Key ID="STR_ITEM_Land_IntravenStand_01_2bags_F">
+				<Original>TBB Salineständer</Original>
+				<German>TBB Salineständer</German>
+			</Key>
+
+			<Key ID="STR_PLACE_Land_Stretcher_01_F">
+				<Original>Platziere Trage</Original>
+				<German>Platziere Trage</German>
+			</Key>
+			<Key ID="STR_ITEM_Land_Stretcher_01_F">
+				<Original>TBB Trage</Original>
+				<German>TBB Trage</German>
+			</Key>
+
+			<Key ID="STR_PLACE_Land_PortableLight_double_F">
+				<Original>Platziere Tragbareslicht (doppelt)</Original>
+				<German>Platziere Tragbareslicht (doppelt)</German>
+			</Key>
+			<Key ID="STR_ITEM_Land_PortableLight_double_F">
+				<Original>TBB Tragbareslicht (doppelt)</Original>
+				<German>TBB Tragbareslicht (doppelt)</German>
+			</Key>
+
+			<Key ID="STR_PLACE_Land_MedicalTent_01_white_generic_open_F">
+				<Original>Platziere Zelt</Original>
+				<German>Platziere Zelt</German>
+			</Key>
+			<Key ID="STR_ITEM_Land_MedicalTent_01_white_generic_open_F">
+				<Original>TBB Zelt</Original>
+				<German>TBB Zelt</German>
+			</Key>
+
+			<Key ID="STR_PLACE_Land_MedicalTent_01_floor_light_F">
+				<Original>Platziere Zeltboden</Original>
+				<German>Platziere Zeltboden</German>
+			</Key>
+			<Key ID="STR_ITEM_Land_MedicalTent_01_floor_light_F">
+				<Original>TBB Zeltboden</Original>
+				<German>TBB Zeltboden</German>
+			</Key>
+
 			<Key ID="STR_PLACE_RoadBarrier_F">
 				<Original>Platziere Strassensperre</Original>
 				<German>Platziere Strassensperre</German>
