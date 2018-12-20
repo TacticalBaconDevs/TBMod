@@ -44,7 +44,8 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         };
     };
 
-    if (count _markers > 1500) then {
+    if (count _markers > 1500) then
+    {
         private _msg = format ["ACHTUNG, es sollen über 1500 Gitterzonen (derzeit: %1) erstellt werden,
             das ist zuviel, vergrößere die Gittergröße!", count _markers];
         systemChat _msg;
@@ -71,10 +72,12 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         _mkr setMarkerAlpha _gridAlpha;
         _mkr setMarkerSize [_gridHalb, _gridHalb];
         
-        private _trg = createTrigger ["EmptyDetector", _pos];
+        private _trg = createTrigger ["EmptyDetector", _pos, false];
         _trg setTriggerArea [_gridHalb, _gridHalb, 0, true];
         _trg setTriggerActivation ["ANY", "PRESENT", true];
-        _trg setTriggerStatements ["this && !((thisList select {_x isKindOf 'CAManBase'}) isEqualTo [])", format ["
+        _trg setTriggerStatements ["this && !((thisList select {_x isKindOf 'CAManBase' && alive _x}) isEqualTo [])", format ["
+            private _list = thisList select {_x isKindOf 'CAManBase' && alive _x};
+            
             private _array = [
                 [west countSide _list, 'colorBLUFOR'],
                 [east countSide _list, 'colorOPFOR'],
@@ -84,13 +87,13 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
             
             _array sort false;
             
-            if (((_array select 0) select 0) == 0) exitWith {
+            if (((_array select 0) select 0) == 0) then {
                 '%1' setMarkerColor %3;
                 '%1' setMarkerAlpha ((%2 - 0.1) max 0.1);
+            } else {
+                '%1' setMarkerColor ((_array select 0) select 1);
+                '%1' setMarkerAlpha %2;
             };
-            
-            '%1' setMarkerColor ((_array select 0) select 1);
-            '%1' setMarkerAlpha %2;
         ", _markerName, (_gridAlpha + 0.1) min 1, _unknowColor], ""];
         _trg setTriggerTimeout _timeoutArray;
     }

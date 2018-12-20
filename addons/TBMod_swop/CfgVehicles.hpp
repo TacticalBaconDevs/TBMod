@@ -88,8 +88,6 @@ class CfgVehicles
                     delete TB_supply_all_mines;
                     delete TB_supply_all_hmg;
                 };
-                delete usa;
-                delete bw;
                 
                 class themen_usaVietnam
                 {
@@ -113,154 +111,158 @@ class CfgVehicles
     };
     
     // #################### Nachschub #######################
-    WRAPPER(uns_trap_box);          // sehr kleine Munitionskiste
-    WRAPPER(uns_medcrate);          // Medickarton
-    WRAPPER(uns_resupply_crate_NVA);// große grüne Munitionskiste
-    //WRAPPER(uns_81mmammobox_US);  // mittlere Munitionskiste - NUR MODEL
-    WRAPPER(uns_HMGammobox_US);     // mini Munitionsbox
-    WRAPPER(uns_US_Ordnance);       // längliche Munitionskiste
-    WRAPPER(uns_HiddenAmmoBox_small1);// flache Munitionskiste
     
-    // ################### OVERRIDES ########################
-    
-    class WRAPPER_NAME(Box_NATO_Ammo_F);
-    class WRAPPER_NAME(Box_NATO_Support_F);
-    class WRAPPER_NAME(Box_NATO_WpsSpecial_F);
-    class WRAPPER_NAME(Box_NATO_Equip_F);
-    
-    class TB_supply_empty: WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_usa_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
     {
-        model = "\uns_ammo\US\uns_US_Launchers.p3d";
-    };
-    
-    class TB_supply_all_medic : WRAPPER_NAME(Box_NATO_Support_F)
-    {
-        model = "\uns_ammo\US\uns_US_medical.p3d";
-    };
-    
-    class TB_supply_all_mortar : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Ammo_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Ammo_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_Ammo_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_Ammo_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    class TB_supply_all_hmg : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Equip_F)
-    {
-        model = "\uns_ammo\VC\uns_VC_ammo2.p3d";
-    };
-    
-    // ######################################################
-        
-    class TB_supply_themen_usaVietnam_ammo : WRAPPER_NAME(uns_resupply_crate_NVA)
-    {
-        PUBLIC_NAME_CAT("Munition",Themen_USAVietnam);
+        PUBLIC_NAME_CAT("Munition",USA);
         
         class TransportMagazines
-        {
-            MACRO_ADDMAGAZINE(uns_30Rnd_556x45_Stanag_T,30);
-            MACRO_ADDMAGAZINE(uns_thompsonmag_20_T,20);
-            MACRO_ADDMAGAZINE(uns_m1carbinemag_T,20);
-            MACRO_ADDMAGAZINE(uns_12gaugemag_6f,15);
+        { 
+            MACRO_ADDMAGAZINE(SWOP_DC15ABlasterRifle_Mag,30);       // Gewehr
+            MACRO_ADDMAGAZINE(SWOP_DC15_Mag,10);                    // Karabiner
+            MACRO_ADDMAGAZINE(swop_RepShotgun_Mag,5);               // Schotgun
+            MACRO_ADDMAGAZINE(SWOP_dc15xBlasterRifle_Mag,10);       // DMRMag7.62
         };
     };
-    
-    class TB_supply_themen_usaVietnam_ammoSmall : WRAPPER_NAME(uns_HiddenAmmoBox_small1)
+
+    class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_NATO_Ammo_F)
     {
-        PUBLIC_NAME_CAT("HandwaffenMunition",Themen_USAVietnam);
+        PUBLIC_NAME_CAT("HandwaffenMunition",USA);
         
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(uns_m1911mag,30);
+            MACRO_ADDMAGAZINE(SWOP_DC15SAPistol_Mag,20);
+            MACRO_ADDMAGAZINE(SWOP_DC17Pistol_Mag,20);
         };
     };
-    
-    class TB_supply_themen_usaVietnam_grena : WRAPPER_NAME(uns_trap_box)
+
+    class TB_supply_usa_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
-        PUBLIC_NAME_CAT("Granaten",Themen_USAVietnam);
+        PUBLIC_NAME_CAT("Granaten",USA);
         
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(uns_m18white,10);
-            MACRO_ADDMAGAZINE(uns_m18red,10);
+            MACRO_ADDMAGAZINE(SWOP_termDet_G,15);       // Splitternade
+            MACRO_ADDMAGAZINE(swop_mag_gimpact,10);     // Offensivenade
+            MACRO_ADDMAGAZINE(swop_mag_flashbang,4);    // Stannade
             
-            MACRO_ADDMAGAZINE(uns_f1gren,20);
-            MACRO_ADDMAGAZINE(uns_m308gren,10);
-            MACRO_ADDMAGAZINE(uns_mk40gren,10);
+            MACRO_ADDMAGAZINE(SWOP_SCAR_EMP_GrenadeGM,10);
+            MACRO_ADDMAGAZINE(swop_mag_incendiary,4);
+            MACRO_ADDMAGAZINE(swop_SmokeShell,4);
         };
     };
-    
-    class TB_supply_themen_usaVietnam_unterlauf : WRAPPER_NAME(uns_resupply_crate_NVA) // model von uns_81mmammobox_US
+
+    class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
-        PUBLIC_NAME_CAT("Unterlauf",Themen_USAVietnam);
-        model = "\uns_ammo\US\uns_US_ammo_Mortar.p3d";
+        PUBLIC_NAME_CAT("Unterlauf",USA);
         
         class TransportMagazines
         {
-            // Explosiv
-            MACRO_ADDMAGAZINE(uns_1Rnd_AB_M397,6);
-            MACRO_ADDMAGAZINE(uns_ex41mag,6);
-            MACRO_ADDMAGAZINE(Uns_1Rnd_HE_M406,6);
-            
-            // Smokes
-            MACRO_ADDMAGAZINE(uns_1Rnd_Smoke_40mm,8);
-            MACRO_ADDMAGAZINE(uns_1Rnd_SmokeRed_40mm,4);
-            MACRO_ADDMAGAZINE(uns_1Rnd_SmokeGreen_40mm,4);
-            
-            // Flares
-            MACRO_ADDMAGAZINE(uns_40mm_white,8);
-            MACRO_ADDMAGAZINE(uns_40mm_green,4);
+            MACRO_ADDMAGAZINE(5Rnd_HE_Grenade_DC15A,30);
         };
     };
-    
-    class TB_supply_themen_usaVietnam_mgammo : WRAPPER_NAME(uns_resupply_crate_NVA)
+
+    class TB_supply_usa_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
     {
-        PUBLIC_NAME_CAT("MG Munnition",Themen_USAVietnam);
+        PUBLIC_NAME_CAT("SpezialwaffenMunition",USA);
         
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(uns_barmag_T,20);
-            MACRO_ADDMAGAZINE(uns_100Rnd_m1919,4);
-            MACRO_ADDMAGAZINE(uns_m60mag,4);
+            // MACRO_ADDMAGAZINE(,10);
+            // MACRO_ADDMAGAZINE(,5);
         };
     };
-    
-    class TB_supply_themen_usaVietnam_launcher : WRAPPER_NAME(uns_US_Ordnance)
+
+    class TB_supply_usa_launcher : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     {
-        PUBLIC_NAME_CAT("Werfer",Themen_USAVietnam);
+        PUBLIC_NAME_CAT("Werfer",USA);
         
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(uns_m72,2);
+            // MACRO_ADDWEAPON(,1);
         };
         
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(uns_m72rocket,2);
-            MACRO_ADDMAGAZINE(uns_M30_smoke_mag,10);
+            // MACRO_ADDMAGAZINE(,1);
+        };
+    };
+
+    class TB_supply_usa_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+    {
+        PUBLIC_NAME_CAT("WerferMunition",USA);
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(rhs_fgm148_magazine_AT,1);    // Javlin
+            MACRO_ADDMAGAZINE(rhs_fim92_mag,1);             // AA
+            MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,3);        // MAAWS
+            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEAA,3);         // HEAA
+        };
+    };
+
+    class TB_supply_usa_javlinAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+    {
+        PUBLIC_NAME_CAT("JavlinMunition",USA);
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(rhs_fgm148_magazine_AT,4);
+        };
+    };
+
+    class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+    {
+        PUBLIC_NAME_CAT("MAAWSMunition",USA);
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,10);
+            MACRO_ADDMAGAZINE(rhs_mag_maaws_HE,4);
+        };
+    };
+
+    class TB_supply_usa_SMAWAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+    {
+        PUBLIC_NAME_CAT("SMAWMunition",USA);
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEAA,6);
+            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEDP,2);
+            MACRO_ADDMAGAZINE(rhs_mag_smaw_SR,5);
+        };
+    };
+
+    class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
+    {
+        PUBLIC_NAME_CAT("NotfallWaffen",USA);
+        
+        class TransportWeapons
+        {
+            MACRO_ADDWEAPON(rhs_weap_m4,4);
+        };
+        
+        class TransportMagazines
+        {
+            MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,20);
+        };
+    };
+
+    class TB_supply_usa_night : WRAPPER_NAME(Box_NATO_Equip_F)
+    {
+        PUBLIC_NAME_CAT("Nachtkiste",USA);
+        
+        class TransportItems
+        {
+            MACRO_ADDITEM(rhsusf_ANPVS_14,5);
+            MACRO_ADDITEM(rhsusf_ANPVS_15,5);
+            
+            MACRO_ADDITEM(ACE_IR_Strobe_Item,10);
+            MACRO_ADDITEM(ACE_Flashlight_KSF1,10);
+            
+            MACRO_ADDITEM(ACE_Chemlight_HiYellow,10);
+            MACRO_ADDITEM(ACE_Chemlight_HiRed,10);
         };
     };
     
