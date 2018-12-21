@@ -127,10 +127,16 @@ class CfgVehicles
     
     class TB_arsenal_vanilla : TB_arsenal_base
     {
-        MAKE_PUBLIC(Vanilla,VANILLA-BLUE);
+        MAKE_PUBLIC(Vanilla,VANILLA);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
     };
 
+    class TB_arsenal_vanillacop : TB_arsenal_base
+    {
+        MAKE_PUBLIC(VanillaCop,VANILLA-COP);
+        hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
+    };
+    
     class TB_arsenal_bw : TB_arsenal_base
     {
         MAKE_PUBLIC(Bundeswehr,BW);
@@ -141,6 +147,11 @@ class CfgVehicles
     {
         MAKE_PUBLIC(Russland,RUSS);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_Russland.paa"};
+    };
+    
+    class TB_arsenal_swop : TB_arsenal_base
+    {
+        MAKE_PUBLIC(Republik,SWOPReb);
     };
     
     // ###################### SpezialArsenale ######################

@@ -16,9 +16,10 @@ private _allItems = call (switch (_type) do
     case "USA": {TB_fnc_arsenalUSA};
     case "RUSS": {TB_fnc_arsenalRUSS};
     case "BW": {TB_fnc_arsenalBW};
-    case "VANILLA-BLUE": {TB_fnc_arsenalVANILLA};
+    case "VANILLA": {TB_fnc_arsenalVANILLA};
     case "Themen": {TB_fnc_arsenalThemen};
-    default {hint "Schwerer Fehler #200"};
+    case "SWOPReb": {TB_fnc_arsenalSWOPRebuplik}; // only for crash help
+    default {hint "Schwerer Fehler #200"; []};
 });
 
 // MEDIC STUFF
@@ -70,16 +71,14 @@ ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];
 [_ammoBox, _allItems, false] call ace_arsenal_fnc_addVirtualItems;
 
 // Virtuelle Items auf dem Spieler sichern und andere Arsenale syncen
-private _tbCargo = _ammoBox getVariable 'ace_arsenal_virtualItems';
+private _tbCargo = _ammoBox getVariable "ace_arsenal_virtualItems";
 ACE_player setVariable ["TB_arsenalCargo", _tbCargo];
 
 // Arsenale syncen
 {
-    if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ['ace_arsenal_virtualItems', []]))}) then
+    if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
     {
-        _x setVariable ['ace_arsenal_virtualItems', _tbCargo];
+        _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
     };
-    
-    false;
 }
-count (entities (typeOf _ammoBox));
+forEach (entities (typeOf _ammoBox));
