@@ -231,7 +231,6 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,20);
             MACRO_ADDITEM(ACE_epinephrine,10);
             
-            MACRO_ADDITEM(ACE_personalAidKit,3);
             MACRO_ADDITEM(ACE_surgicalKit,1);
         };
     };
