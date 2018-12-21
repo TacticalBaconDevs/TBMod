@@ -425,12 +425,12 @@ class CfgVehicles
                 class values {
                     class BLUFOR {
                         name = "Blufor";
-                        value = "Blufor";
+                        value = "blufor";
                         default = 1;
                     };
                     class Opfor {
                         name = "Opfor";
-                        value = "Opfor";
+                        value = "opfor";
                     };
                     class INDEPENDENT {
                         name = "Independent";

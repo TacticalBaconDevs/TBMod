@@ -46,8 +46,8 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 
     if (count _markers > 1500) then
     {
-        private _msg = format ["ACHTUNG, es sollen �ber 1500 Gitterzonen (derzeit: %1) erstellt werden,
-            das ist zuviel, vergr��ere die Gittergr��e!", count _markers];
+        private _msg = format ["ACHTUNG, es sollen über 1500 Gitterzonen (derzeit: %1) erstellt werden,
+            das ist zuviel, vergrößere die Gittergröße!", count _markers];
         systemChat _msg;
         hint _msg;
     };
@@ -60,7 +60,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     private _gridType = _logic getVariable ["gridType", "Solid"];
     private _area = [getPos _logic];
     _area append (_logic getVariable ["objectarea",[]]);
-    private _playerSide = call compile (_logic getVariable ["playerSide", "opfor"]);
+    private _playerSide = _logic getVariable ["playerSide", "opfor"];
     
     // Triggercode
     private _triggerHead = "
@@ -94,7 +94,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         _triggerHead = _triggerHead + "
             private _enemys = [];
             private _friendly = [];
-            private _playerSide = %4;
+            private _playerSide = call compile '%4';
             {
                 if ([_playerSide, _x] call BIS_fnc_sideIsFriendly) then {_friendly pushBack _x};
                 if ([_playerSide, _x] call BIS_fnc_sideIsEnemy) then {_enemys pushBack _x};
@@ -129,7 +129,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     {
         _triggerHead = _triggerHead + "
             private _enemys = [];
-            private _playerSide = %4;
+            private _playerSide = call compile '%4';
             {
                 if ([_playerSide, _x] call BIS_fnc_sideIsEnemy) then {_enemys pushBack _x};
             }

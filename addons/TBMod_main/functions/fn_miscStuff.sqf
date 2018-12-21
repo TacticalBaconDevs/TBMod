@@ -99,13 +99,26 @@ if (_architecture != "x64") then
     3 
 ] call ace_interact_menu_fnc_createAction, true] call ace_interact_menu_fnc_addActionToClass;
 
+// TFAR Funkanim
 if (isNil "TB_funkAnim") then {TB_funkAnim = true};
+if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 ["TB_funkAnim", "OnTangent", {
     params ["_unit", "_activRadio", "_isLR", "_additional", "_buttonDown"];
     
     if (!TB_funkAnim) exitWith {};
-    player playActionNow (if (_buttonDown) then {(["tb_radioSR", "tb_radioLR"] select _isLR)} else {"tb_radioStop"});
-}, Player] call TFAR_fnc_addEventHandler;
+    if (!(TB_funkAnim_on && !_buttonDown) && (ace_common_isReloading || cameraView == "GUNNER")) exitWith {};
+
+    if (_buttonDown) then
+    {
+        TB_funkAnim_on = true;
+        player playActionNow (["tb_radioSR", "tb_radioLR"] select _isLR);
+    }
+    else
+    {
+        TB_funkAnim_on = false;
+        player playActionNow "tb_radioStop";
+    };
+}, player] call TFAR_fnc_addEventHandler;
 
 // AddZeus
 [
