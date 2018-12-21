@@ -220,22 +220,18 @@ class CfgVehicles
         
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,40);
-            MACRO_ADDITEM(ACE_elasticBandage,40);
-            MACRO_ADDITEM(ACE_fieldDressing,10);
+            MACRO_ADDITEM(ACE_quikclot,60);
+            MACRO_ADDITEM(ACE_elasticBandage,60);
             
-            MACRO_ADDITEM(ACE_tourniquet,10);
+            MACRO_ADDITEM(ACE_tourniquet,4);
             
             MACRO_ADDITEM(ACE_bloodIV_500,10);
             MACRO_ADDITEM(ACE_bloodIV,5);
             
             MACRO_ADDITEM(ACE_morphine,20);
             MACRO_ADDITEM(ACE_epinephrine,10);
-            MACRO_ADDITEM(ACE_atropine,5);
             
-            MACRO_ADDITEM(ACE_personalAidKit,3);
             MACRO_ADDITEM(ACE_surgicalKit,1);
-            MACRO_ADDITEM(ACE_bodyBag,2);
         };
     };
     
