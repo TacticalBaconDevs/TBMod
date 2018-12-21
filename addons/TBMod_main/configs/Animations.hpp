@@ -55,7 +55,7 @@ class CfgGesturesMale
         class tb_radioStop : tb_base
         {
             file = "a3\anims_f\data\anim\sdr\gst\gesturenod.rtm";
-            speed = 0.3;
+            speed = 20;
             
             mask = "empty";
             

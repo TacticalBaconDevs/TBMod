@@ -332,6 +332,36 @@ class CfgVehicles
         
         class Attributes: AttributesBase
         {
+            class modus: Combo
+            {
+                property = "TB_eden_frontverlauf_modus";
+                displayName = "Modulmodus";
+                tooltip = "Der Modus mit dem das Modul arbeitet.";
+                typeName = "STRING";
+                class values {
+                    class MOSTSIDE {
+                        name = "MeisteSeite";
+                        value = "mostside";
+                        default = 1;
+                    };
+                    class MOSTENEMY {
+                        name = "MeisteFeind";
+                        value = "mostenemy";
+                    };
+                    class MOSTENEMY_KNOWN {
+                        name = "MeisteFeind (knownAbout Abhängig)";
+                        value = "mostenemy_known";
+                    };
+                    class ENEMYFREE {
+                        name = "Feindfrei";
+                        value = "enemyfree";
+                    };
+                    class ENEMYFREE_KNOWN {
+                        name = "Feindfrei (knownAbout Abhängig)";
+                        value = "enemyfree_known";
+                    };
+                };
+            };
             class gridSize: Edit
             {
                 property = "TB_eden_frontverlauf_gridSize";
@@ -355,9 +385,9 @@ class CfgVehicles
                 tooltip = "Die Farbe die ein Gitter hat, wenn noch keine Infos da sind.";
                 typeName = "STRING";
                 class values {
-                    class UNKNOWN {
+                    class GREY {
                         name = "Grau";
-                        value = "ColorUNKNOWN"; //ColorGrey
+                        value = "ColorGrey";
                         default = 1;
                     };
                     class EAST {
@@ -385,6 +415,28 @@ class CfgVehicles
                 tooltip = "Der Alphawert (Sichtbarkeit) der Gitter. Wenn nicht mehr unbekannt, wird 0.1 (10%) automatisch hinzugefügt!";
                 typeName = "NUMBER";
                 defaultValue = "0.7";
+            };
+            class playerSide: Combo
+            {
+                property = "TB_eden_frontverlauf_playerSide";
+                displayName = "PlayerSide";
+                tooltip = "Für alle Feindmodi benötigt.";
+                typeName = "STRING";
+                class values {
+                    class BLUFOR {
+                        name = "Blufor";
+                        value = "blufor";
+                        default = 1;
+                    };
+                    class Opfor {
+                        name = "Opfor";
+                        value = "opfor";
+                    };
+                    class INDEPENDENT {
+                        name = "Independent";
+                        value = "independent";
+                    };
+                };
             };
             class gridType: Combo
             {
