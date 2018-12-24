@@ -14,33 +14,36 @@ if (_save) then
 {
     {
         private _veh = _x;
-        private _ammo = [];
-        private _pylonMags = [];
+        if(!(_veh in ((attachedTo _veh) getVariable ["ace_cargo_loaded", []]))) then //is loaded in ace context -> skip
         {
-            _pylonMags pushBack (getText (configFile >> "CfgVehicles" >> (typeOf _veh) >> "Components" >> "TransportPylonsComponent" >> "Pylons" >> (configName _x) >> "attachment"));
-        } forEach (configProperties [configFile >> "CfgVehicles" >> (typeOf _veh) >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]);
+            
+            private _ammo = [];
+            private _pylonMags = [];
+            {
+                _pylonMags pushBack (getText (configFile >> "CfgVehicles" >> (typeOf _veh) >> "Components" >> "TransportPylonsComponent" >> "Pylons" >> (configName _x) >> "attachment"));
+            } forEach (configProperties [configFile >> "CfgVehicles" >> (typeOf _veh) >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]);
+            {
+                if !((_x select 0) in _pylonMags) then {_ammo pushBack [_x select 0, _x select 2, _x select 1]};
+            } forEach (magazinesAllTurrets _x);
+    
+                private _array = [
+                typeOf _veh,
+                getPosASL _veh,
+                vectorDir _veh,
+                vectorUp _veh,
+                simulationEnabled _veh,
+                [true, _veh] call TB_fnc_cargo,
+                (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _x] call TB_fnc_cargo]},
+                if ((getAllHitPointsDamage _veh) isEqualTo []) then {[]} else {[(getAllHitPointsDamage _veh) select 0, (getAllHitPointsDamage _veh) select 2]},
+                _ammo,
+                fuel _veh,
+                [side _veh, (crew _veh) apply {typeOf _x}]
+            ];
 
-        {
-            if !((_x select 0) in _pylonMags) then {_ammo pushBack [_x select 0, _x select 2, _x select 1]};
-        } forEach (magazinesAllTurrets _x);
+            if (vehicleVarName _veh != "") then {_array pushBack (vehicleVarName _x)};
         
-        private _array = [
-            typeOf _veh,
-            getPosASL _veh,
-            vectorDir _veh,
-            vectorUp _veh,
-            simulationEnabled _veh,
-            [true, _veh] call TB_fnc_cargo,
-            (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _veh] call TB_fnc_cargo]},
-            if ((getAllHitPointsDamage _veh) isEqualTo []) then {[]} else {[(getAllHitPointsDamage _veh) select 0, (getAllHitPointsDamage _veh) select 2]},
-            _ammo,
-            fuel _veh,
-            [side _veh, (crew _veh) apply {typeOf _x}]
-        ];
-        
-        if (vehicleVarName _veh != "") then {_array pushBack (vehicleVarName _x)};
-        
-        (_storagearray select 3) pushBack _array;
+            (_storagearray select 3) pushBack _array;
+        };        
     }
     forEach vehicles;
 }
