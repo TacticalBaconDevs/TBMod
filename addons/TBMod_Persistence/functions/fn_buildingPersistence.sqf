@@ -28,6 +28,8 @@ if (_save) then
                     typeOf _obj,
                     getPosASL _obj,
                     getDir _obj,
+                    vectorDir _obj,
+                    vectorUp _obj,
                     simulationEnabled _obj,
                     _obj getVariable ["TB_building_addInfos", []]
                 ];
@@ -46,11 +48,11 @@ else //laden
     if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
     
     {
-        _x params ["_big", "_classname", "_pos", "_dir", "_sim", "_addInfos"];
+        _x params ["_big", "_classname", "_pos", "_dir", "_up", "_sim", "_addInfos"];
         
         private _obj = createVehicle [_classname, [0,0,0], [], 0, "CAN_COLLIDE"];
         
-        _obj setDir _dir;
+        _obj setVectorDirAndUp [_dir, _up];
         _obj setPosASL _pos;
         
         private _params = [_obj];
