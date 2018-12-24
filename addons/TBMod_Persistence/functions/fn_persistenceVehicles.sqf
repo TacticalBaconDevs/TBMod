@@ -46,7 +46,7 @@ if (_save) then
 }
 else // load
 {
-	{
+    {
         _x params ["_class", "_pos", "_dir", "_up", "_sim", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew", "_name"];
         
         private _vehicle = (if (isNil "_name") then

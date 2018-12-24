@@ -46,9 +46,9 @@ if (_save) then
 }
 else // load
 {
-	TB_disconnectCache = _storagearray select 0;
+    TB_disconnectCache = _storagearray select 0;
     publicVariable "TB_disconnectCache";
-	{
+    {
         private _find = [TB_disconnectCache, getPlayerUID _x] call BIS_fnc_findNestedElement;
         if !(_find isEqualTo []) then
         {

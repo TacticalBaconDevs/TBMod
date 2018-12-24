@@ -38,7 +38,7 @@ if (_save) then
 }
 else // load
 {
-	{
+    {
         _x params ["_classname", "_pos", "_dir", "_up","_sim", "_name"];
         
         objNull;

@@ -31,7 +31,7 @@ if (_save) then
 }
 else // load
 {
-	{
+    {
         _x params ["_marker", "_pos", "_color", "_size", "_type", "_alpha", "_brush", "_dir", "_shape", "_text"];
         
         private _newMarker = createMarker [_marker, _pos];
