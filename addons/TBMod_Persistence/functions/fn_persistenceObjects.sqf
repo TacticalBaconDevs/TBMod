@@ -40,8 +40,6 @@ else // load
 {
     {
         _x params ["_classname", "_pos", "_dir", "_up","_sim", "_name"];
-        
-        objNull;
 
         private _obj = (if (isNil "_name") then
             {

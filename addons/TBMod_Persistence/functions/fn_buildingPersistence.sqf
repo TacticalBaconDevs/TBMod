@@ -27,7 +27,6 @@ if (_save) then
                     _big,
                     typeOf _obj,
                     getPosASL _obj,
-                    getDir _obj,
                     vectorDir _obj,
                     vectorUp _obj,
                     simulationEnabled _obj,

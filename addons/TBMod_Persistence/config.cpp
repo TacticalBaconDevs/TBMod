@@ -1,6 +1,6 @@
 class CfgPatches
 {
-    class TBMod_pkins
+    class TBMod_persistence
     {
         name = "TBMod Persistence";
         
