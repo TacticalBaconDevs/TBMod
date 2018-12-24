@@ -34,11 +34,8 @@ class CfgFunctions
             class chatCommands {};
             class schauspieler {};
             class miscStuff {};
-            class persistence {};
-            class cargo {};
             class sitAI {};
             class animationAI {};
-            class clearCache {};
             class keysForAI {};
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
