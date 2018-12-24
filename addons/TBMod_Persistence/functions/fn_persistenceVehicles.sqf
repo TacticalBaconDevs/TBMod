@@ -6,8 +6,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_number", 0, [0]],
-        ["_storagearray", [], []]
+        ["_storagearray", [], [[], [], [], []]]
     ];
 
 
@@ -28,7 +27,9 @@ if (_save) then
         private _array = [
             typeOf _veh,
             getPosASL _veh,
-            getDir _veh,
+            vectorDir _veh,
+            vectorUp _veh,
+            simulationEnabled _veh,
             [true, _veh] call TB_fnc_cargo,
             (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _veh] call TB_fnc_cargo]},
             if ((getAllHitPointsDamage _veh) isEqualTo []) then {[]} else {[(getAllHitPointsDamage _veh) select 0, (getAllHitPointsDamage _veh) select 2]},
@@ -46,7 +47,7 @@ if (_save) then
 else // load
 {
 	{
-        _x params ["_class", "_pos", "_dir", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew", "_name"];
+        _x params ["_class", "_pos", "_dir", "_up", "_sim", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew", "_name"];
         
         private _vehicle = (if (isNil "_name") then
             {
@@ -57,7 +58,7 @@ else // load
                 missionNamespace getVariable [_name, objNull];
             });
         
-        _vehicle setDir _dir;
+        _vehicle setVectorDirAndUp [_dir, _up];
         
         if (_vehicle in TB_persistence_tempSimulationDisabled) then {_pos set [2, (_pos select 2) + 0.5]};
         _vehicle setPosASL _pos;
@@ -91,8 +92,9 @@ else // load
             _unit moveInAny _vehicle;
         }
         forEach (_crew select 1);
+        if (!_sim) then {_vehicle enableSimulationGlobal false};
     }
     forEach (_storagearray select 3);
-}
+};
 
 (format ["[TBMod_persistence] Fahrzeuge wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];

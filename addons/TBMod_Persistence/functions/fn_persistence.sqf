@@ -26,16 +26,16 @@ if (_save) then
     ];
     
     // save current players
-    [_save, _number, _saveArray] spawn TB_fnc_persistencePlayers;
+    [_save, _saveArray] call TB_fnc_persistencePlayers;
 
     // save marker
-    [_save, _number, _saveArray] spawn TB_fnc_persistenceMarkers;
+    [_save, _saveArray] call TB_fnc_persistenceMarkers;
 
     //save objects
-    [_save, _number, _saveArray] spawn TB_fnc_persistenceObjects;
+    [_save, _saveArray] call TB_fnc_persistenceObjects;
     
     // save vehicles
-    [_save, _number, _saveArray] spawn TB_fnc_persistenceVehicles;
+    [_save, _saveArray] call TB_fnc_persistenceVehicles;
 
     //save storagearray
     profileNamespace setVariable [format ["TB_persistence_%1", _number], _saveArray];
@@ -43,7 +43,7 @@ if (_save) then
     (format ["[TBMod_persistence] Es wurde alles in Slot %1 gespeichert!", _number]) remoteExecCall ["systemChat"];
 
     //save TBMod_building stuff
-    [true, _number] spawn TB_fnc_buildingPersistence;
+    [true, _number] call TB_fnc_buildingPersistence;
 }
 else // load
 {
@@ -66,24 +66,24 @@ else // load
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
     
     // Marker laden
-    
-    
+    [_save, _loadArray] call TB_fnc_persistenceMarkers;
+
     // das Löschen der Fahrzeuge dauert etwas, um Explosionen zu verhindern kurz warten
     uiSleep 1;
 
     // Objekte laden
-    
+    [_save, _loadArray] call TB_fnc_persistenceObjects;
 
     // Fahrzeuge organisieren
-    
+    [_save, _loadArray] call TB_fnc_persistenceVehicles;
 
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
     //Teleport players
-    [_save, _number, _loadArray] spawn TB_fnc_persistenceMarkers;
+    [_save, _loadArray] call TB_fnc_persistencePlayers;
 
-    [false, _number] spawn TB_fnc_buildingPersistence;
+    [false, _number] call TB_fnc_buildingPersistence;
     
     (format ["[TBMod_persistence] Es wurde alles von Slot %1 geladen!", _number]) remoteExecCall ["systemChat"];
 };

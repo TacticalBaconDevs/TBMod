@@ -7,8 +7,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_number", 0, [0]],
-        ["_storagearray", [], []]
+        ["_storagearray", [], [[], [], [], []]]
     ];
 
 
@@ -26,7 +25,8 @@ if (_save) then
         private _array = [
                 typeOf _x,
                 getPosASL _x,
-                getDir _x,
+                vectorDir _x,
+                vectorUp _x,
                 simulationEnabled _x
             ];
         
@@ -39,7 +39,7 @@ if (_save) then
 else // load
 {
 	{
-        _x params ["_classname", "_pos", "_dir", "_sim", "_name"];
+        _x params ["_classname", "_pos", "_dir", "_up","_sim", "_name"];
         
         objNull;
 
@@ -52,12 +52,12 @@ else // load
                 missionNamespace getVariable [_name, objNull];
             });
         
-        _obj setDir _dir;
+        _obj setVectorDirAndUp [_dir, _up];
         _obj setPosASL _pos;
 
         if (!_sim) then {_obj enableSimulationGlobal false};
     }
     forEach (_storagearray select 2);
-}
+};
 
 (format ["[TBMod_persistence] Objekte wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];

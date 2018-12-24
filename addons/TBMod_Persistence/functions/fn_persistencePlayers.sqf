@@ -6,8 +6,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_number", 0, [0]],
-        ["_storagearray", [], []]
+        ["_storagearray", [], [[], [], [], []]]
     ];
 
 
@@ -80,6 +79,6 @@ else // load
         };
     }
     forEach allPlayers;
-}
+};
 
 (format ["[TBMod_persistence] Positionen aller Spieler wurden %1", ["geladen und gesetzt.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];

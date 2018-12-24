@@ -6,8 +6,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_number", 0, [0]],
-        ["_storagearray", [], []]
+        ["_storagearray", [], [[], [], [], []]]
     ];
 
 
@@ -46,6 +45,6 @@ else // load
         _newMarker setMarkerText _text;
     }
     forEach (_storagearray select 1);
-}
+};
 
 (format ["[TBMod_persistence] Marker wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];
