@@ -12,6 +12,7 @@ params [
 
 if (_save) then
 {
+    if(isNil "TB_disconnectCache") then {TB_disconnectCache = [];};
    {
         private _unit = _x;
         private _uid = getPlayerUID _unit;
