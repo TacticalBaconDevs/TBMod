@@ -32,7 +32,7 @@ if (_save) then
         
         if (vehicleVarName _x != "") then {_array pushBack (vehicleVarName _x)};
         
-        (_storagearray select 2) pushBack _array;
+        _storagearray pushBack _array;
     }
     forEach _objectarray;
 }
@@ -55,7 +55,7 @@ else // load
 
         if (!_sim) then {_obj enableSimulationGlobal false};
     }
-    forEach (_storagearray select 2);
+    forEach _storagearray;
 };
 
 (format ["[TBMod_persistence] Objekte wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];

@@ -6,7 +6,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_storagearray", [], [[], [], [], []]]
+        ["_storagearray", [], []]
     ];
 
 
@@ -42,11 +42,11 @@ if (_save) then
     }
     forEach allPlayers;
     publicVariable "TB_disconnectCache";
-    _storagearray set [0, TB_disconnectCache];
+    _storagearray = TB_disconnectCache;
 }
 else // load
 {
-    TB_disconnectCache = _storagearray select 0;
+    TB_disconnectCache = _storagearray;
     publicVariable "TB_disconnectCache";
     {
         private _find = [TB_disconnectCache, getPlayerUID _x] call BIS_fnc_findNestedElement;

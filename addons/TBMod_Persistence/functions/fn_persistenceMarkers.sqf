@@ -6,7 +6,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_storagearray", [], [[], [], [], []]]
+        ["_storagearray", [], []]
     ];
 
 
@@ -14,7 +14,7 @@ if (_save) then
 {
     {
         if ((_x select [0, 13]) == "_USER_DEFINED") then {
-            (_storagearray select 1) pushBack [
+            _storagearray pushBack [
                 _x,
                 markerPos _x,
                 markerColor _x,
@@ -44,7 +44,7 @@ else // load
         _newMarker setMarkerShape _shape;
         _newMarker setMarkerText _text;
     }
-    forEach (_storagearray select 1);
+    forEach _storagearray;
 };
 
 (format ["[TBMod_persistence] Marker wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];

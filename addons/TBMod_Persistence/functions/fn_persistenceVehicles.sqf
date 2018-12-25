@@ -6,7 +6,7 @@
 
 params [
         ["_save", false, [false]],
-        ["_storagearray", [], [[], [], [], []]]
+        ["_storagearray", [], []]
     ];
 
 
@@ -42,7 +42,7 @@ if (_save) then
 
             if (vehicleVarName _veh != "") then {_array pushBack (vehicleVarName _x)};
         
-            (_storagearray select 3) pushBack _array;
+            _storagearray pushBack _array;
         };        
     }
     forEach vehicles;
@@ -97,7 +97,7 @@ else // load
         forEach (_crew select 1);
         if (!_sim) then {_vehicle enableSimulationGlobal false};
     }
-    forEach (_storagearray select 3);
+    forEach _storagearray;
 };
 
 (format ["[TBMod_persistence] Fahrzeuge wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];

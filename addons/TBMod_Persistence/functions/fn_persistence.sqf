@@ -26,16 +26,16 @@ if (_save) then
     ];
     
     // save current players
-    [_save, _saveArray] call TB_fnc_persistencePlayers;
+    [_save, _saveArray select 0] call TB_fnc_persistencePlayers;
 
     // save marker
-    [_save, _saveArray] call TB_fnc_persistenceMarkers;
+    [_save, _saveArray select 1] call TB_fnc_persistenceMarkers;
 
     //save objects
-    [_save, _saveArray] call TB_fnc_persistenceObjects;
+    [_save, _saveArray select 2] call TB_fnc_persistenceObjects;
     
     // save vehicles
-    [_save, _saveArray] call TB_fnc_persistenceVehicles;
+    [_save, _saveArray select 3] call TB_fnc_persistenceVehicles;
 
     //save storagearray
     profileNamespace setVariable [format ["TB_persistence_%1", _number], _saveArray];
@@ -66,22 +66,22 @@ else // load
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
     
     // Marker laden
-    [_save, _loadArray] call TB_fnc_persistenceMarkers;
+    [_save, _loadArray select 1] call TB_fnc_persistenceMarkers;
 
     // das Löschen der Fahrzeuge dauert etwas, um Explosionen zu verhindern kurz warten
     uiSleep 1;
 
     // Objekte laden
-    [_save, _loadArray] call TB_fnc_persistenceObjects;
+    [_save, _loadArray select 2] call TB_fnc_persistenceObjects;
 
     // Fahrzeuge organisieren
-    [_save, _loadArray] call TB_fnc_persistenceVehicles;
+    [_save, _loadArray select 3] call TB_fnc_persistenceVehicles;
 
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
     //Teleport players
-    [_save, _loadArray] call TB_fnc_persistencePlayers;
+    [_save, _loadArray select 0] call TB_fnc_persistencePlayers;
 
     [false, _number] call TB_fnc_buildingPersistence;
     
