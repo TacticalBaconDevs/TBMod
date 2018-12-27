@@ -39,14 +39,14 @@ private _lookup = [["hitengine","Enh_damageEngine"],["hitgun","Enh_damageGun"],[
         { 
             private _part = _x; 
             private _result = (_lookup select {(tolower (_x # 0)) isEqualTo  (tolower _part)}); 
-               if(!(_result isEqualTo [])) then { 
+            if(!(_result isEqualTo [])) then { 
                 _vehicle set3DENAttribute [_result # 0 # 1, (_dmg select 1) select _forEachIndex]; 
-               };     
+            };     
         }forEach (_dmg select 0); 
     }; 
  
     _vehicle set3DENAttribute ["fuel", _fuel]; 
- _vehicle set3DENAttribute ["enableSimulation", _sim]; 
+    _vehicle set3DENAttribute ["enableSimulation", _sim]; 
 } forEach (_loadArray select 3); 
  
  
