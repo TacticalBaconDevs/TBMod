@@ -20,17 +20,24 @@ if (_save) then
 else
 {
     _value params ["_backpack", "_item", "_mags", "_items"];
-    
+
     {
         _vehicle addBackpackCargoGlobal [_x, (_backpack select 1) select _forEachIndex];
-    } forEach (_backpack select 0);
+    }
+    forEach (_backpack select 0);
+
     {
         _vehicle addItemCargoGlobal [_x, (_item select 1) select _forEachIndex];
-    } forEach (_item select 0);
+    }
+    forEach (_item select 0);
+
     {
         _vehicle addMagazineCargoGlobal [_x, (_mags select 1) select _forEachIndex];
-    } forEach (_mags select 0);
+    }
+    forEach (_mags select 0);
+
     {
         _vehicle addItemCargoGlobal [_x, (_items select 1) select _forEachIndex];
-    } forEach (_items select 0);
+    }
+    forEach (_items select 0);
 };

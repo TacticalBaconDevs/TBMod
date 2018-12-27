@@ -6,17 +6,13 @@ class CfgPatches
 {
     class TBModExt_monitoring
     {
-        author = "shukari";
-        authorUrl = "tacticalbacon.de";
-        
-        requiredVersion = 1.84;
+        name = "TBModExt Monitoring";
+
         requiredAddons[] = {
             "TBMod_main"
         };
-        
         addonRootClass = "TBMod_main";
     };
 };
 
-#include "CfgFunctions.hpp"
 #include "ExtendedEventHandlers.hpp"

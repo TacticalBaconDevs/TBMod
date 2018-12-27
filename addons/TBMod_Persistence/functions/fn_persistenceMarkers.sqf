@@ -1,14 +1,11 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-    
 */
-
 params [
         ["_save", false, [false]],
         ["_storagearray", [], []]
     ];
-
 
 if (_save) then
 {
@@ -25,7 +22,8 @@ if (_save) then
             markerShape _x,
             markerText _x
         ];
-    } forEach allMapMarkers;
+    }
+    forEach allMapMarkers;
 }
 else // load
 {
@@ -46,4 +44,5 @@ else // load
     forEach _storagearray;
 };
 
-(format ["[TBMod_persistence] Marker wurden %1", ["geladen.", "gespeichert."] select(_save)]) remoteExecCall ["systemChat"];
+(format ["[TBMod_persistence] Marker wurden ge%1.", ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
+_storagearray;

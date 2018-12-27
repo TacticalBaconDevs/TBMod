@@ -1,5 +1,6 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
 class CfgFunctions
 {

@@ -1,7 +1,7 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     ToDo:
     - Unsung Minen sind CfgAmmos auf dem Boden
         - zu finden per Default das ist dan aber alle CfgWeapons (allMissionObjects "Default")
@@ -24,36 +24,34 @@ if (_save) then
         [],     // Objects
         []      // Vehicles
     ];
-    
+
     // save current players
-    [_save, _saveArray select 0] call TB_fnc_persistencePlayers;
+    _saveArray set [0, [_save] call TB_fnc_persistencePlayers];
 
     // save marker
-    [_save, _saveArray select 1] call TB_fnc_persistenceMarkers;
+    _saveArray set [1, [_save] call TB_fnc_persistenceMarkers];
 
-    //save objects
-    [_save, _saveArray select 2] call TB_fnc_persistenceObjects;
-    
+    // save objects
+    _saveArray set [2, [_save] call TB_fnc_persistenceObjects];
+
     // save vehicles
-    [_save, _saveArray select 3] call TB_fnc_persistenceVehicles;
+    _saveArray set [3, [_save] call TB_fnc_persistenceVehicles];
 
-    //save storagearray
+    // save storagearray
     profileNamespace setVariable [format ["TB_persistence_%1", _number], _saveArray];
 
-    (format ["[TBMod_persistence] Es wurde alles in Slot %1 gespeichert!", _number]) remoteExecCall ["systemChat"];
-
-    //save TBMod_building stuff
-    [true, _number] call TB_fnc_buildingPersistence;
+    // save TBMod_building stuff
+    [true, _number] call TB_fnc_persistenceBuilding;
 }
 else // load
 {
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _number], [[], [], [], []]];
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
     _objArray = _objArray arrayIntersect _objArray;
-    
+
     // vorhandene nicht benannte Fahrzeuge löschen
     (_objArray select {vehicleVarName _x == ""}) call CBA_fnc_deleteEntity;
-    
+
     // Benutzermarker löschen
     (allMapMarkers select {(_x select [0, 13]) == "_USER_DEFINED"}) call CBA_fnc_deleteEntity;
 
@@ -64,7 +62,7 @@ else // load
         TB_persistence_tempSimulationDisabled pushBackUnique _x;
     }
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
-    
+
     // Marker laden
     [_save, _loadArray select 1] call TB_fnc_persistenceMarkers;
 
@@ -80,10 +78,11 @@ else // load
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
-    //Teleport players
+    // Teleport players
     [_save, _loadArray select 0] call TB_fnc_persistencePlayers;
 
-    [false, _number] call TB_fnc_buildingPersistence;
-    
-    (format ["[TBMod_persistence] Es wurde alles von Slot %1 geladen!", _number]) remoteExecCall ["systemChat"];
+    // Load TBMod_building stuff
+    [false, _number] call TB_fnc_persistenceBuilding;
 };
+
+(format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _number, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];

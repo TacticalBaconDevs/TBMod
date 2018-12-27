@@ -3,8 +3,6 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
     
-    Author: Willi "shukari" Graff
-    
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
 class ctrlCombo;

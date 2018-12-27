@@ -6,10 +6,10 @@ class CfgPatches
         
         author = "Eric";
         
-        
-
-        requiredAddons[] = {"TBMod_main",
-                            "TBMod_building"};
+        requiredAddons[] = {
+            "TBMod_main",
+            "TBMod_building"
+        };
         addonRootClass = "TBMod_main";
     };
 };
