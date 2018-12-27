@@ -10,8 +10,8 @@ params [
         ["_dontAddToArray", false, [false]]
     ];
 
-if (!isServer) exitWith {"[TBMod_building] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
-if !(_number in [1,2,3,4,5]) exitWith {"[TBMod_building] Wähle einen Slot zwischen 1-5" remoteExecCall ["systemChat"]};
+if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
+if !(_number in [1,2,3,4,5]) exitWith {"[TBMod_persistence] Wähle einen Slot zwischen 1-5" remoteExecCall ["systemChat"]};
 
 if (_save) then
 {
@@ -42,7 +42,7 @@ else //laden
 {
     private _array = profileNamespace getVariable [format ["TB_persistent_buildings_%1", _number], []];
 
-    if (_array isEqualTo []) exitWith {"[TBMod_building] Nichts zum Laden verfügbar!" remoteExecCall ["systemChat"]};
+    if (_array isEqualTo []) exitWith {"[TBMod_persistence] Nichts zum Laden verfügbar!" remoteExecCall ["systemChat"]};
     if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
 
     {
@@ -99,4 +99,4 @@ else //laden
     publicVariable "TB_persistent_buildings";
 };
 
-(format ["[TBMod_building] Es wurde alles aus Slot %1 ge%2.", _number, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
+(format ["[TBMod_persistence] Es wurde alles aus Slot %1 ge%2.", _number, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
