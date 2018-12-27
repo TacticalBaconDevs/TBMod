@@ -6,7 +6,7 @@
 */
 params [
         ["_save", false, [false]],
-        ["_storagearray", [], [[], [], [], []]]
+        ["_storagearray", [], [[]]]
     ];
 
 if (_save) then
@@ -26,6 +26,7 @@ if (_save) then
                 getPosASL _x,
                 vectorDir _x,
                 vectorUp _x,
+                getDir _x,
                 simulationEnabled _x
             ];
 
@@ -38,7 +39,7 @@ if (_save) then
 else // load
 {
     {
-        _x params ["_classname", "_pos", "_dir", "_up", "_sim", "_name"];
+        _x params ["_classname", "_pos", "_dir", "_up", "_dirsimple", "_sim", "_name"];
 
         private _obj = (if (isNil "_name") then
             {
@@ -51,6 +52,7 @@ else // load
 
         _obj setVectorDirAndUp [_dir, _up];
         _obj setPosASL _pos;
+
         _obj enableSimulationGlobal _sim;
     }
     forEach _storagearray;

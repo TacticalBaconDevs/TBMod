@@ -32,11 +32,15 @@ forEach (_loadArray select 1);
 
 // Objects
 {
-    _x params ["_classname", "_pos", "_dir", "_up", "_sim", "_nameignored"];
+    _x params ["_classname", "_pos", "_dir", "_up", "_dirsimple", "_sim", "_nameignored"];
 
     private _obj = create3DENEntity ["Object", _classname, ASLToATL _pos, true];
 
     //_obj setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
+
+    // Workaround
+    private _v = (_obj get3DENAttribute "rotation") select 0;
+    _obj set3DENAttribute ["rotation",  [_v select 0, _v select 1, _dirsimple]];
 
     _obj set3DENAttribute ["enableSimulation", _sim];
 }
@@ -44,11 +48,15 @@ forEach (_loadArray select 2);
 
 // Vehicles
 {
-    _x params ["_class", "_pos", "_dir", "_up", "_sim", "_vanillaCargoignored", "_aceCargoignored", "_dmg", "_ammoignored", "_fuel", "_crew", "_nameignored"];
+    _x params ["_class", "_pos", "_dir", "_up", "_dirsimple", "_sim", "_vanillaCargoignored", "_aceCargoignored", "_dmg", "_ammoignored", "_fuel", "_crew", "_nameignored"];
 
     private _vehicle = create3DENEntity ["Object", _class, ASLToATL _pos, (_crew select 1) isEqualTo []];
 
     //_vehicle setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
+
+    // Workaround
+    private _v = (_obj get3DENAttribute "rotation") select 0;
+    _obj set3DENAttribute ["rotation",  [_v select 0, _v select 1, _dirsimple]];
 
     if !(_dmg isEqualTo []) then
     {
