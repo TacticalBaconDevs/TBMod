@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
-#define BLACKLIST ["ACE_BFT_", "trace_", "_USER_DEFINED", "curatorInterface_"]
+#define BLACKLIST ["ACE_BFT_", "trace_"]
 params [
         ["_save", false, [false]],
         ["_storagearray", [], []]
@@ -13,20 +13,20 @@ if (_save) then
     {
         private _marker = _x;
 
-        if (BLACKLIST findIf {([_marker, _x] call CBA_fnc_find) != -1} == -1) then
+        if (BLACKLIST findIf {([toLower _marker, toLower _x] call CBA_fnc_find) != -1} == -1 && markerShape _x != "POLYLINE") then
         {
             _storagearray pushBack [
-                _marker,
-                markerPos _x,
-                markerColor _x,
-                markerSize _x,
-                markerType _x,
-                markerAlpha _x,
-                markerBrush _x,
-                markerDir _x,
-                markerShape _x,
-                markerText _x
-            ];
+                    _marker,
+                    markerPos _x,
+                    markerColor _x,
+                    markerSize _x,
+                    markerType _x,
+                    markerAlpha _x,
+                    markerBrush _x,
+                    markerDir _x,
+                    markerShape _x,
+                    markerText _x
+                ];
         };
     }
     forEach allMapMarkers;
