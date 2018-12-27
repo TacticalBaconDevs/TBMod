@@ -32,7 +32,6 @@ if (_save) then
                     getPosASL _veh,
                     vectorDir _veh,
                     vectorUp _veh,
-                    getDir _veh,
                     simulationEnabled _veh,
                     [true, _veh] call TB_fnc_cargo,
                     (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _x] call TB_fnc_cargo]},
@@ -52,7 +51,7 @@ if (_save) then
 else // load
 {
     {
-        _x params ["_class", "_pos", "_dir", "_up", "_dirsimple", "_sim", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew", "_name"];
+        _x params ["_class", "_pos", "_dir", "_up", "_sim", "_vanillaCargo", "_aceCargo", "_dmg", "_ammo", "_fuel", "_crew", "_name"];
 
         private _vehicle = (if (isNil "_name") then
             {

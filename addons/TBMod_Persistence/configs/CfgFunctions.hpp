@@ -7,7 +7,7 @@ class CfgFunctions
     class TBMod_persistence
     {
         tag = "TB";
-        
+
         class functions
         {
             file = "\TBMod_persistence\functions";
@@ -20,7 +20,7 @@ class CfgFunctions
             class persistenceBuilding {};
             class cargo {};
             class clearCache {};
+            class vector2Eden {};
         };
-        
     };
 };
