@@ -22,7 +22,7 @@ foreach (all3DENEntities select 0);
          
     //_obj setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
  
- _obj set3DENAttribute ["enableSimulation",false ]; 
+    _obj set3DENAttribute ["enableSimulation",false ]; 
 } 
 forEach (_loadArray select 2); 
  
@@ -37,11 +37,11 @@ private _lookup = [["hitengine","Enh_damageEngine"],["hitgun","Enh_damageGun"],[
          
     if !(_dmg isEqualTo []) then { 
         { 
-        	private _part = _x; 
-        	private _result = (_lookup select {(tolower (_x # 0)) isEqualTo  (tolower _part)}); 
-   			if(!(_result isEqualTo [])) then { 
-    			_vehicle set3DENAttribute [_result # 0 # 1, (_dmg select 1) select _forEachIndex]; 
-   			};     
+            private _part = _x; 
+            private _result = (_lookup select {(tolower (_x # 0)) isEqualTo  (tolower _part)}); 
+               if(!(_result isEqualTo [])) then { 
+                _vehicle set3DENAttribute [_result # 0 # 1, (_dmg select 1) select _forEachIndex]; 
+               };     
         }forEach (_dmg select 0); 
     }; 
  
