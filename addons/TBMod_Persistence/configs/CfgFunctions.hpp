@@ -11,6 +11,7 @@ class CfgFunctions
         {
             file = "\TBMod_persistence\functions";
             class persistence {};
+            class persistenceEDEN {};
             class persistencePlayers {};
             class persistenceMarkers {};
             class persistenceObjects {};
