@@ -38,7 +38,7 @@ forEach (_loadArray select 1);
     private _obj = create3DENEntity ["Object", _classname, ASLToATL _pos, true];
 
     //_obj setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
-    _obj set3DENAttribute ["Init", format ["_this setVectorDirAndUp [%1, %2];", _dir, _up]];
+    _obj set3DENAttribute ["Init", format ["if(local this) then {this setVectorDirAndUp [%1, %2]};", _dir, _up]];
 
 
     // Workaround
@@ -56,7 +56,8 @@ forEach (_loadArray select 2);
     private _vehicle = create3DENEntity ["Object", _class, ASLToATL _pos, (_crew select 1) isEqualTo []];
 
     //_vehicle setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
-    _obj set3DENAttribute ["Init", format ["_this setVectorDirAndUp [%1, %2];", _dir, _up]];
+    _vehicle set3DENAttribute ["Init", format ["if(local this) then {this setVectorDirAndUp [%1, %2]};", _dir, _up]];
+
 
     // Workaround
     private _v = (_obj get3DENAttribute "rotation") select 0;
