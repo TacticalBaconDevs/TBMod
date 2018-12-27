@@ -1,5 +1,6 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
 class CfgFunctions
 {
@@ -34,11 +35,8 @@ class CfgFunctions
             class chatCommands {};
             class schauspieler {};
             class miscStuff {};
-            class persistence {};
-            class cargo {};
             class sitAI {};
             class animationAI {};
-            class clearCache {};
             class keysForAI {};
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
