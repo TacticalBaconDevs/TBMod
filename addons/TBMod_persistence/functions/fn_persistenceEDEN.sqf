@@ -13,16 +13,16 @@ private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", 
   delete3DENEntities [_x] 
  } 
 } 
-foreach (all3DENEntities select 0); 
+foreach (all3DENEntities select 0);     
  
 { 
-    _x params ["_classname", "_pos", "_dir", "_up","_dirsimple", "_sim", "_nameignored"]; 
+    _x params ["_classname", "_pos", "_dir", "_up", "_dirsimple", "_sim", "_nameignored"]; 
  
     private _obj = create3DENEntity ["Object", _classname, ASLToATL _pos]; 
          
     //_obj setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
- 	private v = (_obj get3DENAttribute "rotation") select 0;  //Workaround
- 	_obj set3DENAttribute ["rotation",  [v # 0, v # 1, _dirsimple]]; //Workaround
+    private _v = (_obj get3DENAttribute "rotation") select 0;  //Workaround
+    _obj set3DENAttribute ["rotation",  [_v # 0, _v # 1, _dirsimple]]; //Workaround
     _obj set3DENAttribute ["enableSimulation", _sim]; 
 } 
 forEach (_loadArray select 2); 
@@ -35,15 +35,15 @@ private _lookup = [["hitengine","Enh_damageEngine"],["hitgun","Enh_damageGun"],[
              
          
     //_vehicle setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
-    private v = (_vehicle get3DENAttribute "rotation") select 0;  //Workaround
- 	_vehicle set3DENAttribute ["rotation",  [v # 0, v # 1, _dirsimple]]; //Workaround
+    private _v = (_vehicle get3DENAttribute "rotation") select 0;  //Workaround
+    _vehicle set3DENAttribute ["rotation",  [_v # 0, _v # 1, _dirsimple]]; //Workaround
     if !(_dmg isEqualTo []) then { 
         { 
             private _part = _x; 
             private _result = (_lookup select {(tolower (_x # 0)) isEqualTo  (tolower _part)}); 
             if(!(_result isEqualTo [])) then { 
                 _vehicle set3DENAttribute [_result # 0 # 1, (_dmg select 1) select _forEachIndex]; 
-            };     
+            };   
         }forEach (_dmg select 0); 
     }; 
  
