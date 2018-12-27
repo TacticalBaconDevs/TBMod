@@ -22,7 +22,7 @@ foreach (all3DENEntities select 0);
          
     //_obj setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
     private _v = (_obj get3DENAttribute "rotation") select 0;  //Workaround
-    _obj set3DENAttribute ["rotation",  [_v # 0, _v # 1, _dirsimple]]; //Workaround
+    _obj set3DENAttribute ["rotation",  [_v select 0, _v select 1, _dirsimple]]; //Workaround
     _obj set3DENAttribute ["enableSimulation", _sim]; 
 } 
 forEach (_loadArray select 2); 
@@ -36,13 +36,13 @@ private _lookup = [["hitengine","Enh_damageEngine"],["hitgun","Enh_damageGun"],[
          
     //_vehicle setVectorDirAndUp [_dir, _up]; Rotation is not working I have no idea what the calculation to xyz rotation is
     private _v = (_vehicle get3DENAttribute "rotation") select 0;  //Workaround
-    _vehicle set3DENAttribute ["rotation",  [_v # 0, _v # 1, _dirsimple]]; //Workaround
+    _vehicle set3DENAttribute ["rotation",  [_v select 0, _v select 1, _dirsimple]]; //Workaround
     if !(_dmg isEqualTo []) then { 
         { 
             private _part = _x; 
-            private _result = (_lookup select {(tolower (_x # 0)) isEqualTo  (tolower _part)}); 
+            private _result = (_lookup select {(tolower (_x select 0)) isEqualTo  (tolower _part)}); 
             if(!(_result isEqualTo [])) then { 
-                _vehicle set3DENAttribute [_result # 0 # 1, (_dmg select 1) select _forEachIndex]; 
+                _vehicle set3DENAttribute [_result select 0 select 1, (_dmg select 1) select _forEachIndex]; 
             };   
         }forEach (_dmg select 0); 
     }; 
