@@ -52,6 +52,6 @@ if(_save) then {
         if (_dialogResult2 isEqualTo []) exitWith{}; 
  
         _dialogResult2 params ["_nameidx"]; 
-        [_save, _saves select _nameidx] call TB_fnc_persistence; 
+        [_save, _saves select _nameidx] remoteExec ["TB_fnc_persistence", 2]; 
     };
 }; 
