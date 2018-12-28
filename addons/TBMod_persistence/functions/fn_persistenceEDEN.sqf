@@ -4,11 +4,13 @@
 */
 #define HITPOINTS [["hitengine", "Enh_damageEngine"], ["hitgun", "Enh_damageGun"], ["hitfuel", "Enh_damageFuelTank"], ["hitturret", "Enh_damageTurret"], ["hithull", "Enh_hull"], ["hitrglass", "Enh_damageWindows"], ["hitglass1", "Enh_damageWindows1"], ["hitglass2", "Enh_damageWindows2"], ["hitglass3", "Enh_damageWindows3"], ["hitglass4", "Enh_damageWindows4"], ["hitglass5", "Enh_damageWindows5"], ["hitglass6", "Enh_damageWindows6"], ["hitlfwheel", "Enh_damageLFWheel"], ["hitrfwheel", "Enh_damageRFWheel"], ["hitlf2wheel","Enh_damageLF2Wheel"], ["hitrf2wheel", "Enh_damageRF2Wheel"], ["hitlmwheel", "Enh_damageLMWheel"], ["hitrmwheel", "Enh_damageRMWheel"], ["hitlbwheel", "Enh_damageLBWheel"], ["hitrbwheel", "Enh_damageRBWheel"], ["hitbody", "Enh_damageVehBody"], ["hitltrack", "Enh_damageLTrack"], ["hitrtrack","Enh_damageRTrack"], ["hitavionics", "Enh_damageAvionics"], ["hitrrotor", "Enh_damageMainRotor"], ["hitvrotor", "Enh_damageTailRotor"], ["hitengine2", "Enh_engine2"], ["hitfuel2", "Enh_fuel2"], ["hitlaileron", "Enh_hitlaileron"], ["hitraileron", "Enh_hitraileron"], ["hitlcrudder", "Enh_hitlcrudder"], ["hitrrudder", "Enh_hitrrudder"], ["hitlcelevator", "Enh_hitlcelevator"], ["hitrelevator", "Enh_hitrelevator"], ["#gear_f_lights", "Enh_gear_f_lights"]]
 params [
-        ["_number", 0, [0]],
+        ["_name", "", [""]],
         ["_addToEditor", false, [false]]
     ];
+if(!is3DEN) exitWith {systemChat "[TBMod_persistence]Nur im Eden Editor verfügbar."};
+if (_name == "") exitWith {systemChat "[TBMod_persistence] Kein Name angegeben"};
 
-private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _number], [[], [], [], []]];
+private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
 
 if (!_addToEditor) then
 {
@@ -65,3 +67,5 @@ forEach (_loadArray select 2);
     };
 }
 forEach (_loadArray select 3);
+
+systemChat format["[TBMod_persistence] Loaded from slot %1" , _name];

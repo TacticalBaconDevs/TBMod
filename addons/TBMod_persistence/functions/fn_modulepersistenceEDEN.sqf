@@ -12,8 +12,8 @@
         ] 
     ] call Ares_fnc_showChooseDialog; 
  
-    if (_dialogResult2 isEqualTo []) exitWith{}; 
+    if (_dialogResult2 isEqualTo []) exitWith{systemChat "[TBMod_persistence] Abbruch"}; 
  
     _dialogResult2 params ["_nameidx"]; 
-    [_save, _saves select _nameidx] call TB_fnc_persistenceEDEN; 
+    [_saves select _nameidx] call TB_fnc_persistenceEDEN; 
 }
