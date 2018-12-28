@@ -2,6 +2,12 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
+params ["_logic", "", "_activated"];
+
+if !(local _logic) exitWith {true};
+deleteVehicle _logic;
+if !(_activated) exitWith {true};
+    
 0 spawn { 
  
 private _dialogResult = 

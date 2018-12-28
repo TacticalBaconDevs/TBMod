@@ -7,8 +7,8 @@
 {
     profileNamespace setVariable [format ["TB_persistent_buildings_%1", _x], nil];
     profileNamespace setVariable [format ["TB_persistence_%1", _x], nil];
-} forEach ( private _saves = profileNamespace getVariable ["TB_persistence_savednames",[]]);
-profileNamespace setVariable ["TB_persistence_savednames",nil]
+} forEach (profileNamespace getVariable ["TB_persistence_savednames",[]]);
+profileNamespace setVariable ["TB_persistence_savednames",nil];
 
 //Delete old. Backcomp
 for "_i" from 1 to 5 do

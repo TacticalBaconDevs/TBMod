@@ -15,6 +15,7 @@ private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", 
 if (!_addToEditor) then
 {
     delete3DENEntities ((all3DENEntities select 0) select {!((_x get3DENAttribute "ControlMP") select 0 || (_x get3DENAttribute "ControlSP") select 0)});
+    delete3DENEntities (all3DENEntities select 5);
 };
 
 // Markers
