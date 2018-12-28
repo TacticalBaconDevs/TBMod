@@ -16,6 +16,7 @@ if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" rem
 if (!canSuspend) exitWith {"[TBMod_persistence] Skript muss per SPAWN ausgeführt werden" remoteExecCall ["systemChat"]};
 if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
 
+
 if (_save) then
 {
     private _saveArray = [
@@ -38,6 +39,7 @@ if (_save) then
     _saveArray set [3, [_save] call TB_fnc_persistenceVehicles];
 
     // save storagearray
+
     profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
 
     // save TBMod_building stuff
@@ -46,6 +48,7 @@ if (_save) then
 else // load
 {
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
+
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
     _objArray = _objArray arrayIntersect _objArray;
 
@@ -86,3 +89,4 @@ else // load
 };
 
 (format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
+
