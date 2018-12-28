@@ -32,7 +32,6 @@ class CfgVehicles
         isDisposable = 0;
         is3DEN = 1;
     };
-    
-    // #include "..\LV\CfgVehicles.hpp"
+
     #include "..\eos\CfgVehicles.hpp"
 };
