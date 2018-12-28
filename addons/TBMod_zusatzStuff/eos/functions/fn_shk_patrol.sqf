@@ -8,8 +8,7 @@
     http://forums.bistudio.com/showthread.php?163496-SHK_Patrol
     Modified for EOS by Bangabob
     MODIFIED BY: shukari [TacticalBacon.de]
-    
-    Requires TB_EOS_fnc_shk_pos.sqf
+
     Required Parameters:
         0 Object or Group     The patrolling unit
         1 Marker Name
@@ -31,10 +30,15 @@ private _wps = [];
 private _slack = _dst / 5.5;
 if (_slack < 20) then {_slack = 20};
 
+private _mkrPos = getMarkerPos _mkr;
+(getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
+private _mkrSize = _mkrX min _mkrY;
+private _waterMode = parseNumber (surfaceIsWater (getPos (leader _grp)));
+
 // Find positions for waypoints
 while {count _wps < _cnt} do
 {
-    _wps pushBack ([_mkr, (surfaceIsWater (getPos (leader _grp)))] call TB_EOS_fnc_shk_pos);
+    _wps pushBack ([_mkrPos, 0, _mkrSize, 10, _waterMode, 0.25, 0] call TB_EOS_fnc_findSafePos);
 };
 
 // Create waypoints
@@ -44,7 +48,7 @@ for "_i" from 1 to (_cnt - 1) do
     _wp setWaypointType "MOVE";
     _wp setWaypointCompletionRadius (5 + _slack);
     [_grp,_i] setWaypointTimeout [0, 2, 16];
-    
+
     // When completing waypoint have 33% chance to choose a random next wp
     [_grp,_i] setWaypointStatements ["true", "if (random 3 > 2) then {(group this) setCurrentWaypoint [group this, floor (random (count (waypoints (group this))))]}"];
 };

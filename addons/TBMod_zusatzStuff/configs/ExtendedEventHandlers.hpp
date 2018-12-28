@@ -2,6 +2,7 @@ class Extended_PostInit_EventHandlers
 {
     class TBMod_zusatzStuff
     {
-        // clientInit = "call compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postClientInit.sqf'";
+        clientInit = "[] spawn compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postInit.sqf'";
+        // serverInit = "[] spawn compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postServerInit.sqf'";
     };
 };

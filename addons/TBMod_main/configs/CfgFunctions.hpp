@@ -7,7 +7,7 @@ class CfgFunctions
     class TBMod_main
     {
         tag = "TB";
-        
+
         class functions
         {
             file = "\TBMod_main\functions";
@@ -42,15 +42,17 @@ class CfgFunctions
             class moduleApplyLoadout {};
             class moduleFrontverlauf {};
             class debug {};
+            class forceRagdoll {};
+            class attachToRelative {};
         };
-        
+
         class gcam
         {
             file = "\TBMod_main\gcam";
             class showGCAM {};
         };
     };
-    
+
     // REPLACEMENT
     class Achilles
     {
@@ -62,13 +64,13 @@ class CfgFunctions
             };
         };
     };
-    
+
     // REPLACEMENT - Experiment
     class A3_Modules
     {
         tag = "BIS";
         project = "arma3";
-        
+
         class Environment
         {
             class moduleEditTerrainObject
