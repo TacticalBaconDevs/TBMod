@@ -39,8 +39,14 @@ forEach (_loadArray select 1);
     _x params ["_classname", "_pos", "_dir", "_up", "_sim"];
 
     private _obj = create3DENEntity ["Object", _classname, ASLToATL _pos, true];
-    _obj set3DENAttribute ["rotation", [_dir, _up] call TB_fnc_vector2Eden];
-    _obj set3DENAttribute ["enableSimulation", _sim];
+    if(isnil "_obj") then {
+        systemChat format ["[TBMod_persistence] Error creating object %1", _classname];
+    }
+    else
+    {
+        _obj set3DENAttribute ["rotation", [_dir, _up] call TB_fnc_vector2Eden];
+        _obj set3DENAttribute ["enableSimulation", _sim];
+    };
 }
 forEach (_loadArray select 2);
 
@@ -49,22 +55,28 @@ forEach (_loadArray select 2);
     _x params ["_class", "_pos", "_dir", "_up", "_sim", "", "", "_dmg", "", "_fuel", "_crew"];
 
     private _vehicle = create3DENEntity ["Object", _class, ASLToATL _pos, (_crew select 1) isEqualTo []];
-    _vehicle set3DENAttribute ["rotation", [_dir, _up] call TB_fnc_vector2Eden];
-    _vehicle set3DENAttribute ["fuel", _fuel];
-    _vehicle set3DENAttribute ["enableSimulation", _sim];
-
-    if !(_dmg isEqualTo []) then
+    if(isnil "_vehicle") then {
+        systemChat format ["[TBMod_persistence] Error creating object %1", _class];
+    }
+    else
     {
-        {
-            private _part = _x;
-            private _index = (HITPOINTS findIf {(_x select 0) == _part});
+        _vehicle set3DENAttribute ["rotation", [_dir, _up] call TB_fnc_vector2Eden];
+        _vehicle set3DENAttribute ["fuel", _fuel];
+        _vehicle set3DENAttribute ["enableSimulation", _sim];
 
-            if (_index != -1) then
+        if !(_dmg isEqualTo []) then
+        {
             {
-                _vehicle set3DENAttribute [(HITPOINTS select _index) select 1, (_dmg select 1) select _forEachIndex];
-            };
-        }
-        forEach (_dmg select 0);
+                private _part = _x;
+                private _index = (HITPOINTS findIf {(_x select 0) == _part});
+
+                if (_index != -1) then
+                {
+                    _vehicle set3DENAttribute [(HITPOINTS select _index) select 1, (_dmg select 1) select _forEachIndex];
+                };
+            }
+            forEach (_dmg select 0);   
+        };
     };
 }
 forEach (_loadArray select 3);
