@@ -1,12 +1,13 @@
 ﻿/*
-    Author: Willi "shukari" Graff
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
 class CfgFunctions
 {
     class TBMod_main
     {
         tag = "TB";
-        
+
         class functions
         {
             file = "\TBMod_main\functions";
@@ -34,25 +35,24 @@ class CfgFunctions
             class chatCommands {};
             class schauspieler {};
             class miscStuff {};
-            class persistence {};
-            class cargo {};
             class sitAI {};
             class animationAI {};
-            class clearCache {};
             class keysForAI {};
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
             class moduleFrontverlauf {};
             class debug {};
+            class forceRagdoll {};
+            class attachToRelative {};
         };
-        
+
         class gcam
         {
             file = "\TBMod_main\gcam";
             class showGCAM {};
         };
     };
-    
+
     // REPLACEMENT
     class Achilles
     {
@@ -64,13 +64,13 @@ class CfgFunctions
             };
         };
     };
-    
+
     // REPLACEMENT - Experiment
     class A3_Modules
     {
         tag = "BIS";
         project = "arma3";
-        
+
         class Environment
         {
             class moduleEditTerrainObject

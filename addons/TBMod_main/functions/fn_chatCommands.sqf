@@ -36,7 +36,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["safe", {
-    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
+    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
     {
         switch (_this select 0) do {
             case "1":
@@ -59,7 +59,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["hideGroup", {
-    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
+    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
     {
         switch (_this select 0) do {
             case "1":
@@ -82,15 +82,84 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["setGroup", {
-    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then 
+    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
     {
         if (_this select 0 == "") exitWith {systemChat "Kein Name wurde angegeben!"};
-        
+
         private _unit = cursorObject;
         if (isPlayer _unit) then {_unit = objNull};
         if (!isNull _unit) then {_unit = player};
-        
+
         systemChat format ["Gruppe %1 heißt nun %2!", groupId (group player), _this select 0];
         (group cursorObject) setGroupIdGlobal [_this select 0];
+    };
+}, "all"] call CBA_fnc_registerChatCommand;
+
+// Credits to: http://killzonekid.com/arma-scripting-tutorials-3d-compass/
+["kompass", {
+    params ["_range"];
+
+    if (cameraView != "GUNNER") exitWith {systemChat "Der virtuelle Kompass, wird nur in Optiken zu gelassen."};
+    if (_range == "") exitWith {systemChat "Es wurde kein Abstand angegeben."};
+    TB_compass_range = _range;
+
+    if (isNil "TB_compass_id" && !(_range in ["0", "-1", "off"])) then
+    {
+        TB_compass_id = addMissionEventHandler ["Draw3D", {
+            if (cameraView != "GUNNER") exitWith {removeMissionEventHandler ["Draw3D", _thisEventHandler]; TB_compass_id = nil};
+
+            private _modifier = 1;
+            private _show = true;
+            private _center = if (TB_compass_range != "surface") then {positionCameraToWorld [0, 0, parseNumber TB_compass_range]} else
+            {
+                private _ins = lineIntersectsSurfaces [
+                    AGLToASL positionCameraToWorld [0,0,0],
+                    AGLToASL positionCameraToWorld [0,0,1000],
+                    ACE_player,
+                    vehicle ACE_player
+                ];
+                if !(_ins isEqualTo []) then
+                {
+                    private _pos = ASLToAGL ((_ins select 0) select 0);
+                    _modifier = linearConversion [0, 1000, _pos distance (positionCameraToWorld [0, 0, 0]), 0.5, 10, true];
+                    _pos;
+                }
+                else
+                {
+                    _show = false;
+                    positionCameraToWorld [0, 0, 25];
+                };
+            };
+
+            {
+                _x params ["_color", "_array"];
+
+                {
+                    _x params ["_letter", "_offset"];
+                    drawIcon3D [
+                        "",
+                        _color,
+                        _center vectorAdd _offset,
+                        0,
+                        0,
+                        0,
+                        _letter,
+                        2,
+                        0.06 * (parseNumber _show)
+                        //"PuristaMedium"
+                    ];
+                }
+                forEach _array;
+            } forEach [
+                    [[1,0,0,0.75],[["N",[0,2 * _modifier,0]],[".",[0,1 * _modifier,0]],[".",[0,0.5 * _modifier,0]]]],
+                    [[0,1,0,0.5],[["S",[0,-2 * _modifier,0]],[".",[0,-1 * _modifier,0]],[".",[0,-0.5 * _modifier,0]]]],
+                    [[0,0,1,0.5],[["E",[2 * _modifier,0,0]],[".",[1 * _modifier,0,0]],[".",[0.5 * _modifier,0,0]]]],
+                    [[1,1,0,0.5],[["W",[-2 * _modifier,0,0]],[".",[-1 * _modifier,0,0]],[".",[-0.5 * _modifier,0,0]]]]
+                ];
+        }];
+    }
+    else
+    {
+        if (!isNil "TB_compass_id") then {removeMissionEventHandler ["Draw3D", TB_compass_id]; TB_compass_id = nil};
     };
 }, "all"] call CBA_fnc_registerChatCommand;

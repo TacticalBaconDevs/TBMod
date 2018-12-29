@@ -15,7 +15,6 @@ class CfgFunctions
             file = "\TBMod_building\functions";
             class placePlaceables {};
             class placePlaceablesBig {};
-            class buildingPersistence {};
             class initItem {};
             class initItemBig {};
             class moduleRessourcenFahrzeug {};

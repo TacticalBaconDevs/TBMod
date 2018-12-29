@@ -1,10 +1,10 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author:
         bangabob ( https://forums.bohemia.net/forums/topic/144150-enemy-occupation-system-eos/ )
-  
+
     Complete rewrite and modification:
         shukari
 */
@@ -14,11 +14,7 @@ params ["_faction", "_type"];
 private _tempArray = [];
 
 // MISSION POOL
-if (["unitPools.sqf"] call TB_EOS_fnc_fileExists && _faction <= 10) exitWith
-{
-    if (isNil "TB_EOS_fnc_unitPools_custom") then {TB_EOS_fnc_unitPools_custom = compile preprocessFileLineNumbers "unitPools.sqf"};
-    _this call TB_EOS_fnc_unitPools_custom;
-};
+if (_faction <= 10) exitWith {if (!isNil "TB_EOS_fnc_unitPools_custom") then {_this call TB_EOS_fnc_unitPools_custom} else {[]}};
 
 switch (_faction) do
 {
@@ -47,71 +43,71 @@ switch (_type) do
     {
         for "_i" from 0 to 5 do {_tempArray pushBack (selectRandom _InfPool)};
     };
-    
+
     case 1:
     {
         _tempArray = _diverPool;
     };
-    
+
     // CREATE ARMOUR & CREW
     case 2:
     {
         _tempArray pushBack (selectRandom _ArmPool);
         _tempArray pushBack (selectRandom _crewPool);
     };
-    
+
     // CREATE ATTACK CHOPPER & CREW
     case 3:
     {
         _tempArray pushBack (selectRandom _ACHPool);
         _tempArray pushBack (selectRandom _heliCrew);
     };
-    
-    // CREATE TRANSPORT CHOPPER & CREW 
+
+    // CREATE TRANSPORT CHOPPER & CREW
     case 4:
     {
         _tempArray pushBack (selectRandom _CHPool);
         _tempArray pushBack (selectRandom _heliCrew);
     };
-    
+
     // CREATE STATIC & CREW
     case 5:
     {
         _tempArray pushBack (selectRandom _stPool);
         _tempArray pushBack (selectRandom _crewPool);
     };
-    
+
     case 6:
     {
         _tempArray pushBack (selectRandom _uavPool);
     };
-    
+
     // CREATE TRANSPORT & CREW
     case 7:
     {
         _tempArray pushBack (selectRandom _MotPool);
         _tempArray pushBack (selectRandom _crewPool);
     };
-    
+
     // CREATE BOAT & DIVER CREW
     case 8:
     {
         _tempArray pushBack (selectRandom _shipPool);
         _tempArray pushBack (selectRandom _diverPool);
     };
-    
+
     // CREATE CARGO
     case 9:
     {
         for "_i" from 0 to 4 do {_tempArray pushBack (selectRandom _InfPool)};
     };
-    
+
     // CREATE DIVER CARGO
     case 10:
     {
-        for "_i" from 0 to 4 do {_tempArray pushBack (selectRandom _diverPool)}; 
+        for "_i" from 0 to 4 do {_tempArray pushBack (selectRandom _diverPool)};
     };
-    
+
     // default {};
 };
 
