@@ -5,7 +5,7 @@
 class TBMod_zusatzStuff_LV
 {
     tag = "TB_EOS";
-    
+
     class modules
     {
         file = "\TBMod_zusatzStuff\eos\core";
@@ -15,7 +15,7 @@ class TBMod_zusatzStuff_LV
         class moduleBastion {};
         class unitPools {};
     };
-    
+
     class functions
     {
         file = "\TBMod_zusatzStuff\eos\functions";
@@ -24,10 +24,8 @@ class TBMod_zusatzStuff_LV
         class findSafePos {};
         class setCargo {};
         class shk_patrol {};
-        class shk_pos {};
         class shk_buildingpos {};
         class transportUnload {};
         class fileExists {};
-        class findRandomPos {};
     };
 };
