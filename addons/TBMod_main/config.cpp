@@ -11,9 +11,9 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
-        version = 1.2.5;
-        versionStr = "1.2.5";
-        versionAr[] = {1,2,5};
+        version = 1.2.6;
+        versionStr = "1.2.6";
+        versionAr[] = {1,2,6};
         versionDesc = "TBMod";
         versionAct = "";
 
