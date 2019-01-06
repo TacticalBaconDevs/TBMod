@@ -21,7 +21,7 @@ if !(_activated) exitWith {true};
     private _server = _ort == 0;
     private _saves = if (_server) then
     {
-        [profileNamespace, "TB_persistence_savedNames", []] spawn BIS_fnc_getServerVariable;
+        [profileNamespace, "TB_persistence_savedNames", []] call BIS_fnc_getServerVariable;
     }
     else
     {
@@ -40,7 +40,7 @@ if !(_activated) exitWith {true};
         if (_server) then
         {
             [true, _nameOrId] remoteExec ["TB_fnc_persistence", 2];
-            [profileNamespace, "TB_persistence_savedNames", _saves] spawn BIS_fnc_setServerVariable;
+            [profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
         }
         else
         {
