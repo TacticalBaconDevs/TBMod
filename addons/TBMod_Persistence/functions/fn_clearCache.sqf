@@ -12,3 +12,5 @@ for "_i" from 1 to 5 do
 
 // Inkognitiosystem
 profileNamespace setVariable ["TB_umziehen", nil];
+
+saveProfileNamespace;

@@ -7,7 +7,7 @@ class CfgPatches
     class TBMod_main
     {
         name = "TBMod Hauptmod";
-        
+
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
@@ -30,17 +30,11 @@ class CfgPatches
             "TB_zeus_applyLoadout",
             "TB_zeus_handleAsPlayerMedical"
         };
-        ammo[] = {
-            "FlareBase",
-            "F_40mm_White",
-            "F_20mm_White",
-            "Flare_82mm_AMOS_White"
-        };
 
-        requiredVersion = 1.84;
+        requiredVersion = 1.88;
         requiredAddons[] = {
             // Arma3
-            "A3_Data_F_Tank_Loadorder",
+            "A3_Data_F_Sams_Loadorder",
 
             // CBA
             "cba_main",
