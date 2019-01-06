@@ -36,6 +36,6 @@ if (!_activated) exitWith {true};
         _dialogResult params ["_nameIdx"];
         [_saves select _nameIdx] call TB_fnc_persistenceEDEN;
     };
-}
+};
 
 true;
