@@ -2,43 +2,40 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
-_mode = param [0,"",[""]];
-_input = param [1,[],[[]]];
-_activatet = false;
-_logic = _input param [0,objNull,[objNull]];
-switch _mode do {
-    // Default object init
-    case "init": {  
-        _activatet = true;
-    };
-    
-    case "attributesChanged3DEN": {
-        _activatet = true;
-    };
-    
-    case "registeredToWorld3DEN": {
-        _activatet = true;
-    };
+params [
+        ["_mode", "", [""]],
+        ["_input", [], [[]]]
+    ];
 
-   
+private _activated = switch _mode do
+{
+    case "init";
+    case "attributesChanged3DEN";
+    case "registeredToWorld3DEN": {true};
+    default {false};
 };
 
-if (!_activatet) exitWith {true};
+if (!_activated) exitWith {true};
 
-_logic spawn {
-    params ["_logic"];
-    private _saves = profileNamespace getVariable ["TB_persistence_savednames",[]]; 
-    private _dialogResult2 = 
-    [ 
-        "Persistence", 
-        [ 
-            ["Save Name", _saves, 0] 
-        ] 
-    ] call Ares_fnc_showChooseDialog; 
- 
-    if (_dialogResult2 isEqualTo []) exitWith{ delete3DENEntities [_logic]; systemChat "[TBMod_persistence] Abbruch";}; 
- 
-    _dialogResult2 params ["_nameidx"]; 
-    [_saves select _nameidx] call TB_fnc_persistenceEDEN; 
-    delete3DENEntities [_logic];
+[] spawn
+{
+    private _saves = profileNamespace getVariable ["TB_persistence_savedNames", []];
+    private _dialogResult = [
+            "Persistence",
+            [
+                ["Save Name", _saves, 0]
+            ]
+        ] call Ares_fnc_showChooseDialog;
+
+    if (_dialogResult isEqualTo []) then
+    {
+        systemChat "[TBMod_persistence] Abbruch";
+    }
+    else
+    {
+        _dialogResult params ["_nameIdx"];
+        [_saves select _nameIdx] call TB_fnc_persistenceEDEN;
+    };
 }
+
+true;

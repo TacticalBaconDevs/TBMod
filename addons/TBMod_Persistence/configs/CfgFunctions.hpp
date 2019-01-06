@@ -21,9 +21,8 @@ class CfgFunctions
             class cargo {};
             class clearCache {};
             class vector2Eden {};
-            class modulepersistenceEDEN {};
-            class modulepersistencezeus {};
-
+            class modulePersistenceEDEN {};
+            class modulePersistenceZeus {};
         };
     };
 };

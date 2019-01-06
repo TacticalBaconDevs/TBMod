@@ -7,10 +7,10 @@ params [
         ["_name", "", [""]],
         ["_addToEditor", false, [false]]
     ];
-if(!is3DEN) exitWith {systemChat "[TBMod_persistence]Nur im Eden Editor verfügbar."};
+if (!is3DEN) exitWith {systemChat "[TBMod_persistence] Nur im Eden Editor verfügbar."};
 if (_name == "") exitWith {systemChat "[TBMod_persistence] Kein Name angegeben"};
 
-private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
+(profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]]) params ["", "_markers", "_objecte", "_vehicles"];
 
 if (!_addToEditor) then
 {
@@ -19,10 +19,11 @@ if (!_addToEditor) then
 };
 
 // Markers
+private _newMarker = "";
 {
     _x params ["_marker", "_pos", "_color", "_size", "_type", "_alpha", "_brush", "_dir", "_shape", "_text"];
 
-    private _newMarker = create3DENEntity ["Marker", _type, ASLToATL _pos];
+    _newMarker = create3DENEntity ["Marker", _type, ASLToATL _pos];
     _newMarker set3DENAttribute ["markerName", _marker];
     _newMarker set3DENAttribute ["baseColor", _color];
     _newMarker set3DENAttribute ["size2", _size];
@@ -32,14 +33,16 @@ if (!_addToEditor) then
     _newMarker set3DENAttribute ["rotation", _dir];
     _newMarker set3DENAttribute ["text", _text];
 }
-forEach (_loadArray select 1);
+forEach _markers;
 
 // Objects
+private _obj = nil;
 {
     _x params ["_classname", "_pos", "_dir", "_up", "_sim"];
 
-    private _obj = create3DENEntity ["Object", _classname, ASLToATL _pos, true];
-    if(isnil "_obj") then {
+    _obj = create3DENEntity ["Object", _classname, ASLToATL _pos, true];
+    if (isNil "_obj") then
+    {
         systemChat format ["[TBMod_persistence] Error creating object %1", _classname];
     }
     else
@@ -48,15 +51,17 @@ forEach (_loadArray select 1);
         _obj set3DENAttribute ["enableSimulation", _sim];
     };
 }
-forEach (_loadArray select 2);
+forEach _objecte;
 
 // Vehicles
+private _vehicle = nil;
 {
     _x params ["_class", "_pos", "_dir", "_up", "_sim", "", "", "_dmg", "", "_fuel", "_crew"];
 
-    private _vehicle = create3DENEntity ["Object", _class, ASLToATL _pos, (_crew select 1) isEqualTo []];
-    if(isnil "_vehicle") then {
-        systemChat format ["[TBMod_persistence] Error creating object %1", _class];
+    _vehicle = create3DENEntity ["Object", _class, ASLToATL _pos, (_crew select 1) isEqualTo []];
+    if (isNil "_vehicle") then
+    {
+        systemChat format ["[TBMod_persistence] Error creating vehicle %1", _class];
     }
     else
     {
@@ -66,19 +71,23 @@ forEach (_loadArray select 2);
 
         if !(_dmg isEqualTo []) then
         {
+            _dmg params ["_hitNames", "dmgValues"];
+
+            private _part = "";
+            private _index = -1;
             {
-                private _part = _x;
-                private _index = (HITPOINTS findIf {(_x select 0) == _part});
+                _part = _x;
+                _index = (HITPOINTS findIf {(_x select 0) == _part});
 
                 if (_index != -1) then
                 {
-                    _vehicle set3DENAttribute [(HITPOINTS select _index) select 1, (_dmg select 1) select _forEachIndex];
+                    _vehicle set3DENAttribute [(HITPOINTS select _index) select 1, dmgValues select _forEachIndex];
                 };
             }
-            forEach (_dmg select 0);   
+            forEach _hitNames;
         };
     };
 }
-forEach (_loadArray select 3);
+forEach _vehicles;
 
-systemChat format["[TBMod_persistence] Loaded from slot %1" , _name];
+systemChat format["[TBMod_persistence] Save mit Namen '%1' wurde in 3den geladen!", _name];

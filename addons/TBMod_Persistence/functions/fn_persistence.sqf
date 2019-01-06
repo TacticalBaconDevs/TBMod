@@ -9,13 +9,13 @@
 */
 params [
         ["_save", false, [false]],
-        ["_name", "", [""]]
+        ["_name", "", [""]],
+        ["_localOverride", false, [false]]
     ];
 
-if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
+if (!isServer && !_localOverride) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
 if (!canSuspend) exitWith {"[TBMod_persistence] Skript muss per SPAWN ausgeführt werden" remoteExecCall ["systemChat"]};
 if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
-
 
 if (_save) then
 {
