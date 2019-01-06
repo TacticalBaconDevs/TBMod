@@ -54,12 +54,12 @@ _useMissionParams = FALSE;
 {
     if (_forEachIndex % 2 == 0) then {
         if (isNil {_logic getVariable _x}) then {
-            _logic setVariable [_x, _logicDefaultParams # ((_logicDefaultParams find _x) + 1)];
+            _logic setVariable [_x, _logicDefaultParams select ((_logicDefaultParams find _x) + 1)];
         };
         if (_useMissionParams) then {
             _i = _missionParams find (missionConfigFile >> "Params" >> format ["BIS_WL%1", _x]);
             if (_i >= 0) then {
-                _logic setVariable [_x, paramsArray # _i];
+                _logic setVariable [_x, paramsArray select _i];
             };
         };
     };
@@ -115,15 +115,15 @@ if (isServer) then {
         if !(isPlayer _x) then {
             _x setVariable ["BIS_WL_funds", BIS_WL_startCP, TRUE];
             _x addEventHandler ["HandleRating", {
-                if ((_this # 1) > 100) then {
-                    (_this # 0) setVariable ["BIS_WL_funds", ((_this # 0) getVariable "BIS_WL_funds") + ((_this # 1) / 20), TRUE];
-                    ["Kill reward: %1 (%2)", name (_this # 0), (_this # 1) / 20] call BIS_fnc_WLdebug;
+                if ((_this select 1) > 100) then {
+                    (_this select 0) setVariable ["BIS_WL_funds", ((_this select 0) getVariable "BIS_WL_funds") + ((_this select 1) / 20), TRUE];
+                    ["Kill reward: %1 (%2)", name (_this select 0), (_this select 1) / 20] call BIS_fnc_WLdebug;
                 };
             }];
         };
         _x setVariable ["BIS_WL_AIHandle", _x call BIS_fnc_WLAICore];
         (group _x) setVariable ["BIS_WL_groupVehs", [], TRUE];
-        _x addEventHandler ["Respawn", {(_this # 0) setVariable ["BIS_WL_AIHandle", (_this # 0) call BIS_fnc_WLAICore];}];
+        _x addEventHandler ["Respawn", {(_this select 0) setVariable ["BIS_WL_AIHandle", (_this select 0) call BIS_fnc_WLAICore];}];
         _x allowFleeing 0;
     } forEach BIS_WL_allWarlords;
     {_x call BIS_fnc_WLsectorHandleServer} forEach [BIS_WL_base_WEST, BIS_WL_base_EAST];
@@ -134,7 +134,7 @@ if (isServer) then {
         scriptName "WLInit (buried deletion)";
         while {TRUE} do {
             sleep 300;
-            {if ((getPosATL _x) # 2 < -0.5) then {["Deleting buried unit %1 (%2)", _x, typeOf _x] call BIS_fnc_WLdebug; deleteVehicle _x}} forEach allDeadMen;
+            {if ((getPosATL _x) select 2 < -0.5) then {["Deleting buried unit %1 (%2)", _x, typeOf _x] call BIS_fnc_WLdebug; deleteVehicle _x}} forEach allDeadMen;
         };
     };
     addMissionEventHandler ["EntityKilled", {
@@ -227,13 +227,13 @@ waitUntil {!isNil "BIS_WL_sectors" && !isNil "BIS_WL_scenarioServices"};
                     _wpnArrSecondary = _wpns select {getNumber (BIS_WL_cfgWpns >> _x >> "type") == 4};
                     _wpnArrHandgun = _wpns select {getNumber (BIS_WL_cfgWpns >> _x >> "type") == 2};
                     _wpn = if (count _wpnArrSecondary > 0) then {
-                        _wpnArrSecondary # 0;
+                        _wpnArrSecondary select 0;
                     } else {
                         if (count _wpnArrPrimary > 0) then {
-                            _wpnArrPrimary # 0;
+                            _wpnArrPrimary select 0;
                         } else {
                             if (count _wpnArrHandgun > 0) then {
-                                _wpnArrPrimary # 0;
+                                _wpnArrPrimary select 0;
                             } else {
                                 ""
                             };
@@ -245,7 +245,7 @@ waitUntil {!isNil "BIS_WL_sectors" && !isNil "BIS_WL_scenarioServices"};
                     _text = _text + "<br/>";
                     _linked = getArray (BIS_WL_cfgVehs >> _entryClass >> "linkedItems");
                     if (count _linked > 0) then {
-                        _text = _text + (getText (BIS_WL_cfgWpns >> _linked # 0 >> "displayName")) + "<br/>";
+                        _text = _text + (getText (BIS_WL_cfgWpns >> _linked select 0 >> "displayName")) + "<br/>";
                     };
                     _backpack = getText (BIS_WL_cfgVehs >> _entryClass >> "backpack");
                     if (_backpack != "") then {_text = _text + (getText (BIS_WL_cfgVehs >> _backpack >> "displayName"))};
@@ -256,11 +256,11 @@ waitUntil {!isNil "BIS_WL_sectors" && !isNil "BIS_WL_scenarioServices"};
                     if (_text == "") then {    // --- some are not even there
                         _validClassArr = "toLower getText (_x >> 'vehicle') == toLower _entryClass" configClasses BIS_WL_cfgHints;
                         if (count _validClassArr > 0) then {
-                            _hintLibClass = ("toLower getText (_x >> 'vehicle') == toLower _entryClass" configClasses BIS_WL_cfgHints) # 0;    // --- who thought of this omg
+                            _hintLibClass = ("toLower getText (_x >> 'vehicle') == toLower _entryClass" configClasses BIS_WL_cfgHints) select 0;    // --- who thought of this omg
                             _text = getText (_hintLibClass >> "description");    // --- the fun does not stop here though
                             if (count _text > 0) then {
-                                if (((toArray _text) # 0) == 37) then {     // --- yes that can happen
-                                    _text = localize (((getArray (_hintLibClass >> "arguments")) # 1) # 0);    // --- WHYYYYY???!!!!
+                                if (((toArray _text) select 0) == 37) then {     // --- yes that can happen
+                                    _text = localize (((getArray (_hintLibClass >> "arguments")) select 1) select 0);    // --- WHYYYYY???!!!!
                                 };
                             };
                         };
@@ -293,7 +293,7 @@ waitUntil {!isNil "BIS_WL_sectors" && !isNil "BIS_WL_scenarioServices"};
                     };
                 };
                 if (_text != "") then {
-                    _textNew = (_text splitString "$") # 0;
+                    _textNew = (_text splitString "$") select 0;
                     if (_textNew != _text) then {_text = localize _textNew} else {_text = _textNew};
                 };
                 _textSize = count _text;

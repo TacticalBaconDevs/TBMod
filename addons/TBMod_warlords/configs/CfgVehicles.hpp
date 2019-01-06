@@ -66,9 +66,6 @@ class CfgVehicles
             MACRO_ADDWEAPON(rhs_weap_m27iar,1);
             MACRO_ADDWEAPON(rhs_weap_m16a4,1);
             MACRO_ADDWEAPON(rhs_weap_m16a4_carryhandle,1);
-            MACRO_ADDWEAPON(arifle_SPAR_01_blk_F,1);
-            MACRO_ADDWEAPON(arifle_SPAR_01_khk_F,1);
-            MACRO_ADDWEAPON(arifle_SPAR_01_snd_F,1);
             MACRO_ADDWEAPON(rhs_weap_m4a1_carryhandle_mstock,1);
             MACRO_ADDWEAPON(rhs_weap_m4a1_blockII,1);
             MACRO_ADDWEAPON(rhs_weap_m4a1_blockII_bk,1);
@@ -111,6 +108,8 @@ class CfgVehicles
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG_Tan,2);
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red,2);
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red,2);
+			MACRO_ADDMAGAZINE(rhs_mag_m714_White,3);
+            MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,3);
         };
         class TransportWeapons
         {
@@ -134,7 +133,7 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell,10);
+            MACRO_ADDMAGAZINE(rhs_mag_m714_White,25);
             MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,25);
         };
     };
@@ -212,7 +211,7 @@ class CfgVehicles
         };
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,30);
+            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,3);
         };
         class TransportWeapons
         {
@@ -231,7 +230,7 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,25);
+            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,18);
         };
     };
 
@@ -242,9 +241,8 @@ class CfgVehicles
 
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(rhs_weap_M136,5);
-            MACRO_ADDWEAPON(rhs_weap_M136_hedp,5);
-            MACRO_ADDWEAPON(rhs_weap_m72a7,5);
+            MACRO_ADDWEAPON(rhs_weap_M136,4);
+            MACRO_ADDWEAPON(rhs_weap_m72a7,4);
         };
     };
 
@@ -255,16 +253,12 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEDP,1);
-            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEAA,1);
             MACRO_ADDMAGAZINE(rhs_mag_maaws_HEDP,1);
             MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,1);
             MACRO_ADDMAGAZINE(rhs_fim92_mag,1);
         };
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(rhs_weap_smaw_optic,1);
-            MACRO_ADDWEAPON(rhs_weap_smaw_gr_optic,1);
             MACRO_ADDWEAPON(rhs_weap_maaws_optic,1);
             MACRO_ADDWEAPON(rhs_weap_fim92,1);
         };
@@ -275,8 +269,6 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEDP,5);
-            MACRO_ADDMAGAZINE(rhs_mag_smaw_HEAA,5);
             MACRO_ADDMAGAZINE(rhs_mag_maaws_HEDP,5);
             MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,5);
             MACRO_ADDMAGAZINE(rhs_fim92_mag,5);
@@ -304,16 +296,16 @@ class CfgVehicles
         };
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(rhs_weap_ak105_zenitco01_npz_afg,1);
-            MACRO_ADDWEAPON(rhs_weap_ak105_zenitco01_b33_afg,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74_3,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74_2,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74m_npz,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74m_desert_npz,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74m_zenitco01_npz_afg,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74mr_afg,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74n_2_npz,1);
+            MACRO_ADDWEAPON(rhs_weap_ak105_zenitco01_npz_afg,4);
+            MACRO_ADDWEAPON(rhs_weap_ak105_zenitco01_b33_afg,4);
+            MACRO_ADDWEAPON(rhs_weap_ak74_3,2);
+            MACRO_ADDWEAPON(rhs_weap_ak74_2,2);
+            MACRO_ADDWEAPON(rhs_weap_ak74,2);
+            MACRO_ADDWEAPON(rhs_weap_ak74m_npz,4);
+            MACRO_ADDWEAPON(rhs_weap_ak74m_desert_npz,2);
+            MACRO_ADDWEAPON(rhs_weap_ak74m_zenitco01_npz_afg,4);
+            MACRO_ADDWEAPON(rhs_weap_ak74mr_afg,2);
+            MACRO_ADDWEAPON(rhs_weap_ak74n_2_npz,2);
         };
     };
     class TB_WL_Mun_AR_RUS : WRAPPER_NAME(Box_NATO_Ammo_F)
@@ -346,13 +338,15 @@ class CfgVehicles
             MACRO_ADDMAGAZINE(rhs_30Rnd_545x39_7N22_camo_AK,2);
             MACRO_ADDMAGAZINE(rhs_30Rnd_545x39_7N22_desert_AK,2);
             MACRO_ADDMAGAZINE(rhs_30Rnd_545x39_7N6_AK,2);
+			MACRO_ADDMAGAZINE(rhs_GRD40_White,3);
+            MACRO_ADDMAGAZINE(rhs_VOG25,3);
         };
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(rhs_weap_ak74m_gp25_1p63,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74m_gp25_npz_dtk,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74mr_gp25,1);
-            MACRO_ADDWEAPON(rhs_weap_ak74n_2_gp25_npz,1);
+            MACRO_ADDWEAPON(rhs_weap_ak74m_gp25_1p63,3);
+            MACRO_ADDWEAPON(rhs_weap_ak74m_gp25_npz_dtk,3);
+            MACRO_ADDWEAPON(rhs_weap_ak74mr_gp25,3);
+            MACRO_ADDWEAPON(rhs_weap_ak74n_2_gp25_npz,3);
         };
     };
     class TB_WL_Mun_GREN_RUS : WRAPPER_NAME(Box_NATO_Ammo_F)
@@ -466,8 +460,8 @@ class CfgVehicles
 
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(rhs_weap_rpg26,1);
-            MACRO_ADDWEAPON(rhs_weap_rshg2,1);
+            MACRO_ADDWEAPON(rhs_weap_rpg26,4);
+            MACRO_ADDWEAPON(rhs_weap_rshg2,6);
         };
     };
 
@@ -481,7 +475,7 @@ class CfgVehicles
             MACRO_ADDMAGAZINE(rhs_rpg7_OG7V_mag,1);
             MACRO_ADDMAGAZINE(rhs_rpg7_PG7VL_mag,1);
             MACRO_ADDMAGAZINE(rhs_rpg7_PG7VR_mag,1);
-            MACRO_ADDMAGAZINE(rhs_rpg7_TBG7V_mag,1);
+			MACRO_ADDMAGAZINE(rhs_mag_9k38_rocket,1);
         };
         class TransportWeapons
         {
@@ -495,10 +489,9 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(rhs_rpg7_OG7V_mag,2);
-            MACRO_ADDMAGAZINE(rhs_rpg7_PG7VL_mag,5);
-            MACRO_ADDMAGAZINE(rhs_rpg7_PG7VR_mag,5);
-            MACRO_ADDMAGAZINE(rhs_rpg7_TBG7V_mag,2);
+            MACRO_ADDMAGAZINE(rhs_rpg7_OG7V_mag,5);
+            MACRO_ADDMAGAZINE(rhs_rpg7_PG7VL_mag,4);
+            MACRO_ADDMAGAZINE(rhs_rpg7_PG7VR_mag,3);
             MACRO_ADDMAGAZINE(rhs_mag_9k38_rocket,5);
         };
     };

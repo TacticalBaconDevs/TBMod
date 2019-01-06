@@ -33,7 +33,7 @@ class CfgWLRequisitionPresets
                 ADD(rhsusf_m1043_d, 500);
                 ADD(rhsusf_m1043_d_m2, 750);
                 ADD(rhsusf_m1043_d_mk19, 800);
-                ADD(rhsusf_m1045_d, 900);
+                ADD(rhsusf_m1045_d, 1500);
 
                 // ### LKWs
                 ADD(rhsusf_M1078A1P2_D_fmtv_usarmy, 1000);
@@ -41,7 +41,7 @@ class CfgWLRequisitionPresets
                 // ### MRAPS
                 ADD(rhsusf_CGRCAT1A2_usmc_d, 1200);
                 ADD(rhsusf_CGRCAT1A2_M2_usmc_d, 1400);
-                ADD(rhsusf_CGRCAT1A2_Mk19_usmc_d, 1450);
+                ADD(rhsusf_CGRCAT1A2_Mk19_usmc_d, 1500);
 
                 // ### SPW
                 ADD(rhsusf_M1117_D, 2000);
@@ -57,9 +57,9 @@ class CfgWLRequisitionPresets
 
             class Aircraft
             {
-                ADDREQ(RHS_MELB_H6M, 1000, A);
-                ADDREQ(RHS_MELB_MH6M, 1500, A);
-                ADDREQ(RHS_UH60M_d, 3000, A);
+                ADDREQ(RHS_MELB_H6M, 1000, H);
+                ADDREQ(RHS_MELB_MH6M, 1500, H);
+                ADDREQ(RHS_UH60M_d, 3000, H);
             };
 
             class Naval
@@ -75,19 +75,19 @@ class CfgWLRequisitionPresets
                 ADD(TB_supply_all_mines, 400);
 
                 // ### Fraktionspezifisch
-                ADD(TB_WL_AR_AR_556mm_USA_Kiste, 100);
-                ADD(TB_WL_Mun_AR_USA, 200);
-                ADD(TB_WL_GREN_556mm_USA_Kiste, 200);
-                ADD(TB_WL_Mun_GREN_USA, 200);
-                ADD(TB_WL_MG_556mm_USA_Kiste, 200);
-                ADD(TB_WL_Mun_MG556_USA, 200);
-                ADD(TB_WL_MG_762mm_USA_Kiste, 500);
-                ADD(TB_WL_Mun_MG762_USA, 500);
-                ADD(TB_WL_DMR_762mm_USA_Kiste, 100);
-                ADD(TB_WL_Mun_DMR762_USA, 100);
-                ADD(TB_WL_Werfer_USA_Leicht_Kiste, 100);
-                ADD(TB_WL_Werfer_USA_Schwer_Kiste, 100);
-                ADD(TB_WL_Mun_Werfer_Schwer_USA, 100);
+                ADD(TB_WL_AR_AR_556mm_USA_Kiste, 50);
+                ADD(TB_WL_Mun_AR_USA, 150);
+                ADD(TB_WL_GREN_556mm_USA_Kiste, 250);
+                ADD(TB_WL_Mun_GREN_USA, 600);
+                ADD(TB_WL_MG_556mm_USA_Kiste, 300);
+                ADD(TB_WL_Mun_MG556_USA, 900);
+                ADD(TB_WL_MG_762mm_USA_Kiste, 600);
+                ADD(TB_WL_Mun_MG762_USA, 1300);
+                ADD(TB_WL_DMR_762mm_USA_Kiste, 1000);
+                ADD(TB_WL_Mun_DMR762_USA, 2200);
+                ADD(TB_WL_Werfer_USA_Leicht_Kiste, 550);
+                ADD(TB_WL_Werfer_USA_Schwer_Kiste, 1500);
+                ADD(TB_WL_Mun_Werfer_Schwer_USA, 1900);
             };
 
             class Defences
@@ -119,35 +119,35 @@ class CfgWLRequisitionPresets
             class Vehicles
             {
                 // ### Autos
-                ADD(rhsgref_ins_uaz_open, 300);
-                ADD(rhsgref_ins_uaz_dshkm, 550);
-                ADD(rhsgref_ins_uaz_ags, 600);
-                ADD(rhsgref_ins_uaz_spg9, 700);
+                ADD(rhsgref_ins_uaz_open, 400);
+                ADD(rhsgref_ins_uaz_dshkm, 650);
+                ADD(rhsgref_ins_uaz_ags, 700);
+                ADD(rhsgref_ins_uaz_spg9, 800);
 
                 // ### LKWs
-                ADD(rhs_gaz66_msv, 800);
+                ADD(rhs_gaz66_msv, 900);
 
                 // ### MRAPS
                 ADD(rhs_tigr_3camo_msv, 1200);
-                ADD(rhs_tigr_sts_3camo_msv, 1600);
+                ADD(rhs_tigr_sts_3camo_msv, 1800);
 
                 // ### SPW
-                ADD(rhsgref_BRDM2_msv, 2200);
+                ADD(rhsgref_BRDM2_msv, 2100);
 
                 // ### SPZ
                 ADD(rhs_bmp3m_msv, 3000);
                 ADD(rhs_bmp3mera_msv, 4000);
 
                 // ### Panzer
-                ADD(rhs_t80um, 6000);
-                ADD(rhs_t90a_tv, 7000);
+                ADD(rhs_t72bc_tv, 7000);
+                ADD(rhs_t72ba_tv, 8000);
             };
 
             class Aircraft
             {
-                ADDREQ(RHS_MELB_H6M, 1000, A);
-                ADDREQ(RHS_MELB_MH6M, 1500, A);
-                ADDREQ(RHS_UH60M_d, 3000, A);
+                ADDREQ(RHS_MELB_H6M, 1000, H);
+                ADDREQ(RHS_MELB_MH6M, 1500, H);
+                ADDREQ(RHS_UH60M_d, 3000, H);
             };
 
             class Naval
@@ -163,19 +163,19 @@ class CfgWLRequisitionPresets
                 ADD(TB_supply_all_mines, 400);
 
                 // ### Fraktionspezifisch
-                ADD(TB_WL_AR_545mm_RUS_Kiste, 100);
-                ADD(TB_WL_Mun_AR_RUS, 200);
-                ADD(TB_WL_GREN_545mm_RUS_Kiste, 200);
-                ADD(TB_WL_Mun_GREN_RUS, 200);
-                ADD(TB_WL_MG_556mm_RUS_Kiste, 200);
-                ADD(TB_WL_Mun_MG556_RUS, 200);
-                ADD(TB_WL_MG_762mm_RUS_Kiste, 500);
-                ADD(TB_WL_Mun_MG762_RUS, 500);
-                ADD(TB_WL_DMR_762mm_RUS_Kiste, 100);
-                ADD(TB_WL_Mun_DMR772_RUS, 100);
-                ADD(TB_WL_Werfer_RUS_Leicht_Kiste, 100);
-                ADD(TB_WL_Werfer_RUS_Schwer_Kiste, 100);
-                ADD(TB_WL_Mun_Werfer_Schwer_RUS, 100);
+                ADD(TB_WL_AR_545mm_RUS_Kiste, 50);
+                ADD(TB_WL_Mun_AR_RUS, 150);
+                ADD(TB_WL_GREN_545mm_RUS_Kiste, 250);
+                ADD(TB_WL_Mun_GREN_RUS, 600);
+                ADD(TB_WL_MG_556mm_RUS_Kiste, 300);
+                ADD(TB_WL_Mun_MG556_RUS, 900);
+                ADD(TB_WL_MG_762mm_RUS_Kiste, 600);
+                ADD(TB_WL_Mun_MG762_RUS, 1300);
+                ADD(TB_WL_DMR_762mm_RUS_Kiste, 1000);
+                ADD(TB_WL_Mun_DMR772_RUS, 2200);
+                ADD(TB_WL_Werfer_RUS_Leicht_Kiste, 550);
+                ADD(TB_WL_Werfer_RUS_Schwer_Kiste, 1500);
+                ADD(TB_WL_Mun_Werfer_Schwer_RUS, 1900);
             };
 
             class Defences
