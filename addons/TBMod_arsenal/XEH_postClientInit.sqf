@@ -27,9 +27,9 @@ if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
     {
         params ["_unit", "_container", "_item"];
 
-        if (local _unit && {!((_unit nearEntities ["TB_arsenal_base", 5]) isEqualTo [])}) then
+        if (local _unit && {!((_unit nearEntities ["TB_arsenal_base", 6]) isEqualTo [])}) then
         {
-            if (typeOf _container == "GroundWeaponHolder") then {deleteVehicle _container} else {_container removeItem _item};
+            if (typeOf _container == "GroundWeaponHolder") then {deleteVehicle _container};
         };
     },
     true,
@@ -37,18 +37,3 @@ if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
     true
 ] call CBA_fnc_addClassEventHandler;
 
-[
-    "CAManBase",
-    "Take",
-    {
-        params ["_unit", "_container", "_item"];
-
-        if (local _unit && {_unit nearEntities ["TB_arsenal_base", 5]}) then
-        {
-            if (typeOf _container == "GroundWeaponHolder") then {deleteVehicle _container} else {_container removeItem _item};
-        };
-    },
-    true,
-    [],
-    true
-] call CBA_fnc_addClassEventHandler;
