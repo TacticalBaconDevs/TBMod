@@ -10,6 +10,15 @@
         }; \
     }
 
+class Extended_PreInit_EventHandlers
+{
+    class TBMod_warlords
+    {
+        clientInit = "call compile preprocessFileLineNumbers '\TBMod_warlords\XEH_preClientInit.sqf'";
+        serverInit = "call compile preprocessFileLineNumbers '\TBMod_warlords\XEH_preServerInit.sqf'";
+    };
+};
+
 class Extended_InitPost_Eventhandlers
 {
     class AllVehicles
@@ -35,3 +44,5 @@ class Extended_InitPost_Eventhandlers
     INIT_TEXTURE(rhs_t80um, rhs_Sand);
     INIT_TEXTURE(rhs_t90a_tv, rhs_Sand);
 };
+
+
