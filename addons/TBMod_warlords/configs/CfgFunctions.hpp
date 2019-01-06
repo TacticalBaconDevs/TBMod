@@ -18,13 +18,13 @@ class CfgFunctions
 
     // OVERRIDES
     class A3_Warlords
-	{
-		tag = "BIS";
-		project = "arma3";
+    {
+        tag = "BIS";
+        project = "arma3";
 
-		class Warlords
-		{
-			class WLVarsInit
+        class Warlords
+        {
+            class WLVarsInit
             {
                 file = "\TBMod_warlords\replacement\fn_WLVarsInit.sqf";
             };
@@ -32,6 +32,6 @@ class CfgFunctions
             {
                 file = "\TBMod_warlords\replacement\fn_WLInit.sqf";
             };
-		};
-	};
+        };
+    };
 };
