@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -23,18 +23,13 @@ class CfgFunctions
             class insertChildrenGruppen {};
             class garage {};
             class garageGUI {};
-            class inkognitoSystem {};
             class doorBreach {};
             class recoilSystem {};
             class crashHelferClient {};
             class crashHelferServer {};
             class shortcuts {};
             class chatCommands {};
-            class schauspieler {};
             class miscStuff {};
-            class sitAI {};
-            class animationAI {};
-            class keysForAI {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};

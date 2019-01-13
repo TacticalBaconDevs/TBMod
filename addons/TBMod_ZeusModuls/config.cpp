@@ -4,7 +4,7 @@
 */
 class CfgPatches
 {
-    class TBMod_main
+    class TBMod_ZeusModuls
     {
         name = "TBMod Zeus Modules";
         
@@ -26,3 +26,4 @@ class CfgPatches
 // Configs
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
+#include "configs\ExtendedEventHandlers.hpp"

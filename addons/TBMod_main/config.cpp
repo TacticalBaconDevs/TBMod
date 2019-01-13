@@ -70,7 +70,6 @@ class CfgPatches
 
 // Configs
 #include "configs\Animations.hpp"
-#include "configs\Cfg3DEN.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgEditorCategories.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
