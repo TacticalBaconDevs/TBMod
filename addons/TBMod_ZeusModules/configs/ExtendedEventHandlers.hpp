@@ -5,9 +5,9 @@
 
 class Extended_PreInit_EventHandlers
 {
-    class TBMod_Zeusmoduls
+    class TBMod_ZeusModules
     {
-        init = "call compile preprocessFileLineNumbers '\TBMod_Zeusmoduls\XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers '\TBMod_ZeusModules\XEH_preInit.sqf'";
     };
 };
 

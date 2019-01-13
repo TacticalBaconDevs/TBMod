@@ -4,7 +4,7 @@
 */
 class CfgFunctions
 {
-    class TBMod_main
+    class TBMod_ZeusModules
     {
         tag = "TB";
 

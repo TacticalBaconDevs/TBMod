@@ -4,7 +4,7 @@
 */
 class CfgPatches
 {
-    class TBMod_main
+    class TBMod_Eden
     {
         name = "TBMod Eden";
         
