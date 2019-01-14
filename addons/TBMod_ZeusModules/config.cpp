@@ -18,7 +18,10 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical"
         };
 
-        requiredAddons[] = {"TBMod_main", "TBMod_nachschub"};
+        requiredAddons[] = {
+            "TBMod_main",
+            "TBMod_nachschub"
+        };
         addonRootClass = "TBMod_main";
     };
 };
