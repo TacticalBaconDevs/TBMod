@@ -8,10 +8,6 @@ class CfgPatches
     {
         name = "TBMod Eden";
         
-        units[] = {
-            
-        };
-
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
     };
