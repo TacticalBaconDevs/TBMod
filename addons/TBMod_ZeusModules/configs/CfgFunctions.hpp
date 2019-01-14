@@ -18,6 +18,5 @@ class CfgFunctions
             class moduleApplyLoadout {};
             class moduleFrontverlauf {};
         };
-
     };
 };
