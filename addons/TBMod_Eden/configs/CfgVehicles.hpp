@@ -6,7 +6,6 @@
 */
 class CfgVehicles
 {
-    
     // ###################### 3den Module ######################
     class Logic;
     class Module_F: Logic
@@ -26,6 +25,7 @@ class CfgVehicles
             class AnyBrain;
         };
     };
+    
     class TB_eden_base : Module_F {
         scope = 1;
         scopeCurator = 1;
@@ -39,6 +39,7 @@ class CfgVehicles
         isDisposable = 1;
         is3DEN = 1;
     };
+    
     class TB_eden_frontverlauf : TB_eden_base {
         scope = 2;
         displayName = "Frontverlauf";
