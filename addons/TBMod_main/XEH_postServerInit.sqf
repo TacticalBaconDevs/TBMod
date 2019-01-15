@@ -19,10 +19,11 @@ if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
 
             private _moderatorModule = (createGroup [sideLogic, true]) createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
             _moderatorModule addCuratorEditableObjects [vehicles + allUnits, true];
+            _moderatorModule setVariable ['BIS_fnc_initModules_disableAutoActivation', false];
             _player assignCurator _moderatorModule;
             _player setVariable ["TB_Admin_Zeus", _moderatorModule, true];
 
-            ["TB_informAdminsandZeus", format["%1 wurde zum Zeus", name _player]] call CBA_fnc_globalEvent;
+            ["TB_informAdminsandZeus", format["%1 wurde zum Zeus", name _player]] call CBA_fnc_globalEvent; // Admin Info Broadcast
             "Zeus wurde erstellt!" remoteExec ["systemChat", _player];
         };
     }

@@ -117,8 +117,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         if (_hiSize > 0) then
         {
             private _hiGroup = [_mPos, _hiSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
-
-            if (!isNull _piGroup) then
+            if (!isNull _hiGroup) then
             {
                 if (!surfaceIsWater _mPos) then
                 {

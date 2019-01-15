@@ -1,5 +1,7 @@
-// units[] = {"ModuleWLInit_F","ModuleWLSector_F"};
-
+/*
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
+*/
 // ###################### Makros ######################
 #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
         name = #ITEM; \
@@ -211,7 +213,8 @@ class CfgVehicles
         };
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,3);
+            MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,2);
+            MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,2);
         };
         class TransportWeapons
         {
@@ -230,7 +233,8 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,18);
+            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
+            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
         };
     };
 
@@ -433,8 +437,8 @@ class CfgVehicles
         };
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(rhs_10Rnd_762x39mm,2);
-            MACRO_ADDMAGAZINE(rhs_10Rnd_762x54mmR_7N1,2);
+            MACRO_ADDMAGAZINE(rhs_10Rnd_762x39mm,4);
+            MACRO_ADDMAGAZINE(rhs_10Rnd_762x54mmR_7N1,4);
         };
         class TransportWeapons
         {

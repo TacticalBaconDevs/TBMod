@@ -297,8 +297,9 @@ private _mg_munition = [
     //"BWA3_B_556x45_Ball_SD",
     //"BWA3_B_556x45_Ball_AP",
     "hlc_100rnd_556x45_EPR_G36",
-    "hlc_100rnd_556x45_M_G36",
+    //"hlc_100rnd_556x45_M_G36", // TODO: keine Trommel 100Mags
     "hlc_100rnd_556x45_Mdim_G36",
+    "BWA3_200Rnd_556x45_Tracer",
     "hlc_50Rnd_762x51_B_MG3",
     "hlc_50Rnd_762x51_M_MG3",
     "hlc_50Rnd_762x51_Barrier_MG3",
@@ -519,9 +520,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_G28_Patrol",
             "hlc_rifle_g3sg1ris",
             // ### Visiere
-            "BWA3_optic_PMII_ShortdotCC",   //x8 
+            "BWA3_optic_PMII_ShortdotCC",   //x8
             "optic_ams",                    // x8.8 Vanilla
-            
+
             // ### Schalli
             "hlc_muzzle_300blk_KAC",
 
@@ -550,7 +551,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Gewehr
-            "hlc_rifle_MG36",
+            //"hlc_rifle_MG36", // TODO: anschauen
             "BWA3_MG4",
             "hlc_lmg_MG3", // MG3 nur 50 Schuss
 

@@ -5,7 +5,7 @@
 
 if !(call TB_fnc_isWLMission) exitWith {};
 
-// KI ist keine Muniversorgung
+// KI ist keine Muniversorgung - ServerKI
 [
     "CAManBase",
     "Killed",
@@ -28,11 +28,11 @@ if !(call TB_fnc_isWLMission) exitWith {};
 // AddonSettingsCheck
 if (isMultiplayer && ace_map_BFT_Enabled) then
 {
-    [] spawn {waitUntil {"Shukari hat vergessen die schweren AddonSettings zu laden!" remoteExecCall ["systemChat"]; uiSleep 60; false}};
+    [] spawn {waitUntil {"Shukari hat vergessen die schweren AddonSettings zu laden!" remoteExecCall ["systemChat"]; uiSleep 60; !ace_map_BFT_Enabled}};
 };
 
 // ServerDifficulty
 if (isMultiplayer && (difficultyOption "commands") == 0) then
 {
-    [] spawn {waitUntil {"Shukari hat vergessen die ServerSchwierigkeits-Einstellungen zu laden!" remoteExecCall ["systemChat"]; uiSleep 60; false}};
+    [] spawn {waitUntil {"Shukari hat vergessen die ServerSchwierigkeits-Einstellungen zu laden!" remoteExecCall ["systemChat"]; uiSleep 60; (difficultyOption "commands") != 0}};
 };
