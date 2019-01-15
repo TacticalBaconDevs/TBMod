@@ -9,12 +9,13 @@
 */
 params [
         ["_save", false, [false]],
-        ["_number", 0, [0]]
+        ["_name", "", [""]],
+        ["_localOverride", false, [false]]
     ];
 
-if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
+if (!isServer && !_localOverride) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
 if (!canSuspend) exitWith {"[TBMod_persistence] Skript muss per SPAWN ausgeführt werden" remoteExecCall ["systemChat"]};
-if !(_number in [1,2,3,4,5]) exitWith {"[TBMod_persistence] Wähle einen Slot zwischen 1-5" remoteExecCall ["systemChat"]};
+if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
 
 if (_save) then
 {
@@ -38,14 +39,16 @@ if (_save) then
     _saveArray set [3, [_save] call TB_fnc_persistenceVehicles];
 
     // save storagearray
-    profileNamespace setVariable [format ["TB_persistence_%1", _number], _saveArray];
+
+    profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
 
     // save TBMod_building stuff
-    [true, _number] call TB_fnc_persistenceBuilding;
+    [true, _name] call TB_fnc_persistenceBuilding;
 }
 else // load
 {
-    private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _number], [[], [], [], []]];
+    private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
+
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
     _objArray = _objArray arrayIntersect _objArray;
 
@@ -82,7 +85,8 @@ else // load
     [_save, _loadArray select 0] call TB_fnc_persistencePlayers;
 
     // Load TBMod_building stuff
-    [false, _number] call TB_fnc_persistenceBuilding;
+    [false, _name] call TB_fnc_persistenceBuilding;
 };
 
-(format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _number, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
+(format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
+
