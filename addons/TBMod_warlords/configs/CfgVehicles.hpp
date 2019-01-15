@@ -233,8 +233,8 @@ class CfgVehicles
 
         class TransportMagazines
         {
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
-            MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
+            MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,13);
+            MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,13);
         };
     };
 
