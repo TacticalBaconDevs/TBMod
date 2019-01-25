@@ -5,8 +5,8 @@
     Author: Eric, IDarky
 */
 
-#define addCategory(EDITORSUB) editorCategory = "EdCat_TB_Skins"; \
-            editorSubcategory = EdSubcat_TB_Skins_##EDITORSUB; \
+#define addCategory(EDITORSUB) editorCategory = "EdCat_TB_skins"; \
+            editorSubcategory = EdSubcat_TB_skins_##EDITORSUB; \
             faction = "BLU_F"; \
             side = 1;\
             scope = 2;\
@@ -41,7 +41,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_Sek_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\uniforms\polizei_sek.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_sek.paa"};
     };
     
     class TB_Uniform_Kommissar: B_Soldier_F
@@ -52,7 +52,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_kommissar_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\uniforms\polizei_kommissar.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_kommissar.paa"};
     };
     
     class TB_Uniform_rekrut: B_RangeMaster_F
@@ -63,7 +63,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_rekrut_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\uniforms\polizei_rekrut.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_rekrut.paa"};
     };
     
     class TB_Uniform_presi: O_officer_F
@@ -74,7 +74,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_presi_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\uniforms\polizei_presi.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_presi.paa"};
     };
     
     ///////////////////////Polizei Fahrzeuge//////////////////////////
@@ -85,7 +85,7 @@ class CfgVehicles
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo1"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\vehicles\TB_Vehicles_sek_light.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_light.paa"};
     };
     
     class TB_Vehicles_sek_hellcat: I_Heli_light_03_unarmed_F
@@ -94,7 +94,7 @@ class CfgVehicles
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\vehicles\TB_Vehicles_sek_hellcat.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_hellcat.paa"};
     };
     
     class TB_Vehicles_polizei_hellcat: I_Heli_light_03_unarmed_F
@@ -103,7 +103,7 @@ class CfgVehicles
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\vehicles\TB_Vehicles_polizei_hellcat.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_polizei_hellcat.paa"};
     };
 
     class TB_Vehicles_polizei_hunter: B_MRAP_01_F
@@ -113,8 +113,8 @@ class CfgVehicles
         addCategory(Polizei);
         hiddenSelections[] = {"Camo1", "Camo2", "riotpolice"};
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_polizei_hunter_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_polizei_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_polizei_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_polizei_hunter_1.paa",
             ""
         };
     };
@@ -127,8 +127,8 @@ class CfgVehicles
         author = "Eron";
         addCategory(USA);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
             ""
         };
     };
@@ -139,9 +139,9 @@ class CfgVehicles
         author = "Eron";
         addCategory(USA);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_hunter_smg_2.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_smg_2.paa"
         };
     };
 
@@ -151,9 +151,9 @@ class CfgVehicles
         author = "Eron";
         addCategory(USA);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa"
         };
     };
 
@@ -163,12 +163,12 @@ class CfgVehicles
         author = "Eron";
         addCategory(USA);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa",
             "",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa"
         };
     };
 
@@ -180,12 +180,12 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Pandur_2.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa",
             "",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa"
         };
     };
 
@@ -195,10 +195,10 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Merlin_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Merlin_1.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Merlin_2.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Merlin_3.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_3.paa"
         };
     };
 
@@ -208,8 +208,8 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_hunter_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_1.paa",
             ""
         };
     };
@@ -220,9 +220,9 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_hunter_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_hunter_1.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_hunter_smg_2.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_smg_2.paa"
         };
     };
 
@@ -232,7 +232,7 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Strider_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Strider_0.paa",
             ""
         };
     };
@@ -243,8 +243,8 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Strider_0.paa",
-            "\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Strider_1.paa"
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Strider_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Strider_1.paa"
         };
     };
 
@@ -253,7 +253,7 @@ class CfgVehicles
         displayName = "Hellcat (unbewaffnet)";
         author = "Eron";
         addCategory(BW);
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
     };
 
     class TB_Vehicles_BW_Hellcat_2: I_Heli_light_03_dynamicLoadout_F
@@ -261,6 +261,6 @@ class CfgVehicles
         displayName = "Hellcat (bewaffnet)";
         author = "Eron";
         addCategory(BW);
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
     };
 };

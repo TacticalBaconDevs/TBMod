@@ -106,7 +106,7 @@ class CfgWeapons
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
         hiddenSelections[] = {"camo"};
-        picture = "\TBMod_Skins\pictures\polizei_sek.paa";
+        picture = "\TBMod_skins\pictures\polizei_sek.paa";
     };
     
     class U_B_CTRG_1;
@@ -114,7 +114,7 @@ class CfgWeapons
     {
         displayName = "Kommissar Uniform";
         author = "IDarky";
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\polizei_kommissar.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\polizei_kommissar.paa"};
     };
     
     class U_Competitor;
@@ -122,7 +122,7 @@ class CfgWeapons
     {
         displayName = "Rekruten Uniform";
         author = "IDarky";
-        hiddenSelectionsTextures[] = {"\TBMod_Skins\pictures\polizei_normal.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\polizei_normal.paa"};
     };
 };
 */

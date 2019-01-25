@@ -81,7 +81,7 @@ class CfgVehicles
         //hiddenSelections[] = {"Camo_Signs","Camo"};
         hiddenSelectionsTextures[] = {
             "",
-            "\TBMod_Skins\pictures\statics\TB_vorratslager.paa"
+            "\TBMod_skins\pictures\statics\TB_vorratslager.paa"
         };
         
         class TransportItems {};

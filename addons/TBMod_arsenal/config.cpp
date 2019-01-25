@@ -16,7 +16,7 @@
         
         requiredAddons[] = {
             "TBMod_main",
-            "TBMod_Skins"
+            "TBMod_skins"
         };
         addonRootClass = "TBMod_main";
     };

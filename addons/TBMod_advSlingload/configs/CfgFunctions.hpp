@@ -4,13 +4,13 @@
 */
 class CfgFunctions
 {
-    class TBMod_ADVSlingload
+    class TBMod_advSlingload
     {
         tag = "TB";
         
         class functions
         {
-            file = "\TBMod_ADVSlingload\functions";
+            file = "\TBMod_advSlingload\functions";
             class calculateAttachPoint {};
             class attach {};
             class detach {};
