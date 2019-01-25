@@ -4,13 +4,13 @@
 */
 class CfgFunctions
 {
-    class TBMod_ZeusModules
+    class TBMod_zeus
     {
         tag = "TB";
 
         class functions
         {
-            file = "\TBMod_ZeusModules\functions";
+            file = "\TBMod_zeus\functions";
             class moduleNachschubAbwurf {};
             class moduleDisablePath {};
             class modulePrioSichtbarkeit {};
