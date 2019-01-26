@@ -9,6 +9,12 @@ class CfgVehicles
             statement = "(group ACE_player) setGroupIdGlobal ['NAME']"; \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
+    #define ADD_RUFNAME_MISC(NAME,MISC) class _xx_##NAME \
+        { \
+            displayName = "NAME - MISC"; \
+            statement = "(group ACE_player) setGroupIdGlobal ['NAME']"; \
+            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+        }
     #define ADD_FOB(NAME, NUMBER) class TB_spezial_fob##NAME : TB_spezial_fobBase \
         { \
             displayName = "NAME-FOB"; \
@@ -37,16 +43,16 @@ class CfgVehicles
         displayName = "NAME (klein)"; \
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\NAME.paa"}; \
     }
-    
-    // ###################### Boards ######################    
+
+    // ###################### Boards ######################
     class Land_MapBoard_F;
     class TB_spezial_base : Land_MapBoard_F
     {
         author = "shukari";
-        
+
         scope = 1;
         scopeCurator = 1;
-        
+
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
     };
@@ -54,12 +60,12 @@ class CfgVehicles
     class TB_flag_rufnamen : TB_spezial_base
     {
         displayName = "Rufnamen";
-        
+
         scope = 2;
         scopeCurator = 2;
-        
+
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\rufnamen.paa"};
-        
+
         class ACE_Actions
         {
             class ACE_MainActions
@@ -67,68 +73,39 @@ class CfgVehicles
                 displayName = "TB-Rufnamen";
                 distance = 10;
                 runOnHover = 1;
-                
+
                 class kommando
                 {
                     displayName = "Kommando";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
+
                     ADD_RUFNAME(Kommando);
                     ADD_RUFNAME(G1);
                     ADD_RUFNAME(G2);
                     ADD_RUFNAME(G3);
                     ADD_RUFNAME(G4);
                 };
-                
+
                 class trupp
                 {
                     displayName = "Trupp";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
+
                     ADD_RUFNAME(Alpha);
                     ADD_RUFNAME(Bravo);
                     ADD_RUFNAME(Charlie);
                     ADD_RUFNAME(Delta);
                     ADD_RUFNAME(Echo);
+                    ADD_RUFNAME(Fox);
                     ADD_RUFNAME(Foxtrott);
                     ADD_RUFNAME(Gamma);
                 };
-                
-                class special
+
+                class grupp
                 {
-                    displayName = "Spezial";
+                    displayName = "Grupp";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
-                    ADD_RUFNAME(Angel);
-                    ADD_RUFNAME(Phantom);
-                    ADD_RUFNAME(Ghost);
-                    ADD_RUFNAME(Reaper);
-                    ADD_RUFNAME(Pegasus);
-                    ADD_RUFNAME(NightHawk);
-                    ADD_RUFNAME(Wuestenfuchs);
-                    ADD_RUFNAME(Fox);
-                    ADD_RUFNAME(Foxy);
-                };
-                
-                class trupp2
-                {
-                    displayName = "Trupp2";
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
-                    ADD_RUFNAME(Alpha2);
-                    ADD_RUFNAME(Bravo2);
-                    ADD_RUFNAME(Charlie2);
-                    ADD_RUFNAME(Delta2);
-                    ADD_RUFNAME(Echo2);
-                    ADD_RUFNAME(Foxtrott2);
-                    ADD_RUFNAME(Gamma2);
-                };
-                
-                class special2
-                {
-                    displayName = "Spezial2";
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
+
                     // http://henney.com/chm/callsign.htm
                     ADD_RUFNAME(Atlas);
                     ADD_RUFNAME(Badger);
@@ -136,8 +113,8 @@ class CfgVehicles
                     ADD_RUFNAME(Dallas);
                     ADD_RUFNAME(Eagle);
                     ADD_RUFNAME(Falcon);
+                    ADD_RUFNAME(Foxy);
                     ADD_RUFNAME(Gremlin);
-                    ADD_RUFNAME(Hammer);
                     ADD_RUFNAME(Havoc);
                     ADD_RUFNAME(Inferno);
                     ADD_RUFNAME(Jaguar);
@@ -147,19 +124,40 @@ class CfgVehicles
                     ADD_RUFNAME(Lunar);
                     ADD_RUFNAME(Manta);
                 };
+
+                class special
+                {
+                    displayName = "Spezial";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+
+                    ADD_RUFNAME_MISC(Warrior,SPz);
+                    ADD_RUFNAME_MISC(Vanguard,SPz);
+
+                    ADD_RUFNAME_MISC(Angel,MedicHeli);
+                    ADD_RUFNAME_MISC(Reaper,AngriffsHeli);
+                    ADD_RUFNAME_MISC(Pegasus,Helikopter);
+
+                    ADD_RUFNAME(NightHawk);
+
+                    ADD_RUFNAME_MISC(Hammer,Logistik);
+                    ADD_RUFNAME_MISC(Wombat,Logistik);
+
+                    ADD_RUFNAME_MISC(Phantom,Aufklaerer);
+                    ADD_RUFNAME_MISC(Ghost,Aufklaerer);
+                };
             };
         };
     };
-    
+
     class TB_flag_teleportBase : TB_spezial_base
     {
         displayName = "TeleportBase";
-        
+
         scope = 2;
         scopeCurator = 2;
-        
+
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\teleport.paa"};
-        
+
         class ACE_Actions
         {
             class ACE_MainActions
@@ -167,7 +165,7 @@ class CfgVehicles
                 displayName = "TB-Teleport";
                 distance = 10;
                 runOnHover = 1;
-                
+
                 class fob
                 {
                     displayName = "FOB";
@@ -175,19 +173,19 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     insertChildren = "_this call TB_fnc_insertChildrenFOB";
                 };
-                
+
                 class truppe
                 {
                     displayName = "Trupp";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
+
                     class toLeader
                     {
                         displayName = "Truppführer";
                         statement = "if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn TB_fnc_teleport} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'}";
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     };
-                    
+
                     class toSpieler
                     {
                         displayName = "Kameraden";
@@ -196,7 +194,7 @@ class CfgVehicles
                         insertChildren = "_this call TB_fnc_insertChildrenKameraden";
                     };
                 };
-                
+
                 class gruppen
                 {
                     displayName = "Truppen";
@@ -206,22 +204,22 @@ class CfgVehicles
             };
         };
     };
-    
+
     // ###################### FOBs ######################
     class Box_FIA_Ammo_F;
     class TB_spezial_fobBase : Box_FIA_Ammo_F
     {
         author = "shukari";
-        
+
         scope = 1;
         scopeCurator = 1;
-        
+
         disableInventory = 1;
-        
+
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_FOBs";
     };
-    
+
     ADD_FOB(Alpha,0);
     ADD_FOB(Bravo,1);
     ADD_FOB(Charlie,2);
@@ -231,8 +229,8 @@ class CfgVehicles
     ADD_FOB(Golf,6);
     ADD_FOB(Hotel,7);
     ADD_FOB(India,8);
-    
-    
+
+
     // ###################### Zeus Module ######################
     class Logic;
     class Module_F: Logic
@@ -256,12 +254,12 @@ class CfgVehicles
     {
         scope = 1;
         scopeCurator = 1;
-        
+
         functionPriority = 1;
         isGlobal = 1;
         isTriggerActivated = 0;
         curatorCanAttach = 0;
-        
+
         function = "ace_common_fnc_dummy";
         author = "shukari";
         category = "TB_categorie";
@@ -299,8 +297,8 @@ class CfgVehicles
         displayName = "Apply Loadout";
         function = "TB_fnc_moduleApplyLoadout";
     };
-    
-    
+
+
     // ###################### 3den Module ######################
     class TB_eden_base : Module_F {
         scope = 1;
@@ -323,13 +321,13 @@ class CfgVehicles
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
-        
+
         class AttributeValues
         {
             isRectangle = 1;
             size3[] = {500,500,-1};
         };
-        
+
         class Attributes: AttributesBase
         {
             class modus: Combo
@@ -494,8 +492,8 @@ class CfgVehicles
             };
         };
     };
-    
-    
+
+
     // ###################### Schilder ######################
     class SignAd_Sponsor_F;
     class Land_Noticeboard_F;
@@ -504,7 +502,7 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
-        
+
         displayName = "Briefing (groß)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
     };
@@ -513,7 +511,7 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
-        
+
         displayName = "Briefing (klein)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
     };
@@ -533,7 +531,7 @@ class CfgVehicles
     ADD_SIGN(OneTeam);
     ADD_SIGN(Rufnamen);
     ADD_SIGN(Trupp);
-    
+
     // ###################### ACE Defuse ######################
     // class Items_base_F;
     // class ACE_DefuseObject: Items_base_F
@@ -572,8 +570,8 @@ class CfgVehicles
             // };
         // };
     // };
-    
-    
+
+
     // ###################### TFAR RADIOS leichter ######################
     #define ADD_OVERRIDE(NAME,PARENT,LOAD,MASSE) class NAME : PARENT \
     { \
@@ -584,17 +582,17 @@ class CfgVehicles
     ADD_OVERRIDE(TFAR_rt1523g,TFAR_Bag_Base,129,25); // 50, 80 - 5,16 - Russen kleines LR
     ADD_OVERRIDE(tf_rt1523g,TFAR_rt1523g,129,25);
     ADD_OVERRIDE(OPXT_aor1_117,tf_rt1523g,129,25);
-    
+
     ADD_OVERRIDE(TFAR_rt1523g_big,TFAR_rt1523g,160,30); // 160, 160 - 5,3 - USA großes LR
     ADD_OVERRIDE(tf_rt1523g_big,TFAR_rt1523g_big,160,30);
     ADD_OVERRIDE(OPXT_aor1_1523,tf_rt1523g_big,160,30);
-    
+
     ADD_OVERRIDE(TFAR_rt1523g_sage,TFAR_rt1523g,160,30); // 100, 120 - 5,3
     ADD_OVERRIDE(tf_rt1523g_sage,TFAR_rt1523g_sage,160,30);
-    
-    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50; 
+
+    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50;
     // OPXT_rf7800m: tf_anarc210 - maximumLoad = 300; mass = 60;
-    
+
     // ###################### No Uniform ######################
     class Civilian;
     class CAManBase;
