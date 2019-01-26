@@ -99,4 +99,4 @@ else //laden
     publicVariable "TB_persistent_buildings";
 };
 
-(format ["[TBMod_persistence] Es wurde alles aus Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
+(format ["[TBMod_persistence] Es wurde alles in/aus Slot '%1' ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];

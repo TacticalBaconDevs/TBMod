@@ -7,7 +7,7 @@ class CfgPatches
     class TBMod_zeus
     {
         name = "TBMod Zeus Modules";
-        
+
         units[] = {
             "TB_zeus_base",
             "TB_zeus_nachschubAbwurf",
@@ -30,3 +30,5 @@ class CfgPatches
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
+#include "configs\CfgFactionClasses.hpp"
+#include "configs\ACE_ZeusActions.hpp"

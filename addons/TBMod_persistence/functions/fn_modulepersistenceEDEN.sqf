@@ -7,6 +7,14 @@ params [
         ["_input", [], [[]]]
     ];
 
+// On-Use-Eden Module, darf nicht direkt gelöscht werden
+_input spawn
+{
+    uiSleep 1;
+    params [["_logic", objNull, [objNull]]];
+    if (!isNull _logic) then {delete3DENEntities [_logic]};
+};
+
 private _activated = switch _mode do
 {
     case "init";

@@ -31,7 +31,7 @@ private _newMarker = "";
     _newMarker set3DENAttribute ["alpha", _alpha];
     _newMarker set3DENAttribute ["brush", _brush];
     _newMarker set3DENAttribute ["rotation", _dir];
-    _newMarker set3DENAttribute ["text", _text];
+    _newMarker set3DENAttribute ["text", _text]; // TODO: wird nicht angezeigt, obwohl es hier gesetzt wird, in der Console geht dieser Code mit Text
 }
 forEach _markers;
 
@@ -71,7 +71,7 @@ private _vehicle = nil;
 
         if !(_dmg isEqualTo []) then
         {
-            _dmg params ["_hitNames", "dmgValues"];
+            _dmg params ["_hitNames", "_dmgValues"];
 
             private _part = "";
             private _index = -1;
@@ -81,7 +81,7 @@ private _vehicle = nil;
 
                 if (_index != -1) then
                 {
-                    _vehicle set3DENAttribute [(HITPOINTS select _index) select 1, dmgValues select _forEachIndex];
+                    _vehicle set3DENAttribute [(HITPOINTS select _index) select 1, _dmgValues select _forEachIndex];
                 };
             }
             forEach _hitNames;

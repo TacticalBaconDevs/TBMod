@@ -22,3 +22,5 @@ for "_i" from 1 to 5 do
 profileNamespace setVariable ["TB_umziehen", nil];
 
 saveProfileNamespace;
+
+systemChat "[Persistence] ProfileNamespace wurde aufgeräumt!";

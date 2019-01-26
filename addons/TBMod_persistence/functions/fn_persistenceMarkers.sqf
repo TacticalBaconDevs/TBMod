@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
-#define BLACKLIST ["ACE_BFT_", "trace_"]
+#define BLACKLIST ["ACE_BFT_", "trace_", "tb_eos"]
 params [
         ["_save", false, [false]],
         ["_storagearray", [], []]
@@ -39,7 +39,7 @@ else // load
         private _newMarker = createMarker [_marker, _pos];
         _newMarker setMarkerColor _color;
         _newMarker setMarkerSize _size;
-        _newMarker setMarkerType _type;
+        if !(_type isEqualTo "") then {_newMarker setMarkerType _type};
         _newMarker setMarkerAlpha _alpha;
         _newMarker setMarkerBrush _brush;
         _newMarker setMarkerDir _dir;
