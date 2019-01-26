@@ -117,17 +117,19 @@ if (getMarkerColor _mkr != "ColorBlack") then
         if (_hiSize > 0) then
         {
             private _hiGroup = [_mPos, _hiSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
+            if (!isNull _hiGroup) then
+            {
+                if (!surfaceIsWater _mPos) then
+                {
+                    [_mPos, units _hiGroup, _mkrSize] call TB_EOS_fnc_shk_buildingpos;
+                }
+                else
+                {
+                    [_hiGroup, _mkr] call TB_EOS_fnc_shk_patrol;
+                };
 
-            if (!surfaceIsWater _mPos) then
-            {
-                [_mPos, units _hiGroup, _mkrSize] call TB_EOS_fnc_shk_buildingpos;
-            }
-            else
-            {
-                [_hiGroup, _mkr] call TB_EOS_fnc_shk_patrol;
+                _hiZoneGroups pushBack _hiGroup;
             };
-
-            _hiZoneGroups pushBack _hiGroup;
         };
     };
 
@@ -160,9 +162,12 @@ if (getMarkerColor _mkr != "ColorBlack") then
             };
 
             private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
-            [_piGroup, _mkr] call TB_EOS_fnc_shk_patrol;
+            if (!isNull _piGroup) then
+            {
+                [_piGroup, _mkr] call TB_EOS_fnc_shk_patrol;
 
-            _piZoneGroups pushBack _piGroup;
+                _piZoneGroups pushBack _piGroup;
+            };
         };
     };
 

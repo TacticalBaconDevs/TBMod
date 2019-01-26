@@ -12,7 +12,7 @@ if !(_activated) exitWith {true};
 {
     private _dialogResult = ["Persistence", [
             ["Operation", ["Speichern", "Laden"], 0],
-            ["Ort", ["Server", "Lokal"], 0],
+            ["Ort", ["Server", "Lokal"], 0]
         ]] call Ares_fnc_showChooseDialog;
     if (_dialogResult isEqualTo []) exitWith {systemChat "[TBMod_persistence] Abbruch"};
     _dialogResult params ["_operation", "_ort"];

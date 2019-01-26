@@ -151,7 +151,7 @@ for "_i" from 1 to _piGroups do
     };
 
     private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
-    _piZoneGroups pushBack _piGroup;
+    if (!isNull _piGroup) then {_piZoneGroups pushBack _piGroup};
 };
 
 uiSleep 1; // TODO: temp solution
