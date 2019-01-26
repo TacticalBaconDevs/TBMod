@@ -1,8 +1,6 @@
 /*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
-    
-    Author: shukari
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 
@@ -32,7 +30,7 @@ enableSaving [false, false];
     [] call TB_fnc_chatCommands;
     [] call TB_fnc_extremMedicMode;
     [] spawn TB_fnc_miscStuff;
-    
+
     TB_init_done = true;
     publicVariableServer "TB_init_done";
 }] call CBA_fnc_addEventHandler;

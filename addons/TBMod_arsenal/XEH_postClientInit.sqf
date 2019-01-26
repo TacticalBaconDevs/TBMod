@@ -19,3 +19,21 @@ if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
     if (!isNil "TB_arsenal_kiste") then {TB_arsenal_kiste hideObject true};
     //(ace_arsenal_virtualItems select 2) append ["ACE_1Rnd_82mm_Mo_HE", "ACE_1Rnd_82mm_Mo_Smoke", "ACE_1Rnd_82mm_Mo_Illum"];
 }] call CBA_fnc_addEventHandler;
+
+// kein Müll
+[
+    "CAManBase",
+    "Put",
+    {
+        params ["_unit", "_container", "_item"];
+
+        if (local _unit && {!((_unit nearEntities ["TB_arsenal_base", 6]) isEqualTo [])}) then
+        {
+            if (typeOf _container == "GroundWeaponHolder") then {deleteVehicle _container};
+        };
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
+
