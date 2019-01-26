@@ -23,7 +23,7 @@ if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
             _player assignCurator _moderatorModule;
             _player setVariable ["TB_Admin_Zeus", _moderatorModule, true];
 
-            ["TB_informAdminsandZeus", format["%1 wurde zum Zeus", name _player]] call CBA_fnc_globalEvent; // Admin Info Broadcast
+            ["TB_informAdminsAndZeus", ["%1 wurde zum Zeus", name _player]] call CBA_fnc_globalEvent; // Admin Info Broadcast
             "Zeus wurde erstellt!" remoteExec ["systemChat", _player];
         };
     }

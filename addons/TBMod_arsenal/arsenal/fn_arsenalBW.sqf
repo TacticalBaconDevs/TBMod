@@ -13,8 +13,8 @@ private _allgemein = [
     "BWA3_FieldPack_Tropen",
     "B_Parachute",
     // ### LR-Funke
-    // "TFAR_rt1523g_big_bwmod",
-    // "TFAR_rt1523g_big_bwmod_tropen",
+    "TFAR_rt1523g_big_bwmod",
+    "TFAR_rt1523g_big_bwmod_tropen",
     // "TFAR_rt1523g_big",
     // "TFAR_rt1523g_big_rhs",
     "OPXT_blk_1523",    // schwarz

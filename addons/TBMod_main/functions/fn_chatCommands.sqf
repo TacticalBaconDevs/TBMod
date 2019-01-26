@@ -22,7 +22,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["zeus", {
-    systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name _x}) joinString ", "];
+    systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name (getAssignedCuratorUnit _x)}) joinString ", "];
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["fps", {
@@ -55,6 +55,8 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
                 [isNil "TB_safeInfo"] remoteExec ["TB_fnc_safe"];
             };
         };
+
+        ["TB_informAdminsAndZeus", ["%1 hat den SAFE Status geändert!", profileName]] call CBA_fnc_globalEvent;
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 
@@ -90,8 +92,8 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
         if (isPlayer _unit) then {_unit = objNull};
         if (!isNull _unit) then {_unit = player};
 
-        systemChat format ["Gruppe %1 heißt nun %2!", groupId (group player), _this select 0];
-        (group cursorObject) setGroupIdGlobal [_this select 0];
+        systemChat format ["Gruppe %1 heißt nun %2!", groupId (group _unit), _this select 0];
+        (group _unit) setGroupIdGlobal [_this select 0];
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 
