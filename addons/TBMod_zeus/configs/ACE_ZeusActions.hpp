@@ -46,7 +46,7 @@ class ACE_ZeusActions
                 statement = "{private _units = (units _x) select {alive _x}; \
                         {[_x, 'PATH'] remoteExec ['enableAI', _x]} forEach _units; \
                         _x setVariable ['NOPATH', false, true]; \
-                        (units _x) doFollow (leader _x); \
+                        _units doFollow (leader _x); \
                     } forEach (curatorSelected select 1)";
             };
         };
