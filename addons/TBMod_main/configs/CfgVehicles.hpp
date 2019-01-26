@@ -9,12 +9,6 @@ class CfgVehicles
             statement = "(group ACE_player) setGroupIdGlobal ['NAME']"; \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
-    #define ADD_RUFNAME_MISC(NAME,MISC) class _xx_##NAME \
-        { \
-            displayName = "NAME - MISC"; \
-            statement = "(group ACE_player) setGroupIdGlobal ['NAME']"; \
-            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-        }
     #define ADD_FOB(NAME, NUMBER) class TB_spezial_fob##NAME : TB_spezial_fobBase \
         { \
             displayName = "NAME-FOB"; \
@@ -43,16 +37,16 @@ class CfgVehicles
         displayName = "NAME (klein)"; \
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\NAME.paa"}; \
     }
-
-    // ###################### Boards ######################
+    
+    // ###################### Boards ######################    
     class Land_MapBoard_F;
     class TB_spezial_base : Land_MapBoard_F
     {
         author = "shukari";
-
+        
         scope = 1;
         scopeCurator = 1;
-
+        
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
     };
@@ -60,12 +54,12 @@ class CfgVehicles
     class TB_flag_rufnamen : TB_spezial_base
     {
         displayName = "Rufnamen";
-
+        
         scope = 2;
         scopeCurator = 2;
-
+        
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\rufnamen.paa"};
-
+        
         class ACE_Actions
         {
             class ACE_MainActions
@@ -73,39 +67,68 @@ class CfgVehicles
                 displayName = "TB-Rufnamen";
                 distance = 10;
                 runOnHover = 1;
-
+                
                 class kommando
                 {
                     displayName = "Kommando";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-
+                    
                     ADD_RUFNAME(Kommando);
                     ADD_RUFNAME(G1);
                     ADD_RUFNAME(G2);
                     ADD_RUFNAME(G3);
                     ADD_RUFNAME(G4);
                 };
-
+                
                 class trupp
                 {
                     displayName = "Trupp";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-
+                    
                     ADD_RUFNAME(Alpha);
                     ADD_RUFNAME(Bravo);
                     ADD_RUFNAME(Charlie);
                     ADD_RUFNAME(Delta);
                     ADD_RUFNAME(Echo);
-                    ADD_RUFNAME(Fox);
                     ADD_RUFNAME(Foxtrott);
                     ADD_RUFNAME(Gamma);
                 };
-
-                class grupp
+                
+                class special
                 {
-                    displayName = "Grupp";
+                    displayName = "Spezial";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-
+                    
+                    ADD_RUFNAME(Angel);
+                    ADD_RUFNAME(Phantom);
+                    ADD_RUFNAME(Ghost);
+                    ADD_RUFNAME(Reaper);
+                    ADD_RUFNAME(Pegasus);
+                    ADD_RUFNAME(NightHawk);
+                    ADD_RUFNAME(Wuestenfuchs);
+                    ADD_RUFNAME(Fox);
+                    ADD_RUFNAME(Foxy);
+                };
+                
+                class trupp2
+                {
+                    displayName = "Trupp2";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    
+                    ADD_RUFNAME(Alpha2);
+                    ADD_RUFNAME(Bravo2);
+                    ADD_RUFNAME(Charlie2);
+                    ADD_RUFNAME(Delta2);
+                    ADD_RUFNAME(Echo2);
+                    ADD_RUFNAME(Foxtrott2);
+                    ADD_RUFNAME(Gamma2);
+                };
+                
+                class special2
+                {
+                    displayName = "Spezial2";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    
                     // http://henney.com/chm/callsign.htm
                     ADD_RUFNAME(Atlas);
                     ADD_RUFNAME(Badger);
@@ -113,8 +136,8 @@ class CfgVehicles
                     ADD_RUFNAME(Dallas);
                     ADD_RUFNAME(Eagle);
                     ADD_RUFNAME(Falcon);
-                    ADD_RUFNAME(Foxy);
                     ADD_RUFNAME(Gremlin);
+                    ADD_RUFNAME(Hammer);
                     ADD_RUFNAME(Havoc);
                     ADD_RUFNAME(Inferno);
                     ADD_RUFNAME(Jaguar);
@@ -124,40 +147,19 @@ class CfgVehicles
                     ADD_RUFNAME(Lunar);
                     ADD_RUFNAME(Manta);
                 };
-
-                class special
-                {
-                    displayName = "Spezial";
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-
-                    ADD_RUFNAME_MISC(Warrior,SPz);
-                    ADD_RUFNAME_MISC(Vanguard,SPz);
-
-                    ADD_RUFNAME_MISC(Angel,MedicHeli);
-                    ADD_RUFNAME_MISC(Reaper,AngriffsHeli);
-                    ADD_RUFNAME_MISC(Pegasus,Helikopter);
-
-                    ADD_RUFNAME(NightHawk);
-
-                    ADD_RUFNAME_MISC(Hammer,Logistik);
-                    ADD_RUFNAME_MISC(Wombat,Logistik);
-
-                    ADD_RUFNAME_MISC(Phantom,Aufklaerer);
-                    ADD_RUFNAME_MISC(Ghost,Aufklaerer);
-                };
             };
         };
     };
-
+    
     class TB_flag_teleportBase : TB_spezial_base
     {
         displayName = "TeleportBase";
-
+        
         scope = 2;
         scopeCurator = 2;
-
+        
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\teleport.paa"};
-
+        
         class ACE_Actions
         {
             class ACE_MainActions
@@ -165,7 +167,7 @@ class CfgVehicles
                 displayName = "TB-Teleport";
                 distance = 10;
                 runOnHover = 1;
-
+                
                 class fob
                 {
                     displayName = "FOB";
@@ -173,19 +175,19 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     insertChildren = "_this call TB_fnc_insertChildrenFOB";
                 };
-
+                
                 class truppe
                 {
                     displayName = "Trupp";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-
+                    
                     class toLeader
                     {
                         displayName = "Truppführer";
                         statement = "if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn TB_fnc_teleport} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'}";
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     };
-
+                    
                     class toSpieler
                     {
                         displayName = "Kameraden";
@@ -194,7 +196,7 @@ class CfgVehicles
                         insertChildren = "_this call TB_fnc_insertChildrenKameraden";
                     };
                 };
-
+                
                 class gruppen
                 {
                     displayName = "Truppen";
@@ -204,22 +206,22 @@ class CfgVehicles
             };
         };
     };
-
+    
     // ###################### FOBs ######################
     class Box_FIA_Ammo_F;
     class TB_spezial_fobBase : Box_FIA_Ammo_F
     {
         author = "shukari";
-
+        
         scope = 1;
         scopeCurator = 1;
-
+        
         disableInventory = 1;
-
+        
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_FOBs";
     };
-
+    
     ADD_FOB(Alpha,0);
     ADD_FOB(Bravo,1);
     ADD_FOB(Charlie,2);
@@ -229,271 +231,7 @@ class CfgVehicles
     ADD_FOB(Golf,6);
     ADD_FOB(Hotel,7);
     ADD_FOB(India,8);
-
-
-    // ###################### Zeus Module ######################
-    class Logic;
-    class Module_F: Logic
-    {
-        class AttributesBase
-        {
-            class Default;
-            class Edit; // Default edit box (i.e., text input field)
-            class Combo; // Default combo box (i.e., drop-down menu)
-            class Checkbox; // Default checkbox (returned value is Bool)
-            class CheckboxNumber; // Default checkbox (returned value is Number)
-            class ModuleDescription; // Module description
-            class Units; // Selection of units on which the module is applied
-        };
-        class ModuleDescription
-        {
-            class AnyBrain;
-        };
-    };
-    class TB_zeus_base : Module_F
-    {
-        scope = 1;
-        scopeCurator = 1;
-
-        functionPriority = 1;
-        isGlobal = 1;
-        isTriggerActivated = 0;
-        curatorCanAttach = 0;
-
-        function = "ace_common_fnc_dummy";
-        author = "shukari";
-        category = "TB_categorie";
-    };
-    class TB_zeus_nachschubAbwurf : TB_zeus_base
-    {
-        scopeCurator = 2;
-        displayName = "NachschubAbwurf";
-        function = "TB_fnc_moduleNachschubAbwurf";
-    };
-    class TB_zeus_disablePath : TB_zeus_base
-    {
-        scopeCurator = 2;
-        curatorCanAttach = 1;
-        displayName = "DisablePath 4 Group";
-        function = "TB_fnc_moduleDisablePath";
-    };
-    class TB_zeus_prioSichtbarkeit : TB_zeus_base
-    {
-        scopeCurator = 2;
-        displayName = "PrioSichtbarkeit";
-        function = "TB_fnc_modulePrioSichtbarkeit";
-    };
-    class TB_zeus_handleAsPlayerMedical : TB_zeus_base
-    {
-        scopeCurator = 2;
-        curatorCanAttach = 1;
-        displayName = "HandlePlayerAsMedical";
-        function = "TB_fnc_moduleHandleAsPlayerMedical";
-    };
-    class TB_zeus_applyLoadout : TB_zeus_base
-    {
-        curatorCanAttach = 1;
-        scopeCurator = 2;
-        displayName = "Apply Loadout";
-        function = "TB_fnc_moduleApplyLoadout";
-    };
-
-
-    // ###################### 3den Module ######################
-    class TB_eden_base : Module_F {
-        scope = 1;
-        scopeCurator = 1;
-        displayName = "Default TB modulename";
-        category = "TB_categorie";
-        function = "";
-        functionPriority = 1;
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\intel_ca.paa";
-        isGlobal = 0;
-        isTriggerActivated = 1;
-        isDisposable = 1;
-        is3DEN = 1;
-    };
-    class TB_eden_frontverlauf : TB_eden_base {
-        scope = 2;
-        displayName = "Frontverlauf";
-        function = "TB_fnc_moduleFrontverlauf";
-        canSetArea = 1;
-        canSetAreaHeight = 0;
-        canSetAreaShape = 1;
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
-
-        class AttributeValues
-        {
-            isRectangle = 1;
-            size3[] = {500,500,-1};
-        };
-
-        class Attributes: AttributesBase
-        {
-            class modus: Combo
-            {
-                property = "TB_eden_frontverlauf_modus";
-                displayName = "Modulmodus";
-                tooltip = "Der Modus mit dem das Modul arbeitet.";
-                typeName = "STRING";
-                class values {
-                    class MOSTSIDE {
-                        name = "MeisteSeite";
-                        value = "mostside";
-                        default = 1;
-                    };
-                    class MOSTENEMY {
-                        name = "MeisteFeind";
-                        value = "mostenemy";
-                    };
-                    class MOSTENEMY_KNOWN {
-                        name = "MeisteFeind (knownAbout Abhängig)";
-                        value = "mostenemy_known";
-                    };
-                    class ENEMYFREE {
-                        name = "Feindfrei";
-                        value = "enemyfree";
-                    };
-                    class ENEMYFREE_KNOWN {
-                        name = "Feindfrei (knownAbout Abhängig)";
-                        value = "enemyfree_known";
-                    };
-                };
-            };
-            class gridSize: Edit
-            {
-                property = "TB_eden_frontverlauf_gridSize";
-                displayName = "Gittergröße";
-                tooltip = "Die Größe der quadratischen Gitters des Frontverlaufrasters. (Werte in m: 100-1000)";
-                typeName = "NUMBER";
-                defaultValue = "100";
-            };
-            class activateTime: Edit
-            {
-                property = "TB_eden_frontverlauf_activateTime";
-                displayName = "Aktivierungszeit";
-                tooltip = "Die Zeit die benötigt wird, bis das Gitter aktiviert wird, der Wert bildet den Median, Min und Max werden automatisch mit -+30% gebildet. (Werte in s)";
-                typeName = "NUMBER";
-                defaultValue = "60";
-            };
-            class unknownColor: Combo
-            {
-                property = "TB_eden_frontverlauf_unknownColor";
-                displayName = "Unbekannten Gitterfarbe";
-                tooltip = "Die Farbe die ein Gitter hat, wenn noch keine Infos da sind.";
-                typeName = "STRING";
-                class values {
-                    class GREY {
-                        name = "Grau";
-                        value = "ColorGrey";
-                        default = 1;
-                    };
-                    class EAST {
-                        name = "Rot";
-                        value = "colorOPFOR";
-                    };
-                    class WEST {
-                        name = "Blau";
-                        value = "colorBLUFOR";
-                    };
-                    class INDEPENDENT {
-                        name = "Grün";
-                        value = "colorIndependent";
-                    };
-                    class CIVILIAN {
-                        name = "Violett";
-                        value = "colorCivilian";
-                    };
-                };
-            };
-            class gridAlpha: Edit
-            {
-                property = "TB_eden_frontverlauf_gridAlpha";
-                displayName = "Gitter Sichtbarkeit";
-                tooltip = "Der Alphawert (Sichtbarkeit) der Gitter. Wenn nicht mehr unbekannt, wird 0.1 (10%) automatisch hinzugefügt!";
-                typeName = "NUMBER";
-                defaultValue = "0.7";
-            };
-            class playerSide: Combo
-            {
-                property = "TB_eden_frontverlauf_playerSide";
-                displayName = "PlayerSide";
-                tooltip = "Für alle Feindmodi benötigt.";
-                typeName = "STRING";
-                class values {
-                    class BLUFOR {
-                        name = "Blufor";
-                        value = "blufor";
-                        default = 1;
-                    };
-                    class Opfor {
-                        name = "Opfor";
-                        value = "opfor";
-                    };
-                    class INDEPENDENT {
-                        name = "Independent";
-                        value = "independent";
-                    };
-                };
-            };
-            class gridType: Combo
-            {
-                property = "TB_eden_frontverlauf_gridType";
-                displayName = "Gittertyp";
-                tooltip = "Der Gittertyp der auf der Karte angezeigt wird.";
-                typeName = "STRING";
-                class values {
-                    class Solid {
-                        name = "Solid";
-                        value = "Solid";
-                        default = 1;
-                    };
-                    class SolidFull {
-                        name = "SolidFull";
-                        value = "SolidFull";
-                    };
-                    class Horizontal {
-                        name = "Horizontal";
-                        value = "Horizontal";
-                    };
-                    class Vertical {
-                        name = "Vertical";
-                        value = "Vertical";
-                    };
-                    class Grid {
-                        name = "Grid";
-                        value = "Grid";
-                    };
-                    class FDiagonal {
-                        name = "FDiagonal";
-                        value = "FDiagonal";
-                    };
-                    class BDiagonal {
-                        name = "BDiagonal";
-                        value = "BDiagonal";
-                    };
-                    class DiagGrid {
-                        name = "DiagGrid";
-                        value = "DiagGrid";
-                    };
-                    class Cross {
-                        name = "Cross";
-                        value = "Cross";
-                    };
-                    class Border {
-                        name = "Border";
-                        value = "Border";
-                    };
-                    class SolidBorder {
-                        name = "SolidBorder";
-                        value = "SolidBorder";
-                    };
-                };
-            };
-        };
-    };
-
-
+    
     // ###################### Schilder ######################
     class SignAd_Sponsor_F;
     class Land_Noticeboard_F;
@@ -502,7 +240,7 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
-
+        
         displayName = "Briefing (groß)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
     };
@@ -511,7 +249,7 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
-
+        
         displayName = "Briefing (klein)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
     };
@@ -531,7 +269,7 @@ class CfgVehicles
     ADD_SIGN(OneTeam);
     ADD_SIGN(Rufnamen);
     ADD_SIGN(Trupp);
-
+    
     // ###################### ACE Defuse ######################
     // class Items_base_F;
     // class ACE_DefuseObject: Items_base_F
@@ -570,8 +308,8 @@ class CfgVehicles
             // };
         // };
     // };
-
-
+    
+    
     // ###################### TFAR RADIOS leichter ######################
     #define ADD_OVERRIDE(NAME,PARENT,LOAD,MASSE) class NAME : PARENT \
     { \
@@ -582,17 +320,17 @@ class CfgVehicles
     ADD_OVERRIDE(TFAR_rt1523g,TFAR_Bag_Base,129,25); // 50, 80 - 5,16 - Russen kleines LR
     ADD_OVERRIDE(tf_rt1523g,TFAR_rt1523g,129,25);
     ADD_OVERRIDE(OPXT_aor1_117,tf_rt1523g,129,25);
-
+    
     ADD_OVERRIDE(TFAR_rt1523g_big,TFAR_rt1523g,160,30); // 160, 160 - 5,3 - USA großes LR
     ADD_OVERRIDE(tf_rt1523g_big,TFAR_rt1523g_big,160,30);
     ADD_OVERRIDE(OPXT_aor1_1523,tf_rt1523g_big,160,30);
-
+    
     ADD_OVERRIDE(TFAR_rt1523g_sage,TFAR_rt1523g,160,30); // 100, 120 - 5,3
     ADD_OVERRIDE(tf_rt1523g_sage,TFAR_rt1523g_sage,160,30);
-
-    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50;
+    
+    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50; 
     // OPXT_rf7800m: tf_anarc210 - maximumLoad = 300; mass = 60;
-
+    
     // ###################### No Uniform ######################
     class Civilian;
     class CAManBase;

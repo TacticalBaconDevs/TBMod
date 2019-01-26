@@ -1,6 +1,6 @@
 class CfgPatches
 {
-    class TBMod_ADVSlingload
+    class TBMod_advSlingload
     {
         name = "TBMod Erweiteres Slingload";
         

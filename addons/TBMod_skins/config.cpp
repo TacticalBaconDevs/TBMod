@@ -1,8 +1,8 @@
 class CfgPatches
 {
-    class TBMod_Skins
+    class TBMod_skins
     {
-        name = "TBMod Skins";
+        name = "TBMod skins";
         
         author = "Eric";
         

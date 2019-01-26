@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/shukari/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -20,27 +20,16 @@ class CfgFunctions
             class modifierFOBs {};
             class displayName {};
             class isTBMission {};
-            class moduleNachschubAbwurf {};
-            class moduleDisablePath {};
-            class modulePrioSichtbarkeit {};
             class insertChildrenGruppen {};
             class garage {};
             class garageGUI {};
-            class inkognitoSystem {};
             class doorBreach {};
             class recoilSystem {};
             class crashHelferClient {};
             class crashHelferServer {};
             class shortcuts {};
             class chatCommands {};
-            class schauspieler {};
             class miscStuff {};
-            class sitAI {};
-            class animationAI {};
-            class keysForAI {};
-            class moduleHandleAsPlayerMedical {};
-            class moduleApplyLoadout {};
-            class moduleFrontverlauf {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};

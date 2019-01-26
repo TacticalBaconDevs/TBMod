@@ -29,7 +29,6 @@ enableSaving [false, false];
     [] spawn TB_fnc_shortcuts;
     [] call TB_fnc_chatCommands;
     [] call TB_fnc_extremMedicMode;
-    [] call TB_fnc_schauspieler;
     [] spawn TB_fnc_miscStuff;
 
     TB_init_done = true;
