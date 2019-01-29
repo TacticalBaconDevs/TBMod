@@ -31,26 +31,35 @@ if !(_activated) exitWith {true};
     private _diagType = if (_save) then {["Save Name", "", ""]} else {["Save Name", _saves, 0]};
     _dialogResult = ["Persistence", [_diagType]] call Ares_fnc_showChooseDialog;
     if (_dialogResult isEqualTo []) exitWith {systemChat "[TBMod_persistence] Abbruch"};
-    _dialogResult params ["_nameOrId"];
 
     if (_save) then
     {
-        _saves pushBackUnique _nameOrId;
+        _dialogResult params ["_name"];
+        _saves pushBackUnique _name;
 
         if (_server) then
         {
-            [true, _nameOrId] remoteExec ["TB_fnc_persistence", 2];
+            [true, _name] remoteExec ["TB_fnc_persistence", 2];
             [profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
         }
         else
         {
-            [true, _nameOrId, true] call TB_fnc_persistence;
+            [true, _name, true] call TB_fnc_persistence;
             profileNamespace setVariable ["TB_persistence_savedNames", _saves];
         };
     }
     else
     {
-        [false, _saves select _nameOrId] remoteExec ["TB_fnc_persistence", 2];
+        _dialogResult params ["_id"];
+
+        if (_server) then
+        {
+            [false, saves select _id] remoteExec ["TB_fnc_persistence", 2];
+        }
+        else
+        {
+            [false, saves select _id, true] call TB_fnc_persistence;
+        };
     };
 };
 
