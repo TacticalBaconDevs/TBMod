@@ -44,6 +44,8 @@ if (_save) then
 
     // save TBMod_building stuff
     [true, _name] call TB_fnc_persistenceBuilding;
+
+    saveProfileNamespace;
 }
 else // load
 {
