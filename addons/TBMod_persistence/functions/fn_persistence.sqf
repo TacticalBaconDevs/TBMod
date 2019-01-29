@@ -41,7 +41,7 @@ if (_save) then
     // save storagearray
 
     profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
-
+    saveProfileNamespace;
     // save TBMod_building stuff
     [true, _name] call TB_fnc_persistenceBuilding;
 }
