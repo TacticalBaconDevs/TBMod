@@ -56,11 +56,11 @@ if !(_activated) exitWith {true};
 
         if (_server) then
         {
-            [false, saves select _id] remoteExec ["TB_fnc_persistence", 2];
+            [false, _saves select _id] remoteExec ["TB_fnc_persistence", 2];
         }
         else
         {
-            [false, saves select _id, true] call TB_fnc_persistence;
+            [false, _saves select _id, true] call TB_fnc_persistence;
         };
     };
 };
