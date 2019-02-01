@@ -55,7 +55,7 @@ else // load
     _objArray = _objArray arrayIntersect _objArray;
 
     // vorhandene nicht benannte Fahrzeuge löschen
-    (_objArray select {vehicleVarName _x == ""}) call CBA_fnc_deleteEntity;
+    (_objArray select {vehicleVarName _x == "" && _x getVariable ["ace_arsenal_virtualitems",[]] isEqualTo []}) call CBA_fnc_deleteEntity;
 
     // Benutzermarker löschen
     (allMapMarkers select {(_x select [0, 13]) == "_USER_DEFINED"}) call CBA_fnc_deleteEntity;
