@@ -46,7 +46,7 @@ if (_save) then
             _storagearray pushBack _array;
         };
     }
-    forEach (vehicles select {_x getVariable ["ace_arsenal_virtualitems",[]] isEqualTo []});
+    forEach (vehicles select {_x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []});
 }
 else // load
 {
