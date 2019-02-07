@@ -1198,7 +1198,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gepäck
             "B_UAV_01_backpack_F",
-
+            "C_UAV_06_backpack_F",
+            
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
