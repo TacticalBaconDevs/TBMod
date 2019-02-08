@@ -6,7 +6,7 @@
 systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["help", {
     systemChat ("TB-Mod Version: "+ getText (configfile >> "CfgPatches" >> "TBMod_main" >> "versionStr"));
-    systemChat "#tasten, #rechte, #zeus, #fps, #safe, #hideGroup, #setGroup, #kompass, #clearCache";
+    systemChat "#tasten, #rechte, #zeus, #fps, #safe, #hideGroup, #setGroup, #kompass, #clearCache, #hideGUI";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
@@ -181,3 +181,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 
+["hideGUI", {
+    ["sthud_settings_hudmode", [0 , 3] select (sthud_settings_hudmode == 0)] call CBA_settings_fnc_set;
+    systemChat format ["HUD ist nun %1",["sichtbar" , "unsichtbar"] select (sthud_settings_hudmode == 0)];
+}, "all"] call CBA_fnc_registerChatCommand;
