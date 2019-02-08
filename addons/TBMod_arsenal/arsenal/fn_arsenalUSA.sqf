@@ -1198,7 +1198,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gepäck
             "B_UAV_01_backpack_F",
-            "C_UAV_06_backpack_F",
             
             // Ferngläser
             "lerca_1200_black",
@@ -1212,6 +1211,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
+
+            // Experiment
+            "B_UAV_06_backpack_F", // UAV Bag (AL-6) [NATO]
 
             // Items
             "B_UavTerminal",
