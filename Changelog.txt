@@ -58,7 +58,7 @@ Geändert:
 INFO: Dieser Release wurde möglich gemacht durch: Eric, Eron und BenZockt
 - TB ADVSlingLoad
     - Author: Eric
-    - Seile müssen einzeln am Fahrzeug befestigt werden 
+    - Seile müssen einzeln am Fahrzeug befestigt werden
     - Seile kann man fallen lassen und wieder aufheben
     - Seile haben eine Länge von 20m
     - Seile können von Bodentruppen dem Helikopter entnommen und zurück gepackt werden
@@ -187,7 +187,7 @@ INFO: Dieser Release wurde möglich gemacht durch: Eric, Eron und BenZockt
     - und
     - rumexperimentiere
     - für fucking ein Modul bis jetzt -.-
-    
+
 
 
 ### 1.0.7 (09.04.18)
@@ -221,4 +221,4 @@ INFO: Dieser Release wurde möglich gemacht durch: Eric, Eron und BenZockt
 - TB Nachschub
 	- mehr Bandagen in der Sanikiste
 	- für alle Gruppenaufklärer Waffen und Munition in der USA Munitionskiste
-	
+
