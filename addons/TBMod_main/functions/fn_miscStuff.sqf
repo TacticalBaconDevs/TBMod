@@ -131,9 +131,8 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 [
     "TB_informAdminsAndZeus",
     {
-        params [["_msg", "<Fehlertext>", [[], ""]]];
         if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
-            (getPlayerUID player) in TB_lvl3) then {systemChat (if (_msg isEqualType []) then {format _msg} else {_msg})};
+            (getPlayerUID player) in TB_lvl3) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
     }
 ] call CBA_fnc_addEventHandler;
 

@@ -82,7 +82,7 @@ TB_umziehenFNC = {
 TB_condLaden = {
     params ["_mode"];
     (profileNamespace getVariable ["TB_umziehen", []]) params ["", "", ["_currentMode", ""]];
-    !((nearestObjects [ACE_player, TB_inkognitoSystem_station, 10]) isEqualTo []) &&
+    !((nearestObjects [ACE_player, TB_inkognitoSystem_station, 7]) isEqualTo []) &&
         _currentMode != "" && !(_currentMode isEqualTo _mode)
 };
 private _actionLadenMil = ["Laden Militär", "Laden Militär", "", {["mil", false] spawn TB_umziehenFNC}, {["mil"] call TB_condLaden}] call ace_interact_menu_fnc_createAction;
