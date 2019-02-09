@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "\a3\editor_f\Data\Scripts\dikCodes.h"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -6,8 +7,6 @@
     https://github.com/CBATeam/CBA_A3/blob/master/addons/keybinding/fnc_addKeybind.sqf
     https://community.bistudio.com/wiki/DIK_KeyCodes
 */
-#include "\a3\editor_f\Data\Scripts\dikCodes.h"
-
 [
     "TBMod",
     "TBMod_key_hideGUI",

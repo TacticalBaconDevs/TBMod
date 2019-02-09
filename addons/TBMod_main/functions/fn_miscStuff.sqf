@@ -132,7 +132,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
     "TB_informAdminsAndZeus",
     {
         if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
-            (getPlayerUID player) in (call TB_lvl3) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
+            (getPlayerUID player) in (call TB_lvl3)) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
     }
 ] call CBA_fnc_addEventHandler;
 

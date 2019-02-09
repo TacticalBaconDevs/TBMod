@@ -1,3 +1,4 @@
+#include "\a3\editor_f\Data\Scripts\dikCodes.h"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -6,7 +7,6 @@
 
     DIK Codes -> https://community.bistudio.com/wiki/DIK_KeyCodes
 */
-#include "\a3\editor_f\Data\Scripts\dikCodes.h"
 TB_liveMonitor_isActive = false;
 
 [
