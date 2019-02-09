@@ -1,7 +1,24 @@
 ﻿#include "\a3\editor_f\Data\Scripts\dikCodes.h"
 /*
-    Author: shukari
+    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Developed by http://tacticalbacon.de
 */
+// https://github.com/CBATeam/CBA_A3/wiki/Keybinding
+// https://github.com/CBATeam/CBA_A3/blob/master/addons/keybinding/fnc_addKeybind.sqf
+[
+    "TBMod",
+    "TBMod_hideGUI_key",
+    "Zeigt/Verbirgt die GUI",
+    {
+        ["sthud_settings_hudmode", [0 , 3] select (sthud_settings_hudmode == 0)] call CBA_settings_fnc_set;
+        systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select (sthud_settings_hudmode == 0)];
+    },
+    {},
+    [DIK_J, [false, false, true]]
+] call CBA_fnc_addKeybind;
+
+// TODO: alle Keybinds to CBA
+
 waitUntil {!isNull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
     params ["", "_code", "_shift", "_ctrl", "_alt"];

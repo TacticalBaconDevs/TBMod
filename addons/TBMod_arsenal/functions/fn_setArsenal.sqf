@@ -52,12 +52,19 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         // "ACE_plasmaIV",
         // "ACE_plasmaIV_500",
         // "ACE_plasmaIV_250",
-        "ACE_personalAidKit",
+        // "ACE_personalAidKit",
         "ACE_surgicalKit",
 
         // Deffi
         "adv_aceCPR_AED",
         "TB_Item_liveMonitor"
+    ];
+};
+
+if (_rolle == "arzt") then
+{
+    _allItems append [
+        "ACE_personalAidKit"
     ];
 };
 

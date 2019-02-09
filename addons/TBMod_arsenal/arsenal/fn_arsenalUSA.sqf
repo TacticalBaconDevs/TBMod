@@ -1212,6 +1212,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
 
+            // Experiment
+            "B_UAV_06_backpack_F", // UAV Bag (AL-6) [NATO]
+
             // Items
             "B_UavTerminal",
             "ACE_UAVBattery",
