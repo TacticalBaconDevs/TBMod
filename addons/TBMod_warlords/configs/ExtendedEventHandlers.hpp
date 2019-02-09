@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 #define INIT_TEXTURE(VEHICLE,SKIN) class VEHICLE \

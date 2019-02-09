@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params [
         ["_obj", objNull, [objNull]],
@@ -16,9 +17,9 @@ if (_obj isKindOf "Man") then
         systemChat "Halte Dich bereit, Teleport wird vorbereitet...";
         format ["Achtung, %1 teleportet zu Dir!", profileName] remoteExecCall ["systemChat", _obj];
     };
-    
+
     uiSleep _time;
-    
+
     private _vehicle = vehicle _obj;
     if (_vehicle != _obj) then
     {

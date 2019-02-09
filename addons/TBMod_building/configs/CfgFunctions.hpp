@@ -1,15 +1,13 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgFunctions
 {
     class TBMod_building
     {
         tag = "TB";
-        
+
         class functions
         {
             file = "\TBMod_building\functions";

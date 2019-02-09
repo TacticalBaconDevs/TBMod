@@ -1,13 +1,13 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author: Eric Ruhland
     Detatach a Vehicle that was attached
-    
+
     Arguments:
     0: Target <OBJECT>
-    
+
     Return Value:
     None
 */
@@ -33,7 +33,7 @@ if (!isNull _attachedVehicle) then
         detach _helper;
         deleteVehicle _helper;
     };
-    
+
     ropeDestroy _x;
 }
 forEach (ropes _target);

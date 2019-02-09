@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 
@@ -16,8 +16,8 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["rechte", {
-    if (getPlayerUID player in TB_lvl3) exitWith {systemChat "### Rechte Level -> LVL3 (Admin)"};
-    if (getPlayerUID player in TB_lvl2) exitWith {systemChat "### Rechte Level -> LVL2 (Spezi)"};
+    if (getPlayerUID player in (call TB_lvl3)) exitWith {systemChat "### Rechte Level -> LVL3 (Admin)"};
+    if (getPlayerUID player in (call TB_lvl2)) exitWith {systemChat "### Rechte Level -> LVL2 (Spezi)"};
     systemChat "### Rechte Level -> LVL1 (Normalo)"
 }, "all"] call CBA_fnc_registerChatCommand;
 
@@ -38,7 +38,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["safe", {
-    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
+    if (getPlayerUID player in (call TB_lvl2)) then
     {
         switch (_this select 0) do {
             case "1":
@@ -63,7 +63,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["hideGroup", {
-    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
+    if (getPlayerUID player in (call TB_lvl2)) then
     {
         switch (_this select 0) do {
             case "1":
@@ -86,7 +86,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["setGroup", {
-    if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
+    if (getPlayerUID player in (call TB_lvl2)) then
     {
         params ["_grpName"];
         if (_grpName == "") exitWith {systemChat "Kein Name wurde angegeben!"};
@@ -170,7 +170,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["clearCache", {
-    if (getPlayerUID player in TB_lvl3) then
+    if (getPlayerUID player in (call TB_lvl3)) then
     {
         params ["_target"];
         [] remoteExec ["TB_fnc_clearCache", [player, 2] select (_target == "server")];

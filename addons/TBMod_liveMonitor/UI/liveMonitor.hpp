@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Chris 'Taranis'
@@ -13,10 +13,10 @@ class TB_liveMonitor_gui
     fadeout = 0;
     name = "TB_liveMonitor_gui";
     onLoad = "uiNamespace setVariable ['TB_liveMonitor_display', _this select 0]; call TB_liveMonitor_fnc_loop";
-    
+
     class controlsBackground {};
-    
-    class controls 
+
+    class controls
     {
         class group_liveMonitorMaster: TB_RscControlsGroup
         {
@@ -65,7 +65,7 @@ class TB_liveMonitor_gui
                         };
 
                         class pic_Heartline: TB_RscPicture
-                        {    
+                        {
                             idc = -1;
 
                             text = "\TBMod_liveMonitor\pictures\heartline.paa";
@@ -90,7 +90,7 @@ class TB_liveMonitor_gui
                             w = 0.175;
                             h = 0.2;
 
-                            class Attributes 
+                            class Attributes
                             {
                                 align = "center";
                                 valign = "middle";
@@ -110,7 +110,7 @@ class TB_liveMonitor_gui
                             w = 0.175;
                             h = 0.08;
 
-                            class Attributes 
+                            class Attributes
                             {
                                 align = "center";
                                 valign = "middle";
@@ -132,7 +132,7 @@ class TB_liveMonitor_gui
 
                             colorText[] = {1,0.22,0.22,1};
 
-                            class Attributes 
+                            class Attributes
                             {
                                 align = "center";
                                 valign = "middle";
@@ -150,7 +150,7 @@ class TB_liveMonitor_gui
                             {
                                 width = 0;
                             };
-                            
+
                             class HScrollBar : TB_RscScrollBar
                             {
                                 height = 0;
@@ -243,7 +243,7 @@ class TB_liveMonitor_gui
                             font = "PuristaSemiBold";
                             size = 0.08;
 
-                            class Attributes 
+                            class Attributes
                             {
                                 align = "center";
                                 valign = "middle";
@@ -259,7 +259,7 @@ class TB_liveMonitor_gui
                             w = 0.075;
                             h = 0.12;
                         };
-                        
+
                         class txtCheck: TB_RscStructuredText
                         {
                             idc = -1;
@@ -272,7 +272,7 @@ class TB_liveMonitor_gui
                             font = "PuristaSemiBold";
                             size = 0.04;
 
-                            class Attributes 
+                            class Attributes
                             {
                                 align = "center";
                                 valign = "middle";
@@ -290,7 +290,7 @@ class TB_liveMonitor_gui
                             font = "PuristaSemiBold";
                             size = 0.10;
 
-                            class Attributes 
+                            class Attributes
                             {
                                 align = "center";
                                 valign = "middle";
@@ -309,7 +309,7 @@ class TB_liveMonitor_gui
                         };
                     };
                 };
-                
+
             };
         };
     };

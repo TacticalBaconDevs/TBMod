@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params ["_target", "_player", "_params"];
 
@@ -7,7 +8,7 @@ params ["_target", "_player", "_params"];
 private _actions = [];
 {
     _x params ["_name", "_obj"];
-    
+
     if (!isNil "_x") then
     {
         private _action = [_name, _name, "", {[_this select 2] spawn TB_fnc_teleport}, {true}, {}, _obj] call ace_interact_menu_fnc_createAction;

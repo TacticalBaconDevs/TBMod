@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 if !(call TB_fnc_isTBMission) exitWith {};
@@ -22,14 +22,14 @@ if (isNil "TB_intervall") then {TB_intervall = 60};
     //TB_extensionQueue pushBack ["scriptlag", TB_sl]; TB_sl = 0;
     TB_extensionQueue pushBack ["fps", diag_fps];
     TB_extensionQueue pushBack ["minfps", diag_fpsMin];
-    
+
     TB_extensionQueue pushBack ["allKI", {!isPlayer _x} count allUnits];
     TB_extensionQueue pushBack ["simKI", {!isPlayer _x && simulationEnabled _x} count allUnits];
     TB_extensionQueue pushBack ["allVehicles", count vehicles];
     TB_extensionQueue pushBack ["simVehicles", {simulationEnabled _x} count vehicles];
     TB_extensionQueue pushBack ["allEntities", count (entities [[], [], true, true])];
     TB_extensionQueue pushBack ["simEntities", {simulationEnabled _x} count (entities [[], [], true, true])];
-    
+
     TB_extensionQueue pushBack ["activeScripts", (diag_activeScripts select 0) + (diag_activeScripts select 1) + (diag_activeScripts select 2) + (diag_activeScripts select 3)];
     TB_extensionQueue pushBack ["activeSQF", count diag_activeSQFScripts];
 }, TB_intervall] call CBA_fnc_addPerFrameHandler;
