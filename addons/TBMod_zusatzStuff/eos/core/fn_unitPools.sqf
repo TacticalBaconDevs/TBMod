@@ -14,7 +14,18 @@ params ["_faction", "_type"];
 private _tempArray = [];
 
 // MISSION POOL
-if (_faction <= 10) exitWith {if (!isNil "TB_EOS_fnc_unitPools_custom") then {_this call TB_EOS_fnc_unitPools_custom} else {[]}};
+if (_faction <= 10) exitWith
+{
+    if (!isNil "TB_EOS_fnc_unitPools_custom") then
+    {
+        _this call TB_EOS_fnc_unitPools_custom;
+    }
+    else
+    {
+        {("[ERROR][EOS][unitPoolsSERVER] TB_EOS_fnc_unitPools_custom ist nicht definiert") remoteExecCall [_x]} forEach ["systemChat", "diag_log"];
+        [];
+    };
+};
 
 switch (_faction) do
 {

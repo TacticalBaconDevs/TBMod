@@ -6,7 +6,7 @@
 systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["help", {
     systemChat ("TB-Mod Version: "+ getText (configfile >> "CfgPatches" >> "TBMod_main" >> "versionStr"));
-    systemChat "#tasten, #rechte, #zeus, #safe, #hideGroup, #setGroup, #fps";
+    systemChat "#tasten, #rechte, #zeus, #fps, #safe, #hideGroup, #setGroup, #kompass, #clearCache, #hideGUI";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
@@ -22,7 +22,7 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["zeus", {
-    systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name _x}) joinString ", "];
+    systemChat format ["Aktive Zeus: %1", ((allCurators select {isPlayer (getAssignedCuratorUnit _x)}) apply {name (getAssignedCuratorUnit _x)}) joinString ", "];
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["fps", {
@@ -30,7 +30,9 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     {
         TB_fpsMonitor_zeus = !TB_fpsMonitor_zeus;
         systemChat format ["Zeus-FPS ist nun %1aktiviert!", ["de", ""] select TB_fpsMonitor_zeus];
-    } else {
+    }
+    else
+    {
         systemChat "Dieser Befehl ist nur für ZeusSpieler relevant!";
     };
 }, "all"] call CBA_fnc_registerChatCommand;
@@ -55,6 +57,8 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
                 [isNil "TB_safeInfo"] remoteExec ["TB_fnc_safe"];
             };
         };
+
+        ["TB_informAdminsAndZeus", ["%1 hat den SAFE Status geändert!", profileName]] call CBA_fnc_globalEvent;
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 
@@ -84,14 +88,15 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
 ["setGroup", {
     if (getPlayerUID player in (TB_lvl3 + TB_lvl2)) then
     {
-        if (_this select 0 == "") exitWith {systemChat "Kein Name wurde angegeben!"};
+        params ["_grpName"];
+        if (_grpName == "") exitWith {systemChat "Kein Name wurde angegeben!"};
 
         private _unit = cursorObject;
-        if (isPlayer _unit) then {_unit = objNull};
-        if (!isNull _unit) then {_unit = player};
+        if (!isPlayer _unit) then {_unit = objNull};
+        if (isNull _unit) then {_unit = ACE_player};
 
-        systemChat format ["Gruppe %1 heißt nun %2!", groupId (group player), _this select 0];
-        (group cursorObject) setGroupIdGlobal [_this select 0];
+        systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, name (leader _unit)];
+        (group _unit) setGroupIdGlobal [_grpName];
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 
@@ -162,4 +167,21 @@ systemChat "### ChatCommands initalisiert. Nutze #help für Hilfe.";
     {
         if (!isNil "TB_compass_id") then {removeMissionEventHandler ["Draw3D", TB_compass_id]; TB_compass_id = nil};
     };
+}, "all"] call CBA_fnc_registerChatCommand;
+
+["clearCache", {
+    if (getPlayerUID player in TB_lvl3) then
+    {
+        params ["_target"];
+        [] remoteExec ["TB_fnc_clearCache", [player, 2] select (_target == "server")];
+    }
+    else
+    {
+        systemChat "Nicht deine Gehaltsstufe!";
+    };
+}, "all"] call CBA_fnc_registerChatCommand;
+
+["hideGUI", {
+    ["sthud_settings_hudmode", [0 , 3] select (sthud_settings_hudmode == 0)] call CBA_settings_fnc_set;
+    systemChat format ["HUD ist nun %1",["sichtbar" , "unsichtbar"] select (sthud_settings_hudmode == 0)];
 }, "all"] call CBA_fnc_registerChatCommand;

@@ -3,15 +3,15 @@
     Developed by http://tacticalbacon.de
 */
 // looped anims fürs eden attribut
-private _ausgabe = ""; 
+private _ausgabe = "";
 private _array = ((configProperties [configfile >> "CfgMovesMaleSdr" >> "States"]) select {((configName _x) find "Acts_" != -1) && getNumber (_x >> "looped") == 1}) apply {configName _x};
 _array sort true;
-{_ausgabe = _ausgabe + "class "+ _x +" 
-{ 
-    text = "+ _x +"; 
-    data = "+ _x +"; 
-}; 
-";} forEach _array; 
+{_ausgabe = _ausgabe + "class "+ _x +"
+{
+    text = "+ _x +";
+    data = "+ _x +";
+};
+";} forEach _array;
 _ausgabe
 
 // looped anims
@@ -29,7 +29,7 @@ diag_log format ["### Vergleich -> %1 | %2 ###", configName _first, configName _
 {
     private _valueFirst = (_first >> _x) call BIS_fnc_getCfgData;
     private _valueSecond = (_second >> _x) call BIS_fnc_getCfgData;
-    
+
     if !(_valueFirst isEqualTo _valueSecond) then
     {
         diag_log format ["%1 -> %2 | %3", _x, _valueFirst, _valueSecond];
@@ -47,11 +47,11 @@ private _resultset = [];
     _value = _value apply {if (_x < 1) then {parseNumber ((_x * 100) toFixed 0)} else {_x}};
     _resultset pushBack _value;
 } forEach [
-    "rhsusf_mbav_medic", 
-    "rhsusf_mbav_mg", 
-    "rhsusf_mbav_grenadier", 
-    "rhsusf_mbav_rifleman", 
-    "rhsusf_mbav_light", 
+    "rhsusf_mbav_medic",
+    "rhsusf_mbav_mg",
+    "rhsusf_mbav_grenadier",
+    "rhsusf_mbav_rifleman",
+    "rhsusf_mbav_light",
     "rhsusf_mbav"
 ];
 _resultset;
@@ -61,7 +61,7 @@ _resultset;
 _result = [];
 {
     private _text = toLower (configName _x);
-    
+
     if (_text find "bwa" != -1) then {
         _result pushBack (configName _x);
     };
@@ -71,14 +71,14 @@ _result;
 
 
 // spectator
-[ 
-    ["Spectator", { 
-        [allPlayers, allUnits - allPlayers] call ace_spectator_fnc_updateUnits; 
-        [[west], [east,civilian,independent]] call ace_spectator_fnc_updateSides; 
-        [[1,2,0], []] call ace_spectator_fnc_updateCameraModes; 
-        [[-2,-1,0], []] call ace_spectator_fnc_updateVisionModes; 
-        [true, false, false] call ace_spectator_fnc_setSpectator; 
-    }, nil, 0, false, true, ""] 
+[
+    ["Spectator", {
+        [allPlayers, allUnits - allPlayers] call ace_spectator_fnc_updateUnits;
+        [[west], [east,civilian,independent]] call ace_spectator_fnc_updateSides;
+        [[1,2,0], []] call ace_spectator_fnc_updateCameraModes;
+        [[-2,-1,0], []] call ace_spectator_fnc_updateVisionModes;
+        [true, false, false] call ace_spectator_fnc_setSpectator;
+    }, nil, 0, false, true, ""]
 ] call CBA_fnc_addPlayerAction;
 
 
@@ -88,7 +88,7 @@ diag_log text "[";
     diag_log text "  {";
     diag_log text format ["    ""type"":""%1"",",_x];
     diag_log text "    ""weapons"":[";
-    _weap = "((configName (_x)) isKindof ['"+_x+"', configFile >> 'cfgWeapons']) && (getText (_x >> 'displayName') != '')" configClasses (configFile >> "cfgWeapons"); 
+    _weap = "((configName (_x)) isKindof ['"+_x+"', configFile >> 'cfgWeapons']) && (getText (_x >> 'displayName') != '')" configClasses (configFile >> "cfgWeapons");
     {
         if (count (getArray(_x >> "magazines"))!=0) then
         {
@@ -121,3 +121,30 @@ diag_log text "[";
 } forEach ["Pistol","Rifle"];
 diag_log text "  {""dummy"":""false""}";
 diag_log text "]";
+
+
+// Kisteninhalt erhalten
+private _obj = cursorObject;
+private _output = "PUBLIC_NAME("+ (str cursorObject) +");
+";
+
+{
+_x params ["_className", "_cargo" ,"_macro"];
+if !((_cargo select 0) isEqualTo []) then {
+_output = _output + "
+class "+ _className +"
+{";
+{_output = format ["%1
+    %4(%2,%3);", _output, _x, (_cargo select 1) select _forEachIndex, _macro]} forEach (_cargo select 0);
+_output = _output + "
+};";
+};
+}
+forEach [
+        ["TransportItems", getItemCargo _obj, "MACRO_ADDITEM"],
+        ["TransportMagazines", getMagazineCargo _obj, "MACRO_ADDMAGAZINE"],
+        ["TransportWeapons", getWeaponCargo _obj, "MACRO_ADDWEAPON"],
+        ["TransportBackpacks", getBackpackCargo _obj, "MACRO_ADDBACKPACK"]
+    ];
+
+_output
