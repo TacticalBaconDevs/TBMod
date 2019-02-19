@@ -1,4 +1,8 @@
 #include "\A3\Ui_f\hpp\defineResincl.inc"
+/*
+    Original idea/code: http://killzonekid.com/farewell-my-arma-friends/
+    Modified for Spotlight: https://github.com/ampersand38/Server-Spotlight
+*/
 
 params
 [
