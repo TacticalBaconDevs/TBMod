@@ -23,7 +23,7 @@ if !(_find isEqualTo []) then
     player setUnitLoadout _gear;
 
     private _dialogResult = ["Spawnmethode auswählen", [
-            ["COMBOBOX", "Spawnmethode", ["zum Crashort", "zur Gruppe", "nichts machen"], 0, true]
+            ["COMBOBOX", "Spawnmethode", ["zur Gruppe", "zum Crashort", "nichts machen"], 0, true]
         ]] call Achilles_fnc_showChooseDialog;
 
     player setVariable ["TB_team", _team, true];

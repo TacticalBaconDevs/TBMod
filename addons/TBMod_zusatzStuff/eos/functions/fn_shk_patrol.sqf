@@ -15,10 +15,11 @@
 */
 if (!isServer) exitWith {};
 
-params ["_grp", "_mkr"];
+params ["_grp", "_mkr", ["_onlyInf", false]];
 if (_grp isEqualType objNull) then {_grp = group _grp};
 
 private _dst = 250;
+private _onlyInf = _onlyInf || (units _grp) findIf {!((vehicle _x) isKindOf "CAManBase")} == -1;
 
 _grp setBehaviour "SAFE";
 _grp setSpeedMode "LIMITED";
@@ -36,9 +37,10 @@ private _mkrSize = _mkrX min _mkrY;
 private _waterMode = parseNumber (surfaceIsWater (getPos (leader _grp)));
 
 // Find positions for waypoints
+private _safeDistance = [10, 2] select _onlyInf;
 while {count _wps < _cnt} do
 {
-    _wps pushBack ([_mkrPos, 0, _mkrSize, 10, _waterMode, 0.25, 0] call TB_EOS_fnc_findSafePos);
+    _wps pushBack ([_mkrPos, 0, _mkrSize, _safeDistance, _waterMode, 0.25, 0] call TB_EOS_fnc_findSafePos);
 };
 
 // Create waypoints
