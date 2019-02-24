@@ -30,6 +30,7 @@ class CfgFunctions
             class shortcuts {};
             class chatCommands {};
             class miscStuff {};
+            class calcTreatmentTime {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};
