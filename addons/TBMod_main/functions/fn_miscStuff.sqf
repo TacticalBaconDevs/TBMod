@@ -34,7 +34,10 @@ if (_tag == "TB") then
 
 
 // ### BriefingStühle nicht tragen lassen
-{[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities "Land_CampingChair_V2_F");
+{
+    {[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities _x);
+}
+forEach (configProperties [configFile >> "CfgVehicles", "isClass _x && getNumber (_x >> 'acex_sitting_canSit') == 1", true]);
 
 
 // ### BuildAbfrage
