@@ -34,6 +34,7 @@ class CfgFunctions
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};
+            class addBriefingEntries {};
         };
 
         class gcam
