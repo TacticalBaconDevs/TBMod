@@ -41,7 +41,7 @@ if (isNil "TB_fnc_upDownEH") then {
             _unit setVariable ["TB_upDown_modus", 1];
         };
     };
-}
+};
 
 // Set Eventhandler
 _unit addEventHandler ["FiredNear", {
