@@ -11,7 +11,7 @@ class CfgFunctions
         class functions
         {
             file = "\TBMod_main\functions";
-            class UpDown {};
+            class upDown {};
             class teleport {};
             class safe {};
             class actionTeleportKamerad {};
