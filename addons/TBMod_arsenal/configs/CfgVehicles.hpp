@@ -1,8 +1,6 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgVehicles
 {
@@ -44,25 +42,25 @@ class CfgVehicles
     {
         displayName = "BASE";
         author = "shukari";
-        
+
         arsenalType = "";
-        
+
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Arsenal";
-        
+
         scope = 1;
         scopeCurator = 1;
 
         disableInventory = 1;
-        
+
         ace_cargo_canLoad = 0;
         DLC = "";
-        
+
         class TransportItems {};
         class TransportMagazines {};
         class TransportWeapons {};
         class TransportBackpacks {};
-        
+
         class ACE_Actions
         {
             class ACE_MainActions
@@ -72,7 +70,7 @@ class CfgVehicles
                 statement = "[_this] call TB_fnc_actionMain";
                 runOnHover = 1;
                 distance = 6;
-                
+
                 class changeArsenalType
                 {
                     displayName = "Wechsel zu...";
@@ -82,7 +80,7 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
-                
+
                 class openArsenal
                 {
                     displayName = "Öffne Arsenal";
@@ -91,14 +89,14 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
-                
+
                 class rollen
                 {
                     displayName = "Rollen";
                     condition = "[_target] call TB_fnc_isArsenalType";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 3;
-                    
+
                     ADD_ROLLE(lead);
                     ADD_ROLLE(grena);
                     ADD_ROLLE(sani);
@@ -118,13 +116,13 @@ class CfgVehicles
             };
         };
     };
-    
+
     class TB_arsenal_usa : TB_arsenal_base
     {
         MAKE_PUBLIC(USA,USA);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_USA.paa"};
     };
-    
+
     class TB_arsenal_vanilla : TB_arsenal_base
     {
         MAKE_PUBLIC(Vanilla,VANILLA);
@@ -136,35 +134,35 @@ class CfgVehicles
         MAKE_PUBLIC(VanillaCop,VANILLA-COP);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_NATO.paa"};
     };
-    
+
     class TB_arsenal_bw : TB_arsenal_base
     {
         MAKE_PUBLIC(Bundeswehr,BW);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_Bw.paa"};
     };
-    
+
     class TB_arsenal_russ : TB_arsenal_base
     {
         MAKE_PUBLIC(Russland,RUSS);
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_Russland.paa"};
     };
-    
+
     class TB_arsenal_swop : TB_arsenal_base
     {
         MAKE_PUBLIC(Republik,SWOPReb);
     };
-    
+
     // ###################### SpezialArsenale ######################
     class TB_arsenal_themen : TB_arsenal_base
     {
         MAKE_PUBLIC(Themen,Themen);
-        
+
         class ACE_Actions : ACE_Actions
         {
             class ACE_MainActions : ACE_MainActions
             {
                 class openArsenal : openArsenal {};
-                
+
                 class rollen : rollen
                 {
                     ADD_ROLLE_THEMEN(lead);
@@ -189,13 +187,13 @@ class CfgVehicles
     class TB_arsenal_predefined_custom : TB_arsenal_base
     {
         MAKE_PUBLIC(Vordefiniert Custom,CUSTOM);
-        
+
         class ACE_Actions : ACE_Actions
         {
             class ACE_MainActions : ACE_MainActions
             {
                 class openArsenal : openArsenal {};
-                
+
                 class rollen : rollen
                 {
                     ADD_ROLLE_CUSTOM(lead);

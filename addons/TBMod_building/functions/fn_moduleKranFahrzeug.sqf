@@ -1,8 +1,6 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params ["_logic", "", "_activated"];
 

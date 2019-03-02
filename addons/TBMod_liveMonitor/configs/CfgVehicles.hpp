@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Chris 'Taranis'
@@ -19,7 +19,7 @@ class CfgVehicles
                     icon = "\TBMod_liveMonitor\pictures\medical_cross_lm.paa";
                     condition = "call TB_liveMonitor_fnc_canShow";
                     statement = "TB_liveMonitor_unit = _target;";
-                    exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};    
+                    exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};
                 };
             };
         };
@@ -33,7 +33,7 @@ class CfgVehicles
                     icon = "\TBMod_liveMonitor\pictures\medical_cross_lm.paa";
                     condition = "call TB_liveMonitor_fnc_canShow";
                     statement = "TB_liveMonitor_unit = player;";
-                    exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};    
+                    exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};
                 };
             };
 
@@ -46,7 +46,7 @@ class CfgVehicles
                     showDisabled = 0;
                     priority = 0.1;
                     icon = "\TBMod_liveMonitor\pictures\medical_cross_lm.paa";
-                    exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"}; 
+                    exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};
 
                     class TB_liveMonitor_open
                     {
@@ -56,7 +56,7 @@ class CfgVehicles
                         showDisabled = 0;
                         priority = 0.2;
                         icon = "\TBMod_liveMonitor\pictures\medical_cross_lm.paa";
-                        exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"}; 
+                        exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};
                     };
 
                     class TB_liveMonitor_hide
@@ -67,7 +67,7 @@ class CfgVehicles
                         showDisabled = 0;
                         priority = 0.3;
                         icon = "\TBMod_liveMonitor\pictures\medical_cross_lm.paa";
-                        exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"}; 
+                        exceptions[] = {"isNotInside", "isNotSwimming", "isNotSitting"};
                     };
                 };
             };

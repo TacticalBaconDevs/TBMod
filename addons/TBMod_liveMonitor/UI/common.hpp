@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Chris 'Taranis'
@@ -32,18 +32,18 @@ class TB_RscControlsGroup {
     h = 1;
     shadow = 0;
     style = 16;
-    
+
     class VScrollBar : TB_RscScrollBar
     {
         width = 0.021;
         autoScrollEnabled = 1;
     };
-    
+
     class HScrollBar : TB_RscScrollBar
     {
         height = 0.028;
     };
-    
+
     class Controls {};
 };
 
@@ -51,13 +51,13 @@ class TB_RscControlsGroupNoScrollbars : TB_RscControlsGroup {
     class VScrollbar : VScrollbar {
         width = 0;
     };
-    
+
     class HScrollbar : HScrollbar {
         height = 0;
     };
 };
 
-class TB_RscHud 
+class TB_RscHud
 {
     idc = -1;
     type = 0;
@@ -182,7 +182,7 @@ class TB_RscTextMulti : TB_RscText
     style = 0 + 16 + 0x200;
 };
 
-class TB_RscPictureKeepAspect : TB_RscPicture 
+class TB_RscPictureKeepAspect : TB_RscPicture
 {
     style = 0x30 + 0x800;
 };
@@ -198,7 +198,7 @@ class TB_RscStructuredText {
     size = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
     colorText[] = {1, 1, 1, 1.0};
     shadow = 1;
-    
+
     class Attributes {
         font = "PuristaMedium";
         color = "#ffffff";
@@ -231,7 +231,7 @@ idc = -1;
     tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class TB_RscButton 
+class TB_RscButton
 {
     style = 2;
     x = 0;
@@ -270,7 +270,7 @@ class TB_RscButtonTextOnly : TB_RscButton {
     borderSize = 0.0;
 };
 
-class TB_RscShortcutButton 
+class TB_RscShortcutButton
 {
     idc = -1;
     style = 0;
@@ -407,21 +407,21 @@ class TB_RscShortcutButtonMain : TB_RscShortcutButton {
     h = 0.104575;
     color[] = {1, 1, 1, 1.0};
     colorDisabled[] = {1, 1, 1, 0.25};
-    
+
     class HitZone {
         left = 0.0;
         top = 0.0;
         right = 0.0;
         bottom = 0.0;
     };
-    
+
     class ShortcutPos {
         left = 0.0145;
         top = "(            (        (        ((safezoneW / safezoneH) min 1.2) / 1.2) / 20) -         (            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)) / 2";
         w = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2) * (3/4)";
         h = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
     };
-    
+
     class TextPos {
         left = "(        ((safezoneW / safezoneH) min 1.2) / 32) * 1.5";
         top = "(            (        (        ((safezoneW / safezoneH) min 1.2) / 1.2) / 20)*2 -         (            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)) / 2";
@@ -444,14 +444,14 @@ class TB_RscShortcutButtonMain : TB_RscShortcutButton {
     soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
     soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
     action = "";
-    
+
     class Attributes {
         font = "PuristaMedium";
         color = "#E5E5E5";
         align = "left";
         shadow = "false";
     };
-    
+
     class AttributesImage {
         font = "PuristaMedium";
         color = "#E5E5E5";
@@ -483,7 +483,7 @@ class TB_RscCheckbox {
     checked_strings[] = {CHECKED};
 };
 
-class TB_RscProgress 
+class TB_RscProgress
 {
     type = 8;
     style = 0;
@@ -498,7 +498,7 @@ class TB_RscProgress
     colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 };
 
-class TB_RscListBox 
+class TB_RscListBox
 {
     style = 16;
     idc = -1;
@@ -564,7 +564,7 @@ class TB_RscSlider {
     colorActive[] = {1, 1, 1, 1};
 };
 
-class TB_RscXSliderH 
+class TB_RscXSliderH
 {
     style = 1024;
     type = 43;
@@ -625,49 +625,49 @@ class TB_RscHTML {
     prevPage = "\A3\ui_f\data\gui\Rsccommon\Rschtml\arrow_left_ca.paa";
     nextPage = "\A3\ui_f\data\gui\Rsccommon\Rschtml\arrow_right_ca.paa";
     shadow = 2;
-    
+
     class H1 {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
         sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
         align = "left";
     };
-    
+
     class H2 {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
         sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
         align = "right";
     };
-    
+
     class H3 {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
         sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
         align = "left";
     };
-    
+
     class H4 {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
         sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
         align = "left";
     };
-    
+
     class H5 {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
         sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
         align = "left";
     };
-    
+
     class H6 {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
         sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
         align = "left";
     };
-    
+
     class P {
         font = "PuristaMedium";
         fontBold = "PuristaSemibold";
@@ -687,7 +687,7 @@ class TB_RscHitZones {
     ySpace = 0;
 };
 
-class TB_RscMapControl 
+class TB_RscMapControl
 {
     access = 0;
     type = 101;
@@ -1090,7 +1090,7 @@ class TB_RscCombo {
     colorDisabled[] = {1, 1, 1, 0.25};
     font = "PuristaMedium";
     sizeEx = "(            (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-    
+
     class ComboScrollBar : TB_RscScrollBar {};
 };
 
@@ -1111,81 +1111,81 @@ class TB_RscButtonSilent
     access = 0;
     type = 1;
     text = "";
-    colorText[] = 
+    colorText[] =
     {
         0, // 1
         0, // 1
         0, // 1
         0 // 1
     };
-    colorDisabled[] = 
+    colorDisabled[] =
     {
         0, // 0.4
         0, // 0.4
         0, // 0.4
         1 // 1
     };
-    colorBackground[] = 
+    colorBackground[] =
     {
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])",
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])",
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",
         0 // 0.7
     };
-    colorBackgroundDisabled[] = 
+    colorBackgroundDisabled[] =
     {
         0, // 0.95,
         0, // 0.95,
         0, // 0.95,
         0 // 1
     };
-    colorBackgroundActive[] = 
+    colorBackgroundActive[] =
     {
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])",
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])",
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",
         0 // 1
     };
-    colorFocused[] = 
+    colorFocused[] =
     {
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])",
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])",
         0, // "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",
         0 // 1
     };
-    colorShadow[] = 
+    colorShadow[] =
     {
         0,
         0,
         0,
         0 // 1
     };
-    colorBorder[] = 
+    colorBorder[] =
     {
         0,
         0,
         0,
         1
     };
-    soundEnter[] = 
+    soundEnter[] =
     {
         "",
         0.09,
         1
     };
-    soundPush[] = 
+    soundPush[] =
     {
         "",
         0.09,
         1
     };
-    soundClick[] = 
+    soundClick[] =
     {
         "",
         0.09,
         1
     };
-    soundEscape[] = 
+    soundEscape[] =
     {
         "",
         0.09,

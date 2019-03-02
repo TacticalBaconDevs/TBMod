@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Eric, IDarky
@@ -13,12 +13,12 @@
             scopeCurator = 2
 
 class CfgVehicles
-{    
+{
     // Uniformen
     class B_Soldier_F;
     class B_RangeMaster_F;
     class O_officer_F;
-    
+
     // Fahrzeuge
     class B_Heli_Light_01_F;
     class I_Heli_light_03_unarmed_F;
@@ -43,7 +43,7 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_sek.paa"};
     };
-    
+
     class TB_Uniform_Kommissar: B_Soldier_F
     {
         scope = 1;
@@ -54,7 +54,7 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_kommissar.paa"};
     };
-    
+
     class TB_Uniform_rekrut: B_RangeMaster_F
     {
         scope = 1;
@@ -65,7 +65,7 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_rekrut.paa"};
     };
-    
+
     class TB_Uniform_presi: O_officer_F
     {
         scope = 1;
@@ -76,18 +76,18 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_presi.paa"};
     };
-    
+
     ///////////////////////Polizei Fahrzeuge//////////////////////////
 
     class TB_Vehicles_sek_light: B_Heli_Light_01_F
-    {    
+    {
         displayName = "SEK Hummingbird";
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo1"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_light.paa"};
     };
-    
+
     class TB_Vehicles_sek_hellcat: I_Heli_light_03_unarmed_F
     {
         displayName = "SEK Hellcat";
@@ -96,7 +96,7 @@ class CfgVehicles
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_hellcat.paa"};
     };
-    
+
     class TB_Vehicles_polizei_hellcat: I_Heli_light_03_unarmed_F
     {
         displayName = "Polizei Hellcat";
@@ -118,9 +118,9 @@ class CfgVehicles
             ""
         };
     };
-    
+
     ///////////////////////USA Fahrzeuge//////////////////////////
-    
+
     class TB_Vehicles_USA_hunter: B_MRAP_01_F
     {
         displayName = "M-ATV Sand";

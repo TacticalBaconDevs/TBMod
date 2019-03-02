@@ -1,7 +1,7 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Wiki: https://community.bistudio.com/wiki/eden_Editor:_Configuring_Attributes
 */
 class CfgVehicles
@@ -25,7 +25,7 @@ class CfgVehicles
             class AnyBrain;
         };
     };
-    
+
     class TB_eden_base : Module_F {
         scope = 1;
         scopeCurator = 1;
@@ -39,7 +39,7 @@ class CfgVehicles
         isDisposable = 1;
         is3DEN = 1;
     };
-    
+
     class TB_eden_frontverlauf : TB_eden_base {
         scope = 2;
         displayName = "Frontverlauf";
@@ -48,13 +48,13 @@ class CfgVehicles
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
-        
+
         class AttributeValues
         {
             isRectangle = 1;
             size3[] = {500,500,-1};
         };
-        
+
         class Attributes: AttributesBase
         {
             class modus: Combo

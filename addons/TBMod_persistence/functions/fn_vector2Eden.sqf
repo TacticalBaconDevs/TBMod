@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
 
     Return the Eden X Y Rotation of an object by its VectorDirAndUp
     Credit: Ian Banks @foxhound.international

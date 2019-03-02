@@ -1,8 +1,6 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
-    Author: shukari
 */
 params [
         ["_mode", "", [""]],
@@ -21,16 +19,16 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
         if (!isNil "_value" && _value isEqualType "") then {_logic setVariable [_x, call compile _value]};
     }
     forEach ["patrolInf", "lightVeh", "armorVeh", "helis", "side", "settings", "bastionSettings", "angriffsRichtung", "angriffsRichtungHeli"];
-    
+
     (_logic getVariable ["objectarea", []]) params [["_w", 300], ["_h", 300]];
     // private _radius = _w min _h;
-    
+
     private _marker = createMarker [format ["tb_eosBast_%1", random 999999], getPos _logic];
     _marker setMarkerSize [_w, _h];
     _marker setMarkerDir (getDir _logic);
     _marker setMarkerAlpha 0.8;
     if (_logic getVariable ["sichtbar", false]) then {_marker setMarkerShape "ELLIPSE"};
-    
+
     private _settings = _logic getVariable ["settings", [0]];
     _settings pushBack (_logic getVariable ["side", EAST]);
     _settings pushBack (_logic getVariable ["heightCheck", true]);
@@ -39,7 +37,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     _settings pushBack (_logic getVariable ["helicopterHeight", 500]);
     _settings pushBack (_logic getVariable ["angriffsRichtung", [0, 360]]);
     _settings pushBack (_logic getVariable ["angriffsRichtungHeli", [0, 360]]);
-    
+
     [
         _marker,
         _logic getVariable ["patrolInf", [0, 0]],

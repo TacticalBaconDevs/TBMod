@@ -1,10 +1,10 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author:
         bangabob (https://forums.bohemia.net/forums/topic/144150-enemy-occupation-system-eos/)
-  
+
     Complete rewrite and modification:
         shukari
 */
@@ -32,14 +32,14 @@ if (_emptySeats > 0) then
     _grp = createGroup [_side, true];
     private _unit = objNull;
     for "_i" from 1 to _grpSize do
-    {                    
+    {
         _unit = _grp createUnit [selectRandom _cargoPool, [0,0,0], [], 0, "CAN_COLLIDE"];
         _unit assignAsCargoIndex [_vehicle, _i - 1];
         _unit moveInCargo _vehicle;
-        
+
         // _unit moveInCargo _vehicle;
         // _unit assignAsCargo _vehicle;
-        
+
         if (_vehicle getCargoIndex _unit == -1) exitWith {deleteVehicle _unit};
     };
 };

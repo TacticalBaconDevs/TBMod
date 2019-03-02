@@ -1,12 +1,12 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author: Eric Ruhland
     Returns Array<Arrray<Number>> of all file contents
-    
+
     Arguments:
-    
+
     Return Value:
     filecontents Array<Arrray<Number>>
 */

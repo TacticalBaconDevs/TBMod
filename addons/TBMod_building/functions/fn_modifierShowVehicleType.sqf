@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_args", ""];
@@ -14,7 +14,7 @@ if ([_target] call ace_repair_fnc_isRepairVehicle) then {_newActionName pushBack
 if ([_target] call ace_refuel_fnc_getFuel > 0) then {_newActionName pushBack "Ta"};
 if (_target getVariable ["ace_rearm_isSupplyVehicle", false] ||
     getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "ace_rearm_defaultSupply") > 0) then {_newActionName pushBack "Mu"};
-    
+
 if (count _newActionName > 2) then {_newActionName = ["Utils"]};
 
 _actionData set [1, format ["%1%2",

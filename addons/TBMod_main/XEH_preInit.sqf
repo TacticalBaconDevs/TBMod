@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 if !(call TB_fnc_isTBMission) exitWith {};
@@ -15,7 +15,7 @@ if (isNil "TB_fpsMonitor_zeus") then {TB_fpsMonitor_zeus = true};
 
 ["CAManBase", "Local", {
     params ["_entity", "_isLocal"];
-    
+
     if (_isLocal) then
     {
         // HeadlessClient - setGroupOwner Fix

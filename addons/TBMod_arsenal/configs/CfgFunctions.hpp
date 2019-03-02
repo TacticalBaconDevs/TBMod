@@ -1,15 +1,13 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgFunctions
 {
     class TBMod_arsenal
     {
         tag = "TB";
-        
+
         class functions
         {
             file = "\TBMod_arsenal\functions";
@@ -27,7 +25,7 @@ class CfgFunctions
             class whitelist {};
             class deleteAny {};
         };
-        
+
         class arsenal
         {
             file = "\TBMod_arsenal\arsenal";
@@ -37,7 +35,7 @@ class CfgFunctions
             class arsenalVANILLA {};
             class arsenalThemen {};
         };
-        
+
         class arsenalThemen
         {
             file = "\TBMod_arsenal\arsenal\themen";

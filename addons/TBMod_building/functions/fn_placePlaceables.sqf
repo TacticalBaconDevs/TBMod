@@ -1,8 +1,6 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params [
     "_item",
@@ -39,34 +37,34 @@ waitUntil {_obj distance2D _pos < 5};
 [_obj, _item] spawn
 {
     params ["_obj", "_item"];
-    
+
     waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
-    
+
     if !(typeOf _obj in ["Land_PortableLight_single_F"]) then
     {
         _obj enableSimulation false;
         [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
     };
     [_obj, true] remoteExecCall ["hideObjectGlobal", 2];
-    
+
     [ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation;
 
     [[15, 2] select ((ACE_player getVariable ['TB_rolle', '']) == 'pionier' || _item in ["TB_building_item_ace_concertinawirecoil"]), [ _obj, _item], {
         (_this select 0) params ["_obj"];
-        
+
         [ACE_player, "", 1] call ace_common_fnc_doAnimation;
-        
+
         [_obj, false] remoteExecCall ["hideObjectGlobal", 2];
-        
+
         if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
         TB_persistent_buildings pushBack [_obj, false];
         publicVariable "TB_persistent_buildings";
     },
     {
         (_this select 0) params ["_obj", "_item"];
-        
+
         [ACE_player, "", 1] call ace_common_fnc_doAnimation;
-        
+
         deleteVehicle _obj;
         ACE_player addItem _item;
     }, localize "STR_PLACE_Build"] call ace_common_fnc_progressBar;

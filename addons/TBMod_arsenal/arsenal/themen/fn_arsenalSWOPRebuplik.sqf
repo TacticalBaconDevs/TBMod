@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Ansprechpartner: Jojo
@@ -11,23 +11,23 @@ private _allgemein = [
     "SWOP_InvisBag",
     // ### LR-Funke
     "SWOP_B_CloneDVa",
-    
+
     // Gesichtsbedeckung
     "SWOP_Clones_HUD",
-    
+
     // Nachtsichtgeräte
     "SWOP_visor_w",
     "SWOP_visor_antenna",
-    
+
     // Ferngläser
     "ElectroBinocularsW_F",
-    
+
     // Karte
     "ItemMap",
-    
+
     // Terminal
     "ItemGPS",
-    
+
     // Kommunikation
     "TFAR_anprc152",
 
@@ -73,19 +73,19 @@ private _allgemein_visiere = [
 ];
 
 private _allgemein_befestigungsschiene = [
-    
+
 ];
 
 private _allgemein_geschuetzzubehoer = [
-    
+
 ];
 
 private _allgemein_zweibein = [
-    
+
 ];
 
 private _allgemein_raketenwerfer = [
-    
+
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -133,7 +133,7 @@ private _mg_munition = [
 ];
 
 private _pilot_munition = [
- 
+
 ];
 
 private _sniper_munition = [
@@ -202,12 +202,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SWOP_Clonetrooper_501sargeant_F_CombatUniform",
             "SWOP_Clonetrooper_212cody_F_CombatUniform",
             "SWOP_Clonetrooper_74sage_F_CombatUniform",
-            
+
             // Weste
             "SWOP_Clonetrooper_501_armor_pauldrons2",
             "SWOP_Clonetrooper_212_armor_pauldrons2",
             "SWOP_Clonetrooper_74_armor_kama",
-            
+
             // Nachtsichtgeräte
             "SWOP_cosir1",
             "SWOP_cosir2",
@@ -242,12 +242,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         [
-            // Weste 
+            // Weste
             "SWOP_Clonetrooper_501med_armor",
             "SWOP_Clonetrooper_501kix_armor",
             "SWOP_Clonetrooper_212med_armor",
             "SWOP_Clonetrooper_74med_armor",
-            
+
             // Rucksack
             "SWOP_B_CloneBackpack_med",
 
@@ -273,12 +273,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         [
-            // Weste 
+            // Weste
             "SWOP_Clonetrooper_501med_armor",
             "SWOP_Clonetrooper_501kix_armor",
             "SWOP_Clonetrooper_212med_armor",
             "SWOP_Clonetrooper_74med_armor",
-            
+
             // Rucksack
             "SWOP_B_CloneBackpack_med",
 
@@ -330,7 +330,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SWOP_Clonetrooper_212waxer_boil_armor",
             "SWOP_Clonetrooper_501jesse_armor",
             "SWOP_Clonetrooper_74jang_armor",
-        
+
             // Gewehre
             "SWOP_dc15xBlasterRifle",
             "SWOP_DC15ABlasterRifle_mod1",
@@ -339,7 +339,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "swop_dc15a_zoomscopex10range",
             "swop_dc15a_zoomscopex8",
             "swop_dc15a_zoomscope",
-            
+
             // Nachtsichtgeräte
             "SWOP_range"
         ]
@@ -363,7 +363,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SWOP_Clonetrooper_212_armor_recon",
             "SWOP_Clonetrooper_501_armor_recon",
             "SWOP_Clonetrooper_74_armor_recon",
-            
+
             // Gewehre
             "SWOP_Z6Blaster"
         ]
@@ -390,7 +390,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _aaat_munition +
         _gepaeck_mittel +
         [
-            
+
         ]
     };
 
@@ -449,7 +449,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _sniper_munition +
         [
-            
+
         ]
     };
 
@@ -470,7 +470,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _grenadier_gewehr +
         _grenadier_munition +
         [
-            
+
         ]
     };
 
@@ -493,11 +493,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SWOP_Clonetrooper_501hardcase_armor",
             "SWOP_Clonetrooper_212waxer_boil_armor",
             "SWOP_Clonetrooper_74jang_armor",
-        
+
             // Handwaffen
             "ACE_VMH3",
             "ACE_VMM3",
-            
+
             // Gepäck
             "SWOP_B_CloneBackpack_dem",
 
@@ -537,7 +537,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SWOP_Clonetrooper_212_armor_grenade",
             "SWOP_Clonetrooper_501_armor_grenade",
             "SWOP_Clonetrooper_74_armor_grenade",
-            
+
             // Raketenwerfer
             "RocketL_F"
         ]
@@ -580,12 +580,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Handwaffen
             "ACE_VMH3",
             "ACE_VMM3",
-            
+
             // Westen
             "SWOP_Clonetrooper_501hardcase_armor",
             "SWOP_Clonetrooper_212waxer_boil_armor",
             "SWOP_Clonetrooper_74jang_armor",
-            
+
             // Gepäck
             "SWOP_B_CloneBackpack_dem",
 

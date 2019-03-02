@@ -1,10 +1,10 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Chris 'Taranis'
 */
-class RscTitles 
+class RscTitles
 {
     #include "..\UI\common.hpp"
     #include "..\UI\common_EditorWrapper.hpp"
