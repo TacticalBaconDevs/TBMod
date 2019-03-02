@@ -42,19 +42,19 @@ if (_tag == "TB") then
 {[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities "Land_CampingChair_V2_F");
 
 // BuildAbfrage
-waitUntil {!isNil "TB_serverBuild"};
+//waitUntil {!isNil "TB_serverBuild"};
 productVersion params ["", "", "", "_buildNumber", "", "", "", "_architecture"];
 
-if (_buildNumber < TB_serverBuild) then
-{
-    private _msg = "[WICHTIG] Du benutzt kein PerformanceBuild, solltest du FPS Probleme oder Crashes haben, können wir Dir nicht helfen!";
-
-    systemChat _msg;
-    hint _msg;
-    diag_log _msg;
-
-    (format ["[WARNUNG] %1 benutzt kein PerformanceBuild!", profileName]) remoteExecCall ["systemChat"];
-};
+//if (_buildNumber < TB_serverBuild) then
+//{
+//    private _msg = "[WICHTIG] Du benutzt kein PerformanceBuild, solltest du FPS Probleme oder Crashes haben, können wir Dir nicht helfen!";
+//
+//    systemChat _msg;
+//    hint _msg;
+//    diag_log _msg;
+//
+//    (format ["[WARNUNG] %1 benutzt kein PerformanceBuild!", profileName]) remoteExecCall ["systemChat"];
+//};
 
 if (_architecture != "x64") then
 {
