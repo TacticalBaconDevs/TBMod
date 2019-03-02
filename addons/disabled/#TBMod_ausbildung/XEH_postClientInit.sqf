@@ -1,9 +1,8 @@
+#include "\TBMod_main\defineDIKCodes.inc"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-#include "\TBMod_main\defineDIKCodes.inc"
-
 if !(call TB_fnc_isTBMission) exitWith {};
 
 // get all Targets
