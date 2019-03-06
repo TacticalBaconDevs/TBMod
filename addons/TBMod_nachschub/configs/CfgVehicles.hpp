@@ -102,6 +102,7 @@ class CfgVehicles
 
                     ADD_SUPPLY(LeereKiste,TB_supply_empty);
                     ADD_SUPPLY(Sanikiste,TB_supply_all_medic);
+                    ADD_SUPPLY(arztkiste,TB_supply_all_arzt);
                     ADD_SUPPLY(Ersatzreifen,ACE_Wheel);
                     ADD_SUPPLY(Ersatzkette,ACE_Track);
                     ADD_SUPPLY(Funkgeräte,TB_supply_all_funk);
@@ -212,10 +213,10 @@ class CfgVehicles
         PUBLIC_NAME("Leere Kiste");
     };
 
-    class TB_supply_all_medic: WRAPPER_NAME(Box_NATO_Support_F)
+    class TB_supply_all_medic: WRAPPER_NAME(Land_PlasticCase_01_small_F)
     {
         PUBLIC_NAME("Sanikiste");
-
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\Land_PlasticCase_01_medium_F_0.paa"};
         class TransportItems
         {
             MACRO_ADDITEM(ACE_quikclot,60);
@@ -233,9 +234,31 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_funk : WRAPPER_NAME(Box_NATO_Equip_F)
+    class TB_supply_all_arzt: WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("Arztkiste");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\Land_PlasticCase_01_medium_F_0.paa"};
+        class TransportItems
+        {
+            MACRO_ADDITEM(ACE_quikclot,60);
+            MACRO_ADDITEM(ACE_elasticBandage,60);
+
+            MACRO_ADDITEM(ACE_tourniquet,4);
+
+            MACRO_ADDITEM(ACE_bloodIV_500,10);
+            MACRO_ADDITEM(ACE_bloodIV,5);
+
+            MACRO_ADDITEM(ACE_morphine,20);
+            MACRO_ADDITEM(ACE_epinephrine,10);
+
+            MACRO_ADDITEM(ACE_surgicalKit,1);
+        };
+    };
+
+    class TB_supply_all_funk : WRAPPER_NAME(Box_IND_Ammo_F)
     {
         PUBLIC_NAME("Funkkiste");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -249,9 +272,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mortar : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+    class TB_supply_all_mortar : WRAPPER_NAME(Box_IND_WpsSpecial_F)
     {
         PUBLIC_NAME("MörserKit");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -272,9 +296,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
         PUBLIC_NAME("MörserMunition");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -286,9 +311,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
         PUBLIC_NAME("MörserMunitionHE");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -296,9 +322,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
         PUBLIC_NAME("MörserMunitionRauch");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -306,9 +333,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
         PUBLIC_NAME("MörserMunitionFlare");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -316,9 +344,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_hmg : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+    class TB_supply_all_hmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("HMGKit");
+        //hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\Land_PlasticCase_01_medium_F .paa"};
 
         class TransportBackpacks
         {
@@ -347,9 +376,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Equip_F)
+    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F )
     {
         PUBLIC_NAME("BauKiste");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\uniforms_box_blufor_co_0.paa","\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa"};
 
         class TransportItems
         {
@@ -367,6 +397,7 @@ class CfgVehicles
     class TB_supply_all_medicbuilding : WRAPPER_NAME(Box_IDAP_Equip_F)
     {
         PUBLIC_NAME("SaniBauKiste");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa","\TBMod_nachschub\textures\equipment_box_idap_co_0.paa"};
 
         class TransportItems
         {
@@ -381,6 +412,7 @@ class CfgVehicles
     class TB_supply_all_mp5 : WRAPPER_NAME(Box_NATO_Ammo_F)
     {
         PUBLIC_NAME("MP5Muni");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportMagazines
         {
@@ -392,9 +424,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mines : WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_all_mines : WRAPPER_NAME(Box_IND_AmmoOrd_F)
     {
         PUBLIC_NAME("Minenkiste");
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
