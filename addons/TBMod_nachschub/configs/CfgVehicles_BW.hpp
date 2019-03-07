@@ -5,6 +5,7 @@
 class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 {
     PUBLIC_NAME_CAT("Munition",BW);
+    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -56,9 +57,10 @@ class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     };
 };
 
-class TB_supply_bw_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
     PUBLIC_NAME_CAT("SpezialwaffenMunition",BW);
+    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_1.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {

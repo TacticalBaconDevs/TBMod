@@ -102,7 +102,7 @@ class CfgVehicles
 
                     ADD_SUPPLY(LeereKiste,TB_supply_empty);
                     ADD_SUPPLY(Sanikiste,TB_supply_all_medic);
-                    ADD_SUPPLY(arztkiste,TB_supply_all_arzt);
+                    ADD_SUPPLY(Arztkiste,TB_supply_all_arzt);
                     ADD_SUPPLY(Ersatzreifen,ACE_Wheel);
                     ADD_SUPPLY(Ersatzkette,ACE_Track);
                     ADD_SUPPLY(Funkgeräte,TB_supply_all_funk);
@@ -207,6 +207,23 @@ class CfgVehicles
     WRAPPER(Box_NATO_Grenades_F);
     WRAPPER(Box_NATO_AmmoOrd_F);
     WRAPPER(Box_NATO_WpsSpecial_F);
+    WRAPPER(Land_PlasticCase_01_small_F);
+    WRAPPER(Land_PlasticCase_01_medium_F);
+    WRAPPER(Box_IND_Ammo_F);
+    WRAPPER(Box_IND_WpsSpecial_F);
+    WRAPPER(Box_NATO_Uniforms_F);
+    WRAPPER(Box_IND_AmmoOrd_F);
+    WRAPPER(Box_IND_Support_F);
+    WRAPPER(Box_IND_Wps_F);
+    WRAPPER(Box_East_Wps_F);
+    WRAPPER(Box_EAST_WpsLaunch_F);
+    WRAPPER(Box_IND_Grenades_F);
+    WRAPPER(Box_IND_WpsLaunch_F);
+    WRAPPER(Box_East_WpsSpecial_F);
+    WRAPPER(Box_East_Support_F);
+    WRAPPER(Box_East_Grenades_F);
+    WRAPPER(Box_East_AmmoOrd_F);
+
 
     class TB_supply_empty: WRAPPER_NAME(Box_NATO_Ammo_F)
     {
@@ -347,7 +364,7 @@ class CfgVehicles
     class TB_supply_all_hmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("HMGKit");
-        //hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\Land_PlasticCase_01_medium_F .paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\uniforms_box_blufor_co_0.paa"};
 
         class TransportBackpacks
         {
@@ -376,10 +393,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F )
+    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F)
     {
         PUBLIC_NAME("BauKiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\uniforms_box_blufor_co_0.paa","\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\uniforms_box_blufor_co_0.paa", "\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa"};
 
         class TransportItems
         {
@@ -397,7 +414,7 @@ class CfgVehicles
     class TB_supply_all_medicbuilding : WRAPPER_NAME(Box_IDAP_Equip_F)
     {
         PUBLIC_NAME("SaniBauKiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa","\TBMod_nachschub\textures\equipment_box_idap_co_0.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\equipment_box_idap_co_1.paa", "\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa"};
 
         class TransportItems
         {

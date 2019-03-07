@@ -16,9 +16,10 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
     };
 };
 
-class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("HandwaffenMunition",USA);
+    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -143,7 +144,7 @@ class TB_supply_usa_javlinAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_East_WpsSpecial_F )
+class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_East_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("MAAWSMunition",USA);
     hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_1.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
