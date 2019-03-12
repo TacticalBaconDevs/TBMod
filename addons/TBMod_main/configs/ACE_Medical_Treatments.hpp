@@ -1,4 +1,7 @@
-
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+*/
 class ACE_Medical_Actions {
     class Advanced {
         class FieldDressing {
@@ -9,6 +12,10 @@ class ACE_Medical_Actions {
         };
         class Morphine: fieldDressing {
             treatmentTime = "[3] call TB_fnc_calcTreatmentTime";
+        };
+        class Atropine: Morphine { // Ketamin
+            displayName = "Ketamin injizieren2";
+            displayNameProgress = "Ketamin injizieren2...";
         };
         class BloodIV: fieldDressing {
             treatmentTime = "[7] call TB_fnc_calcTreatmentTime";
@@ -649,50 +656,36 @@ class ACE_Medical_Advanced {
             // The viscosity of a fluid is a measure of its resistance to gradual deformation by shear stress or tensile stress. For liquids, it corresponds to the informal concept of "thickness". This value will increase/decrease the viscoty of the blood with the percentage given. Where 100 = max. Using the minus will decrease viscosity
             viscosityChange = 0;
 
+            inCompatableMedication[] = {};
+
             // specific details for the ACE_Morphine treatment action
             class Morphine {
                 painReduce = 15;
-                hrIncreaseLow[] = {-10, -20, 35};
-                hrIncreaseNormal[] = {-10, -30, 35};
-                hrIncreaseHigh[] = {-10, -35, 50};
+                hrIncreaseLow[] = {-25, -35, 35};
+                hrIncreaseNormal[] = {-25, -45, 35};
+                hrIncreaseHigh[] = {-25, -50, 50};
                 timeInSystem = 900;
-                maxDose = 4;
-                inCompatableMedication[] = {};
-                viscosityChange = -10;
+                viscosityChange = -20;
             };
             class Epinephrine {
-                painReduce = 0;
                 hrIncreaseLow[] = {10, 20, 15};
                 hrIncreaseNormal[] = {10, 50, 10};
                 hrIncreaseHigh[] = {10, 40, 5};
-                timeInSystem = 120;
                 maxDose = 10;
-                inCompatableMedication[] = {};
             };
-            class Adenosine {
-                painReduce = 0;
-                hrIncreaseLow[] = {-7, -10, 15};
-                hrIncreaseNormal[] = {-15, -30, 20};
-                hrIncreaseHigh[] = {-15, -35, 10};
-                timeInSystem = 120;
-                maxDose = 6;
-                inCompatableMedication[] = {};
+            class Adenosine { // Ketamin
+                painReduce = 1;
+                hrIncreaseLow[] = {0, -5, 60};
+                hrIncreaseNormal[] = {-5, -10, 60};
+                hrIncreaseHigh[] = {-10, -15, 90};
+                timeInSystem = 300;
+                maxDose = 8;
             };
             class Atropine {
-                painReduce = 0;
                 hrIncreaseLow[] = {-2, -5, 15};
                 hrIncreaseNormal[] = {-10, -15, 20};
                 hrIncreaseHigh[] = {-5, -20, 10};
-                timeInSystem = 120;
                 maxDose = 6;
-                inCompatableMedication[] = {};
-            };
-            class PainKillers {
-                painReduce = 0.7;
-                timeInSystem = 120;
-                maxDose = 10;
-                inCompatableMedication[] = {};
-                viscosityChange = 5;
             };
         };
 

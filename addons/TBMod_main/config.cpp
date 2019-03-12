@@ -80,7 +80,9 @@ class CfgPatches
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CBA_Stuff.hpp"
 #include "configs\CfgMisc.hpp"
+#include "configs\CfgWeapons.hpp"
 #include "configs\ACE_Medical_Treatments.hpp"
+#include "configs\ACE_Medical_SelfActions.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
