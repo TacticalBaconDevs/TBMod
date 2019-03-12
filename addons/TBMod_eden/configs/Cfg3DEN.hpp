@@ -125,7 +125,6 @@ class Cfg3DEN
                         property = "TBMod_Main_kiDeckung";
                         control = "Checkbox";
 
-                        expression = "";
                         expression = "if (!is3DEN && _value) then {[this] call TB_fnc_upDown}";
 
                         defaultValue = "false";
