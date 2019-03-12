@@ -53,10 +53,10 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
 if (_rolle == "arzt") then
 {
     _allItems append [
-        "ACE_personalAidKit"
+        "ACE_personalAidKit",
         "ACE_bloodIV",
         "ACE_bloodIV_500",
-        "ACE_bloodIV_250",
+        "ACE_bloodIV_250"
         // "ACE_salineIV",
         // "ACE_salineIV_500",
         // "ACE_salineIV_250",

@@ -35,9 +35,9 @@ if (_tag == "TB") then
 
 // ### BriefingStühle nicht tragen lassen
 {
-    {[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities _x);
+    {[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities (configName _x));
 }
-forEach (configProperties [configFile >> "CfgVehicles", "isClass _x && getNumber (_x >> 'acex_sitting_canSit') == 1", true]);
+forEach (configProperties [configFile >> "CfgVehicles", "isClass _x && {getNumber (_x >> 'acex_sitting_canSit') == 1}", true]);
 
 
 // BuildAbfrage

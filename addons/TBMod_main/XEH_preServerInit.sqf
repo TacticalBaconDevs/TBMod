@@ -16,7 +16,7 @@ publicVariable "TB_disconnectCache";
 
 // ### RECHTE & ChatCommands
 TB_lvl3 = compileFinal (str [
-    "_SP_PLAYER_"
+    "_SP_PLAYER_",
     "76561198029318101", /* shukari */
     "76561198053478498", /* Sponst */
     "76561198040057152", /* Culli */

@@ -20,7 +20,7 @@ private _txt = "
 - Verbrauch OP-Kit: %10<br/>
 - Ort PAK: %11<br/>
 - Ort OP-Kit: %12<br/>";
-player createDiaryRecord ["missionSettings", ["Medical", format [_txt, "%"
+player createDiaryRecord ["missionSettings", ["Medical", format [_txt, "%",
     ace_medical_maxReviveTime / 60,
     ace_medical_AIDamageThreshold * 100,
     ace_medical_playerDamageThreshold * 100,

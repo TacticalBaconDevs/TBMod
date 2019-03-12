@@ -5,7 +5,7 @@ class ACE_Medical_Actions {
             treatmentTime = "[8] call TB_fnc_calcTreatmentTime";
         };
         class Tourniquet: fieldDressing {
-            treatmentTime = "[4] call TB_fnc_calcTreatmentTime";
+            treatmentTime = 1; // "[4] call TB_fnc_calcTreatmentTime"
         };
         class Morphine: fieldDressing {
             treatmentTime = "[3] call TB_fnc_calcTreatmentTime";
@@ -23,7 +23,7 @@ class ACE_Medical_Actions {
             treatmentTime = "[2] call TB_fnc_calcTreatmentTime";
         };
         class RemoveTourniquet: Tourniquet {
-            treatmentTime = "[2.5] call TB_fnc_calcTreatmentTime";
+            treatmentTime = 1; // "[2.5] call TB_fnc_calcTreatmentTime"
         };
         class CPR: fieldDressing {
             treatmentTime = "[15] call TB_fnc_calcTreatmentTime"; // wird vermutlich von adv_cpr überschrieben
@@ -630,13 +630,77 @@ class ACE_Medical_Advanced {
             };
         };
 
-        // class Medication {};
+        class Medication {
+            // How much does the pain get reduced?
+            painReduce = 0;
+            // How much will the heart rate be increased when the HR is low (below 55)? {minIncrease, maxIncrease, seconds}
+            hrIncreaseLow[] = {0, 0, 0};
+            hrIncreaseNormal[] = {0, 0, 0};
+            hrIncreaseHigh[] = {0, 0, 0};
+            // Callback once the heart rate values have been added.
+            hrCallback = "";
+
+            // How long until this medication has disappeared
+            timeInSystem = 120;
+            // How many of this type of medication can be in the system before the patient overdoses?
+            maxDose = 4;
+            // Function to execute upon overdose. Arguments passed to call back are 0: unit <OBJECT>, 1: medicationClassName <STRING>
+            onOverDose = "";
+            // The viscosity of a fluid is a measure of its resistance to gradual deformation by shear stress or tensile stress. For liquids, it corresponds to the informal concept of "thickness". This value will increase/decrease the viscoty of the blood with the percentage given. Where 100 = max. Using the minus will decrease viscosity
+            viscosityChange = 0;
+
+            // specific details for the ACE_Morphine treatment action
+            class Morphine {
+                painReduce = 15;
+                hrIncreaseLow[] = {-10, -20, 35};
+                hrIncreaseNormal[] = {-10, -30, 35};
+                hrIncreaseHigh[] = {-10, -35, 50};
+                timeInSystem = 900;
+                maxDose = 4;
+                inCompatableMedication[] = {};
+                viscosityChange = -10;
+            };
+            class Epinephrine {
+                painReduce = 0;
+                hrIncreaseLow[] = {10, 20, 15};
+                hrIncreaseNormal[] = {10, 50, 10};
+                hrIncreaseHigh[] = {10, 40, 5};
+                timeInSystem = 120;
+                maxDose = 10;
+                inCompatableMedication[] = {};
+            };
+            class Adenosine {
+                painReduce = 0;
+                hrIncreaseLow[] = {-7, -10, 15};
+                hrIncreaseNormal[] = {-15, -30, 20};
+                hrIncreaseHigh[] = {-15, -35, 10};
+                timeInSystem = 120;
+                maxDose = 6;
+                inCompatableMedication[] = {};
+            };
+            class Atropine {
+                painReduce = 0;
+                hrIncreaseLow[] = {-2, -5, 15};
+                hrIncreaseNormal[] = {-10, -15, 20};
+                hrIncreaseHigh[] = {-5, -20, 10};
+                timeInSystem = 120;
+                maxDose = 6;
+                inCompatableMedication[] = {};
+            };
+            class PainKillers {
+                painReduce = 0.7;
+                timeInSystem = 120;
+                maxDose = 10;
+                inCompatableMedication[] = {};
+                viscosityChange = 5;
+            };
+        };
 
         class IV {
             volume = 1000; // volume is in millileters
 
             class BloodIV {
-                volume = 1500; // 1000
+                volume = 2000; // 1000
             };
             class BloodIV_500: BloodIV {
                 volume = 1000; // 500
