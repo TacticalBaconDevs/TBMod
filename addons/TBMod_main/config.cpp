@@ -8,7 +8,8 @@ class CfgPatches
     {
         name = "TBMod Hauptmod";
 
-        author[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
+        author = "TBMod-DevTeam";
+        authors[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
         url = "https://github.com/TacticalBaconDevs/TBMod";
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";

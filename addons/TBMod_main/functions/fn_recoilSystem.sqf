@@ -47,7 +47,7 @@ TB_recoilID = ["ace_firedPlayer", {
     if (_deploy) then {_recoil = _recoil - 0.3};
 
     // Waffen Einflüsse
-    if (_weapon == primaryWeapon _unit) then // TODO: nur machen wenn RHS vorhanden
+    if (isClass (configfile >> "CfgPatches" >> "rhsusf_main") && _weapon == primaryWeapon _unit) then // TODO: check ob waffe von RHS, sonst auch nicht
     {
         (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
 
@@ -66,7 +66,7 @@ TB_recoilID = ["ace_firedPlayer", {
         if (_silencer != "") then {_recoil = _recoil - 0.1};
     };
 
-    ["Before: %1 | Now: %2 | Coef: %3 | Influ: %4 | InfluOhneGrenze: %5 | CustomAimCoef: %6 | recoilStart: %7", unitRecoilCoefficient _unit, (_recoil max 0.5) * TB_recoilCoef, TB_recoilCoef, _recoil max 0.5, _recoil, getCustomAimCoef _unit, TB_recoilStart] call TB_fnc_debug;
+    ["Now: %1 | Before: %2 | Coef: %3 | Influ: %4 | CustomAimCoef: %5 | recoilStart: %6", (_recoil max 0.5) * TB_recoilCoef, TB_recoilCoef, unitRecoilCoefficient _unit, _recoil max 0.5, getCustomAimCoef _unit, TB_recoilStart] call TB_fnc_debug;
     _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
 
     TB_recoilFreeze = diag_tickTime + 1;
