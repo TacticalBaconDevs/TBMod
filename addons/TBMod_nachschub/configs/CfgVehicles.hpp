@@ -29,22 +29,40 @@ class CfgVehicles
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
-    class TB_##CLASS_NAME : CLASS_NAME \
-    { \
-        author = "shukari"; \
-        ace_cargo_canLoad = 1; \
-        ace_cargo_size = 1; \
-        ace_dragging_canCarry = 1; \
-        ace_dragging_canDrag = 1; \
-        editorCategory = "EdCat_TB_MainCat_supply"; \
-        editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
-        scope = 1; \
-        scopeCurator = 1; \
-        class TransportItems {}; \
-        class TransportWeapons {}; \
-        class TransportBackpacks {}; \
-        class TransportMagazines {}; \
-    }
+        class TB_##CLASS_NAME : CLASS_NAME \
+        { \
+            author = "shukari"; \
+            ace_cargo_canLoad = 1; \
+            ace_cargo_size = 1; \
+            ace_dragging_canCarry = 1; \
+            ace_dragging_canDrag = 1; \
+            editorCategory = "EdCat_TB_MainCat_supply"; \
+            editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
+            scope = 1; \
+            scopeCurator = 1; \
+            class TransportItems {}; \
+            class TransportWeapons {}; \
+            class TransportBackpacks {}; \
+            class TransportMagazines {}; \
+        }
+    #define WRAPPER_SKIN(CLASS_NAME,SKINS) class CLASS_NAME; \
+        class TB_##CLASS_NAME : CLASS_NAME \
+        { \
+            author = "shukari"; \
+            ace_cargo_canLoad = 1; \
+            ace_cargo_size = 1; \
+            ace_dragging_canCarry = 1; \
+            ace_dragging_canDrag = 1; \
+            editorCategory = "EdCat_TB_MainCat_supply"; \
+            editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
+            scope = 1; \
+            scopeCurator = 1; \
+            hiddenSelectionsTextures[] = {SKINS}; \
+            class TransportItems {}; \
+            class TransportWeapons {}; \
+            class TransportBackpacks {}; \
+            class TransportMagazines {}; \
+        }
     #define WRAPPER_NAME(CLASS_NAME) TB_##CLASS_NAME
     #define PUBLIC_NAME(D_NAME) \
         displayName = D_NAME; \
@@ -76,11 +94,8 @@ class CfgVehicles
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
 
-        //hiddenSelections[] = {"Camo_Signs","Camo"};
-        hiddenSelectionsTextures[] = {
-            "",
-            "\TBMod_skins\pictures\statics\TB_vorratslager.paa"
-        };
+        // hiddenSelections[] = {"Camo_Signs","Camo"};
+        hiddenSelectionsTextures[] = {"", "\TBMod_skins\pictures\statics\TB_vorratslager.paa"};
 
         class TransportItems {};
         class TransportMagazines {};
@@ -198,32 +213,38 @@ class CfgVehicles
 
 
     // ###################### KISTEN #########################
-    WRAPPER(Box_NATO_Support_F);
-    WRAPPER(Box_NATO_Ammo_F);
-    WRAPPER(Box_NATO_Wps_F);
-    WRAPPER(Box_NATO_Equip_F); // sehr groß
-    WRAPPER(Box_IDAP_Equip_F);
-    WRAPPER(Box_NATO_WpsLaunch_F);
-    WRAPPER(Box_NATO_Grenades_F);
-    WRAPPER(Box_NATO_AmmoOrd_F);
-    WRAPPER(Box_NATO_WpsSpecial_F);
-    WRAPPER(Land_PlasticCase_01_small_F);
-    WRAPPER(Land_PlasticCase_01_medium_F);
-    WRAPPER(Box_IND_Ammo_F);
-    WRAPPER(Box_IND_WpsSpecial_F);
-    WRAPPER(Box_NATO_Uniforms_F);
-    WRAPPER(Box_IND_AmmoOrd_F);
-    WRAPPER(Box_IND_Support_F);
-    WRAPPER(Box_IND_Wps_F);
-    WRAPPER(Box_East_Wps_F);
-    WRAPPER(Box_EAST_WpsLaunch_F);
-    WRAPPER(Box_IND_Grenades_F);
-    WRAPPER(Box_IND_WpsLaunch_F);
-    WRAPPER(Box_East_WpsSpecial_F);
-    WRAPPER(Box_East_Support_F);
-    WRAPPER(Box_East_Grenades_F);
-    WRAPPER(Box_East_AmmoOrd_F);
+    #define SKIN_GRP1 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_3.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
+    #define SKIN_GRP2 "\TBMod_skins\pictures\statics\Land_PlasticCase_01_medium_F_0.paa"
+    #define SKIN_GRP3 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_2.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
+    #define SKIN_GRP4 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
+    #define SKIN_GRP5 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
+    #define SUPPORT_SKIN "\TBMod_skins\pictures\statics\equipment_box_blufor_ca_1.paa"
 
+    // WRAPPER(Box_NATO_Support_F); // nicht benutzt
+    WRAPPER(Box_NATO_Equip_F); // sehr groß
+    WRAPPER_SKIN(Box_NATO_Ammo_F, SKIN_GRP1);
+    WRAPPER_SKIN(Box_NATO_Wps_F, SKIN_GRP1);
+    WRAPPER_SKIN(Box_IDAP_Equip_F, ARR_2("\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN));
+    WRAPPER_SKIN(Box_NATO_WpsLaunch_F, SKIN_GRP1);
+    WRAPPER_SKIN(Box_NATO_Grenades_F, SKIN_GRP1);
+    WRAPPER_SKIN(Box_NATO_AmmoOrd_F, SKIN_GRP1);
+    WRAPPER_SKIN(Box_NATO_WpsSpecial_F, SKIN_GRP1);
+    WRAPPER_SKIN(Land_PlasticCase_01_small_F, SKIN_GRP2);
+    WRAPPER_SKIN(Land_PlasticCase_01_medium_F, SKIN_GRP2);
+    WRAPPER_SKIN(Box_IND_Ammo_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_IND_WpsSpecial_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_NATO_Uniforms_F, ARR_2("\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa", SUPPORT_SKIN));
+    WRAPPER_SKIN(Box_IND_AmmoOrd_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_IND_Support_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_IND_Wps_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_East_Wps_F, SKIN_GRP4);
+    WRAPPER_SKIN(Box_EAST_WpsLaunch_F, SKIN_GRP5);
+    WRAPPER_SKIN(Box_IND_Grenades_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_IND_WpsLaunch_F, SKIN_GRP3);
+    WRAPPER_SKIN(Box_East_WpsSpecial_F, SKIN_GRP5);
+    WRAPPER_SKIN(Box_East_Support_F, SKIN_GRP1);
+    WRAPPER_SKIN(Box_East_Grenades_F, SKIN_GRP5);
+    WRAPPER_SKIN(Box_East_AmmoOrd_F, SKIN_GRP4);
 
     class TB_supply_empty: WRAPPER_NAME(Box_NATO_Ammo_F)
     {
@@ -233,7 +254,7 @@ class CfgVehicles
     class TB_supply_all_medic: WRAPPER_NAME(Land_PlasticCase_01_small_F)
     {
         PUBLIC_NAME("Sanikiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\Land_PlasticCase_01_medium_F_0.paa"};
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_quikclot,60);
@@ -254,7 +275,7 @@ class CfgVehicles
     class TB_supply_all_arzt: WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("Arztkiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\Land_PlasticCase_01_medium_F_0.paa"};
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_quikclot,60);
@@ -275,7 +296,6 @@ class CfgVehicles
     class TB_supply_all_funk : WRAPPER_NAME(Box_IND_Ammo_F)
     {
         PUBLIC_NAME("Funkkiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -292,7 +312,6 @@ class CfgVehicles
     class TB_supply_all_mortar : WRAPPER_NAME(Box_IND_WpsSpecial_F)
     {
         PUBLIC_NAME("MörserKit");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -316,7 +335,6 @@ class CfgVehicles
     class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
         PUBLIC_NAME("MörserMunition");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -331,7 +349,6 @@ class CfgVehicles
     class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
         PUBLIC_NAME("MörserMunitionHE");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -342,7 +359,6 @@ class CfgVehicles
     class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
         PUBLIC_NAME("MörserMunitionRauch");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -353,7 +369,6 @@ class CfgVehicles
     class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
         PUBLIC_NAME("MörserMunitionFlare");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {
@@ -364,7 +379,7 @@ class CfgVehicles
     class TB_supply_all_hmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("HMGKit");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\uniforms_box_blufor_co_0.paa"};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
 
         class TransportBackpacks
         {
@@ -396,7 +411,6 @@ class CfgVehicles
     class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F)
     {
         PUBLIC_NAME("BauKiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\uniforms_box_blufor_co_0.paa", "\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa"};
 
         class TransportItems
         {
@@ -414,7 +428,6 @@ class CfgVehicles
     class TB_supply_all_medicbuilding : WRAPPER_NAME(Box_IDAP_Equip_F)
     {
         PUBLIC_NAME("SaniBauKiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\equipment_box_idap_co_1.paa", "\TBMod_nachschub\textures\equipment_box_blufor_ca_1.paa"};
 
         class TransportItems
         {
@@ -429,7 +442,6 @@ class CfgVehicles
     class TB_supply_all_mp5 : WRAPPER_NAME(Box_NATO_Ammo_F)
     {
         PUBLIC_NAME("MP5Muni");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_3.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportMagazines
         {
@@ -444,7 +456,6 @@ class CfgVehicles
     class TB_supply_all_mines : WRAPPER_NAME(Box_IND_AmmoOrd_F)
     {
         PUBLIC_NAME("Minenkiste");
-        hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
         class TransportItems
         {

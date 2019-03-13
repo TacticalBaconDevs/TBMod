@@ -5,7 +5,6 @@
 class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 {
     PUBLIC_NAME_CAT("Munition",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -21,7 +20,7 @@ class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 class TB_supply_bw_ammoSmall : WRAPPER_NAME(Box_East_Grenades_F)
 {
     PUBLIC_NAME_CAT("HandwaffenMunition",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_1.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
+
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(BWA3_15Rnd_9x19_P8,15);
@@ -31,7 +30,6 @@ class TB_supply_bw_ammoSmall : WRAPPER_NAME(Box_East_Grenades_F)
 class TB_supply_bw_grena : WRAPPER_NAME(Box_IND_Grenades_F)
 {
     PUBLIC_NAME_CAT("Granaten",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -47,7 +45,6 @@ class TB_supply_bw_grena : WRAPPER_NAME(Box_IND_Grenades_F)
 class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 {
     PUBLIC_NAME_CAT("Unterlauf",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_2.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -60,7 +57,6 @@ class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
     PUBLIC_NAME_CAT("SpezialwaffenMunition",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_1.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -72,8 +68,8 @@ class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
 class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Werfer",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_4.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
-    
+    hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_4.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"};
+
     class TransportWeapons
     {
         MACRO_ADDWEAPON(BWA3_RGW90,2);
@@ -92,8 +88,8 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("WerferMunition",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_4.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
-    
+    hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_4.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"};
+
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(BWA3_RGW90_HH,2);
@@ -105,7 +101,7 @@ class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 class TB_supply_bw_notfallg36 : WRAPPER_NAME(Box_East_AmmoOrd_F)
 {
     PUBLIC_NAME_CAT("NotfallG36",BW);
-    hiddenSelectionsTextures[] = {"\TBMod_nachschub\textures\AmmoBox_signs_CA_0_1.paa","\TBMod_nachschub\textures\Box_T_East_Wps_F_co_1.paa"};
+
     class TransportWeapons
     {
         MACRO_ADDWEAPON(hlc_rifle_G36A1,4);
