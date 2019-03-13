@@ -24,7 +24,6 @@ TB_recoilFreeze = -1;
 
 ["weapon", {
     params ["_unit", "_newWeapon"];
-
     TB_cacheWeaponType = ([_newWeapon] call BIS_fnc_itemType) select 1;
 }] call CBA_fnc_addPlayerEventHandler;
 
@@ -48,7 +47,7 @@ TB_recoilID = ["ace_firedPlayer", {
     if (_deploy) then {_recoil = _recoil - 0.3};
 
     // Waffen Einflüsse
-    if (_weapon == primaryWeapon _unit) then
+    if (_weapon == primaryWeapon _unit) then // TODO: nur machen wenn RHS vorhanden
     {
         (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
 
@@ -67,7 +66,7 @@ TB_recoilID = ["ace_firedPlayer", {
         if (_silencer != "") then {_recoil = _recoil - 0.1};
     };
 
-    //TB_debug_recoil = _recoil;
+    ["Before: %1 | Now: %2 | Coef: %3 | Influ: %4 | InfluOhneGrenze: %5 | CustomAimCoef: %6 | recoilStart: %7", unitRecoilCoefficient _unit, (_recoil max 0.5) * TB_recoilCoef, TB_recoilCoef, _recoil max 0.5, _recoil, getCustomAimCoef _unit, TB_recoilStart] call TB_fnc_debug;
     _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
 
     TB_recoilFreeze = diag_tickTime + 1;

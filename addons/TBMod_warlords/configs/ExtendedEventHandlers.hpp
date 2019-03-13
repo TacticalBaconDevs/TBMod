@@ -1,11 +1,9 @@
-/*
+﻿/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-#define INIT_TEXTURE(VEHICLE,SKIN) class VEHICLE \
-    { \
-        class TBMod_warlords \
-        { \
+#define INIT_TEXTURE(CLASSE,SKIN) class CLASSE { \
+        class TBMod_warlords { \
             serverInit = "params ['_vehicle']; if (call TB_fnc_isWLMission) then {{_vehicle setObjectTextureGlobal [_forEachIndex, _x]} forEach (getArray (configfile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'textureSources' >> 'SKIN' >> 'textures'))};"; \
         }; \
     }
@@ -29,20 +27,20 @@ class Extended_InitPost_Eventhandlers
         };
     };
 
-    INIT_TEXTURE(rhsgref_ins_uaz_open, Camo);
-    INIT_TEXTURE(rhsgref_ins_uaz_dshkm, Camo);
-    INIT_TEXTURE(rhsgref_ins_uaz_ags, Camo);
-    INIT_TEXTURE(rhsgref_ins_uaz_spg9, Camo);
+    // TODO: INIT_TEXTURE MACRO erzeugt Fehler -> circa Line 32 Expected ';' or ':' or '{' after classname
 
-    INIT_TEXTURE(rhs_gaz66_msv, rhs_sand);
+    // INIT_TEXTURE(rhsgref_ins_uaz_open3, Camo);
+    // INIT_TEXTURE(rhsgref_ins_uaz_dshkm, Camo);
+    // INIT_TEXTURE(rhsgref_ins_uaz_ags, Camo);
+    // INIT_TEXTURE(rhsgref_ins_uaz_spg9, Camo);
 
-    INIT_TEXTURE(rhsgref_BRDM2_msv, takistan);
+    // INIT_TEXTURE(rhs_gaz66_msv, rhs_sand);
 
-    INIT_TEXTURE(rhs_bmp3m_msv, rhs_sand);
-    INIT_TEXTURE(rhs_bmp3mera_msv, rhs_sand);
+    // INIT_TEXTURE(rhsgref_BRDM2_msv, takistan);
 
-    INIT_TEXTURE(rhs_t80um, rhs_Sand);
-    INIT_TEXTURE(rhs_t90a_tv, rhs_Sand);
+    // INIT_TEXTURE(rhs_bmp3m_msv, rhs_sand);
+    // INIT_TEXTURE(rhs_bmp3mera_msv, rhs_sand);
+
+    // INIT_TEXTURE(rhs_t80um, rhs_Sand);
+    // INIT_TEXTURE(rhs_t90a_tv, rhs_Sand);
 };
-
-
