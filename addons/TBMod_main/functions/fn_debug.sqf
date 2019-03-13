@@ -13,4 +13,4 @@ private _text = format ["[DEBUG][%1] %2", _fnc_scriptNameParent, if (_this isEqu
 
 if (TB_debug_lvl >= 1) then {diag_log _text};
 if (TB_debug_lvl >= 2) then {systemChat _text};
-if (TB_debug_lvl >= 3) then {hint _text};
+if (TB_debug_lvl >= 3) then {hintSilent _text};

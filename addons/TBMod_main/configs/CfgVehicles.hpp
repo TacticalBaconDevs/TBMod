@@ -345,10 +345,46 @@ class CfgVehicles
         displayName = "Ketamin-Autoinjektor";
     };
 
+    #define ATRO_OVERRIDE(EXTR_NAME) class EXTR_NAME { \
+            class Morphine; \
+            class Atropine: Morphine { \
+                displayName = "Ketamin injizieren"; \
+            }; \
+        }
+    #define OVERRIDES ATRO_OVERRIDE(ACE_ArmLeft); \
+                ATRO_OVERRIDE(ACE_ArmRight); \
+                ATRO_OVERRIDE(ACE_LegLeft); \
+                ATRO_OVERRIDE(ACE_LegRight)
+
+    class Man;
+    class CAManBase: Man
+    {
+        class ACE_SelfActions
+        {
+            class Medical
+            {
+                OVERRIDES;
+            };
+        };
+
+        class ACE_Actions
+        {
+            OVERRIDES;
+
+            class ACE_MainActions
+            {
+                class Medical
+                {
+                    OVERRIDES;
+                };
+            };
+        };
+    };
+
 
     // ###################### No Uniform ######################
     class Civilian;
-    class CAManBase;
+    // class CAManBase;
     class B_Soldier_diver_base_F;
     class C_man_1;
     class I_G_Soldier_F;
