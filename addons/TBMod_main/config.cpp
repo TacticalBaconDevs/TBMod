@@ -8,7 +8,8 @@ class CfgPatches
     {
         name = "TBMod Hauptmod";
 
-        author[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
+        author = "TBMod-DevTeam";
+        authors[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
         url = "https://github.com/TacticalBaconDevs/TBMod";
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
@@ -65,6 +66,7 @@ class CfgPatches
 };
 
 // Configs
+#include "script_macros_common.hpp"
 #include "configs\Animations.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgEditorCategories.hpp"
@@ -80,6 +82,7 @@ class CfgPatches
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CBA_Stuff.hpp"
 #include "configs\CfgMisc.hpp"
+#include "configs\CfgWeapons.hpp"
 #include "configs\ACE_Medical_Treatments.hpp"
 
 // Other config stuff

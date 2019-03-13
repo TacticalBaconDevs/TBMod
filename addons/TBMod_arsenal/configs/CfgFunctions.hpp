@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -11,6 +11,7 @@ class CfgFunctions
         class functions
         {
             file = "\TBMod_arsenal\functions";
+
             class actionMain {};
             class changeRolle {};
             class getRollenName {};
@@ -29,6 +30,7 @@ class CfgFunctions
         class arsenal
         {
             file = "\TBMod_arsenal\arsenal";
+
             class arsenalUSA {};
             class arsenalRUSS {};
             class arsenalBW {};
@@ -39,6 +41,7 @@ class CfgFunctions
         class arsenalThemen
         {
             file = "\TBMod_arsenal\arsenal\themen";
+
             class arsenalUSAVietnam {};
             class arsenalRUSSSimple {};
             class arsenalVANILLACOP {};

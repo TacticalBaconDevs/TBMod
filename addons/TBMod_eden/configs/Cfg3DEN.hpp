@@ -118,22 +118,20 @@ class Cfg3DEN
                         defaultValue = "false";
                     };
 
-                    // TODO
-                    // class TBMod_main_kiDeckung
-                    // {
-                        // displayName = "UpDown Skript";
-                        // tooltip = "KI UpDown Skript";
-                        // property = "TBMod_Main_kiDeckung";
-                        // control = "Checkbox";
+                    class TBMod_main_kiDeckung
+                    {
+                        displayName = "UpDown Skript";
+                        tooltip = "KI UpDown Skript";
+                        property = "TBMod_Main_kiDeckung";
+                        control = "Checkbox";
 
-                        // expression = "";
-                        // //expression = "if (!is3DEN && _value) then {this addeventhandler ['FiredNear', {[_this select 0, ['UP', 'MIDDLE']] spawn TB_fnc_UpDown}]}";
+                        expression = "if (!is3DEN && _value) then {[this] call TB_fnc_upDown}";
 
-                        // defaultValue = "false";
+                        defaultValue = "false";
 
-                        // unique = 0;
-                        // condition = "objectControllable";
-                    // };
+                        unique = 0;
+                        condition = "objectControllable";
+                    };
                 };
             };
         };
