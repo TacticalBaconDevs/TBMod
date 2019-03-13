@@ -1,4 +1,4 @@
-﻿class CfgEditorSubcategories
+class CfgEditorSubcategories
 {
     class EdSubcat_TB_Supply_WL
     {

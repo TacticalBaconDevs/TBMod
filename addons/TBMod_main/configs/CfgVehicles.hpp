@@ -6,12 +6,12 @@
 #define ADD_RUFNAME(NAME) class _xx_##NAME \
     { \
         displayName = #NAME; \
-        statement = "(group ACE_player) setGroupIdGlobal ['NAME']"; \
+        statement = QUOTE((group ACE_player) setGroupIdGlobal ['NAME']); \
         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
     }
 #define ADD_FOB(NAME, NUMBER) class TB_spezial_fob##NAME : TB_spezial_fobBase \
     { \
-        displayName = "NAME-FOB"; \
+        displayName = QUOTE(NAME-FOB); \
         fobNumber = NUMBER; \
         scope = 2; \
         scopeCurator = 2; \
@@ -29,13 +29,13 @@
     }
 #define ADD_SIGN(NAME) class TB_editor_g##NAME: TB_editor_gBriefing \
     { \
-        displayName = "NAME (groß)"; \
-        hiddenSelectionsTextures[] = {"\TBMod_main\pics\NAME.paa"}; \
+        displayName = QUOTE(NAME (groß)); \
+        hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
     }; \
     class TB_editor_k##NAME: TB_editor_kBriefing \
     { \
-        displayName = "NAME (klein)"; \
-        hiddenSelectionsTextures[] = {"\TBMod_main\pics\NAME.paa"}; \
+        displayName = QUOTE(NAME (klein)); \
+        hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
     }
 
 class CBA_Extended_EventHandlers;
@@ -345,16 +345,16 @@ class CfgVehicles
         displayName = "Ketamin-Autoinjektor";
     };
 
-    #define ATRO_OVERRIDE(EXTR_NAME) class EXTR_NAME { \
+    #define ATROPINE_OVERRIDE(EXTR_NAME) class EXTR_NAME { \
             class Morphine; \
             class Atropine: Morphine { \
                 displayName = "Ketamin injizieren"; \
             }; \
         }
-    #define OVERRIDES ATRO_OVERRIDE(ACE_ArmLeft); \
-                ATRO_OVERRIDE(ACE_ArmRight); \
-                ATRO_OVERRIDE(ACE_LegLeft); \
-                ATRO_OVERRIDE(ACE_LegRight)
+    #define OVERRIDES ATROPINE_OVERRIDE(ACE_ArmLeft); \
+                ATROPINE_OVERRIDE(ACE_ArmRight); \
+                ATROPINE_OVERRIDE(ACE_LegLeft); \
+                ATROPINE_OVERRIDE(ACE_LegRight)
 
     class Man;
     class CAManBase: Man

@@ -65,6 +65,7 @@ class CfgPatches
 };
 
 // Configs
+#include "script_macros_common.hpp"
 #include "configs\Animations.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgEditorCategories.hpp"
@@ -82,7 +83,6 @@ class CfgPatches
 #include "configs\CfgMisc.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\ACE_Medical_Treatments.hpp"
-#include "configs\ACE_Medical_SelfActions.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
