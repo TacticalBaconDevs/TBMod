@@ -3,7 +3,7 @@
     class TBMod_arsenal
     {
         name = "TBMod Arsenal";
-        
+
         units[] = {
             "TB_arsenal_base",
             "TB_arsenal_usa",
@@ -13,7 +13,7 @@
             "TB_arsenal_themen",
             "TB_arsenal_predefined_custom"
         };
-        
+
         requiredAddons[] = {
             "TBMod_main",
             "TBMod_skins"
@@ -23,6 +23,7 @@
 };
 
 // Configs
+#include "..\TBMod_main\script_macros_common.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\Cfg3DEN.hpp"

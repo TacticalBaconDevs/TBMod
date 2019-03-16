@@ -1,5 +1,5 @@
 ["passthrough", "armor", "maximumload"]
-    
+
 // Stark gepanzert - MSV
 "rhs_6b13_EMR_6sh92_vog",[68,56,120],
 "rhs_6b13_EMR_6sh92_headset_mapcase",[68,56,120],
@@ -72,7 +72,7 @@
 "rhs_6sh92_vog",[3,1,120],
 
 
-// Weniger gepanzert - Wüste
+// Weniger gepanzert - Wï¿½ste
 "rhs_6b23_ML_6sh92_headset_mapcase",[49,49,120],
 "rhs_6b23_ML_6sh92_vog_headset",[49,49,120],
 "rhs_6b23_ML_6sh92_vog",[49,49,120],

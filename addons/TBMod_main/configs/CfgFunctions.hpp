@@ -11,7 +11,7 @@ class CfgFunctions
         class functions
         {
             file = "\TBMod_main\functions";
-            class UpDown {};
+            class upDown {};
             class teleport {};
             class safe {};
             class actionTeleportKamerad {};
@@ -30,6 +30,7 @@ class CfgFunctions
             class shortcuts {};
             class chatCommands {};
             class miscStuff {};
+            class calcTreatmentTime {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};
