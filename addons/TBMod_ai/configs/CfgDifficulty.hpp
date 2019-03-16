@@ -18,8 +18,10 @@ class CfgDifficultyPresets
 
     class Custom
     {
-        description = "TacticalBaconAI";
+        displayName = "TacticalBaconAI";
+        description = "TacticalBaconAI Settings";
         levelAI = "Custom";
+        optionDescription = "TacticalBaconAI Schwierigkeitsgrad, Standard von TB";
 
         class Options
         {
