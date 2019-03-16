@@ -1,442 +1,442 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project name="TB_buildings">
-	<Package name="TB_buildings">
-		<Container name="TB_buildings">
-			<Key ID="STR_PLACE_Land_IntravenStand_01_2bags_F">
-				<Original>Platziere Salineständer</Original>
-				<German>Platziere Salineständer</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_IntravenStand_01_2bags_F">
-				<Original>TBB Salineständer</Original>
-				<German>TBB Salineständer</German>
-			</Key>
+    <Package name="TB_buildings">
+        <Container name="TB_buildings">
+            <Key ID="STR_PLACE_Land_IntravenStand_01_2bags_F">
+                <Original>Platziere Salineständer</Original>
+                <German>Platziere Salineständer</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_IntravenStand_01_2bags_F">
+                <Original>TBB Salineständer</Original>
+                <German>TBB Salineständer</German>
+            </Key>
 
-			<Key ID="STR_PLACE_Land_Stretcher_01_F">
-				<Original>Platziere Trage</Original>
-				<German>Platziere Trage</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_Stretcher_01_F">
-				<Original>TBB Trage</Original>
-				<German>TBB Trage</German>
-			</Key>
+            <Key ID="STR_PLACE_Land_Stretcher_01_F">
+                <Original>Platziere Trage</Original>
+                <German>Platziere Trage</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_Stretcher_01_F">
+                <Original>TBB Trage</Original>
+                <German>TBB Trage</German>
+            </Key>
 
-			<Key ID="STR_PLACE_Land_PortableLight_double_F">
-				<Original>Platziere Tragbareslicht (doppelt)</Original>
-				<German>Platziere Tragbareslicht (doppelt)</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_PortableLight_double_F">
-				<Original>TBB Tragbareslicht (doppelt)</Original>
-				<German>TBB Tragbareslicht (doppelt)</German>
-			</Key>
+            <Key ID="STR_PLACE_Land_PortableLight_double_F">
+                <Original>Platziere Tragbareslicht (doppelt)</Original>
+                <German>Platziere Tragbareslicht (doppelt)</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_PortableLight_double_F">
+                <Original>TBB Tragbareslicht (doppelt)</Original>
+                <German>TBB Tragbareslicht (doppelt)</German>
+            </Key>
 
-			<Key ID="STR_PLACE_Land_MedicalTent_01_white_generic_open_F">
-				<Original>Platziere Zelt</Original>
-				<German>Platziere Zelt</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_MedicalTent_01_white_generic_open_F">
-				<Original>TBB Zelt</Original>
-				<German>TBB Zelt</German>
-			</Key>
+            <Key ID="STR_PLACE_Land_MedicalTent_01_white_generic_open_F">
+                <Original>Platziere Zelt</Original>
+                <German>Platziere Zelt</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_MedicalTent_01_white_generic_open_F">
+                <Original>TBB Zelt</Original>
+                <German>TBB Zelt</German>
+            </Key>
 
-			<Key ID="STR_PLACE_Land_MedicalTent_01_floor_light_F">
-				<Original>Platziere Zeltboden</Original>
-				<German>Platziere Zeltboden</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_MedicalTent_01_floor_light_F">
-				<Original>TBB Zeltboden</Original>
-				<German>TBB Zeltboden</German>
-			</Key>
+            <Key ID="STR_PLACE_Land_MedicalTent_01_floor_light_F">
+                <Original>Platziere Zeltboden</Original>
+                <German>Platziere Zeltboden</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_MedicalTent_01_floor_light_F">
+                <Original>TBB Zeltboden</Original>
+                <German>TBB Zeltboden</German>
+            </Key>
 
-			<Key ID="STR_PLACE_RoadBarrier_F">
-				<Original>Platziere Strassensperre</Original>
-				<German>Platziere Strassensperre</German>
-			</Key>
-			<Key ID="STR_ITEM_RoadBarrier_F">
-				<Original>TBB Strassensperre</Original>
-				<German>TBB Strassensperre</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_RoadBarrier_small_F">
-				<Original>Platziere Strassensperre (klein)</Original>
-				<German>Platziere Strassensperre (klein)</German>
-			</Key>
-			<Key ID="STR_ITEM_RoadBarrier_small_F">
-				<Original>TBB Strassensperre (klein)</Original>
-				<German>TBB Strassensperre (klein)</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_RoadCone_F">
-				<Original>Platziere Verkehrskegel</Original>
-				<German>Platziere Verkehrskegel</German>
-			</Key>
-			<Key ID="STR_ITEM_RoadCone_F">
-				<Original>TBB Verkehrskegel</Original>
-				<German>TBB Verkehrskegel</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_RoadCone_L_F">
-				<Original>Platziere Lichtverkehrskegel</Original>
-				<German>Platziere Lichtverkehrskegel</German>
-			</Key>
-			<Key ID="STR_ITEM_RoadCone_L_F">
-				<Original>TBB Lichtverkehrskegel</Original>
-				<German>TBB Lichtverkehrskegel</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_Pallet_vertical_F">
-				<Original>Platziere Palette</Original>
-				<German>Platziere Palette</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_Pallet_vertical_F">
-				<Original>TBB Palette</Original>
-				<German>TBB Palette</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_BagFence_Long_F">
-				<Original>Platziere Sandsackmauer</Original>
-				<German>Platziere Sandsackmauer</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_BagFence_Long_F">
-				<Original>TBB Sandsackmauer</Original>
-				<German>TBB Sandsackmauer</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_BagFence_Round_F">
-				<Original>Platziere Sandsackmauer (rund)</Original>
-				<German>Platziere Sandsackmauer (rund)</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_BagFence_Round_F">
-				<Original>TBB Sandsackmauer (rund)</Original>
-				<German>TBB Sandsackmauer (rund)</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_PortableLight_single_F">
-				<Original>Platziere Mobiles Licht</Original>
-				<German>Platziere Mobiles Licht</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_PortableLight_single_F">
-				<Original>TBB Mobiles Licht</Original>
-				<German>TBB Mobiles Licht</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_TapeSign_F">
-				<Original>Platziere Flatterbandsperre</Original>
-				<German>Platziere Flatterbandsperre</German>
-			</Key>
-			<Key ID="STR_ITEM_TapeSign_F">
-				<Original>TBB Flatterbandsperre</Original>
-				<German>TBB Flatterbandsperre</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Target_F">
-				<Original>Platziere Ziel</Original>
-				<German>Platziere Ziel</German>
-			</Key>
-			<Key ID="STR_ITEM_Target_F">
-				<Original>TBB Ziel</Original>
-				<German>TBB Ziel</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_HBarrierWall4_F">
-				<Original>Platziere H-BarriereWand</Original>
-				<German>Platziere H-BarriereWand</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_HBarrierWall4_F">
-				<Original>TBB H-BarriereWand</Original>
-				<German>TBB H-BarriereWand</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_HBarrierTower_F">
-				<Original>Platziere H-Barriere</Original>
-				<German>Platziere H-Barriere</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_HBarrierTower_F">
-				<Original>TBB H-Barriere</Original>
-				<German>TBB H-Barriere</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_HBarrier_5_F">
-				<Original>Platziere H-Barriere</Original>
-				<German>Platziere H-Barriere</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_HBarrier_5_F">
-				<Original>TBB H-Barriere</Original>
-				<German>TBB H-Barriere</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_ace_concertinawirecoil">
-				<Original>Platziere Drahtrolle</Original>
-				<German>Platziere Drahtrolle</German>
-			</Key>
-			<Key ID="STR_ITEM_ace_concertinawirecoil">
-				<Original>TBB Drahtrolle</Original>
-				<German>TBB Drahtrolle</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_SandbagBarricade_01_hole_F">
-				<Original>Platziere Hohe Sandsackwand</Original>
-				<German>Platziere Hohe Sandsackwand</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_SandbagBarricade_01_hole_F">
-				<Original>TBB Hohe Sandsackwand</Original>
-				<German>TBB Hohe Sandsackwand</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_BIG_Land_Cargo_Patrol_V1_F">
-				<Original>Baue Militärturm (150 Resourcen)</Original>
-				<German>Baue Militärturm (150 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_HBarrierWall4_F">
-				<Original>Baue HescoMauer (75 Resourcen)</Original>
-				<German>Baue HescoMauer (75 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_HBarrier_5_F">
-				<Original>Platziere Hesco (50 Resourcen)</Original>
-				<German>Platziere Hesco (50 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_HBarrierTower_F">
-				<Original>Platziere HescoTurm (300 Resourcen)</Original>
-				<German>Platziere HescoTurm (300 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_CzechHedgehog_01_F">
-				<Original>Platziere Panzersperre (30 Resourcen)</Original>
-				<German>Platziere Panzersperre (30 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_BagBunker_Small_F">
-				<Original>Platziere Bunker (klein) (100 Resourcen)</Original>
-				<German>Platziere Bunker (klein) (100 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_BagBunker_Large_F">
-				<Original>Platziere Bunker (groß) (250 Resourcen)</Original>
-				<German>Platziere Bunker (groß) (250 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_BagBunker_Tower_F">
-				<Original>Platziere Bunkerturm (275 Resourcen)</Original>
-				<German>Platziere Bunkerturm (275 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_TB_supply_base">
-				<Original>Platziere Vorratslager (750 Resourcen)</Original>
-				<German>Platziere Vorratslager (750 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_Fuelstation_Feed_F">
-				<Original>Platziere Tankstation (80 Resourcen)</Original>
-				<German>Platziere Tankstation (80 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_Medevac_house_V1_F">
-				<Original>Platziere MedizinContainer (200 Resourcen)</Original>
-				<German>Platziere MedizinContainer (200 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_TTowerSmall_1_F">
-				<Original>Platziere FUNK-Antenne (60 Resourcen)</Original>
-				<German>Platziere FUNK-Antenne (60 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_CamoNetVar_NATO">
-				<Original>Platziere Tarnnetz (10 Resourcen)</Original>
-				<German>Platziere Tarnnetz (10 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_FieldToilet_F">
-				<Original>Platziere Klo (10 Resourcen)</Original>
-				<German>Platziere Klo (10 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_Cargo_HQ_V1_F">
-				<Original>Platziere Hauptgebäude1 (200 Resourcen)</Original>
-				<German>Platziere Hauptgebäude1 (200 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_Cargo_HQ_V3_F">
-				<Original>Platziere Hauptgebäude2 (200 Resourcen)</Original>
-				<German>Platziere Hauptgebäude2 (200 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_MedicalTent_01_white_generic_open_F">
-				<Original>Platziere Sanizelt (100 Resourcen)</Original>
-				<German>Platziere Sanizelt (100 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_BarGate_F">
-				<Original>Platziere Schranke (75 Resourcen)</Original>
-				<German>Platziere Schranke (75 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_HelipadSquare_F">
-				<Original>Platziere Heliport (10 Resourcen)</Original>
-				<German>Platziere Heliport (10 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_B_Slingload_01_Repair_F">
-				<Original>Platziere ReparaturContainer (80 Resourcen)</Original>
-				<German>Platziere ReparaturContainer (80 Resourcen)</German>
-			</Key>
-			<Key ID="STR_PLACE_BIG_Land_Cargo_House_V3_F">
-				<Original>Platziere Container (60 Resourcen)</Original>
-				<German>Platziere Container (60 Resourcen)</German>
-			</Key>
-			
-			
-			
-			<Key ID="STR_PLACE_ItemBuildPlaceables">
-				<Original>Placeable items</Original>
-				<English>Placeable items</English>
-				<German>Plazierbare Items</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_BuildingsBuildPlaceables">
-				<Original>Placeable buildings</Original>
-				<English>Placeable buildings</English>
-				<German>Plazierbare Gebäude</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_CampingChair_V1_F">
-				<Original>Platziere Campingstuhl</Original>
-				<German>Platziere Campingstuhl</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_CampingChair_V1_F">
-				<Original>TBB Campingstuhl</Original>
-				<German>TBB Campingstuhl</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Campfire_F">
-				<Original>Platziere Lagerfeuer</Original>
-				<German>Platziere Lagerfeuer</German>
-			</Key>
-			<Key ID="STR_ITEM_Campfire_F">
-				<Original>TBB Lagerfeuer</Original>
-				<German>TBB Lagerfeuer</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_Camping_Light_F">
-				<Original>Platziere Campinglicht</Original>
-				<German>Platziere Campinglicht</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_Camping_Light_F">
-				<Original>TBB Campinglicht</Original>
-				<German>TBB Campinglicht</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_Land_CampingTable_F">
-				<Original>Platziere Campingtisch</Original>
-				<German>Platziere Campingtisch</German>
-			</Key>
-			<Key ID="STR_ITEM_Land_CampingTable_F">
-				<Original>TBB Campingtisch</Original>
-				<German>TBB Campingtisch</German>
-			</Key>
-			
-			
-			<Key ID="STR_ITEM_Land_DrillAku_F">
-				<Original>TBB Akuschrauber</Original>
-				<German>TBB Akuschrauber</German>
-			</Key>
-			
-			
-			<Key ID="STR_ITEM_Land_Wrench_F">
-				<Original>TBB Schraubenzieher</Original>
-				<German>TBB Schraubenzieher</German>
-			</Key>
-			
-			
-			<Key ID="STR_PLACE_PickUpAction">
-				<Original>Pick up</Original>
-				<English>Pick up</English>
-				<German>Aufheben</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_NeedToolBuild">
-				<Original>You need a %1 for building this</Original>
-				<English>You need a %1 for building this</English>
-				<German>Du brauchst ein %1 um das zu bauen</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_NeedToolPickUp">
-				<Original>You need a %1 for pick up this</Original>
-				<English>You need a %1 for pick up this</English>
-				<German>Du brauchst ein %1 um das abzubauen</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_Destroy">
-				<Original>Destroy</Original>
-				<English>Destroy</English>
-				<German>Abbauen</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_Build">
-				<Original>Build</Original>
-				<English>Build</English>
-				<German>Baue</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_AllreadyDestroyed">
-				<Original>Allready destroyed</Original>
-				<English>Allready destroyed</English>
-				<German>Bereits abgebaut</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_AllreadyBuild">
-				<Original>Allready build</Original>
-				<English>Allready build</English>
-				<German>Bereits gebaut</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_NoBuildTruck">
-				<Original>No resource cargo truck in your near</Original>
-				<English>No resource cargo truck in your near</English>
-				<German>Kein Resourcentruck in der Nähe</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_EmptyBuildTruck">
-				<Original>Resource cargo truck not full enough</Original>
-				<English>Resource cargo truck not full enough</English>
-				<German>Resourcentruck hat nicht genügend Rohstoffe</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_NoCraneTruck">
-				<Original>No cranetruck in your near</Original>
-				<English>No cranetruck in your near</English>
-				<German>Kein Kranwagen in der Nähe</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_BuildTruckLoad">
-				<Original>Resource cargo truck load:</Original>
-				<English>Resource cargo truck load:</English>
-				<German>Resourcentruck Ladung:</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_BuildTruckLoad_Description">
-				<Original>Resources in the truck for buildings</Original>
-				<English>Resources in the truck for buildings</English>
-				<German>Resourcen fürs Bauen von Gebäuden</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_FinishBuilding">
-				<Original>Finish building</Original>
-				<English>Finish building</English>
-				<German>Baue zu Ende</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_DestroyBuilding">
-				<Original>Destroy building</Original>
-				<English>Destroy building</English>
-				<German>Gebäude abreißen</German>
-			</Key>
-			
-			<Key ID="STR_PLACE_BuildPatrolTower">
-				<Original>Build PatrolTower (250 Resources)</Original>
-				<English>Build PatrolTower (250 Resources)</English>
-				<German>Baue PatrolTower (250 Resourcen)</German>
-			</Key>
-		</Container>
-	</Package>
+            <Key ID="STR_PLACE_RoadBarrier_F">
+                <Original>Platziere Strassensperre</Original>
+                <German>Platziere Strassensperre</German>
+            </Key>
+            <Key ID="STR_ITEM_RoadBarrier_F">
+                <Original>TBB Strassensperre</Original>
+                <German>TBB Strassensperre</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_RoadBarrier_small_F">
+                <Original>Platziere Strassensperre (klein)</Original>
+                <German>Platziere Strassensperre (klein)</German>
+            </Key>
+            <Key ID="STR_ITEM_RoadBarrier_small_F">
+                <Original>TBB Strassensperre (klein)</Original>
+                <German>TBB Strassensperre (klein)</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_RoadCone_F">
+                <Original>Platziere Verkehrskegel</Original>
+                <German>Platziere Verkehrskegel</German>
+            </Key>
+            <Key ID="STR_ITEM_RoadCone_F">
+                <Original>TBB Verkehrskegel</Original>
+                <German>TBB Verkehrskegel</German>
+            </Key>
+
+            <Key ID="STR_PLACE_RoadCone_L_F">
+                <Original>Platziere Lichtverkehrskegel</Original>
+                <German>Platziere Lichtverkehrskegel</German>
+            </Key>
+            <Key ID="STR_ITEM_RoadCone_L_F">
+                <Original>TBB Lichtverkehrskegel</Original>
+                <German>TBB Lichtverkehrskegel</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_Pallet_vertical_F">
+                <Original>Platziere Palette</Original>
+                <German>Platziere Palette</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_Pallet_vertical_F">
+                <Original>TBB Palette</Original>
+                <German>TBB Palette</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_BagFence_Long_F">
+                <Original>Platziere Sandsackmauer</Original>
+                <German>Platziere Sandsackmauer</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_BagFence_Long_F">
+                <Original>TBB Sandsackmauer</Original>
+                <German>TBB Sandsackmauer</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_BagFence_Round_F">
+                <Original>Platziere Sandsackmauer (rund)</Original>
+                <German>Platziere Sandsackmauer (rund)</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_BagFence_Round_F">
+                <Original>TBB Sandsackmauer (rund)</Original>
+                <German>TBB Sandsackmauer (rund)</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_PortableLight_single_F">
+                <Original>Platziere Mobiles Licht</Original>
+                <German>Platziere Mobiles Licht</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_PortableLight_single_F">
+                <Original>TBB Mobiles Licht</Original>
+                <German>TBB Mobiles Licht</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_TapeSign_F">
+                <Original>Platziere Flatterbandsperre</Original>
+                <German>Platziere Flatterbandsperre</German>
+            </Key>
+            <Key ID="STR_ITEM_TapeSign_F">
+                <Original>TBB Flatterbandsperre</Original>
+                <German>TBB Flatterbandsperre</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Target_F">
+                <Original>Platziere Ziel</Original>
+                <German>Platziere Ziel</German>
+            </Key>
+            <Key ID="STR_ITEM_Target_F">
+                <Original>TBB Ziel</Original>
+                <German>TBB Ziel</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_HBarrierWall4_F">
+                <Original>Platziere H-BarriereWand</Original>
+                <German>Platziere H-BarriereWand</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_HBarrierWall4_F">
+                <Original>TBB H-BarriereWand</Original>
+                <German>TBB H-BarriereWand</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_HBarrierTower_F">
+                <Original>Platziere H-Barriere</Original>
+                <German>Platziere H-Barriere</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_HBarrierTower_F">
+                <Original>TBB H-Barriere</Original>
+                <German>TBB H-Barriere</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_HBarrier_5_F">
+                <Original>Platziere H-Barriere</Original>
+                <German>Platziere H-Barriere</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_HBarrier_5_F">
+                <Original>TBB H-Barriere</Original>
+                <German>TBB H-Barriere</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_ace_concertinawirecoil">
+                <Original>Platziere Drahtrolle</Original>
+                <German>Platziere Drahtrolle</German>
+            </Key>
+            <Key ID="STR_ITEM_ace_concertinawirecoil">
+                <Original>TBB Drahtrolle</Original>
+                <German>TBB Drahtrolle</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_SandbagBarricade_01_hole_F">
+                <Original>Platziere Hohe Sandsackwand</Original>
+                <German>Platziere Hohe Sandsackwand</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_SandbagBarricade_01_hole_F">
+                <Original>TBB Hohe Sandsackwand</Original>
+                <German>TBB Hohe Sandsackwand</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_BIG_Land_Cargo_Patrol_V1_F">
+                <Original>Baue Militärturm (150 Resourcen)</Original>
+                <German>Baue Militärturm (150 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_HBarrierWall4_F">
+                <Original>Baue HescoMauer (75 Resourcen)</Original>
+                <German>Baue HescoMauer (75 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_HBarrier_5_F">
+                <Original>Platziere Hesco (50 Resourcen)</Original>
+                <German>Platziere Hesco (50 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_HBarrierTower_F">
+                <Original>Platziere HescoTurm (300 Resourcen)</Original>
+                <German>Platziere HescoTurm (300 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_CzechHedgehog_01_F">
+                <Original>Platziere Panzersperre (30 Resourcen)</Original>
+                <German>Platziere Panzersperre (30 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_BagBunker_Small_F">
+                <Original>Platziere Bunker (klein) (100 Resourcen)</Original>
+                <German>Platziere Bunker (klein) (100 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_BagBunker_Large_F">
+                <Original>Platziere Bunker (groß) (250 Resourcen)</Original>
+                <German>Platziere Bunker (groß) (250 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_BagBunker_Tower_F">
+                <Original>Platziere Bunkerturm (275 Resourcen)</Original>
+                <German>Platziere Bunkerturm (275 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_TB_supply_base">
+                <Original>Platziere Vorratslager (750 Resourcen)</Original>
+                <German>Platziere Vorratslager (750 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_Fuelstation_Feed_F">
+                <Original>Platziere Tankstation (80 Resourcen)</Original>
+                <German>Platziere Tankstation (80 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_Medevac_house_V1_F">
+                <Original>Platziere MedizinContainer (200 Resourcen)</Original>
+                <German>Platziere MedizinContainer (200 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_TTowerSmall_1_F">
+                <Original>Platziere FUNK-Antenne (60 Resourcen)</Original>
+                <German>Platziere FUNK-Antenne (60 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_CamoNetVar_NATO">
+                <Original>Platziere Tarnnetz (10 Resourcen)</Original>
+                <German>Platziere Tarnnetz (10 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_FieldToilet_F">
+                <Original>Platziere Klo (10 Resourcen)</Original>
+                <German>Platziere Klo (10 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_Cargo_HQ_V1_F">
+                <Original>Platziere Hauptgebäude1 (200 Resourcen)</Original>
+                <German>Platziere Hauptgebäude1 (200 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_Cargo_HQ_V3_F">
+                <Original>Platziere Hauptgebäude2 (200 Resourcen)</Original>
+                <German>Platziere Hauptgebäude2 (200 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_MedicalTent_01_white_generic_open_F">
+                <Original>Platziere Sanizelt (100 Resourcen)</Original>
+                <German>Platziere Sanizelt (100 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_BarGate_F">
+                <Original>Platziere Schranke (75 Resourcen)</Original>
+                <German>Platziere Schranke (75 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_HelipadSquare_F">
+                <Original>Platziere Heliport (10 Resourcen)</Original>
+                <German>Platziere Heliport (10 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_B_Slingload_01_Repair_F">
+                <Original>Platziere ReparaturContainer (80 Resourcen)</Original>
+                <German>Platziere ReparaturContainer (80 Resourcen)</German>
+            </Key>
+            <Key ID="STR_PLACE_BIG_Land_Cargo_House_V3_F">
+                <Original>Platziere Container (60 Resourcen)</Original>
+                <German>Platziere Container (60 Resourcen)</German>
+            </Key>
+
+
+
+            <Key ID="STR_PLACE_ItemBuildPlaceables">
+                <Original>Placeable items</Original>
+                <English>Placeable items</English>
+                <German>Plazierbare Items</German>
+            </Key>
+
+            <Key ID="STR_PLACE_BuildingsBuildPlaceables">
+                <Original>Placeable buildings</Original>
+                <English>Placeable buildings</English>
+                <German>Plazierbare Gebäude</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_CampingChair_V1_F">
+                <Original>Platziere Campingstuhl</Original>
+                <German>Platziere Campingstuhl</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_CampingChair_V1_F">
+                <Original>TBB Campingstuhl</Original>
+                <German>TBB Campingstuhl</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Campfire_F">
+                <Original>Platziere Lagerfeuer</Original>
+                <German>Platziere Lagerfeuer</German>
+            </Key>
+            <Key ID="STR_ITEM_Campfire_F">
+                <Original>TBB Lagerfeuer</Original>
+                <German>TBB Lagerfeuer</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_Camping_Light_F">
+                <Original>Platziere Campinglicht</Original>
+                <German>Platziere Campinglicht</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_Camping_Light_F">
+                <Original>TBB Campinglicht</Original>
+                <German>TBB Campinglicht</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_Land_CampingTable_F">
+                <Original>Platziere Campingtisch</Original>
+                <German>Platziere Campingtisch</German>
+            </Key>
+            <Key ID="STR_ITEM_Land_CampingTable_F">
+                <Original>TBB Campingtisch</Original>
+                <German>TBB Campingtisch</German>
+            </Key>
+
+
+            <Key ID="STR_ITEM_Land_DrillAku_F">
+                <Original>TBB Akuschrauber</Original>
+                <German>TBB Akuschrauber</German>
+            </Key>
+
+
+            <Key ID="STR_ITEM_Land_Wrench_F">
+                <Original>TBB Schraubenzieher</Original>
+                <German>TBB Schraubenzieher</German>
+            </Key>
+
+
+            <Key ID="STR_PLACE_PickUpAction">
+                <Original>Pick up</Original>
+                <English>Pick up</English>
+                <German>Aufheben</German>
+            </Key>
+
+            <Key ID="STR_PLACE_NeedToolBuild">
+                <Original>You need a %1 for building this</Original>
+                <English>You need a %1 for building this</English>
+                <German>Du brauchst ein %1 um das zu bauen</German>
+            </Key>
+
+            <Key ID="STR_PLACE_NeedToolPickUp">
+                <Original>You need a %1 for pick up this</Original>
+                <English>You need a %1 for pick up this</English>
+                <German>Du brauchst ein %1 um das abzubauen</German>
+            </Key>
+
+            <Key ID="STR_PLACE_Destroy">
+                <Original>Destroy</Original>
+                <English>Destroy</English>
+                <German>Abbauen</German>
+            </Key>
+
+            <Key ID="STR_PLACE_Build">
+                <Original>Build</Original>
+                <English>Build</English>
+                <German>Baue</German>
+            </Key>
+
+            <Key ID="STR_PLACE_AllreadyDestroyed">
+                <Original>Allready destroyed</Original>
+                <English>Allready destroyed</English>
+                <German>Bereits abgebaut</German>
+            </Key>
+
+            <Key ID="STR_PLACE_AllreadyBuild">
+                <Original>Allready build</Original>
+                <English>Allready build</English>
+                <German>Bereits gebaut</German>
+            </Key>
+
+            <Key ID="STR_PLACE_NoBuildTruck">
+                <Original>No resource cargo truck in your near</Original>
+                <English>No resource cargo truck in your near</English>
+                <German>Kein Resourcentruck in der Nähe</German>
+            </Key>
+
+            <Key ID="STR_PLACE_EmptyBuildTruck">
+                <Original>Resource cargo truck not full enough</Original>
+                <English>Resource cargo truck not full enough</English>
+                <German>Resourcentruck hat nicht genügend Rohstoffe</German>
+            </Key>
+
+            <Key ID="STR_PLACE_NoCraneTruck">
+                <Original>No cranetruck in your near</Original>
+                <English>No cranetruck in your near</English>
+                <German>Kein Kranwagen in der Nähe</German>
+            </Key>
+
+            <Key ID="STR_PLACE_BuildTruckLoad">
+                <Original>Resource cargo truck load:</Original>
+                <English>Resource cargo truck load:</English>
+                <German>Resourcentruck Ladung:</German>
+            </Key>
+
+            <Key ID="STR_PLACE_BuildTruckLoad_Description">
+                <Original>Resources in the truck for buildings</Original>
+                <English>Resources in the truck for buildings</English>
+                <German>Resourcen fürs Bauen von Gebäuden</German>
+            </Key>
+
+            <Key ID="STR_PLACE_FinishBuilding">
+                <Original>Finish building</Original>
+                <English>Finish building</English>
+                <German>Baue zu Ende</German>
+            </Key>
+
+            <Key ID="STR_PLACE_DestroyBuilding">
+                <Original>Destroy building</Original>
+                <English>Destroy building</English>
+                <German>Gebäude abreißen</German>
+            </Key>
+
+            <Key ID="STR_PLACE_BuildPatrolTower">
+                <Original>Build PatrolTower (250 Resources)</Original>
+                <English>Build PatrolTower (250 Resources)</English>
+                <German>Baue PatrolTower (250 Resourcen)</German>
+            </Key>
+        </Container>
+    </Package>
 </Project>
