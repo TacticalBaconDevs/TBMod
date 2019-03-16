@@ -5,15 +5,15 @@
 #define ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE) class TB_placeItem_##OBJECT \
     { \
         displayName = $STR_PLACE_##OBJECT; \
-        condition = "'TB_building_item_##OBJECT' in (items ACE_player)"; \
+        condition = QUOTE('TB_building_item_##OBJECT' in (items ACE_player)); \
         exceptions[] = {"notOnMap", "isNotInside", "isNotHandcuffed", "isNotSurrendering", "isNotSwimming", "isNotOnLadder"}; \
-        statement = "['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables"; \
+        statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables); \
     }
 #define ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE) class TB_buildBig_##BUILDING_END \
     { \
         displayName = $STR_PLACE_BIG_##BUILDING_END; \
         exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"}; \
-        statement = "['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn TB_fnc_placePlaceablesBig"; \
+        statement = QUOTE(['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn TB_fnc_placePlaceablesBig); \
     }
 #define ADD_RESC_CHECK class ACE_Actions \
         { \

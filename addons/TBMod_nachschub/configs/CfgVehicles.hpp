@@ -24,8 +24,8 @@ class CfgVehicles
     #define ADD_SUPPLY(NAME,ITEM) class ITEM \
         { \
             displayName = #NAME; \
-            condition = "!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0"; \
-            statement = "[_target, 'ITEM'] spawn TB_fnc_createSupply"; \
+            condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
+            statement = QUOTE([_target, 'ITEM'] spawn TB_fnc_createSupply); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
@@ -54,7 +54,7 @@ class CfgVehicles
         displayName = D_NAME; \
         scope = 2; \
         scopeCurator = 2; \
-        editorSubcategory = "EdSubcat_TB_Supply_##CATO"
+        editorSubcategory = EdSubcat_TB_Supply_##CATO
     #define SUB_CAT(NAME) EdSubcat_TB_Supply_##NAME
 
 
