@@ -14,9 +14,9 @@ class CfgPatches
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = 1.2.10;
-        versionStr = "1.2.10";
-        versionAr[] = {1,2,10};
+        version = 1.3.0;
+        versionStr = "1.3.0";
+        versionAr[] = {1,3,0};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -34,7 +34,7 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical"
         };
 
-        requiredVersion = 1.88;
+        requiredVersion = 1.90;
         requiredAddons[] = {
             // Arma3
             "A3_Data_F_Sams_Loadorder",
