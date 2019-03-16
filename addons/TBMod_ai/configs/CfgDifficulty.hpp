@@ -5,10 +5,10 @@
 class CfgAILevelPresets
 {
     class Custom
-	{
+    {
         displayName = "TacticalBaconAI";
         skillAI = 0.6;
-		precisionAI = 0.5;
+        precisionAI = 0.5;
     };
 };
 
@@ -16,13 +16,13 @@ class CfgDifficultyPresets
 {
     defaultPreset = "Custom";
 
-	class Custom
-	{
+    class Custom
+    {
         description = "TacticalBaconAI";
         levelAI = "Custom";
 
         class Options
-		{
+        {
             autoReport = 0;
             cameraShake = 1;
             commands = 0;
