@@ -12,8 +12,8 @@
     "TBMod_key_hideGUI",
     "Zeigt/Verbirgt die GUI",
     {
-        ["sthud_settings_hudmode", [0 , 3] select (sthud_settings_hudmode == 0)] call CBA_settings_fnc_set;
-        systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select (sthud_settings_hudmode == 0)];
+        ["diwako_dui_enable_compass", !diwako_dui_enable_compass] call CBA_settings_fnc_set;
+        systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select !diwako_dui_enable_compass];
     },
     {},
     [DIK_J, [false, false, true]] // [Shift, Strg, Alt]
