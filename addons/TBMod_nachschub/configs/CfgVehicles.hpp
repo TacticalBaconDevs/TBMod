@@ -45,7 +45,8 @@ class CfgVehicles
             class TransportBackpacks {}; \
             class TransportMagazines {}; \
         }
-    #define WRAPPER_SKIN(CLASS_NAME,SKINS) class CLASS_NAME; \
+    #define WRAPPER_SKIN(CLASS_NAME,SKIN) WRAPPER_SKIN2(CLASS_NAME, SKIN, "")
+    #define WRAPPER_SKIN2(CLASS_NAME,SKIN1,SKIN2) class CLASS_NAME; \
         class TB_##CLASS_NAME : CLASS_NAME \
         { \
             author = "shukari"; \
@@ -57,7 +58,7 @@ class CfgVehicles
             editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
             scope = 1; \
             scopeCurator = 1; \
-            hiddenSelectionsTextures[] = {SKINS}; \
+            hiddenSelectionsTextures[] = {SKIN1,SKIN2}; \
             class TransportItems {}; \
             class TransportWeapons {}; \
             class TransportBackpacks {}; \
@@ -213,38 +214,38 @@ class CfgVehicles
 
 
     // ###################### KISTEN #########################
-    #define SKIN_GRP1 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_3.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
+    #define SKIN_GRP1 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_3.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
     #define SKIN_GRP2 "\TBMod_skins\pictures\statics\Land_PlasticCase_01_medium_F_0.paa"
-    #define SKIN_GRP3 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_2.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
-    #define SKIN_GRP4 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
-    #define SKIN_GRP5 ARR_2("\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa")
+    #define SKIN_GRP3 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_2.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
+    #define SKIN_GRP4 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
+    #define SKIN_GRP5 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
     #define SUPPORT_SKIN "\TBMod_skins\pictures\statics\equipment_box_blufor_ca_1.paa"
 
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
-    WRAPPER(Box_NATO_Equip_F); // sehr groß
-    WRAPPER_SKIN(Box_NATO_Ammo_F, SKIN_GRP1);
-    WRAPPER_SKIN(Box_NATO_Wps_F, SKIN_GRP1);
-    WRAPPER_SKIN(Box_IDAP_Equip_F, ARR_2("\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN));
-    WRAPPER_SKIN(Box_NATO_WpsLaunch_F, SKIN_GRP1);
-    WRAPPER_SKIN(Box_NATO_Grenades_F, SKIN_GRP1);
-    WRAPPER_SKIN(Box_NATO_AmmoOrd_F, SKIN_GRP1);
-    WRAPPER_SKIN(Box_NATO_WpsSpecial_F, SKIN_GRP1);
+    WRAPPER(Box_NATO_Equip_F);
+    WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_IDAP_Equip_F, "\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_NATO_WpsLaunch_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_Grenades_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_AmmoOrd_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_WpsSpecial_F, SKIN_GRP1);
     WRAPPER_SKIN(Land_PlasticCase_01_small_F, SKIN_GRP2);
     WRAPPER_SKIN(Land_PlasticCase_01_medium_F, SKIN_GRP2);
-    WRAPPER_SKIN(Box_IND_Ammo_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_IND_WpsSpecial_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_NATO_Uniforms_F, ARR_2("\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa", SUPPORT_SKIN));
-    WRAPPER_SKIN(Box_IND_AmmoOrd_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_IND_Support_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_IND_Wps_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_East_Wps_F, SKIN_GRP4);
-    WRAPPER_SKIN(Box_EAST_WpsLaunch_F, SKIN_GRP5);
-    WRAPPER_SKIN(Box_IND_Grenades_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_IND_WpsLaunch_F, SKIN_GRP3);
-    WRAPPER_SKIN(Box_East_WpsSpecial_F, SKIN_GRP5);
-    WRAPPER_SKIN(Box_East_Support_F, SKIN_GRP1);
-    WRAPPER_SKIN(Box_East_Grenades_F, SKIN_GRP5);
-    WRAPPER_SKIN(Box_East_AmmoOrd_F, SKIN_GRP4);
+    WRAPPER_SKIN2(Box_IND_Ammo_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_WpsSpecial_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_NATO_Uniforms_F, "\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa", SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_IND_AmmoOrd_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_Support_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_Wps_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_East_Wps_F, SKIN_GRP4);
+    WRAPPER_SKIN2(Box_EAST_WpsLaunch_F, SKIN_GRP5);
+    WRAPPER_SKIN2(Box_IND_Grenades_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_WpsLaunch_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_East_WpsSpecial_F, SKIN_GRP5);
+    WRAPPER_SKIN2(Box_East_Support_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_East_Grenades_F, SKIN_GRP5);
+    WRAPPER_SKIN2(Box_East_AmmoOrd_F, SKIN_GRP4);
 
     class TB_supply_empty: WRAPPER_NAME(Box_NATO_Ammo_F)
     {
