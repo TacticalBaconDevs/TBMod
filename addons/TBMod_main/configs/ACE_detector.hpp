@@ -5,10 +5,10 @@
 class ACE_detector
 {
     class detectors
-	{
+    {
         class ACE_VMM3
-		{
-            radius = 5;
+        {
+            radius = 7;
             sounds[] = {"ace_detector_1", "ace_detector_2", "ace_detector_3", "ace_detector_4"};
         };
 
