@@ -147,7 +147,7 @@ class CfgVehicles
                         ADD_BIG_ITEM(Land_Cargo_HQ_V1_F,true,-1,50,200,true,true);
                         ADD_BIG_ITEM(Land_FieldToilet_F,true,-1,5,10,false,false);
                         ADD_BIG_ITEM(Land_CamoNetVar_NATO,true,-1,5,10,false,true);
-                        ADD_BIG_ITEM(Land_TTowerSmall_1_F,true,-1,30,60,true,true);
+                        ADD_BIG_ITEM(TFAR_Land_Communication_F,true,-1,30,60,true,true); // RadioTower - Land_TTowerSmall_1_F
                         ADD_BIG_ITEM(Land_Cargo_House_V3_F,true,-1,15,60,true,false);
                     };
                 };

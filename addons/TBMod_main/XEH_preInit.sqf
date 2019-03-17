@@ -13,7 +13,7 @@ if (isNil "TB_recoilStart") then {TB_recoilStart = 0.50};
 if (isNil "TB_fpsMonitor_client") then {TB_fpsMonitor_client = true};
 if (isNil "TB_fpsMonitor_zeus") then {TB_fpsMonitor_zeus = true};
 if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
-if (isNil "TB_debug_lvl") then {TB_debug_lvl = 2}; // RELEASE: 0
+if (isNil "TB_debug_lvl") then {TB_debug_lvl = 0};
 
 ["CAManBase", "Local", {
     params ["_entity", "_isLocal"];
