@@ -382,6 +382,24 @@ class CfgVehicles
     };
 
 
+    // ###################### ACE-Minedetector ######################
+    #define SET_DETECTABLE(PARENT,CLASSES) class CLASSES : PARENT {ace_minedetector_detectable = 1;}
+
+    class Small_items_NoInteractive;
+    class Items_base_F;
+    class House_Small_F;
+    class House;
+    class Strategic;
+
+    SET_DETECTABLE(Small_items_NoInteractive, Explosive);
+    SET_DETECTABLE(Items_base_F, Land_MetalBarrel_F);
+    SET_DETECTABLE(House_Small_F, Land_MetalBarrel_empty_F);
+    SET_DETECTABLE(House, Land_popelnice);
+    SET_DETECTABLE(House, Land_Kontejner);
+    SET_DETECTABLE(Strategic, Garbage_can);
+    SET_DETECTABLE(Strategic, Garbage_container);
+
+
     // ###################### No Uniform ######################
     class Civilian;
     // class CAManBase;
