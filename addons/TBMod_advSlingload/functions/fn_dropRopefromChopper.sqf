@@ -1,13 +1,13 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author: Eric Ruhland
     Creates a Lastenseil with no end attached
-    
+
     Arguments:
     0: Target <OBJECT>
-    
+
     Return Value:
     None
 */

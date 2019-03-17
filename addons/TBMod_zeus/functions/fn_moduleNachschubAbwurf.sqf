@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_logic", "", "_activated"];
@@ -42,18 +42,18 @@ _supplyBox allowDamage false;
 [_supplyBox] spawn
 {
     params ["_supplyBox"];
-    
+
     waitUntil {((getPosATL _supplyBox) select 2) < 150};
-    
+
     private _smoke = createVehicle ["SmokeShell", [0, 0, 1000], [], 0, "FLY"];
     _smoke attachTo [_supplyBox, [0, 0, 0]];
-    
+
     waitUntil {((getPosATL _supplyBox) select 2) < 20};
-    
+
     deleteVehicle _smoke;
     _smoke = createVehicle ["SmokeShellBlue", [0, 0, 1000], [], 0, "FLY"];
     _smoke attachTo [_supplyBox, [0, 0, 0]];
-    
+
     // Sicherheitsvorkehrung
     uiSleep 5;
     if (((getPosATL _supplyBox) select 2) < 0) then

@@ -1,6 +1,7 @@
 #include "\TBMod_main\defineDIKCodes.inc"
 /*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 
@@ -9,7 +10,7 @@ TB_targetGroups = [[],[],[],[],[],[],[],[],[]];
 {
     private _target = _x;
     private _groups = _target getVariable ["TB_ausbildung_popUpTargets", ""];
-    
+
     if (_groups isEqualType "" && {!(_groups in ["", "0"])}) then
     {
         {
@@ -21,32 +22,32 @@ TB_targetGroups = [[],[],[],[],[],[],[],[],[]];
             {
                 (TB_targetGroups select ((parseNumber _x) - 1)) pushBackUnique [typeOf _target, getDir _target, getPos _target, _target];
             };
-            
+
             false;
         }
         count (_groups splitString ",");
     };
-    
+
     false;
 }
 count (allMissionObjects "ALL");
 
 // Tastaturshortcuts
-[] spawn 
+[] spawn
 {
     if (TB_targetGroups isEqualTo [[],[],[],[],[],[],[],[],[]]) exitWith {};
     waitUntil {!isNull (findDisplay 46)};
     (findDisplay 46) displayAddEventHandler ["KeyDown", {
         params ["", "_code", "_shift", "_ctrl", "_alt"];
-        
+
         _ret = false;
-        
+
         if !(getPlayerUID player in ["_SP_PLAYER_", "76561198029318101", "76561198015612608", "76561198040057152", "76561198047437015",
             "76561198068568975", "76561198083373558"]) exitWith {_ret};
-        
+
         // if (!isNil "TB_ausbildung_block" && {TB_ausbildung_block}) exitWith {};
         // TB_ausbildung_block = true;
-        
+
         switch (_code) do
         {
             case DIK_F1:
@@ -104,13 +105,13 @@ count (allMissionObjects "ALL");
                 // if (_ctrl && _alt) then {[9, true, true] call TB_fnc_manageTargets; _ret = true;};
             };
         };
-        
+
         // [] spawn
         // {
             // uiSleep 0.3;
             // TB_ausbildung_block = false;
         // };
-        
+
         _ret;
     }];
 };

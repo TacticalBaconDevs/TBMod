@@ -1,13 +1,13 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author: Eric Ruhland
     Add Attach Action to vehicle
-    
+
     Arguments:
     0: Target <OBJECT>
-    
+
     Return Value:
     None
 */

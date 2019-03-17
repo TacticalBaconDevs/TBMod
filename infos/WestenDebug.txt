@@ -1,5 +1,5 @@
 ["passthrough", "armor", "maximumload"]
-    
+
     MBAV
     "rhsusf_mbav_medic",[56,49,160],
     "rhsusf_mbav_mg",[56,49,160],
@@ -7,7 +7,7 @@
     "rhsusf_mbav_rifleman",[56,49,140],
     "rhsusf_mbav_light",[56,49,100],
     "rhsusf_mbav",[54,45,20],
-    
+
     IOTV
     "rhsusf_iotv_ucp_SAW",[56,49,150],
     "rhsusf_iotv_ucp_Squadleader",[56,49,150],
@@ -17,7 +17,7 @@
     "rhsusf_iotv_ucp_Repair",[56,49,120],
     "rhsusf_iotv_ucp_Medic",[56,49,120],
     "rhsusf_iotv_ucp",[54,45,20],
-    
+
     "rhsusf_iotv_ocp_SAW",
     "rhsusf_iotv_ocp_Squadleader",
     "rhsusf_iotv_ocp_Teamleader",
@@ -26,7 +26,7 @@
     "rhsusf_iotv_ocp_Repair",
     "rhsusf_iotv_ocp_Medic",
     "rhsusf_iotv_ocp",
-    
+
     SPC
     "rhsusf_spc_iar",[68,56,160],
     "rhsusf_spc_teamleader",[66,56,160]
@@ -40,12 +40,11 @@
     "rhsusf_spc_crewman",[68,56,80],
     "rhsusf_spc_marksman",[66,56,80],
     "rhsusf_spc",[66,53,20],
-    
+
     SPCS
     "rhsusf_spcs_ocp",[66,53,140],
     "rhsusf_spcs_ocp_rifleman",[66,53,140],
     "rhsusf_spcs_ucp",[66,53,140],
     "rhsusf_spcs_ucp_rifleman",[66,53,140]
-    
-    
-    
+
+

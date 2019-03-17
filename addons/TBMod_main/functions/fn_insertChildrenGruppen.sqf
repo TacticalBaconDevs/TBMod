@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params ["_target", "_player", "_params"];
 
@@ -11,7 +12,7 @@ private _actions = [];
         private _action = [groupId _x, format ["%1 (%2)" ,groupId _x, name (leader _x)], "", {[_this select 2] spawn TB_fnc_teleport}, {true}, {}, leader _x] call ace_interact_menu_fnc_createAction;
         _actions pushBack [_action, [], _target];
     };
-    
+
     false;
 }
 count allGroups;

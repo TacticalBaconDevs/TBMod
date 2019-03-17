@@ -1,10 +1,10 @@
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Chris 'Taranis'
-    
+
     DIK Codes -> https://community.bistudio.com/wiki/DIK_KeyCodes
 */
 TB_liveMonitor_isActive = false;
@@ -15,7 +15,7 @@ TB_liveMonitor_isActive = false;
     ["Änderungsrate verändern", "Verändert die Refreshrate des Monitors"],
     {
         private _display = uiNamespace getVariable ["TB_liveMonitor_display", displayNull];
-        if (!isNull _display && TB_liveMonitor_delay < time) then 
+        if (!isNull _display && TB_liveMonitor_delay < time) then
         {
             TB_liveMonitor_delay = time + 0.5;
             TB_liveMonitor_time = time - 100;
@@ -31,7 +31,7 @@ TB_liveMonitor_isActive = false;
 
             systemChat format ["Änderungsrate auf %1s geändert", TB_liveMonitor_update];
         };
-        
+
         false // andere Tasten nicht überschreiben
     },
     {},
@@ -43,11 +43,11 @@ TB_liveMonitor_isActive = false;
     "liveMonitor_keyClose",
     ["schließen", "Schließt den Monitor"],
     {
-        if (!isNull (uiNamespace getVariable ["TB_liveMonitor_display", displayNull])) then 
+        if (!isNull (uiNamespace getVariable ["TB_liveMonitor_display", displayNull])) then
         {
             call TB_liveMonitor_fnc_remove;
         };
-        
+
         false // andere Tasten nicht überschreiben
     },
     {},

@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Eric Ruhland
@@ -20,12 +20,12 @@ class CfgWeapons
         magazines[] = {
             "TB_mag_taser"
         };
-        
+
         class WeaponSlotsInfo : WeaponSlotsInfo
         {
             mass = 42; // 21
         };
-        
+
         class Single : Single
         {
             class BaseSoundModeType

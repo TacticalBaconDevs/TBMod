@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params [["_input", false, [false]]];
 
@@ -23,7 +24,6 @@ TB_recoilFreeze = -1;
 
 ["weapon", {
     params ["_unit", "_newWeapon"];
-
     TB_cacheWeaponType = ([_newWeapon] call BIS_fnc_itemType) select 1;
 }] call CBA_fnc_addPlayerEventHandler;
 
@@ -37,17 +37,18 @@ TB_recoilID = ["ace_firedPlayer", {
 
     private _recoil = (getCustomAimCoef _unit) + TB_recoilStart;
     private _deploy = isWeaponDeployed _unit;
+    private _rested = isWeaponRested _unit;
 
     // Spezielle WaffenStats
     if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([2, 1] select _deploy)};
     if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {_recoil = _recoil - 0.5};
 
     // Externe Einflüsse
-    if (isWeaponRested _unit) then {_recoil = _recoil - 0.2};
+    if (_rested) then {_recoil = _recoil - 0.2};
     if (_deploy) then {_recoil = _recoil - 0.3};
 
     // Waffen Einflüsse
-    if (_weapon == primaryWeapon _unit) then
+    if (isClass (configfile >> "CfgPatches" >> "rhsusf_main") && _weapon == primaryWeapon _unit) then // TODO: check ob waffe von RHS, sonst auch nicht
     {
         (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
 
@@ -66,7 +67,15 @@ TB_recoilID = ["ace_firedPlayer", {
         if (_silencer != "") then {_recoil = _recoil - 0.1};
     };
 
-    //TB_debug_recoil = _recoil;
+    ["Recoil: %1 | Influ: %2 | AimCoef: %3 | Type: %4 | mode: %5 | deploy: %6 | rested: %7",
+            (_recoil max 0.5) * TB_recoilCoef,
+            _recoil max 0.5,
+            getCustomAimCoef _unit,
+            TB_cacheWeaponType,
+            _mode,
+            _deploy,
+            _rested
+        ] call TB_fnc_debug;
     _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
 
     TB_recoilFreeze = diag_tickTime + 1;

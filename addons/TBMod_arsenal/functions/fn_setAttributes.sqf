@@ -1,8 +1,6 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params ["_rolle"];
 
@@ -17,11 +15,13 @@ if (TB_origin_medicClass == 0) then
     {
         ACE_player setVariable ["ace_medical_medicClass", [2, 1] select (_rolle == "sani"), true];
         ACE_player setUnitTrait ["medic", true];
+        TB_medical_coef = [1.1, 0.7] select (_rolle == "arzt");
     }
     else
     {
         ACE_player setVariable ["ace_medical_medicClass", 0, true];
         ACE_player setUnitTrait ["medic", false];
+        TB_medical_coef = 1.3;
     };
 };
 
@@ -51,7 +51,7 @@ ACE_maxWeightCarry = [TB_origin_maxWeightCarry, TB_origin_maxWeightCarry * 4] se
 if (isNil "TB_origin_loadFactor") then {TB_origin_loadFactor = ace_advanced_fatigue_LoadFactor};
 ace_advanced_fatigue_LoadFactor = [TB_origin_loadFactor, TB_origin_loadFactor / 2] select (_rolle in ["aaat", "trag", "pionier"]);
 
-// erhöhter Anti-Verwackler - AntiTank / Muniträger  / Pionier / Unterstützungsschütze 
+// erhöhter Anti-Verwackler - AntiTank / Muniträger  / Pionier / Unterstützungsschütze
 if (isNil "TB_origin_swayFactor") then {TB_origin_swayFactor = ace_advanced_fatigue_swayFactor};
 ace_advanced_fatigue_swayFactor = [TB_origin_swayFactor, TB_origin_swayFactor / 2] select (_rolle in ["aaat", "trag", "pionier", "mg"]);
 

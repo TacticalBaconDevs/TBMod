@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Part of the TBMod ( https://github.com/shukari/TBMod )
+Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
 Developed by http://tacticalbacon.de
 
 Function: TB_liveMonitor_fnc_animated
@@ -54,7 +54,7 @@ if (_mode isEqualTo 0) then
 if (_mode isEqualTo 1) then
 {
     private _displayCtrl = uiNamespace getVariable ['TB_liveMonitor_display', displayNull];
-    
+
     //Turn the display off
     private _control = _displayCtrl displayCtrl 9101;
     _control ctrlSetFade 1;

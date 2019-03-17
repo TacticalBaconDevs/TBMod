@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_unit", "_value"];
@@ -21,7 +21,7 @@ TB_disableANIM = {
         [_unit, "", 1] call ace_common_fnc_doAnimation;
         _unit setVariable ["TB_inAnim", false];
     };
-    
+
     {
         if (_unit getVariable ["TB_inAnim", false]) then {[_x] call TB_disableANIM};
     }

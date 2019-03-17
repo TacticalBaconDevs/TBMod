@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params [["_input", false, [false]]];
 
@@ -9,10 +10,10 @@ if (!TB_crashHelfer) exitWith {};
 addMissionEventHandler ["HandleDisconnect",
 {
     params ["_unit", "", "_uid", ""];
-    
+
     private _pos = getPosASL _unit;
     _pos set [2, (_pos select 2) + 0.5];
-    
+
     private _array = [
             _uid,
             getUnitLoadout _unit,
@@ -23,7 +24,7 @@ addMissionEventHandler ["HandleDisconnect",
             group _unit,
             _unit getVariable ["TB_team", "MAIN"]
         ];
-    
+
     private _find = [TB_disconnectCache, _uid] call BIS_fnc_findNestedElement;
     if (_find isEqualTo []) then
     {
@@ -33,10 +34,10 @@ addMissionEventHandler ["HandleDisconnect",
     {
         TB_disconnectCache set [_find select 0, _array];
     };
-    
+
     publicVariable "TB_disconnectCache";
     deleteVehicle _unit;
-    
+
     false;
 }];
 

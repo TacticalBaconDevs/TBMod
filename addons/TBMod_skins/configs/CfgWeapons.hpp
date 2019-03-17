@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Eric
@@ -16,7 +16,7 @@ class cfgWeapons
         displayName = "SEK Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
-        
+
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -25,7 +25,7 @@ class cfgWeapons
             mass = 40;
         };
     };
-    
+
     class TB_Uniform_Kommissar_U: Uniform_Base
     {
         scope = 2;
@@ -33,7 +33,7 @@ class cfgWeapons
         displayName = "Kommissar Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
-        
+
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -42,7 +42,7 @@ class cfgWeapons
             mass = 40;
         };
     };
-    
+
     class TB_Uniform_rekrut_U: Uniform_Base
     {
         scope = 2;
@@ -50,7 +50,7 @@ class cfgWeapons
         displayName = "Rekruten Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
-        
+
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -59,7 +59,7 @@ class cfgWeapons
             mass = 40;
         };
     };
-    
+
     class TB_Uniform_presi_U: Uniform_Base
     {
         scope = 2;
@@ -67,7 +67,7 @@ class cfgWeapons
         displayName = "Präsidenten Uniform";
         author = "IDarky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_universal_F.p3d";
-        
+
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -90,7 +90,7 @@ class CfgWeapons
         displayName = "G3 M81/Green";
         author = "DArky";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
-        
+
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
@@ -99,7 +99,7 @@ class CfgWeapons
             mass = 40;
         };
     };
-    
+
     class TB_Uniform_SEK: Uniform_Base
     {
         displayName = "SEK Uniform";
@@ -108,7 +108,7 @@ class CfgWeapons
         hiddenSelections[] = {"camo"};
         picture = "\TBMod_skins\pictures\polizei_sek.paa";
     };
-    
+
     class U_B_CTRG_1;
     class TB_Uniform_Kommissar: U_B_CTRG_1
     {
@@ -116,7 +116,7 @@ class CfgWeapons
         author = "IDarky";
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\polizei_kommissar.paa"};
     };
-    
+
     class U_Competitor;
     class TB_Uniform_Polizist: U_Competitor
     {

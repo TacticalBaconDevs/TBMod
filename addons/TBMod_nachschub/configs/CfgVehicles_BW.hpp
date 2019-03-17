@@ -1,8 +1,8 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class TB_supply_bw_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 {
     PUBLIC_NAME_CAT("Munition",BW);
 
@@ -17,7 +17,7 @@ class TB_supply_bw_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_bw_ammoSmall : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_bw_ammoSmall : WRAPPER_NAME(Box_East_Grenades_F)
 {
     PUBLIC_NAME_CAT("HandwaffenMunition",BW);
 
@@ -27,7 +27,7 @@ class TB_supply_bw_ammoSmall : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_bw_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
+class TB_supply_bw_grena : WRAPPER_NAME(Box_IND_Grenades_F)
 {
     PUBLIC_NAME_CAT("Granaten",BW);
 
@@ -42,7 +42,7 @@ class TB_supply_bw_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
     };
 };
 
-class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
+class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 {
     PUBLIC_NAME_CAT("Unterlauf",BW);
 
@@ -54,7 +54,7 @@ class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     };
 };
 
-class TB_supply_bw_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
     PUBLIC_NAME_CAT("SpezialwaffenMunition",BW);
 
@@ -65,9 +65,10 @@ class TB_supply_bw_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
     };
 };
 
-class TB_supply_bw_launcher : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Werfer",BW);
+    hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_4.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportWeapons
     {
@@ -84,9 +85,10 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("WerferMunition",BW);
+    hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_4.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportMagazines
     {
@@ -96,7 +98,7 @@ class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_bw_notfallg36 : WRAPPER_NAME(Box_NATO_Wps_F)
+class TB_supply_bw_notfallg36 : WRAPPER_NAME(Box_East_AmmoOrd_F)
 {
     PUBLIC_NAME_CAT("NotfallG36",BW);
 

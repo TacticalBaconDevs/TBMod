@@ -1,8 +1,6 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params [
     "_obj",
@@ -19,7 +17,7 @@ private _pickupAction = [
     {
         params ["_target", "_player", "_argumente"];
         _argumente params ["_item"];
-        
+
         deleteVehicle _target;
         _player addItem _item;
     },
