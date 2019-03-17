@@ -4,7 +4,7 @@
 */
 class CfgAILevelPresets
 {
-    class TB
+    class TBModAi
     {
         displayName = "TacticalBaconAI";
         skillAI = 0.6;
@@ -14,13 +14,13 @@ class CfgAILevelPresets
 
 class CfgDifficultyPresets
 {
-    defaultPreset = "TB";
+    defaultPreset = "TBModPreset";
 
-    class TB
+    class TBModPreset
     {
         displayName = "TacticalBaconAI";
         description = "TacticalBaconAI Settings";
-        levelAI = "TB";
+        levelAI = "TBModAi";
         optionDescription = "TacticalBaconAI Schwierigkeitsgrad, Standard von TB";
 
         class Options

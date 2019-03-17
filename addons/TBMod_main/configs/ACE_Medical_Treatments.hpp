@@ -14,8 +14,8 @@ class ACE_Medical_Actions {
             treatmentTime = "[3] call TB_fnc_calcTreatmentTime";
         };
         class Atropine: Morphine { // Ketamin
-            displayName = "Ketamin injizieren2";
-            displayNameProgress = "Ketamin injizieren2...";
+            displayName = "Ketamin injizieren";
+            displayNameProgress = "Ketamin injizieren...";
         };
         class BloodIV: fieldDressing {
             treatmentTime = "[7] call TB_fnc_calcTreatmentTime";

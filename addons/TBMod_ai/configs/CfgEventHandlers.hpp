@@ -4,10 +4,10 @@
 */
 class Extended_InitPost_EventHandlers
 {
-    class Wheeled_APC_F {
-        init = "(_this select 0) allowCrewInImmobile true";
-    };
-    class Tank {
-        init = "(_this select 0) allowCrewInImmobile true";
-    };
+    #define STAIYIN(CLASSE) class CLASSE { \
+        init = "(_this select 0) allowCrewInImmobile true";\
+    }
+
+    STAIYIN(Wheeled_APC_F);
+    STAIYIN(Tank);
 };
