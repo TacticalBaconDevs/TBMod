@@ -660,32 +660,37 @@ class ACE_Medical_Advanced {
 
             // specific details for the ACE_Morphine treatment action
             class Morphine {
-                painReduce = 15;
-                hrIncreaseLow[] = {-25, -35, 35};
-                hrIncreaseNormal[] = {-25, -45, 35};
-                hrIncreaseHigh[] = {-25, -50, 50};
-                timeInSystem = 900;
-                viscosityChange = -20;
+                painReduce = 10;
+                hrIncreaseLow[] = {-25, -35, 45};
+                hrIncreaseNormal[] = {-25, -45, 40};
+                hrIncreaseHigh[] = {-25, -50, 35};
+                timeInSystem = 1200;
+                maxDose = 4;
+                viscosityChange = -25;
             };
             class Epinephrine {
-                hrIncreaseLow[] = {10, 20, 15};
-                hrIncreaseNormal[] = {10, 50, 10};
-                hrIncreaseHigh[] = {10, 40, 5};
-                maxDose = 10;
-            };
-            class Adenosine { // Ketamin
-                painReduce = 1;
-                hrIncreaseLow[] = {0, -5, 60};
-                hrIncreaseNormal[] = {-5, -10, 60};
-                hrIncreaseHigh[] = {-10, -15, 90};
-                timeInSystem = 300;
-                maxDose = 8;
-            };
-            class Atropine {
-                hrIncreaseLow[] = {-2, -5, 15};
-                hrIncreaseNormal[] = {-10, -15, 20};
-                hrIncreaseHigh[] = {-5, -20, 10};
+                hrIncreaseLow[] = {15, 35, 15};
+                hrIncreaseNormal[] = {15, 35, 10};
+                hrIncreaseHigh[] = {15, 30, 5};
+                timeInSystem = 150;
                 maxDose = 6;
+            };
+            class Atropine { // Ketamin
+                painReduce = 1.2;
+                hrIncreaseLow[] = {0, -1, 15};
+                hrIncreaseNormal[] = {-1, -3, 10};
+                hrIncreaseHigh[] = {-3, -5, 5};
+                timeInSystem = 300;
+                maxDose = 6;
+                viscosityChange = -3;
+            };
+            class Adenosine {
+                hrIncreaseLow[] = {5, 10, 20};
+                hrIncreaseNormal[] = {8, 12, 15};
+                hrIncreaseHigh[] = {-15, -25, 10};
+                timeInSystem = 90;
+                maxDose = 3;
+                viscosityChange = 6;
             };
         };
 
