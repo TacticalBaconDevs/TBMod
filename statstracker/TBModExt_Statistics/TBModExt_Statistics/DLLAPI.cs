@@ -65,13 +65,14 @@ namespace TBModExt_Statistics
                 if (Database.missionname == null)
                     return 3;
 
-                if (function != "sendQueue")
-                    return 4;
+                if (function == "Player")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPlayerShot), args);
+                if (function == "Vehicle")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputVehicleShot), args);
+                if (function == "Medical")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputMedical), args);
 
-                List<string> tes = (args as string[]).OfType<string>().ToList();
-                output.Append(tes[0]);
-                if (args.Length > 0)
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInput), args);
+                
             }
             catch (Exception e)
             {
@@ -83,24 +84,13 @@ namespace TBModExt_Statistics
             return 100;
         }
 
-        public static void ProcessInput(object input)
+        public static void ProcessInputPlayerShot(object input)
         {
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-
-                if (args.Count <= 0)
-                    return;
-                if (args[0] == "Player")
-                {
-                    args.RemoveAt(0);
-                    Database.insertValuePlayer(args.ToArray());
-                }
-                else if (args[0] == "Vehicle")
-                {
-                    args.RemoveAt(0);
-                    Database.insertValueVehicle(args.ToArray());
-                }
+                 Database.insertValuePlayer(args.ToArray());
+                
                     
             }
             catch (Exception e)
@@ -109,5 +99,34 @@ namespace TBModExt_Statistics
                 error = true;
             }
         }
+
+        public static void ProcessInputVehicleShot(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValueVehicle(args.ToArray());
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+                error = true;
+            }
+        }
+
+        public static void ProcessInputMedical(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValueMedical(args.ToArray());
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+                error = true;
+            }
+        }
+
     }
 }
