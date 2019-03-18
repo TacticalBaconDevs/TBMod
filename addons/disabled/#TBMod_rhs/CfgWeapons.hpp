@@ -1,8 +1,6 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgWeapons
 {
@@ -30,7 +28,7 @@ class CfgWeapons
             // };
         // };
     // };
-    
+
     // class Pistol_Base_F;
     // class rhs_weap_M320_Base_F : Pistol_Base_F
     // {
@@ -42,19 +40,19 @@ class CfgWeapons
             // "rhs_mag_m716_Yellow_precise"
         // };
     // };
-    
-    
+
+
     // class rhs_weap_m4a1 : rhs_weap_m4_Base
     // {
         // class Single;
         // class FullAuto;
     // };
-    
+
     // class rhs_weap_m4a1_changeMode1 : rhs_weap_m4a1
     // {
         // recoil = "recoil_mxm";
         // recoilProne = "assaultRifleBase";
-        
+
         // class Single : Single
         // {
             // recoil = "recoil_single_primary_1outof10";
@@ -66,12 +64,12 @@ class CfgWeapons
             // recoilProne = "recoil_auto_primary_prone_1outof10";
         // };
     // };
-    
+
     // class rhs_weap_m4a1_changeMode2 : rhs_weap_m4a1
     // {
         // recoil = "recoil_mxm";
         // recoilProne = "assaultRifleBase";
-        
+
         // class Single : Single
         // {
             // recoil = "recoil_single_primary_10outof10";
@@ -83,13 +81,13 @@ class CfgWeapons
             // recoilProne = "recoil_auto_primary_prone_10outof10";
         // };
     // };
-    
+
     // class rhs_weap_m4a1_weaponRecoil1 : rhs_weap_m4a1
     // {
         // recoil = "recoil_tb";
         // recoilProne = "assaultRifleBase";
     // };
-    
+
     // class rhs_weap_m4a1_sway1 : rhs_weap_m4a1
     // {
         // swayDecaySpeed = 0.25;

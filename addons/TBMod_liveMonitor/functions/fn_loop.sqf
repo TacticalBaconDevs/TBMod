@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Part of the TBMod ( https://github.com/shukari/TBMod )
+Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
 Developed by http://tacticalbacon.de
 
 Function: TB_liveMonitor_fnc_loop
@@ -21,12 +21,12 @@ Author:
     Taranis [TacticalBacon.de]
 ---------------------------------------------------------------------------- */
 TB_liveMonitor_pefhID = [{
-    if (TB_liveMonitor_initialized) then 
+    if (TB_liveMonitor_initialized) then
     {
         //------------------------ VALUE UPDATE ------------------------
         disableSerialization;
         private _displayCtrl = uiNamespace getVariable ['TB_liveMonitor_display', displayNull];
-        
+
         if (time - TB_liveMonitor_time > TB_liveMonitor_update) exitwith
         {
             //Reset
@@ -72,7 +72,7 @@ TB_liveMonitor_pefhID = [{
         };
 
         //------------------------ ANIMATION HEARTBEAT ------------------------
-        if (!(TB_liveMonitor_ace_heartrate isEqualTo 0) && TB_liveMonitor_nextBeat < time) then 
+        if (!(TB_liveMonitor_ace_heartrate isEqualTo 0) && TB_liveMonitor_nextBeat < time) then
         {
             TB_liveMonitor_nextBeat = time + 60 / TB_liveMonitor_ace_heartrate;
             TB_liveMonitor_beatCounter = TB_liveMonitor_beatCounter + ([1,2] select (TB_liveMonitor_beatCounter % 5 isEqualTo 4));

@@ -1,52 +1,52 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Chris 'Taranis'
 */
 class RscText : TB_RscText
 {
-    
+
 };
 class RscStructuredText : TB_RscStructuredText
 {
-    
+
 };
 class RscPicture : TB_RscPicture
 {
-    
+
 };
 class RscEdit : TB_RscEdit
 {
-    
+
 };
 class RscCombo : TB_RscCombo
 {
-    
+
 };
 class RscListBox : TB_RscListBox
 {
-    
+
 };
 class RscButton : TB_RscButton
 {
-    
+
 };
 class RscShortcutButton : TB_RscShortcutButton
 {
-    
+
 };
 class RscShortcutButtonMain : TB_RscShortcutButtonMain
 {
-    
+
 };
 class RscFrame : TB_RscFrame
 {
-    
+
 };
 class RscSlider : TB_RscSlider
 {
-    
+
 };
 class IGUIBack : TB_RscText
 {
@@ -54,17 +54,17 @@ class IGUIBack : TB_RscText
 };
 class RscCheckBox : TB_RscCheckBox
 {
-    
+
 };
 
 class RscButtonMenu : TB_RscButtonMenu
 {
-    
+
 };
 class RscButtonMenuOK : TB_RscButtonMenu
 {
     idc = 1;
-    shortcuts[] = 
+    shortcuts[] =
     {
         "0x00050000 + 0",
         28,
@@ -73,7 +73,7 @@ class RscButtonMenuOK : TB_RscButtonMenu
     };
     default = 1;
     text = "OK";
-    soundPush[] = 
+    soundPush[] =
     {
         "\A3\ui_f\data\sound\RscButtonMenuOK\soundPush",
         0.09,
@@ -83,7 +83,7 @@ class RscButtonMenuOK : TB_RscButtonMenu
 class RscButtonMenuCancel : TB_RscButtonMenu
 {
     idc = 2;
-    shortcuts[] = 
+    shortcuts[] =
     {
         "0x00050000 + 1"
     };
@@ -91,5 +91,5 @@ class RscButtonMenuCancel : TB_RscButtonMenu
 };
 class RscControlsGroup : TB_RscControlsGroup
 {
-    
+
 };

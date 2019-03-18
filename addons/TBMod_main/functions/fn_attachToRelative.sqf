@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://killzonekid.com/arma-scripting-tutorials-attach-to-relative/
 */
 params ["_obj1", "_obj2"];

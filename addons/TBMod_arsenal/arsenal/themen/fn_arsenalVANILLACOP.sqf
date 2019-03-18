@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Ansprechpartner: IDarky
@@ -17,7 +17,7 @@ private _allgemein = [
     // Rucksäcke
     "B_LegStrapBag_black_F",
     // ### LR-Funke
-    "OPXT_blk_1523", // schwarz 
+    "OPXT_blk_1523", // schwarz
 
     // Attachments
     "acc_flashlight_pistol",
@@ -75,18 +75,18 @@ private _allgemein_Uniform = [
     "TB_Uniform_Kommissar_U",
     "TB_Uniform_Sek_U"
 ];
-    
+
 private _allgemein_Westen = [
     "V_PlateCarrier1_blk"
 ];
 
-private _allgemein_Helm = [  
+private _allgemein_Helm = [
     "H_HelmetSpecB_blk"
 ];
 
 private _allgemein_Waffen = [
     "srifle_EBR_F",
-    "arifle_SPAR_01_blk_F"  
+    "arifle_SPAR_01_blk_F"
 ];
 
 private _allgemein_Magazine = [
@@ -104,14 +104,14 @@ private _items = [];
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
-    {   
+    {
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Magazine +
         _allgemein_Waffen +
-        [ 
+        [
             // Items
             "B_UavTerminal",
             "ACE_UAVBattery",
@@ -119,9 +119,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserbatteries"
         ]
     };
-    
+
     case "sani":
-    {   
+    {
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
@@ -134,7 +134,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
 
     case "dmr":
-    {   
+    {
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
@@ -148,7 +148,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     };
 
     case "rifle":
-    {   
+    {
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
@@ -156,12 +156,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-            
+
         ]
     };
 
     case "pilot":
-    {   
+    {
         _allgemein +
         _allgemein_Uniform +
         _allgemein_Westen +
@@ -170,12 +170,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Head
             "H_PilotHelmetHeli_B",
-            
+
             // Items
             "ToolKit"
         ]
     };
-    
+
     default {hint "Falsche Klasse. Schwerer Fehler #100"};
 });
 

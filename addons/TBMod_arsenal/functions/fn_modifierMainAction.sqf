@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_args", ""];
@@ -13,7 +13,7 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
     private _patches = configfile >> "CfgPatches";
     if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter", "rifle"]};
     if (isClass (_patches >> "SWOP_Main")) exitWith {TB_blacklistRollen_themen = ["sniper", "spotter", "rifle"]};
-    
+
     private _side = side ACE_player;
     if (_side == blufor) exitWith
     {
@@ -21,7 +21,7 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
         TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
         TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
     };
-    
+
     if (_side == opfor) exitWith {};
 };
 

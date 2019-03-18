@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params ["_target", "_shooter", "_bullet", "_position", "_velocity", "_selection", "_ammo", "_direction", "_radius", "_surface", "_direct"];
 
@@ -21,7 +22,7 @@ if (_target getVariable ["TB_ausbildung_popUpTargets", ""] == "" || _target getV
 if (!("target" in _selection) || _target animationPhase "Terc" > 0) exitWith {true};
 
 // --- drop target
-_target animate ["Terc", 1]; 
+_target animate ["Terc", 1];
 _target setDamage 0;
 
 // --- raise target

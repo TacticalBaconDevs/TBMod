@@ -3,16 +3,16 @@ class CfgPatches
     class TBMod_skins
     {
         name = "TBMod skins";
-        
+
         author = "Eric";
-        
+
         weapons[] = {
             "TB_Uniform_SEK_U",
             "TB_Uniform_Kommissar_U",
             "TB_Uniform_Polizist_U",
             "TB_Uniform_presi_U"
         };
-        
+
         vehicles[] = {
             "TB_Uniform_Sek",
             "TB_Uniform_Kommissar",
@@ -30,6 +30,7 @@ class CfgPatches
 };
 
 // Configs
+#include "..\TBMod_main\script_macros_common.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\CfgEditorCategories.hpp"

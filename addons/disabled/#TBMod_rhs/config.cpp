@@ -1,8 +1,6 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgPatches
 {
@@ -10,13 +8,13 @@ class CfgPatches
     {
         author = "shukari";
         authorUrl = "tacticalbacon.de";
-        
+
         requiredVersion = 1.84;
         requiredAddons[] = {
             "TBMod_main",
             "rhsusf_main"
         };
-        
+
         addonRootClass = "TBMod_main";
     };
 };

@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 private _arsenalType = ACE_player getVariable ["TB_arsenalType", ""];
@@ -26,7 +26,7 @@ if (_arsenalType == "USA") exitWith
         case "pionier" : {[[],[],[],["rhs_uniform_cu_ocp",[["ACE_MapTools",1],["ACE_CableTie",1],["ACE_tourniquet",4],["ACE_fieldDressing",15],["ACE_morphine",10],["ACE_quikclot",5]]],["rhsusf_spcs_ocp",[["ACE_fieldDressing",15],["ACE_morphine",5],["ACE_quikclot",5],["rhs_mag_mk3a2",1,1],["rhs_mag_m67",2,1],["SmokeShellBlue",1,1]]],["rhsusf_assault_eagleaiii_ocp",[["ACE_EntrenchingTool",1],["SmokeShell",4,1]]],"rhsusf_ach_helmet_ocp","",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
         default {[]};
     };
-    
+
     ACE_player setUnitLoadout [_layout, true];
 };
 
@@ -56,7 +56,7 @@ if (_arsenalType == "VANILLA") exitWith
         case "pionier" : {[]};
         default {[]};
     };
-    
+
     ACE_player setUnitLoadout [_layout, true];
 };
 
@@ -76,14 +76,14 @@ if (_arsenalType == "Themen") exitWith
     {
         ACE_player setUnitLoadout [[[],[],[],["SWOP_Clonetrooper_501_F_CombatUniform",[["ACE_tourniquet",4],["ACE_EntrenchingTool",1],["ACE_morphine",5],["ACE_CableTie",2],["ACE_quikclot",15]]],["SWOP_Clonetrooper_501_armor",[]],["SWOP_InvisBag",[]],"SWOP_Cloneofficer_capM","",["ElectroBinocularsW_F","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]], true];
     };
-    
+
     private _side = side ACE_player;
     if (_side == blufor) exitWith
     {
         // Vanilla-COP
         ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_morphine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
     };
-    
+
     if (_side == opfor) exitWith
     {
         // RussSimple
@@ -97,7 +97,7 @@ if (_arsenalType == "CUSTOM") exitWith
     {
         TB_fnc_customLayout = {
             params ["_rolle"];
-            
+
             switch (_rolle) do
             {
                 case "lead": {[]};
@@ -121,6 +121,6 @@ if (_arsenalType == "CUSTOM") exitWith
     };
 
     private _layout = [_rolle] call TB_fnc_customLayout;
-    
+
     ACE_player setUnitLoadout [_layout, true];
 };

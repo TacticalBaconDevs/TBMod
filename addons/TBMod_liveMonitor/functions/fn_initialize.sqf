@@ -1,5 +1,5 @@
 ﻿/* ----------------------------------------------------------------------------
-Part of the TBMod ( https://github.com/shukari/TBMod )
+Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
 Developed by http://tacticalbacon.de
 
 Function: TB_liveMonitor_fnc_initialize
@@ -19,7 +19,7 @@ Returns:
 Author:
     Taranis [TacticalBacon.de]
 ---------------------------------------------------------------------------- */
-if (isNull (uiNamespace getVariable ['TB_liveMonitor_display', displayNull])) then 
+if (isNull (uiNamespace getVariable ['TB_liveMonitor_display', displayNull])) then
 {
     TB_liveMonitor_initialized = false;
     [0] spawn TB_liveMonitor_fnc_animated;

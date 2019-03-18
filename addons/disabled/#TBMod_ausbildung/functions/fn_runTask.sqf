@@ -1,5 +1,6 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 params ["_groupNumber", "_startTask"];
 
@@ -10,7 +11,7 @@ if (_startTask) then
     TB_ausbildung_subTask = [_groupNumber] spawn
     {
         params ["_groupNumber"];
-        
+
         hint format ["Kurs %1 gestartet!", _groupNumber];
         playSound "ACE_Sound_Click";
 

@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgPatches
@@ -8,12 +8,15 @@ class CfgPatches
     {
         name = "TBMod Hauptmod";
 
-        author = "shukari";
-        authorUrl = "tacticalbacon.de";
+        author = "TBMod-DevTeam";
+        authors[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
+        url = "https://github.com/TacticalBaconDevs/TBMod";
+        authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
+        license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = 1.2.10;
-        versionStr = "1.2.10";
-        versionAr[] = {1,2,10};
+        version = 1.3.0;
+        versionStr = "1.3.0";
+        versionAr[] = {1,3,0};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -31,7 +34,7 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical"
         };
 
-        requiredVersion = 1.88;
+        requiredVersion = 1.90;
         requiredAddons[] = {
             // Arma3
             "A3_Data_F_Sams_Loadorder",
@@ -63,6 +66,7 @@ class CfgPatches
 };
 
 // Configs
+#include "script_macros_common.hpp"
 #include "configs\Animations.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgEditorCategories.hpp"
@@ -78,7 +82,10 @@ class CfgPatches
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CBA_Stuff.hpp"
 #include "configs\CfgMisc.hpp"
+#include "configs\CfgWeapons.hpp"
 #include "configs\ACE_Medical_Treatments.hpp"
+#include "configs\ACE_detector.hpp"
+#include "configs\CfgSounds.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"

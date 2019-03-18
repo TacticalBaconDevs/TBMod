@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_rolle", "_arsenalType", "_target", ["_loadGear", true]];
@@ -10,7 +10,7 @@ ACE_player setVariable ["TB_rolle", _rolle, true];
 // CrashHelper
 if (isNull _target) then {
     if (_arsenalType in ["", "CUSTOM"]) exitWith {};
-    
+
     {
         if (_arsenalType isEqualTo getText (configFile >> "CfgVehicles" >> typeOf _x >> "arsenalType")) exitWith
         {
@@ -18,7 +18,7 @@ if (isNull _target) then {
         };
     }
     forEach vehicles;
-    
+
     [_target, _rolle] call TB_fnc_setArsenal;
 } else {
     [_target, _rolle] call TB_fnc_setArsenal;
@@ -36,6 +36,6 @@ if (_loadGear) then
     removeBackpack player;
     removeHeadgear player;
     removeGoggles player;
-    
+
     [] call TB_fnc_loadDefault;
 };

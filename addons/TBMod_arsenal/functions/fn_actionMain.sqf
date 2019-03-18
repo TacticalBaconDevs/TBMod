@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_args", ""];
@@ -11,7 +11,7 @@ private _tbCargo = ACE_player getVariable ["TB_arsenalCargo", []];
 if (!(_tbCargo isEqualTo []) && {!(_tbCargo isEqualTo (_target getVariable ["ace_arsenal_virtualItems", []]))}) then
 {
     _target setVariable ["ace_arsenal_virtualItems", _tbCargo];
-    
+
     {
         if (!(_x isEqualTo _target) && [_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
         {
