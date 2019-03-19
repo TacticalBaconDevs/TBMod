@@ -140,6 +140,17 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 ] call CBA_fnc_addEventHandler;
 
 
+// ### Piloten Spielerschaden updaten
+["CBA_SettingChanged", {
+    params ["_setting", "_value"];
+
+    if (_setting == "ace_medical_playerDamageThreshold" && {ACE_player getVariable ["TB_rolle", ""] == "pilot"}) then
+    {
+        ace_medical_playerDamageThreshold = ace_medical_playerDamageThreshold + 10;
+    };
+}] call CBA_fnc_addEventHandler;
+
+
 // ### FPS Infos
 [{
     if (TB_fpsMonitor_client) then
