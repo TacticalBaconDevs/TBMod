@@ -11,7 +11,7 @@ namespace TBModExt_Statistics
 
         public static SQLiteConnection initDatabase()
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=Y:/Arma3mods/@TBMod/statistics.sqlite;Version=3;");
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=D:/Arma3mods/@TBMod/statistics.sqlite;Version=3;");
             dbConnection.Open();
 
             SQLiteCommand command = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_players (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT)", dbConnection);
