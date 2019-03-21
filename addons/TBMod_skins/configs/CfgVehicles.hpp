@@ -37,8 +37,6 @@ class CfgVehicles
     class Offroad_02_LMG_base_F;
     class Offroad_02_AT_base_F;
 
-
-
     ///////////////////////Polizei Uniformen//////////////////////////
 
     class TB_Uniform_Sek: B_Soldier_F
@@ -294,7 +292,6 @@ class CfgVehicles
         class EventHandlers;
     };
 
-
     class TB_Vehicles_PMC_Pickup: B_G_Offroad_01_F
     {
         displayName = "Pickup";
@@ -307,8 +304,6 @@ class CfgVehicles
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];";
         };
     };
-
-    
 
     class TB_Vehicles_PMC_SUV: C_SUV_01_F
     {
@@ -323,8 +318,8 @@ class CfgVehicles
         };
     };
 
-
     //////////Texturen werden manuell geladen
+    
     class TB_Vehicles_PMC_Jeep: I_C_Offroad_02_unarmed_F
     {
         displayName = "Jeep";
