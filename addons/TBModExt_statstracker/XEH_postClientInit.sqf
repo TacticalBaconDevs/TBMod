@@ -5,7 +5,7 @@
 if !(call TB_fnc_isTBMission) exitWith {};
 
 
-"TBModExt_Statstracker" callExtension missionName;
+"TBModExt_Statistics" callExtension missionName;
 
 //Setup all Events to be send to Extension
 ["ace_firedPlayer", {"TBMODExt_Statistics" callExtension ["Player", [text name (_this select 0),text getPlayerUID (_this select 0),text (_this select 1),text (_this select 3)]]}] call CBA_fnc_addEventHandler;

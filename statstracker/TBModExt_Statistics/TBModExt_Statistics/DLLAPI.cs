@@ -37,9 +37,12 @@ namespace TBModExt_Statistics
                 Database.initDatabase();
                 Database.missionname = function + "_" + DateTime.Now.ToString("dd-MM-yyyy_HH:mm:ss");
                 error = false;
+                output.Append(Database.missionname);
             }
+            
             catch (Exception e)
             {
+                output.Append("Error");
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR3 - " + e.ToString() + "\n"); } catch (Exception) { };
                 error = true;
             }
