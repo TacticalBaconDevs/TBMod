@@ -9,32 +9,33 @@ class CfgVehicles
         class rolle##ROLLEN_NAME \
         { \
             displayName = ""; \
-            modifierFunction = "[_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname"; \
-            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;"; \
+            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname); \
+            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define ADD_ROLLE_CUSTOM(ROLLEN_NAME) \
         class rolle##ROLLEN_NAME \
         { \
             displayName = ""; \
-            condition = "!('ROLLEN_NAME' in TB_blacklistRollen_custom)"; \
-            modifierFunction = "[_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname"; \
-            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle"; \
+            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_custom)); \
+            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname); \
+            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define ADD_ROLLE_THEMEN(ROLLEN_NAME) \
         class rolle##ROLLEN_NAME \
         { \
             displayName = ""; \
-            condition = "!('ROLLEN_NAME' in TB_blacklistRollen_themen)"; \
-            modifierFunction = "[_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname"; \
-            statement = "['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;"; \
+            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_themen)); \
+            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname); \
+            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define MAKE_PUBLIC(D_NAME,A_TYPE) displayName = #D_NAME; \
         arsenalType = #A_TYPE; \
         scope = 2; \
         scopeCurator = 2
+
 
     // ###################### ArsenalBoxes ######################
     class C_IDAP_supplyCrate_F;

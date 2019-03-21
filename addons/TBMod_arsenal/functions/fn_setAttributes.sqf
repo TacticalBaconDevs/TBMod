@@ -15,11 +15,13 @@ if (TB_origin_medicClass == 0) then
     {
         ACE_player setVariable ["ace_medical_medicClass", [2, 1] select (_rolle == "sani"), true];
         ACE_player setUnitTrait ["medic", true];
+        TB_medical_coef = [1.1, 0.7] select (_rolle == "arzt");
     }
     else
     {
         ACE_player setVariable ["ace_medical_medicClass", 0, true];
         ACE_player setUnitTrait ["medic", false];
+        TB_medical_coef = 1.3;
     };
 };
 
@@ -53,6 +55,7 @@ ace_advanced_fatigue_LoadFactor = [TB_origin_loadFactor, TB_origin_loadFactor / 
 if (isNil "TB_origin_swayFactor") then {TB_origin_swayFactor = ace_advanced_fatigue_swayFactor};
 ace_advanced_fatigue_swayFactor = [TB_origin_swayFactor, TB_origin_swayFactor / 2] select (_rolle in ["aaat", "trag", "pionier", "mg"]);
 
-
 // Pilot
 if (_rolle == "pilot") then {ACE_player setVariable ["ACE_GForceCoef", 0.4, true]};
+if (isNil "TB_origin_playerDamageThreshold") then {TB_origin_playerDamageThreshold = ace_medical_playerDamageThreshold};
+ace_medical_playerDamageThreshold = if (_rolle == "pilot") then {TB_origin_playerDamageThreshold + 10} else {TB_origin_playerDamageThreshold};

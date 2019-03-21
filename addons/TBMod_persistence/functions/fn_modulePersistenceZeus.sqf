@@ -40,7 +40,7 @@ if !(_activated) exitWith {true};
         if (_server) then
         {
             [true, _name] remoteExec ["TB_fnc_persistence", 2];
-            [profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
+            [profileNamespace, ["TB_persistence_savedNames", _saves]] remoteExec ["setVariable", 2]; //[profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
             [] remoteExec ["saveProfileNamespace", 2];
         }
         else

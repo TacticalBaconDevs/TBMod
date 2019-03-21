@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class TB_supply_usa_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 {
     PUBLIC_NAME_CAT("Munition",USA);
 
@@ -15,7 +15,7 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("HandwaffenMunition",USA);
 
@@ -28,7 +28,7 @@ class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_usa_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
+class TB_supply_usa_grena : WRAPPER_NAME(Box_IND_Grenades_F)
 {
     PUBLIC_NAME_CAT("Granaten",USA);
 
@@ -44,7 +44,7 @@ class TB_supply_usa_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
     };
 };
 
-class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
+class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 {
     PUBLIC_NAME_CAT("Unterlauf",USA);
 
@@ -75,7 +75,7 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     };
 };
 
-class TB_supply_usa_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+class TB_supply_usa_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
     PUBLIC_NAME_CAT("SpezialwaffenMunition",USA);
 
@@ -90,12 +90,12 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
         // DMR7.62
         MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,15);
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,15);
-        //MACRO_ADDMAGAZINE(rhsusf_10Rnd_762x51_m118_special_Mag,15); // nicht zuviel, dann halt nur 5 statt 10 Schuss
+        // MACRO_ADDMAGAZINE(rhsusf_10Rnd_762x51_m118_special_Mag,15); // nicht zuviel, dann halt nur 5 statt 10 Schuss
         MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,10);
     };
 };
 
-class TB_supply_usa_launcher : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_usa_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Werfer",USA);
 
@@ -114,7 +114,7 @@ class TB_supply_usa_launcher : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_usa_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_usa_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("WerferMunition",USA);
 
@@ -137,7 +137,7 @@ class TB_supply_usa_javlinAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_East_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("MAAWSMunition",USA);
 
@@ -148,7 +148,7 @@ class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_usa_SMAWAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_usa_SMAWAmmo : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("SMAWMunition",USA);
 
@@ -175,9 +175,10 @@ class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
     };
 };
 
-class TB_supply_usa_night : WRAPPER_NAME(Box_NATO_Equip_F)
+class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",USA);
+    hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"};
 
     class TransportItems
     {

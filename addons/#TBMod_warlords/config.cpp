@@ -21,6 +21,7 @@ class CfgPatches
 };
 
 // Configs
+#include "..\TBMod_main\script_macros_common.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgWLRequisitionPresets.hpp"
 #include "configs\ExtendedEventHandlers.hpp"

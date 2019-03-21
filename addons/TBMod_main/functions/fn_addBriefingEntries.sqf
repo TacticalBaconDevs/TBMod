@@ -9,18 +9,18 @@ player createDiarySubject ["missionSettings", "Missioneinstellungen"];
 
 private _txt = "
 <br/>Medical:<br/>
-- max Wiederbelebungszeit: %2min<br/>
-- KI-Leben: %3%1<br/>
-- Spieler-Leben: %4%1<br/>
-- Überdosis: %5<br/>
 - direkter Tod verhindert: %6<br/>
+- max Wiederbelebungszeit: %2min<br/>
+- Überdosis: %5<br/><br/>
+- KI-Leben: %3%1<br/>
+- Spieler-Leben: %4%1<br/><br/>
 - Schmerzauswirkung: %7%1<br/>
-- Verblutungsauswirkung: %8%1<br/>
+- Verblutungsauswirkung: %8%1<br/><br/>
 - Verbrauch PAK: %9<br/>
-- Verbrauch OP-Kit: %10<br/>
-- Ort PAK: %11<br/>
+- Verbrauch OP-Kit: %10<br/><br/>
+- Ort PA-Kit: %11<br/>
 - Ort OP-Kit: %12<br/>";
-player createDiaryRecord ["missionSettings", ["Medical", format [_txt, "%"
+player createDiaryRecord ["missionSettings", ["ACE3-Medical", format [_txt, "%",
     ace_medical_maxReviveTime / 60,
     ace_medical_AIDamageThreshold * 100,
     ace_medical_playerDamageThreshold * 100,
