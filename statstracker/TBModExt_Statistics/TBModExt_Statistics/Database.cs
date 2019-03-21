@@ -70,7 +70,7 @@ namespace TBModExt_Statistics
         {
             using (SQLiteCommand command = new SQLiteCommand(connection))
             {
-                command.CommandText = "INSERT INTO shots_vehicle (id, time, missionname, unitnamecaller, uuidcaller, unitnametarget, uuidtarget, selection, treatment) VALUES (Datetime('now'), @missionname, @unitnamecaller, @uuidcaller, @unitnametarget, @unitnametarget, @uuidtarget, @selection, @treatment)";
+                command.CommandText = "INSERT INTO medical (time, missionname, unitnamecaller, uuidcaller, unitnametarget, uuidtarget, selection, treatment) VALUES (Datetime('now'), @missionname, @unitnamecaller, @uuidcaller, @unitnametarget, @uuidtarget, @selection, @treatment)";
                 command.Prepare();
 
                 command.Parameters.AddWithValue("@missionname", missionname);
