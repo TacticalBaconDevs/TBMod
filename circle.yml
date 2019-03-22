@@ -1,18 +1,13 @@
 version: 2
 jobs:
-  validate-scripts:
+  build:
     docker:
       - image: acemod/sqflint:latest
     steps:
       - checkout
       - run:
-          name: Validate SQF and Config style
+          name: Validate SQF And Config style
           command: python tools/sqf_validator.py && python tools/config_style_checker.py
-  linting:
-    docker:
-      - image: acemod/sqflint:latest
-    steps:
-      - checkout
-      - run:
+      - runLint:
           name: Lint sqf code
-          command: sqflint -d addons || true
+          command: sqflint -d addons || true    
