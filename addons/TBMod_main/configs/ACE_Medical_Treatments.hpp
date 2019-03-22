@@ -20,6 +20,12 @@ class ACE_Medical_Actions {
         class BloodIV: fieldDressing {
             treatmentTime = "[7] call TB_fnc_calcTreatmentTime";
         };
+        class PlasmaIV: BloodIV {
+            treatmentTime = "[11] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
+        };
+        class SalineIV: BloodIV {
+            treatmentTime = "[17] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
+        };
         class SurgicalKit: fieldDressing {
             treatmentTime = "[count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5] call TB_fnc_calcTreatmentTime";
         };

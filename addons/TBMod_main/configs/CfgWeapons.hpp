@@ -25,11 +25,11 @@ class CfgWeapons
     SET_NAME(ACE_bloodIV_500, "Blut IV (1000ml)", 5);
     SET_NAME(ACE_bloodIV_250, "Blut IV (500ml)", 2.5);
     
-    SET_NAME(ACE_plasmaIV, "Plasma IV (1000ml)", 20);
-    SET_NAME(ACE_plasmaIV_500, "Plasma IV (500ml)", 10);
-    SET_NAME(ACE_plasmaIV_250, "Plasma IV (250ml)", 5);
+    SET_NAME(ACE_plasmaIV, "Plasma IV (1000ml)", 10);
+    SET_NAME(ACE_plasmaIV_500, "Plasma IV (500ml)", 5);
+    SET_NAME(ACE_plasmaIV_250, "Plasma IV (250ml)", 2.5);
     
-    SET_NAME(ACE_salineIV, "Kochsalzlösung (500ml)", 30);
-    SET_NAME(ACE_salineIV_500, "Kochsalzlösung (250ml)", 15);
-    SET_NAME(ACE_salineIV_250, "Kochsalzlösung (125ml)", 7.5);
+    SET_NAME(ACE_salineIV, "Kochsalzlösung (500ml)", 10);
+    SET_NAME(ACE_salineIV_500, "Kochsalzlösung (250ml)", 5);
+    SET_NAME(ACE_salineIV_250, "Kochsalzlösung (125ml)", 2.5);
 };
