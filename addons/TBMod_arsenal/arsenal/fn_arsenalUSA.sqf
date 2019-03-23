@@ -464,9 +464,6 @@ private _grenadier_gewehr = [
     "rhs_weap_mk18_m320",
     "hlc_smg_9mmar",
 
-    // Test nicht UGLs
-    "rhs_weap_mk18",
-    "rhs_weap_m4a1_carryhandle",
     // ### Handfeuerwaffe
     "rhs_weap_M320"
 ];
@@ -613,7 +610,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "lead":
     {
         _allgemein +
-        _allgemein_magazine +
+        _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
@@ -623,8 +620,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
-        _grenadier_gewehr +
-        _grenadier_munition +
+        _grenadier_munition + 
         [
             // Weste
             "rhsusf_iotv_ocp_Squadleader",
@@ -652,6 +648,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_MX2A", // Thermal EXPERIMENTELL
             //"ACE_VectorDay",
             "ACE_Vector", // Tag/Nacht Version
+
+            // Zweitwaffe
+            "rhs_weap_M320",
 
             // Items
             //"B_UavTerminal",
