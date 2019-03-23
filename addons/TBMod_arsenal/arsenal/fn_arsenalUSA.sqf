@@ -727,6 +727,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "hlc_30Rnd_9x19_SD_MP5",
             "rhsusf_8Rnd_00Buck",
             "rhsusf_8Rnd_Slug",
+            "rhsusf_5Rnd_00Buck",
+            "rhsusf_5Rnd_Slug",
 
             // Kopfbedeckung
             "rhsusf_cvc_green_helmet",
