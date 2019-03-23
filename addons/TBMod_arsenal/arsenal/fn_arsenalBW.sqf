@@ -116,7 +116,10 @@ private _allgemein_gewehre = [
     "hlc_rifle_G36KV",
     "hlc_rifle_g36KTac",
     "hlc_rifle_G36V",
-    "hlc_rifle_G36TAC"
+    "hlc_rifle_G36TAC",
+    "BWA3_G36A1_tan",
+    "BWA3_G36A2_tan",
+    "BWA3_G36KA3_tan"
 ];
 
 private _allgemein_magazine = [
@@ -125,7 +128,11 @@ private _allgemein_magazine = [
     "hlc_30rnd_556x45_SPR_G36",
     "hlc_30rnd_556x45_Tracers_G36",
     "hlc_30rnd_556x45_MDIM_G36",
-    "hlc_30rnd_556x45_TDIM_G36"
+    "hlc_30rnd_556x45_TDIM_G36",
+    "BWA3_30Rnd_556x45_G36_Tracer",
+    "BWA3_30Rnd_556x45_G36_Tracer_Dim",
+    "BWA3_30Rnd_556x45_G36",
+    "BWA3_30Rnd_556x45_G36_SD"
 ];
 
 private _allgemein_visiere = [
@@ -440,8 +447,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "arzt":
     {
         _allgemein +
-        _allgemein_magazine +
-        _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
@@ -455,6 +460,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weste
             "BWA3_Vest_Medic_Tropen",
             "BWA3_Vest_Medic_Fleck",
+
+            // Waffen
+            "BWA3_MP7",
+
+            // Magazine
+            "BWA3_40Rnd_46x30_MP7",
+            "BWA3_40Rnd_46x30_MP7_SD",
 
             // Gepäck
             "BWA3_Kitbag_Fleck_Medic",
@@ -491,6 +503,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _grenadier_gewehr +
         _grenadier_munition +
         [
+            // Waffen
+            "BWA3_G36A1_AG40_tan",
+            "BWA3_G36A2_AG40_tan",
+            "BWA3_G36A3_AG40_tan",
+
             // Weste
             "BWA3_Vest_Grenadier_Fleck",
             "BWA3_Vest_Grenadier_Tropen"
@@ -710,6 +727,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "BWA3_MP7",
+            "BWA3_G36A1_AG40_tan",
+            "BWA3_G36A2_AG40_tan",
+            "BWA3_G36A3_AG40_tan",
+
+
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
 
