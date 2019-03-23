@@ -25,12 +25,16 @@ private _allItems = call (switch (_type) do
 // MEDIC STUFF
 _allItems append [
     "ACE_fieldDressing",
-    "ACE_packingBandage",
-    "ACE_elasticBandage",
-    "ACE_quikclot",
 
-    "ACE_tourniquet",
-    "ACE_morphine"
+    "ACE_salineIV",
+    "ACE_salineIV_500",
+    "ACE_salineIV_250",
+
+    "ACE_atropine",
+    "ACE_adenosine",
+
+    "ACE_tourniquet"
+    
 ];
 
 if (_rolle in ["sani", "arzt", "pilot"]) then
@@ -41,8 +45,12 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         "adv_aceCPR_AED",
         "TB_Item_liveMonitor",
 
-        "ACE_epinephrine",
-        "ACE_atropine",
+        "ACE_epinephrine",        
+        "ACE_morphine",
+
+        "ACE_packingBandage",
+        "ACE_elasticBandage",
+        "ACE_quikclot",
 
         "ACE_plasmaIV",
         "ACE_plasmaIV_500",
