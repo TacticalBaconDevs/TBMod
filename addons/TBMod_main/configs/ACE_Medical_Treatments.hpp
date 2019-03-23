@@ -104,7 +104,7 @@ class ACE_Medical_Advanced {
                 };
                 class AvulsionsLarge: Avulsions {
                     effectiveness = 0.75;
-                    reopeningChance = 0.9;
+                    reopeningChance = 1;
                     reopeningMaxDelay = 360;
                 };
 
@@ -190,13 +190,13 @@ class ACE_Medical_Advanced {
                 class velocityWoundMinor: velocityWound {};
                 class velocityWoundMedium: velocityWound {
                     effectiveness = 1;
-                    reopeningChance = 0.7;
+                    reopeningChance = 0.8;
                     reopeningMinDelay = 240;
-                    reopeningMaxDelay = 1080;
+                    reopeningMaxDelay = 660;
                 };
                 class velocityWoundLarge: velocityWound {
                     effectiveness = 0.75;
-                    reopeningChance = 0.9;
+                    reopeningChance = 1;
                     reopeningMaxDelay = 660;
                 };
 
@@ -247,7 +247,7 @@ class ACE_Medical_Advanced {
                 };
                 class AvulsionsMinor: Avulsions {};
                 class AvulsionsMedium: Avulsions {
-                    effectiveness = 0.25;
+                    effectiveness = 0.5;
                     reopeningChance = 0.4;
                     reopeningMaxDelay = 1320;
                 };
@@ -525,13 +525,13 @@ class ACE_Medical_Advanced {
                 };
                 class AvulsionsMinor: Avulsions {};
                 class AvulsionsMedium: Avulsions {
-                    effectiveness = 0.5;
+                    effectiveness = 0.25;
                     reopeningChance = 0.7;
                     reopeningMaxDelay = 1860;
                 };
                 class AvulsionsLarge: Avulsions {
                     effectiveness = 0.25;
-                    reopeningChance = 0.8;
+                    reopeningChance = 1;
                     reopeningMinDelay = 780;
                     reopeningMaxDelay = 960;
                 };
@@ -611,13 +611,13 @@ class ACE_Medical_Advanced {
                 };
                 class velocityWoundMinor: velocityWound {};
                 class velocityWoundMedium: velocityWound {
-                    effectiveness = 0.5;
+                    effectiveness = 0.25;
                     reopeningChance = 0.7;
                     reopeningMaxDelay = 1860;
                 };
                 class velocityWoundLarge: velocityWound {
                     effectiveness = 0.25;
-                    reopeningChance = 0.8;
+                    reopeningChance = 1;
                     reopeningMinDelay = 780;
                     reopeningMaxDelay = 960;
                 };
