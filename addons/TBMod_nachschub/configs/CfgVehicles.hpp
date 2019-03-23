@@ -276,7 +276,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_atropine,20);
             MACRO_ADDITEM(ACE_adenosine,16);
 
-            MACRO_ADDITEM(ACE_surgicalKit,1);
+            MACRO_ADDITEM(ACE_surgicalKit,2);
         };
     };
 
