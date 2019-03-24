@@ -14,4 +14,8 @@ class CfgEditorSubcategories
     {
         displayName = "BW";
     };
+    class EdSubcat_TB_skins_PMC
+    {
+        displayName = "PMC";
+    };
 };
