@@ -12,16 +12,7 @@ private _allgemein = [
     "rhsusf_falconii_coy",          // maximumLoad = 160; mass = 20; Quotient = 8
     "rhsusf_falconii_mc",
     "B_Parachute",
-    // ### LR-Funke
-    "OPXT_blk_1523",    // schwarz
-    "OPXT_aor1_1523",   // sand
-    "OPXT_oga_1523",    // grün
-    "OPXT_scorpion_1523",
-    "OPXT_m81_1523",
-    "OPXT_multicam_1523",
-    "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523",   //grau2
-
+    
     // Gesichtsbedeckung
     "rhs_googles_orange",
     "rhs_googles_clear",
@@ -634,6 +625,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ucp_squadleader",
             "rhsusf_spcs_ucp_teamleader",
 
+            // ### LR-Funke
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
+
             // Waffen
             "rhs_weap_m4a1_d",
 
@@ -707,6 +708,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
             "rhsusf_spcs_ucp_medic",
+
+            // ### LR-Funke
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
 
             // Kopfbedeckung
             "rhsusf_cvc_green_helmet",
@@ -939,6 +950,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "RHS_jetpilot_usaf",
             "rhsusf_ihadss",
 
+            // ### LR-Funke
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
+
             // Uniform
             "U_B_PilotCoveralls",
             "U_B_HeliPilotCoveralls",
@@ -1033,6 +1054,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserdesignator",
             "ACE_Vector",
 
+            // ### LR-Funke
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
+
             // Items
             "ACE_SpottingScope",
             "ACE_Tripod",
@@ -1079,6 +1110,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "lerca_1200_tan",
             "Laserdesignator",
             "ACE_Vector",
+
+            // ### LR-Funke
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
 
             // Items
             "ACE_SpottingScope",
@@ -1202,6 +1243,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
+
+            // ### LR-Funke
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
 
             // Vesten
             "rhsusf_mbav_rifleman",

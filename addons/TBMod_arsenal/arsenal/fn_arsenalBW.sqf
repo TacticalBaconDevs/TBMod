@@ -10,20 +10,7 @@ private _allgemein = [
     "BWA3_FieldPack_Fleck",
     "BWA3_FieldPack_Tropen",
     "B_Parachute",
-    // ### LR-Funke
-    "TFAR_rt1523g_big_bwmod",
-    "TFAR_rt1523g_big_bwmod_tropen",
-    // "TFAR_rt1523g_big",
-    // "TFAR_rt1523g_big_rhs",
-    "OPXT_blk_1523",    // schwarz
-    "OPXT_aor1_1523",   // sand
-    "OPXT_oga_1523",    // grün
-    "OPXT_scorpion_1523",
-    "OPXT_m81_1523",
-    "OPXT_multicam_1523",
-    "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523",   //grau2
-
+    
     // Gesichtsbedeckung
     "BWA3_G_Combat_clear",
     "BWA3_G_Combat_orange",
@@ -405,6 +392,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gepäck
             "B_UAV_01_backpack_F",
 
+            // ### LR-Funke
+            "TFAR_rt1523g_big_bwmod",
+            "TFAR_rt1523g_big_bwmod_tropen",
+            // "TFAR_rt1523g_big",
+            // "TFAR_rt1523g_big_rhs",
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
+
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
@@ -463,6 +464,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Waffen
             "BWA3_MP7",
+
+            // ### LR-Funke
+            "TFAR_rt1523g_big_bwmod",
+            "TFAR_rt1523g_big_bwmod_tropen",
+            // "TFAR_rt1523g_big",
+            // "TFAR_rt1523g_big_rhs",
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
 
             // Magazine
             "BWA3_40Rnd_46x30_MP7",
@@ -621,6 +636,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_Uniform_Crew_Fleck",
             "BWA3_Uniform_Crew_Tropen",
 
+            // ### LR-Funke
+            "TFAR_rt1523g_big_bwmod",
+            "TFAR_rt1523g_big_bwmod_tropen",
+            // "TFAR_rt1523g_big",
+            // "TFAR_rt1523g_big_rhs",
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
+
             // Kopfbedeckung
             "BWA3_CrewmanKSK_Fleck_Headset",
             "BWA3_CrewmanKSK_Fleck",
@@ -690,6 +719,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_Vest_Marksman_Tropen",
             "BWA3_Vest_Marksman_Fleck",
 
+            // ### LR-Funke
+            "TFAR_rt1523g_big_bwmod",
+            "TFAR_rt1523g_big_bwmod_tropen",
+            // "TFAR_rt1523g_big",
+            // "TFAR_rt1523g_big_rhs",
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
+
             // Ferngläser
             "ACE_Vector",
             "Laserdesignator",
@@ -730,6 +773,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_G36A1_AG40_tan",
             "BWA3_G36A2_AG40_tan",
             "BWA3_G36A3_AG40_tan",
+
+            // ### LR-Funke
+            "TFAR_rt1523g_big_bwmod",
+            "TFAR_rt1523g_big_bwmod_tropen",
+            // "TFAR_rt1523g_big",
+            // "TFAR_rt1523g_big_rhs",
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
 
 
             // ### Geschützzubehör
@@ -855,6 +912,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
+
+            // ### LR-Funke
+            "TFAR_rt1523g_big_bwmod",
+            "TFAR_rt1523g_big_bwmod_tropen",
+            // "TFAR_rt1523g_big",
+            // "TFAR_rt1523g_big_rhs",
+            "OPXT_blk_1523",    // schwarz
+            "OPXT_aor1_1523",   // sand
+            "OPXT_oga_1523",    // grün
+            "OPXT_scorpion_1523",
+            "OPXT_m81_1523",
+            "OPXT_multicam_1523",
+            "OPXT_at_au_1523",  // grau1
+            "OPXT_ogag_1523",   //grau2
 
             // Items
             "B_UavTerminal",
