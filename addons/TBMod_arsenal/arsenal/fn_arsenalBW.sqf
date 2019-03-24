@@ -705,7 +705,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_MP7",
 
             // ### Visiere
-            "bwa3_optic_m5xi_msr",
+            "bwa3_optic_m5xi_msr_microt2",
+            "bwa3_optic_hensoldt",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
 
