@@ -23,4 +23,17 @@ if (isNil "_vehiclePool" || {_vehiclePool isEqualTo []}) exitWith
 };
 
 _vehiclePool params ["_vehicleType", ""];
-[_position, 0, _vehicleType, _side] call BIS_fnc_spawnVehicle;
+private _return = [_position, 0, _vehicleType, _side] call BIS_fnc_spawnVehicle;
+_return params ["_vehicle", "_crew", "_grp"];
+
+if (isNil "TB_eos_disableLock") then
+{
+    _vehicle lock 2;
+    
+    if (isNil "TB_eos_disableLockKeys" && ace_vehiclelock_VehicleStartingLockState != -1) then
+    {
+        {[_x, _vehicle, true] call ACE_VehicleLock_fnc_addKeyForVehicle} forEach _crew;
+    };
+};
+
+_return;
