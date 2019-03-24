@@ -417,9 +417,10 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
 
-            MACRO_ADDITEM(ACE_rope36,10);          
+            MACRO_ADDITEM(ACE_rope36,10);
 
             MACRO_ADDITEM(ACE_wirecutter,2);
+            MACRO_ADDITEM(ToolKit,2);
             MACRO_ADDITEM(ACE_MapTools,5);
 
             MACRO_ADDITEM(Binocular,2);

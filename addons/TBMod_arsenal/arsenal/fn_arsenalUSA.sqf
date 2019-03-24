@@ -697,7 +697,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _pilot_munition +
         [
+            // Waffen
+            "rhsusf_weap_MP7A2",
+            "rhsusf_weap_MP7A2_grip3",
+            "rhs_weap_M590_8RD",
+            "rhs_weap_M590_5RD",
+            // ### Munition
+            "rhsusf_8Rnd_00Buck",
+            "rhsusf_8Rnd_Slug",
+            "rhsusf_5Rnd_00Buck",
+            "rhsusf_5Rnd_Slug",
+
             // Westen
             "rhsusf_iotv_ocp_Medic",
             "rhsusf_iotv_ucp_Medic",
@@ -705,27 +717,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
             "rhsusf_spcs_ucp_medic",
-
-            // Visiere
-            "rhsusf_acc_eotech_552",
-            "rhsusf_acc_eotech_552_d",
-            "rhsusf_acc_eotech_552_wd",
-            "rhsusf_acc_compm4",
-
-            // Waffen
-            "hlc_smg_mp5a2",
-            "hlc_smg_mp5sd5",
-            "rhs_weap_M590_8RD",
-            "rhs_weap_M590_5RD",
-
-            // Munition
-            "hlc_30Rnd_9x19_B_MP5",
-            "hlc_30Rnd_9x19_GD_MP5",
-            "hlc_30Rnd_9x19_SD_MP5",
-            "rhsusf_8Rnd_00Buck",
-            "rhsusf_8Rnd_Slug",
-            "rhsusf_5Rnd_00Buck",
-            "rhsusf_5Rnd_Slug",
 
             // Kopfbedeckung
             "rhsusf_cvc_green_helmet",
@@ -984,7 +975,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             //Visiere
             "rhsusf_acc_ACOG_RMR",
-            
+
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
