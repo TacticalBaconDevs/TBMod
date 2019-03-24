@@ -29,6 +29,10 @@ _allItems append [
     "ACE_elasticBandage",
     "ACE_quikclot",
 
+    "ACE_salineIV",
+    "ACE_salineIV_500",
+    "ACE_salineIV_250",
+
     "ACE_tourniquet",
     "ACE_morphine"
 ];
@@ -39,7 +43,7 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         "ACE_bodyBag",
         "ACE_surgicalKit",
         "adv_aceCPR_AED",
-        "TB_Item_liveMonitor",
+        //"TB_Item_liveMonitor",
 
         "ACE_epinephrine",
         "ACE_atropine",
