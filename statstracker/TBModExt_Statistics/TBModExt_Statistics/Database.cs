@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Data.SQLite;
+using System.IO;
 using System.Text;
 
 namespace TBModExt_Statistics
@@ -11,18 +13,18 @@ namespace TBModExt_Statistics
 
         public static SQLiteConnection initDatabase()
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=D:/Arma3mods/@TBMod/statistics.sqlite;Version=3;");
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source="+ Environment.GetEnvironmentVariable("TBModExt_Statstracker") + "/statistics.sqlite;Version=3;");
             dbConnection.Open();
 
-            SQLiteCommand command = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_players (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT)", dbConnection);
+            SQLiteCommand command = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_players (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT, pgroup TEXT, prole TEXT)", dbConnection);
             command.ExecuteNonQueryAsync();
             command.Dispose();
 
-            SQLiteCommand command2 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_vehicle (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, vehicle TEXT,unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT)", dbConnection);
+            SQLiteCommand command2 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_vehicle (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, vehicle TEXT,unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT, pgroup TEXT, prole TEXT)", dbConnection);
             command2.ExecuteNonQueryAsync();
             command2.Dispose();
             
-            SQLiteCommand command3 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS medical (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, unitnamecaller TEXT, uuidcaller TEXT, unitnametarget TEXT, uuidtarget TEXT, selection TEXT, treatment TEXT)", dbConnection);
+            SQLiteCommand command3 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS medical (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, unitnamecaller TEXT, uuidcaller TEXT, unitnametarget TEXT, uuidtarget TEXT, selection TEXT, treatment TEXT, groupcaller TEXT, rolecaller TEXT, grouptarget TEXT, roletarget TEXT)", dbConnection);
             command3.ExecuteNonQueryAsync();
             command3.Dispose();
 
@@ -37,7 +39,7 @@ namespace TBModExt_Statistics
         {
             using (SQLiteCommand command = new SQLiteCommand(connection))
             {
-                command.CommandText = "INSERT INTO shots_players (time, missionname, unitname, uuid, weapon, mode) VALUES (Datetime('now'), @missionname, @unitname, @uuid, @weapon, @mode)";
+                command.CommandText = "INSERT INTO shots_players (time, missionname, unitname, uuid, weapon, mode, pgroup, prole) VALUES (Datetime('now'), @missionname, @unitname, @uuid, @weapon, @mode, @pgroup, @prole)";
                 command.Prepare();
 
                 command.Parameters.AddWithValue("@missionname", missionname);
@@ -45,6 +47,8 @@ namespace TBModExt_Statistics
                 command.Parameters.AddWithValue("@uuid", values[1]);
                 command.Parameters.AddWithValue("@weapon", values[2]);
                 command.Parameters.AddWithValue("@mode", values[3]);
+                command.Parameters.AddWithValue("@pgroup", values[4]);
+                command.Parameters.AddWithValue("@prole", values[5]);
                 command.ExecuteNonQuery();
             }
         }
@@ -53,7 +57,7 @@ namespace TBModExt_Statistics
         {
             using (SQLiteCommand command = new SQLiteCommand(connection))
             {
-                command.CommandText = "INSERT INTO shots_vehicle (time, missionname, vehicle , unitname, uuid, weapon, mode) VALUES (Datetime('now'), @missionname, @vehicle, @unitname, @uuid, @weapon, @mode)";
+                command.CommandText = "INSERT INTO shots_vehicle (time, missionname, vehicle , unitname, uuid, weapon, mode, pgroup, prole) VALUES (Datetime('now'), @missionname, @vehicle, @unitname, @uuid, @weapon, @mode, @pgroup, @prole)";
                 command.Prepare();
 
                 command.Parameters.AddWithValue("@missionname", missionname);
@@ -62,6 +66,8 @@ namespace TBModExt_Statistics
                 command.Parameters.AddWithValue("@uuid", values[2]);
                 command.Parameters.AddWithValue("@weapon", values[3]); 
                 command.Parameters.AddWithValue("@mode", values[4]);
+                command.Parameters.AddWithValue("@pgroup", values[5]);
+                command.Parameters.AddWithValue("@prole", values[6]);
                 command.ExecuteNonQuery();
             }
         }
@@ -70,7 +76,7 @@ namespace TBModExt_Statistics
         {
             using (SQLiteCommand command = new SQLiteCommand(connection))
             {
-                command.CommandText = "INSERT INTO medical (time, missionname, unitnamecaller, uuidcaller, unitnametarget, uuidtarget, selection, treatment) VALUES (Datetime('now'), @missionname, @unitnamecaller, @uuidcaller, @unitnametarget, @uuidtarget, @selection, @treatment)";
+                command.CommandText = "INSERT INTO medical (time, missionname, unitnamecaller, uuidcaller, unitnametarget, uuidtarget, selection, treatment, groupcaller, rolecaller, grouptarget, roletarget) VALUES (Datetime('now'), @missionname, @unitnamecaller, @uuidcaller, @unitnametarget, @uuidtarget, @selection, @treatment, @groupcaller, @rolecaller, @grouptarget, @roletarget )";
                 command.Prepare();
 
                 command.Parameters.AddWithValue("@missionname", missionname);
@@ -80,6 +86,10 @@ namespace TBModExt_Statistics
                 command.Parameters.AddWithValue("@uuidtarget", values[3]); 
                 command.Parameters.AddWithValue("@selection", values[4]);
                 command.Parameters.AddWithValue("@treatment", values[5]);
+                command.Parameters.AddWithValue("@groupcaller", values[6]);
+                command.Parameters.AddWithValue("@rolecaller", values[7]);
+                command.Parameters.AddWithValue("@grouptarget", values[8]);
+                command.Parameters.AddWithValue("@roletarget", values[9]);
                 command.ExecuteNonQuery();
             }
         }
