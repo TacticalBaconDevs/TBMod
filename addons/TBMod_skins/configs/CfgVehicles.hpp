@@ -36,8 +36,7 @@ class CfgVehicles
     class Offroad_02_unarmed_base_F;
     class Offroad_02_LMG_base_F;
     class Offroad_02_AT_base_F;
-    class RHS_UH60M;
-
+    
     ///////////////////////Polizei Uniformen//////////////////////////
 
     class TB_Uniform_Sek: B_Soldier_F
@@ -164,16 +163,18 @@ class CfgVehicles
         };
     };
 
-    class TB_Vehicles_USA_UH60_MEV: RHS_UH60M
+    class TB_Vehicles_USA_Pandur: I_APC_Wheeled_03_cannon_F
     {
-        displayName = "UH-60 MEV";
+        displayName = "Pandur Sand";
         author = "Eron";
         addCategory(USA);
         hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_UH-60_0.paa",
-            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_UH-60_1.paa",
-            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_UH-60_2.paa",
-            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_UH-60_3.paa"                      
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa",
+            "",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa"
         };
     };
     
