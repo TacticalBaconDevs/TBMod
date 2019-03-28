@@ -22,6 +22,6 @@ class CfgVehicles
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
         };
-    }    
+    };
 };
 
