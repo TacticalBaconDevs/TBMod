@@ -36,7 +36,7 @@ class CfgVehicles
     class Offroad_02_unarmed_base_F;
     class Offroad_02_LMG_base_F;
     class Offroad_02_AT_base_F;
-    
+
     ///////////////////////Polizei Uniformen//////////////////////////
 
     class TB_Uniform_Sek: B_Soldier_F
@@ -177,7 +177,6 @@ class CfgVehicles
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa"
         };
     };
-    
 
     ///////////////////////BW Fahrzeuge//////////////////////////
 
