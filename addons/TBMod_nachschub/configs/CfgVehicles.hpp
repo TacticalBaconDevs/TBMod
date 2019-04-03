@@ -258,18 +258,25 @@ class CfgVehicles
 
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,60);
-            MACRO_ADDITEM(ACE_elasticBandage,60);
+            MACRO_ADDITEM(ACE_quikclot,30);
+            MACRO_ADDITEM(ACE_elasticBandage,30);
+            MACRO_ADDITEM(ACE_fieldDressing,60);
+            MACRO_ADDITEM(ACE_packingBandage,30);
 
             MACRO_ADDITEM(ACE_tourniquet,4);
 
-            MACRO_ADDITEM(ACE_bloodIV_500,10);
-            MACRO_ADDITEM(ACE_bloodIV,5);
+            MACRO_ADDITEM(ACE_plasmaIV_250,8);
+            MACRO_ADDITEM(ACE_plasmaIV_500,4);
+            MACRO_ADDITEM(ACE_plasmaIV,2);
+            MACRO_ADDITEM(ACE_salineIV_500,4);
+            MACRO_ADDITEM(ACE_salineIV,2);
 
-            MACRO_ADDITEM(ACE_morphine,20);
-            MACRO_ADDITEM(ACE_epinephrine,10);
+            MACRO_ADDITEM(ACE_morphine,8);
+            MACRO_ADDITEM(ACE_epinephrine,16);
+            MACRO_ADDITEM(ACE_atropine,20);
+            MACRO_ADDITEM(ACE_adenosine,16);
 
-            MACRO_ADDITEM(ACE_surgicalKit,1);
+            MACRO_ADDITEM(ACE_surgicalKit,2);
         };
     };
 
@@ -279,18 +286,28 @@ class CfgVehicles
 
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,60);
-            MACRO_ADDITEM(ACE_elasticBandage,60);
+            MACRO_ADDITEM(ACE_quikclot,50);
+            MACRO_ADDITEM(ACE_elasticBandage,50);
+            MACRO_ADDITEM(ACE_fieldDressing,90);
+            MACRO_ADDITEM(ACE_packingBandage,50);
 
             MACRO_ADDITEM(ACE_tourniquet,4);
 
-            MACRO_ADDITEM(ACE_bloodIV_500,10);
-            MACRO_ADDITEM(ACE_bloodIV,5);
+            MACRO_ADDITEM(ACE_bloodIV_250,8);
+            MACRO_ADDITEM(ACE_bloodIV_500,4);
+            MACRO_ADDITEM(ACE_bloodIV,2);
+            MACRO_ADDITEM(ACE_plasmaIV_250,16);
+            MACRO_ADDITEM(ACE_plasmaIV_500,8);
+            MACRO_ADDITEM(ACE_plasmaIV,4);
+            MACRO_ADDITEM(ACE_salineIV_500,8);
+            MACRO_ADDITEM(ACE_salineIV,4);
 
-            MACRO_ADDITEM(ACE_morphine,20);
-            MACRO_ADDITEM(ACE_epinephrine,10);
+            MACRO_ADDITEM(ACE_morphine,10);
+            MACRO_ADDITEM(ACE_epinephrine,20);
+            MACRO_ADDITEM(ACE_atropine,20);
+            MACRO_ADDITEM(ACE_adenosine,16);
 
-            MACRO_ADDITEM(ACE_surgicalKit,1);
+            MACRO_ADDITEM(ACE_surgicalKit,5);
         };
     };
 
@@ -400,7 +417,10 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
 
+            MACRO_ADDITEM(ACE_rope36,10);
+
             MACRO_ADDITEM(ACE_wirecutter,2);
+            MACRO_ADDITEM(ToolKit,2);
             MACRO_ADDITEM(ACE_MapTools,5);
 
             MACRO_ADDITEM(Binocular,2);
