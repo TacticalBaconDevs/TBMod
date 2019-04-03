@@ -91,6 +91,22 @@ if (_architecture != "x64") then
 }
 forEach allCurators;
 
+{
+    private _zeus = getAssignedCuratorUnit _x;
+
+    if (!isNull _zeus && {player == _zeus} && {TFAR_pluginTimeout < 15}) then
+    {
+        [] spawn {
+            waitUntil {
+                systemChat "[TB_main] Dein TFAR Plugin Timeout ist weniger als 15s. Du solltest dies so schnell wie möglich ändern."; 
+                uiSleep 60; 
+                TFAR_pluginTimeout >= 15
+            }; 
+            systemChat "[TB_main] TFAR PluginTimeout ist nun 15 oder mehr. ";
+        };
+    };
+}
+forEach allCurators;
 
 // ### Entschärf Fix
 ["ACE_DefuseObject", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
