@@ -306,7 +306,11 @@ private _mg_munition = [
 
 private _pilot_munition = [
     "BWA3_40Rnd_46x30_MP7",
-    "BWA3_40Rnd_46x30_MP7_SD"
+    "BWA3_40Rnd_46x30_MP7_SD",
+
+    "hlc_30Rnd_9x19_B_MP5",
+    "hlc_30Rnd_9x19_GD_MP5",
+    "hlc_30Rnd_9x19_SD_MP5"
 ];
 
 private _sniper_munition = [
@@ -440,8 +444,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "arzt":
     {
         _allgemein +
-        _allgemein_magazine +
-        _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
@@ -451,7 +453,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _pilot_munition +
         [
+            // Waffen
+            "hlc_smg_mp5sd5",
+            "hlc_smg_mp5sd6",
+
             // Weste
             "BWA3_Vest_Medic_Tropen",
             "BWA3_Vest_Medic_Fleck",

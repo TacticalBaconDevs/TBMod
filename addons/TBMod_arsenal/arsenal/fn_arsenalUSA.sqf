@@ -227,7 +227,6 @@ private _allgemein_visiere = [
     "rhsusf_acc_eotech_552_d",
     "rhsusf_acc_eotech_552_wd",
     "rhsusf_acc_compm4",
-    "rhsusf_acc_ACOG_RMR",
     "rhsusf_acc_ACOG_d",
     "rhsusf_acc_ACOG_wd"
     //"rhsusf_acc_eotech_xps3"
@@ -689,8 +688,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "arzt":
     {
         _allgemein +
-        _allgemein_gewehre +
-        _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
@@ -700,7 +697,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _pilot_munition +
         [
+            // Waffen
+            "rhsusf_weap_MP7A2",
+            "rhsusf_weap_MP7A2_grip3",
+            "rhs_weap_M590_8RD",
+            "rhs_weap_M590_5RD",
+            // ### Munition
+            "rhsusf_8Rnd_00Buck",
+            "rhsusf_8Rnd_Slug",
+            "rhsusf_5Rnd_00Buck",
+            "rhsusf_5Rnd_Slug",
+
             // Westen
             "rhsusf_iotv_ocp_Medic",
             "rhsusf_iotv_ucp_Medic",
@@ -964,6 +973,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         [
+            //Visiere
+            "rhsusf_acc_ACOG_RMR",
+
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
