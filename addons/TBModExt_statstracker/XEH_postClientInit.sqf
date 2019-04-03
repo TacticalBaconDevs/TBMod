@@ -24,6 +24,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
     waitUntil {!isNull player && isPlayer player};
     TB_ReporterClientMedical = player;
     publicVariable "TB_ReporterClientMedical";
+    (format ["[TBMod_statstracker] %1 is using the Statstracker", TB_ReporterClientMedical]) remoteExecCall ["systemChat"];
 };
 
 
