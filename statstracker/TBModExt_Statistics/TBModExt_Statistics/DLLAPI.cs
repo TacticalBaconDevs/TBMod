@@ -34,10 +34,8 @@ namespace TBModExt_Statistics
             try
             {
                 output.Append(function);
-                Database.initDatabase();
-                Database.missionname = function + "_" + DateTime.Now.ToString("dd-MM-yyyy_HH:mm:ss");
+                Database.initDatabase(function + "_" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss"));
                 error = false;
-                output.Append(Database.missionname);
             }
             
             catch (Exception e)
@@ -64,9 +62,6 @@ namespace TBModExt_Statistics
 
                 if (Database.connection == null)
                     return 2;
-
-                if (Database.missionname == null)
-                    return 3;
 
                 if (function == "Player")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPlayerShot), args);

@@ -32,9 +32,8 @@ if !(call TB_fnc_isTBMission) exitWith {};
         {
             _pos = getPos _x;
             "TBMODExt_Statistics" callExtension ["Position", [text name _x,text getPlayerUID _x,text str (_pos select 0), text str (_pos select 1), text groupid group _X, text (_x getVariable ["TB_Rolle",""])]];
-            systemChat str getpos _x;
-            uiSleep 5;
         } forEach allPlayers;
+        uiSleep 5;
     }
 };
 
