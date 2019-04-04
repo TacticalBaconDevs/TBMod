@@ -32,6 +32,10 @@ class CfgFunctions
             {
                 file = "\TBMod_warlords\replacement\fn_WLInit.sqf";
             };
+            class WLClientInit
+            {
+                file = "\TBMod_warlords\replacement\fn_WLClientInit.sqf";
+            };
         };
     };
 };

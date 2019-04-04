@@ -12,7 +12,7 @@ player addEventHandler ["FIRED", {
 
     params ["", "_weapon", "", "", "_ammo"];
 
-    if (_ammo == "rhs_ammo_12g_slug" && {_weapon in ["rhs_weap_M590_8RD","rhs_weap_M590_5RD"]}) then {
+    if (_ammo == "rhs_ammo_12g_slug" && {_weapon in ["rhs_weap_M590_8RD", "rhs_weap_M590_5RD"]}) then {
         private _objs = [cursorObject, "GEOM"] intersect [asltoagl (eyepos player), screentoworld [0.5, 0.5]];
         if !(_objs isEqualTo []) then {
             (_objs select 0) params ["_door", "_distance"];

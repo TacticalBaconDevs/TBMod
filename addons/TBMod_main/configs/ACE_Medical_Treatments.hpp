@@ -19,12 +19,29 @@ class ACE_Medical_Actions {
         };
         class BloodIV: fieldDressing {
             treatmentTime = "[7] call TB_fnc_calcTreatmentTime";
+            displayName = "Blutransfusion (2000ml)";
+        };
+        class BloodIV_500: BloodIV {
+            displayName = "Blutransfusion (1000ml)";
+        };
+        class BloodIV_250: BloodIV {
+            displayName = "Blutransfusion (500ml)";
         };
         class PlasmaIV: BloodIV {
             treatmentTime = "[11] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
         };
         class SalineIV: BloodIV {
             treatmentTime = "[17] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
+            displayName = "Kochsalztransfusion (500ml)";
+            requiredMedic = 0;
+        };
+        class SalineIV_500: SalineIV {
+            displayName = "Kochsalztransfusion (250ml)";
+            requiredMedic = 0;
+        };
+        class SalineIV_250: SalineIV {
+            displayName = "Kochsalztransfusion (125ml)";
+            requiredMedic = 0;
         };
         class SurgicalKit: fieldDressing {
             treatmentTime = "[count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5] call TB_fnc_calcTreatmentTime";
@@ -104,7 +121,7 @@ class ACE_Medical_Advanced {
                 };
                 class AvulsionsLarge: Avulsions {
                     effectiveness = 0.75;
-                    reopeningChance = 1;
+                    reopeningChance = 0.9;
                     reopeningMaxDelay = 360;
                 };
 
@@ -190,13 +207,13 @@ class ACE_Medical_Advanced {
                 class velocityWoundMinor: velocityWound {};
                 class velocityWoundMedium: velocityWound {
                     effectiveness = 1;
-                    reopeningChance = 0.8;
+                    reopeningChance = 0.7;
                     reopeningMinDelay = 240;
-                    reopeningMaxDelay = 660;
+                    reopeningMaxDelay = 1080;
                 };
                 class velocityWoundLarge: velocityWound {
                     effectiveness = 0.75;
-                    reopeningChance = 1;
+                    reopeningChance = 0.9;
                     reopeningMaxDelay = 660;
                 };
 
@@ -247,7 +264,7 @@ class ACE_Medical_Advanced {
                 };
                 class AvulsionsMinor: Avulsions {};
                 class AvulsionsMedium: Avulsions {
-                    effectiveness = 0.5;
+                    effectiveness = 0.25;
                     reopeningChance = 0.4;
                     reopeningMaxDelay = 1320;
                 };
@@ -525,13 +542,13 @@ class ACE_Medical_Advanced {
                 };
                 class AvulsionsMinor: Avulsions {};
                 class AvulsionsMedium: Avulsions {
-                    effectiveness = 0.25;
+                    effectiveness = 0.5;
                     reopeningChance = 0.7;
                     reopeningMaxDelay = 1860;
                 };
                 class AvulsionsLarge: Avulsions {
                     effectiveness = 0.25;
-                    reopeningChance = 1;
+                    reopeningChance = 0.8;
                     reopeningMinDelay = 780;
                     reopeningMaxDelay = 960;
                 };
@@ -611,13 +628,13 @@ class ACE_Medical_Advanced {
                 };
                 class velocityWoundMinor: velocityWound {};
                 class velocityWoundMedium: velocityWound {
-                    effectiveness = 0.25;
+                    effectiveness = 0.5;
                     reopeningChance = 0.7;
                     reopeningMaxDelay = 1860;
                 };
                 class velocityWoundLarge: velocityWound {
                     effectiveness = 0.25;
-                    reopeningChance = 1;
+                    reopeningChance = 0.8;
                     reopeningMinDelay = 780;
                     reopeningMaxDelay = 960;
                 };

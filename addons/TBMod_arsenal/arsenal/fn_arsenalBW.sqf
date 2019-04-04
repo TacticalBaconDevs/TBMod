@@ -10,19 +10,6 @@ private _allgemein = [
     "BWA3_FieldPack_Fleck",
     "BWA3_FieldPack_Tropen",
     "B_Parachute",
-    // ### LR-Funke
-    "TFAR_rt1523g_big_bwmod",
-    "TFAR_rt1523g_big_bwmod_tropen",
-    // "TFAR_rt1523g_big",
-    // "TFAR_rt1523g_big_rhs",
-    "OPXT_blk_1523",    // schwarz
-    "OPXT_aor1_1523",   // sand
-    "OPXT_oga_1523",    // grün
-    "OPXT_scorpion_1523",
-    "OPXT_m81_1523",
-    "OPXT_multicam_1523",
-    "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523",   //grau2
 
     // Gesichtsbedeckung
     "BWA3_G_Combat_clear",
@@ -116,7 +103,10 @@ private _allgemein_gewehre = [
     "hlc_rifle_G36KV",
     "hlc_rifle_g36KTac",
     "hlc_rifle_G36V",
-    "hlc_rifle_G36TAC"
+    "hlc_rifle_G36TAC",
+    "BWA3_G36A1_tan",
+    "BWA3_G36A2_tan",
+    "BWA3_G36KA3_tan"
 ];
 
 private _allgemein_magazine = [
@@ -125,7 +115,11 @@ private _allgemein_magazine = [
     "hlc_30rnd_556x45_SPR_G36",
     "hlc_30rnd_556x45_Tracers_G36",
     "hlc_30rnd_556x45_MDIM_G36",
-    "hlc_30rnd_556x45_TDIM_G36"
+    "hlc_30rnd_556x45_TDIM_G36",
+    "BWA3_30Rnd_556x45_G36_Tracer",
+    "BWA3_30Rnd_556x45_G36_Tracer_Dim",
+    "BWA3_30Rnd_556x45_G36",
+    "BWA3_30Rnd_556x45_G36_SD"
 ];
 
 private _allgemein_visiere = [
@@ -253,7 +247,10 @@ private _grenadier_gewehr = [
     "hlc_rifle_G36A1AG36",
     "hlc_rifle_G36E1AG36",
     "HLC_Rifle_G36KSKAG36",
-    "hlc_rifle_G36VAG36"
+    "hlc_rifle_G36VAG36",
+    "BWA3_G36A1_AG40_tan",
+    "BWA3_G36A2_AG40_tan",
+    "BWA3_G36A3_AG40_tan"
 ];
 
 private _grenadier_munition = [
@@ -306,7 +303,11 @@ private _mg_munition = [
 
 private _pilot_munition = [
     "BWA3_40Rnd_46x30_MP7",
-    "BWA3_40Rnd_46x30_MP7_SD"
+    "BWA3_40Rnd_46x30_MP7_SD",
+
+    "hlc_30Rnd_9x19_B_MP5",
+    "hlc_30Rnd_9x19_GD_MP5",
+    "hlc_30Rnd_9x19_SD_MP5"
 ];
 
 private _sniper_munition = [
@@ -343,6 +344,22 @@ private _gepaeck_gross = [
     "BWA3_PatrolPack_Tropen"
 ];
 
+private _lrFunken = [
+    // ### LR-Funke
+    "TFAR_rt1523g_big_bwmod",
+    "TFAR_rt1523g_big_bwmod_tropen",
+    // "TFAR_rt1523g_big",
+    // "TFAR_rt1523g_big_rhs",
+    "OPXT_blk_1523",    // schwarz
+    "OPXT_aor1_1523",   // sand
+    "OPXT_oga_1523",    // grün
+    "OPXT_scorpion_1523",
+    "OPXT_m81_1523",
+    "OPXT_multicam_1523",
+    "OPXT_at_au_1523",  // grau1
+    "OPXT_ogag_1523"   //grau2
+];
+
 private _items = [];
 
 // #################################################################
@@ -370,6 +387,7 @@ private _items = [];
 // _aaat_munition                    - AtiTank Munition
 // _gepaeck_mittel                    - Seesack
 // _gepaeck_gross                    - Carryall
+// _lrFunken                         - LR Funken
 
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
@@ -386,8 +404,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
-        _grenadier_gewehr +
-        _grenadier_munition +
+        _lrFunken +
         [
             // Weste
             "BWA3_Vest_Leader_Fleck",
@@ -440,8 +457,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "arzt":
     {
         _allgemein +
-        _allgemein_magazine +
-        _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
@@ -451,10 +466,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _lrFunken +
+        _pilot_munition +
         [
+            // Waffen
+            "hlc_smg_mp5sd5",
+            "hlc_smg_mp5sd6",
+
             // Weste
             "BWA3_Vest_Medic_Tropen",
             "BWA3_Vest_Medic_Fleck",
+
+            // Waffen
+            "BWA3_MP7",
 
             // Gepäck
             "BWA3_Kitbag_Fleck_Medic",
@@ -592,6 +616,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
+        _lrFunken +
         _pilot_munition +
         [
             // Weapons
@@ -649,6 +674,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _lrFunken +
         _sniper_munition +
         _pilot_munition +
         [
@@ -657,9 +683,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "hlc_rifle_awMagnum_FDE_ghillie",
             "hlc_rifle_awMagnum_FDE",
             "BWA3_MP7",
+            // ### Geschützzubehör
+            "BWA3_muzzle_snds_Rotex_II",
 
             // ### Visiere
-            "bwa3_optic_m5xi_msr",
+            "bwa3_optic_m5xi_msr_microt2",
+            "bwa3_optic_hensoldt",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
 
@@ -702,6 +731,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _lrFunken +
         _sniper_munition +
         _pilot_munition +
         _gepaeck_mittel +
@@ -825,6 +855,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _lrFunken +
         [
             // Gepäck
             "B_UAV_01_backpack_F",

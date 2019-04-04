@@ -19,10 +19,12 @@ _unit setVariable ["TB_upDown_modus", 1];
 // Setup function
 if (isNil "TB_fnc_upDownEH") then {
     TB_fnc_upDownEH = {
+        params ["_unit"];
+
         private _unitOriginalStance = unitPos _unit;
         private _iterations = 0;
         private _time = diag_tickTime + 300;
-        ["UP", "MIDDLE"] params ["_stanceStart", "_stanceDef"];
+        ["UP", "MIDDLE"] params ["_stanceStart", "_stanceDef"]; // TODO: ggf Liegen und Hocken noch rein
 
         waitUntil
         {
@@ -50,6 +52,6 @@ _unit addEventHandler ["FiredNear", {
     if (_unit getVariable ["TB_upDown_modus", -1] <= 1) then
     {
         _unit setVariable ["TB_upDown_modus", 2];
-        [] spawn TB_fnc_upDownEH;
+        [_unit] spawn TB_fnc_upDownEH;
     };
 }];
