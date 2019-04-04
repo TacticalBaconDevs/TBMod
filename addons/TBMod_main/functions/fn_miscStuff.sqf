@@ -73,6 +73,12 @@ if (_architecture != "x64") then
 
     if (!isNull _zeus && {player == _zeus} && {isNull (getAssignedCuratorLogic _zeus)}) then
     {
+        // TFAR Timeout setzen
+        if (TFAR_pluginTimeout < 15) then {
+            ["TFAR_pluginTimeout", 15] call CBA_settings_fnc_set;
+        };
+        
+        // TODO: das scheint nicht zu gehen, killedEH?!?
         [{(getMarkerPos "respawn") distance player < 2}, {
             params ["_dir", "_pos"];
             {
@@ -91,22 +97,6 @@ if (_architecture != "x64") then
 }
 forEach allCurators;
 
-{
-    private _zeus = getAssignedCuratorUnit _x;
-
-    if (!isNull _zeus && {player == _zeus} && {TFAR_pluginTimeout < 15}) then
-    {
-        [] spawn {
-            waitUntil {
-                systemChat "[TB_main] Dein TFAR Plugin Timeout ist weniger als 15s. Du solltest dies so schnell wie möglich ändern."; 
-                uiSleep 60; 
-                TFAR_pluginTimeout >= 15
-            }; 
-            systemChat "[TB_main] TFAR PluginTimeout ist nun 15 oder mehr. ";
-        };
-    };
-}
-forEach allCurators;
 
 // ### Entschärf Fix
 ["ACE_DefuseObject", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
