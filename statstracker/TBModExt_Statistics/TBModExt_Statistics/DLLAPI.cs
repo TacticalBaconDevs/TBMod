@@ -74,8 +74,10 @@ namespace TBModExt_Statistics
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputVehicleShot), args);
                 if (function == "Medical")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputMedical), args);
+                if (function == "Position")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPosition), args);
 
-                
+
             }
             catch (Exception e)
             {
@@ -123,6 +125,20 @@ namespace TBModExt_Statistics
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
                 Database.insertValueMedical(args.ToArray());
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+                error = true;
+            }
+        }
+
+        public static void ProcessInputPosition(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValuePosition(args.ToArray());
             }
             catch (Exception e)
             {

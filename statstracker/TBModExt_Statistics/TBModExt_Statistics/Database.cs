@@ -28,6 +28,10 @@ namespace TBModExt_Statistics
             command3.ExecuteNonQueryAsync();
             command3.Dispose();
 
+            SQLiteCommand command4 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS position (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, missionname TEXT, unitname TEXT, uuid TEXT, xpos REAL, ypos REAL, pgroup TEXT, prole TEXT)", dbConnection);
+            command4.ExecuteNonQueryAsync();
+            command4.Dispose();
+
             connection = dbConnection;
             return dbConnection;
         }
@@ -90,6 +94,24 @@ namespace TBModExt_Statistics
                 command.Parameters.AddWithValue("@rolecaller", values[7]);
                 command.Parameters.AddWithValue("@grouptarget", values[8]);
                 command.Parameters.AddWithValue("@roletarget", values[9]);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void insertValuePosition(string[] values)
+        {
+            using (SQLiteCommand command = new SQLiteCommand(connection))
+            {
+                command.CommandText = "INSERT INTO position (time, missionname, unitname, uuid, xpos, ypos, pgroup, prole) VALUES (Datetime('now'), @missionname, @unitname, @uuid, @xpos, @ypos, @pgroup, @prole )";
+                command.Prepare();
+
+                command.Parameters.AddWithValue("@missionname", missionname);
+                command.Parameters.AddWithValue("@unitname", values[0]);
+                command.Parameters.AddWithValue("@uuid", values[1]);
+                command.Parameters.AddWithValue("@xpos", Convert.ToDouble(values[2]));
+                command.Parameters.AddWithValue("@ypos", Convert.ToDouble(values[3]));
+                command.Parameters.AddWithValue("@pgroup", values[4]);
+                command.Parameters.AddWithValue("@prole", values[5]);
                 command.ExecuteNonQuery();
             }
         }

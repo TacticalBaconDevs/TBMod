@@ -27,6 +27,16 @@ if !(call TB_fnc_isTBMission) exitWith {};
     (format ["[TBMod_statstracker] %1 is using the Statstracker", TB_ReporterClientMedical]) remoteExecCall ["systemChat"];
 };
 
+0 spawn {
+    while {TRUE} do {
+        {
+            _pos = getPos _x;
+            "TBMODExt_Statistics" callExtension ["Position", [text name _x,text getPlayerUID _x,text str (_pos select 0), text str (_pos select 1), text groupid group _X, text (_x getVariable ["TB_Rolle",""])]];
+            systemChat str getpos _x;
+            uiSleep 5;
+        } forEach allPlayers;
+    }
+};
 
 // Setup reviever
 ["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
