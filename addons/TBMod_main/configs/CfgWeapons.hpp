@@ -21,6 +21,14 @@ class CfgWeapons
         descriptionShort = "Wird verwendet um leichte Schmerzen zu lindern.";
         descriptionUse = "Ein Schmerzmittel um leichte Schmerzen zu behandeln.";
     };
+
+    class ACE_adenosine: ACE_ItemCore
+    {
+        displayName = "Adenosine-Autoinjektor";
+        descriptionShort = "Stabiliesiert und stärkt den Hezschlag.";
+        descriptionUse = "Stabiliesiert und stärkt den Hezschlag.";
+    };
+
     SET_NAME(ACE_bloodIV, "Blut IV (2000ml)", 10, "\z\ace\addons\medical\ui\items\bloodIV_x_ca.paa");
     SET_NAME(ACE_bloodIV_500, "Blut IV (1000ml)", 5, "\z\ace\addons\medical\ui\items\bloodIV_x_ca.paa");
     SET_NAME(ACE_bloodIV_250, "Blut IV (500ml)", 2.5, "\z\ace\addons\medical\ui\items\bloodIV_x_ca.paa");
