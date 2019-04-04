@@ -31,7 +31,8 @@ _allItems append [
     "ACE_salineIV_250",
 
     "ACE_tourniquet",
-    "ACE_morphine"
+    "ACE_atropine",
+    "ACE_adenosine"
 ];
 
 if (_rolle in ["sani", "arzt", "pilot"]) then
@@ -43,7 +44,7 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         //"TB_Item_liveMonitor",
 
         "ACE_epinephrine",
-
+        "ACE_morphine",
         "ACE_packingBandage",
         "ACE_elasticBandage",
         "ACE_quikclot",
