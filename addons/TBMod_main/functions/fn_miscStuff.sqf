@@ -71,28 +71,31 @@ if (_architecture != "x64") then
 {
     private _zeus = getAssignedCuratorUnit _x;
 
-    if (!isNull _zeus && {player == _zeus} && {isNull (getAssignedCuratorLogic _zeus)}) then
+    if (!isNull _zeus && {player == _zeus}) then
     {
         // TFAR Timeout setzen
         if (TFAR_pluginTimeout < 15) then {
             ["TFAR_pluginTimeout", 15] call CBA_settings_fnc_set;
         };
         
-        // TODO: das scheint nicht zu gehen, killedEH?!?
-        [{(getMarkerPos "respawn") distance player < 2}, {
-            params ["_dir", "_pos"];
-            {
-                {deleteVehicle _x} forEach (_pos nearObjects [_x, 5]);
-            }
-            forEach ["CAManBase", "GroundWeaponHolder", "WeaponHolderSimulated"];
+        if (isNull (getAssignedCuratorLogic _zeus)) then
+        {
+            // TODO: das scheint nicht zu gehen, killedEH?!?
+            [{(getMarkerPos "respawn") distance player < 2}, {
+                params ["_dir", "_pos"];
+                {
+                    {deleteVehicle _x} forEach (_pos nearObjects [_x, 5]);
+                }
+                forEach ["CAManBase", "GroundWeaponHolder", "WeaponHolderSimulated"];
 
-            player setDir _dir;
-            player setPos _pos;
-        }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+                player setDir _dir;
+                player setPos _pos;
+            }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
 
-        systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
-        forceRespawn player;
-        setPlayerRespawnTime 1; // fix for Hardsettings
+            systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
+            forceRespawn player;
+            setPlayerRespawnTime 1; // fix for Hardsettings
+        };
     };
 }
 forEach allCurators;
