@@ -52,6 +52,6 @@ _unit addEventHandler ["FiredNear", {
     if (_unit getVariable ["TB_upDown_modus", -1] <= 1) then
     {
         _unit setVariable ["TB_upDown_modus", 2];
-        [_unit] call TB_fnc_upDownEH;
+        [_unit] spawn TB_fnc_upDownEH;
     };
 }];
