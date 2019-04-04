@@ -15,31 +15,33 @@ class ACE_Medical_Actions {
         };
         class Atropine: Morphine { // Ketamin
             displayName = "Ketamin injizieren";
-            displayNameProgress = "Ketamin injizieren...";
+            displayNameProgress = "Ketamin injizieren";
         };
         class BloodIV: fieldDressing {
             treatmentTime = "[7] call TB_fnc_calcTreatmentTime";
-            displayName = "Give Blood IV (2000ml)";
+            displayName = "Blutransfusion (2000ml)";
         };
         class BloodIV_500: BloodIV {
-            displayName = "Give Blood IV (1000ml)";
+            displayName = "Blutransfusion (1000ml)";
         };
         class BloodIV_250: BloodIV {
-            displayName = "Give Blood IV (500ml)";
+            displayName = "Blutransfusion (500ml)";
         };
         class PlasmaIV: BloodIV {
             treatmentTime = "[11] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
         };
         class SalineIV: BloodIV {
             treatmentTime = "[17] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
-            displayName = "Give Blood IV (500ml)";
+            displayName = "Kochsalztransfusion (500ml)";
             requiredMedic = 0;
         };
         class SalineIV_500: SalineIV {
-            displayName = "Give Blood IV (250ml)";
+            displayName = "Kochsalztransfusion (250ml)";
+            requiredMedic = 0;
         };
         class SalineIV_250: SalineIV {
-            displayName = "Give Blood IV (125ml)";
+            displayName = "Kochsalztransfusion (125ml)";
+            requiredMedic = 0;
         };
         class SurgicalKit: fieldDressing {
             treatmentTime = "[count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5] call TB_fnc_calcTreatmentTime";

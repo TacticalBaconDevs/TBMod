@@ -25,8 +25,8 @@ class CfgWeapons
     class ACE_adenosine: ACE_ItemCore
     {
         displayName = "Adenosin-Autoinjektor";
-        descriptionShort = "Stabilisiert und stärkt den Herzschlag.";
-        descriptionUse = "Stabilisiert und stärkt den Herzschlag.";
+        descriptionShort = "Stabilisiert den Herzschlag.";
+        descriptionUse = "Stabilisiert den Herzschlag.";
     };
 
     SET_NAME(ACE_bloodIV, "Blut IV (2000ml)", 10, "\z\ace\addons\medical\ui\items\bloodIV_x_ca.paa");
