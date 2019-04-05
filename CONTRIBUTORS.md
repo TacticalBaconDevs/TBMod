@@ -1,6 +1,6 @@
 # Contributors
 - Eric van Fandenfart (Verwaltung, Scripts, Reviews)
-- Eron (Konzertbearbeitung, Skins, Tests)
+- Eron (Konzeptbearbeitung, Skins, Tests)
 - IDarky (Ideen, Scripts)
-- Schwaggot (Ideen, neue Einflüsse)
+- Schwaggot (Ideen, neue EinflÃ¼sse)
 - mordl, BenZockt, Nimrod, BeLink, Jojo, Culli
