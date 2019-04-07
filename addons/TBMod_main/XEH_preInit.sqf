@@ -15,15 +15,15 @@ if (isNil "TB_fpsMonitor_zeus") then {TB_fpsMonitor_zeus = true};
 if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
 if (isNil "TB_debug_lvl") then {TB_debug_lvl = 0};
 
-["CAManBase", "Local", {
-    params ["_entity", "_isLocal"];
+// ### RECHTE & ChatCommands
+TB_lvl3 = compileFinal (str [
+    "_SP_PLAYER_",
+    "76561198029318101", /* shukari */
+    "76561198053478498", /* Sponst */
+    "76561198040057152", /* Culli */
+    "76561198047437015" /* BeLink */
+]);
 
-    if (_isLocal) then
-    {
-        // HeadlessClient - setGroupOwner Fix
-        if ((uniform _entity) isEqualTo "") then //((getUnitLoadout _entity) isEqualTo [[],[],[],[],[],[],"","",[],["","","","","",""]])
-        {
-            _entity setUnitLoadout (typeOf _entity);
-        };
-    };
-}] call CBA_fnc_addClassEventHandler;
+TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
+    "76561198066861232" /* Darky */
+]));
