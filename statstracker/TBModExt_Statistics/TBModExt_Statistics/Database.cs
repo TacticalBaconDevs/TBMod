@@ -15,19 +15,19 @@ namespace TBModExt_Statistics
             SQLiteConnection dbConnection = new SQLiteConnection("Data Source="+ Environment.GetEnvironmentVariable("TBModExt_Statstracker") + "/" + missionname + ".sqlite;Version=3;");
             dbConnection.Open();
 
-            SQLiteCommand command = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_players (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT, pgroup TEXT, prole TEXT)", dbConnection);
+            SQLiteCommand command = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_players (time DateTime, unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT, pgroup TEXT, prole TEXT)", dbConnection);
             command.ExecuteNonQueryAsync();
             command.Dispose();
 
-            SQLiteCommand command2 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_vehicle (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, vehicle TEXT,unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT, pgroup TEXT, prole TEXT)", dbConnection);
+            SQLiteCommand command2 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS shots_vehicle (time DateTime, vehicle TEXT,unitname TEXT, uuid TEXT, weapon TEXT, mode TEXT, pgroup TEXT, prole TEXT)", dbConnection);
             command2.ExecuteNonQueryAsync();
             command2.Dispose();
             
-            SQLiteCommand command3 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS medical (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, unitnamecaller TEXT, uuidcaller TEXT, unitnametarget TEXT, uuidtarget TEXT, selection TEXT, treatment TEXT, groupcaller TEXT, rolecaller TEXT, grouptarget TEXT, roletarget TEXT)", dbConnection);
+            SQLiteCommand command3 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS medical (time DateTime, unitnamecaller TEXT, uuidcaller TEXT, unitnametarget TEXT, uuidtarget TEXT, selection TEXT, treatment TEXT, groupcaller TEXT, rolecaller TEXT, grouptarget TEXT, roletarget TEXT)", dbConnection);
             command3.ExecuteNonQueryAsync();
             command3.Dispose();
 
-            SQLiteCommand command4 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS position (id INTEGER PRIMARY KEY AUTOINCREMENT,time DateTime, unitname TEXT, uuid TEXT, xpos REAL, ypos REAL, pgroup TEXT, prole TEXT)", dbConnection);
+            SQLiteCommand command4 = new SQLiteCommand("CREATE TABLE IF NOT EXISTS position (time DateTime, unitname TEXT, uuid TEXT, xpos REAL, ypos REAL, pgroup TEXT, prole TEXT)", dbConnection);
             command4.ExecuteNonQueryAsync();
             command4.Dispose();
 
