@@ -21,4 +21,5 @@ builder/bin
 builder/.classpath
 builder/.project
 builder/.settings
-builder/bin
+builder/build
+builder.cfg
