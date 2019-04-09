@@ -45,9 +45,6 @@ public class App {
 		BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		StringBuilder incaserror = new StringBuilder();
 		while ((line = input.readLine()) != null) {
-			if(line.contains("WARNING")) {
-				System.out.println(line);
-			}
 			incaserror.append(line + "\n");
 		}
 		while ((line = inputerror.readLine()) != null) {
