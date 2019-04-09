@@ -15,3 +15,10 @@ statstracker/TBModExt_Statistics/.vs/
 statstracker/TBModExt_Statistics/packages/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/bin/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/obj/
+
+builder/.gradle
+builder/bin
+builder/.classpath
+builder/.project
+builder/.settings
+builder/bin
