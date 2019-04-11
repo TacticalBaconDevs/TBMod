@@ -13,6 +13,7 @@
     "Zeigt/Verbirgt die GUI",
     {
         ["diwako_dui_enable_compass", !diwako_dui_enable_compass] call CBA_settings_fnc_set;
+        ["diwako_dui_namelist", !diwako_dui_enable_compass] call CBA_settings_fnc_set;
         systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select !diwako_dui_enable_compass];
     },
     {},
