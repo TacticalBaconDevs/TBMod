@@ -7,7 +7,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
 // Default Values
 if (isNil "TB_inkognitoSystem") then {TB_inkognitoSystem = false};
 if (isNil "TB_crashHelfer") then {TB_crashHelfer = true};
-if (isNil "TB_doorBreach") then {TB_doorBreach = false};
+if (isNil "TB_doorBreach") then {TB_doorBreach = true};
 if (isNil "TB_recoilCoef") then {TB_recoilCoef = 1.0};
 if (isNil "TB_recoilStart") then {TB_recoilStart = 0.50};
 if (isNil "TB_fpsMonitor_client") then {TB_fpsMonitor_client = true};
