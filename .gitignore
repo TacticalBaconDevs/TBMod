@@ -24,3 +24,4 @@ builder/.settings
 builder/build
 builder.cfg
 /builderV2/.settings
+builderV2/bin
