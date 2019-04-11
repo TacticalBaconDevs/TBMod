@@ -6,11 +6,11 @@ import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +24,7 @@ public class Main {
 	private static final String version = "1.0.0";
 	private static Properties properties = new Properties();
 	private static Map<String, String> overrides = new HashMap<>();
+	private static boolean buildFailure = false;
 
 	public static void main(String[] args) throws Exception {
 		// per Doppelklick gestartet, neu mit Console aufrufen
@@ -61,12 +62,21 @@ public class Main {
 				processAddon(addonfolder, outputDir);
 			
 			System.out.println("Ende");
-			if (getProperty("WaitOnNormalEnd?").equals("true"))
-				while (true) {}
+			if (getProperty("WaitOnNormalEnd?").equals("true") || buildFailure)
+				requestClose();
 		} catch (Exception e) {
 			System.out.println("Es kam zu einem Fehler: ");
 			e.printStackTrace();
-			while (true) {}
+			requestClose();
+		}
+	}
+	
+	private static void requestClose() {
+		try {
+			System.out.println("Drücke Enter zum beenden.");
+			System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -85,7 +95,7 @@ public class Main {
 				String path = scanner.nextLine().trim().replace("\"", "");
 				
 				if (Files.notExists(Paths.get(path))) {
-					System.out.println("Der angegebene Pfad exestiert nicht, bitte überprüfe ihn nochmal!");
+					System.out.println("Der angegebene Pfad existiert nicht, bitte überprüfe ihn nochmal!");
 					continue;
 				}
 				
@@ -153,12 +163,13 @@ public class Main {
 			while ((line = inputerror.readLine()) != null) {
 				incaserror.append(line + "\n");
 				if (line.contains("No Error(s)")) {
-					System.out.println("\\t> "+ addonfolder.getName() + " erfolgreich gebaut!");
+					System.out.println("\t> "+ addonfolder.getName() + " erfolgreich gebaut!");
 					error = false;
 				}
 			}
 			if (error) {
-				System.out.println("\\t!!! "+ addonfolder.getName() + " wurde nicht erfolgreich gebaut. Fehler folgt...");
+				buildFailure = true;
+				System.out.println("\t!!! "+ addonfolder.getName() + " wurde nicht erfolgreich gebaut. Fehler folgt...");
 				System.out.println(incaserror);
 			}
 		} finally {
@@ -184,19 +195,29 @@ public class Main {
 		return result;
 	}
 	
+	
+	//Sub files need to be also tested
 	public static Date getLastModified(File input) {
 		if (input.isFile())
 			return new Date(input.lastModified());
 		
-	    File[] files = input.listFiles();
-	    if (files.length == 0)
+		File[] directories = input.listFiles(file -> file.isDirectory());
+	    File[] files = input.listFiles(file -> file.isFile());
+	    
+	    if (files.length == 0 && directories.length == 0)
 	    	return new Date(input.lastModified());
 	    
-	    Arrays.sort(files, new Comparator<File>() {
-	        public int compare(File o1, File o2) {
-	            return new Long(o2.lastModified()).compareTo(o1.lastModified());
-	        }});
-	    return new Date(files[0].lastModified());
+	    Long[] moddates = new Long[directories.length+files.length];
+	    for (int i = 0; i < directories.length; i++) {
+			moddates[i] = getLastModified(directories[i]).getTime();
+		}
+	    for (int i = 0; i < files.length; i++) {
+	    	moddates[directories.length+i] = files[i].lastModified();
+		}
+	    
+	    
+	    Arrays.sort(moddates, (o1,o2) -> o2.compareTo(o1));
+	    return new Date(moddates[0]);
 	}
 	
 }
