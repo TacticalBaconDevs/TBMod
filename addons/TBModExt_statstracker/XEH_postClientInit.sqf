@@ -32,7 +32,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
         {
             _pos = getPos _x;
             "TBMODExt_Statistics" callExtension ["Position", [text name _x,text getPlayerUID _x,text str round (_pos select 0), text str round (_pos select 1), text groupid group _X, text (_x getVariable ["TB_Rolle",""])]];
-        } forEach allPlayers - entities "HeadlessClient_F";;
+        } forEach (allPlayers select {alive _x && !(_x isKindOf " HeadlessClient_F")});
         uiSleep 1;
     }
 };
