@@ -58,7 +58,7 @@ class CfgVehicles
                 {
                     displayName = $STR_PLACE_ItemBuildPlaceables;
                     exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"};
-                    // condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) > 0 && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
+                    // condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
 
                     // ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE)
 
@@ -96,7 +96,7 @@ class CfgVehicles
                 {
                     displayName = $STR_PLACE_BuildingsBuildPlaceables;
                     exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"};
-                    condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) > 0 && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
+                    condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
 
                     // ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE)
 

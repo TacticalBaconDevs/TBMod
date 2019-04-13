@@ -29,7 +29,7 @@ private _pickupAction = [
 
         deleteVehicle _target;
     },
-    {(ACE_player getVariable ['ACE_IsEngineer', 0]) > 0 && (ACE_player getVariable ['TB_rolle', '']) == 'pionier' && ("ToolKit" in (items ACE_player))},
+    {(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier' && ("ToolKit" in (items ACE_player))},
     nil,
     [_obj, _resourcen],
     nil,
