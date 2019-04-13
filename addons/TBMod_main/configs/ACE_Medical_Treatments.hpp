@@ -47,7 +47,7 @@ class ACE_Medical_Actions {
             treatmentTime = "[count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5] call TB_fnc_calcTreatmentTime";
         };
         class PersonalAidKit: fieldDressing {
-            treatmentTime = "[([_this select 1] call ace_medical_fnc_treatmentAdvanced_fullHealTreatmentTime) * 0.75] call TB_fnc_calcTreatmentTime";
+            treatmentTime = "[((_this select 1) call ace_medical_fnc_treatmentAdvanced_fullHealTreatmentTime) * 0.75] call TB_fnc_calcTreatmentTime";
         };
         class CheckPulse: fieldDressing {
             treatmentTime = "[2] call TB_fnc_calcTreatmentTime";
