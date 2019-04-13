@@ -12,12 +12,12 @@
     "TBMod_key_hideGUI",
     "Zeigt/Verbirgt die GUI",
     {
-        ["diwako_dui_enable_compass", !diwako_dui_enable_compass] call CBA_settings_fnc_set;
-        ["diwako_dui_namelist", !diwako_dui_enable_compass] call CBA_settings_fnc_set;
-        systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select !diwako_dui_enable_compass];
+        diwako_dui_main_toggled_off = !diwako_dui_main_toggled_off;
+        ["diwako_dui_main_hudToggled", [diwako_dui_main_toggled_off]] call CBA_fnc_localEvent;
+        systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select diwako_dui_main_toggled_off];
     },
     {},
-    [DIK_J, [false, false, true]] // [Shift, Strg, Alt]
+    [DIK_J, [false, true, true]] // [Shift, Strg, Alt]
 ] call CBA_fnc_addKeybind;
 
 
