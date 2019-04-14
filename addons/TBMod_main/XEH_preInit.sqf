@@ -13,7 +13,6 @@ if (isNil "TB_recoilStart") then {TB_recoilStart = 0.50};
 if (isNil "TB_fpsMonitor_client") then {TB_fpsMonitor_client = true};
 if (isNil "TB_fpsMonitor_zeus") then {TB_fpsMonitor_zeus = true};
 if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
-if (isNil "TB_debug_lvl") then {TB_debug_lvl = 0};
 
 // ### RECHTE & ChatCommands
 TB_lvl3 = compileFinal (str [
@@ -25,5 +24,19 @@ TB_lvl3 = compileFinal (str [
 ]);
 
 TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
-    "76561198066861232" /* Darky */
+    "76561198066861232", /* Darky */
+    "76561198127241859", /* Eric */
+    "76561198049880123" /* Eron */
 ]));
+
+// CBA Settings
+// https://github.com/CBATeam/CBA_A3/blob/master/addons/settings/fnc_init.sqf
+
+// if (isNil "TB_debug_lvl") then {TB_debug_lvl = 0};
+[
+    "TB_debug_lvl",
+    "SLIDER",
+    "Debug Level",
+    "TBMod",
+    [0, 3, 0, 0]
+] call CBA_Settings_fnc_init;

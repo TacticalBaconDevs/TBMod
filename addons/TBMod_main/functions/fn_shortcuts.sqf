@@ -20,24 +20,6 @@
     [DIK_J, [false, true, true]] // [Shift, Strg, Alt]
 ] call CBA_fnc_addKeybind;
 
-
-// Shortcuts für LVL2
-if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
-
-[
-    "TBMod",
-    "TBMod_key_gcam",
-    "Öffnet GCAM",
-    {
-
-        [ACE_player] spawn TB_fnc_showGCAM;
-        ["TB_informAdminsAndZeus", ["%1 hat GCAM gestartet!", profileName]] call CBA_fnc_globalEvent;
-        systemChat "GCAM gestartet!";
-    },
-    {},
-    [DIK_END, [false, true, false]] // STRG + ENDE
-] call CBA_fnc_addKeybind;
-
 [
     "TBMod",
     "TBMod_key_curatorCamEars",
@@ -54,6 +36,25 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
     },
     {},
     [DIK_END, [true, false, false]] // SHIFT + ENDE
+] call CBA_fnc_addKeybind;
+
+
+// Shortcuts für LVL2
+if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
+
+
+[
+    "TBMod",
+    "TBMod_key_gcam",
+    "Öffnet GCAM",
+    {
+
+        [ACE_player] spawn TB_fnc_showGCAM;
+        ["TB_informAdminsAndZeus", ["%1 hat GCAM gestartet!", profileName]] call CBA_fnc_globalEvent;
+        systemChat "GCAM gestartet!";
+    },
+    {},
+    [DIK_END, [false, true, false]] // STRG + ENDE
 ] call CBA_fnc_addKeybind;
 
 

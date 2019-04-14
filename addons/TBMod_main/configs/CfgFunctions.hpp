@@ -56,6 +56,19 @@ class CfgFunctions
         };
     };
 
+    // REPLACEMENT - ace3
+    class ACE3
+	{
+		tag = "ace_medical";
+		class ace_medical
+		{
+			class getBloodVolumeChange
+			{
+				file = "\TBMod_main\replacement\fn_getBloodVolumeChange.sqf";
+			};
+		};
+	};
+
     // REPLACEMENT - Experiment
     class A3_Modules
     {
@@ -66,7 +79,7 @@ class CfgFunctions
         {
             class moduleEditTerrainObject
             {
-                file = "\TBMod_main\replacement\init.sqf";
+                file = "\TBMod_main\replacement\init.sqf"; // TODO: das ist kritisch ggf in 1.90 geupdated worden
             };
         };
     };
