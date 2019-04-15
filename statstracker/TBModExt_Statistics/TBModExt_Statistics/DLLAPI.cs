@@ -1,7 +1,6 @@
 ﻿using RGiesecke.DllExport;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -59,10 +58,7 @@ namespace TBModExt_Statistics
             {
                 if (error)
                     return 1;
-
-                if (Database.connection == null)
-                    return 2;
-
+                
                 if (function == "Player")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPlayerShot), args);
                 if (function == "Vehicle")
@@ -71,6 +67,8 @@ namespace TBModExt_Statistics
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputMedical), args);
                 if (function == "Position")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPosition), args);
+                if (function == "KIPosition")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputKIPosition), args);
 
 
             }
@@ -134,6 +132,20 @@ namespace TBModExt_Statistics
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
                 Database.insertValuePosition(args.ToArray());
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+                error = true;
+            }
+        }
+
+        public static void ProcessInputKIPosition(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValueKIPosition(args.ToArray());
             }
             catch (Exception e)
             {

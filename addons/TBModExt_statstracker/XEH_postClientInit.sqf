@@ -33,18 +33,14 @@ if !(call TB_fnc_isTBMission) exitWith {};
             _pos = getPos _x;
             "TBMODExt_Statistics" callExtension ["Position", [text name _x,text getPlayerUID _x,text str round (_pos select 0), text str round (_pos select 1), text groupid group _X, text (_x getVariable ["TB_Rolle",""])]];
         } forEach (allPlayers select {alive _x && !(_x isKindOf " HeadlessClient_F")});
+        
+        {
+            _pos = getPos _x;
+            "TBMODExt_Statistics" callExtension ["KIPosition", [text name _x, text str round (_pos select 0), text str round (_pos select 1), text groupid group _X]];
+        } forEach (allUnits select {!isplayer _x});
         uiSleep 1;
     }
 };
-
-//0 spawn {
-//    for "_x" from 0 to 10240 step 1 do {
-//        for "_y" from 0 to 10240 step 1 do {
-//            s = str getTerrainHeightASL [_x, _y];
-//            systemchat ((str [_x,_y]) + s);
-//        };
-//    };
-//};
 
 // Setup reviever
 ["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
