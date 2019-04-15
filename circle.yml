@@ -7,7 +7,4 @@ jobs:
       - checkout
       - run:
           name: Validate SQF And Config style
-          command: python tools/sqf_validator.py && python tools/config_style_checker.py
-      - run:
-          name: Lint sqf code
-          command: sqflint -d addons || true    
+          command: python tools/sqf_validator.py && python tools/config_style_checker.py   
