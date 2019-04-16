@@ -161,13 +161,21 @@ namespace TBModExt_Statistics
             using (MySqlCommand command = new MySqlCommand("INSERT INTO kiposition (`time`, unitname, xpos, ypos, pgroup) VALUES (CURRENT_TIMESTAMP(), @unitname, @xpos, @ypos, @pgroup)", getDBConnection()))
             {
                 command.Prepare();
-
-                command.Parameters.AddWithValue("@unitname", values[0]);
-                command.Parameters.AddWithValue("@xpos", Convert.ToInt32(values[1]));
-                command.Parameters.AddWithValue("@ypos", Convert.ToInt32(values[2]));
-                command.Parameters.AddWithValue("@pgroup", values[3]);
-
-                command.ExecuteNonQuery();
+                command.Parameters.Add(new MySqlParameter("@unitname", MySqlDbType.Text));
+                command.Parameters.Add(new MySqlParameter("@xpos", MySqlDbType.Int32));
+                command.Parameters.Add(new MySqlParameter("@ypos", MySqlDbType.Int32));
+                command.Parameters.Add(new MySqlParameter("@pgroup", MySqlDbType.Text));
+                command.Transaction = getDBConnection().BeginTransaction();
+                for(int i = 0; i < values.Length; i=i+4)
+                {
+                    command.Parameters["@unitname"].Value = values[i];
+                    command.Parameters["@xpos"].Value = Convert.ToInt32(values[i+1]);
+                    command.Parameters["@ypos"].Value = Convert.ToInt32(values[i+2]);
+                    command.Parameters["@pgroup"].Value = values[i+3];
+                    command.ExecuteNonQuery();
+                }
+                command.Transaction.Commit();
+                
             }
         }
     }
