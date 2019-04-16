@@ -211,6 +211,9 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3",
     "rhsusf_acc_g33_xps3_tan",
     "rhsusf_acc_ACOG",
+    "rhsusf_acc_acog_rmr",
+    "rhsusf_acc_su230_mrds",
+    "rhsusf_acc_su230_mrds_c",
     //"rhsusf_acc_ACOG2",
     //"rhsusf_acc_ACOG3",
     //"rhsusf_acc_M2A1",
@@ -971,9 +974,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         [
-            //Visiere
-            "rhsusf_acc_ACOG_RMR",
-
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
