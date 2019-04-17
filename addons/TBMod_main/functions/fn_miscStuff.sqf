@@ -77,7 +77,7 @@ if (_architecture != "x64") then
         if (TFAR_pluginTimeout < 15) then {
             ["TFAR_pluginTimeout", 15] call CBA_settings_fnc_set;
         };
-        
+
         if (isNull (getAssignedCuratorLogic _zeus)) then
         {
             // TODO: das scheint nicht zu gehen, killedEH?!?
@@ -214,3 +214,10 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
     };
 }, 5] call CBA_fnc_addPerFrameHandler;
+
+
+// ### CPR/HLW Stuff
+["adv_aceCPR_evh_CPR_local", {
+    params ["_caller", "_target"];
+    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", true]};
+}] call CBA_fnc_addEventHandler;

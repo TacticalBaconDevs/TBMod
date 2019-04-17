@@ -42,6 +42,12 @@ class CfgFunctions
             file = "\TBMod_main\gcam";
             class showGCAM {};
         };
+
+        // Replacement
+        class replacement
+        {
+            file = "\TBMod_main\replacement";
+        };
     };
 
     // REPLACEMENT
