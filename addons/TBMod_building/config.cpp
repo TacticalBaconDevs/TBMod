@@ -20,3 +20,4 @@ class CfgPatches
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\CfgEden.hpp"
+#include "configs\ExtendedEventHandlers.hpp"

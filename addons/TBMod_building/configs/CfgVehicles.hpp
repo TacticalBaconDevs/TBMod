@@ -42,8 +42,17 @@
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
                     statement = "[_target] call TB_fnc_getFuel"; \
                 }; \
+                class ACE_Passengers \
+                { \
+                    displayName = "Insassen"; \
+                    condition = "alive _target || {!alive _target && count ((crew _target) select {alive _x}) > 0}"; \
+                    statement = ""; \
+                    exceptions[] = {"isNotSwimming"}; \
+                    insertChildren = "_this call ace_interaction_fnc_addPassengersActions"; \
+                }; \
             }; \
         }
+class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles
 {
@@ -205,4 +214,18 @@ class CfgVehicles
         function = "TB_fnc_moduleKranFahrzeug";
         category = "TB_categorie_zeus_building";
     };
+
+
+    // ###################### XEH aktivieren ######################
+    #define ACTIVE_XEH(CLASSE,PARENT) class CLASSE : PARENT \
+        { \
+            class EventHandlers \
+            { \
+                class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {}; \
+            }; \
+        }
+
+    class Camping_base_F;
+    ACTIVE_XEH(Land_MedicalTent_01_base_F,Camping_base_F);
+    ACTIVE_XEH(Land_MedicalTent_01_floor_base_F,Camping_base_F);
 };
