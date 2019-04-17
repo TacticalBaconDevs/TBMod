@@ -35,6 +35,7 @@ class CfgFunctions
             class forceRagdoll {};
             class attachToRelative {};
             class addBriefingEntries {};
+            class firstJoin {};
         };
 
         class gcam
