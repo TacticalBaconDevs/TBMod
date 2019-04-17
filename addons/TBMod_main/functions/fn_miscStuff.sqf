@@ -75,7 +75,7 @@ if (_architecture != "x64") then
     {
         // TFAR Timeout setzen
         if (TFAR_pluginTimeout < 15) then {
-            ["TFAR_pluginTimeout", 15] call CBA_settings_fnc_set;
+            ["TFAR_pluginTimeout", 15, 0, "client", true] call CBA_settings_fnc_set;
         };
 
         if (isNull (getAssignedCuratorLogic _zeus)) then
