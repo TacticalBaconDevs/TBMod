@@ -980,7 +980,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_Rifleman",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman"
+            "rhsusf_spcs_ucp_rifleman",
+
+            // Binocular
+            "ACE_Vector",
+
+            // Commando Mörser
+            "TB_vz99_carryWeapon",
+            "TB_vz99_HE",
+            "TB_vz99_HE_multi",
+            "TB_vz99_smokeWhite",
+            "TB_vz99_smokeRed",
+            "TB_vz99_flare"
         ]
     };
 
