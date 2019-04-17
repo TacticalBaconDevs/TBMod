@@ -4,6 +4,9 @@
 */
 if !(call TB_fnc_isTBMission) exitWith {};
 
+// Default Values
+if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
+
 // ### RECHTE & ChatCommands
 TB_lvl3 = compileFinal (str [
     "_SP_PLAYER_",
