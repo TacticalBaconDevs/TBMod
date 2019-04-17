@@ -6,4 +6,4 @@
 params ["_magazineClassname"];
 
 TB_vz99_nextReload = _magazineClassname;
-systemChat format ["Es wird %1 als nächstes geladen!", [_magazineClassname] call TB_fnc_displayName];
+systemChat format ["Es wird '%1' als nächstes geladen!", [_magazineClassname, true] call TB_fnc_displayName];
