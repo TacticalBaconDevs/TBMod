@@ -24,12 +24,12 @@ class CfgAmmo
     class TB_vz99_ammo_smokeWhite : ShotDeployBase
     {
         model = "\A3\weapons_f\ammo\shell";
-        submunitionAmmo = QGVAR(deploy_smokeWhite);
+        submunitionAmmo = "TB_vz99_deploy_smokeWhite";
     };
     class TB_vz99_ammo_smokeRed : ShotDeployBase
     {
         model = "\A3\weapons_f\ammo\shell";
-        submunitionAmmo = QGVAR(deploy_smokeRed);
+        submunitionAmmo = "TB_vz99_deploy_smokeRed";
     };
 
     // Flare:
