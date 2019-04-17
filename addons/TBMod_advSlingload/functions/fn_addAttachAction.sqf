@@ -21,7 +21,7 @@ _target addAction [
     true,
     true,
     "",
-    "!isNull (ACE_player getVariable ['TB_Rope_helper', objNull])",
+    "alive _target && !isNull (ACE_player getVariable ['TB_Rope_helper', objNull])",
     10,
     false,
     "",

@@ -45,7 +45,7 @@
                 class ACE_Passengers \
                 { \
                     displayName = "Insassen"; \
-                    condition = "alive _target || {!alive _target && count ((crew _target) select {alive _x}) > 0}"; \
+                    condition = "alive _target || (!alive _target && count ((crew _target) select {alive _x}) > 0)"; \
                     statement = ""; \
                     exceptions[] = {"isNotSwimming"}; \
                     insertChildren = "_this call ace_interaction_fnc_addPassengersActions"; \

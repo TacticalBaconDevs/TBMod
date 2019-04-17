@@ -40,7 +40,7 @@ TB_recoilID = ["ace_firedPlayer", {
     private _rested = isWeaponRested _unit;
 
     // Spezielle WaffenStats
-    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + ([2, 1] select _deploy)};
+    if (TB_cacheWeaponType == "MachineGun") then {_recoil = _recoil + 1};
     if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {_recoil = _recoil - 0.5};
 
     // Externe Einflüsse
@@ -52,9 +52,10 @@ TB_recoilID = ["ace_firedPlayer", {
     {
         (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
 
-        // silencer
-        if (_mode == "Single" && {toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"]}) then {_recoil = _recoil - 0.2};
-        if (_silencer != "" && {!(toLower _silencer in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"])}) then {_recoil = _recoil - 0.1};
+        // Silencer
+        private _muzzleHider = (toLower _silencer) in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"];
+        if (_mode == "Single" && {_muzzleHider}) then {_recoil = _recoil - 0.2};
+        if (_silencer != "" && {!_muzzleHider}) then {_recoil = _recoil - 0.1};
 
         // Grip
         if (_bipod != "" && !_deploy && _bipod != "rhsusf_acc_harris_bipod") then {_recoil = _recoil - 0.1};
