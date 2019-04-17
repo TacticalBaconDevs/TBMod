@@ -45,19 +45,26 @@ class CfgVehicles
         function = "TB_fnc_moduleNachschubAbwurf";
     };
 
+    class TB_zeus_prioSichtbarkeit : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "PrioSichtbarkeit";
+        function = "TB_fnc_modulePrioSichtbarkeit";
+    };
+
+    class TB_zeus_moduleUnflipVehicle : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Unflip Vehicle";
+        function = "TB_fnc_moduleUnflipVehicle";
+    };
+
     class TB_zeus_disablePath : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "DisablePath 4 Group";
         function = "TB_fnc_moduleDisablePath";
         category = "TB_categorie_zeus_ki";
-    };
-
-    class TB_zeus_prioSichtbarkeit : TB_zeus_base
-    {
-        scopeCurator = 2;
-        displayName = "PrioSichtbarkeit";
-        function = "TB_fnc_modulePrioSichtbarkeit";
     };
 
     class TB_zeus_handleAsPlayerMedical : TB_zeus_base

@@ -66,7 +66,7 @@ class CfgVehicles
                     ADD_VEHICLE_ITEM(Land_IntravenStand_01_2bags_F,-1,true);
                     ADD_VEHICLE_ITEM(Land_Stretcher_01_F,-1,true);
                     ADD_VEHICLE_ITEM(Land_PortableLight_double_F,-1,true);
-                    ADD_VEHICLE_ITEM(Land_MedicalTent_01_white_generic_open_F,-1,true);    //muss noch als Medizinische Einrichtung gesetzt werden
+                    ADD_VEHICLE_ITEM(Land_MedicalTent_01_white_generic_open_F,-1,true);    // muss noch als Medizinische Einrichtung gesetzt werden
                     ADD_VEHICLE_ITEM(Land_MedicalTent_01_floor_light_F,-1,true);
 
                     // Zivil
