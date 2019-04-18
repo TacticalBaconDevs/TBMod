@@ -17,7 +17,6 @@
     4:    ab welcher Entfernung werden KIs erst gelöscht [Standard: 100]
     5:    Bedingung, Sicht und Entferungscheck Pausendelay [Standard: 15]
 */
-if (!canSuspend) exitWith {_this spawn TB_fnc_deleteIfNotSeen};
 params [
         "_grp",
         ["_condition", {true}],
@@ -45,7 +44,6 @@ waitUntil
         } count _units) then
     {
         {deleteVehicle _x} forEach _units;
-        if (!isNull _grp) then {[_grp] remoteExecCall ["deleteGroup", groupOwner _grp]};
     };
 
     isNull _grp || {(units _grp) isEqualTo []}
