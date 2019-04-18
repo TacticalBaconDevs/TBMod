@@ -8,6 +8,12 @@ class CfgPatches
     {
         name = "TBMod eden";
 
+        units[] = {
+            "TB_eden_frontverlauf",
+            "TB_eden_atmoLZ",
+            "TB_eden_atmoCore"
+        };
+
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
     };

@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
-    Wiki: https://community.bistudio.com/wiki/eden_Editor:_Configuring_Attributes
+    Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
 class CfgVehicles
 {
@@ -26,7 +26,8 @@ class CfgVehicles
         };
     };
 
-    class TB_eden_base : Module_F {
+    class TB_eden_base : Module_F
+    {
         scope = 1;
         scopeCurator = 1;
         displayName = "Default TB modulename";
@@ -40,7 +41,8 @@ class CfgVehicles
         is3DEN = 1;
     };
 
-    class TB_eden_frontverlauf : TB_eden_base {
+    class TB_eden_frontverlauf : TB_eden_base
+    {
         scope = 2;
         displayName = "Frontverlauf";
         function = "TB_fnc_moduleFrontverlauf";
@@ -216,6 +218,52 @@ class CfgVehicles
                         value = "SolidBorder";
                     };
                 };
+            };
+        };
+    };
+
+    class TB_eden_atmoLZ : TB_eden_base
+    {
+        scope = 2;
+        displayName = "AtmoLZ";
+        function = "";
+        canSetArea = 0;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 0;
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\land_ca.paa";
+
+        class AttributeValues
+        {
+            isRectangle = 1;
+            size3[] = {0, 0, -1};
+        };
+    };
+
+    class TB_eden_atmoCore : TB_eden_base
+    {
+        scope = 2;
+        displayName = "AtmoCore";
+        function = "TB_fnc_moduleAtmoCore";
+        canSetArea = 0;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 0;
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\intel_ca.paa";
+
+        class AttributeValues
+        {
+            isRectangle = 1;
+            size3[] = {0, 0, -1};
+        };
+
+        class Attributes: AttributesBase
+        {
+            class makernames: Edit
+            {
+                property = "TB_eden_atmoCore_makernames";
+                displayName = "Makernames";
+                tooltip = "Markernames per Komma getrennt, Beispiel: ['marker1', 'marker2']";
+                typeName = "STRING";
+                defaultValue = "[]";
             };
         };
     };
