@@ -11,7 +11,7 @@ params [
 
 ACE_player removeItem _item;
 
-private _obj = createVehicle [_obj, [0, 0, 0], [], 0, "NONE"];
+private _obj = createVehicle [_obj, [0, 0, 0], [], 0, "CAN_COLLIDE"];
 
 [_obj, _item] call TB_fnc_initItem;
 
@@ -40,11 +40,6 @@ waitUntil {_obj distance2D _pos < 5};
 
     waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
 
-    if !(typeOf _obj in ["Land_PortableLight_single_F"]) then
-    {
-        _obj enableSimulation false;
-        [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
-    };
     [_obj, true] remoteExecCall ["hideObjectGlobal", 2];
 
     [ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation;

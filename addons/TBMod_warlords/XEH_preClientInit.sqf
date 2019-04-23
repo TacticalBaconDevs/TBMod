@@ -55,3 +55,30 @@ if !(call TB_fnc_isWLMission) exitWith {};
     [],
     true
 ] call CBA_fnc_addClassEventHandler;
+
+// MELBS - damit Opfor und Blufor
+[
+    "RHS_MELB_base",
+    "init",
+    {
+        params ["_vehicle"];
+        _vehicle setVariable ["ace_vehiclelock_lockSide", independent, true];
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
+
+// UH60 - damit Opfor und Blufor
+[
+    "RHS_UH60M_d",
+    "init",
+    {
+        params ["_vehicle"];
+        _vehicle setVariable ["ace_vehiclelock_lockSide", independent, true];
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
+

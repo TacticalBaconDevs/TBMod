@@ -351,10 +351,28 @@ class CfgVehicles
                 displayName = "Ketamin injizieren"; \
             }; \
         }
-    #define OVERRIDES ATROPINE_OVERRIDE(ACE_ArmLeft); \
-                ATROPINE_OVERRIDE(ACE_ArmRight); \
-                ATROPINE_OVERRIDE(ACE_LegLeft); \
-                ATROPINE_OVERRIDE(ACE_LegRight)
+    #define OVERRIDE_IV(CLASSE,PARENT,NAME) class CLASSE: PARENT { \
+            displayName = #NAME; \
+        }
+    #define OVERRIDE_PART(EXTR_NAME) class EXTR_NAME { \
+            class Morphine; \
+            class Atropine: Morphine { \
+                displayName = "Ketamin injizieren"; \
+            }; \
+            \
+            class fieldDressing; \
+            OVERRIDE_IV(BloodIV, fieldDressing, Blutransfusion (2000ml)); \
+            OVERRIDE_IV(BloodIV_500, BloodIV, Blutransfusion (1000ml)); \
+            OVERRIDE_IV(BloodIV_250, BloodIV, Blutransfusion (500ml)); \
+            \
+            OVERRIDE_IV(SalineIV, BloodIV, Kochsalztransfusion (500ml)); \
+            OVERRIDE_IV(SalineIV_500, SalineIV, Kochsalztransfusion (250ml)); \
+            OVERRIDE_IV(SalineIV_250, SalineIV, Kochsalztransfusion (125ml)); \
+        }
+    #define OVERRIDES OVERRIDE_PART(ACE_ArmLeft); \
+        OVERRIDE_PART(ACE_ArmRight); \
+        OVERRIDE_PART(ACE_LegLeft); \
+        OVERRIDE_PART(ACE_LegRight)
 
     class Man;
     class CAManBase: Man
@@ -363,7 +381,10 @@ class CfgVehicles
         {
             class Medical
             {
-                OVERRIDES;
+                ATROPINE_OVERRIDE(ACE_ArmLeft);
+                ATROPINE_OVERRIDE(ACE_ArmRight);
+                ATROPINE_OVERRIDE(ACE_LegLeft);
+                ATROPINE_OVERRIDE(ACE_LegRight);
             };
         };
 
@@ -383,7 +404,8 @@ class CfgVehicles
 
 
     // ###################### ACE-Minedetector ######################
-    #define SET_DETECTABLE(PARENT,CLASSES) class CLASSES : PARENT {ace_minedetector_detectable = 1;}
+    // TODO: CUP Abhängigkeit
+    /*#define SET_DETECTABLE(PARENT,CLASSES) class CLASSES : PARENT {ace_minedetector_detectable = 1;}
 
     class Small_items_NoInteractive;
     class Items_base_F;
@@ -391,18 +413,18 @@ class CfgVehicles
     class House;
     class Strategic;
 
-    SET_DETECTABLE(Small_items_NoInteractive, Explosive);
+    //SET_DETECTABLE(Small_items_NoInteractive, Explosive);
     SET_DETECTABLE(Items_base_F, Land_MetalBarrel_F);
     SET_DETECTABLE(House_Small_F, Land_MetalBarrel_empty_F);
     SET_DETECTABLE(House, Land_popelnice);
     SET_DETECTABLE(House, Land_Kontejner);
     SET_DETECTABLE(Strategic, Garbage_can);
-    SET_DETECTABLE(Strategic, Garbage_container);
+    SET_DETECTABLE(Strategic, Garbage_container);*/
 
 
     // ###################### No Uniform ######################
     class Civilian;
-    // class CAManBase;
+    //class CAManBase;
     class B_Soldier_diver_base_F;
     class C_man_1;
     class I_G_Soldier_F;
@@ -422,6 +444,9 @@ class CfgVehicles
     class O_Soldier_diver_base_F;
     class I_G_Sharpshooter_F;
     class B_Soldier_F;
+    class I_C_Soldier_Para_2_F;
+    class I_G_Soldier_LAT2_F;
+    class I_crew_F;
 
     class Civilian_F: Civilian {
         modelSides[] = {6};
@@ -636,13 +661,28 @@ class CfgVehicles
     class I_Protagonist_VR_F: I_Soldier_base_F {
         modelSides[] = {6};
     };
+    class C_Protagonist_VR_F: C_man_1 {
+        modelSides[] = {6};
+    };
     class B_G_Sharpshooter_F: I_G_Sharpshooter_F {
         modelSides[] = {6};
     };
     class O_G_Sharpshooter_F: I_G_Sharpshooter_F {
         modelSides[] = {6};
     };
+    class B_Captain_Pettka_F: B_Soldier_02_f {
+        modelSides[] = {6};
+    };
+    class B_Captain_Jay_F: B_Soldier_02_f {
+        modelSides[] = {6};
+    };
+    class I_Captain_Hladas_F: I_officer_F {
+        modelSides[] = {6};
+    };
     class Underwear_F: B_Soldier_F {
+        modelSides[] = {6};
+    };
+    class B_G_Captain_Ivan_F: I_C_Soldier_Para_2_F {
         modelSides[] = {6};
     };
     class C_man_sport_1_F: C_man_1 {
@@ -658,6 +698,18 @@ class CfgVehicles
         modelSides[] = {6};
     };
     class C_IDAP_Man_Base_F: Civilian_F {
+        modelSides[] = {6};
+    };
+    class O_A_soldier_base_F: O_officer_F {
+        modelSides[] = {6};
+    };
+    class B_G_Soldier_LAT2_F: I_G_Soldier_LAT2_F {
+        modelSides[] = {6};
+    };
+    class O_G_Soldier_LAT2_F: I_G_Soldier_LAT2_F {
+        modelSides[] = {6};
+    };
+    class I_Story_Crew_F: I_crew_F {
         modelSides[] = {6};
     };
 };

@@ -71,22 +71,31 @@ if (_architecture != "x64") then
 {
     private _zeus = getAssignedCuratorUnit _x;
 
-    if (!isNull _zeus && {player == _zeus} && {isNull (getAssignedCuratorLogic _zeus)}) then
+    if (!isNull _zeus && {player == _zeus}) then
     {
-        [{(getMarkerPos "respawn") distance player < 2}, {
-            params ["_dir", "_pos"];
-            {
-                {deleteVehicle _x} forEach (_pos nearObjects [_x, 5]);
-            }
-            forEach ["CAManBase", "GroundWeaponHolder", "WeaponHolderSimulated"];
+        // TFAR Timeout setzen
+        if (TFAR_pluginTimeout < 15) then {
+            ["TFAR_pluginTimeout", 15, 0, "client", true] call CBA_settings_fnc_set;
+        };
 
-            player setDir _dir;
-            player setPos _pos;
-        }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+        if (isNull (getAssignedCuratorLogic _zeus)) then
+        {
+            // TODO: das scheint nicht zu gehen, killedEH?!?
+            [{(getMarkerPos "respawn") distance player < 2}, {
+                params ["_dir", "_pos"];
+                {
+                    {deleteVehicle _x} forEach (_pos nearObjects [_x, 5]);
+                }
+                forEach ["CAManBase", "GroundWeaponHolder", "WeaponHolderSimulated"];
 
-        systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
-        forceRespawn player;
-        setPlayerRespawnTime 1; // fix for Hardsettings
+                player setDir _dir;
+                player setPos _pos;
+            }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+
+            systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
+            forceRespawn player;
+            setPlayerRespawnTime 1; // fix for Hardsettings
+        };
     };
 }
 forEach allCurators;
@@ -138,6 +147,18 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
             (getPlayerUID player) in (call TB_lvl3)) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
     }
 ] call CBA_fnc_addEventHandler;
+
+
+// ### Piloten Spielerschaden updaten
+["CBA_SettingChanged", {
+    params ["_setting", "_value"];
+
+    if (_setting == "ace_medical_playerDamageThreshold") then
+    {
+        TB_origin_playerDamageThreshold = ace_medical_playerDamageThreshold;
+        if (ACE_player getVariable ["TB_rolle", ""] == "pilot") then {ace_medical_playerDamageThreshold = TB_origin_playerDamageThreshold + 10};
+    };
+}] call CBA_fnc_addEventHandler;
 
 
 // ### FPS Infos
@@ -193,3 +214,10 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
     };
 }, 5] call CBA_fnc_addPerFrameHandler;
+
+
+// ### CPR/HLW Stuff
+["adv_aceCPR_evh_CPR_local", {
+    params ["_caller", "_target"];
+    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", true]};
+}] call CBA_fnc_addEventHandler;

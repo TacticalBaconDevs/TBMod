@@ -25,28 +25,34 @@ private _allItems = call (switch (_type) do
 // MEDIC STUFF
 _allItems append [
     "ACE_fieldDressing",
-    "ACE_packingBandage",
-    "ACE_elasticBandage",
-    "ACE_quikclot",
 
-    "ACE_tourniquet",
-    "ACE_morphine"
+    "ACE_atropine",
+    "ACE_adenosine",
+
+    "ACE_salineIV",
+    "ACE_salineIV_500",
+    "ACE_salineIV_250",
+
+    "ACE_tourniquet"
 ];
 
 if (_rolle in ["sani", "arzt", "pilot"]) then
 {
     _allItems append [
-        "ACE_bodyBag",
-        "ACE_surgicalKit",
-        "adv_aceCPR_AED",
-        "TB_Item_liveMonitor",
+        "ACE_packingBandage",
+        "ACE_elasticBandage",
+        "ACE_quikclot",
 
         "ACE_epinephrine",
-        "ACE_atropine",
+        "ACE_morphine",
 
         "ACE_plasmaIV",
         "ACE_plasmaIV_500",
-        "ACE_plasmaIV_250"
+        "ACE_plasmaIV_250",
+
+        "ACE_bodyBag",
+        "ACE_surgicalKit",
+        "adv_aceCPR_AED"
     ];
 };
 
@@ -54,16 +60,10 @@ if (_rolle == "arzt") then
 {
     _allItems append [
         "ACE_personalAidKit",
+
         "ACE_bloodIV",
         "ACE_bloodIV_500",
         "ACE_bloodIV_250"
-        // "ACE_salineIV",
-        // "ACE_salineIV_500",
-        // "ACE_salineIV_250",
-        // "ACE_plasmaIV",
-        // "ACE_plasmaIV_500",
-        // "ACE_plasmaIV_250",
-        // "ACE_personalAidKit",
     ];
 };
 
