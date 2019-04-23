@@ -27,6 +27,7 @@ params [
 
 _grp deleteGroupWhenEmpty true;
 _grp allowFleeing 0;
+_grp setVariable ["acex_headless_blacklist", true, true];
 
 waitUntil {uiSleep _checkPause; _grp call _condition};
 uiSleep _delay;

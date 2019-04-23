@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params ["_ftl", "_marker"];
+params ["_ftl", "_pos"];
 
 private _grp = createGroup west;
 private _units = [];
@@ -20,11 +20,12 @@ for "_i" from 1 to (3 + (random 3)) do
 
 _units joinSilent _grp;
 _grp deleteGroupWhenEmpty true;
+_grp setVariable ["acex_headless_blacklist", true, true];
 
 [_grp, {isNull objectParent (leader _this)}, 20, 200] spawn TB_fnc_deleteIfNotSeen;
 
 _grp setBehaviour (selectRandom ["CARELESS", "SAFE", "AWARE"]);
 _grp setSpeedMode (selectRandom ["UNCHANGED", "LIMITED", "NORMAL", "FULL"]);
 
-private _wp = _grp addWaypoint [getMarkerPos _marker, 0];
+private _wp = _grp addWaypoint [_pos , 0];
 _wp setWaypointStatements ["isNull objectParent this", "{deleteVehicle _x} forEach thislist"];
