@@ -20,7 +20,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     private _lzLogic = selectRandom _syncObjs;
 
     // Check for EndPoints Module
-    _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "TB_eden_atmoReinforcementEndpoint" || _x isKindOf "TB_eden_endpoint"};
+    _syncObjs = ((synchronizedObjects _lzLogic) + (synchronizedObjects _logic)) select {_x isKindOf "TB_eden_atmoReinforcementEndpoint" || _x isKindOf "TB_eden_endpoint"};
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoCore-Modul braucht mindestens ein AtmoEndpoint-Modul gesynct!"};
     private _endPoint = selectRandom _syncObjs;
 
