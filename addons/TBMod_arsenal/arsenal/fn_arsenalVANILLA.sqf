@@ -76,7 +76,6 @@ private _allgemein = [
     "ACE_NVG_Gen4",
     "ACE_CableTie",
     "ACE_IR_Strobe_Item",
-    "ACE_EarPlugs",
     "ACE_Altimeter",
     "ACE_wirecutter",
     //"ACE_Flashlight_XL50",
@@ -95,7 +94,6 @@ private _allgemein = [
     //"ACE_SpraypaintRed",
     "ACE_EntrenchingTool",
     "ACE_Sandbag_empty",
-    "ACE_SpraypaintBlack",
     "ACE_UAVBattery",
     "ACE_HuntIR_M203",
     "ACE_ConcertinaWireCoil",
@@ -564,7 +562,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "MineDetector",
             "ACE_wirecutter",
-            "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
