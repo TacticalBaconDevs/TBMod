@@ -1257,6 +1257,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _lrFunken +
         [
             // Handfeuerwaffen
             "ACE_VMH3",
