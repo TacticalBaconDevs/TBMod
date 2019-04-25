@@ -583,7 +583,6 @@ private _lrFunken = [
 ];
 
 private _moerser_munition = [
-            "TB_vz99_carryWeapon",
             "TB_vz99_HE",
             "TB_vz99_HE_multi",
             "TB_vz99_smokeWhite",
@@ -996,7 +995,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ucp_rifleman",
 
             // Binocular
-            "ACE_Vector"           
+            "ACE_Vector",
+
+            // Waffen
+            "TB_vz99_carryWeapon"           
         ]
     };
 
