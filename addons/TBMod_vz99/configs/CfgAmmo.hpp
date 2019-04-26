@@ -35,12 +35,13 @@ class CfgAmmo
     // Flare:
     class TB_vz99_ammo_flare : Flare_82mm_AMOS_White
     {
-        flareSize = 6;
-        intensity = 2000000;
-        timeToLive = 45;
+        // nutze 2te Sonnen Settings
+        //flareSize = 6;
+        //intensity = 2000000;
+        //timeToLive = 45;
     };
 
-    //HE:
+    // HE:
     class TB_vz99_ammo_he : Sh_82mm_AMOS
     {
         // Quelle: https://www.universal-dsg.com/product/60-mm-mortar-bomb-he-explosive-practice/
@@ -55,7 +56,7 @@ class CfgAmmo
         // effectFly = "ArtilleryTrails"; //Fun but not don't make any sense
 
         fuseDistance = 50; //The minimum distance any explosive projectile has to travel, before it becomes armed and thus explodes on impact.
-        hit = 170;
+        hit = 300;
         indirectHit = 10;
         indirectHitRange = 9;
 

@@ -13,7 +13,7 @@ class CfgMagazines
         picture = "\TBMod_vz99\ui\shell_ca.paa";
         author = "PabstMirror";
         count = 1;
-        mass = 30;
+        mass = 20;
 
         TB_vz99_base = "TB_vz99_HE";
         displayName = "vz99 60mm HE Impact Fuze";
