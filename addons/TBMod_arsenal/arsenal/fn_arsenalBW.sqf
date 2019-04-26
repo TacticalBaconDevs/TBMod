@@ -249,6 +249,7 @@ private _mg_munition = [
 private _pilot_munition = [
     "BWA3_40Rnd_46x30_MP7",
     "BWA3_40Rnd_46x30_MP7_SD"
+];
 
 private _sniper_munition = [
     "BWA3_10Rnd_127x99_G82_SD",
