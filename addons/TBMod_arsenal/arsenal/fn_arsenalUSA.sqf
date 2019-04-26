@@ -6,12 +6,12 @@
 */
 private _allgemein = [
     // Gepäck
+    "rhsusf_falconii_coy",          // maximumLoad = 106; mass = 13; Quotient = 8
+    "rhsusf_falconii_mc",
     "rhsusf_assault_eagleaiii_coy", // maximumLoad = 160; mass = 20; Quotient = 8
     "rhsusf_assault_eagleaiii_ocp",
     "rhsusf_assault_eagleaiii_ucp",
-    "rhsusf_falconii_coy",          // maximumLoad = 160; mass = 20; Quotient = 8
-    "rhsusf_falconii_mc",
-    "B_Parachute",
+        "B_Parachute",
 
     // Gesichtsbedeckung
     "rhs_googles_orange",

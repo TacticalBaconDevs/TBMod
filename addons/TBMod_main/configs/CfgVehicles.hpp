@@ -422,6 +422,15 @@ class CfgVehicles
     SET_DETECTABLE(Strategic, Garbage_container);*/
 
 
+    // ###################### Rucksäcke ######################
+    class Bag_Base;
+    class B_AssaultPack_Base : Bag_Base
+    {
+        maximumLoad = 106;
+        mass = 13;
+    };
+    
+
     // ###################### No Uniform ######################
     class Civilian;
     //class CAManBase;
