@@ -36,6 +36,7 @@ class CfgFunctions
             class attachToRelative {};
             class addBriefingEntries {};
             class firstJoin {};
+            class deleteIfNotSeen {};
         };
 
         class gcam

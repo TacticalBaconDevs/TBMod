@@ -16,6 +16,11 @@ class CfgWeapons
         model = "\TBMod_vz99\data\vz99_carry";
         picture = "\TBMod_vz99\ui\weaponSide_ca.paa";
         modes[] = {};
+        ace_reloadlaunchers_enabled = 1;
+
+        class WeaponSlotsInfo {
+            mass = 66; // 3kg
+        };
     };
 
     class CannonCore;
@@ -57,6 +62,7 @@ class CfgWeapons
         //      displayName = "Gravity";
         // };
 
+        ace_reloadlaunchers_enabled = 1;
         scope = 1;
         displayname = "60 mm Mortar";
         nameSound = "CannonCore";
@@ -101,6 +107,10 @@ class CfgWeapons
                 positionName = "Usti Hlavne";
                 directionName = "Konec Hlavne";
             };
+        };
+
+        class WeaponSlotsInfo {
+            mass = 66; // 3kg
         };
     };
 };

@@ -33,6 +33,13 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "TBMod",
     [[0, 1, 2, 3], ["aus", "RPT", "RPT+systemChat", "RPT+systemChat+Hint"], 0]
 ] call CBA_Settings_fnc_init;
+[
+    "TB_debug_remote",
+    "CHECKBOX",
+    ["Debug Remote", "Zeigt remote Debuginformationen an"],
+    "TBMod",
+    false
+] call CBA_Settings_fnc_init;
 
 // if (isNil "TB_inkognitoSystem") then {TB_inkognitoSystem = false};
 [
@@ -49,7 +56,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "CHECKBOX",
     "Crashhelfer",
     "TBMod",
-    false
+    true
 ] call CBA_Settings_fnc_init;
 
 // if (isNil "TB_doorBreach") then {TB_doorBreach = true};
