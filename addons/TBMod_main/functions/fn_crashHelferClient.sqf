@@ -36,18 +36,18 @@ if !(_find isEqualTo []) then
 
     if (_id == 0) then
     {
-        player setDir _dir;
-        player setPosASL _pos;
-    };
-
-    if (_id == 1) then
-    {
         if ({if (alive _x && {_x != player}) exitWith {[_x] spawn TB_fnc_teleport; 1}; false} count (units (group player)) == 0) then
         {
             systemChat "Nicht möglich, keine lebenden Personen zum Teleporten da, zurück zur alten Pos!";
             player setDir _dir;
             player setPosASL _pos;
         };
+    };
+
+    if (_id == 1) then
+    {
+        player setDir _dir;
+        player setPosASL _pos;
     };
 
     [] spawn
