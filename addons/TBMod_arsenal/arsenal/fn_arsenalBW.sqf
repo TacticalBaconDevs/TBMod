@@ -92,30 +92,12 @@ private _allgemein = [
 
 private _allgemein_gewehre = [
     // Gewehr
-    "hlc_rifle_G36A1",
-    "hlc_rifle_G36C",
-    "hlc_rifle_G36CV",
-    "hlc_rifle_G36CTac",
-    "hlc_rifle_G36E1",
-    "hlc_rifle_G36KA1KSK",
-    "hlc_rifle_G36KA1",
-    "hlc_rifle_G36KE1",
-    "hlc_rifle_G36KV",
-    "hlc_rifle_g36KTac",
-    "hlc_rifle_G36V",
-    "hlc_rifle_G36TAC",
     "BWA3_G36A1_tan",
     "BWA3_G36A2_tan",
     "BWA3_G36KA3_tan"
 ];
 
 private _allgemein_magazine = [
-    "hlc_30rnd_556x45_EPR_G36",
-    "hlc_30rnd_556x45_SOST_G36",
-    "hlc_30rnd_556x45_SPR_G36",
-    "hlc_30rnd_556x45_Tracers_G36",
-    "hlc_30rnd_556x45_MDIM_G36",
-    "hlc_30rnd_556x45_TDIM_G36",
     "BWA3_30Rnd_556x45_G36_Tracer",
     "BWA3_30Rnd_556x45_G36_Tracer_Dim",
     "BWA3_30Rnd_556x45_G36",
@@ -136,14 +118,6 @@ private _allgemein_visiere = [
     "BWA3_optic_RSAS",
     //"BWA3_optic_ZO4x30_Single", keine Ahnung was das neue ist
     "BWA3_optic_ZO4x30",
-    "HLC_Optic_G36Dualoptic15x",
-    "HLC_Optic_G36Dualoptic15x2d",
-    "HLC_Optic_G36dualoptic35x",
-    "HLC_Optic_G36dualoptic35x2d",
-    "HLC_Optic_G36Export15x",
-    "HLC_Optic_G36Export15x2d",
-    "HLC_Optic_G36Export35x",
-    "HLC_Optic_G36Export35x2d",
     "BWA3_optic_NSV600" //  Zusatz zum ZO4x30
 ];
 
@@ -159,13 +133,10 @@ private _allgemein_befestigungsschiene = [
 ];
 
 private _allgemein_geschuetzzubehoer = [
-    "hlc_muzzle_300blk_KAC",
-    "hlc_muzzle_556NATO_KAC"
 ];
 
 private _allgemein_zweibein = [
-    "bipod_01_F_blk",
-    "HLC_Bipod_G36"
+    "bipod_01_F_blk"
 ];
 
 private _allgemein_raketenwerfer = [
@@ -183,7 +154,6 @@ private _allgemein_handfeuerwaffen = [
     // Handfeuerwaffen
     "BWA3_P2A1",
     "BWA3_P8",
-    "hlc_pistol_P226R_Combat",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -193,14 +163,10 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_1Rnd_Flare_Multistar_Green",
     "BWA3_1Rnd_Flare_Multistar_Red",
     "BWA3_15Rnd_9x19_P8",
-    "hlc_15Rnd_9x19_B_P226",
-    "hlc_15Rnd_9x19_JHP_P226",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
     "BWA3_acc_LLM01_flash",
-    "hlc_optic_docter_cadex",
-    "hlc_acc_dbalpl_fl",
     "muzzle_snds_l"
 ];
 
@@ -244,10 +210,6 @@ private _allgemein_kopfbedeckung = [
 ];
 
 private _grenadier_gewehr = [
-    "hlc_rifle_G36A1AG36",
-    "hlc_rifle_G36E1AG36",
-    "HLC_Rifle_G36KSKAG36",
-    "hlc_rifle_G36VAG36",
     "BWA3_G36A1_AG40_tan",
     "BWA3_G36A2_AG40_tan",
     "BWA3_G36A3_AG40_tan"
@@ -275,15 +237,7 @@ private _dmr_munition = [
     "BWA3_20Rnd_762x51_G28_Tracer", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_AP", //G27 und G28 Patrol
-    "BWA3_20Rnd_762x51_G28_SD", //G27 und G28 Patrol
-
-    "hlc_20rnd_762x51_b_G3",
-    "hlc_20rnd_762x51_Mk316_G3",
-    "hlc_20rnd_762x51_barrier_G3",
-    "hlc_20rnd_762x51_T_G3",
-    "hlc_20rnd_762x51_MDim_G3",
-    "hlc_20rnd_762x51_IRDim_G3",
-    "hlc_20rnd_762x51_S_G3"
+    "BWA3_20Rnd_762x51_G28_SD" //G27 und G28 Patrol
 ];
 
 private _mg_munition = [
@@ -291,32 +245,19 @@ private _mg_munition = [
     "BWA3_30Rnd_556x45_G36_Tracer",
     //"BWA3_B_556x45_Ball_SD",
     //"BWA3_B_556x45_Ball_AP",
-    "hlc_100rnd_556x45_EPR_G36",
     //"hlc_100rnd_556x45_M_G36", // TODO: keine Trommel 100Mags
-    "hlc_100rnd_556x45_Mdim_G36",
-    "BWA3_200Rnd_556x45_Tracer",
-    "hlc_50Rnd_762x51_B_MG3",
-    "hlc_50Rnd_762x51_M_MG3",
-    "hlc_50Rnd_762x51_Barrier_MG3",
-    "hlc_50Rnd_762x51_T_MG3"
+    "BWA3_200Rnd_556x45_Tracer"
 ];
 
 private _pilot_munition = [
     "BWA3_40Rnd_46x30_MP7",
-    "BWA3_40Rnd_46x30_MP7_SD",
-
-    "hlc_30Rnd_9x19_B_MP5",
-    "hlc_30Rnd_9x19_GD_MP5",
-    "hlc_30Rnd_9x19_SD_MP5"
-];
+    "BWA3_40Rnd_46x30_MP7_SD"
 
 private _sniper_munition = [
     "BWA3_10Rnd_127x99_G82_SD",
     "BWA3_10Rnd_127x99_G82_Raufoss",
     "BWA3_10Rnd_127x99_G82_Raufoss_Tracer",
-    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim",
-    "hlc_5rnd_300WM_T_AWM",
-    "hlc_5rnd_300WM_FMJ_AWM"
+    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim"
 ];
 
 private _aaat_munition = [
@@ -469,9 +410,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _lrFunken +
         _pilot_munition +
         [
-            // Waffen
-            "hlc_smg_mp5sd5",
-            "hlc_smg_mp5sd6",
 
             // Weste
             "BWA3_Vest_Medic_Tropen",
@@ -545,9 +483,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_optic_PMII_ShortdotCC",   //x8
             "optic_ams",                    // x8.8 Vanilla
 
-            // ### Schalli
-            "hlc_muzzle_300blk_KAC",
-
             // Items
             "ACE_Yardage450",
             "ACE_RangeCard",
@@ -575,7 +510,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             //"hlc_rifle_MG36", // TODO: anschauen
             "BWA3_MG4",
-            "hlc_lmg_MG3", // MG3 nur 50 Schuss
 
             // Weste
             "BWA3_Vest_MachineGunner_Tropen",
@@ -680,8 +614,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "BWA3_G82",
-            "hlc_rifle_awMagnum_FDE_ghillie",
-            "hlc_rifle_awMagnum_FDE",
             "BWA3_MP7",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
