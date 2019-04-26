@@ -132,9 +132,6 @@ private _allgemein_befestigungsschiene = [
     "ACE_acc_pointer_green_IR"
 ];
 
-private _allgemein_geschuetzzubehoer = [
-];
-
 private _allgemein_zweibein = [
     "bipod_01_F_blk"
 ];
@@ -312,7 +309,6 @@ private _items = [];
 // _allgemein_magazine                 - 5.56 Mags einzeln
 // _allgemein_visiere                - normalen Visiere
 // _allgemein_befestigungsschiene    - laser/Lampe usw
-// _allgemein_geschuetzzubehoer        - Schalldämpfer usw
 // _allgemein_zweibein                - Zweibeine
 // _allgemein_raketenwerfer            - einmal Raketenwerfer
 // _allgemein_handfeuerwaffen        - Pistolen
@@ -338,7 +334,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -375,7 +370,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -400,7 +394,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -443,7 +436,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -463,7 +455,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -497,7 +488,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -524,7 +514,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -585,7 +574,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -602,7 +590,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -657,7 +644,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -712,7 +698,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -755,7 +740,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
@@ -780,7 +764,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
@@ -811,7 +794,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
