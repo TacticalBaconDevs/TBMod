@@ -1156,6 +1156,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_M26_Clacker",
+            "ACE_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
