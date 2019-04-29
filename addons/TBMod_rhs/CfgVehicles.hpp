@@ -10,6 +10,7 @@
             scopeCurator = 2
 class CfgVehicles
 {
+    // ExtraSkin
     class RHS_UH60M;
     class TB_Vehicles_USA_UH60_MEV: RHS_UH60M
     {
