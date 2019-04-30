@@ -17,12 +17,17 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
     private _side = side ACE_player;
     if (_side == blufor) exitWith
     {
-        // Vanilla-COP
-        // TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
-        // TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+        if (worldName == "gm_weferlingen_summer" || worldName == "gm_weferlingen_winter") exitWith 
+        {
         // BRD
         TB_blacklistRollen_themen = [ "sani", "spreng", "dmr", "pilot", "sniper", "spotter", "jtac", "rifle"];
         TB_customName_themen = ["","Schütze","","","","","","","","","","","Feldarzt","","Sprengspezialist"];
+        }
+        else
+        // Vanilla-COP
+        TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
+        TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+        
     };
 
     if (_side == opfor) exitWith {};
