@@ -429,11 +429,6 @@ class CfgVehicles
         maximumLoad = 106;
         mass = 13;
     };
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> b370b4ab14b37707ee264ef30b15a2f5e1260e6a
 
     // ###################### No Uniform ######################
     class Civilian;

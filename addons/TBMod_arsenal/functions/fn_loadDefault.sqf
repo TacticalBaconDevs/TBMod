@@ -32,11 +32,7 @@ if (_arsenalType == "USA") exitWith
 
 if (_arsenalType == "BW") exitWith
 {
-<<<<<<< HEAD
     ACE_player setUnitLoadout [[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_fieldDressing",25],["ACE_adenosine",2],["ACE_atropine",9],["ACE_tourniquet",4]]],["BWA3_Vest_JPC_Rifleman_Fleck",[["ACE_MapTools",1],["ACE_Flashlight_KSF1",1],["ACE_CableTie",2],["ACE_salineIV",4],["ACE_EntrenchingTool",1],["Laserbatteries",1,1],["SmokeShell",2,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152_8","ItemCompass","ACE_Altimeter",""]], true];
-=======
-    ACE_player setUnitLoadout [[[],[],["hlc_pistol_P226R_Combat","","hlc_acc_DBALPL_FL","HLC_Optic_Docter_CADEX",["hlc_15Rnd_9x19_JHP_P226",15],[],""],["BWA3_Uniform2_Fleck",[["ACE_fieldDressing",25],["ACE_adenosine",2],["ACE_atropine",9],["ACE_tourniquet",4]]],["BWA3_Vest_JPC_Rifleman_Fleck",[["ACE_MapTools",1],["ACE_Flashlight_KSF1",1],["ACE_CableTie",2],["ACE_salineIV",4],["ACE_EntrenchingTool",1],["Laserbatteries",1,1],["SmokeShell",2,1],["hlc_15Rnd_9x19_JHP_P226",2,15]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152_8","ItemCompass","ACE_Altimeter",""]], true];
->>>>>>> b370b4ab14b37707ee264ef30b15a2f5e1260e6a
 };
 
 
