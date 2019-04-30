@@ -18,5 +18,3 @@ if (_side == blufor) exitWith
         
     };
 if (_side == opfor) exitWith {call TB_fnc_arsenalRUSSSimple};
-
-
