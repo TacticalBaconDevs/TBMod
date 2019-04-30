@@ -18,8 +18,11 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
     if (_side == blufor) exitWith
     {
         // Vanilla-COP
-        TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
-        TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+        // TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
+        // TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+        // BRD
+        TB_blacklistRollen_themen = ["rifle", "spreng", "sniper", "spotter", "jtac", "pilot"];
+        TB_customName_themen = ["","","","","","","","","","","","","","",""];
     };
 
     if (_side == opfor) exitWith {};

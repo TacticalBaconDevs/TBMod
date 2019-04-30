@@ -9,7 +9,6 @@
             "TB_arsenal_usa",
             "TB_arsenal_vanilla",
             "TB_arsenal_bw",
-            "TB_arsenal_brd",
             "TB_arsenal_russ",
             "TB_arsenal_themen",
             "TB_arsenal_predefined_custom"
