@@ -102,7 +102,7 @@ _hcs pushBack 2;
                 waitUntil {
                     uisleep 1;
                     if (!isNil "TB_ReporterClient") then {
-                        ["TB_FPSReport", [profileName,diag_fps], TB_ReporterClient] call CBA_fnc_targetEvent;
+                        ["TB_FPSReport", [profileName,round diag_fps], TB_ReporterClient] call CBA_fnc_targetEvent;
                     };
                     false
                 }

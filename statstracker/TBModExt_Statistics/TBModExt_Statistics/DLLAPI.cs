@@ -69,6 +69,10 @@ namespace TBModExt_Statistics
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPosition), args);
                 if (function == "KIPosition")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputKIPosition), args);
+                if (function == "CPS")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputCPS), args);
+                if (function == "FPS")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputFPS), args);
 
 
             }
@@ -154,5 +158,32 @@ namespace TBModExt_Statistics
             }
         }
 
+        public static void ProcessInputFPS(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValueFPS(args.ToArray());
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+                error = true;
+            }
+        }
+
+        public static void ProcessInputCPS(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValueCPS(args.ToArray());
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+                error = true;
+            }
+        }
     }
 }

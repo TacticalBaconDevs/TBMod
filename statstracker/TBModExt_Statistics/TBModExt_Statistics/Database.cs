@@ -43,6 +43,14 @@ namespace TBModExt_Statistics
             command5.ExecuteNonQuery();
             command5.Dispose();
 
+            MySqlCommand command6 = new MySqlCommand("CREATE TABLE IF NOT EXISTS CPS (time DateTime, unitname TEXT, cps INT)", dbConnection);
+            command6.ExecuteNonQuery();
+            command6.Dispose();
+
+            MySqlCommand command7 = new MySqlCommand("CREATE TABLE IF NOT EXISTS FPS (time DateTime, unitname TEXT, fps INT)", dbConnection);
+            command7.ExecuteNonQuery();
+            command7.Dispose();
+
             return dbConnection;
         }
 
@@ -176,6 +184,34 @@ namespace TBModExt_Statistics
                 }
                 command.Transaction.Commit();
                 
+            }
+        }
+
+        public static void insertValueFPS(string[] values)
+        {
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `FPS` (`time`, unitname, `fps`) VALUES (NOW(), @unitname, @fps)", getDBConnection()))
+            {
+                command.Prepare();
+
+                command.Parameters.AddWithValue("@unitname", values[0]);
+                command.Parameters.AddWithValue("@uuid", values[1]);
+                command.Parameters.AddWithValue("@fps", Convert.ToDouble(values[2]));
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void insertValueCPS(string[] values)
+        {
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `CPS` (`time`, unitname, `cps`) VALUES (NOW(), @unitname, @cps)", getDBConnection()))
+            {
+                command.Prepare();
+
+                command.Parameters.AddWithValue("@unitname", values[0]);
+                command.Parameters.AddWithValue("@uuid", values[1]);
+                command.Parameters.AddWithValue("@cps", Convert.ToDouble(values[2]));
+
+                command.ExecuteNonQuery();
             }
         }
     }
