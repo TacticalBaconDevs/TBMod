@@ -22,7 +22,7 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
         // TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
         // BRD
         TB_blacklistRollen_themen = [ "sani", "spreng", "dmr", "pilot", "sniper", "spotter", "jtac", "rifle"];
-        TB_customName_themen = ["","","","","","","","","","","","","","",""];
+        TB_customName_themen = ["","Schütze","","","","","","","","","","","Feldarzt","","Sprengspezialist"];
     };
 
     if (_side == opfor) exitWith {};
