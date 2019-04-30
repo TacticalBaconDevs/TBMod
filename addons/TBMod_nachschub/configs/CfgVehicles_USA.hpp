@@ -192,3 +192,28 @@ class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDITEM(ACE_Chemlight_HiRed,10);
     };
 };
+
+class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
+{
+    PUBLIC_NAME("vz99 MörserMunition");
+
+    class TransportItems
+    {
+        MACRO_ADDITEM(TB_vz99_HE_multi,10);
+        MACRO_ADDITEM(TB_vz99_HE,8);
+        MACRO_ADDITEM(TB_vz99_smokeWhite,3);
+        MACRO_ADDITEM(TB_vz99_smokeRed,3);
+        MACRO_ADDITEM(TB_vz99_flare,2);
+    };
+};
+
+class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
+{
+    PUBLIC_NAME("vz99 MörserMunitionHE");
+
+    class TransportItems
+    {
+        MACRO_ADDITEM(TB_vz99_HE_multi,20);
+        MACRO_ADDITEM(TB_vz99_HE,15);
+    };
+};

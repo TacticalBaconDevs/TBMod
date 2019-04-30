@@ -55,4 +55,10 @@ class CfgMagazines
 
         mass = 15; //5
     };
+
+    class CA_LauncherMagazine;
+    class rhs_fgm148_magazine_AT : CA_LauncherMagazine
+    {
+        mass = 176.37; // 286.88
+    };
 };

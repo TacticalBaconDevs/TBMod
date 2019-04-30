@@ -14,7 +14,7 @@ _veh params ["_vehicle", "", "_grp", "_cargoGrp"];
 private _mkrPos = getMarkerPos _mkr;
 (getMarkerSize _mkr) params ["_mkrX", "_mkrY"];
 private _pos = [_mkrPos, 0, _mkrX min _mkrY, 7, 1, 0.25, 0] call TB_EOS_fnc_findSafePos;
-private _pad = createVehicle ["Land_HelipadEmpty_F", _pos, [], 0, "NONE"];
+private _pad = createVehicle ["Land_HelipadEmpty_F", _pos, [], 0, "CAN_COLLIDE"];
 
 {_x allowFleeing 0} forEach ((units _grp) + (units _cargoGrp));
 

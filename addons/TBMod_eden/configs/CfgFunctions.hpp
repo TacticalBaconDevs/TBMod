@@ -16,6 +16,8 @@ class CfgFunctions
             class animationAI {};
             class keysForAI {};
             class inkognitoSystem {};
+            class moduleAtmoCore {};
+            class atmoCoreAction {};
         };
     };
 };

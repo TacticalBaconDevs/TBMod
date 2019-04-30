@@ -15,13 +15,13 @@ if (TB_origin_medicClass == 0) then
     {
         ACE_player setVariable ["ace_medical_medicClass", [2, 1] select (_rolle == "sani"), true];
         ACE_player setUnitTrait ["medic", true];
-        TB_medical_coef = [0.9, 0.55] select (_rolle == "arzt");
+        TB_medical_coef = ([0.9, 0.55] select (_rolle == "arzt")) * TB_medical_coef_global;
     }
     else
     {
         ACE_player setVariable ["ace_medical_medicClass", 0, true];
         ACE_player setUnitTrait ["medic", false];
-        TB_medical_coef = 1.1;
+        TB_medical_coef = 1.1 * TB_medical_coef_global;
     };
 };
 

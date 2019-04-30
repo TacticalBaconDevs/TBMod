@@ -37,11 +37,13 @@ if (!isNil {_unit getVariable QGVAR(ivBags)}) then {
             // CHANGE START
             private _inFacility = [_unit] call ace_medical_fnc_isInMedicalFacility;
             private _inVehicle = [_unit] call ace_medical_fnc_isInMedicalVehicle;
-            private _influence = ([1, 2] select _inVehicle) max ([1, 4] select _inFacility);
-            
+            private _boost = [1, 10] select (_unit getVariable ["TB_cpr_boost", false]);
+            private _influence = (([1, 2] select _inVehicle) max ([1, 4] select _inFacility)) * _boost;
+
             //private _bagChange = IV_CHANGE_PER_SECOND min _bagVolumeRemaining; // absolute value of the change in miliLiters
             private _bagChange = (IV_CHANGE_PER_SECOND * _influence) min _bagVolumeRemaining;
-            ["RemainIV: %1 | ChangeIV: %2 | InfluCoef: %3 | InFac: %4 | InVeh: %5", _bagVolumeRemaining, _bagChange, _influence, _inFacility, _inVehicle] call TB_fnc_debug;
+            ["RemainIV: %1 | ChangeIV: %2 | InfluCoef: %3 | InFac: %4 | InVeh: %5 | Boost: %6", _bagVolumeRemaining, _bagChange, _influence, _inFacility, _inVehicle, _boost] call TB_fnc_debug;
+            _unit setVariable ["TB_cpr_boost", nil];
             // CHANGE ENDE
 
             _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;

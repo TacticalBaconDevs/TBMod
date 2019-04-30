@@ -34,3 +34,15 @@ private _pickupAction = [
     ["ACE_MainActions"],
     _pickupAction
 ] remoteExecCall ["ace_interact_menu_fnc_addActionToObject", [0, -2] select isDedicated, true];
+
+if !((typeOf _obj) in ["Land_PortableLight_single_F", "Land_MedicalTent_01_white_generic_open_F"]) then
+{
+    _obj enableSimulation false;
+    [_obj, false] remoteExecCall ["enableSimulationGlobal", 2];
+};
+
+// Medic
+if ((typeOf _obj) in ["Land_MedicalTent_01_white_generic_open_F", "Land_Stretcher_01_F", "Land_IntravenStand_01_2bags_F", "Land_MedicalTent_01_floor_light_F"]) then
+{
+    _obj setVariable ["ace_medical_isMedicalFacility", true, true];
+};

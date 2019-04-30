@@ -153,6 +153,8 @@ class CfgVehicles
                     ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
                     ADD_SUPPLY(NotfallWaffen,TB_supply_usa_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
+                    ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
+                    ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
                 };
 
                 class bw

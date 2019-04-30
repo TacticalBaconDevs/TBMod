@@ -6,11 +6,13 @@
 */
 private _allgemein = [
     // Gepäck
+    "rhsusf_falconii_coy",          // maximumLoad = 106; mass = 13; Quotient = 8
+    "rhsusf_falconii_mc",
+    "B_AssaultPack_blk",
+    "B_AssaultPack_rgr",
     "rhsusf_assault_eagleaiii_coy", // maximumLoad = 160; mass = 20; Quotient = 8
     "rhsusf_assault_eagleaiii_ocp",
     "rhsusf_assault_eagleaiii_ucp",
-    "rhsusf_falconii_coy",          // maximumLoad = 160; mass = 20; Quotient = 8
-    "rhsusf_falconii_mc",
     "B_Parachute",
 
     // Gesichtsbedeckung
@@ -582,34 +584,43 @@ private _lrFunken = [
     "OPXT_ogag_1523"   //grau2
 ];
 
+private _moerser_munition = [
+            "TB_vz99_HE",
+            "TB_vz99_HE_multi",
+            "TB_vz99_smokeWhite",
+            "TB_vz99_smokeRed",
+            "TB_vz99_flare"
+];
+
 private _items = [];
 
 // #################################################################
 // LAYOUTS
 // Ab hier sind Items nur noch für die bestimmten Rollen
 // #################################################################
-// _allgemein                         - Grundlegenden Sachen für alle
-// _allgemein_gewehre                 - 5.56 Waffen und Mags
-// _allgemein_magazine                 - 5.56 Mags einzeln
+// _allgemein                        - Grundlegenden Sachen für alle
+// _allgemein_gewehre                - 5.56 Waffen und Mags
+// _allgemein_magazine               - 5.56 Mags einzeln
 // _allgemein_visiere                - normalen Visiere
 // _allgemein_befestigungsschiene    - laser/Lampe usw
-// _allgemein_geschuetzzubehoer        - Schalldämpfer usw
-// _allgemein_zweibein                - Zweibeine
-// _allgemein_raketenwerfer            - einmal Raketenwerfer
+// _allgemein_geschuetzzubehoer      - Schalldämpfer usw
+// _allgemein_zweibein               - Zweibeine
+// _allgemein_raketenwerfer          - einmal Raketenwerfer
 // _allgemein_handfeuerwaffen        - Pistolen
-// _allgemein_uniformen                - Uniformen
-// _allgemein_westen                - Westen
-// _allgemein_kopfbedeckung            - Helme
-// _grenadier_gewehr                - Alle m320 und M203 Gewehre
-// _grenadier_munition                - Grenadier Unterlauf
-// _dmr_munition                    - DMR Munition
-// _mg_munition                        - MG Munition
-// _pilot_munition                    - Piloten MP7 Munition
-// _sniper_munition                    - Sniper munition
+// _allgemein_uniformen              - Uniformen
+// _allgemein_westen                 - Westen
+// _allgemein_kopfbedeckung          - Helme
+// _grenadier_gewehr                 - Alle m320 und M203 Gewehre
+// _grenadier_munition               - Grenadier Unterlauf
+// _dmr_munition                     - DMR Munition
+// _mg_munition                      - MG Munition
+// _pilot_munition                   - Piloten MP7 Munition
+// _sniper_munition                  - Sniper munition
 // _aaat_munition                    - AtiTank Munition
-// _gepaeck_mittel                    - Seesack
+// _gepaeck_mittel                   - Seesack
 // _gepaeck_gross                    - Carryall
-// _lrFunken                          - LR Funken
+// _lrFunken                         - LR Funken
+// _moerser_munition                 - Munition für Kommandomoerser  
 
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
@@ -617,6 +628,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_gewehre +
+        _grenadier_munition +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
@@ -888,6 +900,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _aaat_munition +
         _gepaeck_mittel +
         _gepaeck_gross +
+        _moerser_munition +
         [
             // Westen
             "rhsusf_iotv_ocp_SAW",
@@ -973,6 +986,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _moerser_munition +
         [
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
@@ -980,7 +994,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_Rifleman",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman"
+            "rhsusf_spcs_ucp_rifleman",
+
+            // Binocular
+            "ACE_Vector",
+
+            // Waffen
+            "TB_vz99_carryWeapon"           
         ]
     };
 
@@ -1135,8 +1155,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ucp_rifleman",
 
             // Items
-            "ACE_Clacker",
             "ACE_M26_Clacker",
+            "ACE_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
@@ -1246,6 +1266,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _lrFunken +
         [
             // Handfeuerwaffen
             "ACE_VMH3",

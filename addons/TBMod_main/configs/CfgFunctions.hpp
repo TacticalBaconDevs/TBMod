@@ -35,12 +35,20 @@ class CfgFunctions
             class forceRagdoll {};
             class attachToRelative {};
             class addBriefingEntries {};
+            class firstJoin {};
+            class deleteIfNotSeen {};
         };
 
         class gcam
         {
             file = "\TBMod_main\gcam";
             class showGCAM {};
+        };
+
+        // Replacement
+        class replacement
+        {
+            file = "\TBMod_main\replacement";
         };
     };
 
