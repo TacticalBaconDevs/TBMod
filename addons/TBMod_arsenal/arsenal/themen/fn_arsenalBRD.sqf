@@ -268,6 +268,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_pzf84_win",
             "gm_pzf44_2_win",
             "gm_pzf44_2_oli",
+            
+            // Rucksack TOW 
+            "gm_fagot_launcher_weaponBag",
+            "gm_milan_launcher_weaponBag",
+
             // Magazine
             "gm_1Rnd_40mm_heat_pg7v_rpg7",
             "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
