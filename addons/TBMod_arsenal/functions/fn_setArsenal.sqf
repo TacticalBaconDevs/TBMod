@@ -16,7 +16,6 @@ private _allItems = call (switch (_type) do
     case "USA": {TB_fnc_arsenalUSA};
     case "RUSS": {TB_fnc_arsenalRUSS};
     case "BW": {TB_fnc_arsenalBW};
-    case "BRD": {TB_fnc_arsenalBRD};
     case "VANILLA": {TB_fnc_arsenalVANILLA};
     case "Themen": {TB_fnc_arsenalThemen};
     case "SWOPReb": {TB_fnc_arsenalSWOPRebuplik}; // only for crash help
