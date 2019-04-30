@@ -52,8 +52,8 @@ if !(call TB_fnc_isTBMission) exitWith {};
 
 // Setup reviever
 ["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
-["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [_this select 0,_this select 1]}] call CBA_fnc_addEventHandler;
-["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [_this select 0,_this select 1]}] call CBA_fnc_addEventHandler;
+["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [_this select 0,_this select 1]]} call CBA_fnc_addEventHandler;
+["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [_this select 0,_this select 1]]} call CBA_fnc_addEventHandler;
 
 //Send script
 [0,{
