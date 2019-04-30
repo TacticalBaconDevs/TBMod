@@ -32,8 +32,14 @@ if (_arsenalType == "USA") exitWith
 
 if (_arsenalType == "BW") exitWith
 {
-    ACE_player setUnitLoadout [[[],[],["hlc_pistol_P226R_Combat","","hlc_acc_DBALPL_FL","HLC_Optic_Docter_CADEX",["hlc_15Rnd_9x19_JHP_P226",15],[],""],["BWA3_Uniform2_Fleck",[["ACE_fieldDressing",25],["ACE_adenosine",2],["ACE_atropine",9],["ACE_tourniquet",4]]],["BWA3_Vest_JPC_Rifleman_Fleck",[["ACE_MapTools",1],["ACE_Flashlight_KSF1",1],["ACE_CableTie",2],["ACE_salineIV",4],["ACE_EntrenchingTool",1],["Laserbatteries",1,1],["SmokeShell",2,1],["hlc_15Rnd_9x19_JHP_P226",2,15]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152_8","ItemCompass","ACE_Altimeter",""]], true];
+    ACE_player setUnitLoadout [[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_fieldDressing",25],["ACE_adenosine",2],["ACE_atropine",9],["ACE_tourniquet",4]]],["BWA3_Vest_JPC_Rifleman_Fleck",[["ACE_MapTools",1],["ACE_Flashlight_KSF1",1],["ACE_CableTie",2],["ACE_salineIV",4],["ACE_EntrenchingTool",1],["Laserbatteries",1,1],["SmokeShell",2,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152_8","ItemCompass","ACE_Altimeter",""]], true];
 };
+
+if (_arsenalType == "BRD") exitWith
+{
+    ACE_player setUnitLoadout [[[],[],[],["gm_ge_army_uniform_soldier_80_ols",[["ACE_fieldDressing",25],["ACE_tourniquet",4],["ACE_atropine",9],["ACE_adenosine",2]]],["gm_dk_army_vest_54_rifleman",[["gm_feroz24_des",1],["gm_pgo7v_blk",1],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_Flashlight_KSF1",1]]],[],"gm_ge_headgear_hat_80_m62_oli","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","","gm_gc_compass_f73","gm_watch_kosei_80",""]], true];
+};
+
 
 if (_arsenalType == "VANILLA") exitWith
 {
