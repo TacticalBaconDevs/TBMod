@@ -115,16 +115,13 @@ private _allgemein_Westen = [
 ];
 
 private _LR = [
-    //schwarz
-    "OPXT_blk_1523",
-    //tropen
-    "OPXT_at_ix_1523",
-    "OPXT_at_fg_1523",
-    "OPXT_multicamt_1523",
-    //MTP+Multicam
-    "OPXT_scorpion_1523",
-    "OPXT_multicam_1523",
-    "OPXT_wht_1523"
+    // Sommer
+    "OPXT_ogao_210",
+    "OPXT_ogag_210",
+    "OPXT_multicamt_210",
+    "OPXT_oga_210",
+    // Winter
+    "OPXT_multicama_210"
 
 ];
 
@@ -133,7 +130,7 @@ private _allgemein_Helm = [
     "gm_ge_headgear_m62_net",
     "gm_ge_headgear_m62_win_pap_01",
     "gm_dk_headgear_m52_net_win",
-    "gm_dk_headgear_m52_net_oli",
+    "gm_dk_headgear_m52_net_oli"
     
 ];
 
@@ -145,7 +142,9 @@ private _allgemein_Waffen = [
 ];
 
 private _allgemein_Magazine = [
-    "gm_30Rnd_545x39mm_B_7N6_ak74_prp"
+    "gm_30Rnd_545x39mm_B_7N6_ak74_prp",
+    "gm_20Rnd_762x51mm_B_T_DM21_g3_blk",
+    "gm_20Rnd_762x51mm_AP_DM151_g3_blk"
 ];
 
 private _items = [];
@@ -173,7 +172,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
-    case "sani":
+    case "arzt":
     {
         _allgemein +
         _allgemein_Helm +
@@ -183,20 +182,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
+            // Rucksack + Weste
             "gm_ge_pol_vest_80_wht",
-            "gm_ge_backpack_satchel_80_san"
-        ]
-    };
-
-    case "arzt":
-    {
-        _allgemein +
-        _allgemein_Helm +
-        _allgemein_Uniform +
-        _allgemein_Westen +
-        _LR +
-        [
-            // Rucksack
             "gm_ge_backpack_satchel_80_san",
             
             // Waffe
@@ -226,22 +213,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
-        _allgemein_Westen +
         [
             // Weapons
-            "arifle_MX_SW_F",
-            "arifle_MX_SW_Black_F",
-            "arifle_MX_SW_khk_F",
-            "arifle_SPAR_02_blk_F",
-            "arifle_SPAR_02_snd_F",
-            "arifle_SPAR_02_khk_F",
-            "LMG_03_F",
-
+            "gm_mg3_blk",
+            "gm_hmgpkm_prp",
             // Magazine
-            "150Rnd_556x45_Drum_Mag_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_Red_F",
-            "100Rnd_65x39_caseless_mag_Tracer"
+            "gm_120Rnd_752x51mm_B_T_DM21_mg3_grn",
+            "gm_120Rnd_752x51mm_B_T_DM21A1_mg3_grn",
+            "gm_120Rnd_752x51mm_B_T_DM21A2_mg3_grn",
+            "ghm_100Rnd_762x54mm_B_T_T46_pk_grn",
+            "ghm_100Rnd_762x54mm_API_B32_pk_grn",
+            // Westen 
+            "gm_ge_army_vest_80_machinegunner",
+            "gm_dk_army_vest_54_machinegunner"
         ]
     };
 
@@ -254,30 +238,22 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-            // Backpack
-            "B_Carryall_cbr",
-            "B_Carryall_ocamo",
-            "B_Carryall_khk",
-            "B_Carryall_mcamo",
-            "B_Carryall_oli",
-            "B_Carryall_oucamo",
-
             // Magazine
-            "150Rnd_556x45_Drum_Mag_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_Red_F",
-            "20Rnd_762x51_Mag",
+            "gm_120Rnd_752x51mm_B_T_DM21_mg3_grn",
+            "gm_120Rnd_752x51mm_B_T_DM21A1_mg3_grn",
+            "gm_120Rnd_752x51mm_B_T_DM21A2_mg3_grn",
+            "ghm_100Rnd_762x54mm_B_T_T46_pk_grn",
+            "ghm_100Rnd_762x54mm_API_B32_pk_grn",
 
-            //AT
-            "Vorona_HEAT",
-            "Vorona_HE",
-            "MRAWS_HEAT_F",
-            "MRAWS_HE_F"
+            // AT
+            "gm_1Rnd_40mm_heat_pg7v_rpg7",
+            "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
+            "gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf",
+            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"            
         ]
     };
 
-
-    case "rifle":
+    case "aaat":
     {
         _allgemein +
         _allgemein_Helm +
@@ -286,21 +262,30 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-
+            // AT
+            "gm_rpg7_prp",
+            "gm_pzf84_oli",
+            "gm_pzf84_win",
+            "gm_pzf44_2_win",
+            "gm_pzf44_2_oli",
+            // Magazine
+            "gm_1Rnd_40mm_heat_pg7v_rpg7",
+            "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
+            "gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf",
+            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"  
         ]
     };
-
-
-    case "spreng":
+    case "pionier":
     {
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _LR +
         [
             // Westen
-           "gm_ge_army_vest_80_demolition"
+           "gm_ge_army_vest_80_demolition",
 
             // Items
             "MineDetector",
@@ -315,44 +300,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Minen
-            
-        ]
-    };
+            "gm_mine_at_dm21",
+            "gm_mine_at_tm46",
+            "gm_explosive_petn_charge",
+            "gm_explosive_plnp_charge",
+            "gm_mine_ap_dm31"
 
-    case "aaat":
-    {
-        _allgemein +
-        _allgemein_Helm +
-        _allgemein_Uniform +
-        _allgemein_Westen +
-        _allgemein_Waffen +
-        _allgemein_Magazine +
-        [
-            // AT
-          
-            // Magazine
-            
-        ]
-    };
-    case "pionier":
-    {
-        _allgemein +
-        _allgemein_Helm +
-        _allgemein_Uniform +
-        _allgemein_Waffen +
-        _allgemein_Magazine +
-        _LR +
-        [
-            // Items
-            "MineDetector",
-            //"MCC_multiTool",
-            "ACE_wirecutter",
-            "ACE_DefusalKit",
-            "ToolKit",
-
-            // Minensucher
-            "ACE_VMH3",
-            "ACE_VMM3"
         ]
     };
 
