@@ -430,6 +430,7 @@ class CfgVehicles
         mass = 13;
     };
 
+
     // ###################### No Uniform ######################
     class Civilian;
     //class CAManBase;

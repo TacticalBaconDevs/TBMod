@@ -4,9 +4,7 @@
 
     Ansprechpartner: IDarky
 */
-// Mengen definierung
 private _allgemein = [
-
     // Gesichtsbedeckung
     "G_Bandanna_beast",
     "G_Bandanna_tan",
@@ -22,7 +20,6 @@ private _allgemein = [
     "gm_gc_facewear_m65",
 
     // Pistolen + Munition
-
     "gm_lp1_blk",
     "gm_p1_blk",
     "gm_p2a1_blk",
@@ -38,15 +35,12 @@ private _allgemein = [
     "gm_1Rnd_265mm_flare_multi_red_gc",
     "gm_1Rnd_265mm_flare_multi_grn_DM21",
     "gm_1Rnd_265mm_flare_multi_nbc_DM47",
-    
 
     // Rucksäcke
-
     "gm_ge_army_backpack_80_oli",
     "gm_dk_army_backpack_73_oli",
 
     // Items
-
     "ACE_CableTie",
     "ACE_IR_Strobe_Item",
     "ACE_Altimeter",
@@ -72,7 +66,7 @@ private _allgemein = [
     "gm_feroz24_blk",
     "gm_feroz24_des",
     //"gm_pgo7v_blk",
- 
+
     //Granaten
     "gm_smokeshell_wht_dm25",
     "gm_smokeshell_blk_gc",
@@ -82,11 +76,9 @@ private _allgemein = [
 
     // SR-Funke
     "TFAR_anprc152"
-    
 ];
 
 private _allgemein_Uniform = [
-
     "gm_ge_army_uniform_crew_80_oli",
     "gm_ge_army_uniform_soldier_80_oli",
     "gm_ge_army_uniform_soldier_80_ols",
@@ -105,12 +97,10 @@ private _allgemein_Uniform = [
 ];
 
 private _allgemein_Westen = [
-
     "gm_ge_bgs_vest_80_rifleman",
     "gm_ge_army_vest_80_mp_wht",
     "gm_gc_bgs_vest_80_border_str",
     "gm_dk_army_vest_54_rifleman"
-
 ];
 
 private _LR = [
@@ -121,7 +111,6 @@ private _LR = [
     "OPXT_oga_210",
     // Winter
     "OPXT_multicama_210"
-
 ];
 
 private _allgemein_Helm = [
@@ -130,14 +119,12 @@ private _allgemein_Helm = [
     "gm_ge_headgear_m62_win_pap_01",
     "gm_dk_headgear_m52_net_win",
     "gm_dk_headgear_m52_net_oli"
-    
 ];
 
 private _allgemein_Waffen = [
     "gm_g3a3_oli",
     "gm_g3a3_grn",
     "gm_mpiak74n_brn"
-
 ];
 
 private _allgemein_Magazine = [
@@ -167,7 +154,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Kopf
             "gm_ge_headgear_beret_crew_red_opcom"
-            
         ]
     };
 
@@ -184,7 +170,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Rucksack + Weste
             "gm_ge_pol_vest_80_wht",
             "gm_ge_backpack_satchel_80_san",
-            
+
             // Waffe
             "gm_mp2a1_blk",
             "gm_32Rnd_9x19mm_B_DM51_mp2_blk",
@@ -201,7 +187,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-            // Munition 
+            // Munition
             "gm_1rnd_67mm_heat_dm22a1_g3"
         ]
     };
@@ -222,7 +208,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_120Rnd_752x51mm_B_T_DM21A2_mg3_grn",
             "ghm_100Rnd_762x54mm_B_T_T46_pk_grn",
             "ghm_100Rnd_762x54mm_API_B32_pk_grn",
-            // Westen 
+            // Westen
             "gm_ge_army_vest_80_machinegunner",
             "gm_dk_army_vest_54_machinegunner"
         ]
@@ -248,7 +234,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_1Rnd_40mm_heat_pg7v_rpg7",
             "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
             "gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf",
-            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"            
+            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"
         ]
     };
 
@@ -267,8 +253,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_pzf84_win",
             "gm_pzf44_2_win",
             "gm_pzf44_2_oli",
-            
-            // Rucksack TOW 
+
+            // Rucksack TOW
             "gm_fagot_launcher_weaponBag",
             "gm_milan_launcher_weaponBag",
 
@@ -276,7 +262,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_1Rnd_40mm_heat_pg7v_rpg7",
             "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
             "gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf",
-            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"  
+            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"
         ]
     };
     case "pionier":
@@ -309,7 +295,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_explosive_petn_charge",
             "gm_explosive_plnp_charge",
             "gm_mine_ap_dm31"
-
         ]
     };
 
