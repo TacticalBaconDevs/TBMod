@@ -24,10 +24,11 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
         TB_customName_themen = ["","Schütze","","","","","","","","","","","Feldarzt","","Sprengspezialist"];
         }
         else
+        {
         // Vanilla-COP
         TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
         TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
-        
+        };
     };
 
     if (_side == opfor) exitWith {};

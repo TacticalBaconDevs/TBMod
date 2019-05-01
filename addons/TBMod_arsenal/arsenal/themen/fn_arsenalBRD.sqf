@@ -54,7 +54,6 @@ private _allgemein = [
     //"ACE_Flashlight_XL50",
     "ACE_MapTools",
     "ACE_RangeTable_82mm",
-    "ItemGPS",
     "gm_watch_kosei_80",    // Uhr
     "gm_ge_army_conat2",    // Kompass
     "gm_gc_compass_f73",    // Kompass
