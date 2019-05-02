@@ -6,16 +6,10 @@
 */
 private _allgemein = [
     // Gesichtsbedeckung
-    "G_Bandanna_beast",
     "G_Bandanna_tan",
     "G_Bandanna_khk",
     "G_Bandanna_oli",
-    "G_Bandanna_aviator",
     "G_Bandanna_blk",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Shades_Black",
     "gm_gc_army_facewear_schm41m",
     "gm_gc_facewear_m65",
 
@@ -42,10 +36,9 @@ private _allgemein = [
 
     // Items
     "ACE_CableTie",
-    "ACE_IR_Strobe_Item",
-    "ACE_Altimeter",
     "ACE_wirecutter",
     //"ACE_Flashlight_XL50",
+    "gm_df7x40_blk",
     "ACE_MapTools",
     "ACE_RangeTable_82mm",
     "gm_watch_kosei_80",    // Uhr

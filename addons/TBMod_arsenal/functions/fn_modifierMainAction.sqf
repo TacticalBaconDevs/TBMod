@@ -22,7 +22,7 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
         {
             // BRD
             TB_blacklistRollen_themen = [ "sani", "spreng", "dmr", "pilot", "sniper", "spotter", "jtac", "rifle"];
-            TB_customName_themen = ["","Schütze","","","","","","","","","","","Feldarzt","","Sprengspezialist"];
+            TB_customName_themen = ["Truppführer","Schütze","","MG 3 Schütze","","Anti Tank","Muniträger","","","","","","Feldarzt","","Sprengspezialist"];
         }
         else
         {
