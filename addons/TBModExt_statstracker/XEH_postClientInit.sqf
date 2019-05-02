@@ -56,6 +56,9 @@ if !(call TB_fnc_isTBMission) exitWith {};
 ["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [_this select 0,_this select 1]]}] call CBA_fnc_addEventHandler;
 ["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [_this select 0,_this select 1]]}] call CBA_fnc_addEventHandler;
 
+["TB_CPSReport", {systemChat str _this}] call CBA_fnc_addEventHandler;
+["TB_FPSReport", {systemChat str _this}] call CBA_fnc_addEventHandler;
+
 //Send script
 [0,{
     if (isNil "TB_ReporterMedical") then
@@ -74,42 +77,34 @@ _hcs pushBack 2;
 [0,{
     if (isNil "TB_ReporterCPS") then
     {
-        TB_ReporterCPS = ["ace_treatmentSucceded", {
-            TB_cps = 0;
-            0 spawn {
-                waitUntil {TB_cps = TB_cps + 1; false}
-            };
-            0 spawn {
-                waitUntil {
-                    uisleep 1;
-                    if (!isNil "TB_ReporterClient") then {
-                        ["TB_CPSReport", [profileName,TB_CPS], TB_ReporterClient] call CBA_fnc_targetEvent;
-                    };
-                    TB_cps = 0;
-                    false
-                }
-            };
-
-            
-        }] call CBA_fnc_addEventHandler;
+        TB_cps = 0;
+        TB_ReporterCPS = 0 spawn {
+            waitUntil {TB_cps = TB_cps + 1; false}
+        };
+        TB_ReporterCPS2 = 0 spawn {
+            waitUntil {
+                uisleep 1;
+                if (!isNil "TB_ReporterClient") then {
+                    ["TB_CPSReport", [profileName,TB_CPS], TB_ReporterClient] call CBA_fnc_targetEvent;
+                };
+                TB_cps = 0;
+                false
+            }
+        };
     };
 }] remoteExec ["call", _hcs];
 
 [0,{
     if (isNil "TB_ReporterFPS") then
     {
-        TB_ReporterFPS = ["ace_treatmentSucceded", {
-            0 spawn {
-                waitUntil {
-                    uisleep 1;
-                    if (!isNil "TB_ReporterClient") then {
-                        ["TB_FPSReport", [profileName,round diag_fps], TB_ReporterClient] call CBA_fnc_targetEvent;
-                    };
-                    false
-                }
-            };
-
-            
-        }] call CBA_fnc_addEventHandler;
+        TB_ReporterFPS = 0 spawn {
+            waitUntil {
+                uisleep 1;
+                if (!isNil "TB_ReporterClient") then {
+                    ["TB_FPSReport", [profileName,round diag_fps], TB_ReporterClient] call CBA_fnc_targetEvent;
+                };
+                false
+            }
+        };
     };
 }] remoteExec ["call", _hcs];
