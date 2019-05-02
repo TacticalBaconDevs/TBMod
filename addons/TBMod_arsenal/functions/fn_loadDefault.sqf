@@ -80,7 +80,7 @@ if (_arsenalType == "Themen") exitWith
         if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
         {
             // BRD
-            ACE_player setUnitLoadout [[[],[],[],["gm_ge_army_uniform_soldier_80_ols",[["ACE_fieldDressing",25],["ACE_tourniquet",4],["ACE_atropine",9],["ACE_adenosine",2]]],["gm_dk_army_vest_54_rifleman",[["gm_feroz24_des",1],["gm_pgo7v_blk",1],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_Flashlight_KSF1",1]]],[],"gm_ge_headgear_hat_80_m62_oli","",["gm_df7x40_blk","","","",[],[],""],["ItemMap","ItemGPS","","gm_gc_compass_f73","gm_watch_kosei_80",""]], true];
+            ACE_player setUnitLoadout [[[],[],[],["gm_ge_army_uniform_soldier_80_ols",[["ACE_fieldDressing",25],["ACE_tourniquet",4],["ACE_atropine",9],["ACE_adenosine",2]]],["gm_dk_army_vest_54_rifleman",[["gm_feroz24_des",1],["gm_pgo7v_blk",1],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_Flashlight_KSF1",1]]],[],"gm_ge_headgear_hat_80_m62_oli","",["gm_df7x40_blk","","","",[],[],""],["ItemMap","","","gm_gc_compass_f73","gm_watch_kosei_80",""]], true];
         }
         else
         {

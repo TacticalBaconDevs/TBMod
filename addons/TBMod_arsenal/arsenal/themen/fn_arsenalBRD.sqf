@@ -11,7 +11,7 @@ private _allgemein = [
     "G_Bandanna_oli",
     "G_Bandanna_blk",
     "gm_gc_army_facewear_schm41m",
-    "gm_gc_facewear_m65",
+    "gm_ge_facewear_m65",
 
     // Pistolen + Munition
     "gm_lp1_blk",
@@ -196,11 +196,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_mg3_blk",
             "gm_hmgpkm_prp",
             // Magazine
-            "gm_120Rnd_752x51mm_B_T_DM21_mg3_grn",
-            "gm_120Rnd_752x51mm_B_T_DM21A1_mg3_grn",
-            "gm_120Rnd_752x51mm_B_T_DM21A2_mg3_grn",
-            "ghm_100Rnd_762x54mm_B_T_T46_pk_grn",
-            "ghm_100Rnd_762x54mm_API_B32_pk_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
+            "gm_100Rnd_762x54mm_B_T_T46_pk_grn",
+            "gm_100Rnd_762x54mm_API_B32_pk_grn",
             // Westen
             "gm_ge_army_vest_80_machinegunner",
             "gm_dk_army_vest_54_machinegunner"
@@ -217,11 +217,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         [
             // Magazine
-            "gm_120Rnd_752x51mm_B_T_DM21_mg3_grn",
-            "gm_120Rnd_752x51mm_B_T_DM21A1_mg3_grn",
-            "gm_120Rnd_752x51mm_B_T_DM21A2_mg3_grn",
-            "ghm_100Rnd_762x54mm_B_T_T46_pk_grn",
-            "ghm_100Rnd_762x54mm_API_B32_pk_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
+            "gm_100Rnd_762x54mm_B_T_T46_pk_grn",
+            "gm_100Rnd_762x54mm_API_B32_pk_grn",
 
             // AT
             "gm_1Rnd_40mm_heat_pg7v_rpg7",
