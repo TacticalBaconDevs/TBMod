@@ -122,7 +122,7 @@ private _allgemein_Waffen = [
 
 private _allgemein_Magazine = [
     "gm_30Rnd_545x39mm_B_7N6_ak74_prp",
-    "gm_20Rnd_762x51mm_B_T_DM21_g3_blk",
+    "gm_20Rnd_762x51mm_B_T_DM21A1_g3_blk",
     "gm_20Rnd_762x51mm_AP_DM151_g3_blk"
 ];
 
