@@ -45,7 +45,7 @@ class CfgFunctions
             class arsenalUSAVietnam {};
             class arsenalRUSSSimple {};
             class arsenalVANILLACOP {};
-            class arsenalSWOPRebuplik {};
+            class arsenalBRD {};
         };
     };
 };
