@@ -16,7 +16,8 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical",
             "TB_zeus_applyLoadout",
             "TB_zeus_handleAsPlayerMedical",
-            "TB_zeus_moduleUnflipVehicle"
+            "TB_zeus_moduleUnflipVehicle",
+            "TB_zeus_adjust_ace_cargo"
         };
 
         requiredAddons[] = {

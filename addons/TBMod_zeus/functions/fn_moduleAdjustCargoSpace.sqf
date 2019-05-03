@@ -12,17 +12,17 @@ deleteVehicle _logic;
 if !(_activated) exitWith {true};
 if (isNull _unit) exitWith {systemChat "[TBMOD_zeus] No vehicle selected."; true};
 
-0 spawn {
+_unit spawn {
 	private _dialogResult = 
 	[ 
 		"TB Adjust Ace Cargo", 
-		[ ["BIS_fnc_getVirtualWeaponCargo Space", "", "0"] ] 
+		[ ["Cargo Space", "", "0"] ] 
 	] call Ares_fnc_showChooseDialog; 
 	
 	if (_dialogResult isEqualTo []) exitWith{};
 	_dialogResult params ["_newSize"];
 	_newSize = parseNumber (_dialogResult select 0);
-	[_unit, _newSize] call ace_cargo_fnc_setSpace
-}
+	[_this, _newSize] call ace_cargo_fnc_setSpace;
+};
 
 true
