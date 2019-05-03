@@ -6,20 +6,30 @@ params ["_args", ""];
 _args params ["_target", "_player", "_params", "_actionData"];
 
 // ThemenArsenale Rollen blockieren
+// Reihenfolge TB_blacklistRollen_themen: ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]
 TB_blacklistRollen_themen = [];
 TB_customName_themen = [];
 if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
 {
     private _patches = configfile >> "CfgPatches";
-    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter", "rifle"]};
-    if (isClass (_patches >> "SWOP_Main")) exitWith {TB_blacklistRollen_themen = ["sniper", "spotter", "rifle"]};
-
     private _side = side ACE_player;
+
+    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter", "rifle"]};
+
     if (_side == blufor) exitWith
     {
-        // Vanilla-COP
-        TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
-        TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+        if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
+        {
+            // BRD
+            TB_blacklistRollen_themen = [ "sani", "spreng", "dmr", "pilot", "sniper", "spotter", "jtac", "rifle"];
+            TB_customName_themen = ["Truppführer","Schütze + DM22A1","","MG3-Schütze","","Anti-Tank","Muniträger","","","","","","Feldarzt","","Sprengspezialist"];
+        }
+        else
+        {
+            // Vanilla-COP
+            TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
+            TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+        };
     };
 
     if (_side == opfor) exitWith {};
