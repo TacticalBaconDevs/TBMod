@@ -32,7 +32,7 @@ if (_arsenalType == "USA") exitWith
 
 if (_arsenalType == "BW") exitWith
 {
-    ACE_player setUnitLoadout [[[],[],["hlc_pistol_P226R_Combat","","hlc_acc_DBALPL_FL","HLC_Optic_Docter_CADEX",["hlc_15Rnd_9x19_JHP_P226",15],[],""],["BWA3_Uniform2_Fleck",[["ACE_fieldDressing",25],["ACE_adenosine",2],["ACE_atropine",9],["ACE_tourniquet",4]]],["BWA3_Vest_JPC_Rifleman_Fleck",[["ACE_MapTools",1],["ACE_Flashlight_KSF1",1],["ACE_CableTie",2],["ACE_salineIV",4],["ACE_EntrenchingTool",1],["Laserbatteries",1,1],["SmokeShell",2,1],["hlc_15Rnd_9x19_JHP_P226",2,15]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152_8","ItemCompass","ACE_Altimeter",""]], true];
+    ACE_player setUnitLoadout [[[],[],[],["BWA3_Uniform2_Fleck",[["ACE_fieldDressing",25],["ACE_adenosine",2],["ACE_atropine",9],["ACE_tourniquet",4]]],["BWA3_Vest_JPC_Rifleman_Fleck",[["ACE_MapTools",1],["ACE_Flashlight_KSF1",1],["ACE_CableTie",2],["ACE_salineIV",4],["ACE_EntrenchingTool",1],["Laserbatteries",1,1],["SmokeShell",2,1]]],[],"BWA3_OpsCore_Tropen_Camera","",["Binocular","","","",[],[],""],["ItemMap","BWA3_ItemNaviPad","TFAR_anprc152_8","ItemCompass","ACE_Altimeter",""]], true];
 };
 
 if (_arsenalType == "VANILLA") exitWith
@@ -68,20 +68,25 @@ if (_arsenalType == "RUSS") exitWith
 if (_arsenalType == "Themen") exitWith
 {
     private _patches = configfile >> "CfgPatches";
+    private _side = side ACE_player;
+
     if (isClass (_patches >> "uns_main")) exitWith
     {
         ACE_player setUnitLoadout [[[],[],[],["UNS_ARMY_BDU_101stAB65pv1",[["ACE_quikclot",15],["ACE_tourniquet",2],["ACE_Atropine",3],["ACE_EntrenchingTool",1]]],["UNS_M1956_A12",[]],[],"UNS_M1_3A","",[],["ItemMap","","","ItemCompass","ItemWatch",""]], true];
     };
-    if (isClass (_patches >> "SWOP_Main")) exitWith
-    {
-        ACE_player setUnitLoadout [[[],[],[],["SWOP_Clonetrooper_501_F_CombatUniform",[["ACE_tourniquet",4],["ACE_EntrenchingTool",1],["ACE_Atropine",5],["ACE_CableTie",2],["ACE_quikclot",15]]],["SWOP_Clonetrooper_501_armor",[]],["SWOP_InvisBag",[]],"SWOP_Cloneofficer_capM","",["ElectroBinocularsW_F","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]], true];
-    };
 
-    private _side = side ACE_player;
     if (_side == blufor) exitWith
     {
-        // Vanilla-COP
-        ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_Atropine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
+        if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
+        {
+            // BRD
+            ACE_player setUnitLoadout [[[],[],[],["gm_ge_army_uniform_soldier_80_ols",[["ACE_fieldDressing",25],["ACE_tourniquet",4],["ACE_atropine",9],["ACE_adenosine",2]]],["gm_dk_army_vest_54_rifleman",[["gm_feroz24_des",1],["gm_pgo7v_blk",1],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_Flashlight_KSF1",1]]],[],"gm_ge_headgear_hat_80_m62_oli","",["gm_df7x40_blk","","","",[],[],""],["ItemMap","","","gm_gc_compass_f73","gm_watch_kosei_80",""]], true];
+        }
+        else
+        {
+            // Vanilla-COP
+            ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_Atropine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
+        };
     };
 
     if (_side == opfor) exitWith
