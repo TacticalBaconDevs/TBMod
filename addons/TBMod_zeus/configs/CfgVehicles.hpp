@@ -83,7 +83,7 @@ class CfgVehicles
         category = "TB_categorie_zeus_ki";
     };
 
-    class TB_zeus_adjust_ace_cargo : TB_zeus_base
+    class TB_zeus_adjustAceCargo : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "Adjust Ace Cargo space Loadout";

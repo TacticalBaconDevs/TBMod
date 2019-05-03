@@ -148,11 +148,6 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {"\TBMod_arsenal\pics\Arsenal_Russland.paa"};
     };
 
-    class TB_arsenal_swop : TB_arsenal_base
-    {
-        MAKE_PUBLIC(Republik,SWOPReb);
-    };
-
     // ###################### SpezialArsenale ######################
     class TB_arsenal_themen : TB_arsenal_base
     {
