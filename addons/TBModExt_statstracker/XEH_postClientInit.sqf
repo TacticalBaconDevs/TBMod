@@ -25,6 +25,7 @@ if !(call TB_fnc_isTBMission) exitWith {};
     uiSleep 10;
     TB_ReporterClient = (missionNamespace getVariable ["TB_ReporterClient", []]);
     TB_ReporterClient pushBackUnique player;
+	TB_ReporterClient = TB_ReporterClient - [objNull];
     publicVariable "TB_ReporterClient";
     (format ["[TBMod_statstracker] %1 is using the Statstracker", TB_ReporterClient]) remoteExecCall ["systemChat"];
 };
@@ -52,12 +53,15 @@ if !(call TB_fnc_isTBMission) exitWith {};
 
 
 // Setup reviever
-["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
-["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [_this select 0,_this select 1]]}] call CBA_fnc_addEventHandler;
-["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [_this select 0,_this select 1]]}] call CBA_fnc_addEventHandler;
 
-["TB_CPSReport", {systemChat str _this}] call CBA_fnc_addEventHandler;
-["TB_FPSReport", {systemChat str _this}] call CBA_fnc_addEventHandler;
+["TB_CPSReport", {systemChat ("CPS" + (str _this))}] call CBA_fnc_addEventHandler;
+["TB_FPSReport", {systemChat ("FPS" + (str _this))}] call CBA_fnc_addEventHandler;
+
+["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
+["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [text (_this select 0), (_this select 1)]]}] call CBA_fnc_addEventHandler;
+["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [text (_this select 0), (_this select 1)]]}] call CBA_fnc_addEventHandler;
+
+
 
 //Send script
 [0,{
@@ -79,7 +83,7 @@ _hcs pushBack 2;
     {
         TB_cps = 0;
         TB_ReporterCPS = 0 spawn {
-            waitUntil {TB_cps = TB_cps + 1; false}
+            waitUntil {TB_cps = TB_cps + 1; false};
         };
         TB_ReporterCPS2 = 0 spawn {
             waitUntil {
@@ -89,7 +93,7 @@ _hcs pushBack 2;
                 };
                 TB_cps = 0;
                 false
-            }
+            };
         };
     };
 }] remoteExec ["call", _hcs];
