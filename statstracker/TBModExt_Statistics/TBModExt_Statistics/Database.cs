@@ -194,8 +194,7 @@ namespace TBModExt_Statistics
                 command.Prepare();
 
                 command.Parameters.AddWithValue("@unitname", values[0]);
-                command.Parameters.AddWithValue("@uuid", values[1]);
-                command.Parameters.AddWithValue("@fps", Convert.ToDouble(values[2]));
+                command.Parameters.AddWithValue("@fps", Convert.ToDouble(values[1]));
 
                 command.ExecuteNonQuery();
             }
@@ -208,8 +207,7 @@ namespace TBModExt_Statistics
                 command.Prepare();
 
                 command.Parameters.AddWithValue("@unitname", values[0]);
-                command.Parameters.AddWithValue("@uuid", values[1]);
-                command.Parameters.AddWithValue("@cps", Convert.ToDouble(values[2]));
+                command.Parameters.AddWithValue("@cps", Convert.ToDouble(values[1]));
 
                 command.ExecuteNonQuery();
             }
