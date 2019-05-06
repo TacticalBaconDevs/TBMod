@@ -10,6 +10,6 @@ class CfgMagazines
         displayNameShort = "Weißer AIM Rauch";
         descriptionShort = "Typ: AIM-Rauchmunition - weiß <br />Patronen: 3<br />Eingesetzt von: 3GL";
 
-        mass = 36; //12
+        mass = 20; //12
     };
 };
