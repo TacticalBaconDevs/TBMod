@@ -113,7 +113,6 @@ private _allgemein = [
     //"TB_building_item_Land_Pallet_vertical_F",
     //"TB_building_item_Land_SandbagBarricade_01_hole_F",
     // ### Granaten
-    "TB_mag_IR_Handgrenade",
     "SmokeShell",
     "SmokeShellRed",
     "SmokeShellGreen",

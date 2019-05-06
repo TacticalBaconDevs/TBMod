@@ -71,27 +71,7 @@ class CfgAmmo
         visualTarget = 1;
         visualTargetSize = 2;
     };
-
-    class TB_IR_Grenade : B_IRStrobe { // IR Handgranate
-        ace_frag_enabled = 0;
-        ace_frag_force = 0;
-        cost = 0;
-        dangerRadiusHit = 0;
-        deflecting = 0;
-        hit = 0;
-        indirectHit = 0;
-        indirectHitRange = 0;        
-        irTarget = 1;
-        irTargetSize = 2;
-        laserTarget = 1;
-        lockSeekRadius = 100;
-        timeToLive = 900;
-        visibleFire = 0;
-        visibleFireTime = 0;
-        visualTarget = 1;
-        visualTargetSize = 2;
-    };
-
+    
     class rhsusf_40mm_HEDP;
     class TB_rhs_40mm_Delay : rhsusf_40mm_HEDP { // Unterlauf-Delay Grenade
         deflecting = 0;

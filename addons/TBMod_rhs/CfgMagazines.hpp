@@ -132,20 +132,7 @@ class CfgMagazines
         mass = 5;
         picture = "\z\ace\addons\huntir\data\m_m1070_ca.paa";
         tracersEvery = 1;
-    };
-    
-    class TB_rhs_mag_IR_Handgrenade : B_IR_Grenade // Umbenennung zu TB_IR_Handgrenade
-    {
-        ammo = "TB_IR_Grenade";
-        author = "TBMod";
-
-        descriptionShort = "Type: TB IR Handgrenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB IR Handgrenade Round";
-        displaynameshort = "TB IR Handgrenade";
-
-        initSpeed = 30;
-        mass = 5;
-    };
+    };       
 
     class rhs_mag_M585_white;
     class TB_rhs_mag_M585_white : rhs_mag_M585_white // White Flare
