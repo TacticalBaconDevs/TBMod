@@ -6,6 +6,7 @@
 *.cmd
 *.dll
 *.class
+*.code-workspace
 
 /#localStuff
 /Changelog.txt
@@ -15,4 +16,4 @@ statstracker/TBModExt_Statistics/.vs/
 statstracker/TBModExt_Statistics/packages/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/bin/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/obj/
-
+.vscode

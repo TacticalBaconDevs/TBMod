@@ -59,6 +59,7 @@ class CfgAmmo
         hit = 300;
         indirectHit = 10;
         indirectHitRange = 9;
+        explosive = 0.7;
 
         muzzleEffect = "";
         class CamShakeExplode
@@ -99,6 +100,7 @@ class CfgAmmo
         hit = 80;
         indirectHit = 30;
         indirectHitRange = 25;
+        explosive = 0.9;
 
         // explosionEffects = "HERocketExplosion"; //ExploAmmoExplosion, HEShellExplosion
         // CraterEffects = "";

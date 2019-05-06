@@ -17,6 +17,7 @@ class CfgFunctions
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
             class moduleFrontverlauf {};
+            class moduleAdjustCargoSpace {};
             class moduleUnflipVehicle {};
             class unflipVehicle {};
         };
