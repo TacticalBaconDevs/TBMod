@@ -134,7 +134,7 @@ class CfgMagazines
         tracersEvery = 1;
     };
     
-    class TB_mag_IR_Handgrenade : B_IR_Grenade // Umbenennung zu TB_IR_Grenade
+    class TB_rhs_mag_IR_Handgrenade : B_IR_Grenade // Umbenennung zu TB_IR_Handgrenade
     {
         ammo = "TB_IR_Grenade";
         author = "TBMod";
