@@ -14,11 +14,10 @@
     a: reyhard
     modified: TacticalBacon-Team
 */
-params ["_projectile"];
-
+private _projectile = _this;
 private _distance = 20;
 private _units = _projectile nearEntities ["CAManBase", _distance];
-private _projectileHigh = [_p select 0, _p select 1, (_p select 2) + 0.5];
+private _projectileHigh = [_projectile select 0, _projectile select 1, (_projectile select 2) + 0.5];
 
 {
     private _eyePos = eyePos _x;

@@ -34,7 +34,7 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical"
         };
 
-        requiredVersion = 1.90;
+        requiredVersion = 1.92;
         requiredAddons[] = {
             // Arma3
             "A3_Data_F_Sams_Loadorder",
