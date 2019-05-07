@@ -78,12 +78,12 @@ class CfgMagazines
     class rhs_mag_M441_HE;
     class TB_rhs_mag_40mm_HE : rhs_mag_M441_HE // Umbenennung zu TB_HE
     {
-        ammo = "TB_rhsusf_40mm_HE";
+        ammo = "TB_rhsusf_40mm_HET";
         author = "TBMod";
 
-        descriptionShort = "Type: TB HE Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB 40mm HE Grenade Round";
-        displaynameshort = "TB HE Grenade";
+        descriptionShort = "Type: TB HET Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
+        displayName = "TB 40mm HET Grenade Round";
+        displaynameshort = "TB HET Grenade";
 
         mass = 5; // 5.06
     };

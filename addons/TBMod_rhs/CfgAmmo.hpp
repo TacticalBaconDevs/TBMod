@@ -29,14 +29,34 @@ class CfgAmmo
     };
 
     class rhsusf_40mm_HE;
-    class TB_rhsusf_40mm_HE : rhsusf_40mm_HE // Unterlauf-HE
+    class TB_rhsusf_40mm_HET : rhsusf_40mm_HE // Unterlauf-HE
     {
         caliber = 0.15; // 2
-        deflecting = 0; // 5
+        deflecting = 100.0; // 5 - 100 = HET Wert
         fuseDistance = 10; // 15
         hit = 9; // 20
         indirectHit = 8.5; // 5
         indirectHitRange = 10.5; // 10.7
+
+		class HitEffects
+		{
+			hitMetal = "RHS_m397_hit";
+			hitMetalPlate = "RHS_m397_hit";
+			hitBuilding = "RHS_m397_hit";
+			hitConcrete = "RHS_m397_hit";
+			hitGroundSoft = "RHS_m397_hit";
+			hitGroundHard = "RHS_m397_hit";
+			default_mat = "RHS_m397_hit";
+			hitFoliage = "RHS_m397_hit";
+			hitGlass = "RHS_m397_hit";
+			hitGlassArmored = "RHS_m397_hit";
+			hitWood = "RHS_m397_hit";
+			hitPlastic = "RHS_m397_hit";
+			hitRubber = "RHS_m397_hit";
+			hitMan = "RHS_m397_hit";
+			hitWater = "RHS_m397_hit";
+			hitVirtual = "RHS_m397_hit";
+		};
     };
     class TB_rhs_40mm_Delay : rhsusf_40mm_HE // Unterlauf-Delay Grenade
     {
