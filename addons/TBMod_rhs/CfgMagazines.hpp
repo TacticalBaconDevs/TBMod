@@ -62,6 +62,7 @@ class CfgMagazines
         mass = 176.37; // 286.88
     };
 
+    class rhs_mag_M433_HEDP;
     class TB_rhs_mag_40mm_HEDP : rhs_mag_M433_HEDP // Umbenennung zu TB_HEDP
     {
         ammo = "TB_rhs_40mm_HEDP";
