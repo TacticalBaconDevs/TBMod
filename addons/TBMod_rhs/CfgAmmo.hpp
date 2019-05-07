@@ -20,12 +20,6 @@ class CfgAmmo
     ADD_PRECISE_SMOKE(rhs_40mm_smoke_white);
     ADD_PRECISE_SMOKE(rhs_40mm_smoke_yellow);
 
-    class rhs_g_vog25;
-    class rhs_g_vg40sz : rhs_g_vog25 { // Unterlauf-Stungrenade 
-        deflection = 0;
-        fuseDistance = 10;
-    };
-
     class rhsusf_40mm_HE;
     class TB_rhs_40mm_HEDP : rhsusf_40mm_HE { // Unterlauf-HEDP ;hat gewollt kaum Wirkung gegen KPz
         ace_frag_enabled = 0;
@@ -43,6 +37,24 @@ class CfgAmmo
         hit = 9;
         indirectHit = 8.5;
         indirectHitRange = 10.5;
+    };
+
+    class TB_rhs_40mm_Delay : rhsusf_40mm_HE { // Unterlauf-Delay Grenade
+        deflecting = 0;
+        explosionAngle = 360;
+        explosionTime = 4;
+        fuseDistance = 9;
+        hit = 0;
+        indirectHit = 6;
+        indirectHitRange = 6.5;
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+        tracerColor[] = {0.9,0.9,0.1,1};
+        tracerColorR[] = {0.9,0.9,0.1,1};
+        tracerEndTime = 3.98;
+        tracerScale= 1.2;
+        tracerStartTime = 0.04;
+        visibleFire = 0.3;
+        visibleFireTime = 1;
     };
 
     class B_IRStrobe;
@@ -72,25 +84,6 @@ class CfgAmmo
         visualTargetSize = 2;
     };
     
-    class rhsusf_40mm_HEDP;
-    class TB_rhs_40mm_Delay : rhsusf_40mm_HEDP { // Unterlauf-Delay Grenade
-        deflecting = 0;
-        explosionAngle = 360;
-        explosionTime = 4;
-        fuseDistance = 9;
-        hit = 0;
-        indirectHit = 6;
-        indirectHitRange = 6.5;
-        model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-        tracerColor[] = {0.9,0.9,0.1,1};
-        tracerColorR[] = {0.9,0.9,0.1,1};
-        tracerEndTime = 3.98;
-        tracerScale= 1.2;
-        tracerStartTime = 0.04;
-        visibleFire = 0.3;
-        visibleFireTime = 1;
-    };
-
     class rhs_ammo_12g_slug;
     class TB_rhs_ammo_40mm_Slugshot : rhs_ammo_12g_slug { // Unterlauf-Slug
         caliber = 2;

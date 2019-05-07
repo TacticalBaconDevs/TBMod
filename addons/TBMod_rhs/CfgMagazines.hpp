@@ -63,21 +63,6 @@ class CfgMagazines
     };
 
     class rhs_mag_M433_HEDP;
-    class TB_rhs_mag_40mm_Delay : rhs_mag_M433_HEDP // Delay Grenade
-    {
-        ammo = "TB_rhs_40mm_Delay";
-        author = "TBMod";
-
-        descriptionShort = "Type: TB Delay Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB 40mm Delay Direct Grenade Round";
-        displaynameshort = "TB Delay D Grenade";
-
-        initSpeed = 425;
-        mass = 5;
-        picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m781_ca.paa";
-        tracersEvery= 1;
-    };
-
     class TB_rhs_mag_40mm_HEDP : rhs_mag_M433_HEDP // Umbenennung zu TB_HEDP
     {
         ammo = "TB_rhs_40mm_HEDP";
@@ -101,6 +86,21 @@ class CfgMagazines
         displaynameshort = "TB HE Grenade";
 
         mass = 5;
+    };
+
+    class TB_rhs_mag_40mm_Delay : rhs_mag_M441_HE // Delay Grenade
+    {
+        ammo = "TB_rhs_40mm_Delay";
+        author = "TBMod";
+
+        descriptionShort = "Type: TB Delay Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
+        displayName = "TB 40mm Delay Direct Grenade Round";
+        displaynameshort = "TB Delay D Grenade";
+
+        initSpeed = 425;
+        mass = 5;
+        picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m781_ca.paa";
+        tracersEvery= 1;
     };
 
     class rhsusf_8Rnd_Slug;

@@ -98,8 +98,7 @@ private _allgemein = [
     "ACE_CableTie",
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
-    //"ACE_IR_Strobe_Item",
-    "TB_mag_IR_Handgrenade",
+    //"ACE_IR_Strobe_Item",    
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
