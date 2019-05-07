@@ -99,7 +99,6 @@ private _allgemein = [
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
     //"ACE_IR_Strobe_Item",
-    "TB_mag_IR_Handgrenade",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
@@ -468,7 +467,7 @@ private _grenadier_munition = [
     "TB_rhs_mag_40mm_HE",
     "TB_rhs_mag_40mm_HEDP",
     "rhs_mag_m4009",    // Stun
-    
+
     // Flares
     "rhs_mag_M585_white",
     "rhs_mag_m661_green",
@@ -482,9 +481,9 @@ private _grenadier_munition = [
     "rhs_mag_m716_Yellow_precise",
 
     // Sondermunition
-    "TB_rhs_mag_40mm_Delay",    
+    "TB_rhs_mag_40mm_Delay",
     "TB_rhs_mag_40mm_IR_Grenade",
-    "TB_rhs_mag_40mm_Slugshot",    
+    "TB_rhs_mag_40mm_Slugshot",
 
     "ACE_HuntIR_M203"
 ];
@@ -618,7 +617,7 @@ private _items = [];
 // _gepaeck_mittel                   - Seesack
 // _gepaeck_gross                    - Carryall
 // _lrFunken                         - LR Funken
-// _moerser_munition                 - Munition für Kommandomoerser  
+// _moerser_munition                 - Munition für Kommandomoerser
 
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
@@ -999,7 +998,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_Vector",
 
             // Waffen
-            "TB_vz99_carryWeapon"           
+            "TB_vz99_carryWeapon"
         ]
     };
 

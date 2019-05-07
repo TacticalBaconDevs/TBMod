@@ -62,22 +62,6 @@ class CfgMagazines
         mass = 176.37; // 286.88
     };
 
-    class rhs_mag_M433_HEDP;
-    class TB_rhs_mag_40mm_Delay : rhs_mag_M433_HEDP // Delay Grenade
-    {
-        ammo = "TB_rhs_40mm_Delay";
-        author = "TBMod";
-
-        descriptionShort = "Type: TB Delay Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB 40mm Delay Direct Grenade Round";
-        displaynameshort = "TB Delay D Grenade";
-
-        initSpeed = 425;
-        mass = 5;
-        picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m781_ca.paa";
-        tracersEvery= 1;
-    };
-
     class TB_rhs_mag_40mm_HEDP : rhs_mag_M433_HEDP // Umbenennung zu TB_HEDP
     {
         ammo = "TB_rhs_40mm_HEDP";
@@ -87,7 +71,7 @@ class CfgMagazines
         displayName = "TB 40mm HEDP Grenade Round";
         displaynameshort = "TB HEDP Grenade";
 
-        mass = 5;
+        mass = 5; // 5.06
     };
 
     class rhs_mag_M441_HE;
@@ -100,7 +84,21 @@ class CfgMagazines
         displayName = "TB 40mm HE Grenade Round";
         displaynameshort = "TB HE Grenade";
 
-        mass = 5;
+        mass = 5; // 5.06
+    };
+    class TB_rhs_mag_40mm_Delay : rhs_mag_M441_HE // Delay Grenade
+    {
+        ammo = "TB_rhs_40mm_Delay";
+        author = "TBMod";
+
+        descriptionShort = "Type: TB Delay Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
+        displayName = "TB 40mm Delay Direct Grenade Round";
+        displaynameshort = "TB Delay D Grenade";
+
+        initSpeed = 425; // 80
+        mass = 5; // 5.06
+        picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m781_ca.paa"; // \rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m443_ca.paa
+        tracersEvery = 1; // 0
     };
 
     class rhsusf_8Rnd_Slug;
@@ -113,26 +111,10 @@ class CfgMagazines
         displayName = "TB 40mm Slugshot Grenade Round";
         displaynameshort = "TB Slugshot Grenade";
 
-        count = 1;
-        mass = 5;
+        count = 1; // 8
+        mass = 5; // 5.06
         picture = "\rhsusf\addons\rhsusf_weapons\icons\m576_buckshot_ca.paa";
     };
-    
-    class B_IR_Grenade;
-    class TB_rhs_mag_40mm_IR_Grenade : B_IR_Grenade // Umbenennung zu TB_40mm_IR_Grenade
-    {
-        ammo = "TB_rhs_40mm_IR_Grenade";
-        author = "TBMod";
-
-        descriptionShort = "Type: TB IR Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB 40mm IR Direct Grenade Round";
-        displaynameshort = "TB IR D Grenade"; 
-
-        initSpeed = 425;
-        mass = 5;
-        picture = "\z\ace\addons\huntir\data\m_m1070_ca.paa";
-        tracersEvery = 1;
-    };       
 
     class rhs_mag_M585_white;
     class TB_rhs_mag_M585_white : rhs_mag_M585_white // White Flare
@@ -144,7 +126,7 @@ class CfgMagazines
         displayName = "TB 40mm White Flare Grenade Round";
         displaynameshort = "TB White Flare Grenade";
 
-        mass = 3;
+        mass = 3; // 5.06
     };
 
     class rhs_mag_m661_green;
@@ -157,7 +139,7 @@ class CfgMagazines
         displayName = "TB 40mm Green Flare Grenade Round";
         displaynameshort = "TB Green Flare Grenade";
 
-        mass = 3;
+        mass = 3; // 5.06
     };
 
     class rhs_mag_m662_red;
@@ -170,6 +152,6 @@ class CfgMagazines
         displayName = "TB 40mm Red Flare Grenade Round";
         displaynameshort = "TB Red Flare Grenade";
 
-        mass = 3;
+        mass = 3; // 5.06
     };
 };

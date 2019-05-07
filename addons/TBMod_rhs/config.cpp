@@ -23,5 +23,4 @@ class CfgPatches
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgMagazineWells.hpp"
-// #include "CfgWeapons.hpp"
-// #include "CfgRecoils.hpp"
+#include "CfgCloudlets.hpp"
