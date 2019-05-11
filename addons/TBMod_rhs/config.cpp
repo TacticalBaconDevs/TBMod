@@ -9,7 +9,6 @@ class CfgPatches
         author = "shukari";
         authorUrl = "tacticalbacon.de";
 
-        requiredVersion = 1.84;
         requiredAddons[] = {
             "TBMod_main",
             "rhsusf_main"
@@ -23,5 +22,4 @@ class CfgPatches
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgMagazineWells.hpp"
-// #include "CfgWeapons.hpp"
-// #include "CfgRecoils.hpp"
+#include "CfgCloudlets.hpp"
