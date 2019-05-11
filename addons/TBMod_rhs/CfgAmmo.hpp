@@ -32,7 +32,7 @@ class CfgAmmo
     class TB_rhsusf_40mm_HET : rhsusf_40mm_HE // Unterlauf-HE
     {
         caliber = 0.15; // 2
-        deflecting = 100.0; // 5 - 100 = HET Wert
+        deflecting = 0; // 5 - 100 = HET Wert
         fuseDistance = 10; // 15
         hit = 9; // 20
         indirectHit = 8.5; // 5
