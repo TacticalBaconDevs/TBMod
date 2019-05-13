@@ -559,6 +559,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "BWA3_CrewmanKSK_Tropen_Headset",
             "BWA3_CrewmanKSK_Tropen",
             "BWA3_Knighthelm",
+            "H_PilotHelmetFighter_B",
 
             // Gesichtsbedeckung
             "G_Aviator",
