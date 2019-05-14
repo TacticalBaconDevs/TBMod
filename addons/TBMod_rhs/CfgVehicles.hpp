@@ -60,11 +60,11 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.84; // 0.9
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"};
+        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"}; // "240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
         radarType = 8; // 1
-        weapons[] = {"rhsusf_weap_CMFlareLauncher"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
     class RHS_UH60_Base;
@@ -80,10 +80,10 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.86; // 0.9
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         nvScanner = 1; // 0
         radarTargetSize = 1.25; // 1
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ144"
     };
 
     class rhsusf_CH53E_USMC;
@@ -99,10 +99,10 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 2+8+16
         irTargetSize = 1.24; // 1.2
         LockDetectionSystem = "2 + 8 + 4"; // 8
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         radarTargetSize = 1.5; // 1.12
         radarType = 8; // 4
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANAAQ24"
     };
 
     class RHS_CH_47F_base;
@@ -116,10 +116,10 @@ class CfgVehicles
         audible = 74; // 50
         camouflage = 120; // 100
         irTargetSize = 1.14; // 1.2
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         radarTargetSize = 1.65; // 1.12
         radarType = 8; // 4
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"
     };
 
     class Heli_Transport_03_base_F;
@@ -134,9 +134,9 @@ class CfgVehicles
         camouflage = 110; // 100
         irTargetSize = 0.86; // 1.2
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.41; // 1.2
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_01_base_F;
@@ -148,9 +148,9 @@ class CfgVehicles
         camouflage = 78; // 100
         irTargetSize = 0.5; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.33; // 0.7
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Attack_01_dynamicLoadout_base_F;
@@ -164,10 +164,10 @@ class CfgVehicles
         camouflage = 63; // 100
         irTargetSize = 0.48; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"};
+        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"}; // "240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 0.21; // 0.7
-        weapons[] = {"rhsusf_weap_CMFlareLauncher"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
     class RHS_AH1Z_base;
@@ -212,10 +212,10 @@ class CfgVehicles
         camouflage = 170; // 100
         irScanRangeMin = 200; // 500
         irTargetSize = 1.65; // 1
-        magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"};
+        magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
-        weapons[] = {"Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"};
+        weapons[] = {"Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","CMFlareLauncher"
     };
 
     class Plane_Fighter_01_Base_F;
@@ -230,10 +230,10 @@ class CfgVehicles
         camouflage = 150; // 100
         irScanRangeMin = 650; // 2000
         irTargetSize = 1.7; // 1
-        magazines[] = {"magazine_Fighter01_Gun20mm_AA_x450","magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"};
+        magazines[] = {"magazine_Fighter01_Gun20mm_AA_x450","magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 0.7; // 0.8
-        weapons[] = {"weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"};
+        weapons[] = {"weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","CMFlareLauncher_Singles"
     };
 
     class UAV_01_base_F;
@@ -311,10 +311,10 @@ class CfgVehicles
         camouflage = 84; // 100
         irTargetSize = 0.8; // 1
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 1
-        weapons[] = {"M134_minigun","missiles_DAR","rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"M134_minigun","missiles_DAR","rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_02_base_F;
@@ -324,9 +324,9 @@ class CfgVehicles
         audible = 64; // 50
         camouflage = 95; // 100
         irTargetSize = 1; // 1.2
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"};
+        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 1; // 1.2
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"};
+        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class UAV_02_dynamicLoadout_base_F;
@@ -366,7 +366,7 @@ class CfgVehicles
         armor = 250; // 400
         audible = 3.2; // 6
         camouflage = 1.45; // 2
-        magazines[] = {"SmokeLauncherMag_boat","SmokeLauncherMag_boat","SmokeLauncherMag_boat"};
+        magazines[] = {"SmokeLauncherMag_boat","SmokeLauncherMag_boat","SmokeLauncherMag_boat"}; // "SmokeLauncherMag_boat"
     };
 
     class SDV_01_base_F;
@@ -394,14 +394,14 @@ class CfgVehicles
     class rhsusf_hmmwe_base;
     class rhsusf_m998_w_2dr : rhsusf_hmmwe_base // RHS Humvee Serie
     {
-        armor = 90 // 80
+        armor = 90; // 80
         audible = 4; // 5
     };
 
     class MRAP_01_base_F;
     class B_MRAP_01_F : MRAP_01_base_F // Vanilla Hunter
     {
-        armor = 210 // 200
+        armor = 210; // 200
     };
 
     class I_APC_Wheeled_03_base_F;
