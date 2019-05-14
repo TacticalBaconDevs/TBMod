@@ -14,9 +14,9 @@ class CfgPatches
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = 1.3.3;
-        versionStr = "1.3.3";
-        versionAr[] = {1,3,3};
+        version = 1.3.4;
+        versionStr = "1.3.4";
+        versionAr[] = {1,3,4};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -61,7 +61,8 @@ class CfgPatches
             "achilles_functions_f_achilles",
             "achilles_settings_f",
             "3denEnhanced",
-            "adv_aceCPR"
+            "adv_aceCPR",
+            "WarFXPE"
         };
     };
 };
