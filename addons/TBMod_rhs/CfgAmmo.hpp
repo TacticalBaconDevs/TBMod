@@ -23,7 +23,7 @@ class CfgAmmo
     class rhs_g_vog25;
     class rhs_g_vg40sz : rhs_g_vog25 // Unterlauf-Stungrenade
     {
-        deflection = 0;
+        deflecting = 0;
         fuseDistance = 10;
         ExplosionEffects = "RHS_flashbang_20"; // RHS_flashbang_10
     };

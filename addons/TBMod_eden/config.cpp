@@ -12,7 +12,8 @@ class CfgPatches
             "TB_eden_frontverlauf",
             "TB_eden_atmoReinforcementLZ", "TB_eden_atmoLZ",
             "TB_eden_atmoReinforcementEndpoint", "TB_eden_endpoint",
-            "TB_eden_atmoReinforcementCore", "TB_eden_atmoCore"
+            "TB_eden_atmoReinforcementCore", "TB_eden_atmoCore",
+            "TB_eden_atmoShootingRange"
         };
 
         requiredAddons[] = {"TBMod_main"};

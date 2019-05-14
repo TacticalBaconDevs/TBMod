@@ -244,7 +244,7 @@ class CfgVehicles
             duplicate = 1;
         };
     };
-    class TB_eden_atmoLZ : TB_eden_atmoReinforcementLZ {}; // Backwards comp
+    class TB_eden_atmoLZ : TB_eden_atmoReinforcementLZ {scope = 0;}; // Backwards comp
 
     class TB_eden_atmoReinforcementEndpoint : TB_eden_base
     {
@@ -257,7 +257,7 @@ class CfgVehicles
             position = 1;
         };
     };
-    class TB_eden_endpoint : TB_eden_atmoReinforcementEndpoint {}; // Backwards comp
+    class TB_eden_endpoint : TB_eden_atmoReinforcementEndpoint {scope = 0;}; // Backwards comp
 
     class TB_eden_atmoReinforcementCore : TB_eden_base
     {
@@ -272,5 +272,19 @@ class CfgVehicles
             position = 1;
         };
     };
-    class TB_eden_atmoCore : TB_eden_atmoReinforcementCore {}; // Backwards comp
+    class TB_eden_atmoCore : TB_eden_atmoReinforcementCore {scope = 0;}; // Backwards comp
+
+    class TB_eden_atmoShootingRange : TB_eden_base
+    {
+        scope = 2;
+        displayName = "AtmoShootingRange";
+        function = "TB_fnc_moduleAtmoShootingRange";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+
+        class ModuleDescription : ModuleDescription
+        {
+            description = "Gesyncte Soldaten, schießen in regelmäßigen Abständen.";
+            position = 1;
+        };
+    };
 };
