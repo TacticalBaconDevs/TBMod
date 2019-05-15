@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call EFUNC(main,isTBMission)) exitWith {};
 
 [
     "TB_enableVanillaSlingload",    // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.

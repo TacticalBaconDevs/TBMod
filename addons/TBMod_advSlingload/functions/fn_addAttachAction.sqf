@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -15,7 +16,7 @@ params ["_target"];
 
 _target addAction [
     "Lastenseil anbringen",
-    {[_this select 0, ACE_player getVariable ['TB_Rope_helper', objNull]] call TB_fnc_attach},
+    {[_this select 0, ACE_player getVariable ['TB_Rope_helper', objNull]] call FUNC(attach)},
     [],
     1.5,
     true,
