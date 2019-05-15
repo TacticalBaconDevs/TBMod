@@ -9,8 +9,8 @@ class CfgVehicles
         class rolle##ROLLEN_NAME \
         { \
             displayName = ""; \
-            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname); \
-            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;); \
+            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define ADD_ROLLE_CUSTOM(ROLLEN_NAME) \
@@ -18,8 +18,8 @@ class CfgVehicles
         { \
             displayName = ""; \
             condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_custom)); \
-            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname); \
-            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle); \
+            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle)); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define ADD_ROLLE_THEMEN(ROLLEN_NAME) \
@@ -27,8 +27,8 @@ class CfgVehicles
         { \
             displayName = ""; \
             condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_themen)); \
-            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call TB_fnc_modifierRollenname); \
-            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call TB_fnc_changeRolle; [_target, _player] call ace_arsenal_fnc_openBox;); \
+            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define MAKE_PUBLIC(D_NAME,A_TYPE) displayName = #D_NAME; \
@@ -67,17 +67,17 @@ class CfgVehicles
             class ACE_MainActions
             {
                 displayName = "Interaktionen";
-                modifierFunction = "[_this] call TB_fnc_modifierMainAction";
-                statement = "[_this] call TB_fnc_actionMain";
+                modifierFunction = "[_this] call FUNC(modifierMainAction)";
+                statement = "[_this] call FUNC(actionMain)";
                 runOnHover = 1;
                 distance = 6;
 
                 class changeArsenalType
                 {
                     displayName = "Wechsel zu...";
-                    modifierFunction = "[_this, getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType')] call TB_fnc_modifierChangeArsenalType";
+                    modifierFunction = "[_this, getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType')] call FUNC(modifierChangeArsenalType)";
                     statement = "_player setVariable ['TB_arsenalType', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), true]; _player setVariable ['TB_rolle', nil, true]; _player setVariable ['TB_arsenalCargo', nil]";
-                    condition = "!([_target] call TB_fnc_isArsenalType)";
+                    condition = "!([_target] call FUNC(isArsenalType))";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
@@ -86,7 +86,7 @@ class CfgVehicles
                 {
                     displayName = "Öffne Arsenal";
                     statement = "[_target, _player] call ace_arsenal_fnc_openBox";
-                    condition = "!isNil {_target getVariable 'ace_arsenal_virtualItems'} && [_target] call TB_fnc_isArsenalType";
+                    condition = "!isNil {_target getVariable 'ace_arsenal_virtualItems'} && [_target] call FUNC(isArsenalType)";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
@@ -94,7 +94,7 @@ class CfgVehicles
                 class rollen
                 {
                     displayName = "Rollen";
-                    condition = "[_target] call TB_fnc_isArsenalType";
+                    condition = "[_target] call FUNC(isArsenalType)";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 3;
 

@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -13,11 +14,11 @@ if (_type in ["", "CUSTOM"]) exitWith {};
 // Arsenalitems laden
 private _allItems = call (switch (_type) do
 {
-    case "USA": {TB_fnc_arsenalUSA};
-    case "RUSS": {TB_fnc_arsenalRUSS};
-    case "BW": {TB_fnc_arsenalBW};
-    case "VANILLA": {TB_fnc_arsenalVANILLA};
-    case "Themen": {TB_fnc_arsenalThemen};
+    case "USA": {Func(arsenalUSA)};
+    case "RUSS": {Func(arsenalRUSS)};
+    case "BW": {Func(arsenalBW)};
+    case "VANILLA": {Func(arsenalVANILLA)};
+    case "Themen": {Func(arsenalThemen)};
     default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {}};
 });
 
@@ -66,7 +67,7 @@ if (_rolle == "arzt") then
     ];
 };
 
-[_allItems] call TB_fnc_whitelist;
+[_allItems] call Func(whitelist);
 
 ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];
 
@@ -81,7 +82,7 @@ ACE_player setVariable ["TB_arsenalCargo", _tbCargo];
 
 // Arsenale syncen
 {
-    if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
+    if ([_x] call Func(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
     {
         _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
     };
