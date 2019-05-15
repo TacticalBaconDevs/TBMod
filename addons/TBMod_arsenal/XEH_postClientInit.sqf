@@ -1,10 +1,10 @@
-﻿#include "/script_macros.hpp"
+﻿#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 // initalisiert die TB Rolle nach dem spawnen
-[] spawn TB_fnc_waitUntilLoaded;
+[] spawn FUNC(waitUntilLoaded);
 
 // Variablen
 if (isNil "TB_blacklistRollen_custom") then {TB_blacklistRollen_custom = []};

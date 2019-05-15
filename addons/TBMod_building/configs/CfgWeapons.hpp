@@ -42,7 +42,7 @@ class CfgWeapons
     // Sanibaukiste
     ADD_ITEM(Land_IntravenStand_01_2bags_F,"\A3\Props_F_Orange\Humanitarian\Camps\IntravenStand_01_F.p3d",10);
     ADD_ITEM(Land_Stretcher_01_F,"\A3\Props_F_Orange\Humanitarian\Camps\Stretcher_01_F.p3d",22);
-    ADD_ITEM(Land_PortableLight_double_F,"\A3\Structures_F_EPA\Civ\Constructions\PortableLight_double_F.p3d",30);
+    ADD_ITEM(Land_PortableLight_DOUBLES_F,"\A3\Structures_F_EPA\Civ\Constructions\PortableLight_DOUBLES_F.p3d",30);
     ADD_ITEM(Land_MedicalTent_01_white_generic_open_F,"\A3\Structures_F_Orange\Humanitarian\Camps\MedicalTent_01_F.p3d",44);    //muss noch als Medizinische Einrichtung gesetzt werden
     ADD_ITEM(Land_MedicalTent_01_floor_light_F,"\A3\Structures_F_Orange\Humanitarian\Camps\MedicalTent_01_floor_light_F.p3d",10);
 

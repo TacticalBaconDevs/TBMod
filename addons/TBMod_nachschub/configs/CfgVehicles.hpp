@@ -458,7 +458,7 @@ class CfgVehicles
             MACRO_ADDITEM(TB_building_item_Land_MedicalTent_01_floor_light_F,1);
             MACRO_ADDITEM(TB_building_item_Land_Stretcher_01_F,6);
             MACRO_ADDITEM(TB_building_item_Land_IntravenStand_01_2bags_F,6);
-            MACRO_ADDITEM(TB_building_item_Land_PortableLight_double_F,2);
+            MACRO_ADDITEM(TB_building_item_Land_PortableLight_DOUBLES_F,2);
         };
     };
 

@@ -66,8 +66,8 @@ if (isNil "Achilles_curator_init_done") then
 
 // Add mouse click event handlers
 _display displayAddEventHandler ["KeyDown",{_this call Achilles_fnc_handleCuratorKeyPressed;}];
-(_display displayCtrl IDC_RSCDISPLAYCURATOR_MOUSEAREA) ctrlAddEventHandler ["MouseButtonDblClick",{_this call Achilles_fnc_handleMouseDoubleClicked;}];
-(_display displayCtrl IDC_RSCDISPLAYCURATOR_MAINMAP) ctrlAddEventHandler ["MouseButtonDblClick",{_this call Achilles_fnc_handleMouseDoubleClicked;}];
+(_display displayCtrl IDC_RSCDISPLAYCURATOR_MOUSEAREA) ctrlAddEventHandler ["MouseButtonDblClick",{_this call Achilles_fnc_handleMouseDOUBLESClicked;}];
+(_display displayCtrl IDC_RSCDISPLAYCURATOR_MAINMAP) ctrlAddEventHandler ["MouseButtonDblClick",{_this call Achilles_fnc_handleMouseDOUBLESClicked;}];
 
 // Fixes the loss of sides in the module tree caused by an ongoing search
 {
