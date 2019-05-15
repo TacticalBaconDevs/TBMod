@@ -14,7 +14,7 @@ class CfgPatches
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgWeapons.hpp"

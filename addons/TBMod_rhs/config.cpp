@@ -18,6 +18,7 @@ class CfgPatches
     };
 };
 
+#include "script_macros.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"

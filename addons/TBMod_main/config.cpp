@@ -67,7 +67,7 @@ class CfgPatches
 };
 
 // Configs
-#include "script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\Animations.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgEditorCategories.hpp"

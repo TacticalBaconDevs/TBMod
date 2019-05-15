@@ -20,5 +20,6 @@ class CfgPatches
 };
 
 // Configs
+#include "script_macros.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"

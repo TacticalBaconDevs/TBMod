@@ -32,3 +32,5 @@ class RscDisplayMain: RscStandardDisplay
         };
     };
 };
+
+#include "script_macros.hpp"
