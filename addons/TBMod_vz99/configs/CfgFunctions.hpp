@@ -6,7 +6,7 @@ class CfgFunctions
 {
     class TBMod_vz99
     {
-        tag = "TB";
+        tag = QUOTE(Double(ADDON,COMPONENT));
 
         class functions
         {

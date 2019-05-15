@@ -1,5 +1,5 @@
 #define ADDON TB
-#define COMPONENT zusatzStuff
+#define COMPONENT eos
 
 
 #include "..\TBMod_main\script_macros_common.hpp"
