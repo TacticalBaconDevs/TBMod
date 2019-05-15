@@ -14,11 +14,11 @@ if (_type in ["", "CUSTOM"]) exitWith {};
 // Arsenalitems laden
 private _allItems = call (switch (_type) do
 {
-    case "USA": {Func(arsenalUSA)};
-    case "RUSS": {Func(arsenalRUSS)};
-    case "BW": {Func(arsenalBW)};
-    case "VANILLA": {Func(arsenalVANILLA)};
-    case "Themen": {Func(arsenalThemen)};
+    case "USA": {FUNC(arsenalUSA)};
+    case "RUSS": {FUNC(arsenalRUSS)};
+    case "BW": {FUNC(arsenalBW)};
+    case "VANILLA": {FUNC(arsenalVANILLA)};
+    case "Themen": {FUNC(arsenalThemen)};
     default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {}};
 });
 
@@ -67,7 +67,7 @@ if (_rolle == "arzt") then
     ];
 };
 
-[_allItems] call Func(whitelist);
+[_allItems] call FUNC(whitelist);
 
 ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];
 
@@ -82,7 +82,7 @@ ACE_player setVariable ["TB_arsenalCargo", _tbCargo];
 
 // Arsenale syncen
 {
-    if ([_x] call Func(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
+    if ([_x] call FUNC(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
     {
         _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
     };
