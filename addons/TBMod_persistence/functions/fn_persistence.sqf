@@ -28,7 +28,7 @@ if (_save) then
     ];
 
     // save current players
-    _saveArray set [0, [_save] call FUNC(persistencePlayers];
+    _saveArray set [0, [_save] call FUNC(persistencePlayers)];
 
     // save marker
     _saveArray set [1, [_save] call FUNC(persistenceMarkers)];
