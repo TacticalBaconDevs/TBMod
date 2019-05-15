@@ -195,7 +195,7 @@ class CfgVehicles
                     class toSpieler
                     {
                         displayName = "Kameraden";
-                        statement = "[] spawn FUNC(actionTeleportKamerad)";
+                        statement = QUOTE([] spawn FUNC(actionTeleportKamerad));
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                         insertChildren = QUOTE(_this call FUNC(insertChildrenKameraden));
                     };
