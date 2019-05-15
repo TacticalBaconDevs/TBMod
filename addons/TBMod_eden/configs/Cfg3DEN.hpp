@@ -71,7 +71,7 @@ class Cfg3DEN
                         property = "TBMod_Main_sitzen";
                         control = "Checkbox";
 
-                        expression = "if (!is3DEN && _value) then {[_this] spawn TB_fnc_sitAI}";
+                        expression = "if (!is3DEN && _value) then {[_this] spawn FUNC(sitAI)}";
 
                         defaultValue = "false";
 
@@ -85,7 +85,7 @@ class Cfg3DEN
                         property = "TBMod_main_animation";
                         control = "TB_main_animationControl";
 
-                        expression = "if (!is3DEN && _value != '') then {[_this, _value] spawn TB_fnc_animationAI}";
+                        expression = "if (!is3DEN && _value != '') then {[_this, _value] spawn FUNC(animationAI)}";
 
                         defaultValue = "";
 
@@ -100,7 +100,7 @@ class Cfg3DEN
                         control = "Edit";
                         typeName = "STRING";
 
-                        expression = "if (!is3DEN && _value != '[]' && _value != '') then {[_this, _value] spawn TB_fnc_keysForAI}";
+                        expression = "if (!is3DEN && _value != '[]' && _value != '') then {[_this, _value] spawn FUNC(keysForAI)}";
 
                         defaultValue = "[]";
 
@@ -125,7 +125,7 @@ class Cfg3DEN
                         property = "TBMod_Main_kiDeckung";
                         control = "Checkbox";
 
-                        expression = "if (!is3DEN && _value) then {[_this] call TB_fnc_upDown}";
+                        expression = "if (!is3DEN && _value) then {[_this] call EFUNC(main,upDown)}";
 
                         defaultValue = "false";
 
