@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     ##########################
     Copy of the function 'BIS_fnc_findSafePos' but with a dir for the position

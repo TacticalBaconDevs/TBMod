@@ -67,17 +67,17 @@ class CfgVehicles
             class ACE_MainActions
             {
                 displayName = "Interaktionen";
-                modifierFunction = "[_this] call FUNC(modifierMainAction)";
-                statement = "[_this] call FUNC(actionMain)";
+                modifierFunction = QUOTE([_this] call FUNC(modifierMainAction));
+                statement =  QUOTE([_this] call FUNC(actionMain));
                 runOnHover = 1;
                 distance = 6;
 
                 class changeArsenalType
                 {
                     displayName = "Wechsel zu...";
-                    modifierFunction = "[_this, getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType')] call FUNC(modifierChangeArsenalType)";
+                    modifierFunction =  QUOTE([_this, getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType')] call FUNC(modifierChangeArsenalType));
                     statement = "_player setVariable ['TB_arsenalType', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), true]; _player setVariable ['TB_rolle', nil, true]; _player setVariable ['TB_arsenalCargo', nil]";
-                    condition = "!([_target] call FUNC(isArsenalType))";
+                    condition =  QUOTE(!([_target] call FUNC(isArsenalType)));
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
@@ -86,7 +86,7 @@ class CfgVehicles
                 {
                     displayName = "Öffne Arsenal";
                     statement = "[_target, _player] call ace_arsenal_fnc_openBox";
-                    condition = "!isNil {_target getVariable 'ace_arsenal_virtualItems'} && [_target] call FUNC(isArsenalType)";
+                    condition =  QUOTE(!isNil {_target getVariable 'ace_arsenal_virtualItems'} && [_target] call FUNC(isArsenalType));
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
@@ -94,7 +94,7 @@ class CfgVehicles
                 class rollen
                 {
                     displayName = "Rollen";
-                    condition = "[_target] call FUNC(isArsenalType)";
+                    condition =  QUOTE([_target] call FUNC(isArsenalType));
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 3;
 

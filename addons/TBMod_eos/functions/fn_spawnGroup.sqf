@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -18,12 +19,12 @@ params [
     ];
 
 private _isWater = surfaceiswater _pos;
-private _pool = [_faction, parseNumber _isWater] call TB_EOS_fnc_unitPools;
+private _pool = [_faction, parseNumber _isWater] call FUNC(unitPools);
 
 if (_isWater && {_pool isEqualTo []}) then
 {
     {(format ["[WARN][EOS][spawnGroup] es sind keine diver definiert -> surfaceWater %2 -> %1", _this, _isWater]) remoteExecCall [_x]} forEach ["systemChat", "diag_log"];
-    _pool = [_faction, 0] call TB_EOS_fnc_unitPools;
+    _pool = [_faction, 0] call FUNC(unitPools);
 };
 
 if (isNil "_pool" || {_pool isEqualTo []}) exitWith

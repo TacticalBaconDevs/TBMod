@@ -4,5 +4,5 @@
 */
 class CfgFunctions
 {
-    #include "..\eos\CfgFunctions.hpp"
+    
 };

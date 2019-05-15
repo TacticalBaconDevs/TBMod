@@ -2,7 +2,7 @@ class CfgPatches
 {
     class TBMod_zusatzStuff
     {
-        name = "TBMod ZusätzlicherStuff";
+        name = "TBMod TPW";
 
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";

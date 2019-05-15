@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -18,7 +19,7 @@ if (_faction <= 10) exitWith
 {
     if (!isNil "TB_EOS_fnc_unitPools_custom") then
     {
-        _this call TB_EOS_fnc_unitPools_custom;
+        _this call TB_EOS_fnc_unitPools_custom;//TODO backcomp.
     }
     else
     {

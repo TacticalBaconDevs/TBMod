@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
   SHK_buildingpos.sqf
   Shuko of LDD Kyllikki (kyllikki.fi)
@@ -57,7 +58,7 @@ private _bpos = [];
 forEach (nearestObjects [_opos, ["House", "Building"], _rad]);
 
 {
-    if (_bpos isEqualTo []) exitWith {systemChat "[TB_zusatzStuff] EOS: Es gibt zuwenig Gebäude zum Besetzen!"};
+    if (_bpos isEqualTo []) exitWith {systemChat "[TB_eos] EOS: Es gibt zuwenig Gebäude zum Besetzen!"};
     private _pos = selectRandom _bpos;
     _bpos = _bpos - [_pos];
     

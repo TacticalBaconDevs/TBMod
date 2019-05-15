@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -86,22 +87,22 @@ private _positions = [[], [], [], []];
 
 // SPAWN PATROLS - POSITIONEN
 private _default = _mPos getPos [_placement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
-for "_i" from 1 to _piGroups do {(_positions select 0) pushBackUnique ([_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findSafePos)};
+for "_i" from 1 to _piGroups do {(_positions select 0) pushBackUnique ([_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]], _angriffsRichtung] call FUNC(findSafePos))};
 
 // SPAWN LIGHT VEHICLES - POSITIONEN
 private _spezicalPlacement = _placement + 500;
 _default = _mPos getPos [_spezicalPlacement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
-for "_i" from 1 to _lvGroups do {(_positions select 1) pushBackUnique ([_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findSafePos)};
+for "_i" from 1 to _lvGroups do {(_positions select 1) pushBackUnique ([_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call FUNC(findSafePos))};
 
 // SPAWN ARMOURED VEHICLES - POSITIONEN
 _spezicalPlacement = _placement + 700;
 _default = _mPos getPos [_spezicalPlacement, _baseDir + ((random (_randomDir * 2)) - _randomDir)];
-for "_i" from 1 to _avGroups do {(_positions select 2) pushBackUnique ([_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findSafePos)};
+for "_i" from 1 to _avGroups do {(_positions select 2) pushBackUnique ([_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call FUNC(findSafePos))};
 
 // SPAWN HELICOPTERS - POSITIONEN
 _spezicalPlacement = _placement + 1000;
 _default = _mPos getPos [_spezicalPlacement, _baseDirHeli + ((random (_randomDirHeli * 2)) - _randomDirHeli)];
-for "_i" from 1 to _hGroups do {(_positions select 3) pushBackUnique ([_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtungHeli] call TB_EOS_fnc_findSafePos)};
+for "_i" from 1 to _hGroups do {(_positions select 3) pushBackUnique ([_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtungHeli] call FUNC(findSafePos))};
 
 // Auf Auslösung warten
 waitUntil {triggerActivated _basActivated};
@@ -143,7 +144,7 @@ for "_i" from 1 to _piGroups do
 {
     _pos = if ((_positions select 0) isEqualTo []) then
     {
-        [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findSafePos;
+        [_mPos, _placement - 100, _placement + 100, 3, TB_waterMode, 0, 0, [], [_default, [0,0,0]], _angriffsRichtung] call FUNC(findSafePos);
     }
     else
     {
@@ -166,7 +167,7 @@ for "_i" from 1 to _lvGroups do
 {
     _pos = if ((_positions select 1) isEqualTo []) then
     {
-        [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findSafePos;
+        [_mPos, _spezicalPlacement - 200, _spezicalPlacement + 200, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call FUNC(findSafePos);
     }
     else
     {
@@ -206,7 +207,7 @@ for "_i" from 1 to _avGroups do
 {
     _pos = if ((_positions select 2) isEqualTo []) then
     {
-        [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call TB_EOS_fnc_findSafePos;
+        [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtung] call FUNC(findSafePos);
     }
     else
     {
@@ -231,7 +232,7 @@ for "_i" from 1 to _hGroups do
 {
     _pos = if ((_positions select 3) isEqualTo []) then
     {
-        [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtungHeli] call TB_EOS_fnc_findSafePos;
+        [_mPos, _spezicalPlacement - 250, _spezicalPlacement + 250, 7, TB_waterMode, 0.2, 0, [], [_default, [0,0,0]], _angriffsRichtungHeli] call FUNC(findSafePos);
     }
     else
     {

@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     SHK_patrol
 
@@ -40,7 +41,7 @@ private _waterMode = parseNumber (surfaceIsWater (getPos (leader _grp)));
 private _safeDistance = [10, 2] select _onlyInf;
 while {count _wps < _cnt} do
 {
-    _wps pushBack ([_mkrPos, 0, _mkrSize, _safeDistance, _waterMode, 0.25, 0] call TB_EOS_fnc_findSafePos);
+    _wps pushBack ([_mkrPos, 0, _mkrSize, _safeDistance, _waterMode, 0.25, 0] call FUNC(findSafePos));
 };
 
 // Create waypoints

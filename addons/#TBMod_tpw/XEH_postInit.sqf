@@ -1,14 +1,10 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call EFUNC(main,isTBMission)) exitWith {};
 
-// MISSION POOL
-if (isNil "TB_EOS_fnc_unitPools_custom" && {["unitPools.sqf"] call TB_EOS_fnc_fileExists}) then
-{
-    TB_EOS_fnc_unitPools_custom = compile preprocessFileLineNumbers "unitPools.sqf";
-};
 
 // postClientInit Stuff
 /*

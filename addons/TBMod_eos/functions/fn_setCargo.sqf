@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -19,7 +20,7 @@ params [
     ];
 
 private _grp = grpNull;
-private _cargoPool = [_faction, _cargoType] call TB_EOS_fnc_unitPools;
+private _cargoPool = [_faction, _cargoType] call FUNC(unitPools);
 if (_cargoPool isEqualTo []) exitWith {_grp};
 
 private _emptySeats = _vehicle emptyPositions "cargo";

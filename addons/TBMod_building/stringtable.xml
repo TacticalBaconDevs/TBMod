@@ -20,11 +20,11 @@
                 <German>TBB Trage</German>
             </Key>
 
-            <Key ID="STR_PLACE_Land_PortableLight_DOUBLES_F">
+            <Key ID="STR_PLACE_Land_PortableLight_double_F">
                 <Original>Platziere Tragbareslicht (doppelt)</Original>
                 <German>Platziere Tragbareslicht (doppelt)</German>
             </Key>
-            <Key ID="STR_ITEM_Land_PortableLight_DOUBLES_F">
+            <Key ID="STR_ITEM_Land_PortableLight_double_F">
                 <Original>TBB Tragbareslicht (doppelt)</Original>
                 <German>TBB Tragbareslicht (doppelt)</German>
             </Key>

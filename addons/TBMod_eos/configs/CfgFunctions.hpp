@@ -2,13 +2,15 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class TBMod_zusatzStuff_LV
+class CfgFunctions
 {
-    tag = "TB_EOS";
+    class TBMod_zusatzStuff_LV
+{
+    tag = QUOTE(DOUBLES(ADDON,COMPONENT));;
 
     class modules
     {
-        file = "\TBMod_zusatzStuff\eos\core";
+        file = "\TBMod_eos\core";
         class core {};
         class moduleZone {};
         class bastionCore {};
@@ -18,7 +20,7 @@ class TBMod_zusatzStuff_LV
 
     class functions
     {
-        file = "\TBMod_zusatzStuff\eos\functions";
+        file = "\TBMod_eos\functions";
         class spawnVehicle {};
         class spawnGroup {};
         class findSafePos {};
@@ -28,4 +30,6 @@ class TBMod_zusatzStuff_LV
         class transportUnload {};
         class fileExists {};
     };
+};
+
 };

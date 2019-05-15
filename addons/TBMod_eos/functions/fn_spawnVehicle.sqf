@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -15,7 +16,7 @@ params [
         "_type"
     ];
 
-private _vehiclePool = [_faction, _type] call TB_EOS_fnc_unitPools;
+private _vehiclePool = [_faction, _type] call FUNC(unitPools);
 if (isNil "_vehiclePool" || {_vehiclePool isEqualTo []}) exitWith
 {
     {(format ["[ERROR][EOS][spawnVehicle] pool ist leer/kaputt -> %1", _this]) remoteExecCall [_x]} forEach ["systemChat", "diag_log"];

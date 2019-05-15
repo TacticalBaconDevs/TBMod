@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -88,10 +89,10 @@ if (getMarkerColor _mkr != "ColorGreen") then {_mkr setMarkerColor "ColorRed"};
 private _positions = [[], []];
 
 // SPAWN PATROLS
-for "_i" from 1 to _piGroups do {(_positions select 0) pushBackUnique ([_mPos, 0, _mkrSize, 3, 1, 0, 0, [], [_mPos, [0,0,0]]] call TB_EOS_fnc_findSafePos)};
+for "_i" from 1 to _piGroups do {(_positions select 0) pushBackUnique ([_mPos, 0, _mkrSize, 3, 1, 0, 0, [], [_mPos, [0,0,0]]] call FUNC(findSafePos))};
 
 // SPAWN LIGHT VEHICLES
-for "_i" from 1 to (_lvGroups + _avGroups + _stGroups) do {(_positions select 1) pushBackUnique ([_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call TB_EOS_fnc_findSafePos)};
+for "_i" from 1 to (_lvGroups + _avGroups + _stGroups) do {(_positions select 1) pushBackUnique ([_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call FUNC(findSafePos))};
 
 // Auf Auslösung warten
 waitUntil {triggerActivated _eosActivated};
@@ -116,16 +117,16 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
         if (_hiSize > 0) then
         {
-            private _hiGroup = [_mPos, _hiSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
+            private _hiGroup = [_mPos, _hiSize, _faction, _side] call FUNC(spawnGroup);
             if (!isNull _hiGroup) then
             {
                 if (!surfaceIsWater _mPos) then
                 {
-                    [_mPos, units _hiGroup, _mkrSize] call TB_EOS_fnc_shk_buildingpos;
+                    [_mPos, units _hiGroup, _mkrSize] call FUNC(shk_buildingpos);
                 }
                 else
                 {
-                    [_hiGroup, _mkr] call TB_EOS_fnc_shk_patrol;
+                    [_hiGroup, _mkr] call FUNC(shk_patrol);
                 };
 
                 _hiZoneGroups pushBack _hiGroup;
@@ -154,17 +155,17 @@ if (getMarkerColor _mkr != "ColorBlack") then
         {
             _pos = if ((_positions select 0) isEqualTo []) then
             {
-                [_mPos, 0, _mkrSize, 3, 1, 0, 0, [], [_mPos, [0,0,0]]] call TB_EOS_fnc_findSafePos;
+                [_mPos, 0, _mkrSize, 3, 1, 0, 0, [], [_mPos, [0,0,0]]] call FUNC(findSafePos);
             }
             else
             {
                 (_positions select 0) deleteAt 0;
             };
 
-            private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
+            private _piGroup = [_pos, _piSize, _faction, _side] call FUNC(spawnGroup);
             if (!isNull _piGroup) then
             {
-                [_piGroup, _mkr] call TB_EOS_fnc_shk_patrol;
+                [_piGroup, _mkr] call FUNC(shk_patrol);
 
                 _piZoneGroups pushBack _piGroup;
             };
@@ -184,7 +185,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {
         _pos = if ((_positions select 1) isEqualTo []) then
         {
-            [_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call TB_EOS_fnc_findSafePos;
+            [_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call FUNC(findSafePos);
         }
         else
         {
@@ -199,16 +200,16 @@ if (getMarkerColor _mkr != "ColorBlack") then
             _cargoType = 10;
         };
 
-        private _lvGroup = [_pos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+        private _lvGroup = [_pos, _side, _faction, _vehType] call FUNC(spawnVehicle);
         if !(_lvGroup isEqualTo []) then
         {
             if (_lvSize > 0) then
             {
-                private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+                private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call FUNC(setCargo);
                 if (!isNull _cargoGrp) then {_lvGroup pushBack _cargoGrp};
             };
 
-            [_lvGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
+            [_lvGroup select 2, _mkr] call FUNC(shk_patrol);
             _lvZoneGroups pushBack _lvGroup;
         };
     };
@@ -225,7 +226,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
     {
         _pos = if ((_positions select 1) isEqualTo []) then
         {
-            [_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call TB_EOS_fnc_findSafePos;
+            [_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call FUNC(findSafePos);
         }
         else
         {
@@ -233,11 +234,11 @@ if (getMarkerColor _mkr != "ColorBlack") then
         };
 
         private _vehType = if (surfaceiswater _pos) then {8} else {2};
-        private _avGroup = [_pos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+        private _avGroup = [_pos, _side, _faction, _vehType] call FUNC(spawnVehicle);
 
         if !(_avGroup isEqualTo []) then
         {
-            [_avGroup select 2, _mkr] call TB_EOS_fnc_shk_patrol;
+            [_avGroup select 2, _mkr] call FUNC(shk_patrol);
             _avZoneGroups pushBack _avGroup;
         };
     };
@@ -256,14 +257,14 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
         _pos = if ((_positions select 1) isEqualTo []) then
         {
-            [_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call TB_EOS_fnc_findSafePos;
+            [_mPos, 0, _mkrSize, 7, 1, 0.25, 0] call FUNC(findSafePos);
         }
         else
         {
             (_positions select 1) deleteAt 0;
         };
 
-        private _stGroup = [_pos, _side, _faction, 5] call TB_EOS_fnc_spawnVehicle;
+        private _stGroup = [_pos, _side, _faction, 5] call FUNC(spawnVehicle);
 
         if !(_stGroup isEqualTo []) then {_stZoneGroups pushBack _stGroup};
     };
@@ -284,17 +285,17 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _vehType = if (_hSize > 0) then {4} else {3};
 
         private _pos = [_mPos, 3000 + ((random 500) - 250), _baseDirHeli + ((random _randomDirHeli) - (_randomDirHeli / 2))] call BIS_fnc_relPos;
-        private _hGroup = [_pos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+        private _hGroup = [_pos, _side, _faction, _vehType] call FUNC(spawnVehicle);
 
         if !(_hGroup isEqualTo []) then
         {
             if (_hSize > 0) then
             {
-                private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+                private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call FUNC(setCargo);
                 if (!isNull _cargoGrp) then
                 {
                     _hGroup pushBack _cargoGrp;
-                    [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
+                    [_mkr, _hGroup, _parachuteJump] spawn FUNC(transportUnload);
                 };
             }
             else
@@ -442,7 +443,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
             [_hGroups, _hSize, _hGroupsIncrease, _hSizeIncrease],
             _settings,
             true
-        ] spawn TB_EOS_fnc_core;
+        ] spawn FUNC(core);
     }
     else
     {

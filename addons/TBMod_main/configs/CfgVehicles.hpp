@@ -21,7 +21,7 @@
             { \
                 displayName = "TB-FOB"; \
                 distance = 10; \
-                modifierFunction = "[_this] call FUNC(modifierFOBs)"; \
+                modifierFunction =  QUOTE([_this] call FUNC(modifierFOBs)); \
                 statement = "_action = false"; \
                 runOnHover = 1; \
             }; \
@@ -177,7 +177,7 @@ class CfgVehicles
                     displayName = "FOB";
                     condition = "!isNil 'TB_main_fobs' && {(count TB_main_fobs) > 0}";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call FUNC(insertChildrenFOB)";
+                    insertChildren = QUOTE(_this call FUNC(insertChildrenFOB));
                 };
 
                 class truppe
@@ -188,7 +188,7 @@ class CfgVehicles
                     class toLeader
                     {
                         displayName = "Truppführer";
-                        statement = "if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn FUNC(teleport)} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'}";
+                        statement = QUOTE(if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn FUNC(teleport)} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'});
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     };
 
@@ -197,7 +197,7 @@ class CfgVehicles
                         displayName = "Kameraden";
                         statement = "[] spawn FUNC(actionTeleportKamerad)";
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        insertChildren = "_this call FUNC(insertChildrenKameraden)";
+                        insertChildren = QUOTE(_this call FUNC(insertChildrenKameraden));
                     };
                 };
 
@@ -205,7 +205,7 @@ class CfgVehicles
                 {
                     displayName = "Truppen";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call FUNC(insertChildrenGruppen)";
+                    insertChildren = QUOTE(_this call FUNC(insertChildrenGruppen));
                 };
             };
         };
