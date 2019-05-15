@@ -10,7 +10,7 @@ class CfgVehicles
         author = "Eric";
         scopeCurator = 2;
         displayName = "Persistence";
-        function = "TB_fnc_modulePersistenceZeus";
+        function = QUOTE(FUNC(modulePersistenceZeus));
     };
 
     class TB_eden_base;
@@ -18,6 +18,6 @@ class CfgVehicles
         scope = 2;
         scopeCurator = 1;
         displayName = "Persistence";
-        function = "TB_fnc_modulePersistenceEDEN";
+        function = QUOTE(FUNC(modulePersistenceEDEN));
     };
 };

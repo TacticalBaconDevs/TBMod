@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -27,23 +28,23 @@ if (_save) then
     ];
 
     // save current players
-    _saveArray set [0, [_save] call TB_fnc_persistencePlayers];
+    _saveArray set [0, [_save] call FUNC(persistencePlayers];
 
     // save marker
-    _saveArray set [1, [_save] call TB_fnc_persistenceMarkers];
+    _saveArray set [1, [_save] call FUNC(persistenceMarkers)];
 
     // save objects
-    _saveArray set [2, [_save] call TB_fnc_persistenceObjects];
+    _saveArray set [2, [_save] call FUNC(persistenceObjects)];
 
     // save vehicles
-    _saveArray set [3, [_save] call TB_fnc_persistenceVehicles];
+    _saveArray set [3, [_save] call FUNC(persistenceVehicles)];
 
     // save storagearray
 
     profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
 
     // save TBMod_building stuff
-    [true, _name] call TB_fnc_persistenceBuilding;
+    [true, _name] call FUNC(persistenceBuilding);
 
     saveProfileNamespace;
 }
@@ -69,25 +70,25 @@ else // load
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
 
     // Marker laden
-    [_save, _loadArray select 1] call TB_fnc_persistenceMarkers;
+    [_save, _loadArray select 1] call FUNC(persistenceMarkers);
 
     // das Löschen der Fahrzeuge dauert etwas, um Explosionen zu verhindern kurz warten
     uiSleep 1;
 
     // Objekte laden
-    [_save, _loadArray select 2] call TB_fnc_persistenceObjects;
+    [_save, _loadArray select 2] call FUNC(persistenceObjects);
 
     // Fahrzeuge organisieren
-    [_save, _loadArray select 3] call TB_fnc_persistenceVehicles;
+    [_save, _loadArray select 3] call FUNC(persistenceVehicles);
 
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
     // Teleport players
-    [_save, _loadArray select 0] call TB_fnc_persistencePlayers;
+    [_save, _loadArray select 0] call FUNC(persistencePlayers);
 
     // Load TBMod_building stuff
-    [false, _name] call TB_fnc_persistenceBuilding;
+    [false, _name] call FUNC(persistenceBuilding);
 };
 
 (format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
