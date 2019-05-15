@@ -5,20 +5,20 @@
 class ACE_Medical_Actions {
     class Advanced {
         class FieldDressing {
-            treatmentTime = "[8] call TB_fnc_calcTreatmentTime";
+            treatmentTime =  QUOTE([8] call FUNC(calcTreatmentTime));
         };
         class Tourniquet: fieldDressing {
-            treatmentTime = 1; // "[4] call TB_fnc_calcTreatmentTime"
+            treatmentTime = 1; // "[4] call FUNC(calcTreatmentTime)"
         };
         class Morphine: fieldDressing {
-            treatmentTime = "[3] call TB_fnc_calcTreatmentTime";
+            treatmentTime =  QUOTE([3] call FUNC(calcTreatmentTime));
         };
         class Atropine: Morphine { // Ketamin
             displayName = "Ketamin injizieren";
             displayNameProgress = "Ketamin injizieren...";
         };
         class BloodIV: fieldDressing {
-            treatmentTime = "[7] call TB_fnc_calcTreatmentTime";
+            treatmentTime =  QUOTE([7] call FUNC(calcTreatmentTime));
             displayName = "Blutransfusion (2000ml)";
         };
         class BloodIV_500: BloodIV {
@@ -28,10 +28,10 @@ class ACE_Medical_Actions {
             displayName = "Blutransfusion (500ml)";
         };
         class PlasmaIV: BloodIV {
-            treatmentTime = "[11] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
+            treatmentTime =  QUOTE([11] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
         };
         class SalineIV: BloodIV {
-            treatmentTime = "[17] call TB_fnc_calcTreatmentTime"; // + round (x * 1,5)
+            treatmentTime =  QUOTE([17] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
             displayName = "Kochsalztransfusion (500ml)";
             requiredMedic = 0;
         };
@@ -44,22 +44,22 @@ class ACE_Medical_Actions {
             requiredMedic = 0;
         };
         class SurgicalKit: fieldDressing {
-            treatmentTime = "[count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5] call TB_fnc_calcTreatmentTime";
+            treatmentTime =  QUOTE([count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5] call FUNC(calcTreatmentTime));
         };
         class PersonalAidKit: fieldDressing {
-            treatmentTime = "[((_this select 1) call ace_medical_fnc_treatmentAdvanced_fullHealTreatmentTime) * 0.75] call TB_fnc_calcTreatmentTime";
+            treatmentTime =  QUOTE([((_this select 1) call ace_medical_fnc_treatmentAdvanced_fullHealTreatmentTime) * 0.75] call FUNC(calcTreatmentTime));
         };
         class CheckPulse: fieldDressing {
-            treatmentTime = "[2] call TB_fnc_calcTreatmentTime";
+            treatmentTime = QUOTE([2] call FUNC(calcTreatmentTime));
         };
         class RemoveTourniquet: Tourniquet {
-            treatmentTime = 1; // "[2.5] call TB_fnc_calcTreatmentTime"
+            treatmentTime = 1; // "[2.5] call FUNC(calcTreatmentTime)"
         };
         class CPR: fieldDressing {
-            treatmentTime = "[15] call TB_fnc_calcTreatmentTime"; // wird vermutlich von adv_cpr überschrieben
+            treatmentTime =  QUOTE([15] call FUNC(calcTreatmentTime)); // wird vermutlich von adv_cpr überschrieben
         };
         class BodyBag: fieldDressing {
-            treatmentTime = "[15] call TB_fnc_calcTreatmentTime";
+            treatmentTime =  QUOTE([15] call FUNC(calcTreatmentTime));
         };
     };
 };

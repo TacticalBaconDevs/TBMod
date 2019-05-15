@@ -14,6 +14,6 @@
 //#define ADDON TB
 //#define COMPONENT main
 
-#define FUNC(var1) TRIPLES(DOUBLESS(ADDON,COMPONENT),fnc,var1)
+#define FUNC(var1) TRIPLES(DOUBLES(ADDON,COMPONENT),fnc,var1)
 #define EFUNC(var1,var2) TRIPLES(DOUBLES(ADDON,var1),fnc,var2)
 

@@ -1,20 +1,10 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_mode"];
 if (isDedicated) exitWith {};
-
-// if (isNil "TB_jip_safe" && {!canSuspend}) exitWith {_this spawn TB_fnc_safe};
-// if (isNil "TB_jip_safe") then {
-    // private _time = diag_tickTime + 10;
-    // waitUntil {!isNil "TB_jip_safe" || _time < diag_tickTime};
-    // if (_time < diag_tickTime) then {TB_jip_safe = false; publicVariable "TB_jip_safe";};
-// };
-
-// für init
-// if (isNil "_mode" && {!TB_jip_safe}) exitWith {};
-// if (isNil "_mode" && {TB_jip_safe}) then {_mode = true};
 
 if (_mode) then
 {
@@ -22,7 +12,7 @@ if (_mode) then
     {
         TB_FiredMan = player addEventHandler ["FiredMan", {
             params ["", "_weapon", "", "", "_ammo", "", "_obj"];
-            (format ["[SafeStart] %1 hat mit %2 geschossen!", profileName, [_weapon] call TB_fnc_displayName]) remoteExecCall ["systemChat"];
+            (format ["[SafeStart] %1 hat mit %2 geschossen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
             deleteVehicle _obj;
         }];
     };
@@ -31,7 +21,7 @@ if (_mode) then
     {
         TB_firedPlayer = ["ace_firedPlayer", {
             if (_weapon == "Throw") then {
-                (format ["[SafeStart] %1 hat mit %2 geworfen!", profileName, [_ammo] call TB_fnc_displayName]) remoteExecCall ["systemChat"];
+                (format ["[SafeStart] %1 hat mit %2 geworfen!", profileName, [_ammo] call FUNC(displayName)]) remoteExecCall ["systemChat"];
                 deleteVehicle _projectile;
             };
         }] call CBA_fnc_addEventHandler;

@@ -21,7 +21,7 @@
             { \
                 displayName = "TB-FOB"; \
                 distance = 10; \
-                modifierFunction = "[_this] call TB_fnc_modifierFOBs"; \
+                modifierFunction = "[_this] call FUNC(modifierFOBs)"; \
                 statement = "_action = false"; \
                 runOnHover = 1; \
             }; \
@@ -177,7 +177,7 @@ class CfgVehicles
                     displayName = "FOB";
                     condition = "!isNil 'TB_main_fobs' && {(count TB_main_fobs) > 0}";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call TB_fnc_insertChildrenFOB";
+                    insertChildren = "_this call FUNC(insertChildrenFOB)";
                 };
 
                 class truppe
@@ -188,16 +188,16 @@ class CfgVehicles
                     class toLeader
                     {
                         displayName = "Truppführer";
-                        statement = "if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn TB_fnc_teleport} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'}";
+                        statement = "if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn FUNC(teleport)} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'}";
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     };
 
                     class toSpieler
                     {
                         displayName = "Kameraden";
-                        statement = "[] spawn TB_fnc_actionTeleportKamerad";
+                        statement = "[] spawn FUNC(actionTeleportKamerad)";
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        insertChildren = "_this call TB_fnc_insertChildrenKameraden";
+                        insertChildren = "_this call FUNC(insertChildrenKameraden)";
                     };
                 };
 
@@ -205,7 +205,7 @@ class CfgVehicles
                 {
                     displayName = "Truppen";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call TB_fnc_insertChildrenGruppen";
+                    insertChildren = "_this call FUNC(insertChildrenGruppen)";
                 };
             };
         };

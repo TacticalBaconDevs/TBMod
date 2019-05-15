@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -11,7 +12,7 @@ private _actions = [];
 
     if (!isNil "_x") then
     {
-        private _action = [_name, _name, "", {[_this select 2] spawn TB_fnc_teleport}, {true}, {}, _obj] call ace_interact_menu_fnc_createAction;
+        private _action = [_name, _name, "", {[_this select 2] spawn FUNC(teleport)}, {true}, {}, _obj] call ace_interact_menu_fnc_createAction;
         _actions pushBack [_action, [], _target];
     };
 }

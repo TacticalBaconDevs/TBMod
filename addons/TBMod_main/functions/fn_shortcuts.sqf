@@ -1,4 +1,5 @@
-﻿#include "\a3\editor_f\Data\Scripts\dikCodes.h"
+﻿#include "../script_macros.hpp"
+#include "\a3\editor_f\Data\Scripts\dikCodes.h"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -49,7 +50,7 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
     "Öffnet GCAM",
     {
 
-        [ACE_player] spawn TB_fnc_showGCAM;
+        [ACE_player] spawn FUNC(showGCAM);
         ["TB_informAdminsAndZeus", ["%1 hat GCAM gestartet!", profileName]] call CBA_fnc_globalEvent;
         systemChat "GCAM gestartet!";
     },
