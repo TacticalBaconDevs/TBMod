@@ -11,9 +11,9 @@
 #define DOUBLES(var1,var2) ##var1##_##var2
 #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
 
-#define ADDON TB
-#define COMPONENT main
+//#define ADDON TB
+//#define COMPONENT main
 
-#define FUNC(var1) TRIPLES(Double(ADDON,COMPONENT),fnc,var1)
-#define EFUNC(var1,var2) TRIPLES(Double(ADDON,var1),fnc,var2)
+#define FUNC(var1) TRIPLES(DOUBLES(ADDON,COMPONENT),fnc,var1)
+#define EFUNC(var1,var2) TRIPLES(DOUBLES(ADDON,var1),fnc,var2)
 

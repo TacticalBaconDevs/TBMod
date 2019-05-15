@@ -7,25 +7,25 @@
         displayName = $STR_PLACE_##OBJECT; \
         condition = QUOTE('TB_building_item_##OBJECT' in (items ACE_player)); \
         exceptions[] = {"notOnMap", "isNotInside", "isNotHandcuffed", "isNotSurrendering", "isNotSwimming", "isNotOnLadder"}; \
-        statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables); \
+        statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call FUNC(placePlaceables)); \
     }
 #define ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE) class TB_buildBig_##BUILDING_END \
     { \
         displayName = $STR_PLACE_BIG_##BUILDING_END; \
         exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"}; \
-        statement = QUOTE(['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn TB_fnc_placePlaceablesBig); \
+        statement = QUOTE(['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn FUNC(placePlaceablesBig)); \
     }
 #define ADD_RESC_CHECK class ACE_Actions \
         { \
             class ACE_MainActions \
             { \
-                modifierFunction = "[_this] call TB_fnc_modifierShowVehicleType"; \
+                modifierFunction = "[_this] call FUNC(modifierShowVehicleType)"; \
                 class truck_getType \
                 { \
                     displayName = "Fahrzeugtyp abfragen"; \
                     condition = "alive _target"; \
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-                    statement = "call TB_fnc_getVehicleType"; \
+                    statement = "call FUNC(getVehicleType)"; \
                 }; \
                 class ResourceTruck_getLoad \
                 { \
@@ -40,7 +40,7 @@
                     condition = "alive _target && locked _target < 2"; \
                     icon = "\z\ace\addons\refuel\ui\icon_refuel_interact.paa"; \
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
-                    statement = "[_target] call TB_fnc_getFuel"; \
+                    statement = "[_target] call FUNC(getFuel)"; \
                 }; \
                 class ACE_Passengers \
                 { \
@@ -204,14 +204,14 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "Ressourcentruck setzen";
-        function = "TB_fnc_moduleRessourcenFahrzeug";
+        function = QUOTE(FUNC(moduleRessourcenFahrzeug));
         category = "TB_categorie_zeus_building";
     };
     class TB_zeus_kranFahrzeug : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "Krantruck setzen";
-        function = "TB_fnc_moduleKranFahrzeug";
+        function = QUOTE(FUNC(moduleKranFahrzeug));
         category = "TB_categorie_zeus_building";
     };
 

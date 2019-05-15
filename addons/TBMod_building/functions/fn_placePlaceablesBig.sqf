@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
 *     Author: KokaKolaA3
 *     Modified: shukari
@@ -45,7 +46,7 @@ _truck setVariable ["TBMod_Building_PlaceablesCargo", _resc - _resourcen, true];
 
 private _obj = createVehicle [_readyObj, [0, 0, 0], [], 0, "CAN_COLLIDE"];
 
-[_obj, _resourcen] call TB_fnc_initItemBig;
+[_obj, _resourcen] call FUNC(initItemBig);
 
 private _specialDir = [0, 180] select _spiegeln;
 _obj setDir _specialDir;
