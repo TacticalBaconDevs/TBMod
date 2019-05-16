@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
  * Author: Schwaggot
  * Modified by: TBMod ( https://github.com/TacticalBaconDevs/TBMod )
@@ -22,7 +23,7 @@ switch (true) do
 {
     case (isNull _target): {[objNull, "nothing selected"] call bis_fnc_showCuratorFeedbackMessage};
     case (!alive _target): {[objNull, "target is destroyed"] call bis_fnc_showCuratorFeedbackMessage};
-    default {_target remoteExec ["TB_fnc_unflipVehicle", _target]};
+    default {_target remoteExec [QUOTE(FUNC(unflipVehicle)), _target]};
 };
 
 deleteVehicle _logic;

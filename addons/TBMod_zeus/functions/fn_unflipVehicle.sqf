@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
  * Author: Schwaggot
  * Modified by: TBMod ( https://github.com/TacticalBaconDevs/TBMod )
