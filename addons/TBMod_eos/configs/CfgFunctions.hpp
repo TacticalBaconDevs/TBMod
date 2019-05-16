@@ -4,7 +4,7 @@
 */
 class CfgFunctions
 {
-    class TBMod_zusatzStuff_LV
+    class TBMod_eos
 {
     tag = QUOTE(DOUBLES(ADDON,COMPONENT));;
 

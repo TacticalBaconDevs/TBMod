@@ -1,7 +1,7 @@
 class Extended_PostInit_EventHandlers
 {
-    class TBMod_zusatzStuff
+    class TBMod_eos
     {
-        init = "[] spawn compile preprocessFileLineNumbers '\TBMod_zusatzStuff\XEH_postInit.sqf'";
+        init = "[] spawn compile preprocessFileLineNumbers '\TBMod_eos\XEH_postInit.sqf'";
     };
 };

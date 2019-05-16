@@ -1,6 +1,6 @@
 class CfgPatches
 {
-    class TBMod_zusatzStuff
+    class TBMod_eos
     {
         name = "TBMod EOS";
 

@@ -1,6 +1,6 @@
 class CfgPatches
 {
-    class TBMod_zusatzStuff
+    class TBMod_tpw
     {
         name = "TBMod TPW";
 
