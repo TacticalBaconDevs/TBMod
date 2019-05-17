@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * _logic call TB_fnc_moduleUnflipVehicle
+ * _logic call TB_zeus_fnc_moduleUnflipVehicle
  */
 params ["_logic"];
 

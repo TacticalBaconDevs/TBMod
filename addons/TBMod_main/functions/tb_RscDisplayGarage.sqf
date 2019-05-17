@@ -7,12 +7,12 @@ switch _mode do {
     case "onLoad": {
         if (isnil {missionnamespace getvariable "bis_fnc_arsenal_data"}) then {
             startloadingscreen [""];
-            ['Init',_params] spawn (uinamespace getvariable "TB_fnc_garage");
+            ['Init',_params] spawn (uinamespace getvariable QFUNC(garage));
         } else {
-            ['Init',_params] call (uinamespace getvariable "TB_fnc_garage");
+            ['Init',_params] call (uinamespace getvariable QFUNC(garage));
         };
     };
     case "onUnload": {
-        ['Exit',_params] call (uinamespace getvariable "TB_fnc_garage");
+        ['Exit',_params] call (uinamespace getvariable QFUNC(garage));
     };
 };

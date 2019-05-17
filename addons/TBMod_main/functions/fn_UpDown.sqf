@@ -18,8 +18,8 @@ _unit setVariable ["acex_headless_blacklist", true, true];
 _unit setVariable ["TB_upDown_modus", 1];
 
 // Setup function
-if (isNil "TB_fnc_upDownEH") then {
-    TB_fnc_upDownEH = {
+if (isNil QFUNC(upDownEH)) then {
+    FUNC(upDownEH) = {
         params ["_unit"];
 
         private _unitOriginalStance = unitPos _unit;
@@ -53,6 +53,6 @@ _unit addEventHandler ["FiredNear", {
     if (_unit getVariable ["TB_upDown_modus", -1] <= 1) then
     {
         _unit setVariable ["TB_upDown_modus", 2];
-        [_unit] spawn TB_fnc_upDownEH;
+        [_unit] spawn FUNC(upDownEH);
     };
 }];

@@ -23,7 +23,7 @@ _units joinSilent _grp;
 _grp deleteGroupWhenEmpty true;
 _grp setVariable ["acex_headless_blacklist", true, true];
 
-[_grp, {isNull objectParent (leader _this)}, 20, 200] spawn TB_fnc_deleteIfNotSeen;
+[_grp, {isNull objectParent (leader _this)}, 20, 200] spawn EFUNC(main,deleteIfNotSeen);
 
 _grp setBehaviour (selectRandom ["CARELESS", "SAFE", "AWARE"]);
 _grp setSpeedMode (selectRandom ["UNCHANGED", "LIMITED", "NORMAL", "FULL"]);

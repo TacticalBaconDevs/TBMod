@@ -60,7 +60,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     // Setup Waypoints
     private _wp = _grp addWaypoint [getPos _logic, 50];
     _wp setWaypointType "MOVE";
-    _wp setWaypointStatements ["true", format ["[this, %1] spawn TB_fnc_atmoCoreAction", getPos _endPoint]];
+    _wp setWaypointStatements ["true", format [QUOTE([this, %1] spawn FUNC(atmoCoreAction)), getPos _endPoint]];
 
     _wp = _grp addWaypoint [getPos _lzLogic, 5];
     _wp setWaypointType "TR UNLOAD";

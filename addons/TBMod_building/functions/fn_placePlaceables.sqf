@@ -14,7 +14,7 @@ ACE_player removeItem _item;
 
 private _obj = createVehicle [_obj, [0, 0, 0], [], 0, "CAN_COLLIDE"];
 
-[_obj, _item] call TB_fnc_initItem;
+[_obj, _item] call FUNC(initItem);
 
 private _specialDir = [0, 180] select _spiegeln;
 _obj setDir _specialDir;

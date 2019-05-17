@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * _vechile call TB_fnc_unflipVehicle
+ * _vechile call TB_zeus_fnc_unflipVehicle
  */
 params ["_vehicle"];
 
