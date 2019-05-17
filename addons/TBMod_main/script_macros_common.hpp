@@ -17,3 +17,12 @@
 #define FUNC(var1) TRIPLES(DOUBLES(ADDON,COMPONENT),fnc,var1)
 #define EFUNC(var1,var2) TRIPLES(DOUBLES(ADDON,var1),fnc,var2)
 
+#define QFUNC(var1) QUOTE(FUNC(var1))
+#define QEFUNC(var1,var2) QUOTE(EFUNC(var1,var2))
+
+
+//Are they needed?
+#define QQFUNC(var1) QUOTE(QFUNC(var1))
+#define QQEFUNC(var1,var2) QUOTE(QEFUNC(var1,var2))
+
+#define GETVARS(var1,var2,var3) (##var1##_##var2 getVariable #var3)
