@@ -40,7 +40,7 @@ if !(_activated) exitWith {true};
 
         if (_server) then
         {
-            [true, _name] remoteExec [QUOTE(FUNC(persistence)), 2];
+            [true, _name] remoteExec [QFUNC(persistence), 2];
             [profileNamespace, ["TB_persistence_savedNames", _saves]] remoteExec ["setVariable", 2]; //[profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
             [] remoteExec ["saveProfileNamespace", 2];
         }
@@ -57,7 +57,7 @@ if !(_activated) exitWith {true};
 
         if (_server) then
         {
-            [false, _saves select _id] remoteExec [QUOTE(FUNC(persistence)), 2];
+            [false, _saves select _id] remoteExec [QFUNC(persistence), 2];
         }
         else
         {

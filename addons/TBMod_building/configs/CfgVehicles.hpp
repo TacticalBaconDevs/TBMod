@@ -204,14 +204,14 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "Ressourcentruck setzen";
-        function = QUOTE(FUNC(moduleRessourcenFahrzeug));
+        function = QFUNC(moduleRessourcenFahrzeug);
         category = "TB_categorie_zeus_building";
     };
     class TB_zeus_kranFahrzeug : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "Krantruck setzen";
-        function = QUOTE(FUNC(moduleKranFahrzeug));
+        function = QFUNC(moduleKranFahrzeug);
         category = "TB_categorie_zeus_building";
     };
 

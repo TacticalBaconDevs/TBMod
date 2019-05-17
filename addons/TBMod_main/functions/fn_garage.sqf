@@ -122,7 +122,7 @@ switch _mode do {
         };
 
         INITTYPES
-        ["InitGUI",[_display,QUOTE(FUNC(garage))]] call bis_fnc_arsenal;
+        ["InitGUI",[_display,QFUNC(garage)]] call bis_fnc_arsenal;
         ["Preload"] call FUNC(garage);
         ["ListAdd",[_display]] call FUNC(garage);
         //["ListSelectCurrent",[_display]] call BIS_fnc_garage;

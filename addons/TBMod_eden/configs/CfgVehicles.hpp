@@ -54,7 +54,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "Frontverlauf";
-        function = QUOTE(FUNC(moduleFrontverlauf));
+        function = QFUNC(moduleFrontverlauf);
         canSetArea = 1;
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
@@ -263,7 +263,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoReinforcementCore";
-        function = QUOTE(FUNC(moduleAtmoCore));
+        function = QFUNC(moduleAtmoCore);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\intel_ca.paa";
 
         class ModuleDescription : ModuleDescription

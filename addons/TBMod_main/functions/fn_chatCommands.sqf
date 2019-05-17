@@ -42,18 +42,18 @@
         switch (_this select 0) do {
             case "1":
             {
-                [true] remoteExec [QUOTE(FUNC(safe))];
+                [true] remoteExec [QFUNC(safe)];
                 systemChat "SafeStart wurde global aktiviert!";
             };
             case "0":
             {
-                [false] remoteExec [QUOTE(FUNC(safe))];
+                [false] remoteExec [QFUNC(safe)];
                 systemChat "SafeStart wurde global deaktiviert!";
             };
             default
             {
                 systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil "TB_safeInfo")];
-                [isNil "TB_safeInfo"] remoteExec [QUOTE(FUNC(safe))];
+                [isNil "TB_safeInfo"] remoteExec [QFUNC(safe)];
             };
         };
 
@@ -103,7 +103,7 @@
     if (getPlayerUID player in (call TB_lvl3)) then
     {
         params ["_target"];
-        [] remoteExec [QUOTE(EFUNC(persistence,clearCache)), [player, 2] select (_target == "server")];
+        [] remoteExec [QEFUNC(persistence,clearCache), [player, 2] select (_target == "server")];
     }
     else
     {
