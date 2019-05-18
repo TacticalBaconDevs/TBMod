@@ -13,9 +13,9 @@ namespace TBModExt_Statistics
         public static Dictionary<int, MySqlConnection> connections = new Dictionary<int, MySqlConnection>();
         public static String connString;
         public static String DBName;
-        public static MySqlConnection initDatabase(String missionname)
+        public static MySqlConnection initDatabase()
         {
-            DBName = "`"+missionname+"`";
+            DBName = "`curmission`";
 
             //MySqlConnection dbConnection = new MySqlConnection("Data Source="+ Environment.GetEnvironmentVariable("TBModExt_Statstracker") + "/" + missionname + ".sqlite;Version=3;");
             connString = Environment.GetEnvironmentVariable("TBModExt_StatstrackerConnstring");

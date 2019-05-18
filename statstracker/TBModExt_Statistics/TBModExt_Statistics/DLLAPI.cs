@@ -33,7 +33,7 @@ namespace TBModExt_Statistics
             try
             {
                 output.Append(function);
-                Database.initDatabase(DateTime.Now.ToString("yyy-MM-dd_HH-mm-ss") + "_" + function);
+                Database.initDatabase();
                 error = false;
             }
             

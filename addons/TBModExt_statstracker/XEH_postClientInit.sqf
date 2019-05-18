@@ -5,7 +5,6 @@
 if !(call TB_fnc_isTBMission) exitWith {};
 
 
-0 spawn {
 uiSleep 10;
 "TBModExt_Statistics" callExtension missionName;
 
@@ -77,7 +76,7 @@ uiSleep 10;
     };
 }] remoteExec ["call", 0, true];
 
-_hcs = allUnits select {_x isKindOf "HeadlessClient_F"};
+_hcs = entities "HeadlessClient_F";
 _hcs pushBack 2;
 
 [0,{
@@ -98,7 +97,7 @@ _hcs pushBack 2;
             };
         };
     };
-}] remoteExec ["call", _hcs];
+}] remoteExec ["spawn", _hcs];
 
 [0,{
     if (isNil "TB_ReporterFPS") then
@@ -113,5 +112,4 @@ _hcs pushBack 2;
             }
         };
     };
-}] remoteExec ["call", _hcs];
-};
+}] remoteExec ["spawn", _hcs];
