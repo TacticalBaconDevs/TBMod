@@ -76,7 +76,7 @@ uiSleep 10;
     };
 }] remoteExec ["call", 0, true];
 
-_hcs = entities "HeadlessClient_F";
+private _hcs = entities "HeadlessClient_F";
 _hcs pushBack 2;
 
 [0,{
