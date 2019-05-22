@@ -108,14 +108,14 @@ class CfgAmmo
     class ammo_ShipCannon_120mm_HE_cluster : Cluster_155mm_AMOS // Mk45 Hammer HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_AP"}; // {"Mo_cluster_AP",0.93,"Mo_cluster_AP_UXO_deploy",0.07}
-        submunitionConeAngle = 30; // 15
+        submunitionConeAngle = 25; // 15
     };
 
     class AT_Mine_155mm_AMOS_range;
     class ammo_ShipCannon_120mm_AT_mine : AT_Mine_155mm_AMOS_range // Mk45 Hammer AT Minen Cluster
     {
         submunitionAmmo = "Mo_ATMineRange"; // "Mo_ATMineRange"
-        submunitionConeAngle = 8; // 30
+        submunitionConeAngle = 9; // 30
     };
 
     class MineBase;
@@ -128,8 +128,8 @@ class CfgAmmo
     class Mo_cluster_AP : ShellBase // Mk45 Hammer HE Cluster Submunition
     {
         caliber = 2; // 34
-        hit = 12; // 35
-        indirectHit = 6; // 25
-        indirectHitRange = 24; // 8
+        hit = 5; // 35
+        indirectHit = 5; // 25
+        indirectHitRange = 20; // 8
     };
 };
