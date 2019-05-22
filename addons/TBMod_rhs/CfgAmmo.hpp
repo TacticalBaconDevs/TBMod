@@ -103,15 +103,4 @@ class CfgAmmo
     CHANGETIMETOLIFE(rhsusf_40mm_white);
     CHANGETIMETOLIFE(rhsusf_40mm_green);
     CHANGETIMETOLIFE(rhsusf_40mm_red);
-
-    class ammo_Bomb_SmallDiameterBase;
-    class ammo_Bomb_SDB : ammo_Bomb_SmallDiameterBase // 4x SDB
-    {
-        hit = 5000; // 1800
-        lockSeekRadius = 1000; // 500
-        maneuvrability = 28; // 20
-        missileKeepLockedCone = 360; // 120
-        missileLockCone = 360; // 120
-        missileLockMaxSpeed = 60; // 30
-    };
 };

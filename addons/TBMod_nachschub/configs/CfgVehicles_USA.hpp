@@ -51,7 +51,7 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     class TransportMagazines
     {
         // Explosiv
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,5);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,15);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Delay,5);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,5);
 

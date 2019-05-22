@@ -119,7 +119,6 @@ class CfgVehicles
         magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         radarTargetSize = 1.65; // 1.12
         radarType = 8; // 4
-        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"
     };
 
     class Heli_Transport_03_base_F;
