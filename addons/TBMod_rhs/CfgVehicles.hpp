@@ -333,7 +333,7 @@ class CfgVehicles
     {
         accuracy = 0.6; // 0.1
         camouflage = 45; // 150
-        fuelCapacity = 200; // 100
+        fuelCapacity = 1800; // 1000
         irTargetSize = 0.3; // 0.5
         nvScanner = 1; // 0
         radarTargetSize = 0.3; // 0.5
@@ -344,6 +344,7 @@ class CfgVehicles
     class B_UAV_05_F : UAV_05_Base_F // Vanilla UCAV Sentinel
     {
         accuracy = 0.2; // 0.1
+        fuelCapacity = 4000; // 1000
         nvScanner = 1; // 0
     };
 
