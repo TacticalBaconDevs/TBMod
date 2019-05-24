@@ -108,14 +108,25 @@ class CfgAmmo
     class ammo_ShipCannon_120mm_HE_cluster : Cluster_155mm_AMOS // Mk45 Hammer HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_AP"}; // {"Mo_cluster_AP",0.93,"Mo_cluster_AP_UXO_deploy",0.07}
-        submunitionConeAngle = 25; // 15
+        submunitionConeType[] = {"poissondisccenter",5}; // "randomcenter",35
+        triggerDistance = 150; // 200
+    };
+
+    class ShellBase;
+    class Mo_cluster_AP : ShellBase // Mk45 Hammer HE Cluster Submunition
+    {
+        caliber = 2; // 34
+        hit = 6; // 35
+        indirectHit = 6; // 25
+        indirectHitRange = 20; // 8
     };
 
     class AT_Mine_155mm_AMOS_range;
     class ammo_ShipCannon_120mm_AT_mine : AT_Mine_155mm_AMOS_range // Mk45 Hammer AT Minen Cluster
     {
         submunitionAmmo = "Mo_ATMineRange"; // "Mo_ATMineRange"
-        submunitionConeAngle = 9; // 30
+        submunitionConeAngle = 15; // 30
+        submunitionConeType[] = {"poissondisccenter",22}; // "randomcenter",12
     };
 
     class MineBase;
@@ -124,12 +135,24 @@ class CfgAmmo
         indirectHitRange = 2; // 1
     };
 
-    class ShellBase;
-    class Mo_cluster_AP : ShellBase // Mk45 Hammer HE Cluster Submunition
+    class Smoke_120mm_AMOS_White;
+    class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Smoke
     {
-        caliber = 2; // 34
-        hit = 5; // 35
-        indirectHit = 5; // 25
-        indirectHitRange = 20; // 8
+        effectsSmoke = "SmokeShellWhiteEffect"; // "ACE_ArtillerySmoke"
+        submunitionConeAngle = 22; // 10
+        submunitionConeType[] = {"poissondisccenter",12}; // 5
+    };
+
+    class Mine_155mm_AMOS_range;
+    class ammo_ShipCannon_120mm_mine : Mine_155mm_AMOS_range // Mk45 Hammer HE Minen Cluster
+    {
+        submunitionConeAngle = 25; // 30
+        submunitionConeType[] = {"poissondisccenter",38}; // "randomcenter",24
+    };
+
+    class ShotDeployBase;
+    class Mo_ClassicMineRange : ShotDeployBase // Mk45 Hammer HE Minen Cluster Submunition
+    {
+        submunitionAmmo = "APERSBoundingMine_Range_Ammo"; // "APERSMine_Range_Ammo"
     };
 };
