@@ -960,6 +960,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_hgu56p_visor_usa",
             "RHS_jetpilot_usaf",
             "rhsusf_ihadss",
+            "H_PilotHelmetFighter_B",
 
             // Uniform
             "U_B_PilotCoveralls",

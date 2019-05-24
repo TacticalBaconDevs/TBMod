@@ -51,15 +51,9 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     class TransportMagazines
     {
         // Explosiv
-        MACRO_ADDMAGAZINE(rhs_mag_M397_HET,5);
-        MACRO_ADDMAGAZINE(rhs_mag_M441_HE,5);
-        MACRO_ADDMAGAZINE(rhs_mag_M433_HEDP,3);
-
-        // Smokes
-        MACRO_ADDMAGAZINE(rhs_mag_m714_White,4);
-        MACRO_ADDMAGAZINE(rhs_mag_m713_Red,2);
-        MACRO_ADDMAGAZINE(rhs_mag_m715_Green,2);
-        MACRO_ADDMAGAZINE(rhs_mag_m716_yellow,2);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,15);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Delay,5);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,5);
 
         // AIM Smokes
         MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell_precise,4);
@@ -69,9 +63,13 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
         MACRO_ADDMAGAZINE(rhs_mag_m716_Yellow_precise,2);
 
         // Flares
-        MACRO_ADDMAGAZINE(rhs_mag_M585_white,2);
-        MACRO_ADDMAGAZINE(rhs_mag_m661_green,1);
-        MACRO_ADDMAGAZINE(rhs_mag_m662_red,1);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_M585_white,4);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_m661_green,1);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_m662_red,1);
+
+        // IR + Slug
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_IR_Grenade,2);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot,6);        
     };
 };
 
@@ -185,11 +183,11 @@ class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDITEM(rhsusf_ANPVS_14,5);
         MACRO_ADDITEM(rhsusf_ANPVS_15,5);
 
-        MACRO_ADDITEM(ACE_IR_Strobe_Item,10);
+        MACRO_ADDITEM(ACE_IR_Strobe_Item,20);
         MACRO_ADDITEM(ACE_Flashlight_KSF1,10);
 
-        MACRO_ADDITEM(ACE_Chemlight_HiYellow,10);
-        MACRO_ADDITEM(ACE_Chemlight_HiRed,10);
+        MACRO_ADDITEM(ACE_Chemlight_HiYellow,20);
+        MACRO_ADDITEM(ACE_Chemlight_HiRed,20);
     };
 };
 
