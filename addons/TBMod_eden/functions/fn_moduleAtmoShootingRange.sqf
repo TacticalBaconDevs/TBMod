@@ -18,27 +18,14 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "CAManBase"};
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoShootingRange braucht gesyncte Soldaten!"};
 
-    {_x setVariable ["acex_headless_blacklist", true, true]} forEach _syncObjs;
+    {
+        _x setVariable ["acex_headless_blacklist", true, true];
+        _x setBehaviour "COMBAT";
+        _x setCombatMode "BLUE";
+        _x setUnitPos (["UP", "MIDDLE"] select (floor random 2));
+        _x spawn {uiSleep 2; _this disableAI "ALL"};
+    }
+    forEach _syncObjs;
 
-    [{
-        params ["_syncObjs"];
-
-        {
-            if (random 1 < 0.3) then
-            {
-                _x spawn
-                {
-                    _this setAmmo [currentWeapon _this, 999];
-
-                    for "_i" from 0 to (1 + (random 2)) do
-                    {
-                        (weaponState _this) params ["", "_muzzel", "_mode"];
-                        _this forceWeaponFire [_muzzel, _mode];
-                        uiSleep (0.2 + random 1);
-                    };
-                };
-            };
-        }
-        forEach _syncObjs;
-    }, 5, _syncObjs] call CBA_fnc_addPerFrameHandler;
+    ["TB_atmo_event_atmoShootingRange", [_syncObjs]] call CBA_fnc_serverEvent;
 };

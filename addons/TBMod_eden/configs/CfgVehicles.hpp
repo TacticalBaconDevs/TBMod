@@ -244,7 +244,6 @@ class CfgVehicles
             duplicate = 1;
         };
     };
-    class TB_eden_atmoLZ : TB_eden_atmoReinforcementLZ {scope = 0;}; // Backwards comp
 
     class TB_eden_atmoReinforcementEndpoint : TB_eden_base
     {
@@ -257,7 +256,6 @@ class CfgVehicles
             position = 1;
         };
     };
-    class TB_eden_endpoint : TB_eden_atmoReinforcementEndpoint {scope = 0;}; // Backwards comp
 
     class TB_eden_atmoReinforcementCore : TB_eden_base
     {
@@ -272,7 +270,6 @@ class CfgVehicles
             position = 1;
         };
     };
-    class TB_eden_atmoCore : TB_eden_atmoReinforcementCore {scope = 0;}; // Backwards comp
 
     class TB_eden_atmoShootingRange : TB_eden_base
     {
