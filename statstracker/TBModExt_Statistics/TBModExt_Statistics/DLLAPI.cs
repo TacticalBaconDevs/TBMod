@@ -11,7 +11,6 @@ namespace TBModExt_Statistics
 {
     class DLLAPI
     {
-        private static bool error = false;
 
 #if WIN64
         [DllExport("RVExtensionVersion", CallingConvention = CallingConvention.Winapi)]
@@ -34,14 +33,12 @@ namespace TBModExt_Statistics
             {
                 output.Append(function);
                 Database.initDatabase();
-                error = false;
             }
             
             catch (Exception e)
             {
                 output.Append("Error");
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR3 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -56,8 +53,6 @@ namespace TBModExt_Statistics
         {
             try
             {
-                if (error)
-                    return 1;
                 
                 if (function == "Player")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPlayerShot), args);
@@ -79,7 +74,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR2 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
                 return -1;
             }
 
@@ -98,7 +92,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -112,7 +105,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -126,7 +118,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -140,7 +131,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -154,7 +144,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -168,7 +157,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
 
@@ -182,7 +170,6 @@ namespace TBModExt_Statistics
             catch (Exception e)
             {
                 try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-                error = true;
             }
         }
     }
