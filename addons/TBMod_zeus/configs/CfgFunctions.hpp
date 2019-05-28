@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgFunctions
@@ -17,6 +17,9 @@ class CfgFunctions
             class moduleHandleAsPlayerMedical {};
             class moduleApplyLoadout {};
             class moduleFrontverlauf {};
+            class moduleAdjustCargoSpace {};
+            class moduleUnflipVehicle {};
+            class unflipVehicle {};
         };
     };
 };

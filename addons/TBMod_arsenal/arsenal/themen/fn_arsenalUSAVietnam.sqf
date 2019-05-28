@@ -1,11 +1,12 @@
 ﻿/*
-    Author: shukari
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
 */
 
 private _allgemein = [
     // Gepäck
     "UNS_BA22_Para",
-    
+
     // Gesichtsbedeckung
     "UNS_Bandana_A",
     "UNS_Bullets",
@@ -58,7 +59,7 @@ private _allgemein_magazine = [
     "uns_m1carbinemag_NT",
     "uns_m1carbinemag",
     "uns_m1carbinemag_T",
-    
+
     // Schrot
     "uns_12gaugemag_6",
     "uns_12gaugemag_6f"
@@ -79,7 +80,7 @@ private _allgemein_gewehre = [
 _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
-    
+
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -151,7 +152,7 @@ private _grenadier_gewehr = [
     "uns_xm177e2_m203",
     "uns_m79",
     "uns_ex41",
-    
+
     // ohne UGL
     "uns_m16_bc",
     "uns_m16A1_camo",
@@ -163,11 +164,11 @@ private _grenadier_munition = [
     "uns_1Rnd_AB_M397",
     "uns_ex41mag",
     "Uns_1Rnd_HE_M406",
-    
+
     // Flares
     "uns_40mm_white",
     "uns_40mm_green",
-    
+
     // Smoke
     "uns_1Rnd_Smoke_40mm",
     "uns_1Rnd_SmokeRed_40mm",
@@ -284,7 +285,7 @@ _items append (switch (_rolle) do
 
             // Uniform
             "UNS_ARMY_BDU_USA_BDU_Earlymaj",
-            
+
             // Weste
             "UNS_M1956_S3",
 
@@ -314,9 +315,9 @@ _items append (switch (_rolle) do
             // Rucksack
             "UNS_ARMY_MED",
 
-            // Weste 
+            // Weste
             "UNS_M1956_S2",
-            
+
             // Item
             "TB_Item_liveMonitor"
         ]
@@ -340,7 +341,7 @@ _items append (switch (_rolle) do
             // Rucksack
             "UNS_ARMY_MED",
 
-            // Weste 
+            // Weste
             "UNS_M1956_S2",
 
             // Item
@@ -390,7 +391,7 @@ _items append (switch (_rolle) do
             "uns_o_m84",
             // Befestigungsschiene
             "uns_b_m1",
-            
+
             // Ferngläser
             "uns_binocular_army"
         ]
@@ -443,10 +444,10 @@ _items append (switch (_rolle) do
         _aaat_munition +
         _gepaeck_mittel +
         _gepaeck_lr +
-        [        
+        [
             // Weste
             "UNS_M1956_LRRP1",
-            
+
             // Rucksack
             "UNS_Alice_LRP1"
         ]
@@ -472,10 +473,10 @@ _items append (switch (_rolle) do
             "UNS_HP_Helmet_1MD",
             "UNS_HP_Helmet_OG",
             "UNS_HP_Helmet_TIGER",
-            
+
             // Uniform
             "UNS_Pilot_BDU",
-            
+
             // Weste
             "UNS_FLAK",
 
@@ -515,7 +516,7 @@ _items append (switch (_rolle) do
         _allgemein_kopfbedeckung +
         _sniper_munition +
         [
-            
+
         ]
     };
 
@@ -536,7 +537,7 @@ _items append (switch (_rolle) do
         _grenadier_gewehr +
         _grenadier_munition +
         [
-            
+
         ]
     };
 
@@ -631,7 +632,7 @@ _items append (switch (_rolle) do
             // Handfeuerwaffen
             "ACE_VMH3",
             "ACE_VMM3",
-          
+
             // Items
             "ACE_DefusalKit",
             "ToolKit",

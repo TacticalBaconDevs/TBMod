@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params [
@@ -7,7 +7,7 @@ params [
         ["_player", player],
         ["_blockedCats", []]
     ];
-    
+
 if (_item isEqualTo "") exitWith {};
 
 (_item call BIS_fnc_itemType) params ["_cat", "_subCat"];
@@ -21,7 +21,7 @@ switch (_cat) do
     {
         [_player, _item] call CBA_fnc_removeWeapon;
         [_player, _item] call CBA_fnc_removeItem;
-        
+
         for "_i" from 1 to ({_x == _item} count (items _player + assignedItems _player + magazines _player)) do
         {
             [_player, _item] call CBA_fnc_removeWeapon;
@@ -30,18 +30,18 @@ switch (_cat) do
     };
     case "Magazine":
     {
-        private _magArray = magazines _player + primaryWeaponMagazine _player + primaryWeaponItems _player + 
+        private _magArray = magazines _player + primaryWeaponMagazine _player + primaryWeaponItems _player +
                 secondaryWeaponMagazine _player + secondaryWeaponItems _player + handgunMagazine _player + handgunItems _player;
-        
+
         [_player, _item] call CBA_fnc_removeMagazine;
         [_player, _item] call CBA_fnc_removeItem;
-        
+
         for "_i" from 1 to ({_x == _item} count _magArray) do
         {
             [_player, _item] call CBA_fnc_removeMagazine;
             [_player, _item] call CBA_fnc_removeItem;
         };
-        
+
         _player removePrimaryWeaponItem _item;
         _player removeSecondaryWeaponItem _item;
         _player removeHandgunItem _item;
@@ -71,13 +71,13 @@ switch (_cat) do
             {
                 [_player, _item] call CBA_fnc_removeItem;
                 _player unlinkItem _item;
-                
+
                 for "_i" from 1 to ({_x == _item} count (items _player + assignedItems _player)) do
                 {
                     [_player, _item] call CBA_fnc_removeItem;
                     _player unlinkItem _item;
                 };
-                
+
                 _player removePrimaryWeaponItem _item;
                 _player removeSecondaryWeaponItem _item;
                 _player removeHandgunItem _item;
@@ -86,7 +86,7 @@ switch (_cat) do
             {
                 [_player, _item] call CBA_fnc_removeItem;
                 _player unlinkItem _item;
-                
+
                 for "_i" from 1 to ({_x == _item} count (items _player + assignedItems _player)) do
                 {
                     [_player, _item] call CBA_fnc_removeItem;

@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgFunctions
@@ -11,7 +11,7 @@ class CfgFunctions
         class functions
         {
             file = "\TBMod_main\functions";
-            class UpDown {};
+            class upDown {};
             class teleport {};
             class safe {};
             class actionTeleportKamerad {};
@@ -30,15 +30,25 @@ class CfgFunctions
             class shortcuts {};
             class chatCommands {};
             class miscStuff {};
+            class calcTreatmentTime {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};
+            class addBriefingEntries {};
+            class firstJoin {};
+            class deleteIfNotSeen {};
         };
 
         class gcam
         {
             file = "\TBMod_main\gcam";
             class showGCAM {};
+        };
+
+        // Replacement
+        class replacement
+        {
+            file = "\TBMod_main\replacement";
         };
     };
 
@@ -54,6 +64,19 @@ class CfgFunctions
         };
     };
 
+    // REPLACEMENT - ace3
+    class ACE3
+    {
+        tag = "ace_medical";
+        class ace_medical
+        {
+            class getBloodVolumeChange
+            {
+                file = "\TBMod_main\replacement\fn_getBloodVolumeChange.sqf";
+            };
+        };
+    };
+
     // REPLACEMENT - Experiment
     class A3_Modules
     {
@@ -64,7 +87,7 @@ class CfgFunctions
         {
             class moduleEditTerrainObject
             {
-                file = "\TBMod_main\replacement\init.sqf";
+                file = "\TBMod_main\replacement\init.sqf"; // TODO: das ist kritisch ggf in 1.90 geupdated worden
             };
         };
     };

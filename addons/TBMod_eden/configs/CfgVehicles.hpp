@@ -1,8 +1,8 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
-    Wiki: https://community.bistudio.com/wiki/eden_Editor:_Configuring_Attributes
+
+    Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
 class CfgVehicles
 {
@@ -25,8 +25,9 @@ class CfgVehicles
             class AnyBrain;
         };
     };
-    
-    class TB_eden_base : Module_F {
+
+    class TB_eden_base : Module_F
+    {
         scope = 1;
         scopeCurator = 1;
         displayName = "Default TB modulename";
@@ -38,9 +39,19 @@ class CfgVehicles
         isTriggerActivated = 1;
         isDisposable = 1;
         is3DEN = 1;
+        canSetArea = 0;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 0;
+
+        class AttributeValues
+        {
+            isRectangle = 1;
+            size3[] = {0, 0, -1};
+        };
     };
-    
-    class TB_eden_frontverlauf : TB_eden_base {
+
+    class TB_eden_frontverlauf : TB_eden_base
+    {
         scope = 2;
         displayName = "Frontverlauf";
         function = "TB_fnc_moduleFrontverlauf";
@@ -48,13 +59,13 @@ class CfgVehicles
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
-        
+
         class AttributeValues
         {
             isRectangle = 1;
             size3[] = {500,500,-1};
         };
-        
+
         class Attributes: AttributesBase
         {
             class modus: Combo
@@ -219,4 +230,47 @@ class CfgVehicles
             };
         };
     };
+
+    class TB_eden_atmoReinforcementLZ : TB_eden_base
+    {
+        scope = 2;
+        displayName = "AtmoReinforcementLZ";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\land_ca.paa";
+
+        class ModuleDescription : ModuleDescription
+        {
+            description = "Der Punkt, an dem das belandene Fahrzeug landet/hält und ablädt.";
+            position = 1;
+            duplicate = 1;
+        };
+    };
+    class TB_eden_atmoLZ : TB_eden_atmoReinforcementLZ {}; // Backwards comp
+
+    class TB_eden_atmoReinforcementEndpoint : TB_eden_base
+    {
+        scope = 2;
+        displayName = "AtmoReinforcementEndPunkt";
+
+        class ModuleDescription : ModuleDescription
+        {
+            description = "Der Punkt, an den die abgesessenen Truppen hingehen wollen.";
+            position = 1;
+        };
+    };
+    class TB_eden_endpoint : TB_eden_atmoReinforcementEndpoint {}; // Backwards comp
+
+    class TB_eden_atmoReinforcementCore : TB_eden_base
+    {
+        scope = 2;
+        displayName = "AtmoReinforcementCore";
+        function = "TB_fnc_moduleAtmoCore";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\intel_ca.paa";
+
+        class ModuleDescription : ModuleDescription
+        {
+            description = "Der Punkt, an dem das Fahrzeug mit einem neuen Trupp aufgefüllt wird.";
+            position = 1;
+        };
+    };
+    class TB_eden_atmoCore : TB_eden_atmoReinforcementCore {}; // Backwards comp
 };

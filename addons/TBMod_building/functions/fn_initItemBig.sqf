@@ -1,8 +1,6 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 params [
     "_obj",
@@ -31,7 +29,7 @@ private _pickupAction = [
 
         deleteVehicle _target;
     },
-    {(ACE_player getVariable ['ACE_IsEngineer', 0]) > 0 && (ACE_player getVariable ['TB_rolle', '']) == 'pionier' && ("ToolKit" in (items ACE_player))},
+    {(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier' && ("ToolKit" in (items ACE_player))},
     nil,
     [_obj, _resourcen],
     nil,
@@ -54,7 +52,7 @@ if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_gene
 // Antenne
 if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
 {
-    [_obj, 20000] remoteExec ["TFAR_antennas_fnc_initRadioTower"];
+    //[_obj, 20000] remoteExec ["TFAR_antennas_fnc_initRadioTower"];
 };
 
 // Antenne

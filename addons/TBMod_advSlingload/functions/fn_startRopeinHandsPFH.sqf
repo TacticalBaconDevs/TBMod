@@ -1,15 +1,15 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author: Eric Ruhland
     Creates a Lastenseil with no end attached
-    
+
     Arguments:
     0: Source <OBJECT>
     1: Selection <STRING>
     2: Helper <OBJECT>
-    
+
     Return Value:
     None
 */
@@ -22,11 +22,11 @@ private _idPFH = [{
     private _posACE_player = ASLtoAGL (getPosASL ACE_player);
     private _sourcepos = _source modelToWorld (_source selectionPosition _selection);
     private _playerPFH = ACE_player getVariable ["TB_Rope_idPFH", -1];
-    
+
     if (_playerPFH != _idPFH || isNull _helper) exitWith {[_idPFH] call CBA_fnc_removePerFrameHandler};
-    
+
     if !(
-        alive ACE_player 
+        alive ACE_player
         && {!(ACE_player getVariable ["ACE_isUnconscious", false])}
         && ACE_player == vehicle ACE_player
         && (_posACE_player distance _sourcepos) < 21

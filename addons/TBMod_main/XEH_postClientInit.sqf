@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 if !(call TB_fnc_isTBMission) exitWith {};
@@ -30,6 +30,8 @@ enableSaving [false, false];
     [] call TB_fnc_chatCommands;
     [] call TB_fnc_extremMedicMode;
     [] spawn TB_fnc_miscStuff;
+    [] call TB_fnc_addBriefingEntries;
+    [] spawn TB_fnc_firstJoin;
 
     TB_init_done = true;
     publicVariableServer "TB_init_done";

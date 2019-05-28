@@ -1,8 +1,6 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class CfgVehicles
 {
@@ -26,27 +24,46 @@ class CfgVehicles
     #define ADD_SUPPLY(NAME,ITEM) class ITEM \
         { \
             displayName = #NAME; \
-            condition = "!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0"; \
-            statement = "[_target, 'ITEM'] spawn TB_fnc_createSupply"; \
+            condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
+            statement = QUOTE([_target, 'ITEM'] spawn TB_fnc_createSupply); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
-    class TB_##CLASS_NAME : CLASS_NAME \
-    { \
-        author = "shukari"; \
-        ace_cargo_canLoad = 1; \
-        ace_cargo_size = 1; \
-        ace_dragging_canCarry = 1; \
-        ace_dragging_canDrag = 1; \
-        editorCategory = "EdCat_TB_MainCat_supply"; \
-        editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
-        scope = 1; \
-        scopeCurator = 1; \
-        class TransportItems {}; \
-        class TransportWeapons {}; \
-        class TransportBackpacks {}; \
-        class TransportMagazines {}; \
-    }
+        class TB_##CLASS_NAME : CLASS_NAME \
+        { \
+            author = "shukari"; \
+            ace_cargo_canLoad = 1; \
+            ace_cargo_size = 1; \
+            ace_dragging_canCarry = 1; \
+            ace_dragging_canDrag = 1; \
+            editorCategory = "EdCat_TB_MainCat_supply"; \
+            editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
+            scope = 1; \
+            scopeCurator = 1; \
+            class TransportItems {}; \
+            class TransportWeapons {}; \
+            class TransportBackpacks {}; \
+            class TransportMagazines {}; \
+        }
+    #define WRAPPER_SKIN(CLASS_NAME,SKIN) WRAPPER_SKIN2(CLASS_NAME, SKIN, "")
+    #define WRAPPER_SKIN2(CLASS_NAME,SKIN1,SKIN2) class CLASS_NAME; \
+        class TB_##CLASS_NAME : CLASS_NAME \
+        { \
+            author = "shukari"; \
+            ace_cargo_canLoad = 1; \
+            ace_cargo_size = 1; \
+            ace_dragging_canCarry = 1; \
+            ace_dragging_canDrag = 1; \
+            editorCategory = "EdCat_TB_MainCat_supply"; \
+            editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
+            scope = 1; \
+            scopeCurator = 1; \
+            hiddenSelectionsTextures[] = {SKIN1,SKIN2}; \
+            class TransportItems {}; \
+            class TransportWeapons {}; \
+            class TransportBackpacks {}; \
+            class TransportMagazines {}; \
+        }
     #define WRAPPER_NAME(CLASS_NAME) TB_##CLASS_NAME
     #define PUBLIC_NAME(D_NAME) \
         displayName = D_NAME; \
@@ -56,39 +73,36 @@ class CfgVehicles
         displayName = D_NAME; \
         scope = 2; \
         scopeCurator = 2; \
-        editorSubcategory = "EdSubcat_TB_Supply_##CATO"
+        editorSubcategory = EdSubcat_TB_Supply_##CATO
     #define SUB_CAT(NAME) EdSubcat_TB_Supply_##NAME
 
-        
+
     // ###################### VORRATSLAGER #########################
     class Box_NATO_AmmoVeh_F;
     class TB_supply_base: Box_NATO_AmmoVeh_F
     {
         displayName = "Vorratslager";
         author = "shukari";
-        
+
         scope = 2;
         scopeCurator = 2;
-        
+
         disableInventory = 1;
-        
+
         ace_cargo_canLoad = 0;
         ace_cargo_size = -1;
-        
+
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
-        
-        //hiddenSelections[] = {"Camo_Signs","Camo"};
-        hiddenSelectionsTextures[] = {
-            "",
-            "\TBMod_skins\pictures\statics\TB_vorratslager.paa"
-        };
-        
+
+        // hiddenSelections[] = {"Camo_Signs","Camo"};
+        hiddenSelectionsTextures[] = {"", "\TBMod_skins\pictures\statics\TB_vorratslager.paa"};
+
         class TransportItems {};
         class TransportMagazines {};
         class TransportWeapons {};
         class TransportBackpacks {};
-        
+
         class ACE_Actions
         {
             class ACE_MainActions
@@ -96,14 +110,15 @@ class CfgVehicles
                 displayName = "TB-Nachschub";
                 modifierFunction = "[_this] call TB_fnc_modifierSupplyMain";
                 distance = 7;
-                
+
                 class allgemein
                 {
                     displayName = "Allgemein";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    
+
                     ADD_SUPPLY(LeereKiste,TB_supply_empty);
                     ADD_SUPPLY(Sanikiste,TB_supply_all_medic);
+                    ADD_SUPPLY(Arztkiste,TB_supply_all_arzt);
                     ADD_SUPPLY(Ersatzreifen,ACE_Wheel);
                     ADD_SUPPLY(Ersatzkette,ACE_Track);
                     ADD_SUPPLY(Funkgeräte,TB_supply_all_funk);
@@ -119,13 +134,13 @@ class CfgVehicles
                     ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
                     ADD_SUPPLY(Minenkiste,TB_supply_all_mines);
                 };
-        
+
                 class usa
                 {
                     displayName = "USA";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(count (entities 'TB_arsenal_usa')) > 0";
-                    
+
                     ADD_SUPPLY(Munition,TB_supply_usa_ammo);
                     ADD_SUPPLY(KleinMunition,TB_supply_usa_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_usa_grena);
@@ -138,14 +153,16 @@ class CfgVehicles
                     ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
                     ADD_SUPPLY(NotfallWaffen,TB_supply_usa_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
+                    ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
+                    ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
                 };
-        
+
                 class bw
                 {
                     displayName = "BW";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(count (entities 'TB_arsenal_bw')) > 0";
-                    
+
                     ADD_SUPPLY(Munition,TB_supply_bw_ammo);
                     ADD_SUPPLY(KleinMunition,TB_supply_bw_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_bw_grena);
@@ -162,7 +179,7 @@ class CfgVehicles
                     displayName = "NATO";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(count (entities 'TB_arsenal_vanilla')) > 0";
-                    
+
                     ADD_SUPPLY(Munition,TB_supply_nato_ammo);
                     ADD_SUPPLY(Granaten,TB_supply_nato_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
@@ -175,7 +192,7 @@ class CfgVehicles
                     displayName = "RUSS";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(count (entities 'TB_arsenal_russ')) > 0";
-                    
+
                     ADD_SUPPLY(Munition,TB_supply_russ_ammo);
                     ADD_SUPPLY(KleinMunition,TB_supply_russ_ammoSmall);
                     ADD_SUPPLY(Granaten,TB_supply_russ_grena);
@@ -186,7 +203,7 @@ class CfgVehicles
                     ADD_SUPPLY(NotfallWaffen,TB_supply_russ_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_russ_night);
                 };
-                
+
                 class packBack
                 {
                     displayName = "Kiste zurückpacken";
@@ -196,88 +213,149 @@ class CfgVehicles
             };
         };
     };
-    
-    
+
+
     // ###################### KISTEN #########################
-    WRAPPER(Box_NATO_Support_F);
-    WRAPPER(Box_NATO_Ammo_F);
-    WRAPPER(Box_NATO_Wps_F);
-    WRAPPER(Box_NATO_Equip_F); // sehr groß
-    WRAPPER(Box_IDAP_Equip_F);
-    WRAPPER(Box_NATO_WpsLaunch_F);
-    WRAPPER(Box_NATO_Grenades_F);
-    WRAPPER(Box_NATO_AmmoOrd_F);
-    WRAPPER(Box_NATO_WpsSpecial_F);
-    
+    #define SKIN_GRP1 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_3.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
+    #define SKIN_GRP2 "\TBMod_skins\pictures\statics\Land_PlasticCase_01_medium_F_0.paa"
+    #define SKIN_GRP3 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_2.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
+    #define SKIN_GRP4 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
+    #define SKIN_GRP5 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
+    #define SUPPORT_SKIN "\TBMod_skins\pictures\statics\equipment_box_blufor_ca_1.paa"
+
+    // WRAPPER(Box_NATO_Support_F); // nicht benutzt
+    WRAPPER(Box_NATO_Equip_F);
+    WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_IDAP_Equip_F, "\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_NATO_WpsLaunch_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_Grenades_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_AmmoOrd_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_NATO_WpsSpecial_F, SKIN_GRP1);
+    WRAPPER_SKIN(Land_PlasticCase_01_small_F, SKIN_GRP2);
+    WRAPPER_SKIN(Land_PlasticCase_01_medium_F, SKIN_GRP2);
+    WRAPPER_SKIN2(Box_IND_Ammo_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_WpsSpecial_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_NATO_Uniforms_F, "\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa", SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_IND_AmmoOrd_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_Support_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_Wps_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_East_Wps_F, SKIN_GRP4);
+    WRAPPER_SKIN2(Box_EAST_WpsLaunch_F, SKIN_GRP5);
+    WRAPPER_SKIN2(Box_IND_Grenades_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_IND_WpsLaunch_F, SKIN_GRP3);
+    WRAPPER_SKIN2(Box_East_WpsSpecial_F, SKIN_GRP5);
+    WRAPPER_SKIN2(Box_East_Support_F, SKIN_GRP1);
+    WRAPPER_SKIN2(Box_East_Grenades_F, SKIN_GRP5);
+    WRAPPER_SKIN2(Box_East_AmmoOrd_F, SKIN_GRP4);
+
     class TB_supply_empty: WRAPPER_NAME(Box_NATO_Ammo_F)
     {
         PUBLIC_NAME("Leere Kiste");
     };
-    
-    class TB_supply_all_medic: WRAPPER_NAME(Box_NATO_Support_F)
+
+    class TB_supply_all_medic: WRAPPER_NAME(Land_PlasticCase_01_small_F)
     {
         PUBLIC_NAME("Sanikiste");
-        
+
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,60);
-            MACRO_ADDITEM(ACE_elasticBandage,60);
-            
+            MACRO_ADDITEM(ACE_quikclot,30);
+            MACRO_ADDITEM(ACE_elasticBandage,30);
+            MACRO_ADDITEM(ACE_fieldDressing,60);
+            MACRO_ADDITEM(ACE_packingBandage,30);
+
             MACRO_ADDITEM(ACE_tourniquet,4);
-            
-            MACRO_ADDITEM(ACE_bloodIV_500,10);
-            MACRO_ADDITEM(ACE_bloodIV,5);
-            
-            MACRO_ADDITEM(ACE_morphine,20);
-            MACRO_ADDITEM(ACE_epinephrine,10);
-            
-            MACRO_ADDITEM(ACE_surgicalKit,1);
+
+            MACRO_ADDITEM(ACE_plasmaIV_250,8);
+            MACRO_ADDITEM(ACE_plasmaIV_500,4);
+            MACRO_ADDITEM(ACE_plasmaIV,2);
+            MACRO_ADDITEM(ACE_salineIV_500,4);
+            MACRO_ADDITEM(ACE_salineIV,2);
+
+            MACRO_ADDITEM(ACE_morphine,8);
+            MACRO_ADDITEM(ACE_epinephrine,16);
+            MACRO_ADDITEM(ACE_atropine,20);
+            MACRO_ADDITEM(ACE_adenosine,16);
+
+            MACRO_ADDITEM(ACE_surgicalKit,2);
         };
     };
-    
-    class TB_supply_all_funk : WRAPPER_NAME(Box_NATO_Equip_F)
+
+    class TB_supply_all_arzt: WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("Arztkiste");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(ACE_quikclot,50);
+            MACRO_ADDITEM(ACE_elasticBandage,50);
+            MACRO_ADDITEM(ACE_fieldDressing,90);
+            MACRO_ADDITEM(ACE_packingBandage,50);
+
+            MACRO_ADDITEM(ACE_tourniquet,4);
+
+            MACRO_ADDITEM(ACE_bloodIV_250,8);
+            MACRO_ADDITEM(ACE_bloodIV_500,4);
+            MACRO_ADDITEM(ACE_bloodIV,2);
+            MACRO_ADDITEM(ACE_plasmaIV_250,16);
+            MACRO_ADDITEM(ACE_plasmaIV_500,8);
+            MACRO_ADDITEM(ACE_plasmaIV,4);
+            MACRO_ADDITEM(ACE_salineIV_500,8);
+            MACRO_ADDITEM(ACE_salineIV,4);
+
+            MACRO_ADDITEM(ACE_morphine,10);
+            MACRO_ADDITEM(ACE_epinephrine,20);
+            MACRO_ADDITEM(ACE_atropine,20);
+            MACRO_ADDITEM(ACE_adenosine,16);
+
+            MACRO_ADDITEM(ACE_surgicalKit,5);
+        };
+    };
+
+    class TB_supply_all_funk : WRAPPER_NAME(Box_IND_Ammo_F)
     {
         PUBLIC_NAME("Funkkiste");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(TFAR_anprc152,10);
         };
-        
+
         class TransportBackpacks
         {
             MACRO_ADDBACKPACK(TFAR_rt1523g_big,2);
             MACRO_ADDBACKPACK(TFAR_rt1523g_big_rhs,2);
         };
     };
-    
-    class TB_supply_all_mortar : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+
+    class TB_supply_all_mortar : WRAPPER_NAME(Box_IND_WpsSpecial_F)
     {
         PUBLIC_NAME("MörserKit");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_RangeTable_82mm,2);
             MACRO_ADDITEM(ACE_Altimeter,2);
             MACRO_ADDITEM(ACE_MapTools,2);
             MACRO_ADDITEM(ACE_microDAGR,2);
-            
+
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE,5);
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_Smoke,3);
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_Illum,2);
         };
-        
+
         class TransportBackpacks
         {
             MACRO_ADDBACKPACK(B_Mortar_01_weapon_F,1);
             MACRO_ADDBACKPACK(B_Mortar_01_support_F,1);
         };
     };
-    
-    class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Ammo_F)
+
+    class TB_supply_all_mortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
         PUBLIC_NAME("MörserMunition");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE,8);
@@ -287,69 +365,73 @@ class CfgVehicles
             //MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE_LaserGuided,2);
         };
     };
-    
-    class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Ammo_F)
+
+    class TB_supply_all_mortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
     {
         PUBLIC_NAME("MörserMunitionHE");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE,15);
         };
     };
-    
-    class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_Ammo_F)
+
+    class TB_supply_all_mortarAmmoSmoke : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
         PUBLIC_NAME("MörserMunitionRauch");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_Smoke,15);
         };
     };
-    
-    class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_Ammo_F)
+
+    class TB_supply_all_mortarAmmoFlare : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     {
         PUBLIC_NAME("MörserMunitionFlare");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_Illum,15);
         };
     };
-    
-    class TB_supply_all_hmg : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+
+    class TB_supply_all_hmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("HMGKit");
-        
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
         class TransportBackpacks
         {
             MACRO_ADDBACKPACK(RHS_M2_Gun_Bag,1);
             MACRO_ADDBACKPACK(RHS_M2_Tripod_Bag,1);
         };
     };
-    
+
     class TB_supply_all_misc : WRAPPER_NAME(Box_NATO_Equip_F)
     {
         PUBLIC_NAME("EquipmentKiste");
-        
+
         class TransportItems
         {
             MACRO_ADDITEM(ACE_CableTie,10);
             MACRO_ADDITEM(ACE_EntrenchingTool,5);
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
-            
+
+            MACRO_ADDITEM(ACE_rope36,10);
+
             MACRO_ADDITEM(ACE_wirecutter,2);
+            MACRO_ADDITEM(ToolKit,2);
             MACRO_ADDITEM(ACE_MapTools,5);
-            
+
             MACRO_ADDITEM(Binocular,2);
             MACRO_ADDITEM(ItemGPS,2);
             MACRO_ADDITEM(ItemCompass,2);
         };
     };
-    
-    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Equip_F)
+
+    class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F)
     {
         PUBLIC_NAME("BauKiste");
 
@@ -379,7 +461,7 @@ class CfgVehicles
             MACRO_ADDITEM(TB_building_item_Land_PortableLight_double_F,2);
         };
     };
-    
+
     class TB_supply_all_mp5 : WRAPPER_NAME(Box_NATO_Ammo_F)
     {
         PUBLIC_NAME("MP5Muni");
@@ -394,10 +476,10 @@ class CfgVehicles
         };
     };
 
-    class TB_supply_all_mines : WRAPPER_NAME(Box_NATO_Ammo_F)
+    class TB_supply_all_mines : WRAPPER_NAME(Box_IND_AmmoOrd_F)
     {
         PUBLIC_NAME("Minenkiste");
-    
+
         class TransportItems
         {
             MACRO_ADDITEM(DemoCharge_Remote_Mag,10);

@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_ammoBox", ["_rolle", ""]];
@@ -18,53 +18,51 @@ private _allItems = call (switch (_type) do
     case "BW": {TB_fnc_arsenalBW};
     case "VANILLA": {TB_fnc_arsenalVANILLA};
     case "Themen": {TB_fnc_arsenalThemen};
-    case "SWOPReb": {TB_fnc_arsenalSWOPRebuplik}; // only for crash help
-    default {hint "Schwerer Fehler #200"; []};
+    default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {}};
 });
 
 // MEDIC STUFF
 _allItems append [
-    // Medic Stuff BASIC
     "ACE_fieldDressing",
-    "ACE_morphine",
-    
-    // Medic Stuff ADV
-    // "ACE_packingBandage",
-    "ACE_elasticBandage",
-    "ACE_quikclot",
+
+    "ACE_atropine",
+    "ACE_adenosine",
+
+    "ACE_salineIV",
+    "ACE_salineIV_500",
+    "ACE_salineIV_250",
+
     "ACE_tourniquet"
 ];
 
 if (_rolle in ["sani", "arzt", "pilot"]) then
 {
     _allItems append [
-        "ACE_bodyBag",
-        "ACE_epinephrine",
-        "ACE_bloodIV",
-        "ACE_bloodIV_500",
-        "ACE_bloodIV_250",
-        
-        // Medic Stuff ADV
-        "ACE_atropine",
-        // "ACE_salineIV",
-        // "ACE_salineIV_500",
-        // "ACE_salineIV_250",
-        // "ACE_plasmaIV",
-        // "ACE_plasmaIV_500",
-        // "ACE_plasmaIV_250",
-        // "ACE_personalAidKit",
-        "ACE_surgicalKit",
+        "ACE_packingBandage",
+        "ACE_elasticBandage",
+        "ACE_quikclot",
 
-        // Deffi
-        "adv_aceCPR_AED",
-        "TB_Item_liveMonitor"
+        "ACE_epinephrine",
+        "ACE_morphine",
+
+        "ACE_plasmaIV",
+        "ACE_plasmaIV_500",
+        "ACE_plasmaIV_250",
+
+        "ACE_bodyBag",
+        "ACE_surgicalKit",
+        "adv_aceCPR_AED"
     ];
 };
 
 if (_rolle == "arzt") then
 {
     _allItems append [
-        "ACE_personalAidKit"
+        "ACE_personalAidKit",
+
+        "ACE_bloodIV",
+        "ACE_bloodIV_500",
+        "ACE_bloodIV_250"
     ];
 };
 
