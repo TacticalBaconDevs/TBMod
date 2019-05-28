@@ -918,6 +918,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _lrFunken +
         _pilot_munition +
+        _allgemein_magazine +
+        _pilot_munition +
+        _mg_munition +
+        _grenadier_munition +
+        _dmr_munition +
+        _pilot_munition +
+        _sniper_munition +
+        _aaat_munition +
         [
             // Gewehr
             "rhsusf_weap_MP7A2",

@@ -402,6 +402,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _LR +
+        _allgemein_magazine +
+        _pilot_munition +
+        _mg_munition +
+        _grenadier_munition +
+        _dmr_munition +
+        _pilot_munition +
+        _sniper_munition +
+        _aaat_munition +
         [
             // Head
             "H_HelmetCrew_I",
