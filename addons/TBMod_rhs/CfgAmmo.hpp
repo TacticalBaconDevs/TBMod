@@ -135,12 +135,32 @@ class CfgAmmo
         indirectHitRange = 2; // 1
     };
 
+    class Sh_155mm_AMOS;
+    class ammo_ShipCannon_120mm_HE : Sh_155mm_AMOS // Mk45 Hammer HE
+    {
+        caliber = 4; // 10
+        ExplosionEffects = "BombExplosion"; // "MortarExplosion"
+        hit = 340; // 340
+        indirectHit = 125; // 125
+        indirectHitRange = 30; // 30
+    };
+
     class Smoke_120mm_AMOS_White;
     class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Smoke
     {
-        effectsSmoke = "SmokeShellWhiteEffect"; // "ACE_ArtillerySmoke"
-        submunitionConeAngle = 22; // 10
-        submunitionConeType[] = {"poissondisccenter",12}; // 5
+        submunitionConeType[] = {"poissondisccenter", 20}; // "poissondisc",5
+    };
+
+    class ammo_ShipCannon_120mm_smoke_Q : Smoke_120mm_AMOS_White // NEU Mk45 Hammer Rauchwand Quer
+    {
+        submunitionConeType[] = {"custom", {{7,0},{6.5,0},{6,0},{5.5,0},{5,0},{4.5,0},{4,0},{3.5,0},{3,0},{2.5,0},{2,0},{1.5,0},{1,0},{0.5,0},{0,0},{-0.5,0},{-1,0},{-1.5,0},{-2,0},{-2.5,0},{-3,0},{-3.5,0},{-4,0},{-4.5,0},{-5,0},{-5.5,0},{-6,0},{-6.5,0},{-7,0}} };
+        submunitionDirectionType="SubmunitionModelDirection";
+    };
+
+    class ammo_ShipCannon_120mm_smoke_L : Smoke_120mm_AMOS_White // NEU Mk45 Hammer Rauchwand Längst
+    {
+        submunitionConeType[] = {"custom", {{0,7},{0,6.5},{0,6},{0,5.5},{0,5},{0,4.5},{0,4},{0,3.5},{0,3},{0,2.5},{0,2},{0,1.5},{0,1},{0,0.5},{0,0},{0,-0.5},{0,-1},{0,-1.5},{0,-2},{0,-2.5},{0,-3},{0,-3.5},{0,-4},{0,-4.5},{0,-5},{0,-5.5},{0,-6},{0,-6.5},{0,-7}} };
+        submunitionDirectionType="SubmunitionModelDirection";
     };
 
     class Mine_155mm_AMOS_range;
@@ -154,5 +174,20 @@ class CfgAmmo
     class Mo_ClassicMineRange : ShotDeployBase // Mk45 Hammer HE Minen Cluster Submunition
     {
         submunitionAmmo = "APERSBoundingMine_Range_Ammo"; // "APERSMine_Range_Ammo"
+    };
+
+    class BoundingMineBase;
+    class APERSBoundingMine_Range_Ammo : BoundingMineBase // Mk45 Hammer HE Minen Cluster Submunition Sprungmine
+    {
+        indirectHit = 18; // 10
+    };
+
+    class BulletBase;
+    class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // GAU-8 A-10 
+    {
+        caliber = 35; // 1.4
+        hit = 60; // 80
+        indirectHit = 45; // 12
+        indirectHitRange = 5; // 3
     };
 };

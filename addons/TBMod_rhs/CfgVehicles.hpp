@@ -209,7 +209,7 @@ class CfgVehicles
         armor = 115; // 80
         audible = 210; // 60
         camouflage = 170; // 100
-        irScanRangeMin = 200; // 500
+        camShakeCoef = 1.2; // 0
         irTargetSize = 1.65; // 1
         magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
@@ -242,7 +242,7 @@ class CfgVehicles
         accuracyNightLightsOff = 0.00006; // 0.006
         accuracyNightLightsOn = 0.001; // 0.1
         camouflage = 0.25; // 0.5
-        fuelCapacity = 200; // 100
+        fuelCapacity = 150; // 100
         irTargetSize = 0.01; // 1
         nvScanner = 1; // 0
         radarTargetSize = 0.05; // 0.1
@@ -333,7 +333,7 @@ class CfgVehicles
     {
         accuracy = 0.6; // 0.1
         camouflage = 45; // 150
-        fuelCapacity = 1800; // 1000
+        fuelCapacity = 3000; // 1000
         irTargetSize = 0.3; // 0.5
         nvScanner = 1; // 0
         radarTargetSize = 0.3; // 0.5

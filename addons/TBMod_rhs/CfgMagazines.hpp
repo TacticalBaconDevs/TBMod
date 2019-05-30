@@ -87,20 +87,6 @@ class CfgMagazines
 
         mass = 5; // 5.06
     };
-    class TB_rhs_mag_40mm_Delay : rhs_mag_M441_HE // Delay Grenade
-    {
-        ammo = "TB_rhs_40mm_Delay";
-        author = "TBMod";
-
-        descriptionShort = "Type: TB Delay Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB 40mm Delay Direct Grenade Round";
-        displaynameshort = "TB Delay D Grenade";
-
-        initSpeed = 425; // 80
-        mass = 5; // 5.06
-        picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m781_ca.paa"; // \rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m443_ca.paa
-        tracersEvery = 1; // 0
-    };
 
     class rhsusf_8Rnd_Slug;
     class TB_rhs_mag_40mm_Slugshot : rhsusf_8Rnd_Slug // Umbenennung zu TB_Slugshot
@@ -154,5 +140,81 @@ class CfgMagazines
         displaynameshort = "TB Red Flare Grenade";
 
         mass = 3; // 5.06
+    };
+
+    class 2Rnd_155mm_Mo_Cluster;
+    class magazine_ShipCannon_120mm_HE_cluster_shells_x2 : 2Rnd_155mm_Mo_Cluster // Mk45 Hammer HE Cluster
+    {
+        count = 18; // 2
+    };
+
+    class 6Rnd_155mm_Mo_mine;
+    class magazine_ShipCannon_120mm_mine_shells_x6 : 6Rnd_155mm_Mo_mine // Mk45 Hammer HE Minen Cluster
+    {
+        count = 18; // 6
+    };
+
+    class 6Rnd_155mm_Mo_smoke;
+    class magazine_ShipCannon_120mm_smoke_shells_x6 : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Smoke
+    {
+        descriptionShort = "Rauchwand zentriert";
+        displayName = "Rauch zentriert";
+        displaynameshort = "Rauch zentriert";
+        
+        count = 18; // 6
+    };
+    
+    class magazine_ShipCannon_120mm_smoke_shells_x6_L : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Rauchwand Längst
+    {
+        ammo = "ammo_ShipCannon_120mm_smoke_L";
+
+        descriptionShort = "Rauchwand längst der Flugbahn";
+        displayName = "Rauch längst";
+        displaynameshort = "Rauch längst";
+
+        count = 18; // 6
+    };
+    
+    class magazine_ShipCannon_120mm_smoke_shells_x6_Q : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Rauchwand Quer
+    {
+        ammo = "ammo_ShipCannon_120mm_smoke_Q";
+
+        descriptionShort = "Rauchwand quer der Flugbahn";
+        displayName = "Rauch quer";
+        displaynameshort = "Rauch quer";
+
+        count = 18; // 6
+    };
+
+    class 6Rnd_155mm_Mo_AT_mine;
+    class magazine_ShipCannon_120mm_AT_mine_shells_x6 : 6Rnd_155mm_Mo_AT_mine // Mk45 Hammer AT Minen Cluster
+    {
+        count = 18; // 6
+    };
+
+    class 2Rnd_155mm_Mo_LG;
+    class magazine_ShipCannon_120mm_HE_LG_shells_x2 : 2Rnd_155mm_Mo_LG // Mk45 Hammer AT Laserguided
+    {
+        count = 18; // 2
+        displayName = "AT Laser Guided"; // "Laser Guided"
+        displayNameMFDFormat = "AT LASER GUID"; // "LASER GUID"
+        displayNameShort = "AT Laser Guided"; // "155mm Laser Guided"
+    };
+
+    class magazine_Bomb_SDB_x1;
+    class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // GBU SDB x4 
+    {
+        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON"}; // "B_SDB_QUAD_RAIL"
+    };
+
+    class 4Rnd_Bomb_04_F;
+    class PylonMissile_1Rnd_Bomb_04_F : 4Rnd_Bomb_04_F // GBU-12 HE
+    {
+        descriptionShort = "227kg LG HE Bomb"; // "500lb, high-explosive, laser-guided bomb"
+        displayName = "GBU-12 LG HE"; // "GBU-12"
+        displayNameShort = "LG HE Bomb"; // "Bomb"
+        model = "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d"; // "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d"
+
+        mass = 800; // 230
     };
 };
