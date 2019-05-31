@@ -18,8 +18,6 @@ private _allgemein = [
     // ### Vanilla
     "G_Aviator",
 
-    
-
     // Nachtsichtgeräte
     "ACE_NVG_Gen4",
 
