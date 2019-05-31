@@ -37,6 +37,15 @@ private _allgemein = [
     // Navigation
     "ItemCompass",
 
+    // Schalldämpfer
+    "bwa3_muzzle_snds_rotex_iia",
+    "muzzle_snds_b_khk_f",
+    "muzzle_snds_b_snd_f",
+    "muzzle_snds_b",
+    "bwa3_muzzle_snds_rotex_monoblock",
+    "bwa3_muzzle_snds_rotex_iic",
+    "bwa3_muzzle_snds_rotex_iic_tan",
+
     // Uhr
     "ItemWatch",
     "ACE_Altimeter",
@@ -332,6 +341,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "lead":
     {
         _allgemein +
+        _allgemein_gewehre +
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
@@ -522,10 +532,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
-        _grenadier_munition    +
+        _grenadier_munition +
         _dmr_munition +
         _pilot_munition +
-        _sniper_munition    +
+        _sniper_munition +
         _aaat_munition +
         _gepaeck_mittel +
         _gepaeck_gross +
@@ -541,7 +551,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _lrFunken +
+        _allgemein_magazine +
         _pilot_munition +
+        _mg_munition +
+        _grenadier_munition +
+        _dmr_munition +
+        _pilot_munition +
+        _sniper_munition +
+        _aaat_munition +
         [
             // Weapons
             "BWA3_MP7",
@@ -655,6 +672,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _sniper_munition +
         _pilot_munition +
         _gepaeck_mittel +
+        _allgemein_gewehre +
         _grenadier_gewehr +
         _grenadier_munition +
         [
