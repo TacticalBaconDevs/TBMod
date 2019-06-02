@@ -12,6 +12,9 @@ _input params [
         ["_isCuratorPlaced", false, [true]]
     ];
 
+// TODO: wieder deaktivierbare Module machen
+//["%1", _this] call TB_fnc_debug;
+
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {
     // Check for Target

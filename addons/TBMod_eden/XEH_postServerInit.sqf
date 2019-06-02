@@ -152,7 +152,6 @@ if !(call TB_fnc_isTBMission) exitWith {};
                 {
                     _target = selectRandom _targets;
                     _x doSuppressiveFire _target;
-                    ["Suppression ausgeführt: %1 | %2 | %3", _target, _x, _args] call TB_fnc_debug;
                 };
             }
             forEach TB_fireSuppressSoldiers;
