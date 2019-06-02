@@ -1,18 +1,18 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author: Eric Ruhland
     Befestigt ein Object
-    
+
     Arguments:
     0: Target <OBJECT>
     1: Helper <OBJECT>
-    
+
     Return Value:
     None
 */
-params ["_target", "_helper"]; 
+params ["_target", "_helper"];
 
 private _rope = _helper getVariable ['TB_Rope_rope', objNull];
 private _source = _rope getVariable ['TB_Rope_Source', objNull];
@@ -32,14 +32,14 @@ if (!isNull _attachedVehicle && _attachedVehicle != _target) exitWith {systemCha
 private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
 if (_selection == "") exitWith {systemChat format ["ERROR(attach): no Slingloadposition found on _source %1   ", _source]};
 
-private _posToAttach = ASLToAGL ([ACE_player, _ray] call TB_fnc_calculateAttachPoint); 
+private _posToAttach = ASLToAGL ([ACE_player, _ray] call TB_fnc_calculateAttachPoint);
 private _sourcepos = (_source modelToWorld (_source selectionPosition _selection));
 
 // Sanity Check
 if ((_posToAttach distance _sourcepos) > 20) exitWith {systemChat "Seil ist zu kurz"};
 
 //systemChat format ["DEBUG(attach): _source %1  _selection %2 _target %3 _attachoffset %4", _source, _selection, _target, (_target worldToModel _posToAttach)];
-if (_idPFH==-1) then 
+if (_idPFH==-1) then
 {
     systemChat format ["ERROR(dropRope): no idPFH assigned _helper %1", _helper];
 }

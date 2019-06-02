@@ -1,10 +1,10 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-    
+
     Author:
         CBA ( https://github.com/CBATeam/CBA_A3 )
-        
+
     Info:
         the macro FILE_EXISTS as function
 */
@@ -21,4 +21,3 @@ if (isNull _control) then {
 };
 
 _return
-    

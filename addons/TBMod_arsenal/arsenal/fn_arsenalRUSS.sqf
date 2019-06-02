@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Ansprechpartner: mordl, Darky
@@ -18,13 +18,13 @@ private _allgemein = [
     "rhs_balaclava",
     // ### Vanilla
     "G_Aviator",
-    
+
     // Nachtsichtgeräte
     "rhs_1PN138",
-    
+
     // Ferngläser
     "Binocular",
-    
+
     // Karte
     "ItemMap",
 
@@ -235,7 +235,7 @@ private _items = [];
 _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 {
     case "lead":
-    {   
+    {
         _allgemein +
         _allgemein_magazine +
         _allgemein_visiere +
@@ -253,19 +253,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhs_weap_ak74n",
             "rhs_weap_ak74n_npz",
-            
-            // Weste        
+
+            // Weste
             "rhs_6b13_EMR_6sh92_radio",
             "rhs_6b23_digi_6sh92_radio",
             "rhs_6b13_Flora_6sh92_radio",
             "rhs_6b23_6sh92_radio",
             "rhs_6b23_ML_6sh92_radio",
-            
+
             // Ferngläser
             "rhs_pdu4"
         ]
     };
-    
+
     case "sani":
     {
         _allgemein +
@@ -284,11 +284,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weste
             "rhs_6b23_digi_medic",
             "rhs_6b23_medic",
-            "rhs_6b23_ML_medic"        
-            
+            "rhs_6b23_ML_medic"
+
         ]
     };
-    
+
     case "arzt":
     {
         _allgemein +
@@ -304,17 +304,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         [
-            // Uniform 
+            // Uniform
             "rhs_uniform_df15",
             "rhs_uniform_df15_tan",
-            
+
             // Weste
             "rhs_6b23_digi_medic",
             "rhs_6b23_medic",
             "rhs_6b23_ML_medic"
         ]
     };
-    
+
     case "grena":
     {
         _allgemein +
@@ -334,7 +334,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhs_weap_ak74n",
             "rhs_weap_ak74n_npz",
-            
+
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
             "rhs_6b23_6sh116_vog",
@@ -343,7 +343,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_6sh92_vog"
         ]
     };
-    
+
     case "dmr":
     {
         _allgemein +
@@ -366,13 +366,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Geschützzubehör
             "rhs_acc_tgpv",
             "rhs_acc_tgpv2",
-            
+
             // Weste
             "rhs_6b23_digi_sniper",
             "rhs_6b23_sniper"
         ]
     };
-    
+
     case "mg":
     {
         _allgemein +
@@ -389,7 +389,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehr
             "rhs_weap_pkp",
-            
+
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
             "rhs_6b23_6sh116_vog",
@@ -398,7 +398,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_6sh92_vog"
         ]
     };
-    
+
     case "trag":
     {
         _allgemein +
@@ -429,7 +429,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_6sh92_vog"
         ]
     };
-    
+
     case "pilot":
     {
         _allgemein +
@@ -437,10 +437,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _pilot_munition +
+        _allgemein_magazine +
+        _pilot_munition +
+        _mg_munition +
+        _grenadier_munition +
+        _dmr_munition +
+        _pilot_munition +
+        _sniper_munition +
+        _aaat_munition +
         [
             // Gewehr
             "rhs_weap_pp2000",
-            
+
             // Kopfbedeckung
             "rhs_tsh4",
             "rhs_tsh4_bala",
@@ -451,20 +459,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_zsh7a",
             "rhs_zsh7a_alt",
 
-            // Uniform 
+            // Uniform
             "rhs_uniform_df15",
             "rhs_uniform_df15_tan",
-        
+
             // Weste
             "rhs_vest_commander",
             "rhs_vest_pistol_holster",
             "rhs_6sh46",
-            
+
             // Items
             "ToolKit"
         ]
     };
-    
+
     case "rifle":
     {
         _allgemein +
@@ -479,11 +487,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
-        [   
-        
+        [
+
         ]
     };
-    
+
     case "sniper":
     {
         _allgemein +
@@ -500,15 +508,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_t5000",
             // Zweibein
             "rhs_acc_harris_swivel",
-            
+
             // Kopfbedeckung
             "rhs_fieldcap_khk",
             "rhs_fieldcap_vsr",
-            
+
             // Weste
             "rhs_6b23_digi_sniper",
             "rhs_6b23_sniper",
-            
+
             // Items
             "ACE_Tripod",
             "ACE_Kestrel4500",
@@ -516,7 +524,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard"
         ]
     };
-    
+
     case "spotter":
     {
         _allgemein +
@@ -537,7 +545,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Kopfbedeckung
             "rhs_fieldcap_khk",
             "rhs_fieldcap_vsr",
-            
+
             // Weste
             "rhs_6b23_digi_sniper",
             "rhs_6b23_sniper",
@@ -550,7 +558,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard"
         ]
     };
-    
+
     case "spreng":
     {
         _allgemein +
@@ -565,21 +573,21 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
-        [   
+        [
             // Handwaffen
             "ACE_VMH3",
             "ACE_VMM3",
-            
+
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
             "rhs_6b23_6sh116_vog",
             "rhs_6b13_Flora_6sh92_vog",
             "rhs_6b23_6sh92_vog",
             "rhs_6b23_ML_6sh92_vog",
-            
+
             // Gepäck
             "rhs_assault_umbts_engineer_empty",
-            
+
             // Items
             "ACE_Clacker",
             "ACE_M26_Clacker",
@@ -594,7 +602,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "APERSTripMine_Wire_Mag"
         ]
     };
-    
+
     case "aaat":
     {
         _allgemein +
@@ -614,11 +622,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weste
             "rhs_6b23_digi_vydra_3m",
             "rhs_6b23_vydra_3m",
-            "rhs_6b23_ML_vydra_3m",            
-            
+            "rhs_6b23_ML_vydra_3m",
+
             // Gepäck
             "rhs_rpg_empty",
-            
+
             // Raketenwerfer
             "rhs_weap_rpg7",
             "rhs_weap_igla",
@@ -626,7 +634,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_acc_pgo7v3"
         ]
     };
-    
+
     case "jtac":
     {
         _allgemein +
@@ -647,10 +655,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b13_Flora_6sh92_headset_mapcase",
             "rhs_6b23_6sh92_headset_mapcase",
             "rhs_6b23_ML_6sh92_headset_mapcase",
-        
+
             // Gepäck
             "O_UAV_01_backpack_F",
-            
+
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
@@ -662,7 +670,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserbatteries"
         ]
     };
-    
+
     case "pionier":
     {
         _allgemein +
@@ -681,22 +689,22 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Handfeuerwaffen
             "ACE_VMH3",
             "ACE_VMM3",
-            
+
             // Weste
             "rhs_6b23_digi_engineer",
             "rhs_6b23_engineer",
             "rhs_6b23_ML_engineer",
-            
+
             // Gepäck
             "rhs_assault_umbts_engineer_empty",
-            
+
             // Items
             "ACE_DefusalKit",
             "ToolKit",
             "ACE_wirecutter"
         ]
     };
-    
+
     default {hint "Schwerer Fehler #100"};
 });
 

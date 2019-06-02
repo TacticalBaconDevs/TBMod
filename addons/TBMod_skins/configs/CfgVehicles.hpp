@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Eric, IDarky
@@ -13,12 +13,12 @@
             scopeCurator = 2
 
 class CfgVehicles
-{    
+{
     // Uniformen
     class B_Soldier_F;
     class B_RangeMaster_F;
     class O_officer_F;
-    
+
     // Fahrzeuge
     class B_Heli_Light_01_F;
     class I_Heli_light_03_unarmed_F;
@@ -30,6 +30,12 @@ class CfgVehicles
     class I_APC_Wheeled_03_cannon_F;
     class I_Heli_Transport_02_F;
     class I_MRAP_03_hmg_F;
+
+    class I_G_Offroad_01_F;
+    class SUV_01_base_F;
+    class Offroad_02_unarmed_base_F;
+    class Offroad_02_LMG_base_F;
+    class Offroad_02_AT_base_F;
 
     ///////////////////////Polizei Uniformen//////////////////////////
 
@@ -43,7 +49,7 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_sek.paa"};
     };
-    
+
     class TB_Uniform_Kommissar: B_Soldier_F
     {
         scope = 1;
@@ -54,7 +60,7 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_kommissar.paa"};
     };
-    
+
     class TB_Uniform_rekrut: B_RangeMaster_F
     {
         scope = 1;
@@ -65,7 +71,7 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_rekrut.paa"};
     };
-    
+
     class TB_Uniform_presi: O_officer_F
     {
         scope = 1;
@@ -76,18 +82,18 @@ class CfgVehicles
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_presi.paa"};
     };
-    
+
     ///////////////////////Polizei Fahrzeuge//////////////////////////
 
     class TB_Vehicles_sek_light: B_Heli_Light_01_F
-    {    
+    {
         displayName = "SEK Hummingbird";
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo1"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_light.paa"};
     };
-    
+
     class TB_Vehicles_sek_hellcat: I_Heli_light_03_unarmed_F
     {
         displayName = "SEK Hellcat";
@@ -96,7 +102,7 @@ class CfgVehicles
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_hellcat.paa"};
     };
-    
+
     class TB_Vehicles_polizei_hellcat: I_Heli_light_03_unarmed_F
     {
         displayName = "Polizei Hellcat";
@@ -118,9 +124,9 @@ class CfgVehicles
             ""
         };
     };
-    
+
     ///////////////////////USA Fahrzeuge//////////////////////////
-    
+
     class TB_Vehicles_USA_hunter: B_MRAP_01_F
     {
         displayName = "M-ATV Sand";
@@ -262,5 +268,94 @@ class CfgVehicles
         author = "Eron";
         addCategory(BW);
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
+    };
+
+    ///////////////////////PMC Fahrzeuge//////////////////////////
+
+    class B_G_Offroad_01_F : I_G_Offroad_01_F {
+        class EventHandlers;
+    };
+
+    class C_SUV_01_F : SUV_01_base_F {
+        class EventHandlers;
+    };
+
+    class I_C_Offroad_02_unarmed_F : Offroad_02_unarmed_base_F {
+        class EventHandlers;
+    };
+
+    class I_C_Offroad_02_LMG_F : Offroad_02_LMG_base_F {
+        class EventHandlers;
+    };
+
+    class I_C_Offroad_02_AT_F : Offroad_02_AT_base_F {
+        class EventHandlers;
+    };
+
+    class TB_Vehicles_PMC_Pickup: B_G_Offroad_01_F
+    {
+        displayName = "Pickup";
+        author = "Eron";
+        addCategory(PMC);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa"};
+
+        class EventHandlers: EventHandlers
+        {
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false];";
+        };
+    };
+
+    class TB_Vehicles_PMC_SUV: C_SUV_01_F
+    {
+        displayName = "SUV";
+        author = "Eron";
+        addCategory(PMC);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Suv_0.paa"};
+
+        class EventHandlers: EventHandlers
+        {
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false];";
+        };
+    };
+
+    //////////Texturen werden manuell geladen
+    
+    class TB_Vehicles_PMC_Jeep: I_C_Offroad_02_unarmed_F
+    {
+        displayName = "Jeep";
+        author = "Eron";
+        addCategory(PMC);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
+    
+        class EventHandlers: EventHandlers
+        {
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
+        };
+    };
+
+    class TB_Vehicles_PMC_Jeep_2: I_C_Offroad_02_LMG_F
+    {
+        displayName = "Jeep LMG";
+        author = "Eron";
+        addCategory(PMC);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
+    
+        class EventHandlers: EventHandlers
+        {
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
+        };
+    };
+
+    class TB_Vehicles_PMC_Jeep_3: I_C_Offroad_02_AT_F
+    {
+        displayName = "Jeep AT";
+        author = "Eron";
+        addCategory(PMC);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
+    
+        class EventHandlers: EventHandlers
+        {
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
+        };
     };
 };

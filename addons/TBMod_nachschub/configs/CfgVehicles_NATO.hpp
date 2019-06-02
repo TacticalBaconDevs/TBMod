@@ -1,8 +1,8 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
-    Author: shukari, IDarky
+    Author: IDarky
 */
 
 class TB_supply_nato_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
@@ -24,7 +24,7 @@ class TB_supply_nato_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 class TB_supply_nato_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
 {
     PUBLIC_NAME_CAT("Granaten",NATO);
-    
+
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(SmokeShell,20);
@@ -40,7 +40,7 @@ class TB_supply_nato_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
 class TB_supply_nato_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
 {
     PUBLIC_NAME_CAT("Unterlauf",NATO);
-    
+
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,15);
@@ -53,7 +53,7 @@ class TB_supply_nato_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
 class TB_supply_nato_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("WerferMunition",NATO);
-    
+
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(MRAWS_HEAT_F,4);
@@ -66,14 +66,14 @@ class TB_supply_nato_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 class TB_supply_nato_night : WRAPPER_NAME(Box_NATO_Equip_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",NATO);
-    
+
     class TransportItems
     {
         MACRO_ADDITEM(ACE_NVG_Gen4,10);
-        
+
         MACRO_ADDITEM(ACE_IR_Strobe_Item,10);
         MACRO_ADDITEM(ACE_Flashlight_KSF1,10);
-        
+
         MACRO_ADDITEM(ACE_Chemlight_HiYellow,10);
         MACRO_ADDITEM(ACE_Chemlight_HiRed,10);
     };

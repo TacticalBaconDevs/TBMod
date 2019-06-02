@@ -1,0 +1,5 @@
+# ganze History fast
+gource -f -a 0.1 -s 2 -c 4.0 --highlight-users --title "TBMod"
+
+# seit 1.2.2 bis aktuell langsamer
+gource -f -a 0.5 -s 5 -c 2.0 --highlight-users --title "TBMod" --start-date "2018-12-14 01:00:00"

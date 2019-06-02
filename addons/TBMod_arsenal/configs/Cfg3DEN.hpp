@@ -1,9 +1,7 @@
-﻿#include "macros.inc"
+#include "macros.inc"
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 class ctrlCombo;
 
@@ -19,7 +17,7 @@ class Cfg3DEN
                 class Title;
             };
         };
-        
+
         class TB_arsenal_rollenControl : Title
         {
             attributeLoad = "[_this controlsGroupCtrl 100, _config] call Enh_fnc_attributeLoadCombo";
@@ -92,7 +90,7 @@ class Cfg3DEN
             {
                 displayName = "TB Arsenal";
                 collapsed = 1;
-                
+
                 class Attributes
                 {
                     class TB_rolle
@@ -101,11 +99,11 @@ class Cfg3DEN
                         tooltip = "Wähle hier eine Rolle aus, wenn du ohne das Arsenalsystem trotzdem bestimmte Eigenschaften der Rollen benötigst.";
                         property = "TB_rolle";
                         control = "TB_arsenal_rollenControl";
-                        
+
                         expression = "_this setVariable ['%s', _value, true]";
-                        
+
                         defaultValue = "";
-                        
+
                         condition = "objectBrain";
                         typeName = "STRING";
                     };

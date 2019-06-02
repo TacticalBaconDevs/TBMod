@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgFunctions
@@ -16,6 +16,8 @@ class CfgFunctions
             class animationAI {};
             class keysForAI {};
             class inkognitoSystem {};
+            class moduleAtmoCore {};
+            class atmoCoreAction {};
         };
     };
 };

@@ -1,18 +1,11 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 ace_microdagr_settingUseMils = true;
 
-// ### RECHTE & ChatCommands
-TB_lvl3 = ["76561198029318101", /* shukari */
-            "76561198053478498", /* Sponst */
-            "76561198040057152", /* Culli */
-            "76561198047437015" /* BeLink */];
-TB_lvl2 = ["76561198066861232" /* Darky */];
-TB_lvl3 pushBack "_SP_PLAYER_";
 
-// Von [14.JgKp]Ben@Arms
+// ### Gras entfernen - Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {
     private _zerschneider = createVehicle ["Land_ClutterCutter_medium_F", ACE_player modelToWorld [0, 2.7, 0], [], 0, "CAN_COLLIDE"];
 
@@ -24,7 +17,8 @@ private _grasAction = ["TB_cutGras", "Gras entfernen", "", {
 }, {true}] call ace_interact_menu_fnc_createAction;
 [ACE_player, 1, ["ACE_SelfActions", "ACE_Equipment"], _grasAction] call ace_interact_menu_fnc_addActionToObject;
 
-// TB Rank up
+
+// ### TB Rank up
 (squadParams ACE_player) params [["_gruppenInfos", []]];
 _gruppenInfos params [["_tag", ""]];
 
@@ -38,23 +32,28 @@ if (_tag == "TB") then
     [ACE_player, "TB_Insigna_Soldat"] call BIS_fnc_setUnitInsignia;
 };
 
-// BriefingStühle nicht tragen lassen
-{[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities "Land_CampingChair_V2_F");
+
+// ### BriefingStühle nicht tragen lassen
+{
+    {[_x, false] call ace_dragging_fnc_setCarryable} forEach (entities (configName _x));
+}
+forEach (configProperties [configFile >> "CfgVehicles", "isClass _x && {getNumber (_x >> 'acex_sitting_canSit') == 1}", true]);
+
 
 // BuildAbfrage
-waitUntil {!isNil "TB_serverBuild"};
+//waitUntil {!isNil "TB_serverBuild"};
 productVersion params ["", "", "", "_buildNumber", "", "", "", "_architecture"];
 
-if (_buildNumber < TB_serverBuild) then
-{
-    private _msg = "[WICHTIG] Du benutzt kein PerformanceBuild, solltest du FPS Probleme oder Crashes haben, können wir Dir nicht helfen!";
-
-    systemChat _msg;
-    hint _msg;
-    diag_log _msg;
-
-    (format ["[WARNUNG] %1 benutzt kein PerformanceBuild!", profileName]) remoteExecCall ["systemChat"];
-};
+//if (_buildNumber < TB_serverBuild) then
+//{
+//    private _msg = "[WICHTIG] Du benutzt kein PerformanceBuild, solltest du FPS Probleme oder Crashes haben, können wir Dir nicht helfen!";
+//
+//    systemChat _msg;
+//    hint _msg;
+//    diag_log _msg;
+//
+//    (format ["[WARNUNG] %1 benutzt kein PerformanceBuild!", profileName]) remoteExecCall ["systemChat"];
+//};
 
 if (_architecture != "x64") then
 {
@@ -67,31 +66,42 @@ if (_architecture != "x64") then
     (format ["[WARNUNG] %1 benutzt ein 32bit Arma3!", profileName]) remoteExecCall ["systemChat"];
 };
 
-// ZeusFix
+
+// ### ZeusFix
 {
     private _zeus = getAssignedCuratorUnit _x;
 
-    if (!isNull _zeus && {player == _zeus} && {isNull (getAssignedCuratorLogic _zeus)}) then
+    if (!isNull _zeus && {player == _zeus}) then
     {
-        [{(getMarkerPos "respawn") distance player < 2}, {
-            params ["_dir", "_pos"];
-            {
-                {deleteVehicle _x} forEach (_pos nearObjects [_x, 5]);
-            }
-            forEach ["CAManBase", "GroundWeaponHolder", "WeaponHolderSimulated"];
+        // TFAR Timeout setzen
+        if (TFAR_pluginTimeout < 15) then {
+            ["TFAR_pluginTimeout", 15, 0, "client", true] call CBA_settings_fnc_set;
+        };
 
-            player setDir _dir;
-            player setPos _pos;
-        }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+        if (isNull (getAssignedCuratorLogic _zeus)) then
+        {
+            // TODO: das scheint nicht zu gehen, killedEH?!?
+            [{(getMarkerPos "respawn") distance player < 2}, {
+                params ["_dir", "_pos"];
+                {
+                    {deleteVehicle _x} forEach (_pos nearObjects [_x, 5]);
+                }
+                forEach ["CAManBase", "GroundWeaponHolder", "WeaponHolderSimulated"];
 
-        systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
-        forceRespawn player;
-        setPlayerRespawnTime 1; // fix for Hardsettings
+                player setDir _dir;
+                player setPos _pos;
+            }, [getDir player, getPos player]] call CBA_fnc_waitUntilAndExecute;
+
+            systemChat "[TBMod_Main] ForceRespawn, weil noch kein Zeus zugeordnet!";
+            forceRespawn player;
+            setPlayerRespawnTime 1; // fix for Hardsettings
+        };
     };
 }
 forEach allCurators;
 
-// Entschärf Fix
+
+// ### Entschärf Fix
 ["ACE_DefuseObject", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
 ["ACE_DefuseObject_Large", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
 ["ACE_DefuseObject", 0, [], [
@@ -106,7 +116,8 @@ forEach allCurators;
     3
 ] call ace_interact_menu_fnc_createAction, true] call ace_interact_menu_fnc_addActionToClass;
 
-// TFAR Funkanim
+
+// ### TFAR Funkanim
 if (isNil "TB_funkAnim") then {TB_funkAnim = true};
 if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 ["TB_funkAnim", "OnTangent", {
@@ -127,16 +138,30 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
     };
 }, player] call TFAR_fnc_addEventHandler;
 
-// AddZeus
+
+// ### AddZeus
 [
     "TB_informAdminsAndZeus",
     {
         if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
-            (getPlayerUID player) in TB_lvl3) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
+            (getPlayerUID player) in (call TB_lvl3)) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
     }
 ] call CBA_fnc_addEventHandler;
 
-// FPS Infos
+
+// ### Piloten Spielerschaden updaten
+["CBA_SettingChanged", {
+    params ["_setting", "_value"];
+
+    if (_setting == "ace_medical_playerDamageThreshold") then
+    {
+        TB_origin_playerDamageThreshold = ace_medical_playerDamageThreshold;
+        if (ACE_player getVariable ["TB_rolle", ""] == "pilot") then {ace_medical_playerDamageThreshold = TB_origin_playerDamageThreshold + 10};
+    };
+}] call CBA_fnc_addEventHandler;
+
+
+// ### FPS Infos
 [{
     if (TB_fpsMonitor_client) then
     {
@@ -189,3 +214,10 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
     };
 }, 5] call CBA_fnc_addPerFrameHandler;
+
+
+// ### CPR/HLW Stuff
+["adv_aceCPR_evh_CPR_local", {
+    params ["_caller", "_target"];
+    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", true]};
+}] call CBA_fnc_addEventHandler;

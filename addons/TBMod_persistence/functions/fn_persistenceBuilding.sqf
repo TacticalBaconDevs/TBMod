@@ -1,5 +1,5 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
     Author: Eric Ruhland
@@ -78,7 +78,7 @@ else //laden
         // Antenne
         if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
         {
-            [_obj, 20000] remoteExec ["TFAR_antennas_fnc_initRadioTower"];
+            //[_obj, 20000] remoteExec ["TFAR_antennas_fnc_initRadioTower"];
         };
 
         // Antenne

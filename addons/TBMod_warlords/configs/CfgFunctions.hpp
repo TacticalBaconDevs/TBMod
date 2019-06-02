@@ -1,5 +1,5 @@
-﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgFunctions
@@ -31,6 +31,10 @@ class CfgFunctions
             class WLInit
             {
                 file = "\TBMod_warlords\replacement\fn_WLInit.sqf";
+            };
+            class WLClientInit
+            {
+                file = "\TBMod_warlords\replacement\fn_WLClientInit.sqf";
             };
         };
     };

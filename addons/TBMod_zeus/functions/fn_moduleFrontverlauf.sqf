@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params [
@@ -17,7 +17,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     private _gridSize = _logic getVariable ["gridSize", 100];
     (getPos _logic) params ["_posX", "_posY"];
     (_logic getVariable ["objectarea", []]) params [["_width", 500], ["_height", 500]];
-    
+
     private _start = [_posX - _width, _posY + _height];
     private _ende = [_posX + _width, _posY - _height];
     private _gridHalb = _gridSize / 2;
@@ -38,7 +38,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 
     for "_iX" from _startX to _endeX step _gridSize do
     {
-        for "_iY" from _startY to _endeY step -_gridSize do 
+        for "_iY" from _startY to _endeY step -_gridSize do
         {
             _markers pushBack [_iX, _iY]
         };
@@ -51,7 +51,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         systemChat _msg;
         hint _msg;
     };
-    
+
     private _randomSalt = random 999999;
     private _activateTime = _logic getVariable ["activateTime", 60];
     private _timeoutArray = [_activateTime * 0.7, _activateTime, _activateTime * 1.3, false];
@@ -61,7 +61,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     private _area = [getPos _logic];
     _area append (_logic getVariable ["objectarea",[]]);
     private _playerSide = _logic getVariable ["playerSide", "opfor"];
-    
+
     // Triggercode
     private _triggerHead = "
         private _list = thisList select {alive _x && (_x isKindOf 'CAManBase' || _x isKindOf 'LandVehicle')};
@@ -100,7 +100,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
                 if ([_playerSide, _x] call BIS_fnc_sideIsEnemy) then {_enemys pushBack _x};
             }
             forEach [opfor, independent, blufor];
-            
+
             private _countEnemys = 0;
             {_countEnemys = _countEnemys + (_x countSide _list)} forEach _enemys;
             private _countFriendly = 0;
@@ -109,7 +109,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
             _mostFactionColor = if (_countEnemys >= _countFriendly) then {'colorOPFOR'} else {'colorBLUFOR'};
         ";
     };
-    
+
     if (_logic getVariable ["modus", "most"] == "mostenemy_known") then
     {
         _triggerHead = _triggerHead + "
@@ -134,7 +134,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
                 if ([_playerSide, _x] call BIS_fnc_sideIsEnemy) then {_enemys pushBack _x};
             }
             forEach [opfor, independent, blufor];
-            
+
             private _countEnemys = 0;
             {_countEnemys = _countEnemys + (_x countSide _list)} forEach _enemys;
             private _countFriendly = 0;
@@ -152,7 +152,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 
     private _triggerCode = _triggerHead + "
         };
-    
+
         if (_mostFactionColor == 'empty') then
         {
             '%1' setMarkerColor '%3';
@@ -165,14 +165,14 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
             thisTrigger setVariable ['TB_mostFaction', _mostFactionColor];
         };
     ";
-    
+
     private _triggerCondition = _triggerHead + "
         };
 
         private _triggerMost = thisTrigger getVariable ['TB_mostFaction', 'empty'];
         _triggerMost != _mostFactionColor && _mostFactionColor != 'empty'
     ";
-     
+
     {
         _x params ["_iX", "_iY"];
         private _pos = [_iX, _iY];
@@ -183,7 +183,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         _mkr setMarkerColor _unknowColor;
         _mkr setMarkerAlpha _gridAlpha;
         _mkr setMarkerSize [_gridHalb, _gridHalb];
-        
+
         private _trg = createTrigger ["EmptyDetector", _pos, false];
         _trg setTriggerArea [_gridHalb, _gridHalb, 0, true];
         _trg setTriggerActivation ["ANY", "PRESENT", true];

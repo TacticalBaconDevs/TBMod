@@ -1,21 +1,19 @@
 ﻿/*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: shukari
 */
 #define ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE) class TB_placeItem_##OBJECT \
     { \
         displayName = $STR_PLACE_##OBJECT; \
-        condition = "'TB_building_item_##OBJECT' in (items ACE_player)"; \
+        condition = QUOTE('TB_building_item_##OBJECT' in (items ACE_player)); \
         exceptions[] = {"notOnMap", "isNotInside", "isNotHandcuffed", "isNotSurrendering", "isNotSwimming", "isNotOnLadder"}; \
-        statement = "['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables"; \
+        statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables); \
     }
 #define ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE) class TB_buildBig_##BUILDING_END \
     { \
         displayName = $STR_PLACE_BIG_##BUILDING_END; \
         exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"}; \
-        statement = "['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn TB_fnc_placePlaceablesBig"; \
+        statement = QUOTE(['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn TB_fnc_placePlaceablesBig); \
     }
 #define ADD_RESC_CHECK class ACE_Actions \
         { \
@@ -44,8 +42,17 @@
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
                     statement = "[_target] call TB_fnc_getFuel"; \
                 }; \
+                class ACE_Passengers \
+                { \
+                    displayName = "Insassen"; \
+                    condition = "alive _target || (!alive _target && count ((crew _target) select {alive _x}) > 0)"; \
+                    statement = ""; \
+                    exceptions[] = {"isNotSwimming"}; \
+                    insertChildren = "_this call ace_interaction_fnc_addPassengersActions"; \
+                }; \
             }; \
         }
+class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles
 {
@@ -60,7 +67,7 @@ class CfgVehicles
                 {
                     displayName = $STR_PLACE_ItemBuildPlaceables;
                     exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"};
-                    // condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) > 0 && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
+                    // condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
 
                     // ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE)
 
@@ -68,7 +75,7 @@ class CfgVehicles
                     ADD_VEHICLE_ITEM(Land_IntravenStand_01_2bags_F,-1,true);
                     ADD_VEHICLE_ITEM(Land_Stretcher_01_F,-1,true);
                     ADD_VEHICLE_ITEM(Land_PortableLight_double_F,-1,true);
-                    ADD_VEHICLE_ITEM(Land_MedicalTent_01_white_generic_open_F,-1,true);    //muss noch als Medizinische Einrichtung gesetzt werden
+                    ADD_VEHICLE_ITEM(Land_MedicalTent_01_white_generic_open_F,-1,true);    // muss noch als Medizinische Einrichtung gesetzt werden
                     ADD_VEHICLE_ITEM(Land_MedicalTent_01_floor_light_F,-1,true);
 
                     // Zivil
@@ -98,7 +105,7 @@ class CfgVehicles
                 {
                     displayName = $STR_PLACE_BuildingsBuildPlaceables;
                     exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"};
-                    condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) > 0 && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
+                    condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
 
                     // ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE)
 
@@ -149,7 +156,7 @@ class CfgVehicles
                         ADD_BIG_ITEM(Land_Cargo_HQ_V1_F,true,-1,50,200,true,true);
                         ADD_BIG_ITEM(Land_FieldToilet_F,true,-1,5,10,false,false);
                         ADD_BIG_ITEM(Land_CamoNetVar_NATO,true,-1,5,10,false,true);
-                        ADD_BIG_ITEM(Land_TTowerSmall_1_F,true,-1,30,60,true,true);
+                        ADD_BIG_ITEM(TFAR_Land_Communication_F,true,-1,30,60,true,true); // RadioTower - Land_TTowerSmall_1_F
                         ADD_BIG_ITEM(Land_Cargo_House_V3_F,true,-1,15,60,true,false);
                     };
                 };
@@ -207,4 +214,18 @@ class CfgVehicles
         function = "TB_fnc_moduleKranFahrzeug";
         category = "TB_categorie_zeus_building";
     };
+
+
+    // ###################### XEH aktivieren ######################
+    #define ACTIVE_XEH(CLASSE,PARENT) class CLASSE : PARENT \
+        { \
+            class EventHandlers \
+            { \
+                class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {}; \
+            }; \
+        }
+
+    class Camping_base_F;
+    ACTIVE_XEH(Land_MedicalTent_01_base_F,Camping_base_F);
+    ACTIVE_XEH(Land_MedicalTent_01_floor_base_F,Camping_base_F);
 };

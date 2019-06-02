@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgMovesBasic
@@ -10,7 +10,7 @@ class CfgMovesBasic
         tb_radioSR = "tb_radioSR";
         tb_radioStop = "tb_radioStop";
     };
-    
+
     class Actions
     {
         class NoActions: ManActions
@@ -23,7 +23,7 @@ class CfgMovesBasic
 };
 
 class CfgGesturesMale
-{   
+{
     class Default;
     class States
     {
@@ -56,9 +56,9 @@ class CfgGesturesMale
         {
             file = "a3\anims_f\data\anim\sdr\gst\gesturenod.rtm";
             speed = 20;
-            
+
             mask = "empty";
-            
+
             weaponIK = 1;
             leftHandIKBeg = 0;
             leftHandIKCurve[] = {1};

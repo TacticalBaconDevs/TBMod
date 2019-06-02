@@ -1,11 +1,9 @@
 /*
-    WARLORDS-SPECIFIC FUNCTION
+WARLORDS-SPECIFIC FUNCTION
 
-    Author: Josef Zemánek
+Author: Josef Zem�nek
 
-    Description: Init variables.
-
-    Modified for: tacticalbacon.de
+Description: Init variables.
 */
 
 BIS_WL_sidesPool = [
@@ -19,7 +17,8 @@ BIS_WL_cfgMags = configFile >> "CfgMagazines";
 BIS_WL_cfgWrld = configFile >> "CfgWorlds" >> worldName;
 BIS_WL_cfgMods = configFile >> "CfgMods";
 BIS_WL_cfgHints = configFile >> "CfgHints" >> "VehicleList";
-BIS_WL_cfgIndepGrps = configFile >> "CfgGroups" >> "Indep";
+BIS_WL_cfgGroups = configFile >> "CfgGroups";
+BIS_WL_cfgIndepGrps = BIS_WL_cfgGroups >> "Indep";
 BIS_WL_resetVoting = FALSE;
 BIS_WL_AIVotingReset = FALSE;
 BIS_WL_recalculateIncome = TRUE;
@@ -33,8 +32,6 @@ BIS_WL_scanDuration = 30;
 if (isNil "BIS_WL_vehicleSpan") then {BIS_WL_vehicleSpan = 3600}; // _this getVariable "VehicleSpan"
 if (isNil "BIS_WL_AICanVote") then {BIS_WL_AICanVote = 0}; // _this getVariable "AIVoting"
 if (isNil "BIS_WL_arsenalEnabled") then {BIS_WL_arsenalEnabled = 0}; // _this getVariable "ArsenalEnabled"
-if (isNil "BIS_WL_lastLoadoutEnabled") then {BIS_WL_lastLoadoutEnabled = 0};
-if (isNil "BIS_WL_fundTransferEnabled") then {BIS_WL_fundTransferEnabled = 1};
 BIS_WL_forcedProgress = _this getVariable "Progress";
 if (isNil "BIS_WL_FTEnabled") then {BIS_WL_FTEnabled = 0}; // _this getVariable "FTEnabled"
 if (isNil "BIS_WL_scanEnabled") then {BIS_WL_scanEnabled = 0}; // _this getVariable "ScanEnabled"
@@ -42,8 +39,10 @@ if (isNil "BIS_WLVotingResetEnabled") then {BIS_WLVotingResetEnabled = 0}; // _t
 if (isNil "BIS_WL_fatigueEnabled") then {BIS_WL_fatigueEnabled = 1}; // _this getVariable "FatigueEnabled"
 BIS_WL_CPIncomeMult = _this getVariable "CPMultiplier";
 BIS_WL_shoppingList = _this getVariable "AssetList";
-if (BIS_WL_shoppingList == "") then {BIS_WL_shoppingList = "['A3DefaultAll']"};
+if (BIS_WL_shoppingList == "") then {BIS_WL_shoppingList = "['TB_RHS']"};
+//BIS_WL_shoppingList = call compile [BIS_WL_shoppingList, TRUE];
 BIS_WL_shoppingList = call compile BIS_WL_shoppingList;
+BIS_WL_maxSubordinates = _this getVariable ["MaxSubordinates", 9];
 BIS_WL_mapSize = getNumber (BIS_WL_cfgWrld >> "Grid" >> "offsetY");
 if (isNil "BIS_WL_dropCost") then {BIS_WL_dropCost = 25};
 if (isNil "BIS_WL_FTCost") then {BIS_WL_FTCost = 50};
@@ -56,13 +55,23 @@ BIS_WL_votingResetTimeout = 300;
 BIS_WL_newlySelectedSector = objNull;
 BIS_WL_markerIndex = 1;
 BIS_WL_allWarlords = +(playableUnits + switchableUnits) select {(side group _x) in [WEST, EAST]};
-addMissionEventHandler ["EntityRespawned", {BIS_WL_allWarlords = BIS_WL_allWarlords - [_this select 1]; if ((side group _x) in [WEST, EAST]) then {BIS_WL_allWarlords pushBackUnique (_this select 0)}}];
+addMissionEventHandler ["EntityRespawned", {
+    BIS_WL_allWarlords = BIS_WL_allWarlords - [_this # 1];
+    if ((side group _x) in [WEST, EAST]) then {
+        BIS_WL_allWarlords pushBackUnique (_this # 0)
+    };
+    if (isServer) then {
+        _this spawn BIS_WL_spawnProtectionCode;
+    };
+}];
 [] spawn {while {TRUE} do {{BIS_WL_allWarlords pushBackUnique _x} forEach ((playableUnits + switchableUnits) select {(side group _x) in [WEST, EAST]}); sleep 5}};
 if (isServer) then {
     BIS_WL_factionsPool = [_this getVariable "FactionOPFOR", _this getVariable "FactionBLUFOR", _this getVariable "FactionIndep"];
     BIS_WL_unitsPool = [];
     BIS_WL_punishmentDuration = 60;
     BIS_WL_friendlyFirePunishPool = [];
+    BIS_WL_disconnectedVotes_WEST = [];
+    BIS_WL_disconnectedVotes_EAST = [];
     BIS_WL_mortarUnits = [
         "B_support_Mort_F",
         "B_support_AMort_F",
@@ -76,10 +85,9 @@ if (isServer) then {
         "O_T_Support_AMort_F"
     ];
     {
-        _faction = _this getVariable (["FactionOPFOR", "FactionBLUFOR", "FactionIndep"] select _forEachIndex);
+        _faction = _this getVariable (["FactionOPFOR", "FactionBLUFOR", "FactionIndep"] # _forEachIndex);
         _factionUnits = [];
-        _cfgGroups = configFile >> "CfgGroups";
-        _groupTypes = "TRUE" configClasses (_cfgGroups >> ["East", "West", "Indep"] select _forEachIndex >> _faction);
+        _groupTypes = "TRUE" configClasses (BIS_WL_cfgGroups >> ["East", "West", "Indep"] # _forEachIndex >> _faction);
         {
             _groupClasses = "TRUE" configClasses _x;
             {
@@ -99,8 +107,34 @@ if (isServer) then {
                 if !(_includesVehicles) then {{_factionUnits pushBackUnique _x} forEach _groupUnits};
             } forEach _groupClasses;
         } forEach _groupTypes;
+        _factionUnits append (("TRUE" configClasses (missionConfigFile >> "CfgWLFactionAssets" >> ["East", "West", "Indep"] # _forEachIndex >> "InfantryUnits")) apply {configName _x});
         BIS_WL_unitsPool pushBack _factionUnits;
     } forEach BIS_WL_sidesPool;
+    //BIS_WL_grpPool_infantry = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Infantry")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "InfantryGroups" >> "groups")) apply {call compile [format ["BIS_WL_cfgGroups >> %1", _x], TRUE]});
+    //BIS_WL_grpPool_motorized = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Motorized")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "MotorizedGroups" >> "groups")) apply {call compile [format ["BIS_WL_cfgGroups >> %1", _x], TRUE]});
+    //BIS_WL_grpPool_mechanized = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Mechanized")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "MechanizedGroups" >> "groups")) apply {call compile [format ["BIS_WL_cfgGroups >> %1", _x], TRUE]});
+    //BIS_WL_grpPool_armored = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Armored")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "ArmoredGroups" >> "groups")) apply {call compile [format ["BIS_WL_cfgGroups >> %1", _x], TRUE]});
+    BIS_WL_grpPool_infantry = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Infantry")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "InfantryGroups" >> "groups")) apply {call compile format ["BIS_WL_cfgGroups >> %1", _x]});
+    BIS_WL_grpPool_motorized = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Motorized")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "MotorizedGroups" >> "groups")) apply {call compile format ["BIS_WL_cfgGroups >> %1", _x]});
+    BIS_WL_grpPool_mechanized = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Mechanized")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "MechanizedGroups" >> "groups")) apply {call compile format ["BIS_WL_cfgGroups >> %1", _x]});
+    BIS_WL_grpPool_armored = ("TRUE" configClasses (BIS_WL_cfgIndepGrps >> BIS_WL_factionsPool # 2 >> "Armored")) + ((getArray (missionConfigFile >> "CfgWLFactionAssets" >> "INDEP" >> "ArmoredGroups" >> "groups")) apply {call compile format ["BIS_WL_cfgGroups >> %1", _x]});
+    BIS_WL_grpPool_patrols = BIS_WL_grpPool_motorized + BIS_WL_grpPool_mechanized;
+    /*BIS_WL_planeLitterClasses = [];
+    {
+        BIS_WL_planeLitterClasses pushBackUnique getText (_x >> "EjectionSystem" >> "EjectionSeatClass");
+        BIS_WL_planeLitterClasses pushBackUnique getText (_x >> "EjectionSystem" >> "CanopyClass");
+    } forEach ("getNumber (_x >> 'scope') == 2" configClasses BIS_WL_cfgVehs);
+    BIS_WL_planeLitterClasses = BIS_WL_planeLitterClasses - [""];*/
+    BIS_WL_spawnProtectionCode = {
+        params ["_unit"];
+        _t = time + 60;
+        _base = missionNamespace getVariable format ["BIS_WL_base_%1", side group _unit];
+        if ([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea && !(_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])) then {
+            _unit allowDamage FALSE;
+            waitUntil {!alive _unit || time > _t || !([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea) || (_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])};
+            _unit allowDamage TRUE;
+        };
+    };
 };
 if !(isDedicated) then {
     BIS_WL_dropPool = [];
@@ -214,3 +248,19 @@ if (isNil "BIS_WL_leadingSector_EAST") then {BIS_WL_leadingSector_EAST = objNull
 if (isNil "BIS_WL_leadingSector_WEST") then {BIS_WL_leadingSector_WEST = objNull};
 if (isNil "BIS_WL_selectionTime_EAST") then {BIS_WL_selectionTime_EAST = -1};
 if (isNil "BIS_WL_selectionTime_WEST") then {BIS_WL_selectionTime_WEST = -1};
+BIS_WL_mineRestrictionCode = {
+    if (toLower (_this select 1) == "put") then {
+        _unit = _this select 0;
+        _base = missionNamespace getVariable format ["BIS_WL_base_%1", side group _unit];
+        if !(_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST]) then {
+            _mine = _this select 6;
+            if (_mine inArea ((_base getVariable "BIS_WL_sectorMrkrs") select 0)) then {
+                _mag = _this select 5;
+                deleteVehicle _mine;
+                _unit addMagazine _mag;
+                playSound "AddItemFailed";
+                [toUpper localize "STR_A3_WL_hint_no_mines"] spawn BIS_fnc_WLSmoothText;
+            };
+        };
+    };
+};

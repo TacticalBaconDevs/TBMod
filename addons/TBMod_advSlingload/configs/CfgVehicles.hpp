@@ -1,5 +1,5 @@
 /*
-    Part of the TBMod ( https://github.com/shukari/TBMod )
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgVehicles
@@ -9,12 +9,12 @@ class CfgVehicles
     {
         displayName = "Unsichtbares Object";
         author = "Eric Ruhland";
-        
+
         scope = 1;
         scopeCurator = 1;
-        
+
         disableInventory = 1;
-        
+
         ace_cargo_canLoad = 0;
         ace_cargo_size = -1;
         DLC = "Expansion";
