@@ -361,8 +361,8 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE,8);
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_Smoke,4);
             MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_Illum,2);
+            MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE_LaserGuided,4);
             //MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE_Guided,3);
-            //MACRO_ADDITEM(ACE_1Rnd_82mm_Mo_HE_LaserGuided,2);
         };
     };
 

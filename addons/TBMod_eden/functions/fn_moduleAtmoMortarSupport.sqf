@@ -14,21 +14,20 @@ _input params [
 
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {
-    // Check for Soldiers
-    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "CAManBase"};
-    if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoShootingRange braucht gesyncte Soldaten!"};
+    // Check for Mortars
+    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "Mortar_01_base_F"}; //"Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _x >> "availableForSupportTypes"))
+    if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoMortarSupport braucht gesyncte Mortars!"};
 
     {
         doStop _x;
         _x setVariable ["acex_headless_blacklist", true, true];
         _x setBehaviour "COMBAT";
         _x setCombatMode "BLUE";
-        _x setUnitPos (selectRandom ["UP", "MIDDLE"]);
-        [_x, "MOVE"] remoteExecCall ["disableAI", _x];
-        _x spawn {uiSleep 1; [_this, "MOVE"] remoteExecCall ["disableAI", _this]};
-        _x setVariable ["Vcm_Disable", true, true];
+		_x lock 2;
+        //_x setFuel 0;
+        _x addEventHandler ["Fired", {(_this # 6) setPos [0,0,0]; deleteVehicle (_this # 6)}];
     }
     forEach _syncObjs;
 
-    ["TB_atmo_event_atmoShootingRange", [_syncObjs]] call CBA_fnc_serverEvent;
+    ["TB_atmo_event_amtoMortarSupport", [_syncObjs]] call CBA_fnc_serverEvent;
 };

@@ -231,57 +231,69 @@ class CfgVehicles
         };
     };
 
-    class TB_eden_atmoReinforcementLZ : TB_eden_base
+    // ######################## ATMO Module
+    class TB_eden_atmoBase : TB_eden_base
+    {
+        category = "TB_categorie_eden_atmo";
+    };
+
+    class TB_eden_atmoReinforcementLZ : TB_eden_atmoBase
     {
         scope = 2;
         displayName = "AtmoReinforcementLZ";
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\land_ca.paa";
-
-        class ModuleDescription : ModuleDescription
-        {
-            description = "Der Punkt, an dem das belandene Fahrzeug landet/hält und ablädt.";
-            position = 1;
-            duplicate = 1;
-        };
     };
 
-    class TB_eden_atmoReinforcementEndpoint : TB_eden_base
+    class TB_eden_atmoReinforcementEndpoint : TB_eden_atmoBase
     {
         scope = 2;
         displayName = "AtmoReinforcementEndPunkt";
-
-        class ModuleDescription : ModuleDescription
-        {
-            description = "Der Punkt, an den die abgesessenen Truppen hingehen wollen.";
-            position = 1;
-        };
     };
 
-    class TB_eden_atmoReinforcementCore : TB_eden_base
+    class TB_eden_atmoReinforcementCore : TB_eden_atmoBase
     {
         scope = 2;
         displayName = "AtmoReinforcementCore";
         function = "TB_fnc_moduleAtmoCore";
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\intel_ca.paa";
-
-        class ModuleDescription : ModuleDescription
-        {
-            description = "Der Punkt, an dem das Fahrzeug mit einem neuen Trupp aufgefüllt wird.";
-            position = 1;
-        };
     };
 
-    class TB_eden_atmoShootingRange : TB_eden_base
+    class TB_eden_atmoShootingRange : TB_eden_atmoBase
     {
         scope = 2;
         displayName = "AtmoShootingRange";
         function = "TB_fnc_moduleAtmoShootingRange";
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+    };
 
-        class ModuleDescription : ModuleDescription
-        {
-            description = "Gesyncte Soldaten, schießen in regelmäßigen Abständen.";
-            position = 1;
-        };
+    class TB_eden_atmoMortarSupport : TB_eden_atmoBase
+    {
+        scope = 2;
+        displayName = "AtmoMortarSupport";
+        function = "TB_fnc_moduleAtmoMortarSupport";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+    };
+
+    class TB_eden_atmoMortarSuppression : TB_eden_atmoBase
+    {
+        scope = 2;
+        displayName = "AtmoMortarSuppression";
+        function = "TB_fnc_moduleAtmoMortarSuppression";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+    };
+
+    class TB_eden_atmoFireSuppression : TB_eden_atmoBase
+    {
+        scope = 2;
+        displayName = "AtmoFireSuppression";
+        function = "TB_fnc_moduleAtmoFireSuppression";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+    };
+
+    class TB_eden_atmoTarget : TB_eden_atmoBase
+    {
+        scope = 2;
+        displayName = "AtmoTarget";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
     };
 };
