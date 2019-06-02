@@ -23,7 +23,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         _x setVariable ["acex_headless_blacklist", true, true];
         _x setBehaviour "COMBAT";
         _x setCombatMode "BLUE";
-		_x lock 2;
+        _x lock 2;
         //_x setFuel 0;
         _x addEventHandler ["Fired", {(_this # 6) setPos [0,0,0]; deleteVehicle (_this # 6)}];
     }
