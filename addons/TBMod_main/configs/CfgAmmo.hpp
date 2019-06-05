@@ -15,7 +15,7 @@ class CfgAmmo
         indirectHit = 0; // 2
         indirectHitRange = 0; // 0.2
         model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; // \A3\Weapons_F_EPB\Ammo\B_IRstrobe_F.p3d
-        timeToLive = 900; // 300
+        timeToLive = 120; // 300
         tracerColor[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04};
         tracerColorR[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04};
         visibleFire = 0; // 2

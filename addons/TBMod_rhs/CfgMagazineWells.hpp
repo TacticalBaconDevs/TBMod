@@ -12,7 +12,6 @@ class CfgMagazineWells
             "rhs_mag_m714_White_precise",
             "rhs_mag_m715_Green_precise",
             "rhs_mag_m716_Yellow_precise",
-            "TB_rhs_mag_40mm_Delay",
             "TB_rhs_mag_40mm_HEDP",
             "TB_rhs_mag_40mm_HE",
             "TB_rhs_mag_40mm_IR_Grenade",            

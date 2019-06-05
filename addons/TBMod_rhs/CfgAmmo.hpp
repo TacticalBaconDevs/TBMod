@@ -36,7 +36,7 @@ class CfgAmmo
         fuseDistance = 10; // 15
         hit = 9; // 20
         indirectHit = 8.5; // 5
-        indirectHitRange = 10.5; // 10.7
+        indirectHitRange = 12; // 10.7
 
         class HitEffects
         {
@@ -57,26 +57,6 @@ class CfgAmmo
             hitWater = "RHS_m397_hit";
             hitVirtual = "RHS_m397_hit";
         };
-    };
-    class TB_rhs_40mm_Delay : rhsusf_40mm_HE // Unterlauf-Delay Grenade
-    {
-        deflecting = 0; // 5
-        explosionAngle = 360; // 60
-        explosionTime = 4; // 0
-        fuseDistance = 9; // 15
-        hit = 0; // 20
-        indirectHit = 6; // 5
-        indirectHitRange = 6.5; // 3.6
-        model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; // \A3\weapons_f\ammo\UGL_slug
-        tracerColor[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04}
-        tracerColorR[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04}
-        visibleFire = 0.3; // 1
-        visibleFireTime = 1; // 3
-
-        // in Reference und Original nicht vorhanden - https://community.bistudio.com/wiki/Weapons_settings
-        tracerEndTime = 3.98;
-        tracerScale= 1.2;
-        tracerStartTime = 0.04;
     };
 
     class rhsusf_40mm_HEDP;
@@ -146,21 +126,10 @@ class CfgAmmo
     };
 
     class Smoke_120mm_AMOS_White;
-    class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Smoke
+    class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Rauchwand
     {
-        submunitionConeType[] = {"poissondisccenter", 20}; // "poissondisc",5
-    };
-
-    class ammo_ShipCannon_120mm_smoke_Q : Smoke_120mm_AMOS_White // NEU Mk45 Hammer Rauchwand Quer
-    {
-        submunitionConeType[] = {"custom", {{7,0},{6.5,0},{6,0},{5.5,0},{5,0},{4.5,0},{4,0},{3.5,0},{3,0},{2.5,0},{2,0},{1.5,0},{1,0},{0.5,0},{0,0},{-0.5,0},{-1,0},{-1.5,0},{-2,0},{-2.5,0},{-3,0},{-3.5,0},{-4,0},{-4.5,0},{-5,0},{-5.5,0},{-6,0},{-6.5,0},{-7,0}} };
-        submunitionDirectionType="SubmunitionModelDirection";
-    };
-
-    class ammo_ShipCannon_120mm_smoke_L : Smoke_120mm_AMOS_White // NEU Mk45 Hammer Rauchwand Längst
-    {
-        submunitionConeType[] = {"custom", {{0,7},{0,6.5},{0,6},{0,5.5},{0,5},{0,4.5},{0,4},{0,3.5},{0,3},{0,2.5},{0,2},{0,1.5},{0,1},{0,0.5},{0,0},{0,-0.5},{0,-1},{0,-1.5},{0,-2},{0,-2.5},{0,-3},{0,-3.5},{0,-4},{0,-4.5},{0,-5},{0,-5.5},{0,-6},{0,-6.5},{0,-7}} };
-        submunitionDirectionType="SubmunitionModelDirection";
+        submunitionConeAngle = 19; // 10
+        submunitionConeType[] = {"poissondisc",26}; // "poissondisc",5
     };
 
     class Mine_155mm_AMOS_range;
@@ -182,12 +151,114 @@ class CfgAmmo
         indirectHit = 18; // 10
     };
 
+    class M_Mo_120mm_AT_LG;
+    class M_Mo_155mm_AT_LG : M_Mo_120mm_AT_LG // Mk45 Hammer AT Laserguided Submunition
+    {
+        caliber = 145; // 1
+    };
+
     class BulletBase;
     class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // GAU-8 A-10 
     {
-        caliber = 35; // 1.4
-        hit = 60; // 80
-        indirectHit = 45; // 12
-        indirectHitRange = 5; // 3
+        caliber = 55; // 1.4
+        indirectHit = 35; // 12
+        indirectHitRange = 2.5; // 3
+    };
+
+    class BombCluster_01_Ammo_F;
+    class BombCluster_02_Ammo_F : BombCluster_01_Ammo_F // CBU Mines
+    {
+        submunitionAmmo[] = {"Mo_ATMineRange"}; // {"Mo_cluster_Bomb_02_F",0.93,"BombCluster_02_UXO_deploy",0.07}
+        submunitionConeType[] = {"poissondisccenter",60}; // "randomcenter",45
+    };
+
+    class B_127x99_Ball;
+    class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // RHS 50.cal Anti-Materiel
+    {
+        caliber = 1; // 2.05761
+        hit = 72; // 24.8085
+        indirectHitRange = 0.65; // 2.76
+    };
+
+    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // RHS 50.cal High Penetration
+    {
+        caliber = 4.6; // 1.02533
+        hit = 13; // 25.3075
+    };
+
+    class rhs_ammo_m397 : rhsusf_40mm_HE // M32 Airburst (auf 50m Entfernung einstellen)
+    {
+        coefGravity = 4.5; // 1
+        explosionTime = 1; // 0
+        hit = 4; // 20
+        indirectHit = 4; // 5
+        indirectHitRange = 2.5; // 10.7
+    };
+
+    class rhs_40mm_smoke_white_M32 : rhs_40mm_smoke_white // M32 Smoke (auf 50m Entfernung einstellen)
+    {
+        coefGravity = 4.5; // 1
+        explosionTime = 1; // 2
+    };
+
+    class BombCluster_03_Ammo_F : BombCluster_01_Ammo_F // BL-778 HE Cluster
+    {
+        submunitionAmmo[] = {"Mo_cluster_Bomb_03_F"}; // "Mo_cluster_Bomb_03_F",0.93,"BombCluster_03_UXO_deploy",0.07
+        submunitionConeAngle = 12; // 10
+        submunitionConeType[] = {"random",80}; // "randomcenter",50
+    };
+
+    class Mo_cluster_Bomb_01_F;
+    class Mo_cluster_Bomb_03_F : Mo_cluster_Bomb_01_F // BL-778 HE Cluster Submunition
+    {
+        aiAmmoUsageFlags = "64 + 128"; // "64 + 128 + 256"
+        airFriction = -0.00005; // -0.0005
+        caliber = 0.5; // 34
+        hit = 9; // 70
+        indirectHit = 7; // 12
+        indirectHitRange = 10; // 6
+    };
+
+    class ammo_Penetrator_Base;
+    class ammo_Penetrator_AGM_02 : ammo_Penetrator_Base // AGM-65 L Penetrator
+    {
+        caliber = 145; // 66.7
+        indirectHit = 350; // 85
+        indirectHitRange = 2; // 8
+    };
+
+    class ammo_Penetrator_Scalpel : ammo_Penetrator_Base // AGM-114K Penetrator
+    {
+        caliber = 45; // 56.6
+        hit = 500; // 900
+    };
+
+    class M_Scalpel_AT;
+    class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
+    {
+        indirectHitRange = 1; // 4
+    };
+    
+    class ACE_Hellfire_AGM114N : ACE_Hellfire_AGM114K // AGM-114N
+    {
+        hit = 300; // 200
+        indirectHit = 120; // 200
+        indirectHitRange = 10; // 12
+    };
+
+    class rhs_ammo_agm65;
+    class rhs_ammo_agm65b : rhs_ammo_agm65 // AGM-65B TV
+    {
+        lockSeekRadius = 500; // 2000
+        maneuvrability = 27; // 14
+        missileLockMaxDistance = 8000; // 4000
+    };
+
+    class rhsusf_ammo_basic_penetrator;
+    class rhs_ammo_agm65_penetrator : rhsusf_ammo_basic_penetrator // AGM-65B TV Submunition
+    {
+        caliber = 145; // 73.3
+        hit = 1500; // 320
+        submunitionAmmo = ""; // "rhs_ammo_spall"
     };
 };

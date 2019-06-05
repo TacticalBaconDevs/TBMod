@@ -155,34 +155,8 @@ class CfgMagazines
     };
 
     class 6Rnd_155mm_Mo_smoke;
-    class magazine_ShipCannon_120mm_smoke_shells_x6 : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Smoke
+    class magazine_ShipCannon_120mm_smoke_shells_x6 : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Rauchwand
     {
-        descriptionShort = "Rauchwand zentriert";
-        displayName = "Rauch zentriert";
-        displaynameshort = "Rauch zentriert";
-        
-        count = 18; // 6
-    };
-    
-    class magazine_ShipCannon_120mm_smoke_shells_x6_L : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Rauchwand Längst
-    {
-        ammo = "ammo_ShipCannon_120mm_smoke_L";
-
-        descriptionShort = "Rauchwand längst der Flugbahn";
-        displayName = "Rauch längst";
-        displaynameshort = "Rauch längst";
-
-        count = 18; // 6
-    };
-    
-    class magazine_ShipCannon_120mm_smoke_shells_x6_Q : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Rauchwand Quer
-    {
-        ammo = "ammo_ShipCannon_120mm_smoke_Q";
-
-        descriptionShort = "Rauchwand quer der Flugbahn";
-        displayName = "Rauch quer";
-        displaynameshort = "Rauch quer";
-
         count = 18; // 6
     };
 
@@ -202,7 +176,7 @@ class CfgMagazines
     };
 
     class magazine_Bomb_SDB_x1;
-    class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // GBU SDB x4 
+    class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // SDB x4 
     {
         hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON"}; // "B_SDB_QUAD_RAIL"
     };
@@ -214,7 +188,75 @@ class CfgMagazines
         displayName = "GBU-12 LG HE"; // "GBU-12"
         displayNameShort = "LG HE Bomb"; // "Bomb"
         model = "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d"; // "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d"
+    };
 
-        mass = 800; // 230
+    class PylonMissile_1Rnd_BombCluster_01_F;
+    class PylonMissile_1Rnd_BombCluster_02_F : PylonMissile_1Rnd_BombCluster_01_F // CBU-85 Mine Cluster
+    {
+        hardpoints[] = {"B_BOMB_PYLON"}; // "O_BOMB_PYLON_HELI"
+
+        descriptionShort = "LG AT-Mines Cluster"; // "500lb, high-explosive, laser-guided bomb"
+        displayName = "LG AT-Mines Cluster"; // "GBU-12"
+        displayNameShort = "LG AT-Mines Cluster"; // "Bomb"
+    };
+
+    class rhs_mag_agm65;
+    class rhs_mag_agm65b : rhs_mag_agm65 // AGM-65B TV
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+
+        descriptionShort = "AGM-65B TV"; // n.a
+        displayName = "AGM-65B TV Autoseek"; // "AGM-65B"
+        displayNameShort = "AGM-65B TV"; // "TV"
+    };
+
+    class 10Rnd_RHS_50BMG_Box;
+    class rhsusf_mag_10Rnd_STD_50BMG_M33 : 10Rnd_RHS_50BMG_Box // 50.cal Anti-Personnel ursprünglich
+    {
+        descriptionShort = ".50Cal Anti-Materiel Magazine"; // "10RD .50BMG M33 Ball M107 Magazine"
+        displayName = ".50Cal Anti-Materiel"; // "10rnd M107 M33"
+        displayNameShort = ".50Cal Anti-Materiel"; // "M33 Ball"
+
+        mass = 28; // 41.14
+    };
+
+    class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal Anti-Materiel ursprünglich
+    {
+        descriptionShort = ".50Cal High Penetration Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
+        displayName = ".50Cal High Penetration"; // "10rnd M107 M33"
+        displayNameShort = ".50Cal High Penetration"; // "M33 Ball"
+
+        mass = 20; // 41.14
+    };
+
+    class rhsusf_mag_6Rnd_M433_HEDP;
+    class rhsusf_mag_6Rnd_M714_white : rhsusf_mag_6Rnd_M433_HEDP // M32 Smoke
+    {
+        ammo = "rhs_40mm_smoke_white_precise"; // "rhs_40mm_smoke_white"
+
+        descriptionShort = "M32 Smoke"; // "Type: Charge<br />Rounds: 1<br />Used on: Ground"
+        displayName = "M32 Smoke"; // "M112 Demolition Block"
+        displayNameShort = "M32 Smoke"; // n.a
+
+        initSpeed = 480; // 80
+        mass = 25; // 30.36
+    };
+
+    class rhs_mag_M397_HET;
+    class rhsusf_mag_6Rnd_M397_HET : rhs_mag_M397_HET // M32 Airburst
+    {
+        descriptionShort = "M32 Airburst"; // "Type: High Explosive Timed<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79"
+        displayName = "M32 Airburst"; // "6rnd M397 HET Grenades"
+        displayNameShort = "M32 Airburst"; // HET Grenade
+
+        initSpeed = 480; // 80
+        mass = 25; // 30.36
+    };
+
+    class PylonMissile_1Rnd_BombCluster_03_F : PylonMissile_1Rnd_BombCluster_01_F // BL-778 HE Cluster
+    {
+        descriptionShort = "LG HE Cluster"; // "580lb, laser-guided cluster bomb"
+        displayName = "LG HE Cluster"; // "BL778 Cluster x1"
+        displayNameShort = "LG HE Cluster"; // "Cluster Bomb"
     };
 };

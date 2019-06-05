@@ -27,7 +27,7 @@ class CfgVehicles
 
     // accuracy: 3.5 = sniper, 1.5 = soldier, 0.9 = truck, 0.5 = small vehicle 0.2 = building
     // armor: 3 = soldier, 20 = car, 150 = building, 150-300 = bmp, 300 = boat, 400-900 = tank, 10000 = ship
-    // audible: 0.05 = soldier, 3 = motorcycle, 6 = tank, 18 = vanilla merkava/rhs tank 
+    // audible: 0.05 = soldier, 3 = motorcycle, 6 = tank, 18 = vanilla merkava/rhs tank
     // camouflage: 1 = soldier, 4 = truck, 8 = tank
     // radarTargetSize: 0.1 = fully stealth, 0.7 = small aircraft/semi-stealth, 1 = mid sized aircraft/car, 1.2 = tank/truck, 2 = large bomber (max value)
     class Helicopter_Base_H;
@@ -46,7 +46,7 @@ class CfgVehicles
         nvScanner = 1; // 0
         radarTargetSize = 0.65; // 0.8
     };
-    
+
     class Heli_Attack_01_base_F;
     class RHS_AH64_base : Heli_Attack_01_base_F // RHS AH-64
     {
@@ -200,8 +200,41 @@ class CfgVehicles
         radarType = 8; // 0
     };
 
-    class Plane_CAS_01_dynamicLoadout_base_F;
-    class B_Plane_CAS_01_dynamicLoadout_F : Plane_CAS_01_dynamicLoadout_base_F // Vanilla A-10
+    class Plane_Base_F;
+    class Plane_CAS_01_base_F: Plane_Base_F
+    {
+        class Components;
+    };
+    class Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_base_F
+    {
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                class Pylons
+                {
+                    class Pylons1;
+                    class Pylons2 : Pylons1
+                    {
+                        maxweight = 5000; // 500
+                    };
+                    class Pylons3 : Pylons1
+                    {
+                        maxweight = 5000; // 500
+                    };
+                    class Pylons4 : Pylons1
+                    {
+                        maxweight = 5000; // 500
+                    };
+                    class Pylons5 : Pylons1
+                    {
+                        maxweight = 5000; // 500
+                    };
+                };
+            };
+        };
+    };
+    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F
     {
         accuracyDarkNightLightsOff = 0.005; // 0.001
         accuracyNightLightsOff = 0.03; // 0.006
@@ -209,7 +242,7 @@ class CfgVehicles
         armor = 115; // 80
         audible = 210; // 60
         camouflage = 170; // 100
-        camShakeCoef = 1.2; // 0
+        camShakeCoef = 1.4; // 0
         irTargetSize = 1.65; // 1
         magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
@@ -226,6 +259,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.3; // 0.1
         armor = 65; // 60
         audible = 190; // 60
+        camShakeCoef = 0.4; // 0
         camouflage = 150; // 100
         irScanRangeMin = 650; // 2000
         irTargetSize = 1.7; // 1
