@@ -211,22 +211,22 @@ class CfgMagazines
     };
 
     class 10Rnd_RHS_50BMG_Box;
-    class rhsusf_mag_10Rnd_STD_50BMG_M33 : 10Rnd_RHS_50BMG_Box // 50.cal Anti-Personnel ursprünglich
+    class rhsusf_mag_10Rnd_STD_50BMG_M33 : 10Rnd_RHS_50BMG_Box // 50.cal Long-Range Sniper
     {
-        descriptionShort = ".50Cal Anti-Materiel Magazine"; // "10RD .50BMG M33 Ball M107 Magazine"
-        displayName = ".50Cal Anti-Materiel"; // "10rnd M107 M33"
-        displayNameShort = ".50Cal Anti-Materiel"; // "M33 Ball"
+        descriptionShort = ".50Cal LRS"; // "10RD .50BMG M33 Ball M107 Magazine"
+        displayName = ".50Cal Long-Range Sniper Magazine"; // "10rnd M107 M33"
+        displayNameShort = ".50Cal LRS"; // "M33 Ball"
 
-        mass = 28; // 41.14
+        mass = 15.5; // 41.14
     };
 
-    class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal Anti-Materiel ursprünglich
+    class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
     {
-        descriptionShort = ".50Cal High Penetration Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
-        displayName = ".50Cal High Penetration"; // "10rnd M107 M33"
-        displayNameShort = ".50Cal High Penetration"; // "M33 Ball"
+        descriptionShort = ".50Cal HEIAP-T Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
+        displayName = ".50Cal High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
+        displayNameShort = ".50Cal HEIAP-T"; // "M33 Ball"
 
-        mass = 20; // 41.14
+        mass = 26; // 41.14
     };
 
     class rhsusf_mag_6Rnd_M433_HEDP;

@@ -119,10 +119,9 @@ class CfgAmmo
     class ammo_ShipCannon_120mm_HE : Sh_155mm_AMOS // Mk45 Hammer HE
     {
         caliber = 4; // 10
-        ExplosionEffects = "BombExplosion"; // "MortarExplosion"
-        hit = 340; // 340
-        indirectHit = 125; // 125
-        indirectHitRange = 30; // 30
+        hit = 300; // 340
+        indirectHit = 250; // 125
+        indirectHitRange = 17; // 30
     };
 
     class Smoke_120mm_AMOS_White;
@@ -148,7 +147,7 @@ class CfgAmmo
     class BoundingMineBase;
     class APERSBoundingMine_Range_Ammo : BoundingMineBase // Mk45 Hammer HE Minen Cluster Submunition Sprungmine
     {
-        indirectHit = 18; // 10
+        indirectHit = 15; // 10
     };
 
     class M_Mo_120mm_AT_LG;
@@ -173,17 +172,21 @@ class CfgAmmo
     };
 
     class B_127x99_Ball;
-    class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // RHS 50.cal Anti-Materiel
+    class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
-        caliber = 1; // 2.05761
-        hit = 72; // 24.8085
-        indirectHitRange = 0.65; // 2.76
+        ACE_muzzleVelocityVariationSD = 0.01; // 0.35
+        caliber = 0.25; // 1.02533
+        sideAirFriction = 0.2; // 1
+        tracerEndTime = 6; // 3
     };
 
-    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // RHS 50.cal High Penetration
+    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
     {
-        caliber = 4.6; // 1.02533
-        hit = 13; // 25.3075
+        airFriction = -0.0000017; // -0.000617
+        caliber = 10.3; // 2.05761
+        hit = 39.7; // 24.8085
+        indirectHitRange = 1.66; // 2.76
+        tracerEndTime = 4.5; // 3
     };
 
     class rhs_ammo_m397 : rhsusf_40mm_HE // M32 Airburst (auf 50m Entfernung einstellen)
@@ -260,5 +263,27 @@ class CfgAmmo
         caliber = 145; // 73.3
         hit = 1500; // 320
         submunitionAmmo = ""; // "rhs_ammo_spall"
+    };
+
+    class M_PG_AT;
+    class M_AT : M_PG_AT // Hydra 12x HE
+    {
+        hit = 140; // 300
+        indirectHit = 35; // 50
+        indirectHitRange = 19; // 8
+    };
+
+    class MissileBase;
+    class Rocket_04_HE_F : MissileBase // Hydra 7x HE
+    {
+        hit = 140; // 210
+        indirectHit = 35; // 55
+        indirectHitRange = 19; // 15
+    };
+
+    class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
+    {
+        caliber = 48; // 1
+        hit = 140; // 95
     };
 };
