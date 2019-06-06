@@ -189,21 +189,6 @@ class CfgAmmo
         tracerEndTime = 4.5; // 3
     };
 
-    class rhs_ammo_m397 : rhsusf_40mm_HE // M32 Airburst (auf 50m Entfernung einstellen)
-    {
-        coefGravity = 4.5; // 1
-        explosionTime = 1; // 0
-        hit = 4; // 20
-        indirectHit = 4; // 5
-        indirectHitRange = 2.5; // 10.7
-    };
-
-    class rhs_40mm_smoke_white_M32 : rhs_40mm_smoke_white // M32 Smoke (auf 50m Entfernung einstellen)
-    {
-        coefGravity = 4.5; // 1
-        explosionTime = 1; // 2
-    };
-
     class BombCluster_03_Ammo_F : BombCluster_01_Ammo_F // BL-778 HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_Bomb_03_F"}; // "Mo_cluster_Bomb_03_F",0.93,"BombCluster_03_UXO_deploy",0.07

@@ -19,10 +19,4 @@ class CfgWeapons
         dispersion = 0.0005; // 0.002
         magazineReloadTime = 1; // 7
     };
-
-    class rhs_weap_m32_Base_F;
-    class rhs_weap_m32 : rhs_weap_m32_Base_F // M32 Grenadelauncher
-    {
-        magazines[] = {"rhsusf_mag_6Rnd_M714_white", "rhsusf_mag_6Rnd_M397_HET"};// {"rhsusf_mag_6Rnd_M441_HE","rhsusf_mag_6Rnd_M433_HEDP","rhsusf_mag_6Rnd_M397_HET","rhsusf_mag_6Rnd_M576_Buckshot","rhsusf_mag_6Rnd_M781_Practice","rhsusf_mag_6Rnd_m4009","rhsusf_mag_6Rnd_M585_white","rhsusf_mag_6Rnd_m661_green","rhsusf_mag_6Rnd_m662_red","rhsusf_mag_6Rnd_M713_red","rhsusf_mag_6Rnd_M714_white","rhsusf_mag_6Rnd_M715_green","rhsusf_mag_6Rnd_M716_yellow"}
-    };
 };

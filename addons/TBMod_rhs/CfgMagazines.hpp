@@ -229,30 +229,6 @@ class CfgMagazines
         mass = 26; // 41.14
     };
 
-    class rhsusf_mag_6Rnd_M433_HEDP;
-    class rhsusf_mag_6Rnd_M714_white : rhsusf_mag_6Rnd_M433_HEDP // M32 Smoke
-    {
-        ammo = "rhs_40mm_smoke_white_precise"; // "rhs_40mm_smoke_white"
-
-        descriptionShort = "M32 Smoke"; // "Type: Charge<br />Rounds: 1<br />Used on: Ground"
-        displayName = "M32 Smoke"; // "M112 Demolition Block"
-        displayNameShort = "M32 Smoke"; // n.a
-
-        initSpeed = 480; // 80
-        mass = 25; // 30.36
-    };
-
-    class rhs_mag_M397_HET;
-    class rhsusf_mag_6Rnd_M397_HET : rhs_mag_M397_HET // M32 Airburst
-    {
-        descriptionShort = "M32 Airburst"; // "Type: High Explosive Timed<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79"
-        displayName = "M32 Airburst"; // "6rnd M397 HET Grenades"
-        displayNameShort = "M32 Airburst"; // HET Grenade
-
-        initSpeed = 480; // 80
-        mass = 25; // 30.36
-    };
-
     class PylonMissile_1Rnd_BombCluster_03_F : PylonMissile_1Rnd_BombCluster_01_F // BL-778 HE Cluster
     {
         descriptionShort = "LG HE Cluster"; // "580lb, laser-guided cluster bomb"
