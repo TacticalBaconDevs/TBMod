@@ -8,8 +8,9 @@
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
+    systemChat "SHIFT + ENDE -> [LVL0] TFAR vom Spieler lösen, folgt der ZeusCam";
     systemChat "STRG + ENDE  -> [LVL2] GCAM";
-    systemChat "SHIFT + ENDE -> [LVL2] TFAR vom Spieler lösen, folgt der ZeusCam";
+    systemChat "SHIFT + STRG + ENDE -> [LVL2] Spectator";
     systemChat "ALT + ENDE   -> [LVL3] Zeus in der Mission erstellen";
 }, "all"] call CBA_fnc_registerChatCommand;
 
