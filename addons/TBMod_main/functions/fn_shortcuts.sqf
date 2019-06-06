@@ -59,8 +59,8 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
     "TBMod_key_spectator",
     "Öffnet den Spectator",
     {
-        if (isNil "TB_spectator") then {TB_spectator = false};
-        TB_spectator = !TB_spectator;
+        //if (isNil "TB_spectator") then {TB_spectator = false};
+        //TB_spectator = !TB_spectator;
 
         // https://ace3mod.com/wiki/framework/spectator-framework.html
         [allPlayers, []] call ace_spectator_fnc_updateUnits;
@@ -68,9 +68,9 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
         [[1,2], [0]] call ace_spectator_fnc_updateCameraModes;
         [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
         [2, player, -2] call ace_spectator_fnc_setCameraAttributes;
-        [TB_spectator, false, false] call ace_spectator_fnc_setSpectator;
+        [true, false, false] call ace_spectator_fnc_setSpectator;
 
-        systemChat format ["Spectator ist nun %1aktiviert!", ["de" , ""] select TB_spectator];
+        //systemChat format ["Spectator ist nun %1aktiviert!", ["de" , ""] select TB_spectator];
     },
     {},
     [DIK_END, [true, true, false]] // SHIFT + STRG + ENDE
