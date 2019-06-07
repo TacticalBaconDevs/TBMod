@@ -201,15 +201,6 @@ class CfgMagazines
         mass = 17; // 41.14
     };
 
-    class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
-    {
-        descriptionShort = ".50Cal HEIAP-T Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
-        displayName = ".50Cal High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
-        displayNameShort = ".50Cal HEIAP-T"; // "M33 Ball"
-
-        mass = 28; // 41.14
-    };
-
     class 4Rnd_Bomb_04_F;
     class PylonMissile_1Rnd_Bomb_04_F : 4Rnd_Bomb_04_F // GBU-12 HE
     {

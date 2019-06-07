@@ -247,14 +247,6 @@ class CfgAmmo
         tracerEndTime = 6; // 3
     };
 
-    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
-    {
-        caliber = 10.3; // 2.05761
-        hit = 39.7; // 24.8085
-        indirectHitRange = 1.66; // 2.76
-        tracerEndTime = 4.5; // 3
-    };
-
     class MissileBase;
     class M_PG_AT : MissileBase // DAGR
     {
