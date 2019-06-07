@@ -156,6 +156,7 @@ class CfgMagazines
         mass = 3; // 5.06
     };
 
+    class rhsusf_mag_10Rnd_STD_50BMG_M33;
     class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
     {
         descriptionShort = ".50Cal HEIAP-T Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
