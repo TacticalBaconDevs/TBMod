@@ -70,6 +70,7 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
         [2, player, -2] call ace_spectator_fnc_setCameraAttributes;
         [true, false, false] call ace_spectator_fnc_setSpectator;
 
+        ["TB_informAdminsAndZeus", ["%1 hat den Spectator gestartet!", profileName]] call CBA_fnc_globalEvent;
         //systemChat format ["Spectator ist nun %1aktiviert!", ["de" , ""] select TB_spectator];
     },
     {},
