@@ -248,6 +248,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoReinforcementEndPunkt";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\move_ca.paa";
     };
 
     class TB_eden_atmoReinforcementCore : TB_eden_atmoBase
@@ -255,7 +256,7 @@ class CfgVehicles
         scope = 2;
         displayName = "AtmoReinforcementCore";
         function = "TB_fnc_moduleAtmoCore";
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\intel_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa";
     };
 
     class TB_eden_atmoShootingRange : TB_eden_atmoBase
@@ -263,7 +264,7 @@ class CfgVehicles
         scope = 2;
         displayName = "AtmoShootingRange";
         function = "TB_fnc_moduleAtmoShootingRange";
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\kill_ca.paa";
     };
 
     class TB_eden_atmoMortarSupport : TB_eden_atmoBase
@@ -271,7 +272,7 @@ class CfgVehicles
         scope = 2;
         displayName = "AtmoMortarSupport";
         function = "TB_fnc_moduleAtmoMortarSupport";
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\destroy_ca.paa";
     };
 
     class TB_eden_atmoMortarSuppression : TB_eden_atmoBase
@@ -279,7 +280,7 @@ class CfgVehicles
         scope = 2;
         displayName = "AtmoMortarSuppression";
         function = "TB_fnc_moduleAtmoMortarSuppression";
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\danger_ca.paa";
     };
 
     class TB_eden_atmoFireSuppression : TB_eden_atmoBase
@@ -287,7 +288,7 @@ class CfgVehicles
         scope = 2;
         displayName = "AtmoFireSuppression";
         function = "TB_fnc_moduleAtmoFireSuppression";
-        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\attack_ca.paa";
     };
 
     class TB_eden_atmoTarget : TB_eden_atmoBase

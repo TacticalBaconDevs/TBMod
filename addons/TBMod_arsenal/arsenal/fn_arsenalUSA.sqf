@@ -918,6 +918,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _lrFunken +
         _pilot_munition +
+        _allgemein_magazine +
+        _pilot_munition +
+        _mg_munition +
+        _grenadier_munition +
+        _dmr_munition +
+        _pilot_munition +
+        _sniper_munition +
+        _aaat_munition +
         [
             // Gewehr
             "rhsusf_weap_MP7A2",
@@ -960,6 +968,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_hgu56p_visor_usa",
             "RHS_jetpilot_usaf",
             "rhsusf_ihadss",
+            "H_PilotHelmetFighter_B",
 
             // Uniform
             "U_B_PilotCoveralls",
