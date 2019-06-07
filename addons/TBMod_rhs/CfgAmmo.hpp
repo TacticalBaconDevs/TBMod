@@ -259,8 +259,6 @@ class CfgAmmo
     class M_PG_AT : MissileBase // DAGR
     {
         autoSeekTarget = 1; // 0
-        irLock = 1; // 1
-        laserLock = 1; // 1
         lockSeekRadius = 50; // 100
         manualControl = 0; // 1
         maneuvrability = 5; // 8
