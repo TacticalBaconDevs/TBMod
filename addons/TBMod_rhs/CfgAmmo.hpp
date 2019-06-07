@@ -144,10 +144,11 @@ class CfgAmmo
         submunitionAmmo = "APERSBoundingMine_Range_Ammo"; // "APERSMine_Range_Ammo"
     };
 
-    class BoundingMineBase;
-    class APERSBoundingMine_Range_Ammo : BoundingMineBase // Mk45 Hammer HE Minen Cluster Submunition Sprungmine
+    class Sh_155mm_AMOS_LG;
+    class ammo_ShipCannon_120mm_HE_LG : Sh_155mm_AMOS_LG // Mk45 Hammer AT Laserguided
     {
-        indirectHit = 15; // 10
+        lockSeekRadius = 1500; // 100
+        maneuvrability = 8; // 1
     };
 
     class M_Mo_120mm_AT_LG;
@@ -164,36 +165,24 @@ class CfgAmmo
         indirectHitRange = 2.5; // 3
     };
 
-    class BombCluster_01_Ammo_F;
-    class BombCluster_02_Ammo_F : BombCluster_01_Ammo_F // CBU Mines
+    class Bomb_04_F;
+    class BombCluster_01_Ammo_F : Bomb_04_F // CBU-85 HE Mines Cluster
+    {
+        submunitionAmmo[] = {"Mo_ClassicMineRange"}; // {"Mo_cluster_Bomb_01_F",0.93,"BombCluster_01_UXO_deploy",0.07}
+        submunitionConeType[] = {"poissondisccenter",50}; // "randomcenter",85
+    };
+
+    class BombCluster_02_Ammo_F : BombCluster_01_Ammo_F // RBK-500F AT Mines Cluster
     {
         submunitionAmmo[] = {"Mo_ATMineRange"}; // {"Mo_cluster_Bomb_02_F",0.93,"BombCluster_02_UXO_deploy",0.07}
-        submunitionConeType[] = {"poissondisccenter",60}; // "randomcenter",45
-    };
-
-    class B_127x99_Ball;
-    class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
-    {
-        ACE_muzzleVelocityVariationSD = 0.01; // 0.35
-        caliber = 0.25; // 1.02533
-        sideAirFriction = 0.2; // 1
-        tracerEndTime = 6; // 3
-    };
-
-    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
-    {
-        airFriction = -0.0000017; // -0.000617
-        caliber = 10.3; // 2.05761
-        hit = 39.7; // 24.8085
-        indirectHitRange = 1.66; // 2.76
-        tracerEndTime = 4.5; // 3
+        submunitionConeType[] = {"poissondisccenter",50}; // "randomcenter",45
     };
 
     class BombCluster_03_Ammo_F : BombCluster_01_Ammo_F // BL-778 HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_Bomb_03_F"}; // "Mo_cluster_Bomb_03_F",0.93,"BombCluster_03_UXO_deploy",0.07
         submunitionConeAngle = 12; // 10
-        submunitionConeType[] = {"random",80}; // "randomcenter",50
+        submunitionConeType[] = {"random",70}; // "randomcenter",50
     };
 
     class Mo_cluster_Bomb_01_F;
@@ -238,7 +227,6 @@ class CfgAmmo
     class rhs_ammo_agm65b : rhs_ammo_agm65 // AGM-65B TV
     {
         lockSeekRadius = 500; // 2000
-        maneuvrability = 27; // 14
         missileLockMaxDistance = 8000; // 4000
     };
 
@@ -250,25 +238,40 @@ class CfgAmmo
         submunitionAmmo = ""; // "rhs_ammo_spall"
     };
 
-    class M_PG_AT;
-    class M_AT : M_PG_AT // Hydra 12x HE
+    class B_127x99_Ball;
+    class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
-        hit = 140; // 300
-        indirectHit = 35; // 50
-        indirectHitRange = 19; // 8
+        ACE_muzzleVelocityVariationSD = 0.01; // 0.35
+        caliber = 0.25; // 1.02533
+        sideAirFriction = 0.2; // 1
+        tracerEndTime = 6; // 3
+    };
+
+    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
+    {
+        caliber = 10.3; // 2.05761
+        hit = 39.7; // 24.8085
+        indirectHitRange = 1.66; // 2.76
+        tracerEndTime = 4.5; // 3
     };
 
     class MissileBase;
-    class Rocket_04_HE_F : MissileBase // Hydra 7x HE
+    class M_PG_AT : MissileBase // DAGR
     {
-        hit = 140; // 210
-        indirectHit = 35; // 55
-        indirectHitRange = 19; // 15
+        autoSeekTarget = 1; // 0
+        irLock = 1; // 1
+        laserLock = 1; // 1
+        lockSeekRadius = 50; // 100
+        manualControl = 0; // 1
+        maneuvrability = 5; // 8
+        missileLockMaxSpeed = 90; // 35
+        missileKeepLockedCone = 85; // 60
+        missileLockCone = 12; // 30
     };
 
-    class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
+    class ammo_Penetrator_PG_AT : ammo_Penetrator_Base // DAGR Submunition
     {
-        caliber = 48; // 1
-        hit = 140; // 95
+        caliber = 55; // 40
+        hit = 140; // 300
     };
 };

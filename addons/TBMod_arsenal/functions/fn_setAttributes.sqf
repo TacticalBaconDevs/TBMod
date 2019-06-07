@@ -25,11 +25,11 @@ if (TB_origin_medicClass == 0) then
     };
 };
 
-// Sanitäter - Enigneer / Pilot / Pionier
+// Sanitäter - Enigneer / Pilot / Pionier / JTAC
 if (isNil "TB_origin_IsEngineer") then {TB_origin_IsEngineer = ACE_player getVariable ["ACE_IsEngineer", 0]};
 if (TB_origin_IsEngineer == 0) then
 {
-    if (_rolle in ["spreng", "pilot", "pionier"]) then
+    if (_rolle in ["spreng", "pilot", "pionier", "jtac"]) then
     {
         ACE_player setVariable ["ACE_IsEngineer", 2, true];
         ACE_player setUnitTrait ["engineer", true];

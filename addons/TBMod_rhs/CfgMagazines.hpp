@@ -170,9 +170,9 @@ class CfgMagazines
     class magazine_ShipCannon_120mm_HE_LG_shells_x2 : 2Rnd_155mm_Mo_LG // Mk45 Hammer AT Laserguided
     {
         count = 18; // 2
-        displayName = "AT Laser Guided"; // "Laser Guided"
-        displayNameMFDFormat = "AT LASER GUID"; // "LASER GUID"
-        displayNameShort = "AT Laser Guided"; // "155mm Laser Guided"
+        displayName = "AT [LG]"; // "Laser Guided"
+        displayNameMFDFormat = "AT Shell[GUID]"; // "LASER GUID"
+        displayNameShort = "155mm [LG]"; // "155mm Laser Guided"
     };
 
     class magazine_Bomb_SDB_x1;
@@ -181,33 +181,14 @@ class CfgMagazines
         hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON"}; // "B_SDB_QUAD_RAIL"
     };
 
-    class 4Rnd_Bomb_04_F;
-    class PylonMissile_1Rnd_Bomb_04_F : 4Rnd_Bomb_04_F // GBU-12 HE
-    {
-        descriptionShort = "227kg LG HE Bomb"; // "500lb, high-explosive, laser-guided bomb"
-        displayName = "GBU-12 LG HE"; // "GBU-12"
-        displayNameShort = "LG HE Bomb"; // "Bomb"
-        model = "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d"; // "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d"
-    };
-
-    class PylonMissile_1Rnd_BombCluster_01_F;
-    class PylonMissile_1Rnd_BombCluster_02_F : PylonMissile_1Rnd_BombCluster_01_F // CBU-85 Mine Cluster
-    {
-        hardpoints[] = {"B_BOMB_PYLON"}; // "O_BOMB_PYLON_HELI"
-
-        descriptionShort = "LG AT-Mines Cluster"; // "500lb, high-explosive, laser-guided bomb"
-        displayName = "LG AT-Mines Cluster"; // "GBU-12"
-        displayNameShort = "LG AT-Mines Cluster"; // "Bomb"
-    };
-
     class rhs_mag_agm65;
     class rhs_mag_agm65b : rhs_mag_agm65 // AGM-65B TV
     {
         hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
 
-        descriptionShort = "AGM-65B TV"; // n.a
-        displayName = "AGM-65B TV Autoseek"; // "AGM-65B"
-        displayNameShort = "AGM-65B TV"; // "TV"
+        descriptionShort = "[AS]"; // n.a
+        displayName = "AGM-65[GUID]"; // "AGM-65B"
+        displayNameShort = "[AUTOSEEK]"; // "TV"
     };
 
     class 10Rnd_RHS_50BMG_Box;
@@ -217,7 +198,7 @@ class CfgMagazines
         displayName = ".50Cal Long-Range Sniper Magazine"; // "10rnd M107 M33"
         displayNameShort = ".50Cal LRS"; // "M33 Ball"
 
-        mass = 15.5; // 41.14
+        mass = 17; // 41.14
     };
 
     class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
@@ -226,13 +207,46 @@ class CfgMagazines
         displayName = ".50Cal High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
         displayNameShort = ".50Cal HEIAP-T"; // "M33 Ball"
 
-        mass = 26; // 41.14
+        mass = 28; // 41.14
+    };
+
+    class 4Rnd_Bomb_04_F;
+    class PylonMissile_1Rnd_Bomb_04_F : 4Rnd_Bomb_04_F // GBU-12 HE
+    {
+        descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
+        displayName = "HE Bomb[GUID]"; // "GBU-12"
+        displayNameShort = "[LG]"; // "Bomb"
+        model = "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d"; // "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d"
+    };
+
+    class PylonMissile_1Rnd_BombCluster_01_F : PylonMissile_1Rnd_Bomb_04_F // CBU-85 HE Mines Cluster
+    {
+        descriptionShort = "[LG]"; // "750lb, laser-guided cluster bomb"
+        displayName = "HE-Mines Cluster[GUID]"; // "CBU-85 Cluster x1"
+        displayNameShort = "[LG]"; // "Cluster Bomb"
+    };
+
+    class PylonMissile_1Rnd_BombCluster_02_F : PylonMissile_1Rnd_BombCluster_01_F // RBK-500F AT Mines Cluster
+    {
+        hardpoints[] = {"B_BOMB_PYLON"}; // "O_BOMB_PYLON_HELI"
+
+        descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
+        displayName = "AT-Mines Cluster[GUID]"; // "GBU-12"
+        displayNameShort = "[LG]"; // "Bomb"
     };
 
     class PylonMissile_1Rnd_BombCluster_03_F : PylonMissile_1Rnd_BombCluster_01_F // BL-778 HE Cluster
     {
-        descriptionShort = "LG HE Cluster"; // "580lb, laser-guided cluster bomb"
-        displayName = "LG HE Cluster"; // "BL778 Cluster x1"
-        displayNameShort = "LG HE Cluster"; // "Cluster Bomb"
+        descriptionShort = "[LG]"; // "580lb, laser-guided cluster bomb"
+        displayName = "HE Cluster [GUID]"; // "BL778 Cluster x1"
+        displayNameShort = "[LG]"; // "Cluster Bomb"
+    };
+
+    class 24Rnd_PG_missiles;
+    class PylonRack_12Rnd_PG_missiles : 24Rnd_PG_missiles // DAGR
+    {
+        descriptionShort = "[LG][IR][AS]"; // "Short-range, laser/infrared-guided, air-to-surface missile with high-explosive anti-tank warhead"
+        displayName = "70mm AP[GUID]"; // "DAGR"
+        displayNameShort = "[LG][IR][AS]"; // "70mm HE"
     };
 };
