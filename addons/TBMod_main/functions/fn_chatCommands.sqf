@@ -88,6 +88,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
             (group player) setVariable ["ace_map_hideBlueForceMarker", !((group player) getVariable ["ace_map_hideBlueForceMarker", false]), true];
         };
     };
+    
+    ["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' %3sichtbar gemacht!", profileName, groupId (group player), ["", "un"] select ((group player) getVariable ["ace_map_hideBlueForceMarker", false])]] call CBA_fnc_globalEvent;
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["setGroup", {
@@ -99,6 +101,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
     if (isNull _unit) then {_unit = ACE_player};
 
     systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, name (leader _unit)];
+    ["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, name (leader _unit)]] call CBA_fnc_globalEvent;
+    
     (group _unit) setGroupIdGlobal [_grpName];
 }, "all"] call CBA_fnc_registerChatCommand;
 
@@ -114,6 +118,7 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
     [2, player, -2] call ace_spectator_fnc_setCameraAttributes;
     [true, false, false] call ace_spectator_fnc_setSpectator;
     
+    ["TB_informAdminsAndZeus", ["%1 hat den Spectator gestartet!", profileName]] call CBA_fnc_globalEvent;
     //systemChat format ["Spectator ist nun %1aktiviert!", ["de" , ""] select TB_spectator];
 }, "all"] call CBA_fnc_registerChatCommand;
 
@@ -122,4 +127,6 @@ if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
 ["clearCache", {
     params ["_target"];
     [] remoteExec ["TB_fnc_clearCache", [player, 2] select (_target == "server")];
+
+   ["TB_informAdminsAndZeus", ["%1 hat den Cache gecleared (%2)!", profileName, ["Lokal", "Server"] select (_target == "server")]] call CBA_fnc_globalEvent;
 }, "all"] call CBA_fnc_registerChatCommand;
