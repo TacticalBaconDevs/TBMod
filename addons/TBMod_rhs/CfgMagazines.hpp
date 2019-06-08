@@ -170,7 +170,7 @@ class CfgMagazines
     class magazine_ShipCannon_120mm_HE_LG_shells_x2 : 2Rnd_155mm_Mo_LG // Mk45 Hammer AT Laserguided
     {
         count = 18; // 2
-        displayName = "AT [LG]"; // "Laser Guided"
+        displayName = "AT Shell [LG]"; // "Laser Guided"
         displayNameMFDFormat = "AT Shell[GUID]"; // "LASER GUID"
         displayNameShort = "155mm [LG]"; // "155mm Laser Guided"
     };
@@ -239,5 +239,20 @@ class CfgMagazines
         descriptionShort = "[LG][IR][AS]"; // "Short-range, laser/infrared-guided, air-to-surface missile with high-explosive anti-tank warhead"
         displayName = "70mm AP[GUID]"; // "DAGR"
         displayNameShort = "[LG][IR][AS]"; // "70mm HE"
+    };
+
+    class rhs_mag_gau19_air_base;
+    class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6
+    {
+        count = 650; // 1300
+        hardpoints[] = {"RHS_HP_MELB_L","RHS_HP_MELB_M134"}; // "RHS_HP_MELB_L"
+        displayname = "12.7x99mm SLAP Left"; // "12.7x99mm SLAP"
+    };
+
+    class rhsusf_mag_gau19_melb_right : rhs_mag_gau19_air_base // AH-6
+    {
+        count = 650; // 1300
+        hardpoints[] = {"RHS_HP_MELB_R","RHS_HP_MELB_M134"}; // "RHS_HP_MELB_R"
+        displayname = "12.7x99mm SLAP Right"; // "12.7x99mm SLAP"
     };
 };
