@@ -199,6 +199,7 @@ class CfgMagazines
         displayNameShort = ".50Cal LRS"; // "M33 Ball"
 
         mass = 17; // 41.14
+        tracersEvery = 1; // 0
     };
 
     class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
