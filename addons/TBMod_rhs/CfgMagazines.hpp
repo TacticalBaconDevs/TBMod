@@ -187,7 +187,7 @@ class CfgMagazines
         hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
 
         descriptionShort = "[AS]"; // n.a
-        displayName = "AGM-65[GUID]"; // "AGM-65B"
+        displayName = "AGM-65 TV[GUID]"; // "AGM-65B"
         displayNameShort = "[AUTOSEEK]"; // "TV"
     };
 
@@ -198,7 +198,7 @@ class CfgMagazines
         displayName = ".50Cal Long-Range Sniper Magazine"; // "10rnd M107 M33"
         displayNameShort = ".50Cal LRS"; // "M33 Ball"
 
-        mass = 17; // 41.14
+        mass = 14; // 41.14
     };
 
     class 4Rnd_Bomb_04_F;

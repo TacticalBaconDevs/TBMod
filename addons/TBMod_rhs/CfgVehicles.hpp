@@ -310,6 +310,19 @@ class CfgVehicles
         visualTargetSize = 0.2; // n.a.
     };
 
+    class Quadbike_01_base_F;
+    class B_Quadbike_01_F : Quadbike_01_base_F // Vanilla Quad
+    {
+        accuracy = 1.25; // 0.25
+        accuracyDarkNightLightsOff = 0.0005; // 0.001
+        accuracyNightLightsOff = 0.003; // 0.006
+        accuracyNightLightsOn = 0.05; // 0.1
+        audible = 0.35; // 5
+        camouflage = 1.15; // 2
+        irTargetSize = 0.1; // n.a.
+        visualTargetSize = 0.15; // n.a.
+    };
+
     class MRAP_03_base_F;
     class I_MRAP_03_F : MRAP_03_base_F // Vanilla Fennek
     {

@@ -241,9 +241,11 @@ class CfgAmmo
     class B_127x99_Ball;
     class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
+        ACE_ballisticCoefficients[] = {1.4}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.35
-        caliber = 0.25; // 1.02533
-        sideAirFriction = 0.2; // 1
+        explosive = 0.1; // 0
+        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        explosionSoundEffect = "DefaultExplosion"; // ""
         tracerEndTime = 6; // 3
     };
 
