@@ -4,21 +4,20 @@
 */
 class CfgPatches
 {
-    class TBMod_nachschub
+    class TBMod_medical
     {
-        name = "TBMod Nachschub";
+        name = "TBMod Medical";
 
         requiredAddons[] = {
-            "TBMod_main",
-            "TBMod_skins"
+            "TBMod_main"
         };
+
         addonRootClass = "TBMod_main";
     };
 };
 
-// Configs
 #include "script_macros.hpp"
-#include "configs\CfgVehicles.hpp"
 #include "configs\CfgFunctions.hpp"
-#include "configs\CfgEditorCategories.hpp"
-#include "configs\CfgEditorSubcategories.hpp"
+#include "configs\ACE_Medical_Treatments.hpp"
+#include "configs\CfgVehicles.hpp"
+#include "configs\CfgWeapons.hpp"

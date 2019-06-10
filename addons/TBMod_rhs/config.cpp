@@ -6,8 +6,7 @@ class CfgPatches
 {
     class TBMod_rhs
     {
-        author = "shukari";
-        authorUrl = "tacticalbacon.de";
+        name = "TBMod RHS";
 
         requiredAddons[] = {
             "TBMod_main",

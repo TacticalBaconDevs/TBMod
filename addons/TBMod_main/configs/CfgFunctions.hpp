@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_main
     {
-        tag = QUOTE(DOUBLES(ADDON,COMPONENT));
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_main\functions";
+
             class upDown {};
             class teleport {};
             class safe {};
@@ -30,7 +31,6 @@ class CfgFunctions
             class shortcuts {};
             class chatCommands {};
             class miscStuff {};
-            class calcTreatmentTime {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};

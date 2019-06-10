@@ -4,6 +4,8 @@
     Developed by http://tacticalbacon.de
 */
 
+if !(call EFUNC(main,isTBMission)) exitWith {};
+
 [
     "Helicopter",
     "init",

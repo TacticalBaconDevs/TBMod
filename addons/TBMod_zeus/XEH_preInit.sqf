@@ -1,9 +1,9 @@
-#include "../script_macros.hpp"
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
+if !(call EFUNC(main,isTBMission)) exitWith {};
 
 // Nachschubskisten automatisch aus der config lesen fürs Zeus Modul
 private _naschschubConfigs = configProperties [configFile >> "CfgVehicles", "isClass _x && {(configName _x) select [0, 3] == 'TB_'}

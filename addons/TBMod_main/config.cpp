@@ -152,14 +152,14 @@ class CfgPatches
             "ace_medical",
             "ace_medical_ai",
             "ace_medical_blood",
-            "ace_medical_damage",
+            /*"ace_medical_damage", // NEW Ace Version
             "ace_medical_engine",
             "ace_medical_feedback",
             "ace_medical_gui",
             "ace_medical_statemachine",
             "ace_medical_status",
             "ace_medical_treatment",
-            "ace_medical_vitals",
+            "ace_medical_vitals",*/
             "ace_microdagr",
             "ace_minedetector",
             "ace_missileguidance",
@@ -235,8 +235,6 @@ class CfgPatches
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CBA_Stuff.hpp"
 #include "configs\CfgMisc.hpp"
-#include "configs\CfgWeapons.hpp"
-#include "configs\ACE_Medical_Treatments.hpp"
 #include "configs\ACE_detector.hpp"
 #include "configs\CfgSounds.hpp"
 

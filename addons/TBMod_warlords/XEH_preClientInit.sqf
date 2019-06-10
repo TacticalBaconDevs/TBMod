@@ -82,4 +82,3 @@ if !(call FUNC(isWLMission)) exitWith {};
     [],
     true
 ] call CBA_fnc_addClassEventHandler;
-

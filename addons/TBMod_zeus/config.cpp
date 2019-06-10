@@ -6,7 +6,7 @@ class CfgPatches
 {
     class TBMod_zeus
     {
-        name = "TBMod Zeus Modules";
+        name = "TBMod ZeusModules";
 
         units[] = {
             "TB_zeus_base",

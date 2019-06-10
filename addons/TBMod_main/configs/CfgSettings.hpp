@@ -16,7 +16,7 @@ class CfgSettings
                 // Optional: Dependencies
                 class Dependencies
                 {
-                   CBA[] = {"cba_main", {3,10,0}, "(true)"};
+                    CBA[] = {"cba_main", {3,10,0}, "(true)"};
                 };
 
                 // Optional: Removed addons Upgrade registry

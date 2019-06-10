@@ -3,6 +3,6 @@
     Developed by http://tacticalbacon.de
 */
 #define ADDON TB
-#define COMPONENT eos
+#define COMPONENT medical
 
 #include "..\TBMod_main\script_macros_common.hpp"
