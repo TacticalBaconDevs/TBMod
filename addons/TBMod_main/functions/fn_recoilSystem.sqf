@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -76,7 +77,7 @@ TB_recoilID = ["ace_firedPlayer", {
             _mode,
             _deploy,
             _rested
-        ] call TB_fnc_debug;
+        ] call FUNC(debug);
     _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
 
     TB_recoilFreeze = diag_tickTime + 1;

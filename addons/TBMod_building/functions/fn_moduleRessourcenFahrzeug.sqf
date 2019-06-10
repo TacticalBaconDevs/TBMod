@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -9,7 +10,7 @@ deleteVehicle _logic;
 
 if !(local _logic) exitWith {};
 if !(_activated) exitWith {};
-if !(canSuspend) exitWith {_this spawn TB_fnc_moduleNachschubAbwurf};
+if !(canSuspend) exitWith {_this spawn EFUNC(zeus,moduleNachschubAbwurf)};
 
 private _dialogResult = ["Nachschubmenge", [
         ["Nachschubmenge", "", "2000", true]

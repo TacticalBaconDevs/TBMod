@@ -25,7 +25,7 @@ class CfgVehicles
         { \
             displayName = #NAME; \
             condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
-            statement = QUOTE([_target, 'ITEM'] spawn TB_fnc_createSupply); \
+            statement = QUOTE([_target, 'ITEM'] spawn FUNC(createSupply)); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
@@ -108,7 +108,7 @@ class CfgVehicles
             class ACE_MainActions
             {
                 displayName = "TB-Nachschub";
-                modifierFunction = "[_this] call TB_fnc_modifierSupplyMain";
+                modifierFunction = QUOTE([_this] call FUNC(modifierSupplyMain));
                 distance = 7;
 
                 class allgemein
@@ -208,7 +208,7 @@ class CfgVehicles
                 {
                     displayName = "Kiste zurückpacken";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call TB_fnc_insertChildrenDeleteBox";
+                    insertChildren = QUOTE(_this call FUNC(insertChildrenDeleteBox));
                 };
             };
         };
@@ -458,7 +458,7 @@ class CfgVehicles
             MACRO_ADDITEM(TB_building_item_Land_MedicalTent_01_floor_light_F,1);
             MACRO_ADDITEM(TB_building_item_Land_Stretcher_01_F,6);
             MACRO_ADDITEM(TB_building_item_Land_IntravenStand_01_2bags_F,6);
-            MACRO_ADDITEM(TB_building_item_Land_PortableLight_double_F,2);
+            MACRO_ADDITEM(TB_building_item_Land_PortableLight_DOUBLES_F,2);
         };
     };
 

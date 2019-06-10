@@ -1,8 +1,11 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call EFUNC(main,isTBMission)) exitWith {};
+
+// TODO: eine QUEUE mit custom Code pro Modul nicht 10 mal das gleiche
 
 ["TB_atmo_event_atmoShootingRange", {
     params ["_units"];

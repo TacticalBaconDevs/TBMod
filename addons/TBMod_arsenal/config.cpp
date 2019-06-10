@@ -1,4 +1,8 @@
-﻿class CfgPatches
+﻿/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+*/
+class CfgPatches
 {
     class TBMod_arsenal
     {
@@ -23,7 +27,7 @@
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\Cfg3DEN.hpp"

@@ -54,7 +54,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "Frontverlauf";
-        function = "TB_fnc_moduleFrontverlauf";
+        function = QFUNC(moduleFrontverlauf);
         canSetArea = 1;
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
@@ -255,7 +255,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoReinforcementCore";
-        function = "TB_fnc_moduleAtmoCore";
+        function = QFUNC(moduleAtmoCore);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa";
     };
 
@@ -263,7 +263,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoShootingRange";
-        function = "TB_fnc_moduleAtmoShootingRange";
+        function = QFUNC(moduleAtmoShootingRange);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\kill_ca.paa";
     };
 
@@ -271,7 +271,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoMortarSupport";
-        function = "TB_fnc_moduleAtmoMortarSupport";
+        function = QFUNC(moduleAtmoMortarSupport);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\destroy_ca.paa";
     };
 
@@ -279,7 +279,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoMortarSuppression";
-        function = "TB_fnc_moduleAtmoMortarSuppression";
+        function = QFUNC(moduleAtmoMortarSuppression);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\danger_ca.paa";
     };
 
@@ -287,7 +287,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "AtmoFireSuppression";
-        function = "TB_fnc_moduleAtmoFireSuppression";
+        function = QFUNC(moduleAtmoFireSuppression);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\attack_ca.paa";
     };
 

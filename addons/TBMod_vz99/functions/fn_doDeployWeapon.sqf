@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Original by https://github.com/BourbonWarfare/POTATO
@@ -22,7 +23,7 @@ params ["", "_player"];
                 ACE_player removeWeapon "TB_vz99_carryWeapon";
 
                 // Level and set starting turret dir to player's dir:
-                [_mortarVeh, getDir ACE_player] call TB_fnc_levelToGround;
+                [_mortarVeh, getDir ACE_player] call FUNC(levelToGround);
 
                 // Move in auto
                 ACE_player moveInGunner _mortarVeh;

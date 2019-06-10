@@ -1,8 +1,9 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call FUNC(isTBMission)) exitWith {};
 
 // ### DevAbfrage
 TB_serverBuild = productVersion select 3;

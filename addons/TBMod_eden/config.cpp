@@ -26,7 +26,7 @@ class CfgPatches
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\Cfg3DEN.hpp"

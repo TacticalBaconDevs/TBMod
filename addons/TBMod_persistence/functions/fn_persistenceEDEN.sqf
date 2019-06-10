@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -47,7 +48,7 @@ private _obj = nil;
     }
     else
     {
-        _obj set3DENAttribute ["rotation", [_dir, _up] call TB_fnc_vector2Eden];
+        _obj set3DENAttribute ["rotation", [_dir, _up] call FUNC(vector2Eden)];
         _obj set3DENAttribute ["enableSimulation", _sim];
     };
 }
@@ -65,7 +66,7 @@ private _vehicle = nil;
     }
     else
     {
-        _vehicle set3DENAttribute ["rotation", [_dir, _up] call TB_fnc_vector2Eden];
+        _vehicle set3DENAttribute ["rotation", [_dir, _up] call FUNC(vector2Eden)];
         _vehicle set3DENAttribute ["fuel", _fuel];
         _vehicle set3DENAttribute ["enableSimulation", _sim];
 

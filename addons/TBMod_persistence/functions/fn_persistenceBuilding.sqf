@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -58,11 +59,11 @@ else //laden
 
         if (_big) then
         {
-            _params spawn TB_fnc_initItemBig;
+            _params spawn FUNC(initItemBig);
         }
         else
         {
-            _params spawn TB_fnc_initItem;
+            _params spawn FUNC(initItem);
         };
 
         _obj enableSimulationGlobal _sim;

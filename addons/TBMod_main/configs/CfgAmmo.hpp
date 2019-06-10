@@ -49,7 +49,7 @@ class CfgAmmo
 
         //flareSize = 12;
         useFlare = 1;
-        timeToLive = 500;
+        timeToLive = 250;
         coefGravity = 0.5;
     };
 
@@ -60,7 +60,7 @@ class CfgAmmo
 
         //flareSize = 12;
         useFlare = 1;
-        timeToLive = 600;
+        timeToLive = 400;
         coefGravity = 0.5;
     };
 
@@ -70,7 +70,7 @@ class CfgAmmo
         brightness = 3000000;
 
         flareSize = 20;
-        timeToLive = 1000;
+        timeToLive = 600;
         coefGravity = 0.3;
     };
 

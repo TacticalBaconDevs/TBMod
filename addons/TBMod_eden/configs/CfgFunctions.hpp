@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_eden
     {
-        tag = "TB";
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_eden\functions";
+
             class schauspieler {};
             class sitAI {};
             class animationAI {};

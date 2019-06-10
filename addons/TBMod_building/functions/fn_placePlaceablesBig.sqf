@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -12,7 +13,7 @@ params [
 ];
 _zusatz params ["_zeit", "_resourcen"];
 
-if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler (TB_fnc_placePlaceablesBig)"};
+if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler (TB_building_fnc_placePlaceablesBig)"};
 
 if (_kran && {((nearestObjects [ACE_player, [], 15]) select {_x getVariable ["TBMod_Building_kranWagen", false]}) isEqualTo []}) exitWith {systemChat "Kein Kranwagen in der Nähe"};
 
@@ -31,7 +32,7 @@ private _attachPos = ((abs (((_bbr # 1) # 1) - ((_bbr # 0) # 1))) / 2 + 2) min 9
 private _pos = ACE_player modelToWorld [0, _attachPos, 0];
 _building setPos _pos;
 
-[_building, _resourcen] call TB_fnc_initItemBig;
+[_building, _resourcen] call FUNC(initItemBig);
 [_building, true, [0, _attachPos, 0], _specialDir, true] call ace_dragging_fnc_setCarryable;
 
 waitUntil {_building distance2D _pos < 10};
@@ -56,9 +57,20 @@ if (isNil "TB_building_displayEH") then
     params ["_building", "_zeit", "_truck", "_resourcen"];
 
     ["Bauen", "Abbrechen", "Heben/Senken"] call ace_interaction_fnc_showMouseHint;
-    waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
-    [_building, false] call ace_dragging_fnc_setCarryable;
+    waitUntil {
+        if (ACE_player distance _truck > 20) then
+        {
+            private _carrayobj = ACE_player getVariable ["ace_dragging_carriedObject", objNull];
+            if (isNull _carrayobj) exitWith {};
 
+            _carrayobj setVariable ["TB_building_abbruch", true, true];
+            [ACE_player, _carrayobj] call ace_dragging_fnc_dropObject_carry;
+        };
+
+        !(ACE_player getVariable ["ace_dragging_isCarrying", false])
+    };
+
+    [_building, false] call ace_dragging_fnc_setCarryable;
     [_building, true] remoteExecCall ["hideObjectGlobal", [0, -2] select isDedicated];
 
     if !(_building getVariable ["TB_building_abbruch", false]) then {[ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation};

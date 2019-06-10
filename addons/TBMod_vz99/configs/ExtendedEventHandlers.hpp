@@ -17,7 +17,7 @@ class Extended_FiredBIS_EventHandlers
     {
         class TBMod_vz99
         {
-            firedBIS = "_this call TB_fnc_handleFired";
+            firedBIS = QUOTE(_this call FUNC(handleFired));
         };
     };
 };
