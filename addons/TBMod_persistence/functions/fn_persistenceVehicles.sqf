@@ -34,7 +34,7 @@ if (_save) then
                     vectorUp _veh,
                     simulationEnabled _veh,
                     [true, _veh] call TB_fnc_cargo,
-                    (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _x] call TB_fnc_cargo]},
+                    ((_veh getVariable ["ace_cargo_loaded", []]) select {_x isEqualType objNull}) apply {[typeOf _x, [true, _x] call TB_fnc_cargo]},
                     if ((getAllHitPointsDamage _veh) isEqualTo []) then {[]} else {[(getAllHitPointsDamage _veh) select 0, (getAllHitPointsDamage _veh) select 2]},
                     _ammo,
                     fuel _veh,
