@@ -1,4 +1,7 @@
 /*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+
     Original idea/code: http://killzonekid.com/farewell-my-arma-friends/
     Modified for Spotlight: https://github.com/ampersand38/Server-Spotlight
 */
@@ -7,7 +10,7 @@ class CfgPatches
     class TBMod_menubutton
     {
         name = "TBMod MenuButton";
-        
+
         requiredAddons[] = {
             "TBMod_main"
         };
@@ -32,3 +35,5 @@ class RscDisplayMain: RscStandardDisplay
         };
     };
 };
+
+#include "script_macros.hpp"

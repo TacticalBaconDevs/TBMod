@@ -1,4 +1,5 @@
 # TBMod Main
 
-MainDeveloper: [shukari](https://github.com/shukari)<br>
-Developer:     [Eric Ruhland](https://github.com/Er1807)
+Developer:
+- [shukari](https://github.com/shukari)
+- [Eric Ruhland](https://github.com/Er1807)

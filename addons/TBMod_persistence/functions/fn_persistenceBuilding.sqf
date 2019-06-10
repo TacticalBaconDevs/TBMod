@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -58,11 +59,11 @@ else //laden
 
         if (_big) then
         {
-            _params spawn TB_fnc_initItemBig;
+            _params spawn FUNC(initItemBig);
         }
         else
         {
-            _params spawn TB_fnc_initItem;
+            _params spawn FUNC(initItem);
         };
 
         _obj enableSimulationGlobal _sim;
@@ -73,12 +74,6 @@ else //laden
         if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F"]) then
         {
             _obj setVariable ["ace_medical_isMedicalFacility", true, true];
-        };
-
-        // Antenne
-        if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
-        {
-            //[_obj, 20000] remoteExec ["TFAR_antennas_fnc_initRadioTower"];
         };
 
         // Antenne

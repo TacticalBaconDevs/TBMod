@@ -6,7 +6,7 @@ class CfgFunctions
 {
     class TBMod_warlords
     {
-        tag = "TB";
+        tag = ADDONTAG;
 
         class functions
         {
@@ -35,6 +35,10 @@ class CfgFunctions
             class WLClientInit
             {
                 file = "\TBMod_warlords\replacement\fn_WLClientInit.sqf";
+            };
+            class WLParseAssetList
+            {
+                file = "\TBMod_warlords\replacement\fn_WLParseAssetList.sqf";
             };
         };
     };

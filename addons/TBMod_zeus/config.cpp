@@ -6,7 +6,7 @@ class CfgPatches
 {
     class TBMod_zeus
     {
-        name = "TBMod Zeus Modules";
+        name = "TBMod ZeusModules";
 
         units[] = {
             "TB_zeus_base",
@@ -29,7 +29,7 @@ class CfgPatches
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"

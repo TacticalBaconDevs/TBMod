@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -52,18 +53,18 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
     switch (_this select 0) do {
         case "1":
         {
-            [true] remoteExec ["TB_fnc_safe"];
+            [true] remoteExec ["QFUNC(safe)"];
             systemChat "SafeStart wurde global aktiviert!";
         };
         case "0":
         {
-            [false] remoteExec ["TB_fnc_safe"];
+            [false] remoteExec ["QFUNC(safe)"];
             systemChat "SafeStart wurde global deaktiviert!";
         };
         default
         {
             systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil "TB_safeInfo")];
-            [isNil "TB_safeInfo"] remoteExec ["TB_fnc_safe"];
+            [isNil "TB_safeInfo"] remoteExec ["QFUNC(safe)"];
         };
     };
 
@@ -126,7 +127,7 @@ if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
 
 ["clearCache", {
     params ["_target"];
-    [] remoteExec ["TB_fnc_clearCache", [player, 2] select (_target == "server")];
+    [] remoteExec [QEFUNC(persistence,clearCache), [player, 2] select (_target == "server")];
 
    ["TB_informAdminsAndZeus", ["%1 hat den Cache gecleared (%2)!", profileName, ["Lokal", "Server"] select (_target == "server")]] call CBA_fnc_globalEvent;
 }, "all"] call CBA_fnc_registerChatCommand;

@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -37,4 +38,4 @@ if ((_player getVariable ["TB_arsenalType", ""]) == "Themen") then
 
 private _rolle = _player getVariable ["TB_rolle", ""];
 private _condition = (_rolle != "") && ((getText (configFile >> "CfgVehicles" >> typeOf _target >> "arsenalType")) == _player getVariable ["TB_arsenalType", ""]);
-_actionData set [1, ["TB-Arsenal", [_rolle] call TB_fnc_getRollenName] select _condition];
+_actionData set [1, ["TB-Arsenal", [_rolle] call FUNC(getRollenName)] select _condition];

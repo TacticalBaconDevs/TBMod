@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -9,7 +10,7 @@ private _pos = getPos _logic;
 deleteVehicle _logic;
 if !(_activated) exitWith {true};
 
-private _nachschubsKistenNamen = TB_nachschubsKisten apply {[_x] call TB_fnc_displayName};
+private _nachschubsKistenNamen = TB_nachschubsKisten apply {[_x] call EFUNC(main,displayName)};
 
 private _dialogResult = ["Nachschub auswählen", [
         ["Nachschub", _nachschubsKistenNamen, 0, true],
