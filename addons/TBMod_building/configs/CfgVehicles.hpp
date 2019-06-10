@@ -25,7 +25,7 @@ class CfgVehicles
                             displayName = $STR_PLACE_##OBJECT; \
                             condition = QUOTE('TB_building_item_##OBJECT' in (items ACE_player)); \
                             EXCEPTIONS; \
-                            statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables); \
+                            statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call FUNC(placePlaceables)); \
                         }
 
                     // Medic
@@ -68,7 +68,7 @@ class CfgVehicles
                         { \
                             displayName = DISPLAY; \
                             EXCEPTIONS; \
-                            statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] spawn TB_fnc_placePlaceablesBig); \
+                            statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] spawn FUNC(placePlaceablesBig)); \
                         }
 
                     class TB_cat_Wall
@@ -140,13 +140,13 @@ class CfgVehicles
         { \
             class ACE_MainActions \
             { \
-                modifierFunction = "[_this] call TB_fnc_modifierShowVehicleType"; \
+                modifierFunction = "[_this] call FUNC(modifierShowVehicleType)"; \
                 class truck_getType \
                 { \
                     displayName = "Fahrzeugtyp abfragen"; \
                     condition = "alive _target"; \
                     EXCEPTIONS; \
-                    statement = "call TB_fnc_getVehicleType"; \
+                    statement = "call FUNC(getVehicleType)"; \
                 }; \
                 class ResourceTruck_getLoad \
                 { \
@@ -161,7 +161,7 @@ class CfgVehicles
                     condition = "alive _target && locked _target < 2"; \
                     icon = "\z\ace\addons\refuel\ui\icon_refuel_interact.paa"; \
                     EXCEPTIONS; \
-                    statement = "[_target] call TB_fnc_getFuel"; \
+                    statement = "[_target] call FUNC(getFuel)"; \
                 }; \
                 class ACE_Passengers \
                 { \
@@ -211,14 +211,14 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "Ressourcentruck setzen";
-        function = "TB_fnc_moduleRessourcenFahrzeug";
+        function = QFUNC(moduleRessourcenFahrzeug);
         category = "TB_categorie_zeus_building";
     };
     class TB_zeus_kranFahrzeug : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "Krantruck setzen";
-        function = "TB_fnc_moduleKranFahrzeug";
+        function = QFUNC(moduleKranFahrzeug);
         category = "TB_categorie_zeus_building";
     };
 

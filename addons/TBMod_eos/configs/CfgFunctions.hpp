@@ -5,31 +5,32 @@
 class CfgFunctions
 {
     class TBMod_eos
-{
-    tag = QUOTE(DOUBLES(ADDON,COMPONENT));;
-
-    class modules
     {
-        file = "\TBMod_eos\core";
-        class core {};
-        class moduleZone {};
-        class bastionCore {};
-        class moduleBastion {};
-        class unitPools {};
-    };
+        tag = ADDONTAG;
 
-    class functions
-    {
-        file = "\TBMod_eos\functions";
-        class spawnVehicle {};
-        class spawnGroup {};
-        class findSafePos {};
-        class setCargo {};
-        class shk_patrol {};
-        class shk_buildingpos {};
-        class transportUnload {};
-        class fileExists {};
-    };
-};
+        class modules
+        {
+            file = "\TBMod_eos\core";
 
+            class core {};
+            class moduleZone {};
+            class bastionCore {};
+            class moduleBastion {};
+            class unitPools {};
+        };
+
+        class functions
+        {
+            file = "\TBMod_eos\functions";
+
+            class spawnVehicle {};
+            class spawnGroup {};
+            class findSafePos {};
+            class setCargo {};
+            class shk_patrol {};
+            class shk_buildingpos {};
+            class transportUnload {};
+            class fileExists {};
+        };
+    };
 };

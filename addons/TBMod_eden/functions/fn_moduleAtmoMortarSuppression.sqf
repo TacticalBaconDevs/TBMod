@@ -13,7 +13,7 @@ _input params [
     ];
 
 // TODO: wieder deaktivierbare Module machen
-//["%1", _this] call TB_fnc_debug;
+//["%1", _this] call EFUNC(main,debug);
 
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {

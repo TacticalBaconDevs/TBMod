@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_nachschub
     {
-        tag = QUOTE(DOUBLES(ADDON,COMPONENT));
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_nachschub\functions";
+
             class insertChildrenDeleteBox {};
             class modifierSupplyMain {};
             class createSupply {};

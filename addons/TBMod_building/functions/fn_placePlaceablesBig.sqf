@@ -12,7 +12,7 @@ params [
 ];
 _zusatz params ["_zeit", "_resourcen"];
 
-if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler (TB_fnc_placePlaceablesBig)"};
+if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler (TB_building_fnc_placePlaceablesBig)"};
 
 if (_kran && {((nearestObjects [ACE_player, [], 15]) select {_x getVariable ["TBMod_Building_kranWagen", false]}) isEqualTo []}) exitWith {systemChat "Kein Kranwagen in der Nähe"};
 
@@ -31,7 +31,7 @@ private _attachPos = ((abs (((_bbr # 1) # 1) - ((_bbr # 0) # 1))) / 2 + 2) min 9
 private _pos = ACE_player modelToWorld [0, _attachPos, 0];
 _building setPos _pos;
 
-[_building, _resourcen] call TB_fnc_initItemBig;
+[_building, _resourcen] call FUNC(initItemBig);
 [_building, true, [0, _attachPos, 0], _specialDir, true] call ace_dragging_fnc_setCarryable;
 
 waitUntil {_building distance2D _pos < 10};

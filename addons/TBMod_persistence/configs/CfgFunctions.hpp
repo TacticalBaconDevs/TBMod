@@ -6,7 +6,7 @@ class CfgFunctions
 {
     class TBMod_persistence
     {
-        tag = QUOTE(DOUBLES(ADDON,COMPONENT));
+        tag = ADDONTAG;
 
         class functions
         {

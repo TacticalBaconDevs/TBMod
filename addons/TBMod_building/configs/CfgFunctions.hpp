@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_building
     {
-        tag = QUOTE(DOUBLES(ADDON,COMPONENT));
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_building\functions";
+
             class placePlaceables {};
             class placePlaceablesBig {};
             class initItem {};
