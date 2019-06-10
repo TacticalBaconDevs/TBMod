@@ -28,6 +28,8 @@ if (side group player == EAST) then {
 player createDiaryRecord ["Diary", [localize "STR_A3_WL_rules_title", format [localize "STR_A3_WL_rules_text", "<br/>- ", "<br/><br/>- "]]];
 player kbAddTopic ["Warlords", "A3\Missions_F_Warlords\kb\warlords.bikb"];
 
+player setVariable ["BIS_WL_connectedAt", call BIS_fnc_WLSyncedTime, TRUE];
+
 waitUntil {!isNil "BIS_WL_recentStart"};
 
 // --- handle map icons hover actions
@@ -74,6 +76,7 @@ while {count waypoints group player > 1} do {deleteWaypoint (waypoints group pla
 if (BIS_WL_arsenalEnabled == 1) then {
     BIS_fnc_arsenal_data set [3, BIS_WL_factionAppropriateUniforms];
     BIS_fnc_arsenal_data set [5, (BIS_fnc_arsenal_data select 5) - BIS_WL_mortarBackpacks];
+    BIS_fnc_arsenal_data set [23, (BIS_fnc_arsenal_data select 23) - ["APERSMineDispenser_Mag"]];
 };
 
 // --- add default amount of funds at the scenario start or a smaller amount in case of JIP
@@ -81,7 +84,7 @@ if (BIS_WL_arsenalEnabled == 1) then {
 if (BIS_WL_recentStart) then {
     player setVariable ["BIS_WL_funds", BIS_WL_startCP, TRUE];
 } else {
-    player setVariable ["BIS_WL_funds", if (BIS_WL_startCP > 50) then {50} else {0}, TRUE];
+    player setVariable ["BIS_WL_funds", if (BIS_WL_startCP > 50) then {50 min BIS_WL_maxCP} else {0}, TRUE];
 };
 
 if (isNil {player getVariable "BIS_WL_selectedSector"}) then {
@@ -131,7 +134,7 @@ _null = [] spawn {
 player addEventHandler ["Killed", {player call BIS_fnc_WLloadoutGrab}];
 player addEventHandler ["HandleRating", {
     if ((_this # 1) > 100) then {
-        (_this # 0) setVariable ["BIS_WL_funds", ((_this # 0) getVariable "BIS_WL_funds") + ((_this # 1) / 20), TRUE];
+        (_this # 0) setVariable ["BIS_WL_funds", (((_this # 0) getVariable "BIS_WL_funds") + ((_this # 1) / 20)) min BIS_WL_maxCP, TRUE];
         ["Kill reward: %1 (%2)", name (_this # 0), (_this # 1) / 20] call BIS_fnc_WLdebug;
         systemChat format [localize "STR_A3_WL_award_kill", (_this # 1) / 20];
     };
@@ -242,11 +245,20 @@ if (BIS_WL_fatigueEnabled == 0) then {
 };
 
 [] spawn {
+    while {TRUE} do {
+        _autonomous = player getVariable ["BIS_WL_autonomousPool", []];
+        _autonomousAlive = _autonomous select {alive _x};
+        player setVariable ["BIS_WL_autonomousPool", _autonomousAlive];
+        sleep 1;
+    };
+};
+
+[] spawn {
     waitUntil {!isNull findDisplay 46};
     sleep 2;
     (findDisplay 46) displayAddEventHandler ["KeyDown", {
         _key = _this # 1;
-        if (_key in actionKeys "Gear" && !(missionNamespace getVariable ["BIS_gearKeyPressed", FALSE])) then {
+        if (_key in actionKeys "Gear" && !(missionNamespace getVariable ["BIS_gearKeyPressed", FALSE]) && !(player getVariable ["BIS_WL_toSwitchSides", FALSE]) && (player getVariable ["BIS_WL_friendlyFirePunishmentEnd", 0]) == 0) then {
             if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
                 "close" call BIS_fnc_WLPurchaseMenu;
             } else {
@@ -270,7 +282,7 @@ if (BIS_WL_fatigueEnabled == 0) then {
                         };
                     } else {
                         if (BIS_gearKeyPressed) then {
-                            if (BIS_WL_currentSelection in ["", "voted"]) then {;
+                            if (BIS_WL_currentSelection in ["", "voted"]) then {
                                 "open" spawn BIS_fnc_WLPurchaseMenu;
                             } else {
                                 playSound "AddItemFailed";
@@ -411,6 +423,32 @@ addMissionEventHandler ["Draw3D", {
         titleCut ["", "BLACK IN", 1];
         player setVariable ["BIS_WL_friendlyFirePunishmentEnd", 0];
         forceRespawn player;
+    };
+};
+
+if !(isServer || BIS_WLTeamBalanceEnabled == 0) then {
+    sleep 0.01;
+    [] spawn {
+        _exit = FALSE;
+        _maxDelay = (call BIS_fnc_WLSyncedTime) + 20;
+        waitUntil {sleep 3; (player getVariable ["BIS_WL_toSwitchSides", FALSE] && alive player) || (call BIS_fnc_WLSyncedTime) >= _maxDelay};
+        if ((call BIS_fnc_WLSyncedTime) < _maxDelay) then {
+            while {!_exit} do {
+                if (player getVariable ["BIS_WL_toSwitchSides", FALSE]) then {
+                    _loadout = getUnitLoadout player;
+                    removeAllWeapons player;
+                    titleCut [format [toUpper localize "STR_A3_WL_popup_team_balance", (([WEST, EAST] - [side group player]) select 0) call BIS_fnc_WLSideToFaction], "BLACK FADED", 100000];
+                    waitUntil {sleep 0.25; !alive player || !(player getVariable ["BIS_WL_toSwitchSides", FALSE])};
+                    titleCut ["", "BLACK IN", 1];
+                    if (alive player) then {
+                        _exit = TRUE;
+                        player setUnitLoadout _loadout;
+                    } else {
+                        waitUntil {sleep 0.25; alive player};
+                    };
+                };
+            };
+        };
     };
 };
 

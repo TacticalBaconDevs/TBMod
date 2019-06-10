@@ -102,7 +102,9 @@ forEach allCurators;
 
 
 // ### Entschärf Fix
+["ACE_DefuseObject"] call ace_interact_menu_fnc_compileMenu;
 ["ACE_DefuseObject", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
+["ACE_DefuseObject_Large"] call ace_interact_menu_fnc_compileMenu;
 ["ACE_DefuseObject_Large", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
 ["ACE_DefuseObject", 0, [], [
     "ACE_Defuse",

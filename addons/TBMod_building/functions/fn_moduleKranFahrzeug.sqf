@@ -18,7 +18,7 @@ if (_mouseOverType != "OBJECT") then
 }
 else
 {
-    _mouseOverUnit setVariable ["TBMod_Building_Cranwagen", true, true];
+    _mouseOverUnit setVariable ["TBMod_Building_kranWagen", true, true];
 };
 
 true

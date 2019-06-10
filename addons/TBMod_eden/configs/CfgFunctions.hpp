@@ -18,6 +18,10 @@ class CfgFunctions
             class inkognitoSystem {};
             class moduleAtmoCore {};
             class atmoCoreAction {};
+            class moduleAtmoShootingRange {};
+            class moduleAtmoMortarSupport {};
+            class moduleAtmoMortarSuppression {};
+            class moduleAtmoFireSuppression {};
         };
     };
 };

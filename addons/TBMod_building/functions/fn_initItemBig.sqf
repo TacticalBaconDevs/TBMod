@@ -3,66 +3,41 @@
     Developed by http://tacticalbacon.de
 */
 params [
-    "_obj",
+    "_building",
     ["_resourcen", 50]
 ];
 
-_obj setVariable ["TB_building_addInfos", [_resourcen], true];
+_building setVariable ["TB_building_addInfos", [_resourcen], true];
 
-// Actions
-private _bbr = boundingBoxReal _obj;
-private _range = ((abs (((_bbr select 1) select 1) - ((_bbr select 0) select 1))) / 2) max ((abs (((_bbr select 1) select 0) - ((_bbr select 0) select 0))) / 2);
+private _bbr = boundingBoxReal _building;
+private _range = (((abs (((_bbr # 1) # 1) - ((_bbr # 0) # 1))) / 2) max ((abs (((_bbr # 1) # 0) - ((_bbr # 0) # 0))) / 2)) min 9;
+private _typeOf = typeOf _building;
 
 private _pickupAction = [
-    format ["destroy_%1_%2", typeOf _obj, random 999999],
+    format ["destroy_%1_%2", _typeOf, random 999999],
     "Zurückbauen",
     "",
     {
         params ["_target", "_player", "_argumente"];
-        _argumente params ["_obj", "_resourcen"];
+        _argumente params ["_building", "_resourcen"];
 
-        private _trucks = (nearestObjects [ACE_player, [], 50]) select {(_x getVariable ["TBMod_Building_PlaceablesCargo", -1]) >= 0};
-        if (_trucks isEqualTo []) exitWith {systemChat "Kein Resourcentruck in der Nähe!"};
-        private _truck = _trucks select 0;
+        ((nearestObjects [ACE_player, [], 50]) select {(_x getVariable ["TBMod_Building_resourcenCargo", -1]) >= 0}) params [["_truck", objNull]];
+        if (isNull _truck) exitWith {systemChat "Kein Resourcentruck in der Nähe"};
 
-        _truck setVariable ["TBMod_Building_PlaceablesCargo", (_truck getVariable ["TBMod_Building_PlaceablesCargo", 0]) + round (_resourcen / 2), true];
+        _truck setVariable ["TBMod_Building_resourcenCargo", (_truck getVariable ["TBMod_Building_resourcenCargo", 0]) + round (_resourcen / 2), true];
 
         deleteVehicle _target;
     },
-    {(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier' && ("ToolKit" in (items ACE_player))},
+    {((ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] || (ACE_player getVariable ['TB_rolle', '']) == 'pionier') && 'ToolKit' in ([ACE_player] call ace_common_fnc_uniqueItems)},
     nil,
-    [_obj, _resourcen],
+    [_building, _resourcen],
     nil,
     (_range - 1) max 5
 ] call ace_interact_menu_fnc_createAction;
 
-[
-    _obj,
-    0,
-    ["ACE_MainActions"],
-    _pickupAction
-] remoteExecCall ["ace_interact_menu_fnc_addActionToObject", [0, -2] select isDedicated, true];
+[_building, 0, ["ACE_MainActions"], _pickupAction] remoteExecCall ["ace_interact_menu_fnc_addActionToObject", [0, -2] select isDedicated, true];
 
-// Medic
-if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F"]) then
-{
-    _obj setVariable ["ace_medical_isMedicalFacility", true, true];
-};
-
-// Antenne
-if ((typeOf _obj) in ["Land_TTowerSmall_1_F"]) then
-{
-    //[_obj, 20000] remoteExec ["TFAR_antennas_fnc_initRadioTower"];
-};
-
-// Antenne
-if ((typeOf _obj) in ["Land_BarGate_F"]) then
-{
-    [_obj, false] remoteExecCall ["allowDamage", _obj];
-};
-
-// Repair
-if ((typeOf _obj) in ["B_Slingload_01_Repair_F"]) then
-{
-    _obj enableRopeAttach false;
-};
+// Attribute
+if (_typeOf in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F"]) then {_building setVariable ["ace_medical_isMedicalFacility", true, true]};
+if (_typeOf in ["Land_BarGate_F"]) then {[_building, false] remoteExecCall ["allowDamage", _building]};
+if (_typeOf in ["B_Slingload_01_Repair_F"]) then {_building enableRopeAttach false};
