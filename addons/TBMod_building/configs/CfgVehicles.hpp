@@ -2,56 +2,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-#define ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE) class TB_placeItem_##OBJECT \
-    { \
-        displayName = $STR_PLACE_##OBJECT; \
-        condition = QUOTE('TB_building_item_##OBJECT' in (items ACE_player)); \
-        exceptions[] = {"notOnMap", "isNotInside", "isNotHandcuffed", "isNotSurrendering", "isNotSwimming", "isNotOnLadder"}; \
-        statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call FUNC(placePlaceables)); \
-    }
-#define ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE) class TB_buildBig_##BUILDING_END \
-    { \
-        displayName = $STR_PLACE_BIG_##BUILDING_END; \
-        exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"}; \
-        statement = QUOTE(['BUILDING_END', true, SIM, ATT, [ZEIT, COSTEN], CRANE, ROTATE] spawn FUNC(placePlaceablesBig)); \
-    }
-#define ADD_RESC_CHECK class ACE_Actions \
-        { \
-            class ACE_MainActions \
-            { \
-                modifierFunction =  QUOTE([_this] call FUNC(modifierShowVehicleType)); \
-                class truck_getType \
-                { \
-                    displayName = "Fahrzeugtyp abfragen"; \
-                    condition = "alive _target"; \
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-                    statement =  QUOTE(call FUNC(getVehicleType)); \
-                }; \
-                class ResourceTruck_getLoad \
-                { \
-                    displayName = "Verbleibende Resourcen"; \
-                    condition = "alive _target && (_target getVariable ['TBMod_Building_PlaceablesCargo', -1]) >= 0"; \
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-                    statement = "hint format ['Das Fahrzeug hat noch %1 Resourcen', (_target getVariable ['TBMod_Building_PlaceablesCargo', 0]) max 0]"; \
-                }; \
-                class truck_getFuel \
-                { \
-                    displayName = "Tank abfragen"; \
-                    condition = "alive _target && locked _target < 2"; \
-                    icon = "\z\ace\addons\refuel\ui\icon_refuel_interact.paa"; \
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap"}; \
-                    statement =  QUOTE([_target] call FUNC(getFuel)); \
-                }; \
-                class ACE_Passengers \
-                { \
-                    displayName = "Insassen"; \
-                    condition = "alive _target || (!alive _target && count ((crew _target) select {alive _x}) > 0)"; \
-                    statement = ""; \
-                    exceptions[] = {"isNotSwimming"}; \
-                    insertChildren = "_this call ace_interaction_fnc_addPassengersActions"; \
-                }; \
-            }; \
-        }
+#define EXCEPTIONS exceptions[] = {"notOnMap", "isNotInside", "isNotHandcuffed", "isNotSurrendering", "isNotSwimming", "isNotOnLadder"}
+
 class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles
@@ -65,16 +17,21 @@ class CfgVehicles
             {
                 class TB_itemBuildPlaceables
                 {
-                    displayName = $STR_PLACE_ItemBuildPlaceables;
-                    exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"};
-                    // condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
+                    displayName = "Plazierbare Items";
+                    EXCEPTIONS;
 
-                    // ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE)
+                    #define ADD_VEHICLE_ITEM(OBJECT,ATT,ROTATE) class TB_placeItem_##OBJECT \
+                        { \
+                            displayName = $STR_PLACE_##OBJECT; \
+                            condition = QUOTE('TB_building_item_##OBJECT' in (items ACE_player)); \
+                            EXCEPTIONS; \
+                            statement = QUOTE(['TB_building_item_##OBJECT', 'OBJECT', ATT, ROTATE] call TB_fnc_placePlaceables); \
+                        }
 
                     // Medic
                     ADD_VEHICLE_ITEM(Land_IntravenStand_01_2bags_F,-1,true);
                     ADD_VEHICLE_ITEM(Land_Stretcher_01_F,-1,true);
-                    ADD_VEHICLE_ITEM(Land_PortableLight_DOUBLES_F,-1,true);
+                    ADD_VEHICLE_ITEM(Land_PortableLight_double_F,-1,true);
                     ADD_VEHICLE_ITEM(Land_MedicalTent_01_white_generic_open_F,-1,true);    // muss noch als Medizinische Einrichtung gesetzt werden
                     ADD_VEHICLE_ITEM(Land_MedicalTent_01_floor_light_F,-1,true);
 
@@ -103,69 +60,119 @@ class CfgVehicles
 
                 class TB_buildingsBuildPlaceables
                 {
-                    displayName = $STR_PLACE_BuildingsBuildPlaceables;
-                    exceptions[] = {"notOnMap","isNotInside","isNotHandcuffed","isNotSurrendering","isNotSwimming","isNotOnLadder"};
-                    condition = "(ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] && (ACE_player getVariable ['TB_rolle', '']) == 'pionier'";
+                    displayName = "Plazierbare Gebäude";
+                    EXCEPTIONS;
+                    condition = "((ACE_player getVariable ['ACE_IsEngineer', 0]) in [true, 1, 2] || (ACE_player getVariable ['TB_rolle', '']) == 'pionier') && 'ToolKit' in ([ACE_player] call ace_common_fnc_uniqueItems)";
 
-                    // ADD_BIG_ITEM(BUILDING_END,SIM,ATT,ZEIT,COSTEN,CRANE,ROTATE)
+                    #define ADD_BIG_ITEM(BUILDING, DISPLAY, ZEIT, KOSTEN, KRAN, ROTATE) class TB_buildBig_##BUILDING \
+                        { \
+                            displayName = DISPLAY; \
+                            EXCEPTIONS; \
+                            statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] spawn TB_fnc_placePlaceablesBig); \
+                        }
 
                     class TB_cat_Wall
                     {
                         displayName = "Wände";
 
-                        ADD_BIG_ITEM(Land_HBarrierWall4_F,true,-1,10,75,false,false);
-                        ADD_BIG_ITEM(Land_HBarrier_5_F,true,-1,15,25,false,false);
+                        ADD_BIG_ITEM(Land_HBarrierWall4_F, "HescoMauer (75 Resourcen)", 10, 75, false, false);
+                        ADD_BIG_ITEM(Land_HBarrier_5_F, "Hesco (50 Resourcen)", 15, 25, false, false);
                     };
 
                     class TB_cat_Bunker
                     {
                         displayName = "Bunker";
 
-                        ADD_BIG_ITEM(Land_Cargo_Patrol_V1_F,true,-1,30,150,true,true);
-                        ADD_BIG_ITEM(Land_HBarrierTower_F,true,-1,50,300,true,true);
-                        ADD_BIG_ITEM(Land_BagBunker_Small_F,true,-1,15,100,false,true);
-                        ADD_BIG_ITEM(Land_BagBunker_Large_F,true,-1,30,250,true,true);
-                        ADD_BIG_ITEM(Land_BagBunker_Tower_F,true,-1,35,275,true,true);
+                        ADD_BIG_ITEM(Land_Cargo_Patrol_V1_F, "Militärturm (150 Resourcen)", 30, 150, true, true);
+                        ADD_BIG_ITEM(Land_HBarrierTower_F, "HescoTurm (300 Resourcen)", 50, 300, true, true);
+                        ADD_BIG_ITEM(Land_BagBunker_Small_F, "Bunker (klein) (100 Resourcen)", 15, 100, false, true);
+                        ADD_BIG_ITEM(Land_BagBunker_Large_F, "Bunker (groß) (250 Resourcen)", 30, 250, true, true);
+                        ADD_BIG_ITEM(Land_BagBunker_Tower_F, "Bunkerturm (275 Resourcen)", 35, 275, true, true);
                     };
 
                     class TB_cat_Roadblock
                     {
                         displayName = "Absperrungen";
 
-                        ADD_BIG_ITEM(Land_CzechHedgehog_01_F,true,-1,5,30,false,true);
-                        ADD_BIG_ITEM(Land_BarGate_F,true,-1,8,75,false,true);
+                        ADD_BIG_ITEM(Land_CzechHedgehog_01_F, "Panzersperre (30 Resourcen)", 5, 30, false, true);
+                        ADD_BIG_ITEM(Land_BarGate_F, "Schranke (75 Resourcen)", 8, 75, false, true);
                     };
 
                     class TB_cat_Support
                     {
                         displayName = "Support";
 
-                        ADD_BIG_ITEM(TB_supply_base,true,-1,50,750,false,true);
-                        ADD_BIG_ITEM(Land_Fuelstation_Feed_F,true,-1,7,80,false,true);
-                        ADD_BIG_ITEM(B_Slingload_01_Repair_F,true,-1,10,80,false,true);
-                        ADD_BIG_ITEM(Land_Medevac_house_V1_F,true,-1,25,200,true,false);
+                        ADD_BIG_ITEM(TB_supply_base, "Vorratslager (750 Resourcen)", 50, 750, false, true);
+                        ADD_BIG_ITEM(Land_Fuelstation_Feed_F, "Tankstation (80 Resourcen)", 7, 80, false, true);
+                        ADD_BIG_ITEM(B_Slingload_01_Repair_F, "ReparaturContainer (80 Resourcen)", 10, 80, false, true);
+                        ADD_BIG_ITEM(Land_Medevac_house_V1_F, "MedizinContainer (200 Resourcen)", 25, 200, true, false);
                     };
 
                     class TB_cat_Base
                     {
                         displayName = "Base";
 
-                        ADD_BIG_ITEM(Land_HelipadSquare_F,true,-1,3,10,false,true);
-                        ADD_BIG_ITEM(Land_MedicalTent_01_white_generic_open_F,true,-1,15,100,false,true);
-                        ADD_BIG_ITEM(Land_Cargo_HQ_V3_F,true,-1,50,200,true,true);
-                        ADD_BIG_ITEM(Land_Cargo_HQ_V1_F,true,-1,50,200,true,true);
-                        ADD_BIG_ITEM(Land_FieldToilet_F,true,-1,5,10,false,false);
-                        ADD_BIG_ITEM(Land_CamoNetVar_NATO,true,-1,5,10,false,true);
-                        ADD_BIG_ITEM(TFAR_Land_Communication_F,true,-1,30,60,true,true); // RadioTower - Land_TTowerSmall_1_F
-                        ADD_BIG_ITEM(Land_Cargo_House_V3_F,true,-1,15,60,true,false);
+                        ADD_BIG_ITEM(Land_HelipadSquare_F, "Heliport (10 Resourcen)", 3, 10, false, true);
+                        ADD_BIG_ITEM(Land_MedicalTent_01_white_generic_open_F, "Sanizelt (100 Resourcen)", 15, 100, false, true);
+                        ADD_BIG_ITEM(Land_Cargo_HQ_V3_F, "Hauptgebäude2 (200 Resourcen)", 50, 200, true, true);
+                        ADD_BIG_ITEM(Land_Cargo_HQ_V1_F, "Hauptgebäude1 (200 Resourcen)", 50, 200, true, true);
+                        ADD_BIG_ITEM(Land_FieldToilet_F, "Klo (10 Resourcen)", 5, 10, false, false);
+                        ADD_BIG_ITEM(Land_CamoNetVar_NATO, "Tarnnetz (10 Resourcen)", 5, 10, false, true);
+                        ADD_BIG_ITEM(TB_Land_TTowerSmall_1_F, "FUNK-Antenne (60 Resourcen)", 30, 60, true, true);
+                        ADD_BIG_ITEM(Land_Cargo_House_V3_F, "Container (60 Resourcen)", 15, 60, true, false);
                     };
                 };
             };
         };
     };
 
+    class Land_TTowerSmall_1_F;
+    class TB_Land_TTowerSmall_1_F : Land_TTowerSmall_1_F
+    {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "TBMod Funkantenne";
+    };
+
 
     // ###################### ResourcenAbfrage ######################
+    #define ADD_RESC_CHECK class ACE_Actions \
+        { \
+            class ACE_MainActions \
+            { \
+                modifierFunction = "[_this] call TB_fnc_modifierShowVehicleType"; \
+                class truck_getType \
+                { \
+                    displayName = "Fahrzeugtyp abfragen"; \
+                    condition = "alive _target"; \
+                    EXCEPTIONS; \
+                    statement = "call TB_fnc_getVehicleType"; \
+                }; \
+                class ResourceTruck_getLoad \
+                { \
+                    displayName = "Verbleibende Resourcen"; \
+                    condition = "alive _target && (_target getVariable ['TBMod_Building_resourcenCargo', -1]) >= 0"; \
+                    EXCEPTIONS; \
+                    statement = "hint format ['Das Fahrzeug hat noch %1 Resourcen', (_target getVariable ['TBMod_Building_resourcenCargo', 0]) max 0]"; \
+                }; \
+                class truck_getFuel \
+                { \
+                    displayName = "Tank abfragen"; \
+                    condition = "alive _target && locked _target < 2"; \
+                    icon = "\z\ace\addons\refuel\ui\icon_refuel_interact.paa"; \
+                    EXCEPTIONS; \
+                    statement = "[_target] call TB_fnc_getFuel"; \
+                }; \
+                class ACE_Passengers \
+                { \
+                    displayName = "Insassen"; \
+                    condition = "alive _target || (!alive _target && count ((crew _target) select {alive _x}) > 0)"; \
+                    statement = ""; \
+                    exceptions[] = {"isNotSwimming"}; \
+                    insertChildren = "_this call ace_interaction_fnc_addPassengersActions"; \
+                }; \
+            }; \
+        }
     class LandVehicle;
     class Car: LandVehicle
     {
@@ -204,14 +211,14 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "Ressourcentruck setzen";
-        function = QFUNC(moduleRessourcenFahrzeug);
+        function = "TB_fnc_moduleRessourcenFahrzeug";
         category = "TB_categorie_zeus_building";
     };
     class TB_zeus_kranFahrzeug : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "Krantruck setzen";
-        function = QFUNC(moduleKranFahrzeug);
+        function = "TB_fnc_moduleKranFahrzeug";
         category = "TB_categorie_zeus_building";
     };
 

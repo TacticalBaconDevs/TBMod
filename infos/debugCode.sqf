@@ -148,3 +148,15 @@ forEach [
     ];
 
 _output
+
+
+// Parents erhalten
+_return = [];
+{
+    _return pushBack [_x, ([configFile >> "CfgAmmo" >> _x, true] call BIS_fnc_returnParents) param [1, ""]];
+}
+forEach [
+    "ShellCore",
+    "FlareCore"
+];
+_return

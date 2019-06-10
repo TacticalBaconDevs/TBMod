@@ -90,6 +90,7 @@ class CfgPatches
             "3denEnhanced",
             "adv_aceCPR",
             "acex_main",
+            "WarFXPE",
 
             // ACE3
             "ace_advanced_ballistics",

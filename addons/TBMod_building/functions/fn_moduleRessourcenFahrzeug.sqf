@@ -29,7 +29,7 @@ if (_mouseOverType != "OBJECT") then
 }
 else
 {
-    _mouseOverUnit setVariable ["TBMod_Building_PlaceablesCargo", _menge, true];
+    _mouseOverUnit setVariable ["TBMod_Building_resourcenCargo", _menge, true];
 };
 
 true

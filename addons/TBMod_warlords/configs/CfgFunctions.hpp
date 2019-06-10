@@ -36,6 +36,10 @@ class CfgFunctions
             {
                 file = "\TBMod_warlords\replacement\fn_WLClientInit.sqf";
             };
+            class WLParseAssetList
+            {
+                file = "\TBMod_warlords\replacement\fn_WLParseAssetList.sqf";
+            };
         };
     };
 };
