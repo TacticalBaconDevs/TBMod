@@ -23,7 +23,7 @@ class CfgAmmo
     class rhs_g_vog25;
     class rhs_g_vg40sz : rhs_g_vog25 // Unterlauf-Stungrenade
     {
-        deflecting = 0;
+        deflection = 0;
         fuseDistance = 10;
         ExplosionEffects = "RHS_flashbang_20"; // RHS_flashbang_10
     };
@@ -154,5 +154,14 @@ class CfgAmmo
     class Mo_ClassicMineRange : ShotDeployBase // Mk45 Hammer HE Minen Cluster Submunition
     {
         submunitionAmmo = "APERSBoundingMine_Range_Ammo"; // "APERSMine_Range_Ammo"
+    };
+
+    class rhsusf_ammo_127x99_M33_Ball;
+    class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
+    {
+        caliber = 10.3; // 2.05761
+        hit = 39.7; // 24.8085
+        indirectHitRange = 1.66; // 2.76
+        tracerEndTime = 4.5; // 3
     };
 };

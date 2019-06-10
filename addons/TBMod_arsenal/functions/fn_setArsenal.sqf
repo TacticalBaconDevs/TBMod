@@ -18,7 +18,7 @@ private _allItems = call (switch (_type) do
     case "BW": {TB_fnc_arsenalBW};
     case "VANILLA": {TB_fnc_arsenalVANILLA};
     case "Themen": {TB_fnc_arsenalThemen};
-    default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {}};
+    default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {[]}};
 });
 
 // MEDIC STUFF
