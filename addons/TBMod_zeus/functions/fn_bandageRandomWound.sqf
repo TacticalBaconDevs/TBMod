@@ -22,36 +22,36 @@ private _wounds = 0;
     _x params ["", "", "_bodyPart", "_numOpenWounds", "_bloodLoss"];
 
     if (_bloodLoss > 0) then
-	{
+    {
         switch (_bodyPart) do
-		{
+        {
             case 0:
-			{
-				for "_i" from 1 to _numOpenWounds do {[_unit, _unit, "head", selectRandom ["ElasticBandage", "PackingBandage"]] call ace_medical_fnc_treatmentAdvanced_bandage};
+            {
+                for "_i" from 1 to _numOpenWounds do {[_unit, _unit, "head", selectRandom ["ElasticBandage", "PackingBandage"]] call ace_medical_fnc_treatmentAdvanced_bandage};
             };
 
             case 1:
-			{
-				for "_i" from 1 to _numOpenWounds do {[_unit, _unit, "body", selectRandom ["ElasticBandage", "PackingBandage"]] call ace_medical_fnc_treatmentAdvanced_bandage};
+            {
+                for "_i" from 1 to _numOpenWounds do {[_unit, _unit, "body", selectRandom ["ElasticBandage", "PackingBandage"]] call ace_medical_fnc_treatmentAdvanced_bandage};
             };
 
             case 2:
-			{
-				for "_i" from 1 to (random _numOpenWounds) do {[_unit, _unit, "hand_l", "Bandage"] call ace_medical_fnc_treatmentAdvanced_bandage};
+            {
+                for "_i" from 1 to (random _numOpenWounds) do {[_unit, _unit, "hand_l", "Bandage"] call ace_medical_fnc_treatmentAdvanced_bandage};
             };
 
             case 3:
-			{
+            {
                 for "_i" from 1 to (random _numOpenWounds) do {[_unit, _unit, "hand_r", "Bandage"] call ace_medical_fnc_treatmentAdvanced_bandage};
             };
 
             case 4:
-			{
+            {
                 for "_i" from 1 to (random _numOpenWounds) do {[_unit, _unit, "leg_l", "Bandage"] call ace_medical_fnc_treatmentAdvanced_bandage};
             };
 
             case 5:
-			{
+            {
                 for "_i" from 1 to (random _numOpenWounds) do {[_unit, _unit, "leg_r", "Bandage"] call ace_medical_fnc_treatmentAdvanced_bandage};
             };
         };

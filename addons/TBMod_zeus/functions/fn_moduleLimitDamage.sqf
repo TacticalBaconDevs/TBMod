@@ -27,17 +27,17 @@ if (isNull _target) exitWith {systemChat "[TBMod_zeus] No vehicle selected"; tru
 switch (true) do
 {
     case (isNull _target):
-	{
+    {
         systemChat "[TBMod_zeus] _target is null";
         [objNull, "_target is null"] call bis_fnc_showCuratorFeedbackMessage;
     };
     case (!alive _target):
-	{
+    {
         systemChat "[TBMod_zeus] _target is not alive";
         [objNull, "_target is not alive"] call bis_fnc_showCuratorFeedbackMessage;
     };
     default
-	{
+    {
         private _numOpenWounds = _target call FUNC(getNumOpenWounds);
 
         if (_numOpenWounds > 0) then {_target call FUNC(applyTourniquets)};
