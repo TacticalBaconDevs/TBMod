@@ -140,13 +140,13 @@ class CfgVehicles
         { \
             class ACE_MainActions \
             { \
-                modifierFunction = "[_this] call FUNC(modifierShowVehicleType)"; \
+                modifierFunction = QUOTE([_this] call FUNC(modifierShowVehicleType)); \
                 class truck_getType \
                 { \
                     displayName = "Fahrzeugtyp abfragen"; \
                     condition = "alive _target"; \
                     EXCEPTIONS; \
-                    statement = "call FUNC(getVehicleType)"; \
+                    statement = QUOTE([] call FUNC(getVehicleType)); \
                 }; \
                 class ResourceTruck_getLoad \
                 { \
@@ -161,7 +161,7 @@ class CfgVehicles
                     condition = "alive _target && locked _target < 2"; \
                     icon = "\z\ace\addons\refuel\ui\icon_refuel_interact.paa"; \
                     EXCEPTIONS; \
-                    statement = "[_target] call FUNC(getFuel)"; \
+                    statement = QUOTE([_target] call FUNC(getFuel)); \
                 }; \
                 class ACE_Passengers \
                 { \

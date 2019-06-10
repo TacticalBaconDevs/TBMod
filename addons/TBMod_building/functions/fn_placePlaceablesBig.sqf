@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -56,9 +57,20 @@ if (isNil "TB_building_displayEH") then
     params ["_building", "_zeit", "_truck", "_resourcen"];
 
     ["Bauen", "Abbrechen", "Heben/Senken"] call ace_interaction_fnc_showMouseHint;
-    waitUntil {!(ACE_player getVariable ["ace_dragging_isCarrying", false])};
-    [_building, false] call ace_dragging_fnc_setCarryable;
+    waitUntil {
+        if (ACE_player distance _truck > 20) then
+        {
+            private _carrayobj = ACE_player getVariable ["ace_dragging_carriedObject", objNull];
+            if (isNull _carrayobj) exitWith {};
 
+            _carrayobj setVariable ["TB_building_abbruch", true, true];
+            [ACE_player, _carrayobj] call ace_dragging_fnc_dropObject_carry;
+        };
+
+        !(ACE_player getVariable ["ace_dragging_isCarrying", false])
+    };
+
+    [_building, false] call ace_dragging_fnc_setCarryable;
     [_building, true] remoteExecCall ["hideObjectGlobal", [0, -2] select isDedicated];
 
     if !(_building getVariable ["TB_building_abbruch", false]) then {[ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation};
