@@ -28,7 +28,7 @@ class CfgAmmo
         laserTarget = 1;
 
         // in Reference und Original nicht vorhanden - https://community.bistudio.com/wiki/Weapons_settings
-        tracerEndTime = 2;
+        tracerEndTime = 6;
         tracerScale= 1.2;
         tracerStartTime = 0.04;
     };
