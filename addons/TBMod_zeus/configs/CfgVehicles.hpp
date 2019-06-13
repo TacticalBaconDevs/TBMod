@@ -89,4 +89,11 @@ class CfgVehicles
         displayName = "Adjust Ace Cargo space Loadout";
         function = QFUNC(moduleAdjustCargoSpace);
     };
+
+    class TB_zeus_limitDamage : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Limit Damage";
+        function = QFUNC(moduleLimitDamage);
+    };
 };
