@@ -21,10 +21,10 @@ class CfgWeapons
     };
 
     // Skin schwarze Weste
-    class rhsusf_spc;
-    class SPC_Black_01: rhsusf_spc
+    class rhsusf_spc_patchless_radio;
+    class SPC_Black_01: rhsusf_spc_patchless_radio
     {
-        displayName = "SPC_Black";
+        displayName = "SPC Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
@@ -32,13 +32,14 @@ class CfgWeapons
             "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
             "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa"
         };
+        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
     // Skin schwarze Weste
     class rhsusf_spcs_ucp_rifleman;
     class UCP_Black_01: rhsusf_spcs_ucp_rifleman
     {
-        displayName = "UCP_Black";
+        displayName = "UCP Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
@@ -46,13 +47,14 @@ class CfgWeapons
             "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
             "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa"
         };
+        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
     // Skin schwarze Weste
-    class rhsusf_spcs_ucp_rifleman;
-    class UCP_Black_01: rhsusf_spcs_ucp_rifleman
+    class rhsusf_mbav_mg;
+    class MBAV_Black_01: rhsusf_mbav_mg
     {
-        displayName = "MBAV_Black";
+        displayName = "MBAV Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
@@ -60,6 +62,22 @@ class CfgWeapons
             "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
             "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa"
         };
+        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
+    };
+
+    // Skin schwarze Weste
+    class rhsusf_mbav_medic;
+    class MBAV_Black_02: rhsusf_mbav_medic
+    {
+        displayName = "MBAV Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa"
+        };
+        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
     class RocketPods;

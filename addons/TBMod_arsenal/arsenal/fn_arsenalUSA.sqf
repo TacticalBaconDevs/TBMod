@@ -327,7 +327,11 @@ private _allgemein_westen = [
     "rhsusf_mbav",
     "rhsusf_spc",
     "rhsusf_spcs_ocp",
-    "rhsusf_spcs_ucp"
+    "rhsusf_spcs_ucp",
+    "SPC_Black_01",
+    "UCP_Black_01",
+    "MBAV_Black_01",
+    "MBAV_Black_02"
 ];
 
 private _allgemein_kopfbedeckung = [
