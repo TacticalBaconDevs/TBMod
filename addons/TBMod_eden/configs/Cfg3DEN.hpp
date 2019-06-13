@@ -132,6 +132,21 @@ class Cfg3DEN
                         unique = 0;
                         condition = "objectControllable";
                     };
+
+                    class TBMod_main_defineAmmo
+                    {
+                        displayName = "DefineAmmo";
+                        tooltip = "Definiere die Munition der Fahrzeuge (Beispiel: ['rhs_mag_762x51_M240_1200'] (ganzes Mag) oder [['rhs_mag_762x51_M240_1200', 200]] (Mag mit 200 Schuss))";
+                        property = "TBMod_main_defineAmmo";
+                        control = "Edit";
+
+                        expression =  "private _compValue = call compile _value; if (!is3DEN && _value != '[]' && _value != '' && !((magazines _this) isEqualTo _compValue)) then {_this setVehicleAmmoDef 0; {_x params ['_ammo', ['_amount', 999999]]; _this addMagazine [_ammo, _amount]} forEach _compValue; reload _this}";
+
+                        defaultValue = "magazines _this";
+
+                        unique = 0;
+                        condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
+                    };
                 };
             };
         };

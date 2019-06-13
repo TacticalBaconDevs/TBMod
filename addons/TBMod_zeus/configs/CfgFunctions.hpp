@@ -21,6 +21,10 @@ class CfgFunctions
             class moduleAdjustCargoSpace {};
             class moduleUnflipVehicle {};
             class unflipVehicle {};
+            class moduleLimitDamage {};
+            class getNumOpenWounds {};
+            class applyTourniquets {};
+            class bandageRandomWound {};
         };
     };
 };
