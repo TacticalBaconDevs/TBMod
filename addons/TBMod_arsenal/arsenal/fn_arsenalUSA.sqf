@@ -214,6 +214,8 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3_tan",
     "rhsusf_acc_ACOG",
     "rhsusf_acc_acog_rmr",
+    "rhsusf_acc_su230",
+    "rhsusf_acc_su230_c",
     "rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230_mrds_c",
     //"rhsusf_acc_ACOG2",

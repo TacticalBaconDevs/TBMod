@@ -170,24 +170,24 @@ class CfgMagazines
     class magazine_ShipCannon_120mm_HE_LG_shells_x2 : 2Rnd_155mm_Mo_LG // Mk45 Hammer AT Laserguided
     {
         count = 18; // 2
-        displayName = "AT Shell [LG]"; // "Laser Guided"
-        displayNameMFDFormat = "AT Shell[GUID]"; // "LASER GUID"
-        displayNameShort = "155mm [LG]"; // "155mm Laser Guided"
     };
 
     class magazine_Bomb_SDB_x1;
-    class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // SDB x4 
+    class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // SDB x4
     {
         hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON"}; // "B_SDB_QUAD_RAIL"
+        descriptionShort = "[LG]"; // "250lb, high-explosive, infrared/laser-guided bomb"
+        displayName = "4x SDB [LG]"; // "GBU SDB x4"
+        displayNameShort = "[LG]"; // "Bomb"
     };
 
     class rhs_mag_agm65;
-    class rhs_mag_agm65b : rhs_mag_agm65 // AGM-65B TV
+    class rhs_mag_agm65h : rhs_mag_agm65 // AGM-65H CCD
     {
         hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
 
         descriptionShort = "[AS]"; // n.a
-        displayName = "AGM-65 TV[GUID]"; // "AGM-65B"
+        displayName = "AGM-65 CCD [GUID]"; // "AGM-65H"
         displayNameShort = "[AUTOSEEK]"; // "TV"
     };
 
@@ -205,64 +205,100 @@ class CfgMagazines
     class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
     {
         descriptionShort = ".50Cal HEIAP-T Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
-        displayName = ".50Cal High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
+        displayName = "High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
         displayNameShort = ".50Cal HEIAP-T"; // "M33 Ball"
 
         mass = 28; // 41.14
+    };
+
+    class VehicleMagazine;
+    class magazine_Missile_HARM_x1 : VehicleMagazine // AGM-88 HARM
+    {
+        descriptionShort = "Anti-Radar [SEAD]"; // "Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead"
+        displayName = "AGM-88 [SEAD]"; // "AGM-88C HARM x1"
+        displayNameShort = "Anti-Radar [SEAD]"; // "ARM"
+    };
+
+    class 2Rnd_Mk82;
+    class PylonMissile_1Rnd_Mk82_F : 2Rnd_Mk82 // Mk-82
+    {
+        displayName = "HE Airburst Bomb"; // "Mk82"
+        displayNameShort = "Unguided"; // "Bomb"
+    };
+
+    class 1000Rnd_Gatling_30mm_Plane_CAS_01_F : VehicleMagazine // A-10 GAU-8
+    {
+        muzzleImpulseFactor[] = {0,5.1};
+    };
+
+    class magazine_Bomb_GBU12_x1;
+    class PylonMissile_Bomb_GBU12_x1 : magazine_Bomb_GBU12_x1 // GBU-12 HE F/A-18 Version - überflüssig/irritierend
+    {
+        hardpoints[] = {""}; // "B_GBU12","I_GBU12"
     };
 
     class 4Rnd_Bomb_04_F;
     class PylonMissile_1Rnd_Bomb_04_F : 4Rnd_Bomb_04_F // GBU-12 HE
     {
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
-        displayName = "HE Bomb[GUID]"; // "GBU-12"
+        displayName = "HE Bomb [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
-        model = "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d"; // "\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d"
+        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_BOMB_PYLON"
     };
 
     class PylonMissile_1Rnd_BombCluster_01_F : PylonMissile_1Rnd_Bomb_04_F // CBU-85 HE Mines Cluster
     {
         descriptionShort = "[LG]"; // "750lb, laser-guided cluster bomb"
-        displayName = "HE-Mines Cluster[GUID]"; // "CBU-85 Cluster x1"
+        displayName = "HE-Mines Cluster [LG]"; // "CBU-85 Cluster x1"
         displayNameShort = "[LG]"; // "Cluster Bomb"
     };
 
     class PylonMissile_1Rnd_BombCluster_02_F : PylonMissile_1Rnd_BombCluster_01_F // RBK-500F AT Mines Cluster
     {
-        hardpoints[] = {"B_BOMB_PYLON"}; // "O_BOMB_PYLON_HELI"
-
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
-        displayName = "AT-Mines Cluster[GUID]"; // "GBU-12"
+        displayName = "AT-Mines Cluster [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
+         hardpoints[] = {"B_BOMB_PYLON"}; // "O_BOMB_PYLON_HELI"
     };
 
     class PylonMissile_1Rnd_BombCluster_03_F : PylonMissile_1Rnd_BombCluster_01_F // BL-778 HE Cluster
     {
         descriptionShort = "[LG]"; // "580lb, laser-guided cluster bomb"
-        displayName = "HE Cluster [GUID]"; // "BL778 Cluster x1"
+        displayName = "HE Cluster [LG]"; // "BL778 Cluster x1"
         displayNameShort = "[LG]"; // "Cluster Bomb"
     };
 
-    class 24Rnd_PG_missiles;
-    class PylonRack_12Rnd_PG_missiles : 24Rnd_PG_missiles // DAGR
-    {
-        descriptionShort = "[LG][IR][AS]"; // "Short-range, laser/infrared-guided, air-to-surface missile with high-explosive anti-tank warhead"
-        displayName = "70mm AP[GUID]"; // "DAGR"
-        displayNameShort = "[LG][IR][AS]"; // "70mm HE"
-    };
-
     class rhs_mag_gau19_air_base;
-    class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6
+    class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6 12.7x99mm Left
     {
-        count = 650; // 1300
         hardpoints[] = {"RHS_HP_MELB_L","RHS_HP_MELB_M134"}; // "RHS_HP_MELB_L"
         displayname = "12.7x99mm SLAP Left"; // "12.7x99mm SLAP"
     };
 
-    class rhsusf_mag_gau19_melb_right : rhs_mag_gau19_air_base // AH-6
+    class rhsusf_mag_gau19_melb_right : rhs_mag_gau19_air_base // AH-6 12.7x99mm Right
     {
-        count = 650; // 1300
         hardpoints[] = {"RHS_HP_MELB_R","RHS_HP_MELB_M134"}; // "RHS_HP_MELB_R"
         displayname = "12.7x99mm SLAP Right"; // "12.7x99mm SLAP"
+    };
+
+    class 6Rnd_ACE_Hellfire_AGM114K;
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
+    {
+        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+    };
+
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K 3x
+    {
+        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+    };
+
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N
+    {
+        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+    };
+
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
+    {
+        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
     };
 };

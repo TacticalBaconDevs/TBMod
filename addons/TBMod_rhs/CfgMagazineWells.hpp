@@ -14,7 +14,7 @@ class CfgMagazineWells
             "rhs_mag_m716_Yellow_precise",
             "TB_rhs_mag_40mm_HEDP",
             "TB_rhs_mag_40mm_HE",
-            "TB_rhs_mag_40mm_IR_Grenade",            
+            "TB_rhs_mag_40mm_IR_Grenade",
             "TB_rhs_mag_40mm_Slugshot",
             "TB_rhs_mag_M585_white",
             "TB_rhs_mag_m661_green",

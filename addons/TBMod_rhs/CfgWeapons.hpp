@@ -19,4 +19,57 @@ class CfgWeapons
         dispersion = 0.0005; // 0.002
         magazineReloadTime = 1; // 7
     };
+
+    // Skin schwarze Weste
+    class rhsusf_spc;
+    class SPC_Black_01: rhsusf_spc
+    {
+        displayName = "SPC_Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa"
+        };
+    };
+
+    // Skin schwarze Weste
+    class rhsusf_spcs_ucp_rifleman;
+    class UCP_Black_01: rhsusf_spcs_ucp_rifleman
+    {
+        displayName = "UCP_Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa"
+        };
+    };
+
+    // Skin schwarze Weste
+    class rhsusf_spcs_ucp_rifleman;
+    class UCP_Black_01: rhsusf_spcs_ucp_rifleman
+    {
+        displayName = "MBAV_Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa"
+        };
+    };
+
+    class RocketPods;
+    class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
+    {
+        modes[] = {"Far_AI","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
+    };
+
+    class rhs_weap_FFARLauncher_M229 : rhs_weap_FFARLauncher // Hydra (M229 HEPD)
+    {
+        modes[] = {"Far_AI","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
+    };
 };

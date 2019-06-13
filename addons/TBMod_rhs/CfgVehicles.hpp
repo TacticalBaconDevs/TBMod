@@ -40,6 +40,7 @@ class CfgVehicles
         armor = 25; // 35
         audible = 48; // 50
         camouflage = 45; // 100
+        camShakeCoef = 0.8; // 0
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.31; // 0.7
         LockDetectionSystem = "2 + 8 + 4"; // 0
@@ -161,6 +162,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.05; // 0.1
         audible = 24; // 50
         camouflage = 63; // 100
+        camShakeCoef = 0.4; // 0
         irTargetSize = 0.48; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
         magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"}; // "240Rnd_CMFlare_Chaff_Magazine"

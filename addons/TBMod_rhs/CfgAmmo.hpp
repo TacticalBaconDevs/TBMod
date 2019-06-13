@@ -144,28 +144,18 @@ class CfgAmmo
         submunitionAmmo = "APERSBoundingMine_Range_Ammo"; // "APERSMine_Range_Ammo"
     };
 
-    class Sh_155mm_AMOS_LG;
-    class ammo_ShipCannon_120mm_HE_LG : Sh_155mm_AMOS_LG // Mk45 Hammer AT Laserguided
-    {
-        lockSeekRadius = 1500; // 100
-        maneuvrability = 8; // 1
-    };
-
     class M_Mo_120mm_AT_LG;
     class M_Mo_155mm_AT_LG : M_Mo_120mm_AT_LG // Mk45 Hammer AT Laserguided Submunition
     {
         caliber = 145; // 1
     };
 
-    class BulletBase;
-    class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // GAU-8 A-10 
+    class ammo_Bomb_LaserGuidedBase;
+    class Bomb_04_F : ammo_Bomb_LaserGuidedBase // GBU-12 HE
     {
-        caliber = 55; // 1.4
-        indirectHit = 35; // 12
-        indirectHitRange = 2.5; // 3
+        trackOversteer = 0.95; // 1
     };
 
-    class Bomb_04_F;
     class BombCluster_01_Ammo_F : Bomb_04_F // CBU-85 HE Mines Cluster
     {
         submunitionAmmo[] = {"Mo_ClassicMineRange"}; // {"Mo_cluster_Bomb_01_F",0.93,"BombCluster_01_UXO_deploy",0.07}
@@ -196,6 +186,14 @@ class CfgAmmo
         indirectHitRange = 10; // 6
     };
 
+    class BombCore;
+    class Bo_Mk82 : BombCore // Mk-82 Airburst
+    {
+        indirectHit = 70; // 1100
+        indirectHitRange = 75; // 12
+        suppressionRadiusHit = 210; // 100
+    };
+
     class ammo_Penetrator_Base;
     class ammo_Penetrator_AGM_02 : ammo_Penetrator_Base // AGM-65 L Penetrator
     {
@@ -210,28 +208,42 @@ class CfgAmmo
         hit = 500; // 900
     };
 
+    class ammo_Penetrator_PG_AT : ammo_Penetrator_Base // DAGR Submunition
+    {
+        caliber = 45; // 20
+        hit = 500; // 450
+    };
+
+    class ammo_Penetrator_Rocket_04_AP : ammo_Penetrator_Base // Hydra 7x AP Submunition
+    {
+        caliber = 45; // 20
+        hit = 500; // 435
+    };
+
     class M_Scalpel_AT;
     class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
     {
         indirectHitRange = 1; // 4
+        trackOversteer = 0.95; // 1
     };
-    
+
     class ACE_Hellfire_AGM114N : ACE_Hellfire_AGM114K // AGM-114N
     {
         hit = 300; // 200
         indirectHit = 120; // 200
         indirectHitRange = 10; // 12
+        trackOversteer = 0.95; // 1
     };
 
     class rhs_ammo_agm65;
-    class rhs_ammo_agm65b : rhs_ammo_agm65 // AGM-65B TV
+    class rhs_ammo_agm65h : rhs_ammo_agm65 // AGM-65H CCD
     {
-        lockSeekRadius = 500; // 2000
-        missileLockMaxDistance = 8000; // 4000
+        indirectHitRange = 3; // 10.5
+        lockSeekRadius = 1000; // 2000
     };
 
     class rhsusf_ammo_basic_penetrator;
-    class rhs_ammo_agm65_penetrator : rhsusf_ammo_basic_penetrator // AGM-65B TV Submunition
+    class rhs_ammo_agm65_penetrator : rhsusf_ammo_basic_penetrator // AGM-65H CCD Submunition
     {
         caliber = 145; // 73.3
         hit = 1500; // 320
@@ -246,7 +258,6 @@ class CfgAmmo
         deflecting = 0; // 15
         explosive = 0.1; // 0
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
-        explosionSoundEffect = "DefaultExplosion"; // ""
         tracerEndTime = 8; // 3
         tracerStartTime = 0.85; // 0.05
     };
@@ -261,21 +272,36 @@ class CfgAmmo
         indirectHitRange = 0.2; // 2.76
     };
 
-    class MissileBase;
-    class M_PG_AT : MissileBase // DAGR
+    class M_PG_AT;
+    class M_AT : M_PG_AT // Hydra 12x HE
     {
-        autoSeekTarget = 1; // 0
-        lockSeekRadius = 50; // 100
-        manualControl = 0; // 1
-        maneuvrability = 5; // 8
-        missileLockMaxSpeed = 90; // 35
-        missileKeepLockedCone = 85; // 60
-        missileLockCone = 12; // 30
+        hit = 100; // 300
+        indirectHit = 20; // 50
+        indirectHitRange = 18; // 8
+        trackOversteer = 0.95; // 1
     };
 
-    class ammo_Penetrator_PG_AT : ammo_Penetrator_Base // DAGR Submunition
+    class MissileBase;
+    class Rocket_04_HE_F : MissileBase // Hydra 7x HE
     {
-        caliber = 55; // 40
-        hit = 140; // 300
+        hit = 100; // 210
+        indirectHit = 20; // 55
+        indirectHitRange = 18; // 15
+        trackOversteer = 0.95; // 1
+    };
+
+    class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
+    {
+        hit = 300; // 95
+        indirectHit = 50; // 25
+        trackOversteer = 0.95; // 1
+    };
+
+    class BulletBase;
+    class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // A-10 GAU-8
+    {
+        caliber = 19; // 1.4
+        indirectHit = 35; // 12
+        indirectHitRange = 4.5; // 3
     };
 };

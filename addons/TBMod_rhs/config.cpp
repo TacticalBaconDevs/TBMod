@@ -11,6 +11,7 @@ class CfgPatches
         requiredAddons[] = {
             "TBMod_main",
             "rhsusf_main",
+            "TBMod_skins",
             "ace_advanced_ballistics"
         };
 
