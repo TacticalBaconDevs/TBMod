@@ -214,6 +214,8 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3_tan",
     "rhsusf_acc_ACOG",
     "rhsusf_acc_acog_rmr",
+    "rhsusf_acc_su230",
+    "rhsusf_acc_su230_c",
     "rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230_mrds_c",
     //"rhsusf_acc_ACOG2",
@@ -325,7 +327,11 @@ private _allgemein_westen = [
     "rhsusf_mbav",
     "rhsusf_spc",
     "rhsusf_spcs_ocp",
-    "rhsusf_spcs_ucp"
+    "rhsusf_spcs_ucp",
+    "SPC_Black_01",
+    "UCP_Black_01",
+    "MBAV_Black_01",
+    "MBAV_Black_02"
 ];
 
 private _allgemein_kopfbedeckung = [

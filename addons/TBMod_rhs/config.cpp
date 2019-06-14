@@ -10,7 +10,9 @@ class CfgPatches
 
         requiredAddons[] = {
             "TBMod_main",
-            "rhsusf_main"
+            "rhsusf_main",
+            "TBMod_skins",
+            "ace_advanced_ballistics"
         };
 
         addonRootClass = "TBMod_main";
@@ -23,3 +25,4 @@ class CfgPatches
 #include "CfgVehicles.hpp"
 #include "CfgMagazineWells.hpp"
 #include "CfgCloudlets.hpp"
+#include "CfgWeapons.hpp"
