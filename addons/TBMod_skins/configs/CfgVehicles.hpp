@@ -20,6 +20,7 @@ class CfgVehicles
     class O_officer_F;
 
     // Fahrzeuge
+    class I_Plane_Fighter_03_CAS_F;
     class B_Heli_Light_01_F;
     class I_Heli_light_03_unarmed_F;
     class I_Heli_light_03_dynamicLoadout_F;
@@ -175,6 +176,17 @@ class CfgVehicles
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa",
             "",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa"
+        };
+    };
+
+    class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_CAS_F // I_Plane_Fighter_03_dynamicLoadout_F
+    {
+        displayName = "L-159 Albatros";
+        author = "Eron";
+        addCategory(USA);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_01.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_02.paa"
         };
     };
 
