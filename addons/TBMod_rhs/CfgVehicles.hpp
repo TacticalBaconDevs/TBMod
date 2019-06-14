@@ -273,8 +273,8 @@ class CfgVehicles
         weapons[] = {"weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","CMFlareLauncher_Singles"
     };
 
-    class I_Plane_Fighter_03_CAS_F;
-    class TB_Vehicles_L159_Albatros : I_Plane_Fighter_03_CAS_F // L-159 Albatros
+    class I_Plane_Fighter_03_dynamicLoadout_F;
+    class TB_Vehicles_L159_Albatros : I_Plane_Fighter_03_dynamicLoadout_F // L-159 Albatros
     {
         accuracyDarkNightLightsOff = 0.002; // 0.001
         accuracyNightLightsOff = 0.015; // 0.006
@@ -284,11 +284,11 @@ class CfgVehicles
         camShakeCoef = 0.9; // 0
         camouflage = 105; // 100
         irTargetSize = 1.4; // 0.8
-        magazines[] = {"300Rnd_20mm_shells","300Rnd_20mm_shells","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "300Rnd_20mm_shells","2Rnd_LG_scalpel","2Rnd_AAA_missiles","2Rnd_GBU12_LGB_MI10","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
+        magazines[] = {"Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 0.8
         thrustCoef[] = {1.6,1.75,2,2.1,2.2,2.1,1.95,1.6,1.1,0,0,0,0,0,0,0,0}; // {1.42,1.38,1.34,1.3,1.25,1.2,1.19,1.18,1.17,1.17,1.16,1.16,0.1,0,0,0,0}
-        weapons[] = {"Twin_Cannon_20mm","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "Twin_Cannon_20mm","missiles_SCALPEL","missiles_ASRAAM","GBU12BombLauncher_Plane_Fighter_03_F","Laserdesignator_pilotCamera","CMFlareLauncher"
+        weapons[] = {"Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
     class UAV_01_base_F;

@@ -231,11 +231,6 @@ class CfgMagazines
         muzzleImpulseFactor[] = {0,5.1};
     };
 
-    class 300Rnd_20mm_shells : VehicleMagazine // L-159 20mm Shells
-    {
-        muzzleImpulseFactor[] = {0,1.6};
-    };
-
     class magazine_Bomb_GBU12_x1;
     class PylonMissile_Bomb_GBU12_x1 : magazine_Bomb_GBU12_x1 // GBU-12 HE F/A-18 Version - überflüssig/irritierend
     {

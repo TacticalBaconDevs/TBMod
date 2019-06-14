@@ -20,7 +20,7 @@ class CfgVehicles
     class O_officer_F;
 
     // Fahrzeuge
-    class I_Plane_Fighter_03_CAS_F;
+    class I_Plane_Fighter_03_dynamicLoadout_F;
     class B_Heli_Light_01_F;
     class I_Heli_light_03_unarmed_F;
     class I_Heli_light_03_dynamicLoadout_F;
@@ -179,7 +179,7 @@ class CfgVehicles
         };
     };
 
-    class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_CAS_F // I_Plane_Fighter_03_dynamicLoadout_F
+    class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_dynamicLoadout_F // I_Plane_Fighter_03_dynamicLoadout_F
     {
         displayName = "L-159 Albatros";
         author = "Eron";
