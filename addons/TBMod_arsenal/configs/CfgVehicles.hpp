@@ -105,7 +105,6 @@ class CfgVehicles
                     ADD_ROLLE(spreng);
                     ADD_ROLLE(aaat);
                     ADD_ROLLE(trag);
-                    ADD_ROLLE(dmr);
                     ADD_ROLLE(pilot);
                     ADD_ROLLE(sniper);
                     ADD_ROLLE(spotter);

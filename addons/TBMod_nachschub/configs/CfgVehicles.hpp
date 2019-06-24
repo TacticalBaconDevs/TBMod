@@ -129,6 +129,9 @@ class CfgVehicles
                     ADD_SUPPLY(MoerserMunnitionRauch,TB_supply_all_mortarAmmoSmoke);
                     ADD_SUPPLY(MoerserMunnitionFlare,TB_supply_all_mortarAmmoFlare);
                     ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
+                    ADD_SUPPLY(GMGKit,TB_supply_all_gmg);
+                    ADD_SUPPLY(TOWKit,TB_supply_all_tow);
+                    ADD_SUPPLY(FlaRakKit,TB_supply_all_flarak);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
                     ADD_SUPPLY(SaniBaukiste,TB_supply_all_medicbuilding);
                     ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
@@ -408,6 +411,42 @@ class CfgVehicles
         };
     };
 
+    class TB_supply_all_tow : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("TOWKit");
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
+        class TransportBackpacks
+        {
+            MACRO_ADDBACKPACK(rhs_Tow_Gun_Bag,1);
+            MACRO_ADDBACKPACK(rhs_TOW_Tripod_Bag,1);
+        };
+    };
+
+    class TB_supply_all_gmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("GMGKit");
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
+        class TransportBackpacks
+        {
+            MACRO_ADDBACKPACK(RHS_Mk19_Gun_Bag,1);
+            MACRO_ADDBACKPACK(RHS_Mk19_Tripod_Bag,1);
+        };
+    };
+
+    class TB_supply_all_flarak : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("FlaRakKit");
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
+        class TransportBackpacks
+        {
+            MACRO_ADDBACKPACK(B_AA_01_weapon_F,1);
+            MACRO_ADDBACKPACK(B_HMG_01_support_F,1);
+        };
+    };
+
     class TB_supply_all_misc : WRAPPER_NAME(Box_NATO_Equip_F)
     {
         PUBLIC_NAME("EquipmentKiste");
@@ -419,7 +458,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
 
-            MACRO_ADDITEM(ACE_rope36,10);
+            MACRO_ADDITEM(ACE_rope36,6);
 
             MACRO_ADDITEM(ACE_wirecutter,2);
             MACRO_ADDITEM(ToolKit,2);
