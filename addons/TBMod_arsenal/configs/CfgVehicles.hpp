@@ -5,37 +5,10 @@
 class CfgVehicles
 {
     // ###################### Makros ######################
-    #define ADD_ROLLE(ROLLEN_NAME) \
-        class rolle##ROLLEN_NAME \
-        { \
-            displayName = ""; \
-            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
-            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
-            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-        }
-    #define ADD_ROLLE_CUSTOM(ROLLEN_NAME) \
-        class rolle##ROLLEN_NAME \
-        { \
-            displayName = ""; \
-            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_custom)); \
-            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
-            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle)); \
-            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-        }
-    #define ADD_ROLLE_THEMEN(ROLLEN_NAME) \
-        class rolle##ROLLEN_NAME \
-        { \
-            displayName = ""; \
-            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_themen)); \
-            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
-            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
-            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-        }
     #define MAKE_PUBLIC(D_NAME,A_TYPE) displayName = #D_NAME; \
         arsenalType = #A_TYPE; \
         scope = 2; \
         scopeCurator = 2
-
 
     // ###################### ArsenalBoxes ######################
     class C_IDAP_supplyCrate_F;
@@ -98,6 +71,15 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 3;
 
+                    #define ADD_ROLLE(ROLLEN_NAME) \
+                        class rolle##ROLLEN_NAME \
+                        { \
+                            displayName = ""; \
+                            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+                            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
+                            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+                        }
+
                     ADD_ROLLE(lead);
                     ADD_ROLLE(grena);
                     ADD_ROLLE(sani);
@@ -155,6 +137,16 @@ class CfgVehicles
 
                 class rollen : rollen
                 {
+                    #define ADD_ROLLE_THEMEN(ROLLEN_NAME) \
+                        class rolle##ROLLEN_NAME \
+                        { \
+                            displayName = ""; \
+                            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_themen)); \
+                            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+                            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
+                            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+                        }
+
                     ADD_ROLLE_THEMEN(lead);
                     ADD_ROLLE_THEMEN(grena);
                     ADD_ROLLE_THEMEN(sani);
@@ -186,6 +178,16 @@ class CfgVehicles
 
                 class rollen : rollen
                 {
+                    #define ADD_ROLLE_CUSTOM(ROLLEN_NAME) \
+                        class rolle##ROLLEN_NAME \
+                        { \
+                            displayName = ""; \
+                            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_custom)); \
+                            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+                            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle)); \
+                            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+                        }
+
                     ADD_ROLLE_CUSTOM(lead);
                     ADD_ROLLE_CUSTOM(grena);
                     ADD_ROLLE_CUSTOM(sani);
