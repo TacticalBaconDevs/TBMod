@@ -253,7 +253,7 @@ class CfgAmmo
     class B_127x99_Ball;
     class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
-        ACE_ballisticCoefficients[] = {1.7}; // {0.67}
+        ACE_ballisticCoefficients[] = {2}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.35
         deflecting = 0; // 15
         explosive = 0.1; // 0
@@ -264,7 +264,7 @@ class CfgAmmo
 
     class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
     {
-        ACE_ballisticCoefficients[] = {0.8}; // {0.67}
+        ACE_ballisticCoefficients[] = {2}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.4
         caliber = 12.3; // 2.05761
         hit = 39.7; // 24.8085
