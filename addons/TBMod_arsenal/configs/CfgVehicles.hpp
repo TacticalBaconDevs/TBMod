@@ -75,6 +75,7 @@ class CfgVehicles
                         class rolle##ROLLEN_NAME \
                         { \
                             displayName = ""; \
+                            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen)); \
                             modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
                             statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
                             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
