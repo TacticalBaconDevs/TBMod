@@ -42,28 +42,28 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "NachschubAbwurf";
-        function = "TB_fnc_moduleNachschubAbwurf";
+        function = QFUNC(moduleNachschubAbwurf);
     };
 
     class TB_zeus_prioSichtbarkeit : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "PrioSichtbarkeit";
-        function = "TB_fnc_modulePrioSichtbarkeit";
+        function = QFUNC(modulePrioSichtbarkeit);
     };
 
     class TB_zeus_moduleUnflipVehicle : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "Unflip Vehicle";
-        function = "TB_fnc_moduleUnflipVehicle";
+        function = QFUNC(moduleUnflipVehicle);
     };
 
     class TB_zeus_disablePath : TB_zeus_base
     {
         scopeCurator = 2;
         displayName = "DisablePath 4 Group";
-        function = "TB_fnc_moduleDisablePath";
+        function = QFUNC(moduleDisablePath);
         category = "TB_categorie_zeus_ki";
     };
 
@@ -71,7 +71,7 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "HandlePlayerAsMedical";
-        function = "TB_fnc_moduleHandleAsPlayerMedical";
+        function = QFUNC(moduleHandleAsPlayerMedical);
         category = "TB_categorie_zeus_ki";
     };
 
@@ -79,7 +79,7 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "Apply Loadout";
-        function = "TB_fnc_moduleApplyLoadout";
+        function = QFUNC(moduleApplyLoadout);
         category = "TB_categorie_zeus_ki";
     };
 
@@ -87,6 +87,13 @@ class CfgVehicles
     {
         scopeCurator = 2;
         displayName = "Adjust Ace Cargo space Loadout";
-        function = "TB_fnc_moduleAdjustCargoSpace";
+        function = QFUNC(moduleAdjustCargoSpace);
+    };
+
+    class TB_zeus_limitDamage : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Limit Damage";
+        function = QFUNC(moduleLimitDamage);
     };
 };

@@ -1,9 +1,11 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Original by https://github.com/BourbonWarfare/POTATO
     Modified by http://tacticalbacon.de
 */
 if (!hasInterface) exitWith {};
+if !(call EFUNC(main,isTBMission)) exitWith {};
 
 TB_vz99_nextReload = "TB_vz99_HE";
 
@@ -17,7 +19,7 @@ TB_vz99_nextReload = "TB_vz99_HE";
         if ((_mortarVeh == ACE_player) || {!(_mortarVeh isKindOf "TB_vz99_mortar")}) exitWith {false};
         if !([ACE_player, _mortarVeh, []] call ace_common_fnc_canInteractWith) exitWith {false};
 
-        [_mortarVeh, ACE_player] call TB_fnc_doReload;
+        [_mortarVeh, ACE_player] call FUNC(doReload);
 
         true
     },
@@ -26,4 +28,4 @@ TB_vz99_nextReload = "TB_vz99_HE";
     false
 ] call CBA_fnc_addKeybind; // R Key
 
-["vehicle", {_this call TB_fnc_handlePlayerVehicleChanged}, true] call CBA_fnc_addPlayerEventHandler;
+["vehicle", {_this call FUNC(handlePlayerVehicleChanged)}, true] call CBA_fnc_addPlayerEventHandler;

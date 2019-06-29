@@ -1,11 +1,12 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_rolle", "_arsenalType", "_target", ["_loadGear", true]];
 
 ACE_player setVariable ["TB_rolle", _rolle, true];
-[_rolle] call TB_fnc_setAttributes;
+[_rolle] call FUNC(setAttributes);
 
 // CrashHelper
 if (isNull _target) then {
@@ -19,12 +20,12 @@ if (isNull _target) then {
     }
     forEach vehicles;
 
-    [_target, _rolle] call TB_fnc_setArsenal;
+    [_target, _rolle] call FUNC(setArsenal);
 } else {
-    [_target, _rolle] call TB_fnc_setArsenal;
+    [_target, _rolle] call FUNC(setArsenal);
 };
 
-systemChat format ["Du bist nun: %1 (%2)", [_rolle] call TB_fnc_getRollenName, _arsenalType];
+systemChat format ["Du bist nun: %1 (%2)", [_rolle] call FUNC(getRollenName), _arsenalType];
 
 if (_loadGear) then
 {
@@ -37,5 +38,5 @@ if (_loadGear) then
     removeHeadgear player;
     removeGoggles player;
 
-    [] call TB_fnc_loadDefault;
+    [] call FUNC(loadDefault);
 };

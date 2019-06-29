@@ -8,7 +8,7 @@ class CfgVehicles
     class TB_Rope_InvisibleObject: ReammoBox_F
     {
         displayName = "Unsichtbares Object";
-        author = "Eric Ruhland";
+        author = "TBMod";
 
         scope = 1;
         scopeCurator = 1;

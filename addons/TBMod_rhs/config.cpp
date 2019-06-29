@@ -6,20 +6,23 @@ class CfgPatches
 {
     class TBMod_rhs
     {
-        author = "shukari";
-        authorUrl = "tacticalbacon.de";
+        name = "TBMod RHS";
 
         requiredAddons[] = {
             "TBMod_main",
-            "rhsusf_main"
+            "rhsusf_main",
+            "TBMod_skins",
+            "ace_advanced_ballistics"
         };
 
         addonRootClass = "TBMod_main";
     };
 };
 
+#include "script_macros.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgMagazineWells.hpp"
 #include "CfgCloudlets.hpp"
+#include "CfgWeapons.hpp"

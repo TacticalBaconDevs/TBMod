@@ -15,7 +15,7 @@ class CfgAmmo
         indirectHit = 0; // 2
         indirectHitRange = 0; // 0.2
         model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; // \A3\Weapons_F_EPB\Ammo\B_IRstrobe_F.p3d
-        timeToLive = 900; // 300
+        timeToLive = 120; // 300
         tracerColor[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04};
         tracerColorR[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04};
         visibleFire = 0; // 2
@@ -28,7 +28,7 @@ class CfgAmmo
         laserTarget = 1;
 
         // in Reference und Original nicht vorhanden - https://community.bistudio.com/wiki/Weapons_settings
-        tracerEndTime = 2;
+        tracerEndTime = 6;
         tracerScale= 1.2;
         tracerStartTime = 0.04;
     };
@@ -49,7 +49,7 @@ class CfgAmmo
 
         //flareSize = 12;
         useFlare = 1;
-        timeToLive = 500;
+        timeToLive = 250;
         coefGravity = 0.5;
     };
 
@@ -60,7 +60,7 @@ class CfgAmmo
 
         //flareSize = 12;
         useFlare = 1;
-        timeToLive = 600;
+        timeToLive = 400;
         coefGravity = 0.5;
     };
 
@@ -70,7 +70,7 @@ class CfgAmmo
         brightness = 3000000;
 
         flareSize = 20;
-        timeToLive = 1000;
+        timeToLive = 600;
         coefGravity = 0.3;
     };
 

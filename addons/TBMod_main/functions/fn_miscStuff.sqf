@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -102,7 +103,9 @@ forEach allCurators;
 
 
 // ### Entschärf Fix
+["ACE_DefuseObject"] call ace_interact_menu_fnc_compileMenu;
 ["ACE_DefuseObject", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
+["ACE_DefuseObject_Large"] call ace_interact_menu_fnc_compileMenu;
 ["ACE_DefuseObject_Large", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
 ["ACE_DefuseObject", 0, [], [
     "ACE_Defuse",
@@ -143,8 +146,12 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 [
     "TB_informAdminsAndZeus",
     {
-        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
-            (getPlayerUID player) in (call TB_lvl3)) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
+        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) || (getPlayerUID player) in (call TB_lvl3)) then
+        {
+            private _msg = if (_this isEqualType []) then {format _this} else {_this};
+            systemChat _msg;
+            diag_log format ["[ADMINLOG] %1", _msg];
+        };
     }
 ] call CBA_fnc_addEventHandler;
 

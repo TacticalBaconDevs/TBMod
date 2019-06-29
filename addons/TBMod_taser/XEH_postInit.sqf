@@ -1,8 +1,9 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call EFUNC(main,isTBMission)) exitWith {};
 
 ["CAManBase", "HitPart", {
     {
@@ -12,6 +13,8 @@ if !(call TB_fnc_isTBMission) exitWith {};
         {
             if (_target != _shooter) then {[_target, [2, 0] select (isPlayer _target), 1] remoteExec ["rhs_fnc_flashbang_effect", _target]};
             [_target, true, 20, true] call ace_medical_fnc_setUnconscious;
+
+            ["TB_informAdminsAndZeus", ["%1 hat %2 getasert!", name _shooter, name _target]] call CBA_fnc_globalEvent;
         };
     }
     forEach _this;

@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 params ["_target", "_spawn", "_classes"];
 
 for "_i" from 0 to 5 do {
@@ -83,6 +84,6 @@ private _action = ["tbGarage", "Garage", "", {
         missionnamespace setvariable ["BIS_fnc_garage_center",BIS_fnc_garage_center];
         missionnamespace setvariable ["BIS_fnc_arsenal_fullGarage",true];
         
-        ["Open", [true, _spawn]] call TB_fnc_garage;
+        ["Open", [true, _spawn]] call FUNC(garage);
     }, {true}, nil, _this, nil, 10] call ace_interact_menu_fnc_createAction;
 [_target, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;

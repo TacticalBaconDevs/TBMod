@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -33,8 +34,8 @@ if (_save) then
                     vectorDir _veh,
                     vectorUp _veh,
                     simulationEnabled _veh,
-                    [true, _veh] call TB_fnc_cargo,
-                    (_veh getVariable ["ace_cargo_loaded", []]) apply {[typeOf _x, [true, _x] call TB_fnc_cargo]},
+                    [true, _veh] call FUNC(cargo),
+                    ((_veh getVariable ["ace_cargo_loaded", []]) select {_x isEqualType objNull}) apply {[typeOf _x, [true, _x] call FUNC(cargo)]},
                     if ((getAllHitPointsDamage _veh) isEqualTo []) then {[]} else {[(getAllHitPointsDamage _veh) select 0, (getAllHitPointsDamage _veh) select 2]},
                     _ammo,
                     fuel _veh,
@@ -67,12 +68,12 @@ else // load
         if (_vehicle in TB_persistence_tempSimulationDisabled) then {_pos set [2, (_pos select 2) + 0.5]};
         _vehicle setPosASL _pos;
 
-        [false, _vehicle, _vanillaCargo] call TB_fnc_cargo;
+        [false, _vehicle, _vanillaCargo] call FUNC(cargo);
 
         {
             private _ammoChest = createVehicle [_x select 0, [0,0,0], [], 0, "CAN_COLLIDE"];
             _ammoChest attachTo [_vehicle, [0,0,-100]];
-            [false, _ammoChest, _x select 1] call TB_fnc_cargo;
+            [false, _ammoChest, _x select 1] call FUNC(cargo);
 
             [_ammoChest, _vehicle, true] call ace_cargo_fnc_loadItem;
         }

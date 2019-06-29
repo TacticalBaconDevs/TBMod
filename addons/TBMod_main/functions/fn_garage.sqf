@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 #include "\A3\ui_f\hpp\defineDIKCodes.inc"
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"
 
@@ -121,11 +122,11 @@ switch _mode do {
         };
 
         INITTYPES
-        ["InitGUI",[_display,"TB_fnc_garage"]] call bis_fnc_arsenal;
-        ["Preload"] call TB_fnc_garage;
-        ["ListAdd",[_display]] call TB_fnc_garage;
+        ["InitGUI",[_display,QFUNC(garage)]] call bis_fnc_arsenal;
+        ["Preload"] call FUNC(garage);
+        ["ListAdd",[_display]] call FUNC(garage);
         //["ListSelectCurrent",[_display]] call BIS_fnc_garage;
-        if (BIS_fnc_garage_centerType == "") then {["buttonRandom",[_display]] call TB_fnc_garage;};
+        if (BIS_fnc_garage_centerType == "") then {["buttonRandom",[_display]] call FUNC(garage);};
         ["MouseZChanged",[controlnull,10]] call BIS_fnc_arsenal; //--- Reset zoom
         {
             _ctrl = _display displayctrl _x;
@@ -309,7 +310,7 @@ switch _mode do {
 
             _cfg = configfile >> "cfgvehicles" >> typeof _center;
             ["ShowItemInfo",[_cfg,gettext (_cfg >> "displayName")]] call bis_fnc_arsenal;
-            ["ShowItemStats",[_cfg]] call TB_fnc_garage;
+            ["ShowItemStats",[_cfg]] call FUNC(garage);
         } else {
             {
                 _items = _x;
@@ -381,7 +382,7 @@ switch _mode do {
                 ];
                 _ctrlLineTabLeft ctrlcommit 0;
                 ctrlsetfocus _ctrlList;
-                ['SelectItem',[_display,_display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc),_idc]] call TB_fnc_garage;
+                ['SelectItem',[_display,_display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc),_idc]] call FUNC(garage);
             } else {
                 if ((_center getvariable "bis_fnc_arsenal_idc") != _idc) then {_ctrlList lbsetcursel -1;};
             };
@@ -430,7 +431,7 @@ switch _mode do {
             ];
         };
 
-        ['TabSelectRight',[_display,IDC_RSCDISPLAYGARAGE_TAB_SUBCREW]] call TB_fnc_garage;
+        ['TabSelectRight',[_display,IDC_RSCDISPLAYGARAGE_TAB_SUBCREW]] call FUNC(garage);
     };
 
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -883,10 +884,10 @@ switch _mode do {
             [_center,_textures,_animations] call bis_fnc_initVehicle;
         };
 
-        ["SetCrewStatus",[_display]] call TB_fnc_garage;
+        ["SetCrewStatus",[_display]] call FUNC(garage);
         if (isclass _cfg) then {
             ["ShowItemInfo",[_cfg]] call bis_fnc_arsenal;
-            ["ShowItemStats",[_cfgStats]] call TB_fnc_garage;
+            ["ShowItemStats",[_cfgStats]] call FUNC(garage);
         };
     };
 
@@ -1161,7 +1162,7 @@ switch _mode do {
                 {_center deletevehiclecrew _x;} foreach (crew _center);
                 [_center,_crew] call bis_fnc_initVehicleCrew;
                 {_x setbehaviour "careless";} foreach (crew _center);
-                ["SetCrewStatus",[_display]] call TB_fnc_garage;
+                ["SetCrewStatus",[_display]] call FUNC(garage);
             };
         };
         endloadingscreen;
@@ -1311,7 +1312,7 @@ switch _mode do {
 
                         [_center,[profilenamespace,_name]] call bis_fnc_loadvehicle;
                         if (is3DEN) then {
-                            ['SelectItem',[_display,_display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _categoryIndex),_categoryIndex]] call TB_fnc_garage;
+                            ['SelectItem',[_display,_display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _categoryIndex),_categoryIndex]] call FUNC(garage);
                         } else {
 
                         };

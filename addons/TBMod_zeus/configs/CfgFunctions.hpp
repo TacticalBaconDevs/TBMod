@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_zeus
     {
-        tag = "TB";
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_zeus\functions";
+
             class moduleNachschubAbwurf {};
             class moduleDisablePath {};
             class modulePrioSichtbarkeit {};
@@ -20,6 +21,10 @@ class CfgFunctions
             class moduleAdjustCargoSpace {};
             class moduleUnflipVehicle {};
             class unflipVehicle {};
+            class moduleLimitDamage {};
+            class getNumOpenWounds {};
+            class applyTourniquets {};
+            class bandageRandomWound {};
         };
     };
 };

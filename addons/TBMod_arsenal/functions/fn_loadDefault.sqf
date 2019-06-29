@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -112,7 +113,7 @@ if (_arsenalType == "CUSTOM") exitWith
 {
     if (isNil "TB_fnc_customLayout") then
     {
-        TB_fnc_customLayout = {
+        TB_fnc_customLayout = {//Not changed for backward comp.
             params ["_rolle"];
 
             switch (_rolle) do

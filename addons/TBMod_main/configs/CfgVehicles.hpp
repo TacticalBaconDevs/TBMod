@@ -2,47 +2,18 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-// ###################### Makros ######################
-#define ADD_RUFNAME(NAME) class _xx_##NAME \
-    { \
-        displayName = #NAME; \
-        statement = QUOTE((group ACE_player) setGroupIdGlobal ['NAME']); \
-        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
-    }
-#define ADD_FOB(NAME, NUMBER) class TB_spezial_fob##NAME : TB_spezial_fobBase \
-    { \
-        displayName = QUOTE(NAME-FOB); \
-        fobNumber = NUMBER; \
-        scope = 2; \
-        scopeCurator = 2; \
-        class ACE_Actions \
-        { \
-            class ACE_MainActions \
-            { \
-                displayName = "TB-FOB"; \
-                distance = 10; \
-                modifierFunction = "[_this] call TB_fnc_modifierFOBs"; \
-                statement = "_action = false"; \
-                runOnHover = 1; \
-            }; \
-        }; \
-    }
-#define ADD_SIGN(NAME) class TB_editor_g##NAME: TB_editor_gBriefing \
-    { \
-        displayName = QUOTE(NAME (groß)); \
-        hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
-    }; \
-    class TB_editor_k##NAME: TB_editor_kBriefing \
-    { \
-        displayName = QUOTE(NAME (klein)); \
-        hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
-    }
-
 class CBA_Extended_EventHandlers;
 
 class CfgVehicles
 {
     // ###################### Boards ######################
+    #define ADD_RUFNAME(NAME) class _xx_##NAME \
+        { \
+            displayName = #NAME; \
+            statement = QUOTE((group ACE_player) setGroupIdGlobal ['NAME']); \
+            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+        }
+
     class Land_MapBoard_F;
     class TB_spezial_base : Land_MapBoard_F
     {
@@ -177,7 +148,7 @@ class CfgVehicles
                     displayName = "FOB";
                     condition = "!isNil 'TB_main_fobs' && {(count TB_main_fobs) > 0}";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call TB_fnc_insertChildrenFOB";
+                    insertChildren = QUOTE(_this call FUNC(insertChildrenFOB));
                 };
 
                 class truppe
@@ -188,16 +159,16 @@ class CfgVehicles
                     class toLeader
                     {
                         displayName = "Truppführer";
-                        statement = "if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn TB_fnc_teleport} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'}";
+                        statement = QUOTE(if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn FUNC(teleport)} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'});
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     };
 
                     class toSpieler
                     {
                         displayName = "Kameraden";
-                        statement = "[] spawn TB_fnc_actionTeleportKamerad";
+                        statement = QUOTE([] spawn FUNC(actionTeleportKamerad));
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        insertChildren = "_this call TB_fnc_insertChildrenKameraden";
+                        insertChildren = QUOTE(_this call FUNC(insertChildrenKameraden));
                     };
                 };
 
@@ -205,7 +176,7 @@ class CfgVehicles
                 {
                     displayName = "Truppen";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    insertChildren = "_this call TB_fnc_insertChildrenGruppen";
+                    insertChildren = QUOTE(_this call FUNC(insertChildrenGruppen));
                 };
             };
         };
@@ -213,6 +184,25 @@ class CfgVehicles
 
 
     // ###################### FOBs ######################
+    #define ADD_FOB(NAME, NUMBER) class TB_spezial_fob##NAME : TB_spezial_fobBase \
+        { \
+            displayName = QUOTE(NAME-FOB); \
+            fobNumber = NUMBER; \
+            scope = 2; \
+            scopeCurator = 2; \
+            class ACE_Actions \
+            { \
+                class ACE_MainActions \
+                { \
+                    displayName = "TB-FOB"; \
+                    distance = 10; \
+                    modifierFunction =  QUOTE([_this] call FUNC(modifierFOBs)); \
+                    statement = "_action = false"; \
+                    runOnHover = 1; \
+                }; \
+            }; \
+        }
+
     class Box_FIA_Ammo_F;
     class TB_spezial_fobBase : Box_FIA_Ammo_F
     {
@@ -239,6 +229,17 @@ class CfgVehicles
 
 
     // ###################### Schilder ######################
+    #define ADD_SIGN(NAME) class TB_editor_g##NAME: TB_editor_gBriefing \
+        { \
+            displayName = QUOTE(NAME (groß)); \
+            hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
+        }; \
+        class TB_editor_k##NAME: TB_editor_kBriefing \
+        { \
+            displayName = QUOTE(NAME (klein)); \
+            hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
+        }
+
     class SignAd_Sponsor_F;
     class Land_Noticeboard_F;
     class TB_editor_gBriefing: SignAd_Sponsor_F // ### große Schilder
@@ -246,6 +247,9 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
+
+        scope = 2;
+        scopeCurator = 2;
 
         displayName = "Briefing (groß)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
@@ -255,6 +259,9 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
+
+        scope = 2;
+        scopeCurator = 2;
 
         displayName = "Briefing (klein)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
@@ -339,70 +346,6 @@ class CfgVehicles
     // OPXT_rf7800m: tf_anarc210 - maximumLoad = 300; mass = 60;
 
 
-    // ###################### ACE-MEDICAL-ANPASSUNGEN ######################
-    class Item_Base_F;
-    class ACE_atropineItem: Item_Base_F {
-        displayName = "Ketamin-Autoinjektor";
-    };
-
-    #define ATROPINE_OVERRIDE(EXTR_NAME) class EXTR_NAME { \
-            class Morphine; \
-            class Atropine: Morphine { \
-                displayName = "Ketamin injizieren"; \
-            }; \
-        }
-    #define OVERRIDE_IV(CLASSE,PARENT,NAME) class CLASSE: PARENT { \
-            displayName = #NAME; \
-        }
-    #define OVERRIDE_PART(EXTR_NAME) class EXTR_NAME { \
-            class Morphine; \
-            class Atropine: Morphine { \
-                displayName = "Ketamin injizieren"; \
-            }; \
-            \
-            class fieldDressing; \
-            OVERRIDE_IV(BloodIV, fieldDressing, Blutransfusion (2000ml)); \
-            OVERRIDE_IV(BloodIV_500, BloodIV, Blutransfusion (1000ml)); \
-            OVERRIDE_IV(BloodIV_250, BloodIV, Blutransfusion (500ml)); \
-            \
-            OVERRIDE_IV(SalineIV, BloodIV, Kochsalztransfusion (500ml)); \
-            OVERRIDE_IV(SalineIV_500, SalineIV, Kochsalztransfusion (250ml)); \
-            OVERRIDE_IV(SalineIV_250, SalineIV, Kochsalztransfusion (125ml)); \
-        }
-    #define OVERRIDES OVERRIDE_PART(ACE_ArmLeft); \
-        OVERRIDE_PART(ACE_ArmRight); \
-        OVERRIDE_PART(ACE_LegLeft); \
-        OVERRIDE_PART(ACE_LegRight)
-
-    class Man;
-    class CAManBase: Man
-    {
-        class ACE_SelfActions
-        {
-            class Medical
-            {
-                ATROPINE_OVERRIDE(ACE_ArmLeft);
-                ATROPINE_OVERRIDE(ACE_ArmRight);
-                ATROPINE_OVERRIDE(ACE_LegLeft);
-                ATROPINE_OVERRIDE(ACE_LegRight);
-            };
-        };
-
-        class ACE_Actions
-        {
-            OVERRIDES;
-
-            class ACE_MainActions
-            {
-                class Medical
-                {
-                    OVERRIDES;
-                };
-            };
-        };
-    };
-
-
     // ###################### ACE-Minedetector ######################
     // TODO: CUP Abhängigkeit
     /*#define SET_DETECTABLE(PARENT,CLASSES) class CLASSES : PARENT {ace_minedetector_detectable = 1;}
@@ -433,7 +376,7 @@ class CfgVehicles
 
     // ###################### No Uniform ######################
     class Civilian;
-    //class CAManBase;
+    class CAManBase;
     class B_Soldier_diver_base_F;
     class C_man_1;
     class I_G_Soldier_F;
