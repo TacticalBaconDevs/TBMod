@@ -61,5 +61,5 @@ ACE_player setVariable ['TB_Rope_helper', nil];
 _source setVariable ['TB_Rope_attachedVehicle', _target, true];
 _target setVariable ['TB_Rope_original_Mass', getMass _target, true];
 
-if (getMass _target > TB_adv_maxWeight) then {[_target, TB_adv_maxWeight] remoteExec ["setMass", _target]};
+if (getMass _target > GVAR(maxWeight)) then {[_target, GVAR(maxWeight)] remoteExec ["setMass", _target]};
 ACE_player setVariable ["TB_Rope_source", nil];
