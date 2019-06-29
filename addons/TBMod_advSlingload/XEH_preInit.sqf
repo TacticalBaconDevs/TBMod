@@ -14,7 +14,7 @@
 [
     "TB_adv_maxWeight",
     "SLIDER",
-    "recoilStart",
+    "Maximales Gewicht",
     "TBMod",
-    [0.1, 2, 0.5, 1]
+    [100, 14000, 12000, 0]
 ] call CBA_Settings_fnc_init;
