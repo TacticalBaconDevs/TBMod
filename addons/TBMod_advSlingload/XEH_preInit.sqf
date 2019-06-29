@@ -13,7 +13,7 @@
 ] call CBA_Settings_fnc_init;
 
 [
-    "TB_adv_maxWeight",
+    QGVAR(maxWeight),
     "SLIDER",
     "Maximales Gewicht",
     "TBMod",
