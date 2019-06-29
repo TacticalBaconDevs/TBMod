@@ -22,7 +22,7 @@ private _attachedVehicle = _target getVariable ["TB_Rope_attachedVehicle", objNu
 if (!isNull _attachedVehicle) then
 {
     private _originalMass = _attachedVehicle getVariable ["TB_Rope_original_Mass", 0];
-    if (_originalMass != 0) then {_attachedVehicle setMass _originalMass};
+    if (_originalMass != 0) then {[_attachedVehicle, _originalMass] remoteExec ["setMass", _originalMass]};
     _attachedVehicle setVariable ["TB_Rope_original_Mass", nil, true];
     _target setVariable ["TB_Rope_attachedVehicle", nil, true];
 };
