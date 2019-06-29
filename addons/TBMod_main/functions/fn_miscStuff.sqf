@@ -146,8 +146,12 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 [
     "TB_informAdminsAndZeus",
     {
-        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
-            (getPlayerUID player) in (call TB_lvl3)) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
+        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) || (getPlayerUID player) in (call TB_lvl3)) then
+        {
+            private _msg = if (_this isEqualType []) then {format _this} else {_this};
+            systemChat _msg;
+            diag_log format ["[ADMINLOG] %1", _msg];
+        };
     }
 ] call CBA_fnc_addEventHandler;
 

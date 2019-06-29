@@ -248,6 +248,9 @@ class CfgVehicles
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
 
+        scope = 2;
+        scopeCurator = 2;
+
         displayName = "Briefing (groß)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
     };
@@ -256,6 +259,9 @@ class CfgVehicles
         author = "TacticalBacon";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_BriefingBereich";
+
+        scope = 2;
+        scopeCurator = 2;
 
         displayName = "Briefing (klein)";
         hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};

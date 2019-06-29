@@ -7,6 +7,7 @@
 [] spawn FUNC(waitUntilLoaded);
 
 // Variablen
+if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};
 if (isNil "TB_blacklistRollen_custom") then {TB_blacklistRollen_custom = []};
 if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
 

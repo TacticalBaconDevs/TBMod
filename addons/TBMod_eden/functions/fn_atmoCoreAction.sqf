@@ -23,10 +23,10 @@ _units joinSilent _grp;
 _grp deleteGroupWhenEmpty true;
 _grp setVariable ["acex_headless_blacklist", true, true];
 
-[_grp, {isNull objectParent (leader _this)}, 20, 200] spawn EFUNC(main,deleteIfNotSeen);
-
 _grp setBehaviour (selectRandom ["CARELESS", "SAFE", "AWARE"]);
 _grp setSpeedMode (selectRandom ["UNCHANGED", "LIMITED", "NORMAL", "FULL"]);
 
 private _wp = _grp addWaypoint [_pos , 0];
 _wp setWaypointStatements ["isNull objectParent this", "{deleteVehicle _x} forEach thislist"];
+
+[_grp, {({vehicle _x != _x} count (units _this)) <= 0}, 20, 200] spawn EFUNC(main,deleteIfNotSeen);

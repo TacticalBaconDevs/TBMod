@@ -59,7 +59,7 @@ class CfgFunctions
         {
             class onDisplayCuratorLoad
             {
-                file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";
+                file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf"; // TODO: testen
             };
         };
     };
