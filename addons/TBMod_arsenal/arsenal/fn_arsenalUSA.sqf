@@ -782,6 +782,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_HuntIR_monitor"
         ]
     };
+    
+    case "dmr": {[]};
 
     case "mg":
     {
