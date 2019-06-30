@@ -166,6 +166,7 @@ if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
         private _msg = "";
         private _loadout = (([getUnitLoadout _x, ""] call TB_temp_uniqueArray) select {_x != ""}) apply {toLower _x};
         private _arsenalType = _x getVariable ["TB_arsenalType", ""];
+        private _rolle = _x getVariable ["TB_rolle", ""];
         private _allItems = call (switch (_arsenalType) do
         {
             case "USA": {EFUNC(arsenal,arsenalUSA)};
@@ -232,7 +233,7 @@ if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
             }
             forEach _loadout;
 
-            if !(_msg isEqualTo "") then {["TB_informAdminsAndZeus", ["%1 hat unerlaubte Gegenstände dabei (%2)", profileName, _msg select [2]]] call CBA_fnc_globalEvent};
+            if !(_msg isEqualTo "") then {["TB_informAdminsAndZeus", ["%1 (%3) hat unerlaubte Gegenstände dabei (%2)", name _x, _msg select [2], _rolle]] call CBA_fnc_globalEvent};
         };
     }
     forEach allPlayers;
