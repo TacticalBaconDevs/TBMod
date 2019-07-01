@@ -42,7 +42,6 @@ private _allgemein = [
     "rhsusf_oakley_goggles_ylw",
     // ### Vanilla
     "G_Aviator",
-    "G_B_Diving", // Taucherbrille
     // ### Beards
     "SFG_Tac_smallBeardB",
     "SFG_Tac_smallBeardD",
@@ -319,10 +318,7 @@ private _allgemein_uniformen = [
     "rhs_uniform_g3_blk",
     "rhs_uniform_g3_m81",
     "rhs_uniform_g3_rgr",
-    "rhs_uniform_g3_tan",
-
-    // Taucheranzug
-    "U_B_Wetsuit"
+    "rhs_uniform_g3_tan"
 ];
 
 private _allgemein_westen = [
@@ -335,10 +331,7 @@ private _allgemein_westen = [
     "SPC_Black_01",
     "UCP_Black_01",
     "MBAV_Black_01",
-    "MBAV_Black_02",
-
-    // Tauchgerät
-    "V_RebreatherB"
+    "MBAV_Black_02"
 ];
 
 private _allgemein_kopfbedeckung = [

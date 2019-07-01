@@ -457,9 +457,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_EntrenchingTool,5);
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
-
-            MACRO_ADDITEM(ACE_rope36,6);
-
+            
             MACRO_ADDITEM(ACE_wirecutter,2);
             MACRO_ADDITEM(ToolKit,2);
             MACRO_ADDITEM(ACE_MapTools,5);
