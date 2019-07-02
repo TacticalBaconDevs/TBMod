@@ -842,7 +842,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_mg",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_machinegunner",
-            "rhsusf_spcs_ucp_machinegunner"
+            "rhsusf_spcs_ucp_machinegunner",
+
+            // Ferngläser
+            "ACE_Vector"
         ]
     };
 
