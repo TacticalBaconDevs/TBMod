@@ -3,56 +3,72 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params ["_mode"];
+params ["_mode", ["_hideMessage", false]];
 if (isDedicated) exitWith {};
 
 if (_mode) then
 {
-    if (isNil "TB_FiredMan") then
+    if (isNil QGVAR(FiredMan)) then
     {
-        TB_FiredMan = player addEventHandler ["FiredMan", {
+        GVAR(FiredMan_last) = "";
+        GVAR(FiredMan) = player addEventHandler ["FiredMan", {
             params ["", "_weapon", "", "", "_ammo", "", "_obj"];
-            (format ["[SafeStart] %1 hat mit %2 geschossen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
+
+            if (GVAR(FiredMan_last) != _weapon) then
+            {
+                (format ["[SafeWeapons] %1 hat mit %2 geschossen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
+                GVAR(FiredMan_last) = _weapon;
+            };
+
             deleteVehicle _obj;
         }];
     };
 
-    if (isNil "TB_firedPlayer") then
+    if (isNil QGVAR(firedPlayer)) then
     {
-        TB_firedPlayer = ["ace_firedPlayer", {
-            if (_weapon == "Throw") then {
-                (format ["[SafeStart] %1 hat mit %2 geworfen!", profileName, [_ammo] call FUNC(displayName)]) remoteExecCall ["systemChat"];
+        GVAR(firedPlayer_last) = "";
+        GVAR(firedPlayer) = ["ace_firedPlayer", {
+            if (_weapon == "Throw") then
+            {
+                if (GVAR(firedPlayer_last) != _ammo) then
+                {
+                    (format ["[SafeWeapons] %1 hat mit %2 geworfen!", profileName, [_ammo] call FUNC(displayName)]) remoteExecCall ["systemChat"];
+                    GVAR(firedPlayer_last) = _ammo;
+                };
                 deleteVehicle _projectile;
             };
         }] call CBA_fnc_addEventHandler;
     };
 
-    // if (!TB_jip_safe) then
-    // {
-        // TB_jip_safe = true;
-        // publicVariable "TB_jip_safe";
-    // };
+    if (isNil QGVAR(blockFire)) then
+    {
+        GVAR(blockFire_last) = "";
+        GVAR(blockFire) = [player, "DefaultAction", {true}, {
+            private _weapon = currentWeapon (vehicle (_this select 1));
 
-    if (isNil "TB_safeInfo") then {TB_safeInfo = [] spawn {waitUntil {uiSleep 60; systemChat format ["[SafeStart] ist immer noch aktiv!"]; false}}};
+            if (GVAR(blockFire_last) != _weapon) then
+            {
+                (format ["[SafeWeapons] %1 hat mit %2 versucht zu schießen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
+                GVAR(blockFire_last) = _weapon;
+            };
+        }] call ace_common_fnc_addActionEventHandler;
+    };
 
-    systemChat "[SafeStart] Deine Munition wurde aus Sicherheitsgründen durch Luft ersetzt!";
+    if (isNil QGVAR(safeInfo) && !_hideMessage) then {GVAR(safeInfo) = [] spawn {waitUntil {uiSleep 60; systemChat format ["[SafeWeapons] ist immer noch aktiv!"]; false}}};
+
+    if (!_hideMessage) then {systemChat "[SafeWeapons] Deine Munition wurde aus Sicherheitsgründen durch Luft ersetzt!"};
 }
 else
 {
-    if (!isNil "TB_FiredMan") then {player removeEventHandler ["FiredMan", TB_FiredMan]};
-    if (!isNil "TB_firedPlayer") then {["ace_firedPlayer", TB_firedPlayer] call CBA_fnc_removeEventHandler};
+    if (!isNil QGVAR(FiredMan)) then {player removeEventHandler ["FiredMan", GVAR(FiredMan)]; GVAR(FiredMan) = nil;};
+    if (!isNil QGVAR(firedPlayer)) then {["ace_firedPlayer", GVAR(firedPlayer)] call CBA_fnc_removeEventHandler; GVAR(firedPlayer) = nil;};
+    if (!isNil QGVAR(blockFire)) then {[player, "DefaultAction", GVAR(blockFire)] call ace_common_fnc_removeActionEventHandler; GVAR(blockFire) = nil;};
 
-    // if (TB_jip_safe) then
-    // {
-        // TB_jip_safe = false;
-        // publicVariable "TB_jip_safe";
-    // };
-
-    if (!isNil "TB_safeInfo") then
+    if (!isNil QGVAR(safeInfo)) then
     {
         terminate TB_safeInfo;
-        TB_safeInfo = nil;
+        GVAR(safeInfo) = nil;
     };
 
-    systemChat "[SafeStart] Deine Munition ist nun wieder tödlich!";
+    if (!_hideMessage) then {systemChat "[SafeWeapons] Deine Munition ist nun wieder tödlich!"};
 };

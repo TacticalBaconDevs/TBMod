@@ -92,6 +92,20 @@ class Cfg3DEN
                         condition = "objectControllable";
                     };
 
+                    class TBMod_main_animationDisableOverride
+                    {
+                        displayName = "Animation abbrechbar";
+                        tooltip = "Animationen werden abgebrochen, wenn jemand in der Nähe schießt oder verletzt wird.";
+                        property = "TBMod_main_animationDisableOverride";
+                        control = "Checkbox";
+
+                        expression =  QUOTE(if (!is3DEN && !_value) then {_this setVariable ['animDisableOverride', true, true]});
+
+                        defaultValue = "false";
+
+                        condition = "objectControllable";
+                    };
+
                     class TBMod_main_keys
                     {
                         displayName = "Schlüssel für das Auto";
