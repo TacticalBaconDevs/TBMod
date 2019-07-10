@@ -4,8 +4,8 @@
 */
 class cfgScriptPaths
 {
-    TB_Main = "\TBMod_main\functions\";
-    TB_replacement = "\TBMod_main\replacement\";
+    TB_Main = QPATHTOF(functions\);
+    TB_replacement = QPATHTOF(replacement\);
 };
 
 class RscDisplayGarage;

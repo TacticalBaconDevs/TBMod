@@ -326,10 +326,10 @@ class CfgVehicles
 
     // ###################### TFAR RADIOS leichter ######################
     #define ADD_OVERRIDE(NAME,PARENT,LOAD,MASSE) class NAME : PARENT \
-    { \
-        maximumLoad = LOAD; \
-        mass = MASSE; \
-    }
+        { \
+            maximumLoad = LOAD; \
+            mass = MASSE; \
+        }
     class TFAR_Bag_Base;
     ADD_OVERRIDE(TFAR_rt1523g,TFAR_Bag_Base,129,25); // 50, 80 - 5,16 - Russen kleines LR
     ADD_OVERRIDE(tf_rt1523g,TFAR_rt1523g,129,25);

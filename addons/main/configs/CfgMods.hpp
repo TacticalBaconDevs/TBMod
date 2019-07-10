@@ -1,3 +1,7 @@
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+*/
 class CfgMods
 {
     class Mod_Base;
@@ -6,10 +10,10 @@ class CfgMods
         author = "TBMod-DevTeam";
         authors[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
 
-        picture = "\TBMod_main\pics\logo.paa";
-        logo = "\TBMod_main\pics\logo.paa";
-        logoOver = "\TBMod_main\pics\logo.paa";
-        logoSmall = "\TBMod_main\pics\logo.paa";
+        picture = QPATHTOF(pics\logo.paa); // "\x\TBMod\addons\main\pics\logo.paa"
+        logo = QPATHTOF(pics\logo.paa);
+        logoOver = QPATHTOF(pics\logo.paa);
+        logoSmall = QPATHTOF(pics\logo.paa);
 
         dlcColor[] = {0,0,0,1};
         fieldManualTopicAndHint[] = {};

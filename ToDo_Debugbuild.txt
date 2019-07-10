@@ -26,6 +26,7 @@ Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verä
     7.2. nun müssen wir die Verlinkungen erstellen, per Console ausführen:
         mklink /J "[Pfad aus 7.1.1.]\TBMod" "[Ort des Gitprojekts]"
         mklink /J "P:\x\TBMod" "[Ort des Gitprojekts]"
+    7.3. entweder du clonst nun CBA in den Ordner "P:\x\cba" oder machst eine Verlinkung per "mklink /J"
 8. Gitordner optimieren
     8.1. wenn du nun den TestMod starten willst, dann machst du das per "-mod=x\TBMod -filePatching" in den "Additional Parameter" in Arma3Sync
     8.2. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod" (Repo Original) in das "Gitprojekt\addons" Folder

@@ -67,22 +67,22 @@ class CfgVehicles
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
-    class TB_##CLASS_NAME : CLASS_NAME \
-    { \
-        author = "shukari"; \
-        ace_cargo_canLoad = 1; \
-        ace_cargo_size = 1; \
-        ace_dragging_canCarry = 1; \
-        ace_dragging_canDrag = 1; \
-        editorCategory = "EdCat_TB_MainCat_supply"; \
-        editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
-        scope = 1; \
-        scopeCurator = 1; \
-        class TransportItems {}; \
-        class TransportWeapons {}; \
-        class TransportBackpacks {}; \
-        class TransportMagazines {}; \
-    }
+        class TB_##CLASS_NAME : CLASS_NAME \
+        { \
+            author = "shukari"; \
+            ace_cargo_canLoad = 1; \
+            ace_cargo_size = 1; \
+            ace_dragging_canCarry = 1; \
+            ace_dragging_canDrag = 1; \
+            editorCategory = "EdCat_TB_MainCat_supply"; \
+            editorSubcategory = "EdSubcat_TB_Supply_ALL"; \
+            scope = 1; \
+            scopeCurator = 1; \
+            class TransportItems {}; \
+            class TransportWeapons {}; \
+            class TransportBackpacks {}; \
+            class TransportMagazines {}; \
+        }
     #define WRAPPER_NAME(CLASS_NAME) TB_##CLASS_NAME
     #define PUBLIC_NAME(D_NAME) \
         displayName = D_NAME; \

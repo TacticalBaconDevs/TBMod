@@ -14,7 +14,7 @@ class CfgPatches
 };
 
 // Configs
-#include "\x\TBMod\addons\main\script_macros_common.hpp"
+#include "\x\TBMod\addons\main\script_macros.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\RscTitles.hpp"

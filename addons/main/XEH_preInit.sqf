@@ -5,6 +5,14 @@
 */
 if !(call FUNC(isTBMission)) exitWith {};
 
+ADDON = false;
+
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
+
+ADDON = true;
+
 // Default Values
 if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
 

@@ -4,33 +4,33 @@
 */
 class Extended_PreStart_EventHandlers
 {
-    class TBMod_main
+    class ADDON
     {
-        init = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_preStart.sqf'";
+        init = QUOTE(call COMPILE_FILE(XEH_preStart));
     };
 };
 
 class Extended_PreInit_EventHandlers
 {
-    class TBMod_main
+    class ADDON
     {
-        init = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_preInit.sqf'";
-        serverInit = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_preServerInit.sqf'";
+        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+        serverInit = QUOTE(call COMPILE_FILE(XEH_preServerInit));
     };
 };
 
 class Extended_PostInit_EventHandlers
 {
-    class TBMod_main
+    class ADDON
     {
-        clientInit = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_postClientInit.sqf'";
-        serverInit = "call compile preprocessFileLineNumbers '\TBMod_main\XEH_postServerInit.sqf'";
+        clientInit = QUOTE(call COMPILE_FILE(XEH_postClientInit));
+        serverInit = QUOTE(call COMPILE_FILE(XEH_postServerInit));
     };
 };
 
 #define EMPTY_VANILLA_INV(CLASSE) class CLASSE \
     { \
-        class TBMod_main \
+        class ADDON \
         { \
             serverInit = "params ['_vehicle']; if !(_vehicle getVariable ['TB_main_disableCargoCleanup', false]) then {clearBackpackCargoGlobal _vehicle; clearItemCargoGlobal _vehicle; clearMagazineCargoGlobal _vehicle; clearWeaponCargoGlobal _vehicle;};"; \
         }; \
@@ -40,7 +40,7 @@ class Extended_InitPost_EventHandlers
 {
     class TB_spezial_fobBase
     {
-        class TBMod_main
+        class ADDON
         {
             serverInit = "params ['_vehicle']; {if !(_x isEqualTo _vehicle) then {deleteVehicle _x}; false} count (entities (typeOf _vehicle)); if (isNil 'TB_main_fobs') then {TB_main_fobs = []}; private _displayname = getText (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'displayName'); TB_main_fobs set [getNumber (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'fobNumber'), [_displayname, _vehicle]];  publicVariable 'TB_main_fobs'; private _marker = createMarker [_displayname, getPos _vehicle]; _marker setMarkerText _displayname; _marker setMarkerType 'hd_flag'; (format ['%1 wurde errichtet!', _displayname]) remoteExecCall ['systemChat']";
         };

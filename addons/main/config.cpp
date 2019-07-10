@@ -1,10 +1,11 @@
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgPatches
 {
-    class TBMod_main
+    class ADDON
     {
         name = "TBMod Hauptmod";
 
@@ -14,9 +15,8 @@ class CfgPatches
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = "1.3.12";
-        versionStr = "1.3.12";
-        versionAr[] = {1,3,12};
+        VERSION_CONFIG;
+
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -34,7 +34,7 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical"
         };
 
-        requiredVersion = 1.92;
+        requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             // Arma3
             "A3_Data_F_Sams_Loadorder",
@@ -220,13 +220,12 @@ class CfgPatches
 };
 
 // Configs
-#include "script_component.hpp"
 #include "configs\Animations.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgEditorCategories.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
 #include "configs\CfgFactionClasses.hpp"
-#include "configs\CfgFunctions.hpp"
+//#include "configs\CfgFunctions.hpp" // XEH_PREP.hpp
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgMagazineWells.hpp"
 #include "configs\CfgMods.hpp"
