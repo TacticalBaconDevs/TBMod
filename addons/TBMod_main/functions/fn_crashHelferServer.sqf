@@ -5,8 +5,8 @@
 */
 params [["_input", false, [false]]];
 
-if (!TB_crashHelfer && _input) then {TB_crashHelfer = true};
-if (!TB_crashHelfer) exitWith {};
+if (!VAR(crashHelfer) && _input) then {VAR(crashHelfer) = true};
+if (!VAR(crashHelfer)) exitWith {};
 
 addMissionEventHandler ["HandleDisconnect",
 {
@@ -26,17 +26,17 @@ addMissionEventHandler ["HandleDisconnect",
             _unit getVariable ["TB_team", "MAIN"]
         ];
 
-    private _find = [TB_disconnectCache, _uid] call BIS_fnc_findNestedElement;
+    private _find = [VAR(disconnectCache), _uid] call BIS_fnc_findNestedElement;
     if (_find isEqualTo []) then
     {
-        TB_disconnectCache pushBack _array;
+        VAR(disconnectCache) pushBack _array;
     }
     else
     {
-        TB_disconnectCache set [_find select 0, _array];
+        VAR(disconnectCache) set [_find select 0, _array];
     };
 
-    publicVariable "TB_disconnectCache";
+    publicVariable QVAR(disconnectCache);
     deleteVehicle _unit;
 
     false;
