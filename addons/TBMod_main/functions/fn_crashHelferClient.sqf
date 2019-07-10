@@ -5,11 +5,11 @@
 */
 params [["_input", false, [false]]];
 
-if (!TB_crashHelfer && _input) then {TB_crashHelfer = true};
-if (!TB_crashHelfer) exitWith {};
+if (!VAR(crashHelfer) && _input) then {VAR(crashHelfer) = true};
+if (!VAR(crashHelfer)) exitWith {};
 
-waitUntil {!isNil "TB_disconnectCache"};
-private _find = [TB_disconnectCache, getPlayerUID player] call BIS_fnc_findNestedElement;
+waitUntil {!isNil QVAR(disconnectCache)};
+private _find = [VAR(disconnectCache), getPlayerUID player] call BIS_fnc_findNestedElement;
 if !(_find isEqualTo []) then
 {
     (TB_disconnectCache select (_find select 0)) params ["_uid", "_gear", "_pos", "_dir", "_arsenalType", "_rolle", "_group", "_team"];
