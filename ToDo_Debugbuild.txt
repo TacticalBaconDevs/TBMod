@@ -1,0 +1,41 @@
+### Info
+Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verändern... was ein 100mal schnelleres entwickeln ermöglicht.
+
+### Ablauf
+1. in Steam "Arma 3 Tools" starten (wenn nicht installiert, dann Unterpunkte nachen)
+    1.1. Steam öffnen
+    1.2. über "Bibliothek" hovern und "Werkzeuge" anklicken
+    1.3. nun "Arma 3 Tools" suchen und installieren
+2. nun irgendwo auf deinem Rechner einen Ordner erstellen der "Arma3Drive" heißt
+    -> dieser stellt später das Laufwerk P: dar (Speicherplatz sollte vorhanden sein)
+3. nun in "Arma 3 Tools" auf "Preferences" klicken
+    3.1. dann auf "Options"
+    3.2. dann unter "Path to your P Drive" den "Arma3Drive" (Schritt 2) auswählen
+    3.3. per "Register" bestätigen
+4. nun ein paar Grundeinstellungen übernehmen (optional)
+    4.1. unter "Preferences" die Optionen unter "Buldozer Configurator" anklicken
+5. den Button "Mount the Project Drive" drücken
+    5.1. überprüfen ob im FileExplorer nun ein Laufwerk P: existiert
+    5.2. nun "Diagnostics" einmal durchlaufen lassen (Registry wird gesetzt)
+6. Hinweise
+    6.1. wenn "Arma 3 Tools" nicht gestartet wird, ist auch kein P: Drive da... muss also immer gestartet werden bei Tests
+7. Verlinkungen
+    7.1. nun müssen wir Ordner erstellen (wir brauchen die Pfade der Ordner)
+        7.1.1. in deine Arma3 Installation gehen (musst die arma3.exe sehen) und dann dort einen Ordner mit dem Namen "x" erstellen
+        7.1.2. im P: Drive einen Ordner mit dem Namen "x" erstellen
+    7.2. nun müssen wir die Verlinkungen erstellen, per Console ausführen:
+        mklink /J "[Pfad aus 7.1.1.]\TBMod" "[Ort des Gitprojekts]"
+        mklink /J "P:\x\TBMod" "[Ort des Gitprojekts]"
+8. Gitordner optimieren
+    8.1. wenn du nun den TestMod starten willst, dann machst du das per "-mod=x\TBMod -filePatching" in den "Additional Parameter" in Arma3Sync
+    8.2. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod" (Repo Original) in das "Gitprojekt\addons" Folder
+    8.3. dein Gitordner ist nun also der Mod und wird per "-mod=x\TBMod" durch die Verlinkung in 7.2. gestartet
+    8.4. du brauchst "-filePatching" nicht als "Additional Parameter" wenn du es oben ankreuzt
+9. nun starte den TBMod_Builder.jar und schaue das in der ersten Zeile min. Version 1.0.4 ist, sonst geht es nicht (UPDATEN)
+    9.1. die "builder.cfg" öffnen und schauen das unter "currentArgs" irgendwo "-@\=x\\TBMod\\addons\\<ADDON_NAME>" steht, wenn nicht hinzufügen
+    9.2. den Placeholder "<ADDON_NAME>" stehen lassen, der Builder ersetzt das
+10. nun den TBMod_Builder.jar IN dem Ordner "P:\x\TBMod" starten
+    10.1. sollte bereits einmal nicht dort gestartet worden sein... in der "Builder.cfg" bei "ExecDir" -> ExecDir=P\:\\x\\TBMod
+11. nun TBMod_Builder.jar ausführen, Arma3Sync ohne "@TBMod" und mit "-mod=x\TBMod" starten
+12. Spiel starten und staunen, es kann sein, das Skripte erst bei einem Mission neustart neu geladen werden (in Eden war es sofort)
+
