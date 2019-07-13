@@ -37,6 +37,7 @@ class CfgFunctions
             class addBriefingEntries {};
             class firstJoin {};
             class deleteIfNotSeen {};
+            class insertChildrenRufname {};
         };
 
         class gcam

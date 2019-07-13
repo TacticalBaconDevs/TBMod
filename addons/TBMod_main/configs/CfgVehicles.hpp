@@ -10,8 +10,9 @@ class CfgVehicles
     #define ADD_RUFNAME_DETAIL(NAME,RUFNAME) class _xx_##RUFNAME \
         { \
             displayName = #NAME; \
-            statement = QUOTE(systemChat (RUFNAME + ' wurde als Rufname gesetzt!'); (group ACE_player) setGroupIdGlobal ['RUFNAME']); \
+            statement = QUOTE(systemChat 'RUFNAME wurde als Rufname gesetzt!'; (group ACE_player) setGroupIdGlobal ['RUFNAME']); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+            insertChildren = QUOTE([_this, 'RUFNAME'] call FUNC(insertChildrenRufname)); \
         }
     #define ADD_RUFNAME(NAME) ADD_RUFNAME_DETAIL(NAME, NAME)
 
