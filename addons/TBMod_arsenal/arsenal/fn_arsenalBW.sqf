@@ -346,7 +346,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -382,7 +381,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -406,7 +404,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -448,7 +445,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -467,7 +463,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -500,7 +495,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -526,7 +520,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -594,7 +587,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -610,7 +602,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -664,7 +655,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -719,7 +709,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -785,7 +774,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -815,7 +803,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
