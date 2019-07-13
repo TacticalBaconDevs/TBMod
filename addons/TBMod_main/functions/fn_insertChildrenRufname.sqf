@@ -12,11 +12,11 @@ if (count _name <= 2) exitWith {_actions};
 
 for "_i" from 1 to 4 do
 {
-    private _name = format ["%1%2", _name, _i];
+    private _rufname = format ["%1%2", _name, _i];
     _actions pushBack [
         [
             str _i,
-            _name,
+            _rufname,
             "",
             {
                 params ["_target", "_player", "_params"];
@@ -25,7 +25,7 @@ for "_i" from 1 to 4 do
             },
             {true},
             {},
-            _name
+            _rufname
         ] call ace_interact_menu_fnc_createAction,
         [],
         _target
