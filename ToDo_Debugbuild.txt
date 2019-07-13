@@ -29,7 +29,7 @@ Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verä
     7.3. entweder du clonst nun CBA in den Ordner "P:\x\cba" oder machst eine Verlinkung per "mklink /J"
 8. Gitordner optimieren
     8.1. wenn du nun den TestMod starten willst, dann machst du das per "-mod=x\TBMod -filePatching" in den "Additional Parameter" in Arma3Sync
-    8.2. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod" (Repo Original) in das "Gitprojekt\addons" Folder
+    8.2. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod(Repo Original)\addons"  in das "Gitprojekt\addons" Folder
     8.3. dein Gitordner ist nun also der Mod und wird per "-mod=x\TBMod" durch die Verlinkung in 7.2. gestartet
     8.4. du brauchst "-filePatching" nicht als "Additional Parameter" wenn du es oben ankreuzt
 9. nun starte den TBMod_Builder.jar und schaue das in der ersten Zeile min. Version 1.0.4 ist, sonst geht es nicht (UPDATEN)
