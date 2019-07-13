@@ -16,13 +16,13 @@ params ["_target"];
 
 _target addAction [
     "Lastenseil anbringen",
-    {[_this select 0, ACE_player getVariable ['TB_Rope_helper', objNull]] call FUNC(attach)},
+    {[_this # 0, ACE_player getVariable [QGVAR(ropeHelper), objNull]] call FUNC(attach)},
     [],
     1.5,
     true,
     true,
     "",
-    "alive _target && !isNull (ACE_player getVariable ['TB_Rope_helper', objNull])",
+    QUOTE(alive _target && !isNull (ACE_player getVariable [QQGVAR(ropeHelper), objNull])),
     10,
     false,
     "",

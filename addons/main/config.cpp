@@ -225,7 +225,6 @@ class CfgPatches
 #include "configs\CfgEditorCategories.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
 #include "configs\CfgFactionClasses.hpp"
-//#include "configs\CfgFunctions.hpp" // XEH_PREP.hpp
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgMagazineWells.hpp"
 #include "configs\CfgMods.hpp"

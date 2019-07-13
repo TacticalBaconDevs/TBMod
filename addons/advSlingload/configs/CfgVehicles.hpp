@@ -5,7 +5,7 @@
 class CfgVehicles
 {
     class ReammoBox_F;
-    class TB_Rope_InvisibleObject: ReammoBox_F
+    class GVAR(ropeInvisibleObject) : ReammoBox_F
     {
         displayName = "Unsichtbares Object";
         author = "TBMod";

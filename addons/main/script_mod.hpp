@@ -12,3 +12,12 @@
 #define REQUIRED_VERSION 1.92
 #define REQUIRED_CBA_VERSION {3,12,0}
 #define REQUIRED_ACE_VERSION {3,12,6}
+
+/*
+    Mod spezifische Makros
+*/
+#define CALL_XEHPREP ADDON = false; \
+    PREP_RECOMPILE_START; \
+    #include "XEH_PREP.hpp" \
+    PREP_RECOMPILE_END; \
+    ADDON = true

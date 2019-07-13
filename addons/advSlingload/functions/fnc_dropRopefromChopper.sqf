@@ -22,18 +22,18 @@ private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "
 if (_selection == "") exitWith {systemChat format ["ERROR(dropRopefromChopper): no Slingloadposition found on _target %1", _target]};
 
 private _posSlingload = _target modelToWorld (_target selectionPosition _selection);
-private _helper = createVehicle ["TB_Rope_InvisibleObject", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+private _helper = createVehicle [QGVAR(ropeInvisibleObject), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 
 _helper setPos [_posSlingload select 0, _posSlingload select 1, (_posSlingload select 2) - 1];
 
 //[[_helper, 0, [], TB_Rope_PickupAction], []] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
 //[, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global
-["TB_Rope_addPickupAction", [_helper]] call CBA_fnc_globalEvent;
+[QGVAR(addPickupActionEvent), [_helper]] call CBA_fnc_globalEvent;
 private _rope = ropeCreate [_target, _selection, _helper, [0, 0, 0], 1];
 //ropeUnwind [_rope, 3, 22];
 [[_rope, 3, 22]] remoteExecCall ["ropeUnwind", _target];
 
-_helper setVariable ["TB_Rope_rope", _rope, true];
-_helper setVariable ["TB_Rope_is_carry", false, true];
-_rope setVariable ["TB_Rope_helper", _helper, true];
-_rope setVariable ["TB_Rope_Source", _target, true];
+_helper setVariable [QGVAR(ropeObj), _rope, true];
+_helper setVariable [QGVAR(isCarry), false, true];
+_rope setVariable [QGVAR(ropeHelper), _helper, true];
+_rope setVariable [QGVAR(ropeSource), _target, true];
