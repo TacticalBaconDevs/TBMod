@@ -7,6 +7,9 @@
 *.dll
 *.class
 *.code-workspace
+*.pbo
+*.bikey
+*.bisigns
 
 /#localStuff
 /Changelog.txt
@@ -17,3 +20,4 @@ statstracker/TBModExt_Statistics/packages/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/bin/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/obj/
 .vscode
+*.bisign
