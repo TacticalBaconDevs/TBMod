@@ -194,6 +194,7 @@ class CfgMagazines
     class 10Rnd_RHS_50BMG_Box;
     class rhsusf_mag_10Rnd_STD_50BMG_M33 : 10Rnd_RHS_50BMG_Box // 50.cal Long-Range Sniper
     {
+        author = "TBMod";
         descriptionShort = ".50Cal LRS"; // "10RD .50BMG M33 Ball M107 Magazine"
         displayName = ".50Cal Long-Range Sniper Magazine"; // "10rnd M107 M33"
         displayNameShort = ".50Cal LRS"; // "M33 Ball"
@@ -204,11 +205,33 @@ class CfgMagazines
 
     class rhsusf_mag_10Rnd_STD_50BMG_mk211 : rhsusf_mag_10Rnd_STD_50BMG_M33 // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer)
     {
+        author = "TBMod";
         descriptionShort = ".50Cal HEIAP-T Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
         displayName = "High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
         displayNameShort = ".50Cal HEIAP-T"; // "M33 Ball"
 
         mass = 28; // 41.14
+    };
+
+    class 20Rnd_762x51_Mag;
+    class ACE_20Rnd_762x51_M993_AP_Mag : 20Rnd_762x51_Mag // 7.62mm Long-Range Sniper
+    {
+        author = "TBMod";
+        descriptionShort = "7.62mm LRS"; // "Caliber: 7.62x51mm NATO (M993 AP)<br />Rounds: 20"
+        displayName = "7.62mm Long-Range Sniper Magazine"; // "7.62mm 20Rnd Mag (M993 AP)"
+        displayNameShort = "7.62mm LRS"; // "7.62mm AP"
+
+        mass = 14; // 12
+    };
+
+    class ACE_20Rnd_762x51_Mag_SD : 20Rnd_762x51_Mag // 7.62mm Subsonic Low Visible
+    {
+        author = "TBMod";
+        descriptionShort = "7.62mm SDLV"; // "Caliber: 7.62x51mm SD<br />Rounds: 20<br />Used in: Mk18 ABR"
+        displayName = "7.62mm Subsonic Low Visible Magazine"; // "7.62mm 20Rnd SD Mag"
+        displayNameShort = "7.62mm SDLV"; // "7.62mm SD"
+
+        mass = 14; // 12
     };
 
     class VehicleMagazine;
