@@ -43,7 +43,7 @@ if (!isNil {_unit getVariable QGVAR(ivBags)}) then {
             //private _bagChange = IV_CHANGE_PER_SECOND min _bagVolumeRemaining; // absolute value of the change in miliLiters
             private _bagChange = ((IV_CHANGE_PER_SECOND * 2) * _influence) min _bagVolumeRemaining;
             ["RemainIV: %1 | ChangeIV: %2 | InfluCoef: %3 | InFac: %4 | InVeh: %5 | Boost: %6", _bagVolumeRemaining, _bagChange, _influence, _inFacility, _inVehicle, _unit getVariable ["TB_cpr_boost", 0]] call TB_main_fnc_debug;
-            _unit setVariable ["TB_cpr_boost", ((_target getVariable ["TB_cpr_boost", 0]) - 1) max 0];
+            _unit setVariable ["TB_cpr_boost", ((_unit getVariable ["TB_cpr_boost", 0]) - 1) max 0];
             // CHANGE ENDE
 
             _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
