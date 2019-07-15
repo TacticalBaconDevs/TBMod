@@ -3,6 +3,11 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+ADDON = false;
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
+
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
 // Nachschubskisten automatisch aus der config lesen fürs Zeus Modul
@@ -25,3 +30,5 @@ private _lastOrderNr = -1;
     TB_nachschubsKisten pushBackUnique (_x select 1);
 }
 forEach _naschschubConfigs;
+
+ADDON = true;

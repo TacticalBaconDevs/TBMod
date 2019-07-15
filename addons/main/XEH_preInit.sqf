@@ -5,7 +5,10 @@
 */
 if !(call FUNC(isTBMission)) exitWith {};
 
-CALL_XEHPREP;
+ADDON = false;
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
 
 // Default Values
 if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
@@ -115,3 +118,5 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "TBMod",
     [0.1, 2, 1, 1]
 ] call CBA_Settings_fnc_init;
+
+ADDON = true;

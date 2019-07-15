@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Original by https://github.com/BourbonWarfare/POTATO
@@ -5,7 +6,7 @@
 */
 class CfgPatches
 {
-    class TBMod_vz99
+    class ADDON
     {
         name = "TBMod vz99";
 
@@ -44,10 +45,8 @@ class CfgPatches
 };
 
 // Configs
-#include "script_component.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgMagazines.hpp"
-#include "configs\CfgFunctions.hpp"

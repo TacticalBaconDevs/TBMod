@@ -10,7 +10,7 @@ class CfgMods
         author = "TBMod-DevTeam";
         authors[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
 
-        picture = QPATHTOF(pics\logo.paa); // "\x\TBMod\addons\main\pics\logo.paa"
+        picture = QPATHTOF(pics\logo.paa);
         logo = QPATHTOF(pics\logo.paa);
         logoOver = QPATHTOF(pics\logo.paa);
         logoSmall = QPATHTOF(pics\logo.paa);

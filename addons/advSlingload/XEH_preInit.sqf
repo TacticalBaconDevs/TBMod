@@ -5,9 +5,12 @@
 
     see https://github.com/CBATeam/CBA_A3/blob/master/addons/settings/fnc_init.sqf
 */
-if !(call FUNC(isTBMission)) exitWith {};
+ADDON = false;
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
 
-CALL_XEHPREP;
+if !(call EFUNC(main,isTBMission)) exitWith {};
 
 // Settings
 [
@@ -25,3 +28,5 @@ CALL_XEHPREP;
     "TBMod",
     [100, 50000, 12000, 0]
 ] call CBA_Settings_fnc_init;
+
+ADDON = true;

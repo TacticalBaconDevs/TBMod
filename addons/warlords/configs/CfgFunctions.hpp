@@ -4,18 +4,6 @@
 */
 class CfgFunctions
 {
-    class TBMod_warlords
-    {
-        tag = ADDON;
-
-        class functions
-        {
-            file = "\TBMod_warlords\functions";
-            class isWLMission {};
-        };
-    };
-
-
     // OVERRIDES
     class A3_Warlords
     {
@@ -24,22 +12,15 @@ class CfgFunctions
 
         class Warlords
         {
-            class WLVarsInit
-            {
-                file = "\TBMod_warlords\replacement\fn_WLVarsInit.sqf";
-            };
-            class WLInit
-            {
-                file = "\TBMod_warlords\replacement\fn_WLInit.sqf";
-            };
-            class WLClientInit
-            {
-                file = "\TBMod_warlords\replacement\fn_WLClientInit.sqf";
-            };
-            class WLParseAssetList
-            {
-                file = "\TBMod_warlords\replacement\fn_WLParseAssetList.sqf";
-            };
+            #define WL_FNC(name) class name \
+                { \
+                    file = QPATHTOF(replacement\fn_##name##.sqf); \
+                }
+
+            WL_FNC(WLVarsInit);
+            WL_FNC(WLInit);
+            WL_FNC(WLClientInit);
+            WL_FNC(WLParseAssetList);
         };
     };
 };

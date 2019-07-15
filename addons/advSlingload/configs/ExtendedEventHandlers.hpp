@@ -22,7 +22,7 @@ class Extended_PostInit_EventHandlers
 {
     class ADDON
     {
-        clientInit = QUOTE(call COMPILE_FILE(XEH_postClientInit));
         init = QUOTE(call COMPILE_FILE(XEH_postInit));
+        clientInit = QUOTE(call COMPILE_FILE(XEH_postClientInit));
     };
 };

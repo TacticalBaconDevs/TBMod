@@ -2,18 +2,27 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class Extended_PostInit_EventHandlers
+class Extended_PreStart_EventHandlers
 {
-    class TBMod_eden
+    class ADDON
     {
-        clientInit = "call compile preprocessFileLineNumbers '\TBMod_eden\XEH_postClientInit.sqf'";
+        init = QUOTE(call COMPILE_FILE(XEH_preStart));
     };
 };
 
 class Extended_PreInit_EventHandlers
 {
-    class TBMod_main
+    class ADDON
     {
-        serverInit = "call compile preprocessFileLineNumbers '\TBMod_eden\XEH_preServerInit.sqf'";
+        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+        serverInit = QUOTE(call COMPILE_FILE(XEH_preServerInit));
+    };
+};
+
+class Extended_PostInit_EventHandlers
+{
+    class ADDON
+    {
+        clientInit = QUOTE(call COMPILE_FILE(XEH_postClientInit));
     };
 };

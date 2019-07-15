@@ -48,7 +48,7 @@ class CfgVehicles
                 condition = QUOTE(_this call FUNC(canDeployWeapon));
                 statement = QUOTE(_this call FUNC(doDeployWeapon));
                 exceptions[] = {};
-                icon = "\TBMod_vz99\UI\action_mortar_ca.paa";
+                icon = QPATHTOF(UI\action_mortar_ca.paa);
             };
         };
     };
@@ -109,20 +109,20 @@ class CfgVehicles
                 condition = QUOTE((['TB_vz99_HE'] call FUNC(canSelectNextMagazine) || {['TB_vz99_HE_multi'] call FUNC(canSelectNextMagazine)}));
                 statement = QUOTE(['TB_vz99_HE_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
-                icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                icon = QPATHTOF(UI\action_shell_ca.paa);
 
                 class TB_vz99_load_HE_charge0
                 {
                     displayName = "Charge 0";
                     statement = QUOTE(['TB_vz99_HE_charge0'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
 
                 class TB_vz99_load_HE_charge1
                 {
                     displayName = "Charge 1";
                     statement = QUOTE(['TB_vz99_HE'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
             };
 
@@ -132,20 +132,20 @@ class CfgVehicles
                 condition = QUOTE(['TB_vz99_HE_PRX'] call FUNC(canSelectNextMagazine));
                 statement = QUOTE(['TB_vz99_HE_PRX_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
-                icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                icon = QPATHTOF(UI\action_shell_ca.paa);
 
                 class TB_vz99_load_HE_charge0
                 {
                     displayName = "Charge 0";
                     statement = QUOTE(['TB_vz99_HE_PRX_charge0'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa'";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
 
                 class TB_vz99_load_HE_charge1
                 {
                     displayName = "Charge 1";
                     statement = QUOTE(['TB_vz99_HE_PRX'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa'";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
             };
 
@@ -155,20 +155,20 @@ class CfgVehicles
                 condition = QUOTE(['TB_vz99_smokeWhite'] call FUNC(canSelectNextMagazine));
                 statement = QUOTE(['TB_vz99_smokeWhite_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
-                icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                icon = QPATHTOF(UI\action_shell_ca.paa);
 
                 class TB_vz99_load_smokeWhite_charge0
                 {
                     displayName = "Charge 0";
                     statement = QUOTE(['TB_vz99_smokeWhite_charge0'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
 
                 class TB_vz99_load_smokeWhite_charge1
                 {
                     displayName = "Charge 1";
                     statement = QUOTE(['TB_vz99_smokeWhite'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
             };
 
@@ -178,20 +178,20 @@ class CfgVehicles
                 condition = QUOTE(['TB_vz99_smokeRed'] call FUNC(canSelectNextMagazine));
                 statement = QUOTE(['TB_vz99_smokeRed_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
-                icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                icon = QPATHTOF(UI\action_shell_ca.paa);
 
                 class TB_vz99_load_smokeRed_charge0
                 {
                     displayName = "Charge 0";
                     statement = QUOTE(['TB_vz99_smokeRed_charge0'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
 
                 class TB_vz99_load_smokeRed_charge1
                 {
                     displayName = "Charge 1";
                     statement = QUOTE(['TB_vz99_smokeRed'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
             };
 
@@ -201,25 +201,26 @@ class CfgVehicles
                 condition = QUOTE(['TB_vz99_flare'] call FUNC(canSelectNextMagazine));
                 statement = QUOTE(['TB_vz99_flare_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
-                icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                icon = QPATHTOF(UI\action_shell_ca.paa);
 
                 class TB_vz99_load_flare_charge0
                 {
                     displayName = "Charge 0";
                     statement = QUOTE(['TB_vz99_flare_charge0'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
 
                 class TB_vz99_load_flare_charge1
                 {
                     displayName = "Charge 1";
                     statement = QUOTE(['TB_vz99_flare'] call FUNC(doSelectNextMagazine));
-                    icon = "\TBMod_vz99\UI\action_shell_ca.paa";
+                    icon = QPATHTOF(UI\action_shell_ca.paa);
                 };
             };
         };
 
-        model = "\TBMod_vz99\data\vz99_vehicle";
+        model = QPATHTOF(data\vz99_vehicle);
+
         class AnimationSources
         {
             class Level

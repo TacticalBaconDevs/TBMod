@@ -13,8 +13,8 @@ class CfgWeapons
         author = "PabstMirror";
         scope = 2;
         displayName = "VZ99 60mm Mortar";
-        model = "\TBMod_vz99\data\vz99_carry";
-        picture = "\TBMod_vz99\ui\weaponSide_ca.paa";
+        model = QPATHTOF(data\vz99_carry);
+        picture = QPATHTOF(ui\weaponSide_ca.paa);
         modes[] = {};
         ace_reloadlaunchers_enabled = 1;
 

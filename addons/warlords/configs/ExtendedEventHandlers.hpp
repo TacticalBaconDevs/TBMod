@@ -2,12 +2,21 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class Extended_PreStart_EventHandlers
+{
+    class ADDON
+    {
+        init = QUOTE(call COMPILE_FILE(XEH_preStart));
+    };
+};
+
 class Extended_PreInit_EventHandlers
 {
-    class TBMod_warlords
+    class ADDON
     {
-        clientInit = "call compile preprocessFileLineNumbers '\TBMod_warlords\XEH_preClientInit.sqf'";
-        serverInit = "call compile preprocessFileLineNumbers '\TBMod_warlords\XEH_preServerInit.sqf'";
+        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+        clientInit = QUOTE(call COMPILE_FILE(XEH_preClientInit));
+        serverInit = QUOTE(call COMPILE_FILE(XEH_preServerInit));
     };
 };
 
@@ -15,14 +24,14 @@ class Extended_InitPost_Eventhandlers
 {
     class AllVehicles
     {
-        class TBMod_warlords
+        class ADDON
         {
             serverInit = QUOTE(params ['_vehicle']; if (call FUNC(isWLMission)) then {_vehicle setVehicleLock 'LOCKED'};);
         };
     };
 
     #define INIT_TEXTURE(CLASSE,SKIN) class CLASSE { \
-            class TBMod_warlords { \
+            class ADDON { \
                 serverInit = QUOTE(params ['_vehicle']; if (call FUNC(isWLMission)) then {{_vehicle setObjectTextureGlobal [_forEachIndex, _x]} forEach (getArray (configfile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'textureSources' >> 'SKIN' >> 'textures'))};); \
             }; \
         }

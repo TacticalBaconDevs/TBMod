@@ -69,7 +69,7 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 
         // IR + Slug
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_IR_Grenade,2);
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot,6);        
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot,6);
     };
 };
 
@@ -176,7 +176,7 @@ class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",USA);
-    hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"};
+    hiddenSelectionsTextures[] = {QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
 
     class TransportItems
     {

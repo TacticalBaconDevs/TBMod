@@ -23,13 +23,11 @@ else
 };
 private _remoteID = [clientOwner, [0, -2] select isDedicated] select TB_debug_remote;
 
-private _text = format ["[DEBUG%1][%2] %3",
+private _text = format ["[DEBUG%1] %2",
         if (isRemoteExecuted) then {"-REMOTE]["+ _remoteName} else {""},
-        _fnc_scriptNameParent,
         if (_this isEqualType []) then {format _this} else {_this}
     ];
 
 if (TB_debug_lvl >= 1) then {_text remoteExecCall ["diag_log", _remoteID]};
 if (TB_debug_lvl >= 2) then {_text remoteExecCall ["systemChat", _remoteID]};
 if (TB_debug_lvl >= 3) then {_text remoteExecCall ["hintSilent", _remoteID]};
-// test123

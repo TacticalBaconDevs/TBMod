@@ -22,7 +22,7 @@ _target addAction [
     true,
     true,
     "",
-    QUOTE(alive _target && !isNull (ACE_player getVariable [QQGVAR(ropeHelper), objNull])),
+    'alive _target && !isNull (ACE_player getVariable [QGVAR(ropeHelper), objNull])',
     10,
     false,
     "",

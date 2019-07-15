@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -16,8 +17,9 @@ class CfgPatches
     };
 };
 
-#include "script_component.hpp"
-#include "configs\CfgFunctions.hpp"
+// Configs
 #include "configs\ACE_Medical_Treatments.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
+#include "configs\ExtendedEventHandlers.hpp"
+#include "configs\CfgFunctions.hpp"

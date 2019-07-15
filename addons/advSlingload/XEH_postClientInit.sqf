@@ -11,8 +11,12 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     {
         private _heli = _this # 0;
         {
-            _x params ["_type", "_action"];
-            [_heli, _type, [["ACE_MainActions", "ACE_SelfActions"] # _type], _action] call ace_interact_menu_fnc_addActionToObject;
+            _x params ["_types", "_action"];
+
+            {
+                [_heli, _x, [["ACE_MainActions", "ACE_SelfActions"] # _x], _action] call ace_interact_menu_fnc_addActionToObject;
+            }
+            forEach _types;
         }
         forEach [
             [

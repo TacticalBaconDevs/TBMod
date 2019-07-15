@@ -10,7 +10,7 @@ class CfgMagazines
     // HE
     class TB_vz99_HE : 8Rnd_82mm_Mo_shells
     {
-        picture = "\TBMod_vz99\ui\shell_ca.paa";
+        picture = QPATHTOF(ui\shell_ca.paa);
         author = "PabstMirror";
         count = 1;
         mass = 20;

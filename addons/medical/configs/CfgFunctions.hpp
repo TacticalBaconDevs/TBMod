@@ -4,15 +4,16 @@
 */
 class CfgFunctions
 {
-    class TBMod_medical
+    // REPLACEMENT - ace3
+    class ACE3
     {
-        tag = ADDON;
-
-        class functions
+        tag = "ace_medical";
+        class ace_medical
         {
-            file = "\TBMod_medical\functions";
-
-            class calcTreatmentTime {};
+            class getBloodVolumeChange
+            {
+                file = QPATHTOF(replacement\fn_getBloodVolumeChange.sqf);
+            };
         };
     };
 };

@@ -16,8 +16,12 @@
 /*
     Mod spezifische Makros
 */
-#define CALL_XEHPREP ADDON = false; \
-    PREP_RECOMPILE_START; \
-    #include "XEH_PREP.hpp" \
-    PREP_RECOMPILE_END; \
-    ADDON = true
+#ifdef DISABLE_COMPILE_CACHE
+    #define PREP_OTHERFOLDER(fncName,path) DFUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(path\DOUBLES(fnc,fncName).sqf)
+#else
+    #define PREP_OTHERFOLDER(fncName,path) [QPATHTOF(path\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
+#endif
+
+#define DEBUG_MODE_FULL
+#define DISABLE_COMPILE_CACHE
+// #define ENABLE_PERFORMANCE_COUNTERS

@@ -1,6 +1,12 @@
+#include "script_component.hpp"
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Original by https://github.com/BourbonWarfare/POTATO
+    Modified by http://tacticalbacon.de
+*/
 class CfgPatches
 {
-    class TBMod_warlords
+    class ADDON
     {
         name = "TBMod Warlords";
 
@@ -21,7 +27,6 @@ class CfgPatches
 };
 
 // Configs
-#include "script_component.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgWLRequisitionPresets.hpp"
 #include "configs\ExtendedEventHandlers.hpp"

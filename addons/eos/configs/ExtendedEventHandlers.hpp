@@ -1,7 +1,27 @@
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+*/
+class Extended_PreStart_EventHandlers
+{
+    class ADDON
+    {
+        init = QUOTE(call COMPILE_FILE(XEH_preStart));
+    };
+};
+
+class Extended_PreInit_EventHandlers
+{
+    class ADDON
+    {
+        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+    };
+};
+
 class Extended_PostInit_EventHandlers
 {
-    class TBMod_eos
+    class ADDON
     {
-        init = "[] spawn compile preprocessFileLineNumbers '\TBMod_eos\XEH_postInit.sqf'";
+        init = QUOTE([] spawn COMPILE_FILE(XEH_postInit));
     };
 };

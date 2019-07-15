@@ -9,3 +9,8 @@
 // #define DISABLE_COMPILE_CACHE
 
 #include "\x\TBMod\addons\main\script_macros.hpp"
+
+/*
+    Addon spezifisch
+*/
+

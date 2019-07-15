@@ -96,7 +96,7 @@ class CfgVehicles
         editorSubcategory = "EdSubcat_TB_Spezial";
 
         // hiddenSelections[] = {"Camo_Signs","Camo"};
-        hiddenSelectionsTextures[] = {"", "\TBMod_skins\pictures\statics\TB_vorratslager.paa"};
+        hiddenSelectionsTextures[] = {"", QPATHTOF(pictures\statics\TB_vorratslager.paa)};
 
         class TransportItems {};
         class TransportMagazines {};
@@ -216,18 +216,18 @@ class CfgVehicles
 
 
     // ###################### KISTEN #########################
-    #define SKIN_GRP1 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_3.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
-    #define SKIN_GRP2 "\TBMod_skins\pictures\statics\Land_PlasticCase_01_medium_F_0.paa"
-    #define SKIN_GRP3 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_2.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
-    #define SKIN_GRP4 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
-    #define SKIN_GRP5 "\TBMod_skins\pictures\statics\AmmoBox_signs_CA_0_1.paa", "\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa"
-    #define SUPPORT_SKIN "\TBMod_skins\pictures\statics\equipment_box_blufor_ca_1.paa"
+    #define SKIN_GRP1 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_3.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SKIN_GRP2 QPATHTOF(pictures\statics\Land_PlasticCase_01_medium_F_0.paa)
+    #define SKIN_GRP3 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_2.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SKIN_GRP4 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SKIN_GRP5 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SUPPORT_SKIN QPATHTOF(pictures\statics\equipment_box_blufor_ca_1.paa)
 
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
-    WRAPPER_SKIN2(Box_IDAP_Equip_F, "\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOF(pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
     WRAPPER_SKIN2(Box_NATO_WpsLaunch_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Grenades_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_AmmoOrd_F, SKIN_GRP1);
@@ -236,7 +236,7 @@ class CfgVehicles
     WRAPPER_SKIN(Land_PlasticCase_01_medium_F, SKIN_GRP2);
     WRAPPER_SKIN2(Box_IND_Ammo_F, SKIN_GRP3);
     WRAPPER_SKIN2(Box_IND_WpsSpecial_F, SKIN_GRP3);
-    WRAPPER_SKIN2(Box_NATO_Uniforms_F, "\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa", SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_NATO_Uniforms_F, QPATHTOF(pictures\statics\uniforms_box_blufor_co_0.paa), SUPPORT_SKIN);
     WRAPPER_SKIN2(Box_IND_AmmoOrd_F, SKIN_GRP3);
     WRAPPER_SKIN2(Box_IND_Support_F, SKIN_GRP3);
     WRAPPER_SKIN2(Box_IND_Wps_F, SKIN_GRP3);
@@ -399,7 +399,7 @@ class CfgVehicles
     class TB_supply_all_hmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("HMGKit");
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\statics\uniforms_box_blufor_co_0.paa)};
 
         class TransportBackpacks
         {

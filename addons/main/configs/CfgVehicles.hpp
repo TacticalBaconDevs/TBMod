@@ -34,7 +34,7 @@ class CfgVehicles
         scope = 2;
         scopeCurator = 2;
 
-        hiddenSelectionsTextures[] = {"\TBMod_main\pics\rufnamen.paa"};
+        hiddenSelectionsTextures[] = {PATHTOF(pics\rufnamen.paa)};
 
         class ACE_Actions
         {
@@ -131,7 +131,7 @@ class CfgVehicles
         scope = 2;
         scopeCurator = 2;
 
-        hiddenSelectionsTextures[] = {"\TBMod_main\pics\teleport.paa"};
+        hiddenSelectionsTextures[] = {PATHTOF(pics\teleport.paa)};
 
         class ACE_Actions
         {
@@ -230,12 +230,12 @@ class CfgVehicles
     #define ADD_SIGN(NAME) class TB_editor_g##NAME: TB_editor_gBriefing \
         { \
             displayName = QUOTE(NAME (groß)); \
-            hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
+            hiddenSelectionsTextures[] = {QPATHTOF(pics\NAME.paa)}; \
         }; \
         class TB_editor_k##NAME: TB_editor_kBriefing \
         { \
             displayName = QUOTE(NAME (klein)); \
-            hiddenSelectionsTextures[] = {QUOTE(\TBMod_main\pics\NAME.paa)}; \
+            hiddenSelectionsTextures[] = {QPATHTOF(pics\NAME.paa)}; \
         }
 
     class SignAd_Sponsor_F;
@@ -250,7 +250,7 @@ class CfgVehicles
         scopeCurator = 2;
 
         displayName = "Briefing (groß)";
-        hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOF(pics\briefing.paa)};
     };
     class TB_editor_kBriefing: Land_Noticeboard_F // ### kleine Schilder
     {
@@ -262,7 +262,7 @@ class CfgVehicles
         scopeCurator = 2;
 
         displayName = "Briefing (klein)";
-        hiddenSelectionsTextures[] = {"\TBMod_main\pics\briefing.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOF(pics\briefing.paa)};
     };
     ADD_SIGN(Logo);
     ADD_SIGN(Sammelplatz);

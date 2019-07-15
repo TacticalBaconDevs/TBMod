@@ -27,10 +27,10 @@ class CfgWeapons
         displayName = "SPC Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_spc_01.paa"
+            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -42,10 +42,10 @@ class CfgWeapons
         displayName = "UCP Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_ucp_01.paa"
+            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -57,10 +57,10 @@ class CfgWeapons
         displayName = "MBAV Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa"
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -72,10 +72,10 @@ class CfgWeapons
         displayName = "MBAV Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_01.paa"
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -83,11 +83,11 @@ class CfgWeapons
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
-        modes[] = {"Far_AI","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
+        modes[] = {"Far_AI", "Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
 
     class rhs_weap_FFARLauncher_M229 : rhs_weap_FFARLauncher // Hydra (M229 HEPD)
     {
-        modes[] = {"Far_AI","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
+        modes[] = {"Far_AI", "Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
 };

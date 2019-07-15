@@ -8,6 +8,6 @@ class Extended_PostInit_EventHandlers
 {
     class TBMod_taser
     {
-        init = "call compile preprocessFileLineNumbers '\TBMod_taser\XEH_postInit.sqf'";
+        init = QUOTE(call COMPILE_FILE(XEH_postInit));
     };
 };

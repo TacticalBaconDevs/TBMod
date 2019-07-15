@@ -1,10 +1,11 @@
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgPatches
 {
-    class TBMod_taser
+    class ADDON
     {
         name = "TBMod Taser";
 
@@ -18,7 +19,6 @@ class CfgPatches
 };
 
 // Configs
-#include "script_component.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgWeapons.hpp"
