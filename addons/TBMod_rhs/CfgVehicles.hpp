@@ -25,6 +25,14 @@ class CfgVehicles
         };
     };
 
+    // Skin FlaRak Kit
+    class AA_01_base_F;
+    class B_static_AA_F: AA_01_base_F
+    {
+        author = "Eron";
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\TB_stationäre_Luftabwehr.paa","\TBMod_skins\pictures\statics\TB_stationäre_Luftabwehr.paa"};
+    };
+
     // accuracy: 3.5 = sniper, 1.5 = soldier, 0.9 = truck, 0.5 = small vehicle 0.2 = building
     // armor: 3 = soldier, 20 = car, 150 = building, 150-300 = bmp, 300 = boat, 400-900 = tank, 10000 = ship
     // audible: 0.05 = soldier, 3 = motorcycle, 6 = tank, 18 = vanilla merkava/rhs tank
