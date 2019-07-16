@@ -7,12 +7,14 @@ class CBA_Extended_EventHandlers;
 class CfgVehicles
 {
     // ###################### Boards ######################
-    #define ADD_RUFNAME(NAME) class _xx_##NAME \
+    #define ADD_RUFNAME_DETAIL(NAME,RUFNAME) class _xx_##RUFNAME \
         { \
             displayName = #NAME; \
-            statement = QUOTE((group ACE_player) setGroupIdGlobal ['NAME']); \
+            statement = QUOTE(systemChat 'RUFNAME wurde als Rufname gesetzt!'; (group ACE_player) setGroupIdGlobal ['RUFNAME']); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+            insertChildren = QUOTE([_this, 'RUFNAME'] call FUNC(insertChildrenRufname)); \
         }
+    #define ADD_RUFNAME(NAME) ADD_RUFNAME_DETAIL(NAME, NAME)
 
     class Land_MapBoard_F;
     class TB_spezial_base : Land_MapBoard_F
@@ -74,53 +76,50 @@ class CfgVehicles
                     displayName = "Spezial";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
 
-                    ADD_RUFNAME(Angel);
-                    ADD_RUFNAME(Phantom);
+                    ADD_RUFNAME_DETAIL(Angel (Sanitätseinheit), Angel);
+                    ADD_RUFNAME_DETAIL(Phantom (Aufklärer), Phantom);
+                    ADD_RUFNAME_DETAIL(Reaper (AngriffsHeli), Reaper);
+                    ADD_RUFNAME_DETAIL(Pegasus (TranpsortHeli), Pegasus);
                     ADD_RUFNAME(Ghost);
-                    ADD_RUFNAME(Reaper);
-                    ADD_RUFNAME(Pegasus);
                     ADD_RUFNAME(NightHawk);
-                    ADD_RUFNAME(Wuestenfuchs);
-                    ADD_RUFNAME(Fox);
-                    ADD_RUFNAME(Foxy);
                 };
 
-                class trupp2
+                class alphabet
                 {
-                    displayName = "Trupp2";
-                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-
-                    ADD_RUFNAME(Alpha2);
-                    ADD_RUFNAME(Bravo2);
-                    ADD_RUFNAME(Charlie2);
-                    ADD_RUFNAME(Delta2);
-                    ADD_RUFNAME(Echo2);
-                    ADD_RUFNAME(Foxtrott2);
-                    ADD_RUFNAME(Gamma2);
-                };
-
-                class special2
-                {
-                    displayName = "Spezial2";
+                    displayName = "Alphabetisch";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
 
                     // http://henney.com/chm/callsign.htm
-                    ADD_RUFNAME(Atlas);
-                    ADD_RUFNAME(Badger);
+                    ADD_RUFNAME(Arrow);
+                    ADD_RUFNAME(Bronco);
                     ADD_RUFNAME(Cobra);
                     ADD_RUFNAME(Dallas);
                     ADD_RUFNAME(Eagle);
                     ADD_RUFNAME(Falcon);
                     ADD_RUFNAME(Gremlin);
-                    ADD_RUFNAME(Hammer);
+                    ADD_RUFNAME(Hound);
                     ADD_RUFNAME(Havoc);
                     ADD_RUFNAME(Inferno);
                     ADD_RUFNAME(Jaguar);
                     ADD_RUFNAME(Karma);
                     ADD_RUFNAME(Wolf);
                     ADD_RUFNAME(Killjoy);
-                    ADD_RUFNAME(Lunar);
-                    ADD_RUFNAME(Manta);
+                    ADD_RUFNAME(Lion);
+                    ADD_RUFNAME(Monty);
+                };
+
+                class reserviert
+                {
+                    displayName = "Reserviert";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+
+                    ADD_RUFNAME_DETAIL(shukari, Atlas);
+                    ADD_RUFNAME_DETAIL(Mike, Bazinga);
+                    ADD_RUFNAME_DETAIL(Jojo, Foxy);
+                    ADD_RUFNAME_DETAIL(Sponst, Badger);
+                    ADD_RUFNAME_DETAIL(Darky, Lunar);
+                    ADD_RUFNAME_DETAIL(Eron, Manta);
+                    ADD_RUFNAME_DETAIL(Pingu, Hammer);
                 };
             };
         };

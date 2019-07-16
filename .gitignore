@@ -8,8 +8,8 @@
 *.class
 *.code-workspace
 *.pbo
-*.bikey
 *.bisign
+*.bikey
 
 /#localStuff
 /Changelog.txt
