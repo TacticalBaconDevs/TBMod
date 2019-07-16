@@ -90,4 +90,13 @@ class CfgWeapons
     {
         modes[] = {"Far_AI","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
+
+    // Skin schwarzes Shemagh
+    class H_ShemagOpen_khk;
+    class TB_Shemagh_black: H_ShemagOpen_khk
+    {
+        displayName = "Shemag Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_Shemagh_black.paa"};
+    };
 };

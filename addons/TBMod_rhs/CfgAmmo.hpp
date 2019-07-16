@@ -269,7 +269,24 @@ class CfgAmmo
         caliber = 12.3; // 2.05761
         hit = 39.7; // 24.8085
         indirectHit = 24.8; // 4
-        indirectHitRange = 0.2; // 2.76
+        indirectHitRange = 0.9; // 2.76
+    };
+
+    class B_762x51_Ball;
+    class ACE_762x51_Ball_M993_AP : B_762x51_Ball // 7.62mm Long-Range Sniper
+    {
+        ACE_ballisticCoefficients[] = {2}; // {0.359}
+        tracerEndTime = 6; // 2.15957
+    };
+
+    class ACE_762x51_Ball_Subsonic : B_762x51_Ball // 7.62mm SDLV
+    {
+        ACE_ballisticCoefficients[] = {2}; // {0.235}
+        audibleFire = 5; // 45
+        dangerRadiusBulletClose = 1; // 8
+        dangerRadiusHit = 1; // 12
+        visibleFire = 0.5; // 3
+        visibleFireTime = 0.5; // 2
     };
 
     class M_PG_AT;
