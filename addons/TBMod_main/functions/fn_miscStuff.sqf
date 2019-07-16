@@ -226,5 +226,5 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 // ### CPR/HLW Stuff
 ["adv_aceCPR_evh_CPR_local", {
     params ["_caller", "_target"];
-    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", true]};
+    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", (_target getVariable ["TB_cpr_boost", 0]) + 5]};
 }] call CBA_fnc_addEventHandler;

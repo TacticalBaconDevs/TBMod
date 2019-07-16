@@ -7,6 +7,9 @@
 *.dll
 *.class
 *.code-workspace
+*.pbo
+*.bikey
+*.bisign
 
 /#localStuff
 /Changelog.txt
