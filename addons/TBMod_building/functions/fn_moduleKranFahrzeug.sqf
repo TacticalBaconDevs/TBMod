@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -18,7 +19,7 @@ if (_mouseOverType != "OBJECT") then
 }
 else
 {
-    _mouseOverUnit setVariable ["TBMod_Building_Cranwagen", true, true];
+    _mouseOverUnit setVariable ["TBMod_Building_kranWagen", true, true];
 };
 
 true

@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -17,7 +18,7 @@ if !(_find isEqualTo []) then
 
     if !(_rolle isEqualTo "" || _arsenalType isEqualTo "") then {
         player setVariable ["TB_arsenalType", _arsenalType, true];
-        [_rolle, _arsenalType, objNull, false] call TB_fnc_changeRolle;
+        [_rolle, _arsenalType, objNull, false] call EFUNC(arsenal,changeRolle);
     };
 
     player setUnitLoadout _gear;
@@ -36,7 +37,7 @@ if !(_find isEqualTo []) then
 
     if (_id == 0) then
     {
-        if ({if (alive _x && {_x != player}) exitWith {[_x] spawn TB_fnc_teleport; 1}; false} count (units (group player)) == 0) then
+        if ({if (alive _x && {_x != player}) exitWith {[_x] spawn FUNC(teleport); 1}; false} count (units (group player)) == 0) then
         {
             systemChat "Nicht möglich, keine lebenden Personen zum Teleporten da, zurück zur alten Pos!";
             player setDir _dir;

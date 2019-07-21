@@ -19,11 +19,11 @@ class CfgMagazines
         ammo = "TB_rhs_40mm_IR_Grenade";
         author = "TBMod";
 
-        descriptionShort = "Type: TB IR Direct Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
-        displayName = "TB 40mm IR Direct Grenade Round";
-        displaynameshort = "TB IR D Grenade";
+        descriptionShort = "TB IR Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
+        displayName = "TB 40mm IR Grenade Round";
+        displaynameshort = "TB IR Grenade";
 
-        initSpeed = 425; // 18 (Granate)
+        initSpeed = 80; // 18 (Granate)
         mass = 5; // 8
         picture = "\z\ace\addons\huntir\data\m_m1070_ca.paa";
         tracersEvery = 1; // 0

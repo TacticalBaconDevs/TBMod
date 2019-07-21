@@ -1,13 +1,14 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call FUNC(isTBMission)) exitWith {};
 
 enableEnvironment [false, true];
 enableSaving [false, false];
 
-if (TB_crashHelfer) then {[true] spawn TB_fnc_crashHelferServer};
+if (TB_crashHelfer) then {[true] spawn FUNC(crashHelferServer)};
 
 // Zeus im Spiel erstellen
 [

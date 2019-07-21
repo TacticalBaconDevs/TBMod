@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -42,7 +43,7 @@ if (!_activated) exitWith {true};
     else
     {
         _dialogResult params ["_nameIdx"];
-        [_saves select _nameIdx] call TB_fnc_persistenceEDEN;
+        [_saves select _nameIdx] call FUNC(persistenceEDEN);
     };
 };
 

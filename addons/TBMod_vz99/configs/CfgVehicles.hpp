@@ -45,8 +45,8 @@ class CfgVehicles
             class TB_vz99_deploy
             {
                 displayName = "Bau vz99 auf";
-                condition = "_this call TB_fnc_canDeployWeapon";
-                statement = "_this call TB_fnc_doDeployWeapon";
+                condition = QUOTE(_this call FUNC(canDeployWeapon));
+                statement = QUOTE(_this call FUNC(doDeployWeapon));
                 exceptions[] = {};
                 icon = "\TBMod_vz99\UI\action_mortar_ca.paa";
             };
@@ -97,8 +97,8 @@ class CfgVehicles
                 displayName = "Pickup Weapon";
                 selection = "Konec hlavne";
                 distance = 3;
-                condition = "_this call TB_fnc_canPickupWeapon";
-                statement = "_this call TB_fnc_doPickupWeapon";
+                condition = QUOTE(_this call FUNC(canPickupWeapon));
+                statement = QUOTE(_this call FUNC(doPickupWeapon));
             };
         };
         class ACE_SelfActions: ACE_SelfActions
@@ -106,22 +106,22 @@ class CfgVehicles
             class TB_vz99_load_HE
             {
                 displayName = "Lade HE-Impact";
-                condition = "(['TB_vz99_HE'] call TB_fnc_canSelectNextMagazine || {['TB_vz99_HE_multi'] call TB_fnc_canSelectNextMagazine})";
-                statement = "['TB_vz99_HE_charge0'] call TB_fnc_doSelectNextMagazine";
+                condition = QUOTE((['TB_vz99_HE'] call FUNC(canSelectNextMagazine) || {['TB_vz99_HE_multi'] call FUNC(canSelectNextMagazine)}));
+                statement = QUOTE(['TB_vz99_HE_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
                 icon = "\TBMod_vz99\UI\action_shell_ca.paa";
 
                 class TB_vz99_load_HE_charge0
                 {
                     displayName = "Charge 0";
-                    statement = "['TB_vz99_HE_charge0'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_HE_charge0'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
 
                 class TB_vz99_load_HE_charge1
                 {
                     displayName = "Charge 1";
-                    statement = "['TB_vz99_HE'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_HE'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
             };
@@ -129,22 +129,22 @@ class CfgVehicles
             class TB_vz99_load_HE_PRX
             {
                 displayName = "Lade HE-Proximity";
-                condition = "['TB_vz99_HE_PRX'] call TB_fnc_canSelectNextMagazine";
-                statement = "['TB_vz99_HE_PRX_charge0'] call TB_fnc_doSelectNextMagazine";
+                condition = QUOTE(['TB_vz99_HE_PRX'] call FUNC(canSelectNextMagazine));
+                statement = QUOTE(['TB_vz99_HE_PRX_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
                 icon = "\TBMod_vz99\UI\action_shell_ca.paa";
 
                 class TB_vz99_load_HE_charge0
                 {
                     displayName = "Charge 0";
-                    statement = "['TB_vz99_HE_PRX_charge0'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_HE_PRX_charge0'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa'";
                 };
 
                 class TB_vz99_load_HE_charge1
                 {
                     displayName = "Charge 1";
-                    statement = "['TB_vz99_HE_PRX'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_HE_PRX'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa'";
                 };
             };
@@ -152,22 +152,22 @@ class CfgVehicles
             class TB_vz99_load_smokeWhite
             {
                 displayName = "Load Smoke(White) @ Charge 1";
-                condition = "['TB_vz99_smokeWhite'] call TB_fnc_canSelectNextMagazine";
-                statement = "['TB_vz99_smokeWhite_charge0'] call TB_fnc_doSelectNextMagazine";
+                condition = QUOTE(['TB_vz99_smokeWhite'] call FUNC(canSelectNextMagazine));
+                statement = QUOTE(['TB_vz99_smokeWhite_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
                 icon = "\TBMod_vz99\UI\action_shell_ca.paa";
 
                 class TB_vz99_load_smokeWhite_charge0
                 {
                     displayName = "Charge 0";
-                    statement = "['TB_vz99_smokeWhite_charge0'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_smokeWhite_charge0'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
 
                 class TB_vz99_load_smokeWhite_charge1
                 {
                     displayName = "Charge 1";
-                    statement = "['TB_vz99_smokeWhite'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_smokeWhite'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
             };
@@ -175,22 +175,22 @@ class CfgVehicles
             class TB_vz99_load_smokeRed
             {
                 displayName = "Load Smoke(Red) @ Charge 1";
-                condition = "['TB_vz99_smokeRed'] call TB_fnc_canSelectNextMagazine";
-                statement = "['TB_vz99_smokeRed_charge0'] call TB_fnc_doSelectNextMagazine";
+                condition = QUOTE(['TB_vz99_smokeRed'] call FUNC(canSelectNextMagazine));
+                statement = QUOTE(['TB_vz99_smokeRed_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
                 icon = "\TBMod_vz99\UI\action_shell_ca.paa";
 
                 class TB_vz99_load_smokeRed_charge0
                 {
                     displayName = "Charge 0";
-                    statement = "['TB_vz99_smokeRed_charge0'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_smokeRed_charge0'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
 
                 class TB_vz99_load_smokeRed_charge1
                 {
                     displayName = "Charge 1";
-                    statement = "['TB_vz99_smokeRed'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_smokeRed'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
             };
@@ -198,22 +198,22 @@ class CfgVehicles
             class TB_vz99_load_flare
             {
                 displayName = "Load Flare @ Charge 1";
-                condition = "['TB_vz99_flare'] call TB_fnc_canSelectNextMagazine";
-                statement = "['TB_vz99_flare_charge0'] call TB_fnc_doSelectNextMagazine";
+                condition = QUOTE(['TB_vz99_flare'] call FUNC(canSelectNextMagazine));
+                statement = QUOTE(['TB_vz99_flare_charge0'] call FUNC(doSelectNextMagazine));
                 exceptions[] = {};
                 icon = "\TBMod_vz99\UI\action_shell_ca.paa";
 
                 class TB_vz99_load_flare_charge0
                 {
                     displayName = "Charge 0";
-                    statement = "['TB_vz99_flare_charge0'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_flare_charge0'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
 
                 class TB_vz99_load_flare_charge1
                 {
                     displayName = "Charge 1";
-                    statement = "['TB_vz99_flare'] call TB_fnc_doSelectNextMagazine";
+                    statement = QUOTE(['TB_vz99_flare'] call FUNC(doSelectNextMagazine));
                     icon = "\TBMod_vz99\UI\action_shell_ca.paa";
                 };
             };

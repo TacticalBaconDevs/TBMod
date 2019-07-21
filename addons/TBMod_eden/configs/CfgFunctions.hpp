@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_eden
     {
-        tag = "TB";
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_eden\functions";
+
             class schauspieler {};
             class sitAI {};
             class animationAI {};
@@ -18,6 +19,10 @@ class CfgFunctions
             class inkognitoSystem {};
             class moduleAtmoCore {};
             class atmoCoreAction {};
+            class moduleAtmoShootingRange {};
+            class moduleAtmoMortarSupport {};
+            class moduleAtmoMortarSuppression {};
+            class moduleAtmoFireSuppression {};
         };
     };
 };

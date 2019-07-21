@@ -1,7 +1,7 @@
 /*
 WARLORDS-SPECIFIC FUNCTION
 
-Author: Josef Zem�nek
+Author: Josef Zemánek
 
 Description: System init.
 */
@@ -16,26 +16,29 @@ _logic = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
 
 _logicDefaultParams = [
     "StartingDaytime", -6,
-    "TimeAcceleration", 16,
+    "TimeAcceleration", 1,
     "Progress", 1,
-    "FTEnabled", 0,
+    "FTEnabled", 4,
     "ScanEnabled", 0,
     "AIVoting", 0,
     "ArsenalEnabled", 0,
     "VotingResetEnabled", 1,
+    "TeamBalanceEnabled", 0,
     "MarkersTransparency", 0.5,
     "PlayersTransparency", 0.5,
     "FatigueEnabled", 1,
     "Music", 0,
     "Voice", 1,
-    "StartCP", 500,
+    "StartCP", 250,
     "CPMultiplier", 1,
+    "MaxCP", -1,
     "VotingTimeout", 60,
     "VehicleSpan", 3600,
     "FactionBLUFOR", "BLU_F",
     "FactionOPFOR", "OPF_F",
     "FactionIndep", "IND_F",
     "AssetList", ["TB_RHS"],
+    "MaxSubordinates", 9,
     "MissionEnd", 1,
     "DebriefingWinBLUFOR", "BIS_WLVictoryWEST",
     "DebriefingFailBLUFOR", "BIS_WLDefeatWEST",
@@ -115,7 +118,7 @@ if (isServer) then {
             _x setVariable ["BIS_WL_funds", BIS_WL_startCP, TRUE];
             _x addEventHandler ["HandleRating", {
                 if ((_this # 1) > 100) then {
-                    (_this # 0) setVariable ["BIS_WL_funds", ((_this # 0) getVariable "BIS_WL_funds") + ((_this # 1) / 20), TRUE];
+                    (_this # 0) setVariable ["BIS_WL_funds", (((_this # 0) getVariable "BIS_WL_funds") + ((_this # 1) / 20)) min BIS_WL_maxCP, TRUE];
                     ["Kill reward: %1 (%2)", name (_this # 0), (_this # 1) / 20] call BIS_fnc_WLdebug;
                 };
             }];
@@ -163,10 +166,14 @@ if (isServer) then {
                     _arrID = BIS_WL_friendlyFirePunishPool find _uid;
                     if (_arrID >= 0) then {
                         _punishments = BIS_WL_friendlyFirePunishPool select (_arrID + 1);
+                        if (typeName _punishments == typeName []) then {
+                            if (count _punishments > 0) then {
                         _lastPunishment = _punishments select ((count _punishments) - 1);
                         if (_lastPunishment + BIS_WL_punishmentDuration < (call BIS_fnc_WLSyncedTime)) then {
                             _punishments pushBack (call BIS_fnc_WLSyncedTime);
                             BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
+                        };
+                            };
                         };
                     } else {
                         BIS_WL_friendlyFirePunishPool append [_uid, [(call BIS_fnc_WLSyncedTime)]];
@@ -185,16 +192,17 @@ if (isServer) then {
                     if (_arrID >= 0) then {
                         _punishments = BIS_WL_friendlyFirePunishPool select (_arrID + 1);
                         _lastPunishment = _punishments select ((count _punishments) - 1);
-                        if ((call BIS_fnc_WLSyncedTime) < (_lastPunishment + BIS_WL_punishmentDuration + (30 * (((count _punishments) - 1) min 8)))) then {
-                            _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", _lastPunishment + BIS_WL_punishmentDuration + (30 * (((count _punishments) - 1) min 8)), TRUE];
+                        _duration = BIS_WL_punishmentDuration + (30 * (((count _punishments) - 1) min 8));
+                        if ((call BIS_fnc_WLSyncedTime) < (_lastPunishment + _duration)) then {
+                            _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", _lastPunishment + _duration, TRUE];
+                        } else {
+                            _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", 0];
                         };
                         {
                             if (_x < ((call BIS_fnc_WLSyncedTime) - 1800)) then {_punishments = _punishments - [_x]};
                         } forEach _punishments;
                         BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
                     };
-                } else {
-                    _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", 0];
                 };
             } forEach (BIS_WL_allWarlords select {isPlayer _x});
             sleep 1;
@@ -220,7 +228,7 @@ if (isServer) then {
     };
     [] spawn {
         while {TRUE} do {
-            sleep 300;
+            sleep 30;
             {
                 if (_forEachIndex % 2 == 1) then {
                     _playerID = BIS_WL_friendlyFirePunishPool select (_forEachIndex - 1);
@@ -228,12 +236,70 @@ if (isServer) then {
                     {
                         if (_x < ((call BIS_fnc_WLSyncedTime) - 1800)) then {_punishments = _punishments - [_x]};
                     } forEach _punishments;
+                    BIS_WL_friendlyFirePunishPool set [_forEachIndex, _punishments];
                     if (count _punishments == 0) then {
                         BIS_WL_friendlyFirePunishPool = BIS_WL_friendlyFirePunishPool - [_playerID];
                     };
                 };
             } forEach BIS_WL_friendlyFirePunishPool;
             BIS_WL_friendlyFirePunishPool = BIS_WL_friendlyFirePunishPool - [[]];
+        };
+    };
+    if (isMultiplayer && BIS_WLTeamBalanceEnabled == 1) then {
+        [] spawn {
+            sleep 0.01;
+            _maxDifference = 3;
+            while {TRUE} do {
+                _warlordsToSwitch = [];
+                _diff = -1;
+                _westWarlordsLobby = playersNumber WEST;
+                _westSlots = playableSlotsNumber WEST;
+                _freeSlotsWest = _westSlots - _westWarlordsLobby;
+                _eastWarlordsLobby = playersNumber EAST;
+                _eastSlots = playableSlotsNumber EAST;
+                _freeSlotsEast = _eastSlots - _eastWarlordsLobby;
+                _westWarlords = BIS_WL_allWarlords select {side group _x == WEST};
+                _warlordsToSwitchHandledWest = _westWarlords select {_x getVariable ["BIS_WL_toSwitchSides", FALSE]};
+                _warlordsToSwitchHandledWestCnt = count _warlordsToSwitchHandledWest;
+                _westWarlordsCnt = count _westWarlords;
+                _eastWarlords = BIS_WL_allWarlords select {side group _x == EAST};
+                _warlordsToSwitchHandledEast = _eastWarlords select {_x getVariable ["BIS_WL_toSwitchSides", FALSE]};
+                _warlordsToSwitchHandledEastCnt = count _warlordsToSwitchHandledEast;
+                _eastWarlordsCnt = count _eastWarlords;
+                if (_westWarlordsCnt > (_eastWarlordsCnt + _maxDifference) && _freeSlotsEast > 0) then {
+                    _diff = (_westWarlordsCnt - _eastWarlordsCnt - _maxDifference - _warlordsToSwitchHandledWestCnt) min _freeSlotsEast;
+                    if (_diff > 0) then {
+                        _warlordsToSwitch = _westWarlords - _warlordsToSwitchHandledWest;
+                    };
+                } else {
+                    {
+                        _x setVariable ["BIS_WL_toSwitchSides", FALSE, TRUE];
+                    } forEach _warlordsToSwitchHandledWest;
+                    if (_eastWarlordsCnt > (_westWarlordsCnt + _maxDifference) && _freeSlotsWest > 0) then {
+                        _diff = (_eastWarlordsCnt - _westWarlordsCnt - _maxDifference - _warlordsToSwitchHandledEastCnt) min _freeSlotsWest;
+                        if (_diff > 0) then {
+                            _warlordsToSwitch = _eastWarlords - _warlordsToSwitchHandledEast;
+                        };
+                    } else {
+                        {
+                            _x setVariable ["BIS_WL_toSwitchSides", FALSE, TRUE];
+                        } forEach _warlordsToSwitchHandledEast;
+                    }
+                };
+                if (count _warlordsToSwitch > 0) then {
+                    _warlordsToSwitch = _warlordsToSwitch select {(_x getVariable ["BIS_WL_connectedAt", 10e10]) > ((call BIS_fnc_WLSyncedTime) - 20)};
+                    _warlordsToSwitch = _warlordsToSwitch apply {[_x getVariable ["BIS_WL_connectedAt", 10e10], _x]};
+                    _warlordsToSwitch sort FALSE;
+                    if (_diff < count _warlordsToSwitch) then {
+                        _warlordsToSwitch resize _diff;
+                    };
+                    _warlordsToSwitch = _warlordsToSwitch apply {_x select 1};
+                    {
+                        _x setVariable ["BIS_WL_toSwitchSides", TRUE, TRUE];
+                    } forEach _warlordsToSwitch;
+                };
+                sleep 1;
+            };
         };
     };
 };

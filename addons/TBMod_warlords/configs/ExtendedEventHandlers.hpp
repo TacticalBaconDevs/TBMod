@@ -17,13 +17,13 @@ class Extended_InitPost_Eventhandlers
     {
         class TBMod_warlords
         {
-            serverInit = "params ['_vehicle']; if (call TB_fnc_isWLMission) then {_vehicle setVehicleLock 'LOCKED'};";
+            serverInit = QUOTE(params ['_vehicle']; if (call FUNC(isWLMission)) then {_vehicle setVehicleLock 'LOCKED'};);
         };
     };
 
     #define INIT_TEXTURE(CLASSE,SKIN) class CLASSE { \
             class TBMod_warlords { \
-                serverInit = QUOTE(params ['_vehicle']; if (call TB_fnc_isWLMission) then {{_vehicle setObjectTextureGlobal [_forEachIndex, _x]} forEach (getArray (configfile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'textureSources' >> 'SKIN' >> 'textures'))};); \
+                serverInit = QUOTE(params ['_vehicle']; if (call FUNC(isWLMission)) then {{_vehicle setObjectTextureGlobal [_forEachIndex, _x]} forEach (getArray (configfile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'textureSources' >> 'SKIN' >> 'textures'))};); \
             }; \
         }
 

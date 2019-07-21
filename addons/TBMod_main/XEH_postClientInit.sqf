@@ -1,8 +1,9 @@
+#include "script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call TB_fnc_isTBMission) exitWith {};
+if !(call FUNC(isTBMission)) exitWith {};
 
 enableEnvironment [false, true];
 enableSaving [false, false];
@@ -23,15 +24,15 @@ enableSaving [false, false];
 // }] call CBA_fnc_addEventHandler;
 
 ["CBA_loadingScreenDone", {
-    [] call TB_fnc_doorBreach;
-    [] call TB_fnc_recoilSystem;
-    [] spawn TB_fnc_crashHelferClient;
-    [] spawn TB_fnc_shortcuts;
-    [] call TB_fnc_chatCommands;
-    [] call TB_fnc_extremMedicMode;
-    [] spawn TB_fnc_miscStuff;
-    [] call TB_fnc_addBriefingEntries;
-    [] spawn TB_fnc_firstJoin;
+    [] call FUNC(doorBreach);
+    [] call FUNC(recoilSystem);
+    [] spawn FUNC(crashHelferClient);
+    [] spawn FUNC(shortcuts);
+    [] call FUNC(chatCommands);
+    [] call FUNC(extremMedicMode);
+    [] spawn FUNC(miscStuff);
+    [] call FUNC(addBriefingEntries);
+    [] spawn FUNC(firstJoin);
 
     TB_init_done = true;
     publicVariableServer "TB_init_done";
