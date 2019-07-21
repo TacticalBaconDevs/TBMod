@@ -100,10 +100,21 @@ private _allgemein = [
 ];
 
 private _allgemein_gewehre = [
-    // Gewehr
+    "BWA3_G36A1",
     "BWA3_G36A1_tan",
+    "BWA3_G36A2",
     "BWA3_G36A2_tan",
-    "BWA3_G36KA3_tan"
+    "BWA3_G36A3",
+    "BWA3_G36A3_tan",
+    "BWA3_G38",
+    "BWA3_G38_tan"
+];
+
+private _allgemein_gewehre_unterlauf = [
+    "BWA3_G36A3_AG40",
+    "BWA3_G36A3_AG40_tan",
+    "BWA3_G38_AG40",
+    "BWA3_G38_AG40_tan"
 ];
 
 private _allgemein_magazine = [
@@ -127,6 +138,8 @@ private _allgemein_visiere = [
     "BWA3_optic_RSAS",
     //"BWA3_optic_ZO4x30_Single", keine Ahnung was das neue ist
     "BWA3_optic_ZO4x30",
+    "bwa3_optic_zo4x30i",
+    "bwa3_optic_zo4x30i_microt2",
     "BWA3_optic_NSV600" //  Zusatz zum ZO4x30
 ];
 
@@ -142,7 +155,8 @@ private _allgemein_befestigungsschiene = [
 ];
 
 private _allgemein_zweibein = [
-    "bipod_01_F_blk"
+    "bwa3_bipod_harris",
+    "bwa3_bipod_atlas"
 ];
 
 private _allgemein_raketenwerfer = [
@@ -441,6 +455,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "grena":
     {
         _allgemein +
+        _allgemein_gewehre_unterlauf +
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
@@ -452,6 +467,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _grenadier_gewehr +
         _grenadier_munition +
         [
+
             // Weste
             "BWA3_Vest_Grenadier_Fleck",
             "BWA3_Vest_Grenadier_Tropen"
