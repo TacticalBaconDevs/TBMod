@@ -775,7 +775,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_HuntIR_monitor"
         ]
     };
-    
+
     case "dmr": {[]};
 
     case "mg":
@@ -937,7 +937,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "rhs_weap_m14ebrri",
-            
+
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
@@ -1065,6 +1065,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_sniper",
             "rhsusf_spcs_ucp_sniper",
 
+            // Munition
+            "rhsusf_mag_10Rnd_STD_50BMG_mk211",
+            "rhsusf_mag_10Rnd_STD_50BMG_M33",
+            "ACE_20Rnd_762x51_Mag_SD",
+            "ACE_20Rnd_762x51_M993_AP_Mag",
+
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
@@ -1079,6 +1085,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
             "Laserbatteries",
             "ACE_HuntIR_monitor",
+
             // ### Minen
             "APERSTripMine_Wire_Mag",
             "APERSBoundingMine_Range_Mag",

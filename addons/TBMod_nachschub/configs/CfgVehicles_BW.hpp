@@ -51,6 +51,7 @@ class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
         MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,15);
         MACRO_ADDMAGAZINE(1Rnd_Smoke_Grenade_shell,10);
         MACRO_ADDMAGAZINE(UGL_FlareWhite_F,3);
+        MACRO_ADDMAGAZINE(ACE_HuntIR_M203,6);
     };
 };
 

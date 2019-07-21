@@ -99,4 +99,46 @@ class CfgWeapons
         author = "Eron";
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_Shemagh_black.paa"};
     };
+
+    class launch_O_Titan_F;
+    class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
+    {
+        mass = 176.37; // 152.46
+    };
+
+    class Launcher_Base_F;
+    class rhs_weap_smaw: Launcher_Base_F // MK153 Mod 0 SMAW (Black)
+    {
+        mass = 132.25; // 34
+    };
+
+    class rhs_weap_maaws: Launcher_Base_F // M3 MAAWS
+    {
+        mass = 154.32; // 38.4
+    };
+
+    class rhs_weap_M136: Launcher_Base_F // M136 (HEAT)
+    {
+        mass = 143.3; // 30.3
+    };
+
+    class rhs_weap_M136_hedp: rhs_weap_M136 // M136 (HEDP)
+    {
+        mass = 88.18; // 30.3
+    };
+
+    class rhs_weap_M136_hp: rhs_weap_M136 // M136 (HP)
+    {
+        mass = 66.13; // 30.3
+    };
+
+    class rhs_weap_m72a7: rhs_weap_M136 // M72A7
+    {
+        mass = 71.63; // 15.8
+    };
+
+    class rhs_weap_fim92: rhs_weap_M136 // FIM-92F
+    {
+        mass = 132.25; // 92.35
+    };
 };
