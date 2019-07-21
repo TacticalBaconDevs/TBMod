@@ -8,7 +8,7 @@ class CfgMagazines
     class BWA3_10Rnd_127x99_G82_AP_Tracer_LRS : BWA3_10Rnd_127x99_G82_AP_Tracer // 50.cal Long-Range Sniper BW
     {
         author = "TBMod";
-        ammo = "BWA3_10Rnd_127x99_G82_AP_Tracer_LRS";
+        ammo = "BWA3_B_127x99_Ball_AP";
         descriptionShort = ".50Cal LRS BW";
         displayName = ".50Cal Long-Range Sniper Magazine BW";
         displayNameShort = ".50Cal LRS BW";
@@ -20,7 +20,7 @@ class CfgMagazines
     class BWA3_10Rnd_127x99_G82_AP_Tracer_HEIAP_T : BWA3_10Rnd_127x99_G82_AP_Tracer // 50.cal HEIAP-T (High-Explosive Incendiary/Armor-Piercing Ammunition Tracer) BW
     {
         author = "TBMod";
-        ammo = "BWA3_10Rnd_127x99_G82_AP_Tracer_HEIAP_T";
+        ammo = "BWA3_B_127x99_Ball_AP_HEIAP_T";
         descriptionShort = ".50Cal HEIAP-T Magazine BW";
         displayName = "High-Explosive Incendiary/Armor-Piercing Ammunition Tracer BW";
         displayNameShort = ".50Cal HEIAP-T BW";
