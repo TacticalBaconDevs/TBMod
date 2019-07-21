@@ -110,13 +110,6 @@ private _allgemein_gewehre = [
     "BWA3_G38_tan"
 ];
 
-private _allgemein_gewehre_unterlauf = [
-    "BWA3_G36A3_AG40",
-    "BWA3_G36A3_AG40_tan",
-    "BWA3_G38_AG40",
-    "BWA3_G38_AG40_tan"
-];
-
 private _allgemein_magazine = [
     "BWA3_30Rnd_556x45_G36_Tracer",
     "BWA3_30Rnd_556x45_G36_Tracer_Dim",
@@ -230,9 +223,10 @@ private _allgemein_kopfbedeckung = [
 ];
 
 private _grenadier_gewehr = [
-    "BWA3_G36A1_AG40_tan",
-    "BWA3_G36A2_AG40_tan",
-    "BWA3_G36A3_AG40_tan"
+    "BWA3_G36A3_AG40",
+    "BWA3_G36A3_AG40_tan",
+    "BWA3_G38_AG40",
+    "BWA3_G38_AG40_tan"
 ];
 
 private _grenadier_munition = [
@@ -455,7 +449,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "grena":
     {
         _allgemein +
-        _allgemein_gewehre_unterlauf +
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
