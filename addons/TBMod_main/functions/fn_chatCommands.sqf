@@ -35,6 +35,37 @@
     systemChat format ["HUD ist nun %1", ["sichtbar" , "unsichtbar"] select diwako_dui_main_toggled_off];
 }, "all"] call CBA_fnc_registerChatCommand;
 
+["sniper", {
+
+    private _weapon = currentWeapon player;
+    private _magazine = currentMagazine player;
+    if (_weapon == "" || _magazine == "") exitwith {systemChat "Habe eine Waffe mit Magazin ausgerüstet."};
+    private _ammo = getText (configfile >> "CfgMagazines" >> _magazine >> "ammo");
+    systemChat format ["Sniper Informationen MET"];
+    systemChat format ["Map: %1", worldName];
+    systemChat format ["Map Latitude: %1°", ace_common_maplatitude];
+
+
+    systemChat format ["Weapon: %1", _weapon];
+    systemChat format ["Bore: %1cm", [player, 0] call ace_scopes_fnc_getBoreHeight];
+    systemChat format ["Barrel Twist: %1cm", (getNumber (configFile >> "CfgWeapons" >> _weapon >> "ACE_barrelTwist"))/25.4];
+    
+    
+    systemChat format ["Bullet: %1", _ammo];
+    systemChat format ["Bullet Mass: %1g", getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_bulletMass")];
+    systemChat format ["Bullet Diam: %1mm", getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_caliber")];
+    systemChat format ["Bullet C1 Coef: %1", (getArray (configFile >> "CfgAmmo" >> _ammo >> "ACE_ballisticCoefficients") # 0)];
+    private _muzzlevelocity = getArray (configFile >> "CfgAmmo" >> _ammo >> "ACE_muzzleVelocities") # 0;
+    systemChat format ["Bullet Muzzle Velocity: %1m/s", _muzzlevelocity];
+    systemChat format ["Muzzle velocity table:"];
+    private _tempLookup = [-15,-10,-5,0,5,10,15,20,25,30,35];
+    private _shifts = getArray(configFile >> "CfgAmmo" >> _ammo >> "ACE_ammoTempMuzzleVelocityShifts");
+    for [{_i = 0}, {_i < 11}, {_i = _i + 1}] do {
+        systemChat format ["%1°C  :  %2m/s", _tempLookup#_i,_muzzlevelocity + _shifts#_i];
+    };
+
+}, "all"] call CBA_fnc_registerChatCommand;
+
 if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
 ["fps", {
