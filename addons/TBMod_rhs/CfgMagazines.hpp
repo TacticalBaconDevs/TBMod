@@ -281,7 +281,8 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
         displayName = "AT-Mines Cluster [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
-         hardpoints[] = {"B_BOMB_PYLON"}; // "O_BOMB_PYLON_HELI"
+        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "O_BOMB_PYLON_HELI"
+        mass = 340; // 470
     };
 
     class PylonMissile_1Rnd_BombCluster_03_F : PylonMissile_1Rnd_BombCluster_01_F // BL-778 HE Cluster

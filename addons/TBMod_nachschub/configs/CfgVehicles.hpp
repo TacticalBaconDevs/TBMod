@@ -135,7 +135,7 @@ class CfgVehicles
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
                     ADD_SUPPLY(SaniBaukiste,TB_supply_all_medicbuilding);
                     ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
-                    ADD_SUPPLY(Minenkiste,TB_supply_all_mines);
+                    ADD_SUPPLY(Sprengstoff,TB_supply_all_mines);
                 };
 
                 class usa
@@ -515,7 +515,7 @@ class CfgVehicles
 
     class TB_supply_all_mines : WRAPPER_NAME(Box_IND_AmmoOrd_F)
     {
-        PUBLIC_NAME("Minenkiste");
+        PUBLIC_NAME("Sprengstoff");
 
         class TransportItems
         {
