@@ -9,10 +9,10 @@ class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(BWA3_200Rnd_556x45_Tracer,2);
-        MACRO_ADDMAGAZINE(BWA3_10Rnd_762x51_G28,4);
+        MACRO_ADDMAGAZINE(BWA3_10Rnd_762x51_G28,4);        //G27 Munition
         MACRO_ADDMAGAZINE(BWA3_20Rnd_762x51_G28,4);
         MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36_Tracer,10);
-        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36,15);    //G27 Munition
+        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36,15);    
     };
 };
 
