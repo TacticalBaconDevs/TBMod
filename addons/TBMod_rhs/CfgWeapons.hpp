@@ -117,4 +117,12 @@ class CfgWeapons
         displayName = "Airburst Bomb";
     };
     
+    // Skin schwarzes Shemagh
+    class H_ShemagOpen_khk;
+    class TB_Shemagh_black: H_ShemagOpen_khk
+    {
+        displayName = "Shemag Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_Shemagh_black.paa"};
+    };
 };

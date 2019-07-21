@@ -685,19 +685,19 @@ class ACE_Medical_Advanced {
             // specific details for the ACE_Morphine treatment action
             class Morphine {
                 painReduce = 10;
-                hrIncreaseLow[] = {-25, -35, 45};
-                hrIncreaseNormal[] = {-25, -45, 40};
-                hrIncreaseHigh[] = {-25, -50, 35};
+                hrIncreaseLow[] = {-10, -20, 55};
+                hrIncreaseNormal[] = {-15, -35, 40};
+                hrIncreaseHigh[] = {-15, -40, 35};
                 timeInSystem = 1200;
-                maxDose = 4;
-                viscosityChange = -25;
+                maxDose = 2;
+                viscosityChange = -15;
             };
             class Epinephrine {
                 hrIncreaseLow[] = {15, 35, 15};
-                hrIncreaseNormal[] = {15, 35, 10};
-                hrIncreaseHigh[] = {15, 30, 5};
-                timeInSystem = 150;
-                maxDose = 6;
+                hrIncreaseNormal[] = {15, 40, 10};
+                hrIncreaseHigh[] = {15, 35, 5};
+                timeInSystem = 300;
+                maxDose = 4;
             };
             class Atropine { // Ketamin
                 painReduce = 1.2;
@@ -705,16 +705,16 @@ class ACE_Medical_Advanced {
                 hrIncreaseNormal[] = {-1, -3, 10};
                 hrIncreaseHigh[] = {-3, -5, 5};
                 timeInSystem = 300;
-                maxDose = 6;
+                maxDose = 4;
                 viscosityChange = -3;
             };
             class Adenosine {
                 hrIncreaseLow[] = {5, 10, 20};
                 hrIncreaseNormal[] = {8, 12, 15};
                 hrIncreaseHigh[] = {-15, -25, 10};
-                timeInSystem = 90;
-                maxDose = 3;
-                viscosityChange = 6;
+                timeInSystem = 300;
+                maxDose = 4;
+                viscosityChange = 8;
             };
         };
 
