@@ -31,7 +31,6 @@ _allItems append [
 
     "ACE_salineIV",
     "ACE_salineIV_500",
-    "ACE_salineIV_250",
 
     "ACE_tourniquet"
 ];

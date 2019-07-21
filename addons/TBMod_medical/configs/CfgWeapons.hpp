@@ -23,11 +23,14 @@ class CfgWeapons
         descriptionUse = "Stabilisiert den Herzschlag.";
     };
 
-    SET_NAME(ACE_bloodIV, ACE_ItemCore, "Blut IV (2000ml)");
-    SET_NAME(ACE_bloodIV_500, ACE_bloodIV, "Blut IV (1000ml)");
-    SET_NAME(ACE_bloodIV_250, ACE_bloodIV, "Blut IV (500ml)");
+    SET_NAME(ACE_bloodIV, ACE_ItemCore, "Blut IV (2800ml)");
+    SET_NAME(ACE_bloodIV_500, ACE_bloodIV, "Blut IV (1400ml)");
+    SET_NAME(ACE_bloodIV_250, ACE_bloodIV, "Blut IV (700ml)");
 
-    SET_NAME(ACE_salineIV, ACE_ItemCore, "Kochsalzlösung (500ml)");
-    SET_NAME(ACE_salineIV_500, ACE_salineIV,  "Kochsalzlösung (250ml)");
-    SET_NAME(ACE_salineIV_250, ACE_salineIV, "Kochsalzlösung (125ml)");
+    SET_NAME(ACE_plasmaIV, ACE_ItemCore, "Plasmalösung (1400ml)");
+    SET_NAME(ACE_plasmaIV_500, ACE_plasmaIV,  "Plasmalösung (700ml)");
+    SET_NAME(ACE_plasmaIV_250, ACE_plasmaIV, "Plasmalösung (350ml)");
+
+    SET_NAME(ACE_salineIV, ACE_ItemCore, "Kochsalzlösung (700ml)");
+    SET_NAME(ACE_salineIV_500, ACE_salineIV,  "Kochsalzlösung (350ml)");
 };
