@@ -8,7 +8,10 @@ params [["_input", false, [false]]];
 if (!TB_crashHelfer && _input) then {TB_crashHelfer = true};
 if (!TB_crashHelfer) exitWith {};
 
-if(isNil "TB_disconnectCache") then {TB_disconnectCache = []; publicVariable "TB_disconnectCache";}
+if(isNil "TB_disconnectCache") then {
+    TB_disconnectCache = []; 
+    publicVariable "TB_disconnectCache";
+};
 
 addMissionEventHandler ["HandleDisconnect",
 {
