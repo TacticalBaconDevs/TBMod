@@ -1,3 +1,7 @@
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+*/
 class CfgPatches
 {
     class TBMod_taser
@@ -14,7 +18,7 @@ class CfgPatches
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgWeapons.hpp"

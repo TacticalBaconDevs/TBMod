@@ -20,6 +20,7 @@ class CfgVehicles
     class O_officer_F;
 
     // Fahrzeuge
+    class I_Plane_Fighter_03_dynamicLoadout_F;
     class B_Heli_Light_01_F;
     class I_Heli_light_03_unarmed_F;
     class I_Heli_light_03_dynamicLoadout_F;
@@ -178,6 +179,17 @@ class CfgVehicles
         };
     };
 
+    class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_dynamicLoadout_F // I_Plane_Fighter_03_dynamicLoadout_F
+    {
+        displayName = "L-159 Albatros";
+        author = "Eron";
+        addCategory(USA);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_01.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_02.paa"
+        };
+    };
+
     ///////////////////////BW Fahrzeuge//////////////////////////
 
     class TB_Vehicles_BW_Pandur: I_APC_Wheeled_03_cannon_F
@@ -319,14 +331,14 @@ class CfgVehicles
     };
 
     //////////Texturen werden manuell geladen
-    
+
     class TB_Vehicles_PMC_Jeep: I_C_Offroad_02_unarmed_F
     {
         displayName = "Jeep";
         author = "Eron";
         addCategory(PMC);
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
-    
+
         class EventHandlers: EventHandlers
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
@@ -339,7 +351,7 @@ class CfgVehicles
         author = "Eron";
         addCategory(PMC);
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
-    
+
         class EventHandlers: EventHandlers
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
@@ -352,7 +364,7 @@ class CfgVehicles
         author = "Eron";
         addCategory(PMC);
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
-    
+
         class EventHandlers: EventHandlers
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";

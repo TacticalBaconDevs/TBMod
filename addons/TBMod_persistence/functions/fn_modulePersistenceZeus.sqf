@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -39,13 +40,13 @@ if !(_activated) exitWith {true};
 
         if (_server) then
         {
-            [true, _name] remoteExec ["TB_fnc_persistence", 2];
+            [true, _name] remoteExec [QFUNC(persistence), 2];
             [profileNamespace, ["TB_persistence_savedNames", _saves]] remoteExec ["setVariable", 2]; //[profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
             [] remoteExec ["saveProfileNamespace", 2];
         }
         else
         {
-            [true, _name, true] call TB_fnc_persistence;
+            [true, _name, true] call FUNC(persistence);
             profileNamespace setVariable ["TB_persistence_savedNames", _saves];
             saveProfileNamespace;
         };
@@ -56,11 +57,11 @@ if !(_activated) exitWith {true};
 
         if (_server) then
         {
-            [false, _saves select _id] remoteExec ["TB_fnc_persistence", 2];
+            [false, _saves select _id] remoteExec [QFUNC(persistence), 2];
         }
         else
         {
-            [false, _saves select _id, true] call TB_fnc_persistence;
+            [false, _saves select _id, true] call FUNC(persistence);
         };
     };
 };

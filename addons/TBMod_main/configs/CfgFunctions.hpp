@@ -6,11 +6,12 @@ class CfgFunctions
 {
     class TBMod_main
     {
-        tag = "TB";
+        tag = ADDONTAG;
 
         class functions
         {
             file = "\TBMod_main\functions";
+
             class upDown {};
             class teleport {};
             class safe {};
@@ -30,13 +31,13 @@ class CfgFunctions
             class shortcuts {};
             class chatCommands {};
             class miscStuff {};
-            class calcTreatmentTime {};
             class debug {};
             class forceRagdoll {};
             class attachToRelative {};
             class addBriefingEntries {};
             class firstJoin {};
             class deleteIfNotSeen {};
+            class insertChildrenRufname {};
         };
 
         class gcam
@@ -59,7 +60,7 @@ class CfgFunctions
         {
             class onDisplayCuratorLoad
             {
-                file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf";
+                file = "\TBMod_main\replacement\fn_onDisplayCuratorLoad.sqf"; // TODO: testen
             };
         };
     };

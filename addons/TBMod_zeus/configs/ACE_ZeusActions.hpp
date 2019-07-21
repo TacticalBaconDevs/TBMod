@@ -2,27 +2,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-// ###################### Makros ######################
-#define ADD_OPTION(NAME,VAR) class off_##VAR \
-    { \
-        displayName = "NAME: aus"; \
-        condition = "(curatorSelected select 1) findIf {!(_x getVariable ['VAR', false])} != -1"; \
-        statement = "{_x setVariable ['VAR', true, true]} forEach (curatorSelected select 1)"; \
-    }; \
-    class on_##VAR \
-    { \
-        displayName = "NAME: an"; \
-        condition = "(curatorSelected select 1) findIf {_x getVariable ['VAR', false]} != -1"; \
-        statement = "{_x setVariable ['VAR', false, true]} forEach (curatorSelected select 1)"; \
-    }
-
 class ACE_ZeusActions
 {
-    class ZeusUnits
-    {
-
-    };
-
     class ZeusGroups
     {
         class TBMod
@@ -55,6 +36,19 @@ class ACE_ZeusActions
         {
             displayName = "VCOM";
 
+            #define ADD_OPTION(NAME,VAR) class off_##VAR \
+                { \
+                    displayName = QUOTE(NAME: aus); \
+                    condition = QUOTE((curatorSelected select 1) findIf {!(_x getVariable [#VAR, false])} != -1); \
+                    statement = QUOTE({_x setVariable [#VAR, true, true]} forEach (curatorSelected select 1)); \
+                }; \
+                class on_##VAR \
+                { \
+                    displayName = QUOTE(NAME: an); \
+                    condition = QUOTE((curatorSelected select 1) findIf {_x getVariable [#VAR, false]} != -1); \
+                    statement = QUOTE({_x setVariable [#VAR, false, true]} forEach (curatorSelected select 1)); \
+                }
+
             ADD_OPTION(VCOM generell, Vcm_Disable);
             ADD_OPTION(Flankieren, VCM_NOFLANK);
             ADD_OPTION(Unterstützung geben, VCM_NORESCUE);
@@ -64,13 +58,7 @@ class ACE_ZeusActions
         };
     };
 
-    class ZeusWaypoints
-    {
-
-    };
-
-    class ZeusMarkers
-    {
-
-    };
+    class ZeusUnits {};
+    class ZeusWaypoints {};
+    class ZeusMarkers {};
 };

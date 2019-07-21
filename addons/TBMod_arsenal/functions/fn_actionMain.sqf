@@ -1,11 +1,12 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_args", ""];
 _args params ["_target", "_player", "_params", "_actionData"];
 
-if !([_target] call TB_fnc_isArsenalType) exitWith {};
+if !([_target] call FUNC(isArsenalType)) exitWith {};
 
 private _tbCargo = ACE_player getVariable ["TB_arsenalCargo", []];
 if (!(_tbCargo isEqualTo []) && {!(_tbCargo isEqualTo (_target getVariable ["ace_arsenal_virtualItems", []]))}) then
@@ -13,7 +14,7 @@ if (!(_tbCargo isEqualTo []) && {!(_tbCargo isEqualTo (_target getVariable ["ace
     _target setVariable ["ace_arsenal_virtualItems", _tbCargo];
 
     {
-        if (!(_x isEqualTo _target) && [_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
+        if (!(_x isEqualTo _target) && [_x] call FUNC(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
         {
             _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
         };

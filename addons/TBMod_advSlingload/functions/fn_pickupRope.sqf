@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -29,7 +30,7 @@ if (_fromGround) then //_target = helper
 
     _target setVariable ["TB_Rope_is_carry", true, true];
     ACE_player setVariable ["TB_Rope_helper", _target];
-    [_source, _selection, _target] call TB_fnc_startRopeinHandsPFH;
+    [_source, _selection, _target] call FUNC(startRopeinHandsPFH);
 }
 else  //_target = helicopter
 {
@@ -51,5 +52,5 @@ else  //_target = helicopter
     _rope setVariable ["TB_Rope_helper", _helper, true];
     _rope setVariable ["TB_Rope_Source", _target, true];
 
-    [_target, _selection, _helper] call TB_fnc_startRopeinHandsPFH;
+    [_target, _selection, _helper] call FUNC(startRopeinHandsPFH);
 }

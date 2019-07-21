@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -32,7 +33,7 @@ if (!isNull _attachedVehicle && _attachedVehicle != _target) exitWith {systemCha
 private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
 if (_selection == "") exitWith {systemChat format ["ERROR(attach): no Slingloadposition found on _source %1   ", _source]};
 
-private _posToAttach = ASLToAGL ([ACE_player, _ray] call TB_fnc_calculateAttachPoint);
+private _posToAttach = ASLToAGL ([ACE_player, _ray] call FUNC(calculateAttachPoint));
 private _sourcepos = (_source modelToWorld (_source selectionPosition _selection));
 
 // Sanity Check
@@ -60,5 +61,5 @@ ACE_player setVariable ['TB_Rope_helper', nil];
 _source setVariable ['TB_Rope_attachedVehicle', _target, true];
 _target setVariable ['TB_Rope_original_Mass', getMass _target, true];
 
-if (getMass _target > 12000) then {_target setMass 12000};
+if (getMass _target > GVAR(maxWeight)) then {[_target, GVAR(maxWeight)] remoteExec ["setMass", _target]};
 ACE_player setVariable ["TB_Rope_source", nil];

@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -15,12 +16,12 @@ _input params [
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {
     // Check for LZ Module
-    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "TB_eden_atmoReinforcementLZ" || _x isKindOf "TB_eden_atmoLZ"};
+    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "TB_eden_atmoReinforcementLZ"};
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoCore-Modul braucht ein AtmoLZ-Modul gesynct!"};
     private _lzLogic = selectRandom _syncObjs;
 
     // Check for EndPoints Module
-    _syncObjs = ((synchronizedObjects _lzLogic) + (synchronizedObjects _logic)) select {_x isKindOf "TB_eden_atmoReinforcementEndpoint" || _x isKindOf "TB_eden_endpoint"};
+    _syncObjs = ((synchronizedObjects _lzLogic) + (synchronizedObjects _logic)) select {_x isKindOf "TB_eden_atmoReinforcementEndpoint"};
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoCore-Modul braucht mindestens ein AtmoEndpoint-Modul gesynct!"};
     private _endPoint = selectRandom _syncObjs;
 
@@ -32,7 +33,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 
     if (_vehicle isKindOf "Air") then
     {
-        if ((entities "HeliH") isEqualTo []) then
+        if ((nearestObjects [_lzLogic, ["HeliH"], 15]) isEqualTo []) then
         {
             private _heli = createVehicle ["Land_HelipadSquare_F", [0,0,0], [], 0, "CAN_COLLIDE"];
             _heli setDir (getDir _lzLogic);
@@ -59,7 +60,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     // Setup Waypoints
     private _wp = _grp addWaypoint [getPos _logic, 50];
     _wp setWaypointType "MOVE";
-    _wp setWaypointStatements ["true", format ["[this, %1] spawn TB_fnc_atmoCoreAction", getPos _endPoint]];
+    _wp setWaypointStatements ["true", format ["[this, %1] spawn TB_eden_fnc_atmoCoreAction", getPos _endPoint]];
 
     _wp = _grp addWaypoint [getPos _lzLogic, 5];
     _wp setWaypointType "TR UNLOAD";

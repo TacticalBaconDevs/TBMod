@@ -214,6 +214,8 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3_tan",
     "rhsusf_acc_ACOG",
     "rhsusf_acc_acog_rmr",
+    "rhsusf_acc_su230",
+    "rhsusf_acc_su230_c",
     "rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230_mrds_c",
     //"rhsusf_acc_ACOG2",
@@ -325,7 +327,11 @@ private _allgemein_westen = [
     "rhsusf_mbav",
     "rhsusf_spc",
     "rhsusf_spcs_ocp",
-    "rhsusf_spcs_ucp"
+    "rhsusf_spcs_ucp",
+    "SPC_Black_01",
+    "UCP_Black_01",
+    "MBAV_Black_01",
+    "MBAV_Black_02"
 ];
 
 private _allgemein_kopfbedeckung = [
@@ -535,7 +541,8 @@ private _pilot_munition = [
 private _sniper_munition = [
     "rhsusf_mag_10Rnd_STD_50BMG_mk211",
     "rhsusf_mag_10Rnd_STD_50BMG_M33",
-    "rhsusf_5Rnd_300winmag_xm2010",
+    "ACE_20Rnd_762x51_Mag_SD",
+    "ACE_20Rnd_762x51_M993_AP_Mag",
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
     "rhsusf_mag_40Rnd_46x30_AP"
@@ -768,79 +775,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_HuntIR_monitor"
         ]
     };
-
-    case "dmr":
-    {
-        _allgemein +
-        _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
-        _allgemein_zweibein +
-        _allgemein_handfeuerwaffen +
-        _allgemein_uniformen +
-        _allgemein_westen +
-        _allgemein_kopfbedeckung +
-        _dmr_munition +
-        [
-            // Gewehre
-            "rhs_weap_m14ebrri",
-            "rhs_weap_m24sws",
-            "rhs_weap_m24sws_blk",
-            "rhs_weap_m40a5",
-            "rhs_weap_m40a5_d",
-            "rhs_weap_m40a5_wd",
-            "rhs_weap_sr25",
-            "rhs_weap_sr25_d",
-            "rhs_weap_sr25_ec_d",
-            "rhs_weap_sr25_ec_wd",
-            "rhs_weap_sr25_wd",
-            "rhs_weap_sr25_ec",
-            // ### Visiere
-            "rhsusf_acc_su230a",
-            "rhsusf_acc_su230a_c",
-            "rhsusf_acc_su230a_mrds",
-            "rhsusf_acc_su230a_mrds_c",
-            "rhsusf_acc_m8541_low",
-            "rhsusf_acc_m8541_low_d",
-            "rhsusf_acc_m8541_low_wd",
-            "rhsusf_acc_leupoldmk4",
-            "rhsusf_acc_leupoldmk4_d",
-            "rhsusf_acc_leupoldmk4_wd",
-            "rhsusf_acc_ACOG_MDO",
-            // ### Geschützzubehör
-            "rhsusf_acc_sr25s",
-            "rhsusf_acc_sr25s_d",
-            "rhsusf_acc_sr25s_wd",
-            "rhsusf_acc_m24_muzzlehider_black",
-            "rhsusf_acc_m24_muzzlehider_d",
-            "rhsusf_acc_m24_muzzlehider_wd",
-            "rhsusf_acc_m24_silencer_black",
-            "rhsusf_acc_m24_silencer_d",
-            "rhsusf_acc_m24_silencer_wd",
-            // ### Zweibein
-            "rhsusf_acc_harris_swivel",
-
-            // Westen
-            "rhsusf_iotv_ucp_Rifleman",
-            "rhsusf_iotv_ocp_Rifleman",
-            "rhsusf_mbav_rifleman",
-            "rhsusf_spc_marksman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman",
-
-            // Ferngläser
-            "ACE_Yardage450",
-            "lerca_1200_black",
-            "lerca_1200_tan",
-            "rhsusf_lrf_Vector21",
-            //"ACE_VectorDay",
-            "ACE_Vector", // Tag/Nacht Version
-            "ACE_Kestrel4500",
-
-            // Spezial
-            "ACE_RangeCard"
-        ]
-    };
+    
+    case "dmr": {[]};
 
     case "mg":
     {
@@ -906,7 +842,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_mg",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_machinegunner",
-            "rhsusf_spcs_ucp_machinegunner"
+            "rhsusf_spcs_ucp_machinegunner",
+
+            // Ferngläser
+            "ACE_Vector"
         ]
     };
 
@@ -994,7 +933,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         _moerser_munition +
+        _dmr_munition +
         [
+            // Gewehre
+            "rhs_weap_m14ebrri",
+            
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
@@ -1002,9 +945,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
+            "rhsusf_spc_marksman",
 
-            // Binocular
+            // Spezial
             "ACE_Vector",
+            "ACE_Kestrel4500",
+            "ACE_RangeCard",
 
             // Waffen
             "TB_vz99_carryWeapon"
@@ -1028,29 +974,30 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_M107",
             "rhs_weap_M107_d",
             "rhs_weap_M107_w",
-            "rhs_weap_XM2010",
-            "rhs_weap_XM2010_wd",
-            "rhs_weap_XM2010_sa",
-            "rhs_weap_XM2010_d",
+            "rhs_weap_sr25",
+            "rhs_weap_sr25_d",
+            "rhs_weap_sr25_ec_d",
+            "rhs_weap_sr25_ec_wd",
+            "rhs_weap_sr25_wd",
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
             // ### Visiere
-            "rhsusf_acc_M8541",
-            "rhsusf_acc_M8541_low",
-            "rhsusf_acc_M8541_low_d",
-            "rhsusf_acc_M8541_low_wd",
-            "rhsusf_acc_premier_low",
             "rhsusf_acc_premier_anpvs27",
             "rhsusf_acc_premier",
-            "rhsusf_acc_LEUPOLDMK4",
             "rhsusf_acc_LEUPOLDMK4_2",
             "rhsusf_acc_LEUPOLDMK4_2_d",
+            "optic_lrps",
+            "ace_optic_lrps_2d",
+            "ace_optic_sos_2d",
             // ### Geschützzubehör
-            "rhsusf_acc_M2010S",
-            "rhsusf_acc_M2010S_d",
-            "rhsusf_acc_M2010S_sa",
-            "rhsusf_acc_M2010S_wd",
+            "muzzle_snds_b",
+            "muzzle_snds_b_snd_f",
+            "bipod_01_f_blk",
+            "bipod_01_f_snd",
             "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_sr25s",
+            "rhsusf_acc_sr25s_d",
+            "rhsusf_acc_sr25s_wd",
 
             // Uniforms
             "U_B_FullGhillie_lsh",
@@ -1065,6 +1012,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_sniper",
             "rhsusf_spcs_ucp_sniper",
+
+            // Rucksäcke
+            "ace_gunbag_Tan",
+            "ace_gunbag",
 
             // Ferngläser
             "lerca_1200_black",
