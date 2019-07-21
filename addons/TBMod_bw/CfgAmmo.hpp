@@ -5,7 +5,7 @@
 class CfgAmmo
 {
     class BWA3_B_127x99_Ball;
-    class BWA3_B_127x99_Ball_AP : BWA3_B_127x99_Ball // 50.cal Long-Range Sniper BW
+    class BWA3_B_127x99_Ball_Raufoss : BWA3_B_127x99_Ball // 50.cal Long-Range Sniper BW
     {
         ACE_ballisticCoefficients[] = {2}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.35
@@ -17,13 +17,14 @@ class CfgAmmo
         tracerStartTime = 0.85; // 0.05
     };
 
-    class BWA3_B_127x99_Ball_AP_HEIAP_T : BWA3_B_127x99_Ball_AP // 50.cal HEIAP-T BW
+    class BWA3_B_127x99_Ball_Raufoss_Tracer_Dim : BWA3_B_127x99_Ball_Raufoss // 50.cal HEIAP-T BW
     {
         ACE_ballisticCoefficients[] = {2}; // {0.67}
-        ACE_muzzleVelocityVariationSD = 0.01; // 0.4
-        caliber = 12.3; // 5.2
-        hit = 39.7; // 31.5
-        indirectHit = 24.8; // 0
-        indirectHitRange = 0.9; // 0
+        ACE_muzzleVelocityVariationSD = 0.01; // 0.35
+        caliber = 12.3; // 2.6
+        hit = 39.7; // 30
+        indirectHit = 24.8; // 12
+        indirectHitRange = 0.9; // 0.3
+        nvgOnly = 0; // 1
     };
 };
