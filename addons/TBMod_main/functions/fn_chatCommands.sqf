@@ -42,7 +42,7 @@
     private _ammo = getText (configfile >> "CfgMagazines" >> _magazine >> "ammo");
     private _ammoCFG = configFile >> "CfgAmmo" >> _ammo;
     
-    systemChat format ["Sniper Informationen MET"];
+    systemChat "Sniper Informationen MET";
     systemChat format ["Map: %1", worldName];
     systemChat format ["Map Latitude: %1°", ace_common_maplatitude];
     systemChat format ["Weapon: %1", _weapon];
@@ -57,7 +57,7 @@
     
     private _tempLookup = [-15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35];
     private _shifts = getArray (_ammoCFG >> "ACE_ammoTempMuzzleVelocityShifts");
-    systemChat format ["Muzzle velocity table:"];
+    systemChat "Muzzle velocity table:";
     for "_i" from 0 to 10 do
     {
         systemChat format ["%1°C  :  %2m/s", _tempLookup # _i, _muzzleVelocity + _shifts # _i];
