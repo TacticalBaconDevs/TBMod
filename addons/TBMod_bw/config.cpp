@@ -11,7 +11,6 @@ class CfgPatches
         requiredAddons[] = {
             "TBMod_main",
             "bwa3_g82",
-            "ace_advanced_ballistics",
             "bwa3_comp_ace"
         };
 
