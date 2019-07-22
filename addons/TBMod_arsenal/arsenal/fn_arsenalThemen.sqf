@@ -19,5 +19,6 @@ if (_side == blufor) exitWith
         call FUNC(arsenalVANILLACOP);
     };
 };
+if (_side == independent) exitWith {call FUNC(arsenalLDF)};     // Fehlt diese Zeile, kommt der Fehler "Kein virtuelles Objekt verfügbar".
 
 if (_side == opfor) exitWith {call FUNC(arsenalRUSSSimple)};

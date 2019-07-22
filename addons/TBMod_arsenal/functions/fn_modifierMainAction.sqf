@@ -37,6 +37,12 @@ if (_arsenalType == "Themen") then
             TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
         };
     };
+    if (_side == independent) exitWith
+    {
+        // LDF
+        TB_blacklistRollen_themen = ["arzt", "spreng", "dmr", "sniper", "spotter"];
+
+    };
 
     if (_side == opfor) exitWith {};
 };

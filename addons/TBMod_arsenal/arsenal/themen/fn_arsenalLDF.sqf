@@ -43,6 +43,7 @@ private _allgemein = [
     "ACE_Altimeter",
     "ItemWatch",
     "ItemCompass",
+    "ItemGPS",
     "ItemMap",
     "ACE_Flashlight_KSF1",
     "ACE_EntrenchingTool",
@@ -140,7 +141,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
-        []
+        [
+
+        ]
     };
 
     case "sani":
@@ -249,7 +252,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         "arifle_MSBS65_UBS_black_F",
         "arifle_MSBS65_UBS_camo_F",
         "arifle_MSBS65_Mark_F",
-        "arifle_MSBS65_Mark_sand_F"
+        "arifle_MSBS65_Mark_sand_F",
         "arifle_MSBS65_Mark_black_F",
         "arifle_MSBS65_Mark_camo_F",
 
