@@ -187,6 +187,7 @@ class CfgVehicles
                     ADD_SUPPLY(Granaten,TB_supply_nato_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
                     ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
+                    ADD_SUPPLY(ED-1D Drohne,TB_supply_nato_ED);
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
                 };
 
@@ -228,6 +229,7 @@ class CfgVehicles
 
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
+    WRAPPER(Box_EAF_Uniforms_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_IDAP_Equip_F, "\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN);
