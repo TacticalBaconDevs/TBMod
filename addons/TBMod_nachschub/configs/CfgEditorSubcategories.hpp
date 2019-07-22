@@ -29,4 +29,10 @@ class CfgEditorSubcategories
         displayName = "NATO";
         order = 95;
     };
+
+    class EdSubcat_TB_Supply_LDF
+    {
+        displayName = "LDF";
+        order = 94;
+    };
 };

@@ -191,6 +191,20 @@ class CfgVehicles
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
                 };
 
+                class ldf 
+                {
+                    displayName = "LDF";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_themen')) > 0";
+
+                    ADD_SUPPLY(Munition,TB_supply_ldf_ammo);
+                    ADD_SUPPLY(Granaten,TB_supply_ldf_grena);
+                    ADD_SUPPLY(Unterlauf,TB_supply_ldf_unterlauf);
+                    ADD_SUPPLY(WerferMunition,TB_supply_ldf_launcherAmmo);
+                    ADD_SUPPLY(ED-1D Drohne,TB_supply_ldf_ED);
+                    ADD_SUPPLY(NachtKiste,TB_supply_ldf_night);
+                };
+
                 class russ
                 {
                     displayName = "RUSS";
@@ -537,5 +551,6 @@ class CfgVehicles
     #include "CfgVehicles_USA.hpp"
     #include "CfgVehicles_BW.hpp"
     #include "CfgVehicles_NATO.hpp"
+    #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_RUSS.hpp"
 };
