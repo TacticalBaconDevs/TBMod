@@ -209,6 +209,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
+            // Rucksack
+            "B_Carryall_eaf_F",
+            "B_Carryall_green_F",
+
             // Magazine
             "200Rnd_65x39_cased_Box_Tracer_Red",
             "200Rnd_65x39_cased_Box_Tracer",
@@ -235,6 +239,24 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
         // Uniform
         "U_I_E_Uniform_01_coveralls_F"
+        ]
+    };
+
+    case "JTAC":
+    {
+        _allgemein +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
+        _LR +
+        [
+        // Drohne 
+        "I_E_UAV_01_backpack_F",
+        "I_E_UGV_02_Demining_backpack_F",
+        "I_E_UGV_02_Science_backpack_F",
+        "I_E_UavTerminal"
+
         ]
     };
 
@@ -291,7 +313,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
-        [
+        [   
+            // Rucksack
+            "B_Carryall_eaf_F",
+            "B_Carryall_green_F",
+
             // Westen
             "V_CarrierRigKBT_01_heavy_EAF_F",
             "V_CarrierRigKBT_01_heavy_Olive_F",
