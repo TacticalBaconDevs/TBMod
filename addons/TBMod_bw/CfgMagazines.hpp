@@ -24,6 +24,4 @@ class CfgMagazines
 
         mass = 17; // 20
     };
-
-
 };

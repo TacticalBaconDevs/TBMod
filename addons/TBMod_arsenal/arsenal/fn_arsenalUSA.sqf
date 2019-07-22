@@ -1065,12 +1065,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_sniper",
             "rhsusf_spcs_ucp_sniper",
 
-            // Munition
-            "rhsusf_mag_10Rnd_STD_50BMG_mk211",
-            "rhsusf_mag_10Rnd_STD_50BMG_M33",
-            "ACE_20Rnd_762x51_Mag_SD",
-            "ACE_20Rnd_762x51_M993_AP_Mag",
-
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
