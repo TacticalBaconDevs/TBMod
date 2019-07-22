@@ -135,7 +135,7 @@ class CfgVehicles
     };
 
 
-    // ###################### ResourcenAbfrage ######################
+    // ###################### ResourcenAbfrage && Flags ######################
     #define ADD_RESC_CHECK class ACE_Actions \
         { \
             class ACE_MainActions \
@@ -170,6 +170,14 @@ class CfgVehicles
                     statement = ""; \
                     exceptions[] = {"isNotSwimming"}; \
                     insertChildren = "_this call ace_interaction_fnc_addPassengersActions"; \
+                }; \
+                class flags \
+                { \
+                    displayName = "Flaggen"; \
+                    condition = "alive _target"; \
+                    statement = "_target forceFlagTexture ''"; \
+                    EXCEPTIONS; \
+                    insertChildren = QUOTE(_this call EFUNC(main,insertChildrenFlaggen)); \
                 }; \
             }; \
         }
