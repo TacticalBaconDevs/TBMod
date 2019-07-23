@@ -775,7 +775,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_HuntIR_monitor"
         ]
     };
-    
+
     case "dmr": {[]};
 
     case "mg":
@@ -937,7 +937,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "rhs_weap_m14ebrri",
-            
+
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
@@ -1079,6 +1079,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
             "Laserbatteries",
             "ACE_HuntIR_monitor",
+
             // ### Minen
             "APERSTripMine_Wire_Mag",
             "APERSBoundingMine_Range_Mag",

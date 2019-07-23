@@ -269,9 +269,7 @@ private _pilot_munition = [
 ];
 
 private _sniper_munition = [
-    "BWA3_10Rnd_127x99_G82_SD",
     "BWA3_10Rnd_127x99_G82_Raufoss",
-    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer",
     "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim"
 ];
 
