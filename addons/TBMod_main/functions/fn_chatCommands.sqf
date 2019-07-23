@@ -186,7 +186,6 @@ if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
 
             "ACE_salineIV",
             "ACE_salineIV_500",
-            "ACE_salineIV_250",
 
             "ACE_tourniquet"
         ];

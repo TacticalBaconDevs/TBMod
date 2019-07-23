@@ -91,6 +91,32 @@ class CfgWeapons
         modes[] = {"Far_AI","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
 
+    class weapon_LGBLauncherBase;
+    class Bomb_04_Plane_CAS_01_F : weapon_LGBLauncherBase // GBU-12
+    {
+        displayName = "Laserguided Bomb";
+    };
+
+    class BombCluster_01_F : Bomb_04_Plane_CAS_01_F // CBU-85 HE Mines Cluster
+    {
+        displayName = "HE Minen Cluster";
+    };
+
+    class BombCluster_02_F : BombCluster_01_F // RBK-500F AT Mines Cluster
+    {
+        displayName = "AT Minen Cluster";
+    };
+
+    class BombCluster_03_F : BombCluster_01_F // BL-778 HE Cluster
+    {
+        displayName = "HE Cluster";
+    };
+
+    class Mk82BombLauncher : RocketPods // Mk-82
+    {
+        displayName = "Airburst Bomb";
+    };
+    
     // Skin schwarzes Shemagh
     class H_ShemagOpen_khk;
     class TB_Shemagh_black: H_ShemagOpen_khk

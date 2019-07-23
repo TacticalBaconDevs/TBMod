@@ -19,28 +19,31 @@ class ACE_Medical_Actions {
         };
         class BloodIV: fieldDressing {
             treatmentTime =  QUOTE([7] call FUNC(calcTreatmentTime));
-            displayName = "Blutransfusion (2000ml)";
+            displayName = "Bluttransfusion (2800ml)";
         };
         class BloodIV_500: BloodIV {
-            displayName = "Blutransfusion (1000ml)";
+            displayName = "Bluttransfusion (1400ml)";
         };
         class BloodIV_250: BloodIV {
-            displayName = "Blutransfusion (500ml)";
+            displayName = "Bluttransfusion (700ml)";
         };
         class PlasmaIV: BloodIV {
             treatmentTime =  QUOTE([11] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
+            displayName = "Plasmatransfusion (1400ml)";
+        };
+        class PlasmaIV_500: BloodIV {
+            displayName = "Plasmatransfusion (700ml)";
+        };
+        class PlasmaIV_250: BloodIV {
+            displayName = "Plasmatransfusion (350ml)";
         };
         class SalineIV: BloodIV {
             treatmentTime =  QUOTE([17] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
-            displayName = "Kochsalztransfusion (500ml)";
+            displayName = "Kochsalztransfusion (700ml)";
             requiredMedic = 0;
         };
         class SalineIV_500: SalineIV {
-            displayName = "Kochsalztransfusion (250ml)";
-            requiredMedic = 0;
-        };
-        class SalineIV_250: SalineIV {
-            displayName = "Kochsalztransfusion (125ml)";
+            displayName = "Kochsalztransfusion (350ml)";
             requiredMedic = 0;
         };
         class SurgicalKit: fieldDressing {
@@ -722,33 +725,30 @@ class ACE_Medical_Advanced {
             volume = 1000; // volume is in millileters
 
             class BloodIV {
-                volume = 2000; // 1000
+                volume = 2800; // 1000
             };
             class BloodIV_500: BloodIV {
-                volume = 1000; // 500
+                volume = 1400; // 500
             };
             class BloodIV_250: BloodIV {
-                volume = 500; // 250
+                volume = 700; // 250
             };
 
             class PlasmaIV: BloodIV {
-                volume = 1000;
+                volume = 1400;
             };
             class PlasmaIV_500: PlasmaIV {
-                volume = 500;
+                volume = 700;
             };
             class PlasmaIV_250: PlasmaIV {
-                volume = 250;
+                volume = 350;
             };
 
             class SalineIV: BloodIV {
-                volume = 500;
+                volume = 700;
             };
             class SalineIV_500: SalineIV {
-                volume = 250;
-            };
-            class SalineIV_250: SalineIV {
-                volume = 125;
+                volume = 350;
             };
         };
     };

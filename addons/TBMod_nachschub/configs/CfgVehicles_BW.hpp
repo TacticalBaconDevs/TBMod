@@ -8,12 +8,11 @@ class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(hlc_30rnd_556x45_EPR_G36,30);
-        MACRO_ADDMAGAZINE(BWA3_200Rnd_556x45_Tracer,2);
-        MACRO_ADDMAGAZINE(hlc_50Rnd_762x51_T_MG3,2);
-        MACRO_ADDMAGAZINE(BWA3_10Rnd_762x51_G28,4);
-        MACRO_ADDMAGAZINE(hlc_20rnd_762x51_T_G3,4);
-        MACRO_ADDMAGAZINE(BWA3_20Rnd_762x51_G28,4);    //G27 Munition
+        MACRO_ADDMAGAZINE(BWA3_200Rnd_556x45_Tracer,4);
+        MACRO_ADDMAGAZINE(BWA3_10Rnd_762x51_G28,5);        //G27 Munition
+        MACRO_ADDMAGAZINE(BWA3_20Rnd_762x51_G28,5);
+        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36_Tracer,15);
+        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36,15);    
     };
 };
 
@@ -105,12 +104,13 @@ class TB_supply_bw_notfallg36 : WRAPPER_NAME(Box_East_AmmoOrd_F)
 
     class TransportWeapons
     {
-        MACRO_ADDWEAPON(hlc_rifle_G36A1,4);
+        MACRO_ADDWEAPON(BWA3_G36A3,4);
     };
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(hlc_30rnd_556x45_EPR_G36,20);
+        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36_Tracer,10);
+        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36,10);
     };
 };
 
