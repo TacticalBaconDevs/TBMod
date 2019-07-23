@@ -59,7 +59,7 @@ class CfgMagazines
     class CA_LauncherMagazine;
     class rhs_fgm148_magazine_AT : CA_LauncherMagazine
     {
-        mass = 176.37; // 286.88
+        mass = 165.34; // 286.88
     };
 
     class rhs_mag_M433_HEDP;
@@ -324,5 +324,36 @@ class CfgMagazines
     class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
     {
         hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+    };
+
+    class rhs_mag_smaw_HEAA : CA_LauncherMagazine // Mk.6 HEAA SMAW
+    {
+        mass = 93.67; // 136.4
+    };
+
+    class rhs_mag_smaw_HEDP : CA_LauncherMagazine // Mk.3 HEDP SMAW
+    {
+        mass = 55.1; // 129.8
+    };
+
+    class rhs_mag_maaws_HEAT : CA_LauncherMagazine // FFV751 HEAT MAAWS
+    {
+        mass = 132.25; // 88.2
+    };
+
+    class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
+    {
+        mass = 93.67; // 72.77
+    };
+
+    class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
+    {
+        mass = 55.1; // 68.36
+    };
+
+    class Titan_AA;
+    class rhs_fim92_mag : Titan_AA // FIM-92F Stinger
+    {
+        mass = 66.12; // 120
     };
 };
