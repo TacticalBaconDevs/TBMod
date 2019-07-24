@@ -309,6 +309,17 @@ class CfgVehicles
         };
     };
 
+    class RHS_MELB_MH6M;
+    class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
+    {
+        displayName = "MH-6 S.W.A.T.";
+        author = "Eron";
+        addCategory(Fluggeräte);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa"
+        };
+    };
+
     ///////////////////////PMC Fahrzeuge//////////////////////////
 
     class B_G_Offroad_01_F : I_G_Offroad_01_F {
