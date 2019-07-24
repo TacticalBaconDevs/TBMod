@@ -29,13 +29,16 @@ class CfgVehicles
             }; \
             \
             class fieldDressing; \
-            OVERRIDE_IV(BloodIV, fieldDressing, Blutransfusion (2000ml)); \
-            OVERRIDE_IV(BloodIV_500, BloodIV, Blutransfusion (1000ml)); \
-            OVERRIDE_IV(BloodIV_250, BloodIV, Blutransfusion (500ml)); \
+            OVERRIDE_IV(BloodIV, fieldDressing, Bluttransfusion (2800ml)); \
+            OVERRIDE_IV(BloodIV_500, BloodIV, Bluttransfusion (1400ml)); \
+            OVERRIDE_IV(BloodIV_250, BloodIV, Bluttransfusion (700ml)); \
             \
-            OVERRIDE_IV(SalineIV, BloodIV, Kochsalztransfusion (500ml)); \
-            OVERRIDE_IV(SalineIV_500, SalineIV, Kochsalztransfusion (250ml)); \
-            OVERRIDE_IV(SalineIV_250, SalineIV, Kochsalztransfusion (125ml)); \
+            OVERRIDE_IV(PlasmaIV, BloodIV, Kochsalztransfusion (1400ml)); \
+            OVERRIDE_IV(PlasmaIV_500, PlasmaIV, Kochsalztransfusion (700ml)); \
+            OVERRIDE_IV(PlasmaIV_250, PlasmaIV, Kochsalztransfusion (350ml)); \
+            \
+            OVERRIDE_IV(SalineIV, BloodIV, Kochsalztransfusion (700ml)); \
+            OVERRIDE_IV(SalineIV_500, SalineIV, Kochsalztransfusion (350ml)); \
         }
     #define OVERRIDES OVERRIDE_PART(ACE_ArmLeft); \
         OVERRIDE_PART(ACE_ArmRight); \
