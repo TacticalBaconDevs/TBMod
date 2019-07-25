@@ -281,7 +281,7 @@ class CfgAmmo
 
     class ACE_762x51_Ball_Subsonic : B_762x51_Ball // 7.62mm SDLV
     {
-        ACE_ballisticCoefficients[] = {2}; // {0.235}
+        ACE_ballisticCoefficients[] = {1.439}; // {0.235}
         audibleFire = 5; // 45
         dangerRadiusBulletClose = 1; // 8
         dangerRadiusHit = 1; // 12
