@@ -16,7 +16,7 @@ class CfgVehicles
     {
         displayName = "UH-60 MEV";
         author = "Eron";
-        addCategory(Fluggeräte);
+        addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_fuselage_mev_co.paa",
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_engine_mev_co.paa",
