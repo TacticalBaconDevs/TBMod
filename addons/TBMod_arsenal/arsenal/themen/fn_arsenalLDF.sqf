@@ -166,15 +166,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Magazine +
         [
-        // Waffen 
-        "arifle_MSBS65_GL_sand_F",
-        "arifle_MSBS65_GL_black_F",
-        "arifle_MSBS65_GL_camo_F",
+            // Waffen 
+            "arifle_MSBS65_GL_sand_F",
+            "arifle_MSBS65_GL_black_F",
+            "arifle_MSBS65_GL_camo_F",
 
-        // Munition 
-        "1Rnd_HE_Grenade_shell",
-        "ACE_HuntIR_M203",
-        "3Rnd_Smoke_Grenade_shell_precise"
+            // Munition 
+            "1Rnd_HE_Grenade_shell",
+            "ACE_HuntIR_M203",
+            "3Rnd_Smoke_Grenade_shell_precise"
         ]
     };
 
