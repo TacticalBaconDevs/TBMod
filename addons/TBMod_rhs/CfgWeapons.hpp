@@ -80,6 +80,21 @@ class CfgWeapons
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
+    // Skin S.W.A.T. Weste
+    class rhsusf_mbav_light;
+    class TB_vest_SWAT: rhsusf_mbav_light
+    {
+        displayName = "S.W.A.T.";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa"
+        };
+        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
+    };
+
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
@@ -116,7 +131,7 @@ class CfgWeapons
     {
         displayName = "Airburst Bomb";
     };
-    
+
     // Skin schwarzes Shemagh
     class H_ShemagOpen_khk;
     class TB_Shemagh_black: H_ShemagOpen_khk
@@ -124,6 +139,15 @@ class CfgWeapons
         displayName = "Shemag Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_Shemagh_black.paa"};
+    };
+
+    // Skin schwarzer Helm S.W.A.T.
+    class rhsusf_opscore_bk_pelt;
+    class TB_helmet_SWAT_01: rhsusf_opscore_bk_pelt
+    {
+        displayName = "S.W.A.T.";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_black_helmet_SWAT_01.paa"};
     };
 
     class launch_O_Titan_F;
