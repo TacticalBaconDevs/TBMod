@@ -117,7 +117,19 @@ if (_arsenalType == "Themen") exitWith
         else
         {
             // Vanilla-COP
-            ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_Atropine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
+            //ACE_player setUnitLoadout [[[],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["TB_Uniform_Kommissar_U",[["ACE_quikclot",25],["ACE_Atropine",5],["ACE_tourniquet",4],["ACE_CableTie",5]]],["V_TacVest_blk_POLICE",[["AMP_Breaching_Charge_Mag",1,1],["TB_mag_taser",1,3]]],[],"H_Cap_police","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]], true];
+            
+            // WoMi Polizei
+            private _layout = switch (_rolle) do
+            {
+                case "lead";
+                case "sani": {[[],[],["rhsusf_weap_glock17g4","","acc_flashlight_pistol","",["rhsusf_mag_17Rnd_9x19_JHP",17],[],""],["TB_Uniform_Sek_U",[["ACE_tourniquet",4],["ACE_fieldDressing",10],["ACE_adenosine",2],["ACE_epinephrine",2]]],["V_TacVest_blk_POLICE",[["ACE_CableTie",6],["rhsusf_mag_17Rnd_9x19_JHP",4,17],["ACE_M84",1,1]]],[],"H_Cap_police","",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]]};
+                case "arzt";
+                case "rifle": {[["rhs_weap_mk18","","","rhsusf_acc_su230",["rhs_mag_30Rnd_556x45_M855_Stanag",30],[],""],[],["TB_weap_taser","","acc_flashlight_pistol","optic_MRD",["TB_mag_taser",3],[],""],["rhs_uniform_g3_blk",[["ACE_atropine",6],["ACE_adenosine",2],["ACE_CableTie",6],["TB_mag_taser",1,3]]],["TB_vest_SWAT",[["TB_mag_taser",1,3],["rhs_mag_30Rnd_556x45_M855_Stanag",6,30],["ACE_M84",2,1],["SmokeShell",1,1],["AMP_Breaching_Charge_Mag",1,1]]],[],"TB_helmet_SWAT_01","",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]]};
+                default {[]};
+            };
+            
+            ACE_player setUnitLoadout [_layout, true];
         };
     };
 

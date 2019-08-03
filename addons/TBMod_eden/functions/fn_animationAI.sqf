@@ -12,7 +12,13 @@ waitUntil {time > 0 && !isNil "TB_init_done"};
 [_unit, "ANIM"] remoteExec ["disableAI", _unit];
 [_unit, "PATH"] remoteExec ["disableAI", _unit];
 
-uiSleep (random 3 + random 3);
+if (dynamicSimulationEnabled (group _unit) || !simulationEnabled _unit) then
+{
+    uiSleep 10;
+    waitUntil {simulationEnabled _unit};
+};
+
+uiSleep (random 10 + random 10);
 
 [_unit, _value, 2] call ace_common_fnc_doAnimation;
 
