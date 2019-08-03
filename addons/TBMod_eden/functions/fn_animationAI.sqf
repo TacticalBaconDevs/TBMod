@@ -36,7 +36,7 @@ TB_disableANIM = {
         _unit setVariable ["TB_inAnim", false];
     };
 
-    if (!_chain) exitWith {};
+    if (_chain isEqualType true && {!_chain}) exitWith {};
 
     {
         if (_unit getVariable ["TB_inAnim", false]) then {[_x, false] call TB_disableANIM};

@@ -289,6 +289,17 @@ class CfgAmmo
         visibleFireTime = 0.5; // 2
     };
 
+    class B_762x51_Minigun_Tracer_Red_splash : B_762x51_Ball // 7.62mm Miniguns Helis
+    {
+        caliber = 5.04; // 3.6
+        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        explosive = 0.2; // 0
+        hit = 4.64; // 11.6
+        indirectHit = 3.24; // 1.2
+        indirectHitRange = 3.6; // 2
+        tracerScale = 0.4; // 1.2
+    };
+
     class M_PG_AT;
     class M_AT : M_PG_AT // Hydra 12x HE
     {
