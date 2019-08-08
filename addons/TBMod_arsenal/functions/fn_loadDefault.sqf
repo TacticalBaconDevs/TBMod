@@ -153,7 +153,7 @@ if (_arsenalType == "Themen") exitWith
                 case "pionier" : {[[],[],[],["U_I_E_Uniform_01_F",[]],["V_CarrierRigKBT_01_light_Olive_F",[]],[],"H_HelmetHBK_headset_F","",["Binocular","","","",[],[],""],["ItemMap","I_E_UavTerminal","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
                 case "pilot": {[[],[],[],["U_I_E_Uniform_01_F",[]],["V_CarrierRigKBT_01_light_Olive_F",[]],[],"H_HelmetHBK_headset_F","",["Binocular","","","",[],[],""],["ItemMap","I_E_UavTerminal","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
                 case "rifle" : {[[],[],[],["U_I_E_Uniform_01_F",[]],["V_CarrierRigKBT_01_light_Olive_F",[]],[],"H_HelmetHBK_headset_F","",["Binocular","","","",[],[],""],["ItemMap","I_E_UavTerminal","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
-                case "JTAC" : {[[],[],[],["U_I_E_Uniform_01_F",[]],["V_CarrierRigKBT_01_light_Olive_F",[]],[],"H_HelmetHBK_headset_F","",["Binocular","","","",[],[],""],["ItemMap","I_E_UavTerminal","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
+                case "jtac" : {[[],[],[],["U_I_E_Uniform_01_F",[]],["V_CarrierRigKBT_01_light_Olive_F",[]],[],"H_HelmetHBK_headset_F","",["Binocular","","","",[],[],""],["ItemMap","I_E_UavTerminal","TFAR_anprc152","ItemCompass","ACE_Altimeter",""]]};
                 default {[]};
             };
 
