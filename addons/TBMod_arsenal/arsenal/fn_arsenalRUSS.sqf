@@ -729,8 +729,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ToolKit",
-            "ACE_wirecutter"
+            "ACE_wirecutter",
+            "ToolKit"
         ]
     };
 
