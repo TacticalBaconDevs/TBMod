@@ -16,7 +16,7 @@ class CfgVehicles
     {
         displayName = "UH-60 MEV";
         author = "Eron";
-        addCategory(Fluggeräte);
+        addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_fuselage_mev_co.paa",
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_engine_mev_co.paa",
@@ -186,7 +186,7 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.0011; // 0.001
         accuracyNightLightsOff = 0.007; // 0.006
         accuracyNightLightsOn = 0.12; // 0.1
-        armor = 42; // 50
+        armor = 55; // 50
         camouflage = 63; // 100
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.74; // 0.9
@@ -202,6 +202,7 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.0007; // 0.001
         accuracyNightLightsOff = 0.004; // 0.006
         accuracyNightLightsOn = 0.09; // 0.1
+        armor = 55; // 40
         audible = 52; // 50
         camouflage = 73; // 100
         irTargetSize = 0.84; // 0.9
@@ -390,7 +391,7 @@ class CfgVehicles
         magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 1
-        weapons[] = {"M134_minigun","missiles_DAR","rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
+        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_02_base_F;
@@ -430,7 +431,7 @@ class CfgVehicles
     {
         accuracy = 1.25; // 0.5
         ace_cargo_space = 1; // 0
-        armor = 14; // 10
+        armor = 19; // 10
         audible = 2.8; // 6
         camouflage = 1.15; // 2
     };
@@ -471,7 +472,7 @@ class CfgVehicles
     class rhsusf_hmmwe_base;
     class rhsusf_m998_w_2dr : rhsusf_hmmwe_base // RHS Humvee Serie
     {
-        armor = 90; // 80
+        armor = 95; // 80
         audible = 4; // 5
     };
 

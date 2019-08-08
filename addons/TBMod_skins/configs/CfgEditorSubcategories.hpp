@@ -10,12 +10,12 @@ class CfgEditorSubcategories
         displayName = "Wald";
     };
 
-    class EdSubcat_TB_skins_Wüste
+    class EdSubcat_TB_skins_Wueste
     {
         displayName = "Wüste";
     };
 
-    class EdSubcat_TB_skins_Fluggeräte
+    class EdSubcat_TB_skins_Fluggeraete
     {
         displayName = "Fluggeräte";
     };

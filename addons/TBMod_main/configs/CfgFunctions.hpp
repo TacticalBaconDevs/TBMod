@@ -38,6 +38,7 @@ class CfgFunctions
             class firstJoin {};
             class deleteIfNotSeen {};
             class insertChildrenRufname {};
+            class insertChildrenFlaggen {};
         };
 
         class gcam

@@ -133,7 +133,7 @@ class CfgVehicles
     {
         displayName = "M-ATV Sand";
         author = "Eron";
-        addCategory(Wüste);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
@@ -145,7 +145,7 @@ class CfgVehicles
     {
         displayName = "M-ATV Sand (smg)";
         author = "Eron";
-        addCategory(Wüste);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
@@ -157,7 +157,7 @@ class CfgVehicles
     {
         displayName = "Merkava Mk4 Sand";
         author = "Eron";
-        addCategory(Wüste);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa",
@@ -169,7 +169,7 @@ class CfgVehicles
     {
         displayName = "Pandur IFV";
         author = "Eron";
-        addCategory(Wüste);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa",
@@ -180,11 +180,11 @@ class CfgVehicles
         };
     };
 
-    class TB_Vehicles_Wüste_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
+    class TB_Vehicles_Wueste_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
     {
         displayName = "Badger IFV";
         author = "Eron";
-        addCategory(Wüste);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa",
@@ -273,7 +273,7 @@ class CfgVehicles
     {
         displayName = "Hellcat BW (unbewaffnet)";
         author = "Eron";
-        addCategory(Fluggeräte);
+        addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
     };
 
@@ -281,7 +281,7 @@ class CfgVehicles
     {
         displayName = "Hellcat BW (bewaffnet)";
         author = "Eron";
-        addCategory(Fluggeräte);
+        addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
     };
 
@@ -289,7 +289,7 @@ class CfgVehicles
     {
         displayName = "Merlin BW";
         author = "Eron";
-        addCategory(Fluggeräte);
+        addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_0.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_1.paa",
@@ -302,10 +302,21 @@ class CfgVehicles
     {
         displayName = "L-159 Albatros";
         author = "Eron";
-        addCategory(Fluggeräte);
+        addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_1.paa",
             "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_2.paa"
+        };
+    };
+
+    class RHS_MELB_MH6M;
+    class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
+    {
+        displayName = "MH-6 S.W.A.T.";
+        author = "Eron";
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa"
         };
     };
 

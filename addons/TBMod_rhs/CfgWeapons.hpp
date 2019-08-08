@@ -80,6 +80,21 @@ class CfgWeapons
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
+    // Skin S.W.A.T. Weste
+    class rhsusf_mbav_light;
+    class TB_vest_SWAT: rhsusf_mbav_light
+    {
+        displayName = "S.W.A.T.";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
+            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa"
+        };
+        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
+    };
+
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
@@ -116,7 +131,7 @@ class CfgWeapons
     {
         displayName = "Airburst Bomb";
     };
-    
+
     // Skin schwarzes Shemagh
     class H_ShemagOpen_khk;
     class TB_Shemagh_black: H_ShemagOpen_khk
@@ -124,5 +139,56 @@ class CfgWeapons
         displayName = "Shemag Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_Shemagh_black.paa"};
+    };
+
+    // Skin schwarzer Helm S.W.A.T.
+    class rhsusf_opscore_bk_pelt;
+    class TB_helmet_SWAT_01: rhsusf_opscore_bk_pelt
+    {
+        displayName = "S.W.A.T.";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_black_helmet_SWAT_01.paa"};
+    };
+
+    class launch_O_Titan_F;
+    class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
+    {
+        mass = 176.37; // 152.46
+    };
+
+    class Launcher_Base_F;
+    class rhs_weap_smaw: Launcher_Base_F // MK153 Mod 0 SMAW (Black)
+    {
+        mass = 132.25; // 34
+    };
+
+    class rhs_weap_maaws: Launcher_Base_F // M3 MAAWS
+    {
+        mass = 154.32; // 38.4
+    };
+
+    class rhs_weap_M136: Launcher_Base_F // M136 (HEAT)
+    {
+        mass = 143.3; // 30.3
+    };
+
+    class rhs_weap_M136_hedp: rhs_weap_M136 // M136 (HEDP)
+    {
+        mass = 88.18; // 30.3
+    };
+
+    class rhs_weap_M136_hp: rhs_weap_M136 // M136 (HP)
+    {
+        mass = 66.13; // 30.3
+    };
+
+    class rhs_weap_m72a7: rhs_weap_M136 // M72A7
+    {
+        mass = 71.63; // 15.8
+    };
+
+    class rhs_weap_fim92: rhs_weap_M136 // FIM-92F
+    {
+        mass = 132.25; // 92.35
     };
 };
