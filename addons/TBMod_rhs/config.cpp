@@ -12,7 +12,8 @@ class CfgPatches
             "TBMod_main",
             "rhsusf_main",
             "TBMod_skins",
-            "ace_advanced_ballistics"
+            "ace_advanced_ballistics",
+            "ace_compat_rhs_usf3"
         };
 
         addonRootClass = "TBMod_main";

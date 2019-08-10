@@ -14,9 +14,9 @@ class CfgPatches
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = "1.3.14";
-        versionStr = "1.3.14";
-        versionAr[] = {1,3,14};
+        version = "1.3.15";
+        versionStr = "1.3.15";
+        versionAr[] = {1,3,15};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -108,7 +108,6 @@ class CfgPatches
             "ace_cargo",
             "ace_chemlights",
             "ace_common",
-            "ace_compat_rhs_usf3",
             "ace_concertina_wire",
             "ace_cookoff",
             "ace_dagr",
