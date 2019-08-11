@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -27,7 +28,7 @@ switch (_shortName) do
     case "spotter": {_missionVar param [10, "AufklärerSpotter"]};
     case "jtac": {_missionVar param [11, "DrohnenOP"]};
     case "arzt": {_missionVar param [12, "Arzt"]};
-    case "rifle": {_missionVar param [13, "Schütze"]};
+    case "rifle": {_missionVar param [13, "Waffenspezialist"]};
     case "pionier": {_missionVar param [14, "Pionier"]};
     default {"FEHLER #201"};
 };

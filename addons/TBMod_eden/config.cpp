@@ -10,9 +10,14 @@ class CfgPatches
 
         units[] = {
             "TB_eden_frontverlauf",
-            "TB_eden_atmoReinforcementLZ", "TB_eden_atmoLZ",
-            "TB_eden_atmoReinforcementEndpoint", "TB_eden_endpoint",
-            "TB_eden_atmoReinforcementCore", "TB_eden_atmoCore"
+            "TB_eden_atmoReinforcementLZ",
+            "TB_eden_atmoReinforcementEndpoint",
+            "TB_eden_atmoReinforcementCore",
+            "TB_eden_atmoShootingRange",
+            "TB_eden_atmoMortarSupport",
+            "TB_eden_atmoMortarSuppression",
+            "TB_eden_atmoFireSuppression",
+            "TB_eden_atmoTarget"
         };
 
         requiredAddons[] = {"TBMod_main"};
@@ -21,8 +26,9 @@ class CfgPatches
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\Cfg3DEN.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
+#include "configs\CfgFactionClasses.hpp"

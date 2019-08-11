@@ -71,7 +71,7 @@ class Cfg3DEN
                         property = "TBMod_Main_sitzen";
                         control = "Checkbox";
 
-                        expression = "if (!is3DEN && _value) then {[_this] spawn TB_fnc_sitAI}";
+                        expression =  QUOTE(if (!is3DEN && _value) then {[_this] spawn FUNC(sitAI)});
 
                         defaultValue = "false";
 
@@ -85,9 +85,23 @@ class Cfg3DEN
                         property = "TBMod_main_animation";
                         control = "TB_main_animationControl";
 
-                        expression = "if (!is3DEN && _value != '') then {[_this, _value] spawn TB_fnc_animationAI}";
+                        expression =  QUOTE(if (!is3DEN && _value != '') then {[_this, _value] spawn FUNC(animationAI)});
 
                         defaultValue = "";
+
+                        condition = "objectControllable";
+                    };
+
+                    class TBMod_main_animationDisableOverride
+                    {
+                        displayName = "Animation abbrechbar";
+                        tooltip = "Animationen werden abgebrochen, wenn jemand in der Nähe schießt oder verletzt wird.";
+                        property = "TBMod_main_animationDisableOverride";
+                        control = "Checkbox";
+
+                        expression =  QUOTE(if (!is3DEN && !_value) then {_this setVariable ['animDisableOverride', true, true]});
+
+                        defaultValue = "false";
 
                         condition = "objectControllable";
                     };
@@ -100,7 +114,7 @@ class Cfg3DEN
                         control = "Edit";
                         typeName = "STRING";
 
-                        expression = "if (!is3DEN && _value != '[]' && _value != '') then {[_this, _value] spawn TB_fnc_keysForAI}";
+                        expression =  QUOTE(if (!is3DEN && _value != '[]' && _value != '') then {[_this, _value] spawn FUNC(keysForAI)});
 
                         defaultValue = "[]";
 
@@ -125,12 +139,27 @@ class Cfg3DEN
                         property = "TBMod_Main_kiDeckung";
                         control = "Checkbox";
 
-                        expression = "if (!is3DEN && _value) then {[_this] call TB_fnc_upDown}";
+                        expression =  QUOTE(if (!is3DEN && _value) then {[_this] call EFUNC(main,upDown)});
 
                         defaultValue = "false";
 
                         unique = 0;
                         condition = "objectControllable";
+                    };
+
+                    class TBMod_main_defineAmmo
+                    {
+                        displayName = "DefineAmmo";
+                        tooltip = "Definiere die Munition der Fahrzeuge (Beispiel: ['rhs_mag_762x51_M240_1200'] (ganzes Mag) oder [['rhs_mag_762x51_M240_1200', 200]] (Mag mit 200 Schuss))";
+                        property = "TBMod_main_defineAmmo";
+                        control = "Edit";
+
+                        expression =  "private _compValue = call compile _value; if (!is3DEN && _value != '[]' && _value != '' && !((magazines _this) isEqualTo _compValue)) then {_this setVehicleAmmoDef 0; {_x params ['_ammo', ['_amount', 999999]]; _this addMagazine [_ammo, _amount]} forEach _compValue; reload _this}";
+
+                        defaultValue = "magazines _this";
+
+                        unique = 0;
+                        condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
                     };
                 };
             };

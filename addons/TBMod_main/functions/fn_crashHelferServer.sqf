@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -6,6 +7,12 @@ params [["_input", false, [false]]];
 
 if (!TB_crashHelfer && _input) then {TB_crashHelfer = true};
 if (!TB_crashHelfer) exitWith {};
+
+if (isNil "TB_disconnectCache") then
+{
+    TB_disconnectCache = []; 
+    publicVariable "TB_disconnectCache";
+};
 
 addMissionEventHandler ["HandleDisconnect",
 {

@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -27,7 +28,7 @@ if (_obj isKindOf "Man") then
         {
             "Das Fahrzeug beim Teleportspieler ist voll, warte etwas!" remoteExecCall ["systemChat", _obj];
             uiSleep 5;
-            _this spawn TB_fnc_teleport;
+            _this spawn FUNC(teleport);
         };
     }
     else

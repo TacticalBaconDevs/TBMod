@@ -6,7 +6,7 @@ class CfgPatches
 {
     class TBMod_zeus
     {
-        name = "TBMod Zeus Modules";
+        name = "TBMod ZeusModules";
 
         units[] = {
             "TB_zeus_base",
@@ -17,7 +17,8 @@ class CfgPatches
             "TB_zeus_applyLoadout",
             "TB_zeus_handleAsPlayerMedical",
             "TB_zeus_moduleUnflipVehicle",
-            "TB_zeus_adjustAceCargo"
+            "TB_zeus_adjustAceCargo",
+            "TB_zeus_limitDamage"
         };
 
         requiredAddons[] = {
@@ -29,7 +30,7 @@ class CfgPatches
 };
 
 // Configs
-#include "..\TBMod_main\script_macros_common.hpp"
+#include "script_macros.hpp"
 #include "configs\CfgFunctions.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"

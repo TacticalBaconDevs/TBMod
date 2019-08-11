@@ -16,12 +16,12 @@ class CfgSettings
                 // Optional: Dependencies
                 class Dependencies
                 {
-                   CBA[] = {"cba_main", {3,10,0}, "(true)"};
+                    CBA[] = {"cba_main", {3,10,0}, "(true)"};
                 };
 
                 // Optional: Removed addons Upgrade registry
                 // Example: myMod_addon1 was removed and it's important the user doesn't still have it loaded
-                removed[] = {"TBMod_ausbildung", "TBMod_items"};
+                removed[] = {"TBMod_ausbildung", "TBMod_items", "TBMod_zusatzStuff"};
             };
         };
     };

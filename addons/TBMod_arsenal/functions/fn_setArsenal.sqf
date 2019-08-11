@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -13,12 +14,12 @@ if (_type in ["", "CUSTOM"]) exitWith {};
 // Arsenalitems laden
 private _allItems = call (switch (_type) do
 {
-    case "USA": {TB_fnc_arsenalUSA};
-    case "RUSS": {TB_fnc_arsenalRUSS};
-    case "BW": {TB_fnc_arsenalBW};
-    case "VANILLA": {TB_fnc_arsenalVANILLA};
-    case "Themen": {TB_fnc_arsenalThemen};
-    default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {}};
+    case "USA": {FUNC(arsenalUSA)};
+    case "RUSS": {FUNC(arsenalRUSS)};
+    case "BW": {FUNC(arsenalBW)};
+    case "VANILLA": {FUNC(arsenalVANILLA)};
+    case "Themen": {FUNC(arsenalThemen)};
+    default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {[]}};
 });
 
 // MEDIC STUFF
@@ -30,7 +31,6 @@ _allItems append [
 
     "ACE_salineIV",
     "ACE_salineIV_500",
-    "ACE_salineIV_250",
 
     "ACE_tourniquet"
 ];
@@ -66,7 +66,7 @@ if (_rolle == "arzt") then
     ];
 };
 
-[_allItems] call TB_fnc_whitelist;
+[_allItems] call FUNC(whitelist);
 
 ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];
 
@@ -81,7 +81,7 @@ ACE_player setVariable ["TB_arsenalCargo", _tbCargo];
 
 // Arsenale syncen
 {
-    if ([_x] call TB_fnc_isArsenalType && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
+    if ([_x] call FUNC(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
     {
         _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
     };

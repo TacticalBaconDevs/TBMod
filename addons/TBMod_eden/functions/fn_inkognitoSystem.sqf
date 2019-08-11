@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -65,7 +66,7 @@ TB_umziehenFNC = {
             ACE_player setUnitLoadout _loadout;
 
             ACE_player setVariable ['TB_rolle', _rolle, true];
-            [_rolle] call TB_fnc_setAttributes;
+            [_rolle] call EFUNC(arsenal,setAttributes);
         };
 
         _saveData set [2, _inputMode];
