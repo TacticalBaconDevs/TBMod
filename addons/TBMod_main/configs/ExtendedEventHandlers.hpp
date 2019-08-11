@@ -65,3 +65,4 @@ class Extended_Killed_EventHandlers {
         };
     };
 };
+
