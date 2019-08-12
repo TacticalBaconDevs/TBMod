@@ -1,9 +1,9 @@
 class CfgPatches
 {
-	class TBMod_factions
-	{
-		name = "TBMod Factions";
-		
+    class TBMod_factions
+    {
+        name = "TBMod Factions";
+
         units[] = {
             // I_TB_Drogen
             "I_ITBDrogen_Drogenheandler_01",
@@ -14,21 +14,21 @@ class CfgPatches
             "I_ITBDrogen_Drogenboss_02",
             "I_ITBDrogen_OffroadSupport_01",
             "I_ITBDrogen_SuvBoss_01",
-            
+
             // CIV_TB
             "C_TB_Konsument_Heroin_01",
             "C_TB_Konsument_Heroin_02",
             "C_TB_Konsument_Cocain_01",
             "C_TB_Konsument_Cocain_02"
         };
-		weapons[] = {};
-        
+        weapons[] = {};
+
         requiredAddons[] = {
             "TBMod_main",
             "A3_Characters_F"
         };
-		addonRootClass = "TBMod_main";
-	};
+        addonRootClass = "TBMod_main";
+    };
 };
 
 class CfgFactionClasses
