@@ -61,7 +61,7 @@ class Extended_InitPost_EventHandlers
 class Extended_Killed_EventHandlers {
     class CAManBase {
         class TBModExt_statstracker {
-            killed = "['TB_Kill', [(_this # 0) getVariable['ace_medical_lastDamageSource',objNull], _this # 0]] call CBA_fnc_globalEvent;";
+            killed = "['TB_Kill', [(_this # 0) getVariable ['ace_medical_lastDamageSource', objNull], _this # 0]] call CBA_fnc_globalEvent;";
         };
     };
 };
