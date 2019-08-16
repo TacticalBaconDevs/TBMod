@@ -14,9 +14,9 @@ class CfgPatches
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = "1.3.14";
-        versionStr = "1.3.14";
-        versionAr[] = {1,3,14};
+        version = "1.3.17";
+        versionStr = "1.3.17";
+        versionAr[] = {1,3,17};
         versionDesc = "TBMod";
         versionAct = "";
 
@@ -34,10 +34,11 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical"
         };
 
-        requiredVersion = 1.92;
+        requiredVersion = 1.94;
         requiredAddons[] = {
             // Arma3
-            "A3_Data_F_Sams_Loadorder",
+            "A3_Data_F_Enoch_Loadorder",
+            "A3_Data_F_Mod_Loadorder",
 
             // CBA
             "cba_accessory",
@@ -108,7 +109,6 @@ class CfgPatches
             "ace_cargo",
             "ace_chemlights",
             "ace_common",
-            "ace_compat_rhs_usf3",
             "ace_concertina_wire",
             "ace_cookoff",
             "ace_dagr",

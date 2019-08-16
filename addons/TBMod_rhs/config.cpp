@@ -11,8 +11,10 @@ class CfgPatches
         requiredAddons[] = {
             "TBMod_main",
             "rhsusf_main",
+            "rhsusf_main_loadorder",
             "TBMod_skins",
-            "ace_advanced_ballistics"
+            "ace_advanced_ballistics",
+            "ace_compat_rhs_usf3"
         };
 
         addonRootClass = "TBMod_main";

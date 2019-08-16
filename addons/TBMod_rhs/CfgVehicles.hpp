@@ -24,6 +24,18 @@ class CfgVehicles
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
         };
     };
+    
+    // Skin
+    class RHS_MELB_MH6M;
+    class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
+    {
+        displayName = "MH-6 S.W.A.T.";
+        author = "Eron";
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa"
+        };
+    };
 
     // Skin FlaRak Kit
     class AA_01_base_F;
