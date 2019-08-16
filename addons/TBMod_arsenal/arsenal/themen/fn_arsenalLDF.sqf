@@ -51,6 +51,13 @@ private _allgemein = [
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
 
+    //NV 
+    "O_NVGoggles_grn_F",
+    "NVGoggles_tna_F",
+    "ACE_NVG_Gen2",
+    "NVGoggles_INDEP"
+
+
     //Visire 
     "optic_erco_snd_f",
     "optic_erco_khk_f",
