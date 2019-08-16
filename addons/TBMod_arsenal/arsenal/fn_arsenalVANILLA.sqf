@@ -38,8 +38,6 @@ private _allgemein = [
     "TB_mag_taser",
     "11Rnd_45ACP_Mag",
     
-
-
     //Rucksäcke
     "ACE_TacticalLadder_Pack",
     "B_Kitbag_cbr",
