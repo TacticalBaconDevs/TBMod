@@ -20,7 +20,7 @@ class CfgPatches
 
         requiredAddons[] = {
             "TBMod_main",
-            "TBMod_skins"
+            "TBMod_Skins"
         };
         addonRootClass = "TBMod_main";
     };
