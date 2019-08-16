@@ -361,4 +361,18 @@ class CfgMagazines
     {
         mass = 66.12; // 120
     };
+
+    class rhs_m136_mag;
+    class rhs_m136_hp_mag : rhs_m136_mag // M136 AST (M136 HP)
+    {
+        descriptionshort = "Type: Anti Structure Tandem-warheads"; // "Type: High Penetration"
+        displayName = "M136 AST"; // "M136 HP"
+    };
+
+    class rhs_m136_hedp_mag;
+    class rhs_m72a7_mag : rhs_m136_hedp_mag // M72A7
+    {
+        descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
+        displayName = "M72A7 (HE)"; // "M136 HP"
+    };
 };

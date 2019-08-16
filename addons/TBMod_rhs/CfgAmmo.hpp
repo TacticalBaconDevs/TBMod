@@ -332,4 +332,29 @@ class CfgAmmo
         indirectHit = 35; // 12
         indirectHitRange = 4.5; // 3
     };
+
+    class RocketBase;
+    class rhs_ammo_maaws_HE : RocketBase // FFV441 HE MAAWS
+    {
+        indirectHitRange = 18.7; // 11
+    };
+
+    class rhs_ammo_M136_rocket;
+    class rhs_ammo_M136_hp_rocket : rhs_ammo_M136_rocket // M136 AST (M136 HP)
+    {
+
+    };
+
+    class rhs_ammo_M136_hedp_rocket;
+    class rhs_ammo_m72a7_rocket : rhs_ammo_M136_hedp_rocket // M72A7
+    {
+        CraterEffects = "ArtyShellCrater"; // "ATRocketCrater"
+        explosionEffects = "MortarExplosion"; // "ATRocketExplosion"
+        explosive = 1; // 0.65
+        indirectHit = 65; // 19
+        indirectHitRange = 18.7; // 4.1
+        hit = 75; // 145
+        submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
+        suppressionRadiusHit = 65; // 30
+    };
 };

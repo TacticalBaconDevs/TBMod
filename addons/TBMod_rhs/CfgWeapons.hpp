@@ -179,12 +179,16 @@ class CfgWeapons
 
     class rhs_weap_M136_hp: rhs_weap_M136 // M136 (HP)
     {
+        descriptionShort = "Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot Anti Structure Tandem-warheads"; // "Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot High-penetration"
+        displayName = "M136 (AST)"; //"M136 (HP)"
         mass = 66.13; // 30.3
     };
 
     class rhs_weap_m72a7: rhs_weap_M136 // M72A7
     {
-        mass = 71.63; // 15.8
+        descriptionShort = "Rocket launcher<br/>Caliber: 66mm<br/>Type: Single-shot High-explosive"; // "Rocket launcher<br/>Caliber: 66mm<br/>Type: Single-shot Anti-Tank"
+        displayName = "M72A7 (HE)"; // "M72A7"
+        mass = 60.61; // 15.8
     };
 
     class rhs_weap_fim92: rhs_weap_M136 // FIM-92F
