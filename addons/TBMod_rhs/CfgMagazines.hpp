@@ -353,7 +353,7 @@ class CfgMagazines
 
     class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
     {
-        mass = 49.59; // 68.36
+        mass = 44.08; // 68.36
     };
 
     class Titan_AA;
