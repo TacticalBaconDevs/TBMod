@@ -159,36 +159,34 @@ class CfgWeapons
     class Launcher_Base_F;
     class rhs_weap_smaw: Launcher_Base_F // MK153 Mod 0 SMAW (Black)
     {
-        mass = 132.25; // 34
+        mass = 110.2; // 34
     };
 
     class rhs_weap_maaws: Launcher_Base_F // M3 MAAWS
     {
-        mass = 154.32; // 38.4
+        mass = 137.75; // 38.4
     };
 
     class rhs_weap_M136: Launcher_Base_F // M136 (HEAT)
     {
-        mass = 143.3; // 30.3
+        mass = 104.69; // 30.3
     };
 
     class rhs_weap_M136_hedp: rhs_weap_M136 // M136 (HEDP)
     {
-        mass = 88.18; // 30.3
+        mass = 82.65; // 30.3
     };
 
     class rhs_weap_M136_hp: rhs_weap_M136 // M136 (HP)
     {
-        descriptionShort = "Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot Anti Structure Tandem-warheads"; // "Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot High-penetration"
-        displayName = "M136 (AST)"; //"M136 (HP)"
-        mass = 66.13; // 30.3
+        mass = 143.26; // 30.3
     };
 
     class rhs_weap_m72a7: rhs_weap_M136 // M72A7
     {
         descriptionShort = "Rocket launcher<br/>Caliber: 66mm<br/>Type: Single-shot High-explosive"; // "Rocket launcher<br/>Caliber: 66mm<br/>Type: Single-shot Anti-Tank"
-        displayName = "M72A7 (HE)"; // "M72A7"
-        mass = 60.61; // 15.8
+        displayName = "M72E10 (HE)"; // "M72A7"
+        mass = 55.1; // 15.8
     };
 
     class rhs_weap_fim92: rhs_weap_M136 // FIM-92F

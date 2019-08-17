@@ -339,10 +339,11 @@ class CfgAmmo
         indirectHitRange = 18.7; // 11
     };
 
-    class rhs_ammo_M136_rocket;
-    class rhs_ammo_M136_hp_rocket : rhs_ammo_M136_rocket // M136 AST (M136 HP)
+    class rhs_ammo_M136_penetrator;
+    class rhs_ammo_M136_hp_penetrator : rhs_ammo_M136_penetrator // M136 HP Submunition
     {
-
+        hit = 377; // 290
+        caliber = 47.58; // 36.6667
     };
 
     class rhs_ammo_M136_hedp_rocket;

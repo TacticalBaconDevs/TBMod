@@ -333,46 +333,39 @@ class CfgMagazines
 
     class rhs_mag_smaw_HEAA : CA_LauncherMagazine // Mk.6 HEAA SMAW
     {
-        mass = 93.67; // 136.4
+        mass = 88.16; // 136.4
     };
 
     class rhs_mag_smaw_HEDP : CA_LauncherMagazine // Mk.3 HEDP SMAW
     {
-        mass = 55.1; // 129.8
+        mass = 49.59; // 129.8
     };
 
     class rhs_mag_maaws_HEAT : CA_LauncherMagazine // FFV751 HEAT MAAWS
     {
-        mass = 132.25; // 88.2
+        mass = 126.73; // 88.2
     };
 
     class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
     {
-        mass = 93.67; // 72.77
+        mass = 88.16; // 72.77
     };
 
     class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
     {
-        mass = 55.1; // 68.36
+        mass = 49.59; // 68.36
     };
 
     class Titan_AA;
     class rhs_fim92_mag : Titan_AA // FIM-92F Stinger
     {
-        mass = 66.12; // 120
-    };
-
-    class rhs_m136_mag;
-    class rhs_m136_hp_mag : rhs_m136_mag // M136 AST (M136 HP)
-    {
-        descriptionshort = "Type: Anti Structure Tandem-warheads"; // "Type: High Penetration"
-        displayName = "M136 AST"; // "M136 HP"
+        mass = 60.61; // 120
     };
 
     class rhs_m136_hedp_mag;
     class rhs_m72a7_mag : rhs_m136_hedp_mag // M72A7
     {
         descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
-        displayName = "M72A7 (HE)"; // "M136 HP"
+        displayName = "M72E10 (HE)"; // "M72 HEDP"
     };
 };
