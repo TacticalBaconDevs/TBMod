@@ -368,4 +368,10 @@ class CfgMagazines
         descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
         displayName = "M72E10 (HE)"; // "M72 HEDP"
     };
+
+    class 1Rnd_HE_Grenade_shell;
+    class ACE_HuntIR_M203 : 1Rnd_HE_Grenade_shell // HuntIR
+    {
+        initSpeed = 160; // 80
+    };
 };
