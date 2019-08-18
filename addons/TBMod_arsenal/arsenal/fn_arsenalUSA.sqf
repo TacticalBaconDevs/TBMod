@@ -504,9 +504,11 @@ private _dmr_munition = [
     "rhsusf_10Rnd_762x51_m118_special_Mag",
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
-    "rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
-    "rhsusf_20Rnd_762x51_SR25_m62_Mag",
-    "rhsusf_20Rnd_762x51_SR25_m993_Mag"
+    "rhs_mag_20Rnd_SCAR_762x51_m118_special",
+    "rhs_mag_20Rnd_SCAR_762x51_m61_ap",
+    "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+    "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
+    "rhs_mag_20Rnd_SCAR_762x51_mk316_special"
 
     // verfügbar aber nicht in Benutzung m40A5
     //rhsusf_5Rnd_762x51_AICS_m118_special_Mag
@@ -541,11 +543,11 @@ private _pilot_munition = [
 private _sniper_munition = [
     "rhsusf_mag_10Rnd_STD_50BMG_mk211",
     "rhsusf_mag_10Rnd_STD_50BMG_M33",
-    "ACE_20Rnd_762x51_Mag_SD",
-    "ACE_20Rnd_762x51_M993_AP_Mag",
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
-    "rhsusf_mag_40Rnd_46x30_AP"
+    "rhsusf_mag_40Rnd_46x30_AP",
+    "rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS",
+    "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"
 ];
 
 private _aaat_munition = [
@@ -937,6 +939,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "rhs_weap_m14ebrri",
+            "rhs_weap_mk17_CQC",
+            "rhs_weap_mk17_LB",
+            "rhs_weap_mk17_STD",
+            "rhs_weap_sr25",
+            "rhs_weap_sr25_d",
+            "rhs_weap_sr25_ec_d",
+            "rhs_weap_sr25_ec_wd",
+            "rhs_weap_sr25_wd",
+
+            // Munition
+            "rhsusf_20Rnd_762x51_SR25_m62_Mag",
+            "rhsusf_20Rnd_762x51_SR25_m993_Mag",
+            "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag",
 
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
@@ -953,7 +968,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
 
             // Waffen
-            "TB_vz99_carryWeapon"
+            "TB_vz99_carryWeapon",
+
+            // Zubehör
+            "rhsusf_acc_sr25s",
+            "rhsusf_acc_sr25s_d",
+            "rhsusf_acc_sr25s_wd"
         ]
     };
 
@@ -969,18 +989,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _lrFunken +
         _sniper_munition +
+        _dmr_munition +
         [
             // Gewehre
             "rhs_weap_M107",
             "rhs_weap_M107_d",
             "rhs_weap_M107_w",
-            "rhs_weap_sr25",
-            "rhs_weap_sr25_d",
-            "rhs_weap_sr25_ec_d",
-            "rhs_weap_sr25_ec_wd",
-            "rhs_weap_sr25_wd",
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
+            "rhs_weap_mk17_CQC",
+            "rhs_weap_mk17_LB",
+            "rhs_weap_mk17_STD",
             // ### Visiere
             "rhsusf_acc_premier_anpvs27",
             "rhsusf_acc_premier",
@@ -995,9 +1014,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "bipod_01_f_blk",
             "bipod_01_f_snd",
             "rhsusf_acc_rotex_mp7",
-            "rhsusf_acc_sr25s",
-            "rhsusf_acc_sr25s_d",
-            "rhsusf_acc_sr25s_wd",
 
             // Uniforms
             "U_B_FullGhillie_lsh",

@@ -191,4 +191,25 @@ class CfgWeapons
     {
         mass = 132.25; // 92.35
     };
+
+    class rhs_weap_SCAR_H_CQC_Base;
+    class rhs_weap_mk17_CQC: rhs_weap_SCAR_H_CQC_Base // Mk17 CQC
+    {
+       magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+       magazines[] = {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+    };
+
+    class rhs_weap_SCAR_H_LB_Base;
+    class rhs_weap_mk17_LB: rhs_weap_SCAR_H_LB_Base // Mk17 LB
+    {
+        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] = {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+    };
+
+    class rhs_weap_SCAR_H_STD_Base;
+    class rhs_weap_mk17_STD: rhs_weap_SCAR_H_STD_Base // Mk17 STD
+    {
+        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] = {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+    };
 };
