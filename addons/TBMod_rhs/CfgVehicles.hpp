@@ -24,7 +24,7 @@ class CfgVehicles
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
         };
     };
-    
+
     // Skin
     class RHS_MELB_MH6M;
     class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
@@ -58,7 +58,7 @@ class CfgVehicles
         accuracyNightLightsOff = 0.003; // 0.006
         accuracyNightLightsOn = 0.05; // 0.1
         armor = 25; // 35
-        audible = 48; // 50
+        audible = 38; // 50
         camouflage = 45; // 100
         camShakeCoef = 0.8; // 0
         incomingMissileDetectionSystem = 16; // 0
@@ -107,8 +107,7 @@ class CfgVehicles
         weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ144"
     };
 
-    class rhsusf_CH53E_USMC;
-    class rhsusf_CH53E_USMC_D : rhsusf_CH53E_USMC // RHS CH-53
+    class rhsusf_CH53E_USMC : Helicopter_Base_H // RHS CH-53
     {
         accuracy = 0.3; // 0.5
         accuracyDarkNightLightsOff = 0.003; // 0.001
@@ -150,7 +149,7 @@ class CfgVehicles
         accuracyNightLightsOff = 0.009; // 0.006
         accuracyNightLightsOn = 0.15; // 0.1
         armor = 65; // 40
-        audible = 44; // 50
+        audible = 36; // 50
         camouflage = 110; // 100
         irTargetSize = 0.86; // 1.2
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
@@ -164,7 +163,7 @@ class CfgVehicles
     {
         accuracy = 0.4; // 0.5
         armor = 45; // 40
-        audible = 39; // 50
+        audible = 31; // 50
         camouflage = 78; // 100
         irTargetSize = 0.5; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
@@ -180,7 +179,7 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.0005; // 0.001
         accuracyNightLightsOff = 0.003; // 0.006
         accuracyNightLightsOn = 0.05; // 0.1
-        audible = 24; // 50
+        audible = 20; // 50
         camouflage = 63; // 100
         camShakeCoef = 0.4; // 0
         irTargetSize = 0.48; // 0.8
@@ -223,41 +222,8 @@ class CfgVehicles
         radarType = 8; // 0
     };
 
-    class Plane_Base_F;
-    class Plane_CAS_01_base_F: Plane_Base_F
-    {
-        class Components;
-    };
-    class Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_base_F
-    {
-        class Components : Components
-        {
-            class TransportPylonsComponent
-            {
-                class Pylons
-                {
-                    class Pylons1;
-                    class Pylons2 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons3 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons4 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons5 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                };
-            };
-        };
-    };
-    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F
+    class Plane_CAS_01_dynamicLoadout_base_F;
+    class B_Plane_CAS_01_dynamicLoadout_F : Plane_CAS_01_dynamicLoadout_base_F // Vanilla A-10
     {
         accuracyDarkNightLightsOff = 0.005; // 0.001
         accuracyNightLightsOff = 0.03; // 0.006
@@ -270,27 +236,42 @@ class CfgVehicles
         magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
-        thrustCoef[] = {1.1,1.14,1.18,1.21,1.2,1.19,1.17,1.15,0.8,0.3,0.2,0,0,0,0}; // {1.1,1.14,1.18,1.21,1.2,1.19,1.17,1.15,1.13,1.1,1.04,0.6,0.1,0,0}
         weapons[] = {"Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","CMFlareLauncher"
     };
 
     class Plane_Fighter_01_Base_F;
     class B_Plane_Fighter_01_F : Plane_Fighter_01_Base_F // Vanilla F/A-181
     {
+        acceleration = 220; // 200
         accuracy = 0.25; // 0.02
         accuracyDarkNightLightsOff = 0.003; // 0.001
         accuracyNightLightsOff = 0.018; // 0.006
         accuracyNightLightsOn = 0.3; // 0.1
+        aileronCoef[] = {0.2,0.25,0.89,1.04,1.09,1.13,1.16,1.17,1.05,0.7,0.68,0.66,0.63,0.6,0.57,0.55}; // {0.4,0.5,0.8,0.95,1.02,1.04,1.03,1.01,1,0.7,0.6,0.55,0.5,0.45,0.4,0.35}
+        aileronControlsSensitivityCoef = 4.2; // 3.5
+        aileronSensitivity = 1.5; // 1.2
+        airBrakeFrictionCoef = 3; // 2.4
         armor = 65; // 60
         audible = 190; // 60
-        camShakeCoef = 0.4; // 0
+        camShakeCoef = 0.2; // 0
         camouflage = 150; // 100
-        irScanRangeMin = 650; // 2000
+        draconicForceXCoef = 12; // 7
+        draconicForceYCoef = 1.4; // 1.1
+        draconicForceZCoef = 1; // 1
+        draconicTorqueXCoef[] = {6.4,7.5,8.2,9,9.7,9.9,10.1,10.2,10.2,10.3,10.3}; // {4,5.1,6.1,7,7.7,8.3,9,9.1,9.2,9.2,9.2}
+        draconicTorqueYCoef[] = {14.6,10.1,3.1,0.9,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // {6.8,5.5,4,1.5,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+        flapsFrictionCoef = 0.72; // 0.36
+        fuelCapacity = 2250; // 1550
+        gearsUpFrictionCoef = 6.2; // 0.8
+        irScanRangeMin = 1000; // 2000
         irTargetSize = 1.7; // 1
         magazines[] = {"magazine_Fighter01_Gun20mm_AA_x450","magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine"
+        maxSpeed = 1840; // 1200
         nvScanner = 1; // 0
-        radarTargetSize = 0.7; // 0.8
-        thrustCoef[] = {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.8,1.75,1.6,1.4,1.2}; // {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.4,0.4,0,0,0}
+        radarTargetSize = 0.65; // 0.8
+        rudderControlsSensitivityCoef = 4; // 3.8
+        rudderCoef[] = {0.1,1.1,3.8,4.6,4.8,4.9,4.7,4.5,3.6,2.2,1.1,1.1,1,1,0.9,0.8}; // {0.5,1.8,2.6,2.75,2.8,2.85,2.9,2.95,2.98,3.01,2.7,1.1,0.9,0.7,0.5,0.3}
+        thrustCoef[] = {2.06,2.02,1.99,1.94,1.96,1.99,2.1,2.22,2.4,2.55,2.76,2.71,2.65,2.62,2.54,2.48}; // {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.4,0.4,0,0,0}
         weapons[] = {"weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","CMFlareLauncher_Singles"
     };
 
@@ -300,10 +281,16 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.002; // 0.001
         accuracyNightLightsOff = 0.015; // 0.006
         accuracyNightLightsOn = 0.26; // 0.1
+        aileronControlsSensitivityCoef = 4.8; // 3.6
+        aileronSensitivity = 2.4; // 1
+        airBrakeFrictionCoef = 4.2; // 2.2
         armor = 50; // 55
         audible = 180; // 60
         camShakeCoef = 0.9; // 0
         camouflage = 105; // 100
+        draconicForceXCoef = 19; // 8
+        draconicForceYCoef = 1.6; // 1.4
+        gearsUpFrictionCoef = 2.8; // 0.6
         irTargetSize = 1.4; // 0.8
         magazines[] = {"Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
@@ -388,8 +375,8 @@ class CfgVehicles
         radarTargetSize = 1.95; // 1.5
     };
 
-    class Heli_light_03_base_F;
-    class Heli_light_03_unarmed_base_F : Heli_light_03_base_F // Vanilla AW-159 Hellcat
+    class Heli_light_03_dynamicLoadout_base_F;
+    class I_Heli_light_03_dynamicLoadout_F1 : Heli_light_03_dynamicLoadout_base_F // Vanilla AW-159 Hellcat
     {
         accuracy = 0.42; // 1.5
         accuracyDarkNightLightsOff = 0.002; // 0.001
@@ -400,7 +387,7 @@ class CfgVehicles
         camouflage = 84; // 100
         irTargetSize = 0.8; // 1
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
+        magazines[] = {"5000Rnd_762x51_Yellow_Belt","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // ""5000Rnd_762x51_Yellow_Belt","168Rnd_CMFlare_Chaff_Magazine""
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 1
         weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
@@ -426,7 +413,6 @@ class CfgVehicles
         fuelCapacity = 3000; // 1000
         irTargetSize = 0.3; // 0.5
         nvScanner = 1; // 0
-        radarTargetSize = 0.3; // 0.5
         visualTargetSize = 0.6; // 0.7
     };
 
@@ -470,34 +456,83 @@ class CfgVehicles
     class APC_Tracked_03_base_F;
     class RHS_M2A2_Base : APC_Tracked_03_base_F // RHS M2 Bradley
     {
-        armor = 460; // 290
+        armor = 320; // 290
         audible = 8; // 18
     };
 
-    class rhsusf_caiman_base;
-    class rhsusf_M1220_usarmy_d : rhsusf_caiman_base // RHS M1220 Serie
+    class Truck_01_base_F;
+    class rhsusf_caiman_base : Truck_01_base_F // RHS M1220 Serie
     {
-        armor = 230; // 200
+        armor = 220; // 200
         audible = 5; // 9
     };
 
     class rhsusf_hmmwe_base;
     class rhsusf_m998_w_2dr : rhsusf_hmmwe_base // RHS Humvee Serie
     {
-        armor = 95; // 80
+        armor = 110; // 80
         audible = 4; // 5
     };
 
-    class MRAP_01_base_F;
-    class B_MRAP_01_F : MRAP_01_base_F // Vanilla Hunter
+    class Car_F;
+    class MRAP_01_base_F : Car_F // Vanilla Hunter + Großteil MRAPs
     {
-        armor = 210; // 200
+        armor = 250; // 200
+    };
+
+    class Wheeled_Apc_F : Car_F // M1117
+    {
+        armor = 250; // 150
     };
 
     class I_APC_Wheeled_03_base_F;
     class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Vanilla Pandur II
     {
-        armor = 460; // 480
+        armor = 320; // 480
         audible = 8; // 14
+    };
+
+    class APC_Wheeled_01_base_F : Wheeled_Apc_F // Vanilla Badger IFV
+    {
+        armor = 320; // 320
+        audible = 8; // 14
+    };
+
+    class rhsusf_stryker_base : Wheeled_Apc_F // RHS Stryker
+    {
+        armor = 300; // 320
+        audible = 8; // 14
+    };
+
+    class UAV_03_dynamicLoadout_base_F;
+    class B_T_UAV_03_dynamicLoadout_F : UAV_03_dynamicLoadout_base_F // MQ-12 Falcon
+    {
+        accuracy = 1.2; // 2.5
+        armor = 35; // 25
+        camouflage = 40; // 100
+        fuelCapacity = 300; // 100
+        irTargetSize = 0.6; // 0.8
+        nvScanner = 1; // 0
+        radarTargetSize = 0.4; // 0.7
+        visualTargetSize = 0.7; // 0.8
+    };
+
+    class UGV_01_base_F;
+    class B_UGV_01_F : UGV_01_base_F // UGV Stomper
+    {
+        ace_rearm_defaultSupply = 750; // 0
+        ace_repair_canRepair = 1; // 0
+        ace_refuel_fuelCargo = 250; // 0
+        armor = 50; // 30
+        audible = 2.25; // 5
+        fuelCapacity = 30; // 14
+    };
+
+    class UGV_01_rcws_base_F;
+    class B_UGV_01_rcws_F : UGV_01_rcws_base_F // UGV Stomper RCWS
+    {
+        armor = 50; // 30
+        audible = 2.25; // 5
+        fuelCapacity = 30; // 14
     };
 };

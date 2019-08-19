@@ -208,18 +208,6 @@ class CfgAmmo
         hit = 500; // 900
     };
 
-    class ammo_Penetrator_PG_AT : ammo_Penetrator_Base // DAGR Submunition
-    {
-        caliber = 45; // 20
-        hit = 500; // 450
-    };
-
-    class ammo_Penetrator_Rocket_04_AP : ammo_Penetrator_Base // Hydra 7x AP Submunition
-    {
-        caliber = 45; // 20
-        hit = 500; // 435
-    };
-
     class M_Scalpel_AT;
     class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
     {
@@ -298,31 +286,6 @@ class CfgAmmo
         indirectHit = 3.24; // 1.2
         indirectHitRange = 3.6; // 2
         tracerScale = 0.4; // 1.2
-    };
-
-    class M_PG_AT;
-    class M_AT : M_PG_AT // Hydra 12x HE
-    {
-        hit = 100; // 300
-        indirectHit = 20; // 50
-        indirectHitRange = 18; // 8
-        trackOversteer = 0.95; // 1
-    };
-
-    class MissileBase;
-    class Rocket_04_HE_F : MissileBase // Hydra 7x HE
-    {
-        hit = 100; // 210
-        indirectHit = 20; // 55
-        indirectHitRange = 18; // 15
-        trackOversteer = 0.95; // 1
-    };
-
-    class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
-    {
-        hit = 300; // 95
-        indirectHit = 50; // 25
-        trackOversteer = 0.95; // 1
     };
 
     class BulletBase;
