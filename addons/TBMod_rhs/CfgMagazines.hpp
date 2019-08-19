@@ -266,7 +266,7 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
         displayName = "HE Bomb [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
-        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_BOMB_PYLON"
+        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_BOMB_PYLON"
     };
 
     class PylonMissile_1Rnd_BombCluster_01_F : PylonMissile_1Rnd_Bomb_04_F // CBU-85 HE Mines Cluster
@@ -281,7 +281,7 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
         displayName = "AT-Mines Cluster [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
-        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "O_BOMB_PYLON_HELI"
+        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "O_BOMB_PYLON_HELI"
         mass = 340; // 470
     };
 
