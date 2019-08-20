@@ -335,7 +335,7 @@ class CfgAmmo
 
     class rhs_ammo_762x51_M80_Ball : BulletBase // 100rnd 7.62x51mm + 100rnd 7.62x51mm Tracer
     {
-        ACE_ballisticCoefficients[] = {0.9}; // {0.2}
+        ACE_ballisticCoefficients[] = {0.65}; // {0.2}
         caliber = 1.25; // 1
         hit = 16; // 8
         indirectHit = 8; // 0
