@@ -16,6 +16,7 @@ class CfgPatches
 };
 
 // Configs
+#include "script_macros.hpp"
 #include "configs\CfgAISkill.hpp"
 #include "configs\CfgDifficulty.hpp"
 #include "configs\CfgEventHandlers.hpp"

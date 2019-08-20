@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -59,7 +60,7 @@ else // load
             if !(_rolle isEqualTo "" || _arsenalType isEqualTo "") then
             {
                 _x setVariable ["TB_arsenalType", _arsenalType, true];
-                [_rolle, _arsenalType, objNull, false] remoteExec ["TB_fnc_changeRolle", _x];
+                [_rolle, _arsenalType, objNull, false] remoteExec [QEFUNC(arsenal,changeRolle), _x];
             };
 
             _x setUnitLoadout _gear;

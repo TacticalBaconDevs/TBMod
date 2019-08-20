@@ -6,7 +6,7 @@ class CfgFunctions
 {
     class TBMod_arsenal
     {
-        tag = "TB";
+        tag = ADDONTAG;
 
         class functions
         {

@@ -1,7 +1,7 @@
 /*
 WARLORDS-SPECIFIC FUNCTION
 
-Author: Josef Zem�nek
+Author: Josef Zemánek
 
 Description: Init variables.
 */
@@ -27,15 +27,16 @@ if (isNil "BIS_WL_selectionTimeout") then {BIS_WL_selectionTimeout = 60}; // _th
 BIS_WL_fundsPayoffTimeout = 60;
 BIS_WL_startCP = _this getVariable "StartCP";
 BIS_WL_spawnedRemovalTime = 600;
-BIS_WL_scanCost = 350;
+BIS_WL_scanCost = 350; _overridenCost = getNumber (missionConfigFile >> "CfgWLAssetCostOverride" >> "Scan"); if (_overridenCost > 0) then {BIS_WL_scanCost = _overridenCost};
 BIS_WL_scanDuration = 30;
 if (isNil "BIS_WL_vehicleSpan") then {BIS_WL_vehicleSpan = 3600}; // _this getVariable "VehicleSpan"
 if (isNil "BIS_WL_AICanVote") then {BIS_WL_AICanVote = 0}; // _this getVariable "AIVoting"
 if (isNil "BIS_WL_arsenalEnabled") then {BIS_WL_arsenalEnabled = 0}; // _this getVariable "ArsenalEnabled"
 BIS_WL_forcedProgress = _this getVariable "Progress";
-if (isNil "BIS_WL_FTEnabled") then {BIS_WL_FTEnabled = 0}; // _this getVariable "FTEnabled"
+if (isNil "BIS_WL_FTEnabled") then {BIS_WL_FTEnabled = 4}; // _this getVariable "FTEnabled"
 if (isNil "BIS_WL_scanEnabled") then {BIS_WL_scanEnabled = 0}; // _this getVariable "ScanEnabled"
-if (isNil "BIS_WLVotingResetEnabled") then {BIS_WLVotingResetEnabled = 0}; // _this getVariable "VotingResetEnabled"
+if (isNil "BIS_WLVotingResetEnabled") then {BIS_WLVotingResetEnabled = 1}; // _this getVariable "VotingResetEnabled"
+BIS_WLTeamBalanceEnabled = _this getVariable "TeamBalanceEnabled";
 if (isNil "BIS_WL_fatigueEnabled") then {BIS_WL_fatigueEnabled = 1}; // _this getVariable "FatigueEnabled"
 BIS_WL_CPIncomeMult = _this getVariable "CPMultiplier";
 BIS_WL_shoppingList = _this getVariable "AssetList";
@@ -43,15 +44,17 @@ if (BIS_WL_shoppingList == "") then {BIS_WL_shoppingList = "['TB_RHS']"};
 //BIS_WL_shoppingList = call compile [BIS_WL_shoppingList, TRUE];
 BIS_WL_shoppingList = call compile BIS_WL_shoppingList;
 BIS_WL_maxSubordinates = _this getVariable ["MaxSubordinates", 9];
+BIS_WL_maxCP = _this getVariable ["MaxCP", -1];
+if (BIS_WL_maxCP < 0) then {BIS_WL_maxCP = 10e10};
 BIS_WL_mapSize = getNumber (BIS_WL_cfgWrld >> "Grid" >> "offsetY");
 if (isNil "BIS_WL_dropCost") then {BIS_WL_dropCost = 25};
-if (isNil "BIS_WL_FTCost") then {BIS_WL_FTCost = 50};
-if (isNil "BIS_WL_lastLoadoutCost") then {BIS_WL_lastLoadoutCost = 500}; // 50
-if (isNil "BIS_WL_arsenalCost") then {BIS_WL_arsenalCost = 1000};
-BIS_WL_newVoteCost = 500;
+if (isNil "BIS_WL_FTCost") then {BIS_WL_FTCost = 500};
+if (isNil "BIS_WL_lastLoadoutCost") then {BIS_WL_lastLoadoutCost = 5000}; // 50
+if (isNil "BIS_WL_arsenalCost") then {BIS_WL_arsenalCost = 10000};
 if (isNil "BIS_WL_transferCost") then {BIS_WL_transferCost = 0}; // 500
 if (isNil "BIS_WL_votingResetCost") then {BIS_WL_votingResetCost = 500}; // 2000
 BIS_WL_votingResetTimeout = 300;
+BIS_RET_WL_autonomous_limit = 3;
 BIS_WL_newlySelectedSector = objNull;
 BIS_WL_markerIndex = 1;
 BIS_WL_allWarlords = +(playableUnits + switchableUnits) select {(side group _x) in [WEST, EAST]};
@@ -64,6 +67,30 @@ addMissionEventHandler ["EntityRespawned", {
         _this spawn BIS_WL_spawnProtectionCode;
     };
 }];
+BIS_WL_friendlyFireVehicleProtectionCode = {
+    params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
+    _owner = _unit getVariable ["BIS_WL_itemOwner", objNull];
+    if (_instigator != _owner && side group _instigator == side group _owner && group _instigator != group _owner) then {
+        0
+    };
+};
+BIS_WL_vehicleLockCode = {
+    params ["_item", "_initialLock"];
+    _item lock _initialLock;
+    _actionHandle = _item addAction [if (_initialLock) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}, {(_this select 0) removeAction (_this select 2); if (locked (_this select 0) == 2) then {(_this select 0) lock FALSE} else {(_this select 0) lock TRUE}}, [], if (_initialLock) then {100} else {-19}, if (_initialLock) then {TRUE} else {FALSE}, FALSE, "", "alive _target && _target in ((_this getVariable ['BIS_WL_pointer', objNull]) getVariable ['BIS_WL_purchased', []])", 50, TRUE];
+    [_item, _actionHandle] spawn {
+        params ["_item", "_actionHandle"];
+        _prevLock = locked _item;
+        while {alive _item} do {
+            sleep 0.25;
+            if (locked _item != _prevLock) then {
+                _item removeAction _actionHandle;
+                _prevLock = locked _item;
+                _actionHandle = _item addAction [if (_prevLock == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}, {(_this select 0) removeAction (_this select 2); if (locked (_this select 0) == 2) then {(_this select 0) lock FALSE} else {(_this select 0) lock TRUE}}, [], if (_prevLock == 2) then {100} else {-19}, if (_prevLock == 2) then {TRUE} else {FALSE}, FALSE, "", "alive _target && _target in ((_this getVariable ['BIS_WL_pointer', objNull]) getVariable ['BIS_WL_purchased', []])", 50, TRUE];
+            };
+        };
+    };
+};
 [] spawn {while {TRUE} do {{BIS_WL_allWarlords pushBackUnique _x} forEach ((playableUnits + switchableUnits) select {(side group _x) in [WEST, EAST]}); sleep 5}};
 if (isServer) then {
     BIS_WL_factionsPool = [_this getVariable "FactionOPFOR", _this getVariable "FactionBLUFOR", _this getVariable "FactionIndep"];
@@ -130,9 +157,9 @@ if (isServer) then {
         _t = time + 60;
         _base = missionNamespace getVariable format ["BIS_WL_base_%1", side group _unit];
         if ([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea && !(_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])) then {
-            _unit allowDamage FALSE;
+            [_unit, FALSE] remoteExec ["allowDamage", _unit];
             waitUntil {!alive _unit || time > _t || !([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea) || (_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])};
-            _unit allowDamage TRUE;
+            [_unit, TRUE] remoteExec ["allowDamage", _unit];
         };
     };
 };
@@ -195,7 +222,13 @@ if !(isDedicated) then {
         "I_Mortar_01_support_F",
         "I_Mortar_01_weapon_F",
         "O_Mortar_01_support_F",
-        "O_Mortar_01_weapon_F"
+        "O_Mortar_01_weapon_F",
+        "B_Respawn_Sleeping_bag_blue_F",
+        "B_Respawn_Sleeping_bag_brown_F",
+        "B_Respawn_TentDome_F",
+        "B_Patrol_Respawn_bag_F",
+        "B_Respawn_Sleeping_bag_F",
+        "B_Respawn_TentA_F"
     ];
     {
         _class = _x;

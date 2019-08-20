@@ -1,3 +1,4 @@
+#include "../script_macros.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Original by https://github.com/BourbonWarfare/POTATO
@@ -27,13 +28,13 @@ _mortarVeh disableNVGEquipment ((hmd _player) == "");
         {
             [_pfID] call CBA_fnc_removePerFrameHandler;
 
-            if (((_player distance _mortarVeh) < 5) && {[_mortarVeh, _player] call TB_fnc_canPickupWeapon} && {[_player, _mortarVeh, []] call ace_common_fnc_canInteractWith}) then
+            if (((_player distance _mortarVeh) < 5) && {[_mortarVeh, _player] call FUNC(canPickupWeapon)} && {[_player, _mortarVeh, []] call ace_common_fnc_canInteractWith}) then
             {
                 private _weaponDir = _mortarVeh weaponDirection (currentWeapon _mortarVeh);
                 private _azimuth = (_weaponDir select 0) atan2 (_weaponDir select 1);
 
                 _player setDir _azimuth;
-                [_mortarVeh, _player] call TB_fnc_doPickupWeapon;
+                [_mortarVeh, _player] call FUNC(doPickupWeapon);
             };
         };
 
@@ -41,7 +42,7 @@ _mortarVeh disableNVGEquipment ((hmd _player) == "");
         if (CBA_missionTime > _levelCheck) then
         {
             _args set [2, CBA_missionTime + 5];
-            [_mortarVeh, false] call TB_fnc_levelToGround;
+            [_mortarVeh, false] call FUNC(levelToGround);
         };
 
     },

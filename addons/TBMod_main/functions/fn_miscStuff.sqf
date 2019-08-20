@@ -1,4 +1,5 @@
-﻿/*
+﻿#include "../script_macros.hpp"
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -102,7 +103,9 @@ forEach allCurators;
 
 
 // ### Entschärf Fix
+["ACE_DefuseObject"] call ace_interact_menu_fnc_compileMenu;
 ["ACE_DefuseObject", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
+["ACE_DefuseObject_Large"] call ace_interact_menu_fnc_compileMenu;
 ["ACE_DefuseObject_Large", 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
 ["ACE_DefuseObject", 0, [], [
     "ACE_Defuse",
@@ -143,8 +146,12 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 [
     "TB_informAdminsAndZeus",
     {
-        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) ||
-            (getPlayerUID player) in (call TB_lvl3)) then {systemChat (if (_this isEqualType []) then {format _this} else {_this})};
+        if ((call BIS_fnc_admin) != 0 || !isNull (getAssignedCuratorLogic player) || (getPlayerUID player) in (call TB_lvl3)) then
+        {
+            private _msg = if (_this isEqualType []) then {format _this} else {_this};
+            systemChat _msg;
+            diag_log format ["[ADMINLOG] %1", _msg];
+        };
     }
 ] call CBA_fnc_addEventHandler;
 
@@ -219,5 +226,5 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 // ### CPR/HLW Stuff
 ["adv_aceCPR_evh_CPR_local", {
     params ["_caller", "_target"];
-    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", true]};
+    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable ["TB_cpr_boost", (_target getVariable ["TB_cpr_boost", 0]) + 5]};
 }] call CBA_fnc_addEventHandler;
