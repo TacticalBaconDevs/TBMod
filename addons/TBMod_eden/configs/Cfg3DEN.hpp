@@ -260,316 +260,314 @@ class Cfg3DEN
                             text = "== Generiert ==";
                             data = "";
                         };
-                        class Acts_AidlPercMstpSlowWrflDnon_warmup01
+                        class ArmedGuardRelaxed01
                         {
-                            text = Acts_AidlPercMstpSlowWrflDnon_warmup01;
-                            data = Acts_AidlPercMstpSlowWrflDnon_warmup01;
+                            text = "Entspannte Wache 01";
+                            data = "Acts_AidlPercMstpSlowWrflDnon_warmup01";
                         };
-                        class Acts_AidlPercMstpSlowWrflDnon_warmup02
+                        class ArmedGuardRelaxed02
                         {
-                            text = Acts_AidlPercMstpSlowWrflDnon_warmup02;
-                            data = Acts_AidlPercMstpSlowWrflDnon_warmup02;
+                            text = "Entspannte Wache 02";
+                            data = "Acts_AidlPercMstpSlowWrflDnon_warmup02";
                         };
-                        class Acts_AidlPercMstpSlowWrflDnon_warmup03
+                        class ArmedGuardRelaxed03
                         {
-                            text = Acts_AidlPercMstpSlowWrflDnon_warmup03;
-                            data = Acts_AidlPercMstpSlowWrflDnon_warmup03;
+                            text = "Entspannte Wache 03";
+                            data = "Acts_AidlPercMstpSlowWrflDnon_warmup03";
                         };
-                        class Acts_AidlPercMstpSlowWrflDnon_warmup04
+                        class ArmedGuardRelaxed04
                         {
-                            text = Acts_AidlPercMstpSlowWrflDnon_warmup04;
-                            data = Acts_AidlPercMstpSlowWrflDnon_warmup04;
+                            text = "Entspannte Wache Waffe in die Luft";
+                            data = "Acts_AidlPercMstpSlowWrflDnon_warmup04";
                         };
-                        class Acts_AidlPercMstpSlowWrflDnon_warmup05
+                        class ArmedGuardRelaxed0105
                         {
-                            text = Acts_AidlPercMstpSlowWrflDnon_warmup05;
-                            data = Acts_AidlPercMstpSlowWrflDnon_warmup05;
+                            text = "Entspannte Wache Schuss Vortäuchen";
+                            data = "Acts_AidlPercMstpSlowWrflDnon_warmup05";
                         };
-                        class Acts_AidlPercMstpSlowWrflDnon_warmup_loop
+                        class Eingefroren
                         {
-                            text = Acts_AidlPercMstpSlowWrflDnon_warmup_loop;
-                            data = Acts_AidlPercMstpSlowWrflDnon_warmup_loop;
+                            text = "Eingefroren";
+                            data = "Acts_AidlPercMstpSlowWrflDnon_warmup_loop";
                         };
-                        class Acts_AidlPsitMstpSsurWnonDnon01
+                        class GefesseltBoden01
                         {
-                            text = Acts_AidlPsitMstpSsurWnonDnon01;
-                            data = Acts_AidlPsitMstpSsurWnonDnon01;
+                            text = "Gefesselt Boden 01";
+                            data = "Acts_AidlPsitMstpSsurWnonDnon01";
                         };
-                        class Acts_AidlPsitMstpSsurWnonDnon02
+                        class GefesseltBoden02
                         {
-                            text = Acts_AidlPsitMstpSsurWnonDnon02;
-                            data = Acts_AidlPsitMstpSsurWnonDnon02;
+                            text = "Gefesselt Boden 02";
+                            data = "Acts_AidlPsitMstpSsurWnonDnon02";
                         };
-                        class Acts_AidlPsitMstpSsurWnonDnon03
+                        class GefesseltBoden03
                         {
-                            text = Acts_AidlPsitMstpSsurWnonDnon03;
-                            data = Acts_AidlPsitMstpSsurWnonDnon03;
+                            text = "Gefesselt Boden 03";
+                            data = "Acts_AidlPsitMstpSsurWnonDnon03";
                         };
-                        class Acts_AidlPsitMstpSsurWnonDnon04
+                        class GefesseltBoden04
                         {
-                            text = Acts_AidlPsitMstpSsurWnonDnon04;
-                            data = Acts_AidlPsitMstpSsurWnonDnon04;
+                            text = "Gefesselt Boden 04";
+                            data = "Acts_AidlPsitMstpSsurWnonDnon04";
                         };
-                        class Acts_AidlPsitMstpSsurWnonDnon05
+                        class GefesseltBoden05
                         {
-                            text = Acts_AidlPsitMstpSsurWnonDnon05;
-                            data = Acts_AidlPsitMstpSsurWnonDnon05;
+                            text = "Gefesselt Boden 05";
+                            data = "Acts_AidlPsitMstpSsurWnonDnon05";
                         };
-                        class Acts_AidlPsitMstpSsurWnonDnon_loop
+                        class GefesseltBodenLoop
                         {
-                            text = Acts_AidlPsitMstpSsurWnonDnon_loop;
-                            data = Acts_AidlPsitMstpSsurWnonDnon_loop;
+                            text = "Gefesselt Boden Loop";
+                            data = "Acts_AidlPsitMstpSsurWnonDnon_loop";
                         };
-                        class Acts_Briefing_SA_Loop
+                        class WaffeAnschauen
                         {
-                            text = Acts_Briefing_SA_Loop;
-                            data = Acts_Briefing_SA_Loop;
+                            text = "Waffe Anschauen";
+                            data = "Acts_Briefing_SA_Loop";
                         };
-                        class Acts_Briefing_SA_StartLoop
+                        class Wache01
                         {
-                            text = Acts_Briefing_SA_StartLoop;
-                            data = Acts_Briefing_SA_StartLoop;
+                            text = "Wache 01";
+                            data = "Acts_Briefing_SA_StartLoop";
                         };
-                        class Acts_Briefing_SB_Loop
+                        class Wache02
                         {
-                            text = Acts_Briefing_SB_Loop;
-                            data = Acts_Briefing_SB_Loop;
+                            text = "Wache 02";
+                            data = "Acts_Briefing_SB_Loop";
                         };
-                        class Acts_Briefing_SB_StartLoop
+                        class Wache03
                         {
-                            text = Acts_Briefing_SB_StartLoop;
-                            data = Acts_Briefing_SB_StartLoop;
+                            text = "Wache 03";
+                            data = "Acts_Briefing_SB_StartLoop";
                         };
-                        class Acts_Briefing_SC_Loop
+                        class Wache04
                         {
-                            text = Acts_Briefing_SC_Loop;
-                            data = Acts_Briefing_SC_Loop;
+                            text = "Wache 04";
+                            data = "Acts_Briefing_SC_Loop";
                         };
-                        class Acts_Briefing_SC_StartLoop
+                        class Wache05
                         {
-                            text = Acts_Briefing_SC_StartLoop;
-                            data = Acts_Briefing_SC_StartLoop;
+                            text = "Wache 05";
+                            data = "Acts_Briefing_SC_StartLoop";
                         };
-                        class Acts_CivilHiding_1
+                        class CivilHiding01
                         {
-                            text = Acts_CivilHiding_1;
-                            data = Acts_CivilHiding_1;
+                            text = "Civil Hiding 01";
+                            data = "Acts_CivilHiding_1";
                         };
-                        class Acts_CivilHiding_2
+                        class CivilHiding02
                         {
-                            text = Acts_CivilHiding_2;
-                            data = Acts_CivilHiding_2;
+                            text = "Civil Hiding 02";
+                            data = "Acts_CivilHiding_2";
                         };
-                        class Acts_CivilIdle_1
+                        class Rumstehen01
                         {
-                            text = Acts_CivilIdle_1;
-                            data = Acts_CivilIdle_1;
+                            text = "Rumstehen 01";
+                            data = "Acts_CivilIdle_1";
                         };
-                        class Acts_CivilIdle_2
+                        class Rumstehen02
                         {
-                            text = Acts_CivilIdle_2;
-                            data = Acts_CivilIdle_2;
+                            text = "Rumstehen 01";
+                            data = "Acts_CivilIdle_2";
                         };
-                        class Acts_CivilInjuredArms_1
+                        class CivilInjuredArms
                         {
-                            text = Acts_CivilInjuredArms_1;
-                            data = Acts_CivilInjuredArms_1;
+                            text = "Civil Arm verletzt";
+                            data = "Acts_CivilInjuredArms_1";
                         };
-                        class Acts_CivilInjuredChest_1
+                        class CivilInjuredChest
                         {
-                            text = Acts_CivilInjuredChest_1;
-                            data = Acts_CivilInjuredChest_1;
+                            text = "Civil Bauch verletzt";
+                            data = "Acts_CivilInjuredChest_1";
                         };
-                        class Acts_CivilInjuredGeneral_1
+                        class CivilInjuredGeneral
                         {
-                            text = Acts_CivilInjuredGeneral_1;
-                            data = Acts_CivilInjuredGeneral_1;
+                            text = "Civil verletzt";
+                            data = "Acts_CivilInjuredGeneral_1";
                         };
-                        class Acts_CivilInjuredHead_1
+                        class CivilInjuredHead
                         {
-                            text = Acts_CivilInjuredHead_1;
-                            data = Acts_CivilInjuredHead_1;
+                            text = "Civil Kopf verletzt";
+                            data = "Acts_CivilInjuredHead_1";
                         };
-                        class Acts_CivilInjuredLegs_1
+                        class CivilInjuredLegs
                         {
-                            text = Acts_CivilInjuredLegs_1;
-                            data = Acts_CivilInjuredLegs_1;
+                            text = "Civil Bein verletzt";
+                            data = "Acts_CivilInjuredLegs_1";
                         };
-                        class Acts_CivilListening_1
+                        class CivilListening01
                         {
-                            text = Acts_CivilListening_1;
-                            data = Acts_CivilListening_1;
+                            text = "Civil Zuhören 01";
+                            data = "Acts_CivilListening_1";
                         };
-                        class Acts_CivilListening_2
+                        class CivilListening02
                         {
-                            text = Acts_CivilListening_2;
-                            data = Acts_CivilListening_2;
+                            text = "Civil Zuhören 02";
+                            data = "Acts_CivilListening_2";
                         };
-                        class Acts_CivilShocked_1
+                        class DeprimiertAmBoden01
                         {
-                            text = Acts_CivilShocked_1;
-                            data = Acts_CivilShocked_1;
+                            text = "Deprimiert am Boden 01";
+                            data = "Acts_CivilShocked_1";
                         };
-                        class Acts_CivilShocked_2
+                        class DeprimiertAmBoden02
                         {
-                            text = Acts_CivilShocked_2;
-                            data = Acts_CivilShocked_2;
+                            text = "Deprimiert am Boden 02";
+                            data = "Acts_CivilShocked_2";
                         };
-                        class Acts_CivilTalking_1
+                        class CivilTalking01
                         {
-                            text = Acts_CivilTalking_1;
-                            data = Acts_CivilTalking_1;
+                            text = "Civil Sprechen 01";
+                            data = "Acts_CivilTalking_1";
                         };
-                        class Acts_CivilTalking_2
+                        class CivilTalking02
                         {
-                            text = Acts_CivilTalking_2;
-                            data = Acts_CivilTalking_2;
+                            text = "Civil Sprechen 02";
+                            data = "Acts_CivilTalking_2";
                         };
-                        class Acts_CrouchingFiringLeftRifle04
+                        class CrouchingFiringLeftRifle04
                         {
-                            text = Acts_CrouchingFiringLeftRifle04;
-                            data = Acts_CrouchingFiringLeftRifle04;
+                            text = "Um die Ecke schießen";
+                            data = "Acts_CrouchingFiringLeftRifle04";
                         };
-                        class Acts_EpicSplit_in
+                        class Acts_EpicSplit_in                         // Funktioniert nicht im Animations Viewer
                         {
                             text = Acts_EpicSplit_in;
                             data = Acts_EpicSplit_in;
                         };
-                        class Acts_EpicSplit_out
+                        class Acts_EpicSplit_out                        // Funktioniert nicht im Animations Viewer
                         {
                             text = Acts_EpicSplit_out;
                             data = Acts_EpicSplit_out;
                         };
-                        class Acts_Executioner_Standing
+                        class ExecutionerStanding
                         {
-                            text = Acts_Executioner_Standing;
-                            data = Acts_Executioner_Standing;
+                            text = "Executioner Pistole";
+                            data = "Acts_Executioner_StandingLoop";
                         };
-                        class Acts_Executioner_StandingLoop
+                        class ExecutionVictim
                         {
-                            text = Acts_Executioner_StandingLoop;
-                            data = Acts_Executioner_StandingLoop;
+                            text = "Gefesselt auf Knien";
+                            data = "Acts_ExecutionVictim_Loop";
                         };
-                        class Acts_ExecutionVictim_Loop
+                        class WacheEineHand
                         {
-                            text = Acts_ExecutionVictim_Loop;
-                            data = Acts_ExecutionVictim_Loop;
+                            text = "Wache eine Hand an der Waffe";
+                            data = "Acts_GetAttention_Loop";
                         };
-                        class Acts_GetAttention_Loop
-                        {
-                            text = Acts_GetAttention_Loop;
-                            data = Acts_GetAttention_Loop;
-                        };
-                        class Acts_gunner_MRAP_01_mocap
+                        class Acts_gunner_MRAP_01_mocap                 // Nicht gefunden im Animations Viewer
                         {
                             text = Acts_gunner_MRAP_01_mocap;
                             data = Acts_gunner_MRAP_01_mocap;
                         };
-                        class Acts_HeliCargo_loop
+                        class KisteSitzend
                         {
-                            text = Acts_HeliCargo_loop;
-                            data = Acts_HeliCargo_loop;
+                            text = "Kiste sitzend";
+                            data = "Acts_HeliCargo_loop";
                         };
-                        class Acts_HeliCargoTalking_loop
+                        class KisteSitzendReden
                         {
-                            text = Acts_HeliCargoTalking_loop;
-                            data = Acts_HeliCargoTalking_loop;
+                            text = "Kiste sitzend reden";
+                            data = "Acts_HeliCargoTalking_loop";
                         };
-                        class Acts_InjuredAngryRifle01
+                        class ArmedAngry
                         {
-                            text = Acts_InjuredAngryRifle01;
-                            data = Acts_InjuredAngryRifle01;
+                            text = "Armed verletzt wütend";
+                            data = "Acts_InjuredAngryRifle01";
                         };
-                        class Acts_InjuredCoughRifle02
+                        class InjuredRifle01
                         {
-                            text = Acts_InjuredCoughRifle02;
-                            data = Acts_InjuredCoughRifle02;
+                            text = "Armed verletzt 01";
+                            data = "Acts_InjuredCoughRifle02";
                         };
-                        class Acts_InjuredLookingRifle01
+                        class InjuredRifle02                             
                         {
-                            text = Acts_InjuredLookingRifle01;
-                            data = Acts_InjuredLookingRifle01;
+                            text = "Armed verletzt 02";
+                            data = "Acts_InjuredLookingRifle01";
                         };
-                        class Acts_InjuredLookingRifle02
+                        class InjuredRifle03
                         {
-                            text = Acts_InjuredLookingRifle02;
-                            data = Acts_InjuredLookingRifle02;
+                            text = "Armed verletzt 03";
+                            data = "Acts_InjuredLookingRifle02";
                         };
-                        class Acts_InjuredLookingRifle03
+                        class InjuredRifle04
                         {
-                            text = Acts_InjuredLookingRifle03;
-                            data = Acts_InjuredLookingRifle03;
+                            text = "Armed verletzt 04";
+                            data = "Acts_InjuredLookingRifle03";
                         };
-                        class Acts_InjuredLookingRifle04
+                        class InjuredRifle05
                         {
-                            text = Acts_InjuredLookingRifle04;
-                            data = Acts_InjuredLookingRifle04;
+                            text = "Armed verletzt 05";
+                            data = "Acts_InjuredLookingRifle04";
                         };
-                        class Acts_InjuredLookingRifle05
+                        class InjuredRifle06
                         {
-                            text = Acts_InjuredLookingRifle05;
-                            data = Acts_InjuredLookingRifle05;
+                            text = "Armed verletzt 06";
+                            data = "Acts_InjuredLookingRifle05";
                         };
-                        class Acts_InjuredLyingRifle01
+                        class InjuredRifle07
                         {
-                            text = Acts_InjuredLyingRifle01;
-                            data = Acts_InjuredLyingRifle01;
+                            text = "Armed verletzt 06";
+                            data = "Acts_InjuredLyingRifle01";
                         };
-                        class Acts_InjuredLyingRifle02
+                        class InjuredRifle08
                         {
-                            text = Acts_InjuredLyingRifle02;
-                            data = Acts_InjuredLyingRifle02;
+                            text = "Armed verletzt 07";
+                            data = "Acts_InjuredLyingRifle02";
                         };
-                        class Acts_InjuredLyingRifle02_180
+                        class InjuredRifle180
                         {
-                            text = Acts_InjuredLyingRifle02_180;
-                            data = Acts_InjuredLyingRifle02_180;
+                            text = "Armed verletzt 180 grad";
+                            data = "Acts_InjuredLyingRifle02_180";
                         };
-                        class Acts_InjuredSpeakingRifle01
+                        class InjuredRifleSpeaking
                         {
-                            text = Acts_InjuredSpeakingRifle01;
-                            data = Acts_InjuredSpeakingRifle01;
+                            text = "Armed verletzt redend";
+                            data = "Acts_InjuredSpeakingRifle01";
                         };
-                        class Acts_JetsCrewaidF_idle
+                        class CivilTuersteher01rechts
                         {
-                            text = Acts_JetsCrewaidF_idle;
-                            data = Acts_JetsCrewaidF_idle;
+                            text = "Civil Türsteher 01 Rechts";
+                            data = "Acts_JetsCrewaidF_idle";
                         };
-                        class Acts_JetsCrewaidF_idle2
+                        class CivilTuersteher01links
                         {
-                            text = Acts_JetsCrewaidF_idle2;
-                            data = Acts_JetsCrewaidF_idle2;
+                            text = "Civil Türsteher 01 links";
+                            data = "Acts_JetsCrewaidF_idle_m";
                         };
-                        class Acts_JetsCrewaidF_idle2_m
+                        class CivilTuersteher02rechts
                         {
-                            text = Acts_JetsCrewaidF_idle2_m;
-                            data = Acts_JetsCrewaidF_idle2_m;
+                            text = "Civil Türsteher 02 Rechts";
+                            data = "Acts_JetsCrewaidF_idle2";
                         };
-                        class Acts_JetsCrewaidF_idle_m
+                        class  CivilTuersteher02links
                         {
-                            text = Acts_JetsCrewaidF_idle_m;
-                            data = Acts_JetsCrewaidF_idle_m;
+                            text = "Civil Türsteher 02 links";
+                            data = "Acts_JetsCrewaidF_idle2_m";
                         };
-                        class Acts_JetsCrewaidFCrouch_loop
+                        class CivilAnschauenKniendRechts
                         {
-                            text = Acts_JetsCrewaidFCrouch_loop;
-                            data = Acts_JetsCrewaidFCrouch_loop;
+                            text = "Civil anschauen kniend Rechts";
+                            data = "Acts_JetsCrewaidFCrouch_loop";
                         };
-                        class Acts_JetsCrewaidFCrouch_loop_m
+                        class CivilAnschauenKniendLinks
                         {
-                            text = Acts_JetsCrewaidFCrouch_loop_m;
-                            data = Acts_JetsCrewaidFCrouch_loop_m;
+                            text = "Civil anschauen kniend Links";
+                            data = "Acts_JetsCrewaidFCrouch_loop_m";
                         };
-                        class Acts_JetsCrewaidFCrouchThumbup_loop
+                        class CivilKniendDaumenHochRechts
                         {
-                            text = Acts_JetsCrewaidFCrouchThumbup_loop;
-                            data = Acts_JetsCrewaidFCrouchThumbup_loop;
+                            text = "Civil kniend Daumen hoch rechts";
+                            data = "Acts_JetsCrewaidFCrouchThumbup_loop";
                         };
-                        class Acts_JetsCrewaidFCrouchThumbup_loop_m
+                        class CivilKniendDaumenHochLinks
                         {
-                            text = Acts_JetsCrewaidFCrouchThumbup_loop_m;
-                            data = Acts_JetsCrewaidFCrouchThumbup_loop_m;
+                            text = "Civil kniend Daumen hoch links";
+                            data = "Acts_JetsCrewaidFCrouchThumbup_loop_m";
                         };
+                        /*
+                        Gleiche Animationen nur leicht verändert
+
                         class Acts_JetsCrewaidL_idle
                         {
                             text = Acts_JetsCrewaidL_idle;
@@ -630,187 +628,154 @@ class Cfg3DEN
                             text = Acts_JetsCrewaidRCrouchThumbup_loop_m;
                             data = Acts_JetsCrewaidRCrouchThumbup_loop_m;
                         };
-                        class Acts_JetsMarshallingClear_loop
+                        */
+                        class HighFive                                      // Hier kommen die Party moves
                         {
-                            text = Acts_JetsMarshallingClear_loop;
-                            data = Acts_JetsMarshallingClear_loop;
+                            text = "High Five";
+                            data = "Acts_JetsMarshallingClear_loop";
                         };
-                        class Acts_JetsMarshallingEmergencyStop_loop
+                        class CrewStop
                         {
-                            text = Acts_JetsMarshallingEmergencyStop_loop;
-                            data = Acts_JetsMarshallingEmergencyStop_loop;
+                            text = "Crew Jet Stop";
+                            data = "Acts_JetsMarshallingEmergencyStop_loop";
                         };
-                        class Acts_JetsMarshallingEnginesOff_loop
+                        class CrewJetEngineOff
                         {
-                            text = Acts_JetsMarshallingEnginesOff_loop;
-                            data = Acts_JetsMarshallingEnginesOff_loop;
+                            text = "Crew Jet Engine Off";
+                            data = "Acts_JetsMarshallingEnginesOff_loop";
                         };
-                        class Acts_JetsMarshallingEnginesOn_loop
+                        class CrewJetEngineOn
                         {
-                            text = Acts_JetsMarshallingEnginesOn_loop;
-                            data = Acts_JetsMarshallingEnginesOn_loop;
+                            text = "Crew Jet Engine On";
+                            data = "Acts_JetsMarshallingEnginesOn_loop";
                         };
-                        class Acts_JetsMarshallingLeft_loop
+                        class CrewJetLeft
                         {
-                            text = Acts_JetsMarshallingLeft_loop;
-                            data = Acts_JetsMarshallingLeft_loop;
+                            text = "Crew Jet turn left";
+                            data = "Acts_JetsMarshallingLeft_loop";
                         };
-                        class Acts_JetsMarshallingRight_loop
+                        class CrewJetRight
                         {
-                            text = Acts_JetsMarshallingRight_loop;
-                            data = Acts_JetsMarshallingRight_loop;
+                            text = "Crew Jet turn right";
+                            data = "Acts_JetsMarshallingRight_loop";
                         };
-                        class Acts_JetsMarshallingSlow_loop
+                        class CrewJetSlowDown
                         {
-                            text = Acts_JetsMarshallingSlow_loop;
-                            data = Acts_JetsMarshallingSlow_loop;
+                            text = "Crew Jet slow down";
+                            data = "Acts_JetsMarshallingSlow_loop";
                         };
-                        class Acts_JetsMarshallingStop_loop
+                        class CrewJetStop
                         {
-                            text = Acts_JetsMarshallingStop_loop;
-                            data = Acts_JetsMarshallingStop_loop;
+                            text = "Crew Jet Stop";
+                            data = "Acts_JetsMarshallingStop_loop";
                         };
-                        class Acts_JetsMarshallingStraight_loop
+                        class CrewJetStraight
                         {
-                            text = Acts_JetsMarshallingStraight_loop;
-                            data = Acts_JetsMarshallingStraight_loop;
+                            text = "Crew Jet Straight";
+                            data = "Acts_JetsMarshallingStraight_loop";
                         };
-                        class Acts_JetsPilotWalking
+                        class PilotWalking
                         {
-                            text = Acts_JetsPilotWalking;
-                            data = Acts_JetsPilotWalking;
+                            text = "Pilot walking";
+                            data = "Acts_JetsPilotWalking";
                         };
-                        class Acts_JetsShooterIdle
+                        class BriefingHandsBack01
                         {
-                            text = Acts_JetsShooterIdle;
-                            data = Acts_JetsShooterIdle;
+                            text = "Briefing hände am Rücken 01";
+                            data = "Acts_JetsShooterIdle";
                         };
-                        class Acts_JetsShooterIdle2
+                        class BriefingHandsBackAslant01
                         {
-                            text = Acts_JetsShooterIdle2;
-                            data = Acts_JetsShooterIdle2;
+                            text = "Briefing hände am Rücken schräg 01";
+                            data = "Acts_JetsShooterIdle2";
                         };
-                        class Acts_JetsShooterIdle2_m
+                        class BriefingHandsBackAslant02
                         {
-                            text = Acts_JetsShooterIdle2_m;
-                            data = Acts_JetsShooterIdle2_m;
+                            text = "Briefing hände am Rücken schräg 02";
+                            data = "Acts_JetsShooterIdle2_m";
                         };
-                        class Acts_JetsShooterIdle_m
+                        class BriefingHandsBack02
                         {
-                            text = Acts_JetsShooterIdle_m;
-                            data = Acts_JetsShooterIdle_m;
+                            text = "Briefing hände am Rücken 02";
+                            data = "Acts_JetsShooterIdle_m";
                         };
-                        class Acts_JetsShooterIdle_stillpose
+                        class CrewJetLaunch01
                         {
-                            text = Acts_JetsShooterIdle_stillpose;
-                            data = Acts_JetsShooterIdle_stillpose;
+                            text = "Crew Jet launch 01";
+                            data = "Acts_JetsShooterShootingLaunch_loop";
                         };
-                        class Acts_JetsShooterIdle_stillpose_m
+                        class CrewJetLaunch02
                         {
-                            text = Acts_JetsShooterIdle_stillpose_m;
-                            data = Acts_JetsShooterIdle_stillpose_m;
+                            text = "Crew Jet launch 02";
+                            data = "Acts_JetsShooterShootingLaunch_loop_m";
                         };
-                        class Acts_JetsShooterIdleMoveaway_loop
+                        class CrewShootingReady01
                         {
-                            text = Acts_JetsShooterIdleMoveaway_loop;
-                            data = Acts_JetsShooterIdleMoveaway_loop;
+                            text = "Crew Shooting Ready 01";
+                            data = "Acts_JetsShooterShootingReady_loop";
                         };
-                        class Acts_JetsShooterIdleMoveaway_loop_m
+                        class CrewShootingReady02
                         {
-                            text = Acts_JetsShooterIdleMoveaway_loop_m;
-                            data = Acts_JetsShooterIdleMoveaway_loop_m;
+                            text = "Crew Shooting Ready 02";
+                            data = "Acts_JetsShooterShootingReady_loop_m";
                         };
-                        class Acts_JetsShooterMoveAway_stillpose
+                        class BriefingWeaponOnFloor
                         {
-                            text = Acts_JetsShooterMoveAway_stillpose;
-                            data = Acts_JetsShooterMoveAway_stillpose;
+                            text = "Briefing Waffe am Boden";
+                            data = "Acts_Kore_IdleNoWeapon_loop";
                         };
-                        class Acts_JetsShooterMoveAway_stillpose_m
+                        class TalkingOverRadio
                         {
-                            text = Acts_JetsShooterMoveAway_stillpose_m;
-                            data = Acts_JetsShooterMoveAway_stillpose_m;
+                            text = "Hand am Funkgerät (Brust)";
+                            data = "Acts_Kore_TalkingOverRadio_loop";
                         };
-                        class Acts_JetsShooterNavigate_loop
+                        class ListeningToRadio
                         {
-                            text = Acts_JetsShooterNavigate_loop;
-                            data = Acts_JetsShooterNavigate_loop;
+                            text = "Hand am Ohr (Funk)";
+                            data = "Acts_listeningToRadio_Loop";
                         };
-                        class Acts_JetsShooterNavigate_loop_m
+                        class sleeping
                         {
-                            text = Acts_JetsShooterNavigate_loop_m;
-                            data = Acts_JetsShooterNavigate_loop_m;
+                            text = "Schlafende Person";
+                            data = "Acts_LyingWounded_loop";
                         };
-                        class Acts_JetsShooterNavigate_stop
+                        class SittingAir
                         {
-                            text = Acts_JetsShooterNavigate_stop;
-                            data = Acts_JetsShooterNavigate_stop;
+                            text = "Sitzt 10 meter in der Luft";
+                            data = "Acts_MHCargo_JumpToWater_sittingloop";
                         };
-                        class Acts_JetsShooterNavigate_stop_m
+                        class BriefingMiller01
                         {
-                            text = Acts_JetsShooterNavigate_stop_m;
-                            data = Acts_JetsShooterNavigate_stop_m;
+                            text = "Briefing Miller 01";
+                            data = "Acts_millerCamp_A";
                         };
-                        class Acts_JetsShooterShootingLaunch_loop
+                        class BriefingMiller02
                         {
-                            text = Acts_JetsShooterShootingLaunch_loop;
-                            data = Acts_JetsShooterShootingLaunch_loop;
+                            text = "Briefing Miller 02";
+                            data = "Acts_millerCamp_C";
                         };
-                        class Acts_JetsShooterShootingLaunch_loop_m
+                        class CrewNavigateChopper
                         {
-                            text = Acts_JetsShooterShootingLaunch_loop_m;
-                            data = Acts_JetsShooterShootingLaunch_loop_m;
+                            text = "Crew Navigate Chopper";
+                            data = "Acts_NavigatingChopper_Loop";
                         };
-                        class Acts_JetsShooterShootingReady_loop
+                        class TacticalTalking
                         {
-                            text = Acts_JetsShooterShootingReady_loop;
-                            data = Acts_JetsShooterShootingReady_loop;
+                            text = "Reden auf Wand zeigend";
+                            data = "Acts_PointingLeftUnarmed";
                         };
-                        class Acts_JetsShooterShootingReady_loop_m
+                        class SchieldFromSun
                         {
-                            text = Acts_JetsShooterShootingReady_loop_m;
-                            data = Acts_JetsShooterShootingReady_loop_m;
+                            text = "Shield From Sun";
+                            data = "Acts_ShieldFromSun_loop";
                         };
-                        class Acts_Kore_IdleNoWeapon_loop
+                        class EntspanntesLiegen
                         {
-                            text = Acts_Kore_IdleNoWeapon_loop;
-                            data = Acts_Kore_IdleNoWeapon_loop;
+                            text = "Halbliegend mit Pistole";
+                            data = "Acts_SittingWounded_loop";
                         };
-                        class Acts_Kore_TalkingOverRadio_loop
-                        {
-                            text = Acts_Kore_TalkingOverRadio_loop;
-                            data = Acts_Kore_TalkingOverRadio_loop;
-                        };
-                        class Acts_listeningToRadio_Loop
-                        {
-                            text = Acts_listeningToRadio_Loop;
-                            data = Acts_listeningToRadio_Loop;
-                        };
-                        class Acts_LyingWounded_loop
-                        {
-                            text = Acts_LyingWounded_loop;
-                            data = Acts_LyingWounded_loop;
-                        };
-                        class Acts_MHCargo_JumpToWater_sittingloop
-                        {
-                            text = Acts_MHCargo_JumpToWater_sittingloop;
-                            data = Acts_MHCargo_JumpToWater_sittingloop;
-                        };
-                        class Acts_millerCamp_A
-                        {
-                            text = Acts_millerCamp_A;
-                            data = Acts_millerCamp_A;
-                        };
-                        class Acts_millerCamp_C
-                        {
-                            text = Acts_millerCamp_C;
-                            data = Acts_millerCamp_C;
-                        };
-                        class Acts_NavigatingChopper_Loop
-                        {
-                            text = Acts_NavigatingChopper_Loop;
-                            data = Acts_NavigatingChopper_Loop;
-                        };
-                        class Acts_passenger_boat_holdleft
+                        // Nicht im Animations Viewer gefunden
+                        class Acts_passenger_boat_holdleft              
                         {
                             text = Acts_passenger_boat_holdleft;
                             data = Acts_passenger_boat_holdleft;
@@ -830,130 +795,87 @@ class Cfg3DEN
                             text = Acts_passenger_flatground_leanright;
                             data = Acts_passenger_flatground_leanright;
                         };
-                        class Acts_PercMwlkSlowWrflDf2
+
+
+                        class KniendWaffeAnschauen
                         {
-                            text = Acts_PercMwlkSlowWrflDf2;
-                            data = Acts_PercMwlkSlowWrflDf2;
+                            text = "Kniend Waffe Anschauen";
+                            data = "Acts_PknlMstpSlowWrflDnon";
                         };
-                        class Acts_PknlMstpSlowWrflDnon
+                        class BriefingUnarmed
                         {
-                            text = Acts_PknlMstpSlowWrflDnon;
-                            data = Acts_PknlMstpSlowWrflDnon;
+                            text = "Briefing an die Wand zeigend";
+                            data = "Acts_PointingLeftUnarmed";
                         };
-                        class Acts_PointingLeftUnarmed
+                        class ShowingTheRightWay
                         {
-                            text = Acts_PointingLeftUnarmed;
-                            data = Acts_PointingLeftUnarmed;
+                            text = "Showing the right way";
+                            data = "Acts_ShowingTheRightWay_loop";
                         };
-                        class Acts_ShieldFromSun_loop
+                        class StandingSpeakingUnarmed
                         {
-                            text = Acts_ShieldFromSun_loop;
-                            data = Acts_ShieldFromSun_loop;
+                            text = "Briefing lange Animation";
+                            data = "Acts_StandingSpeakingUnarmed";
                         };
-                        class Acts_ShowingTheRightWay_loop
+                        class WachePistol
                         {
-                            text = Acts_ShowingTheRightWay_loop;
-                            data = Acts_ShowingTheRightWay_loop;
+                            text = "Wache mit Pistole in der Hand";
+                            data = "Acts_starterPistol_loop";
                         };
-                        class Acts_SittingJumpingSaluting_loop
+                        class KniendWaffeImAnschlagBack
                         {
-                            text = Acts_SittingJumpingSaluting_loop;
-                            data = Acts_SittingJumpingSaluting_loop;
+                            text = "Wache kniend Waffe im Anschlag (Back)";
+                            data = "Acts_SupportTeam_Back_KneelLoop";
                         };
-                        class Acts_SittingJumpingSaluting_loop2
+                        class KniendWaffeImAnschlagFront
                         {
-                            text = Acts_SittingJumpingSaluting_loop2;
-                            data = Acts_SittingJumpingSaluting_loop2;
+                            text = "Wache kniend Waffe im Anschlag (Front)";
+                            data = "Acts_SupportTeam_Front_KneelLoop";
                         };
-                        class Acts_SittingJumpingSaluting_loop3
+                        class KniendWaffeImAnschlagLeft
                         {
-                            text = Acts_SittingJumpingSaluting_loop3;
-                            data = Acts_SittingJumpingSaluting_loop3;
+                            text = "Wache kniend Waffe im Anschlag (Left)";
+                            data = "Acts_SupportTeam_Left_KneelLoop";
                         };
-                        class Acts_SittingWounded_in
+                        class KniendWaffeImAnschlagRight
                         {
-                            text = Acts_SittingWounded_in;
-                            data = Acts_SittingWounded_in;
+                            text = "Wache kniend Waffe im Anschlag (Right)";
+                            data = "Acts_SupportTeam_Right_KneelLoop";
                         };
-                        class Acts_SittingWounded_loop
+                        class TerminalOpen
                         {
-                            text = Acts_SittingWounded_loop;
-                            data = Acts_SittingWounded_loop;
+                            text = "Kniend Terminal öffnen";
+                            data = "Acts_TerminalOpen";
                         };
-                        class Acts_StandingSpeakingUnarmed
+                        class TreatingHLW
                         {
-                            text = Acts_StandingSpeakingUnarmed;
-                            data = Acts_StandingSpeakingUnarmed;
+                            text = "HLW durchfüren";
+                            data = "Acts_TreatingWounded01";
                         };
-                        class Acts_starterPistol_loop
+                        class TreatingAutoinjector
                         {
-                            text = Acts_starterPistol_loop;
-                            data = Acts_starterPistol_loop;
+                            text = "Behandeln Autoinjector";
+                            data = "Acts_TreatingWounded02";
                         };
-                        class Acts_SupportTeam_Back_KneelLoop
+                        class TreatingBandage
                         {
-                            text = Acts_SupportTeam_Back_KneelLoop;
-                            data = Acts_SupportTeam_Back_KneelLoop;
+                            text = "Behandeln Bandage";
+                            data = "Acts_TreatingWounded03";
                         };
-                        class Acts_SupportTeam_Front_KneelLoop
+                        class TreatingPulver
                         {
-                            text = Acts_SupportTeam_Front_KneelLoop;
-                            data = Acts_SupportTeam_Front_KneelLoop;
+                            text = "Behandeln Pulver";
+                            data = "Acts_TreatingWounded04";
                         };
-                        class Acts_SupportTeam_Left_KneelLoop
+                        class TreatingSew
                         {
-                            text = Acts_SupportTeam_Left_KneelLoop;
-                            data = Acts_SupportTeam_Left_KneelLoop;
+                            text = "Behandeln Nähen";
+                            data = "Acts_TreatingWounded05";
                         };
-                        class Acts_SupportTeam_Right_KneelLoop
+                        class TreatingDeinfection
                         {
-                            text = Acts_SupportTeam_Right_KneelLoop;
-                            data = Acts_SupportTeam_Right_KneelLoop;
-                        };
-                        class Acts_TacopsPoster
-                        {
-                            text = Acts_TacopsPoster;
-                            data = Acts_TacopsPoster;
-                        };
-                        class Acts_TerminalOpen
-                        {
-                            text = Acts_TerminalOpen;
-                            data = Acts_TerminalOpen;
-                        };
-                        class Acts_TreatingWounded01
-                        {
-                            text = Acts_TreatingWounded01;
-                            data = Acts_TreatingWounded01;
-                        };
-                        class Acts_TreatingWounded02
-                        {
-                            text = Acts_TreatingWounded02;
-                            data = Acts_TreatingWounded02;
-                        };
-                        class Acts_TreatingWounded03
-                        {
-                            text = Acts_TreatingWounded03;
-                            data = Acts_TreatingWounded03;
-                        };
-                        class Acts_TreatingWounded04
-                        {
-                            text = Acts_TreatingWounded04;
-                            data = Acts_TreatingWounded04;
-                        };
-                        class Acts_TreatingWounded05
-                        {
-                            text = Acts_TreatingWounded05;
-                            data = Acts_TreatingWounded05;
-                        };
-                        class Acts_TreatingWounded06
-                        {
-                            text = Acts_TreatingWounded06;
-                            data = Acts_TreatingWounded06;
-                        };
-                        class Acts_TreatingWounded_loop
-                        {
-                            text = Acts_TreatingWounded_loop;
-                            data = Acts_TreatingWounded_loop;
+                            text = "Behandeln Desinfizieren";
+                            data = "Acts_TreatingWounded06";
                         };
                     };
                 };
