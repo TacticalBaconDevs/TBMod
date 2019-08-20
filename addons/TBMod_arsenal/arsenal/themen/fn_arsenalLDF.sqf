@@ -55,7 +55,7 @@ private _allgemein = [
     "O_NVGoggles_grn_F",
     "NVGoggles_tna_F",
     "ACE_NVG_Gen2",
-    "NVGoggles_INDEP"
+    "NVGoggles_INDEP",
 
 
     //Visire 
