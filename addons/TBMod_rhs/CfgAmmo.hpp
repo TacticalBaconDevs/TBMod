@@ -332,4 +332,42 @@ class CfgAmmo
         indirectHit = 35; // 12
         indirectHitRange = 4.5; // 3
     };
+
+    class rhs_ammo_762x51_M80_Ball : BulletBase // 100rnd 7.62x51mm + 100rnd 7.62x51mm Tracer
+    {
+        ACE_ballisticCoefficients[] = {0.9}; // {0.2}
+        caliber = 1.25; // 1
+        hit = 16; // 8
+        indirectHit = 8; // 0
+        indirectHitRange = 0.9; // 0
+        suppressionRadiusBulletClose = 7; // 2
+        suppressionRadiusHit = 12; // 4
+    };
+
+    class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd 7.62x51mm Tracer AP
+    {
+        caliber = 9.5; // 0.79
+        indirectHit = 0;
+        indirectHitRange = 0;
+    };
+
+    class B_556x45_Ball;
+    class rhs_ammo_556x45_M855_Ball : B_556x45_Ball // 200rnd 5.56x45mm
+    {
+        caliber = 0.5; // 0.44
+        indirectHit = 6; // 0
+        indirectHitRange = 0.9; // 0
+        suppressionRadiusBulletClose = 7; // 6
+        suppressionRadiusHit = 12; // 8
+    };
+
+    class rhs_ammo_556x45_M855A1_Ball;
+    class rhs_ammo_556x45_M855A1_Ball_Red : rhs_ammo_556x45_M855A1_Ball // 200rnd 5.56x45mm Tracer
+    {
+        caliber = 0.5; // 0.65
+        indirectHit = 6; // 0
+        indirectHitRange = 0.9; // 0
+        suppressionRadiusBulletClose = 7; // 6
+        suppressionRadiusHit = 12; // 8
+    };
 };

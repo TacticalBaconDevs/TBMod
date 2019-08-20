@@ -515,19 +515,18 @@ private _dmr_munition = [
 ];
 
 private _mg_munition = [
-    // 7.72
-    "rhsusf_50Rnd_762x51_m62_tracer",
-    "rhsusf_50Rnd_762x51_m61_ap",
-    "rhsusf_50Rnd_762x51_m80a1epr",
+    // 7.62
     "rhsusf_100Rnd_762x51_m62_tracer",
     "rhsusf_100Rnd_762x51_m61_ap",
-    "rhsusf_100Rnd_762x51_m80a1epr",
+    "rhsusf_100Rnd_762x51",
 
     // 5.56
-    "rhsusf_100Rnd_556x45_soft_pouch",
-    "rhsusf_100Rnd_556x45_mixed_soft_pouch",
-    "rhsusf_200Rnd_556x45_box",
-    "rhsusf_200rnd_556x45_mixed_box"
+    "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote",
+    "rhsusf_200Rnd_556x45_M855_soft_pouch",
+    "rhsusf_200Rnd_556x45_M855_soft_pouch_ucp",
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote",
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp",
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"
 ];
 
 private _pilot_munition = [
@@ -792,8 +791,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _mg_munition +
         [
             // Gewehre
-            "rhs_weap_m240B_CAP",
-            "rhs_weap_m249_pip_L",
+            "rhs_weap_m240G",
+            "rhs_weap_m249_light_S",
             //"rhs_weap_m249_pip_L_para",
             //"rhs_weap_m249_pip_L_vfg",
             //"rhs_weap_m249_pip_S",
@@ -809,7 +808,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_mg",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_machinegunner",
-            "rhsusf_spcs_ucp_machinegunner"
+            "rhsusf_spcs_ucp_machinegunner",
+
+            // Zubehör
+            "ACE_RangeCard"
         ]
     };
 

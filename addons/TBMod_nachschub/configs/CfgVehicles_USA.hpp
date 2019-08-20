@@ -8,10 +8,13 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,40);  // Standard GewehrMag
-        MACRO_ADDMAGAZINE(rhsusf_200rnd_556x45_mixed_box,3);                // MGMag5.56
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,6);               // MGMag7.62
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,10);             // DMRMag7.62
+        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,40);      // Standard GewehrMag
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,2);       // MGMag5.56
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,2); // MGMag5.56 Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,1);                   // MGMag7.62 Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,1);                       // MGMag7.62 AP
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51,2);                              // MGMag7.62
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,10);                 // DMRMag7.62
     };
 };
 

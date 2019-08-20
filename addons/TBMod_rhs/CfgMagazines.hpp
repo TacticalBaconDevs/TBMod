@@ -361,4 +361,48 @@ class CfgMagazines
     {
         mass = 66.12; // 120
     };
+
+    class rhsusf_50Rnd_762x51;
+    class rhsusf_100Rnd_762x51 : rhsusf_50Rnd_762x51 // 100rnd M240 Box M80
+    {
+        descriptionshort = "Caliber: 7.62x51mm NATO<br />Rounds: 200<br />Used in: M240"; // Caliber: 7.62x51mm NATO<br />Rounds: 100<br />Used in: M240
+        displayname = "200rnd 7.62x51mm"; // "100rnd M240 Box M80"
+        displayNameShort = "200rnd M240"; // "M80 Ball"
+        count = 200; // 100
+        mass = 64.68; // 32.34
+    };
+
+    class rhsusf_50Rnd_762x51_m62_tracer;
+    class rhsusf_100Rnd_762x51_m62_tracer : rhsusf_50Rnd_762x51_m62_tracer // 100rnd M240 Box M62 Tracer
+    {
+        descriptionshort = "Caliber: 7.62x51mm NATO<br />Rounds: 200<br />Used in: M240"; // Caliber: 7.62x51mm NATO<br />Rounds: 100<br />Used in: M240
+        displayname = "200rnd 7.62x51mm (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
+        displayNameShort = "200rnd Tracer"; // "M62 Tracer"
+        count = 200; // 100
+        mass = 64.68; // 32.34
+    };
+
+    class rhsusf_50Rnd_762x51_m61_ap;
+    class rhsusf_100Rnd_762x51_m61_ap : rhsusf_50Rnd_762x51_m61_ap // 100rnd M240 Box M61 AP
+    {
+        descriptionshort = "Caliber: 7.62x51mm NATO<br />Rounds: 200<br />Used in: M240"; // Caliber: 7.62x51mm NATO<br />Rounds: 100<br />Used in: M240
+        displayname = "200rnd 7.62x51mm (Tracer AP)"; // "100rnd M240 Box M61 AP"
+        displayNameShort = "200rnd Tracer AP"; // "M61 AP"
+        count = 200; // 100
+        mass = 64.68; // 32.34
+        tracersEvery = 1; // 5
+    };
+
+    class rhsusf_100Rnd_556x45_M855_soft_pouch;
+    class rhsusf_200Rnd_556x45_M855_soft_pouch : rhsusf_100Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855
+    {
+        displayname = "200rnd 5.56x45mm"; // "200rnd M249 Box M855"
+        displaynameshort = "200rnd M249"; // "M855"
+    };
+
+    class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch : rhsusf_200Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855 (Mixed)
+    {
+        displayname = "200rnd 5.56x45mm (Tracer)"; // "200rnd M249 Box M855 (Mixed)"
+        displaynameshort = "200rnd (Tracer)"; // "M855 (Mixed)"
+    };
 };
