@@ -973,7 +973,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Zubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
-            "rhsusf_acc_sr25s_wd"
+            "rhsusf_acc_sr25s_wd",
+            "muzzle_snds_b",
+            "muzzle_snds_b_snd_f",
+            "rhsusf_acc_aac_762sdn6_silencer"
         ]
     };
 
