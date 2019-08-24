@@ -936,7 +936,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _dmr_munition +
         [
             // Gewehre
-            "rhs_weap_m14ebrri",
+            "rhs_weap_sr25",
+            "rhs_weap_sr25_d",
+            "rhs_weap_sr25_ec_d",
+            "rhs_weap_sr25_ec_wd",
+            "rhs_weap_sr25_wd",
+
+            // Waffenzubehör
+            "rhsusf_acc_sr25s",
+            "rhsusf_acc_sr25s_d",
+            "rhsusf_acc_sr25s_wd",
+            "bipod_01_f_blk",
+            "bipod_01_f_snd",
 
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
