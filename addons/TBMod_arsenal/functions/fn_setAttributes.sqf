@@ -62,7 +62,8 @@ if (isNil "TB_origin_playerDamageThreshold") then {TB_origin_playerDamageThresho
 ace_medical_playerDamageThreshold = if (_rolle == "pilot") then {TB_origin_playerDamageThreshold + 10} else {TB_origin_playerDamageThreshold};
 
 // KompassStuff
-private _icon = switch (_rolle) do
+// TODO: an/aus machbar
+/*private _icon = switch (_rolle) do
 {
     case "lead": {"a3\ui_f\data\GUI\Cfg\Ranks\general_gs.paa"};
     case "sani": {"a3\ui_f\data\GUI\Cfg\Cursors\add_gs.paa"}; // alternatives: "a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\cargoMisc_ca.paa", "a3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa","a3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa"
@@ -82,4 +83,4 @@ private _icon = switch (_rolle) do
     default {nil};
 };
 
-ACE_player setVariable ["diwako_dui_radar_customIcon", _icon, true];
+ACE_player setVariable ["diwako_dui_radar_customIcon", _icon, true];*/
