@@ -99,6 +99,7 @@ class CfgAmmo
         hit = 6; // 35
         indirectHit = 6; // 25
         indirectHitRange = 20; // 8
+        suppressionRadiusHit = 65; // 30
     };
 
     class AT_Mine_155mm_AMOS_range;
@@ -184,6 +185,7 @@ class CfgAmmo
         hit = 9; // 70
         indirectHit = 7; // 12
         indirectHitRange = 10; // 6
+        suppressionRadiusHit = 65; // 30
     };
 
     class BombCore;
@@ -233,6 +235,7 @@ class CfgAmmo
         indirectHit = 120; // 200
         indirectHitRange = 10; // 12
         trackOversteer = 0.95; // 1
+        suppressionRadiusHit = 65; // 30
     };
 
     class rhs_ammo_agm65;
@@ -309,6 +312,7 @@ class CfgAmmo
         indirectHit = 20; // 50
         indirectHitRange = 18; // 8
         trackOversteer = 0.95; // 1
+        suppressionRadiusHit = 65; // 30
     };
 
     class MissileBase;
@@ -318,6 +322,7 @@ class CfgAmmo
         indirectHit = 20; // 55
         indirectHitRange = 18; // 15
         trackOversteer = 0.95; // 1
+        suppressionRadiusHit = 65; // 30
     };
 
     class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
@@ -333,5 +338,32 @@ class CfgAmmo
         caliber = 19; // 1.4
         indirectHit = 35; // 12
         indirectHitRange = 4.5; // 3
+    };
+
+    class RocketBase;
+    class rhs_ammo_maaws_HE : RocketBase // FFV441 HE MAAWS
+    {
+        indirectHitRange = 18.7; // 11
+        suppressionRadiusHit = 65; // 30
+    };
+
+    class rhs_ammo_M136_penetrator;
+    class rhs_ammo_M136_hp_penetrator : rhs_ammo_M136_penetrator // M136 HP Submunition
+    {
+        hit = 377; // 290
+        caliber = 47.58; // 36.6667
+    };
+
+    class rhs_ammo_M136_hedp_rocket;
+    class rhs_ammo_m72a7_rocket : rhs_ammo_M136_hedp_rocket // M72A7
+    {
+        CraterEffects = "ArtyShellCrater"; // "ATRocketCrater"
+        explosionEffects = "MortarExplosion"; // "ATRocketExplosion"
+        explosive = 1; // 0.65
+        indirectHit = 65; // 19
+        indirectHitRange = 18.7; // 4.1
+        hit = 75; // 145
+        submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
+        suppressionRadiusHit = 65; // 30
     };
 };

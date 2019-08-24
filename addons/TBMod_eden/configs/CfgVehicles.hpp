@@ -54,7 +54,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "Frontverlauf";
-        function = QFUNC(moduleFrontverlauf);
+        function = QEFUNC(zeus,moduleFrontverlauf);
         canSetArea = 1;
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
