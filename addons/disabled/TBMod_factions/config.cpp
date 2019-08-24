@@ -3,11 +3,7 @@ class CfgPatches
     class TBMod_factions
     {
         name = "TBMod Factions";
-<<<<<<< HEAD:addons/TBMod_factions/config.cpp
-        
-=======
 
->>>>>>> 439cb6926302b259dd2170ce0f51ea2bc069995a:addons/disabled/TBMod_factions/config.cpp
         units[] = {
             // I_TB_Drogen
             "I_ITBDrogen_Drogenheandler_01",
@@ -26,11 +22,7 @@ class CfgPatches
             "C_TB_Konsument_Cocain_02"
         };
         weapons[] = {};
-<<<<<<< HEAD:addons/TBMod_factions/config.cpp
-        
-=======
 
->>>>>>> 439cb6926302b259dd2170ce0f51ea2bc069995a:addons/disabled/TBMod_factions/config.cpp
         requiredAddons[] = {
             "TBMod_main",
             "A3_Characters_F"
