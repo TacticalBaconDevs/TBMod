@@ -14,9 +14,9 @@ class CfgPatches
         authorUrl = "https://github.com/TacticalBaconDevs/TBMod";
         license = "https://github.com/TacticalBaconDevs/TBMod/blob/master/LICENSE";
 
-        version = "1.3.17";
-        versionStr = "1.3.17";
-        versionAr[] = {1,3,17};
+        version = "1.3.18";
+        versionStr = "1.3.18";
+        versionAr[] = {1,3,18};
         versionDesc = "TBMod";
         versionAct = "";
 
