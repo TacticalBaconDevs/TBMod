@@ -55,6 +55,10 @@ namespace TBModExt_Statistics
             command8.ExecuteNonQuery();
             command8.Dispose();
 
+            MySqlCommand command9 = new MySqlCommand("CREATE TABLE IF NOT EXISTS DownTime (time DateTime, unitname TEXT, uuid TEXT, downTime INT)", dbConnection);
+            command9.ExecuteNonQuery();
+            command9.Dispose();
+
             return dbConnection;
         }
 
@@ -229,6 +233,20 @@ namespace TBModExt_Statistics
 
                 command.Parameters.AddWithValue("@unitname", values[0]);
                 command.Parameters.AddWithValue("@cps", Convert.ToDouble(values[1]));
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void insertValueDownTime(string[] values)
+        {
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `DownTime` (`time`, unitname, `uuid`, downTime) VALUES (NOW(), @unitname, @uuid, @downTime)", getDBConnection()))
+            {
+                command.Prepare();
+
+                command.Parameters.AddWithValue("@unitname", values[0]);
+                command.Parameters.AddWithValue("@uuid", values[1]);
+                command.Parameters.AddWithValue("@downTime", Convert.ToInt32(values[2]));
 
                 command.ExecuteNonQuery();
             }

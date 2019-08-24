@@ -32,7 +32,15 @@ TB_StatstrackerStarted = false;
     //ace_killed maybe after new update
     ["TB_Kill", {"TBMODExt_Statistics" callExtension ["Kill", [text name (_this select 0),text getPlayerUID (_this select 0),text name (_this select 1),text getPlayerUID (_this select 1), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
     
-    TB_stID = ["TB_Kill", {systemChat str _this}] call CBA_fnc_addEventHandler;
+    ["ace_unconscious", {
+        params ["_unit","_state"];
+        if (_state) then {
+            _unit setVariable ["TB_LastDown", CBA_missiontime, true];
+        } else {
+            "TBMODExt_Statistics" callExtension ["DownTime", [text name _unit, text getPlayerUID _unit, round (CBA_missiontime - (_unit getVariable ["TB_LastDown",0]))]];
+        };
+
+    }] call CBA_fnc_addEventHandler;
     
     //Sent reporter to all players
     
