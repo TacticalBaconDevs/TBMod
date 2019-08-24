@@ -257,7 +257,7 @@ class Cfg3DEN
                         };
                         class automatischeAbHier
                         {
-                            text = "== Generiert ==";
+                            text = "= = = ="; // ehemalig: == Generiert ==
                             data = "";
                         };
                         class ArmedGuardRelaxed01
@@ -350,75 +350,25 @@ class Cfg3DEN
                             text = "Wache 05";
                             data = "Acts_Briefing_SC_StartLoop";
                         };
-                        class CivilHiding01
-                        {
-                            text = "Civil Hiding 01";
-                            data = "Acts_CivilHiding_1";
-                        };
                         class CivilHiding02
                         {
                             text = "Civil Hiding 02";
                             data = "Acts_CivilHiding_2";
-                        };
-                        class Rumstehen01
-                        {
-                            text = "Rumstehen 01";
-                            data = "Acts_CivilIdle_1";
                         };
                         class Rumstehen02
                         {
                             text = "Rumstehen 01";
                             data = "Acts_CivilIdle_2";
                         };
-                        class CivilInjuredArms
-                        {
-                            text = "Civil Arm verletzt";
-                            data = "Acts_CivilInjuredArms_1";
-                        };
-                        class CivilInjuredChest
-                        {
-                            text = "Civil Bauch verletzt";
-                            data = "Acts_CivilInjuredChest_1";
-                        };
-                        class CivilInjuredGeneral
-                        {
-                            text = "Civil verletzt";
-                            data = "Acts_CivilInjuredGeneral_1";
-                        };
-                        class CivilInjuredHead
-                        {
-                            text = "Civil Kopf verletzt";
-                            data = "Acts_CivilInjuredHead_1";
-                        };
-                        class CivilInjuredLegs
-                        {
-                            text = "Civil Bein verletzt";
-                            data = "Acts_CivilInjuredLegs_1";
-                        };
-                        class CivilListening01
-                        {
-                            text = "Civil Zuhören 01";
-                            data = "Acts_CivilListening_1";
-                        };
                         class CivilListening02
                         {
                             text = "Civil Zuhören 02";
                             data = "Acts_CivilListening_2";
                         };
-                        class DeprimiertAmBoden01
-                        {
-                            text = "Deprimiert am Boden 01";
-                            data = "Acts_CivilShocked_1";
-                        };
                         class DeprimiertAmBoden02
                         {
                             text = "Deprimiert am Boden 02";
                             data = "Acts_CivilShocked_2";
-                        };
-                        class CivilTalking01
-                        {
-                            text = "Civil Sprechen 01";
-                            data = "Acts_CivilTalking_1";
                         };
                         class CivilTalking02
                         {
@@ -429,16 +379,6 @@ class Cfg3DEN
                         {
                             text = "Um die Ecke schießen";
                             data = "Acts_CrouchingFiringLeftRifle04";
-                        };
-                        class Acts_EpicSplit_in                         // Funktioniert nicht im Animations Viewer
-                        {
-                            text = Acts_EpicSplit_in;
-                            data = Acts_EpicSplit_in;
-                        };
-                        class Acts_EpicSplit_out                        // Funktioniert nicht im Animations Viewer
-                        {
-                            text = Acts_EpicSplit_out;
-                            data = Acts_EpicSplit_out;
                         };
                         class ExecutionerStanding
                         {
@@ -454,11 +394,6 @@ class Cfg3DEN
                         {
                             text = "Wache eine Hand an der Waffe";
                             data = "Acts_GetAttention_Loop";
-                        };
-                        class Acts_gunner_MRAP_01_mocap                 // Nicht gefunden im Animations Viewer
-                        {
-                            text = Acts_gunner_MRAP_01_mocap;
-                            data = Acts_gunner_MRAP_01_mocap;
                         };
                         class KisteSitzend
                         {
@@ -480,7 +415,7 @@ class Cfg3DEN
                             text = "Armed verletzt 01";
                             data = "Acts_InjuredCoughRifle02";
                         };
-                        class InjuredRifle02                             
+                        class InjuredRifle02
                         {
                             text = "Armed verletzt 02";
                             data = "Acts_InjuredLookingRifle01";
@@ -565,9 +500,8 @@ class Cfg3DEN
                             text = "Civil kniend Daumen hoch links";
                             data = "Acts_JetsCrewaidFCrouchThumbup_loop_m";
                         };
-                        /*
-                        Gleiche Animationen nur leicht verändert
 
+                        /* Gleiche Animationen nur leicht verändert
                         class Acts_JetsCrewaidL_idle
                         {
                             text = Acts_JetsCrewaidL_idle;
@@ -627,9 +561,10 @@ class Cfg3DEN
                         {
                             text = Acts_JetsCrewaidRCrouchThumbup_loop_m;
                             data = Acts_JetsCrewaidRCrouchThumbup_loop_m;
-                        };
-                        */
-                        class HighFive                                      // Hier kommen die Party moves
+                        };*/
+
+                        // Hier kommen die Party moves
+                        class HighFive
                         {
                             text = "High Five";
                             data = "Acts_JetsMarshallingClear_loop";
@@ -774,8 +709,9 @@ class Cfg3DEN
                             text = "Halbliegend mit Pistole";
                             data = "Acts_SittingWounded_loop";
                         };
+
                         // Nicht im Animations Viewer gefunden
-                        class Acts_passenger_boat_holdleft              
+                        class Acts_passenger_boat_holdleft
                         {
                             text = Acts_passenger_boat_holdleft;
                             data = Acts_passenger_boat_holdleft;
@@ -795,7 +731,21 @@ class Cfg3DEN
                             text = Acts_passenger_flatground_leanright;
                             data = Acts_passenger_flatground_leanright;
                         };
-
+                        class Acts_gunner_MRAP_01_mocap
+                        {
+                            text = Acts_gunner_MRAP_01_mocap;
+                            data = Acts_gunner_MRAP_01_mocap;
+                        };
+                        class Acts_EpicSplit_in                         // Funktioniert nicht im Animations Viewer
+                        {
+                            text = Acts_EpicSplit_in;
+                            data = Acts_EpicSplit_in;
+                        };
+                        class Acts_EpicSplit_out                        // Funktioniert nicht im Animations Viewer
+                        {
+                            text = Acts_EpicSplit_out;
+                            data = Acts_EpicSplit_out;
+                        };
 
                         class KniendWaffeAnschauen
                         {
