@@ -57,3 +57,4 @@ class Extended_InitPost_EventHandlers
 
     EMPTY_VANILLA_INV(Ship);
 };
+

@@ -68,6 +68,8 @@ namespace TBModExt_Statistics
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputCPS), args);
                 if (function == "FPS")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputFPS), args);
+                if (function == "Kill")
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputKill), args);
 
 
             }
@@ -86,8 +88,19 @@ namespace TBModExt_Statistics
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
                  Database.insertValuePlayer(args.ToArray());
-                
-                    
+            }
+            catch (Exception e)
+            {
+                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
+            }
+        }
+
+        public static void ProcessInputKill(object input)
+        {
+            try
+            {
+                List<string> args = (input as string[]).OfType<string>().ToList();
+                Database.insertValueKill(args.ToArray());
             }
             catch (Exception e)
             {

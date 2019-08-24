@@ -2,8 +2,16 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+TB_StatstrackerStarted = false;
+
+0 spawn {
+    waitUntil{systemChat "Statstracker not yet activated"; uiSleep 30; TB_StatstrackerStarted};
+};
 
 ["startST", {
+
+    if (TB_StatstrackerStarted) exitwith {systemChat "Statstracker already started!"};
+    TB_StatstrackerStarted = true;
     "TBModExt_Statistics" callExtension missionName;
 
     //Setup all Events to be send to Extension    
@@ -17,16 +25,24 @@
         "TBMODExt_Statistics" callExtension ["Vehicle", [text typeOf (_this select 0), text name (_this select 0),text getPlayerUID (_this select 0),text (_this select 1),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""])]]
     }] call CBA_fnc_addEventHandler;
 
-    //Sent reporter to all players
-    //is player already available
 
+    ["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
+    ["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [text (_this select 0), (_this select 1)]]}] call CBA_fnc_addEventHandler;
+    ["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [text (_this select 0), (_this select 1)]]}] call CBA_fnc_addEventHandler;
+    //ace_killed maybe after new update
+    ["TB_Kill", {"TBMODExt_Statistics" callExtension ["Kill", [text name (_this select 0),text getPlayerUID (_this select 0),text name (_this select 1),text getPlayerUID (_this select 1), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
+    
+    TB_stID = ["TB_Kill", {systemChat str _this}] call CBA_fnc_addEventHandler;
+    
+    //Sent reporter to all players
+    
     TB_ReporterClient = (missionNamespace getVariable ["TB_ReporterClient", []]);
     TB_ReporterClient pushBackUnique player;
     TB_ReporterClient = TB_ReporterClient - [objNull];
     publicVariable "TB_ReporterClient";
     (format ["[TBMod_statstracker] %1 is using the Statstracker", TB_ReporterClient]) remoteExecCall ["systemChat"];
 
-
+    // Positions
     0 spawn {
         while {TRUE} do {
             {
@@ -47,16 +63,6 @@
         }
     };
 
-
-
-    // Setup reviever
-
-    //["TB_CPSReport", {systemChat ("CPS" + (str _this))}] call CBA_fnc_addEventHandler;
-    //["TB_FPSReport", {systemChat ("FPS" + (str _this))}] call CBA_fnc_addEventHandler;
-
-    ["TB_MedicalReport", {"TBMODExt_Statistics" callExtension ["Medical", [text name (_this select 0),text getPlayerUID (_this select 0), text name (_this select 1),text getPlayerUID (_this select 1),text (_this select 2),text (_this select 3), text groupid group(_this select 0), text ((_this select 0) getVariable ["TB_Rolle",""]), text groupid group(_this select 1), text ((_this select 1) getVariable ["TB_Rolle",""])]]}] call CBA_fnc_addEventHandler;
-    ["TB_CPSReport", {"TBMODExt_Statistics" callExtension ["CPS", [text (_this select 0), (_this select 1)]]}] call CBA_fnc_addEventHandler;
-    ["TB_FPSReport", {"TBMODExt_Statistics" callExtension ["FPS", [text (_this select 0), (_this select 1)]]}] call CBA_fnc_addEventHandler;
 
 
 

@@ -51,6 +51,10 @@ namespace TBModExt_Statistics
             command7.ExecuteNonQuery();
             command7.Dispose();
 
+            MySqlCommand command8 = new MySqlCommand("CREATE TABLE IF NOT EXISTS kills (time DateTime, unitnamekiller TEXT, uuidkiller TEXT, unitnametarget TEXT, uuidtarget TEXT, killergroup TEXT, killerrole TEXT)", dbConnection);
+            command8.ExecuteNonQuery();
+            command8.Dispose();
+
             return dbConnection;
         }
 
@@ -142,6 +146,23 @@ namespace TBModExt_Statistics
                 command.Parameters.AddWithValue("@rolecaller", values[7]);
                 command.Parameters.AddWithValue("@grouptarget", values[8]);
                 command.Parameters.AddWithValue("@roletarget", values[9]);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        public static void insertValueKill(string[] values)
+        {
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO kills (`time`, unitnamekiller, uuidkiller, unitnametarget, uuidtarget, killergroup, killerrole) " +
+                "VALUES (CURRENT_TIMESTAMP(), @unitnamekiller, @uuidkiller, @unitnametarget, @uuidtarget, @killergroup, @killerrole)", getDBConnection()))
+            {
+                command.Prepare();
+
+                command.Parameters.AddWithValue("@unitnamekiller", values[0]);
+                command.Parameters.AddWithValue("@uuidkiller", values[1]);
+                command.Parameters.AddWithValue("@unitnametarget", values[2]);
+                command.Parameters.AddWithValue("@uuidtarget", values[3]);
+                command.Parameters.AddWithValue("@killergroup", values[4]);
+                command.Parameters.AddWithValue("@killerrole", values[5]);
 
                 command.ExecuteNonQuery();
             }
