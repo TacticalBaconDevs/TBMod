@@ -78,7 +78,7 @@ private _icon = switch (_rolle) do
     case "spotter": {"\TBMod_skins\pictures\playericons\TB_Spotter.paa"};
     case "spreng": {"\TBMod_skins\pictures\playericons\TB_Sprengstoffexperte.paa"};
     case "aaat": {"\TBMod_skins\pictures\playericons\TB_Anti-Fahrzeug.paa"};
-    case "jtac": {"\TBMod_skins\pictures\playericons\TB_Drohnen-OP.paa"
+    case "jtac": {"\TBMod_skins\pictures\playericons\TB_Drohnen-OP.paa};"
     case "pionier": {"\TBMod_skins\pictures\playericons\TB_Pionier.paa"};
     default {nil};
 };
