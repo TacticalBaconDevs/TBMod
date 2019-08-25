@@ -50,7 +50,7 @@ if !(_activated) exitWith {true};
         if (!_server) then
         {
             [_name, true] call FUNC(transfer);
-        }
+        };
         [false, _name] remoteExec [QFUNC(persistence), 2];
     };
 };

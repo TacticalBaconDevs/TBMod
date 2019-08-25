@@ -25,8 +25,8 @@ if (_toserver) then {
         profileNamespace setVariable [QGVAR(savedNames), _savednames];
 
         saveProfileNamespace;
-		GVAR(transfer) = true;
-		publicVariable QGVAR(transfer);
+        GVAR(transfer) = true;
+        publicVariable QGVAR(transfer);
     }] remoteExec ["call", 2];
 
 } else {
@@ -47,8 +47,8 @@ if (_toserver) then {
                 profileNamespace setVariable [QGVAR(savedNames), _savednames];
 
                 saveProfileNamespace;
-				GVAR(transfer) = true;
-				publicVariable QGVAR(transfer);
+                GVAR(transfer) = true;
+                publicVariable QGVAR(transfer);
         }] remoteExec ["call", _target];
     }] remoteExec ["call", 2];
 };

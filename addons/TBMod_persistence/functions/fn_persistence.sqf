@@ -45,7 +45,7 @@ if (_save) then
     // save TBMod_building stuff
     [true, _name] call FUNC(persistenceBuilding);
 
-    _names = profileNamespace getVariable [QGVAR(savedNames), []
+    _names = profileNamespace getVariable [QGVAR(savedNames), []];
     _names pushBackUnique _name;
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
