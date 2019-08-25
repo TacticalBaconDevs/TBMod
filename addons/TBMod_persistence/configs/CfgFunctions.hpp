@@ -23,6 +23,7 @@ class CfgFunctions
             class vector2Eden {};
             class modulePersistenceEDEN {};
             class modulePersistenceZeus {};
+            class transfer {};
         };
     };
 };
