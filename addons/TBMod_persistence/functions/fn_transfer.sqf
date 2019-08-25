@@ -10,37 +10,47 @@ params [
 
 if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
 
+GVAR(transfer) = false;
+publicVariable QGVAR(transfer);
+
 if (_toserver) then {
-    TB_transerData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
-    [[_name, TB_transerData], 
+    _transferData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
+    [[_name, _transferData], 
     {
         params ["_name","_data"];
 
         profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
-        _savednames = profileNamespace getVariable ["TB_persistence_savedNames", []];
+        _savednames = profileNamespace getVariable [QGVAR(savedNames), []];
         _savednames pushBackUnique _name;
-        profileNamespace setVariable ["TB_persistence_savedNames", _savednames];
+        profileNamespace setVariable [QGVAR(savedNames), _savednames];
 
         saveProfileNamespace;
+		GVAR(transfer) = true;
+		publicVariable QGVAR(transfer);
     }] remoteExec ["call", 2];
+
 } else {
     
     [[_name, ACE_player], 
     {
         params ["_name", "_target"];
 
-        TB_transerData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
+        _transferData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
 
-        [[_name, TB_transerData], 
+        [[_name, _transferData], 
             {
                 params ["_name","_data"];
 
                 profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
-                _savednames = profileNamespace getVariable ["TB_persistence_savedNames", []];
+                _savednames = profileNamespace getVariable [QGVAR(savedNames), []];
                 _savednames pushBackUnique _name;
-                profileNamespace setVariable ["TB_persistence_savedNames", _savednames];
+                profileNamespace setVariable [QGVAR(savedNames), _savednames];
 
                 saveProfileNamespace;
+				GVAR(transfer) = true;
+				publicVariable QGVAR(transfer);
         }] remoteExec ["call", _target];
     }] remoteExec ["call", 2];
 };
+
+waitUntil {GVAR(transfer)}

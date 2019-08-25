@@ -28,7 +28,7 @@ if (!_activated) exitWith {true};
 
 [] spawn
 {
-    private _saves = profileNamespace getVariable ["TB_persistence_savedNames", []];
+    private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
     private _dialogResult = [
             "Persistence",
             [

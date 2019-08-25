@@ -24,6 +24,7 @@ class CfgFunctions
             class modulePersistenceEDEN {};
             class modulePersistenceZeus {};
             class transfer {};
+            class getSavedNamesFromServer {};
         };
     };
 };

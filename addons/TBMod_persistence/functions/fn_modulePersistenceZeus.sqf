@@ -22,11 +22,11 @@ if !(_activated) exitWith {true};
     private _server = _ort == 0;
     private _saves = if (_server) then
     {
-        [profileNamespace, "TB_persistence_savedNames", []] call BIS_fnc_getServerVariable;
+        call FUNC(getSavedNamesFromServer);
     }
     else
     {
-        profileNamespace getVariable ["TB_persistence_savedNames", []];
+        profileNamespace getVariable [QGVAR(savedNames), []];
     };
 
     private _diagType = if (_save) then {["Save Name", "", ""]} else {["Save Name", _saves, 0]};
@@ -36,33 +36,22 @@ if !(_activated) exitWith {true};
     if (_save) then
     {
         _dialogResult params ["_name"];
-        _saves pushBackUnique _name;
-
-        if (_server) then
+        
+        [true, _name] remoteExec [QFUNC(persistence), 2];
+        if (!_server) then
         {
-            [true, _name] remoteExec [QFUNC(persistence), 2];
-            [profileNamespace, ["TB_persistence_savedNames", _saves]] remoteExec ["setVariable", 2]; //[profileNamespace, "TB_persistence_savedNames", _saves] call BIS_fnc_setServerVariable;
-            [] remoteExec ["saveProfileNamespace", 2];
-        }
-        else
-        {
-            [true, _name, true] call FUNC(persistence);
-            profileNamespace setVariable ["TB_persistence_savedNames", _saves];
-            saveProfileNamespace;
+            [_name, false] call FUNC(transfer);
         };
     }
     else
     {
         _dialogResult params ["_id"];
-
-        if (_server) then
+        _name = _saves select _id;
+        if (!_server) then
         {
-            [false, _saves select _id] remoteExec [QFUNC(persistence), 2];
+            [_name, true] call FUNC(transfer);
         }
-        else
-        {
-            [false, _saves select _id, true] call FUNC(persistence);
-        };
+        [false, _name] remoteExec [QFUNC(persistence), 2];
     };
 };
 
