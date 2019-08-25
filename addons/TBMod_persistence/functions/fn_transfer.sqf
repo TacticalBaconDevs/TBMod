@@ -11,36 +11,36 @@ params [
 if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
 
 if (_toserver) then {
-	TB_transerData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
-	[[_name, TB_transerData], 
-	{
-		params ["_name","_data"];
+    TB_transerData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
+    [[_name, TB_transerData], 
+    {
+        params ["_name","_data"];
 
-		profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
-		_savednames = profileNamespace getVariable ["TB_persistence_savedNames", []];
-		_savednames pushBackUnique _name;
-		profileNamespace setVariable ["TB_persistence_savedNames", _savednames];
+        profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
+        _savednames = profileNamespace getVariable ["TB_persistence_savedNames", []];
+        _savednames pushBackUnique _name;
+        profileNamespace setVariable ["TB_persistence_savedNames", _savednames];
 
-		saveProfileNamespace;
-	}] remoteExec ["call", 2];
+        saveProfileNamespace;
+    }] remoteExec ["call", 2];
 } else {
-	
-	[[_name, ACE_player], 
-	{
-		params ["_name", "_target"];
+    
+    [[_name, ACE_player], 
+    {
+        params ["_name", "_target"];
 
-		TB_transerData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
+        TB_transerData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
 
-		[[_name, TB_transerData], 
-			{
-				params ["_name","_data"];
+        [[_name, TB_transerData], 
+            {
+                params ["_name","_data"];
 
-				profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
-				_savednames = profileNamespace getVariable ["TB_persistence_savedNames", []];
-				_savednames pushBackUnique _name;
-				profileNamespace setVariable ["TB_persistence_savedNames", _savednames];
+                profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
+                _savednames = profileNamespace getVariable ["TB_persistence_savedNames", []];
+                _savednames pushBackUnique _name;
+                profileNamespace setVariable ["TB_persistence_savedNames", _savednames];
 
-				saveProfileNamespace;
-		}] remoteExec ["call", _target];
-	}] remoteExec ["call", 2];
+                saveProfileNamespace;
+        }] remoteExec ["call", _target];
+    }] remoteExec ["call", 2];
 };
