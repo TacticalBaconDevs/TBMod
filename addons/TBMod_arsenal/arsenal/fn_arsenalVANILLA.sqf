@@ -224,7 +224,7 @@ private _LR = [
     "B_RadioBag_01_black_F",
     "B_RadioBag_01_tropic_F",
     "B_RadioBag_01_wdl_F"
-    ];
+];
 
 private _allgemein_Helm = [
     // Head
