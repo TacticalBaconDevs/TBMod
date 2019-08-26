@@ -4,9 +4,7 @@
 
     Ansprechpartner: IDarky
 */
-// Mengen definierung
 private _allgemein = [
-
     // Gesichtsbedeckung
     "G_Bandanna_shades",
     "G_Bandanna_beast",
@@ -28,7 +26,7 @@ private _allgemein = [
     "G_Tactical_Clear",
     "G_Tactical_Black",
 
-    //Pistolen + Munition
+    // Pistolen + Munition
     "hgun_Pistol_heavy_01_F",
     "hgun_Pistol_heavy_01_green_F",
     "hgun_P07_F",
@@ -38,7 +36,7 @@ private _allgemein = [
     "TB_mag_taser",
     "11Rnd_45ACP_Mag",
     
-    //Rucksäcke
+    // Rucksäcke
     "ACE_TacticalLadder_Pack",
     "B_Kitbag_cbr",
     "B_Kitbag_sgg",
@@ -119,7 +117,7 @@ private _allgemein = [
     "optic_holosight",
     "optic_yorris",
 
-    //Granaten
+    // Granaten
     "HandGrenade",
     "MiniGrenade",
     "SmokeShell",
@@ -130,7 +128,7 @@ private _allgemein = [
     "SmokeShellBlue",
     "SmokeShellOrange",
 
-    //Unterlaufgranten
+    // Unterlaufgranten
     "1Rnd_HE_Grenade_shell",
     "1Rnd_Smoke_Grenade_shell",
     "1Rnd_SmokeRed_Grenade_shell",
@@ -208,18 +206,18 @@ private _allgemein_Westen = [
 ];
 
 private _LR = [
-    //schwarz
+    // schwarz
     "OPXT_blk_1523",
-    //tropen
+    // tropen
     "OPXT_at_ix_1523",
     "OPXT_at_fg_1523",
     "OPXT_multicamt_1523",
-    //MTP+Multicam
+    // MTP+Multicam
     "OPXT_scorpion_1523",
     "OPXT_multicam_1523",
     "OPXT_wht_1523",
 
-    //Vanilla 
+    // Vanilla 
     "B_RadioBag_01_mtp_F",
     "B_RadioBag_01_black_F",
     "B_RadioBag_01_tropic_F",
@@ -332,6 +330,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _allgemein_WaffeGL +
         [
+        
         ]
     };
 
@@ -353,11 +352,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_03_khk_F",
             "srifle_DMR_06_olive_F",
             "srifle_DMR_06_camo_F",
-
-            //Magazine
+            // ### Magazine
             "20Rnd_762x51_Mag",
-
-            //Attachments
+            // ### Attachments
             "optic_DMS"
         ]
     };
@@ -377,8 +374,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_02_snd_F",
             "arifle_SPAR_02_khk_F",
             "LMG_03_F",
-
-            // Magazine
+            // ### Magazine
             "150Rnd_556x45_Drum_Mag_Tracer_F",
             "200Rnd_556x45_Box_Tracer_F",
             "200Rnd_556x45_Box_Tracer_Red_F",
@@ -404,14 +400,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "B_Carryall_oucamo",
             "B_Carryall_wdl_F",
             "B_Carryall_green_F",
-
-            // Magazine
+            // ### Magazine
             "150Rnd_556x45_Drum_Mag_Tracer_F",
             "200Rnd_556x45_Box_Tracer_F",
             "200Rnd_556x45_Box_Tracer_Red_F",
             "20Rnd_762x51_Mag",
-
-            //AT
+            
+            // AT
             "Vorona_HEAT",
             "Vorona_HE",
             "MRAWS_HEAT_F",
@@ -438,7 +433,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "H_CrewHelmetHeli_B",
             "H_PilotHelmetFighter_I_E",
             
-
             // Goggles
             "G_Aviator",
 
@@ -459,8 +453,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SMG_01_F",
             "SMG_05_F",
             "hgun_PDW2000_F",
-
-            // Magazine
+            // ### Magazine
             "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
             "30Rnd_9x21_Yellow_Mag",
@@ -517,14 +510,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "srifle_GM6_camo_F",
             "srifle_LRR_F",
             "srifle_LRR_camo_F",
-
-            // Magazine
+            // ### Magazine
             "5Rnd_127x108_Mag",
             "5Rnd_127x108_APDS_Mag",
             "7Rnd_408_Mag",
             "ACE_7Rnd_408_305gr_Mag",
-
-            // Attachments
+            // ### Attachments
             "optic_LRPS",
             "optic_DMS",
             "optic_AMS_snd",
@@ -631,10 +622,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "launch_MRAWS_green_rail_F",
             "launch_MRAWS_olive_rail_F",
             "launch_MRAWS_sand_rail_F",
-            "launch_MRAWS_green_F",         //kann Entfernung messen (ungelenkt)
+            "launch_MRAWS_green_F",         // kann Entfernung messen (ungelenkt)
             "launch_MRAWS_olive_F",
             "launch_MRAWS_sand_F",
-            "launch_O_Vorona_brown_F",      //kabelgelenkt
+            "launch_O_Vorona_brown_F",      // kabelgelenkt
             "launch_O_Vorona_green_F",
             "RPG32_F",
             "RPG32_HE_F",
