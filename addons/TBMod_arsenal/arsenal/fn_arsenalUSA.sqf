@@ -517,7 +517,6 @@ private _dmr_munition = [
 ];
 
 private _rifle_munition = [
-    
     // 7.62
     "rhsusf_20Rnd_762x51_SR25_m62_Mag",
     "rhsusf_20Rnd_762x51_SR25_m993_Mag",
