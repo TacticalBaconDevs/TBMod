@@ -37,21 +37,14 @@ if !(_activated) exitWith {true};
     {
         _dialogResult params ["_name"];
         
-        [true, _name] remoteExec [QFUNC(persistence), 2];
-        if (!_server) then
-        {
-            [_name, false] call FUNC(transfer);
-        };
+        [true, _name, !_server] remoteExec [QFUNC(persistence), 2];
     }
     else
     {
         _dialogResult params ["_id"];
         _name = _saves select _id;
-        if (!_server) then
-        {
-            [_name, true] call FUNC(transfer);
-        };
-        [false, _name] remoteExec [QFUNC(persistence), 2];
+        
+        [false, _name, !_server] remoteExec [QFUNC(persistence), 2];
     };
 };
 

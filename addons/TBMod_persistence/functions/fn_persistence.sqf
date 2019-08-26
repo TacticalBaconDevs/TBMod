@@ -10,7 +10,8 @@
 */
 params [
         ["_save", false, [false]],
-        ["_name", "", [""]]
+        ["_name", "", [""]],
+        ["_transfer", false, [false]]
     ];
 
 if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
@@ -50,9 +51,16 @@ if (_save) then
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
+    if (_transfer) then {
+        [_name, remoteExecutedOwner, true] call FUNC(transfer);
+    };
 }
 else // load
 {
+    if (_transfer) then {
+        [_name, remoteExecutedOwner, false] call FUNC(transfer);
+    };
+    
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
 
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
