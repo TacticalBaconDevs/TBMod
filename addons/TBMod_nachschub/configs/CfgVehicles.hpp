@@ -154,7 +154,7 @@ class CfgVehicles
                     ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
                     ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
                     ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
-                    ADD_SUPPLY(NotfallWaffen,TB_supply_usa_notfall);
+                    ADD_SUPPLY(Notfall,TB_supply_usa_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                     ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
                     ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
