@@ -15,7 +15,7 @@ private _allgemein = [
     "G_Blindfold_01_black_F",
     "G_Blindfold_01_white_F",
 
-    //Atemschutz
+    // Atemschutz
     "G_AirPurifyingRespirator_02_olive_F",
     "G_AirPurifyingRespirator_02_sand_F",
     "G_AirPurifyingRespirator_02_black_F",
@@ -311,6 +311,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "RPG32_HE_F"
         ]
     };
+    
     case "pionier":
     {
         _allgemein +
