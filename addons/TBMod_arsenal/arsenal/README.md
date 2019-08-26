@@ -12,9 +12,6 @@ Also die Items in einem Array per Kommentar getrennt in diese Kategorien packen.
 
 // Guckdingsdabumse
 "rhs_acc_dh520x56",
-
-// Sachen für den Kopf
-"rhs_fieldcap_khk",
 ```
 
 #### sondern
@@ -25,8 +22,6 @@ Also die Items in einem Array per Kommentar getrennt in diese Kategorien packen.
 "rhs_acc_harris_swivel",
 // ### Visier 
 "rhs_acc_dh520x56",
-// ### Kopfbedeckung
-"rhs_fieldcap_khk",
 ```
 
 ## Aufbau Mengen
