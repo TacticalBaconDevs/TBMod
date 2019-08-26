@@ -516,11 +516,18 @@ private _dmr_munition = [
     //rhsusf_5Rnd_762x51_AICS_m993_Mag
 ];
 
+private _rifle_munition = [
+    
+    // 7.62
+    "rhsusf_20Rnd_762x51_SR25_m62_Mag",
+    "rhsusf_20Rnd_762x51_SR25_m993_Mag",
+    "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag"
+]:
+
 private _mg_munition = [
     // 7.62
     "rhsusf_100Rnd_762x51_m62_tracer",
     "rhsusf_100Rnd_762x51_m61_ap",
-    "rhsusf_100Rnd_762x51",
 
     // 5.56
     "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote",
@@ -607,7 +614,7 @@ private _items = [];
 // _allgemein_gewehre                - 5.56 Waffen und Mags
 // _allgemein_magazine               - 5.56 Mags einzeln
 // _allgemein_visiere                - normalen Visiere
-// _allgemein_befestigungsschiene    - laser/Lampe usw
+// _allgemein_befestigungsschiene    - Laser/Lampe usw
 // _allgemein_geschuetzzubehoer      - Schalldämpfer usw
 // _allgemein_zweibein               - Zweibeine
 // _allgemein_raketenwerfer          - einmal Raketenwerfer
@@ -615,13 +622,13 @@ private _items = [];
 // _allgemein_uniformen              - Uniformen
 // _allgemein_westen                 - Westen
 // _allgemein_kopfbedeckung          - Helme
-// _grenadier_gewehr                 - Alle m320 und M203 Gewehre
+// _grenadier_gewehr                 - Alle M320 und M203 Gewehre
 // _grenadier_munition               - Grenadier Unterlauf
 // _dmr_munition                     - DMR Munition
 // _mg_munition                      - MG Munition
 // _pilot_munition                   - Piloten MP7 Munition
-// _sniper_munition                  - Sniper munition
-// _aaat_munition                    - AtiTank Munition
+// _sniper_munition                  - Sniper Munition
+// _aaat_munition                    - AntiTank Munition
 // _gepaeck_mittel                   - Seesack
 // _gepaeck_gross                    - Carryall
 // _lrFunken                         - LR Funken
@@ -831,7 +838,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
-        _grenadier_munition    +
+        _grenadier_munition +
+        _rifle_munition +
         _dmr_munition +
         _pilot_munition +
         _sniper_munition    +
@@ -938,6 +946,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         _moerser_munition +
         _dmr_munition +
+        _rifle_munition +
         [
             // Gewehre
             "rhs_weap_m14ebrri",
@@ -949,11 +958,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_sr25_ec_d",
             "rhs_weap_sr25_ec_wd",
             "rhs_weap_sr25_wd",
-
-            // Munition
-            "rhsusf_20Rnd_762x51_SR25_m62_Mag",
-            "rhsusf_20Rnd_762x51_SR25_m993_Mag",
-            "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag",
 
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
@@ -972,7 +976,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Waffen
             "TB_vz99_carryWeapon",
 
-            // Zubehör
+            // ### Geschützzubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
             "rhsusf_acc_sr25s_wd",

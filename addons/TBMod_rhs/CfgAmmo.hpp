@@ -340,34 +340,39 @@ class CfgAmmo
         indirectHitRange = 4.5; // 3
     };
 
-    class rhs_ammo_762x51_M80_Ball : BulletBase // 100rnd 7.62x51mm + 100rnd 7.62x51mm Tracer
-    {
-        ACE_ballisticCoefficients[] = {0.4}; // {0.2}
-        caliber = 1.25; // 1
-        hit = 16; // 11.55
-        suppressionRadiusBulletClose = 7; // 2
-        suppressionRadiusHit = 12; // 4
-    };
-
-    class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd 7.62x51mm Tracer AP
-    {
-        caliber = 9.5; // 0.79
-    };
-
     class B_556x45_Ball;
     class rhs_ammo_556x45_M855_Ball : B_556x45_Ball // 200rnd 5.56x45mm
     {
-        caliber = 0.5; // 0.44
-        suppressionRadiusBulletClose = 7; // 6
-        suppressionRadiusHit = 12; // 8
+        suppressionRadiusBulletClose = 47; // 6
+        suppressionRadiusHit = 7; // 8
     };
 
     class rhs_ammo_556x45_M855A1_Ball;
     class rhs_ammo_556x45_M855A1_Ball_Red : rhs_ammo_556x45_M855A1_Ball // 200rnd 5.56x45mm Tracer
     {
-        caliber = 0.5; // 0.65
-        suppressionRadiusBulletClose = 7; // 6
-        suppressionRadiusHit = 12; // 8
+        caliber = 0.44; // 0.65 --- 0.44 ist Standardwert von rhs_ammo_556x45_M855_Ball
+        suppressionRadiusBulletClose = 4; // 6
+        suppressionRadiusHit = 7; // 8
+    };
+
+    class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
+    {
+        caliber = 1.8; // 0.65
+        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        explosive = 0.2; // 0
+        hit = 23; // 12.55
+        suppressionRadiusBulletClose = 8; // 2
+        suppressionRadiusHit = 14; // 4
+    };
+
+    class rhs_ammo_762x51_M62_tracer : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M62 AP Tracer
+    {
+        caliber = 1.8; // 0.45
+        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        explosive = 0.2; // 0
+        hit = 23; // 11
+        suppressionRadiusBulletClose = 8; // 2
+        suppressionRadiusHit = 14; // 4
     };
 
     class RocketBase;
