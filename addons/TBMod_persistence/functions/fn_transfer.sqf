@@ -34,12 +34,8 @@ if (_toserver) then {
                 saveProfileNamespace;
                 GVAR(transfer) = true;
                 publicVariable QGVAR(transfer);
-        }] remoteExec ["call", 2];
-    }] remoteExec ["call", _client];
-
-
-    
-
+        }] remoteExecCall ["call", 2];
+    }] remoteExecCall ["call", _client];
 } else {
     _transferData = profileNamespace getVariable [format ["TB_persistence_%1", _name], []];
     [[_name, _transferData], 
@@ -54,7 +50,7 @@ if (_toserver) then {
         saveProfileNamespace;
         GVAR(transfer) = true;
         publicVariable QGVAR(transfer);
-    }] remoteExec ["call", _client];
+    }] remoteExecCall ["call", _client];
 };
 
 waitUntil {GVAR(transfer)}
