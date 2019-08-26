@@ -343,7 +343,7 @@ class CfgAmmo
     class B_556x45_Ball;
     class rhs_ammo_556x45_M855_Ball : B_556x45_Ball // 200rnd 5.56x45mm
     {
-        suppressionRadiusBulletClose = 47; // 6
+        suppressionRadiusBulletClose = 4; // 6
         suppressionRadiusHit = 7; // 8
     };
 
