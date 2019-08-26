@@ -41,6 +41,11 @@ if (_arsenalType == "Themen") then
             TB_customName_themen = ["Polizist","","Polizist-Sani","","","","","","Polizeipilot","","","","SWAT-Sani","SWAT",""];
         };
     };
+    if (_side == independent) exitWith
+    {
+        // LDF
+        TB_blacklistRollen_themen = ["arzt", "spreng", "dmr", "sniper", "spotter"];
+    };
 
     if (_side == opfor) exitWith {};
 };

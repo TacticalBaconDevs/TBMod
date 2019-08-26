@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
-    Ansprechpartner: mordl, Darky
+    Ansprechpartner: mordl, Darky, Nikuga
 */
 private _allgemein = [
     // Gepäck
@@ -76,7 +76,13 @@ private _allgemein = [
 
 private _allgemein_magazine = [
     "rhs_30Rnd_545x39_7N6_AK",
-    "rhs_30Rnd_545x39_AK_green"
+    "rhs_30Rnd_545x39_AK_green",
+    "rhs_30Rnd_545x39_AK_plum_green",
+    "rhs_30Rnd_545x39_7N22_AK",
+    "rhs_30Rnd_545x39_7N22_camo_AK",
+
+    // für Spetznas Mission
+    "rhs_20rnd_9x39mm_SP5"
 ];
 
 private _allgemein_gewehre = [
@@ -85,12 +91,15 @@ private _allgemein_gewehre = [
     "rhs_weap_ak74n_2_npz",
     "rhs_weap_ak74mr",
     "rhs_weap_ak74m_npz",
-    "rhs_weap_ak74m"
+    "rhs_weap_ak74m",
+    "rhs_weap_ak74m_camo",
+
+    // für Spetznas Mission 
+    "rhs_weap_asval_grip"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
-    "rhs_acc_1p29",
     "rhs_acc_pkas",
     "rhs_acc_ekp8_02",
     "rhs_acc_1p78",
@@ -104,7 +113,7 @@ private _allgemein_befestigungsschiene = [
 ];
 
 private _allgemein_geschuetzzubehoer = [
-    "rhs_acc_dtk4short",
+    "rhs_acc_tgpa",
     "rhs_acc_dtk1983"
 ];
 
@@ -164,7 +173,9 @@ private _allgemein_kopfbedeckung = [
     "rhs_6b27m",
     "rhs_6b27m_ess",
     "rhs_6b27m_ml",
-    "rhs_6b27m_ml_ess"
+    "rhs_6b27m_ml_ess",
+    "rhs_6b47",
+    "rhs_6b47_ess"
 ];
 
 private _grenadier_gewehr = [
@@ -184,10 +195,6 @@ private _grenadier_munition = [
     "rhs_VOG25P"        // HE jumping grenade
 ];
 
-private _dmr_munition = [
-    "rhs_10Rnd_762x54mmR_7N14"
-];
-
 private _mg_munition = [
     "rhs_100Rnd_762x54mmR_green",
     "rhs_100Rnd_762x54mmR_7N26"
@@ -199,7 +206,9 @@ private _pilot_munition = [
 ];
 
 private _sniper_munition = [
-    "rhs_5Rnd_338lapua_t5000"
+    "rhs_5Rnd_338lapua_t5000",
+    "rhs_10Rnd_762x54mmR_7N14",
+    "ACE_10Rnd_762x54_Tracer_mag"
 ];
 
 private _aaat_munition = [
@@ -213,7 +222,7 @@ private _aaat_munition = [
 ];
 
 private _gepaeck_mittel = [
-    //"rhs_assault_umbts"   // maximumLoad = 140; mass = 20; Quotient = 7
+    "rhs_assault_umbts",    // maximumLoad = 140; mass = 20; Quotient = 7
     "B_FieldPack_cbr",      // maximumLoad = 200; mass = 30; Quotient = 6,6
     "B_FieldPack_khk",
     "B_FieldPack_oli"
@@ -223,6 +232,11 @@ private _gepaeck_gross = [
     "B_Carryall_cbr",       // maximumLoad = 320; mass = 60; Quotient = 5,3
     "B_Carryall_oli",
     "B_Carryall_khk"
+];
+
+private _rifle_munition = [
+    "rhs_30Rnd_762x39mm_polymer",
+    "rhs_30Rnd_762x39mm_polymer_tracer"
 ];
 
 private _items = [];
@@ -285,7 +299,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_digi_medic",
             "rhs_6b23_medic",
             "rhs_6b23_ML_medic"
-
         ]
     };
 
@@ -344,34 +357,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
-    case "dmr":
-    {
-        _allgemein +
-        _allgemein_befestigungsschiene +
-        _allgemein_geschuetzzubehoer +
-        _allgemein_zweibein +
-        _allgemein_raketenwerfer +
-        _allgemein_handfeuerwaffen +
-        _allgemein_uniformen +
-        _allgemein_westen +
-        _allgemein_kopfbedeckung +
-        _dmr_munition +
-        [
-            // Gewehr
-            "rhs_weap_svdp",
-            "rhs_weap_svdp_wd",
-            // ### Visiere
-            "rhs_acc_pso1m2",
-            "rhs_acc_pso1m21",
-            // ### Geschützzubehör
-            "rhs_acc_tgpv",
-            "rhs_acc_tgpv2",
-
-            // Weste
-            "rhs_6b23_digi_sniper",
-            "rhs_6b23_sniper"
-        ]
-    };
+    case "dmr": {[]};
 
     case "mg":
     {
@@ -389,6 +375,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehr
             "rhs_weap_pkp",
+            "rhs_weap_pkm",
 
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
@@ -413,11 +400,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
-        _grenadier_munition    +
+        _grenadier_munition +
         _dmr_munition +
         _pilot_munition +
-        _sniper_munition    +
+        _sniper_munition +
         _aaat_munition +
+        _rifle_munition +
         _gepaeck_mittel +
         _gepaeck_gross +
         [
@@ -486,9 +474,27 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _rifle_munition +
         _gepaeck_mittel +
         [
+            // Gewehre
+            "rhs_weap_svdp",
+            "rhs_weap_svdp_wd",
+            "rhs_weap_akms",         // 7,62 keine Visierung möglich
+            // ### Visiere
+            "rhs_acc_pso1m2",
+            "rhs_acc_pso1m21",
+            // ### Geschützzubehör
+            "rhs_acc_tgpv",
+            "rhs_acc_tgpv2",
 
+            // Weste
+            "rhs_6b23_digi_sniper",
+            "rhs_6b23_sniper",
+
+            // Spetznas 
+            "rhs_weap_vss",
+            "rhs_10rnd_9x39mm_SP6"
         ]
     };
 
@@ -506,10 +512,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehr
             "rhs_weap_t5000",
-            // Zweibein
+            "rhs_weap_svdp",
+            "rhs_weap_svdp_wd",
+            // ### Zweibein
             "rhs_acc_harris_swivel",
-
-            // Kopfbedeckung
+            // ### Visier 
+            "rhs_acc_dh520x56",
+            "rhs_acc_pso1m2",
+            "rhs_acc_tgpv2",
+            // ### Kopfbedeckung
             "rhs_fieldcap_khk",
             "rhs_fieldcap_vsr",
 
@@ -630,7 +641,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Raketenwerfer
             "rhs_weap_rpg7",
             "rhs_weap_igla",
-            // Visier
+            // ### Visier
             "rhs_acc_pgo7v3"
         ]
     };
@@ -700,8 +711,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ToolKit",
-            "ACE_wirecutter"
+            "ACE_wirecutter",
+            "ToolKit"
         ]
     };
 

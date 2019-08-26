@@ -46,6 +46,7 @@ class CfgFunctions
             class arsenalRUSSSimple {};
             class arsenalVANILLACOP {};
             class arsenalBRD {};
+            class arsenalLDF {};
         };
     };
 };
