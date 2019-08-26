@@ -12,6 +12,8 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
         MACRO_ADDMAGAZINE(rhsusf_200rnd_556x45_mixed_box,3);                // MGMag5.56
         MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,6);               // MGMag7.62
         MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,10);             // DMRMag7.62
+        MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,10);                           // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,10);                             // Schrotflinte
     };
 };
 
@@ -24,7 +26,6 @@ class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(hlc_12Rnd_357SIG_JHP_P226,15);
     };
 };
 
@@ -79,17 +80,12 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_East_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(5Rnd_127x108_Mag,10);
-        MACRO_ADDMAGAZINE(5Rnd_127x108_APDS_Mag,5);
-
-        MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,10);
-        MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,10);
+        MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,8);
+        MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
 
         // DMR7.62
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m118_special_Mag,15);
-        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,15);
-        // MACRO_ADDMAGAZINE(rhsusf_10Rnd_762x51_m118_special_Mag,15); // nicht zuviel, dann halt nur 5 statt 10 Schuss
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m118_special_Mag,10);
+        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS,10);
+        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,10);
     };
 };
 

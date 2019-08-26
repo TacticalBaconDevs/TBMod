@@ -63,24 +63,24 @@ ace_medical_playerDamageThreshold = if (_rolle == "pilot") then {TB_origin_playe
 
 // KompassStuff
 // TODO: an/aus machbar
-/*private _icon = switch (_rolle) do
+private _icon = switch (_rolle) do
 {
-    case "lead": {"a3\ui_f\data\GUI\Cfg\Ranks\general_gs.paa"};
-    case "sani": {"a3\ui_f\data\GUI\Cfg\Cursors\add_gs.paa"}; // alternatives: "a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\cargoMisc_ca.paa", "a3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa","a3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa"
-    case "arzt": {"a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\cargoMisc_ca.paa"}; // alternatives: "a3\ui_f\data\GUI\Cfg\Cursors\add_gs.paa", "a3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa","a3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa"
-    case "grena": {"a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\cargoThrow_ca.paa"};
-    case "dmr": {"a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\binoculars_ca.paa"};
-    case "mg": {"a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa"};
-    case "trag": {"a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\backpack_ca.paa"};
-    case "pilot": {"a3\ui_f\data\map\vehicleicons\iconHelicopter_ca.paa"};
-    case "rifle": {"a3\ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa"};
-    case "sniper": {"a3\ui_f\data\GUI\Cfg\RespawnRoles\recon_ca.paa"};
-    case "spotter": {"a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\binoculars_ca.paa"};
-    case "spreng": {"a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\cargoPut_ca.paa"};
-    case "aaat": {"a3\ui_f\data\GUI\Cfg\Hints\Launcher_ca.paa"};
-    case "jtac": {"a3\ui_f\data\GUI\Cfg\Hints\UAVBasic_ca.paa"}; // alternatives: "a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\radio_ca.paa", "a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\gps_ca.paa"
-    case "pionier": {"a3\ui_f\data\GUI\Cfg\RespawnRoles\support_ca.paa"};
+    case "lead": {"\TBMod_skins\pictures\playericons\TB_Truppführer.paa"};
+    case "sani": {"\TBMod_skins\pictures\playericons\TB_Kampfsanitäter.paa"};
+    case "arzt": {"\TBMod_skins\pictures\playericons\TB_Arzt.paa"};
+    case "grena": {"\TBMod_skins\pictures\playericons\TB_Grenadier.paa"};
+    case "dmr": {"\TBMod_skins\pictures\playericons\TB_Spotter.paa"};
+    case "mg": {"\TBMod_skins\pictures\playericons\TB_Unterstützungsschütze.paa"};
+    case "trag": {"\TBMod_skins\pictures\playericons\TB_Munitionsträger.paa"};
+    case "pilot": {"\TBMod_skins\pictures\playericons\TB_Pilot.paa"};
+    case "rifle": {"\TBMod_skins\pictures\playericons\TB_Waffenspezialist.paa"};
+    case "sniper": {"\TBMod_skins\pictures\playericons\TB_Scharfschütze.paa"};
+    case "spotter": {"\TBMod_skins\pictures\playericons\TB_Spotter.paa"};
+    case "spreng": {"\TBMod_skins\pictures\playericons\TB_Sprengstoffexperte.paa"};
+    case "aaat": {"\TBMod_skins\pictures\playericons\TB_Anti-Fahrzeug.paa"};
+    case "jtac": {"\TBMod_skins\pictures\playericons\TB_Drohnen-OP.paa"};
+    case "pionier": {"\TBMod_skins\pictures\playericons\TB_Pionier.paa"};
     default {nil};
 };
 
-ACE_player setVariable ["diwako_dui_radar_customIcon", _icon, true];*/
+ACE_player setVariable ["diwako_dui_radar_customIcon", _icon, true];
