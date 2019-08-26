@@ -4,7 +4,6 @@
 
     Author: IDarky
 */
-
 class TB_supply_ldf_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
     PUBLIC_NAME_CAT("Munition",LDF);
@@ -30,7 +29,7 @@ class TB_supply_ldf_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
         MACRO_ADDMAGAZINE(SmokeShellOrange,10);
 
         MACRO_ADDMAGAZINE(HandGrenade,10);        // Splitternade
-        MACRO_ADDMAGAZINE(ACE_M84,10);        // Blendgranate
+        MACRO_ADDMAGAZINE(ACE_M84,10);            // Blendgranate
     };
 };
 
