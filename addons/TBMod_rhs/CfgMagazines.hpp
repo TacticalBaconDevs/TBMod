@@ -365,6 +365,12 @@ class CfgMagazines
     };
 
     class rhs_m136_hedp_mag;
+    class rhs_m136_mag : rhs_m136_hedp_mag // M136 HEAT (CS)
+    {
+        descriptionshort = "Type: HEAT Confined Spaces"; // "Type: High Explosive Anti Tank"
+        displayName = "M136 HEAT (CS)"; // "M136 HEAT"
+    };
+
     class rhs_m72a7_mag : rhs_m136_hedp_mag // M72A7
     {
         descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
@@ -375,5 +381,33 @@ class CfgMagazines
     class ACE_HuntIR_M203 : 1Rnd_HE_Grenade_shell // HuntIR
     {
         initSpeed = 160; // 80
+    };
+
+    class rhsusf_100Rnd_556x45_M855_soft_pouch;
+    class rhsusf_200Rnd_556x45_M855_soft_pouch : rhsusf_100Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855
+    {
+        displayname = "200rnd 5.56x45mm"; // "200rnd M249 Box M855"
+        displaynameshort = "200rnd M249"; // "M855"
+    };
+
+    class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch : rhsusf_200Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855 Tracer
+    {
+        ammo = "rhs_ammo_556x45_M855_Ball_Red"; // "rhs_ammo_556x45_M855A1_Ball_Red"
+        displayname = "200rnd 5.56x45mm (Tracer)"; // "200rnd M249 Box M855 (Mixed)"
+        displaynameshort = "200rnd (Tracer)"; // "M855 (Mixed)"
+    };
+
+    class rhsusf_50Rnd_762x51_m61_ap;
+    class rhsusf_100Rnd_762x51_m61_ap : rhsusf_50Rnd_762x51_m61_ap // 100rnd M240 Box M61 AP
+    {
+        tracersEvery = 0; // 5
+    };
+
+    class rhsusf_50Rnd_762x51_m62_tracer;
+    class rhsusf_100Rnd_762x51_m62_tracer : rhsusf_50Rnd_762x51_m62_tracer // 100rnd M240 Box M62 AP Tracer
+    {
+        displayname = "100rnd M62 AP (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
+        displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
+        tracersEvery = 1; // 5
     };
 };
