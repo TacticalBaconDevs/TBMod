@@ -22,7 +22,6 @@ private _allgemein = [
     "G_AirPurifyingRespirator_01_F",
     "G_RegulatorMask_F",
     
-
     // Pistole
     "hgun_Pistol_heavy_01_green_F",
     "optic_mrd_black",
@@ -33,7 +32,6 @@ private _allgemein = [
     "B_CombinationUnitRespirator_01_F",
     "B_SCBA_01_F",
     "B_Kitbag_sgg",
-
 
     // Items
     "ACE_CableTie",
@@ -51,14 +49,13 @@ private _allgemein = [
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
 
-    //NV 
+    // NV 
     "O_NVGoggles_grn_F",
     "NVGoggles_tna_F",
     "ACE_NVG_Gen2",
     "NVGoggles_INDEP",
 
-
-    //Visire 
+    // Visire 
     "optic_erco_snd_f",
     "optic_erco_khk_f",
     "optic_erco_blk_f",
@@ -71,14 +68,14 @@ private _allgemein = [
     "optic_ico_01_black_f",
     "optic_ico_01_camo_f",
     
-    //Attachments
+    // Attachments
     "muzzle_snds_65_ti_ghex_f",
     "muzzle_snds_65_ti_blk_f",
     "acc_pointer_ir",
     "ace_acc_pointer_green",
     "acc_flashlight",
 
-    //Granaten
+    // Granaten
     "MiniGrenade",
 
     // SR-Funke
@@ -149,7 +146,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
-
+            
         ]
     };
 
@@ -162,7 +159,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
-        []
+        [
+
+        ]
     };
 
     case "grena":
@@ -239,13 +238,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
-        // Helm
-        "H_PilotHelmetFighter_I_E",
-        "H_CrewHelmetHeli_I_E",
-        "H_PilotHelmetHeli_I_E",
+            // Helm
+            "H_PilotHelmetFighter_I_E",
+            "H_CrewHelmetHeli_I_E",
+            "H_PilotHelmetHeli_I_E",
 
-        // Uniform
-        "U_I_E_Uniform_01_coveralls_F"
+            // Uniform
+            "U_I_E_Uniform_01_coveralls_F"
         ]
     };
 
@@ -258,11 +257,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
-        // Drohne 
-        "I_E_UAV_01_backpack_F",
-        "I_E_UGV_02_Demining_backpack_F",
-        "I_E_UGV_02_Science_backpack_F",
-        "I_E_UavTerminal"
+            // Drohne 
+            "I_E_UAV_01_backpack_F",
+            "I_E_UGV_02_Demining_backpack_F",
+            "I_E_UGV_02_Science_backpack_F",
+            "I_E_UavTerminal"
 
         ]
     };
@@ -275,23 +274,23 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Magazine +
         [
-        // Waffen
-        "arifle_MSBS65_UBS_F",
-        "arifle_MSBS65_UBS_sand_F",
-        "arifle_MSBS65_UBS_black_F",
-        "arifle_MSBS65_UBS_camo_F",
-        "arifle_MSBS65_Mark_F",
-        "arifle_MSBS65_Mark_sand_F",
-        "arifle_MSBS65_Mark_black_F",
-        "arifle_MSBS65_Mark_camo_F",
+            // Waffen
+            "arifle_MSBS65_UBS_F",
+            "arifle_MSBS65_UBS_sand_F",
+            "arifle_MSBS65_UBS_black_F",
+            "arifle_MSBS65_UBS_camo_F",
+            "arifle_MSBS65_Mark_F",
+            "arifle_MSBS65_Mark_sand_F",
+            "arifle_MSBS65_Mark_black_F",
+            "arifle_MSBS65_Mark_camo_F",
 
-        // Magazine 
-        "6Rnd_12Gauge_Pellets",
-        "6Rnd_12Gauge_Slug",
+            // Magazine 
+            "6Rnd_12Gauge_Pellets",
+            "6Rnd_12Gauge_Slug",
 
-        // Attachments
-        "bipod_02_f_lush",
-        "optic_dms_weathered_f"
+            // Attachments
+            "bipod_02_f_lush",
+            "optic_dms_weathered_f"
         ]
     };
 
