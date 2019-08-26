@@ -347,14 +347,6 @@ class CfgAmmo
         suppressionRadiusHit = 7; // 8
     };
 
-    class rhs_ammo_556x45_M855A1_Ball;
-    class rhs_ammo_556x45_M855A1_Ball_Red : rhs_ammo_556x45_M855A1_Ball // 200rnd 5.56x45mm Tracer
-    {
-        caliber = 0.44; // 0.65 --- 0.44 ist Standardwert von rhs_ammo_556x45_M855_Ball
-        suppressionRadiusBulletClose = 4; // 6
-        suppressionRadiusHit = 7; // 8
-    };
-
     class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
     {
         caliber = 1.8; // 0.65
