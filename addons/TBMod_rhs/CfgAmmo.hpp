@@ -349,6 +349,7 @@ class CfgAmmo
 
     class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
     {
+        ACE_ballisticCoefficients[] = {0.35}; // {0.2}
         caliber = 1.8; // 0.65
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
         explosive = 0.2; // 0
@@ -359,6 +360,7 @@ class CfgAmmo
 
     class rhs_ammo_762x51_M62_tracer : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M62 AP Tracer
     {
+        ACE_ballisticCoefficients[] = {0.35}; // {0.2}
         caliber = 1.8; // 0.45
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
         explosive = 0.2; // 0
