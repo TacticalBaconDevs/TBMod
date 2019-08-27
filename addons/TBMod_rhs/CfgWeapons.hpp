@@ -153,32 +153,41 @@ class CfgWeapons
     class launch_O_Titan_F;
     class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
     {
+        aimTransitionSpeed = 0.18; // 0.5
         mass = 176.37; // 152.46
     };
 
     class Launcher_Base_F;
     class rhs_weap_smaw: Launcher_Base_F // MK153 Mod 0 SMAW (Black)
     {
+        aimTransitionSpeed = 0.46; // 0.5
         mass = 110.2; // 34
     };
 
     class rhs_weap_maaws: Launcher_Base_F // M3 MAAWS
     {
+        aimTransitionSpeed = 0.32; // 0.5
         mass = 137.75; // 38.4
     };
 
-    class rhs_weap_M136: Launcher_Base_F // M136 (HEAT)
+    class rhs_weap_M136: Launcher_Base_F // M136 HEAT (CS)
     {
-        mass = 104.69; // 30.3
+        ace_overpressure_angle = 5; // 60
+        ace_overpressure_damage = 0.35; // 0.7
+        ace_overpressure_range = 0.25; // 10
+        aimTransitionSpeed = 0.36; // 0.75
+        mass = 143.26; // 30.3
     };
 
-    class rhs_weap_M136_hedp: rhs_weap_M136 // M136 (HEDP)
+    class rhs_weap_M136_hedp: rhs_weap_M136 // M136 HEDP
     {
+        aimTransitionSpeed = 0.65; // 0.75
         mass = 82.65; // 30.3
     };
 
-    class rhs_weap_M136_hp: rhs_weap_M136 // M136 (HP)
+    class rhs_weap_M136_hp: rhs_weap_M136 // M136 HP
     {
+        aimTransitionSpeed = 0.36; // 0.75
         mass = 143.26; // 30.3
     };
 
@@ -191,6 +200,7 @@ class CfgWeapons
 
     class rhs_weap_fim92: rhs_weap_M136 // FIM-92F
     {
+        aimTransitionSpeed = 0.5; // 0.6
         mass = 132.25; // 92.35
     };
 
@@ -198,20 +208,34 @@ class CfgWeapons
     class rhs_weap_mk17_CQC: rhs_weap_SCAR_H_CQC_Base // Mk17 CQC
     {
        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-       magazines[] = {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+       magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
     };
 
     class rhs_weap_SCAR_H_LB_Base;
     class rhs_weap_mk17_LB: rhs_weap_SCAR_H_LB_Base // Mk17 LB
     {
         magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] = {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
     };
 
     class rhs_weap_SCAR_H_STD_Base;
     class rhs_weap_mk17_STD: rhs_weap_SCAR_H_STD_Base // Mk17 STD
     {
         magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] = {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+    };
+
+    class rhs_weap_m240_base;
+    class rhs_weap_m240G: rhs_weap_m240_base // M240G
+    {
+        ace_overheating_mrbs = 750; // 3000
+        aimTransitionSpeed = 0.18; // 0.5
+    };
+
+    class rhs_weap_m249_pip_S;
+    class rhs_weap_m249_light_S: rhs_weap_m249_pip_S // M249
+    {
+        ace_overheating_mrbs = 750; // 3000
+        aimTransitionSpeed = 0.36; // 0.5
     };
 };

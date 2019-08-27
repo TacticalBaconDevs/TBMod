@@ -154,7 +154,7 @@ class CfgVehicles
                     ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
                     ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
                     ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
-                    ADD_SUPPLY(NotfallWaffen,TB_supply_usa_notfall);
+                    ADD_SUPPLY(Notfall,TB_supply_usa_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                     ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
                     ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
@@ -187,7 +187,22 @@ class CfgVehicles
                     ADD_SUPPLY(Granaten,TB_supply_nato_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
                     ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
+                    ADD_SUPPLY(ED-1D Drohne,TB_supply_nato_ED);
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
+                };
+
+                class ldf 
+                {
+                    displayName = "LDF";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_themen')) > 0";
+
+                    ADD_SUPPLY(Munition,TB_supply_ldf_ammo);
+                    ADD_SUPPLY(Granaten,TB_supply_ldf_grena);
+                    ADD_SUPPLY(Unterlauf,TB_supply_ldf_unterlauf);
+                    ADD_SUPPLY(WerferMunition,TB_supply_ldf_launcherAmmo);
+                    ADD_SUPPLY(ED-1D Drohne,TB_supply_ldf_ED);
+                    ADD_SUPPLY(NachtKiste,TB_supply_ldf_night);
                 };
 
                 class russ
@@ -228,6 +243,7 @@ class CfgVehicles
 
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
+    WRAPPER(Box_EAF_Uniforms_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_IDAP_Equip_F, "\TBMod_skins\pictures\statics\equipment_box_idap_co_1.paa", SUPPORT_SKIN);
@@ -535,5 +551,6 @@ class CfgVehicles
     #include "CfgVehicles_USA.hpp"
     #include "CfgVehicles_BW.hpp"
     #include "CfgVehicles_NATO.hpp"
+    #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_RUSS.hpp"
 };

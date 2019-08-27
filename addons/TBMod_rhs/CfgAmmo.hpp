@@ -340,6 +340,35 @@ class CfgAmmo
         indirectHitRange = 4.5; // 3
     };
 
+    class B_556x45_Ball;
+    class rhs_ammo_556x45_M855_Ball : B_556x45_Ball // 200rnd 5.56x45mm
+    {
+        suppressionRadiusBulletClose = 4; // 6
+        suppressionRadiusHit = 7; // 8
+    };
+
+    class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
+    {
+        ACE_ballisticCoefficients[] = {0.35}; // {0.2}
+        caliber = 1.8; // 0.65
+        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        explosive = 0.2; // 0
+        hit = 23; // 12.55
+        suppressionRadiusBulletClose = 8; // 2
+        suppressionRadiusHit = 14; // 4
+    };
+
+    class rhs_ammo_762x51_M62_tracer : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M62 AP Tracer
+    {
+        ACE_ballisticCoefficients[] = {0.35}; // {0.2}
+        caliber = 1.8; // 0.45
+        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        explosive = 0.2; // 0
+        hit = 23; // 11
+        suppressionRadiusBulletClose = 8; // 2
+        suppressionRadiusHit = 14; // 4
+    };
+
     class RocketBase;
     class rhs_ammo_maaws_HE : RocketBase // FFV441 HE MAAWS
     {
@@ -366,4 +395,5 @@ class CfgAmmo
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
     };
+
 };
