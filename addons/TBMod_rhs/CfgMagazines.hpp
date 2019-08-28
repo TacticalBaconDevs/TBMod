@@ -364,13 +364,13 @@ class CfgMagazines
         mass = 60.61; // 120
     };
 
-    class rhs_m136_hedp_mag;
-    class rhs_m136_mag : rhs_m136_hedp_mag // M136 HEAT (CS)
+    class rhs_m136_mag : CA_LauncherMagazine // M136 HEAT (CS)
     {
         descriptionshort = "Type: HEAT Confined Spaces"; // "Type: High Explosive Anti Tank"
         displayName = "M136 HEAT (CS)"; // "M136 HEAT"
     };
 
+    class rhs_m136_hedp_mag;
     class rhs_m72a7_mag : rhs_m136_hedp_mag // M72A7
     {
         descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
@@ -410,4 +410,5 @@ class CfgMagazines
         displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
         tracersEvery = 1; // 5
     };
+
 };
