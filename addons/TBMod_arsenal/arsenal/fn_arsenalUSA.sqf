@@ -521,7 +521,7 @@ private _rifle_munition = [
     "rhsusf_20Rnd_762x51_SR25_m62_Mag",
     "rhsusf_20Rnd_762x51_SR25_m993_Mag",
     "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag"
-]:
+];
 
 private _mg_munition = [
     // 7.62
@@ -596,11 +596,11 @@ private _lrFunken = [
 ];
 
 private _moerser_munition = [
-            "TB_vz99_HE",
-            "TB_vz99_HE_multi",
-            "TB_vz99_smokeWhite",
-            "TB_vz99_smokeRed",
-            "TB_vz99_flare"
+    "TB_vz99_HE",
+    "TB_vz99_HE_multi",
+    "TB_vz99_smokeWhite",
+    "TB_vz99_smokeRed",
+    "TB_vz99_flare"
 ];
 
 private _items = [];

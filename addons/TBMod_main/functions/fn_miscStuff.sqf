@@ -231,4 +231,4 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 
 
 // ### block Codeexec
-Ares_Allow_Zeus_To_Execute_Code = getPlayerUID player in (call TB_lvl3);
+Ares_Allow_Zeus_To_Execute_Code = false; //getPlayerUID player in (call TB_lvl3);
