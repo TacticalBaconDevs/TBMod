@@ -98,9 +98,9 @@ TB_StatstrackerStarted = false;
             };
             TB_ReporterCPS2 = 0 spawn {
                 waitUntil {
-                    uisleep 1;
+                    uisleep 30;
                     if (!isNil "TB_ReporterClient") then {
-                        ["TB_CPSReport", [profileName,TB_CPS], TB_ReporterClient] call CBA_fnc_targetEvent;
+                        ["TB_CPSReport", [profileName,round (TB_CPS/30)], TB_ReporterClient] call CBA_fnc_targetEvent;
                     };
                     TB_cps = 0;
                     false
@@ -114,7 +114,7 @@ TB_StatstrackerStarted = false;
         {
             TB_ReporterFPS = 0 spawn {
                 waitUntil {
-                    uisleep 1;
+                    uisleep 30;
                     if (!isNil "TB_ReporterClient") then {
                         ["TB_FPSReport", [profileName,round diag_fps], TB_ReporterClient] call CBA_fnc_targetEvent;
                     };
