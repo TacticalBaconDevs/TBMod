@@ -171,7 +171,7 @@ class CfgWeapons
     };
 
     class rhs_weap_M136;
-    class rhs_weap_M136_CS: rhs_weap_M136 // M136 HEAT (CS)
+    class TB_rhs_weap_M136_CS: rhs_weap_M136 // M136 HEAT (CS)
     {
         ace_overpressure_angle = 20; // 60
         ace_overpressure_range = 0.75; // 10

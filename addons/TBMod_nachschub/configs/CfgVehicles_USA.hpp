@@ -98,7 +98,7 @@ class TB_supply_usa_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
     class TransportWeapons
     {
         MACRO_ADDWEAPON(rhs_weap_M136_hp,1);
-        MACRO_ADDWEAPON(rhs_weap_M136_CS,2);
+        MACRO_ADDWEAPON(TB_rhs_weap_M136_CS,2);
         MACRO_ADDWEAPON(rhs_weap_M136_hedp,2);
         MACRO_ADDWEAPON(rhs_weap_m72a7,2);
     };
