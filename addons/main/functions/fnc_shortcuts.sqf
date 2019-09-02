@@ -78,6 +78,12 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
     [DIK_END, [true, true, false]] // SHIFT + STRG + ENDE
 ] call CBA_fnc_addKeybind;
 
+["TBMod", "TBMod_key_recompile", "Recompiled alle Skripte", {
+    systemChat "Q RECOMPILE";
+    [] call ACE_PREP_RECOMPILE;
+    false
+}, {false}, [DIK_Q, [false, false, false]], false] call CBA_fnc_addKeybind; // Q
+
 // Shortcuts für LVL 3
 if !(getPlayerUID ACE_player in (call TB_lvl3)) exitWith {};
 
