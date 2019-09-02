@@ -268,7 +268,7 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_raketenwerfer = [
-    "rhs_weap_M136_CS",
+    "TB_rhs_weap_M136_CS",
     "rhs_weap_M136_hedp",
     "rhs_weap_M136_hp",
     "rhs_weap_m72a7",
