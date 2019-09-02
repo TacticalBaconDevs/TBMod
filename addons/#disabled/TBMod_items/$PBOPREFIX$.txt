@@ -1,0 +1,7 @@
+﻿///<'TBMod_items.pbo' properties via Mikero's dos tools, dll version 7.16>///
+prefix=TBMod_items
+Mikero=DePbo.dll
+version=00000000
+//Pbo Type is: Arma Addon
+//Sha: '0E60673E87DC3DEF4629618E493B27DAE3B4E056'
+//////</properties>//////

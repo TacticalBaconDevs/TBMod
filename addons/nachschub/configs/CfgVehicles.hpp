@@ -129,10 +129,13 @@ class CfgVehicles
                     ADD_SUPPLY(MoerserMunnitionRauch,TB_supply_all_mortarAmmoSmoke);
                     ADD_SUPPLY(MoerserMunnitionFlare,TB_supply_all_mortarAmmoFlare);
                     ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
+                    ADD_SUPPLY(GMGKit,TB_supply_all_gmg);
+                    ADD_SUPPLY(TOWKit,TB_supply_all_tow);
+                    ADD_SUPPLY(FlaRakKit,TB_supply_all_flarak);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
                     ADD_SUPPLY(SaniBaukiste,TB_supply_all_medicbuilding);
                     ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
-                    ADD_SUPPLY(Minenkiste,TB_supply_all_mines);
+                    ADD_SUPPLY(Sprengstoff,TB_supply_all_mines);
                 };
 
                 class usa
@@ -151,7 +154,7 @@ class CfgVehicles
                     ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
                     ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
                     ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
-                    ADD_SUPPLY(NotfallWaffen,TB_supply_usa_notfall);
+                    ADD_SUPPLY(Notfall,TB_supply_usa_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                     ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
                     ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
@@ -184,7 +187,22 @@ class CfgVehicles
                     ADD_SUPPLY(Granaten,TB_supply_nato_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
                     ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
+                    ADD_SUPPLY(ED-1D Drohne,TB_supply_nato_ED);
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
+                };
+
+                class ldf 
+                {
+                    displayName = "LDF";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(count (entities 'TB_arsenal_themen')) > 0";
+
+                    ADD_SUPPLY(Munition,TB_supply_ldf_ammo);
+                    ADD_SUPPLY(Granaten,TB_supply_ldf_grena);
+                    ADD_SUPPLY(Unterlauf,TB_supply_ldf_unterlauf);
+                    ADD_SUPPLY(WerferMunition,TB_supply_ldf_launcherAmmo);
+                    ADD_SUPPLY(ED-1D Drohne,TB_supply_ldf_ED);
+                    ADD_SUPPLY(NachtKiste,TB_supply_ldf_night);
                 };
 
                 class russ
@@ -225,6 +243,7 @@ class CfgVehicles
 
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
+    WRAPPER(Box_EAF_Uniforms_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOF(pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
@@ -408,6 +427,42 @@ class CfgVehicles
         };
     };
 
+    class TB_supply_all_tow : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("TOWKit");
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
+        class TransportBackpacks
+        {
+            MACRO_ADDBACKPACK(rhs_Tow_Gun_Bag,1);
+            MACRO_ADDBACKPACK(rhs_TOW_Tripod_Bag,1);
+        };
+    };
+
+    class TB_supply_all_gmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("GMGKit");
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
+        class TransportBackpacks
+        {
+            MACRO_ADDBACKPACK(RHS_Mk19_Gun_Bag,1);
+            MACRO_ADDBACKPACK(RHS_Mk19_Tripod_Bag,1);
+        };
+    };
+
+    class TB_supply_all_flarak : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
+    {
+        PUBLIC_NAME("FlaRakKit");
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+
+        class TransportBackpacks
+        {
+            MACRO_ADDBACKPACK(B_AA_01_weapon_F,1);
+            MACRO_ADDBACKPACK(B_HMG_01_support_F,1);
+        };
+    };
+
     class TB_supply_all_misc : WRAPPER_NAME(Box_NATO_Equip_F)
     {
         PUBLIC_NAME("EquipmentKiste");
@@ -418,9 +473,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_EntrenchingTool,5);
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
-
-            MACRO_ADDITEM(ACE_rope36,10);
-
+            
             MACRO_ADDITEM(ACE_wirecutter,2);
             MACRO_ADDITEM(ToolKit,2);
             MACRO_ADDITEM(ACE_MapTools,5);
@@ -478,7 +531,7 @@ class CfgVehicles
 
     class TB_supply_all_mines : WRAPPER_NAME(Box_IND_AmmoOrd_F)
     {
-        PUBLIC_NAME("Minenkiste");
+        PUBLIC_NAME("Sprengstoff");
 
         class TransportItems
         {
@@ -498,5 +551,6 @@ class CfgVehicles
     #include "CfgVehicles_USA.hpp"
     #include "CfgVehicles_BW.hpp"
     #include "CfgVehicles_NATO.hpp"
+    #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_RUSS.hpp"
 };

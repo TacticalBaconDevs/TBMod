@@ -26,7 +26,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     "Maximales Gewicht",
     "TBMod",
-    [100, 50000, 12000, 0]
+    [100, 20000, 12000, 0]
 ] call CBA_Settings_fnc_init;
 
 ADDON = true;

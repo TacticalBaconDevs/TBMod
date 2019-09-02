@@ -63,6 +63,16 @@ class TB_supply_nato_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
+class TB_supply_nato_ED : WRAPPER_NAME(Box_EAF_Uniforms_F)
+{
+    PUBLIC_NAME_CAT("ED-1D Drohne",NATO);
+
+    class TransportBackpacks
+    {
+        MACRO_ADDBACKPACK(B_UGV_02_Demining_backpack_F,2);
+    };
+};
+
 class TB_supply_nato_night : WRAPPER_NAME(Box_NATO_Equip_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",NATO);

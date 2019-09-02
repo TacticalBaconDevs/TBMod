@@ -1,10 +1,11 @@
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 class CfgPatches
 {
-    class TBMod_ai
+    class ADDON
     {
         name = "TBMod AI";
 
@@ -16,7 +17,6 @@ class CfgPatches
 };
 
 // Configs
-#include "script_component.hpp"
 #include "configs\CfgAISkill.hpp"
 #include "configs\CfgDifficulty.hpp"
 #include "configs\CfgEventHandlers.hpp"

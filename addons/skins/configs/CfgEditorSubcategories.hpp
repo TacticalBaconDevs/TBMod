@@ -5,14 +5,19 @@ class CfgEditorSubcategories
         displayName = "Polizei";
     };
 
-    class EdSubcat_TB_skins_USA
+    class EdSubcat_TB_skins_Wald
     {
-        displayName = "USA";
+        displayName = "Wald";
     };
 
-    class EdSubcat_TB_skins_BW
+    class EdSubcat_TB_skins_Wueste
     {
-        displayName = "BW";
+        displayName = "Wüste";
+    };
+
+    class EdSubcat_TB_skins_Fluggeraete
+    {
+        displayName = "Fluggeräte";
     };
     class EdSubcat_TB_skins_PMC
     {

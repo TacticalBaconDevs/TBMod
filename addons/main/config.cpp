@@ -37,7 +37,8 @@ class CfgPatches
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             // Arma3
-            "A3_Data_F_Sams_Loadorder",
+            "A3_Data_F_Enoch_Loadorder",
+            "A3_Data_F_Mod_Loadorder",
 
             // CBA
             "cba_accessory",
@@ -108,7 +109,6 @@ class CfgPatches
             "ace_cargo",
             "ace_chemlights",
             "ace_common",
-            "ace_compat_rhs_usf3",
             "ace_concertina_wire",
             "ace_cookoff",
             "ace_dagr",
@@ -236,7 +236,6 @@ class CfgPatches
 #include "configs\CfgMisc.hpp"
 #include "configs\ACE_detector.hpp"
 #include "configs\CfgSounds.hpp"
-#include "configs\CfgFunctions.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"

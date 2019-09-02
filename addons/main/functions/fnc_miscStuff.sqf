@@ -228,3 +228,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
     params ["_caller", "_target"];
     if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
 }] call CBA_fnc_addEventHandler;
+
+
+// ### block Codeexec
+Ares_Allow_Zeus_To_Execute_Code = false; //getPlayerUID player in (call TB_lvl3);

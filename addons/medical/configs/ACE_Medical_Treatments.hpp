@@ -19,28 +19,31 @@ class ACE_Medical_Actions {
         };
         class BloodIV: fieldDressing {
             treatmentTime =  QUOTE([7] call FUNC(calcTreatmentTime));
-            displayName = "Blutransfusion (2000ml)";
+            displayName = "Bluttransfusion (2800ml)";
         };
         class BloodIV_500: BloodIV {
-            displayName = "Blutransfusion (1000ml)";
+            displayName = "Bluttransfusion (1400ml)";
         };
         class BloodIV_250: BloodIV {
-            displayName = "Blutransfusion (500ml)";
+            displayName = "Bluttransfusion (700ml)";
         };
         class PlasmaIV: BloodIV {
             treatmentTime =  QUOTE([11] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
+            displayName = "Plasmatransfusion (1400ml)";
+        };
+        class PlasmaIV_500: BloodIV {
+            displayName = "Plasmatransfusion (700ml)";
+        };
+        class PlasmaIV_250: BloodIV {
+            displayName = "Plasmatransfusion (350ml)";
         };
         class SalineIV: BloodIV {
             treatmentTime =  QUOTE([17] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
-            displayName = "Kochsalztransfusion (500ml)";
+            displayName = "Kochsalztransfusion (700ml)";
             requiredMedic = 0;
         };
         class SalineIV_500: SalineIV {
-            displayName = "Kochsalztransfusion (250ml)";
-            requiredMedic = 0;
-        };
-        class SalineIV_250: SalineIV {
-            displayName = "Kochsalztransfusion (125ml)";
+            displayName = "Kochsalztransfusion (350ml)";
             requiredMedic = 0;
         };
         class SurgicalKit: fieldDressing {
@@ -685,19 +688,19 @@ class ACE_Medical_Advanced {
             // specific details for the ACE_Morphine treatment action
             class Morphine {
                 painReduce = 10;
-                hrIncreaseLow[] = {-25, -35, 45};
-                hrIncreaseNormal[] = {-25, -45, 40};
-                hrIncreaseHigh[] = {-25, -50, 35};
+                hrIncreaseLow[] = {-10, -20, 55};
+                hrIncreaseNormal[] = {-15, -35, 40};
+                hrIncreaseHigh[] = {-15, -40, 35};
                 timeInSystem = 1200;
-                maxDose = 4;
-                viscosityChange = -25;
+                maxDose = 2;
+                viscosityChange = -15;
             };
             class Epinephrine {
                 hrIncreaseLow[] = {15, 35, 15};
-                hrIncreaseNormal[] = {15, 35, 10};
-                hrIncreaseHigh[] = {15, 30, 5};
-                timeInSystem = 150;
-                maxDose = 6;
+                hrIncreaseNormal[] = {15, 40, 10};
+                hrIncreaseHigh[] = {15, 35, 5};
+                timeInSystem = 300;
+                maxDose = 4;
             };
             class Atropine { // Ketamin
                 painReduce = 1.2;
@@ -705,16 +708,16 @@ class ACE_Medical_Advanced {
                 hrIncreaseNormal[] = {-1, -3, 10};
                 hrIncreaseHigh[] = {-3, -5, 5};
                 timeInSystem = 300;
-                maxDose = 6;
+                maxDose = 4;
                 viscosityChange = -3;
             };
             class Adenosine {
                 hrIncreaseLow[] = {5, 10, 20};
                 hrIncreaseNormal[] = {8, 12, 15};
                 hrIncreaseHigh[] = {-15, -25, 10};
-                timeInSystem = 90;
-                maxDose = 3;
-                viscosityChange = 6;
+                timeInSystem = 300;
+                maxDose = 4;
+                viscosityChange = 8;
             };
         };
 
@@ -722,33 +725,30 @@ class ACE_Medical_Advanced {
             volume = 1000; // volume is in millileters
 
             class BloodIV {
-                volume = 2000; // 1000
+                volume = 2800; // 1000
             };
             class BloodIV_500: BloodIV {
-                volume = 1000; // 500
+                volume = 1400; // 500
             };
             class BloodIV_250: BloodIV {
-                volume = 500; // 250
+                volume = 700; // 250
             };
 
             class PlasmaIV: BloodIV {
-                volume = 1000;
+                volume = 1400;
             };
             class PlasmaIV_500: PlasmaIV {
-                volume = 500;
+                volume = 700;
             };
             class PlasmaIV_250: PlasmaIV {
-                volume = 250;
+                volume = 350;
             };
 
             class SalineIV: BloodIV {
-                volume = 500;
+                volume = 700;
             };
             class SalineIV_500: SalineIV {
-                volume = 250;
-            };
-            class SalineIV_250: SalineIV {
-                volume = 125;
+                volume = 350;
             };
         };
     };

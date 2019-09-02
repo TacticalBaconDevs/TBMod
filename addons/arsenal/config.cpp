@@ -5,7 +5,7 @@
 */
 class CfgPatches
 {
-    class TBMod_arsenal
+    class ADDON
     {
         name = "TBMod Arsenal";
 

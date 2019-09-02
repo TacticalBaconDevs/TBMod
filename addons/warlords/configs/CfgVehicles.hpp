@@ -245,7 +245,7 @@ class CfgVehicles
 
         class TransportWeapons
         {
-            MACRO_ADDWEAPON(rhs_weap_M136,4);
+            MACRO_ADDWEAPON(TB_rhs_weap_M136_CS,4);
             MACRO_ADDWEAPON(rhs_weap_m72a7,4);
         };
     };

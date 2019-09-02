@@ -31,6 +31,7 @@ class CfgVehicles
     class I_APC_Wheeled_03_cannon_F;
     class I_Heli_Transport_02_F;
     class I_MRAP_03_hmg_F;
+    class B_APC_Wheeled_01_cannon_F;
 
     class I_G_Offroad_01_F;
     class SUV_01_base_F;
@@ -48,7 +49,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_Sek_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_sek.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_sek.paa"};
     };
 
     class TB_Uniform_Kommissar: B_Soldier_F
@@ -59,7 +60,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_kommissar_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_kommissar.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_kommissar.paa"};
     };
 
     class TB_Uniform_rekrut: B_RangeMaster_F
@@ -70,7 +71,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_rekrut_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_rekrut.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_rekrut.paa"};
     };
 
     class TB_Uniform_presi: O_officer_F
@@ -81,7 +82,7 @@ class CfgVehicles
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_presi_U";
         hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_presi.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\uniforms\polizei_presi.paa"};
     };
 
     ///////////////////////Polizei Fahrzeuge//////////////////////////
@@ -92,7 +93,7 @@ class CfgVehicles
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo1"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_sek_light.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_light.paa"};
     };
 
     class TB_Vehicles_sek_hellcat: I_Heli_light_03_unarmed_F
@@ -101,7 +102,7 @@ class CfgVehicles
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_sek_hellcat.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_sek_hellcat.paa"};
     };
 
     class TB_Vehicles_polizei_hellcat: I_Heli_light_03_unarmed_F
@@ -110,7 +111,7 @@ class CfgVehicles
         author = "nimda";
         addCategory(Polizei);
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hellcat.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_polizei_hellcat.paa"};
     };
 
     class TB_Vehicles_polizei_hunter: B_MRAP_01_F
@@ -120,166 +121,192 @@ class CfgVehicles
         addCategory(Polizei);
         hiddenSelections[] = {"Camo1", "Camo2", "riotpolice"};
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hunter_1.paa),
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_polizei_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_polizei_hunter_1.paa",
             ""
         };
     };
 
-    ///////////////////////USA Fahrzeuge//////////////////////////
+    ///////////////////////Fahrzeuge Camouflage Wüste//////////////////////////
 
-    class TB_Vehicles_USA_hunter: B_MRAP_01_F
+    class TB_Vehicles_hunter: B_MRAP_01_F
     {
         displayName = "M-ATV Sand";
         author = "Eron";
-        addCategory(USA);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
             ""
         };
     };
 
-    class TB_Vehicles_USA_hunter_smg: B_MRAP_01_hmg_F
+    class TB_Vehicles_hunter_smg: B_MRAP_01_hmg_F
     {
         displayName = "M-ATV Sand (smg)";
         author = "Eron";
-        addCategory(USA);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_smg_2.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_hunter_smg_2.paa"
         };
     };
 
-    class TB_Vehicles_USA_Merkava: B_MBT_01_TUSK_F
+    class TB_Vehicles_Merkava: B_MBT_01_TUSK_F
     {
         displayName = "Merkava Mk4 Sand";
         author = "Eron";
-        addCategory(USA);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa"
         };
     };
 
-    class TB_Vehicles_USA_Pandur: I_APC_Wheeled_03_cannon_F
+    class TB_Vehicles_Pandur: I_APC_Wheeled_03_cannon_F
     {
-        displayName = "Pandur Sand";
+        displayName = "Pandur IFV";
         author = "Eron";
-        addCategory(USA);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa),
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa",
             "",
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa"
         };
     };
 
-    class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_dynamicLoadout_F // I_Plane_Fighter_03_dynamicLoadout_F
+    class TB_Vehicles_Wueste_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
     {
-        displayName = "L-159 Albatros";
+        displayName = "Badger IFV";
         author = "Eron";
-        addCategory(USA);
+        addCategory(Wueste);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_L-159_01.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_L-159_02.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa"
         };
     };
 
-    ///////////////////////BW Fahrzeuge//////////////////////////
+    ///////////////////////Fahrzeuge Camouflage Wald//////////////////////////
 
     class TB_Vehicles_BW_Pandur: I_APC_Wheeled_03_cannon_F
     {
-        displayName = "Pandur Wald";
+        displayName = "Pandur IFV";
         author = "Eron";
-        addCategory(BW);
+        addCategory(Wald);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa",
             "",
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
-        };
-    };
-
-    class TB_Vehicles_BW_Merlin: I_Heli_Transport_02_F
-    {
-        displayName = "Merlin BW";
-        author = "Eron";
-        addCategory(BW);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_3.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa"
         };
     };
 
     class TB_Vehicles_BW_hunter: B_MRAP_01_F
     {
-        displayName = "M-ATV Wald";
+        displayName = "M-ATV";
         author = "Eron";
-        addCategory(BW);
+        addCategory(Wald);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_1.paa",
             ""
         };
     };
 
     class TB_Vehicles_BW_hunter_smg: B_MRAP_01_hmg_F
     {
-        displayName = "M-ATV Wald (smg)";
+        displayName = "M-ATV (smg)";
         author = "Eron";
-        addCategory(BW);
+        addCategory(Wald);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_smg_2.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_hunter_smg_2.paa"
         };
     };
 
-    class TB_Vehicles_BW_Strider: I_MRAP_03_F
+    class TB_Vehicles_Wald_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
     {
-        displayName = "Strider Wald";
+        displayName = "Badger IFV";
         author = "Eron";
-        addCategory(BW);
+        addCategory(Wald);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Strider_0.paa),
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa"
+        };
+    };
+
+        class TB_Vehicles_Strider: I_MRAP_03_F
+    {
+        displayName = "Strider";
+        author = "Eron";
+        addCategory(Wald);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Strider_0.paa",
             ""
         };
     };
 
-    class TB_Vehicles_BW_Strider_smg: I_MRAP_03_hmg_F
+    class TB_Vehicles_Strider_smg: I_MRAP_03_hmg_F
     {
-        displayName = "Strider Wald (smg)";
+        displayName = "Strider (smg)";
         author = "Eron";
-        addCategory(BW);
+        addCategory(Wald);
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Strider_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Strider_1.paa)
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Strider_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_Strider_1.paa"
         };
     };
 
+    ///////////////////////Fluggeräte//////////////////////////
+
     class TB_Vehicles_BW_Hellcat: I_Heli_light_03_unarmed_F
     {
-        displayName = "Hellcat (unbewaffnet)";
+        displayName = "Hellcat BW (unbewaffnet)";
         author = "Eron";
-        addCategory(BW);
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
     };
 
     class TB_Vehicles_BW_Hellcat_2: I_Heli_light_03_dynamicLoadout_F
     {
-        displayName = "Hellcat (bewaffnet)";
+        displayName = "Hellcat BW (bewaffnet)";
         author = "Eron";
-        addCategory(BW);
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Hellcat.paa"};
+    };
+
+    class TB_Vehicles_BW_Merlin: I_Heli_Transport_02_F
+    {
+        displayName = "Merlin BW";
+        author = "Eron";
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_0.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_2.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_BW_Merlin_3.paa"
+        };
+    };
+
+        class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_dynamicLoadout_F // I_Plane_Fighter_03_dynamicLoadout_F
+    {
+        displayName = "L-159 Albatros";
+        author = "Eron";
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_1.paa",
+            "\TBMod_skins\pictures\vehicles\TB_Vehicles_L-159_2.paa"
+        };
     };
 
     ///////////////////////PMC Fahrzeuge//////////////////////////
@@ -309,7 +336,7 @@ class CfgVehicles
         displayName = "Pickup";
         author = "Eron";
         addCategory(PMC);
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa), QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa"};
 
         class EventHandlers: EventHandlers
         {
@@ -322,7 +349,7 @@ class CfgVehicles
         displayName = "SUV";
         author = "Eron";
         addCategory(PMC);
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Suv_0.paa)};
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Suv_0.paa"};
 
         class EventHandlers: EventHandlers
         {
@@ -337,16 +364,11 @@ class CfgVehicles
         displayName = "Jeep";
         author = "Eron";
         addCategory(PMC);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)
-        };
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
 
         class EventHandlers: EventHandlers
         {
-            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa)']; (_this select 0) setObjectTexture [1,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa)']; (_this select 0) setObjectTexture [2,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)']; (_this select 0) setObjectTexture [3,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)'];";
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
         };
     };
 
@@ -355,16 +377,11 @@ class CfgVehicles
         displayName = "Jeep LMG";
         author = "Eron";
         addCategory(PMC);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)
-        };
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
 
         class EventHandlers: EventHandlers
         {
-            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa)']; (_this select 0) setObjectTexture [1,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa)']; (_this select 0) setObjectTexture [2,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)']; (_this select 0) setObjectTexture [3,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)'];";
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
         };
     };
 
@@ -373,16 +390,11 @@ class CfgVehicles
         displayName = "Jeep AT";
         author = "Eron";
         addCategory(PMC);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)
-        };
+        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa", "\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa"};
 
         class EventHandlers: EventHandlers
         {
-            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa)']; (_this select 0) setObjectTexture [1,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa)']; (_this select 0) setObjectTexture [2,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)']; (_this select 0) setObjectTexture [3,'PATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa)'];";
+            init = "(_this select 0) setVariable ['BIS_enableRandomization', false]; (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];";
         };
     };
 };
