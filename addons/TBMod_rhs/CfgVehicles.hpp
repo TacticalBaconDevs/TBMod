@@ -24,7 +24,7 @@ class CfgVehicles
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
         };
     };
-    
+
     // Skin
     class RHS_MELB_MH6M;
     class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
