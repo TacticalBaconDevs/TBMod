@@ -395,5 +395,4 @@ class CfgAmmo
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
     };
-
 };

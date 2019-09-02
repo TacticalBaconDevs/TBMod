@@ -153,7 +153,7 @@ class CfgWeapons
     class launch_O_Titan_F;
     class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
     {
-        aimTransitionSpeed = 0.18; // 0.5
+        aimTransitionSpeed = 0.16; // 0.5
         mass = 176.37; // 152.46
     };
 
@@ -170,12 +170,14 @@ class CfgWeapons
         mass = 137.75; // 38.4
     };
 
-    class rhs_weap_M136: Launcher_Base_F // M136 HEAT (CS)
+    class rhs_weap_M136;
+    class rhs_weap_M136_CS: rhs_weap_M136 // M136 HEAT (CS)
     {
-        ace_overpressure_angle = 5; // 60
-        ace_overpressure_damage = 0.35; // 0.7
-        ace_overpressure_range = 0.25; // 10
+        ace_overpressure_angle = 20; // 60
+        ace_overpressure_range = 0.75; // 10
         aimTransitionSpeed = 0.36; // 0.75
+        descriptionShort = "Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot Anti-Tank Confined Spaces"; // ""Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot Anti-Tank";"
+        displayName = "M136 CS (HEAT)"; // "M136 (HEAT)"
         mass = 143.26; // 30.3
     };
 
@@ -188,11 +190,13 @@ class CfgWeapons
     class rhs_weap_M136_hp: rhs_weap_M136 // M136 HP
     {
         aimTransitionSpeed = 0.36; // 0.75
-        mass = 143.26; // 30.3
+        mass = 148.77; // 30.3
     };
 
     class rhs_weap_m72a7: rhs_weap_M136 // M72A7
     {
+        ace_overpressure_angle = 40; // 60
+        ace_overpressure_range = 7.5; // 10
         descriptionShort = "Rocket launcher<br/>Caliber: 66mm<br/>Type: Single-shot High-explosive"; // "Rocket launcher<br/>Caliber: 66mm<br/>Type: Single-shot Anti-Tank"
         displayName = "M72E10 (HE)"; // "M72A7"
         mass = 55.1; // 15.8
@@ -229,7 +233,7 @@ class CfgWeapons
     class rhs_weap_m240G: rhs_weap_m240_base // M240G
     {
         ace_overheating_mrbs = 750; // 3000
-        aimTransitionSpeed = 0.18; // 0.5
+        aimTransitionSpeed = 0.16; // 0.5
     };
 
     class rhs_weap_m249_pip_S;
@@ -237,5 +241,11 @@ class CfgWeapons
     {
         ace_overheating_mrbs = 750; // 3000
         aimTransitionSpeed = 0.36; // 0.5
+    };
+
+    class rhs_weap_M107_Base_F;
+    class rhs_weap_M107: rhs_weap_M107_Base_F // M107
+    {
+        aimTransitionSpeed = 0.26; // 0.5
     };
 };
