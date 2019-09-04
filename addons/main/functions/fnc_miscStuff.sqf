@@ -232,3 +232,17 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 
 // ### block Codeexec
 Ares_Allow_Zeus_To_Execute_Code = false; //getPlayerUID player in (call TB_lvl3);
+
+// ### dance for me
+[
+    player,
+    1,
+    ["ACE_SelfActions"],
+    [
+        "Time2Dance",
+        "Time2Dance",
+        "",
+        {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable ["TB_danceTime", false]} != -1},
+        {[player, [selectRandom ["Acts_Dance_01", "Acts_Dance_02"], ""] select (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")] remoteExecCall ["switchMove"]}
+    ] call ace_interact_menu_fnc_createAction
+] call ace_interact_menu_fnc_addActionToObject;

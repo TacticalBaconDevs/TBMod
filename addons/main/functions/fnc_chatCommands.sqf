@@ -41,7 +41,7 @@
     if (_weapon == "" || _magazine == "") exitwith {systemChat "Habe eine Waffe mit Magazin ausgerüstet."};
     private _ammo = getText (configfile >> "CfgMagazines" >> _magazine >> "ammo");
     private _ammoCFG = configFile >> "CfgAmmo" >> _ammo;
-    
+
     systemChat "Sniper Informationen MET";
     systemChat format ["Map: %1", worldName];
     systemChat format ["Map Latitude: %1°", ace_common_maplatitude];
@@ -54,7 +54,7 @@
     systemChat format ["Bullet C1 Coef: %1", getArray (_ammoCFG >> "ACE_ballisticCoefficients") # 0];
     private _muzzleVelocity = getArray (_ammoCFG >> "ACE_muzzleVelocities") # 0;
     systemChat format ["Bullet Muzzle Velocity: %1m/s", _muzzleVelocity];
-    
+
     private _tempLookup = [-15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35];
     private _shifts = getArray (_ammoCFG >> "ACE_ammoTempMuzzleVelocityShifts");
     systemChat "Muzzle velocity table:";
@@ -151,6 +151,21 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
     ["TB_informAdminsAndZeus", ["%1 hat den Spectator gestartet!", profileName]] call CBA_fnc_globalEvent;
     //systemChat format ["Spectator ist nun %1aktiviert!", ["de" , ""] select TB_spectator];
+}, "all"] call CBA_fnc_registerChatCommand;
+
+["dancetime", {
+    private _prevStatus = player getVariable ["TB_danceTime", false];
+    player setVariable ["TB_danceTime", !_prevStatus, true];
+
+    if (!_prevStatus) then
+    {
+        [] spawn {
+            waitUntil {uiSleep 5; systemChat "Du hast DanceTime noch an!"; !(player getVariable ["TB_danceTime", false])};
+        };
+    };
+
+    systemChat format ["Du hast die DanceTime %1aktiviert!", ["de", ""] select !_prevStatus];
+    ["TB_informAdminsAndZeus", ["%1 hat die DanceTime %2aktiviert!", profileName, ["de", ""] select !_prevStatus]] call CBA_fnc_globalEvent;
 }, "all"] call CBA_fnc_registerChatCommand;
 
 if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
