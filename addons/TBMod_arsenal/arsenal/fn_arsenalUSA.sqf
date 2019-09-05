@@ -268,7 +268,7 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_raketenwerfer = [
-    "rhs_weap_M136",
+    "TB_rhs_weap_M136_CS",
     "rhs_weap_M136_hedp",
     "rhs_weap_M136_hp",
     "rhs_weap_m72a7",
@@ -504,9 +504,11 @@ private _dmr_munition = [
     "rhsusf_10Rnd_762x51_m118_special_Mag",
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
-    "rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
-    "rhsusf_20Rnd_762x51_SR25_m62_Mag",
-    "rhsusf_20Rnd_762x51_SR25_m993_Mag"
+    "rhs_mag_20Rnd_SCAR_762x51_m118_special",
+    "rhs_mag_20Rnd_SCAR_762x51_m61_ap",
+    "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+    "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
+    "rhs_mag_20Rnd_SCAR_762x51_mk316_special"
 
     // verfügbar aber nicht in Benutzung m40A5
     //rhsusf_5Rnd_762x51_AICS_m118_special_Mag
@@ -514,20 +516,25 @@ private _dmr_munition = [
     //rhsusf_5Rnd_762x51_AICS_m993_Mag
 ];
 
+private _rifle_munition = [
+    // 7.62
+    "rhsusf_20Rnd_762x51_SR25_m62_Mag",
+    "rhsusf_20Rnd_762x51_SR25_m993_Mag",
+    "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag"
+];
+
 private _mg_munition = [
-    // 7.72
-    "rhsusf_50Rnd_762x51_m62_tracer",
-    "rhsusf_50Rnd_762x51_m61_ap",
-    "rhsusf_50Rnd_762x51_m80a1epr",
+    // 7.62
     "rhsusf_100Rnd_762x51_m62_tracer",
     "rhsusf_100Rnd_762x51_m61_ap",
-    "rhsusf_100Rnd_762x51_m80a1epr",
 
     // 5.56
-    "rhsusf_100Rnd_556x45_soft_pouch",
-    "rhsusf_100Rnd_556x45_mixed_soft_pouch",
-    "rhsusf_200Rnd_556x45_box",
-    "rhsusf_200rnd_556x45_mixed_box"
+    "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote",
+    "rhsusf_200Rnd_556x45_M855_soft_pouch",
+    "rhsusf_200Rnd_556x45_M855_soft_pouch_ucp",
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote",
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp",
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"
 ];
 
 private _pilot_munition = [
@@ -541,11 +548,11 @@ private _pilot_munition = [
 private _sniper_munition = [
     "rhsusf_mag_10Rnd_STD_50BMG_mk211",
     "rhsusf_mag_10Rnd_STD_50BMG_M33",
-    "ACE_20Rnd_762x51_Mag_SD",
-    "ACE_20Rnd_762x51_M993_AP_Mag",
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
-    "rhsusf_mag_40Rnd_46x30_AP"
+    "rhsusf_mag_40Rnd_46x30_AP",
+    "rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS",
+    "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"
 ];
 
 private _aaat_munition = [
@@ -589,11 +596,11 @@ private _lrFunken = [
 ];
 
 private _moerser_munition = [
-            "TB_vz99_HE",
-            "TB_vz99_HE_multi",
-            "TB_vz99_smokeWhite",
-            "TB_vz99_smokeRed",
-            "TB_vz99_flare"
+    "TB_vz99_HE",
+    "TB_vz99_HE_multi",
+    "TB_vz99_smokeWhite",
+    "TB_vz99_smokeRed",
+    "TB_vz99_flare"
 ];
 
 private _items = [];
@@ -606,7 +613,7 @@ private _items = [];
 // _allgemein_gewehre                - 5.56 Waffen und Mags
 // _allgemein_magazine               - 5.56 Mags einzeln
 // _allgemein_visiere                - normalen Visiere
-// _allgemein_befestigungsschiene    - laser/Lampe usw
+// _allgemein_befestigungsschiene    - Laser/Lampe usw
 // _allgemein_geschuetzzubehoer      - Schalldämpfer usw
 // _allgemein_zweibein               - Zweibeine
 // _allgemein_raketenwerfer          - einmal Raketenwerfer
@@ -614,13 +621,13 @@ private _items = [];
 // _allgemein_uniformen              - Uniformen
 // _allgemein_westen                 - Westen
 // _allgemein_kopfbedeckung          - Helme
-// _grenadier_gewehr                 - Alle m320 und M203 Gewehre
+// _grenadier_gewehr                 - Alle M320 und M203 Gewehre
 // _grenadier_munition               - Grenadier Unterlauf
 // _dmr_munition                     - DMR Munition
 // _mg_munition                      - MG Munition
 // _pilot_munition                   - Piloten MP7 Munition
-// _sniper_munition                  - Sniper munition
-// _aaat_munition                    - AtiTank Munition
+// _sniper_munition                  - Sniper Munition
+// _aaat_munition                    - AntiTank Munition
 // _gepaeck_mittel                   - Seesack
 // _gepaeck_gross                    - Carryall
 // _lrFunken                         - LR Funken
@@ -792,8 +799,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _mg_munition +
         [
             // Gewehre
-            "rhs_weap_m240B_CAP",
-            "rhs_weap_m249_pip_L",
+            "rhs_weap_m240G",
+            "rhs_weap_m249_light_S",
             //"rhs_weap_m249_pip_L_para",
             //"rhs_weap_m249_pip_L_vfg",
             //"rhs_weap_m249_pip_S",
@@ -809,7 +816,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_mg",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_machinegunner",
-            "rhsusf_spcs_ucp_machinegunner"
+            "rhsusf_spcs_ucp_machinegunner",
+
+            // Zubehör
+            "ACE_RangeCard"
         ]
     };
 
@@ -827,7 +837,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
-        _grenadier_munition    +
+        _grenadier_munition +
+        _rifle_munition +
         _dmr_munition +
         _pilot_munition +
         _sniper_munition    +
@@ -934,9 +945,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         _moerser_munition +
         _dmr_munition +
+        _rifle_munition +
         [
             // Gewehre
             "rhs_weap_m14ebrri",
+            "rhs_weap_mk17_CQC",
+            "rhs_weap_mk17_LB",
+            "rhs_weap_mk17_STD",
+            "rhs_weap_sr25",
+            "rhs_weap_sr25_d",
+            "rhs_weap_sr25_ec_d",
+            "rhs_weap_sr25_ec_wd",
+            "rhs_weap_sr25_wd",
 
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
@@ -953,7 +973,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
 
             // Waffen
-            "TB_vz99_carryWeapon"
+            "TB_vz99_carryWeapon",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_sr25s",
+            "rhsusf_acc_sr25s_d",
+            "rhsusf_acc_sr25s_wd",
+            "muzzle_snds_b",
+            "muzzle_snds_b_snd_f",
+            "rhsusf_acc_aac_762sdn6_silencer"
         ]
     };
 
@@ -969,18 +997,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _lrFunken +
         _sniper_munition +
+        _dmr_munition +
         [
             // Gewehre
             "rhs_weap_M107",
             "rhs_weap_M107_d",
             "rhs_weap_M107_w",
-            "rhs_weap_sr25",
-            "rhs_weap_sr25_d",
-            "rhs_weap_sr25_ec_d",
-            "rhs_weap_sr25_ec_wd",
-            "rhs_weap_sr25_wd",
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
+            "rhs_weap_mk17_CQC",
+            "rhs_weap_mk17_LB",
+            "rhs_weap_mk17_STD",
             // ### Visiere
             "rhsusf_acc_premier_anpvs27",
             "rhsusf_acc_premier",
@@ -995,9 +1022,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "bipod_01_f_blk",
             "bipod_01_f_snd",
             "rhsusf_acc_rotex_mp7",
-            "rhsusf_acc_sr25s",
-            "rhsusf_acc_sr25s_d",
-            "rhsusf_acc_sr25s_wd",
 
             // Uniforms
             "U_B_FullGhillie_lsh",

@@ -213,25 +213,27 @@ class CfgMagazines
         mass = 28; // 41.14
     };
 
-    class 20Rnd_762x51_Mag;
-    class ACE_20Rnd_762x51_M993_AP_Mag : 20Rnd_762x51_Mag // 7.62mm Long-Range Sniper
+    class rhs_mag_20Rnd_SCAR_762x51_mk316_special;
+    class rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS : rhs_mag_20Rnd_SCAR_762x51_mk316_special // 7.62mm Long-Range Sniper
     {
+        ammo = "rhs_ammo_762x51_M118_Special_Ball_LRS";
         author = "TBMod";
         descriptionShort = "7.62mm LRS"; // "Caliber: 7.62x51mm NATO (M993 AP)<br />Rounds: 20"
         displayName = "7.62mm Long-Range Sniper Magazine"; // "7.62mm 20Rnd Mag (M993 AP)"
         displayNameShort = "7.62mm LRS"; // "7.62mm AP"
 
-        mass = 14; // 12
+        mass = 14; // 16.24
     };
 
-    class ACE_20Rnd_762x51_Mag_SD : 20Rnd_762x51_Mag // 7.62mm Subsonic Low Visible
+    class rhs_mag_20Rnd_SCAR_762x51_m80_ball;
+    class rhs_mag_20Rnd_SCAR_762x51_m80a1_epr : rhs_mag_20Rnd_SCAR_762x51_m80_ball // 7.62mm Subsonic Low Visible
     {
         author = "TBMod";
         descriptionShort = "7.62mm SDLV"; // "Caliber: 7.62x51mm SD<br />Rounds: 20<br />Used in: Mk18 ABR"
         displayName = "7.62mm Subsonic Low Visible Magazine"; // "7.62mm 20Rnd SD Mag"
         displayNameShort = "7.62mm SDLV"; // "7.62mm SD"
 
-        mass = 14; // 12
+        mass = 14; // 16.24
     };
 
     class VehicleMagazine;
@@ -333,32 +335,80 @@ class CfgMagazines
 
     class rhs_mag_smaw_HEAA : CA_LauncherMagazine // Mk.6 HEAA SMAW
     {
-        mass = 93.67; // 136.4
+        mass = 88.16; // 136.4
     };
 
     class rhs_mag_smaw_HEDP : CA_LauncherMagazine // Mk.3 HEDP SMAW
     {
-        mass = 55.1; // 129.8
+        mass = 49.59; // 129.8
     };
 
     class rhs_mag_maaws_HEAT : CA_LauncherMagazine // FFV751 HEAT MAAWS
     {
-        mass = 132.25; // 88.2
+        mass = 126.73; // 88.2
     };
 
     class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
     {
-        mass = 93.67; // 72.77
+        mass = 88.16; // 72.77
     };
 
     class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
     {
-        mass = 55.1; // 68.36
+        mass = 44.08; // 68.36
     };
 
     class Titan_AA;
     class rhs_fim92_mag : Titan_AA // FIM-92F Stinger
     {
-        mass = 66.12; // 120
+        mass = 60.61; // 120
     };
+
+    class rhs_m136_mag : CA_LauncherMagazine // M136 HEAT (CS)
+    {
+        descriptionshort = "Type: HEAT Confined Spaces"; // "Type: High Explosive Anti Tank"
+        displayName = "M136 HEAT (CS)"; // "M136 HEAT"
+    };
+
+    class rhs_m136_hedp_mag;
+    class rhs_m72a7_mag : rhs_m136_hedp_mag // M72A7
+    {
+        descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
+        displayName = "M72E10 (HE)"; // "M72 HEDP"
+    };
+
+    class 1Rnd_HE_Grenade_shell;
+    class ACE_HuntIR_M203 : 1Rnd_HE_Grenade_shell // HuntIR
+    {
+        initSpeed = 160; // 80
+    };
+
+    class rhsusf_100Rnd_556x45_M855_soft_pouch;
+    class rhsusf_200Rnd_556x45_M855_soft_pouch : rhsusf_100Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855
+    {
+        displayname = "200rnd 5.56x45mm"; // "200rnd M249 Box M855"
+        displaynameshort = "200rnd M249"; // "M855"
+    };
+
+    class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch : rhsusf_200Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855 Tracer
+    {
+        ammo = "rhs_ammo_556x45_M855_Ball_Red"; // "rhs_ammo_556x45_M855A1_Ball_Red"
+        displayname = "200rnd 5.56x45mm (Tracer)"; // "200rnd M249 Box M855 (Mixed)"
+        displaynameshort = "200rnd (Tracer)"; // "M855 (Mixed)"
+    };
+
+    class rhsusf_50Rnd_762x51_m61_ap;
+    class rhsusf_100Rnd_762x51_m61_ap : rhsusf_50Rnd_762x51_m61_ap // 100rnd M240 Box M61 AP
+    {
+        tracersEvery = 0; // 5
+    };
+
+    class rhsusf_50Rnd_762x51_m62_tracer;
+    class rhsusf_100Rnd_762x51_m62_tracer : rhsusf_50Rnd_762x51_m62_tracer // 100rnd M240 Box M62 AP Tracer
+    {
+        displayname = "100rnd M62 AP (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
+        displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
+        tracersEvery = 1; // 5
+    };
+
 };
