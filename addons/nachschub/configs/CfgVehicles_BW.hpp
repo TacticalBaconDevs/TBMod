@@ -12,7 +12,7 @@ class TB_supply_bw_ammo : WRAPPER_NAME(Box_IND_Wps_F)
         MACRO_ADDMAGAZINE(BWA3_10Rnd_762x51_G28,5);        //G27 Munition
         MACRO_ADDMAGAZINE(BWA3_20Rnd_762x51_G28,5);
         MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36_Tracer,15);
-        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36,15);    
+        MACRO_ADDMAGAZINE(BWA3_30Rnd_556x45_G36,15);
     };
 };
 
@@ -68,7 +68,7 @@ class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
 class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Werfer",BW);
-    hiddenSelectionsTextures[] = {QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
+    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
 
     class TransportWeapons
     {
@@ -88,7 +88,7 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("WerferMunition",BW);
-    hiddenSelectionsTextures[] = {QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
+    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
 
     class TransportMagazines
     {

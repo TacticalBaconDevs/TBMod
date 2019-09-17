@@ -27,10 +27,10 @@ class CfgWeapons
         displayName = "SPC Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_spc_01.paa)
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -42,10 +42,10 @@ class CfgWeapons
         displayName = "UCP Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_ucp_01.paa)
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -57,10 +57,10 @@ class CfgWeapons
         displayName = "MBAV Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa)
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -72,10 +72,10 @@ class CfgWeapons
         displayName = "MBAV Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOF(pictures\vests\TB_black_vest_mbav_01.paa)
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -87,10 +87,10 @@ class CfgWeapons
         displayName = "S.W.A.T.";
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa",
-            "\TBMod_skins\pictures\vests\TB_black_vest_mbav_SWAT_01.paa"
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_SWAT_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_SWAT_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_SWAT_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_SWAT_01.paa)
         };
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
@@ -138,7 +138,7 @@ class CfgWeapons
     {
         displayName = "Shemag Black";
         author = "Eron";
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_Shemagh_black.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_Shemagh_black.paa)};
     };
 
     // Skin schwarzer Helm S.W.A.T.
@@ -147,7 +147,7 @@ class CfgWeapons
     {
         displayName = "S.W.A.T.";
         author = "Eron";
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\headgear\TB_black_helmet_SWAT_01.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_black_helmet_SWAT_01.paa)};
     };
 
     class launch_O_Titan_F;

@@ -32,9 +32,7 @@ class CfgVehicles
         displayName = "MH-6 S.W.A.T.";
         author = "Eron";
         addCategory(Fluggeraete);
-        hiddenSelectionsTextures[] = {
-            "\TBMod_skins\pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa"
-        };
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa)};
     };
 
     // Skin FlaRak Kit
@@ -42,7 +40,10 @@ class CfgVehicles
     class B_static_AA_F: AA_01_base_F
     {
         author = "Eron";
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\TB_stationäre_Luftabwehr.paa","\TBMod_skins\pictures\statics\TB_stationäre_Luftabwehr.paa"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa),
+            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa)
+        };
     };
 
     // accuracy: 3.5 = sniper, 1.5 = soldier, 0.9 = truck, 0.5 = small vehicle 0.2 = building

@@ -35,7 +35,7 @@ class CfgVehicles
         scope = 2;
         scopeCurator = 2;
 
-        hiddenSelectionsTextures[] = {PATHTOF(pics\rufnamen.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(pics\rufnamen.paa)};
 
         class ACE_Actions
         {
@@ -132,7 +132,7 @@ class CfgVehicles
         scope = 2;
         scopeCurator = 2;
 
-        hiddenSelectionsTextures[] = {PATHTOF(pics\teleport.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(pics\teleport.paa)};
 
         class ACE_Actions
         {

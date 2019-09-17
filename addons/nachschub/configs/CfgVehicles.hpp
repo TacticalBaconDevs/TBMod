@@ -96,7 +96,7 @@ class CfgVehicles
         editorSubcategory = "EdSubcat_TB_Spezial";
 
         // hiddenSelections[] = {"Camo_Signs","Camo"};
-        hiddenSelectionsTextures[] = {"", QPATHTOF(pictures\statics\TB_vorratslager.paa)};
+        hiddenSelectionsTextures[] = {"", QPATHTOEF(skins,pictures\statics\TB_vorratslager.paa)};
 
         class TransportItems {};
         class TransportMagazines {};
@@ -191,7 +191,7 @@ class CfgVehicles
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
                 };
 
-                class ldf 
+                class ldf
                 {
                     displayName = "LDF";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
@@ -418,7 +418,7 @@ class CfgVehicles
     class TB_supply_all_hmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("HMGKit");
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\statics\uniforms_box_blufor_co_0.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\uniforms_box_blufor_co_0.paa)};
 
         class TransportBackpacks
         {
@@ -430,7 +430,7 @@ class CfgVehicles
     class TB_supply_all_tow : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("TOWKit");
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\uniforms_box_blufor_co_0.paa)};
 
         class TransportBackpacks
         {
@@ -442,7 +442,7 @@ class CfgVehicles
     class TB_supply_all_gmg : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("GMGKit");
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\uniforms_box_blufor_co_0.paa)};
 
         class TransportBackpacks
         {
@@ -454,7 +454,7 @@ class CfgVehicles
     class TB_supply_all_flarak : WRAPPER_NAME(Land_PlasticCase_01_medium_F)
     {
         PUBLIC_NAME("FlaRakKit");
-        hiddenSelectionsTextures[] = {"\TBMod_skins\pictures\statics\uniforms_box_blufor_co_0.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\uniforms_box_blufor_co_0.paa)};
 
         class TransportBackpacks
         {
@@ -473,7 +473,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_EntrenchingTool,5);
             MACRO_ADDITEM(ACE_HuntIR_monitor,2);
             MACRO_ADDITEM(ACE_SpraypaintGreen,5);
-            
+
             MACRO_ADDITEM(ACE_wirecutter,2);
             MACRO_ADDITEM(ToolKit,2);
             MACRO_ADDITEM(ACE_MapTools,5);

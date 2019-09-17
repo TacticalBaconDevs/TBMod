@@ -17,14 +17,15 @@ PREP(whitelist);
 PREP(deleteAny);
 
 // Arsenale
-PREP_OTHERFOLDER(arsenalUSA, arsenale);
-PREP_OTHERFOLDER(arsenalRUSS, arsenale);
-PREP_OTHERFOLDER(arsenalBW, arsenale);
-PREP_OTHERFOLDER(arsenalVANILLA, arsenale);
+PREP_OTHERFOLDER(arsenalBW,arsenale);
+PREP_OTHERFOLDER(arsenalRUSS,arsenale);
+PREP_OTHERFOLDER(arsenalThemen,arsenale);
+PREP_OTHERFOLDER(arsenalUSA,arsenale);
+PREP_OTHERFOLDER(arsenalVANILLA,arsenale);
 
 // Themenarsenale
-PREP_OTHERFOLDER(arsenalThemen, arsenale\themen);
-PREP_OTHERFOLDER(arsenalUSAVietnam, arsenale\themen);
-PREP_OTHERFOLDER(arsenalRUSSSimple, arsenale\themen);
-PREP_OTHERFOLDER(arsenalVANILLACOP, arsenale\themen);
-PREP_OTHERFOLDER(arsenalBRD, arsenale\themen);
+PREP_OTHERFOLDER(arsenalBRD,arsenale\themen);
+PREP_OTHERFOLDER(arsenalLDF,arsenale\themen);
+PREP_OTHERFOLDER(arsenalRUSSSimple,arsenale\themen);
+PREP_OTHERFOLDER(arsenalUSAVietnam,arsenale\themen);
+PREP_OTHERFOLDER(arsenalVANILLACOP,arsenale\themen);

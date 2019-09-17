@@ -12,8 +12,8 @@ PREP(shk_buildingpos);
 PREP(transportUnload);
 PREP(fileExists);
 
-PREP_OTHERFOLDER(core, core);
-PREP_OTHERFOLDER(moduleZone, core);
-PREP_OTHERFOLDER(bastionCore, core);
-PREP_OTHERFOLDER(moduleBastion, core);
-PREP_OTHERFOLDER(unitPools, core);
+PREP_OTHERFOLDER(core,core);
+PREP_OTHERFOLDER(moduleZone,core);
+PREP_OTHERFOLDER(bastionCore,core);
+PREP_OTHERFOLDER(moduleBastion,core);
+PREP_OTHERFOLDER(unitPools,core);

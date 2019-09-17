@@ -13,6 +13,10 @@
 #define REQUIRED_CBA_VERSION {3,12,0}
 #define REQUIRED_ACE_VERSION {3,12,6}
 
+#define DEBUG_MODE_FULL
+#define DISABLE_COMPILE_CACHE
+// #define ENABLE_PERFORMANCE_COUNTERS
+
 /*
     Mod spezifische Makros
 */
@@ -21,7 +25,3 @@
 #else
     #define PREP_OTHERFOLDER(fncName,path) [QPATHTOF(path\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
-
-#define DEBUG_MODE_FULL
-#define DISABLE_COMPILE_CACHE
-// #define ENABLE_PERFORMANCE_COUNTERS
