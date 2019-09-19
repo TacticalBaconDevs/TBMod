@@ -998,6 +998,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _lrFunken +
         _sniper_munition +
         _dmr_munition +
+        _allgemein_uniformen +
         [
             // Gewehre
             "rhs_weap_M107",
@@ -1074,6 +1075,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _lrFunken +
         _grenadier_gewehr +
         _grenadier_munition +
+        _allgemein_uniformen +
         [
             // Uniform
             "U_B_FullGhillie_sard",

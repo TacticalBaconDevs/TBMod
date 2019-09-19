@@ -11,11 +11,13 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
         MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,40);      // Standard GewehrMag
         MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,2);       // MGMag5.56
         MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,2); // MGMag5.56 Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,4);                   // MGMag7.62 AP Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,4);                       // MGMag7.62 AP
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,15);                 // DMRMag7.62
-        MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,10);                               // Schrotflinte
-        MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,10);                                 // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,3);                   // MGMag7.62 AP Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,3);                       // MGMag7.62 AP
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,14);                 // DMRMag7.62
+        MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,7);                                // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,7);                                  // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_00Buck,7);                                // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_Slug,7);                                  // Schrotflinte
     };
 };
 
@@ -133,8 +135,8 @@ class TB_supply_usa_MAAWSAmmo : WRAPPER_NAME(Box_East_WpsSpecial_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,6);
-        MACRO_ADDMAGAZINE(rhs_mag_maaws_HEDP,6);
+        MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,5);
+        MACRO_ADDMAGAZINE(rhs_mag_maaws_HEDP,4);
         MACRO_ADDMAGAZINE(rhs_mag_maaws_HE,4);
     };
 };
