@@ -501,4 +501,8 @@ class CfgVehicles
         armor = 460; // 480
         audible = 8; // 14
     };
+
+    // ### RHS inheritance fix
+    class rhs_uaz_spg9_base;
+    class rhs_uaz_spg9_chdkz : rhs_uaz_spg9_base {};
 };
