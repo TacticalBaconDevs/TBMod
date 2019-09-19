@@ -68,7 +68,7 @@ class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
 class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Werfer",BW);
-    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
+    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)};
 
     class TransportWeapons
     {
@@ -88,7 +88,7 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("WerferMunition",BW);
-    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)};
+    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_4.paa), QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)};
 
     class TransportMagazines
     {

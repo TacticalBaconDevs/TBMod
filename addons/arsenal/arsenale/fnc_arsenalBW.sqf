@@ -259,7 +259,6 @@ private _mg_munition = [
     "BWA3_30Rnd_556x45_G36_Tracer",
     //"BWA3_B_556x45_Ball_SD",
     //"BWA3_B_556x45_Ball_AP",
-    //"hlc_100rnd_556x45_M_G36", // TODO: keine Trommel 100Mags
     "BWA3_200Rnd_556x45_Tracer"
 ];
 
@@ -482,7 +481,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Weapons
             "BWA3_G28_Patrol",
-            "hlc_rifle_g3sg1ris",
             // ### Visiere
             "BWA3_optic_PMII_ShortdotCC",   //x8
             "optic_ams",                    // x8.8 Vanilla
@@ -510,7 +508,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Gewehr
-            //"hlc_rifle_MG36", // TODO: anschauen
             "BWA3_MG4",
 
             // Weste

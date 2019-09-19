@@ -134,7 +134,6 @@ class CfgVehicles
                     ADD_SUPPLY(FlaRakKit,TB_supply_all_flarak);
                     ADD_SUPPLY(BauKiste,TB_supply_all_building);
                     ADD_SUPPLY(SaniBaukiste,TB_supply_all_medicbuilding);
-                    ADD_SUPPLY(MP5Muni,TB_supply_all_mp5);
                     ADD_SUPPLY(Sprengstoff,TB_supply_all_mines);
                 };
 
@@ -234,19 +233,19 @@ class CfgVehicles
 
 
     // ###################### KISTEN #########################
-    #define SKIN_GRP1 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_3.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
-    #define SKIN_GRP2 QPATHTOF(pictures\statics\Land_PlasticCase_01_medium_F_0.paa)
-    #define SKIN_GRP3 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_2.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
-    #define SKIN_GRP4 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
-    #define SKIN_GRP5 QPATHTOF(pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOF(pictures\statics\Box_T_East_Wps_F_co_1.paa)
-    #define SUPPORT_SKIN QPATHTOF(pictures\statics\equipment_box_blufor_ca_1.paa)
+    #define SKIN_GRP1 QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_3.paa), QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SKIN_GRP2 QPATHTOEF(skins,pictures\statics\Land_PlasticCase_01_medium_F_0.paa)
+    #define SKIN_GRP3 QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_2.paa), QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SKIN_GRP4 QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SKIN_GRP5 QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa), QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    #define SUPPORT_SKIN QPATHTOEF(skins,pictures\statics\equipment_box_blufor_ca_1.paa)
 
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
     WRAPPER(Box_EAF_Uniforms_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
-    WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOF(pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOEF(skins,pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
     WRAPPER_SKIN2(Box_NATO_WpsLaunch_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Grenades_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_AmmoOrd_F, SKIN_GRP1);
@@ -255,7 +254,7 @@ class CfgVehicles
     WRAPPER_SKIN(Land_PlasticCase_01_medium_F, SKIN_GRP2);
     WRAPPER_SKIN2(Box_IND_Ammo_F, SKIN_GRP3);
     WRAPPER_SKIN2(Box_IND_WpsSpecial_F, SKIN_GRP3);
-    WRAPPER_SKIN2(Box_NATO_Uniforms_F, QPATHTOF(pictures\statics\uniforms_box_blufor_co_0.paa), SUPPORT_SKIN);
+    WRAPPER_SKIN2(Box_NATO_Uniforms_F, QPATHTOEF(skins,pictures\statics\uniforms_box_blufor_co_0.paa), SUPPORT_SKIN);
     WRAPPER_SKIN2(Box_IND_AmmoOrd_F, SKIN_GRP3);
     WRAPPER_SKIN2(Box_IND_Support_F, SKIN_GRP3);
     WRAPPER_SKIN2(Box_IND_Wps_F, SKIN_GRP3);
@@ -512,20 +511,6 @@ class CfgVehicles
             MACRO_ADDITEM(TB_building_item_Land_Stretcher_01_F,6);
             MACRO_ADDITEM(TB_building_item_Land_IntravenStand_01_2bags_F,6);
             MACRO_ADDITEM(TB_building_item_Land_PortableLight_DOUBLES_F,2);
-        };
-    };
-
-    class TB_supply_all_mp5 : WRAPPER_NAME(Box_NATO_Ammo_F)
-    {
-        PUBLIC_NAME("MP5Muni");
-
-        class TransportMagazines
-        {
-            MACRO_ADDMAGAZINE(hlc_30Rnd_9x19_B_MP5,20);
-            MACRO_ADDMAGAZINE(hlc_30Rnd_9x19_GD_MP5,20);
-            MACRO_ADDMAGAZINE(hlc_30Rnd_9x19_SD_MP5,10);
-            MACRO_ADDMAGAZINE(hlc_30Rnd_10mm_B_MP5,10);
-            MACRO_ADDMAGAZINE(hlc_30Rnd_10mm_JHP_MP5,20);
         };
     };
 

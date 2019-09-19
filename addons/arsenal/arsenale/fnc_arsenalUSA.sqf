@@ -140,12 +140,7 @@ private _allgemein_magazine = [
     "rhsusf_5Rnd_00Buck",
     "rhsusf_5Rnd_Slug",
     "rhsusf_8Rnd_00Buck",
-    "rhsusf_8Rnd_Slug",
-
-    // MP5
-    "hlc_30Rnd_9x19_B_MP5",
-    "hlc_30Rnd_9x19_GD_MP5",
-    "hlc_30Rnd_9x19_SD_MP5"
+    "rhsusf_8Rnd_Slug"
 ];
 
 private _allgemein_gewehre = [
@@ -195,21 +190,11 @@ private _allgemein_gewehre = [
     "rhs_weap_mk18_KAC_bk",
     "rhs_weap_mk18_KAC",
     "rhs_weap_mk18_wd",
-    "rhs_weap_mk18_KAC_wd",
-    "hlc_smg_mp5a2",
-    "hlc_smg_mp5sd5"
+    "rhs_weap_mk18_KAC_wd"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
-    //"rhsusf_acc_T1_high",
-    //"rhsusf_acc_T1_low",
-    //"rhsusf_acc_T1_low_fwd",
-    //"rhsusf_acc_ACOG2_USMC",
-    //"rhsusf_acc_ACOG3_USMC",
-    //"rhsusf_acc_ACOG_USMC",
-    //"rhsusf_acc_EOTECH",
-    //"rhsusf_acc_g33_t1",
     "rhsusf_acc_g33_xps3",
     "rhsusf_acc_g33_xps3_tan",
     "rhsusf_acc_ACOG",
@@ -218,16 +203,12 @@ private _allgemein_visiere = [
     "rhsusf_acc_su230_c",
     "rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230_mrds_c",
-    //"rhsusf_acc_ACOG2",
-    //"rhsusf_acc_ACOG3",
-    //"rhsusf_acc_M2A1",
     "rhsusf_acc_eotech_552",
     "rhsusf_acc_eotech_552_d",
     "rhsusf_acc_eotech_552_wd",
     "rhsusf_acc_compm4",
     "rhsusf_acc_ACOG_d",
     "rhsusf_acc_ACOG_wd"
-    //"rhsusf_acc_eotech_xps3"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -244,8 +225,7 @@ private _allgemein_befestigungsschiene = [
     "rhsusf_acc_anpeq15A",
     "rhsusf_acc_M952V",
     "rhsusf_acc_wmx",
-    "rhsusf_acc_wmx_bk",
-    "hlc_acc_Surefiregrip"
+    "rhsusf_acc_wmx_bk"
 ];
 
 private _allgemein_geschuetzzubehoer = [
@@ -285,24 +265,17 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_weap_m1911a1",
     "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
-    "hlc_pistol_P226R_357Combat",
     "tb_weap_taser",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
-    "hlc_muzzle_Octane9",
     // ### Geschützzubehör
     "rhsusf_acc_omega9k",
-    "hlc_acc_DBALPL",
-    "HLC_Optic_Romeo1_RX",
-    "HLC_optic_Siglite",
     // ### Munition
     "rhsusf_mag_7x45acp_MHP",
     "rhsusf_mag_15Rnd_9x19_FMJ",
     "rhsusf_mag_15Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
-    "hlc_12Rnd_357SIG_B_P226",
-    "hlc_12Rnd_357SIG_JHP_P226",
     "TB_mag_taser"
 ];
 
@@ -434,8 +407,6 @@ private _allgemein_kopfbedeckung = [
     "rhsusf_mich_helmet_marpatwd_norotos_headset",
     "rhsusf_patrolcap_ocp",
     "rhsusf_patrolcap_ucp",
-
-    // experimentell
     "rhsusf_protech_helmet",
     "rhsusf_protech_helmet_ess",
     "rhsusf_protech_helmet_rhino",
@@ -463,7 +434,6 @@ private _grenadier_gewehr = [
     "rhs_weap_m4a1_M320",
     "rhs_weap_m4a1_M203s_wd",
     "rhs_weap_mk18_m320",
-    "hlc_smg_9mmar",
 
     // ### Handfeuerwaffe
     "rhs_weap_M320"
@@ -509,11 +479,6 @@ private _dmr_munition = [
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
     "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
     "rhs_mag_20Rnd_SCAR_762x51_mk316_special"
-
-    // verfügbar aber nicht in Benutzung m40A5
-    //rhsusf_5Rnd_762x51_AICS_m118_special_Mag
-    //rhsusf_5Rnd_762x51_AICS_m62_Mag
-    //rhsusf_5Rnd_762x51_AICS_m993_Mag
 ];
 
 private _rifle_munition = [
@@ -540,9 +505,7 @@ private _mg_munition = [
 private _pilot_munition = [
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
-    "rhsusf_mag_40Rnd_46x30_AP",
-    "hlc_30Rnd_10mm_B_MP5",
-    "hlc_30Rnd_10mm_JHP_MP5"
+    "rhsusf_mag_40Rnd_46x30_AP"
 ];
 
 private _sniper_munition = [
@@ -592,7 +555,7 @@ private _lrFunken = [
     "OPXT_m81_1523",
     "OPXT_multicam_1523",
     "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523"   //grau2
+    "OPXT_ogag_1523"    //grau2
 ];
 
 private _moerser_munition = [
@@ -680,8 +643,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_Vector", // Tag/Nacht Version
 
             // Items
-            //"B_UavTerminal",
-            //"ACE_UAVBattery",
             "ACE_HuntIR_monitor",
             "TB_rhs_mag_40mm_IR_Grenade",
             "Laserbatteries"
@@ -801,12 +762,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehre
             "rhs_weap_m240G",
             "rhs_weap_m249_light_S",
-            //"rhs_weap_m249_pip_L_para",
-            //"rhs_weap_m249_pip_L_vfg",
-            //"rhs_weap_m249_pip_S",
-            //"rhs_weap_m249_pip_S_para",
-            //"rhs_weap_m249_pip_S_vfg",
-            //"rhs_weap_m27iar",
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
 
@@ -880,7 +835,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
-            "hlc_smg_mp510",
 
             // Kopfbedeckung
             "rhsusf_hgu56p_black",
