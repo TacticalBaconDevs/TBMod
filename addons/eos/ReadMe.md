@@ -1,6 +1,12 @@
-# TBMod Main
+# TBMod EOS
 ## Info
-MainMod und Grundlage aller anderen
+Ein umgeschriebenes EOS System
+
+## Original Mod & Author
+- [bangabob](https://forums.bohemia.net/forums/topic/144150-enemy-occupation-system-eos/)
+
+## Maintainer
+- [shukari](https://github.com/shukari)
 
 ## Developer:
 - [shukari](https://github.com/shukari)

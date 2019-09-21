@@ -1,6 +1,9 @@
-# TBMod Main
+# TBMod Building
 ## Info
-MainMod und Grundlage aller anderen
+Eigenes Buildingsystem
+
+## Maintainer
+- [shukari](https://github.com/shukari)
 
 ## Developer:
 - [shukari](https://github.com/shukari)

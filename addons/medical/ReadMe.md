@@ -1,6 +1,6 @@
-# TBMod Main
+# TBMod Medical
 ## Info
-MainMod und Grundlage aller anderen
+Unser eigenes ACE3 Medicsystem
 
 ## Developer:
 - [shukari](https://github.com/shukari)

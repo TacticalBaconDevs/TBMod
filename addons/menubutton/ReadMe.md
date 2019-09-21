@@ -1,6 +1,9 @@
-# TBMod Main
+# TBMod Menubutton
 ## Info
-MainMod und Grundlage aller anderen
+Erstellt in der Mitte des Hauptmenüs einen Button zum Direktjoinen
+
+## Maintainer
+- [IDarky](https://github.com/IDarky)
 
 ## Developer:
 - [shukari](https://github.com/shukari)

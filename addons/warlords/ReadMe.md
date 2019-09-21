@@ -1,6 +1,6 @@
-# TBMod Main
+# TBMod Warlords
 ## Info
-MainMod und Grundlage aller anderen
+Alle Module für den TB eigenen WarlordsModus
 
 ## Developer:
 - [shukari](https://github.com/shukari)

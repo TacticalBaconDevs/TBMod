@@ -1,11 +1,11 @@
 # TBMod vz99
 
-Original:
+## Original:
 - https://github.com/BourbonWarfare/POTATO
 - https://steamcommunity.com/sharedfiles/filedetails/?id=1413018159
 
 
-#ANTOS vz99 60 mm Mortar
+## ANTOS vz99 60 mm Mortar
 
 ## For Mission Makers:
 
