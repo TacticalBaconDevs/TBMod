@@ -39,14 +39,14 @@ class ACE_ZeusActions
             #define ADD_OPTION(NAME,VAR) class off_##VAR \
                 { \
                     displayName = QUOTE(NAME: aus); \
-                    condition = QUOTE((curatorSelected select 1) findIf {!(_x getVariable [#VAR, false])} != -1); \
-                    statement = QUOTE({_x setVariable [#VAR, true, true]} forEach (curatorSelected select 1)); \
+                    condition = QUOTE((curatorSelected select 1) findIf {!(_x getVariable [QUOTE(#VAR), false])} != -1); \
+                    statement = QUOTE({_x setVariable [QUOTE(#VAR), true, true]} forEach (curatorSelected select 1)); \
                 }; \
                 class on_##VAR \
                 { \
                     displayName = QUOTE(NAME: an); \
-                    condition = QUOTE((curatorSelected select 1) findIf {_x getVariable [#VAR, false]} != -1); \
-                    statement = QUOTE({_x setVariable [#VAR, false, true]} forEach (curatorSelected select 1)); \
+                    condition = QUOTE((curatorSelected select 1) findIf {_x getVariable [QUOTE(#VAR), false]} != -1); \
+                    statement = QUOTE({_x setVariable [QUOTE(#VAR), false, true]} forEach (curatorSelected select 1)); \
                 }
 
             ADD_OPTION(VCOM generell, Vcm_Disable);
