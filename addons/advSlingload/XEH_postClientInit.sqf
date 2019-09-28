@@ -64,7 +64,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         _heli addEventHandler ["RopeAttach", {
             params ["_object1", "_rope", "_object2"];
 
-            if (QGVAR(enableVanillaSlingload)) exitWith {};
+            if (GVAR(enableVanillaSlingload)) exitWith {};
             if (!local _object1) exitWith {};
 
             if (typeOf _object2 != QGVAR(ropeInvisibleObject)) then
