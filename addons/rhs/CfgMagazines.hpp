@@ -410,5 +410,4 @@ class CfgMagazines
         displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
         tracersEvery = 1; // 5
     };
-
 };

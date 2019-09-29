@@ -631,19 +631,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Handwaffen
             "rhs_weap_M320",
 
-            // Gepäck
-            //"B_UAV_01_backpack_F",
-
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
-            "rhsusf_lrf_Vector21",
             "ACE_MX2A", // Thermal
             "ACE_Vector", // Tag/Nacht Version
 
             // Items
             "ACE_HuntIR_monitor",
+            "ACE_microDAGR",
             "TB_rhs_mag_40mm_IR_Grenade",
             "Laserbatteries"
         ]
@@ -922,7 +919,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_marksman",
 
             // Spezial
-            "ACE_Vector",
             "ACE_Kestrel4500",
             "ACE_RangeCard",
 
@@ -1059,11 +1055,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
             "Laserbatteries",
             "ACE_HuntIR_monitor",
+            "ACE_DefusalKit",
+            "ACE_wirecutter",
+            "ACE_Clacker", // 250m
 
             // ### Minen
-            "APERSTripMine_Wire_Mag",
-            "APERSBoundingMine_Range_Mag",
-            "APERSMine_Range_Mag"
+            "APERSTripMine_Wire_Mag"
         ]
     };
 

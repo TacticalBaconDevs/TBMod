@@ -269,7 +269,7 @@ class CfgAmmo
     {
         ACE_ballisticCoefficients[] = {2}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.4
-        caliber = 12.3; // 2.05761
+        caliber = 8.2; // 2.05761
         hit = 39.7; // 24.8085
         indirectHit = 24.8; // 4
         indirectHitRange = 0.9; // 2.76
@@ -289,6 +289,7 @@ class CfgAmmo
         audibleFire = 5; // 18
         dangerRadiusBulletClose = 1; // 8
         dangerRadiusHit = 1; // 12
+        explosionEffects = "ExplosionEffects";
         visibleFire = 0.5; // 22
         visibleFireTime = 0.5; // 3
     };

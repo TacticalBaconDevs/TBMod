@@ -59,7 +59,7 @@ class CfgAmmo
         hit = 300;
         indirectHit = 10;
         indirectHitRange = 9;
-        explosive = 0.7;
+        explosive = 0.3;
 
         muzzleEffect = "";
         class CamShakeExplode

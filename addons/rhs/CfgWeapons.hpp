@@ -98,12 +98,12 @@ class CfgWeapons
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
-        modes[] = {"Far_AI", "Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
+        modes[] = {"Far_AI","Single","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
 
     class rhs_weap_FFARLauncher_M229 : rhs_weap_FFARLauncher // Hydra (M229 HEPD)
     {
-        modes[] = {"Far_AI", "Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
+        modes[] = {"Far_AI","Single","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
 
     class weapon_LGBLauncherBase;
@@ -208,11 +208,21 @@ class CfgWeapons
         mass = 132.25; // 92.35
     };
 
+    class rhs_weap_SCAR_Base;
+    class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base // Mk17 Base Class
+    {
+        ACE_Overheating_dispersion = 0.75;
+        ace_overheating_mrbs = 3000;
+        ACE_RailHeightAboveBore = 3.13162;
+    };
+
     class rhs_weap_SCAR_H_CQC_Base;
     class rhs_weap_mk17_CQC: rhs_weap_SCAR_H_CQC_Base // Mk17 CQC
     {
-       magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-       magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        ACE_barrelLength = 330;
+        ACE_barrelTwist = 177.8;
     };
 
     class rhs_weap_SCAR_H_LB_Base;
@@ -220,6 +230,9 @@ class CfgWeapons
     {
         magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
         magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        ACE_barrelLength = 510;
+        ACE_barrelTwist = 177.8;
+        aimTransitionSpeed = 0.36; // 1
     };
 
     class rhs_weap_SCAR_H_STD_Base;
@@ -227,6 +240,9 @@ class CfgWeapons
     {
         magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
         magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        ACE_barrelLength = 410;
+        ACE_barrelTwist = 177.8;
+        aimTransitionSpeed = 0.76; // 1
     };
 
     class rhs_weap_m240_base;
@@ -247,5 +263,11 @@ class CfgWeapons
     class rhs_weap_M107: rhs_weap_M107_Base_F // M107
     {
         aimTransitionSpeed = 0.26; // 0.5
+    };
+
+    class ACE_Clacker;
+    class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
+    {
+        mass = 16; // 3
     };
 };
