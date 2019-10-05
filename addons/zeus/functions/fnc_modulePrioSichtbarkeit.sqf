@@ -33,4 +33,6 @@ publicVariable QGVAR(featureType);
 
 publicVariable QGVAR(featureType);
 
+systemChat "Alle Objekte im Umkreis von 300m sind nun von extrem weit sichtbar, ggf für Jets!";
+
 true
