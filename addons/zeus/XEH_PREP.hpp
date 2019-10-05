@@ -9,7 +9,6 @@ PREP(moduleAdjustCargoSpace);
 PREP(moduleApplyLoadout);
 PREP(moduleDefineAmmo);
 PREP(moduleDisablePath);
-PREP(moduleFrontverlauf);
 PREP(moduleHandleAsPlayerMedical);
 PREP(moduleLimitDamage);
 PREP(moduleNachschubAbwurf);
