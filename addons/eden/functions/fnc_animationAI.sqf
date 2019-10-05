@@ -11,6 +11,7 @@ waitUntil {time > 0 && !isNil "TB_init_done"};
 
 [_unit, "ANIM"] remoteExec ["disableAI", _unit];
 [_unit, "PATH"] remoteExec ["disableAI", _unit];
+_unit setVariable ["acex_headless_blacklist", true, true];
 
 if (dynamicSimulationEnabled (group _unit) || !simulationEnabled _unit) then
 {

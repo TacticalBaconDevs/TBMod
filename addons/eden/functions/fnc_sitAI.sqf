@@ -7,6 +7,7 @@ params ["_unit"];
 
 if (!alive _unit || !local _unit) exitWith {};
 
+_unit setVariable ["acex_headless_blacklist", true, true];
 waitUntil {time > 0 && !isNil "TB_init_done"};
 
 private _objs = (nearestObjects [_unit, [], 2]) select {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "acex_sitting_canSit") == 1};
