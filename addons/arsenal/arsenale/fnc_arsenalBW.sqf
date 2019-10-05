@@ -51,26 +51,16 @@ private _allgemein = [
     "ACE_Altimeter",
 
     // Items
-    // ### Sprays
-    //"ACE_SpraypaintBlue",
-    //"ACE_SpraypaintGreen",
-    //"ACE_SpraypaintRed",
-    //"ACE_SpraypaintBlack",
     // ### Lampe
     "ACE_Chemlight_Shield",
-    //"ACE_Flashlight_XL50",
     "ACE_Flashlight_KSF1",
-    //"ACE_Flashlight_MX991",
     // ### Items
     "ACE_RangeTable_82mm",
     "ACE_MapTools",
     "ACE_CableTie",
-    //"ACE_IR_Strobe_Item",
     "ACE_HuntIR_monitor",
     "ACE_EntrenchingTool",
-    //"ACE_Sandbag_empty",
     "ACE_SpareBarrel",
-    //"ACE_microDAGR",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
@@ -80,11 +70,6 @@ private _allgemein = [
     "TB_building_item_Land_BagFence_Long_F",
     "TB_building_item_Land_BagFence_Round_F",
     "TB_building_item_ace_concertinawirecoil",
-    //"TB_building_item_RoadBarrier_F",
-    //"TB_building_item_RoadCone_F",
-    //"TB_building_item_Land_PortableLight_single_F",
-    //"TB_building_item_Land_Pallet_vertical_F",
-    //"TB_building_item_Land_SandbagBarricade_01_hole_F",
     // ### Granaten
     "SmokeShell",
     //"SmokeShellYellow",
@@ -129,7 +114,6 @@ private _allgemein_visiere = [
     "BWA3_optic_EOTech_Mag_On",
     "BWA3_optic_EOTech_Mag_Off",
     "BWA3_optic_RSAS",
-    //"BWA3_optic_ZO4x30_Single", keine Ahnung was das neue ist
     "BWA3_optic_ZO4x30",
     "bwa3_optic_zo4x30i",
     "bwa3_optic_zo4x30i_microt2",
@@ -212,8 +196,6 @@ private _allgemein_kopfbedeckung = [
     "BWA3_Booniehat_Tropen",
     "BWA3_M92_Fleck",
     "BWA3_M92_Tropen",
-    //"BWA3_MICH_Fleck", nicht gefunden
-    //"BWA3_MICH_Tropen", nicht gefunden
     "BWA3_OpsCore_Fleck_Camera",
     "BWA3_OpsCore_Fleck_Patch",
     "BWA3_OpsCore_Fleck",
@@ -257,8 +239,6 @@ private _dmr_munition = [
 private _mg_munition = [
     "BWA3_30Rnd_556x45_G36",
     "BWA3_30Rnd_556x45_G36_Tracer",
-    //"BWA3_B_556x45_Ball_SD",
-    //"BWA3_B_556x45_Ball_AP",
     "BWA3_200Rnd_556x45_Tracer"
 ];
 
@@ -301,8 +281,6 @@ private _lrFunken = [
     // ### LR-Funke
     "TFAR_rt1523g_big_bwmod",
     "TFAR_rt1523g_big_bwmod_tropen",
-    // "TFAR_rt1523g_big",
-    // "TFAR_rt1523g_big_rhs",
     "OPXT_blk_1523",    // schwarz
     "OPXT_aor1_1523",   // sand
     "OPXT_oga_1523",    // grün

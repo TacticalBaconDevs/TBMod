@@ -56,7 +56,6 @@ detach _helper;
 deleteVehicle _helper;
 
 [QGVAR(attachToEvent), [_target, _target worldToModel _posToAttach, _rope], _rope] call CBA_fnc_targetEvent;
-//[_target,  _target worldToModel ASLtoATL _posToAttach, [0, 0, -1]] ropeAttachTo _rope;
 
 _rope setVariable [QGVAR(ropeHelper), nil, true];
 ACE_player setVariable [QGVAR(ropeHelper), nil];
