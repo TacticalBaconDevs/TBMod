@@ -84,7 +84,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         }];
     },
     true,
-    [],
+    ["ParachuteBase"],
     true
 ] call CBA_fnc_addClassEventHandler;
 
