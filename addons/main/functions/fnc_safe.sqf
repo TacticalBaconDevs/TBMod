@@ -1,10 +1,11 @@
-﻿#include "../script_macros.hpp"
+﻿#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_mode", ["_hideMessage", false]];
 if (isDedicated) exitWith {};
+if (isNil "_mode") then {_mode = !isNil QGVAR(safeJIP)};
 
 if (_mode) then
 {
@@ -17,7 +18,7 @@ if (_mode) then
             if (!weaponLowered player && !(_weapon in (player getVariable ["ace_safemode_safedWeapons", []])) && _weapon != "" && (GVAR(FiredMan_last) # 0 != _weapon || GVAR(FiredMan_last) # 1 <= diag_tickTime)) then
             {
                 (format ["[SafeWeapons] %1 hat mit %2 geschossen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
-                GVAR(FiredMan_last) = [_weapon, diag_tickTime + 3];
+                GVAR(FiredMan_last) = [_weapon, diag_tickTime + 2];
             };
 
             deleteVehicle _obj;
@@ -33,7 +34,7 @@ if (_mode) then
                 if (GVAR(firedPlayer_last) # 0 != _ammo || GVAR(firedPlayer_last) # 1 <= diag_tickTime) then
                 {
                     (format ["[SafeWeapons] %1 hat mit %2 geworfen!", profileName, [_ammo] call FUNC(displayName)]) remoteExecCall ["systemChat"];
-                    GVAR(firedPlayer_last) = [_ammo, diag_tickTime]; // + 2
+                    GVAR(firedPlayer_last) = [_ammo, diag_tickTime + 2];
                 };
                 deleteVehicle _projectile;
             };
@@ -49,7 +50,7 @@ if (_mode) then
             if (!weaponLowered player && !(_weapon in (player getVariable ["ace_safemode_safedWeapons", []])) && _weapon != "" && (GVAR(blockFire_last) # 0 != _weapon || GVAR(blockFire_last) # 1 <= diag_tickTime)) then
             {
                 (format ["[SafeWeapons] %1 hat mit %2 versucht zu schießen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
-                GVAR(blockFire_last) = [_weapon, diag_tickTime + 3];
+                GVAR(blockFire_last) = [_weapon, diag_tickTime + 2];
             };
         }] call ace_common_fnc_addActionEventHandler;
     };
@@ -57,6 +58,12 @@ if (_mode) then
     if (isNil QGVAR(safeInfo) && !_hideMessage) then {GVAR(safeInfo) = [] spawn {waitUntil {uiSleep 60; systemChat format ["[SafeWeapons] ist immer noch aktiv!"]; false}}};
 
     if (!_hideMessage) then {systemChat "[SafeWeapons] Deine Munition wurde aus Sicherheitsgründen durch Luft ersetzt!"};
+
+    if (isNil QGVAR(safeJIP)) then
+    {
+        GVAR(safeJIP) = true;
+        publicVariable QGVAR(safeJIP);
+    };
 }
 else
 {
@@ -71,4 +78,10 @@ else
     };
 
     if (!_hideMessage) then {systemChat "[SafeWeapons] Deine Munition ist nun wieder tödlich!"};
+
+    if (!isNil QGVAR(safeJIP)) then
+    {
+        GVAR(safeJIP) = nil;
+        publicVariable QGVAR(safeJIP);
+    };
 };
