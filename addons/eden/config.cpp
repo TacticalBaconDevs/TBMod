@@ -18,7 +18,8 @@ class CfgPatches
             "TB_eden_atmoMortarSupport",
             "TB_eden_atmoMortarSuppression",
             "TB_eden_atmoFireSuppression",
-            "TB_eden_atmoTarget"
+            "TB_eden_atmoTarget",
+            "TB_eden_radio"
         };
 
         requiredAddons[] = {"TBMod_main"};

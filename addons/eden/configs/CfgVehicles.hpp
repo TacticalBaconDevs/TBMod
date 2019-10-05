@@ -6,7 +6,6 @@
 */
 class CfgVehicles
 {
-    // ###################### 3den Module ######################
     class Logic;
     class Module_F: Logic
     {
@@ -54,7 +53,7 @@ class CfgVehicles
     {
         scope = 2;
         displayName = "Frontverlauf";
-        function = QEFUNC(zeus,moduleFrontverlauf);
+        function = QFUNC(moduleFrontverlauf);
         canSetArea = 1;
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
@@ -230,6 +229,59 @@ class CfgVehicles
             };
         };
     };
+
+    class TB_eden_radio : TB_eden_base
+    {
+        scope = 2;
+        displayName = "Radio";
+        function = QFUNC(moduleRadio);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+
+        class Attributes: AttributesBase
+        {
+            class sound: Edit
+            {
+                property = "TB_eden_radio_sound";
+                displayName = "Radiosound";
+                tooltip = "Entweder der ConfigName der aus CfgMusic oder der Pfad zur Musik, Komanndo 'utils 4' lokal ausführen für alle möglichen Sounds";
+                typeName = "STRING";
+                defaultValue = "'RadioAmbient1'";
+            };
+            class dauer: Edit
+            {
+                property = "TB_eden_radio_dauer";
+                displayName = "Sounddauer";
+                tooltip = "Nur notwenig, wenn Fehler oder Soundpfad";
+                typeName = "NUMBER";
+                defaultValue = "-1";
+            };
+            class radius: Edit
+            {
+                property = "TB_eden_radio_radius";
+                displayName = "Auslöserradius";
+                tooltip = "Ab wann soll das Radio auslösen, Radiosound selber ist Radius * 0.8";
+                typeName = "NUMBER";
+                defaultValue = "30";
+            };
+            class inside: Checkbox
+            {
+                property = "TB_eden_radio_inside";
+                displayName = "In einem Gebäude";
+                tooltip = "In einem Gebäude etwas gedämpfter";
+                typeName = "BOOL";
+                defaultValue = "false";
+            };
+            class volume: Edit
+            {
+                property = "TB_eden_radio_volume";
+                displayName = "Lautstärke";
+                tooltip = "Lautstärke von 0-5";
+                typeName = "NUMBER";
+                defaultValue = "2";
+            };
+        };
+    };
+
 
     // ######################## ATMO Module
     class TB_eden_atmoBase : TB_eden_base
