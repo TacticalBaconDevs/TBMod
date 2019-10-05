@@ -19,7 +19,9 @@ class CfgPatches
             "TB_zeus_handleAsPlayerMedical",
             "TB_zeus_moduleUnflipVehicle",
             "TB_zeus_adjustAceCargo",
-            "TB_zeus_limitDamage"
+            "TB_zeus_limitDamage",
+            "TB_zeus_switchMove",
+            "TB_zeus_defineAmmo"
         };
 
         requiredAddons[] = {
