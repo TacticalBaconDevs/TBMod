@@ -2,14 +2,16 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-PREP(schauspieler);
-PREP(sitAI);
 PREP(animationAI);
-PREP(keysForAI);
-PREP(inkognitoSystem);
-PREP(moduleAtmoCore);
 PREP(atmoCoreAction);
-PREP(moduleAtmoShootingRange);
+PREP(inkognitoSystem);
+PREP(keysForAI);
+PREP(moduleAtmoCore);
+PREP(moduleAtmoFireSuppression);
 PREP(moduleAtmoMortarSupport);
 PREP(moduleAtmoMortarSuppression);
-PREP(moduleAtmoFireSuppression);
+PREP(moduleAtmoShootingRange);
+PREP(moduleFrontverlauf);
+PREP(moduleRadio);
+PREP(schauspieler);
+PREP(sitAI);
