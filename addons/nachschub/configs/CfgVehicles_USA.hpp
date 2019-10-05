@@ -189,7 +189,7 @@ class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",USA);
-    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa","\TBMod_skins\pictures\statics\Box_T_East_Wps_F_co_1.paa)};
+    hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)};
 
     class TransportItems
     {
