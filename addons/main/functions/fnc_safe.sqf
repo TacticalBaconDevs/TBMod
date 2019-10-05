@@ -15,7 +15,7 @@ if (_mode) then
         GVAR(FiredMan) = player addEventHandler ["FiredMan", {
             params ["", "_weapon", "", "", "_ammo", "", "_obj"];
 
-            if (GVAR(FiredMan_last) # 0 != _weapon || GVAR(FiredMan_last) # 1 <= diag_tickTime) then
+            if (!weaponLowered player && !(_weapon in (player getVariable ["ace_safemode_safedWeapons", []])) && _weapon != "" && (GVAR(FiredMan_last) # 0 != _weapon || GVAR(FiredMan_last) # 1 <= diag_tickTime)) then
             {
                 (format ["[SafeWeapons] %1 hat mit %2 geschossen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
                 GVAR(FiredMan_last) = [_weapon, diag_tickTime + 2];
@@ -47,7 +47,7 @@ if (_mode) then
         GVAR(blockFire) = [player, "DefaultAction", {true}, {
             private _weapon = currentWeapon (vehicle (_this select 1));
 
-            if (GVAR(blockFire_last) # 0 != _weapon || GVAR(blockFire_last) # 1 <= diag_tickTime) then
+            if (!weaponLowered player && !(_weapon in (player getVariable ["ace_safemode_safedWeapons", []])) && _weapon != "" && (GVAR(blockFire_last) # 0 != _weapon || GVAR(blockFire_last) # 1 <= diag_tickTime)) then
             {
                 (format ["[SafeWeapons] %1 hat mit %2 versucht zu schießen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
                 GVAR(blockFire_last) = [_weapon, diag_tickTime + 2];
