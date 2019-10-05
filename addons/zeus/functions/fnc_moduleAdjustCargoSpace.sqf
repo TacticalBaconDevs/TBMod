@@ -23,9 +23,9 @@ _unit spawn
     ] call Ares_fnc_showChooseDialog;
 
     if (_dialogResult isEqualTo []) exitWith {};
+
     _dialogResult params ["_newSize"];
-    _newSize = parseNumber (_dialogResult # 0);
-    [_this, _newSize] call ace_cargo_fnc_setSpace;
+    [_this, parseNumber _newSize] call ace_cargo_fnc_setSpace;
 };
 
 true

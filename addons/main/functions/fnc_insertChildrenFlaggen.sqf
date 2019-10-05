@@ -4,6 +4,7 @@
     Developed by http://tacticalbacon.de
 */
 params ["_target", "_player", "_params"];
+
 private _actions = [];
 for "_i" from 1 to 9 do
 {

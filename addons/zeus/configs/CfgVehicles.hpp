@@ -4,7 +4,6 @@
 */
 class CfgVehicles
 {
-    // ###################### Zeus Module ######################
     class Logic;
     class Module_F: Logic
     {
@@ -59,6 +58,35 @@ class CfgVehicles
         function = QFUNC(moduleUnflipVehicle);
     };
 
+    class TB_zeus_adjustAceCargo : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Adjust Ace Cargo space Loadout";
+        function = QFUNC(moduleAdjustCargoSpace);
+    };
+
+    class TB_zeus_limitDamage : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Limit Damage";
+        function = QFUNC(moduleLimitDamage);
+    };
+
+    class TB_zeus_switchMove : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Animation abbrechen";
+        function = QFUNC(moduleSwitchMove);
+    };
+
+    class TB_zeus_defineAmmo : TB_zeus_base
+    {
+        scopeCurator = 2;
+        displayName = "Define Ammo";
+        function = QFUNC(moduleDefineAmmo);
+    };
+
+    // ### Zeus KI
     class TB_zeus_disablePath : TB_zeus_base
     {
         scopeCurator = 2;
@@ -83,17 +111,4 @@ class CfgVehicles
         category = "TB_categorie_zeus_ki";
     };
 
-    class TB_zeus_adjustAceCargo : TB_zeus_base
-    {
-        scopeCurator = 2;
-        displayName = "Adjust Ace Cargo space Loadout";
-        function = QFUNC(moduleAdjustCargoSpace);
-    };
-
-    class TB_zeus_limitDamage : TB_zeus_base
-    {
-        scopeCurator = 2;
-        displayName = "Limit Damage";
-        function = QFUNC(moduleLimitDamage);
-    };
 };
