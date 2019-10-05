@@ -16,7 +16,7 @@ for "_i" from 1 to 9 do
             "",
             {
                 params ["_target", "_player", "_params"];
-                _target forceFlagTexture (format [QPATHTOEF(skins,pictures\flags\Flagge_%1.paa), _params]]);
+                _target forceFlagTexture (format [QPATHTOEF(skins,pictures\flags\Flagge_%1.paa), _params]);
             },
             {true},
             {},
