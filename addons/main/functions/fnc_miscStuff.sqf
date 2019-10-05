@@ -170,7 +170,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 
 // ### FPS Infos
 [{
-    if (TB_fpsMonitor_client) then
+    if (GVAR(fpsMonitor_client)) then
     {
         player setVariable ["TB_clientFPS", floor diag_fps, true];
     }
@@ -179,7 +179,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
     };
 
-    if (TB_fpsMonitor_zeus) then
+    if (GVAR(fpsMonitor_zeus)) then
     {
         if (player in (call BIS_fnc_listCuratorPlayers) && {!isNull (findDisplay 312)}) then
         {

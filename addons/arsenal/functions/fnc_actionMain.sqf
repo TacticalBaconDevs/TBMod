@@ -8,7 +8,7 @@ _args params ["_target", "_player", "_params", "_actionData"];
 
 if !([_target] call FUNC(isArsenalType)) exitWith {};
 
-private _tbCargo = ACE_player getVariable ["TB_arsenalCargo", []];
+private _tbCargo = ACE_player getVariable [QGVAR(arsenalCargo), []];
 if (!(_tbCargo isEqualTo []) && {!(_tbCargo isEqualTo (_target getVariable ["ace_arsenal_virtualItems", []]))}) then
 {
     _target setVariable ["ace_arsenal_virtualItems", _tbCargo];

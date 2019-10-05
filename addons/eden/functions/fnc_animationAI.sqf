@@ -25,22 +25,22 @@ uiSleep (random 10 + random 10);
 
 if (_unit getVariable ["animDisableOverride", false]) exitWith {};
 
-_unit setVariable ["TB_inAnim", true];
+_unit setVariable [QGVAR(inAnim), true];
 
 TB_disableANIM = {
     params ["_unit", ["_chain", true]];
 
     // Selber kampffähig machen
-    if (_unit getVariable ["TB_inAnim", false]) then {
+    if (_unit getVariable [QGVAR(inAnim), false]) then {
         [_unit, "ALL"] remoteExec ["enableAI", _unit];
         [_unit, "", 1] call ace_common_fnc_doAnimation;
-        _unit setVariable ["TB_inAnim", false];
+        _unit setVariable [QGVAR(inAnim), false];
     };
 
     if (_chain isEqualType true && {!_chain}) exitWith {};
 
     {
-        if (_unit getVariable ["TB_inAnim", false]) then {[_x, false] call TB_disableANIM};
+        if (_unit getVariable [QGVAR(inAnim), false]) then {[_x, false] call TB_disableANIM};
     }
     forEach (_unit nearEntities ["Man", 15]);
 };

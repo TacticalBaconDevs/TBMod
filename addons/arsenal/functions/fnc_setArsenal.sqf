@@ -77,7 +77,7 @@ ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];
 
 // Virtuelle Items auf dem Spieler sichern und andere Arsenale syncen
 private _tbCargo = _ammoBox getVariable "ace_arsenal_virtualItems";
-ACE_player setVariable ["TB_arsenalCargo", _tbCargo];
+ACE_player setVariable [QGVAR(arsenalCargo), _tbCargo];
 
 // Arsenale syncen
 {

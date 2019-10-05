@@ -11,7 +11,7 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 // Default Values
-if (isNil "TB_medical_coef") then {TB_medical_coef = 1};
+if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
 
 // ### RECHTE & ChatCommands
 TB_lvl3 = compileFinal (str [
@@ -31,16 +31,16 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
 // CBA Settings
 // https://github.com/CBATeam/CBA_A3/blob/master/addons/settings/fnc_init.sqf
 
-// if (isNil "TB_debug_lvl") then {TB_debug_lvl = 0};
+// if (isNil QGVAR(debug_lvl)) then {GVAR(debug_lvl) = 0};
 [
-    "TB_debug_lvl",
+    QGVAR(debug_lvl),
     "LIST",
     ["Debug Level", "Zeigt massig Debuginformationen an"],
     "TBMod",
     [[0, 1, 2, 3], ["aus", "RPT", "RPT+systemChat", "RPT+systemChat+Hint"], 0]
 ] call CBA_Settings_fnc_init;
 [
-    "TB_debug_remote",
+    QGVAR(debug_remote),
     "CHECKBOX",
     ["Debug Remote", "Zeigt remote Debuginformationen an"],
     "TBMod",
@@ -56,63 +56,63 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     false
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_crashHelfer") then {TB_crashHelfer = true};
+// if (isNil QGVAR(crashHelfer)) then {GVAR(crashHelfer) = true};
 [
-    "TB_crashHelfer",
+    QGVAR(crashHelfer),
     "CHECKBOX",
     "Crashhelfer",
     "TBMod",
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_doorBreach") then {TB_doorBreach = true};
+// if (isNil QGVAR(doorBreach)) then {GVAR(doorBreach) = true};
 [
-    "TB_doorBreach",
+    QGVAR(doorBreach),
     "CHECKBOX",
     "Door Breach",
     "TBMod",
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_recoilCoef") then {TB_recoilCoef = 1.0};
+// if (isNil QGVAR(recoilCoef)) then {GVAR(recoilCoef) = 1.0};
 [
-    "TB_recoilCoef",
+    QGVAR(recoilCoef),
     "SLIDER",
     "recoilCoef",
     "TBMod",
     [0.1, 2, 1, 1]
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_recoilStart") then {TB_recoilStart = 0.50};
+// if (isNil QGVAR(recoilStart)) then {GVAR(recoilStart) = 0.50};
 [
-    "TB_recoilStart",
+    QGVAR(recoilStart),
     "SLIDER",
     "recoilStart",
     "TBMod",
     [0.1, 2, 0.5, 1]
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_fpsMonitor_client") then {TB_fpsMonitor_client = true};
+// if (isNil QGVAR(fpsMonitor_client)) then {GVAR(fpsMonitor_client) = true};
 [
-    "TB_fpsMonitor_client",
+    QGVAR(fpsMonitor_client),
     "CHECKBOX",
     "fpsMonitor_client",
     "TBMod",
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_fpsMonitor_zeus") then {TB_fpsMonitor_zeus = true};
+// if (isNil QGVAR(fpsMonitor_zeus)) then {GVAR(fpsMonitor_zeus) = true};
 [
-    "TB_fpsMonitor_zeus",
+    QGVAR(fpsMonitor_zeus),
     "CHECKBOX",
     "fpsMonitor_zeus",
     "TBMod",
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_medical_coef_global") then {TB_medical_coef_global = 1};
+// if (isNil QEGVAR(medical,coef_global)) then {EGVAR(medical,coef_global) = 1};
 [
-    "TB_medical_coef_global",
+    QEGVAR(medical,coef_global),
     "SLIDER",
     "medicalCoef Global",
     "TBMod",

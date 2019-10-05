@@ -12,11 +12,11 @@ if (isNil "TB_blacklistRollen_custom") then {TB_blacklistRollen_custom = []};
 if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
 
 ["ace_arsenal_displayClosed", {
-    if (!isNil "TB_arsenal_kiste") then {TB_arsenal_kiste hideObject false};
+    if (!isNil QGVAR(kiste)) then {GVAR(kiste) hideObject false};
 }] call CBA_fnc_addEventHandler;
 
 ["ace_arsenal_displayOpened", {
-    if (!isNil "TB_arsenal_kiste") then {TB_arsenal_kiste hideObject true};
+    if (!isNil QGVAR(kiste)) then {GVAR(kiste) hideObject true};
 }] call CBA_fnc_addEventHandler;
 
 // kein Müll

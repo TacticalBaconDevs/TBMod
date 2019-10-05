@@ -49,7 +49,7 @@ class CfgVehicles
                 {
                     displayName = "Wechsel zu...";
                     modifierFunction =  QUOTE([_this, getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType')] call FUNC(modifierChangeArsenalType));
-                    statement = "_player setVariable ['TB_arsenalType', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), true]; _player setVariable ['TB_rolle', nil, true]; _player setVariable ['TB_arsenalCargo', nil]";
+                    statement = QUOTE(_player setVariable ['TB_arsenalType', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), true]; _player setVariable ['TB_rolle', nil, true]; _player setVariable [QQGVAR(arsenalCargo), nil]);
                     condition =  QUOTE(!([_target] call FUNC(isArsenalType)));
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
@@ -63,7 +63,6 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
-
                 class rollen
                 {
                     displayName = "Rollen";
