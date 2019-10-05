@@ -7,7 +7,6 @@ PREP(moduleDisablePath);
 PREP(modulePrioSichtbarkeit);
 PREP(moduleHandleAsPlayerMedical);
 PREP(moduleApplyLoadout);
-PREP(moduleFrontverlauf);
 PREP(moduleAdjustCargoSpace);
 PREP(moduleUnflipVehicle);
 PREP(unflipVehicle);
