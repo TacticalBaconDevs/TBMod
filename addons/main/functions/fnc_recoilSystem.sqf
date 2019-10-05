@@ -5,8 +5,8 @@
 */
 params [["_input", false, [false]]];
 
-if (TB_recoilCoef == -1 && _input) then {TB_recoilCoef = 1};
-if (TB_recoilCoef == -1) exitWith {};
+if (GVAR(recoilCoef) == -1 && _input) then {GVAR(recoilCoef) = 1};
+if (GVAR(recoilCoef) == -1) exitWith {};
 
 {
     ace_overheating_cacheSilencerData setVariable _x;
@@ -29,7 +29,7 @@ TB_recoilFreeze = -1;
 }] call CBA_fnc_addPlayerEventHandler;
 
 TB_recoilID = ["ace_firedPlayer", {
-    if (TB_recoilCoef == -1) exitWith {["ace_firedPlayer", TB_recoilID] call CBA_fnc_removePlayerEventHandler};
+    if (GVAR(recoilCoef) == -1) exitWith {["ace_firedPlayer", TB_recoilID] call CBA_fnc_removePlayerEventHandler};
     params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
     if (toLower _weapon in ["throw", "put"]) exitWith {};
@@ -70,7 +70,7 @@ TB_recoilID = ["ace_firedPlayer", {
     };
 
     ["Recoil: %1 | Influ: %2 | AimCoef: %3 | Type: %4 | mode: %5 | deploy: %6 | rested: %7",
-            (_recoil max 0.5) * TB_recoilCoef,
+            (_recoil max 0.5) * GVAR(recoilCoef),
             _recoil max 0.5,
             getCustomAimCoef _unit,
             TB_cacheWeaponType,
@@ -78,7 +78,7 @@ TB_recoilID = ["ace_firedPlayer", {
             _deploy,
             _rested
         ] call FUNC(debug);
-    _unit setUnitRecoilCoefficient ((_recoil max 0.5) * TB_recoilCoef);
+    _unit setUnitRecoilCoefficient ((_recoil max 0.5) * GVAR(recoilCoef));
 
     TB_recoilFreeze = diag_tickTime + 1;
 }] call CBA_fnc_addEventHandler;

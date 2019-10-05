@@ -5,13 +5,13 @@
 */
 params [["_input", false, [false]]];
 
-if (!TB_doorBreach && _input) then {TB_doorBreach = true};
-if (!TB_doorBreach) exitWith {};
+if (!GVAR(doorBreach) && _input) then {GVAR(doorBreach) = true};
+if (!GVAR(doorBreach)) exitWith {};
 
 player addEventHandler ["FIRED", {
     params ["", "_weapon", "", "", "_ammo"];
 
-    if (!TB_doorBreach) exitWith {player removeEventHandler ["FIRED", _thisEventHandler]};
+    if (!GVAR(doorBreach)) exitWith {player removeEventHandler ["FIRED", _thisEventHandler]};
 
     if (_ammo in ["rhs_ammo_12g_slug", "TB_rhs_ammo_40mm_Slugshot"]) then
     {

@@ -69,8 +69,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 ["fps", {
     if (player in (call BIS_fnc_listCuratorPlayers)) then
     {
-        TB_fpsMonitor_zeus = !TB_fpsMonitor_zeus;
-        systemChat format ["Zeus-FPS ist nun %1aktiviert!", ["de", ""] select TB_fpsMonitor_zeus];
+        GVAR(fpsMonitor_zeus) = !GVAR(fpsMonitor_zeus);
+        systemChat format ["Zeus-FPS ist nun %1aktiviert!", ["de", ""] select GVAR(fpsMonitor_zeus)];
     }
     else
     {

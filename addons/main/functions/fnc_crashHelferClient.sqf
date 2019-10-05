@@ -5,8 +5,8 @@
 */
 params [["_input", false, [false]]];
 
-if (!TB_crashHelfer && _input) then {TB_crashHelfer = true};
-if (!TB_crashHelfer) exitWith {};
+if (!GVAR(crashHelfer) && _input) then {GVAR(crashHelfer) = true};
+if (!GVAR(crashHelfer)) exitWith {};
 
 waitUntil {!isNil "TB_disconnectCache"};
 private _find = [TB_disconnectCache, getPlayerUID player] call BIS_fnc_findNestedElement;
