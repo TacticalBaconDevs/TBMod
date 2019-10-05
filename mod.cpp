@@ -4,14 +4,14 @@ description = "TBMod";
 tooltip = "TBMod";
 tooltipOwned = "TBMod";
 
-picture = "\TBMod_main\pics\logo.paa";
-logo = "\TBMod_main\pics\logo.paa";
-logoSmall = "\TBMod_main\pics\logo.paa";
-logoOver = "\TBMod_main\pics\logo.paa";
+picture = "\x\TBMod\addons\main\pics\logo.paa";
+logo = "\x\TBMod\addons\main\pics\logo.paa";
+logoSmall = "\x\TBMod\addons\main\pics\logo.paa";
+logoOver = "\x\TBMod\addons\main\pics\logo.paa";
 
 actionName = "Website";
 action = "http://tacticalbacon.de";
 
 overview = "Stuff for TacticalBacon.de";
-overviewPicture = "\TBMod_main\pics\logo.paa";
+overviewPicture = "\x\TBMod\addons\main\pics\logo.paa";
 overviewText = "TBMod";

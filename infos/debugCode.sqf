@@ -161,3 +161,17 @@ forEach [
     "FlareCore"
 ];
 _return
+
+
+// Kisten Checken
+private _naschschubConfigs = configProperties [configFile >> "CfgVehicles", "isClass _x && {(configName _x) select [0, 3] == 'TB_'}
+        && {getNumber (_x >> 'scope') == 2} && {(getText (_x >> 'editorCategory')) isEqualTo 'EdCat_TB_MainCat_supply'}", false];
+private _ausgabe = "";
+{
+    if (configName _x find "_WL_" == -1) then {
+        private _obj = createVehicle [configName _x, [0,0,0], [], 0, "CAN_COLLIDE"];
+        if ([_obj] call ace_dragging_fnc_getweight >= 600) then {_ausgabe = format ["%1%2 (%3),", _ausgabe, configName _x, [_obj] call ace_dragging_fnc_getweight]};
+        deleteVehicle _obj;
+    }
+} forEach _naschschubConfigs;
+systemChat format ["Zuschwere Kisten: %1", _ausgabe select [0, count _ausgabe - 1]];
