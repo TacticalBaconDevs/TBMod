@@ -420,7 +420,6 @@ class CfgVehicles
 		};
     };
 
-
     // ######################## ATMO Module
     class TB_eden_atmoBase : TB_eden_base
     {
