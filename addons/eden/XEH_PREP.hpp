@@ -11,6 +11,7 @@ PREP(moduleAtmoFireSuppression);
 PREP(moduleAtmoMortarSupport);
 PREP(moduleAtmoMortarSuppression);
 PREP(moduleAtmoShootingRange);
+PREP(moduleFlares);
 PREP(moduleFrontverlauf);
 PREP(moduleRadio);
 PREP(schauspieler);

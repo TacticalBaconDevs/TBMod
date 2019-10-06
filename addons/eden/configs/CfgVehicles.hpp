@@ -282,6 +282,66 @@ class CfgVehicles
         };
     };
 
+    class TB_eden_flares : TB_eden_base
+    {
+        scope = 2;
+        displayName = "Flares";
+        function = QFUNC(moduleFlares);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+
+        class Attributes: AttributesBase
+        {
+            class hoehe: Edit
+            {
+                property = "TB_eden_flares_hoehe";
+                displayName = "Höhe";
+                tooltip = "Die Höhe in Metern in welcher die Flares starten";
+                typeName = "NUMBER";
+                defaultValue = "150";
+            };
+            class startSpeed: Edit
+            {
+                property = "TB_eden_flares_startSpeed";
+                displayName = "Startgeschwindigkeit";
+                tooltip = "Die Schwindigkeit nach dem Spawnen nach unten in m/s, Minuswerte oder 0 lassen die Flare in der Luft schweben";
+                typeName = "NUMBER";
+                defaultValue = "5";
+            };
+            class deleteAfter: Edit
+            {
+                property = "TB_eden_flares_deleteAfter";
+                displayName = "Löschen nach";
+                tooltip = "Nach wieviel Sekunden soll die Flare gelöscht werden, egal ob sie unten ist oder nicht";
+                typeName = "NUMBER";
+                defaultValue = "60";
+            };
+            class flareType: Edit
+            {
+                property = "TB_eden_flares_flareType";
+                displayName = "Flaretype";
+                tooltip = "Der Klassenname der Flare, Beispiele: F_40mm_White, F_40mm_Red";
+                typeName = "STRING";
+                defaultValue = """F_40mm_White""";
+            };
+            class positionen: Edit
+            {
+                property = "TB_eden_flares_positionen";
+                displayName = "Positionen";
+                tooltip = "Markernamen oder Objektnamen, allerdings lassen sich auch Objekte synchronisieren";
+                typeName = "STRING";
+                defaultValue = """[]""";
+            };
+            class delay: Edit
+            {
+                property = "TB_eden_flares_delay";
+                displayName = "Verzögerung";
+                tooltip = "Verzögerung zwischen den Flares wenn es mehrer sind";
+                typeName = "NUMBER";
+                defaultValue = "1";
+            };
+        };
+    };
+
 
     // ######################## ATMO Module
     class TB_eden_atmoBase : TB_eden_base
