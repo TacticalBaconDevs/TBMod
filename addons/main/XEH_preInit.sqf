@@ -31,7 +31,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
 // CBA Settings
 // https://github.com/CBATeam/CBA_A3/blob/master/addons/settings/fnc_init.sqf
 
-// if (isNil QGVAR(debug_lvl)) then {GVAR(debug_lvl) = 0};
 [
     QGVAR(debug_lvl),
     "LIST",
@@ -47,7 +46,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     false
 ] call CBA_Settings_fnc_init;
 
-// if (isNil "TB_inkognitoSystem") then {TB_inkognitoSystem = false};
 [
     "TB_inkognitoSystem",
     "CHECKBOX",
@@ -56,7 +54,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     false
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QGVAR(crashHelfer)) then {GVAR(crashHelfer) = true};
 [
     QGVAR(crashHelfer),
     "CHECKBOX",
@@ -65,7 +62,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QGVAR(doorBreach)) then {GVAR(doorBreach) = true};
 [
     QGVAR(doorBreach),
     "CHECKBOX",
@@ -74,7 +70,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QGVAR(recoilCoef)) then {GVAR(recoilCoef) = 1.0};
 [
     QGVAR(recoilCoef),
     "SLIDER",
@@ -83,7 +78,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     [0.1, 2, 1, 1]
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QGVAR(recoilStart)) then {GVAR(recoilStart) = 0.50};
 [
     QGVAR(recoilStart),
     "SLIDER",
@@ -92,7 +86,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     [0.1, 2, 0.5, 1]
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QGVAR(fpsMonitor_client)) then {GVAR(fpsMonitor_client) = true};
 [
     QGVAR(fpsMonitor_client),
     "CHECKBOX",
@@ -101,7 +94,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QGVAR(fpsMonitor_zeus)) then {GVAR(fpsMonitor_zeus) = true};
 [
     QGVAR(fpsMonitor_zeus),
     "CHECKBOX",
@@ -110,7 +102,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     true
 ] call CBA_Settings_fnc_init;
 
-// if (isNil QEGVAR(medical,coef_global)) then {EGVAR(medical,coef_global) = 1};
 [
     QEGVAR(medical,coef_global),
     "SLIDER",

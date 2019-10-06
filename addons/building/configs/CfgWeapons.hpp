@@ -19,7 +19,6 @@
         model = MODEL_NAME; \
     }
 
-// picture = "\A3\EditorPreviews_F\Data\CfgVehicles\OBJECT.jpg";
 
 class CfgWeapons
 {
@@ -48,16 +47,8 @@ class CfgWeapons
 
     // Zivil
     ADD_ITEM(RoadBarrier_F,"\A3\Signs_F\SignT\RoadBarrier_F.p3d",22);
-    // ADD_ITEM(RoadBarrier_small_F,"\A3\signs_f\SignT\RoadBarrier_small_F.p3d");
     ADD_ITEM(RoadCone_F,"\A3\signs_f\SignT\RoadCone_F.p3d",10);
-    // ADD_ITEM(RoadCone_L_F,"\A3\signs_f\SignT\RoadCone_L_F.p3d");
     ADD_ITEM(Land_PortableLight_single_F,"\A3\structures_f_epa\Civ\Constructions\PortableLight_single_F.p3d",25);
-    // ADD_ITEM(TapeSign_F,"\A3\signs_f\SignT\TapeSign_F.p3d");
-    // ADD_ITEM(Target_F,"\A3\structures_f\Training\Target_F.p3d");
-    // ADD_ITEM(Land_Camping_Light_F,"\A3\structures_f\Civ\Camping\Camping_Light_F.p3d");
-    // ADD_ITEM(Land_CampingChair_V1_F,"\A3\structures_f\Civ\Camping\CampingChair_V1_folded_F.p3d");
-    // ADD_ITEM(Campfire_F,"\A3\structures_f\Civ\Camping\Campfire_F.p3d");
-    // ADD_ITEM(Land_CampingTable_F,"\A3\Structures_F\Civ\Camping\CampingTable_F.p3d");
 
     ADD_ITEM(Land_Pallet_vertical_F,"\A3\structures_f\Civ\Constructions\Pallet_vertical_F.p3d",22);
     ADD_ITEM(Land_BagFence_Long_F,"A3\Structures_F\Mil\BagFence\BagFence_Long_F.p3d",44);
@@ -76,6 +67,4 @@ class CfgWeapons
     };
     ADD_ITEM(Land_SandbagBarricade_01_hole_F,"\A3\Structures_F_Argo\Military\Fortifications\SandbagBarricade_01_hole_F.p3d",66);
 
-    // ADD_TOOL(Land_DrillAku_F,"\A3\structures_f\Items\Tools\DrillAku_F.p3d");
-    // ADD_TOOL(Land_Wrench_F,"\A3\structures_f\Items\Tools\Wrench_F.p3d");
 };

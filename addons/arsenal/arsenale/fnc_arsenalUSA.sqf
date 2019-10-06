@@ -108,11 +108,6 @@ private _allgemein = [
     "TB_building_item_Land_BagFence_Long_F",
     "TB_building_item_Land_BagFence_Round_F",
     "TB_building_item_ace_concertinawirecoil",
-    //"TB_building_item_RoadBarrier_F",
-    //"TB_building_item_RoadCone_F",
-    //"TB_building_item_Land_PortableLight_single_F",
-    //"TB_building_item_Land_Pallet_vertical_F",
-    //"TB_building_item_Land_SandbagBarricade_01_hole_F",
     // ### Granaten
     "SmokeShell",
     "SmokeShellRed",

@@ -39,8 +39,6 @@ else  //_target = helicopter
     private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "slingLoadMemoryPoint");
     if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _target %1", _target]};
 
-    //[[_helper, 0, [], TB_Rope_PickupAction], []] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, _helper];
-    //[_helper, 0, [], TB_Rope_PickupAction] call ace_interact_menu_fnc_addActionToObject;//TODO execute global
     [QGVAR(addPickupActionEvent), [_helper]] call CBA_fnc_globalEvent;
 
     _helper attachTo [ACE_player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
