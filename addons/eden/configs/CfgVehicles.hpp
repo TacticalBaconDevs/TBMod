@@ -303,7 +303,7 @@ class CfgVehicles
             {
                 property = "TB_eden_flares_startSpeed";
                 displayName = "Startgeschwindigkeit";
-                tooltip = "Die Schwindigkeit nach dem Spawnen nach unten in m/s, Minuswerte oder 0 lassen die Flare in der Luft schweben";
+                tooltip = "Die Geschwindigkeit nach dem Spawnen nach unten in m/s, Minuswerte oder 0 lassen die Flare in der Luft schweben";
                 typeName = "NUMBER";
                 defaultValue = "5";
             };
