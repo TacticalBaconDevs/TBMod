@@ -13,6 +13,7 @@ PREP(moduleAtmoMortarSuppression);
 PREP(moduleAtmoShootingRange);
 PREP(moduleFlares);
 PREP(moduleFrontverlauf);
+PREP(moduleInjured);
 PREP(moduleRadio);
 PREP(schauspieler);
 PREP(sitAI);

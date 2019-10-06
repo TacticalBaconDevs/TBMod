@@ -279,7 +279,19 @@ class CfgVehicles
                 typeName = "NUMBER";
                 defaultValue = "2";
             };
+
+            class ModuleDescription: ModuleDescription {};
         };
+
+        class ModuleDescription: ModuleDescription
+		{
+			description[] = {
+                "Dieses Modul mit Objekten syncen das das Radio sein soll.",
+                "Mit dem Befehl in der Debugconsole 'utils 4' kann ein Sound/Musik rausgesucht werden... dann den Wert bei 'C >' einfach als Radiosound verwenden, sollte der Sound keine Duration haben, einfach eine angeben.",
+                "Kann mit einem wiederholenden Trigger auf Serverseite benutzt werden.",
+                "Wenn erwünscht kann die Duration größer als die Liedlänge sein, dann ist halt eine kleine Pause dazwischen."
+            };
+		};
     };
 
     class TB_eden_flares : TB_eden_base
@@ -339,7 +351,73 @@ class CfgVehicles
                 typeName = "NUMBER";
                 defaultValue = "1";
             };
+
+            class ModuleDescription: ModuleDescription {};
         };
+
+        class ModuleDescription: ModuleDescription
+		{
+			description[] = {
+                "Dieses Modul mit Objekten syncen oder in den Positionsarray Markernamen in '' schreiben oder Objektnamen.",
+                "Von den Markern und Objekten wird dann die Position für die Flares genommen.",
+                "Mit Trigger kann wiederholend und nur auf Serverseite ausgeführt werden."
+            };
+		};
+    };
+
+    class TB_eden_injured : TB_eden_base
+    {
+        scope = 2;
+        displayName = "Verletzte";
+        function = QFUNC(moduleInjured);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+
+        class Attributes: AttributesBase
+        {
+            class bewusstlos: Checkbox
+            {
+                property = "TB_eden_injured_bewusstlos";
+                displayName = "Bewusstlos";
+                tooltip = "Ob die Person bewusstlos ist";
+                typeName = "NUMBER";
+                defaultValue = "true";
+            };
+            class anzahl: Edit
+            {
+                property = "TB_eden_injured_anzahl";
+                displayName = "Anzahl der Quellen";
+                tooltip = "Es geht um die Schadensquellen, also Schuss oder Explosion";
+                typeName = "NUMBER";
+                defaultValue = "1";
+            };
+            class schadenTyp: Edit
+            {
+                property = "TB_eden_injured_schadenTyp";
+                displayName = "Schadensquellen";
+                tooltip = "Welche Quellen random genutzt werden sollen";
+                typeName = "STRING";
+                defaultValue = """['bullet', 'grenade', 'explosive', 'shell', 'stab', 'vehiclecrash']""";
+            };
+            class wundOrte: Edit
+            {
+                property = "TB_eden_injured_wundOrte";
+                displayName = "Wundort";
+                tooltip = "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte";
+                typeName = "STRING";
+                defaultValue = """['head', 'body', 'hand_r', 'hand_l', 'leg_r', 'leg_l']""";
+            };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+		{
+			description[] = {
+                "Dieses Modul mit Personen syncen und fertig!",
+                "Du kannst auch einen Trigger damit verbinden, dann musst du aber die Eigenschaften 'Auf Position bleiben' und unter Ki Optionen 'Path' deaktivieren.",
+                "Mit einem wiederholenden Trigger werden Wunden dann mehrmals hinzugefügt... empfehlen tut sich ein Bereichstrigger ohne Wiederholung nur auf dem Server!"
+            };
+		};
     };
 
 
