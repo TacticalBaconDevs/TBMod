@@ -284,14 +284,14 @@ class CfgVehicles
         };
 
         class ModuleDescription: ModuleDescription
-		{
-			description[] = {
+        {
+            description[] = {
                 "Dieses Modul mit Objekten syncen das das Radio sein soll.",
                 "Mit dem Befehl in der Debugconsole 'utils 4' kann ein Sound/Musik rausgesucht werden... dann den Wert bei 'C >' einfach als Radiosound verwenden, sollte der Sound keine Duration haben, einfach eine angeben.",
                 "Kann mit einem wiederholenden Trigger auf Serverseite benutzt werden.",
                 "Wenn erwünscht kann die Duration größer als die Liedlänge sein, dann ist halt eine kleine Pause dazwischen."
             };
-		};
+        };
     };
 
     class TB_eden_flares : TB_eden_base
@@ -356,13 +356,13 @@ class CfgVehicles
         };
 
         class ModuleDescription: ModuleDescription
-		{
-			description[] = {
+        {
+            description[] = {
                 "Dieses Modul mit Objekten syncen oder in den Positionsarray Markernamen in '' schreiben oder Objektnamen.",
                 "Von den Markern und Objekten wird dann die Position für die Flares genommen.",
                 "Mit Trigger kann wiederholend und nur auf Serverseite ausgeführt werden."
             };
-		};
+        };
     };
 
     class TB_eden_injured : TB_eden_base
@@ -411,13 +411,13 @@ class CfgVehicles
         };
 
         class ModuleDescription: ModuleDescription
-		{
-			description[] = {
+        {
+            description[] = {
                 "Dieses Modul mit Personen syncen und fertig!",
                 "Du kannst auch einen Trigger damit verbinden, dann musst du aber die Eigenschaften 'Auf Position bleiben' und unter Ki Optionen 'Path' deaktivieren.",
                 "Mit einem wiederholenden Trigger werden Wunden dann mehrmals hinzugefügt... empfehlen tut sich ein Bereichstrigger ohne Wiederholung nur auf dem Server!"
             };
-		};
+        };
     };
 
     // ######################## ATMO Module
