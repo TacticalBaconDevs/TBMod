@@ -5,7 +5,11 @@
 */
 params ["_mode", ["_hideMessage", false]];
 if (isDedicated) exitWith {};
-if (isNil "_mode") then {_mode = !isNil QGVAR(safeJIP)};
+if (isNil "_mode") then
+{
+    _mode = !isNil QGVAR(safeJIP);
+    _hideMessage = true;
+};
 
 if (_mode) then
 {

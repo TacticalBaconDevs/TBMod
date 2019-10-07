@@ -10,7 +10,7 @@
 */
 [
     "TBMod",
-    "TBMod_key_hideGUI",
+    QEGVAR(key,hideGUI),
     "Zeigt/Verbirgt die GUI",
     {
         diwako_dui_main_toggled_off = !diwako_dui_main_toggled_off;
@@ -23,7 +23,7 @@
 
 [
     "TBMod",
-    "TBMod_key_curatorCamEars",
+    QEGVAR(key,curatorCamEars),
     ["Zeusohren an/aus", "Du hörst entweder um deinen Spieler oder die ZeusCam"],
     {
         if (isNil "TB_main_spectator") then {TB_main_spectator = false};
@@ -44,7 +44,7 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
 
 [
     "TBMod",
-    "TBMod_key_gcam",
+    QEGVAR(key,gcam),
     "Öffnet GCAM",
     {
         [ACE_player] spawn FUNC(showGCAM);
@@ -57,12 +57,9 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
 
 [
     "TBMod",
-    "TBMod_key_spectator",
+    QEGVAR(key,spectator),
     "Öffnet den Spectator",
     {
-        //if (isNil "TB_spectator") then {TB_spectator = false};
-        //TB_spectator = !TB_spectator;
-
         // https://ace3mod.com/wiki/framework/spectator-framework.html
         [allPlayers, []] call ace_spectator_fnc_updateUnits;
         [[side player], player call BIS_fnc_enemySides] call ace_spectator_fnc_updateSides;
@@ -72,24 +69,35 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
         [true, false, false] call ace_spectator_fnc_setSpectator;
 
         ["TB_informAdminsAndZeus", ["%1 hat den Spectator gestartet!", profileName]] call CBA_fnc_globalEvent;
-        //systemChat format ["Spectator ist nun %1aktiviert!", ["de" , ""] select TB_spectator];
     },
     {},
     [DIK_END, [true, true, false]] // SHIFT + STRG + ENDE
 ] call CBA_fnc_addKeybind;
 
-["TBMod", "TBMod_key_recompile", "Recompiled alle Skripte", {
-    systemChat "STRG+Q RECOMPILE";
-    [] call ACE_PREP_RECOMPILE;
-    false
-}, {false}, [DIK_Q, [true, true, true]], false] call CBA_fnc_addKeybind; // Q
+#ifdef DISABLE_COMPILE_CACHE
+[
+    "TBMod",
+    QEGVAR(key,recompile),
+    "Recompiled alle Skripte",
+    {
+        systemChat "RECOMPILE";
+        [] call ACE_PREP_RECOMPILE;
+        false
+    },
+    {},
+    [DIK_Q, [true, true, true]], // STRG + ALT + SHIFT + Q
+    false,
+    0,
+    true
+] call CBA_fnc_addKeybind;
+#endif
 
 // Shortcuts für LVL 3
 if !(getPlayerUID ACE_player in (call TB_lvl3)) exitWith {};
 
 [
     "TBMod",
-    "TBMod_key_zeusCreate",
+    QEGVAR(key,zeusCreate),
     "Zeus erstellen",
     {
         private _zeusModule = ACE_player getVariable ["TB_Admin_Zeus", objNull];

@@ -16,8 +16,8 @@ _input params [
 if (!is3DEN && {_mode == "init"}) then
 {
     // Check for Radios
-    private _syncRadios = (synchronizedObjects _logic) select {_x isKindOf "Thing" || _x isKindOf "Static"};
-    if (_syncRadios isEqualTo []) exitWith {systemChat "ModulRadio hat keine gesyncten Radios"};
+    private _syncRadios = (synchronizedObjects _logic) select {!(_x isKindOf "EmptyDetector")};
+    if (_syncRadios isEqualTo []) exitWith {systemChat "ModuleRadio hat keine gesyncten Radios"};
 
     {
         private _prevTrigger = _x getVariable ["trigger", objNull];
