@@ -12,6 +12,7 @@ class CfgPatches
         units[] = {
             "TB_arsenal_base",
             "TB_arsenal_usa",
+            "TB_arsenal_uk",
             "TB_arsenal_vanilla",
             "TB_arsenal_bw",
             "TB_arsenal_russ",
