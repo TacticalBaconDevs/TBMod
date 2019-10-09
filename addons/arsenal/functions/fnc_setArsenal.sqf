@@ -15,6 +15,7 @@ if (_type in ["", "CUSTOM"]) exitWith {};
 private _allItems = call (switch (_type) do
 {
     case "USA": {FUNC(arsenalUSA)};
+    case "UK": {FUNC(arsenalUK)};
     case "RUSS": {FUNC(arsenalRUSS)};
     case "BW": {FUNC(arsenalBW)};
     case "VANILLA": {FUNC(arsenalVANILLA)};
