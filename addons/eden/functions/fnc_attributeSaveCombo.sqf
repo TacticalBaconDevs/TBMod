@@ -3,8 +3,9 @@
     Developed by http://tacticalbacon.de
 */
 params ["_ctrlGroup"];
+_ctrlGroup = _ctrlGroup controlsGroupCtrl 100;
 
 [
-    lbCurSel (_ctrlGroup controlsGroupCtrl 100),
-    (_ctrlGroup controlsGroupCtrl 100) lbData (lbCurSel (_ctrlGroup controlsGroupCtrl 100))
+    lbCurSel _ctrlGroup,
+    _ctrlGroup lbData (lbCurSel _ctrlGroup)
 ]
