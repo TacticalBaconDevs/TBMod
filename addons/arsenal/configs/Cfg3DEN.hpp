@@ -20,8 +20,8 @@ class Cfg3DEN
 
         class TB_arsenal_rollenControl : Title
         {
-            attributeLoad = QUOTE([_this, _value] call FUNC(attributeLoadCombo));
-            attributeSave = QUOTE([_this] call FUNC(attributeSaveCombo));
+            attributeLoad = QUOTE([_this, _value] call EFUNC(eden,attributeLoadCombo));
+            attributeSave = QUOTE([_this] call EFUNC(eden,attributeSaveCombo));
 
             class Controls : Controls
             {
