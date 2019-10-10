@@ -4,6 +4,8 @@
 */
 PREP(animationAI);
 PREP(atmoCoreAction);
+PREP(attributeLoadCombo);
+PREP(attributeSaveCombo);
 PREP(inkognitoSystem);
 PREP(keysForAI);
 PREP(moduleAtmoCore);

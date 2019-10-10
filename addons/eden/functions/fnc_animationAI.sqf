@@ -19,7 +19,7 @@ if (dynamicSimulationEnabled (group _unit) || !simulationEnabled _unit) then
     waitUntil {simulationEnabled _unit};
 };
 
-uiSleep (random 10 + random 10);
+uiSleep (random 5 + random 5);
 
 [_unit, _value, 2] call ace_common_fnc_doAnimation;
 
