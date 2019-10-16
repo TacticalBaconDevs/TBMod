@@ -6,9 +6,6 @@
 */
 private _allgemein = [
     // Gepäck
-
-    "B_AssaultPack_blk",
-    "B_AssaultPack_rgr",
     "B_Parachute",
 
     // Gesichtsbedeckung
@@ -36,6 +33,12 @@ private _allgemein = [
     "rhsusf_oakley_goggles_blk",
     "rhsusf_oakley_goggles_clr",
     "rhsusf_oakley_goggles_ylw",
+    "UK3CB_BAF_G_Tactical_Orange",
+    "UK3CB_BAF_G_Tactical_Yellow",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Black",
+    "UK3CB_BAF_G_Balaclava_Win",       // Nur für Wintermissionen
     // ### Vanilla
     "G_Aviator",
     // ### Beards
@@ -64,6 +67,8 @@ private _allgemein = [
     "rhsusf_ANPVS_14",
     "rhsusf_ANPVS_15",
     "rhsusf_Rhino",
+    "UK3CB_ANPVS7",
+    "UK3CB_BAF_HMNVS",
 
     // Ferngläser
     "m24_bino",
@@ -117,25 +122,36 @@ private _allgemein = [
 ];
 
 private _allgemein_magazine = [
-    
-
+    "UK3CB_BAF_556_30Rnd",
+    "UK3CB_BAF_556_30Rnd_T"
 ];
 
 private _allgemein_gewehre = [
-    
+    "UK3CB_BAF_L22",
+    "UK3CB_BAF_L22A2",
+    "UK3CB_BAF_L85A2",
+    "UK3CB_BAF_L85A2_RIS",
+    "UK3CB_BAF_L85A2_RIS_Green",
+    "UK3CB_BAF_L85A2_RIS_Tan"
 ];
+
 _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
-    
+    "rksl_optic_eot552",        // Holo
+    "rksl_optic_lds_pip",       // ACOG vergleich 
+    "rksl_optic_lds",
+    "rksl_optic_rmr_rm33"      // Mini Holo
 ];
 
 private _allgemein_befestigungsschiene = [
-    
+    "uk3cb_baf_llm_flashlight_black",
+    "uk3cb_baf_llm_ir_black"
 ];
 
 private _allgemein_geschuetzzubehoer = [
-    
+    "uk3cb_baf_silencer_l85",
+    "uk3cb_baf_sffh"
 ];
 
 private _allgemein_zweibein = [
@@ -157,37 +173,113 @@ private _allgemein_raketenwerfer = [
 ];
 
 private _allgemein_handfeuerwaffen = [
-    
     "tb_weap_taser",
+    "UK3CB_BAF_L105A1",
+    "UK3CB_BAF_L105A2",
+    "UK3CB_BAF_L107A1",
+    "UK3CB_BAF_L117A2",
+    "UK3CB_BAF_L131A1",
+    "UK3CB_BAF_L9A1",
+    
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
+    "uk3cb_baf_flashlight_l105a1",
+    "uk3cb_baf_l105a1_llm_ir_g",
+    "uk3cb_baf_l105a1_llm_ir_r",
+
     // ### Geschützzubehör
     "rhsusf_acc_omega9k",
-    // ### Munition
+    "uk3cb_baf_silencer_l105a1",
+    "muzzle_snds_l",
 
-    "TB_mag_taser"
+    // ### Munition
+    "TB_mag_taser",
+    "UK3CB_BAF_9_15Rnd",
+    "UK3CB_BAF_9_17Rnd",
+    "UK3CB_BAF_9_13Rnd",
+    "30Rnd_9x21_Green_Mag"
 ];
 
 private _allgemein_uniformen = [
-    
+    // Sand Tarnung
+    "UK3CB_BAF_U_CombatUniform_DDPM",
+    "UK3CB_BAF_U_CombatUniform_DDPM_ShortSleeve",
 
-    // experimentell
+    // Wald Tarnung
+    "UK3CB_BAF_U_CombatUniform_DPMT",
+    "UK3CB_BAF_U_CombatUniform_DPMT_ShortSleeve",
+    "UK3CB_BAF_U_CombatUniform_DPMW",
+    "UK3CB_BAF_U_CombatUniform_DPMW_ShortSleeve",
 
+    // Multicam
+    "UK3CB_BAF_U_CombatUniform_MTP",
+    "UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve",
+
+    // Schneetarnung
+    "UK3CB_BAF_U_Smock_Arctic"
 ];
 
 private _allgemein_westen = [
-   
+    // Sandtarn
+    "UK3CB_BAF_V_Osprey_DDPM1",
+    "UK3CB_BAF_V_Osprey_DDPM2",
+    "UK3CB_BAF_V_Osprey_DDPM5",
+    "UK3CB_BAF_V_Osprey_DDPM8",
+    
+    // Waldtarn
+    "UK3CB_BAF_V_Osprey_DPMT1",
+    "UK3CB_BAF_V_Osprey_DPMT2",
+    "UK3CB_BAF_V_Osprey_DPMT4",
+    "UK3CB_BAF_V_Osprey_DPMT8",
+    "UK3CB_BAF_V_Osprey_DPMW2",
+    "UK3CB_BAF_V_Osprey_DPMW5",
+    "UK3CB_BAF_V_Osprey_DPMW8",
+
+    // Multicam
+    "UK3CB_BAF_V_Osprey_Belt_A",
+    "UK3CB_BAF_V_Osprey_Holster",
+    "UK3CB_BAF_V_Osprey_Marksman_A",
+    "UK3CB_BAF_V_Osprey_MG_B",
+    "UK3CB_BAF_V_Osprey_Rifleman_B",
+    "UK3CB_BAF_V_Osprey_SL_D",
+
+    // Schneetarn
+    "UK3CB_BAF_V_Osprey_Winter",
 ];
 
 private _allgemein_kopfbedeckung = [
-    
+    // Schneetarn
+    "UK3CB_BAF_H_Mk7_Win_A",
+    "UK3CB_BAF_H_Mk7_Win_ESS_A",
+
+    // Sandtarn
+    "UK3CB_BAF_H_Mk6_DDPM_A",
+    "UK3CB_BAF_H_Mk6_DDPM_C",
+
+    // Waldtarn
+    "UK3CB_BAF_H_Mk6_DPMT_A",
+    "UK3CB_BAF_H_Mk6_DPMT_C",
+    "UK3CB_BAF_H_Mk6_DPMT_F",
+    "UK3CB_BAF_H_Mk6_DPMW_C",
+    "UK3CB_BAF_H_Mk6_DPMW_F",
+
+    // Multicam
+    "UK3CB_BAF_H_Mk7_Camo_A",
+    "UK3CB_BAF_H_Mk7_Camo_B",
+    "UK3CB_BAF_H_Mk7_Camo_ESS_A",
+    "UK3CB_BAF_H_Mk7_Camo_ESS_B",
+    "UK3CB_BAF_H_Mk7_Net_A",
+    "UK3CB_BAF_H_Mk7_Net_B",
+    "UK3CB_BAF_H_Mk7_Net_ESS_A",
+    "UK3CB_BAF_H_Mk7_Scrim_B",
+    "UK3CB_BAF_H_Mk7_Scrim_E",
+    "UK3CB_BAF_H_Mk7_Scrim_ESS_B",
+    "UK3CB_BAF_H_Mk7_Scrim_ESS_C"
 ];
 
 private _grenadier_gewehr = [
-    
-
-    // ### Handfeuerwaffe
-
+    "UK3CB_BAF_L85A2_UGL",
+    "UK3CB_BAF_L85A2_UGL_HWS"
 ];
 
 private _grenadier_munition = [
@@ -216,7 +308,6 @@ private _grenadier_munition = [
 ];
 
 private _dmr_munition = [
-    
 ];
 
 private _rifle_munition = [
@@ -226,51 +317,76 @@ private _rifle_munition = [
 
 private _mg_munition = [
     // 7.62
-    
-
-    // 5.56
-    
+    "UK3CB_BAF_762_200Rnd_T",
+    "UK3CB_BAF_762_200Rnd"
 ];
 
 private _pilot_munition = [
-    
+    "UK3CB_BAF_9_30Rnd"
 ];
 
 private _sniper_munition = [
-    
+    "rhsusf_mag_10Rnd_STD_50BMG_M33",
+    "rhsusf_mag_10Rnd_STD_50BMG_mk211"
 ];
 
 private _aaat_munition = [
-    
+    "rhs_mag_smaw_HEDP",
+    "rhs_mag_smaw_HEAA",
+    "rhs_mag_maaws_HEAT",
+    "rhs_mag_maaws_HEDP",
+    "rhs_mag_maaws_HE"
 ];
 
 private _gepaeck_mittel = [
-    "B_Kitbag_cbr",     // maximumLoad = 280; mass = 50; Quotient = 5,6
-    "B_Kitbag_sgg",
-    "B_Kitbag_rgr",
-    "B_Kitbag_mcamo"
+    // Bergen
+    "UK3CB_BAF_B_Bergen_Arctic_Rifleman_A",
+    "UK3CB_BAF_B_Bergen_DDPM_Rifleman_A",
+    "UK3CB_BAF_B_Bergen_DPMT_Rifleman_A",
+    "UK3CB_BAF_B_Bergen_DPMW_Rifleman_A",
+    "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_C",
+    "UK3CB_BAF_B_Bergen_OLI_Rifleman_A",
+    "UK3CB_BAF_B_Bergen_TAN_Rifleman_A",
+
+    // Kitbag
+    "UK3CB_BAF_B_Kitbag_Arctic",
+    "UK3CB_BAF_B_Kitbag_DDPM",
+    "UK3CB_BAF_B_Kitbag_DPMT",
+    "UK3CB_BAF_B_Kitbag_DPMW",
+    "UK3CB_BAF_B_Kitbag_MTP",
+    "UK3CB_BAF_B_Kitbag_OLI",
+    "UK3CB_BAF_B_Kitbag_TAN"
 ];
 
 private _gepaeck_gross = [
-    "B_Carryall_cbr",   // maximumLoad = 320; mass = 60; Quotient = 5,3
-    "B_Carryall_ocamo",
-    "B_Carryall_khk",
-    "B_Carryall_mcamo",
-    "B_Carryall_oli",
-    "B_Carryall_oucamo",
-    "B_Carryall_ghex_F"
+    // Carryall
+    "UK3CB_BAF_B_Carryall_Arctic",   // maximumLoad = 320; mass = 60; Quotient = 5,3
+    "UK3CB_BAF_B_Carryall_DDPM",
+    "UK3CB_BAF_B_Carryall_DPMT",
+    "UK3CB_BAF_B_Carryall_DPMW",
+    "UK3CB_BAF_B_Carryall_MTP",
+    "UK3CB_BAF_B_Carryall_OLI",
+    "UK3CB_BAF_B_Carryall_TAN"
 ];
 
 private _lrFunken = [
-    // ### LR-Funke
-    "OPXT_blk_1523",    // schwarz
-    "OPXT_aor1_1523",   // sand
-    "OPXT_oga_1523",    // grün
-    "OPXT_scorpion_1523",
-    "OPXT_m81_1523",
-    "OPXT_multicam_1523",
-    "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523"    //grau2
+    // LR 20km
+    "UK3CB_BAF_B_Bergen_Arctic_SL_A",
+    "UK3CB_BAF_B_Bergen_DDPM_SL_A",
+    "UK3CB_BAF_B_Bergen_DPMT_SL_A",
+    "UK3CB_BAF_B_Bergen_DPMW_SL_A",
+    "UK3CB_BAF_B_Bergen_MTP_Radio_L_A",
+    "UK3CB_BAF_B_Bergen_OLI_SL_A",
+    "UK3CB_BAF_B_Bergen_TAN_SL_A",
+    
+    // LR 40km
+    "UK3CB_BAF_B_Bergen_Arctic_JTAC_H_A",
+    "UK3CB_BAF_B_Bergen_DDPM_JTAC_H_A",
+    "UK3CB_BAF_B_Bergen_DPMT_JTAC_H_A",
+    "UK3CB_BAF_B_Bergen_DPMW_JTAC_H_A",
+    "UK3CB_BAF_B_Bergen_OLI_JTAC_H_A",
+    "UK3CB_BAF_B_Bergen_TAN_JTAC_H_A",
+    "UK3CB_BAF_B_Bergen_MTP_JTAC_H_A"
 ];
 
 private _moerser_munition = [
@@ -328,18 +444,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _lrFunken +
         [
-            // Weste
-            
-
-            // Waffen
-            
-            // Handwaffen
-
-
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
+            "UK3CB_BAF_Soflam_Laserdesignator",
             "ACE_MX2A", // Thermal
             "ACE_Vector", // Tag/Nacht Version
 
@@ -366,7 +475,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Westen
+            "UK3CB_BAF_V_Osprey_Medic_A",
+            "UK3CB_BAF_V_Osprey_Medic_B",
 
+            // Rucksack
+            "UK3CB_BAF_B_Bergen_MTP_Medic_L_B",
+            "UK3CB_BAF_B_Bergen_MTP_Medic_L_A"
         ]
     };
 
@@ -377,6 +491,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_handfeuerwaffen +
+        _allgemein_visiere +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -385,15 +500,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _pilot_munition +
         [
             // Waffen
+            "UK3CB_BAF_L92A1",
+            "UK3CB_BAF_L128A1",
 
             // ### Munition
-
+            "UK3CB_BAF_12G_Pellets",
+            "UK3CB_BAF_12G_Slugs",
 
             // Westen
+            "UK3CB_BAF_V_Osprey_Medic_A",
+            "UK3CB_BAF_V_Osprey_Medic_B",
 
-
-            // Kopfbedeckung
-
+            // Rucksack
+            "UK3CB_BAF_B_Bergen_MTP_Medic_L_B",
+            "UK3CB_BAF_B_Bergen_MTP_Medic_L_A"
         ]
     };
 
@@ -407,13 +527,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
-        _allgemein_westen +
         _allgemein_kopfbedeckung +
         _grenadier_gewehr +
         _grenadier_munition +
         [
             // Westen
-
+            "UK3CB_BAF_V_Osprey_DDPM3",
+            "UK3CB_BAF_V_Osprey_DPMT3",
+            "UK3CB_BAF_V_Osprey_DPMW3",
+            "UK3CB_BAF_V_Osprey_Grenadier_B",
 
             // Items
             "ACE_HuntIR_monitor"
@@ -436,12 +558,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _mg_munition +
         [
             // Gewehre
-
-            // ### Geschützzubehör
-
-            // Vests
-
-
+            "UK3CB_BAF_L7A2",
+           
             // Zubehör
             "ACE_RangeCard"
         ]
@@ -471,9 +589,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_gross +
         _moerser_munition +
         [
-            // Westen
-
-
             // Ferngläser
             "ACE_Vector"
         ]
@@ -499,13 +614,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
+            "UK3CB_BAF_L92A1",
+            "UK3CB_BAF_L91A1",
 
             // Kopfbedeckung
             "H_PilotHelmetFighter_B",
 
             // Uniform
-            "U_B_PilotCoveralls",
-            "U_B_HeliPilotCoveralls",
+            "UK3CB_BAF_U_HeliPilotCoveralls_Army",
+            "UK3CB_BAF_U_HeliPilotCoveralls_RAF",
+            "UK3CB_BAF_U_HeliPilotCoveralls_RN",
 
             // Items
             "ToolKit"
@@ -530,20 +648,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _dmr_munition +
         _rifle_munition +
         [
-            // Gewehre
-
-
-            // Weste
-
             // Spezial
             "ACE_Kestrel4500",
             "ACE_RangeCard",
 
             // Waffen
-            "TB_vz99_carryWeapon",
-
-            // ### Geschützzubehör
-
+            "TB_vz99_carryWeapon"
         ]
     };
 
@@ -563,6 +673,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         [
             // Gewehre
+            "rhs_weap_M107_w",
 
             // ### Visiere
             "rhsusf_acc_premier_anpvs27",
@@ -584,8 +695,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_FullGhillie_sard",
             "U_B_FullGhillie_ard",
             "U_B_T_FullGhillie_tna_F",
-
-            // Westen
 
             // Rucksäcke
             "ace_gunbag_Tan",
@@ -632,8 +741,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_FullGhillie_lsh",
             "U_B_T_FullGhillie_tna_F",
 
-            // Weste
-
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
@@ -675,8 +782,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMH3",
             "ACE_VMM3",
 
-            // Westen
+            // Rucksack
 
+            "UK3CB_BAF_B_Bergen_MTP_Sapper_L_A",    // Rucksack mit visuellem Minendetektor, Mulicam
+            "UK3CB_BAF_B_Bergen_MTP_Engineer_L_A",  //                        Brechstange,   Multicam
             // Items
             "ACE_M26_Clacker",
             "ACE_Clacker",
@@ -724,10 +833,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_smaw_green",
             // ### Visiere
             "rhs_optic_maaws",
-            "rhs_weap_optic_smaw",
-
-            // Westen
-
+            "rhs_weap_optic_smaw"
         ]
     };
 
@@ -752,8 +858,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
-
-            // Westen
 
             // Experiment
             "B_UAV_06_backpack_F", // UAV Bag (AL-6) [NATO]
@@ -783,8 +887,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Handfeuerwaffen
             "ACE_VMH3",
             "ACE_VMM3",
-
-            // Weste
 
             // Items
             "ACE_DefusalKit",
