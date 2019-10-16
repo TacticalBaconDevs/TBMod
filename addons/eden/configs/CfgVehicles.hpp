@@ -247,6 +247,14 @@ class CfgVehicles
                 typeName = "STRING";
                 defaultValue = "'RadioAmbient1'";
             };
+            class eigener: Checkbox
+            {
+                property = "TB_eden_radio_eigener";
+                displayName = "Eigener Missionsound";
+                tooltip = "Wenn der Sound in der Mission liegt, hier ankreuzen, zB. sounds\some_sound_file.ogg";
+                typeName = "BOOL";
+                defaultValue = "false";
+            };
             class dauer: Edit
             {
                 property = "TB_eden_radio_dauer";
@@ -259,7 +267,7 @@ class CfgVehicles
             {
                 property = "TB_eden_radio_radius";
                 displayName = "Auslöserradius";
-                tooltip = "Ab wann soll das Radio auslösen, Radiosound selber ist Radius * 0.8";
+                tooltip = "Ab wann soll das Radio auslösen"; //, Radiosound selber ist Radius * 0.8
                 typeName = "NUMBER";
                 defaultValue = "30";
             };

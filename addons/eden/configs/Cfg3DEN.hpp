@@ -68,7 +68,7 @@ class Cfg3DEN
                     {
                         displayName = "Hinsetzen";
                         tooltip = "Setzt die KI hin, wenn kein verfügbarer Stuhl in der Nähe, wird einer erstellt.";
-                        property = "TBMod_Main_sitzen";
+                        property = "TBMod_main_sitzen";
                         control = "Checkbox";
 
                         expression =  QUOTE(if (!is3DEN && _value) then {[_this] spawn FUNC(sitAI)});
@@ -81,11 +81,11 @@ class Cfg3DEN
                     class TBMod_main_animation
                     {
                         displayName = "Animation";
-                        tooltip = "Setzt die KI hin, wenn kein verfügbarer Stuhl in der Nähe, wird einer erstellt.";
+                        tooltip = "Spielt eine Animation ab.";
                         property = "TBMod_main_animation";
                         control = "TB_main_animationControl";
 
-                        expression =  QUOTE(if (!is3DEN && _value != '') then {[_this, _value] spawn FUNC(animationAI)});
+                        expression = QUOTE(_value = _value param [1, '']; if (!is3DEN && _value != '') then {[_this, _value] spawn FUNC(animationAI)});
 
                         defaultValue = "";
 
@@ -109,7 +109,7 @@ class Cfg3DEN
                     class TBMod_main_keys
                     {
                         displayName = "Schlüssel für das Auto";
-                        tooltip = "Gibt der KI Schlüssel für mehrere Fahrzeuge, muss der Variablenname sein! ( Bsp.: [""car1"",""car2""]  )";
+                        tooltip = "Gibt der KI Schlüssel für mehrere Fahrzeuge, muss der Variablenname sein! (Bsp.: ['car1', 'car2'])";
                         property = "TBMod_main_keys";
                         control = "Edit";
                         typeName = "STRING";
@@ -179,8 +179,8 @@ class Cfg3DEN
 
         class TB_main_animationControl : Title
         {
-            attributeLoad = "[_this controlsGroupCtrl 100, _config] call Enh_fnc_attributeLoadCombo";
-            attributeSave = "[_this controlsGroupCtrl 100, _config] call Enh_fnc_attributeSaveCombo";
+            attributeLoad = QUOTE([_this, _value] call FUNC(attributeLoadCombo));
+            attributeSave = QUOTE([_this] call FUNC(attributeSaveCombo));
 
             class Controls : Controls
             {
@@ -255,11 +255,11 @@ class Cfg3DEN
                             text = "verletzt Füße";
                             data = "Acts_CivilInjuredLegs_1";
                         };
-                        class automatischeAbHier
+                        /*class automatischeAbHier
                         {
                             text = "= = = ="; // ehemalig: == Generiert ==
                             data = "";
-                        };
+                        };*/
                         class ArmedGuardRelaxed01
                         {
                             text = "Entspannte Wache 01";

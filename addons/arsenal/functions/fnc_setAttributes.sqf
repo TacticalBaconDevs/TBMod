@@ -62,25 +62,24 @@ if (isNil "TB_origin_playerDamageThreshold") then {TB_origin_playerDamageThresho
 ace_medical_playerDamageThreshold = if (_rolle == "pilot") then {TB_origin_playerDamageThreshold + 10} else {TB_origin_playerDamageThreshold};
 
 // KompassStuff
-// TODO: an/aus machbar
 private _icon = switch (_rolle) do
 {
-    case "lead": {"\TBMod_skins\pictures\playericons\TB_Truppführer.paa"};
-    case "sani": {"\TBMod_skins\pictures\playericons\TB_Kampfsanitäter.paa"};
-    case "arzt": {"\TBMod_skins\pictures\playericons\TB_Arzt.paa"};
-    case "grena": {"\TBMod_skins\pictures\playericons\TB_Grenadier.paa"};
-    case "dmr": {"\TBMod_skins\pictures\playericons\TB_Spotter.paa"};
-    case "mg": {"\TBMod_skins\pictures\playericons\TB_Unterstützungsschütze.paa"};
-    case "trag": {"\TBMod_skins\pictures\playericons\TB_Munitionsträger.paa"};
-    case "pilot": {"\TBMod_skins\pictures\playericons\TB_Pilot.paa"};
-    case "rifle": {"\TBMod_skins\pictures\playericons\TB_Waffenspezialist.paa"};
-    case "sniper": {"\TBMod_skins\pictures\playericons\TB_Scharfschütze.paa"};
-    case "spotter": {"\TBMod_skins\pictures\playericons\TB_Spotter.paa"};
-    case "spreng": {"\TBMod_skins\pictures\playericons\TB_Sprengstoffexperte.paa"};
-    case "aaat": {"\TBMod_skins\pictures\playericons\TB_Anti-Fahrzeug.paa"};
-    case "jtac": {"\TBMod_skins\pictures\playericons\TB_Drohnen-OP.paa"};
-    case "pionier": {"\TBMod_skins\pictures\playericons\TB_Pionier.paa"};
-    default {nil};
+    case "lead": {"TB_Truppführer"};
+    case "sani": {"TB_Kampfsanitäter"};
+    case "arzt": {"TB_Arzt"};
+    case "grena": {"TB_Grenadier"};
+    case "dmr": {"TB_Spotter"};
+    case "mg": {"TB_Unterstützungsschütze"};
+    case "trag": {"TB_Munitionsträger"};
+    case "pilot": {"TB_Pilot"};
+    case "rifle": {"TB_Waffenspezialist"};
+    case "sniper": {"TB_Scharfschütze"};
+    case "spotter": {"TB_Spotter"};
+    case "spreng": {"TB_Sprengstoffexperte"};
+    case "aaat": {"TB_Anti-Fahrzeug"};
+    case "jtac": {"TB_Drohnen-OP"};
+    case "pionier": {"TB_Pionier"};
+    default {"TB_Waffenspezialist"};
 };
 
-ACE_player setVariable ["diwako_dui_radar_customIcon", _icon, true];
+ACE_player setVariable ["diwako_dui_radar_customIcon", format [QPATHTOEF(skins,pictures\playericons\%1.paa), _icon], true];

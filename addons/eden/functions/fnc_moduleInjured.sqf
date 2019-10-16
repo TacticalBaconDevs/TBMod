@@ -13,7 +13,6 @@ _input params [
         ["_isCuratorPlaced", false, [true]]
     ];
 
-systemChat format ["injured: %1", _this];
 if (!is3DEN && {_mode == "init"}) then
 {
     // Check for Objects

@@ -20,8 +20,8 @@ class Cfg3DEN
 
         class TB_arsenal_rollenControl : Title
         {
-            attributeLoad = "[_this controlsGroupCtrl 100, _config] call Enh_fnc_attributeLoadCombo";
-            attributeSave = "[_this controlsGroupCtrl 100, _config] call Enh_fnc_attributeSaveCombo";
+            attributeLoad = QUOTE([_this, _value] call EFUNC(eden,attributeLoadCombo));
+            attributeSave = QUOTE([_this] call EFUNC(eden,attributeSaveCombo));
 
             class Controls : Controls
             {
@@ -100,7 +100,7 @@ class Cfg3DEN
                         property = "TB_rolle";
                         control = "TB_arsenal_rollenControl";
 
-                        expression = "_this setVariable ['%s', _value, true]";
+                        expression = "_this setVariable ['%s', _value param [1, ''], true]";
 
                         defaultValue = "";
 
