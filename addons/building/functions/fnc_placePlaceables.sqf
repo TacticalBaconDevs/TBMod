@@ -26,7 +26,7 @@ if (_attachPos == -1) then
 };
 
 private _pos = player modelToWorld [0, _attachPos, 0];
-_obj setPosASL AGLToASL _pos;
+_obj setPosASL (AGLToASL _pos);
 
 [_obj, true, [0, _attachPos, 0], _specialDir] remoteExec ["ace_dragging_fnc_setDraggable", [0, -2] select isDedicated, true];
 [_obj, true, [0, _attachPos, 0], _specialDir] remoteExec ["ace_dragging_fnc_setCarryable", [0, -2] select isDedicated, true];
