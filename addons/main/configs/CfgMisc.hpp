@@ -23,9 +23,5 @@ class TB_RscDisplayGarage: RscDisplayGarage
 
 class RscDisplayCurator
 {
-    idd = 312;
-    onLoad = "[_this select 0] call Achilles_fnc_onDisplayCuratorLoad;";
-    onUnload = "[_this select 0] call Achilles_fnc_onDisplayCuratorUnload;";
-    scriptName = "RscDisplayCurator";
     scriptPath = "TB_replacement";
 };
