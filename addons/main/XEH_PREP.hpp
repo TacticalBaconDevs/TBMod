@@ -29,3 +29,5 @@ PREP(safe);
 PREP(shortcuts);
 PREP(teleport);
 PREP(upDown);
+
+PREP_OTHERFOLDER(showGCAM,gcam);
