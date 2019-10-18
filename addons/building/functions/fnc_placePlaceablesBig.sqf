@@ -30,7 +30,7 @@ _building setDir _specialDir;
 private _bbr = boundingBoxReal _building;
 private _attachPos = ((abs (((_bbr # 1) # 1) - ((_bbr # 0) # 1))) / 2 + 2) min 9;
 private _pos = ACE_player modelToWorld [0, _attachPos, 0];
-_building setPos _pos;
+_building setPosASL AGLToASL _pos;
 
 [_building, _resourcen] call FUNC(initItemBig);
 [_building, true, [0, _attachPos, 0], _specialDir, true] call ace_dragging_fnc_setCarryable;
