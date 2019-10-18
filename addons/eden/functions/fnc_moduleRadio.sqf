@@ -16,7 +16,7 @@ _input params [
 if (!is3DEN && {_mode == "init"}) then
 {
     // Check for Radios
-    private _syncRadios = (synchronizedObjects _logic) select {!(_x isKindOf "EmptyDetector")};
+    private _syncRadios = (synchronizedObjects _logic) select {!(_x isKindOf "EmptyDetector") && alive _x};
     if (_syncRadios isEqualTo []) exitWith {systemChat "ModuleRadio hat keine gesyncten Radios"};
 
     {
@@ -66,24 +66,25 @@ if (!is3DEN && {_mode == "init"}) then
         };
 
         {
-            private _trg = createTrigger ["EmptyDetector", getPos _x, false];
+            private _radio = _x;
+            private _trg = createTrigger ["EmptyDetector", getPos _radio, false];
 
-            _x setVariable ["trigger", _trg, true];
-            _trg setVariable ["values", [_sound, _dauer, _radius, _inside, _volume], true];
+            _radio setVariable ["trigger", _trg, true];
+            _trg setVariable ["values", [_sound, _dauer, _radius, _inside, _volume, _radio], true];
 
             _trg setTriggerArea [_radius, _radius, 0, false];
             _trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-            _trg setTriggerStatements ["this", "
+            _trg setTriggerStatements ["this && alive ((thisTrigger getVariable ['values', []]) param [5, objNull])", "
                 thisTrigger setVariable ['active', true, true];
 
                 if (isNull (thisTrigger getVariable ['scriptHandle', scriptNull])) then
                 {
                     thisTrigger setVariable ['scriptHandle', [thisTrigger, thisTrigger getVariable ['values', []]] spawn {
-                        (_this # 1) params ['_sound', '_dauer', '_radius', '_inside', '_volume'];
+                        (_this # 1) params ['_sound', '_dauer', '_radius', '_inside', '_volume', '_radio'];
                         waitUntil {
                             playSound3D [_sound, _this # 0, _inside, getPosASL (_this # 0), _volume, 1, _radius];
                             uiSleep _dauer;
-                            !((_this # 0) getVariable ['active', false])
+                            !((_this # 0) getVariable ['active', false]) || !alive _radio
                         };
                     }];
                 };
