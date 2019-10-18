@@ -7,11 +7,6 @@ class CfgPatches
     class TBModExt_statstracker
     {
         name = "TBModExt Statstracker";
-
-        requiredAddons[] = {
-            "TBMod_main"
-        };
-        addonRootClass = "TBMod_main";
     };
 };
 

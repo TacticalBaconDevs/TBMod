@@ -32,7 +32,7 @@ namespace TBModExt_Statistics
             try
             {
                 output.Append(function);
-                Database.initDatabase();
+                Database.InitDatabase();
             }
             
             catch (Exception e)
@@ -60,10 +60,6 @@ namespace TBModExt_Statistics
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputVehicleShot), args);
                 if (function == "Medical")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputMedical), args);
-                if (function == "Position")
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputPosition), args);
-                if (function == "KIPosition")
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputKIPosition), args);
                 if (function == "CPS")
                     ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessInputCPS), args);
                 if (function == "FPS")
@@ -89,7 +85,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                 Database.insertValuePlayer(args.ToArray());
+                 Database.InsertValuePlayer(args.ToArray());
             }
             catch (Exception e)
             {
@@ -102,7 +98,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueKill(args.ToArray());
+                Database.InsertValueKill(args.ToArray());
             }
             catch (Exception e)
             {
@@ -115,7 +111,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueVehicle(args.ToArray());
+                Database.InsertValueVehicle(args.ToArray());
             }
             catch (Exception e)
             {
@@ -128,33 +124,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueMedical(args.ToArray());
-            }
-            catch (Exception e)
-            {
-                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-            }
-        }
-
-        public static void ProcessInputPosition(object input)
-        {
-            try
-            {
-                List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValuePosition(args.ToArray());
-            }
-            catch (Exception e)
-            {
-                try { File.AppendAllText("TBModExt_Statistics_ERRORs.log", "[" + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + "] ERROR1 - " + e.ToString() + "\n"); } catch (Exception) { };
-            }
-        }
-
-        public static void ProcessInputKIPosition(object input)
-        {
-            try
-            {
-                List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueKIPosition(args.ToArray());
+                Database.InsertValueMedical(args.ToArray());
             }
             catch (Exception e)
             {
@@ -167,7 +137,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueFPS(args.ToArray());
+                Database.InsertValueFps(args.ToArray());
             }
             catch (Exception e)
             {
@@ -180,7 +150,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueCPS(args.ToArray());
+                Database.InsertValueCps(args.ToArray());
             }
             catch (Exception e)
             {
@@ -193,7 +163,7 @@ namespace TBModExt_Statistics
             try
             {
                 List<string> args = (input as string[]).OfType<string>().ToList();
-                Database.insertValueDownTime(args.ToArray());
+                Database.InsertValueDownTime(args.ToArray());
             }
             catch (Exception e)
             {

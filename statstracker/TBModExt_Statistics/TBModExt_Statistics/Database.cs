@@ -10,16 +10,15 @@ namespace TBModExt_Statistics
 {
     class Database
     {
-        public static Dictionary<int, MySqlConnection> connections = new Dictionary<int, MySqlConnection>();
-        public static String connString;
+        public static Dictionary<int, MySqlConnection> Connections = new Dictionary<int, MySqlConnection>();
+        public static String ConnString;
         public static String DBName;
-        public static MySqlConnection initDatabase()
+        public static MySqlConnection InitDatabase()
         {
             DBName = "`curmission`";
 
-            //MySqlConnection dbConnection = new MySqlConnection("Data Source="+ Environment.GetEnvironmentVariable("TBModExt_Statstracker") + "/" + missionname + ".sqlite;Version=3;");
-            connString = Environment.GetEnvironmentVariable("TBModExt_StatstrackerConnstring");
-            MySqlConnection dbConnection = new MySqlConnection(connString);
+            ConnString = Environment.GetEnvironmentVariable("TBModExt_StatstrackerConnstring");
+            MySqlConnection dbConnection = new MySqlConnection(ConnString);
             dbConnection.Open();
             SetupDB(dbConnection);
 
@@ -34,14 +33,6 @@ namespace TBModExt_Statistics
             MySqlCommand command3 = new MySqlCommand("CREATE TABLE IF NOT EXISTS medical (time DateTime, unitnamecaller TEXT, uuidcaller TEXT, unitnametarget TEXT, uuidtarget TEXT, selection TEXT, treatment TEXT, groupcaller TEXT, rolecaller TEXT, grouptarget TEXT, roletarget TEXT)", dbConnection);
             command3.ExecuteNonQuery();
             command3.Dispose();
-
-            MySqlCommand command4 = new MySqlCommand("CREATE TABLE IF NOT EXISTS position (time DateTime, unitname TEXT, uuid TEXT, xpos INT, ypos INT, pgroup TEXT, prole TEXT)", dbConnection);
-            command4.ExecuteNonQuery();
-            command4.Dispose();
-
-            MySqlCommand command5 = new MySqlCommand("CREATE TABLE IF NOT EXISTS kiposition (time DateTime, unitname TEXT, xpos INT, ypos INT, pgroup TEXT)", dbConnection);
-            command5.ExecuteNonQuery();
-            command5.Dispose();
 
             MySqlCommand command6 = new MySqlCommand("CREATE TABLE IF NOT EXISTS CPS (time DateTime, unitname TEXT, cps INT)", dbConnection);
             command6.ExecuteNonQuery();
@@ -75,11 +66,11 @@ namespace TBModExt_Statistics
 
 
 
-        public static void insertValuePlayer(string[] values)
+        public static void InsertValuePlayer(string[] values)
         {
-            getDBConnection();
+            GetDBConnection();
 
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO shots_players (time, unitname, uuid, weapon, mode, pgroup, prole) VALUES (CURRENT_TIMESTAMP(), @unitname, @uuid, @weapon, @mode, @pgroup, @prole)", getDBConnection()))
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO shots_players (time, unitname, uuid, weapon, mode, pgroup, prole) VALUES (CURRENT_TIMESTAMP(), @unitname, @uuid, @weapon, @mode, @pgroup, @prole)", GetDBConnection()))
             {
                 command.Prepare();
 
@@ -95,30 +86,30 @@ namespace TBModExt_Statistics
             }
         }
 
-        private static MySqlConnection getDBConnection()
+        private static MySqlConnection GetDBConnection()
         {
-            if (!connections.ContainsKey(Thread.CurrentThread.ManagedThreadId))
+            if (!Connections.ContainsKey(Thread.CurrentThread.ManagedThreadId))
             {
-                MySqlConnection createconn = new MySqlConnection(connString);
+                MySqlConnection createconn = new MySqlConnection(ConnString);
                 createconn.Open();
                 SetupDB(createconn);
-                connections.Add(Thread.CurrentThread.ManagedThreadId, createconn);
+                Connections.Add(Thread.CurrentThread.ManagedThreadId, createconn);
             }
             MySqlConnection dbConnection;
-            connections.TryGetValue(Thread.CurrentThread.ManagedThreadId, out dbConnection);
+            Connections.TryGetValue(Thread.CurrentThread.ManagedThreadId, out dbConnection);
             if (!dbConnection.Ping())
             {
-                dbConnection = new MySqlConnection(connString);
+                dbConnection = new MySqlConnection(ConnString);
                 dbConnection.Open();
                 SetupDB(dbConnection);
-                connections.Add(Thread.CurrentThread.ManagedThreadId, dbConnection);
+                Connections.Add(Thread.CurrentThread.ManagedThreadId, dbConnection);
             }
             return dbConnection;
         }
 
-        public static void insertValueVehicle(string[] values)
+        public static void InsertValueVehicle(string[] values)
         {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO shots_vehicle (`time`, vehicle , unitname, `uuid`, weapon, mode, pgroup, prole) VALUES (CURRENT_TIMESTAMP(), @vehicle, @unitname, @uuid, @weapon, @mode, @pgroup, @prole)", getDBConnection()))
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO shots_vehicle (`time`, vehicle , unitname, `uuid`, weapon, mode, pgroup, prole) VALUES (CURRENT_TIMESTAMP(), @vehicle, @unitname, @uuid, @weapon, @mode, @pgroup, @prole)", GetDBConnection()))
             {
                 command.Prepare();
                 
@@ -134,9 +125,9 @@ namespace TBModExt_Statistics
             }
         }
 
-        public static void insertValueMedical(string[] values)
+        public static void InsertValueMedical(string[] values)
         {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO medical (`time`, unitnamecaller, uuidcaller, unitnametarget, uuidtarget, selection, treatment, groupcaller, rolecaller, grouptarget, roletarget) VALUES (CURRENT_TIMESTAMP(), @unitnamecaller, @uuidcaller, @unitnametarget, @uuidtarget, @selection, @treatment, @groupcaller, @rolecaller, @grouptarget, @roletarget )", getDBConnection()))
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO medical (`time`, unitnamecaller, uuidcaller, unitnametarget, uuidtarget, selection, treatment, groupcaller, rolecaller, grouptarget, roletarget) VALUES (CURRENT_TIMESTAMP(), @unitnamecaller, @uuidcaller, @unitnametarget, @uuidtarget, @selection, @treatment, @groupcaller, @rolecaller, @grouptarget, @roletarget )", GetDBConnection()))
             {
                 command.Prepare();
 
@@ -154,10 +145,10 @@ namespace TBModExt_Statistics
                 command.ExecuteNonQuery();
             }
         }
-        public static void insertValueKill(string[] values)
+        public static void InsertValueKill(string[] values)
         {
             using (MySqlCommand command = new MySqlCommand("INSERT INTO kills (`time`, unitnamekiller, uuidkiller, unitnametarget, uuidtarget, killergroup, killerrole) " +
-                "VALUES (CURRENT_TIMESTAMP(), @unitnamekiller, @uuidkiller, @unitnametarget, @uuidtarget, @killergroup, @killerrole)", getDBConnection()))
+                "VALUES (CURRENT_TIMESTAMP(), @unitnamekiller, @uuidkiller, @unitnametarget, @uuidtarget, @killergroup, @killerrole)", GetDBConnection()))
             {
                 command.Prepare();
 
@@ -172,49 +163,9 @@ namespace TBModExt_Statistics
             }
         }
 
-        public static void insertValuePosition(string[] values)
+        public static void InsertValueFps(string[] values)
         {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO `POSITION` (`time`, unitname, `uuid`, xpos, ypos, pgroup, prole) VALUES (NOW(), @unitname, @uuid, @xpos, @ypos, @pgroup, @prole)", getDBConnection()))
-            {
-                command.Prepare();
-                
-                command.Parameters.AddWithValue("@unitname", values[0]);
-                command.Parameters.AddWithValue("@uuid", values[1]);
-                command.Parameters.AddWithValue("@xpos", Convert.ToDouble(values[2]));
-                command.Parameters.AddWithValue("@ypos", Convert.ToDouble(values[3]));
-                command.Parameters.AddWithValue("@pgroup", values[4]);
-                command.Parameters.AddWithValue("@prole", values[5]);
-
-                command.ExecuteNonQuery();
-            }
-        }
-
-        public static void insertValueKIPosition(string[] values)
-        {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO kiposition (`time`, unitname, xpos, ypos, pgroup) VALUES (CURRENT_TIMESTAMP(), @unitname, @xpos, @ypos, @pgroup)", getDBConnection()))
-            {
-                command.Prepare();
-                command.Parameters.Add(new MySqlParameter("@unitname", MySqlDbType.Text));
-                command.Parameters.Add(new MySqlParameter("@xpos", MySqlDbType.Int32));
-                command.Parameters.Add(new MySqlParameter("@ypos", MySqlDbType.Int32));
-                command.Parameters.Add(new MySqlParameter("@pgroup", MySqlDbType.Text));
-                command.Transaction = getDBConnection().BeginTransaction();
-                for(int i = 0; i < values.Length; i=i+4)
-                {
-                    command.Parameters["@unitname"].Value = values[i];
-                    command.Parameters["@xpos"].Value = Convert.ToInt32(values[i+1]);
-                    command.Parameters["@ypos"].Value = Convert.ToInt32(values[i+2]);
-                    command.Parameters["@pgroup"].Value = values[i+3];
-                    command.ExecuteNonQuery();
-                }
-                command.Transaction.Commit();
-                
-            }
-        }
-
-        public static void insertValueFPS(string[] values)
-        {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO `FPS` (`time`, unitname, `fps`) VALUES (NOW(), @unitname, @fps)", getDBConnection()))
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `FPS` (`time`, unitname, `fps`) VALUES (NOW(), @unitname, @fps)", GetDBConnection()))
             {
                 command.Prepare();
 
@@ -225,9 +176,9 @@ namespace TBModExt_Statistics
             }
         }
 
-        public static void insertValueCPS(string[] values)
+        public static void InsertValueCps(string[] values)
         {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO `CPS` (`time`, unitname, `cps`) VALUES (NOW(), @unitname, @cps)", getDBConnection()))
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `CPS` (`time`, unitname, `cps`) VALUES (NOW(), @unitname, @cps)", GetDBConnection()))
             {
                 command.Prepare();
 
@@ -238,9 +189,9 @@ namespace TBModExt_Statistics
             }
         }
 
-        public static void insertValueDownTime(string[] values)
+        public static void InsertValueDownTime(string[] values)
         {
-            using (MySqlCommand command = new MySqlCommand("INSERT INTO `DownTime` (`time`, unitname, `uuid`, downTime) VALUES (NOW(), @unitname, @uuid, @downTime)", getDBConnection()))
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `DownTime` (`time`, unitname, `uuid`, downTime) VALUES (NOW(), @unitname, @uuid, @downTime)", GetDBConnection()))
             {
                 command.Prepare();
 
