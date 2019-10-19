@@ -39,7 +39,7 @@ else
     waitUntil {uiSleep 1; ({isNull (objectParent _x)} count (units _cargoGrp)) == 0};
 };
 
-[_cargoGrp, _mkr] call TB_EOS_fnc_shk_patrol;
+[_cargoGrp, _mkr] call FUNC(shk_patrol);
 
 private _wp2 = _grp addWaypoint [[0,0,0], 0];
 _wp2 setWaypointSpeed "FULL";

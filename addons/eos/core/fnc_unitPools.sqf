@@ -17,13 +17,13 @@ private _tempArray = [];
 // MISSION POOL
 if (_faction <= 10) exitWith
 {
-    if (!isNil "TB_EOS_fnc_unitPools_custom") then
+    if (!isNil QFUNC(unitPools_custom)) then
     {
-        _this call TB_EOS_fnc_unitPools_custom;//TODO backcomp.
+        _this call FUNC(unitPools_custom);
     }
     else
     {
-        {("[ERROR][EOS][unitPoolsSERVER] TB_EOS_fnc_unitPools_custom ist nicht definiert") remoteExecCall [_x]} forEach ["systemChat", "diag_log"];
+        {("[ERROR][EOS][unitPoolsSERVER] TBMod_EOS_fnc_unitPools_custom ist nicht definiert") remoteExecCall [_x]} forEach ["systemChat", "diag_log"];
         [];
     };
 };

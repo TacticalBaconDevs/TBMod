@@ -36,7 +36,7 @@ class CfgVehicles
     class TB_zusatz_eos_normaleZone : TB_zusatz_Module {
         scope = 2;
         displayName = "EOS Zone";
-        function = "TB_EOS_fnc_moduleZone";
+        function = QFUNC(moduleZone);
         canSetArea = 1;
         canSetAreaHeight = 0;
         canSetAreaShape = 0;
@@ -180,13 +180,29 @@ class CfgVehicles
                 typeName = "STRING";
                 defaultValue = "[0, 360]";
             };
+            class lockVehicle: Checkbox
+            {
+                property = "TB_zusatz_eos_normaleZone_lockVehicle";
+                displayName = "Fahrzeuge abschließen";
+                tooltip = "Ob die gespawnten Fahrzeuge abgeschlossen sind.";
+                typeName = "BOOL";
+                defaultValue = "true";
+            };
+            class keyVehicle: Checkbox
+            {
+                property = "TB_zusatz_eos_normaleZone_keyVehicle";
+                displayName = "Fahrzeugeschlüssel";
+                tooltip = "Wenn die Fahrzeuge abgeschlossen sind, erhält die Crew Keys, sollte Sie aussteigen kann man das fahrzeug kapern.";
+                typeName = "BOOL";
+                defaultValue = "false";
+            };
         };
     };
 
     class TB_zusatz_eos_bastionZone : TB_zusatz_Module {
         scope = 2;
         displayName = "EOS BastionZone";
-        function = "TB_EOS_fnc_moduleBastion";
+        function = QFUNC(moduleBastion);
         canSetArea = 1;
         canSetAreaHeight = 0;
         canSetAreaShape = 0;
@@ -329,6 +345,22 @@ class CfgVehicles
                 tooltip = "Aus welcher Richtung sollen die Helis angreifen. (Angabe in 360 Grad Angabe, [RICHTUNG, RANDOM])";
                 typeName = "STRING";
                 defaultValue = "[0, 360]";
+            };
+            class lockVehicle: Checkbox
+            {
+                property = "TB_zusatz_eos_normaleZone_lockVehicle";
+                displayName = "Fahrzeuge abschließen";
+                tooltip = "Ob die gespawnten Fahrzeuge abgeschlossen sind.";
+                typeName = "BOOL";
+                defaultValue = "true";
+            };
+            class keyVehicle: Checkbox
+            {
+                property = "TB_zusatz_eos_normaleZone_keyVehicle";
+                displayName = "Fahrzeugeschlüssel";
+                tooltip = "Wenn die Fahrzeuge abgeschlossen sind, erhält die Crew Keys, sollte Sie aussteigen kann man das fahrzeug kapern.";
+                typeName = "BOOL";
+                defaultValue = "false";
             };
         };
     };
