@@ -22,7 +22,7 @@ class CfgPatches
     };
 };
 
-// Ccnfigs
+// Configs
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
