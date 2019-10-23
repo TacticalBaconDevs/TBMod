@@ -12,11 +12,11 @@ GVAR(ping) = false;
 GVAR(pingStart) = CBA_missiontime;
 
 [
-	[],  
-	{ 
-		GVAR(ping) = true; 
-		remoteExecutedOwner publicVariableClient QGVAR(ping); 
-	}
+    [],  
+    { 
+        GVAR(ping) = true; 
+        remoteExecutedOwner publicVariableClient QGVAR(ping); 
+    }
 ] remoteExecCall ["call", 2];
 
 waitUntil {GVAR(ping) || (CBA_missiontime - GVAR(pingStart)) > 3};
