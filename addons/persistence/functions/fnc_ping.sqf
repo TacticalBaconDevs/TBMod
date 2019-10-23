@@ -7,6 +7,7 @@
 if (!canSuspend) exitwith {"[TBMod_persistence] Ping kann mit spawn aufgerufen werden" remoteExecCall ["systemChat"]};
 if (!isServer) exitwith {"[TBMod_persistence] Ping kann nicht vom Server aufgerufen werden" remoteExecCall ["systemChat"]};
 
+systemChat "Ping started";
 GVAR(ping) = false; 
 GVAR(pingStart) = CBA_missiontime;
 
