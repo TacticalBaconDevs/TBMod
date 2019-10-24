@@ -27,6 +27,7 @@ class CfgVehicles
     class B_MRAP_01_F;
     class B_MRAP_01_hmg_F;
     class B_MBT_01_TUSK_F;
+    class I_MBT_03_cannon_F;
     class I_MRAP_03_F;
     class I_APC_Wheeled_03_cannon_F;
     class I_Heli_Transport_02_F;
@@ -131,7 +132,7 @@ class CfgVehicles
 
     class TB_Vehicles_hunter: B_MRAP_01_F
     {
-        displayName = "M-ATV Sand";
+        displayName = "M-ATV";
         author = "Eron";
         addCategory(Wueste);
         hiddenSelectionsTextures[] = {
@@ -143,7 +144,7 @@ class CfgVehicles
 
     class TB_Vehicles_hunter_smg: B_MRAP_01_hmg_F
     {
-        displayName = "M-ATV Sand (smg)";
+        displayName = "M-ATV (smg)";
         author = "Eron";
         addCategory(Wueste);
         hiddenSelectionsTextures[] = {
@@ -155,13 +156,25 @@ class CfgVehicles
 
     class TB_Vehicles_Merkava: B_MBT_01_TUSK_F
     {
-        displayName = "Merkava Mk4 Sand";
+        displayName = "Merkava Mk4";
         author = "Eron";
         addCategory(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa)
+        };
+    };
+
+    class TB_Vehicles_Leopard: I_MBT_03_cannon_F
+    {
+        displayName = "Leopard 2A7+";
+        author = "Eron";
+        addCategory(Wueste);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_1.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_2.paa)
         };
     };
 
@@ -206,6 +219,18 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
             "",
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
+        };
+    };
+
+    class TB_Vehicles_Leopard_2: I_MBT_03_cannon_F
+    {
+        displayName = "Leopard 2A7+";
+        author = "Eron";
+        addCategory(Wald);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_3.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_4.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_5.paa)
         };
     };
 
