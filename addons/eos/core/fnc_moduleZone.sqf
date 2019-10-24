@@ -37,6 +37,8 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then {
     _settings pushBack (_logic getVariable ["heliAbspringen", false]);
     _settings pushBack (_logic getVariable ["helicopterHeight", 500]);
     _settings pushBack (_logic getVariable ["angriffsRichtungHeli", [0, 360]]);
+    _settings pushBack (_logic getVariable ["lockVehicle", true]);
+    _settings pushBack (_logic getVariable ["keyVehicle", false]);
 
     [
         _marker,

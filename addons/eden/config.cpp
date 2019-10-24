@@ -10,18 +10,19 @@ class CfgPatches
         name = "TBMod eden";
 
         units[] = {
-            "TB_eden_frontverlauf",
-            "TB_eden_atmoReinforcementLZ",
-            "TB_eden_atmoReinforcementEndpoint",
-            "TB_eden_atmoReinforcementCore",
-            "TB_eden_atmoShootingRange",
-            "TB_eden_atmoMortarSupport",
-            "TB_eden_atmoMortarSuppression",
-            "TB_eden_atmoFireSuppression",
-            "TB_eden_atmoTarget",
-            "TB_eden_radio",
-            "TB_eden_flares",
-            "TB_eden_injured"
+            QGVAR(frontverlauf),
+            QGVAR(atmoReinforcementLZ),
+            QGVAR(atmoReinforcementEndpoint),
+            QGVAR(atmoReinforcementCore),
+            QGVAR(atmoShootingRange),
+            QGVAR(atmoMortarSupport),
+            QGVAR(atmoMortarSuppression),
+            QGVAR(atmoFireSuppression),
+            QGVAR(atmoTarget),
+            QGVAR(radio),
+            QGVAR(flares),
+            QGVAR(injured),
+            QGVAR(clearPlaceables)
         };
 
         requiredAddons[] = {"TBMod_main"};

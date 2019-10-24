@@ -38,7 +38,7 @@ _armorVeh params ["_avGroups", ["_avGroupsIncrease", 0]];
 _statics params ["_stGroups", ["_stGroupsIncrease", 0]];
 _helis params ["_hGroups", "_hSize", ["_hGroupsIncrease", 0], ["_hSizeIncrease", 0]];
 
-_settings params ["_faction", "_distance", "_side", "_heightLimit", "_parachuteJump", "_helicopterHeight", "_angriffsRichtungHeli"];
+_settings params ["_faction", "_distance", "_side", "_heightLimit", "_parachuteJump", "_helicopterHeight", "_angriffsRichtungHeli", "_lockVehicle", "_keyVehicle"];
 
 private _civZone = false;
 private _enemyFaction = "east";
@@ -200,7 +200,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
             _cargoType = 10;
         };
 
-        private _lvGroup = [_pos, _side, _faction, _vehType] call FUNC(spawnVehicle);
+        private _lvGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
         if !(_lvGroup isEqualTo []) then
         {
             if (_lvSize > 0) then
@@ -234,7 +234,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         };
 
         private _vehType = if (surfaceiswater _pos) then {8} else {2};
-        private _avGroup = [_pos, _side, _faction, _vehType] call FUNC(spawnVehicle);
+        private _avGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
         if !(_avGroup isEqualTo []) then
         {
@@ -264,7 +264,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
             (_positions select 1) deleteAt 0;
         };
 
-        private _stGroup = [_pos, _side, _faction, 5] call FUNC(spawnVehicle);
+        private _stGroup = [_pos, _side, _faction, 5, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
         if !(_stGroup isEqualTo []) then {_stZoneGroups pushBack _stGroup};
     };
@@ -285,7 +285,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _vehType = if (_hSize > 0) then {4} else {3};
 
         private _pos = [_mPos, 3000 + ((random 500) - 250), _baseDirHeli + ((random _randomDirHeli) - (_randomDirHeli / 2))] call BIS_fnc_relPos;
-        private _hGroup = [_pos, _side, _faction, _vehType] call FUNC(spawnVehicle);
+        private _hGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
         if !(_hGroup isEqualTo []) then
         {

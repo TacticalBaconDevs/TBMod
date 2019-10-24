@@ -181,6 +181,14 @@ class CfgWeapons
         mass = 143.26; // 30.3
     };
 
+    class rhs_weap_M136_used;
+    class TB_rhs_weap_M136_CS_used: rhs_weap_M136_used // M136 HEAT (CS) - USED
+    {
+        descriptionShort = "Used rocket launcher<br/>Caliber: 84mm<br/>Type: Used Single-shot Anti-Tank Confined Spaces"; // "Used rocket launcher<br/>Caliber: 84mm<br/>Type: Used launcher tube";
+        displayName = "M136 CS HEAT (Used)"; // "M136 HEAT (used)"
+        mass = 143.26; // 30.3
+    };
+
     class rhs_weap_M136_hedp: rhs_weap_M136 // M136 HEDP
     {
         aimTransitionSpeed = 0.65; // 0.75
