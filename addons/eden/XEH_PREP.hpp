@@ -13,6 +13,7 @@ PREP(moduleAtmoFireSuppression);
 PREP(moduleAtmoMortarSupport);
 PREP(moduleAtmoMortarSuppression);
 PREP(moduleAtmoShootingRange);
+PREP(moduleClearPlaceables);
 PREP(moduleFlares);
 PREP(moduleFrontverlauf);
 PREP(moduleInjured);

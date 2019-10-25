@@ -38,9 +38,9 @@ if (isNil "Achilles_curator_init_done") then
     // key event handler for remote controlled unit
     private _mainDisplay = findDisplay 46;
     _mainDisplay displayAddEventHandler ["KeyDown", { _this call Achilles_fnc_handleRemoteKeyPressed; }];
-    
+
     // send warning to player if both mods are running
-    if (isClass (configfile >> "CfgPatches" >> "Ares")) then 
+    if (isClass (configfile >> "CfgPatches" >> "Ares")) then
     {
         createDialog "RscDisplayCommonMessage";
         private _dialog = findDisplay IDD_MESSAGE;
@@ -49,10 +49,10 @@ if (isNil "Achilles_curator_init_done") then
         (_dialog displayCtrl IDC_CONFIRM_WARNING) ctrlAddEventHandler ["ButtonClick","closeDialog 1;"];
         (_dialog displayCtrl IDC_CANCLE_WARNING) ctrlAddEventHandler ["ButtonClick", "closeDialog 2;"];
     };
-    
+
     // execute init
     [_moduleTreeCtrl] call Achilles_fnc_onCuratorStart;
-    
+
     // display advanced hints
     private _hasHintBeenShown = profileNamespace getVariable ["Achilles_var_advHint_showIntro", false];
     if (!_hasHintBeenShown) then
@@ -60,7 +60,7 @@ if (isNil "Achilles_curator_init_done") then
         [["Ares", "AresFieldManual"],15,"",35,"",true] call BIS_fnc_advHint;
         profileNamespace setVariable ["Achilles_var_advHint_showIntro", true];
     };
-    
+
     Achilles_curator_init_done = true;
 };
 
@@ -103,7 +103,7 @@ if (Achilles_var_moduleTreeSearchPatch) then
 // Add custom Zeus logo when pressing backspace
 private _zeusLogo = _display displayCtrl 15717;
 private _addLogo = true;
-switch (Achilles_var_iconSelection) do 
+switch (Achilles_var_iconSelection) do
 {
     case "Achilles_var_iconSelection_Ares": {_zeusLogo ctrlSetText "\achilles\data_f_achilles\pictures\ZeusEyeAres.paa"};
     case "Achilles_var_iconSelection_Achilles": {_zeusLogo ctrlSetText "\achilles\data_f_achilles\pictures\Achilles_Icon_005.paa"};
@@ -116,14 +116,16 @@ if (_addLogo) then {_zeusLogo ctrlCommit 0};
 // handle module tree loading
 [_moduleTreeCtrl] spawn
 {
+    disableSerialization;
     params ["_moduleTreeCtrl"];
+    sleep 0.001;
     // For Zeus Game Master missions: Wait until respawn was placed
     if (!(missionNamespace getVariable ["BIS_moduleMPTypeGameMaster_init", false]) && {count allMissionObjects "ModuleMPTypeGameMaster_F" > 0}) then
     {
         waitUntil {sleep 0.1; _moduleTreeCtrl tvCount [] > 1 || isNull findDisplay IDD_RSCDISPLAYCURATOR};
     };
     if (isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {};
-    
+
     // wait for the next frame
     sleep 0.001;
     [Achilles_fnc_onModuleTreeLoad, []] call CBA_fnc_directCall;

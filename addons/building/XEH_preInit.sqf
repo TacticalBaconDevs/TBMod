@@ -28,4 +28,6 @@ forEach [
     "Land_Medevac_HQ_V1_F"
 ];
 
+if (isNil QGVAR(clearPlaceables)) then {GVAR(clearPlaceables) = []};
+
 ADDON = true;
