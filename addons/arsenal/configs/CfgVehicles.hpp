@@ -108,7 +108,7 @@ class CfgVehicles
     class TB_arsenal_uk : TB_arsenal_base
     {
         MAKE_PUBLIC(UK,UK);
-        // hiddenSelectionsTextures[] = {QPATHTOF(pics\Arsenal_UK.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(pics\Arsenal_UK.paa)};
     };
 
     class TB_arsenal_vanilla : TB_arsenal_base

@@ -2,7 +2,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
-    Ansprechpartner: shukari
+    Ansprechpartner: Darky, Eron
 */
 private _allgemein = [
     // Gepäck
@@ -244,7 +244,7 @@ private _allgemein_westen = [
     "UK3CB_BAF_V_Osprey_SL_D",
 
     // Schneetarn
-    "UK3CB_BAF_V_Osprey_Winter",
+    "UK3CB_BAF_V_Osprey_Winter"
 ];
 
 private _allgemein_kopfbedeckung = [
