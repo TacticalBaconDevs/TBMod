@@ -90,6 +90,7 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
 
                     // http://henney.com/chm/callsign.htm
+                    // http://udxf.nl/MCL.pdf - neuer
                     ADD_RUFNAME(Arrow);
                     ADD_RUFNAME(Bronco);
                     ADD_RUFNAME(Cobra);
