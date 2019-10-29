@@ -94,7 +94,7 @@
         default
         {
             systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil QGVAR(safeInfo))];
-            [isNil "TB_safeInfo"] remoteExec [QFUNC(safe)];
+            [isNil QGVAR(safeInfo)] remoteExec [QFUNC(safe)];
         };
     };
 
