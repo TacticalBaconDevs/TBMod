@@ -312,13 +312,22 @@ private _dmr_munition = [
 
 private _rifle_munition = [
     // 7.62
-    
+    "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr",
+    "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+    "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
+    "rhs_mag_20Rnd_SCAR_762x51_m61_ap"
 ];
 
 private _mg_munition = [
     // 7.62
     "UK3CB_BAF_762_200Rnd_T",
-    "UK3CB_BAF_762_200Rnd"
+    "UK3CB_BAF_762_200Rnd",
+    "UK3CB_BAF_762_100Rnd_T",
+    "UK3CB_BAF_762_100Rnd",
+    // 5.56
+    "UK3CB_BAF_556_200Rnd_T",
+    "UK3CB_BAF_556_200Rnd"
+
 ];
 
 private _pilot_munition = [
@@ -444,6 +453,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _lrFunken +
         [
+
+            // Handwaffen
+            "rhs_weap_M320",
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
@@ -530,6 +542,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _grenadier_gewehr +
         _grenadier_munition +
+        _gepaeck_mittel +
         [
             // Westen
             "UK3CB_BAF_V_Osprey_DDPM3",
@@ -556,9 +569,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
+        _gepaeck_mittel +
         [
             // Gewehre
-            "UK3CB_BAF_L7A2",
+            "UK3CB_BAF_L7A2",     
+            "UK3CB_BAF_L110A3",
            
             // Zubehör
             "ACE_RangeCard"
@@ -585,7 +600,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _pilot_munition +
         _sniper_munition    +
         _aaat_munition +
-        _gepaeck_mittel +
         _gepaeck_gross +
         _moerser_munition +
         [
@@ -633,7 +647,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "rifle":
     {
         _allgemein +
-        _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
@@ -653,7 +666,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
 
             // Waffen
-            "TB_vz99_carryWeapon"
+            "TB_vz99_carryWeapon",
+            "UK3CB_BAF_L86A3",
+            "UK3CB_BAF_L86A2",
+            "rhs_weap_mk17_STD",
+            "rhs_weap_mk17_LB",
+            "rhs_weap_mk17_CQC"
         ]
     };
 
