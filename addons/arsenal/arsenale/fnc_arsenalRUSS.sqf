@@ -7,10 +7,7 @@
 private _allgemein = [
     // Gepäck
     "rhs_sidor",        // maximumLoad = 129; mass = 20; Quotient = 6,45
-    // ### LR-Funke
-    "OPXT_ogao_117",
-    "OPXT_pen_bad_117",
-    "OPXT_multicamt_117",
+    
 
     // Gesichtsbedeckung
     "rhs_scarf",
@@ -44,18 +41,18 @@ private _allgemein = [
     // Items
     // ### Lampe
     "ACE_Chemlight_Shield",
-    //"ACE_Flashlight_KSF1",
+    "ACE_Flashlight_KSF1",
     // ### Items
     "ACE_MapTools",
     "ACE_CableTie",
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
-    //"ACE_IR_Strobe_Item",
+    "ACE_IR_Strobe_Item",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
     "ACE_Chemlight_HiRed",
-    //"ACE_Chemlight_HiWhite",
+    "ACE_Chemlight_HiWhite",
     "ACE_Chemlight_HiBlue",
     "ACE_Chemlight_HiGreen",
     "ACE_Chemlight_UltraHiOrange",
@@ -122,8 +119,8 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_raketenwerfer = [
-    "rhs_weap_rpg26",   // is a disposable anti-tank rocket launcher designed to destroy light armored targets
-    "rhs_weap_rshg2"    // is a disposable assault rocket launcher designed for destroying infantry hidden in cover. It uses thermobaric warhead which is deadly within range of 12meters
+    "rhs_weap_rpg26",   // Light-Anti-tank 
+    "rhs_weap_rshg2"    // Thermobaric (HE) launcher 
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -222,10 +219,7 @@ private _aaat_munition = [
 ];
 
 private _gepaeck_mittel = [
-    "rhs_assault_umbts",    // maximumLoad = 140; mass = 20; Quotient = 7
-    "B_FieldPack_cbr",      // maximumLoad = 200; mass = 30; Quotient = 6,6
-    "B_FieldPack_khk",
-    "B_FieldPack_oli"
+    "rhs_assault_umbts"    // maximumLoad = 140; mass = 20; Quotient = 7
 ];
 
 private _gepaeck_gross = [
@@ -237,6 +231,12 @@ private _gepaeck_gross = [
 private _rifle_munition = [
     "rhs_30Rnd_762x39mm_polymer",
     "rhs_30Rnd_762x39mm_polymer_tracer"
+];
+
+private _LR =[
+    "OPXT_ogao_117",
+    "OPXT_pen_bad_117",
+    "OPXT_multicamt_117"
 ];
 
 private _items = [];
@@ -251,22 +251,21 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "lead":
     {
         _allgemein +
+        _allgemein_gewehre +
         _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
+        _gepaeck_mittel +
         _allgemein_kopfbedeckung +
-        _grenadier_gewehr +
         _grenadier_munition +
+        _LR +
         [
-            // Gewehr
-            "rhs_weap_ak74n",
-            "rhs_weap_ak74n_npz",
+            // Handfeuerwaffen
 
             // Weste
             "rhs_6b13_EMR_6sh92_radio",
@@ -288,7 +287,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -310,12 +308,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _LR +
         [
             // Uniform
             "rhs_uniform_df15",
@@ -336,17 +334,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
+        _gepaeck_mittel +
         _allgemein_kopfbedeckung +
         _grenadier_gewehr +
         _grenadier_munition +
         [
-            // Gewehr
-            "rhs_weap_ak74n",
-            "rhs_weap_ak74n_npz",
 
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
@@ -366,10 +361,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
+        _gepaeck_mittel +
+        _gepaeck_gross +
         _allgemein_kopfbedeckung +
         _mg_munition +
         [
@@ -406,7 +402,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _sniper_munition +
         _aaat_munition +
         _rifle_munition +
-        _gepaeck_mittel +
         _gepaeck_gross +
         [
             // Weste
@@ -504,9 +499,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
+        _gepaeck_mittel +
         _allgemein_kopfbedeckung +
         _sniper_munition +
         [
@@ -544,7 +539,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -654,7 +648,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -690,12 +683,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
+        _allgemein_raketenwerfer +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _LR +
         [
             // Handfeuerwaffen
             "ACE_VMH3",

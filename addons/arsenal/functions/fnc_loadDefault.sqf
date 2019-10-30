@@ -82,7 +82,27 @@ if (_arsenalType == "VANILLA") exitWith
 
 if (_arsenalType == "RUSS") exitWith
 {
-    ACE_player setUnitLoadout [[[],[],[],["rhs_uniform_emr_patchless",[["ACE_quikclot",15],["ACE_tourniquet",4],["ACE_Atropine",5],["ACE_MapTools",1],["ACE_CableTie",2],["ACE_EntrenchingTool",1]]],[],[],"rhs_fieldcap_digi","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]], true];
+    private _layout = switch (_rolle) do
+    {
+                case "lead": {[["rhs_weap_ak74m","","","rhs_acc_pkas",["rhs_30Rnd_545x39_7N22_AK",30],[],""],[],[],["rhs_uniform_emr_patchless",[["ACE_MapTools",1],["ACE_EntrenchingTool",1],["ACE_CableTie",5],["ACE_adenosine",1],["ACE_salineIV",1],["ACE_Flashlight_KSF1",1]]],["rhs_6b23_digi_6sh92",[["ACE_fieldDressing",30],["ACE_atropine",7],["rhs_mag_rdg2_white",5,1],["rhs_mag_rdg2_black",1,1]]],["OPXT_multicamt_117",[["ACE_tourniquet",4],["rhs_30Rnd_545x39_7N22_AK",10,30],["rhs_mag_rdg2_black",2,1]]],"rhs_6b47","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]]};
+                case "grena": {[["rhs_weap_ak74m_gp25","","","",["rhs_30Rnd_545x39_7N22_AK",30],["rhs_GDM40",1],""],[],[],["rhs_uniform_emr_patchless",[["ACE_MapTools",1],["ACE_EntrenchingTool",1],["ACE_CableTie",5],["ACE_adenosine",1],["ACE_salineIV",1]]],["rhs_6b23_digi_6sh92",[["ACE_fieldDressing",30],["ACE_atropine",5],["rhs_GDM40",5,1],["rhs_VOG25",2,1],["rhs_VG40SZ",2,1],["rhs_VG40TB",2,1],["rhs_VOG25P",2,1],["rhs_GRD40_White",2,1]]],["rhs_assault_umbts",[["ACE_tourniquet",4],["rhs_30Rnd_545x39_7N22_AK",10,30],["rhs_mag_rdg2_white",2,1]]],"rhs_6b47","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]]};
+                case "sani": {[["rhs_weap_ak74m","rhs_acc_dtk","","",["rhs_30Rnd_545x39_7N22_AK",30],[],""],[],[],["rhs_uniform_emr_patchless",[["ACE_MapTools",1],["ACE_EntrenchingTool",1],["ACE_CableTie",5],["ACE_adenosine",1],["ACE_surgicalKit",1],["ACE_Flashlight_KSF1",1],["ACE_salineIV_500",1]]],["rhs_6b23_digi_medic",[["ACE_elasticBandage",30],["ACE_quikclot",30],["ACE_packingBandage",30],["ACE_atropine",10],["rhs_30Rnd_545x39_7N22_AK",3,30]]],["rhs_assault_umbts",[["ACE_morphine",10],["ACE_epinephrine",10],["ACE_adenosine",10],["adv_aceCPR_AED",1],["ACE_plasmaIV",4],["ACE_plasmaIV_500",6],["ACE_tourniquet",10]]],"rhs_6b47","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]]};
+                case "mg": {[["rhs_weap_pkm","","","",["rhs_100Rnd_762x54mmR_green",100],[],""],[],[],["rhs_uniform_emr_patchless",[["ACE_MapTools",1],["ACE_EntrenchingTool",1],["ACE_CableTie",5],["ACE_adenosine",1],["ACE_salineIV",1],["ACE_Flashlight_KSF1",1]]],["rhs_6b23_digi_6sh92",[["ACE_fieldDressing",30],["ACE_atropine",5],["rhs_mag_rdg2_white",6,1]]],["B_Carryall_oli",[["ACE_tourniquet",4],["rhs_100Rnd_762x54mmR_green",4,100]]],"rhs_6b47","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ACE_Altimeter",""]]};
+                case "spreng": {[]};
+                case "aaat": {[]};
+                case "trag": {[]};
+                case "dmr": {[]};
+                case "pilot": {[]};
+                case "sniper": {[]};
+                case "spotter": {[]};
+                case "jtac": {[]};
+                case "arzt": {[]};
+                case "rifle" : {[]};
+                case "pionier" : {[]};
+                default {[]};
+    };
+
+    ACE_player setUnitLoadout [_layout, true];
 };
 
 if (_arsenalType == "Themen") exitWith
