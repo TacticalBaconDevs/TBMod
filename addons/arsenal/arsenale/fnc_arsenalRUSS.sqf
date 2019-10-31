@@ -385,13 +385,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "trag":
     {
         _allgemein +
+        _allgemein_magazine +
         _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
+        _allgemein_handfeuerwaffen +
+        _allgemein_zweibein +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_raketenwerfer +
-        _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
