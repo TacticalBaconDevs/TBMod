@@ -352,7 +352,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
-    case "dmr": {[]};
+    case "dmr": 
+    {
+        []
+        
+    };
 
     case "mg":
     {
