@@ -72,11 +72,15 @@ private _allgemein = [
 ];
 
 private _allgemein_magazine = [
-    "rhs_30Rnd_545x39_7N6_AK",
+    "rhs_30Rnd_545x39_7N6M_AK",
     "rhs_30Rnd_545x39_AK_green",
+    "rhs_30Rnd_545x39_7N6M_green_AK",
+    "rhs_30Rnd_545x39_7N10_plum_AK",
     "rhs_30Rnd_545x39_AK_plum_green",
-    "rhs_30Rnd_545x39_7N22_AK",
-    "rhs_30Rnd_545x39_7N22_camo_AK",
+    "rhs_30Rnd_545x39_7N10_camo_AK",
+    "rhs_30Rnd_545x39_7N10_desert_AK",
+    "rhs_30Rnd_545x39_7N10_AK",
+    "rhs_30Rnd_545x39_7U1_AK",
 
     // für Spetznas Mission
     "rhs_20rnd_9x39mm_SP5"
@@ -91,6 +95,11 @@ private _allgemein_gewehre = [
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_camo",
     "rhs_weap_ak74m_zenitco01_b33",
+    "rhs_weap_ak74m_desert",
+    "rhs_weap_ak74m_desert_npz",
+    "rhs_weap_ak74_3",
+    "rhs_weap_ak105",
+    "rhs_weap_ak105_npz",
 
     // für Spetznas Mission 
     "rhs_weap_asval_grip"
@@ -106,21 +115,35 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3",
     "rhsusf_acc_g33_t1",
     "ACE_optic",
-    "optic_MRCO_MRCO_2D"
+    "optic_MRCO_MRCO_2D",
+    "rhsusf_acc_eotech_xps3"
 ];
 
 private _allgemein_befestigungsschiene = [
     "rhs_acc_2dpzenit",
-    "rhs_acc_perst1ik"
+    "rhs_acc_perst1ik",
+    "rhs_acc_perst3",
+    "rhs_acc_perst3_top",
+    "rhs_acc_perst3_2dp_h",
+    "rhs_acc_perst3_2dp_light_h"
 ];
 
 private _allgemein_geschuetzzubehoer = [
     "rhs_acc_tgpa",
+    "rhs_acc_dtk3",
+    "rhs_acc_ak5",
     "rhs_acc_dtk1983"
 ];
 
 private _allgemein_zweibein = [
-    "rhs_acc_grip_ffg2"
+    "rhs_acc_grip_ffg2",
+    "rhs_acc_grip_rk2",
+    "rhs_acc_grip_rk6",
+    "rhsusf_acc_rvg_blk",
+    "rhsusf_acc_rvg_de",
+    "rhsusf_acc_grip2",
+    "rhsusf_acc_grip2_tan",
+    "rhsusf_acc_grip2_wd"
 ];
 
 private _allgemein_raketenwerfer = [
@@ -145,13 +168,13 @@ private _allgemein_handfeuerwaffen = [
 
 private _allgemein_uniformen = [
     "rhs_uniform_emr_patchless",
-    //"rhs_uniform_vdv_emr",
+    "rhs_uniform_vdv_emr",
     "rhs_uniform_emr_des_patchless",
-    "rhs_uniform_flora_patchless"
-    //"rhs_uniform_flora_patchless_alt",
-    //"rhs_uniform_mflora_patchless",
-    //"rhs_uniform_gorka_r_g",
-    //"rhs_uniform_gorka_r_y"
+    "rhs_uniform_flora_patchless",
+    "rhs_uniform_flora_patchless_alt",
+    "rhs_uniform_mflora_patchless",
+    "rhs_uniform_gorka_r_g",
+    "rhs_uniform_gorka_r_y"
 ];
 
 private _allgemein_westen = [
@@ -159,7 +182,8 @@ private _allgemein_westen = [
     "rhs_6b23_digi_6sh92",
     "rhs_6b13_Flora_6sh92",
     "rhs_6b23_6sh92",
-    "rhs_6b23_ML_6sh92"
+    "rhs_6b23_ML_6sh92",
+    "rhs_6b23_ML_6sh92_vog"
 ];
 
 private _allgemein_kopfbedeckung = [
