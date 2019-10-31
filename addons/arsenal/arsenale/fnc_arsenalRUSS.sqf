@@ -90,6 +90,7 @@ private _allgemein_gewehre = [
     "rhs_weap_ak74m_npz",
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_camo",
+    "rhs_weap_ak74m_zenitco01_b33",
 
     // für Spetznas Mission 
     "rhs_weap_asval_grip"
@@ -102,6 +103,8 @@ private _allgemein_visiere = [
     "rhs_acc_1p78",
     "rhs_acc_1p87",
     "rhs_acc_rakurspm",
+    "rhsusf_acc_g33_xps3",
+    "rhsusf_acc_g33_t1",
     "ACE_optic",
     "optic_MRCO_MRCO_2D"
 ];
