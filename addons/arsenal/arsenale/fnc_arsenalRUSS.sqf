@@ -101,7 +101,9 @@ private _allgemein_visiere = [
     "rhs_acc_ekp8_02",
     "rhs_acc_1p78",
     "rhs_acc_1p87",
-    "rhs_acc_rakurspm"
+    "rhs_acc_rakurspm",
+    "ACE_optic",
+    "optic_MRCO_MRCO_2D"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -303,7 +305,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "arzt":
     {
         _allgemein +
-        _allgemein_gewehre +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
