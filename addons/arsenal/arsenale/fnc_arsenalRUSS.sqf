@@ -262,7 +262,7 @@ private _rifle_munition = [
     "rhs_30Rnd_762x39mm_polymer_tracer"
 ];
 
-private _LR =[
+private _LR = [
     "OPXT_ogao_117",
     "OPXT_pen_bad_117",
     "OPXT_multicamt_117"
