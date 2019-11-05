@@ -76,6 +76,23 @@ class cfgWeapons
             mass = 40;
         };
     };
+
+    class TB_Uniform_IS_1_black_U: Uniform_Base
+    {
+        scope = 2;
+        picture = "\A3\characters_f\data\ui\icon_U_B_CombatUniform_mcam_ca.paa";
+        displayName = "ISIS 1";
+        author = "Eron";
+        model = "\A3\Characters_F\Common\Suitpacks\suitpack_universal_F.p3d";
+
+        class ItemInfo: UniformItem
+        {
+            uniformModel = "-";
+            uniformClass = "TB_Uniform_IS_1_black";
+            containerClass = "Supply40";
+            mass = 40;
+        };
+    };
 };
 
 ///////////////////////////////////
