@@ -57,7 +57,7 @@ if (_save) then
 }
 else // load
 {
-    if (_overwrite_local) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwrite_local==true"};
+    if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
     if (_transfer) then {[_name, remoteExecutedOwner, false] call FUNC(transfer)};
 
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
