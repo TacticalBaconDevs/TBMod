@@ -105,6 +105,7 @@ class CfgVehicles
         MAKE_PUBLIC(USA,USA);
         hiddenSelectionsTextures[] = {QPATHTOF(pics\Arsenal_USA.paa)};
     };
+    
     class TB_arsenal_uk : TB_arsenal_base
     {
         MAKE_PUBLIC(UK,UK);
