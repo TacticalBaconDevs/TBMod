@@ -36,16 +36,16 @@ if !(_activated) exitWith {true};
         if (_save) then
         {
             _dialogResult params ["_name"];
-
             [true, _name, !_server] remoteExec [QFUNC(persistence), 2];
         }
         else
         {
             _dialogResult params ["_id"];
-
             [false, _saves select _id, !_server] remoteExec [QFUNC(persistence), 2];
         };
-    }else {
+    }
+    else
+    {
         if (_save) then
         {
             [true, _name, false, true] call FUNC(persistence);
@@ -54,9 +54,7 @@ if !(_activated) exitWith {true};
         {
             systemChat "Server kann nicht erreicht werden. Laden nicht möglich";
         };
-        
     };
-    
 };
 
 true;
