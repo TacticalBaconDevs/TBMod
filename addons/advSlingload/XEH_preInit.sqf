@@ -19,7 +19,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "Enable Vanilla Slingload",
     "TBMod",
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(maxWeight),
@@ -27,6 +27,6 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "Maximales Gewicht",
     "TBMod",
     [100, 20000, 12000, 0]
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 ADDON = true;

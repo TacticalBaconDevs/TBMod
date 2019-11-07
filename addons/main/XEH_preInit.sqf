@@ -37,14 +37,14 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     ["Debug Level", "Zeigt massig Debuginformationen an"],
     "TBMod",
     [[0, 1, 2, 3], ["aus", "RPT", "RPT+systemChat", "RPT+systemChat+Hint"], 0]
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 [
     QGVAR(debug_remote),
     "CHECKBOX",
     ["Debug Remote", "Zeigt remote Debuginformationen an"],
     "TBMod",
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     "TB_inkognitoSystem",
@@ -52,7 +52,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     ["Inkognito System", "Erlaubt mehre Ausrüstungen und wechsel zu zivilen Sachen"],
     "TBMod",
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(crashHelfer),
@@ -60,7 +60,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "Crashhelfer",
     "TBMod",
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(doorBreach),
@@ -68,7 +68,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "Door Breach",
     "TBMod",
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(recoilCoef),
@@ -76,7 +76,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "recoilCoef",
     "TBMod",
     [0.1, 2, 1, 1]
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(recoilStart),
@@ -84,7 +84,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "recoilStart",
     "TBMod",
     [0.1, 2, 0.5, 1]
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(fpsMonitor_client),
@@ -92,7 +92,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "fpsMonitor_client",
     "TBMod",
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(fpsMonitor_zeus),
@@ -100,7 +100,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "fpsMonitor_zeus",
     "TBMod",
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QEGVAR(medical,coef_global),
@@ -108,6 +108,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "medicalCoef Global",
     "TBMod",
     [0.1, 2, 1, 1]
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 ADDON = true;
