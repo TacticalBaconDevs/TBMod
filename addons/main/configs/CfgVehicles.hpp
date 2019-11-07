@@ -399,8 +399,8 @@ class CfgVehicles
     class I_C_Soldier_Para_2_F;
     class I_G_Soldier_LAT2_F;
     class I_crew_F;
-	class O_R_Gorka_F;
-	class I_L_Soldier_Base_F;
+    class O_R_Gorka_F;
+    class I_L_Soldier_Base_F;
 
     class Civilian_F: Civilian {
         modelSides[] = {6};
