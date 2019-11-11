@@ -36,6 +36,17 @@ systemChat "submuni";};
 
 
 
+TB_uav_stop = false;
+[] spawn {
+	waitUntil {
+		private _uav = getconnecteduav player;
+		if(!isNull _uav && (uavcontrol _uav) #1 != "") then {
+			hintSilent ([currentweapon _uav] call tbmod_main_fnc_displayname);
+		};
+		uiSleep 0.1;
+		TB_uav_stop;
+	};
+};
 
 
 
