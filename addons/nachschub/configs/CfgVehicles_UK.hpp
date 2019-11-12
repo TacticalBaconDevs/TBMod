@@ -10,11 +10,9 @@ class TB_supply_uk_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(UK3CB_BAF_556_30Rnd,20);
-        MACRO_ADDMAGAZINE(UK3CB_BAF_556_30Rnd_T,20);
-        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m62_tracer,13);
-        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80_ball,13);
-        MACRO_ADDMAGAZINE(UK3CB_BAF_556_200Rnd_T,5);                              // MG 5,56
+        MACRO_ADDMAGAZINE(UK3CB_BAF_556_30Rnd,15);
+        MACRO_ADDMAGAZINE(UK3CB_BAF_556_30Rnd_T,15);
+        MACRO_ADDMAGAZINE(UK3CB_BAF_556_200Rnd_T,4);                              // MG 5,56
         MACRO_ADDMAGAZINE(UK3CB_BAF_762_200Rnd_T,4);                              // MG 7,62
         MACRO_ADDMAGAZINE(UK3CB_BAF_12G_Slugs,10);                                // Schrotflinte
         MACRO_ADDMAGAZINE(UK3CB_BAF_12G_Pellets,10);                              // Schrotflinte
