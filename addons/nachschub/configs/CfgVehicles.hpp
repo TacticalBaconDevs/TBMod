@@ -164,7 +164,7 @@ class CfgVehicles
                 {
                     displayName = "UK";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
                     ADD_SUPPLY(Munition,TB_supply_uk_ammo);
                     ADD_SUPPLY(KleinMunition,TB_supply_uk_ammoSmall);
