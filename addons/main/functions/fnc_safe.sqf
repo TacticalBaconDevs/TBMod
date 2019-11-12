@@ -77,7 +77,7 @@ else
 
     if (!isNil QGVAR(safeInfo)) then
     {
-        terminate TB_safeInfo;
+        terminate GVAR(safeInfo);
         GVAR(safeInfo) = nil;
     };
 

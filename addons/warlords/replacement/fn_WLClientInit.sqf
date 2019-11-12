@@ -77,6 +77,7 @@ if (BIS_WL_arsenalEnabled == 1) then {
     BIS_fnc_arsenal_data set [3, BIS_WL_factionAppropriateUniforms];
     BIS_fnc_arsenal_data set [5, (BIS_fnc_arsenal_data select 5) - BIS_WL_mortarBackpacks];
     BIS_fnc_arsenal_data set [23, (BIS_fnc_arsenal_data select 23) - ["APERSMineDispenser_Mag"]];
+    BIS_WL_arsenalSetupDone = TRUE;
 };
 
 // --- add default amount of funds at the scenario start or a smaller amount in case of JIP
@@ -367,26 +368,24 @@ addMissionEventHandler ["Draw3D", {
     };
     if (BIS_WL_playersAlpha > 0) then {
         {
-            //if (isPlayer _x) then {
-                drawIcon3D [
-                    "A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
-                    if (isPlayer _x) then {[1, 1, 1, BIS_WL_playersAlpha]} else {[0.8, 0.4, 0, BIS_WL_playersAlpha]},
-                    if (vehicle _x == _x) then {
-                        (_x modelToWorldVisual (_x selectionPosition "head")) vectorAdd [0,0,0.75];
-                    } else {
-                        getPosATLVisual _x
-                    },
-                    0,
-                    0,
-                    0,
-                    name _x,
-                    2,
-                    0.0325,
-                    "PuristaSemibold",
-                    "center",
-                    FALSE
-                ];
-            //};
+            drawIcon3D [
+                "A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
+                [1, 1, 1, BIS_WL_playersAlpha],
+                if (vehicle _x == _x) then {
+                    (_x modelToWorldVisual (_x selectionPosition "head")) vectorAdd [0,0,0.75];
+                } else {
+                    getPosATLVisual _x
+                },
+                0,
+                0,
+                0,
+                name _x,
+                2,
+                0.0325,
+                "PuristaSemibold",
+                "center",
+                FALSE
+            ];
         } forEach (BIS_WL_iconDrawArray);
     };
     {
@@ -452,6 +451,19 @@ if !(isServer || BIS_WLTeamBalanceEnabled == 0) then {
     };
 };
 
+BIS_WL_enemiesCheckTrigger = createTrigger ["EmptyDetector", position player, FALSE];
+BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
+BIS_WL_enemiesCheckTrigger setTriggerArea [200, 200, 0, FALSE];
+BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANY", "PRESENT", TRUE];
+BIS_WL_enemiesCheckTrigger setTriggerStatements [
+    "{(side group _x) != side group player && (side group _x) in [EAST, WEST, RESISTANCE]} count thislist > 0",
+    "",
+    ""
+];
+player addEventHandler ["GetInMan", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]]}];
+player addEventHandler ["GetOutMan", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]]}];
+player addEventHandler ["Respawn", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]]}];
+
 waitUntil {visibleMap};
 
 BIS_colorDrawE = BIS_WL_sectorColors # 0; BIS_colorDrawE set [3, 0.5];
@@ -486,21 +498,19 @@ BIS_colorDrawWSel = [0.75, 0.75, 0.75, 1];
     };
     if (BIS_WL_playersAlpha > 0) then {
         {
-            //if (isPlayer _x) then {
-                (_this # 0) drawIcon [
-                    "A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
-                    if (isPlayer _x) then {[1, 1, 1, BIS_WL_playersAlpha]} else {[0.8, 0.4, 0, BIS_WL_playersAlpha]},
-                    getPosVisual _x,
-                    20,
-                    20,
-                    0,
-                    format [" %1", name _x],
-                    2,
-                    0.05,
-                    "EtelkaNarrowMediumPro",
-                    "right"
-                ];
-            //};
+            (_this # 0) drawIcon [
+                "A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
+                if (_x == player) then {[1, 0, 0, BIS_WL_playersAlpha]} else {[1, 1, 1, BIS_WL_playersAlpha]},
+                getPosVisual _x,
+                20,
+                20,
+                0,
+                if (_x == player) then {""} else {format [" %1", name _x]},
+                2,
+                0.05,
+                "EtelkaNarrowMediumPro",
+                "right"
+            ];
         } forEach (BIS_WL_iconDrawArrayMap);
     };
     if (cheatsEnabled) then {

@@ -64,8 +64,6 @@
     };
 }, "all"] call CBA_fnc_registerChatCommand;
 
-if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
-
 ["fps", {
     if (player in (call BIS_fnc_listCuratorPlayers)) then
     {
@@ -79,6 +77,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["safe", {
+    if ((call BIS_fnc_admin) == 0 && isNull (getAssignedCuratorLogic player) && !((getPlayerUID player) in (call TB_lvl2))) exitWith {systemChat "Du hast keine Rechte für diesen Befehl!"};
+
     switch (_this select 0) do
     {
         case "1":
@@ -93,8 +93,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
         };
         default
         {
-            systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil "TB_safeInfo")];
-            [isNil "TB_safeInfo"] remoteExec [QFUNC(safe)];
+            systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil QGVAR(safeInfo))];
+            [isNil QGVAR(safeInfo)] remoteExec [QFUNC(safe)];
         };
     };
 
@@ -102,7 +102,10 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["hideGroup", {
-    switch (_this select 0) do {
+    if ((call BIS_fnc_admin) == 0 && isNull (getAssignedCuratorLogic player) && !((getPlayerUID player) in (call TB_lvl2))) exitWith {systemChat "Du hast keine Rechte für diesen Befehl!"};
+
+    switch (_this select 0) do
+    {
         case "1":
         {
             (group player) setVariable ["ace_map_hideBlueForceMarker", true, true];
@@ -124,6 +127,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["setGroup", {
+    if ((call BIS_fnc_admin) == 0 && isNull (getAssignedCuratorLogic player) && !((getPlayerUID player) in (call TB_lvl2))) exitWith {systemChat "Du hast keine Rechte für diesen Befehl!"};
+
     params ["_grpName"];
     if (_grpName == "") exitWith {systemChat "Kein Name wurde angegeben!"};
 
@@ -136,6 +141,8 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
     (group _unit) setGroupIdGlobal [_grpName];
 }, "all"] call CBA_fnc_registerChatCommand;
+
+if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
 ["spectator", {
     //if (isNil "TB_spectator") then {TB_spectator = false};

@@ -4,6 +4,8 @@
 */
 PREP(animationAI);
 PREP(atmoCoreAction);
+PREP(attributeLoadCombo);
+PREP(attributeSaveCombo);
 PREP(inkognitoSystem);
 PREP(keysForAI);
 PREP(moduleAtmoCore);
@@ -11,6 +13,7 @@ PREP(moduleAtmoFireSuppression);
 PREP(moduleAtmoMortarSupport);
 PREP(moduleAtmoMortarSuppression);
 PREP(moduleAtmoShootingRange);
+PREP(moduleClearPlaceables);
 PREP(moduleFlares);
 PREP(moduleFrontverlauf);
 PREP(moduleInjured);

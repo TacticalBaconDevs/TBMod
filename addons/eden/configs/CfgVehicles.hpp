@@ -25,7 +25,12 @@ class CfgVehicles
         };
     };
 
-    class TB_eden_base : Module_F
+    #define BACKCOMP(NAME) class TB_eden_##NAME : GVAR(NAME) { \
+            scope = 1; \
+            scopeCurator = 1; \
+        };
+
+    class GVAR(base) : Module_F
     {
         scope = 1;
         scopeCurator = 1;
@@ -48,8 +53,9 @@ class CfgVehicles
             size3[] = {0, 0, -1};
         };
     };
+    BACKCOMP(base);
 
-    class TB_eden_frontverlauf : TB_eden_base
+    class GVAR(frontverlauf) : GVAR(base)
     {
         scope = 2;
         displayName = "Frontverlauf";
@@ -69,7 +75,7 @@ class CfgVehicles
         {
             class modus: Combo
             {
-                property = "TB_eden_frontverlauf_modus";
+                property = QEGVAR(frontverlauf,modus);
                 displayName = "Modulmodus";
                 tooltip = "Der Modus mit dem das Modul arbeitet.";
                 typeName = "STRING";
@@ -99,7 +105,7 @@ class CfgVehicles
             };
             class gridSize: Edit
             {
-                property = "TB_eden_frontverlauf_gridSize";
+                property = QEGVAR(frontverlauf,gridSize);
                 displayName = "Gittergröße";
                 tooltip = "Die Größe der quadratischen Gitters des Frontverlaufrasters. (Werte in m: 100-1000)";
                 typeName = "NUMBER";
@@ -107,7 +113,7 @@ class CfgVehicles
             };
             class activateTime: Edit
             {
-                property = "TB_eden_frontverlauf_activateTime";
+                property = QEGVAR(frontverlauf,activateTime);
                 displayName = "Aktivierungszeit";
                 tooltip = "Die Zeit die benötigt wird, bis das Gitter aktiviert wird, der Wert bildet den Median, Min und Max werden automatisch mit -+30% gebildet. (Werte in s)";
                 typeName = "NUMBER";
@@ -115,7 +121,7 @@ class CfgVehicles
             };
             class unknownColor: Combo
             {
-                property = "TB_eden_frontverlauf_unknownColor";
+                property = QEGVAR(frontverlauf,unknownColor);
                 displayName = "Unbekannten Gitterfarbe";
                 tooltip = "Die Farbe die ein Gitter hat, wenn noch keine Infos da sind.";
                 typeName = "STRING";
@@ -145,7 +151,7 @@ class CfgVehicles
             };
             class gridAlpha: Edit
             {
-                property = "TB_eden_frontverlauf_gridAlpha";
+                property = QEGVAR(frontverlauf,gridAlpha);
                 displayName = "Gitter Sichtbarkeit";
                 tooltip = "Der Alphawert (Sichtbarkeit) der Gitter. Wenn nicht mehr unbekannt, wird 0.1 (10%) automatisch hinzugefügt!";
                 typeName = "NUMBER";
@@ -153,7 +159,7 @@ class CfgVehicles
             };
             class playerSide: Combo
             {
-                property = "TB_eden_frontverlauf_playerSide";
+                property = QEGVAR(frontverlauf,playerSide);
                 displayName = "PlayerSide";
                 tooltip = "Für alle Feindmodi benötigt.";
                 typeName = "STRING";
@@ -175,7 +181,7 @@ class CfgVehicles
             };
             class gridType: Combo
             {
-                property = "TB_eden_frontverlauf_gridType";
+                property = QEGVAR(frontverlauf,gridType);
                 displayName = "Gittertyp";
                 tooltip = "Der Gittertyp der auf der Karte angezeigt wird.";
                 typeName = "STRING";
@@ -229,8 +235,9 @@ class CfgVehicles
             };
         };
     };
+    BACKCOMP(frontverlauf);
 
-    class TB_eden_radio : TB_eden_base
+    class GVAR(radio) : GVAR(base)
     {
         scope = 2;
         displayName = "Radio";
@@ -241,15 +248,23 @@ class CfgVehicles
         {
             class sound: Edit
             {
-                property = "TB_eden_radio_sound";
+                property = QEGVAR(radio,sound);
                 displayName = "Radiosound";
                 tooltip = "Entweder der ConfigName der aus CfgMusic oder der Pfad zur Musik, Komanndo 'utils 4' lokal ausführen für alle möglichen Sounds";
                 typeName = "STRING";
                 defaultValue = "'RadioAmbient1'";
             };
+            class eigener: Checkbox
+            {
+                property = QEGVAR(radio,eigener);
+                displayName = "Eigener Missionsound";
+                tooltip = "Wenn der Sound in der Mission liegt, hier ankreuzen, zB. sounds\some_sound_file.ogg";
+                typeName = "BOOL";
+                defaultValue = "false";
+            };
             class dauer: Edit
             {
-                property = "TB_eden_radio_dauer";
+                property = QEGVAR(radio,dauer);
                 displayName = "Sounddauer";
                 tooltip = "Nur notwenig, wenn Fehler oder Soundpfad";
                 typeName = "NUMBER";
@@ -257,15 +272,15 @@ class CfgVehicles
             };
             class radius: Edit
             {
-                property = "TB_eden_radio_radius";
+                property = QEGVAR(radio,radius);
                 displayName = "Auslöserradius";
-                tooltip = "Ab wann soll das Radio auslösen, Radiosound selber ist Radius * 0.8";
+                tooltip = "Ab wann soll das Radio auslösen"; //, Radiosound selber ist Radius * 0.8
                 typeName = "NUMBER";
                 defaultValue = "30";
             };
             class inside: Checkbox
             {
-                property = "TB_eden_radio_inside";
+                property = QEGVAR(radio,inside);
                 displayName = "In einem Gebäude";
                 tooltip = "In einem Gebäude etwas gedämpfter";
                 typeName = "BOOL";
@@ -273,7 +288,7 @@ class CfgVehicles
             };
             class volume: Edit
             {
-                property = "TB_eden_radio_volume";
+                property = QEGVAR(radio,volume);
                 displayName = "Lautstärke";
                 tooltip = "Lautstärke von 0-5";
                 typeName = "NUMBER";
@@ -293,8 +308,9 @@ class CfgVehicles
             };
         };
     };
+    BACKCOMP(radio);
 
-    class TB_eden_flares : TB_eden_base
+    class GVAR(flares) : GVAR(base)
     {
         scope = 2;
         displayName = "Flares";
@@ -305,7 +321,7 @@ class CfgVehicles
         {
             class hoehe: Edit
             {
-                property = "TB_eden_flares_hoehe";
+                property = QEGVAR(flares,hoehe);
                 displayName = "Höhe";
                 tooltip = "Die Höhe in Metern in welcher die Flares starten";
                 typeName = "NUMBER";
@@ -313,7 +329,7 @@ class CfgVehicles
             };
             class startSpeed: Edit
             {
-                property = "TB_eden_flares_startSpeed";
+                property = QEGVAR(flares,startSpeed);
                 displayName = "Startgeschwindigkeit";
                 tooltip = "Die Geschwindigkeit nach dem Spawnen nach unten in m/s, Minuswerte oder 0 lassen die Flare in der Luft schweben";
                 typeName = "NUMBER";
@@ -321,7 +337,7 @@ class CfgVehicles
             };
             class deleteAfter: Edit
             {
-                property = "TB_eden_flares_deleteAfter";
+                property = QEGVAR(flares,deleteAfter);
                 displayName = "Löschen nach";
                 tooltip = "Nach wieviel Sekunden soll die Flare gelöscht werden, egal ob sie unten ist oder nicht";
                 typeName = "NUMBER";
@@ -329,7 +345,7 @@ class CfgVehicles
             };
             class flareType: Edit
             {
-                property = "TB_eden_flares_flareType";
+                property = QEGVAR(flares,flareType);
                 displayName = "Flaretype";
                 tooltip = "Der Klassenname der Flare, Beispiele: F_40mm_White, F_40mm_Red";
                 typeName = "STRING";
@@ -337,7 +353,7 @@ class CfgVehicles
             };
             class positionen: Edit
             {
-                property = "TB_eden_flares_positionen";
+                property = QEGVAR(flares,positionen);
                 displayName = "Positionen";
                 tooltip = "Markernamen oder Objektnamen, allerdings lassen sich auch Objekte synchronisieren";
                 typeName = "STRING";
@@ -345,7 +361,7 @@ class CfgVehicles
             };
             class delay: Edit
             {
-                property = "TB_eden_flares_delay";
+                property = QEGVAR(flares,delay);
                 displayName = "Verzögerung";
                 tooltip = "Verzögerung zwischen den Flares wenn es mehrer sind";
                 typeName = "NUMBER";
@@ -364,8 +380,9 @@ class CfgVehicles
             };
         };
     };
+    BACKCOMP(flares);
 
-    class TB_eden_injured : TB_eden_base
+    class GVAR(injured) : GVAR(base)
     {
         scope = 2;
         displayName = "Verletzte";
@@ -376,7 +393,7 @@ class CfgVehicles
         {
             class bewusstlos: Checkbox
             {
-                property = "TB_eden_injured_bewusstlos";
+                property = QEGVAR(injured,bewusstlos);
                 displayName = "Bewusstlos";
                 tooltip = "Ob die Person bewusstlos ist";
                 typeName = "NUMBER";
@@ -384,7 +401,7 @@ class CfgVehicles
             };
             class anzahl: Edit
             {
-                property = "TB_eden_injured_anzahl";
+                property = QEGVAR(injured,anzahl);
                 displayName = "Anzahl der Quellen";
                 tooltip = "Es geht um die Schadensquellen, also Schuss oder Explosion";
                 typeName = "NUMBER";
@@ -392,7 +409,7 @@ class CfgVehicles
             };
             class schadenTyp: Edit
             {
-                property = "TB_eden_injured_schadenTyp";
+                property = QEGVAR(injured,schadenTyp);
                 displayName = "Schadensquellen";
                 tooltip = "Welche Quellen random genutzt werden sollen";
                 typeName = "STRING";
@@ -400,7 +417,7 @@ class CfgVehicles
             };
             class wundOrte: Edit
             {
-                property = "TB_eden_injured_wundOrte";
+                property = QEGVAR(injured,wundOrte);
                 displayName = "Wundort";
                 tooltip = "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte";
                 typeName = "STRING";
@@ -419,71 +436,112 @@ class CfgVehicles
             };
         };
     };
+    BACKCOMP(injured);
+
+    class GVAR(clearPlaceables) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "Räumoptionen";
+        function = QFUNC(moduleClearPlaceables);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+
+        class Attributes: AttributesBase
+        {
+            class clearArray: Edit
+            {
+                property = QEGVAR(clearPlaceables,clearArray);
+                displayName = "Räumbare Sachen";
+                tooltip = "Entweder der Classname oder den Parent!";
+                typeName = "STRING";
+                defaultValue = """[]""";
+            };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Dieses Modul mit Objekten syncen, welche geräumt werden können, per Classname bzw Parent oder per Objektnamen unter räumbare Sachen.",
+                "Der Pionier kann diese Gegenstände dann entfernen."
+            };
+        };
+    };
+    BACKCOMP(clearPlaceables);
 
     // ######################## ATMO Module
-    class TB_eden_atmoBase : TB_eden_base
+    class GVAR(atmoBase) : GVAR(base)
     {
         category = "TB_categorie_eden_atmo";
     };
+    BACKCOMP(atmoBase);
 
-    class TB_eden_atmoReinforcementLZ : TB_eden_atmoBase
+    class GVAR(atmoReinforcementLZ) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoReinforcementLZ";
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\land_ca.paa";
     };
+    BACKCOMP(atmoReinforcementLZ);
 
-    class TB_eden_atmoReinforcementEndpoint : TB_eden_atmoBase
+    class GVAR(atmoReinforcementEndpoint) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoReinforcementEndPunkt";
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\move_ca.paa";
     };
+    BACKCOMP(atmoReinforcementEndpoint);
 
-    class TB_eden_atmoReinforcementCore : TB_eden_atmoBase
+    class GVAR(atmoReinforcementCore) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoReinforcementCore";
         function = QFUNC(moduleAtmoCore);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa";
     };
+    BACKCOMP(atmoReinforcementCore);
 
-    class TB_eden_atmoShootingRange : TB_eden_atmoBase
+    class GVAR(atmoShootingRange) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoShootingRange";
         function = QFUNC(moduleAtmoShootingRange);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\kill_ca.paa";
     };
+    BACKCOMP(atmoShootingRange);
 
-    class TB_eden_atmoMortarSupport : TB_eden_atmoBase
+    class GVAR(atmoMortarSupport) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoMortarSupport";
         function = QFUNC(moduleAtmoMortarSupport);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\destroy_ca.paa";
     };
+    BACKCOMP(atmoMortarSupport);
 
-    class TB_eden_atmoMortarSuppression : TB_eden_atmoBase
+    class GVAR(atmoMortarSuppression) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoMortarSuppression";
         function = QFUNC(moduleAtmoMortarSuppression);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\danger_ca.paa";
     };
+    BACKCOMP(atmoMortarSuppression);
 
-    class TB_eden_atmoFireSuppression : TB_eden_atmoBase
+    class GVAR(atmoFireSuppression) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoFireSuppression";
         function = QFUNC(moduleAtmoFireSuppression);
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\attack_ca.paa";
     };
+    BACKCOMP(atmoFireSuppression);
 
-    class TB_eden_atmoTarget : TB_eden_atmoBase
+    class GVAR(atmoTarget) : GVAR(atmoBase)
     {
         scope = 2;
         displayName = "AtmoTarget";
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
     };
+    BACKCOMP(atmoTarget);
 };
