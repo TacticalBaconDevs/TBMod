@@ -81,7 +81,7 @@ class TB_supply_uk_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 
 class TB_supply_uk_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
-    PUBLIC_NAME_CAT("SpezialwaffenMunition",USA);
+    PUBLIC_NAME_CAT("SpezialwaffenMunition",UK);
 
     class TransportMagazines
     {
@@ -124,7 +124,7 @@ class TB_supply_uk_IglaAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 
 class TB_supply_uk_javlinAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
-    PUBLIC_NAME_CAT("Javlin Munition",UK);
+    PUBLIC_NAME_CAT("JavlinMunition",UK);
 
     class TransportMagazines
     {
@@ -134,7 +134,7 @@ class TB_supply_uk_javlinAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 
 class TB_supply_uk_MAAWSAmmo : WRAPPER_NAME(Box_East_WpsSpecial_F)
 {
-    PUBLIC_NAME_CAT("MAAWS Munition",UK);
+    PUBLIC_NAME_CAT("MAAWSMunition",UK);
 
     class TransportMagazines
     {
@@ -146,7 +146,7 @@ class TB_supply_uk_MAAWSAmmo : WRAPPER_NAME(Box_East_WpsSpecial_F)
 
 class TB_supply_uk_SMAWAmmo : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
 {
-    PUBLIC_NAME_CAT("SMAW Munition",UK);
+    PUBLIC_NAME_CAT("SMAWMunition",UK);
 
     class TransportMagazines
     {
@@ -208,30 +208,5 @@ class TB_supply_uk_night : WRAPPER_NAME(Box_East_Support_F)
 
         MACRO_ADDITEM(ACE_Chemlight_HiYellow,20);
         MACRO_ADDITEM(ACE_Chemlight_HiRed,20);
-    };
-};
-
-class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
-{
-    PUBLIC_NAME("vz99 MörserMunition");
-
-    class TransportItems
-    {
-        MACRO_ADDITEM(TB_vz99_HE_multi,10);
-        MACRO_ADDITEM(TB_vz99_HE,8);
-        MACRO_ADDITEM(TB_vz99_smokeWhite,3);
-        MACRO_ADDITEM(TB_vz99_smokeRed,3);
-        MACRO_ADDITEM(TB_vz99_flare,2);
-    };
-};
-
-class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
-{
-    PUBLIC_NAME("vz99 MörserMunitionHE");
-
-    class TransportItems
-    {
-        MACRO_ADDITEM(TB_vz99_HE_multi,20);
-        MACRO_ADDITEM(TB_vz99_HE,15);
     };
 };
