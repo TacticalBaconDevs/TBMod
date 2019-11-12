@@ -178,6 +178,8 @@ class CfgVehicles
                     ADD_SUPPLY(SMAWMunition,TB_supply_uk_SMAWAmmo);
                     ADD_SUPPLY(Notfall,TB_supply_uk_notfall);
                     ADD_SUPPLY(NachtKiste,TB_supply_uk_night);
+                    ADD_SUPPLY(FahrzeugMunition12_7,TB_supply_uk_vehicles127);
+                    ADD_SUPPLY(FahrzeugMunition7_62,TB_supply_uk_vehicles762);
                     ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
                     ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
                 };

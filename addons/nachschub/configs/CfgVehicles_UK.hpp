@@ -208,3 +208,31 @@ class TB_supply_uk_night : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDITEM(ACE_Chemlight_HiRed,20);
     };
 };
+
+class TB_supply_uk_vehicles127 : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("FahrzeugMunition12_7",UK);
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(UK3CB_BAF_127_100Rnd,5);
+    };
+};
+
+class TB_supply_uk_vehicles762 : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("FahrzeugMunition7_62",UK);
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(UK3CB_BAF_762_200Rnd_T,9);
+    };
+};
