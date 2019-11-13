@@ -44,4 +44,3 @@ jobs:
           keywords: '["Culli"]'
           assignees: '["Culli-TB"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-  
