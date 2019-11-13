@@ -2,7 +2,6 @@ name: "Set Issue Label"
 on:
   issues:
     types: [opened]
-
 jobs:
   bug:
     runs-on: ubuntu-latest
@@ -11,4 +10,4 @@ jobs:
         with:
           keywords: '["bug"]'
           labels: '["bug"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"<
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
