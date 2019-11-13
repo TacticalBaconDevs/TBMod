@@ -11,3 +11,19 @@ jobs:
           keywords: '["bug"]'
           labels: '["bug"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+  duplicate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["duplicate"]'
+          labels: '["duplicate"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  enhancement:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["enhancement"]'
+          labels: '["enhancement"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
