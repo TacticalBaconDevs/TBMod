@@ -1,6 +1,3 @@
-- name: Issue Labeler
-  uses: Naturalclar/issue-action@v1.0.0
-
 name: "Set Issue Label"
 on:
   issues:
@@ -14,4 +11,4 @@ jobs:
         with:
           keywords: '["bug"]'
           labels: '["bug"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: "${{ secrets.GITHUB_TOKEN }}"<
