@@ -1,0 +1,46 @@
+name: "Set Assignee for Issue"
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  IDarky:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["IDarky"]'
+          assignees: '["IDarky"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  shukari:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["shukari"]'
+          assignees: '["shukari"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  Eron:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["Eron"]'
+          assignees: '["E-for-Eron"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  Eric:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["Eric"]'
+          assignees: '["Eric van Fandenfart"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  Culli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["Culli"]'
+          assignees: '["Culli-TB"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
