@@ -344,7 +344,10 @@ private _aaat_munition = [
     "rhs_mag_smaw_HEAA",
     "rhs_mag_maaws_HEAT",
     "rhs_mag_maaws_HEDP",
-    "rhs_mag_maaws_HE"
+    "rhs_mag_maaws_HE",
+    "rhs_fgm148_magazine_AT",
+    "rhs_fim92_mag",
+    "rhs_mag_smaw_SR"    
 ];
 
 private _gepaeck_mittel = [
@@ -647,6 +650,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "rifle":
     {
         _allgemein +
+        _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
