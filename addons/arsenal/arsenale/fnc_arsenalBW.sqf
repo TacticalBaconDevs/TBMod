@@ -16,7 +16,7 @@ private _allgemein = [
     "BWA3_G_Combat_orange",
     "BWA3_G_Combat_black",
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
 
     // Nachtsichtgeräte
     "ACE_NVG_Gen4",
@@ -554,7 +554,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "H_PilotHelmetFighter_B",
 
             // Gesichtsbedeckung
-            "G_Aviator",
+            //"G_Aviator",
 
             // Items
             "ToolKit"
