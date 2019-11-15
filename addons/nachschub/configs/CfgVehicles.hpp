@@ -160,6 +160,30 @@ class CfgVehicles
                     ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
                 };
 
+                class uk
+                {
+                    displayName = "UK";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY(Munition,TB_supply_uk_ammo);
+                    ADD_SUPPLY(KleinMunition,TB_supply_uk_ammoSmall);
+                    ADD_SUPPLY(Granaten,TB_supply_uk_grena);
+                    ADD_SUPPLY(Unterlauf,TB_supply_uk_unterlauf);
+                    ADD_SUPPLY(SpezialMunition,TB_supply_uk_spezial);
+                    ADD_SUPPLY(Werfer,TB_supply_uk_launcher);
+                    ADD_SUPPLY(IglaMunition,TB_supply_uk_IglaAmmo);
+                    ADD_SUPPLY(JavlinMunition,TB_supply_uk_javlinAmmo);
+                    ADD_SUPPLY(MAAWSMunition,TB_supply_uk_MAAWSAmmo);
+                    ADD_SUPPLY(SMAWMunition,TB_supply_uk_SMAWAmmo);
+                    ADD_SUPPLY(Notfall,TB_supply_uk_notfall);
+                    ADD_SUPPLY(NachtKiste,TB_supply_uk_night);
+                    ADD_SUPPLY(FahrzeugMunition12_7,TB_supply_uk_vehicles127);
+                    ADD_SUPPLY(FahrzeugMunition7_62,TB_supply_uk_vehicles762);
+                    ADD_SUPPLY(vz99 MörserMunition,TB_supply_all_commandMortarAmmo);
+                    ADD_SUPPLY(vz99 MörserMunitionHE,TB_supply_all_commandMortarAmmoHE);
+                };
+
                 class bw
                 {
                     displayName = "BW";
@@ -535,6 +559,7 @@ class CfgVehicles
 
     // ###################### Fraktionskisten ########################
     #include "CfgVehicles_USA.hpp"
+    #include "CfgVehicles_UK.hpp"
     #include "CfgVehicles_BW.hpp"
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
