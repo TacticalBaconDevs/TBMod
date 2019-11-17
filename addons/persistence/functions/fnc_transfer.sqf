@@ -20,10 +20,10 @@ if (_toServer) then
     [[_name], {
         params ["_name"];
 
-        [[_name, profileNamespace getVariable [format ["TB_persistence_%1", _name], []]], {
+        [[_name, profileNamespace getVariable [format ["TBMod_persistence_%1", _name], []]], {
                 params ["_name","_data"];
 
-                profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
+                profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _data];
                 private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
                 _savedNames pushBackUnique _name;
                 profileNamespace setVariable [QGVAR(savedNames), _savedNames];
@@ -36,11 +36,11 @@ if (_toServer) then
 }
 else
 {
-    [[_name, profileNamespace getVariable [format ["TB_persistence_%1", _name], []]],
+    [[_name, profileNamespace getVariable [format ["TBMod_persistence_%1", _name], []]],
     {
         params ["_name","_data"];
 
-        profileNamespace setVariable [format ["TB_persistence_%1", _name], _data];
+        profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _data];
         private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
         _savedNames pushBackUnique _name;
         profileNamespace setVariable [QGVAR(savedNames), _savedNames];

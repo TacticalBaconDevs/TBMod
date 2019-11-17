@@ -37,11 +37,11 @@ if (_save) then
     }
     forEach TB_persistent_buildings;
 
-    profileNamespace setVariable [format ["TB_persistent_buildings_%1", _name], _array];
+    profileNamespace setVariable [format ["TBMod_persistent_buildings_%1", _name], _array];
 }
 else //laden
 {
-    private _array = profileNamespace getVariable [format ["TB_persistent_buildings_%1", _name], []];
+    private _array = profileNamespace getVariable [format ["TBMod_persistence_buildings_%1", _name], []];
 
     if (_array isEqualTo []) exitWith {"[TBMod_persistence] Nichts zum Laden verfügbar!" remoteExecCall ["systemChat"]};
     if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};

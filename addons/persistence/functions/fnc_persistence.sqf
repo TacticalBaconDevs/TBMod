@@ -42,7 +42,7 @@ if (_save) then
 
     // save storagearray
 
-    profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
+    profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _saveArray];
 
     // save TBMod_building stuff
     [true, _name] call FUNC(persistenceBuilding);
@@ -60,7 +60,7 @@ else // load
     if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
     if (_transfer) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
 
-    private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
+    private _loadArray = profileNamespace getVariable [format ["TBMod_persistence_%1", _name], [[], [], [], []]];
 
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
     _objArray = _objArray arrayIntersect _objArray;
