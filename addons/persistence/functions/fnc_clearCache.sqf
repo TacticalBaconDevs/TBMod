@@ -8,6 +8,7 @@
 {
     profileNamespace setVariable [format ["TBMod_persistence_buildings_%1", _x], nil];
     profileNamespace setVariable [format ["TBMod_persistence_%1", _x], nil];
+    //Delete old. Backcomp 2
     profileNamespace setVariable [format ["TB_persistent_buildings_%1", _x], nil];
     profileNamespace setVariable [format ["TB_persistence_%1", _x], nil];
 }

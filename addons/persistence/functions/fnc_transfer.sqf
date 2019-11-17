@@ -15,19 +15,23 @@ if (!isServer) exitWith {"[TBMod_persistence] Transfer nur vom Server startbar."
 GVAR(transfer) = false;
 publicVariable QGVAR(transfer);
 
+format["[TBMod_persistence] Transfer von %1 %2 Server gestartet", _name, ["vom", "zum"] select _toServer] remoteExecCall ["systemChat"];
+
 if (_toServer) then
 {
+    
     [[_name], {
         params ["_name"];
 
-        [[_name, profileNamespace getVariable [format ["TBMod_persistence_%1", _name], []]], {
+        [[_name, profileNamespace getVariable [_name, []]], {
                 params ["_name","_data"];
 
-                profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _data];
+                profileNamespace setVariable [_name, _data];
+                /*
                 private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
                 _savedNames pushBackUnique _name;
                 profileNamespace setVariable [QGVAR(savedNames), _savedNames];
-
+                */
                 saveProfileNamespace;
                 GVAR(transfer) = true;
                 publicVariable QGVAR(transfer);
@@ -36,19 +40,20 @@ if (_toServer) then
 }
 else
 {
-    [[_name, profileNamespace getVariable [format ["TBMod_persistence_%1", _name], []]],
+    [[_name, profileNamespace getVariable [_name, []]],
     {
         params ["_name","_data"];
 
-        profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _data];
+        profileNamespace setVariable [_name, _data];
+        /*
         private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
         _savedNames pushBackUnique _name;
         profileNamespace setVariable [QGVAR(savedNames), _savedNames];
-
+        */
         saveProfileNamespace;
         GVAR(transfer) = true;
         publicVariable QGVAR(transfer);
     }] remoteExecCall ["call", _client];
 };
-
-waitUntil {GVAR(transfer)}
+waitUntil {GVAR(transfer)};
+format["[TBMod_persistence] Transfer von %1 %2 Server beendet", _name, ["vom", "zum"] select _toServer] remoteExecCall ["systemChat"];
