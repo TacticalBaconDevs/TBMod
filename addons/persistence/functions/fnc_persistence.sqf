@@ -53,12 +53,12 @@ if (_save) then
 
     saveProfileNamespace;
 
-    if (_transfer && !_overwriteLocal) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
+    if (_transfer && !_overwriteLocal) then {[_name, remoteExecutedOwner, false] call FUNC(transfer)};
 }
 else // load
 {
     if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
-    if (_transfer) then {[_name, remoteExecutedOwner, false] call FUNC(transfer)};
+    if (_transfer) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
 
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
 
