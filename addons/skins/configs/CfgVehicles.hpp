@@ -103,8 +103,8 @@ class CfgVehicles
         author = "Eron";
         nakedUniform = "U_BasicBody";
         uniformClass = "TB_Uniform_IS_1_black_U";
-        hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa)};
+        hiddenSelections[] = {"camo1","camo2"};
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa),QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa)};
     };
 
     ///////////////////////Polizei Fahrzeuge//////////////////////////
