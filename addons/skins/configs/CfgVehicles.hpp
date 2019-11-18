@@ -26,7 +26,6 @@ class CfgVehicles
     class B_RangeMaster_F;
     class O_officer_F;
     class U_I_C_Soldier_Para_2_F;
-    class rhs_6sh92_vog;
 
     // Fahrzeuge
     class I_Plane_Fighter_03_dynamicLoadout_F;
