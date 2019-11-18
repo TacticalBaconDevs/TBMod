@@ -25,7 +25,7 @@ class CfgVehicles
     class B_Soldier_F;
     class B_RangeMaster_F;
     class O_officer_F;
-    class U_I_C_Soldier_Para_2_F;
+    class I_C_Soldier_Para_2_F;
     class rhs_6sh92_vog;
 
     // Fahrzeuge
@@ -96,7 +96,7 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_presi.paa)};
     };
 
-    class TB_Uniform_IS_1_black: U_I_C_Soldier_Para_2_F
+    class TB_Uniform_IS_1_black: I_C_Soldier_Para_2_F
     {
         scope = 1;
         displayName = "IS_1";
