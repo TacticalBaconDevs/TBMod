@@ -26,6 +26,7 @@ class CfgVehicles
     class B_RangeMaster_F;
     class O_officer_F;
     class U_I_C_Soldier_Para_2_F;
+    class rhs_6sh92_vog;
 
     // Fahrzeuge
     class I_Plane_Fighter_03_dynamicLoadout_F;
@@ -47,7 +48,7 @@ class CfgVehicles
     class Offroad_02_unarmed_base_F;
     class Offroad_02_LMG_base_F;
     class Offroad_02_AT_base_F;
-    class O_MBT_02_cannon_F;
+    class O_MBT_02_base_F;
 
     ///////////////////////Polizei Uniformen//////////////////////////
 
@@ -463,15 +464,18 @@ class CfgVehicles
 
     //////////////////// OPFOR /////////////////////
 
-    class TB_Vehicles_T100: O_MBT_02_cannon_F // T-100
+    class O_MBT_02_cannon_F : O_MBT_02_base_F
     {
         displayName = "T-100";
         author = "Eron";
         addCategoryOPF(Arid);
+
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_2.paa)
         };
     };
+
+    class TB_Vehicles_T100 : O_MBT_02_cannon_F {};
 };

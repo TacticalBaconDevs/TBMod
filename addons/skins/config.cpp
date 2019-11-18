@@ -15,7 +15,8 @@ class CfgPatches
             "TB_Uniform_SEK_U",
             "TB_Uniform_Kommissar_U",
             "TB_Uniform_Polizist_U",
-            "TB_Uniform_presi_U"
+            "TB_Uniform_presi_U",
+            "TB_Uniform_IS_1_black_U"
         };
 
         vehicles[] = {
