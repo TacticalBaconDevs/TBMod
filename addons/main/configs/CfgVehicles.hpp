@@ -28,6 +28,13 @@ class CfgVehicles
         editorSubcategory = "EdSubcat_TB_Spezial";
     };
 
+    class rhs_6sh92;
+    class rhs_6sh92_vog: rhs_6sh92
+    {
+        scope = 2;
+        side = 0;
+    };
+
     class TB_flag_rufnamen : TB_spezial_base
     {
         displayName = "Rufnamen";
