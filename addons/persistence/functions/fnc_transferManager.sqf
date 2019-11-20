@@ -33,7 +33,7 @@ else
         saveProfileNamespace;
         GVAR(transfer) = true;
         publicVariable QGVAR(transfer);
-    }] remoteExecCall ["call", _client];
+    }] remoteExecCall ["call", remoteExecutedOwner];
 };
 waitUntil {GVAR(transfer)};
 format["[TBMod_persistence] Transfer von Save %1 %2 Server beendet", _name, ["vom", "zum"] select _toServer] remoteExecCall ["systemChat"];
