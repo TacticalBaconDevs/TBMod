@@ -5,7 +5,7 @@
 */
 params [
     ["_savename", "", []],
-	["_toServer", false , [false]]
+    ["_toServer", false , [false]]
 ];
 
 if (_savename == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
@@ -17,23 +17,23 @@ format["[TBMod_persistence] Transfer von Save %1 %2 Server gestartet", _name, ["
 [format ["TBMod_persistence_%1", _savename], remoteExecutedOwner, _toServer] call FUNC(transfer);
 [format ["TBMod_persistence_building_%1", _savename], remoteExecutedOwner, _toServer] call FUNC(transfer);
 if(_toServer) {
-	private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
-	_savedNames pushBackUnique _savename;
-	profileNamespace setVariable [QGVAR(savedNames), _savedNames];
-	saveProfileNamespace;
+    private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
+    _savedNames pushBackUnique _savename;
+    profileNamespace setVariable [QGVAR(savedNames), _savedNames];
+    saveProfileNamespace;
 }
 else
 {
-	[[_savename],
-	{
-		params ["_name"];
-		private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
-		_savedNames pushBackUnique _name;
-		profileNamespace setVariable [QGVAR(savedNames), _savedNames];
-		saveProfileNamespace;
-		GVAR(transfer) = true;
-		publicVariable QGVAR(transfer);
-	}] remoteExecCall ["call", _client];
+    [[_savename],
+    {
+        params ["_name"];
+        private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
+        _savedNames pushBackUnique _name;
+        profileNamespace setVariable [QGVAR(savedNames), _savedNames];
+        saveProfileNamespace;
+        GVAR(transfer) = true;
+        publicVariable QGVAR(transfer);
+    }] remoteExecCall ["call", _client];
 }
 waitUntil {GVAR(transfer)};
 format["[TBMod_persistence] Transfer von Save %1 %2 Server beendet", _name, ["vom", "zum"] select _toServer] remoteExecCall ["systemChat"];
