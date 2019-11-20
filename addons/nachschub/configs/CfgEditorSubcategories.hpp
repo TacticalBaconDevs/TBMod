@@ -12,27 +12,33 @@ class CfgEditorSubcategories
         order = 98;
     };
 
+    class EdSubcat_TB_Supply_UK
+    {
+        displayName = "UK";
+        order = 97;
+    };
+
     class EdSubcat_TB_Supply_RUSS
     {
         displayName = "RUSS";
-        order = 97;
+        order = 96;
     };
 
     class EdSubcat_TB_Supply_BW
     {
         displayName = "BW";
-        order = 96;
+        order = 95;
     };
 
     class EdSubcat_TB_Supply_NATO
     {
         displayName = "NATO";
-        order = 95;
+        order = 94;
     };
 
     class EdSubcat_TB_Supply_LDF
     {
         displayName = "LDF";
-        order = 94;
+        order = 93;
     };
 };

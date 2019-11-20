@@ -21,6 +21,7 @@ PREP_OTHERFOLDER(arsenalBW,arsenale);
 PREP_OTHERFOLDER(arsenalRUSS,arsenale);
 PREP_OTHERFOLDER(arsenalThemen,arsenale);
 PREP_OTHERFOLDER(arsenalUSA,arsenale);
+PREP_OTHERFOLDER(arsenalUK,arsenale);
 PREP_OTHERFOLDER(arsenalVANILLA,arsenale);
 
 // Themenarsenale

@@ -11,10 +11,11 @@
 params [
         ["_save", false, [false]],
         ["_name", "", [""]],
-        ["_transfer", false, [false]]
+        ["_transfer", false, [false]],
+        ["_overwriteLocal", false, [false]]
     ];
 
-if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
+if (!isServer && !_overwriteLocal) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
 if (!canSuspend) exitWith {"[TBMod_persistence] Skript muss per SPAWN ausgeführt werden" remoteExecCall ["systemChat"]};
 if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
 
@@ -52,10 +53,11 @@ if (_save) then
 
     saveProfileNamespace;
 
-    if (_transfer) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
+    if (_transfer && !_overwriteLocal) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
 }
 else // load
 {
+    if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
     if (_transfer) then {[_name, remoteExecutedOwner, false] call FUNC(transfer)};
 
     private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
