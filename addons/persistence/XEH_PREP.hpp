@@ -15,6 +15,6 @@ PREP(persistenceObjects);
 PREP(persistencePlayers);
 PREP(persistenceVehicles);
 PREP(transfer);
+PREP(transferManager);
 PREP(vector2Eden);
 PREP(ping);
-PREP(transferManager);
