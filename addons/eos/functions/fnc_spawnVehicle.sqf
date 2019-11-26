@@ -14,7 +14,7 @@ params [
         "_side",
         "_faction",
         "_type",
-        ["lockVehicleParams", [true, false]]
+        ["_lockVehicleParams", [true, false]]
     ];
 
 private _vehiclePool = [_faction, _type] call FUNC(unitPools);
@@ -28,7 +28,7 @@ _vehiclePool params ["_vehicleType", ""];
 private _return = [_position, 0, _vehicleType, _side] call BIS_fnc_spawnVehicle;
 _return params ["_vehicle", "_crew", "_grp"];
 
-lockVehicleParams params ["_lockVehicle", "_giveKeys"];
+_lockVehicleParams params ["_lockVehicle", "_giveKeys"];
 if (_lockVehicle) then
 {
     _vehicle lock 2;
