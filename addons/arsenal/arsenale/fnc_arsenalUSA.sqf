@@ -5,16 +5,6 @@
     Ansprechpartner: shukari
 */
 private _allgemein = [
-    // Gepäck
-    "rhsusf_falconii_coy",          // maximumLoad = 106; mass = 13; Quotient = 8
-    "rhsusf_falconii_mc",
-    "B_AssaultPack_blk",
-    "B_AssaultPack_rgr",
-    "rhsusf_assault_eagleaiii_coy", // maximumLoad = 160; mass = 20; Quotient = 8
-    "rhsusf_assault_eagleaiii_ocp",
-    "rhsusf_assault_eagleaiii_ucp",
-    "B_Parachute",
-
     // Gesichtsbedeckung
     "rhs_googles_orange",
     "rhs_googles_clear",
@@ -524,11 +514,32 @@ private _aaat_munition = [
     "rhs_mag_smaw_SR"
 ];
 
+private _gepaeck_klein = [
+    // Gepäck
+    "rhsusf_falconii_coy",          // maximumLoad = 106; mass = 13; Quotient = 8
+    "rhsusf_falconii_mc",
+    "B_AssaultPack_blk",
+    "B_AssaultPack_rgr",
+    "rhsusf_assault_eagleaiii_coy", // maximumLoad = 160; mass = 20; Quotient = 8
+    "rhsusf_assault_eagleaiii_ocp",
+    "rhsusf_assault_eagleaiii_ucp",
+    "B_Parachute",
+    "B_FieldPack_cbr",
+    "B_FieldPack_khk",
+    "B_FieldPack_oli",
+    "B_FieldPack_blk"
+];
+
 private _gepaeck_mittel = [
     "B_Kitbag_cbr",     // maximumLoad = 280; mass = 50; Quotient = 5,6
     "B_Kitbag_sgg",
     "B_Kitbag_rgr",
-    "B_Kitbag_mcamo"
+    "B_Kitbag_mcamo",
+    "B_Kitbag_tan",
+    "B_TacticalPack_blk",
+    "B_TacticalPack_oli",
+    "B_TacticalPack_mcamo",
+    "B_TacticalPack_rgr"
 ];
 
 private _gepaeck_gross = [
@@ -661,7 +672,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_Medic",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
-            "rhsusf_spcs_ucp_medic"
+            "rhsusf_spcs_ucp_medic",
+
+            // Kopfbedeckung
+            "TB_helmet_Sani_A_Black",
+            "TB_helmet_Sani_B_Grey",
+            "TB_helmet_Sani_C_Green"
         ]
     };
 
@@ -704,7 +720,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_cvc_green_ess",
             "rhsusf_cvc_helmet",
             "rhsusf_cvc_alt_helmet",
-            "rhsusf_cvc_ess"
+            "rhsusf_cvc_ess",
+            "TB_helmet_Sani_A_Black",
+            "TB_helmet_Sani_B_Grey",
+            "TB_helmet_Sani_C_Green"
         ]
     };
 

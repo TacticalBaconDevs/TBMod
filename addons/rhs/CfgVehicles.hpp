@@ -12,7 +12,7 @@ class CfgVehicles
 {
     // ExtraSkin
     class RHS_UH60M;
-    class TB_Vehicles_USA_UH60_MEV: RHS_UH60M
+    class TB_Vehicles_USA_UH60_MEV : RHS_UH60M
     {
         displayName = "UH-60 MEV";
         author = "Eron";
@@ -27,7 +27,7 @@ class CfgVehicles
 
     // Skin
     class RHS_MELB_MH6M;
-    class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
+    class TB_Vehicles_MH6_SWAT : RHS_MELB_MH6M
     {
         displayName = "MH-6 S.W.A.T.";
         author = "Eron";
@@ -37,7 +37,7 @@ class CfgVehicles
 
     // Skin FlaRak Kit
     class AA_01_base_F;
-    class B_static_AA_F: AA_01_base_F
+    class B_static_AA_F : AA_01_base_F
     {
         author = "Eron";
         hiddenSelectionsTextures[] = {
