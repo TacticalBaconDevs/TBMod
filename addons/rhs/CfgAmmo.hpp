@@ -396,4 +396,40 @@ class CfgAmmo
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
     };
+
+    class B_30mm_HE;
+    class B_40mm_GPR : B_30mm_HE // 40mm GPR
+    {
+        hit = 40; // 70
+    };
+
+    class B_30mm_APFSDS;
+    class B_40mm_APFSDS : B_30mm_APFSDS // 40mm APFSDS
+    {
+        hit = 100; // 150
+    };
+
+    class DirectionalBombBase;
+    class ClaymoreDirectionalMine_Remote_Ammo : DirectionalBombBase // Claymore
+    {
+        indirectHit = 50; // 40
+        indirectHitRange = 80; // 30
+        /*mineTrigger = {"RemoteTrigger","TimeTrigger","ACE_MagneticTrigger","IRTrigger"};*/
+        mineTrigger = "IRTrigger";
+    };
+
+    class PipeBombBase;
+    class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
+    {
+        submunitionConeType[] = {"randomupcone",18}; // "randomupcone",14
+        submunitionInitSpeed = 18; // 8
+    };
+
+    class APERSMine_Range_Ammo;
+    class APERSMineDispenser_Mine_Ammo : APERSMine_Range_Ammo // Submunition APERSMineDispenser
+    {
+        hit = 9; // 7
+        indirectHitRange = 10; // 3
+        suppressionRadiusHit = 32; // 16
+    };
 };
