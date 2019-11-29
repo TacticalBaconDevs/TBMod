@@ -505,4 +505,23 @@ class CfgVehicles
     // ### RHS inheritance fix
     class rhs_uaz_spg9_base;
     class rhs_uaz_spg9_chdkz : rhs_uaz_spg9_base {};
+
+    /*// UGV Stomper
+    class UGV_01_base_F;
+    class UGV_01_rcws_base_F : UGV_01_base_F
+        {
+            class Turrets;
+        };
+        class B_UGV_01_rcws_F : UGV_01_rcws_base_F // UGV Stomper RCWS
+        {
+            class Turrets : Turrets
+            {
+                class CargoTurret_01
+                {
+                    class NewTurret;
+                    class MainTurret : NewTurret
+                        magazines[] = {"200Rnd_127x99_mag_Tracer_Red","96Rnd_40mm_G_belt"};
+                };
+            };
+        };*/
 };
