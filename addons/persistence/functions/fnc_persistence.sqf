@@ -72,9 +72,6 @@ else // load
     // vorhandene nicht benannte Fahrzeuge löschen
     (_objArray select {vehicleVarName _x == "" && _x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []}) call CBA_fnc_deleteEntity;
 
-    // Benutzermarker löschen
-    (allMapMarkers select {(_x select [0, 13]) == "_USER_DEFINED"}) call CBA_fnc_deleteEntity;
-
     // benannte Fahrzeuge simulation temp deaktivieren
     TB_persistence_tempSimulationDisabled = [];
     {
@@ -100,14 +97,22 @@ else // load
     // Objekte laden
     [_save, _loadArray select 2] call FUNC(persistenceObjects);
 
+    uiSleep 1;
+
     // Fahrzeuge organisieren
     [_save, _loadArray select 3] call FUNC(persistenceVehicles);
+
+    uiSleep 1;
 
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
+    uiSleep 1;
+
     // Teleport players
     [_save, _loadArray select 0] call FUNC(persistencePlayers);
+
+    uiSleep 1;
 
     // Load TBMod_building stuff
     [false, _name] call FUNC(persistenceBuilding);
