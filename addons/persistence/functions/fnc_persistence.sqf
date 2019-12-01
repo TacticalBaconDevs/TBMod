@@ -83,6 +83,14 @@ else // load
     }
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
 
+    // ki/units simulation deaktivieren
+    TB_persistence_tempSimulationDisabled = [];
+    {
+        _x enableSimulationGlobal false;
+        TB_persistence_tempSimulationDisabled pushBackUnique _x;
+    }
+    forEach (allunits select {simulationEnabled _x});
+
     // Marker laden
     [_save, _loadArray select 1] call FUNC(persistenceMarkers);
 
