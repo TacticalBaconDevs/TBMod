@@ -41,7 +41,7 @@ private _allgemein = [
     "rhsusf_oakley_goggles_clr",
     "rhsusf_oakley_goggles_ylw",
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
     // ### Beards
     "SFG_Tac_smallBeardB",
     "SFG_Tac_smallBeardD",
@@ -116,6 +116,7 @@ private _allgemein = [
     "rhs_mag_mk84",
     "rhs_mag_mk3a2",
     "rhs_mag_m67",
+    "B_IR_Grenade",
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag"
 ];
