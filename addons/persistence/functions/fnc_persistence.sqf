@@ -42,7 +42,7 @@ if (_save) then
 
     // save storagearray
 
-    profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
+    profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _saveArray];
 
     // save TBMod_building stuff
     [true, _name] call FUNC(persistenceBuilding);
@@ -52,24 +52,25 @@ if (_save) then
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
-
-    if (_transfer && !_overwriteLocal) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
+    format ["[TBMod_persistence] Test %1 Test2 %2", _transfer, !_overwriteLocal] remoteExecCall ["systemChat"];
+    if (_transfer && !_overwriteLocal) then {
+        [_name, false] call FUNC(transferManager);
+    };
 }
 else // load
 {
     if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
-    if (_transfer) then {[_name, remoteExecutedOwner, false] call FUNC(transfer)};
+    if (_transfer) then {
+        [_name, true] call FUNC(transferManager);
+    };
 
-    private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
+    private _loadArray = profileNamespace getVariable [format ["TBMod_persistence_%1", _name], [[], [], [], []]];
 
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
     _objArray = _objArray arrayIntersect _objArray;
 
     // vorhandene nicht benannte Fahrzeuge löschen
     (_objArray select {vehicleVarName _x == "" && _x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []}) call CBA_fnc_deleteEntity;
-
-    // Benutzermarker löschen
-    (allMapMarkers select {(_x select [0, 13]) == "_USER_DEFINED"}) call CBA_fnc_deleteEntity;
 
     // benannte Fahrzeuge simulation temp deaktivieren
     TB_persistence_tempSimulationDisabled = [];
@@ -78,6 +79,14 @@ else // load
         TB_persistence_tempSimulationDisabled pushBackUnique _x;
     }
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
+
+    // ki/units simulation deaktivieren
+    TB_persistence_tempSimulationDisabled = [];
+    {
+        _x enableSimulationGlobal false;
+        TB_persistence_tempSimulationDisabled pushBackUnique _x;
+    }
+    forEach (allunits select {simulationEnabled _x});
 
     // Marker laden
     [_save, _loadArray select 1] call FUNC(persistenceMarkers);
@@ -88,14 +97,22 @@ else // load
     // Objekte laden
     [_save, _loadArray select 2] call FUNC(persistenceObjects);
 
+    uiSleep 1;
+
     // Fahrzeuge organisieren
     [_save, _loadArray select 3] call FUNC(persistenceVehicles);
+
+    uiSleep 1;
 
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
+    uiSleep 1;
+
     // Teleport players
     [_save, _loadArray select 0] call FUNC(persistencePlayers);
+
+    uiSleep 1;
 
     // Load TBMod_building stuff
     [false, _name] call FUNC(persistenceBuilding);
