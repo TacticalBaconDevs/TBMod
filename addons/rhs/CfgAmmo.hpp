@@ -125,28 +125,28 @@ class CfgAmmo
         indirectHitRange = 17; // 30
 
         class CamShakeExplode {
-        distance = 900; // 339.599
-        duration = 2; // 2.4
-        frequency = 15; //20
-        power = 28; // 31
+            distance = 900; // 339.599
+            duration = 2; // 2.4
+            frequency = 15; //20
+            power = 28; // 31
         };
         class CamShakeFire {
-        distance = 700; // 99.5992;
-        duration = 2; // 2.4
-        frequency = 10; // 20
-        power = 8; // 3.52844
+            distance = 700; // 99.5992;
+            duration = 2; // 2.4
+            frequency = 10; // 20
+            power = 8; // 3.52844
         };
         class CamShakeHit {
-        distance = 1;
-        duration = 0.8;
-        frequency = 20;
-        power = 155;
+            distance = 1;
+            duration = 0.8;
+            frequency = 20;
+            power = 155;
         };
         class CamShakePlayerFire {
-        distance = 1;
-        duration = 0.1;
-        frequency = 20;
-        power = 0.01;
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 0.01;
         };
     };
 
@@ -183,28 +183,28 @@ class CfgAmmo
         trackOversteer = 0.95; // 1
 
         class CamShakeExplode {
-        distance = 1500;
-        duration = 0.75;
-        frequency = 10;
-        power = 35;
+            distance = 1500;
+            duration = 0.75;
+            frequency = 10;
+            power = 35;
         };
         class CamShakeFire {
-        distance = 1200;
-        duration = 0.75;
-        frequency = 10;
-        power = 18;
+            distance = 1200;
+            duration = 0.75;
+            frequency = 10;
+            power = 18;
         };
         class CamShakeHit {
-        distance = 1;
-        duration = 0.35;
-        frequency = 40;
-        power = 180;
+            distance = 1;
+            duration = 0.35;
+            frequency = 40;
+            power = 180;
         };
         class CamShakePlayerFire {
-        distance = 1;
-        duration = 0.1;
-        frequency = 20;
-        power = 0.01;
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 0.01;
         };
     };
 
@@ -280,28 +280,28 @@ class CfgAmmo
         trackOversteer = 0.95; // 1
 
         class CamShakeExplode {
-        distance = 300;
-        duration = 1.5;
-        frequency = 18;
-        power = 16;
+            distance = 300;
+            duration = 1.5;
+            frequency = 18;
+            power = 16;
         };
         class CamShakeFire {
-        distance = 150;
-        duration = 1.5;
-        frequency = 18;
-        power = 4;
+            distance = 150;
+            duration = 1.5;
+            frequency = 18;
+            power = 4;
         };
         class CamShakeHit {
-        distance = 1;
-        duration = 0.6;
-        frequency = 20;
-        power = 60;
+            distance = 1;
+            duration = 0.6;
+            frequency = 20;
+            power = 60;
         };
         class CamShakePlayerFire {
-        distance = 1;
-        duration = 0.1;
-        frequency = 20;
-        power = 2;
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 2;
         };
     };
 
@@ -402,28 +402,28 @@ class CfgAmmo
         suppressionRadiusHit = 65; // 30
 
         class CamShakeExplode {
-        distance = 300; // 191.554
-        duration = 1.5; // 1.8
-        frequency = 18; // 20
-        power = 10; // 16
+            distance = 300; // 191.554
+            duration = 1.5; // 1.8
+            frequency = 18; // 20
+            power = 10; // 16
         };
         class CamShakeFire {
-        distance = 150; // 71.5542
-        duration = 1.5; // 1.8
-        frequency = 18; // 20
-        power = 2.1; // 2.9907
+            distance = 150; // 71.5542
+            duration = 1.5; // 1.8
+            frequency = 18; // 20
+            power = 2.1; // 2.9907
         };
         class CamShakeHit {
-        distance = 1;
-        duration = 0.6;
-        frequency = 20;
-        power = 60;
+            distance = 1;
+            duration = 0.6;
+            frequency = 20;
+            power = 60;
         };
         class CamShakePlayerFire {
-        distance = 1;
-        duration = 0.1;
-        frequency = 20;
-        power = 2;
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 2;
         };
     };
 
