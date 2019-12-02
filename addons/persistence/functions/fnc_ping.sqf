@@ -19,12 +19,12 @@ private _pingStart = CBA_missiontime;
     }
 ] remoteExecCall ["call", 2];
 
-waitUntil {GVAR(ping) || (CBA_missiontime - _pingStart) >= 3};
+waitUntil {GVAR(ping) || (CBA_missiontime - _pingStart) >= 1};
 private _rtt = CBA_missiontime - _pingStart;
 
-if (_rtt > 3) exitwith
+if (_rtt > 1) exitwith
 {
-    systemChat "Ping timed out after 3s";
+    systemChat "Ping timed out after 1s";
     false;
 };
 
