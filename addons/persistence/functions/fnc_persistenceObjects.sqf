@@ -50,8 +50,9 @@ else // load
 
         _obj setVectorDirAndUp [_dir, _up];
         _obj setPosASL _pos;
-
-        _obj enableSimulationGlobal _sim;
+        if (!(_obj in TB_persistence_tempSimulationDisabled)) then {
+            _obj enableSimulationGlobal _sim;
+        };
     }
     forEach _storagearray;
 };
