@@ -41,7 +41,7 @@ private _allgemein = [
     "rhsusf_oakley_goggles_clr",
     "rhsusf_oakley_goggles_ylw",
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
     // ### Beards
     "SFG_Tac_smallBeardB",
     "SFG_Tac_smallBeardD",
