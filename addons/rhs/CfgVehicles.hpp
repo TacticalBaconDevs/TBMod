@@ -490,9 +490,10 @@ class CfgVehicles
     };
 
     class MRAP_01_base_F;
-    class B_MRAP_01_F : MRAP_01_base_F // Vanilla Hunter
+    class B_MRAP_01_F : MRAP_01_base_F // M-ATV-Reihe / M1238A1-Reihe / M1239 AUV-Reihe / M1240-Reihe
     {
-        armor = 210; // 200
+        armor = 220; // 200
+        audible = 6; // 5
     };
 
     class I_APC_Wheeled_03_base_F;
@@ -500,6 +501,13 @@ class CfgVehicles
     {
         armor = 460; // 480
         audible = 8; // 14
+    };
+
+    class B_APC_Wheeled_01_base_F;
+    class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F // Patria AMW
+    {
+        armor = 220; // 320
+        audible = 6; // 14
     };
 
     // ### RHS inheritance fix

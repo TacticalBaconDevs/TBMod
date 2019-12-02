@@ -116,6 +116,7 @@ private _allgemein = [
     "rhs_mag_mk84",
     "rhs_mag_mk3a2",
     "rhs_mag_m67",
+    "B_IR_Grenade",
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag"
 ];
