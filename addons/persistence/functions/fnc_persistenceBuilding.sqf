@@ -37,7 +37,7 @@ if (_save) then
     }
     forEach TB_persistent_buildings;
 
-    profileNamespace setVariable [format ["TBMod_persistent_buildings_%1", _name], _array];
+    profileNamespace setVariable [format ["TBMod_persistence_buildings_%1", _name], _array];
 }
 else //laden
 {
