@@ -7,3 +7,14 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
 
 GVAR(Namespace) = call CBA_fnc_createNamespace;
 GVAR(loadedTasks) = [];
+
+
+if (isNil QGVAR(Tasks)) then {
+    GVAR(Tasks) = [];
+};
+
+{
+    [_x] call FUNC(loadTask);
+} forEach GVAR(Tasks);
+
+[] spawn FUNC(loop);
