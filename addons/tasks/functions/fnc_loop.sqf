@@ -28,6 +28,7 @@ if(!isServer) exitWith {"[TBMod_tasks] loop wurde nicht auf dem Server gestartet
 			GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Failed];
 		}
 	};
+
 	//Dont complete if failed at the same time
 	if(_state isEqualTo STATE_Initialised) then 
 	{
