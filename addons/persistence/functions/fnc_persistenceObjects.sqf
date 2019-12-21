@@ -10,7 +10,7 @@ params [
 
 if (_save) then
 {
-    private _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {isNil {_x getVariable "TB_building_addInfos"} && !(_x in vehicles)};
+    private _objectarray = ((allMissionObjects "Static") + (allMissionObjects "Thing")) select {!(_x in vehicles)};
     _objectarray = _objectarray arrayIntersect _objectarray; // doppelte elemenieren
 
     // sorting
