@@ -2,4 +2,5 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-//PREP(addAttachAction);
+PREP(loadTask);
+PREP(loop);

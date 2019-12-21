@@ -9,3 +9,7 @@
 // #define DISABLE_COMPILE_CACHE
 
 #include "\x\TBMod\addons\main\script_macros.hpp"
+#define STATE_NotInitialised 0
+#define STATE_Initialised 1
+#define STATE_Completed 2
+#define STATE_Failed 3

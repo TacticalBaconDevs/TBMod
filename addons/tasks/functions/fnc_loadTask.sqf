@@ -5,14 +5,18 @@
 */
 params ["_name"];
 
-result = [] call compile preprocessFileLineNumbers format["taks/%1.sqf", _name];
-result params ["_canInit","_init","_initServer","_canWin","_win","_winServer","_canLose","_lose","_loseServer"];
+result = [] call compile preprocessFileLineNumbers format["tasks/%1.sqf", _name];
+result params ["_canInit","_init","_initServer","_canComplete","_completed","_completedServer","_canFaile","_failed","_failedServer"];
 
-GVAR(Namespace) setVariable [format["%1_canInit", _nane], _canInit];
-GVAR(Namespace) setVariable ["%1_Init", _init];
-GVAR(Namespace) setVariable ["%1_initServer", _initServer];
-
-
-
+GVAR(Namespace) setVariable [format["%1_canInit", _name], _canInit];
+GVAR(Namespace) setVariable [format["%1_init", _name], _init];
+GVAR(Namespace) setVariable [format["%1_initServer", _name], _initServer];
+GVAR(Namespace) setVariable [format["%1_canComplet", _name], _canCompleted];
+GVAR(Namespace) setVariable [format["%1_completed", _name], _completed];
+GVAR(Namespace) setVariable [format["%1_completedServer", _name], _completedServer];
+GVAR(Namespace) setVariable [format["%1_canFail", _name], _canFailed];
+GVAR(Namespace) setVariable [format["%1_failed", _name], _failed];
+GVAR(Namespace) setVariable [format["%1_failedServer", _name], _failedServer];
+GVAR(Namespace) setVariable [format["%1_state", _name], STATE_NotInitialised];
 
 GVAR(loadedTasks) pushBackUnique _name;
