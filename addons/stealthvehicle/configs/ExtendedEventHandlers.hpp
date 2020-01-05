@@ -34,3 +34,11 @@ class Extended_Fired_EventHandlers {
         };
     };
 };
+
+class Extended_Hit_EventHandlers {
+    class All {
+        class GVAR(Hit) {
+            hit = QUOTE(_this call FUNC(handleHit));
+        };
+    };
+};

@@ -5,3 +5,4 @@
 PREP(handleGetIn);
 PREP(handleGetOut);
 PREP(handleFired);
+PREP(handleHit);

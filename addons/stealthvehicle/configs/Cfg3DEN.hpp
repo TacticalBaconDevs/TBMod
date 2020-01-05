@@ -23,11 +23,30 @@ class Cfg3DEN
                         tooltip = "Fahrzeug ist ein Stealth Fahrzeug";
                         property = QGVAR(activateStealth);
                         control = "Checkbox";
-
                         expression = "_this setVariable ['%s', _value, true];";
-
                         defaultValue = "false";
-                        
+                        condition = "objectVehicle + objectHasInventoryCargo";
+                    };
+
+                    class GVAR(deactivateStealthOnHit)
+                    {
+                        displayName = "Stealth deaktivieren bei Schaden";
+                        tooltip = "Stealth deaktivieren bei Schaden";
+                        property = QGVAR(deactivateStealthOnHit);
+                        control = "Checkbox";
+                        expression = "_this setVariable ['%s', _value, true];";
+                        defaultValue = "false";
+                        condition = "objectVehicle + objectHasInventoryCargo";
+                    };
+                    
+                    class GVAR(deactivateStealthOnFired)
+                    {
+                        displayName = "Stealth deaktivieren bei Schussabgabe";
+                        tooltip = "Stealth deaktivieren bei Schussabgabe";
+                        property = QGVAR(deactivateStealthOnFired);
+                        control = "Checkbox";
+                        expression = "_this setVariable ['%s', _value, true];";
+                        defaultValue = "true";
                         condition = "objectVehicle + objectHasInventoryCargo";
                     };
                 };
