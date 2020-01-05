@@ -47,7 +47,6 @@ if (_save) then
     _saveArray set [4, [_save] call FUNC(persistenceTasks)];
 
     // save storagearray
-    systemChat str _name;
     profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _saveArray];
 
     private _names = profileNamespace getVariable [QGVAR(savedNames), []];
@@ -123,4 +122,3 @@ else // load
 EGVAR(tasks,pause) = false;
 
 (format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
-
