@@ -53,6 +53,19 @@ else // load
         if (!(_obj in TB_persistence_tempSimulationDisabled)) then {
             _obj enableSimulationGlobal _sim;
         };
+
+        if ((typeOf _obj) in ["Land_BarGate_F"]) then {
+            [_obj, false] remoteExecCall ["allowDamage", _obj];
+            _obj addEventHandler ["HandleDamage", {0}];
+        };
+       
+        // Medic
+        if ((typeOf _obj) in ["Land_Medevac_house_V1_F", "Land_MedicalTent_01_white_generic_open_F", "Land_Stretcher_01_F", "Land_IntravenStand_01_2bags_F", "Land_MedicalTent_01_floor_light_F"]) then
+        {
+            _obj setVariable ["ace_medical_isMedicalFacility", true, true];
+        };
+
+
     }
     forEach _storagearray;
 };
