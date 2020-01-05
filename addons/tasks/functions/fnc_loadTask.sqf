@@ -21,4 +21,3 @@ GVAR(Namespace) setVariable [format["%1_failedServer", _name], _failedServer];
 GVAR(Namespace) setVariable [format["%1_state", _name], STATE_NotInitialised];
 
 GVAR(loadedTasks) pushBackUnique _name;
-systemChat format["Loaded Task %1",_name];
