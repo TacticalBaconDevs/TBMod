@@ -9,7 +9,7 @@ class CfgPatches
     {
         name = "TBMod Stealth Vehicle";
 
-        
+        author = "Eric Ruhland";
 
         requiredAddons[] = {"TBMod_main"};
         addonRootClass = "TBMod_main";
