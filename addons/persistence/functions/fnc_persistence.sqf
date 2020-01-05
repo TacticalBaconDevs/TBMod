@@ -49,7 +49,6 @@ if (_save) then
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
-    format ["[TBMod_persistence] Test %1 Test2 %2", _transfer, !_overwriteLocal] remoteExecCall ["systemChat"];
     if (_transfer && !_overwriteLocal) then {
         [_name, false] call FUNC(transferManager);
     };
