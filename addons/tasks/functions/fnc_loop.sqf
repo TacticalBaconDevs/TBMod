@@ -5,6 +5,8 @@
 */
 if(!isServer) exitWith {"[TBMod_tasks] loop wurde nicht auf dem Server gestartet" remoteExecCall ["systemChat"]};
 
+if(GVAR(pause)) exitWith {[FUNC(loop), [], 1] call CBA_fnc_waitAndExecute};
+
 {
     _name = _x;
     _state = GVAR(Namespace) getVariable [format["%1_state", _name], STATE_Completed]; //if not found handle as wind
