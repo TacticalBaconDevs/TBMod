@@ -54,7 +54,8 @@ else // load
             _obj enableSimulationGlobal _sim;
         };
 
-        if ((typeOf _obj) in ["Land_BarGate_F"]) then {
+        if ((typeOf _obj) in ["Land_BarGate_F"]) then
+        {
             [_obj, false] remoteExecCall ["allowDamage", _obj];
             _obj addEventHandler ["HandleDamage", {0}];
         };
