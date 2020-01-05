@@ -64,8 +64,6 @@ else // load
         {
             _obj setVariable ["ace_medical_isMedicalFacility", true, true];
         };
-
-
     }
     forEach _storagearray;
 };
