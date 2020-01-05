@@ -51,7 +51,6 @@ if (_save) then
 
     private _names = profileNamespace getVariable [QGVAR(savedNames), []];
     _names pushBackUnique _name;
-    systemChat str _names;
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
