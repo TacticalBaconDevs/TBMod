@@ -11,7 +11,6 @@ GVAR(pause) = false;
 
 [] spawn {
     waitUntil {uiSleep 1; !isNil QGVAR(Tasks);};
-    systemChat str GVAR(Tasks);
     {
         [_x] call FUNC(loadTask);
     } forEach GVAR(Tasks);
