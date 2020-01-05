@@ -9,7 +9,7 @@ if (!local _vehicle) exitWith {};
 
 if (_vehicle getVariable [QGVAR(activateStealth), false]) then 
 {
-    _vehicle setVariable [QGVAR(activateStealth), false, true]);
+    _vehicle setVariable [QGVAR(activateStealth), false, true];
     {
         _x setCaptive false;
     } forEach (crew _vehicle);
