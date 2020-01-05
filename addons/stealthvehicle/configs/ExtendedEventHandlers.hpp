@@ -14,7 +14,7 @@ class Extended_PreInit_EventHandlers
 class Extended_GetIn_EventHandlers {
     class All {
         class GVAR(GetIn) {
-            GetIn = QUOTE([_this] call FUNC(handleGetIn));
+            getIn = QUOTE(_this call FUNC(handleGetIn));
         };
     };
 };
@@ -22,7 +22,15 @@ class Extended_GetIn_EventHandlers {
 class Extended_GetOut_EventHandlers {
     class All {
         class GVAR(GetOut) {
-            GetOut = QUOTE([_this] call FUNC(handleGetOut));
+            getOut = QUOTE(_this call FUNC(handleGetOut));
+        };
+    };
+};
+
+class Extended_Fired_EventHandlers {
+    class All {
+        class GVAR(Fired) {
+            fired = QUOTE(_this call FUNC(handleFired));
         };
     };
 };
