@@ -5,7 +5,8 @@
 */
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
-GVAR(Namespace) = call CBA_fnc_createNamespace;
+GVAR(Namespace) = true call CBA_fnc_createNamespace;
+publicVariable QGVAR(Namespace);
 GVAR(loadedTasks) = [];
 GVAR(pause) = false;
 

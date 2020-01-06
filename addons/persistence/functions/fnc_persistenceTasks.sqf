@@ -30,22 +30,22 @@ else // load
         if (_currentState == STATE_NotInitialised && _state != STATE_NotInitialised) then {
             call (EGVAR(tasks,Namespace) getVariable [format["%1_initServer", _name], {}]);
             [[], EGVAR(tasks,Namespace) getVariable [format["%1_init", _name], {}]] remoteExec ["call", 0];
-            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Initialised];
+            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Initialised, true];
             _currentState = STATE_Initialised;
         };
 
         if (_currentState == STATE_Initialised && _state == STATE_Failed) then {
             call (EGVAR(tasks,Namespace) getVariable [format["%1_failedServer", _name], {}]);
             [[], EGVAR(tasks,Namespace) getVariable [format["%1_failed", _name], {}]] remoteExec ["call", 0];
-            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Failed];
-            _currentState == STATE_Failed;
+            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Failed, true];
+            _currentState = STATE_Failed;
         };
 
         if (_currentState == STATE_Initialised && _state == STATE_Completed) then {
             call (EGVAR(tasks,Namespace) getVariable [format["%1_completedServer", _name], {}]);
             [[], EGVAR(tasks,Namespace) getVariable [format["%1_completed", _name], {}]] remoteExec ["call", 0];
-            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Completed];
-            _currentState == STATE_Completed;
+            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Completed, true];
+            _currentState = STATE_Completed;
         };
     }
     forEach _storagearray;

@@ -18,6 +18,7 @@ GVAR(Namespace) setVariable [format["%1_completedServer", _name], _completedServ
 GVAR(Namespace) setVariable [format["%1_canFail", _name], _canFail];
 GVAR(Namespace) setVariable [format["%1_failed", _name], _failed];
 GVAR(Namespace) setVariable [format["%1_failedServer", _name], _failedServer];
-GVAR(Namespace) setVariable [format["%1_state", _name], STATE_NotInitialised];
+GVAR(Namespace) setVariable [format["%1_state", _name], STATE_NotInitialised, true];
 
 GVAR(loadedTasks) pushBackUnique _name;
+publicVariable QGVAR(loadedTasks);

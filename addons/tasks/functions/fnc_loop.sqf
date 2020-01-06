@@ -17,7 +17,7 @@ if(GVAR(pause)) exitWith {[FUNC(loop), [], 1] call CBA_fnc_waitAndExecute};
         if (_canInit) then {
             call (GVAR(Namespace) getVariable [format["%1_initServer", _name], {}]);
             [[], GVAR(Namespace) getVariable [format["%1_init", _name], {}]] remoteExec ["call", 0];
-            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Initialised];
+            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Initialised, true];
         }
     };
 
@@ -27,7 +27,7 @@ if(GVAR(pause)) exitWith {[FUNC(loop), [], 1] call CBA_fnc_waitAndExecute};
         if (_canInit) then {
             call (GVAR(Namespace) getVariable [format["%1_failedServer", _name], {}]);
             [[], GVAR(Namespace) getVariable [format["%1_failed", _name], {}]] remoteExec ["call", 0];
-            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Failed];
+            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Failed, true];
         }
     };
 
@@ -38,7 +38,7 @@ if(GVAR(pause)) exitWith {[FUNC(loop), [], 1] call CBA_fnc_waitAndExecute};
         if (_canComplete) then {
             call (GVAR(Namespace) getVariable [format["%1_completedServer", _name], {}]);
             [[], GVAR(Namespace) getVariable [format["%1_completed", _name], {}]] remoteExec ["call", 0];
-            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Completed];
+            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Completed, true];
         }
     };
 
