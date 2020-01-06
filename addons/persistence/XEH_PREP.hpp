@@ -8,7 +8,6 @@ PREP(getSavedNamesFromServer);
 PREP(modulePersistenceEDEN);
 PREP(modulePersistenceZeus);
 PREP(persistence);
-PREP(persistenceBuilding);
 PREP(persistenceEDEN);
 PREP(persistenceMarkers);
 PREP(persistenceObjects);
