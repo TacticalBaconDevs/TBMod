@@ -536,6 +536,7 @@ private _gepaeck_mittel = [
     "B_Kitbag_rgr",
     "B_Kitbag_mcamo",
     "B_Kitbag_tan",
+    "TB_backpacks_kitbag_black",
     "B_TacticalPack_blk",
     "B_TacticalPack_oli",
     "B_TacticalPack_mcamo",

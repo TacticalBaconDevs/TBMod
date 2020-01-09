@@ -19,6 +19,9 @@ class CfgVehicles
     class B_RangeMaster_F;
     class O_officer_F;
 
+    // Rucksäcke
+    class B_Kitbag_sgg;
+
     // Fahrzeuge
     class I_Plane_Fighter_03_dynamicLoadout_F;
     class B_Heli_Light_01_F;
@@ -439,5 +442,16 @@ class CfgVehicles
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];"; //  (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];
         };
+    };
+
+    ////////// Skins für Rucksäcke
+
+    // Skin schwarzer Rucksack Mittelgroß
+    class TB_backpacks_kitbag_black : B_Kitbag_sgg
+    {
+        displayName = "Ranzen (schwarz)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_kitbag_black.paa)};
+        picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperHarness_blk_F_ca.paa"; // "\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_sgg"
     };
 };

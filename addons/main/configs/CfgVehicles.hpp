@@ -373,15 +373,6 @@ class CfgVehicles
         mass = 13;
     };
 
-    // Skin schwarzer Rucksack Mittelgroß
-    class B_Kitbag_sgg;
-    class TB_backpack_Test : B_Kitbag_sgg
-    {
-        displayName = "Schwarz";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {QPATHTOF(skins,pictures\backbacks\TB_Test.paa)};
-    };
-
     // ###################### No Uniform ######################
     class Civilian;
     class CAManBase;
