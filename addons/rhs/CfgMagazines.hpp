@@ -410,4 +410,11 @@ class CfgMagazines
         displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
         tracersEvery = 1; // 5
     };
+
+    class 3Rnd_Smoke_Grenade_shell_precise;
+    class 48Rnd_Smoke_Grenades : 3Rnd_Smoke_Grenade_shell_precise // 40mm UGV Smoke Grenades
+    {
+        count = 48;
+        initSpeed = 240;
+    };
 };
