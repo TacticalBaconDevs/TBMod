@@ -894,7 +894,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
