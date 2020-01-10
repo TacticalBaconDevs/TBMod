@@ -244,20 +244,20 @@ private _allgemein_zweibein = [
 
 private _AT_raketenwerfer = [
     "TB_rhs_weap_M136_CS",
-    "rhs_weap_M136_hedp",
-    "rhs_weap_M136_hp",
+    "rhs_weap_M136",
     // ### Befestigungsschiene
     "rhs_acc_at4_handler",
     // ### Munition
     "rhs_m136_mag",
-    "rhs_m136_hedp_mag",
-    "rhs_m136_hp_mag"
+    "rhs_m136_CS_mag"
 ];
 
-private _HE_raketenwerfer = [
+private _HEDP_raketenwerfer = [
     "rhs_weap_m72a7",
+    "rhs_weap_M136_hedp",
     // ### Munition
-    "rhs_m72a7_mag"
+    "rhs_m72a7_mag",
+    "rhs_m136_hedp_mag"
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -580,7 +580,7 @@ private _items = [];
 // _allgemein_geschuetzzubehoer      - Schalldämpfer usw
 // _allgemein_zweibein               - Zweibeine
 // _AT_raketenwerfer                 - einmal AT Raketenwerfer
-// _HE_raketenwerfer                 - einmal HE Raketenwerfer
+// _HEDP_raketenwerfer               - einmal HEDP Raketenwerfer
 // _allgemein_handfeuerwaffen        - Pistolen
 // _allgemein_uniformen              - Uniformen
 // _allgemein_westen                 - Westen
@@ -613,7 +613,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _lrFunken +
-        _HE_raketenwerfer +
+        _HEDP_raketenwerfer +
         [
             // Weste
             "rhsusf_iotv_ocp_Squadleader",
@@ -757,7 +757,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
-        _HE_raketenwerfer +
         [
             // Gewehre
             "rhs_weap_m240G",
@@ -787,7 +786,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _AT_raketenwerfer +
-        _HE_raketenwerfer +
+        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -895,7 +894,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _HE_raketenwerfer +
+        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -950,8 +949,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _AT_raketenwerfer +
-        _HE_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -1028,7 +1025,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _AT_raketenwerfer +
-        _HE_raketenwerfer +
+        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -1089,7 +1086,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
-        _HE_raketenwerfer +
+        _HEDP_raketenwerfer +
         [
             // Handwaffen
             "ACE_VMH3",
@@ -1175,7 +1172,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _lrFunken +
-        _HE_raketenwerfer +
         [
             // Gepäck
             "B_UAV_01_backpack_F",
@@ -1217,7 +1213,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         _lrFunken +
-        _HE_raketenwerfer +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         [
             // Handfeuerwaffen
             "ACE_VMH3",
