@@ -973,7 +973,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "optic_lrps",
             "ace_optic_lrps_2d",
             "ace_optic_sos_2d",
-            "ace_optic_sos_pip",
             // ### Geschützzubehör
             "muzzle_snds_b",
             "muzzle_snds_b_snd_f",
