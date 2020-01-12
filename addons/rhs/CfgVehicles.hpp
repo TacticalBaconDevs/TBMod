@@ -474,14 +474,14 @@ class CfgVehicles
     class APC_Tracked_03_base_F;
     class RHS_M2A2_Base : APC_Tracked_03_base_F // RHS M2 Bradley
     {
-        armor = 310; // 290
+        armor = 510; // 290
         audible = 17; // 18
     };
 
     class rhsusf_caiman_base;
     class rhsusf_M1220_usarmy_d : rhsusf_caiman_base // RHS M1220 Serie
     {
-        armor = 210; // 200
+        armor = 220; // 200
         audible = 8; // 9
         maxOmega = 550; // 230.38
     };
@@ -496,32 +496,32 @@ class CfgVehicles
     class MRAP_01_base_F;
     class B_MRAP_01_F : MRAP_01_base_F // Vanilla M-ATV-Reihe
     {
-        armor = 210; // 200
+        armor = 10; // 200
     };
 
-    class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33-Reihe
+    class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33L-Reihe
     {
-        armor = 205; // 200
+        armor = 215; // 200
         audible = 6; // 5
     };
 
     class rhsusf_RG33_base : MRAP_01_base_F // RHS RG33-Reihe
     {
-        armor = 215; // 200
+        armor = 225; // 200
         audible = 7; // 5
     };
 
     class I_APC_Wheeled_03_base_F;
     class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Vanilla Pandur II
     {
-        armor = 310; // 200
+        armor = 245; // 200
         audible = 16; // 5
     };
 
     class B_APC_Wheeled_01_base_F;
     class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F // Patria AMW
     {
-        armor = 310; // 320
+        armor = 215; // 320
         audible = 16; // 14
     };
 
@@ -531,7 +531,7 @@ class CfgVehicles
 
     class rhsusf_MATV_base : MRAP_01_base_F // RHS M-ATV-Reihe
     {
-        armor = 210; // 100
+        armor = 220; // 100
         audible = 5; // 6
         maxOmega = 600; // 230.38
         maxSpeed = 115; // 105
@@ -540,21 +540,21 @@ class CfgVehicles
 
     class rhsusf_Cougar_base : MRAP_01_base_F // RHS CGR-Reihe
     {
-        armor = 210; // 200
+        armor = 220; // 200
         audible = 15; // 14
     };
 
     class rhsusf_stryker_base;
-    class rhsusf_stryker_m1126_base : rhsusf_stryker_base // Patria AMW
+    class rhsusf_stryker_m1126_base : rhsusf_stryker_base // RHS Stryker-Reihe
     {
-        armor = 210; // 120
+        armor = 220; // 120
         audible = 15; // 14
     };
 
     class Wheeled_Apc_F;
     class rhsusf_M1117_base : Wheeled_Apc_F // RHS M1117-Reihe
     {
-        armor = 210; // 150
+        armor = 195; // 150
         audible = 13; // 14
         maxOmega = 550; // 230.38
     };
