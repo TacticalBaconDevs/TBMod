@@ -938,7 +938,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "optic_ams",
             "optic_ams_khk",
             "optic_ams_snd",
-            "optic_sos",
+            "optic_sos"
         ]
     };
 
