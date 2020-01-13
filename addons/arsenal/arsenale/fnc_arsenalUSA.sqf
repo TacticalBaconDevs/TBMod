@@ -84,6 +84,7 @@ private _allgemein = [
 
     // Navigation
     "ItemCompass",
+    "ACE_microDAGR",
 
     // Uhr
     "ItemWatch",
@@ -637,7 +638,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_HuntIR_monitor",
-            "ACE_microDAGR",
             "TB_rhs_mag_40mm_IR_Grenade",
             "Laserbatteries"
         ]
