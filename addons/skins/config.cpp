@@ -24,7 +24,7 @@ class CfgPatches
             "TB_Uniform_Kommissar",
             "TB_Uniform_rekrut",
             "TB_Uniform_presi",
-            "TB_Uniform_IS_1_black",
+            "TB_Soldier_IS_1_black",
             "TB_Vehicles_sek_light",
             "TB_Vehicles_polizei_hellcat",
             "TB_Vehicles_sek_hellcat",

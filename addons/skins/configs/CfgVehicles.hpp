@@ -95,7 +95,7 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_presi.paa)};
     };
 
-    class TB_Uniform_IS_1_black: I_C_Soldier_Para_2_F
+    class TB_Soldier_IS_1_black: I_C_Soldier_Para_2_F
     {
         scope = 2;
         displayName = "IS_1";

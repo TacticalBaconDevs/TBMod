@@ -88,7 +88,7 @@ class cfgWeapons
         class ItemInfo: UniformItem
         {
             uniformModel = "-";
-            uniformClass = "TB_Uniform_IS_1_black";
+            uniformClass = "TB_Soldier_IS_1_black";
             containerClass = "Supply40";
             mass = 40;
         };
