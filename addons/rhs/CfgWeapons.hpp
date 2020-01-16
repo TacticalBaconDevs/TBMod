@@ -286,9 +286,14 @@ class CfgWeapons
         aimTransitionSpeed = 0.26; // 0.5
     };
 
-    class ACE_Clacker;
+    class ACE_ItemCore;
+    class ACE_Clacker: ACE_ItemCore // M57 Firing Device
+    {
+        mass = 7.71; // 3
+    };
+
     class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
     {
-        mass = 16; // 3
+        mass = 27.55; // 3
     };
 };

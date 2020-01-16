@@ -15,7 +15,6 @@ if (!isRemoteExecuted) exitWith {"[TBMod_persistence] Transfer nur über remoteE
 format["[TBMod_persistence] Transfer von Save %1 %2 Server gestartet", _name, ["vom", "zum"] select _toServer] remoteExecCall ["systemChat"];
 
 [format ["TBMod_persistence_%1", _savename], remoteExecutedOwner, _toServer] call FUNC(transfer);
-[format ["TBMod_persistence_buildings_%1", _savename], remoteExecutedOwner, _toServer] call FUNC(transfer);
 if(_toServer) then {
     private _savedNames = profileNamespace getVariable [QGVAR(savedNames), []];
     _savedNames pushBackUnique _savename;
