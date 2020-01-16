@@ -95,6 +95,18 @@ class CfgWeapons
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
+    // Skin Weste IS
+    class rhs_6sh92;
+    class TB_vest_IS_01: rhs_6sh92
+    {
+        displayName = "ISIS Weste1 (Black)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\vests\TB_vest_IS_01A.paa),
+            QPATHTOEF(skins,pictures\vests\TB_vest_IS_01B.paa)
+        };
+    };
+
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
@@ -273,9 +285,14 @@ class CfgWeapons
         aimTransitionSpeed = 0.26; // 0.5
     };
 
-    class ACE_Clacker;
+    class ACE_ItemCore;
+    class ACE_Clacker: ACE_ItemCore // M57 Firing Device
+    {
+        mass = 7.71; // 3
+    };
+
     class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
     {
-        mass = 16; // 3
+        mass = 27.55; // 3
     };
 };

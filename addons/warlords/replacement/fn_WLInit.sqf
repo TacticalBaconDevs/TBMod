@@ -39,7 +39,8 @@ _logicDefaultParams = [
     "FactionIndep", "IND_F",
     "AssetList", ["TB_RHS"],
     "MaxSubordinates", 9,
-    "MissionEnd", 1,
+    "ScanCooldown", 0,
+    "MissionEnd", 0,
     "DebriefingWinBLUFOR", "BIS_WLVictoryWEST",
     "DebriefingFailBLUFOR", "BIS_WLDefeatWEST",
     "DebriefingWinOPFOR", "BIS_WLVictoryEAST",
@@ -150,6 +151,39 @@ if (isServer) then {
         _limit = 3;
         params ["_killed", "_killer", "_instigator"];
         if (isNull _instigator) then {_instigator = _killer};
+        if (isPlayer _killed) then {
+            if (isPlayer _instigator) then {
+                if (side group _instigator == side group _killed && _instigator != _killed) then {
+                    diag_log format ["WL kill log: [FF] %1 (%2) killed by %3 (%4) at %5 from %6 (%7m)", name _killed, getPlayerUID _killed, name _instigator, getPlayerUID _instigator, position _killed, position _instigator, _killed distance2D _instigator];
+                } else {
+                    diag_log format ["WL kill log: %1 (%2) killed by %3 (%4) at %5", name _killed, getPlayerUID _killed, name _instigator, getPlayerUID _instigator, position _killed];
+                };
+            } else {
+                if !(isNull _instigator) then {
+                    diag_log format ["WL kill log: %1 (%2) killed by AI at %3", name _killed, getPlayerUID _killed, position _killed];
+                } else {
+                    diag_log format ["WL kill log: %1 (%2), killer unknown at %3", name _killed, getPlayerUID _killed, position _killed];
+                };
+            };
+
+            [] spawn {
+                sleep 1;
+                _poolToLog = [];
+                {
+                    _id = _x;
+                    if (typeName _id == typeName "") then {
+                        _arr = BIS_WL_friendlyFirePunishPool select (_forEachIndex + 1);
+                        if (typeName _arr == typeName []) then {
+                            if (count _arr > 0) then {
+                                _poolToLog append [_id, _arr];
+                            };
+                        };
+                    };
+                } forEach BIS_WL_friendlyFirePunishPool;
+
+                diag_log format ["WL FF pool :: %1", _poolToLog];
+            };
+        };
         if (_killed != _instigator && isPlayer _instigator && side group _killed == side group _instigator && group _killed != group _instigator && isPlayer leader group _killed) then {
             _uid = getPlayerUID _instigator;
             if (_uid != "") then {
@@ -168,11 +202,14 @@ if (isServer) then {
                         _punishments = BIS_WL_friendlyFirePunishPool select (_arrID + 1);
                         if (typeName _punishments == typeName []) then {
                             if (count _punishments > 0) then {
-                        _lastPunishment = _punishments select ((count _punishments) - 1);
-                        if (_lastPunishment + BIS_WL_punishmentDuration < (call BIS_fnc_WLSyncedTime)) then {
-                            _punishments pushBack (call BIS_fnc_WLSyncedTime);
-                            BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
-                        };
+                                _lastPunishment = _punishments select ((count _punishments) - 1);
+                                if (_lastPunishment + BIS_WL_punishmentDuration < (call BIS_fnc_WLSyncedTime)) then {
+                                    _punishments pushBack (call BIS_fnc_WLSyncedTime);
+                                    BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
+                                };
+                            } else {
+                                _punishments pushBack (call BIS_fnc_WLSyncedTime);
+                                BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
                             };
                         };
                     } else {
@@ -191,17 +228,26 @@ if (isServer) then {
                     _arrID = BIS_WL_friendlyFirePunishPool find _uid;
                     if (_arrID >= 0) then {
                         _punishments = BIS_WL_friendlyFirePunishPool select (_arrID + 1);
-                        _lastPunishment = _punishments select ((count _punishments) - 1);
-                        _duration = BIS_WL_punishmentDuration + (30 * (((count _punishments) - 1) min 8));
-                        if ((call BIS_fnc_WLSyncedTime) < (_lastPunishment + _duration)) then {
-                            _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", _lastPunishment + _duration, TRUE];
-                        } else {
-                            _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", 0];
+                        if (typeName _punishments == typeName []) then {
+                            if (count _punishments > 0) then {
+                                _lastPunishment = _punishments select ((count _punishments) - 1);
+                                _duration = BIS_WL_punishmentDuration + (30 * (((count _punishments) - 1) min 8));
+                                if ((call BIS_fnc_WLSyncedTime) < (_lastPunishment + _duration)) then {
+                                    _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", _lastPunishment + _duration, TRUE];
+                                    diag_log format ["WL FF punishment log: %1 (%2) :: %3 sec", name _x, _uid, _duration];
+                                    [_duration, _x] spawn {
+                                        sleep (_this # 0);
+                                        (_this # 1) setVariable ["BIS_WL_friendlyFirePunishmentEnd", 0];
+                                    };
+                                } else {
+                                    _x setVariable ["BIS_WL_friendlyFirePunishmentEnd", 0, TRUE];
+                                };
+                                {
+                                    if (_x < ((call BIS_fnc_WLSyncedTime) - 1800)) then {_punishments = _punishments - [_x]};
+                                } forEach _punishments;
+                                BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
+                            };
                         };
-                        {
-                            if (_x < ((call BIS_fnc_WLSyncedTime) - 1800)) then {_punishments = _punishments - [_x]};
-                        } forEach _punishments;
-                        BIS_WL_friendlyFirePunishPool set [_arrID + 1, _punishments];
                     };
                 };
             } forEach (BIS_WL_allWarlords select {isPlayer _x});
@@ -233,16 +279,18 @@ if (isServer) then {
                 if (_forEachIndex % 2 == 1) then {
                     _playerID = BIS_WL_friendlyFirePunishPool select (_forEachIndex - 1);
                     _punishments = _x;
-                    {
-                        if (_x < ((call BIS_fnc_WLSyncedTime) - 1800)) then {_punishments = _punishments - [_x]};
-                    } forEach _punishments;
-                    BIS_WL_friendlyFirePunishPool set [_forEachIndex, _punishments];
-                    if (count _punishments == 0) then {
-                        BIS_WL_friendlyFirePunishPool = BIS_WL_friendlyFirePunishPool - [_playerID];
+                    if (typeName _punishments == typeName []) then {
+                        {
+                            if (_x < ((call BIS_fnc_WLSyncedTime) - 1800)) then {_punishments = _punishments - [_x]};
+                        } forEach _punishments;
+                        BIS_WL_friendlyFirePunishPool set [_forEachIndex, _punishments];
                     };
+                    /*if (count _punishments == 0) then {
+                        BIS_WL_friendlyFirePunishPool = BIS_WL_friendlyFirePunishPool - [_playerID];
+                    };*/
                 };
             } forEach BIS_WL_friendlyFirePunishPool;
-            BIS_WL_friendlyFirePunishPool = BIS_WL_friendlyFirePunishPool - [[]];
+            //BIS_WL_friendlyFirePunishPool = BIS_WL_friendlyFirePunishPool - [[]];
         };
     };
     if (isMultiplayer && BIS_WLTeamBalanceEnabled == 1) then {
@@ -300,6 +348,28 @@ if (isServer) then {
                 };
                 sleep 1;
             };
+        };
+    };
+
+    [] spawn {
+        while {TRUE} do {
+            sleep 300;
+            _allDead = +(allDead select {!(_x isKindOf "Logic")});
+            _allDeadMen = +(allDeadMen select {!(_x isKindOf "Logic")});
+            _allSAMsWest = allMissionObjects "b_sam_system_03_f";
+            _allSAMsEast = allMissionObjects "o_sam_system_04_f";
+            _SAMsLogAlive = [];
+            {
+                _SAMsLogAlive pushBack [if (toLower typeOf _x == "b_sam_system_03_f") then {WEST} else {EAST}, position _x];
+            } forEach ((_allSAMsWest + _allSAMsEast) select {alive _x});
+            _SAMsLogDead = [];
+            {
+                _SAMsLogDead pushBack [if (toLower typeOf _x == "b_sam_system_03_f") then {WEST} else {EAST}, position _x];
+            } forEach ((_allSAMsWest + _allSAMsEast) select {!alive _x});
+            diag_log format ["WL garbage log: Units: %1", count _allDeadMen];
+            diag_log format ["WL garbage log: Vehicles: %1", count (_allDead - _allDeadMen)];
+            diag_log format ["WL SAM log: ALIVE: %1 :: %2", count _SAMsLogAlive, _SAMsLogAlive];
+            diag_log format ["WL SAM log: DEAD: %1 :: %2", count _SAMsLogDead, _SAMsLogDead];
         };
     };
 };

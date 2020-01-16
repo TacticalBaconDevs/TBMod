@@ -44,6 +44,7 @@ if (BIS_WL_shoppingList == "") then {BIS_WL_shoppingList = "['TB_RHS']"};
 //BIS_WL_shoppingList = call compile [BIS_WL_shoppingList, TRUE];
 BIS_WL_shoppingList = call compile BIS_WL_shoppingList;
 BIS_WL_maxSubordinates = _this getVariable ["MaxSubordinates", 9];
+BIS_WL_scanCooldown = _this getVariable ["ScanCooldown", 0];
 BIS_WL_maxCP = _this getVariable ["MaxCP", -1];
 if (BIS_WL_maxCP < 0) then {BIS_WL_maxCP = 10e10};
 BIS_WL_mapSize = getNumber (BIS_WL_cfgWrld >> "Grid" >> "offsetY");
@@ -58,6 +59,7 @@ BIS_RET_WL_autonomous_limit = 3;
 BIS_WL_newlySelectedSector = objNull;
 BIS_WL_markerIndex = 1;
 BIS_WL_allWarlords = +(playableUnits + switchableUnits) select {(side group _x) in [WEST, EAST]};
+BIS_WL_recentlyPurchasedAssets = [];
 addMissionEventHandler ["EntityRespawned", {
     BIS_WL_allWarlords = BIS_WL_allWarlords - [_this # 1];
     if ((side group _x) in [WEST, EAST]) then {
@@ -154,12 +156,16 @@ if (isServer) then {
     BIS_WL_planeLitterClasses = BIS_WL_planeLitterClasses - [""];*/
     BIS_WL_spawnProtectionCode = {
         params ["_unit"];
-        _t = time + 60;
-        _base = missionNamespace getVariable format ["BIS_WL_base_%1", side group _unit];
-        if ([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea && !(_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])) then {
-            [_unit, FALSE] remoteExec ["allowDamage", _unit];
-            waitUntil {!alive _unit || time > _t || !([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea) || (_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])};
-            [_unit, TRUE] remoteExec ["allowDamage", _unit];
+        _t = time + 180;
+        _timeout = time + 5;
+        waitUntil {time > _timeout || (side group _unit) in [WEST, EAST]};
+        if ((side group _unit) in [WEST, EAST]) then {
+            _base = missionNamespace getVariable format ["BIS_WL_base_%1", side group _unit];
+            if ([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea && !(_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])) then {
+                [_unit, FALSE] remoteExec ["allowDamage", _unit];
+                waitUntil {!alive _unit || time > _t || !([_unit, _base, TRUE] call BIS_fnc_WLInSectorArea) || (_base in [BIS_WL_currentSector_WEST, BIS_WL_currentSector_EAST])};
+                [_unit, TRUE] remoteExec ["allowDamage", _unit];
+            };
         };
     };
 };
@@ -206,7 +212,6 @@ if !(isDedicated) then {
     BIS_WL_votingBar_progress = [];
     BIS_WL_votingBar_progress_prev = [];
     BIS_WL_votingBar_progress_loop = scriptNull;
-    BIS_WL_recentlyPurchasedAssets = [];
     BIS_WL_sectorVotingReset_WEST = FALSE;
     BIS_WL_sectorVotingReset_EAST = FALSE;
     BIS_WL_sectorVotingResetName_WEST = "";
@@ -221,6 +226,8 @@ if !(isDedicated) then {
         "B_Mortar_01_Weapon_grn_F",
         "I_Mortar_01_support_F",
         "I_Mortar_01_weapon_F",
+        "I_E_Mortar_01_support_F",
+        "I_E_Mortar_01_weapon_F",
         "O_Mortar_01_support_F",
         "O_Mortar_01_weapon_F",
         "B_Respawn_Sleeping_bag_blue_F",
@@ -228,7 +235,17 @@ if !(isDedicated) then {
         "B_Respawn_TentDome_F",
         "B_Patrol_Respawn_bag_F",
         "B_Respawn_Sleeping_bag_F",
-        "B_Respawn_TentA_F"
+        "B_Respawn_TentA_F",
+        "C_IDAP_UGV_02_Demining_backpack_F",
+        "I_UGV_02_Demining_backpack_F",
+        "O_UGV_02_Demining_backpack_F",
+        "I_E_UGV_02_Demining_backpack_F",
+        "B_UGV_02_Demining_backpack_F",
+        "I_UGV_02_Science_backpack_F",
+        "O_UGV_02_Science_backpack_F",
+        "I_E_UGV_02_Science_backpack_F",
+        "B_UGV_02_Science_backpack_F",
+        "I_E_Mortar_01_Weapon_F"
     ];
     {
         _class = _x;

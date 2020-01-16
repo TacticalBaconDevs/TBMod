@@ -32,18 +32,29 @@ if !(_activated) exitWith {true};
     private _diagType = if (_save) then {["Save Name", "", ""]} else {["Save Name", _saves, 0]};
     _dialogResult = ["Persistence", [_diagType]] call Ares_fnc_showChooseDialog;
     if (_dialogResult isEqualTo []) exitWith {systemChat "[TBMod_persistence] Abbruch"};
-
-    if (_save) then
-    {
-        _dialogResult params ["_name"];
-
-        [true, _name, !_server] remoteExec [QFUNC(persistence), 2];
+    if (call FUNC(ping)) then {
+        if (_save) then
+        {
+            _dialogResult params ["_name"];
+            [true, _name, !_server] remoteExec [QFUNC(persistence), 2];
+        }
+        else
+        {
+            _dialogResult params ["_id"];
+            [false, _saves select _id, !_server] remoteExec [QFUNC(persistence), 2];
+        };
     }
     else
     {
-        _dialogResult params ["_id"];
-
-        [false, _saves select _id, !_server] remoteExec [QFUNC(persistence), 2];
+        if (_save) then
+        {
+            _dialogResult params ["_name"];
+            [true, _name, false, true] call FUNC(persistence);
+        }
+        else
+        {
+            systemChat "Server kann nicht erreicht werden. Laden nicht möglich";
+        };
     };
 };
 
