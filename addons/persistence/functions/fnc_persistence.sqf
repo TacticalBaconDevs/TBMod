@@ -44,15 +44,11 @@ if (_save) then
 
     profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _saveArray];
 
-    // save TBMod_building stuff
-    [true, _name] call FUNC(persistenceBuilding);
-
     private _names = profileNamespace getVariable [QGVAR(savedNames), []];
     _names pushBackUnique _name;
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
-    format ["[TBMod_persistence] Test %1 Test2 %2", _transfer, !_overwriteLocal] remoteExecCall ["systemChat"];
     if (_transfer && !_overwriteLocal) then {
         [_name, false] call FUNC(transferManager);
     };
@@ -111,11 +107,6 @@ else // load
 
     // Teleport players
     [_save, _loadArray select 0] call FUNC(persistencePlayers);
-
-    uiSleep 1;
-
-    // Load TBMod_building stuff
-    [false, _name] call FUNC(persistenceBuilding);
 };
 
 (format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
