@@ -12,24 +12,31 @@ if !(local _logic) exitWith {};
 if !(_activated) exitWith {};
 if !(canSuspend) exitWith {_this spawn EFUNC(zeus,moduleNachschubAbwurf)};
 
-private _dialogResult = ["Nachschubmenge", [
-        ["Nachschubmenge", "", "2000", true]
-    ]] call Ares_fnc_showChooseDialog;
-if (_dialogResult isEqualTo []) exitWith {};
-_dialogResult params ["_menge"];
+[
+    "Nachschubmenge",
+    [
+        [
+            "SLIDER",
+            ["Nachschubmenge", "Die Menge, die an Ressourcen zum Bauen im Fahrzeug ist."],
+            [100, 10000, 2000, 0],
+            true
+        ]
+    ],
+    {
+        params ["_values", "_args"];
+        _values params ["_menge"];
 
-_menge = parseNumber _menge;
-if (_menge < 0 || _menge > 10000) exitWith {systemChat "Menge muss zwischen 0-10000 liegen."};
+        (missionnamespace getvariable ["bis_fnc_curatorObjectPlaced_mouseOver", [""]]) params ["_mouseOverType", "_mouseOverUnit"];
 
-(missionnamespace getvariable ["bis_fnc_curatorObjectPlaced_mouseOver", [""]]) params ["_mouseOverType", "_mouseOverUnit"];
-
-if (_mouseOverType != "OBJECT") then
-{
-    systemChat "Resoucenfahrzeug muss ein Objekt sein!";
-}
-else
-{
-    _mouseOverUnit setVariable ["TBMod_Building_resourcenCargo", _menge, true];
-};
+        if (_mouseOverType != "OBJECT") then
+        {
+            systemChat "Resoucenfahrzeug muss ein Objekt sein!";
+        }
+        else
+        {
+            _mouseOverUnit setVariable ["TBMod_Building_resourcenCargo", _menge, true];
+        };
+    }
+] call zen_dialog_fnc_create;
 
 true

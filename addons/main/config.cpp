@@ -80,16 +80,9 @@ class CfgPatches
             "OPXT_TFAR_ITEMS",
 
             // 3rd PartyMods
-            "achilles_data_f_achilles",
-            "achilles_data_f_ares",
-            "achilles_functions_f_achilles",
-            "achilles_functions_f_ares",
-            "achilles_modules_f_achilles",
-            "achilles_settings_f",
-            "achilles_language_f",
-            "achilles_ui_f",
+            "zen_main",
             "3denEnhanced",
-            "adv_aceCPR",
+            //"adv_aceCPR", // TODO: wird mit ACE 3.13.* nicht mehr unterstützt
             "acex_main",
             "WarFXPE",
 

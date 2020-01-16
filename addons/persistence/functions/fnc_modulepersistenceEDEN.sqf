@@ -26,25 +26,23 @@ private _activated = switch _mode do
 
 if (!_activated) exitWith {true};
 
-[] spawn
-{
-    private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
-    private _dialogResult = [
-            "Persistence",
-            [
-                ["Save Name", _saves, 0]
-            ]
-        ] call Ares_fnc_showChooseDialog;
+private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
+[
+    "Persistence laden",
+    [
+        [
+            "COMBO",
+            ["Speichername", "Der Name des Speicherstandes"],
+            [_saves, [], (count _saves) - 1],
+            true
+        ]
+    ],
+    {
+        params ["_values", "_args"];
+        _values params ["_name"];
 
-    if (_dialogResult isEqualTo []) then
-    {
-        systemChat "[TBMod_persistence] Abbruch";
+        [_name] spawn FUNC(persistenceEDEN);
     }
-    else
-    {
-        _dialogResult params ["_nameIdx"];
-        [_saves select _nameIdx] call FUNC(persistenceEDEN);
-    };
-};
+] call zen_dialog_fnc_create;
 
 true;

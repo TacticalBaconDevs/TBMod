@@ -9,53 +9,75 @@ if !(local _logic) exitWith {true};
 deleteVehicle _logic;
 if !(_activated) exitWith {true};
 
-[] spawn
-{
-    private _dialogResult = ["Persistence", [
-            ["Operation", ["Speichern", "Laden"], 0],
-            ["Ort", ["Server", "Lokal"], 0]
-        ]] call Ares_fnc_showChooseDialog;
-    if (_dialogResult isEqualTo []) exitWith {systemChat "[TBMod_persistence] Abbruch"};
-    _dialogResult params ["_operation", "_ort"];
-
-    private _save = _operation == 0;
-    private _server = _ort == 0;
-    private _saves = if (_server) then
+[
+    "Persistence",
+    [
+        [
+            "COMBO",
+            ["Operation", "Auswahl ob gespeichert oder geladen werden soll."],
+            [[], ["Speichern", "Laden"], 0],
+            true
+        ],
+        [
+            "COMBO",
+            ["Ort", "Auswahl wo gespeichert bzw her geladen werden soll."],
+            [[], ["Server", "Lokal"], 0],
+            true
+        ]
+    ],
     {
-        call FUNC(getSavedNamesFromServer);
-    }
-    else
-    {
-        profileNamespace getVariable [QGVAR(savedNames), []];
-    };
+        params ["_values", "_args"];
+        _values params ["_operation", "_ort"];
 
-    private _diagType = if (_save) then {["Save Name", "", ""]} else {["Save Name", _saves, 0]};
-    _dialogResult = ["Persistence", [_diagType]] call Ares_fnc_showChooseDialog;
-    if (_dialogResult isEqualTo []) exitWith {systemChat "[TBMod_persistence] Abbruch"};
-    if (call FUNC(ping)) then {
-        if (_save) then
+        private _save = _operation == 0;
+        private _server = _ort == 0;
+
+        private _saves = if (_server) then
         {
-            _dialogResult params ["_name"];
-            [true, _name, !_server] remoteExec [QFUNC(persistence), 2];
+            call FUNC(getSavedNamesFromServer);
         }
         else
         {
-            _dialogResult params ["_id"];
-            [false, _saves select _id, !_server] remoteExec [QFUNC(persistence), 2];
+            profileNamespace getVariable [QGVAR(savedNames), []];
         };
-    }
-    else
-    {
-        if (_save) then
+
+        private _diagType = if (_save) then
         {
-            _dialogResult params ["_name"];
-            [true, _name, false, true] call FUNC(persistence);
+            ["EDIT", "Speichername", [""], true];
         }
         else
         {
-            systemChat "Server kann nicht erreicht werden. Laden nicht möglich";
+            ["COMBO", "Speichername", [_saves, [], (count _saves) - 1], true];
         };
-    };
-};
+
+        [
+            "Persistence",
+            [_diagType],
+            {
+                params ["_values", "_args"];
+                _values params ["_name"];
+                _args params ["_ping", "_save", "_server"];
+
+                if (_ping) then
+                {
+                    [_save, _name, !_server] remoteExec [QFUNC(persistence), 2];
+                }
+                else
+                {
+                    if (_save) then
+                    {
+                        [true, _name, false, true] call FUNC(persistence);
+                    }
+                    else
+                    {
+                        systemChat "Server kann nicht erreicht werden. Laden nicht möglich";
+                    };
+                };
+            },
+            {},
+            [call FUNC(ping), _save, _server]
+        ] call zen_dialog_fnc_create;
+    }
+] call zen_dialog_fnc_create;
 
 true;
