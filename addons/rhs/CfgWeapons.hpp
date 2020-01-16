@@ -96,16 +96,15 @@ class CfgWeapons
     };
 
     // Skin Weste IS
-    class rhs_6sh92_vog;
-    class TB_vest_IS_01: rhs_6sh92_vog
+    class rhs_6sh92;
+    class TB_vest_IS_01: rhs_6sh92
     {
-        displayName = "IS";
+        displayName = "ISIS Weste1 (Black)";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\vests\TB_vest_IS_01A.paa),
             QPATHTOEF(skins,pictures\vests\TB_vest_IS_01B.paa)
         };
-        picture = "\rhsafrf\addons\rhs_inventoryicons\data\vests\rhs_6sh92_vog_ca.paa";
     };
 
     class RocketPods;

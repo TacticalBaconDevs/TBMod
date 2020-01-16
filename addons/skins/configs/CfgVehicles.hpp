@@ -26,7 +26,6 @@ class CfgVehicles
     class B_RangeMaster_F;
     class O_officer_F;
     class I_C_Soldier_Para_2_F;
-    class rhs_6sh92_vog;
 
     // Fahrzeuge
     class I_Plane_Fighter_03_dynamicLoadout_F;
@@ -98,7 +97,7 @@ class CfgVehicles
 
     class TB_Uniform_IS_1_black: I_C_Soldier_Para_2_F
     {
-        scope = 1;
+        scope = 2;
         displayName = "IS_1";
         author = "Eron";
         nakedUniform = "U_BasicBody";
@@ -464,8 +463,10 @@ class CfgVehicles
 
     //////////////////// OPFOR /////////////////////
 
-    class O_MBT_02_cannon_F : O_MBT_02_base_F
-    {
+    class O_MBT_02_cannon_F : O_MBT_02_base_F {
+        class EventHandlers;
+    };
+    class TB_Vehicles_T100 : O_MBT_02_cannon_F {
         displayName = "T-100";
         author = "Eron";
         addCategoryOPF(Arid);
@@ -473,9 +474,13 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_2.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_2.paa),
+            "A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
+        };
+
+        class EventHandlers : EventHandlers {
+            init = ""; // "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
         };
     };
 
-    class TB_Vehicles_T100 : O_MBT_02_cannon_F {};
 };
