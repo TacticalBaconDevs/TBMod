@@ -412,10 +412,45 @@ class CfgMagazines
         tracersEvery = 1; // 5
     };
 
+    class CA_Magazine;
+    class SatchelCharge_Remote_Mag : CA_Magazine // M183 Demolition Charge Assembly
+    {
+        mass = 66.12; // 80
+        indirectHitRange = 14; // 5
+    };
+
+    class DemoCharge_Remote_Mag : SatchelCharge_Remote_Mag // M112 Demolition Block
+    {
+        mass = 11.02; // 20
+    };
+
+    class ATMine_Range_Mag;
+    class SLAMDirectionalMine_Wire_Mag : SatchelCharge_Remote_Mag // M4A1 SLAM
+    {
+        mass = 22.04; // 20
+    };
+
+    class AMP_Breaching_Charge_Mag : SLAMDirectionalMine_Wire_Mag // Breaching Charge
+    {
+        mass = 8.82; // 10
+    };
+    
+    class APERSMineDispenser_Mag : SLAMDirectionalMine_Wire_Mag // APERS Mine Dispenser
+    {
+        mass = 77.14; // 60
+    };
+
+
+    class ClaymoreDirectionalMine_Remote_Mag : CA_Magazine // Claymore
+    {
+        mass = 22.04; // 20
+    };
+    
     class 3Rnd_Smoke_Grenade_shell_precise;
     class 48Rnd_Smoke_Grenades : 3Rnd_Smoke_Grenade_shell_precise // 40mm UGV Smoke Grenades
     {
         count = 48;
         initSpeed = 240;
     };
+    
 };

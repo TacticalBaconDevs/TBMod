@@ -95,10 +95,10 @@ class CfgAmmo
     class ShellBase;
     class Mo_cluster_AP : ShellBase // Mk45 Hammer HE Cluster Submunition
     {
-        caliber = 2; // 34
-        hit = 6; // 35
-        indirectHit = 6; // 25
-        indirectHitRange = 20; // 8
+        caliber = 4; // 34
+        hit = 25; // 35
+        indirectHit = 19; // 25
+        indirectHitRange = 18; // 8
         suppressionRadiusHit = 65; // 30
     };
 
@@ -123,6 +123,31 @@ class CfgAmmo
         hit = 300; // 340
         indirectHit = 250; // 125
         indirectHitRange = 17; // 30
+
+        class CamShakeExplode {
+            distance = 900; // 339.599
+            duration = 2; // 2.4
+            frequency = 15; //20
+            power = 28; // 31
+        };
+        class CamShakeFire {
+            distance = 700; // 99.5992;
+            duration = 2; // 2.4
+            frequency = 10; // 20
+            power = 8; // 3.52844
+        };
+        class CamShakeHit {
+            distance = 1;
+            duration = 0.8;
+            frequency = 20;
+            power = 155;
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 0.01;
+        };
     };
 
     class Smoke_120mm_AMOS_White;
@@ -154,7 +179,33 @@ class CfgAmmo
     class ammo_Bomb_LaserGuidedBase;
     class Bomb_04_F : ammo_Bomb_LaserGuidedBase // GBU-12 HE
     {
+        indirectHitRange = 32; // 12
         trackOversteer = 0.95; // 1
+
+        class CamShakeExplode {
+            distance = 1500;
+            duration = 0.75;
+            frequency = 10;
+            power = 35;
+        };
+        class CamShakeFire {
+            distance = 1200;
+            duration = 0.75;
+            frequency = 10;
+            power = 18;
+        };
+        class CamShakeHit {
+            distance = 1;
+            duration = 0.35;
+            frequency = 40;
+            power = 180;
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 0.01;
+        };
     };
 
     class BombCluster_01_Ammo_F : Bomb_04_F // CBU-85 HE Mines Cluster
@@ -172,7 +223,7 @@ class CfgAmmo
     class BombCluster_03_Ammo_F : BombCluster_01_Ammo_F // BL-778 HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_Bomb_03_F"}; // "Mo_cluster_Bomb_03_F",0.93,"BombCluster_03_UXO_deploy",0.07
-        submunitionConeAngle = 12; // 10
+        submunitionConeAngle = 22; // 10
         submunitionConeType[] = {"random",70}; // "randomcenter",50
     };
 
@@ -182,8 +233,8 @@ class CfgAmmo
         aiAmmoUsageFlags = "64 + 128"; // "64 + 128 + 256"
         airFriction = -0.00005; // -0.0005
         caliber = 0.5; // 34
-        hit = 9; // 70
-        indirectHit = 7; // 12
+        hit = 25; // 70
+        indirectHit = 19; // 12
         indirectHitRange = 10; // 6
         suppressionRadiusHit = 65; // 30
     };
@@ -227,6 +278,31 @@ class CfgAmmo
     {
         indirectHitRange = 1; // 4
         trackOversteer = 0.95; // 1
+
+        class CamShakeExplode {
+            distance = 300;
+            duration = 1.5;
+            frequency = 18;
+            power = 16;
+        };
+        class CamShakeFire {
+            distance = 150;
+            duration = 1.5;
+            frequency = 18;
+            power = 4;
+        };
+        class CamShakeHit {
+            distance = 1;
+            duration = 0.6;
+            frequency = 20;
+            power = 60;
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 2;
+        };
     };
 
     class ACE_Hellfire_AGM114N : ACE_Hellfire_AGM114K // AGM-114N
@@ -321,9 +397,34 @@ class CfgAmmo
     {
         hit = 100; // 210
         indirectHit = 20; // 55
-        indirectHitRange = 18; // 15
+        indirectHitRange = 21; // 15
         trackOversteer = 0.95; // 1
         suppressionRadiusHit = 65; // 30
+
+        class CamShakeExplode {
+            distance = 300; // 191.554
+            duration = 1.5; // 1.8
+            frequency = 18; // 20
+            power = 10; // 16
+        };
+        class CamShakeFire {
+            distance = 150; // 71.5542
+            duration = 1.5; // 1.8
+            frequency = 18; // 20
+            power = 2.1; // 2.9907
+        };
+        class CamShakeHit {
+            distance = 1;
+            duration = 0.6;
+            frequency = 20;
+            power = 60;
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.1;
+            frequency = 20;
+            power = 2;
+        };
     };
 
     class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
@@ -414,5 +515,41 @@ class CfgAmmo
         hit = 50; // 145
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
+    };
+
+    class B_30mm_HE;
+    class B_40mm_GPR : B_30mm_HE // 40mm GPR
+    {
+        hit = 40; // 70
+    };
+
+    class B_30mm_APFSDS;
+    class B_40mm_APFSDS : B_30mm_APFSDS // 40mm APFSDS
+    {
+        hit = 100; // 150
+    };
+
+    class DirectionalBombBase;
+    class ClaymoreDirectionalMine_Remote_Ammo : DirectionalBombBase // Claymore
+    {
+        indirectHit = 50; // 40
+        indirectHitRange = 80; // 30
+        /*mineTrigger = {"RemoteTrigger","TimeTrigger","ACE_MagneticTrigger","IRTrigger"};*/
+        mineTrigger = "IRTrigger";
+    };
+
+    class PipeBombBase;
+    class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
+    {
+        submunitionConeType[] = {"randomupcone",18}; // "randomupcone",14
+        submunitionInitSpeed = 18; // 8
+    };
+
+    class APERSMine_Range_Ammo;
+    class APERSMineDispenser_Mine_Ammo : APERSMine_Range_Ammo // Submunition APERSMineDispenser
+    {
+        hit = 9; // 7
+        indirectHitRange = 10; // 3
+        suppressionRadiusHit = 32; // 16
     };
 };

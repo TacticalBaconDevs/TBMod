@@ -48,6 +48,7 @@ if !(_activated) exitWith {true};
     {
         if (_save) then
         {
+            _dialogResult params ["_name"];
             [true, _name, false, true] call FUNC(persistence);
         }
         else

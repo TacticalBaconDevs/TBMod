@@ -351,6 +351,7 @@ class CfgVehicles
         audible = 0.75; // 5
         camouflage = 1.15; // 2
         irTargetSize = 0.2; // n.a.
+        maxOmega = 950; // 837.76
         visualTargetSize = 0.2; // n.a.
     };
 
@@ -371,9 +372,11 @@ class CfgVehicles
     class I_MRAP_03_F : MRAP_03_base_F // Vanilla Fennek
     {
         accuracy = 1.1; // 0.25
+        armor = 190; // 200
         audible = 2.25; // 5
         camouflage = 1.4; // 2
         irTargetSize = 0.3; // n.a.
+        maxOmega = 420; // 320
         visualTargetSize = 0.3; // n.a.
     };
 
@@ -471,57 +474,113 @@ class CfgVehicles
     class APC_Tracked_03_base_F;
     class RHS_M2A2_Base : APC_Tracked_03_base_F // RHS M2 Bradley
     {
-        armor = 460; // 290
-        audible = 8; // 18
+        armor = 510; // 290
+        audible = 17; // 18
     };
 
     class rhsusf_caiman_base;
     class rhsusf_M1220_usarmy_d : rhsusf_caiman_base // RHS M1220 Serie
     {
-        armor = 230; // 200
-        audible = 5; // 9
+        armor = 220; // 200
+        audible = 8; // 9
+        maxOmega = 550; // 230.38
     };
 
     class rhsusf_hmmwe_base;
     class rhsusf_m998_w_2dr : rhsusf_hmmwe_base // RHS Humvee Serie
     {
-        armor = 95; // 80
-        audible = 4; // 5
+        armor = 70; // 80
+        maxOmega = 480; // 356.05
     };
 
     class MRAP_01_base_F;
-    class B_MRAP_01_F : MRAP_01_base_F // Vanilla Hunter
+    class B_MRAP_01_F : MRAP_01_base_F // Vanilla M-ATV-Reihe
     {
-        armor = 210; // 200
+        armor = 10; // 200
+    };
+
+    class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33L-Reihe
+    {
+        armor = 215; // 200
+        audible = 6; // 5
+    };
+
+    class rhsusf_RG33_base : MRAP_01_base_F // RHS RG33-Reihe
+    {
+        armor = 225; // 200
+        audible = 7; // 5
     };
 
     class I_APC_Wheeled_03_base_F;
     class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Vanilla Pandur II
     {
-        armor = 460; // 480
-        audible = 8; // 14
+        armor = 245; // 200
+        audible = 16; // 5
+    };
+
+    class B_APC_Wheeled_01_base_F;
+    class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F // Patria AMW
+    {
+        armor = 215; // 320
+        audible = 16; // 14
     };
 
     // ### RHS inheritance fix
     class rhs_uaz_spg9_base;
     class rhs_uaz_spg9_chdkz : rhs_uaz_spg9_base {};
 
-    /*// UGV Stomper
+    class rhsusf_MATV_base : MRAP_01_base_F // RHS M-ATV-Reihe
+    {
+        armor = 220; // 100
+        audible = 5; // 6
+        maxOmega = 600; // 230.38
+        maxSpeed = 115; // 105
+        normalSpeedForwardCoef = 0.7; // 0.48
+    };
+
+    class rhsusf_Cougar_base : MRAP_01_base_F // RHS CGR-Reihe
+    {
+        armor = 220; // 200
+        audible = 15; // 14
+    };
+
+    class rhsusf_stryker_base;
+    class rhsusf_stryker_m1126_base : rhsusf_stryker_base // RHS Stryker-Reihe
+    {
+        armor = 220; // 120
+        audible = 15; // 14
+    };
+
+    class Wheeled_Apc_F;
+    class rhsusf_M1117_base : Wheeled_Apc_F // RHS M1117-Reihe
+    {
+        armor = 195; // 150
+        audible = 13; // 14
+        maxOmega = 550; // 230.38
+    };
+
+    // UGV Stomper
     class UGV_01_base_F;
     class UGV_01_rcws_base_F : UGV_01_base_F
+    {
+        class Turrets;
+    };
+    class B_UGV_01_rcws_F : UGV_01_rcws_base_F // UGV Stomper RCWS
+    {
+        class Turrets : Turrets
         {
-            class Turrets;
+            class MainTurret;
         };
-        class B_UGV_01_rcws_F : UGV_01_rcws_base_F // UGV Stomper RCWS
+    };
+    class TB_UGV_01_rcws_F : B_UGV_01_rcws_F
+    {
+        class Turrets : Turrets
         {
-            class Turrets : Turrets
+            class MainTurret : MainTurret
             {
-                class CargoTurret_01
-                {
-                    class NewTurret;
-                    class MainTurret : NewTurret
-                        magazines[] = {"200Rnd_127x99_mag_Tracer_Red","96Rnd_40mm_G_belt"};
-                };
+                magazines[] = {"200Rnd_127x99_mag_Tracer_Red", "48Rnd_Smoke_Grenades"};
             };
-        };*/
+        };
+    };
+
 };

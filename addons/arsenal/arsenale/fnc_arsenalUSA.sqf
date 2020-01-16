@@ -41,7 +41,7 @@ private _allgemein = [
     "rhsusf_oakley_goggles_clr",
     "rhsusf_oakley_goggles_ylw",
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
     // ### Beards
     "SFG_Tac_smallBeardB",
     "SFG_Tac_smallBeardD",
@@ -84,6 +84,7 @@ private _allgemein = [
 
     // Navigation
     "ItemCompass",
+    "ACE_microDAGR",
 
     // Uhr
     "ItemWatch",
@@ -116,6 +117,7 @@ private _allgemein = [
     "rhs_mag_mk84",
     "rhs_mag_mk3a2",
     "rhs_mag_m67",
+    "B_IR_Grenade",
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag"
 ];
@@ -626,6 +628,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_teamleader",
             "rhsusf_spcs_ucp_squadleader",
             "rhsusf_spcs_ucp_teamleader",
+            "rhsusf_plateframe_teamleader",
 
             // Waffen
             "rhs_weap_m4a1_d",
@@ -642,7 +645,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_HuntIR_monitor",
-            "ACE_microDAGR",
             "TB_rhs_mag_40mm_IR_Grenade",
             "Laserbatteries"
         ]
@@ -668,7 +670,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_mbav_Medic",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
-            "rhsusf_spcs_ucp_medic"
+            "rhsusf_spcs_ucp_medic",
+            "rhsusf_plateframe_medic"
         ]
     };
 
@@ -704,6 +707,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
             "rhsusf_spcs_ucp_medic",
+            "rhsusf_plateframe_medic",
 
             // Kopfbedeckung
             "rhsusf_cvc_green_helmet",
@@ -737,6 +741,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_grenadier",
             "rhsusf_spcs_ucp_grenadier",
+            "rhsusf_plateframe_grenadier",
 
             // Items
             "ACE_HuntIR_monitor"
@@ -771,6 +776,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_machinegunner",
             "rhsusf_spcs_ucp_machinegunner",
+            "rhsusf_plateframe_machinegunner",
 
             // Zubehör
             "ACE_RangeCard"
@@ -809,6 +815,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_machinegunner",
             "rhsusf_spcs_ucp_machinegunner",
+            "rhsusf_plateframe_machinegunner",
 
             // Ferngläser
             "ACE_Vector",
@@ -922,6 +929,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
             "rhsusf_spc_marksman",
+            "rhsusf_plateframe_marksman",
+            "rhsusf_plateframe_rifleman",
             // Spezial
             "ACE_Kestrel4500",
             "ACE_RangeCard",
@@ -993,6 +1002,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_sniper",
             "rhsusf_spcs_ucp_sniper",
+            "rhsusf_plateframe_marksman",
+            "rhsusf_plateframe_rifleman",
 
             // Rucksäcke
             "ace_gunbag_Tan",
@@ -1047,6 +1058,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_sniper",
             "rhsusf_spcs_ucp_sniper",
+            "rhsusf_plateframe_marksman",
+            "rhsusf_plateframe_rifleman",
 
             // Ferngläser
             "lerca_1200_black",
@@ -1097,6 +1110,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
+            "rhsusf_plateframe_rifleman",
 
             // Items
             "ACE_M26_Clacker",
@@ -1153,7 +1167,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_iotv_ocp_SAW",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_saw",
-            "rhsusf_spcs_ucp_saw"
+            "rhsusf_spcs_ucp_saw",
+            "rhsusf_plateframe_rifleman"
         ]
     };
 
@@ -1186,6 +1201,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
+            "rhsusf_plateframe_rifleman",
 
             // Experiment
             "B_UAV_06_backpack_F", // UAV Bag (AL-6) [NATO]
@@ -1225,6 +1241,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
+            "rhsusf_plateframe_rifleman",
 
             // Items
             "ACE_DefusalKit",
