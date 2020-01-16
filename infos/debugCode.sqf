@@ -175,3 +175,16 @@ private _ausgabe = "";
     }
 } forEach _naschschubConfigs;
 systemChat format ["Zuschwere Kisten: %1", _ausgabe select [0, count _ausgabe - 1]];
+
+// Backpack check
+fnc_backpack = {
+    params [["_backpack", ""]];
+    if (_backpack == "") then {_backpack = backpack player};
+    private _max = getNumber (configFile >> "cfgVehicles" >> _backpack >> "maximumload");
+    private _mass = getNumber (configFile >> "cfgVehicles" >> _backpack >> "mass");
+
+    [_backpack, _max, _mass, _max / _mass]
+};
+
+["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
+
