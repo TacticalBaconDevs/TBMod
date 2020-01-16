@@ -76,6 +76,23 @@ class cfgWeapons
             mass = 40;
         };
     };
+
+    class TB_Uniform_IS_1_black_U: Uniform_Base
+    {
+        scope = 2;
+        picture = "\rhsgref\addons\rhsgref_inventoryicons\data\uniform\rhsgref_uniform_olive_ca.paa";
+        displayName = "ISIS Uniform1 (Black)";
+        author = "Eron";
+        model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+
+        class ItemInfo: UniformItem
+        {
+            uniformModel = "-";
+            uniformClass = "TB_Soldier_IS_1_black";
+            containerClass = "Supply40";
+            mass = 40;
+        };
+    };
 };
 
 ///////////////////////////////////

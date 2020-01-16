@@ -5,10 +5,17 @@
     Author: Eric, IDarky
 */
 
-#define addCategory(EDITORSUB) editorCategory = "EdCat_TB_skins"; \
+#define addCategoryBLU(EDITORSUB) editorCategory = "EdCat_TB_skins"; \
             editorSubcategory = EdSubcat_TB_skins_##EDITORSUB; \
             faction = "BLU_F"; \
             side = 1;\
+            scope = 2;\
+            scopeCurator = 2
+
+#define addCategoryOPF(EDITORSUB) editorCategory = "EdCat_TB_skins"; \
+            editorSubcategory = EdSubcat_TB_skins_##EDITORSUB; \
+            faction = "OPF_F"; \
+            side = 0;\
             scope = 2;\
             scopeCurator = 2
 
@@ -18,6 +25,7 @@ class CfgVehicles
     class B_Soldier_F;
     class B_RangeMaster_F;
     class O_officer_F;
+    class I_C_Soldier_Para_2_F;
 
     // Fahrzeuge
     class I_Plane_Fighter_03_dynamicLoadout_F;
@@ -39,6 +47,7 @@ class CfgVehicles
     class Offroad_02_unarmed_base_F;
     class Offroad_02_LMG_base_F;
     class Offroad_02_AT_base_F;
+    class O_MBT_02_base_F;
 
     ///////////////////////Polizei Uniformen//////////////////////////
 
@@ -86,13 +95,24 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\polizei_presi.paa)};
     };
 
+    class TB_Soldier_IS_1_black: I_C_Soldier_Para_2_F
+    {
+        scope = 2;
+        displayName = "IS_1";
+        author = "Eron";
+        nakedUniform = "U_BasicBody";
+        uniformClass = "TB_Uniform_IS_1_black_U";
+        hiddenSelections[] = {"camo1","camo2"};
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa),QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa)};
+    };
+
     ///////////////////////Polizei Fahrzeuge//////////////////////////
 
     class TB_Vehicles_sek_light: B_Heli_Light_01_F
     {
         displayName = "SEK Hummingbird";
         author = "nimda";
-        addCategory(Polizei);
+        addCategoryBLU(Polizei);
         hiddenSelections[] = {"camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_sek_light.paa)};
     };
@@ -101,7 +121,7 @@ class CfgVehicles
     {
         displayName = "SEK Hellcat";
         author = "nimda";
-        addCategory(Polizei);
+        addCategoryBLU(Polizei);
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_sek_hellcat.paa)};
     };
@@ -110,7 +130,7 @@ class CfgVehicles
     {
         displayName = "Polizei Hellcat";
         author = "nimda";
-        addCategory(Polizei);
+        addCategoryBLU(Polizei);
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hellcat.paa)};
     };
@@ -119,7 +139,7 @@ class CfgVehicles
     {
         displayName = "M-ATV Polizei";
         author = "nimda";
-        addCategory(Polizei);
+        addCategoryBLU(Polizei);
         hiddenSelections[] = {"Camo1", "Camo2", "riotpolice"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hunter_0.paa),
@@ -134,7 +154,7 @@ class CfgVehicles
     {
         displayName = "M-ATV";
         author = "Eron";
-        addCategory(Wueste);
+        addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
@@ -146,7 +166,7 @@ class CfgVehicles
     {
         displayName = "M-ATV (smg)";
         author = "Eron";
-        addCategory(Wueste);
+        addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
@@ -158,7 +178,7 @@ class CfgVehicles
     {
         displayName = "Merkava Mk4";
         author = "Eron";
-        addCategory(Wueste);
+        addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa),
@@ -170,7 +190,7 @@ class CfgVehicles
     {
         displayName = "Leopard 2A7+";
         author = "Eron";
-        addCategory(Wueste);
+        addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_1.paa),
@@ -182,7 +202,7 @@ class CfgVehicles
     {
         displayName = "Pandur IFV";
         author = "Eron";
-        addCategory(Wueste);
+        addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa),
@@ -197,7 +217,7 @@ class CfgVehicles
     {
         displayName = "Badger IFV";
         author = "Eron";
-        addCategory(Wueste);
+        addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
@@ -211,7 +231,7 @@ class CfgVehicles
     {
         displayName = "Pandur IFV";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa),
@@ -226,7 +246,7 @@ class CfgVehicles
     {
         displayName = "Leopard 2A7+";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_3.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_4.paa),
@@ -238,7 +258,7 @@ class CfgVehicles
     {
         displayName = "M-ATV";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
@@ -250,7 +270,7 @@ class CfgVehicles
     {
         displayName = "M-ATV (smg)";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
@@ -262,7 +282,7 @@ class CfgVehicles
     {
         displayName = "Badger IFV";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
@@ -274,7 +294,7 @@ class CfgVehicles
     {
         displayName = "Strider";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),
             ""
@@ -285,7 +305,7 @@ class CfgVehicles
     {
         displayName = "Strider (smg)";
         author = "Eron";
-        addCategory(Wald);
+        addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_1.paa)
@@ -298,7 +318,7 @@ class CfgVehicles
     {
         displayName = "Hellcat BW (unbewaffnet)";
         author = "Eron";
-        addCategory(Fluggeraete);
+        addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
     };
 
@@ -306,7 +326,7 @@ class CfgVehicles
     {
         displayName = "Hellcat BW (bewaffnet)";
         author = "Eron";
-        addCategory(Fluggeraete);
+        addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
     };
 
@@ -314,7 +334,7 @@ class CfgVehicles
     {
         displayName = "Merlin BW";
         author = "Eron";
-        addCategory(Fluggeraete);
+        addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_1.paa),
@@ -327,7 +347,7 @@ class CfgVehicles
     {
         displayName = "L-159 Albatros";
         author = "Eron";
-        addCategory(Fluggeraete);
+        addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_L-159_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_L-159_2.paa)
@@ -360,7 +380,7 @@ class CfgVehicles
     {
         displayName = "Pickup";
         author = "Eron";
-        addCategory(PMC);
+        addCategoryBLU(PMC);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Pickup_0.paa)
@@ -376,7 +396,7 @@ class CfgVehicles
     {
         displayName = "SUV";
         author = "Eron";
-        addCategory(PMC);
+        addCategoryBLU(PMC);
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Suv_0.paa)};
 
         class EventHandlers: EventHandlers
@@ -391,7 +411,7 @@ class CfgVehicles
     {
         displayName = "Jeep";
         author = "Eron";
-        addCategory(PMC);
+        addCategoryBLU(PMC);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
@@ -409,7 +429,7 @@ class CfgVehicles
     {
         displayName = "Jeep LMG";
         author = "Eron";
-        addCategory(PMC);
+        addCategoryBLU(PMC);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
@@ -427,7 +447,7 @@ class CfgVehicles
     {
         displayName = "Jeep AT";
         author = "Eron";
-        addCategory(PMC);
+        addCategoryBLU(PMC);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa),
@@ -440,4 +460,27 @@ class CfgVehicles
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];"; //  (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];
         };
     };
+
+    //////////////////// OPFOR /////////////////////
+
+    class O_MBT_02_cannon_F : O_MBT_02_base_F {
+        class EventHandlers;
+    };
+    class TB_Vehicles_T100 : O_MBT_02_cannon_F {
+        displayName = "T-100";
+        author = "Eron";
+        addCategoryOPF(Arid);
+
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_1.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_RU_T100_2.paa),
+            "A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
+        };
+
+        class EventHandlers : EventHandlers {
+            init = ""; // "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
+        };
+    };
+
 };
