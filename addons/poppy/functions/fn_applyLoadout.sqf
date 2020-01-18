@@ -7,8 +7,7 @@
 
 params ["_unit", "_loadout"];
 
-private _config = missionConfigFile >> "CfgLoadouts" >> _loadout;
-[_unit, _loadout] call compile (getText (_config >> "preLoadout"));
+private _config = configFile >> "CfgLoadouts" >> _loadout;
 
 
 removeAllAssignedItems _unit;
@@ -20,11 +19,7 @@ removeAllWeapons _unit;
 {
     if (isArray (_config >> _x)) then {
         [_unit, getArray (_config >> _x), _x] call FUNC(setEquipment);
-    }
+    };
 } forEach LOADOUT_INDEXES;
 
 _unit selectWeapon (primaryWeapon _unit);
-
-if (_loadConfig) then {
-    [_unit, _loadout] call compile (getText (_config >> "postLoadout"));
-};

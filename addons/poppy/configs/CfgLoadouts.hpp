@@ -35,13 +35,13 @@ class CfgLoadouts {
             {"ACE_morphine", 1}
         };
     };
-	class TBMod_poppy_poppy_01: All {};
-    class TBMod_poppy_poppy_02: All {};
-    class TBMod_poppy_poppy_03: All {};
-    class TBMod_poppy_poppy_04: All {};
-    class TBMod_poppy_poppy_05: All {};
-    class TBMod_poppy_poppy_06: All {};
-    class TBMod_poppy_poppy_07: All {};
-    class TBMod_poppy_poppy_08: All {};
+	class GVAR(poppy_01): All {};
+    class GVAR(poppy_02): All {};
+    class GVAR(poppy_03): All {};
+    class GVAR(poppy_04): All {};
+    class GVAR(poppy_05): All {};
+    class GVAR(poppy_06): All {};
+    class GVAR(poppy_07): All {};
+    class GVAR(poppy_08): All {};
     
 };

@@ -10,6 +10,14 @@ class CfgPatches
         name = "TBMod poppy";
 
         units[] = {
+            QGVAR(poppy_01),
+            QGVAR(poppy_02),
+            QGVAR(poppy_03),
+            QGVAR(poppy_04),
+            QGVAR(poppy_05),
+            QGVAR(poppy_06),
+            QGVAR(poppy_07),
+            QGVAR(poppy_08)
         };
 
         requiredAddons[] = {"TBMod_main"};

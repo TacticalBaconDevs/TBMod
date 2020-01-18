@@ -6,5 +6,4 @@ PREP(addItems);
 PREP(addMagazines);
 PREP(applyLoadout);
 PREP(findLoadableWeapon);
-PREP(selectLoadout);
 PREP(setEquipment);

@@ -14,20 +14,18 @@ PREP_RECOMPILE_END;
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
 if (isClass (missionConfigFile >> "CfgLoadouts")) then {
-    ["TBMod_poppy_poppy_01", "InitPost", {
+    [QGVAR(poppy_01), "InitPost", {
         params ["_unit"];
-        if {local _unit}) then {
-            private _loadout = [_unit] call FUNC(selectLoadout);
-            [_unit, _loadout] call FUNC(applyLoadout);
+        if (local _unit) then {
+            [_unit, typeOf _unit] call FUNC(applyLoadout);
         };
     }] call CBA_fnc_addClassEventHandler;
 
-    ["TBMod_poppy_poppy_01", "Local", {
+    [QGVAR(poppy_01), "Local", {
         params ["_unit"];
-        if {local _unit}) then {
-            private _loadout = [_unit] call FUNC(selectLoadout);
-            [_unit, _loadout] call FUNC(applyLoadout);
+        if (local _unit) then {
+            [_unit, typeOf _unit] call FUNC(applyLoadout);
         };
     }] call CBA_fnc_addClassEventHandler;
-
+};
 ADDON = true;
