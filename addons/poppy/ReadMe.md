@@ -2,6 +2,9 @@
 ## Info
 Poppy von TB
 
+## OOriginal Creator
+- [BaerMitUmlaut](https://github.com/BaerMitUmlaut/Poppy)
+
 ## Maintainer
 - [Eric Ruhland](https://github.com/Er1807)
 

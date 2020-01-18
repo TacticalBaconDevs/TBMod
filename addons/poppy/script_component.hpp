@@ -9,3 +9,11 @@
 // #define DISABLE_COMPILE_CACHE
 
 #include "\x\TBMod\addons\main\script_macros.hpp"
+
+#define LOADOUT_INDEXES [ \
+    "uniform", "vest", "backpack", \
+    "primary", "secondary", "launcher", \
+    "magazines", "items", \
+    "binoculars", "compass", "goggles", \
+    "gps", "headgear", "map", \
+    "nvgs", "watch"]

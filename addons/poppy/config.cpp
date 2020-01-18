@@ -21,3 +21,4 @@ class CfgPatches
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
+#include "configs\CfgLoadouts.hpp"
