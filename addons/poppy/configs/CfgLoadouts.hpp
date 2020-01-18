@@ -35,7 +35,7 @@ class CfgLoadouts {
             {"ACE_morphine", 1}
         };
     };
-	class GVAR(poppy_01): All {};
+    class GVAR(poppy_01): All {};
     class GVAR(poppy_02): All {};
     class GVAR(poppy_03): All {};
     class GVAR(poppy_04): All {};
