@@ -54,14 +54,14 @@ if (_save) then
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
-    if (_transfer && !_overwriteLocal) then {
+    if (_transfer && !_overwriteLocal && isDedicated) then {
         [_name, false] call FUNC(transferManager);
     };
 }
 else // load
 {
     if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
-    if (_transfer) then {
+    if (_transfer && isDedicated) then {
         [_name, true] call FUNC(transferManager);
     };
 
