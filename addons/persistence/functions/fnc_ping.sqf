@@ -4,18 +4,19 @@
     Developed by http://tacticalbacon.de
 */
 
-if (!canSuspend) exitwith {"[TBMod_persistence] Ping kann mit spawn aufgerufen werden" remoteExecCall ["systemChat"]};
-if (isServer) exitwith {"[TBMod_persistence] Ping kann nicht vom Server aufgerufen werden" remoteExecCall ["systemChat"]};
+if (!canSuspend) exitwith {"[TBMod_persistence] Ping muss mit spawn aufgerufen werden" remoteExecCall ["systemChat"]; false};
+if (isDedicated) exitwith {"[TBMod_persistence] Ping kann nicht vom Server aufgerufen werden" remoteExecCall ["systemChat"]; false};
+//if (!isDedicated && isServer) exitwith {false}; // lokal Server
 
 //systemChat "Ping started";
-GVAR(ping) = false; 
+GVAR(ping) = false;
 private _pingStart = CBA_missiontime;
 
 [
-    [],  
-    { 
-        GVAR(ping) = true; 
-        remoteExecutedOwner publicVariableClient QGVAR(ping); 
+    [],
+    {
+        GVAR(ping) = true;
+        remoteExecutedOwner publicVariableClient QGVAR(ping);
     }
 ] remoteExecCall ["call", 2];
 

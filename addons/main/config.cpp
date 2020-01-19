@@ -80,16 +80,9 @@ class CfgPatches
             "OPXT_TFAR_ITEMS",
 
             // 3rd PartyMods
-            "achilles_data_f_achilles",
-            "achilles_data_f_ares",
-            "achilles_functions_f_achilles",
-            "achilles_functions_f_ares",
-            "achilles_modules_f_achilles",
-            "achilles_settings_f",
-            "achilles_language_f",
-            "achilles_ui_f",
+            "zen_main",
             "3denEnhanced",
-            "adv_aceCPR",
+            //"adv_aceCPR", // TODO: wird mit ACE 3.13.* nicht mehr unterstützt
             "acex_main",
             "WarFXPE",
 
@@ -239,3 +232,20 @@ class CfgPatches
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
+
+// TODO: Test, setzt das ACE3 nicht schon?!? und was sind Vanilla Werte?
+class RscMapControl
+{
+    maxSatelliteAlpha=0.5;
+    colorBackground[]={0.89999998,0.89999998,0.89999998,1};
+    colorCountlines[]={0.64999998,0.52999997,0.30000001,1};
+    colorMainCountlines[]={0.85000002,0,0};
+    colorLevels[]={0,0,0,1};
+    sizeExLevel=0.029999999;
+    colorTracks[]={1,0,0,1};
+    colorTracksFill[]={1,1,0,1};
+    colorRoads[]={0,0,0,1};
+    colorRoadsFill[]={1,1,0,1};
+    colorMainRoads[]={0,0,0,1};
+    colorMainRoadsFill[]={1,0.60000002,0.40000001,1};
+};
