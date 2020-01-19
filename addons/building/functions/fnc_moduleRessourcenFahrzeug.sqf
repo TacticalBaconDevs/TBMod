@@ -34,7 +34,7 @@ if !(canSuspend) exitWith {_this spawn EFUNC(zeus,moduleNachschubAbwurf)};
         }
         else
         {
-            _mouseOverUnit setVariable ["TBMod_Building_resourcenCargo", _menge, true];
+            _mouseOverUnit setVariable [QGVAR(resourcenCargo), round _menge, true];
         };
     }
 ] call zen_dialog_fnc_create;

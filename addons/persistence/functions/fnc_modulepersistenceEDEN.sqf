@@ -27,13 +27,15 @@ private _activated = switch _mode do
 if (!_activated) exitWith {true};
 
 private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
+if (_saves isEqualTo []) then {["Keine lokalen Saves vorhanden!", 1] call bis_fnc_3dennotification;};
+
 [
     "Persistence laden",
     [
         [
             "COMBO",
             ["Speichername", "Der Name des Speicherstandes"],
-            [_saves, [], (count _saves) - 1],
+            [_saves, _saves, ((count _saves) - 1) max 0],
             true
         ]
     ],
@@ -42,7 +44,8 @@ private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
         _values params ["_name"];
 
         [_name] spawn FUNC(persistenceEDEN);
+        ["Persistence wurde geladen", 0] call bis_fnc_3dennotification;
     }
-] call zen_dialog_fnc_create;
+] spawn zen_dialog_fnc_create; // TODO: setzt sich selbst mit CBA_fnc_directCall wieder auf unscheduled, aber derzeit werden alle Tastatureingaben geblocked... ENTER drücken geht
 
 true;

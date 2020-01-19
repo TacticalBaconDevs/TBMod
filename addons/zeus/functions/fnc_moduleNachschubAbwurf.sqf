@@ -33,6 +33,7 @@ private _nachschubsKistenNamen = TB_nachschubsKisten apply {[_x] call EFUNC(main
     {
         params ["_values", "_args"];
         _values params ["_classname", "_alt", "_windKorrektur"];
+        _args params ["_pos"];
 
         if (_classname select [0, 3] == "###") exitWith {systemChat "Bitte wähle eine Kiste aus, keine Kategorie!"; true};
 
@@ -76,7 +77,9 @@ private _nachschubsKistenNamen = TB_nachschubsKisten apply {[_x] call EFUNC(main
                 _supplyBox setPos _pos;
             };
         };
-    }
+    },
+    {},
+    [_pos]
 ] call zen_dialog_fnc_create;
 
 true

@@ -21,19 +21,19 @@ if (_loadouts isEqualTo []) exitWith {hint "Keine Loadouts gespeichert"};
     "Select Loadout",
     [
         [
-            "LIST",
-            "Loadouts",
-            [_loadouts apply {_x select 1}, _loadouts apply {_x select 0}, 0, 10]
-        ],
-        [
             "CHECKBOX",
             "Ganze Gruppe",
             false
+        ],
+        [
+            "LIST",
+            "Loadouts",
+            [_loadouts apply {_x select 1}, _loadouts apply {_x select 0}, 0, 10]
         ]
     ],
     {
         params ["_values", "_args"];
-        _values params ["_loadout", "_gruppe"];
+        _values params ["_gruppe", "_loadout"];
         _args params ["_unit"];
 
         {

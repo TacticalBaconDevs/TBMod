@@ -21,13 +21,14 @@ if (_mags isEqualTo []) exitWith {true};
         [
             "EDIT",
             "Magazines",
-            [str _mags]
+            [str _mags],
+            true
         ]
     ],
     {
         params ["_values", "_args"];
         _values params ["_value"];
-        _args params ["_unit"];
+        _args params ["_unit", "_mags"];
 
         private _compValue = call compile _value;
         if (_value != '[]' && _value != '' && !(_mags isEqualTo _compValue)) then
@@ -42,10 +43,14 @@ if (_mags isEqualTo []) exitWith {true};
 
             reload _unit;
             systemChat "DefineAmmo wurde ausgeführt, es dauert kurz bis das Fahrzeug nachgeladen hat!";
-        };
+        }
+        else
+        {
+            systemChat "DefineAmmo wurde nicht ausgeführt, es gab einen Fehler bei der Eingabe!";
+        }
     },
     {},
-    [_unit]
+    [_unit, _mags]
 ] call zen_dialog_fnc_create;
 
 true

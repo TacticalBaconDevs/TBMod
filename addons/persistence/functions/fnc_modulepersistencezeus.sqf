@@ -21,63 +21,70 @@ if !(_activated) exitWith {true};
         [
             "COMBO",
             ["Ort", "Auswahl wo gespeichert bzw her geladen werden soll."],
-            [[], ["Server", "Lokal"], 0],
+            [[], ["Lokal", "Server"], 0],
             true
         ]
     ],
     {
-        params ["_values", "_args"];
-        _values params ["_operation", "_ort"];
+        _this spawn { // TODO: colleren Weg finden
+            params ["_values", "_args"];
+            _values params ["_operation", "_ort"];
+            _args params ["_ping"];
 
-        private _save = _operation == 0;
-        private _server = _ort == 0;
+            private _save = _operation == 0;
+            private _server = _ort == 0;
 
-        private _saves = if (_server) then
-        {
-            call FUNC(getSavedNamesFromServer);
-        }
-        else
-        {
-            profileNamespace getVariable [QGVAR(savedNames), []];
-        };
-
-        private _diagType = if (_save) then
-        {
-            ["EDIT", "Speichername", [""], true];
-        }
-        else
-        {
-            ["COMBO", "Speichername", [_saves, [], (count _saves) - 1], true];
-        };
-
-        [
-            "Persistence",
-            [_diagType],
+            private _saves = if (_server) then
             {
-                params ["_values", "_args"];
-                _values params ["_name"];
-                _args params ["_ping", "_save", "_server"];
+                call FUNC(getSavedNamesFromServer);
+            }
+            else
+            {
+                profileNamespace getVariable [QGVAR(savedNames), []];
+            };
 
-                if (_ping) then
+            if (_save && {_saves isEqualTo []}) exitWith {systemChat "Keine Saves zum Laden verfügbar!"};
+
+            private _diagType = if (_save) then
+            {
+                ["EDIT", "Speichername", [""], true];
+            }
+            else
+            {
+                ["COMBO", "Speichername", [_saves, _saves, (count _saves) - 1], true];
+            };
+
+            [
+                "Persistence",
+                [_diagType],
                 {
-                    [_save, _name, !_server] remoteExec [QFUNC(persistence), 2];
-                }
-                else
-                {
-                    if (_save) then
+                    params ["_values", "_args"];
+                    _values params ["_name"];
+                    _args params ["_ping", "_save", "_server"];
+
+                    if (_ping) then
                     {
-                        [true, _name, false, true] call FUNC(persistence);
+                        [_save, _name, !_server] remoteExec [QFUNC(persistence), 2];
                     }
                     else
                     {
-                        systemChat "Server kann nicht erreicht werden. Laden nicht möglich";
+                        if (_save) then
+                        {
+                            [true, _name, false, true] spawn FUNC(persistence);
+                        }
+                        else
+                        {
+                            systemChat "Server kann nicht erreicht werden. Laden nicht möglich";
+                        };
                     };
-                };
-            },
-            {},
-            [call FUNC(ping), _save, _server]
-        ] call zen_dialog_fnc_create;
-    }
+                },
+                {},
+                [_ping, _save, _server]
+            ] call zen_dialog_fnc_create;
+        };
+    },
+    {},
+    [call FUNC(ping)]
 ] call zen_dialog_fnc_create;
 
 true;

@@ -10,7 +10,7 @@ params [
 
 if (_savename == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
 if (!isServer) exitWith {"[TBMod_persistence] Transfer nur vom Server startbar." remoteExecCall ["systemChat"]};
-if (!isRemoteExecuted) exitWith {"[TBMod_persistence] Transfer nur Ã¼ber remoteExec startbar." remoteExecCall ["systemChat"]};
+//if (!isRemoteExecuted) exitWith {"[TBMod_persistence] Transfer nur über remoteExec startbar." remoteExecCall ["systemChat"]}; // TODO: wird in persistence per call aufgerufen o.O
 
 format["[TBMod_persistence] Transfer von Save %1 %2 Server gestartet", _name, ["vom", "zum"] select _toServer] remoteExecCall ["systemChat"];
 

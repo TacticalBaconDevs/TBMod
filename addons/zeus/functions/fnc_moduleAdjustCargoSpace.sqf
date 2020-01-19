@@ -28,9 +28,12 @@ private _currentSpace = _unit getVariable ["ace_cargo_space", getNumber _cfg];
     {
         params ["_values", "_args"];
         _values params ["_newSize"];
+        _args params ["_unit"];
 
-        [_unit, _newSize] call ace_cargo_fnc_setSpace;
-    }
+        [_unit, round _newSize] call ace_cargo_fnc_setSpace;
+    },
+    {},
+    [_unit]
 ] call zen_dialog_fnc_create;
 
 true
