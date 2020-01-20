@@ -6,13 +6,12 @@
 */
 
 params ["_unit", "_loadout"];
-private _config;
+private _config = configNull;
 if (isClass (missionconfigFile >> "CfgLoadouts" >> _loadout)) then {
     _config = missionconfigFile >> "CfgLoadouts" >> _loadout;
 } else {
     _config = configFile >> "CfgLoadouts" >> _loadout;
 };
-
 
 removeAllAssignedItems _unit;
 removeHeadgear _unit;
