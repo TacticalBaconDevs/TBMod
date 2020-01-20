@@ -2,7 +2,7 @@
 ## Info
 Poppy von TB
 
-## OOriginal Creator
+## Original Creator
 - [BaerMitUmlaut](https://github.com/BaerMitUmlaut/Poppy)
 
 ## Maintainer
