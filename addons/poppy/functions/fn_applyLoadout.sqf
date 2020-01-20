@@ -7,7 +7,7 @@
 
 params ["_unit", "_loadout"];
 private _config;
-if (isClass (missionconfigFile >> "CfgLoadouts" >> _loadout)){
+if (isClass (missionconfigFile >> "CfgLoadouts" >> _loadout)) then {
     _config = missionconfigFile >> "CfgLoadouts" >> _loadout;
 } else {
     _config = configFile >> "CfgLoadouts" >> _loadout;
