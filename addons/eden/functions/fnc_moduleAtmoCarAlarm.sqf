@@ -23,7 +23,8 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         "Car", // "Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Thing"
         "initPost",
         {
-            if (GVAR(carAlarm)) then {["init", _this # 0] call BIS_fnc_carAlarm}
+            params ["_vehicle"];
+            if (GVAR(carAlarm) && {local _vehicle}) then {["init", _vehicle] call BIS_fnc_carAlarm}
         },
         true,
         [],
