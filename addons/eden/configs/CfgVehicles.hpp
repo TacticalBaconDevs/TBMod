@@ -469,6 +469,71 @@ class CfgVehicles
     };
     BACKCOMP(clearPlaceables);
 
+    class GVAR(lockDoors) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "LockDoors";
+        function = QFUNC(moduleLockDoors);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+
+        canSetArea = 1;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 1;
+
+        class AttributeValues
+        {
+            isRectangle = 0;
+            size3[] = {200,200,-1};
+        };
+
+        class Attributes: AttributesBase
+        {
+            class percent: Combo
+            {
+                property = QEGVAR(lockDoors,percent);
+                displayName = "Abgeschlossen Prozent";
+                tooltip = "Von allen Türen der Gebäude im Bereich wieviel Prozent sollen abgeschlossen sein.";
+                typeName = "NUMBER";
+                class values {
+                    class percent100 {
+                        name = "100%";
+                        value = 1;
+                    };
+                    class percent75 {
+                        name = "75%";
+                        value = 0.75;
+                    };
+                    class percent50 {
+                        name = "50%";
+                        value = 0.5;
+                    };
+                    class percent25 {
+                        name = "25%";
+                        value = 0.25;
+                    };
+                    class percent10 {
+                        name = "10%";
+                        value = 0.1;
+                        default = 1;
+                    };
+                    class percent5 {
+                        name = "5%";
+                        value = 0.05;
+                    };
+                };
+            };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Im Bereich dieses Modules werden der angegebene Prozentsatz der Türen alle enthaltenen Häuser verschlossen"
+            };
+        };
+    };
+
     // ######################## ATMO Module
     class GVAR(atmoBase) : GVAR(base)
     {
