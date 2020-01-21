@@ -538,6 +538,18 @@ class CfgVehicles
     class GVAR(atmoBase) : GVAR(base)
     {
         category = "TB_categorie_eden_atmo";
+
+        class Attributes: AttributesBase
+        {
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Dies ist ein Atmo-Modul, es dient NUR zu Atmosphären Zwecken!"
+            };
+        };
     };
     BACKCOMP(atmoBase);
 
@@ -609,4 +621,25 @@ class CfgVehicles
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
     };
     BACKCOMP(atmoTarget);
+
+    class GVAR(atmoCarAlarm) : GVAR(atmoBase)
+    {
+        scope = 2;
+        displayName = "AtmoCarAlarm";
+        function = QFUNC(moduleAtmoCarAlarm);
+        //icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\attack_ca.paa";
+
+        class Attributes: AttributesBase
+        {
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Wenn dieses Modul in einer Mission gesetzt wird, kriegen alle Autos (keine Panzer oder so) einen Alarm wenn es getroffen oder jemand einsteigt.",
+                "In der Mission deaktivierbar mit: TBMod_eden_carAlarm = false"
+            };
+        };
+    };
 };
