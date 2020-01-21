@@ -11,7 +11,7 @@ params [
 if (!is3DEN) exitWith {systemChat "[TBMod_persistence] Nur im Eden Editor verfügbar."};
 if (_name == "") exitWith {systemChat "[TBMod_persistence] Kein Name angegeben"};
 
-(profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]]) params ["", "_markers", "_objecte", "_vehicles"];
+(profileNamespace getVariable [format ["TBMod_persistence_%1", _name], [[], [], [], []]]) params ["", "_markers", "_objecte", "_vehicles"];
 
 if (!_addToEditor) then
 {

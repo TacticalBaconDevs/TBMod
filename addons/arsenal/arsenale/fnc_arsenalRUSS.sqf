@@ -17,7 +17,7 @@ private _allgemein = [
     "rhs_balaclava1_olive",
     "rhs_balaclava",
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
 
     // Nachtsichtgeräte
     "rhs_1PN138",
@@ -94,7 +94,7 @@ private _allgemein_gewehre = [
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_camo",
 
-    // für Spetznas Mission 
+    // für Spetznas Mission
     "rhs_weap_asval_grip"
 ];
 _allgemein_gewehre append _allgemein_magazine;
@@ -492,7 +492,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_digi_sniper",
             "rhs_6b23_sniper",
 
-            // Spetznas 
+            // Spetznas
             "rhs_weap_vss",
             "rhs_10rnd_9x39mm_SP6"
         ]
@@ -516,7 +516,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_svdp_wd",
             // ### Zweibein
             "rhs_acc_harris_swivel",
-            // ### Visier 
+            // ### Visier
             "rhs_acc_dh520x56",
             "rhs_acc_pso1m2",
             "rhs_acc_tgpv2",
