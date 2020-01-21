@@ -19,9 +19,6 @@ class CfgVehicles
     class B_RangeMaster_F;
     class O_officer_F;
 
-    // Rucksäcke
-    class B_Kitbag_sgg;
-
     // Fahrzeuge
     class I_Plane_Fighter_03_dynamicLoadout_F;
     class B_Heli_Light_01_F;
@@ -447,11 +444,44 @@ class CfgVehicles
     ////////// Skins für Rucksäcke
 
     // Skin schwarzer Rucksack Mittelgroß
+    class B_Kitbag_sgg;
     class TB_backpacks_kitbag_black : B_Kitbag_sgg
     {
         displayName = "Ranzen (schwarz)";
         author = "Eron";
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_kitbag_black.paa)};
         picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperHarness_blk_F_ca.paa"; // "\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_sgg"
+    };
+
+    class B_Bergen_tna_F;
+    class TB_backpacks_bergen_m81 : B_Bergen_tna_F
+    {
+        displayName = "Bergen (M81)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_m81.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_tna_CO.paa"
+    };
+
+    class TB_backpacks_bergen_urban : B_Bergen_tna_F
+    {
+        displayName = "Bergen (Urban)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_urban.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_tna_CO.paa"
+        picture = "\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_oucamo.paa"; // "\A3\Supplies_F_Exp\Bags\Data\UI\Icon_B_Bergen_tna_CA.paa"
+    };
+
+    class B_Bergen_hex_F;
+    class TB_backpacks_bergen_marpad_d : B_Bergen_hex_F
+    {
+        displayName = "Bergen (Marpad-D)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_marpad_d.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_hex_CO.paa"
+        picture = "\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa"; // "\A3\Supplies_F_Exp\Bags\Data\UI\Icon_B_Bergen_hex_CA.paa"
+    };
+
+    class TB_backpacks_bergen_marpad_wd : B_Bergen_hex_F
+    {
+        displayName = "Bergen (Marpad-WD)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_marpad_wd.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_hex_CO.paa"
     };
 };

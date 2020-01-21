@@ -516,31 +516,29 @@ private _aaat_munition = [
 
 private _gepaeck_klein = [
     // Gepäck
-    "rhsusf_falconii_coy",          // maximumLoad = 106; mass = 13; Quotient = 8
+    "rhsusf_falconii_coy",          // maximumLoad = 96; mass = 12; Quotient = 8
     "rhsusf_falconii_mc",
     "B_AssaultPack_blk",
     "B_AssaultPack_rgr",
-    "rhsusf_assault_eagleaiii_coy", // maximumLoad = 160; mass = 20; Quotient = 8
-    "rhsusf_assault_eagleaiii_ocp",
-    "rhsusf_assault_eagleaiii_ucp",
     "B_Parachute",
-    "B_FieldPack_cbr",
+    "B_FieldPack_cbr",              // maximumLoad = 96; mass = 12; Quotient = 8
     "B_FieldPack_khk",
-    "B_FieldPack_oli",
-    "B_FieldPack_blk"
+    "B_FieldPack_blk",
+    "B_TacticalPack_blk",           // maximumLoad = 96; mass = 12; Quotient = 8
+    "B_TacticalPack_oli",
+    "B_TacticalPack_mcamo"
 ];
 
 private _gepaeck_mittel = [
-    "B_Kitbag_cbr",     // maximumLoad = 280; mass = 50; Quotient = 5,6
+    "B_Kitbag_cbr",                 // maximumLoad = 280; mass = 50; Quotient = 5,6
     "B_Kitbag_sgg",
     "B_Kitbag_rgr",
     "B_Kitbag_mcamo",
     "B_Kitbag_tan",
     "TB_backpacks_kitbag_black",
-    "B_TacticalPack_blk",
-    "B_TacticalPack_oli",
-    "B_TacticalPack_mcamo",
-    "B_TacticalPack_rgr"
+    "rhsusf_assault_eagleaiii_coy", // maximumLoad = 280; mass = 50; Quotient = 5,6
+    "rhsusf_assault_eagleaiii_ocp",
+    "rhsusf_assault_eagleaiii_ucp"
 ];
 
 private _gepaeck_gross = [
@@ -551,6 +549,12 @@ private _gepaeck_gross = [
     "B_Carryall_oli",
     "B_Carryall_oucamo",
     "B_Carryall_ghex_F"
+];
+
+private _gepaeck_sehrgross = [
+    "TB_backpacks_bergen_urban", // maximumLoad = 500; mass = 104; Quotient = 4.8
+    "TB_backpacks_bergen_M81",
+    "TB_backpacks_bergen_desert"
 ];
 
 private _lrFunken = [
@@ -600,6 +604,7 @@ private _items = [];
 // _aaat_munition                    - AntiTank Munition
 // _gepaeck_mittel                   - Seesack
 // _gepaeck_gross                    - Carryall
+// _gepaeck_sehrgross                - Bergen
 // _lrFunken                         - LR Funken
 // _moerser_munition                 - Munition für Kommandomoerser
 
@@ -742,6 +747,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _grenadier_gewehr +
         _grenadier_munition +
+        _gepaeck_mittel +
         [
             // Westen
             "rhsusf_iotv_ocp_Grenadier",
@@ -770,6 +776,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _mg_munition +
+        _gepaeck_klein +
+        _gepaeck_mittel +
         [
             // Gewehre
             "rhs_weap_m240G",
@@ -808,10 +816,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _rifle_munition +
         _dmr_munition +
         _pilot_munition +
-        _sniper_munition    +
+        _sniper_munition +
         _aaat_munition +
         _gepaeck_mittel +
         _gepaeck_gross +
+        _gepaeck_sehrgross +
         _moerser_munition +
         [
             // Westen
@@ -834,6 +843,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _lrFunken +
+        _gepaeck_klein +
         _pilot_munition +
         _allgemein_magazine +
         _pilot_munition +
@@ -908,7 +918,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
-        _gepaeck_mittel +
+        _gepaeck_klein +
         _moerser_munition +
         _dmr_munition +
         _rifle_munition +
