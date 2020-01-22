@@ -104,6 +104,7 @@ class CfgVehicles
         uniformClass = "TB_Uniform_IS_1_black_U";
         hiddenSelections[] = {"camo1","camo2"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa),QPATHTOF(pictures\uniforms\TB_Uniform_IS_1_black.paa)};
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Soldier_IS_1_black.jpg);
     };
 
     ///////////////////////Polizei Fahrzeuge//////////////////////////
@@ -115,6 +116,7 @@ class CfgVehicles
         addCategoryBLU(Polizei);
         hiddenSelections[] = {"camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_sek_light.paa)};
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_sek_light.jpg);
     };
 
     class TB_Vehicles_sek_hellcat: I_Heli_light_03_unarmed_F
@@ -124,6 +126,7 @@ class CfgVehicles
         addCategoryBLU(Polizei);
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_sek_hellcat.paa)};
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_sek_hellcat.jpg);
     };
 
     class TB_Vehicles_polizei_hellcat: I_Heli_light_03_unarmed_F
@@ -133,6 +136,7 @@ class CfgVehicles
         addCategoryBLU(Polizei);
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hellcat.paa)};
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_polizei_hellcat.jpg);
     };
 
     class TB_Vehicles_polizei_hunter: B_MRAP_01_F
@@ -146,6 +150,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_polizei_hunter_1.paa),
             ""
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_polizei_hunter.jpg);
     };
 
     ///////////////////////Fahrzeuge Camouflage Wüste//////////////////////////
@@ -160,6 +165,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
             ""
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_hunter.jpg);
     };
 
     class TB_Vehicles_hunter_smg: B_MRAP_01_hmg_F
@@ -172,6 +178,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_smg_2.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_hunter_smg.jpg);
     };
 
     class TB_Vehicles_Merkava: B_MBT_01_TUSK_F
@@ -184,6 +191,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Merkava.jpg);
     };
 
     class TB_Vehicles_Leopard: I_MBT_03_cannon_F
@@ -196,6 +204,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_2.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Leopard.jpg);
     };
 
     class TB_Vehicles_Pandur: I_APC_Wheeled_03_cannon_F
@@ -211,6 +220,7 @@ class CfgVehicles
             "",
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Pandur.jpg);
     };
 
     class TB_Vehicles_Wueste_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
@@ -223,6 +233,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Patria_AMW.jpg);
     };
 
     ///////////////////////Fahrzeuge Camouflage Wald//////////////////////////
@@ -240,6 +251,7 @@ class CfgVehicles
             "",
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Pandur.jpg);
     };
 
     class TB_Vehicles_Leopard_2: I_MBT_03_cannon_F
@@ -252,6 +264,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_4.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_5.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Leopard_2.jpg);
     };
 
     class TB_Vehicles_BW_hunter: B_MRAP_01_F
@@ -264,6 +277,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
             ""
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_hunter.jpg);
     };
 
     class TB_Vehicles_BW_hunter_smg: B_MRAP_01_hmg_F
@@ -276,6 +290,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_smg_2.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_hunter_smg.jpg);
     };
 
     class TB_Vehicles_Wald_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
@@ -288,9 +303,10 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Patria_AMW.jpg);
     };
 
-        class TB_Vehicles_Strider: I_MRAP_03_F
+    class TB_Vehicles_Strider: I_MRAP_03_F
     {
         displayName = "Strider";
         author = "Eron";
@@ -299,6 +315,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),
             ""
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Strider.jpg);
     };
 
     class TB_Vehicles_Strider_smg: I_MRAP_03_hmg_F
@@ -310,6 +327,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_1.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Strider_smg.jpg);
     };
 
     ///////////////////////Fluggeräte//////////////////////////
@@ -320,6 +338,7 @@ class CfgVehicles
         author = "Eron";
         addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Hellcat.jpg);
     };
 
     class TB_Vehicles_BW_Hellcat_2: I_Heli_light_03_dynamicLoadout_F
@@ -328,6 +347,7 @@ class CfgVehicles
         author = "Eron";
         addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Hellcat_2.jpg);
     };
 
     class TB_Vehicles_BW_Merlin: I_Heli_Transport_02_F
@@ -341,9 +361,10 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_2.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Merlin_3.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Merlin.jpg);
     };
 
-        class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_dynamicLoadout_F // I_Plane_Fighter_03_dynamicLoadout_F
+    class TB_Vehicles_L159_Albatros: I_Plane_Fighter_03_dynamicLoadout_F
     {
         displayName = "L-159 Albatros";
         author = "Eron";
@@ -352,6 +373,7 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_L-159_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_L-159_2.paa)
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_L159_Albatros.jpg);
     };
 
     ///////////////////////PMC Fahrzeuge//////////////////////////
@@ -359,23 +381,6 @@ class CfgVehicles
     class B_G_Offroad_01_F : I_G_Offroad_01_F {
         class EventHandlers;
     };
-
-    class C_SUV_01_F : SUV_01_base_F {
-        class EventHandlers;
-    };
-
-    class I_C_Offroad_02_unarmed_F : Offroad_02_unarmed_base_F {
-        class EventHandlers;
-    };
-
-    class I_C_Offroad_02_LMG_F : Offroad_02_LMG_base_F {
-        class EventHandlers;
-    };
-
-    class I_C_Offroad_02_AT_F : Offroad_02_AT_base_F {
-        class EventHandlers;
-    };
-
     class TB_Vehicles_PMC_Pickup: B_G_Offroad_01_F
     {
         displayName = "Pickup";
@@ -390,8 +395,12 @@ class CfgVehicles
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];";
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_PMC_Pickup.jpg);
     };
 
+    class C_SUV_01_F : SUV_01_base_F {
+        class EventHandlers;
+    };
     class TB_Vehicles_PMC_SUV: C_SUV_01_F
     {
         displayName = "SUV";
@@ -403,10 +412,14 @@ class CfgVehicles
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];";
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_PMC_SUV.jpg);
     };
 
     //////////Texturen werden manuell geladen
 
+    class I_C_Offroad_02_unarmed_F : Offroad_02_unarmed_base_F {
+        class EventHandlers;
+    };
     class TB_Vehicles_PMC_Jeep: I_C_Offroad_02_unarmed_F
     {
         displayName = "Jeep";
@@ -423,8 +436,12 @@ class CfgVehicles
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];"; // (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_PMC_Jeep.jpg);
     };
 
+    class I_C_Offroad_02_LMG_F : Offroad_02_LMG_base_F {
+        class EventHandlers;
+    };
     class TB_Vehicles_PMC_Jeep_2: I_C_Offroad_02_LMG_F
     {
         displayName = "Jeep LMG";
@@ -441,8 +458,12 @@ class CfgVehicles
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];"; // (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_PMC_Jeep_2.jpg);
     };
 
+    class I_C_Offroad_02_AT_F : Offroad_02_AT_base_F {
+        class EventHandlers;
+    };
     class TB_Vehicles_PMC_Jeep_3: I_C_Offroad_02_AT_F
     {
         displayName = "Jeep AT";
@@ -459,6 +480,7 @@ class CfgVehicles
         {
             init = "(_this select 0) setVariable ['BIS_enableRandomization', false];"; //  (_this select 0) setObjectTexture [0,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [1,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_0.paa']; (_this select 0) setObjectTexture [2,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa']; (_this select 0) setObjectTexture [3,'\TBMod_skins\pictures\vehicles\TB_Vehicles_PMC_Jeep_2.paa'];
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_PMC_Jeep_3.jpg);
     };
 
     ////////// Skins für Rucksäcke
@@ -525,5 +547,6 @@ class CfgVehicles
         class EventHandlers : EventHandlers {
             init = ""; // "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_T100.jpg);
     };
 };
