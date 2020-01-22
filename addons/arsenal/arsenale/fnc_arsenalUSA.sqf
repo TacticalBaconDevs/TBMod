@@ -681,12 +681,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_medic",
             "rhsusf_spcs_ucp_medic",
+            "rhsusf_plateframe_medic",
 
             // Kopfbedeckung
             "TB_helmet_Sani_A_Black",
             "TB_helmet_Sani_B_Grey",
-            "TB_helmet_Sani_C_Green",
-            "rhsusf_plateframe_medic"
+            "TB_helmet_Sani_C_Green"
         ]
     };
 
