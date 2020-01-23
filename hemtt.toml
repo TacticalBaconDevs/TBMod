@@ -1,0 +1,21 @@
+name = "TBMod"
+prefix = "TBMod"
+author = "TBMod-DevTeam"
+
+files = [
+    "*.dll",
+    "*.so",
+    "mod.cpp",
+    "README.md",
+    "LICENSE"
+]
+
+#keyname = "{{prefix}}_{{version}}"
+#signame = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip TB_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]
+
+[header_exts]
+version = "{{git \"id 8\"}}"
