@@ -23,5 +23,5 @@ class TB_RscDisplayGarage: RscDisplayGarage
 
 class RscDisplayCurator
 {
-    scriptPath = "TB_replacement";
+    // TODO: scriptPath = "TB_replacement";
 };

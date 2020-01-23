@@ -8,6 +8,7 @@ PREP(attributeLoadCombo);
 PREP(attributeSaveCombo);
 PREP(inkognitoSystem);
 PREP(keysForAI);
+PREP(moduleAtmoCarAlarm);
 PREP(moduleAtmoCore);
 PREP(moduleAtmoFireSuppression);
 PREP(moduleAtmoMortarSupport);

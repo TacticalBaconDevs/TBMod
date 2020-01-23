@@ -81,6 +81,7 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
     "Recompiled alle Skripte",
     {
         systemChat "RECOMPILE";
+        diag_log "RECOMPILE";
         [] call ACE_PREP_RECOMPILE;
         false
     },
