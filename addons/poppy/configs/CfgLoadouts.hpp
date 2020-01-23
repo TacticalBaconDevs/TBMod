@@ -5,7 +5,7 @@
 
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
-#define ADDCLASS(NUM) class GVAR(poppy_##NUM): All {}
+#define ADDCLASSLOADOUT(NUM) class GVAR(poppy_##NUM): All {}
 
 class CfgLoadouts
 {
@@ -40,15 +40,15 @@ class CfgLoadouts
         };
     };
 
-    ADDCLASS(01);
-    ADDCLASS(02);
-    ADDCLASS(03);
-    ADDCLASS(04);
-    ADDCLASS(05);
-    ADDCLASS(06);
-    ADDCLASS(07);
-    ADDCLASS(08);
-    ADDCLASS(09);
-    ADDCLASS(10);
+    ADDCLASSLOADOUT(01);
+    ADDCLASSLOADOUT(02);
+    ADDCLASSLOADOUT(03);
+    ADDCLASSLOADOUT(04);
+    ADDCLASSLOADOUT(05);
+    ADDCLASSLOADOUT(06);
+    ADDCLASSLOADOUT(07);
+    ADDCLASSLOADOUT(08);
+    ADDCLASSLOADOUT(09);
+    ADDCLASSLOADOUT(10);
 
 };
