@@ -493,12 +493,6 @@ class CfgVehicles
         maxOmega = 480; // 356.05
     };
 
-    class MRAP_01_base_F;
-    class B_MRAP_01_F : MRAP_01_base_F // Vanilla M-ATV-Reihe
-    {
-        armor = 10; // 200
-    };
-
     class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33L-Reihe
     {
         armor = 215; // 200
