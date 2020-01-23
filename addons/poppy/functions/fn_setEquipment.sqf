@@ -20,8 +20,8 @@ switch (_slot) do {
     case "launcher": { _unit addWeapon (_item#0); { _unit addSecondaryWeaponItem _x; } foreach (_item select [1, 100]);};
     case "uniform": { _unit forceAddUniform _item; };
     case "vest": {_unit addVest _vest; };
-    case "magazines": { [_unit, _array] call FUNC(addItems); };
-    case "items": { [_unit, _array] call FUNC(addMagazines); };
+    case "magazines": { [_unit, _array] call FUNC(addMagazines); };
+    case "items": { [_unit, _array] call FUNC(addItems); };
     //Map, Headgear, Watch, Radio, NVG, Compass, GPS
     default { _unit linkItem _item; };
 };
