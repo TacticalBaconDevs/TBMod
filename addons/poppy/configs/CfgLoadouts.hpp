@@ -12,11 +12,11 @@ class CfgLoadouts
     class All
     {
         uniform[] = {"U_B_CTRG_1", "U_B_CTRG_3"};
-        backpack[] = {""};
+        backpack[] = {};
         vest[] = {"V_PlateCarrier2_blk"};
         headgear[] = {"H_HelmetB_light", "H_HelmetB_light_black", "H_HelmetB_light_snakeskin"};
-        goggles[] = {""};
-        nvgs[] = {""};
+        goggles[] = {};
+        nvgs[] = {};
         primary[] = {
             {"arifle_SPAR_01_blk_F", "optic_Holosight_blk_F", "muzzle_snds_M"},
             {"arifle_SPAR_01_snd_F", "optic_Holosight_blk_F", "muzzle_snds_M"}

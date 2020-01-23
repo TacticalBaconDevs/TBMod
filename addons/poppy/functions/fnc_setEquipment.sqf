@@ -6,6 +6,7 @@
 */
 params ["_unit", "_array", "_slot"];
 
+if (_array isEqualTo []) exitwith {};
 private _item = selectRandom _array;
 if (_item isEqualTo "" || _item isEqualTo []) exitwith {};
 
