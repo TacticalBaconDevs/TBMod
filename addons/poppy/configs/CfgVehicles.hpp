@@ -4,41 +4,30 @@
 
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
+#define ADDCLASS(NUM) class GVAR(poppy_##NUM) : GVAR(poppy_01) \
+    { \
+        displayname = QUOTE(Poppy NUM); \
+    }
 
 class CfgVehicles
 {
     class O_Survivor_F;
-    class GVAR(poppy_01) : O_Survivor_F{
+    class GVAR(poppy_01) : O_Survivor_F
+    {
         displayname = "Poppy 01";
-        editorSubcategory = EdSubcat_TB_Poppy;
+
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Poppy";
     };
 
-    class GVAR(poppy_02) : GVAR(poppy_01){
-        displayname = "Poppy 02";
-    };
-
-    class GVAR(poppy_03) : GVAR(poppy_01){
-        displayname = "Poppy 03";
-    };
-
-    class GVAR(poppy_04) : GVAR(poppy_01){
-        displayname = "Poppy 04";
-    };
-
-    class GVAR(poppy_05) : GVAR(poppy_01){
-        displayname = "Poppy 05";
-    };
-
-    class GVAR(poppy_06) : GVAR(poppy_01){
-        displayname = "Poppy 06";
-    };
-
-    class GVAR(poppy_07) : GVAR(poppy_01){
-        displayname = "Poppy 07";
-    };
-
-    class GVAR(poppy_08) : GVAR(poppy_01){
-        displayname = "Poppy 08";
-    };
+    ADDCLASS(02);
+    ADDCLASS(03);
+    ADDCLASS(04);
+    ADDCLASS(05);
+    ADDCLASS(06);
+    ADDCLASS(07);
+    ADDCLASS(08);
+    ADDCLASS(09);
+    ADDCLASS(10);
 
 };

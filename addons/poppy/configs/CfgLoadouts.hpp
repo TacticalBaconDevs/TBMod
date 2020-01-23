@@ -5,8 +5,10 @@
 
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
-class CfgLoadouts {
-    class All {
+class CfgLoadouts
+{
+    class All
+    {
         uniform[] = {"U_B_CTRG_1", "U_B_CTRG_3"};
         backpack[] = {""};
         vest[] = {"V_PlateCarrier2_blk"};
@@ -35,6 +37,7 @@ class CfgLoadouts {
             {"ACE_morphine", 1}
         };
     };
+
     class GVAR(poppy_01): All {};
     class GVAR(poppy_02): All {};
     class GVAR(poppy_03): All {};
@@ -43,5 +46,5 @@ class CfgLoadouts {
     class GVAR(poppy_06): All {};
     class GVAR(poppy_07): All {};
     class GVAR(poppy_08): All {};
-    
+
 };

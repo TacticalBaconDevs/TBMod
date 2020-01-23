@@ -7,7 +7,9 @@ class CfgPatches
 {
     class ADDON
     {
-        name = "TBMod poppy";
+        name = "TBMod Poppy";
+
+        author = "BaerMitUmlaut";
 
         units[] = {
             QGVAR(poppy_01),
@@ -17,7 +19,9 @@ class CfgPatches
             QGVAR(poppy_05),
             QGVAR(poppy_06),
             QGVAR(poppy_07),
-            QGVAR(poppy_08)
+            QGVAR(poppy_08),
+            QGVAR(poppy_09),
+            QGVAR(poppy_10)
         };
 
         requiredAddons[] = {"TBMod_main"};
