@@ -15,8 +15,7 @@ params ["_unit", "_array"];
         _unit addWeaponItem [_loadableWeapon, _item];
         _amount = _amount - 1;
     };
-    for "_i" from 0 to _amount do {
-        _unit addMagazines _item;
-    };
+    _unit addMagazines [_item, _amount];
+
     
 } forEach array;

@@ -7,8 +7,10 @@ params ["_unit", "_array","_slot"];
 */
 
 private _item = selectRandom _array;
+systemChat str _item;
 
-if (_item == "") exitwith {};
+if ((_slot != "weapon" && _slot != "secondary" && _slot != "launcher") && _item == "") exitwith {};
+if ((_slot == "weapon" || _slot == "secondary" || _slot == "launcher") && _item == []) exitWith {};
 
 
 switch (_slot) do {
