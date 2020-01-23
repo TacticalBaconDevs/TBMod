@@ -59,7 +59,7 @@ class CfgMagazines
     class CA_LauncherMagazine;
     class rhs_fgm148_magazine_AT : CA_LauncherMagazine
     {
-        mass = 165.34; // 286.88
+        mass = 159.79; // 286.88
     };
 
     class rhs_mag_M433_HEDP;
