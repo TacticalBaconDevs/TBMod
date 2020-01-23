@@ -12,7 +12,7 @@ params ["_unit", "_array"];
     private _loadableWeapon = [_unit, _item] call FUNC(findLoadableWeapon);
     if (_loadableWeapon != "") then
     {
-        _unit addWeaponItem [_loadableWeapon, _item];
+        _unit addWeaponItem [_loadableWeapon, _item, true];
         _amount = _amount - 1;
     };
 
