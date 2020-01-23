@@ -23,37 +23,48 @@ if !(_find isEqualTo []) then
 
     player setUnitLoadout _gear;
 
-    private _dialogResult = ["Spawnmethode auswählen", [
-            ["COMBOBOX", "Spawnmethode", ["zur Gruppe", "zum Crashort", "nichts machen"], 0, true]
-        ]] call Achilles_fnc_showChooseDialog;
-
-    player setVariable ["TB_team", _team, true];
-    player assignTeam _team;
-
-    if (_dialogResult isEqualTo []) exitWith {};
-    _dialogResult params ["_id"];
-
-    player allowDamage false;
-
-    if (_id == 0) then
-    {
-        if ({if (alive _x && {_x != player}) exitWith {[_x] spawn FUNC(teleport); 1}; false} count (units (group player)) == 0) then
+    [
+        "Spawnmethode auswählen",
+        [
+            [
+                "LIST",
+                "Spawnmethode",
+                [[], ["zur Gruppe", "zum Crashort", "nichts machen"], 0, 3]
+            ]
+        ],
         {
-            systemChat "Nicht möglich, keine lebenden Personen zum Teleporten da, zurück zur alten Pos!";
-            player setDir _dir;
-            player setPosASL _pos;
-        };
-    };
+            params ["_values", "_args"];
+            _values params ["_id"];
+            _args params ["_uid", "_gear", "_pos", "_dir", "_arsenalType", "_rolle", "_group", "_team"];
 
-    if (_id == 1) then
-    {
-        player setDir _dir;
-        player setPosASL _pos;
-    };
+            player setVariable ["TB_team", _team, true];
+            player assignTeam _team;
 
-    [] spawn
-    {
-        uiSleep 10;
-        player allowDamage true;
-    };
+            player allowDamage false;
+
+            if (_id == 0) then
+            {
+                if ({if (alive _x && {_x != player}) exitWith {[_x] spawn FUNC(teleport); 1}; false} count (units (group player)) == 0) then
+                {
+                    systemChat "Nicht möglich, keine lebenden Personen zum Teleporten da, zurück zur alten Pos!";
+                    player setDir _dir;
+                    player setPosASL _pos;
+                };
+            };
+
+            if (_id == 1) then
+            {
+                player setDir _dir;
+                player setPosASL _pos;
+            };
+
+            [] spawn
+            {
+                uiSleep 10;
+                player allowDamage true;
+            };
+        },
+        {},
+        TB_disconnectCache select (_find select 0)
+    ] call zen_dialog_fnc_create;
 };

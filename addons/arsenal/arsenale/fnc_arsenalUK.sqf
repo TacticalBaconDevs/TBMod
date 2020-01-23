@@ -40,7 +40,7 @@ private _allgemein = [
     "UK3CB_BAF_G_Tactical_Black",
     "UK3CB_BAF_G_Balaclava_Win",       // Nur für Wintermissionen
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
     // ### Beards
     "SFG_Tac_smallBeardB",
     "SFG_Tac_smallBeardD",
@@ -139,7 +139,7 @@ _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
     "rksl_optic_eot552",        // Holo
-    "rksl_optic_lds_pip",       // ACOG vergleich 
+    "rksl_optic_lds_pip",       // ACOG vergleich
     "rksl_optic_lds",
     "rksl_optic_rmr_rm33"      // Mini Holo
 ];
@@ -155,7 +155,7 @@ private _allgemein_geschuetzzubehoer = [
 ];
 
 private _allgemein_zweibein = [
-    
+
 ];
 
 private _allgemein_raketenwerfer = [
@@ -180,7 +180,7 @@ private _allgemein_handfeuerwaffen = [
     "UK3CB_BAF_L117A2",
     "UK3CB_BAF_L131A1",
     "UK3CB_BAF_L9A1",
-    
+
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
     "uk3cb_baf_flashlight_l105a1",
@@ -225,7 +225,7 @@ private _allgemein_westen = [
     "UK3CB_BAF_V_Osprey_DDPM2",
     "UK3CB_BAF_V_Osprey_DDPM5",
     "UK3CB_BAF_V_Osprey_DDPM8",
-    
+
     // Waldtarn
     "UK3CB_BAF_V_Osprey_DPMT1",
     "UK3CB_BAF_V_Osprey_DPMT2",
@@ -344,7 +344,10 @@ private _aaat_munition = [
     "rhs_mag_smaw_HEAA",
     "rhs_mag_maaws_HEAT",
     "rhs_mag_maaws_HEDP",
-    "rhs_mag_maaws_HE"
+    "rhs_mag_maaws_HE",
+    "rhs_fgm148_magazine_AT",
+    "rhs_fim92_mag",
+    "rhs_mag_smaw_SR"    
 ];
 
 private _gepaeck_mittel = [
@@ -387,7 +390,7 @@ private _lrFunken = [
     "UK3CB_BAF_B_Bergen_MTP_Radio_L_A",
     "UK3CB_BAF_B_Bergen_OLI_SL_A",
     "UK3CB_BAF_B_Bergen_TAN_SL_A",
-    
+
     // LR 40km
     "UK3CB_BAF_B_Bergen_Arctic_JTAC_H_A",
     "UK3CB_BAF_B_Bergen_DDPM_JTAC_H_A",
@@ -572,9 +575,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Gewehre
-            "UK3CB_BAF_L7A2",     
+            "UK3CB_BAF_L7A2",
             "UK3CB_BAF_L110A3",
-           
+
             // Zubehör
             "ACE_RangeCard"
         ]
@@ -647,6 +650,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "rifle":
     {
         _allgemein +
+        _allgemein_magazine +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +

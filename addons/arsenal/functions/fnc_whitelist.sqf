@@ -8,7 +8,7 @@ params ["_items"];
 // Spieler Whitelist
 _items append (switch (getPlayerUID player) do
 {
-    case "76561198029318101": {[]}; // shukari
+    case "76561198029318101": {["G_Aviator"]}; // shukari
     case "76561198040057152": {[]}; // Culli
     case "76561198047437015": {[]}; // Mike Range
     case "76561198053478498": {[]}; // Sponst
@@ -24,7 +24,8 @@ _items append (switch (getPlayerUID player) do
     case "76561197986271628": {[]}; // Nimrod
     case "76561198049880123": {[]}; // Eron
     case "76561198203984875": {[]}; // TimeToPlay
-    case "76561198127241859": {["G_Tactical_Clear", "LOP_H_Beanie_mtp", "H_Watchcap_blk", "rhs_xmas_antlers" /*Wieso git es überhaupt sowas*/, "H_WirelessEarpiece_F"]}; // Eric
+    case "76561198067143167": {["G_Aviator"]}; // Thor
+    case "76561198127241859": {["G_Tactical_Clear", "LOP_H_Beanie_mtp", "H_Watchcap_blk", "rhs_xmas_antlers", "H_WirelessEarpiece_F"]}; // Eric
 
     default {[]};
 });
@@ -49,7 +50,8 @@ private _truppfuehrer = [
         "76561198089664421",
         "76561197986271628",
         "76561198203984875",
-        "76561198127241859"
+        "76561198127241859",
+        "76561198067143167"
     ] + _ausbilder;
 
 // Generalstabs Whitelist
