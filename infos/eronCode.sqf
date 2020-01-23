@@ -1,4 +1,4 @@
-
+// Airburst Ammo
 player addEventHandler ["FIRED", {
     params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
@@ -35,7 +35,7 @@ systemChat "submuni";};
 }];
 
 
-
+// Waffe der UAV anzeigen
 TB_uav_stop = false;
 [] spawn {
 	waitUntil {
@@ -47,25 +47,3 @@ TB_uav_stop = false;
 		TB_uav_stop;
 	};
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
