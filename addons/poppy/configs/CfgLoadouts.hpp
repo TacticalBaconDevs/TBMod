@@ -5,6 +5,8 @@
 
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
+#define ADDCLASS(NUM) class GVAR(poppy_##NUM): All {}
+
 class CfgLoadouts
 {
     class All
@@ -38,13 +40,15 @@ class CfgLoadouts
         };
     };
 
-    class GVAR(poppy_01): All {};
-    class GVAR(poppy_02): All {};
-    class GVAR(poppy_03): All {};
-    class GVAR(poppy_04): All {};
-    class GVAR(poppy_05): All {};
-    class GVAR(poppy_06): All {};
-    class GVAR(poppy_07): All {};
-    class GVAR(poppy_08): All {};
+    ADDCLASS(01);
+    ADDCLASS(02);
+    ADDCLASS(03);
+    ADDCLASS(04);
+    ADDCLASS(05);
+    ADDCLASS(06);
+    ADDCLASS(07);
+    ADDCLASS(08);
+    ADDCLASS(09);
+    ADDCLASS(10);
 
 };
