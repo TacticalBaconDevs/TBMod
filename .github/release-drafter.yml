@@ -20,7 +20,7 @@ template: |
   ## Contributors
   $CONTRIBUTORS
   
-replacers:
+#replacers:
   # Category titles
   #- search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED|TRANSLATIONS):\*\*)/g'
   #  replace: '$1'
