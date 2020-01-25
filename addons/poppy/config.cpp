@@ -12,16 +12,36 @@ class CfgPatches
         author = "BaerMitUmlaut";
 
         units[] = {
-            QGVAR(poppy_01),
-            QGVAR(poppy_02),
-            QGVAR(poppy_03),
-            QGVAR(poppy_04),
-            QGVAR(poppy_05),
-            QGVAR(poppy_06),
-            QGVAR(poppy_07),
-            QGVAR(poppy_08),
-            QGVAR(poppy_09),
-            QGVAR(poppy_10)
+            QGVAR(opfor_01),
+            QGVAR(opfor_02),
+            QGVAR(opfor_03),
+            QGVAR(opfor_04),
+            QGVAR(opfor_05),
+            QGVAR(opfor_06),
+            QGVAR(opfor_07),
+            QGVAR(opfor_08),
+            QGVAR(opfor_09),
+            QGVAR(opfor_10),
+            QGVAR(blufor_01),
+            QGVAR(blufor_02),
+            QGVAR(blufor_03),
+            QGVAR(blufor_04),
+            QGVAR(blufor_05),
+            QGVAR(blufor_06),
+            QGVAR(blufor_07),
+            QGVAR(blufor_08),
+            QGVAR(blufor_09),
+            QGVAR(blufor_10),
+            QGVAR(ind_01),
+            QGVAR(ind_02),
+            QGVAR(ind_03),
+            QGVAR(ind_04),
+            QGVAR(ind_05),
+            QGVAR(ind_06),
+            QGVAR(ind_07),
+            QGVAR(ind_08),
+            QGVAR(ind_09),
+            QGVAR(ind_10)
         };
 
         requiredAddons[] = {"TBMod_main"};
