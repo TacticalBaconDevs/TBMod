@@ -13,7 +13,6 @@ PREP_RECOMPILE_END;
 
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
-
 {
     [_x, "InitPost", {
         params ["_unit"];
@@ -24,8 +23,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         params ["_unit"];
         if (local _unit) then {[_unit, typeOf _unit] call FUNC(applyLoadout)};
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach [QGVAR(blufor_01), QGVAR(opfor_01), QGVAR(ind_01)];
-
-
+}
+forEach [QGVAR(blufor_01), QGVAR(opfor_01), QGVAR(ind_01)];
 
 ADDON = true;
