@@ -493,6 +493,7 @@ class CfgVehicles
         maxOmega = 480; // 356.05
     };
 
+    class MRAP_01_base_F;
     class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33L-Reihe
     {
         armor = 215; // 200
@@ -553,7 +554,7 @@ class CfgVehicles
         mass = 50; // 20
         maximumLoad = 280; // 160
     };
-  
+
     class rhsusf_MATV_base : MRAP_01_base_F // RHS M-ATV-Reihe
     {
         armor = 220; // 100
