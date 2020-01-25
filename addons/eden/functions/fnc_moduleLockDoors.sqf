@@ -34,6 +34,11 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
                 private _doorName = "bis_disabled_" + ((_content select [0,2]) joinString "_");
                 _building animateSource [_source, 0, true];
                 _building setVariable [_doorName, 1, true];
+
+                #ifdef DEBUG_MODE_FULL
+                _markerName = createMarker ["door"+ str (random 999), _building];
+                _markerName setMarkerType "hd_dot";
+                #endif
             };
         }
         forEach ([configFile >> "CfgVehicles" >> typeOf _building >> "AnimationSources", 0] call BIS_fnc_returnChildren);
