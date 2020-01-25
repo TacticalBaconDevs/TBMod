@@ -494,31 +494,32 @@ class CfgVehicles
                 displayName = "Abgeschlossen Prozent";
                 tooltip = "Von allen Türen der Gebäude im Bereich wieviel Prozent sollen abgeschlossen sein.";
                 typeName = "NUMBER";
+                defaultValue = 10;
                 class values {
-                    class percent100 {
+                    class percent1 {
                         name = "100%";
-                        value = 1;
+                        value = 100;
                     };
-                    class percent75 {
+                    class percent2 {
                         name = "75%";
-                        value = 0.75;
+                        value = 75;
                     };
-                    class percent50 {
+                    class percent3 {
                         name = "50%";
-                        value = 0.5;
+                        value = 50;
                     };
-                    class percent25 {
+                    class percent4 {
                         name = "25%";
-                        value = 0.25;
-                    };
-                    class percent10 {
-                        name = "10%";
-                        value = 0.1;
-                        default = 1;
+                        value = 25;
                     };
                     class percent5 {
+                        name = "10%";
+                        value = 10;
+                        default = 1;
+                    };
+                    class percent6 {
                         name = "5%";
-                        value = 0.05;
+                        value = 5;
                     };
                 };
             };

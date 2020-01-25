@@ -18,7 +18,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     private _objectarea = _logic getVariable ["objectarea", []];
     _objectarea params [["_width", 500], ["_height", 500]];
 
-    private _percent = _logic getVariable ["percent", 1];
+    private _percent = _logic getVariable ["percent", 100];
     private _area = [getPos _logic];
     _area append _objectarea;
 
@@ -29,7 +29,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
             private _source = configName _x;
             private _content = _source splitString "_";
 
-            if (toLower (_content # 2) == "sound" && {random 1 <= _percent}) then //TODO: in ARRAY und door und sound check ggf nur
+            if (toLower (_content # 2) == "sound" && {floor (random 100) <= _percent}) then //TODO: in ARRAY und door und sound check ggf nur
             {
                 private _doorName = "bis_disabled_" + ((_content select [0,2]) joinString "_");
                 _building animateSource [_source, 0, true];
