@@ -7,8 +7,8 @@ class CfgAILevelPresets
     class TBModAi
     {
         displayName = "TacticalBaconAI";
-        skillAI = 0.6;
-        precisionAI = 0.5;
+        skillAI = 0.9;
+        precisionAI = 0.6;
     };
 };
 

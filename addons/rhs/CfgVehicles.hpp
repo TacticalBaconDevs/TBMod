@@ -12,7 +12,7 @@ class CfgVehicles
 {
     // ExtraSkin
     class RHS_UH60M;
-    class TB_Vehicles_USA_UH60_MEV: RHS_UH60M
+    class TB_Vehicles_USA_UH60_MEV : RHS_UH60M
     {
         displayName = "UH-60 MEV";
         author = "Eron";
@@ -27,7 +27,7 @@ class CfgVehicles
 
     // Skin
     class RHS_MELB_MH6M;
-    class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
+    class TB_Vehicles_MH6_SWAT : RHS_MELB_MH6M
     {
         displayName = "MH-6 S.W.A.T.";
         author = "Eron";
@@ -37,7 +37,7 @@ class CfgVehicles
 
     // Skin FlaRak Kit
     class AA_01_base_F;
-    class B_static_AA_F: AA_01_base_F
+    class B_static_AA_F : AA_01_base_F
     {
         author = "Eron";
         hiddenSelectionsTextures[] = {
@@ -494,11 +494,6 @@ class CfgVehicles
     };
 
     class MRAP_01_base_F;
-    class B_MRAP_01_F : MRAP_01_base_F // Vanilla M-ATV-Reihe
-    {
-        armor = 10; // 200
-    };
-
     class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33L-Reihe
     {
         armor = 215; // 200
@@ -528,6 +523,37 @@ class CfgVehicles
     // ### RHS inheritance fix
     class rhs_uaz_spg9_base;
     class rhs_uaz_spg9_chdkz : rhs_uaz_spg9_base {};
+
+    class Bag_Base;
+    class B_AssaultPack_Base : Bag_Base // Assault Pack + Falcon-II Pack
+    {
+        mass = 12; // 20
+        maximumLoad = 96; // 160
+    };
+
+    class B_FieldPack_Base : Bag_Base // Field Pack
+    {
+        mass = 12; // 30
+        maximumLoad = 96; // 200
+    };
+
+    class B_Bergen_Base_F : Bag_Base // Bergen Pack
+    {
+        mass = 104; // 90
+        maximumLoad = 500; // 480
+    };
+
+    class B_TacticalPack_Base : Bag_Base // Tactical Pack
+    {
+        mass = 12; // 40
+        maximumLoad = 96; // 240
+    };
+
+    class rhsusf_assault_eagleaiii_ucp : B_AssaultPack_Base // Eagle A-III Pack
+    {
+        mass = 50; // 20
+        maximumLoad = 280; // 160
+    };
 
     class rhsusf_MATV_base : MRAP_01_base_F // RHS M-ATV-Reihe
     {

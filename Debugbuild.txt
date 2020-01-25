@@ -39,4 +39,13 @@ Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verä
     10.1. sollte bereits einmal nicht dort gestartet worden sein... in der "Builder.cfg" bei "ExecDir" -> ExecDir=P\:\\x\\TBMod
 11. nun TBMod_Builder.jar ausführen, Arma3Sync ohne "@TBMod" und mit "-mod=x\TBMod" starten
 12. Spiel starten und staunen, es kann sein, das Skripte erst bei einem Mission neustart neu geladen werden (in Eden war es sofort)
+    12.1. um den Mod dafür bereit zu machen, lese "Modanpassungen" unten
+
+### Modanpassungen
+1. entweder in "/addons/main/script_mod.hpp" die Zeilen auskommentieren (also die // wegnehmen) - das ist dann für ALLE addons:
+    // #define DEBUG_MODE_FULL
+    // #define DISABLE_COMPILE_CACHE
+2. für nur ein addon (ist meiner Meinung nach nicht sinnvoll bei uns) dann in der script_component.hpp des jeweiligen addons die Zeilen auskommentieren:
+    // #define DEBUG_MODE_FULL
+    // #define DISABLE_COMPILE_CACHE
 
