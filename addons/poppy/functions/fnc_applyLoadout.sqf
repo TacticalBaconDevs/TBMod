@@ -29,3 +29,7 @@ removeAllWeapons _unit;
 forEach LOADOUT_INDEXES;
 
 _unit selectWeapon (primaryWeapon _unit);
+
+if (isText(_config >> "postLoadout")) then {
+    [_unit, _loadout] call compile (getText (_config >> "postLoadout"));
+};
