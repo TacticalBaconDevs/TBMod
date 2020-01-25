@@ -4,7 +4,7 @@
 
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
-#define ADDCLASSVEHICLES(TYPE,NUM) class GVAR(##TYPE_##NUM) : GVAR(##TYPE_01) \
+#define ADDCLASSVEHICLES(TYPE,NUM) class GVAR(##TYPE##_##NUM) : GVAR(TYPE##_01) \
     { \
         displayname = QUOTE(Poppy NUM); \
     }

@@ -5,7 +5,7 @@
 
     Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
-#define ADDCLASSLOADOUT(TYPE,NUM) class GVAR(##TYPE_##NUM): All##TYPE {}
+#define ADDCLASSLOADOUT(TYPE,NUM) class GVAR(##TYPE##_##NUM): All##TYPE {}
 
 class CfgLoadouts
 {

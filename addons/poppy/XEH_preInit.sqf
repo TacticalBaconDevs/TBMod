@@ -13,14 +13,19 @@ PREP_RECOMPILE_END;
 
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
-[QGVAR(poppy_01), "InitPost", {
-    params ["_unit"];
-    if (local _unit) then {[_unit, typeOf _unit] call FUNC(applyLoadout)};
-}, true, [], true] call CBA_fnc_addClassEventHandler;
 
-[QGVAR(poppy_01), "Local", {
-    params ["_unit"];
-    if (local _unit) then {[_unit, typeOf _unit] call FUNC(applyLoadout)};
-}, true, [], true] call CBA_fnc_addClassEventHandler;
+{
+    [_x, "InitPost", {
+        params ["_unit"];
+        if (local _unit) then {[_unit, typeOf _unit] call FUNC(applyLoadout)};
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+    [_x, "Local", {
+        params ["_unit"];
+        if (local _unit) then {[_unit, typeOf _unit] call FUNC(applyLoadout)};
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach [QGVAR(blufor_01), QGVAR(opfor_01), QGVAR(ind_01)];
+
+
 
 ADDON = true;
