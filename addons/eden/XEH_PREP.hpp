@@ -18,6 +18,7 @@ PREP(moduleClearPlaceables);
 PREP(moduleFlares);
 PREP(moduleFrontverlauf);
 PREP(moduleInjured);
+PREP(moduleLockDoors);
 PREP(moduleRadio);
 PREP(schauspieler);
 PREP(sitAI);
