@@ -49,7 +49,7 @@ switch (toLower _slot) do
         };
     };
     case "uniform": {_unit forceAddUniform _item};
-    case "vest": {_unit addVest _vest};
+    case "vest": {_unit addVest _item};
     case "magazines": {[_unit, _array] call FUNC(addMagazines)};
     case "items": {[_unit, _array] call FUNC(addItems)};
     default {_unit linkItem _item}; // Map, Headgear, Watch, Radio, NVG, Compass, GPS
