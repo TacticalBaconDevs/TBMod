@@ -6,7 +6,7 @@
 */
 params ["_mode", "_params"];
 
-if (isNil "SSS_support" ||isNil "SSS_support_fnc_transportDoFastrope") exitWith {
+if (isNil "SSS_support" || isNil "SSS_support_fnc_transportDoFastrope") exitWith {
     systemChat "Simplex-Support-Services ist nicht vorhanden!";
 };
 
