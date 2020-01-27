@@ -40,7 +40,7 @@ switch (_mode) do
         private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
         _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle};
         private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
-	    private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
+        private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
         !(driver _vehicle == _player || currentPilot _vehicle == _player || gunner _vehicle == _player || commander _vehicle == _player && _player in _copilots) &&
             leader _player == _player && !(_player in _ropeUnits)
@@ -65,7 +65,7 @@ switch (_mode) do
         private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
         _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle};
         private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
-	    private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
+        private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
         !(driver _vehicle == _player || currentPilot _vehicle == _player || gunner _vehicle == _player || commander _vehicle == _player && _player in _copilots) &&
             leader _player == _player && _player in _ropeUnits
@@ -132,7 +132,7 @@ switch (_mode) do
         _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle};
         private _height = (getPosVisual _vehicle) # 2;
         private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
-	    private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
+        private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
         (driver _vehicle == _player || currentPilot _vehicle == _player || gunner _vehicle == _player || commander _vehicle == _player && _player in _copilots)
             && !(_ropeUnits isEqualTo []) && _height < 50 && _height > 5 && speed _vehicle < 10
