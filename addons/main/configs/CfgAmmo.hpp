@@ -93,7 +93,7 @@ class CfgAmmo
     // ADD_PRECISE_SMOKE(G_40mm_SmokeRed);
     // ADD_PRECISE_SMOKE(G_40mm_SmokeYellow);
 
-	// Smoke für Fahrzeuge, benötigt ClassEventhandler aus PreInit
+    // Smoke für Fahrzeuge, benötigt ClassEventhandler aus PreInit
     class TB_G_40mm_Smoke : G_40mm_Smoke
     {
         simulation = "shotShell";
