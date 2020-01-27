@@ -7,7 +7,6 @@
 private _allgemein = [
     // Gepäck
     "rhs_sidor",        // maximumLoad = 129; mass = 20; Quotient = 6,45
-    
 
     // Gesichtsbedeckung
     "rhs_scarf",
@@ -147,8 +146,8 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_raketenwerfer = [
-    "rhs_weap_rpg26",   // Light-Anti-tank 
-    "rhs_weap_rshg2"    // Thermobaric (HE) launcher 
+    "rhs_weap_rpg26",   // Light-Anti-tank
+    "rhs_weap_rshg2"    // Thermobaric (HE) launcher
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -380,10 +379,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
-    case "dmr": 
+    case "dmr":
     {
         []
-        
+
     };
 
     case "mg":
@@ -431,7 +430,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _mg_munition +
         _grenadier_munition +
-        _dmr_munition +
         _pilot_munition +
         _sniper_munition +
         _aaat_munition +
@@ -458,7 +456,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _pilot_munition +
         _mg_munition +
         _grenadier_munition +
-        _dmr_munition +
         _pilot_munition +
         _sniper_munition +
         _aaat_munition +
