@@ -182,6 +182,17 @@ switch (_mode) do
                     if (isNil "_unit") exitWith {};
 
                     _unit setVariable ["SSS_fastroping", true, true];
+
+                    // Nichtangreifbar beim Abseilen
+                    [_this, true] remoteExecCall ["setCaptive", _this];
+                    [
+                        {!(_this getVariable ["SSS_fastroping", false])},
+                        {[_this, false] remoteExecCall ["setCaptive", _this]},
+                        _unit,
+                        20,
+                        {[_this, false] remoteExecCall ["setCaptive", _this]}
+                    ] call CBA_fnc_waitUntilAndExecute;
+
                     [_vehicle, _unit, _ropes] remoteExecCall ["SSS_support_fnc_transportDoFastrope", _unit];
                 }, 1.5, _this] call CBA_fnc_addPerFrameHandler;
             },
