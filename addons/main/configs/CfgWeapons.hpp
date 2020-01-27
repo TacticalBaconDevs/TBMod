@@ -2,10 +2,11 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class CfgEditorSubcategories
+class CfgWeapons
 {
-    class EdSubcat_TB_Poppy
+    class GMG_F;
+    class GMG_40mm : GMG_F
     {
-        displayName = "Poppy";
+        magazines[] += {"TB_Smoke_Grenades"};
     };
 };

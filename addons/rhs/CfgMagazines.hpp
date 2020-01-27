@@ -434,7 +434,7 @@ class CfgMagazines
     {
         mass = 8.82; // 10
     };
-    
+
     class APERSMineDispenser_Mag : SLAMDirectionalMine_Wire_Mag // APERS Mine Dispenser
     {
         mass = 77.14; // 60
@@ -445,12 +445,5 @@ class CfgMagazines
     {
         mass = 22.04; // 20
     };
-    
-    class 3Rnd_Smoke_Grenade_shell_precise;
-    class 48Rnd_Smoke_Grenades : 3Rnd_Smoke_Grenade_shell_precise // 40mm UGV Smoke Grenades
-    {
-        count = 48;
-        initSpeed = 240;
-    };
-    
+
 };

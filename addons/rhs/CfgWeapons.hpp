@@ -329,10 +329,4 @@ class CfgWeapons
     {
         mass = 27.55; // 3
     };
-
-    class GMG_F;
-    class GMG_40mm: GMG_F // Mk 19
-    {
-        magazines[] += {"48Rnd_Smoke_Grenades"}; // "200Rnd_40mm_G_belt","96Rnd_40mm_G_belt","64Rnd_40mm_G_belt","32Rnd_40mm_G_belt"
-    };
 };

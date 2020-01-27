@@ -585,28 +585,4 @@ class CfgVehicles
         maxOmega = 550; // 230.38
     };
 
-    // UGV Stomper
-    class UGV_01_base_F;
-    class UGV_01_rcws_base_F : UGV_01_base_F
-    {
-        class Turrets;
-    };
-    class B_UGV_01_rcws_F : UGV_01_rcws_base_F // UGV Stomper RCWS
-    {
-        class Turrets : Turrets
-        {
-            class MainTurret;
-        };
-    };
-    class TB_UGV_01_rcws_F : B_UGV_01_rcws_F
-    {
-        class Turrets : Turrets
-        {
-            class MainTurret : MainTurret
-            {
-                magazines[] = {"200Rnd_127x99_mag_Tracer_Red", "48Rnd_Smoke_Grenades"};
-            };
-        };
-    };
-
 };

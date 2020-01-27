@@ -17,7 +17,6 @@ class CfgPatches
         };
 
         vehicles[] = {
-            "TB_UGV_01_rcws_F",
             "TB_Vehicles_MH6_SWAT",
             "TB_Vehicles_L159_Albatros"
         };
