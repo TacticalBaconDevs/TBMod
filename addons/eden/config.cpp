@@ -23,6 +23,7 @@ class CfgPatches
             QGVAR(radio),
             QGVAR(flares),
             QGVAR(injured),
+            QGVAR(lockDoors),
             QGVAR(clearPlaceables)
         };
 

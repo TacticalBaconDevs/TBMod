@@ -5,8 +5,11 @@ branches:
 name-template: 'Version $NEXT_PATCH_VERSION'
 tag-template: 'v$NEXT_PATCH_VERSION'
 
-#categories:
-#  - title: '**CHANGED:**'
+categories:
+  - title: Features/Enhancement
+    label: kind/enhancement
+  - title: Bugfixes
+    label: kind/bug
 
 exclude-labels:
   - 'ignore changelog'
