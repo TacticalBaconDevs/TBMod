@@ -236,6 +236,32 @@ class CfgVehicles
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Patria_AMW.jpg);
     };
 
+    class LT_01_cannon_base_F;
+    class TB_Vehicles_Wueste_Wiesel_2_MG : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    {
+        displayName = "Wiesel 2 (MG)";
+        author = "Eron";
+        addCategoryBLU(Wueste);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_MG.jpg);
+    };
+
+    class I_LT_01_AT_F;
+    class TB_Vehicles_Wueste_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (ATGM)
+    {
+        displayName = "Wiesel 2 (AT)";
+        author = "Eron";
+        addCategoryBLU(Wueste);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_AT.jpg);
+    };
+
     ///////////////////////Fahrzeuge Camouflage Wald//////////////////////////
 
     class TB_Vehicles_BW_Pandur: I_APC_Wheeled_03_cannon_F
@@ -328,6 +354,30 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_1.paa)
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Strider_smg.jpg);
+    };
+
+    class TB_Vehicles_Wald_Wiesel_2_MG : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    {
+        displayName = "Wiesel 2 (MG)";
+        author = "Eron";
+        addCategoryBLU(Wald);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_1.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_MG.jpg);
+    };
+
+    class TB_Vehicles_Wald_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (ATGM)
+    {
+        displayName = "Wiesel 2 (AT)";
+        author = "Eron";
+        addCategoryBLU(Wald);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AT.jpg);
     };
 
     ///////////////////////Fluggeräte//////////////////////////
@@ -526,7 +576,7 @@ class CfgVehicles
         author = "Eron";
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_marpad_wd.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_hex_CO.paa"
     };
-  
+
     //////////////////// OPFOR /////////////////////
 
     class O_MBT_02_cannon_F : O_MBT_02_base_F {
