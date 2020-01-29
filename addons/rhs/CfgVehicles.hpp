@@ -584,4 +584,11 @@ class CfgVehicles
         audible = 13; // 14
         maxOmega = 550; // 230.38
     };
+
+    class LT_01_cannon_base_F;
+    class TB_Vehicles_BW_Wiesel_2 : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+    };
 };
