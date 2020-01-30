@@ -350,11 +350,13 @@ class CfgMagazines
 
     class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
     {
+        initSpeed = 290; // 230
         mass = 88.16; // 72.77
     };
 
     class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
     {
+        initSpeed = 290; // 255
         mass = 44.08; // 68.36
     };
 

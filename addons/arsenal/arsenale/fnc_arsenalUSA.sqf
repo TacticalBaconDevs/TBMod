@@ -109,7 +109,9 @@ private _allgemein = [
     "rhs_mag_m67",
     "B_IR_Grenade",
     // ### Sprengstoff
-    "AMP_Breaching_Charge_Mag"
+    "AMP_Breaching_Charge_Mag",
+    // ### Fallschirme
+    "B_Parachute"
 ];
 
 private _allgemein_magazine = [
@@ -522,7 +524,6 @@ private _gepaeck_klein = [
     "rhsusf_falconii_mc",
     "B_AssaultPack_blk",
     "B_AssaultPack_rgr",
-    "B_Parachute",
     "B_FieldPack_cbr",              // maximumLoad = 96; mass = 12; Quotient = 8
     "B_FieldPack_khk",
     "B_FieldPack_blk",
