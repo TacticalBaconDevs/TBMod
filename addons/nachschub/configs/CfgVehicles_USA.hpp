@@ -184,6 +184,7 @@ class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
         MACRO_ADDITEM(Binocular,1);
         MACRO_ADDITEM(ItemCompass,1);
         MACRO_ADDITEM(ItemMap,1);
+        MACRO_ADDITEM(rhsusf_acc_aac_762sdn6_silencer,2);
     };
 };
 
