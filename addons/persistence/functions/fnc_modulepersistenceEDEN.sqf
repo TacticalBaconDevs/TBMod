@@ -26,25 +26,26 @@ private _activated = switch _mode do
 
 if (!_activated) exitWith {true};
 
-[] spawn
-{
-    private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
-    private _dialogResult = [
-            "Persistence",
-            [
-                ["Save Name", _saves, 0]
-            ]
-        ] call Ares_fnc_showChooseDialog;
+private _saves = profileNamespace getVariable [QGVAR(savedNames), []];
+if (_saves isEqualTo []) then {["Keine lokalen Saves vorhanden!", 1] call bis_fnc_3dennotification;};
 
-    if (_dialogResult isEqualTo []) then
+[
+    "Persistence laden",
+    [
+        [
+            "COMBO",
+            ["Speichername", "Der Name des Speicherstandes"],
+            [_saves, _saves, ((count _saves) - 1) max 0],
+            true
+        ]
+    ],
     {
-        systemChat "[TBMod_persistence] Abbruch";
+        params ["_values", "_args"];
+        _values params ["_name"];
+
+        [_name] spawn FUNC(persistenceEDEN);
+        ["Persistence wurde geladen", 0] call bis_fnc_3dennotification;
     }
-    else
-    {
-        _dialogResult params ["_nameIdx"];
-        [_saves select _nameIdx] call FUNC(persistenceEDEN);
-    };
-};
+] spawn zen_dialog_fnc_create; // TODO: setzt sich selbst mit CBA_fnc_directCall wieder auf unscheduled, aber derzeit werden alle Tastatureingaben geblocked... ENTER drücken geht
 
 true;

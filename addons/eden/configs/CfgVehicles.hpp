@@ -469,10 +469,88 @@ class CfgVehicles
     };
     BACKCOMP(clearPlaceables);
 
+    class GVAR(lockDoors) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "LockDoors";
+        function = QFUNC(moduleLockDoors);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+
+        canSetArea = 1;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 1;
+
+        class AttributeValues
+        {
+            isRectangle = 0;
+            size3[] = {200,200,-1};
+        };
+
+        class Attributes: AttributesBase
+        {
+            class percent: Combo
+            {
+                property = QEGVAR(lockDoors,percent);
+                displayName = "Abgeschlossen Prozent";
+                tooltip = "Von allen Türen der Gebäude im Bereich wieviel Prozent sollen abgeschlossen sein.";
+                typeName = "NUMBER";
+                defaultValue = 10;
+                class values {
+                    class percent1 {
+                        name = "100%";
+                        value = 100;
+                    };
+                    class percent2 {
+                        name = "75%";
+                        value = 75;
+                    };
+                    class percent3 {
+                        name = "50%";
+                        value = 50;
+                    };
+                    class percent4 {
+                        name = "25%";
+                        value = 25;
+                    };
+                    class percent5 {
+                        name = "10%";
+                        value = 10;
+                        default = 1;
+                    };
+                    class percent6 {
+                        name = "5%";
+                        value = 5;
+                    };
+                };
+            };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Im Bereich dieses Modules werden der angegebene Prozentsatz der Türen alle enthaltenen Häuser verschlossen"
+            };
+        };
+    };
+
     // ######################## ATMO Module
     class GVAR(atmoBase) : GVAR(base)
     {
         category = "TB_categorie_eden_atmo";
+
+        class Attributes: AttributesBase
+        {
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Dies ist ein Atmo-Modul, es dient NUR zu Atmosphären Zwecken!"
+            };
+        };
     };
     BACKCOMP(atmoBase);
 
@@ -544,4 +622,25 @@ class CfgVehicles
         icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\target_ca.paa";
     };
     BACKCOMP(atmoTarget);
+
+    class GVAR(atmoCarAlarm) : GVAR(atmoBase)
+    {
+        scope = 2;
+        displayName = "AtmoCarAlarm";
+        function = QFUNC(moduleAtmoCarAlarm);
+        //icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\attack_ca.paa";
+
+        class Attributes: AttributesBase
+        {
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription
+        {
+            description[] = {
+                "Wenn dieses Modul in einer Mission gesetzt wird, kriegen alle Autos (keine Panzer oder so) einen Alarm wenn es getroffen oder jemand einsteigt.",
+                "In der Mission deaktivierbar mit: TBMod_eden_carAlarm = false"
+            };
+        };
+    };
 };

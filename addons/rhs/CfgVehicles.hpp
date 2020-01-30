@@ -12,7 +12,7 @@ class CfgVehicles
 {
     // ExtraSkin
     class RHS_UH60M;
-    class TB_Vehicles_USA_UH60_MEV: RHS_UH60M
+    class TB_Vehicles_USA_UH60_MEV : RHS_UH60M
     {
         displayName = "UH-60 MEV";
         author = "Eron";
@@ -27,7 +27,7 @@ class CfgVehicles
 
     // Skin
     class RHS_MELB_MH6M;
-    class TB_Vehicles_MH6_SWAT: RHS_MELB_MH6M
+    class TB_Vehicles_MH6_SWAT : RHS_MELB_MH6M
     {
         displayName = "MH-6 S.W.A.T.";
         author = "Eron";
@@ -37,7 +37,7 @@ class CfgVehicles
 
     // Skin FlaRak Kit
     class AA_01_base_F;
-    class B_static_AA_F: AA_01_base_F
+    class B_static_AA_F : AA_01_base_F
     {
         author = "Eron";
         hiddenSelectionsTextures[] = {
@@ -351,6 +351,7 @@ class CfgVehicles
         audible = 0.75; // 5
         camouflage = 1.15; // 2
         irTargetSize = 0.2; // n.a.
+        maxOmega = 950; // 837.76
         visualTargetSize = 0.2; // n.a.
     };
 
@@ -371,9 +372,11 @@ class CfgVehicles
     class I_MRAP_03_F : MRAP_03_base_F // Vanilla Fennek
     {
         accuracy = 1.1; // 0.25
+        armor = 190; // 200
         audible = 2.25; // 5
         camouflage = 1.4; // 2
         irTargetSize = 0.3; // n.a.
+        maxOmega = 420; // 320
         visualTargetSize = 0.3; // n.a.
     };
 
@@ -472,46 +475,121 @@ class CfgVehicles
     class APC_Tracked_03_base_F;
     class RHS_M2A2_Base : APC_Tracked_03_base_F // RHS M2 Bradley
     {
-        armor = 460; // 290
-        audible = 8; // 18
+        armor = 510; // 290
+        audible = 17; // 18
     };
 
     class rhsusf_caiman_base;
     class rhsusf_M1220_usarmy_d : rhsusf_caiman_base // RHS M1220 Serie
     {
-        armor = 230; // 200
-        audible = 5; // 9
+        armor = 220; // 200
+        audible = 8; // 9
+        maxOmega = 550; // 230.38
     };
 
     class rhsusf_hmmwe_base;
     class rhsusf_m998_w_2dr : rhsusf_hmmwe_base // RHS Humvee Serie
     {
-        armor = 95; // 80
-        audible = 4; // 5
+        armor = 70; // 80
+        maxOmega = 480; // 356.05
     };
 
     class MRAP_01_base_F;
-    class B_MRAP_01_F : MRAP_01_base_F // M-ATV-Reihe / M1238A1-Reihe / M1239 AUV-Reihe / M1240-Reihe
+    class rhsusf_RG33L_base : MRAP_01_base_F // RHS RG33L-Reihe
     {
-        armor = 220; // 200
+        armor = 215; // 200
         audible = 6; // 5
+    };
+
+    class rhsusf_RG33_base : MRAP_01_base_F // RHS RG33-Reihe
+    {
+        armor = 225; // 200
+        audible = 7; // 5
     };
 
     class I_APC_Wheeled_03_base_F;
     class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Vanilla Pandur II
     {
-        armor = 460; // 480
-        audible = 8; // 14
+        armor = 245; // 200
+        audible = 16; // 5
     };
 
     class B_APC_Wheeled_01_base_F;
     class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F // Patria AMW
     {
-        armor = 220; // 320
-        audible = 6; // 14
+        armor = 215; // 320
+        audible = 16; // 14
     };
 
     // ### RHS inheritance fix
     class rhs_uaz_spg9_base;
     class rhs_uaz_spg9_chdkz : rhs_uaz_spg9_base {};
+
+    class Bag_Base;
+    class B_AssaultPack_Base : Bag_Base // Assault Pack + Falcon-II Pack
+    {
+        mass = 12; // 20
+        maximumLoad = 96; // 160
+    };
+
+    class B_FieldPack_Base : Bag_Base // Field Pack
+    {
+        mass = 12; // 30
+        maximumLoad = 96; // 200
+    };
+
+    class B_Bergen_Base_F : Bag_Base // Bergen Pack
+    {
+        mass = 104; // 90
+        maximumLoad = 500; // 480
+    };
+
+    class B_TacticalPack_Base : Bag_Base // Tactical Pack
+    {
+        mass = 12; // 40
+        maximumLoad = 96; // 240
+    };
+
+    class rhsusf_assault_eagleaiii_ucp : B_AssaultPack_Base // Eagle A-III Pack
+    {
+        mass = 50; // 20
+        maximumLoad = 280; // 160
+    };
+
+    class rhsusf_MATV_base : MRAP_01_base_F // RHS M-ATV-Reihe
+    {
+        armor = 220; // 100
+        audible = 5; // 6
+        maxOmega = 600; // 230.38
+        maxSpeed = 115; // 105
+        normalSpeedForwardCoef = 0.7; // 0.48
+    };
+
+    class rhsusf_Cougar_base : MRAP_01_base_F // RHS CGR-Reihe
+    {
+        armor = 220; // 200
+        audible = 15; // 14
+    };
+
+    class rhsusf_stryker_base;
+    class rhsusf_stryker_m1126_base : rhsusf_stryker_base // RHS Stryker-Reihe
+    {
+        armor = 220; // 120
+        audible = 15; // 14
+    };
+
+    class Wheeled_Apc_F;
+    class rhsusf_M1117_base : Wheeled_Apc_F // RHS M1117-Reihe
+    {
+        armor = 195; // 150
+        audible = 13; // 14
+        maxOmega = 550; // 230.38
+    };
+
+    class LT_01_cannon_base_F;
+    class TB_Vehicles_BW_Wiesel_2 : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+    };
 };

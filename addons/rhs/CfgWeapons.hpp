@@ -95,6 +95,18 @@ class CfgWeapons
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
+    // Skin Weste IS
+    class rhs_6sh92;
+    class TB_vest_IS_01: rhs_6sh92
+    {
+        displayName = "ISIS Weste1 (Black)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\vests\TB_vest_IS_01A.paa),
+            QPATHTOEF(skins,pictures\vests\TB_vest_IS_01B.paa)
+        };
+    };
+
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
@@ -150,10 +162,43 @@ class CfgWeapons
         hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_black_helmet_SWAT_01.paa)};
     };
 
+    //Skin Sanihelm Delta Force
+    class TB_helmet_Sani_A_Black: rhsusf_opscore_bk_pelt
+    {
+        displayName = "Sani Delta Force";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniA01.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniA02.paa)};
+    };
+
+    //Skin Sanihelm USMC Urban
+    class rhsusf_opscore_mar_fg_pelt;
+    class TB_helmet_Sani_B_Grey: rhsusf_opscore_mar_fg_pelt
+    {
+        displayName = "Sani USMC Urban";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB01.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB02.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB03.paa)};
+        picture = "\rhsusf\addons\rhsusf_inventoryicons\data\headgear\rhsusf_opscore_mar_ut_pelt_ca.paa";
+    };
+
+    //Skin Sanihelm Ranger Green
+    class TB_helmet_Sani_C_Green: rhsusf_opscore_mar_fg_pelt
+    {
+        displayName = "Sani Ranger Green";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC01.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC02.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC03.paa)};
+    };
+
     class launch_O_Titan_F;
     class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
     {
-        aimTransitionSpeed = 0.16; // 0.5
         mass = 176.37; // 152.46
     };
 
