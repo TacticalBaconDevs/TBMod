@@ -142,6 +142,46 @@
     (group _unit) setGroupIdGlobal [_grpName];
 }, "all"] call CBA_fnc_registerChatCommand;
 
+["settings", {
+    if ((call BIS_fnc_admin) == 0 && isNull (getAssignedCuratorLogic player) && !((getPlayerUID player) in (call TB_lvl2))) exitWith {systemChat "Du hast keine Rechte für diesen Befehl!"};
+    if (serverTime >= (20 * 60)) exitWith
+    {
+        private _msg = format ["[BÖSE] %1 wollte %2min nach Serverrestart die Settings verändern", profileName, serverTime * 60];
+        ["[error pos]"+ _msg] remoteExecCall ["diag_log"];
+        [_msg] remoteExecCall ["systemChat"];
+    };
+
+    [
+        "Settings laden",
+        [
+            [
+                "CHECKBOX",
+                ["Bist du sicher das du das darfst?", "Wenn du diese Aktion ohne triftigen Grund ausführst, wird das ernste Konsequenzen haben!"],
+                false,
+                true
+            ],
+            [
+                "LIST",
+                ["Settings", "Settings aus der Mission"],
+                [[], ["zur Gruppe", "zum Crashort", "nichts machen"], 0, 3],
+                true
+            ]
+        ],
+        {
+            params ["_values", "_args"];
+            _values params ["_id"];
+            _args params ["_uid", "_gear", "_pos", "_dir", "_arsenalType", "_rolle", "_group", "_team"];
+
+
+        },
+        {},
+        TB_disconnectCache select (_find select 0)
+    ] call zen_dialog_fnc_create;
+
+    //systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, name (leader _unit)];
+    //["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, name (leader _unit)]] call CBA_fnc_globalEvent;
+}, "all"] call CBA_fnc_registerChatCommand;
+
 if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
 ["spectator", {
