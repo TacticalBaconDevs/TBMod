@@ -102,7 +102,7 @@ TB_recoilFNC = {
 
         // Silencer
         private _muzzleHider = (toLower _silencer) in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"];
-        if (_mode == "Single" && {_muzzleHider}) then {ADD_einfluss,-20)};
+        if (_mode == "Single" && {_muzzleHider}) then {ADD(_einfluss,-20)};
         if (_silencer != "" && {!_muzzleHider}) then {ADD(_einfluss,-10)};
 
         // Grip
