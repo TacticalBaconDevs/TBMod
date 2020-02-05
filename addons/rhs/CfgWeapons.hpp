@@ -199,7 +199,6 @@ class CfgWeapons
     class launch_O_Titan_F;
     class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
     {
-        aimTransitionSpeed = 0.16; // 0.5
         mass = 176.37; // 152.46
     };
 
