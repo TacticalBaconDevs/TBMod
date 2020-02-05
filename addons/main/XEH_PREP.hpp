@@ -12,6 +12,7 @@ PREP(debug);
 PREP(deleteIfNotSeen);
 PREP(displayName);
 PREP(doorBreach);
+PREP(fastRope);
 PREP(firstJoin);
 PREP(forceRagdoll);
 PREP(garage);
