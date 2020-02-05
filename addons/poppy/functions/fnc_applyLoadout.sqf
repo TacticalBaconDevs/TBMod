@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
-	Created by https://github.com/BaerMitUmlaut/Poppy
+    Created by https://github.com/BaerMitUmlaut/Poppy
     Changed by http://tacticalbacon.de
 */
 params ["_unit", "_loadout"];
