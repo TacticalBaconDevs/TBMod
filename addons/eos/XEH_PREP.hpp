@@ -10,7 +10,6 @@ PREP(setCargo);
 PREP(shk_patrol);
 PREP(shk_buildingpos);
 PREP(transportUnload);
-PREP(fileExists);
 
 PREP_OTHERFOLDER(core,core);
 PREP_OTHERFOLDER(moduleZone,core);

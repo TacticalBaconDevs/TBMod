@@ -146,40 +146,55 @@
     if ((call BIS_fnc_admin) == 0 && isNull (getAssignedCuratorLogic player) && !((getPlayerUID player) in (call TB_lvl2))) exitWith {systemChat "Du hast keine Rechte für diesen Befehl!"};
     if (serverTime >= (20 * 60)) exitWith
     {
-        private _msg = format ["[BÖSE] %1 wollte %2min nach Serverrestart die Settings verändern", profileName, serverTime * 60];
+        private _msg = format ["[BÖSE] %1 wollte %2min nach Serverrestart die Settings verändern", profileName, serverTime / 60];
         ["[error pos]"+ _msg] remoteExecCall ["diag_log"];
         [_msg] remoteExecCall ["systemChat"];
+        ["TB_informAdminsAndZeus", _msg] call CBA_fnc_globalEvent;
     };
 
     [
-        "Settings laden",
-        [
-            [
-                "CHECKBOX",
-                ["Bist du sicher das du das darfst?", "Wenn du diese Aktion ohne triftigen Grund ausführst, wird das ernste Konsequenzen haben!"],
-                false,
-                true
-            ],
-            [
-                "LIST",
-                ["Settings", "Settings aus der Mission"],
-                [[], ["zur Gruppe", "zum Crashort", "nichts machen"], 0, 3],
-                true
-            ]
-        ],
+        2,
         {
-            params ["_values", "_args"];
-            _values params ["_id"];
-            _args params ["_uid", "_gear", "_pos", "_dir", "_arsenalType", "_rolle", "_group", "_team"];
+            (_this # 1) params ["_namespace", "_varName"];
+            (((["", "Hard", "WL", "WoMi"] apply {format ["stuff\defaultSettings%1.txt", _x]}) select {[_x] call FUNC(fileExists)}) apply {[_x, preprocessFile _x]}) select {_x # 1 != ""};
+        }, {
+            params ["_return"];
 
+            // TODO: ggf Hardcoded eine rein? ändere die aber zu oft ^^ ggf htmlload aus repo raus?
+            // TODO: profileNameSpace ist einen Option die ich aber nicht mag ;D
+            if (_return isEqualTo []) exitWith {systemChat "Die Mission hat keine Settings zum Laden!"};
 
-        },
-        {},
-        TB_disconnectCache select (_find select 0)
-    ] call zen_dialog_fnc_create;
+            [
+                "Settings laden",
+                [
+                    [
+                        "CHECKBOX",
+                        ["Bist du sicher das du das darfst?", "Wenn du diese Aktion ohne triftigen Grund ausführst, wird das ernste Konsequenzen haben!"],
+                        false,
+                        true
+                    ],
+                    [
+                        "LIST",
+                        ["Settings", "Settings aus der Mission"],
+                        [_return, _return apply {_x # 0}, 0, 4],
+                        true
+                    ]
+                ],
+                {
+                    params ["_values", "_args"];
+                    _values params ["_allowed", "_file"];
 
-    //systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, name (leader _unit)];
-    //["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, name (leader _unit)]] call CBA_fnc_globalEvent;
+                    if (!_allowed) exitWith {systemChat "Abbruch"};
+                    [_file # 1, ["mission", "server"] select isDedicated] call CBA_settings_fnc_import;
+
+                    systemChat format ["Settings aus '%1' wurden eingeladen!", _file # 0];
+                    ["TB_informAdminsAndZeus", ["%1 hat die Settings aus '%2' geladen!", profileName, _file # 0]] call CBA_fnc_globalEvent;
+                },
+                {},
+                []
+            ] call zen_dialog_fnc_create;
+        }
+    ] call FUNC(transfer);
 }, "all"] call CBA_fnc_registerChatCommand;
 
 if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
