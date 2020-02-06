@@ -232,7 +232,7 @@ class CfgPatches
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
-#include "TB_RscHTML.hpp"
+#include "configs\TB_RscHTML.hpp"
 
 // TODO: Test, setzt das ACE3 nicht schon?!? und was sind Vanilla Werte?
 // ACE MircoDagr: https://github.com/acemod/ACE3/blob/e5a15d200f44df5fccc0bc5575d18d80b35538dd/addons/microdagr/gui_controls.hpp#L48

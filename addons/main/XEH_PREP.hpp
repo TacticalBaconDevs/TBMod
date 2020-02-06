@@ -13,6 +13,7 @@ PREP(deleteIfNotSeen);
 PREP(displayName);
 PREP(doorBreach);
 PREP(fastRope);
+PREP(fileExists);
 PREP(firstJoin);
 PREP(forceRagdoll);
 PREP(garage);
@@ -29,6 +30,8 @@ PREP(recoilSystem);
 PREP(safe);
 PREP(shortcuts);
 PREP(teleport);
+PREP(transfer);
+PREP(transferVar);
 PREP(upDown);
 
 PREP_OTHERFOLDER(showGCAM,gcam);
