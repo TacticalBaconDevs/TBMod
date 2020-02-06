@@ -6,7 +6,7 @@
 if !(call FUNC(isTBMission)) exitWith {};
 
 addMissionEventHandler ["ExtensionCallback", {
-	params ["_name", "_function", "_data"];
+   params ["_name", "_function", "_data"];
 
     if (_name isEqualTo "TBModExtension") then
     {
@@ -15,6 +15,7 @@ addMissionEventHandler ["ExtensionCallback", {
         systemChat _msg;
         diag_log _msg;
 
-        //_function == "error" -> error hat extension, _data stacktrace
+        //_function == "error" -> wenn extension einen error hat, _data stacktrace
+        //_function == "task" -> status eines async tasks, _data = [ID, FNC, STATUS]
     };
 }];
