@@ -155,7 +155,6 @@
     [
         2,
         {
-            (_this # 1) params ["_namespace", "_varName"];
             (((["", "Hard", "WL", "WoMi"] apply {format ["stuff\defaultSettings%1.txt", _x]}) select {[_x] call FUNC(fileExists)}) apply {[_x, preprocessFile _x]}) select {_x # 1 != ""};
         }, {
             params ["_return"];
