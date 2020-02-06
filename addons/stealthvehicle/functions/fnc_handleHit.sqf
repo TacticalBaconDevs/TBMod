@@ -7,6 +7,8 @@ params ["_vehicle", "_source", "_damage", "_instigator"];
 
 if (!local _vehicle) exitWith {};
 
+_vehicle = vehicle _vehicle
+
 if ((_vehicle getVariable [QGVAR(activateStealth), false]) && 
      (_vehicle getVariable [QGVAR(deactivateStealthOnHit), false])) then 
 {

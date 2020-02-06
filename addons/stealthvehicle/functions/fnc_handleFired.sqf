@@ -7,6 +7,8 @@ params ["_vehicle", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_proje
 
 if (!local _vehicle) exitWith {};
 
+_vehicle = vehicle _vehicle
+
 if ((_vehicle getVariable [QGVAR(activateStealth), false]) && 
      (_vehicle getVariable [QGVAR(deactivateStealthOnFired), false])) then 
 {
