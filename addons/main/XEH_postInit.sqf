@@ -19,3 +19,6 @@ addMissionEventHandler ["ExtensionCallback", {
         //_function == "task" -> status eines async tasks, _data = [ID, FNC, STATUS]
     };
 }];
+
+// Extension laden
+diag_log format ["TBModExtension-callExtension: %1", "TBModExtension" callExtension "-"];
