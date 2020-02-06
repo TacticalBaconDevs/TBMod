@@ -462,8 +462,6 @@ private _dmr_munition = [
     "rhsusf_20Rnd_762x51_m62_Mag",
     "rhsusf_20Rnd_762x51_m993_Mag",
     "rhsusf_5Rnd_762x51_m118_special_Mag",
-    "rhsusf_5Rnd_762x51_m62_Mag",
-    "rhsusf_5Rnd_762x51_m993_Mag",
     "rhsusf_10Rnd_762x51_m118_special_Mag",
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
@@ -472,7 +470,7 @@ private _dmr_munition = [
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
     "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
     "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
-    "rhsusf_5Rnd_300winmag_xm2010"
+    "rhsusf_5Rnd_762x51_m118_special_Mag"
 ];
 
 private _rifle_munition = [
@@ -950,8 +948,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_sr25_ec_d",
             "rhs_weap_sr25_ec_wd",
             "rhs_weap_sr25_wd",
-            "rhs_weap_XM2010",
-            "rhs_weap_XM2010_d",
+            "rhs_weap_m24sws",
+            "rhs_weap_m24sws_d",
+            "rhs_weap_m24sws_wd",
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
@@ -972,8 +971,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "muzzle_snds_b",
             "muzzle_snds_b_snd_f",
             "rhsusf_acc_aac_762sdn6_silencer",
-            "rhsusf_acc_m2010s_wd",
-            "rhsusf_acc_m2010s_d",
+            "rhsusf_acc_m24_silencer_black",
+            "rhsusf_acc_m24_silencer_d",
+            "rhsusf_acc_m24_silencer_wd",
+            "rhsusf_acc_harris_swivel",
             // ### Visiere
             "optic_ams",
             "optic_ams_khk",
