@@ -21,17 +21,12 @@ class CfgPatches
         versionAct = "";
 
         units[] = {
-            "TB_flag_base",
             "TB_flag_rufnamen",
             "TB_flag_teleport",
-            "TB_flag_fob",
-            "TB_zeus_base",
-            "TB_zeus_nachschubAbwurf",
-            "TB_zeus_disablePath",
-            "TB_zeus_prioSichtbarkeit",
-            "TB_zeus_handleAsPlayerMedical",
-            "TB_zeus_applyLoadout",
-            "TB_zeus_handleAsPlayerMedical"
+            "TB_spezial_fobBase",
+            "TB_editor_gBriefing",
+            "TB_editor_kBriefing",
+            "TB_UGV_01_rcws_F"
         };
 
         requiredVersion = REQUIRED_VERSION;
@@ -229,6 +224,7 @@ class CfgPatches
 #include "configs\CfgMisc.hpp"
 #include "configs\ACE_detector.hpp"
 #include "configs\CfgSounds.hpp"
+#include "configs\CfgWeapons.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
