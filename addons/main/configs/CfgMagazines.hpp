@@ -28,4 +28,13 @@ class CfgMagazines
         picture = "\z\ace\addons\huntir\data\m_m1070_ca.paa";
         tracersEvery = 1; // 0
     };
+
+    class TB_Smoke_Grenades : 3Rnd_Smoke_Grenade_shell
+    {
+        ammo = "TB_G_40mm_Smoke";
+        displayName = "Smoke 40mm";
+        displayNameShort = "Smoke 40mm";
+
+        count = 10;
+    };
 };
