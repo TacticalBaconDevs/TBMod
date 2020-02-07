@@ -16,6 +16,11 @@ class CfgPatches
             "TBMod_skins"
         };
 
+        vehicles[] = {
+            "TB_Vehicles_MH6_SWAT",
+            "TB_Vehicles_L159_Albatros"
+        };
+
         addonRootClass = "TBMod_main";
     };
 };

@@ -592,4 +592,5 @@ class CfgVehicles
         audible = 4; // 18
         camouflage = 4; // 8
     };
+
 };

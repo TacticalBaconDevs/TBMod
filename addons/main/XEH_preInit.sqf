@@ -28,6 +28,26 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "76561198049880123" /* Eron */
 ]));
 
+// UGV Smoke Ammo
+[
+    "TB_UGV_01_rcws_F", // Wenn mehr Car oder Landvehicle
+    "fired",
+    {
+        params ["_vehicle", "", "", "", "_ammo", "", "_projectile", ""];
+
+        if (local _vehicle && _ammo isEqualTo "TB_G_40mm_Smoke" && !isNull _projectile) then
+        {
+            private _smokeColor = _vehicle getVariable [QGVAR(smoke), "SmokeShell"];
+            private _smoke = createVehicle [_smokeColor, [0,0,0] , [], 0, "CAN_COLLIDE"];
+            [_smoke, true] remoteExecCall ["hideObjectGlobal", 2];
+            _smoke attachTo [_projectile, [0,0,0]];
+        };
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
+
 // CBA Settings
 // https://github.com/CBATeam/CBA_A3/blob/master/addons/settings/fnc_init.sqf
 

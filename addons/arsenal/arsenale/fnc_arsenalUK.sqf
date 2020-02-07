@@ -161,14 +161,14 @@ private _allgemein_zweibein = [
 private _allgemein_raketenwerfer = [
     "TB_rhs_weap_M136_CS",
     "rhs_weap_M136_hedp",
-    "rhs_weap_M136_hp",
     "rhs_weap_m72a7",
+    "rhs_weap_M136",
     // ### Befestigungsschiene
     "rhs_acc_at4_handler",
     // ### Munition
     "rhs_m136_mag",
     "rhs_m136_hedp_mag",
-    "rhs_m136_hp_mag",
+    "rhs_m136_CS_mag",
     "rhs_m72a7_mag"
 ];
 

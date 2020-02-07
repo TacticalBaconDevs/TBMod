@@ -561,6 +561,14 @@ class CfgVehicles
         picture = "\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_oucamo.paa"; // "\A3\Supplies_F_Exp\Bags\Data\UI\Icon_B_Bergen_tna_CA.paa"
     };
 
+    class TB_backpacks_bergen_multitarn : B_Bergen_tna_F
+    {
+        displayName = "Bergen (Multitarn)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_multitarn.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_tna_CO.paa"
+        picture = "\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa"; // "\A3\Supplies_F_Exp\Bags\Data\UI\Icon_B_Bergen_tna_CA.paa"
+    };
+
     class B_Bergen_hex_F;
     class TB_backpacks_bergen_marpad_d : B_Bergen_hex_F
     {

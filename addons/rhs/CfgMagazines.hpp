@@ -366,7 +366,8 @@ class CfgMagazines
         mass = 60.61; // 120
     };
 
-    class rhs_m136_mag : CA_LauncherMagazine // M136 HEAT (CS)
+    class rhs_m136_mag;
+    class rhs_m136_CS_mag : rhs_m136_mag // M136 HEAT (CS)
     {
         descriptionshort = "Type: HEAT Confined Spaces"; // "Type: High Explosive Anti Tank"
         displayName = "M136 HEAT (CS)"; // "M136 HEAT"
@@ -435,7 +436,7 @@ class CfgMagazines
     {
         mass = 8.82; // 10
     };
-    
+
     class APERSMineDispenser_Mag : SLAMDirectionalMine_Wire_Mag // APERS Mine Dispenser
     {
         mass = 77.14; // 60
@@ -446,4 +447,5 @@ class CfgMagazines
     {
         mass = 22.04; // 20
     };
+
 };
