@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
-	Created by https://github.com/BaerMitUmlaut/Poppy
+    Created by https://github.com/BaerMitUmlaut/Poppy
     Changed by http://tacticalbacon.de
 
     see https://github.com/CBATeam/CBA_A3/blob/master/addons/settings/fnc_init.sqf
