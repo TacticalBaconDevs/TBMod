@@ -8,14 +8,15 @@ params ["_mode", "_params"];
 
 if (isNil "SSS_support" || isNil "SSS_support_fnc_transportDoFastrope") exitWith {systemChat "Simplex-Support-Services ist nicht vorhanden!"};
 
-private _ropeUnits = if (_mode != "checkUnits") then {["checkUnits", _params # 0] call FUNC(fastRope)} else {(_params # 0) getVariable ["SSS_fastropeUnits", []]};
+private _ropeUnits = if (_mode != "checkUnits") then {["checkUnits", [_params # 0]] call FUNC(fastRope)} else {(_params # 0) getVariable ["SSS_fastropeUnits", []]};
 
 switch (_mode) do
 {
     case "init":
     {
-        _params params ["_vehicle"];
-        if (!isRemoteExecuted) exitWith {["init", [_vehicle]] remoteExec [QFUNC(fastRope), 0]};
+        _params params ["_vehicle", ["_local", false]];
+
+        if (!_local) exitWith {["init", [_vehicle, true]] remoteExec [QFUNC(fastRope), 0]};
 
         if (_vehicle getVariable [QGVAR(fastRopeActions), false]) exitWith {};
         _vehicle setVariable [QGVAR(fastRopeActions), true];
@@ -101,19 +102,20 @@ switch (_mode) do
             private _vector = _centerOfMass vectorAdd [_x, 0, 0];
             _vector set [2, (0 boundingBoxReal _vehicle) # 0 # 2];
 
-            private _hook = createVehicle ["ace_fastroping_helper",_vehicle modelToWorldVisual _vector,[],0,"CAN_COLLIDE"];
+            private _hook = createVehicle ["ace_fastroping_helper", _vehicle modelToWorldVisual _vector, [], 0, "CAN_COLLIDE"];
             _hook allowDamage false;
+            _hook disableCollisionWith _vehicle;
             _hook attachTo [_vehicle, _vector];
 
-            private _end = createVehicle ["ace_fastroping_helper",_vehicle modelToWorldVisual _vector,[],0,"CAN_COLLIDE"];
+            private _end = createVehicle ["ace_fastroping_helper", _vehicle modelToWorldVisual _vector, [], 0, "CAN_COLLIDE"];
             _end allowDamage false;
 
             private _rope = ropeCreate [_hook, [0,0,0], _end, [0,0,0], 1];
-            ropeUnwind [_rope, 7, ((getPosVisual _vehicle) # 2) - 0.5];
+            ropeUnwind [_rope, 30, (getPosVisual _vehicle) # 2];
 
             _ropes pushBack [_hook, _rope, _end];
         }
-        forEach [0.8, -0.8];
+        forEach [0.7, -0.7];
 
         _vehicle setVariable [QGVAR(ropes), _ropes, true];
         true
@@ -152,7 +154,7 @@ switch (_mode) do
         if (_ropes isEqualTo []) exitWith
         {
             ["initRopes", _params] call FUNC(fastRope);
-            ["startFR", _params] call FUNC(fastRope);
+            [{["startFR", _this] call FUNC(fastRope)}, _params, 1] call CBA_fnc_waitAndExecute;
         };
 
         [
@@ -163,7 +165,7 @@ switch (_mode) do
                 [{
                     params ["_args", "_PFHID"];
                     _args params ["_vehicle", "_ropes"];
-                    private _fastropeUnits = ["checkUnits", _vehicle] call FUNC(fastRope);
+                    private _fastropeUnits = ["checkUnits", [_vehicle]] call FUNC(fastRope);
                     [_vehicle, "SSS_fastropeUnits", _fastropeUnits] call CBA_fnc_setVarNet;
 
                     if (_fastropeUnits isEqualTo [] || !alive _vehicle || !alive (driver _vehicle)) exitWith
@@ -172,17 +174,22 @@ switch (_mode) do
 
                         _vehicle setVariable ["SSS_fastropeUnits", nil, true];
 
-                        {
-                            _x params ["_hook", "_rope", "_end"];
+                        [{
+                            {
+                                _x params ["_hook"];
 
-                            _hook ropeDetach _rope;
-                            deleteVehicle _hook;
-                            _end ropeDetach _rope;
-                            deleteVehicle _end;
+                                detach _hook;
+                                //_hook setVelocity [0, 0, -10];
 
-                            [{ropeDestroy _this}, _rope, 15] call CBA_fnc_waitAndExecute;
-                        }
-                        forEach _ropes;
+                                [{
+                                    params ["_hook", "_rope", "_end"];
+                                    deleteVehicle _hook;
+                                    deleteVehicle _end;
+                                    ropeDestroy _rope;
+                                }, _x, 30] call CBA_fnc_waitAndExecute;
+                            }
+                            forEach _this;
+                        }, _ropes, 3] call CBA_fnc_waitAndExecute;
                     };
 
                     private _unit = selectRandom (_fastropeUnits select {!(_x getVariable ["SSS_fastroping", false])});
