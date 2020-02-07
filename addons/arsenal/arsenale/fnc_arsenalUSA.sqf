@@ -550,14 +550,15 @@ private _gepaeck_gross = [
     "B_Carryall_khk",
     "B_Carryall_mcamo",
     "B_Carryall_oli",
-    "B_Carryall_oucamo",
-    "B_Carryall_ghex_F"
+    "B_Carryall_oucamo"
 ];
 
 private _gepaeck_sehrgross = [
     "TB_backpacks_bergen_urban", // maximumLoad = 500; mass = 104; Quotient = 4.8
     "TB_backpacks_bergen_M81",
-    "TB_backpacks_bergen_desert"
+    "TB_backpacks_bergen_marpad_d",
+    "TB_backpacks_bergen_marpad_wd",
+    "TB_backpacks_bergen_multitarn"
 ];
 
 private _lrFunken = [
