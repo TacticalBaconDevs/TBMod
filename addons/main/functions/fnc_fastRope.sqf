@@ -6,15 +6,19 @@
 */
 params ["_mode", "_params"];
 
-if (isNil "SSS_support" || isNil "SSS_support_fnc_transportDoFastrope") exitWith {
-    systemChat "Simplex-Support-Services ist nicht vorhanden!";
-};
+if (isNil "SSS_support" || isNil "SSS_support_fnc_transportDoFastrope") exitWith {systemChat "Simplex-Support-Services ist nicht vorhanden!"};
+
+private _ropeUnits = if (_mode != "checkUnits") then {["checkUnits", _params # 0] call FUNC(fastRope)} else {(_params # 0) getVariable ["SSS_fastropeUnits", []]};
 
 switch (_mode) do
 {
     case "init":
     {
         _params params ["_vehicle"];
+        if (!isRemoteExecuted) exitWith {["init", [_vehicle]] remoteExec [QFUNC(fastRope), 0]};
+
+        if (_vehicle getVariable [QGVAR(fastRopeActions), false]) exitWith {};
+        _vehicle setVariable [QGVAR(fastRopeActions), true];
 
         private _actions = [];
         _actions pushBack [QGVAR(fastRopeAdd), "Add Group", "", {["addGroup", [_target, _player]] call FUNC(fastRope)}, {["canAddGroup", [_target, _player]] call FUNC(fastRope)}];
@@ -37,8 +41,6 @@ switch (_mode) do
     {
         _params params ["_vehicle", "_player"];
 
-        private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
-        _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle};
         private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
         private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
@@ -51,9 +53,9 @@ switch (_mode) do
         _params params ["_vehicle", "_group"];
 
         if (_group isEqualType objNull) then {_group = group _group};
-        private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
+
         _ropeUnits append (units _group);
-        _vehicle setVariable ["SSS_fastropeUnits", _ropeUnits select {alive _x && _x in _vehicle}, true];
+        [_vehicle, "SSS_fastropeUnits", _ropeUnits] call CBA_fnc_setVarNet;
 
         systemChat format ["Die Gruppe '%1' wurde zum Abseilen hinzugefügt!", groupId _group];
     };
@@ -62,8 +64,6 @@ switch (_mode) do
     {
         _params params ["_vehicle", "_player"];
 
-        private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
-        _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle};
         private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
         private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
@@ -76,20 +76,15 @@ switch (_mode) do
         _params params ["_vehicle", "_group"];
 
         if (_group isEqualType objNull) then {_group = group _group};
-        private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
-        _ropeUnits = _ropeUnits select {!((group _x) isEqualTo _group) && alive _x && _x in _vehicle};
-        _vehicle setVariable ["SSS_fastropeUnits", _ropeUnits, true];
+
+        [_vehicle, "SSS_fastropeUnits", _ropeUnits select {!((group _x) isEqualTo _group)}] call CBA_fnc_setVarNet;
 
         systemChat format ["Die Gruppe '%1' wurde vom Abseilen entfernt!", groupId _group];
     };
 
     case "showUnits":
     {
-        _params params ["_vehicle"];
-
-        private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
-        _ropeUnits = (_ropeUnits select {alive _x && _x in _vehicle}) apply {name _x};
-        systemChat format ["Abgeseilt werden: %1", _ropeUnits joinString ", "];
+        systemChat format ["Abgeseilt werden: %1", (_ropeUnits apply {name _x}) joinString ", "];
     };
 
     case "initRopes":
@@ -128,14 +123,25 @@ switch (_mode) do
     {
         _params params ["_vehicle", "_player"];
 
-        private _ropeUnits = _vehicle getVariable ["SSS_fastropeUnits", []];
-        _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle};
         private _height = (getPosVisual _vehicle) # 2;
         private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
         private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
         (driver _vehicle == _player || currentPilot _vehicle == _player || gunner _vehicle == _player || commander _vehicle == _player && _player in _copilots)
             && !(_ropeUnits isEqualTo []) && _height < 50 && _height > 5 && speed _vehicle < 10
+    };
+
+    case "checkUnits":
+    {
+        _params params ["_vehicle"];
+
+        private _copilotTurrets = (allTurrets _vehicle) select {getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0};
+        private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
+
+        _ropeUnits = _ropeUnits select {alive _x && _x in _vehicle && !(driver _vehicle == _x || currentPilot _vehicle == _x || gunner _vehicle == _x || commander _vehicle == _x && _x in _copilots)};
+        [_vehicle, "SSS_fastropeUnits", _ropeUnits] call CBA_fnc_setVarNet;
+
+        _ropeUnits
     };
 
     case "startFR":
@@ -157,9 +163,10 @@ switch (_mode) do
                 [{
                     params ["_args", "_PFHID"];
                     _args params ["_vehicle", "_ropes"];
-                    private _fastropeUnits = (_vehicle getVariable ["SSS_fastropeUnits",[]]) select {alive _x};
+                    private _fastropeUnits = ["checkUnits", _vehicle] call FUNC(fastRope);
+                    [_vehicle, "SSS_fastropeUnits", _fastropeUnits] call CBA_fnc_setVarNet;
 
-                    if (_fastropeUnits isEqualTo [] || !alive _vehicle || !alive driver _vehicle) exitWith
+                    if (_fastropeUnits isEqualTo [] || !alive _vehicle || !alive (driver _vehicle)) exitWith
                     {
                         [_PFHID] call CBA_fnc_removePerFrameHandler;
 
@@ -173,7 +180,7 @@ switch (_mode) do
                             _end ropeDetach _rope;
                             deleteVehicle _end;
 
-                            [{ropeDestroy _this}, _rope, 10] call CBA_fnc_waitAndExecute;
+                            [{ropeDestroy _this}, _rope, 15] call CBA_fnc_waitAndExecute;
                         }
                         forEach _ropes;
                     };
@@ -184,7 +191,7 @@ switch (_mode) do
                     _unit setVariable ["SSS_fastroping", true, true];
 
                     // Nichtangreifbar beim Abseilen
-                    [_this, true] remoteExecCall ["setCaptive", _this];
+                    [_unit, true] remoteExecCall ["setCaptive", _unit];
                     [
                         {!(_this getVariable ["SSS_fastroping", false])},
                         {[_this, false] remoteExecCall ["setCaptive", _this]},
