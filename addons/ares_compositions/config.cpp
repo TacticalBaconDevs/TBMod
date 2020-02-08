@@ -21,4 +21,7 @@ class CfgPatches
 };
 
 // Configs
-#include "compositions.hpp"
+class CfgGroups
+{
+	#include "compositions.hpp"
+};
