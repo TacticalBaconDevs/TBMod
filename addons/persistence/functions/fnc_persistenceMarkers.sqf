@@ -34,6 +34,8 @@ if (_save) then
 }
 else // load
 {
+    (allMapMarkers select {(_x select [0, 13]) == "_USER_DEFINED"}) call CBA_fnc_deleteEntity;
+    (allMapMarkers select {private _marker = _x; BLACKLIST findIf {([toLower _marker, toLower _x] call CBA_fnc_find) != -1} == -1}) call CBA_fnc_deleteEntity;
     {
         _x params ["_marker", "_pos", "_color", "_size", "_type", "_alpha", "_brush", "_dir", "_shape", "_text"];
 

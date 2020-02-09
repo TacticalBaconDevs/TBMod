@@ -13,9 +13,12 @@ class CfgPatches
             "TBMod_main",
             "rhsusf_main",
             "rhsusf_main_loadorder",
-            "TBMod_skins",
-            "ace_advanced_ballistics",
-            "ace_compat_rhs_usf3"
+            "TBMod_skins"
+        };
+
+        vehicles[] = {
+            "TB_Vehicles_MH6_SWAT",
+            "TB_Vehicles_L159_Albatros"
         };
 
         addonRootClass = "TBMod_main";

@@ -19,7 +19,7 @@ if (_mouseOverType != "OBJECT") then
 }
 else
 {
-    _mouseOverUnit setVariable ["TBMod_Building_kranWagen", true, true];
+    _mouseOverUnit setVariable [QGVAR(kranWagen), true, true];
 };
 
 true

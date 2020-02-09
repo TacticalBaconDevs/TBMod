@@ -8,13 +8,13 @@ PREP(getSavedNamesFromServer);
 PREP(modulePersistenceEDEN);
 PREP(modulePersistenceZeus);
 PREP(persistence);
-PREP(persistenceBuilding);
 PREP(persistenceEDEN);
 PREP(persistenceMarkers);
 PREP(persistenceObjects);
 PREP(persistencePlayers);
 PREP(persistenceVehicles);
+PREP(persistenceTasks);
 PREP(transfer);
+PREP(transferManager);
 PREP(vector2Eden);
 PREP(ping);
-

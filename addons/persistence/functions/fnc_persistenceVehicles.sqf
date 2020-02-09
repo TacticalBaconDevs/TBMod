@@ -10,6 +10,11 @@ params [
 
 if (_save) then
 {
+    // sorting
+    _vehiclearray = (vehicles select {_x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []});
+    _vehiclearray = _vehiclearray apply {[(getPosASL _X) select 2, _x]};
+    _vehiclearray sort true;
+    _vehiclearray = _vehiclearray apply {_x select 1};
     {
         private _veh = _x;
 
@@ -47,7 +52,7 @@ if (_save) then
             _storagearray pushBack _array;
         };
     }
-    forEach (vehicles select {_x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []});
+    forEach _vehiclearray;
 }
 else // load
 {
@@ -98,8 +103,9 @@ else // load
             _unit moveInAny _vehicle;
         }
         forEach (_crew select 1);
-
-        _vehicle enableSimulationGlobal _sim;
+        if (!(_vehicle in TB_persistence_tempSimulationDisabled)) then {
+            _vehicle enableSimulationGlobal _sim;
+        };
     }
     forEach _storagearray;
 };

@@ -59,7 +59,7 @@ class CfgMagazines
     class CA_LauncherMagazine;
     class rhs_fgm148_magazine_AT : CA_LauncherMagazine
     {
-        mass = 165.34; // 286.88
+        mass = 159.79; // 286.88
     };
 
     class rhs_mag_M433_HEDP;
@@ -350,11 +350,13 @@ class CfgMagazines
 
     class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
     {
+        initSpeed = 290; // 230
         mass = 88.16; // 72.77
     };
 
     class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
     {
+        initSpeed = 290; // 255
         mass = 44.08; // 68.36
     };
 
@@ -364,7 +366,8 @@ class CfgMagazines
         mass = 60.61; // 120
     };
 
-    class rhs_m136_mag : CA_LauncherMagazine // M136 HEAT (CS)
+    class rhs_m136_mag;
+    class rhs_m136_CS_mag : rhs_m136_mag // M136 HEAT (CS)
     {
         descriptionshort = "Type: HEAT Confined Spaces"; // "Type: High Explosive Anti Tank"
         displayName = "M136 HEAT (CS)"; // "M136 HEAT"
@@ -410,4 +413,39 @@ class CfgMagazines
         displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
         tracersEvery = 1; // 5
     };
+
+    class CA_Magazine;
+    class SatchelCharge_Remote_Mag : CA_Magazine // M183 Demolition Charge Assembly
+    {
+        mass = 66.12; // 80
+        indirectHitRange = 14; // 5
+    };
+
+    class DemoCharge_Remote_Mag : SatchelCharge_Remote_Mag // M112 Demolition Block
+    {
+        mass = 11.02; // 20
+    };
+
+    class ATMine_Range_Mag;
+    class SLAMDirectionalMine_Wire_Mag : SatchelCharge_Remote_Mag // M4A1 SLAM
+    {
+        mass = 22.04; // 20
+    };
+
+    class AMP_Breaching_Charge_Mag : SLAMDirectionalMine_Wire_Mag // Breaching Charge
+    {
+        mass = 8.82; // 10
+    };
+
+    class APERSMineDispenser_Mag : SLAMDirectionalMine_Wire_Mag // APERS Mine Dispenser
+    {
+        mass = 77.14; // 60
+    };
+
+
+    class ClaymoreDirectionalMine_Remote_Mag : CA_Magazine // Claymore
+    {
+        mass = 22.04; // 20
+    };
+
 };

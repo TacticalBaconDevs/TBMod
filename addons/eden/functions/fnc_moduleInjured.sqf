@@ -64,7 +64,8 @@ if (!is3DEN && {_mode == "init"}) then
                     private _array = [0, 0, 0, 0, 0, 0, 0.5 + random 1, 40 + random 20, 60 + random 20, _bewusstlos];
                     _array set [["head", "body", "hand_r", "hand_l", "leg_r", "leg_l"] find (selectRandom _wundOrte), 1];
 
-                    [_unit, selectRandom _schadenTyp, _array] spawn Achilles_fnc_setACEInjury;
+                    //TODO: [_unit, selectRandom _schadenTyp, _array] spawn A chille s_fnc_setACEInjury;
+                    systemChat "Injured Module derzeit deaktiviert!";
                 };
             }
             forEach _syncObjs;

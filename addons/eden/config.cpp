@@ -19,9 +19,11 @@ class CfgPatches
             QGVAR(atmoMortarSuppression),
             QGVAR(atmoFireSuppression),
             QGVAR(atmoTarget),
+            QGVAR(atmoCarAlarm),
             QGVAR(radio),
             QGVAR(flares),
             QGVAR(injured),
+            QGVAR(lockDoors),
             QGVAR(clearPlaceables)
         };
 

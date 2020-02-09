@@ -1,0 +1,29 @@
+branches:
+  - shukarisTests
+  - master
+
+name-template: 'Version $NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+
+categories:
+  - title: Features/Enhancement
+    label: kind/enhancement
+  - title: Bugfixes
+    label: kind/bug
+
+exclude-labels:
+  - 'ignore changelog'
+
+change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
+
+template: |
+  ## Changes
+  $CHANGES
+  
+  ## Contributors
+  $CONTRIBUTORS
+  
+#replacers:
+  # Category titles
+  #- search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED|TRANSLATIONS):\*\*)/g'
+  #  replace: '$1'

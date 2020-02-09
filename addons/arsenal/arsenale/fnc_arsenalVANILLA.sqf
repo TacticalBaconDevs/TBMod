@@ -35,7 +35,7 @@ private _allgemein = [
     "16Rnd_9x21_green_Mag",
     "TB_mag_taser",
     "11Rnd_45ACP_Mag",
-    
+
     // Rucksäcke
     "ACE_TacticalLadder_Pack",
     "B_Kitbag_cbr",
@@ -212,7 +212,7 @@ private _LR = [
     "OPXT_multicam_1523",
     "OPXT_wht_1523",
 
-    // Vanilla 
+    // Vanilla
     "B_RadioBag_01_mtp_F",
     "B_RadioBag_01_black_F",
     "B_RadioBag_01_tropic_F",
@@ -325,7 +325,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _allgemein_WaffeGL +
         [
-        
+
         ]
     };
 
@@ -400,7 +400,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "200Rnd_556x45_Box_Tracer_F",
             "200Rnd_556x45_Box_Tracer_Red_F",
             "20Rnd_762x51_Mag",
-            
+
             // AT
             "Vorona_HEAT",
             "Vorona_HE",
@@ -427,9 +427,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "H_PilotHelmetFighter_B",
             "H_CrewHelmetHeli_B",
             "H_PilotHelmetFighter_I_E",
-            
+
             // Goggles
-            "G_Aviator",
+            //"G_Aviator",
 
             // Uniforms
             "U_B_HeliPilotCoveralls",

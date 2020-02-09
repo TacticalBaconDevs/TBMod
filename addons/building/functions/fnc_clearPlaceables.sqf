@@ -11,17 +11,18 @@ _range = (_range - 1) max 5;
 
 [
     _range * 2, // TODO: Zeit pro Gegenstand einstellbar
-    [_target],
+    [_target, _range],
     {
         (_this select 0) params ["_target"];
 
         deleteVehicle _target;
+        if (!isNil "_target" && {!isNull _target}) then {_target setDamage [1, false]};
     },
     {},
     "Räumen",
     {
-        (_this select 0) params ["_target"];
-        ACE_player distance _target < 5
+        (_this select 0) params ["_target", "_range"];
+        ACE_player distance _target < _range
     },
     ["isnotdead", "isnotinside", "isnothandcuffed", "isnotsurrendering", "isnotswimming", "isnotonladder", "isnotunconscious", "isnotrefueling", "isnotescorting", "isnotdragging", "isnotsitting"]
 ] call ace_common_fnc_progressBar;

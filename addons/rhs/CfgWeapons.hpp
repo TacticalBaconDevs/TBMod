@@ -95,6 +95,18 @@ class CfgWeapons
         picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
     };
 
+    // Skin Weste IS
+    class rhs_6sh92;
+    class TB_vest_IS_01: rhs_6sh92
+    {
+        displayName = "ISIS Weste1 (Black)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\vests\TB_vest_IS_01A.paa),
+            QPATHTOEF(skins,pictures\vests\TB_vest_IS_01B.paa)
+        };
+    };
+
     class RocketPods;
     class rhs_weap_FFARLauncher : RocketPods // Hydra (M151 HEPD)
     {
@@ -150,10 +162,43 @@ class CfgWeapons
         hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_black_helmet_SWAT_01.paa)};
     };
 
+    //Skin Sanihelm Delta Force
+    class TB_helmet_Sani_A_Black: rhsusf_opscore_bk_pelt
+    {
+        displayName = "Sani Delta Force";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniA01.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniA02.paa)};
+    };
+
+    //Skin Sanihelm USMC Urban
+    class rhsusf_opscore_mar_fg_pelt;
+    class TB_helmet_Sani_B_Grey: rhsusf_opscore_mar_fg_pelt
+    {
+        displayName = "Sani USMC Urban";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB01.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB02.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB03.paa)};
+        picture = "\rhsusf\addons\rhsusf_inventoryicons\data\headgear\rhsusf_opscore_mar_ut_pelt_ca.paa";
+    };
+
+    //Skin Sanihelm Ranger Green
+    class TB_helmet_Sani_C_Green: rhsusf_opscore_mar_fg_pelt
+    {
+        displayName = "Sani Ranger Green";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC01.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC02.paa),
+            QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC03.paa)};
+    };
+
     class launch_O_Titan_F;
     class rhs_weap_fgm148: launch_O_Titan_F // FGM-148 Javelin
     {
-        aimTransitionSpeed = 0.16; // 0.5
         mass = 176.37; // 152.46
     };
 
@@ -170,15 +215,27 @@ class CfgWeapons
         mass = 137.75; // 38.4
     };
 
-    class rhs_weap_M136;
+    class rhs_weap_M136: Launcher_Base_F // M136 HEAT
+    {
+        aimTransitionSpeed = 0.50; // 0.75
+        mass = 147.67; // 30.3
+    };
+
+    class rhs_weap_M136_hedp: rhs_weap_M136 // M136 HEDP
+    {
+        aimTransitionSpeed = 0.65; // 0.75
+        mass = 147.67; // 30.3
+    };
+
     class TB_rhs_weap_M136_CS: rhs_weap_M136 // M136 HEAT (CS)
     {
+        aimTransitionSpeed = 0.22; // 0.75
         ace_overpressure_angle = 20; // 60
         ace_overpressure_range = 0.75; // 10
-        aimTransitionSpeed = 0.36; // 0.75
         descriptionShort = "Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot Anti-Tank Confined Spaces"; // ""Rocket launcher<br/>Caliber: 84mm<br/>Type: Single-shot Anti-Tank";"
         displayName = "M136 CS (HEAT)"; // "M136 (HEAT)"
-        mass = 143.26; // 30.3
+        magazines[] = {"rhs_m136_mag"}; // "rhs_m136_mag"
+        mass = 187.34; // 30.3
     };
 
     class rhs_weap_M136_used;
@@ -186,19 +243,7 @@ class CfgWeapons
     {
         descriptionShort = "Used rocket launcher<br/>Caliber: 84mm<br/>Type: Used Single-shot Anti-Tank Confined Spaces"; // "Used rocket launcher<br/>Caliber: 84mm<br/>Type: Used launcher tube";
         displayName = "M136 CS HEAT (Used)"; // "M136 HEAT (used)"
-        mass = 143.26; // 30.3
-    };
-
-    class rhs_weap_M136_hedp: rhs_weap_M136 // M136 HEDP
-    {
-        aimTransitionSpeed = 0.65; // 0.75
-        mass = 82.65; // 30.3
-    };
-
-    class rhs_weap_M136_hp: rhs_weap_M136 // M136 HP
-    {
-        aimTransitionSpeed = 0.36; // 0.75
-        mass = 148.77; // 30.3
+        mass = 107.99; // 30.3
     };
 
     class rhs_weap_m72a7: rhs_weap_M136 // M72A7
@@ -273,9 +318,14 @@ class CfgWeapons
         aimTransitionSpeed = 0.26; // 0.5
     };
 
-    class ACE_Clacker;
+    class ACE_ItemCore;
+    class ACE_Clacker: ACE_ItemCore // M57 Firing Device
+    {
+        mass = 7.71; // 3
+    };
+
     class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
     {
-        mass = 16; // 3
+        mass = 27.55; // 3
     };
 };
