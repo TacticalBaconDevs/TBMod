@@ -129,7 +129,6 @@ class CfgVehicles
                     class allgemeinMortar
                     {
                         displayName = "Mörser Kisten";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
 
                         ADD_SUPPLY(Mörserkit,TB_supply_all_mortar);
                         ADD_SUPPLY(Mörser Munnition,TB_supply_all_mortarAmmo);
@@ -143,7 +142,6 @@ class CfgVehicles
                     class allgemeinBaukisten
                     {
                         displayName = "Baukisten und Kits";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
 
                         ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
                         ADD_SUPPLY(GMGKit,TB_supply_all_gmg);
@@ -159,12 +157,13 @@ class CfgVehicles
                     displayName = "USA";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
-
+                    
+                    ADD_SUPPLY(Notfall,TB_supply_usa_notfall);
+                    ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
+                    
                     class USAMunition
                     {
                         displayName = "Muntions Kisten";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
                         ADD_SUPPLY(Munition,TB_supply_usa_ammo);
                         ADD_SUPPLY(KleinMunition,TB_supply_usa_ammoSmall);
@@ -176,8 +175,6 @@ class CfgVehicles
                     class USAWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
                         ADD_SUPPLY(Werfer,TB_supply_usa_launcher);
                         ADD_SUPPLY(WerferMunition,TB_supply_usa_launcherAmmo);
@@ -185,9 +182,6 @@ class CfgVehicles
                         ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
                         ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
                     };
-
-                    ADD_SUPPLY(Notfall,TB_supply_usa_notfall);
-                    ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
                 };
 
                 class uk
@@ -196,11 +190,12 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
+                    ADD_SUPPLY(Notfall,TB_supply_uk_notfall);
+                    ADD_SUPPLY(Nacht Kiste,TB_supply_uk_night);
+                    
                     class UKMunition
                     {
                         displayName = "Munitions Kisten";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
                         ADD_SUPPLY(Munition,TB_supply_uk_ammo);
                         ADD_SUPPLY(Klein Munition,TB_supply_uk_ammoSmall);
@@ -212,8 +207,6 @@ class CfgVehicles
                     class UKWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
                         ADD_SUPPLY(Werfer,TB_supply_uk_launcher);
                         ADD_SUPPLY(Igla Munition,TB_supply_uk_IglaAmmo);
@@ -225,21 +218,15 @@ class CfgVehicles
                     class UKFahrzeuge
                     {
                         displayName = "Fahrzeug Kisten";
-                        exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                        condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                        ADD_SUPPLY("9x Fahrzeug Magazine 12,7",TB_supply_uk_vehicles127);
-                        ADD_SUPPLY("9x Fahrzeug Magazine 7,62",TB_supply_uk_vehicles762);
-                        ADD_SUPPLY("5x Fahrzeug Magazine GMG",TB_supply_uk_vehiclesGMG);
-                        ADD_SUPPLY("9x Warrior Magazine APDS",TB_supply_uk_warriorAPDS);
-                        ADD_SUPPLY("9x Warrior Magazine HE",TB_supply_uk_warriorHE);
-                        ADD_SUPPLY("2x Warrior Magazine 800 MG",TB_supply_uk_warriorMG);
+                        ADD_SUPPLY(9x Fahrzeug Magazine 12.7,TB_supply_uk_vehicles127);
+                        ADD_SUPPLY(9x Fahrzeug Magazine 7.62,TB_supply_uk_vehicles762);
+                        ADD_SUPPLY(5x Fahrzeug Magazine GMG,TB_supply_uk_vehiclesGMG);
+                        ADD_SUPPLY(9x Warrior Magazine APDS,TB_supply_uk_warriorAPDS);
+                        ADD_SUPPLY(9x Warrior Magazine HE,TB_supply_uk_warriorHE);
+                        ADD_SUPPLY(2x Warrior Magazine 800 MG,TB_supply_uk_warriorMG);
                     };
-
-                    ADD_SUPPLY(Notfall,TB_supply_uk_notfall);
-                    ADD_SUPPLY(Nacht Kiste,TB_supply_uk_night);
                 };
-
 
                 class bw
                 {
