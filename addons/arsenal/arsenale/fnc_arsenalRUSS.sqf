@@ -114,7 +114,7 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3",
     "rhsusf_acc_g33_t1",
     "ACE_optic",
-    "optic_MRCO_MRCO_2D",
+    "optic_mrco",
     "rhsusf_acc_eotech_xps3"
 ];
 
@@ -261,11 +261,13 @@ private _gepaeck_sehrgross = [
     "TB_backpacks_bergen_marpad_d",
     "TB_backpacks_bergen_marpad_wd",
     "TB_backpacks_bergen_multitarn"
-]
+];
 
 private _rifle_munition = [
     "rhs_30Rnd_762x39mm_polymer",
-    "rhs_30Rnd_762x39mm_polymer_tracer"
+    "rhs_30Rnd_762x39mm_polymer_tracer",
+    "rhs_10Rnd_762x54mmR_7N1",
+    "ACE_10Rnd_762x54_Tracer_mag"
 ];
 
 private _LR = [
@@ -310,7 +312,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_ML_6sh92_radio",
 
             // Ferngläser
-            "rhs_pdu4"
+            "rhs_pdu4",
+            "Laserdesignator"
         ]
     };
 
@@ -346,9 +349,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _pilot_munition +
         _gepaeck_mittel +
         _LR +
         [
+            // Gewehr
+            "rhs_weap_pp2000",
+
             // Uniform
             "rhs_uniform_df15",
             "rhs_uniform_df15_tan",
@@ -450,7 +457,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_6sh116_vog",
             "rhs_6b13_Flora_6sh92_vog",
             "rhs_6b23_6sh92_vog",
-            "rhs_6b23_ML_6sh92_vog"
+            "rhs_6b23_ML_6sh92_vog",
+
+            // Ferngläser
+            "rhs_pdu4"
         ]
     };
 
@@ -462,10 +472,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _pilot_munition +
         _allgemein_magazine +
-        _pilot_munition +
         _mg_munition +
         _grenadier_munition +
-        _pilot_munition +
         _sniper_munition +
         _aaat_munition +
         [
@@ -491,8 +499,21 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_vest_pistol_holster",
             "rhs_6sh46",
 
+            // Großes LR mit viel Platz
+
+            "OPXT_scorpion_210",
+            "OPXT_pen_grz_210",
+            "OPXT_ogao_210",
+            "OPXT_oga_210",
+            "OPXT_multicamt_210",
+            "OPXT_multicam_210",
+
             // Items
-            "ToolKit"
+            "ToolKit",
+
+            // Ferngläser
+            "rhs_pdu4",
+            "Laserdesignator"
         ]
     };
 
@@ -529,7 +550,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Spetznas
             "rhs_weap_vss",
-            "rhs_10rnd_9x39mm_SP6"
+            "rhs_10rnd_9x39mm_SP6",
+
+            // Ferngläser
+            "rhs_pdu4"
         ]
     };
 
@@ -540,6 +564,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_handfeuerwaffen +
+        _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _sniper_munition +
@@ -563,6 +588,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b23_digi_sniper",
             "rhs_6b23_sniper",
 
+            // Ferngläser
+            "rhs_pdu4",
+            "Laserdesignator",
+
             // Items
             "ACE_Tripod",
             "ACE_Kestrel4500",
@@ -580,6 +609,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
         _allgemein_handfeuerwaffen +
+        _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _sniper_munition +
@@ -594,6 +624,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weste
             "rhs_6b23_digi_sniper",
             "rhs_6b23_sniper",
+
+            // Ferngläser
+            "rhs_pdu4",
+            "Laserdesignator",
 
             // Items
             "ACE_ATragMX",
