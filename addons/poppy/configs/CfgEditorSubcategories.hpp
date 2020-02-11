@@ -6,6 +6,6 @@ class CfgEditorSubcategories
 {
     class EdSubcat_TB_Poppy
     {
-        displayName = "#TacticalBacon - Poppy";
+        displayName = "Poppy";
     };
 };

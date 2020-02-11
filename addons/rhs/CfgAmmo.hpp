@@ -474,26 +474,45 @@ class CfgAmmo
     class RocketBase;
     class rhs_ammo_maaws_HE : RocketBase // FFV441 HE MAAWS
     {
-        indirectHitRange = 18.7; // 11
+        indirectHitRange = 15; // 11
         suppressionRadiusHit = 65; // 30
     };
 
-    class rhs_ammo_M136_penetrator;
-    class rhs_ammo_M136_hp_penetrator : rhs_ammo_M136_penetrator // M136 HP Submunition
+    class rhs_ammo_M136_rocket : RocketBase // M136 HEAT
     {
-        hit = 377; // 290
-        caliber = 47.58; // 36.6667
+        hit = 20; // 235
     };
 
-    class rhs_ammo_M136_hedp_rocket;
+    class rhs_ammo_M136_hedp_rocket : rhs_ammo_M136_rocket // M136 HEDP
+    {
+        hit = 20; // 235
+    };
+
+    class rhs_ammo_M136_penetrator : rhsusf_ammo_basic_penetrator // M136 HEAT CS Submunition
+    {
+        hit = 80; // 290
+        caliber = 20; // 26.6667
+    };
+
+    class rhs_ammo_M136_hp_penetrator : rhs_ammo_M136_penetrator // M136 HEAT Submunition
+    {
+        hit = 90; // 290
+        caliber = 20; // 36.6667
+    };
+
+    class rhs_ammo_M136_hedp_penetrator : rhs_ammo_M136_penetrator // M136 HEDP Submunition
+    {
+        hit = 70; // 235
+    };
+
     class rhs_ammo_m72a7_rocket : rhs_ammo_M136_hedp_rocket // M72A7
     {
         CraterEffects = "ArtyShellCrater"; // "ATRocketCrater"
         explosionEffects = "MortarExplosion"; // "ATRocketExplosion"
         explosive = 1; // 0.65
-        indirectHit = 65; // 19
-        indirectHitRange = 18.7; // 4.1
-        hit = 75; // 145
+        indirectHit = 30; // 19
+        indirectHitRange = 15; // 4.1
+        hit = 50; // 145
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
     };

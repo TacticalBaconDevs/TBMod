@@ -109,7 +109,9 @@ private _allgemein = [
     "rhs_mag_m67",
     "B_IR_Grenade",
     // ### Sprengstoff
-    "AMP_Breaching_Charge_Mag"
+    "AMP_Breaching_Charge_Mag",
+    // ### Fallschirme
+    "B_Parachute"
 ];
 
 private _allgemein_magazine = [
@@ -234,18 +236,22 @@ private _allgemein_zweibein = [
     "rhsusf_acc_grip3_tan"
 ];
 
-private _allgemein_raketenwerfer = [
+private _AT_raketenwerfer = [
     "TB_rhs_weap_M136_CS",
-    "rhs_weap_M136_hedp",
-    "rhs_weap_M136_hp",
-    "rhs_weap_m72a7",
+    "rhs_weap_M136",
     // ### Befestigungsschiene
     "rhs_acc_at4_handler",
     // ### Munition
     "rhs_m136_mag",
-    "rhs_m136_hedp_mag",
-    "rhs_m136_hp_mag",
-    "rhs_m72a7_mag"
+    "rhs_m136_CS_mag"
+];
+
+private _HEDP_raketenwerfer = [
+    "rhs_weap_m72a7",
+    "rhs_weap_M136_hedp",
+    // ### Munition
+    "rhs_m72a7_mag",
+    "rhs_m136_hedp_mag"
 ];
 
 private _allgemein_handfeuerwaffen = [
@@ -456,8 +462,6 @@ private _dmr_munition = [
     "rhsusf_20Rnd_762x51_m62_Mag",
     "rhsusf_20Rnd_762x51_m993_Mag",
     "rhsusf_5Rnd_762x51_m118_special_Mag",
-    "rhsusf_5Rnd_762x51_m62_Mag",
-    "rhsusf_5Rnd_762x51_m993_Mag",
     "rhsusf_10Rnd_762x51_m118_special_Mag",
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
@@ -465,7 +469,8 @@ private _dmr_munition = [
     "rhs_mag_20Rnd_SCAR_762x51_m61_ap",
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
     "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
-    "rhs_mag_20Rnd_SCAR_762x51_mk316_special"
+    "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
+    "rhsusf_5Rnd_762x51_m118_special_Mag"
 ];
 
 private _rifle_munition = [
@@ -522,7 +527,6 @@ private _gepaeck_klein = [
     "rhsusf_falconii_mc",
     "B_AssaultPack_blk",
     "B_AssaultPack_rgr",
-    "B_Parachute",
     "B_FieldPack_cbr",              // maximumLoad = 96; mass = 12; Quotient = 8
     "B_FieldPack_khk",
     "B_FieldPack_blk",
@@ -549,14 +553,15 @@ private _gepaeck_gross = [
     "B_Carryall_khk",
     "B_Carryall_mcamo",
     "B_Carryall_oli",
-    "B_Carryall_oucamo",
-    "B_Carryall_ghex_F"
+    "B_Carryall_oucamo"
 ];
 
 private _gepaeck_sehrgross = [
     "TB_backpacks_bergen_urban", // maximumLoad = 500; mass = 104; Quotient = 4.8
     "TB_backpacks_bergen_M81",
-    "TB_backpacks_bergen_desert"
+    "TB_backpacks_bergen_marpad_d",
+    "TB_backpacks_bergen_marpad_wd",
+    "TB_backpacks_bergen_multitarn"
 ];
 
 private _lrFunken = [
@@ -592,7 +597,8 @@ private _items = [];
 // _allgemein_befestigungsschiene    - Laser/Lampe usw
 // _allgemein_geschuetzzubehoer      - Schalldämpfer usw
 // _allgemein_zweibein               - Zweibeine
-// _allgemein_raketenwerfer          - einmal Raketenwerfer
+// _AT_raketenwerfer                 - einmal AT Raketenwerfer
+// _HEDP_raketenwerfer               - einmal HEDP Raketenwerfer
 // _allgemein_handfeuerwaffen        - Pistolen
 // _allgemein_uniformen              - Uniformen
 // _allgemein_westen                 - Westen
@@ -626,6 +632,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _lrFunken +
+        _HEDP_raketenwerfer +
         [
             // Weste
             "rhsusf_iotv_ocp_Squadleader",
@@ -812,7 +819,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -839,7 +847,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_plateframe_machinegunner",
 
             // Ferngläser
-            "ACE_Vector"
+            "ACE_Vector",
+
+            // Waffen
+            "TB_vz99_carryWeapon"
         ]
     };
 
@@ -920,13 +931,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
-        _gepaeck_klein +
-        _moerser_munition +
+        _gepaeck_mittel +
         _dmr_munition +
         _rifle_munition +
         [
@@ -940,7 +949,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_sr25_ec_d",
             "rhs_weap_sr25_ec_wd",
             "rhs_weap_sr25_wd",
-
+            "rhs_weap_m24sws",
+            "rhs_weap_m24sws_d",
+            "rhs_weap_m24sws_wd",
             // Weste
             "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_iotv_ucp_Rifleman",
@@ -951,21 +962,25 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_marksman",
             "rhsusf_plateframe_marksman",
             "rhsusf_plateframe_rifleman",
-
             // Spezial
             "ACE_Kestrel4500",
             "ACE_RangeCard",
-
-            // Waffen
-            "TB_vz99_carryWeapon",
-
             // ### Geschützzubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
             "rhsusf_acc_sr25s_wd",
             "muzzle_snds_b",
             "muzzle_snds_b_snd_f",
-            "rhsusf_acc_aac_762sdn6_silencer"
+            "rhsusf_acc_aac_762sdn6_silencer",
+            "rhsusf_acc_m24_silencer_black",
+            "rhsusf_acc_m24_silencer_d",
+            "rhsusf_acc_m24_silencer_wd",
+            "rhsusf_acc_harris_swivel",
+            // ### Visiere
+            "optic_ams",
+            "optic_ams_khk",
+            "optic_ams_snd",
+            "optic_sos"
         ]
     };
 
@@ -975,7 +990,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -1052,7 +1066,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -1115,6 +1130,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
+        _HEDP_raketenwerfer +
         [
             // Handwaffen
             "ACE_VMH3",
@@ -1244,6 +1260,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         _lrFunken +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         [
             // Handfeuerwaffen
             "ACE_VMH3",

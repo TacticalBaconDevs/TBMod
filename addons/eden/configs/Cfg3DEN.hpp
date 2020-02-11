@@ -3,7 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
-    Wiki: https://community.bistudio.com/wiki/eden_Editor:_Configuring_Attributes
+    Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
 class ctrlCombo;
 class Cfg3DEN
@@ -14,18 +14,18 @@ class Cfg3DEN
         {
             class AttributeCategories
             {
-                class TB_main_missionVars
+                class EGVAR(main,missionVars)
                 {
                     collapsed = 0;
                     displayName = "TB Missionwerte";
 
                     class Attributes
                     {
-                        class TB_mission_inkognitoSystem
+                        class EGVAR(mission,inkognitoSystem)
                         {
                             displayName = "InkognitoSystem";
                             tooltip = "Man kann zwei Loadouts haben, zivil und militär.";
-                            property = "TB_mission_inkognitoSystem";
+                            property = QEGVAR(mission,inkognitoSystem);
                             control = "Checkbox";
                             expression = "if (!is3DEN) then {TB_inkognitoSystem = _value; publicVariable 'TB_inkognitoSystem'};";
                             defaultValue = "false";
@@ -44,11 +44,11 @@ class Cfg3DEN
             {
                 class Attributes
                 {
-                    class TB_main_disableCargoCleanup
+                    class EGVAR(main,disableCargoCleanup)
                     {
                         displayName = "Inventar nicht löschen";
                         tooltip = "Normalerweise werden alle Inventare gelöscht, wenn diese Option an ist nicht!";
-                        property = "TB_main_disableCargoCleanup";
+                        property = QEGVAR(main,disableCargoCleanup);
                         control = "Checkbox";
                         expression = "if (!is3DEN && _value) then {_this setVariable ['TB_main_disableCargoCleanup', true, true]}";
                         condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
@@ -57,18 +57,18 @@ class Cfg3DEN
                 };
             };
 
-            class TBMod_main_ki_actions
+            class EGVAR(main,ki_actions)
             {
                 displayName = "TB Aktionen";
                 collapsed = 1;
 
                 class Attributes
                 {
-                    class TBMod_main_sitzen
+                    class EGVAR(main,sitzen)
                     {
                         displayName = "Hinsetzen";
                         tooltip = "Setzt die KI hin, wenn kein verfügbarer Stuhl in der Nähe, wird einer erstellt.";
-                        property = "TBMod_main_sitzen";
+                        property = QEGVAR(main,sitzen);
                         control = "Checkbox";
 
                         expression =  QUOTE(if (!is3DEN && _value) then {[_this] spawn FUNC(sitAI)});
@@ -78,11 +78,11 @@ class Cfg3DEN
                         condition = "objectControllable";
                     };
 
-                    class TBMod_main_animation
+                    class EGVAR(main,animation)
                     {
                         displayName = "Animation";
                         tooltip = "Spielt eine Animation ab.";
-                        property = "TBMod_main_animation";
+                        property = QEGVAR(main,animation);
                         control = "TB_main_animationControl";
 
                         expression = QUOTE(_value = _value param [1, '']; if (!is3DEN && _value != '') then {[_this, _value] spawn FUNC(animationAI)});
@@ -92,11 +92,11 @@ class Cfg3DEN
                         condition = "objectControllable";
                     };
 
-                    class TBMod_main_animationDisableOverride
+                    class EGVAR(main,animationDisableOverride)
                     {
                         displayName = "Animation abbrechbar";
                         tooltip = "Animationen werden abgebrochen, wenn jemand in der Nähe schießt oder verletzt wird.";
-                        property = "TBMod_main_animationDisableOverride";
+                        property = QEGVAR(main,animationDisableOverride);
                         control = "Checkbox";
 
                         expression =  QUOTE(if (!is3DEN && !_value) then {_this setVariable ['animDisableOverride', true, true]});
@@ -106,11 +106,11 @@ class Cfg3DEN
                         condition = "objectControllable";
                     };
 
-                    class TBMod_main_keys
+                    class EGVAR(main,keys)
                     {
                         displayName = "Schlüssel für das Auto";
                         tooltip = "Gibt der KI Schlüssel für mehrere Fahrzeuge, muss der Variablenname sein! (Bsp.: ['car1', 'car2'])";
-                        property = "TBMod_main_keys";
+                        property = QEGVAR(main,keys);
                         control = "Edit";
                         typeName = "STRING";
 
@@ -121,22 +121,22 @@ class Cfg3DEN
                         condition = "objectControllable";
                     };
 
-                    class TBMod_main_enableschauspieler
+                    class EGVAR(main,enableschauspieler)
                     {
                         displayName = "Schauspieler";
                         tooltip = "Wenn aktiviert, besitzt Spieler Schauspielerrechte.";
-                        property = "TBMod_main_enableschauspieler";
+                        property = QEGVAR(main,enableschauspieler);
                         control = "Checkbox";
                         expression = "if (!is3DEN && _value) then {_this setVariable ['TBMod_main_enableschauspieler', _value, true]}";
                         condition = "objectControllable";
                         defaultValue = "false";
                     };
 
-                    class TBMod_main_kiDeckung
+                    class EGVAR(main,kiDeckung)
                     {
                         displayName = "UpDown Skript";
                         tooltip = "KI UpDown Skript";
-                        property = "TBMod_Main_kiDeckung";
+                        property = QEGVAR(main,kiDeckung);
                         control = "Checkbox";
 
                         expression =  QUOTE(if (!is3DEN && _value) then {[_this] call EFUNC(main,upDown)});
@@ -147,16 +147,31 @@ class Cfg3DEN
                         condition = "objectControllable";
                     };
 
-                    class TBMod_main_defineAmmo
+                    class EGVAR(main,defineAmmo)
                     {
                         displayName = "DefineAmmo";
                         tooltip = "Definiere die Munition der Fahrzeuge (Beispiel: ['rhs_mag_762x51_M240_1200'] (ganzes Mag) oder [['rhs_mag_762x51_M240_1200', 200]] (Mag mit 200 Schuss))";
-                        property = "TBMod_main_defineAmmo";
+                        property = QEGVAR(main,defineAmmo);
                         control = "Edit";
 
                         expression =  "private _compValue = call compile _value; if (!is3DEN && _value != '[]' && _value != '' && !((magazines _this) isEqualTo _compValue)) then {_this setVehicleAmmoDef 0; {_x params ['_ammo', ['_amount', 999999]]; _this addMagazine [_ammo, _amount]} forEach _compValue; reload _this}";
 
                         defaultValue = "magazines _this";
+
+                        unique = 0;
+                        condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
+                    };
+
+                    class GVAR(fastRopeTB)
+                    {
+                        displayName = "FastRopeSystem TB";
+                        tooltip = "Ermöglicht besseres FastRoping welches automatisch passiert.";
+                        property = QGVAR(fastRopeTB);
+                        control = "Checkbox";
+
+                        expression =  QUOTE(if (!is3DEN && _value) then {['init', [_this]] call EFUNC(main,fastRope)});
+
+                        defaultValue = "false";
 
                         unique = 0;
                         condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
@@ -177,7 +192,7 @@ class Cfg3DEN
             };
         };
 
-        class TB_main_animationControl : Title
+        class EGVAR(main,animationControl) : Title
         {
             attributeLoad = QUOTE([_this, _value] call FUNC(attributeLoadCombo));
             attributeSave = QUOTE([_this] call FUNC(attributeSaveCombo));

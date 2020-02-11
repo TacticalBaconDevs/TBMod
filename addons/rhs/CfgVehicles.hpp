@@ -423,10 +423,11 @@ class CfgVehicles
     };
 
     class UAV_02_dynamicLoadout_base_F;
-    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // Vanilla MQ-4A Greyhawk (Predator)
+    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // Vanilla MQ-4A Greyhawk (MQ-1 Predator)
     {
         accuracy = 0.6; // 0.1
         camouflage = 45; // 150
+        displayName = "MQ-1 Predator"; //"YABHON-R3"
         fuelCapacity = 3000; // 1000
         irTargetSize = 0.3; // 0.5
         nvScanner = 1; // 0
@@ -584,4 +585,12 @@ class CfgVehicles
         audible = 13; // 14
         maxOmega = 550; // 230.38
     };
+
+    class LT_01_cannon_base_F;
+    class TB_Vehicles_BW_Wiesel_2 : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+    };
+
 };
