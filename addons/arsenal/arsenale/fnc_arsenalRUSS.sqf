@@ -6,7 +6,7 @@
 */
 private _allgemein = [
     // Gepäck
-    "rhs_sidor",        // maximumLoad = 129; mass = 20; Quotient = 6,45
+    "rhs_sidor",            // maximumLoad = 129; mass = 20; Quotient = 6,45
 
     // Gesichtsbedeckung
     "rhs_scarf",
@@ -181,8 +181,7 @@ private _allgemein_westen = [
     "rhs_6b23_digi_6sh92",
     "rhs_6b13_Flora_6sh92",
     "rhs_6b23_6sh92",
-    "rhs_6b23_ML_6sh92",
-    "rhs_6b23_ML_6sh92_vog"
+    "rhs_6b23_ML_6sh92"
 ];
 
 private _allgemein_kopfbedeckung = [
@@ -255,6 +254,14 @@ private _gepaeck_gross = [
     "B_Carryall_oli",
     "B_Carryall_khk"
 ];
+
+private _gepaeck_sehrgross = [
+    "TB_backpacks_bergen_urban", // maximumLoad = 500; mass = 104; Quotient = 4.8
+    "TB_backpacks_bergen_M81",
+    "TB_backpacks_bergen_marpad_d",
+    "TB_backpacks_bergen_marpad_wd",
+    "TB_backpacks_bergen_multitarn"
+]
 
 private _rifle_munition = [
     "rhs_30Rnd_762x39mm_polymer",
@@ -434,7 +441,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _sniper_munition +
         _aaat_munition +
         _rifle_munition +
+        _gepaeck_mittel +
         _gepaeck_gross +
+        _gepaeck_sehrgross +
         [
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
@@ -532,9 +541,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
-        _gepaeck_mittel +
         _allgemein_kopfbedeckung +
         _sniper_munition +
+        _gepaeck_mittel +
         [
             // Gewehr
             "rhs_weap_t5000",
