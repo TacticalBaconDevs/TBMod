@@ -258,7 +258,7 @@ class CfgVehicles
             {
                 property = QEGVAR(radio,eigener);
                 displayName = "Eigener Missionsound";
-                tooltip = "Wenn der Sound in der Mission liegt, hier ankreuzen, zB. sounds\some_sound_file.ogg";
+                tooltip = "Wenn der Sound in der Mission liegt, hier ankreuzen"; // TODO: Mikero bug, danach wieder zusammen - , zB. sounds\some_sound_file.ogg
                 typeName = "BOOL";
                 defaultValue = "false";
             };
