@@ -175,7 +175,7 @@ class CfgMagazines
     class magazine_Bomb_SDB_x1;
     class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // SDB x4
     {
-        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON"}; // "B_SDB_QUAD_RAIL"
+        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_SDB_QUAD_RAIL"
         descriptionShort = "[LG]"; // "250lb, high-explosive, infrared/laser-guided bomb"
         displayName = "4x SDB [LG]"; // "GBU SDB x4"
         displayNameShort = "[LG]"; // "Bomb"
@@ -184,7 +184,7 @@ class CfgMagazines
     class rhs_mag_agm65;
     class rhs_mag_agm65h : rhs_mag_agm65 // AGM-65H CCD
     {
-        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
 
         descriptionShort = "[AS]"; // n.a
         displayName = "AGM-65 CCD [GUID]"; // "AGM-65H"

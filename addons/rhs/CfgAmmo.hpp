@@ -179,6 +179,7 @@ class CfgAmmo
     class ammo_Bomb_LaserGuidedBase;
     class Bomb_04_F : ammo_Bomb_LaserGuidedBase // GBU-12 HE
     {
+        cameraViewAvailable = 1; // 0
         indirectHitRange = 32; // 12
         trackOversteer = 0.95; // 1
 
@@ -242,9 +243,16 @@ class CfgAmmo
     class BombCore;
     class Bo_Mk82 : BombCore // Mk-82 Airburst
     {
+        cameraViewAvailable = 1; // 0
         indirectHit = 70; // 1100
         indirectHitRange = 75; // 12
         suppressionRadiusHit = 210; // 100
+    };
+
+    class ammo_Bomb_SmallDiameterBase;
+    class ammo_Bomb_SDB : ammo_Bomb_SmallDiameterBase // SDB Bomb
+    {
+        cameraViewAvailable = 1; // 0
     };
 
     class ammo_Penetrator_Base;
@@ -276,6 +284,7 @@ class CfgAmmo
     class M_Scalpel_AT;
     class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
     {
+        cameraViewAvailable = 1; // 0
         indirectHitRange = 1; // 4
         trackOversteer = 0.95; // 1
 
@@ -317,16 +326,8 @@ class CfgAmmo
     class rhs_ammo_agm65;
     class rhs_ammo_agm65h : rhs_ammo_agm65 // AGM-65H CCD
     {
+        cameraViewAvailable = 1; // 0
         indirectHitRange = 3; // 10.5
-        lockSeekRadius = 1000; // 2000
-    };
-
-    class rhsusf_ammo_basic_penetrator;
-    class rhs_ammo_agm65_penetrator : rhsusf_ammo_basic_penetrator // AGM-65H CCD Submunition
-    {
-        caliber = 145; // 73.3
-        hit = 1500; // 320
-        submunitionAmmo = ""; // "rhs_ammo_spall"
     };
 
     class B_127x99_Ball;
@@ -488,6 +489,7 @@ class CfgAmmo
         hit = 20; // 235
     };
 
+    class rhsusf_ammo_basic_penetrator;
     class rhs_ammo_M136_penetrator : rhsusf_ammo_basic_penetrator // M136 HEAT CS Submunition
     {
         hit = 80; // 290
