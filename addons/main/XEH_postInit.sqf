@@ -11,14 +11,14 @@ addMissionEventHandler ["ExtensionCallback", {
     if (_name isEqualTo "TBModExtension") then
     {
         _data = if (_data select [0,1] == "[") then {parseSimpleArray _data} else {_data};
-        
+
         switch (_function) do {
             //case "error": {}; // wenn extension einen error hat, _data stacktrace
             //case "task": {}; // status einer asyncTask, _data = [ID, FNC, STATUS]
             default {
-            	private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
-        		systemChat _msg;
-        		diag_log _msg;
+                private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
+                systemChat _msg;
+                diag_log _msg;
             };
         };
     };
