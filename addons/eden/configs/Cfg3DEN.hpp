@@ -3,7 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
-    Wiki: https://community.bistudio.com/wiki/eden_Editor:_Configuring_Attributes
+    Wiki: https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes
 */
 class ctrlCombo;
 class Cfg3DEN
