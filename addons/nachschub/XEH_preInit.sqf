@@ -16,7 +16,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
 ["ace_cargoLoaded", {
     params ["_item", "_vehicle"];
 
-    if ((toLower _item) select [0, 20] in ["tb_supply_uk_vehicle", "tb_supply_uk_warrior"]) then
+    if ((toLower (typeOf _item)) select [0, 20] in ["tb_supply_uk_vehicle", "tb_supply_uk_warrior"]) then
     {
         {
             _vehicle addMagazineCargoGlobal [_x, 1];
@@ -24,6 +24,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         forEach (magazineCargo _item);
 
         deletevehicle _item;
+        //systemChat "Kisteninhalt wurde ins Inventar geladen";
     };
 }] call CBA_fnc_addEventHandler;
 
