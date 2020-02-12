@@ -327,7 +327,6 @@ class CfgAmmo
     class rhs_ammo_agm65h : rhs_ammo_agm65 // AGM-65H CCD
     {
         cameraViewAvailable = 1; // 0
-        indirectHitRange = 3; // 10.5
     };
 
     class B_127x99_Ball;
