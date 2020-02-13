@@ -287,6 +287,12 @@ class CfgAmmo
         cameraViewAvailable = 1; // 0
     };
 
+    class MissileBase;
+    class RHS_Ammo_DAGR : MissileBase // DAGR RHS
+    {
+        maneuvrability = 22; // 14
+    };
+
     class B_127x99_Ball;
     class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
