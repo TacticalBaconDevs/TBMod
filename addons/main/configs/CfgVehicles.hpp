@@ -402,7 +402,7 @@ class CfgVehicles
         {
             class MainTurret: MainTurret
             {
-                magazines[] = {"200Rnd_127x99_mag_Tracer_Red", "TB_Smoke_Grenades"};
+                magazines[] = {"200Rnd_127x99_mag_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
             };
         };
     };
