@@ -35,6 +35,7 @@ class CfgMagazines
         displayName = "Smoke 40mm";
         displayNameShort = "Smoke 40mm";
 
-        count = 10;
+        count = 24;
+        initSpeed = 241; // 80
     };
 };
