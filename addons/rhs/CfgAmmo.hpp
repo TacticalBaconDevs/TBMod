@@ -249,10 +249,24 @@ class CfgAmmo
         cameraViewAvailable = 1; // 0
     };
 
+    class ammo_Penetrator_Base;
+    class ammo_Penetrator_AGM_02 : ammo_Penetrator_Base // AGM-65 L Penetrator
+    {
+        caliber = 145; // 66.7
+        indirectHit = 350; // 85
+        indirectHitRange = 2; // 8
+    };
+
+    class ammo_Penetrator_Scalpel : ammo_Penetrator_Base // AGM-114K Penetrator
+    {
+        cameraViewAvailable = 1; // 0
+    };
+
     class M_Scalpel_AT;
     class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
     {
         cameraViewAvailable = 1; // 0
+        indirectHitRange = 1; // 4
         trackOversteer = 0.95; // 1
 
         class CamShakeExplode {
