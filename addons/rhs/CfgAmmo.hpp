@@ -170,12 +170,6 @@ class CfgAmmo
         submunitionAmmo = "APERSBoundingMine_Range_Ammo"; // "APERSMine_Range_Ammo"
     };
 
-    class M_Mo_120mm_AT_LG;
-    class M_Mo_155mm_AT_LG : M_Mo_120mm_AT_LG // Mk45 Hammer AT Laserguided Submunition
-    {
-        caliber = 145; // 1
-    };
-
     class ammo_Bomb_LaserGuidedBase;
     class Bomb_04_F : ammo_Bomb_LaserGuidedBase // GBU-12 HE
     {
@@ -265,20 +259,7 @@ class CfgAmmo
 
     class ammo_Penetrator_Scalpel : ammo_Penetrator_Base // AGM-114K Penetrator
     {
-        caliber = 45; // 56.6
-        hit = 500; // 900
-    };
-
-    class ammo_Penetrator_PG_AT : ammo_Penetrator_Base // DAGR Submunition
-    {
-        caliber = 45; // 20
-        hit = 500; // 450
-    };
-
-    class ammo_Penetrator_Rocket_04_AP : ammo_Penetrator_Base // Hydra 7x AP Submunition
-    {
-        caliber = 45; // 20
-        hit = 500; // 435
+        cameraViewAvailable = 1; // 0
     };
 
     class M_Scalpel_AT;
@@ -314,19 +295,16 @@ class CfgAmmo
         };
     };
 
-    class ACE_Hellfire_AGM114N : ACE_Hellfire_AGM114K // AGM-114N
-    {
-        hit = 300; // 200
-        indirectHit = 120; // 200
-        indirectHitRange = 10; // 12
-        trackOversteer = 0.95; // 1
-        suppressionRadiusHit = 65; // 30
-    };
-
     class rhs_ammo_agm65;
     class rhs_ammo_agm65h : rhs_ammo_agm65 // AGM-65H CCD
     {
         cameraViewAvailable = 1; // 0
+    };
+
+    class MissileBase;
+    class RHS_Ammo_DAGR : MissileBase // DAGR RHS
+    {
+        maneuvrability = 22; // 14
     };
 
     class B_127x99_Ball;
@@ -382,58 +360,6 @@ class CfgAmmo
         tracerScale = 0.4; // 1.2
     };
 
-    class M_PG_AT;
-    class M_AT : M_PG_AT // Hydra 12x HE
-    {
-        hit = 100; // 300
-        indirectHit = 20; // 50
-        indirectHitRange = 18; // 8
-        trackOversteer = 0.95; // 1
-        suppressionRadiusHit = 65; // 30
-    };
-
-    class MissileBase;
-    class Rocket_04_HE_F : MissileBase // Hydra 7x HE
-    {
-        hit = 100; // 210
-        indirectHit = 20; // 55
-        indirectHitRange = 21; // 15
-        trackOversteer = 0.95; // 1
-        suppressionRadiusHit = 65; // 30
-
-        class CamShakeExplode {
-            distance = 300; // 191.554
-            duration = 1.5; // 1.8
-            frequency = 18; // 20
-            power = 10; // 16
-        };
-        class CamShakeFire {
-            distance = 150; // 71.5542
-            duration = 1.5; // 1.8
-            frequency = 18; // 20
-            power = 2.1; // 2.9907
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.6;
-            frequency = 20;
-            power = 60;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 2;
-        };
-    };
-
-    class Rocket_04_AP_F : Rocket_04_HE_F // Hydra 7x AP
-    {
-        hit = 300; // 95
-        indirectHit = 50; // 25
-        trackOversteer = 0.95; // 1
-    };
-
     class BulletBase;
     class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // A-10 GAU-8
     {
@@ -452,10 +378,8 @@ class CfgAmmo
     class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
     {
         ACE_ballisticCoefficients[] = {0.35}; // {0.2}
-        caliber = 1.8; // 0.65
-        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
-        explosive = 0.2; // 0
-        hit = 23; // 12.55
+        caliber = 0.8; // 0.65
+        hit = 20; // 12.55
         suppressionRadiusBulletClose = 8; // 2
         suppressionRadiusHit = 14; // 4
     };
@@ -463,10 +387,8 @@ class CfgAmmo
     class rhs_ammo_762x51_M62_tracer : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M62 AP Tracer
     {
         ACE_ballisticCoefficients[] = {0.35}; // {0.2}
-        caliber = 1.8; // 0.45
-        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
-        explosive = 0.2; // 0
-        hit = 23; // 11
+        caliber = 0.8; // 0.45
+        hit = 20; // 11
         suppressionRadiusBulletClose = 8; // 2
         suppressionRadiusHit = 14; // 4
     };
