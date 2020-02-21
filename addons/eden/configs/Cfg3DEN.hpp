@@ -83,7 +83,7 @@ class Cfg3DEN
                         displayName = "Animation";
                         tooltip = "Spielt eine Animation ab.";
                         property = QEGVAR(main,animation);
-                        control = QEGVAR(main,animation);
+                        control = QEGVAR(main,animationControl);
 
                         expression = QUOTE(_value = _value param [1, '']; if (!is3DEN && _value != '') then {[_this, _value] spawn FUNC(animationAI)});
 
