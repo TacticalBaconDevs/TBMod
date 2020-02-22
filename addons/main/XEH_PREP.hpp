@@ -18,6 +18,7 @@ PREP(firstJoin);
 PREP(forceRagdoll);
 PREP(garage);
 PREP(garageGUI);
+PREP(handleDisconnect);
 PREP(insertChildrenFlaggen);
 PREP(insertChildrenFOB);
 PREP(insertChildrenGruppen);
