@@ -33,7 +33,7 @@ if (!is3DEN && {_mode == "init"}) then
     forEach _syncObjs;
     if (_isActivated) then
     {
-        private _strength = _logic getVariable ["strength", 1];
+        private _strength = _logic getVariable ["strength", 0.75];
         private _anzahl = _logic getVariable ["anzahl", 1];
         private _schadenTyp = call compile (_logic getVariable ["schadenTyp", "[]"]);
         private _wundOrte = call compile (_logic getVariable ["wundOrte", "[]"]);
