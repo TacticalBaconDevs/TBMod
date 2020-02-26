@@ -31,6 +31,7 @@ if (!is3DEN && {_mode == "init"}) then
         _x setVariable ["Vcm_Disable", true, true];
     }
     forEach _syncObjs;
+    
     if (_isActivated) then
     {
         private _strength = _logic getVariable ["strength", 0.75];
@@ -47,21 +48,20 @@ if (!is3DEN && {_mode == "init"}) then
             {
                 private _unit = _x;
 
-                if (local _unit) then {
-                    {
-                        _x params ["_key", "_value"];
-                        _unit setVariable ["ace_medical_"+ _key, _value, true];
-                    }
-                    forEach [
-                        ["enableUnconsciousnessAI", 2],
-                        ["preventInstaDeath", true],
-                        ["amountOfReviveLives", 5],
-                        ["enableRevive", 2]
-                    ];
-                    for "_i" from 1 to _anzahl do
-                    {
-                        [_unit, _strength, selectRandom _wundOrte, selectRandom _schadenTyp] call ace_medical_fnc_addDamageToUnit;
-                    };
+                {
+                    _x params ["_key", "_value"];
+                    _unit setVariable ["ace_medical_"+ _key, _value, true];
+                }
+                forEach [
+                    ["enableUnconsciousnessAI", 2],
+                    ["preventInstaDeath", true],
+                    ["amountOfReviveLives", 5],
+                    ["enableRevive", 2]
+                ];
+                
+                for "_i" from 1 to _anzahl do
+                {
+                    [_unit, _strength, selectRandom _wundOrte, selectRandom _schadenTyp] remoteExec ["ace_medical_fnc_addDamageToUnit", _unit];
                 };
             }
             forEach _syncObjs;
