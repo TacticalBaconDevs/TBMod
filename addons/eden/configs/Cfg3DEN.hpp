@@ -160,6 +160,9 @@ class Cfg3DEN
 
                         unique = 0;
                         condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
+
+                        attributeLoad = "diag_log format ['attributeLoad: %1', _value]";
+                        attributeSave = "diag_log format ['attributeSave: %1', ctrlText (_this controlsGroupCtrl 100)]";
                     };
 
                     class GVAR(fastRopeTB)
