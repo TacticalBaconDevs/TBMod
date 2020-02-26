@@ -421,7 +421,7 @@ class CfgVehicles
                 displayName = "Wundort";
                 tooltip = "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte";
                 typeName = "STRING";
-                defaultValue = """['head', 'torso', 'hand_r', 'hand_l', 'leg_r', 'leg_l']""";
+                defaultValue = """['head', 'body', 'hand_l', 'hand_r', 'leg_l', 'leg_r']""";
             };
 
             class ModuleDescription: ModuleDescription {};
