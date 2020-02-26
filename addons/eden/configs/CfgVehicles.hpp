@@ -395,7 +395,7 @@ class CfgVehicles
             {
                 property = QEGVAR(injured,strength);
                 displayName = "Stärke";
-                tooltip = "Wie stark ist jede verwundung";
+                tooltip = "Wie stark ist jede Verwundung";
                 typeName = "NUMBER";
                 defaultValue = "0.75";
             };
