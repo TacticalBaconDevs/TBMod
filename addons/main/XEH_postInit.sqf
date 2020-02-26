@@ -12,14 +12,15 @@ addMissionEventHandler ["ExtensionCallback", {
     {
         _data = if (_data select [0,1] == "[") then {parseSimpleArray _data} else {_data};
 
-        switch (_function) do {
-            //case "error": {}; // wenn extension einen error hat, _data stacktrace
-            //case "task": {}; // status einer asyncTask, _data = [ID, FNC, STATUS]
-            default {
-                private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
-                systemChat _msg;
-                diag_log _msg;
-            };
+        private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
+        diag_log _msg; // nur für Übergangsphase alles loggen
+
+        switch (_function) do
+        {
+            case "spawn": {[] spawn (compile _data)};
+            case "call": {[] call (compile _data)};
+            case "log";
+            case "error": {systemChat _msg};
         };
     };
 }];
@@ -30,11 +31,7 @@ if (_return != "") then
 {
     diag_log format ["TBModExtensionInit: %1", _return];
 
-    if (isServer && {("TBModExtension" callExtension ["check", ["logging"]]) params [1, 0] == 1}) then
-    {
-        GVAR(loggingExtension) = 1 == ("TBModExtension" callExtension ["registerlogger", ["adminlog", "#AdminLog.log"]]) params [1, 0];
-        diag_log format ["TBModExtension-extension-logging geladen: ", GVAR(loggingExtension)];
-    };
+    GVAR(loggingExtension) = 1 == ('TBModExtension' callExtension ['registerlogger', ['adminlog', '#AdminLog.log']]) params [1, 0];
 }
 else
 {
