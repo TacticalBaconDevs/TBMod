@@ -376,33 +376,37 @@ class CfgVehicles
 
     // ###################### MISC ######################
     // UGV Stomper
-    class UGV_01_base_F;
-    class UGV_01_rcws_base_F : UGV_01_base_F
+    class Car_F;
+    class UGV_01_base_F: Car_F
     {
         class Turrets;
     };
-    class B_UGV_01_rcws_F : UGV_01_rcws_base_F
+
+    class UGV_01_rcws_base_F: UGV_01_base_F
     {
-        class Turrets : Turrets
+        class Turrets: Turrets
         {
             class MainTurret;
         };
     };
-    class TB_UGV_01_rcws_F : B_UGV_01_rcws_F
+
+    class B_UGV_01_rcws_F: UGV_01_rcws_base_F {};
+
+    class TB_UGV_01_rcws_F: B_UGV_01_rcws_F
     {
-        displayName = "UGV Stomper RCWS (Rauch)"; // UGV Stomper RCWS
+        displayName = "TB UGV Stomper RCWS (Rauch)"; // UGV Stomper RCWS
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
 
-        class Turrets : Turrets
+        class Turrets: Turrets
         {
-            class MainTurret : MainTurret
+            class MainTurret: MainTurret
             {
-                magazines[] = {"200Rnd_127x99_mag_Tracer_Red", "TB_Smoke_Grenades"};
-                //weapons[] = {"HMG_127_UGV", "GMG_40mm"};
+                magazines[] = {"200Rnd_127x99_mag_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
             };
         };
     };
+
 
     // ###################### No Uniform ######################
     class Civilian;

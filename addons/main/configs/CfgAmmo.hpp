@@ -100,5 +100,10 @@ class CfgAmmo
         deflecting = 0;
         deflectionSlowDown = 0.1;
         deflectionDirDistribution = 0;
+        timeToLive = 100;
+        explosiontime = 0;
+        typicalspeed = 200;
+        airfriction = -0.001;
+        caliber = 2;
     };
 };

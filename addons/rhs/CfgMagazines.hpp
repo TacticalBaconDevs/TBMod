@@ -175,7 +175,7 @@ class CfgMagazines
     class magazine_Bomb_SDB_x1;
     class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // SDB x4
     {
-        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON"}; // "B_SDB_QUAD_RAIL"
+        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_SDB_QUAD_RAIL"
         descriptionShort = "[LG]"; // "250lb, high-explosive, infrared/laser-guided bomb"
         displayName = "4x SDB [LG]"; // "GBU SDB x4"
         displayNameShort = "[LG]"; // "Bomb"
@@ -184,7 +184,7 @@ class CfgMagazines
     class rhs_mag_agm65;
     class rhs_mag_agm65h : rhs_mag_agm65 // AGM-65H CCD
     {
-        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
 
         descriptionShort = "[AS]"; // n.a
         displayName = "AGM-65 CCD [GUID]"; // "AGM-65H"
@@ -307,6 +307,12 @@ class CfgMagazines
         displayname = "12.7x99mm SLAP Right"; // "12.7x99mm SLAP"
     };
 
+    class 300Rnd_20mm_shells;
+    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
+    {
+        hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
+    };
+
     class 6Rnd_ACE_Hellfire_AGM114K;
     class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
     {
@@ -331,6 +337,17 @@ class CfgMagazines
     class rhs_mag_ATAS_2 : VehicleMagazine // ATAS
     {
         hardpoints[] = {"RHS_HP_ATAS","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_FFAR_USMC"}; // "RHS_HP_ATAS","RHS_HP_MELB","RHS_HP_MELB_L"
+    };
+
+    class 24Rnd_PG_missiles;
+    class rhs_mag_DAGR_4 : 24Rnd_PG_missiles // 4x DAGR RHS
+    {
+        hardpoints[] = {"RHS_HP_HELLFIRE_SINGLE","RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_SINGLE"
+    };
+
+    class rhs_mag_DAGR_8 : rhs_mag_DAGR_4 // 8x DAGR RHS
+    {
+        hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"
     };
 
     class rhs_mag_smaw_HEAA : CA_LauncherMagazine // Mk.6 HEAA SMAW

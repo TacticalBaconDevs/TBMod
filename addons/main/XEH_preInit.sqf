@@ -35,12 +35,36 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     {
         params ["_vehicle", "", "", "", "_ammo", "", "_projectile", ""];
 
-        if (local _vehicle && _ammo isEqualTo "TB_G_40mm_Smoke" && !isNull _projectile) then
+        if (local _vehicle && {_ammo isEqualTo "TB_G_40mm_Smoke"} && {!isNull _projectile}) then
         {
             private _smokeColor = _vehicle getVariable [QGVAR(smoke), "SmokeShell"];
             private _smoke = createVehicle [_smokeColor, [0,0,0] , [], 0, "CAN_COLLIDE"];
+            _smoke setMass 1;
             [_smoke, true] remoteExecCall ["hideObjectGlobal", 2];
             _smoke attachTo [_projectile, [0,0,0]];
+            TRACE_1("Smoke attached",_smokeColor);
+
+            [_projectile, _vehicle] spawn
+            {
+                params ["_projectile", "_vehicle"];
+                private _pos = getPos _projectile;
+                private _time = time + 4;
+
+                waitUntil {
+                    if !((getPos _projectile) isEqualTo [0,0,0]) then {_pos = getPos _projectile};
+                    TRACE_3("Smoke waitUntil",alive _projectile,_pos,_vehicle distance _projectile);
+                    !alive _projectile
+                };
+
+                TRACE_4("2nd smoke backup0",_time <= time,_time,time,_pos);
+                if (_time <= time) then
+                {
+                    private _smokeColor = _vehicle getVariable [QGVAR(smoke), "SmokeShell"];
+                    private _smoke = createVehicle [_smokeColor, [0,0,0] , [], 0, "CAN_COLLIDE"];
+                    _smoke setMass 1;
+                    _smoke setPos _pos;
+                };
+            };
         };
     },
     true,
