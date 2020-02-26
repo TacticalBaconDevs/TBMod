@@ -391,13 +391,13 @@ class CfgVehicles
 
         class Attributes: AttributesBase
         {
-            class bewusstlos: Checkbox
+            class strength: Edit
             {
-                property = QEGVAR(injured,bewusstlos);
-                displayName = "Bewusstlos";
-                tooltip = "Ob die Person bewusstlos ist";
+                property = QEGVAR(injured,strength);
+                displayName = "Stärke";
+                tooltip = "Wie stark ist jede Verwundung";
                 typeName = "NUMBER";
-                defaultValue = "true";
+                defaultValue = "0.75";
             };
             class anzahl: Edit
             {
@@ -421,7 +421,7 @@ class CfgVehicles
                 displayName = "Wundort";
                 tooltip = "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte";
                 typeName = "STRING";
-                defaultValue = """['head', 'body', 'hand_r', 'hand_l', 'leg_r', 'leg_l']""";
+                defaultValue = """['head', 'body', 'hand_l', 'hand_r', 'leg_l', 'leg_r']""";
             };
 
             class ModuleDescription: ModuleDescription {};
