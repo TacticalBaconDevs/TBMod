@@ -3,8 +3,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-private _log = [];
 private _log = ["Test 'defaultLoadoutTest' beginnt..."];
+
 {
     _x params ["_arsenalType", "_isLoaded"];
 
@@ -31,7 +31,7 @@ private _log = ["Test 'defaultLoadoutTest' beginnt..."];
 }
 forEach [
     ["USA", {isClass (configfile >> "CfgPatches" >> "rhsusf_main")}],
-    ["UK", {false}], // TODO
+    ["UK", {isClass (configfile >> "CfgPatches" >> "UK3CB_BAF_Weapons")}],
     ["RUSS", {isClass (configfile >> "CfgPatches" >> "rhs_main")}],
     ["BW", {isClass (configfile >> "CfgPatches" >> "bwa3_common")}],
     ["VANILLA", {true}]
