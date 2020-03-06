@@ -200,6 +200,29 @@ fnc_backpack = {
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
 
+// Punkte BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    {
+        drawIcon3D ["", [1,0,1,1], _x, 0, 0, 0, "X"];
+    }
+    forEach [
+        [_links, _vorne, _oben],
+        [_rechts, _vorne, _oben],
+        [_links, _vorne, _unten],
+        [_rechts, _vorne, _unten],
+        [_links, _hinten, _oben],
+        [_rechts, _hinten, _oben],
+        [_links, _hinten, _unten],
+        [_rechts, _hinten, _unten]
+    ];
+};
+
+
 // Strich BoundingBox
 onEachFrame {
     (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
@@ -226,29 +249,6 @@ onEachFrame {
         [[_rechts, _vorne, _oben], [_rechts, _hinten, _oben]],
         [[_links, _vorne, _unten], [_links, _hinten, _unten]],
         [[_rechts, _vorne, _unten], [_rechts, _hinten, _unten]]
-    ];
-};
-
-
-// Punkte BoundingBox
-onEachFrame {
-    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
-
-    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
-    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
-
-    {
-        drawIcon3D ["", [1,0,1,1], _x, 0, 0, 0, "X"];
-    }
-    forEach [
-        [_links, _vorne, _oben],
-        [_rechts, _vorne, _oben],
-        [_links, _vorne, _unten],
-        [_rechts, _vorne, _unten],
-        [_links, _hinten, _oben],
-        [_rechts, _hinten, _oben],
-        [_links, _hinten, _unten],
-        [_rechts, _hinten, _unten]
     ];
 };
 
