@@ -199,3 +199,77 @@ fnc_backpack = {
 };
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
+
+// Strich BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    {
+        drawLine3D [_x # 0, _x # 1, [1,0,1,1]];
+    }
+    forEach [
+        // vorderes Viereck
+        [[_links, _vorne, _oben], [_rechts, _vorne, _oben]],
+        [[_rechts, _vorne, _oben], [_rechts, _vorne, _unten]],
+        [[_rechts, _vorne, _unten], [_links, _vorne, _unten]],
+        [[_links, _vorne, _unten], [_links, _vorne, _oben]],
+        // hinteres Viereck
+        [[_links, _hinten, _oben], [_rechts, _hinten, _oben]],
+        [[_rechts, _hinten, _oben], [_rechts, _hinten, _unten]],
+        [[_rechts, _hinten, _unten], [_links, _hinten, _unten]],
+        [[_links, _hinten, _unten], [_links, _hinten, _oben]],
+        // hinten und vorne verbinden
+        [[_links, _vorne, _oben], [_links, _hinten, _oben]],
+        [[_rechts, _vorne, _oben], [_rechts, _hinten, _oben]],
+        [[_links, _vorne, _unten], [_links, _hinten, _unten]],
+        [[_rechts, _vorne, _unten], [_rechts, _hinten, _unten]]
+    ];
+};
+
+
+// Punkte BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    {
+        drawIcon3D ["", [1,0,1,1], _x, 0, 0, 0, "X"];
+    }
+    forEach [
+        [_links, _vorne, _oben],
+        [_rechts, _vorne, _oben],
+        [_links, _vorne, _unten],
+        [_rechts, _vorne, _unten],
+        [_links, _hinten, _oben],
+        [_rechts, _hinten, _oben],
+        [_links, _hinten, _unten],
+        [_rechts, _hinten, _unten]
+    ];
+};
+
+
+// Mittelachsen BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    private _mitteLR = _links - (abs (_links - _rechts) / 2);
+    private _mitteVH = _vorne - (abs (_vorne - _hinten) / 2);
+    private _mitteOU = _oben - (abs (_oben - _unten) / 2);
+
+    {
+        drawLine3D [_x # 0, _x # 1, [1,0,1,1]];
+    }
+    forEach [
+        [[_mitteLR, _mitteVH, _oben], [_mitteLR, _mitteVH, _unten]],
+        [[_rechts, _mitteVH, _mitteOU], [_links, _mitteVH, _mitteOU]]
+    ];
+};
+
