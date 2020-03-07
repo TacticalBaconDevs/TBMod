@@ -28,6 +28,13 @@ class CfgVehicles
             statement = QUOTE([_target, 'ITEM'] spawn FUNC(createSupply)); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
+    #define ADD_SUPPLY2(NAME,ITEM) class ITEM \
+        { \
+            displayName = NAME; \
+            condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
+            statement = QUOTE([_target, 'ITEM'] spawn FUNC(createSupply)); \
+            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+        }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
         class TB_##CLASS_NAME : CLASS_NAME \
         { \
@@ -131,12 +138,12 @@ class CfgVehicles
                         displayName = "Mörser Kisten";
 
                         ADD_SUPPLY(Mörserkit,TB_supply_all_mortar);
-                        ADD_SUPPLY(Mörser Munnition,TB_supply_all_mortarAmmo);
-                        ADD_SUPPLY(Mörser MunnitionHE,TB_supply_all_mortarAmmoHE);
-                        ADD_SUPPLY(Mörser MunnitionRauch,TB_supply_all_mortarAmmoSmoke);
-                        ADD_SUPPLY(Mörser MunnitionFlare,TB_supply_all_mortarAmmoFlare);
-                        ADD_SUPPLY(vz99 Mörser Munition,TB_supply_all_commandMortarAmmo);
-                        ADD_SUPPLY(vz99 Mörser MunitionHE,TB_supply_all_commandMortarAmmoHE);
+                        ADD_SUPPLY2("Mörser Munnition",TB_supply_all_mortarAmmo);
+                        ADD_SUPPLY2("Mörser MunnitionHE",TB_supply_all_mortarAmmoHE);
+                        ADD_SUPPLY2("Mörser MunnitionRauch",TB_supply_all_mortarAmmoSmoke);
+                        ADD_SUPPLY2("Mörser MunnitionFlare",TB_supply_all_mortarAmmoFlare);
+                        ADD_SUPPLY2("vz99 Mörser Munition",TB_supply_all_commandMortarAmmo);
+                        ADD_SUPPLY2("vz99 Mörser MunitionHE",TB_supply_all_commandMortarAmmoHE);
                     };
 
                     class allgemeinBaukisten
@@ -198,8 +205,8 @@ class CfgVehicles
                         displayName = "Munitions Kisten";
 
                         ADD_SUPPLY(Munition,TB_supply_uk_ammo);
-                        ADD_SUPPLY(Klein Munition,TB_supply_uk_ammoSmall);
-                        ADD_SUPPLY(Spezial Munition,TB_supply_uk_spezial);
+                        ADD_SUPPLY(KleinMunition,TB_supply_uk_ammoSmall);
+                        ADD_SUPPLY(SpezialMunition,TB_supply_uk_spezial);
                         ADD_SUPPLY(Granaten,TB_supply_uk_grena);
                         ADD_SUPPLY(Unterlauf,TB_supply_uk_unterlauf);
                     };
@@ -209,22 +216,22 @@ class CfgVehicles
                         displayName = "Raktenwerfer Kisten";
 
                         ADD_SUPPLY(Werfer,TB_supply_uk_launcher);
-                        ADD_SUPPLY(Igla Munition,TB_supply_uk_IglaAmmo);
-                        ADD_SUPPLY(Javlin Munition,TB_supply_uk_javlinAmmo);
-                        ADD_SUPPLY(MAAWS Munition,TB_supply_uk_MAAWSAmmo);
-                        ADD_SUPPLY(SMAW Munition,TB_supply_uk_SMAWAmmo);
+                        ADD_SUPPLY2("Igla Munition",TB_supply_uk_IglaAmmo);
+                        ADD_SUPPLY2("Javlin Munition",TB_supply_uk_javlinAmmo);
+                        ADD_SUPPLY2("MAAWS Munition",TB_supply_uk_MAAWSAmmo);
+                        ADD_SUPPLY2("SMAW Munition",TB_supply_uk_SMAWAmmo);
                     };
 
                     class UKFahrzeuge
                     {
                         displayName = "Fahrzeug Kisten";
 
-                        ADD_SUPPLY(9x Fahrzeug Magazine 12.7,TB_supply_uk_vehicles127);
-                        ADD_SUPPLY(9x Fahrzeug Magazine 7.62,TB_supply_uk_vehicles762);
-                        ADD_SUPPLY(5x Fahrzeug Magazine GMG,TB_supply_uk_vehiclesGMG);
-                        ADD_SUPPLY(9x Warrior Magazine APDS,TB_supply_uk_warriorAPDS);
-                        ADD_SUPPLY(9x Warrior Magazine HE,TB_supply_uk_warriorHE);
-                        ADD_SUPPLY(2x Warrior Magazine 800 MG,TB_supply_uk_warriorMG);
+                        ADD_SUPPLY2("9x Fahrzeug Magazine 12.7",TB_supply_uk_vehicles127);
+                        ADD_SUPPLY2("9x Fahrzeug Magazine 7.62",TB_supply_uk_vehicles762);
+                        ADD_SUPPLY2("5x Fahrzeug Magazine GMG",TB_supply_uk_vehiclesGMG);
+                        ADD_SUPPLY2("9x Warrior Magazine APDS",TB_supply_uk_warriorAPDS);
+                        ADD_SUPPLY2("9x Warrior Magazine HE",TB_supply_uk_warriorHE);
+                        ADD_SUPPLY2("2x Warrior Magazine 800 MG",TB_supply_uk_warriorMG);
                     };
                 };
 
@@ -255,7 +262,7 @@ class CfgVehicles
                     ADD_SUPPLY(Granaten,TB_supply_nato_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
                     ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
-                    ADD_SUPPLY(ED-1D Drohne,TB_supply_nato_ED);
+                    ADD_SUPPLY2("ED-1D Drohne",TB_supply_nato_ED);
                     ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
                 };
 
@@ -269,7 +276,7 @@ class CfgVehicles
                     ADD_SUPPLY(Granaten,TB_supply_ldf_grena);
                     ADD_SUPPLY(Unterlauf,TB_supply_ldf_unterlauf);
                     ADD_SUPPLY(WerferMunition,TB_supply_ldf_launcherAmmo);
-                    ADD_SUPPLY(ED-1D Drohne,TB_supply_ldf_ED);
+                    ADD_SUPPLY2("ED-1D Drohne",TB_supply_ldf_ED);
                     ADD_SUPPLY(NachtKiste,TB_supply_ldf_night);
                 };
 
