@@ -7,21 +7,8 @@
 class CfgWeapons
 {
     class ACE_ItemCore;
-    class CBA_MiscItem_ItemInfo;
 
-    class ACE_atropine: ACE_ItemCore
-    {
-        displayName = "Ketamin-Autoinjektor";
-        descriptionShort = "Wird verwendet um leichte Schmerzen zu lindern.";
-        descriptionUse = "Ein Schmerzmittel um leichte Schmerzen zu behandeln.";
-    };
-
-    class ACE_adenosine: ACE_ItemCore
-    {
-        displayName = "Adenosin-Autoinjektor";
-        descriptionShort = "Stabilisiert den Herzschlag.";
-        descriptionUse = "Stabilisiert den Herzschlag.";
-    };
+    
 
     SET_NAME(ACE_bloodIV, ACE_ItemCore, "Blut IV (2800ml)");
     SET_NAME(ACE_bloodIV_500, ACE_bloodIV, "Blut IV (1400ml)");

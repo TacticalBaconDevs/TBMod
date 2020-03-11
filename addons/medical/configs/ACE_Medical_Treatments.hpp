@@ -13,10 +13,6 @@ class ACE_Medical_Actions {
         class Morphine: fieldDressing {
             treatmentTime =  QUOTE([3] call FUNC(calcTreatmentTime));
         };
-        class Atropine: Morphine { // Ketamin
-            displayName = "Ketamin injizieren";
-            displayNameProgress = "Ketamin injizieren...";
-        };
         class BloodIV: fieldDressing {
             treatmentTime =  QUOTE([7] call FUNC(calcTreatmentTime));
             displayName = "Bluttransfusion (2800ml)";
@@ -701,15 +697,6 @@ class ACE_Medical_Advanced {
                 hrIncreaseHigh[] = {15, 35, 5};
                 timeInSystem = 300;
                 maxDose = 4;
-            };
-            class Atropine { // Ketamin
-                painReduce = 1.2;
-                hrIncreaseLow[] = {0, -1, 15};
-                hrIncreaseNormal[] = {-1, -3, 10};
-                hrIncreaseHigh[] = {-3, -5, 5};
-                timeInSystem = 300;
-                maxDose = 4;
-                viscosityChange = -3;
             };
             class Adenosine {
                 hrIncreaseLow[] = {5, 10, 20};
