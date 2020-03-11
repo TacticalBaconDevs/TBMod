@@ -51,8 +51,8 @@ if (EGVAR(medical,spontaneousWakeUpChance) > 0) then {
             };
         };
 		*/
-		systemChat "WakeUp";
-		[QEGVAR(medical,WakeUp), _unit] call CBA_fnc_localEvent;
+        systemChat "WakeUp";
+        [QEGVAR(medical,WakeUp), _unit] call CBA_fnc_localEvent;
     } else {
         // Unstable vitals, procrastinate the next wakeup check
         private _lastWakeUpCheck = _unit getVariable [QEGVAR(medical,lastWakeUpCheck), 0];
