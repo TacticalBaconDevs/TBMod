@@ -4,8 +4,8 @@
 */
 class CfgFunctions
 {
-    // REPLACEMENT - ace3
-    class ACE3
+    // REPLACEMENT - ace
+    class ace
     {
         
         class medical_status
@@ -22,6 +22,14 @@ class CfgFunctions
             class handleStateUnconscious
             {
                 file = QPATHTOF(replacement\fnc_handleStateUnconscious.sqf);
+            };
+        };
+        class medical_treatment
+        {
+            tag = "ace_medical_treatment";
+            class getBandageTime
+            {
+                file = QPATHTOF(replacement\fnc_getBandageTime.sqf);
             };
         };
     };
