@@ -16,7 +16,6 @@
  */
 
 params ["_unit"];
-systemChat "Check Vitals";
 
 if (GET_BLOOD_VOLUME(_unit) < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) exitWith { false };//BLOOD_VOLUME_CLASS_2_HEMORRHAGE
 if IN_CRDC_ARRST(_unit) exitWith { false };
