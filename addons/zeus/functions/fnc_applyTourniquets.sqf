@@ -19,16 +19,16 @@ params ["_unit"];
 
 private _applyTo = [];
 {
-    _x params ["", "", "_bodyPart", "_numOpenWounds", "_bloodLoss"];
+    _x params ["", "_bodyPart", "_numOpenWounds", "_bloodLoss", ""];
 
     if (_bloodLoss > 0) then
     {
         switch (_bodyPart) do
         {
-            case 2: {_applyTo pushBackUnique "hand_l"};
-            case 3: {_applyTo pushBackUnique "hand_r"};
-            case 4: {_applyTo pushBackUnique "leg_l"};
-            case 5: {_applyTo pushBackUnique "leg_r"};
+            case 2: {_applyTo pushBackUnique "leftarm"};
+            case 3: {_applyTo pushBackUnique "rightarm"};
+            case 4: {_applyTo pushBackUnique "leftleg"};
+            case 5: {_applyTo pushBackUnique "rightleg"};
         };
     };
 
@@ -36,4 +36,4 @@ private _applyTo = [];
 }
 forEach (_unit getVariable ["ace_medical_openWounds", []]);
 
-{[_unit, "", _x] remoteExec ["ace_medical_fnc_treatmentTourniquetLocal", _unit]} forEach _applyTo;
+{["ace_medical_treatment_fnc_tourniquetLocal", [_unit, _x], _unit] call CBA_fnc_targetEvent} forEach _applyTo;
