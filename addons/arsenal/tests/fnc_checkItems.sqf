@@ -3,7 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params ["_player"];
+params [["_player", player]];
 
 private _blacklist = ["tfar", "used"];
 private _msg = "";
