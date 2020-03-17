@@ -21,8 +21,8 @@
 
 params ["_medic", "_patient", "_bodypart", "_bandage"];
 
-private _inFacility = [ACE_player] call EFUNC(medical,isInMedicalFacility);
-private _inVehicle = [ACE_player] call EFUNC(medical,isInMedicalVehicle);
+private _inFacility = [ACE_player] call FUNC(isInMedicalFacility);
+private _inVehicle = [ACE_player] call FUNC(isInMedicalVehicle);
 private _isSani = [_medic, 1] call FUNC(isMedic);
 private _isArzt = [_medic, 2] call FUNC(isMedic);
 
@@ -64,7 +64,7 @@ if (_medic == _patient) then {
 
 // Nobody can bandage instantly
 
-["Treatmenttime -> Out: %1, Sani: %2, Arzt: %2", _bandageTime, _isSani, _isArzt] call TBMod_main_debug;
+["Treatmenttime(bandage) ->In: %1, Out: %2, Sani: %3, Arzt: %4, Vehicle: %5, Facility: %6", [2, 3, 4] select _category, _bandageTime, _isSani, _isArzt, _inVehicle, _inFacility] call TBMod_main_fnc_debug;
 
 
 _bandageTime max 1
