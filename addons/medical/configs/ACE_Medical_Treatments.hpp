@@ -35,7 +35,7 @@ class ace_medical_treatment_actions {
         displayName = "Bluttransfusion (700ml)";
     };
     class PlasmaIV: BloodIV {
-        treatmentTime =  QUOTE([11] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
+        treatmentTime =  QFUNC(getIVTime);
         displayName = "Plasmatransfusion (1400ml)";
     };
     class PlasmaIV_500: PlasmaIV {
@@ -45,7 +45,7 @@ class ace_medical_treatment_actions {
         displayName = "Plasmatransfusion (350ml)";
     };
     class SalineIV: BloodIV {
-        treatmentTime =  QUOTE([17] call FUNC(calcTreatmentTime)); // + round (x * 1,5)
+        treatmentTime =  QFUNC(getIVTime);
         displayName = "Kochsalztransfusion (700ml)";
         requiredMedic = 0;
     };
@@ -78,5 +78,41 @@ class ace_medical_treatment_actions {
     };
     class PersonalAidKit: BasicBandage {
         treatmentTime =  QFUNC(getHealTime);
+    };
+};
+
+class ace_medical_treatment {
+    class IV {
+        volume = 1000; // volume is in millileters
+
+        class BloodIV {
+            volume = 2800; // 1000
+        };
+        class BloodIV_500: BloodIV {
+            volume = 1400; // 500
+        };
+        class BloodIV_250: BloodIV {
+            volume = 700; // 250
+        };
+
+        class PlasmaIV: BloodIV {
+            volume = 1400;
+        };
+        class PlasmaIV_500: PlasmaIV {
+            volume = 700;
+        };
+        class PlasmaIV_250: PlasmaIV {
+            volume = 350;
+        };
+
+        class SalineIV: BloodIV {
+            volume = 700;
+        };
+        class SalineIV_500: SalineIV {
+            volume = 350;
+        };
+        class SalineIV_250: SalineIV {
+            volume = 125;
+        };
     };
 };

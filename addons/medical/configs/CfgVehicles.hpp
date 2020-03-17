@@ -5,7 +5,5 @@
 
 class CfgVehicles
 {
-    // ###################### ACE-MEDICAL-ANPASSUNGEN ######################
     
-
 };
