@@ -14,27 +14,17 @@
  * Treatment Time <NUMBER>
  *
  * Example:
- * [player, cursorTarget, "Head", "FieldDressing"] call ace_medical_treatment_fnc_getBandageTime
+ * [player, cursorTarget, "Head", "FieldDressing"] call TBMod_medical_fnc_getBandageTime
  *
  * Public: No
  */
 
 params ["_medic", "_patient", "_bodypart", "_bandage"];
 
-/*
-
-params [["_input", -1, [0]]];
-systemChat str _input;
-private _inFacility = [ACE_player] call ace_medical_fnc_isInMedicalFacility;
-private _inVehicle = [ACE_player] call ace_medical_fnc_isInMedicalVehicle;
-private _influence = ([0, 0.45] select _inVehicle) max ([0, 0.65] select _inFacility);
-
-private _result = _input * (0.05 max (GVAR(coef) - _influence) min 2);
-["Treatmenttime -> Orig: %1 | Now: %2 | Coef: %3 | Influ: %4 | InFac: %5 | InVeh: %6", _input, _result, GVAR(coef), _influence, _inFacility, _inVehicle] call EFUNC(main,debug);
-
-_result;
-
-*/
+private _inFacility = [ACE_player] call EFUNC(medical,isInMedicalFacility);
+private _inVehicle = [ACE_player] call EFUNC(medical,isInMedicalVehicle);
+private _isSani = [_medic, 1] call FUNC(isMedic);
+private _isArzt = [_medic, 2] call FUNC(isMedic);
 
 private _partIndex = ALL_BODY_PARTS find toLower _bodyPart;
 if (_partIndex < 0) exitWith { ERROR_1("invalid partIndex - %1",_this); 0 };
@@ -59,10 +49,11 @@ if (GVAR(advancedBandages) != 0) then {
 };
 
 // Medics are more practised at applying bandages
-if ([_medic, 1] call FUNC(isMedic)) then {
+
+if (_isSani) then {
     _bandageTime = _bandageTime - 1;
 };
-if ([_medic, 2] call FUNC(isMedic)) then {
+if (_isArzt) then {
     _bandageTime = _bandageTime - 1;
 };
 
@@ -70,6 +61,10 @@ if ([_medic, 2] call FUNC(isMedic)) then {
 if (_medic == _patient) then {
     _bandageTime = _bandageTime + 1; //2
 };
-systemChat str _bandageTime;
+
 // Nobody can bandage instantly
+
+["Treatmenttime -> Out: %1, Sani: %2, Arzt: %2", _bandageTime, _isSani, _isArzt] call TBMod_main_debug;
+
+
 _bandageTime max 1

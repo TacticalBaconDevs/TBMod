@@ -24,13 +24,5 @@ class CfgFunctions
                 file = QPATHTOF(replacement\fnc_handleStateUnconscious.sqf);
             };
         };
-        class medical_treatment
-        {
-            tag = "ace_medical_treatment";
-            class getBandageTime
-            {
-                file = QPATHTOF(replacement\fnc_getBandageTime.sqf);
-            };
-        };
     };
 };
