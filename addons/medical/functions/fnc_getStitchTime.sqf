@@ -19,8 +19,8 @@
 
 params ["_medic", "_patient", "_bodypart", "_bandage"];
 
-private _inFacility = [ACE_player] call FUNC(isInMedicalFacility);
-private _inVehicle = [ACE_player] call FUNC(isInMedicalVehicle);
+private _inFacility = [_patient] call FUNC(isInMedicalFacility);
+private _inVehicle = [_patient] call FUNC(isInMedicalVehicle);
 private _isSani = [_medic, 1] call FUNC(isMedic);
 private _isArzt = [_medic, 2] call FUNC(isMedic);
 
