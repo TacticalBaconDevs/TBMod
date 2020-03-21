@@ -40,7 +40,7 @@ _wound params ["_classID", "", "_amountOf", "_bloodloss", "_damage"];
 private _category = (_classID % 10);
 
 // Base bandage time is based on wound size and remaining percentage
-private _bandageTime = [2, 3, 4] select _category; //4,6,8
+private _bandageTime = [3, 4, 5] select _category; //4,6,8
 
 // Scale bandage time based on amount left and effectiveness (less time if only a little wound left)
 // Basic bandage treatment will have a very high effectiveness and can be ignored
