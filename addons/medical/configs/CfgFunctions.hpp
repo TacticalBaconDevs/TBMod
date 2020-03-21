@@ -7,21 +7,14 @@ class CfgFunctions
     // REPLACEMENT - ace
     class ace
     {
-        
+        tag = "ace_medical_status";
         class medical_status
         {
             tag = "ace_medical_status";
             class hasStableVitals
-            {
+            {   
+                tag = "ace_medical_status";
                 file = QPATHTOF(replacement\fnc_hasStableVitals.sqf);
-            };
-        };
-        class medical_statemachine
-        {
-            tag = "ace_medical_statemachine";
-            class handleStateUnconscious
-            {
-                file = QPATHTOF(replacement\fnc_handleStateUnconscious.sqf);
             };
         };
     };
