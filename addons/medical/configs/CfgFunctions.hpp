@@ -12,7 +12,8 @@ class CfgFunctions
         {
             tag = "ace_medical_status";
             class hasStableVitals
-            {   tag = "ace_medical_status";
+            {   
+                tag = "ace_medical_status";
                 file = QPATHTOF(replacement\fnc_hasStableVitals.sqf);
             };
         };
