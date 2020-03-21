@@ -24,8 +24,14 @@ private _inVehicle = [ACE_player] call FUNC(isInMedicalVehicle);
 private _isSani = [_medic, 1] call FUNC(isMedic);
 private _isArzt = [_medic, 2] call FUNC(isMedic);
 
+if (isInMedicalFacility) then {
+    _bandageTime = _bandageTime * 0.25;
+};
+if (isInMedicalVehicle) then {
+    _bandageTime = _bandageTime * 0.75;
+};
 
-private _time = count (_patient call FUNC(getStitchableWounds)) * WOUND_STITCH_TIME;
+private _time = count (_patient call FUNC(getStitchableWounds)) * 0.9 * WOUND_STITCH_TIME;
 ["Treatmenttime(Stitch) ->Take: %1, Sani: %2, Arzt: %3, Vehicle: %4, Facility: %5", _time, _isSani, _isArzt, _inVehicle, _inFacility] call TBMod_main_fnc_debug;
 
 _time;
