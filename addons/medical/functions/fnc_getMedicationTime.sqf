@@ -4,6 +4,8 @@
 
 TBMod_medical_fnc_getIVTime
 */
+params ["_medic", "_patient", "_bodypart", "_bandage"];
+
 private _inFacility = [ACE_player] call FUNC(isInMedicalFacility);
 private _inVehicle = [ACE_player] call FUNC(isInMedicalVehicle);
 private _isSani = [_medic, 1] call FUNC(isMedic);

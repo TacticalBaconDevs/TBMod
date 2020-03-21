@@ -19,7 +19,7 @@
 
 #define DAMAGE_SCALING_FACTOR 5
 
-params ["", "_patient"];
+params ["_medic", "_patient", "_bodypart", "_bandage"];
 
 
 private _inFacility = [ACE_player] call FUNC(isInMedicalFacility);
