@@ -34,11 +34,11 @@ private _relDir = 0; // TODO: FOV für relDir -> getObjectFOV / getResolution
             _outRange = _x distance _unit >= 6000;
             _relDir = abs ((((getPos _x) vectorFromTo (getPos _unit)) call CBA_fnc_vectDir) - ((getCameraViewDirection _x) call CBA_fnc_vectDir));
             _noDirSight = _relDir > 50 && _relDir < 310;
-            _noSight =  [_x, "VIEW"] checkVisibility [eyePos _x, eyepos _unit] < 0.1 || [_x, "VIEW"] checkVisibility [eyePos _x, AGLToASL (unitAimPosition _unit)] < 0.1;
+            _noSight =  [_x, "VIEW"] checkVisibility [eyePos _x, eyepos _unit] < 0.1 || [_x, "VIEW"] checkVisibility [eyePos _x, AGLToASL (unitAimPosition _unit)] < 0.1; // TODO: selections checking
 
             _outRange || _noDirSight || _noSight
         };
-        _static = !(_unit checkAIFeature "PATH"); // TODO: doStop
+        _static = !(_unit checkAIFeature "PATH"); // TODO: doStop checking
         _patrol = currentWaypoint (group _unit) != count (waypoints _unit);
 
         _sim = true;

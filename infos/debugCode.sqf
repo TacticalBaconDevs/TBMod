@@ -200,6 +200,27 @@ fnc_backpack = {
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
 
+// Punkte Selections
+onEachFrame {
+    {
+        private _selName = _x;
+        
+        {
+            _x params ["_lodName", "_color"];
+            drawIcon3D ["", _color, bob modelToWorldVisual (bob selectionPosition [_selName, _lodName]), 0, 0, 0, _selName];
+        }
+        forEach [
+            ["Memory", [1,1,1,1]], // White
+            ["Geometry", [1,0,1,1]], // Purple
+            ["FireGeometry", [1,1,0,1]], // Yellow
+            ["LandContact", [0,1,1,1]], // Turquoise
+            ["HitPoints", [0,0,1,1]] // Blue
+        ];
+    }
+    forEach (selectionNames bob);
+};
+
+
 // Punkte BoundingBox
 onEachFrame {
     (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
