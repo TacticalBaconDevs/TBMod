@@ -26,7 +26,7 @@ if (TB_origin_medicClass == 0) then
     };
 };
 
-// Sanitäter - Enigneer / Pilot / Pionier / JTAC
+// Enigneer / Pilot / Pionier / JTAC
 if (isNil "TB_origin_IsEngineer") then {TB_origin_IsEngineer = ACE_player getVariable ["ACE_IsEngineer", 0]};
 if (TB_origin_IsEngineer == 0) then
 {

@@ -15,7 +15,7 @@ if (_arsenalType in ["USA", "RUSS", "UK"]) then {TB_blacklistRollen = ["dmr"]};
 TB_blacklistRollen_themen = [];
 // TB_customName_themen: ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]
 TB_customName_themen = [];
-if (_arsenalType == "Themen") then
+if (_arsenalType == "THEMEN") then
 {
     private _patches = configfile >> "CfgPatches";
     private _side = side ACE_player;
@@ -35,7 +35,7 @@ if (_arsenalType == "Themen") then
             // Vanilla-COP
             //TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
             //TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
-            
+
             // WoMi Polizei
             TB_blacklistRollen_themen = ["grena", "mg", "dmr", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "pionier"];
             TB_customName_themen = ["Polizist","","Polizist-Sani","","","","","","Polizeipilot","","","","SWAT-Sani","SWAT",""];

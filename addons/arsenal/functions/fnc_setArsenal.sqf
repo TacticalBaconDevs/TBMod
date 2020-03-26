@@ -19,7 +19,8 @@ private _allItems = call (switch (_type) do
     case "RUSS": {FUNC(arsenalRUSS)};
     case "BW": {FUNC(arsenalBW)};
     case "VANILLA": {FUNC(arsenalVANILLA)};
-    case "Themen": {FUNC(arsenalThemen)};
+    case "THEMEN": {FUNC(arsenalThemen)};
+    case "SPEZIAL": {if (!isNil QFUNC(arsenalSpezial)) then {FUNC(arsenalSpezial)} else {systemChat "Das Spezialarsenal ist nicht initalisiert!"; {[]}}};
     default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {[]}};
 });
 

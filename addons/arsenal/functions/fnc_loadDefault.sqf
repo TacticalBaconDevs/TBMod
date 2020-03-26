@@ -130,7 +130,7 @@ if (_arsenalType == "RUSS") exitWith
     ACE_player setUnitLoadout [_layout, true];
 };
 
-if (_arsenalType == "Themen") exitWith
+if (_arsenalType == "THEMEN") exitWith
 {
     private _patches = configfile >> "CfgPatches";
     private _side = side ACE_player;
