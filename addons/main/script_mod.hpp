@@ -16,7 +16,7 @@
 
 #define DEBUG_MODE_FULL
 #define DISABLE_COMPILE_CACHE
-// #define ENABLE_PERFORMANCE_COUNTERS
+#define ENABLE_PERFORMANCE_COUNTERS
 
 /*
     Mod spezifische Makros
