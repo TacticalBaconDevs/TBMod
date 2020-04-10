@@ -796,6 +796,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m249_light_S",
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
+            // ### Zweibein
+            "rhsusf_acc_saw_lw_bipod",
 
             // Vests
             "rhsusf_iotv_ocp_SAW",
@@ -981,7 +983,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_plateframe_rifleman",
             // Spezial
             "ACE_Kestrel4500",
-            "ACE_RangeCard"
+            "ACE_RangeCard",
+            
+            // Binocular
+            "ace_vector"
         ]
     };
 
