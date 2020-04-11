@@ -62,8 +62,8 @@ class ace_medical_treatment_actions {
     class Diagnose: BasicBandage {};
 
     class CheckPulse: Diagnose {};
-    class CheckBloodPressure: Diagnose {};
-    class CheckResponse: Diagnose {};
+    class CheckBloodPressure: CheckPulse {};
+    class CheckResponse: CheckPulse {};
 
     class BodyBag: BasicBandage {
         treatmentTime =  10;
