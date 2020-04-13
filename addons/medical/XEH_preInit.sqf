@@ -12,4 +12,12 @@ PREP_RECOMPILE_END;
 
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
+[
+    QGVAR(coef_global),
+    "SLIDER",
+    ["MedicSystemCoef", "Bestimmt die Zeiten für medizinische Aktionen (kleiner = weniger Zeit)"],
+    "TBMod",
+    [0.1, 2, 1, 1]
+] call CBA_fnc_addSetting;
+
 ADDON = true;

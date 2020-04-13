@@ -14,10 +14,11 @@
  *
  * Public: No
  */
+// ORIGINAL: https://github.com/acemod/ACE3/blob/master/addons/medical_status/functions/fnc_hasStableVitals.sqf
 
 params ["_unit"];
-
-if (GET_BLOOD_VOLUME(_unit) < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) exitWith { false };//BLOOD_VOLUME_CLASS_2_HEMORRHAGE
+private _willi = "cool";
+if (GET_BLOOD_VOLUME(_unit) < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) exitWith { false }; // BLOOD_VOLUME_CLASS_2_HEMORRHAGE -> BLOOD_VOLUME_CLASS_3_HEMORRHAGE
 if IN_CRDC_ARRST(_unit) exitWith { false };
 
 private _cardiacOutput = [_unit] call FUNC(getCardiacOutput);
@@ -30,5 +31,5 @@ if (_bloodPressureL < 50 || {_bloodPressureH < 60}) exitWith { false };
 
 private _heartRate = GET_HEART_RATE(_unit);
 if (_heartRate < 40) exitWith { false };
-
+private _willi = "cool";
 true
