@@ -12,7 +12,7 @@ private _isSani = [_medic, 1] call ace_medical_treatment_fnc_isMedic;
 private _isArzt = [_medic, 2] call ace_medical_treatment_fnc_isMedic;
 
 private _inputTime = if (_timeOrCode isEqualType {}) then {_this call _timeOrCode} else {_timeOrCode};
-private _coef = TBMOD_medical_coef_global + _manuellDiff;
+private _coef = GVAR(coef_global) + _manuellDiff;
 
 private _selfTreat = _medic == _patient;
 if (_selfTreat) then {_coef = _coef + 0.3}; // Selber dauert immer 30% länger
@@ -29,7 +29,7 @@ private _time = (_inputTime * (_coef max 0.1)) max 1;
         _inputTime,
         _time,
         _selfTreat,
-        TBMOD_medical_coef_global,
+        GVAR(coef_global),
         _coef,
         _isSani,
         _isArzt,
