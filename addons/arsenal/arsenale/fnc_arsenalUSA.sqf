@@ -796,6 +796,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m249_light_S",
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
+            // ### Zweibein
+            "rhsusf_acc_saw_lw_bipod",
 
             // Vests
             "rhsusf_iotv_ocp_SAW",
@@ -952,19 +954,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m24sws",
             "rhs_weap_m24sws_d",
             "rhs_weap_m24sws_wd",
-            // Weste
-            "rhsusf_iotv_ocp_Rifleman",
-            "rhsusf_iotv_ucp_Rifleman",
-            "rhsusf_mbav_Rifleman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman",
-            "rhsusf_spc_marksman",
-            "rhsusf_plateframe_marksman",
-            "rhsusf_plateframe_rifleman",
-            // Spezial
-            "ACE_Kestrel4500",
-            "ACE_RangeCard",
             // ### Geschützzubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
@@ -980,7 +969,24 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "optic_ams",
             "optic_ams_khk",
             "optic_ams_snd",
-            "optic_sos"
+            "optic_sos",
+
+            // Weste
+            "rhsusf_iotv_ocp_Rifleman",
+            "rhsusf_iotv_ucp_Rifleman",
+            "rhsusf_mbav_Rifleman",
+            "rhsusf_spc_rifleman",
+            "rhsusf_spcs_ocp_rifleman",
+            "rhsusf_spcs_ucp_rifleman",
+            "rhsusf_spc_marksman",
+            "rhsusf_plateframe_marksman",
+            "rhsusf_plateframe_rifleman",
+            // Spezial
+            "ACE_Kestrel4500",
+            "ACE_RangeCard",
+            
+            // Binocular
+            "ace_vector"
         ]
     };
 

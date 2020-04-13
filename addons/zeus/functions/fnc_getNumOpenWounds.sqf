@@ -19,7 +19,7 @@ params ["_unit"];
 private _wound = 0;
 
 {
-    _x params ["", "", "_bodyPart", "_numOpenWounds", "_bloodLoss"];
+    _x params ["", "_bodyPart", "_numOpenWounds", "_bloodLoss", ""];
     if (_bloodLoss > 0 && _bodyPart >= 0 && _bodyPart <= 5) then {_wound = _wound + _numOpenWounds};
 }
 forEach (_unit getVariable ["ace_medical_openWounds", []]);
