@@ -199,3 +199,61 @@ fnc_backpack = {
 };
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
+
+// Create grid of all houses
+{deleteVehicle _x} forEach ((allMissionObjects "") - (allMissionObjects "Module"));   
+private _houses = ("getNumber (_x >> 'scope') == 2 && !((configName _x) isKindof 'Ruin') && {(configName _x) isKindof 'Building' || (configName _x) isKindof 'House'}" configClasses (configFile >> "CfgVehicles")) apply {configName _x};   
+_houses = _houses select {true}; // TODO: filter PathLODs ohne model p3d usw   
+_houses resize 1000;   
+private _buildingsCount = 0;   
+   
+private _lineStart = [0,0,0];   
+private _buildingPos = [0,0,0];   
+private _building = objNull;   
+private _maxLineSize = 1000;   
+private _maxSize = 0;   
+{   
+    _building = createVehicle [_x, [0,0,0], [], 0, "CAN_COLLIDE"];   
+    if !((_building buildingPos -1) isEqualTo []) then   
+    {   
+        _building allowDamage false;   
+        _building setPos _buildingPos;   
+        _buildingPos set [0, (_buildingPos # 0) + ((sizeOf _x) max 50)];   
+        _maxSize = _maxSize max (sizeOf _x);   
+        _buildingsCount = _buildingsCount + 1; 
+    }   
+    else   
+    {   
+        deleteVehicle _building;   
+    };   
+       
+    if (_lineStart distance2d _buildingPos > _maxLineSize) then   
+    { 
+        _buildingPos = [0, (_buildingPos # 1) + (_maxSize max 50), 0];   
+        _lineStart = +_buildingPos;   
+        _maxSize = 0;   
+    };   
+}   
+forEach _houses;   
+_buildingsCount
+
+
+// Kisten mit gleichem Namen gleich befüllen
+this spawn
+{
+    uiSleep 10;
+    
+    missionNamespace setVariable [(typeOf _this) + "_loadout", [getWeaponCargo _this, getItemCargo _this, getMagazineCargo _this]];
+    [typeOf _this, "InitPost", {
+        (missionNamespace getVariable [(typeOf _this) + "_loadout", [[],[],[]]]) params ["_weaponCargo", "_itemCargo", "_magazineCargo"];
+        
+        clearWeaponCargoGlobal _this;
+        {_this addWeaponCargoGlobal [_x, (_weaponCargo # 1) select _forEachIndex]} forEach (_weaponCargo # 0);
+        
+        clearItemCargoGlobal _this;
+        {_this addItemCargoGlobal [_x, (_itemCargo # 1) select _forEachIndex]} forEach (_itemCargo # 0);
+        
+        clearMagazineCargoGlobal _this;
+        {_this addMagazineCargoGlobal [_x, (_magazineCargo # 1) select _forEachIndex]} forEach (_magazineCargo # 0);
+    }, false] call CBA_fnc_addClassEventHandler;
+};
