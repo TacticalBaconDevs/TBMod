@@ -23,7 +23,7 @@ class CfgVehicles
         }
     #define ADD_SUPPLY(NAME,ITEM) class ITEM \
         { \
-            displayName = #NAME; \
+            displayName = NAME; \
             condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
             statement = QUOTE([_target, 'ITEM'] spawn FUNC(createSupply)); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
@@ -117,38 +117,38 @@ class CfgVehicles
                     displayName = "Allgemein";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
 
-                    ADD_SUPPLY(LeereKiste,TB_supply_empty);
-                    ADD_SUPPLY(Sanikiste,TB_supply_all_medic);
-                    ADD_SUPPLY(Arztkiste,TB_supply_all_arzt);
-                    ADD_SUPPLY(Ersatzreifen,ACE_Wheel);
-                    ADD_SUPPLY(Ersatzkette,ACE_Track);
-                    ADD_SUPPLY(Funkgeräte,TB_supply_all_funk);
-                    ADD_SUPPLY(EquipmentKiste,TB_supply_all_misc);
-                    ADD_SUPPLY(Sprengstoff,TB_supply_all_mines);
+                    ADD_SUPPLY("LeereKiste",TB_supply_empty);
+                    ADD_SUPPLY("Sanikiste",TB_supply_all_medic);
+                    ADD_SUPPLY("Arztkiste",TB_supply_all_arzt);
+                    ADD_SUPPLY("Ersatzreifen",ACE_Wheel);
+                    ADD_SUPPLY("Ersatzkette",ACE_Track);
+                    ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
+                    ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
+                    ADD_SUPPLY("Sprengstoff",TB_supply_all_mines);
 
                     class allgemeinMortar
                     {
                         displayName = "Mörser Kisten";
 
-                        ADD_SUPPLY(Mörserkit,TB_supply_all_mortar);
-                        ADD_SUPPLY(Mörser Munnition,TB_supply_all_mortarAmmo);
-                        ADD_SUPPLY(Mörser MunnitionHE,TB_supply_all_mortarAmmoHE);
-                        ADD_SUPPLY(Mörser MunnitionRauch,TB_supply_all_mortarAmmoSmoke);
-                        ADD_SUPPLY(Mörser MunnitionFlare,TB_supply_all_mortarAmmoFlare);
-                        ADD_SUPPLY(vz99 Mörser Munition,TB_supply_all_commandMortarAmmo);
-                        ADD_SUPPLY(vz99 Mörser MunitionHE,TB_supply_all_commandMortarAmmoHE);
+                        ADD_SUPPLY("Mörserkit",TB_supply_all_mortar);
+                        ADD_SUPPLY("Mörser Munnition",TB_supply_all_mortarAmmo);
+                        ADD_SUPPLY("Mörser MunnitionHE",TB_supply_all_mortarAmmoHE);
+                        ADD_SUPPLY("Mörser MunnitionRauch",TB_supply_all_mortarAmmoSmoke);
+                        ADD_SUPPLY("Mörser MunnitionFlare",TB_supply_all_mortarAmmoFlare);
+                        ADD_SUPPLY("vz99 Mörser Munition",TB_supply_all_commandMortarAmmo);
+                        ADD_SUPPLY("vz99 Mörser MunitionHE",TB_supply_all_commandMortarAmmoHE);
                     };
 
                     class allgemeinBaukisten
                     {
                         displayName = "Baukisten und Kits";
 
-                        ADD_SUPPLY(HMGKit,TB_supply_all_hmg);
-                        ADD_SUPPLY(GMGKit,TB_supply_all_gmg);
-                        ADD_SUPPLY(TOWKit,TB_supply_all_tow);
-                        ADD_SUPPLY(FlaRakKit,TB_supply_all_flarak);
-                        ADD_SUPPLY(BauKiste,TB_supply_all_building);
-                        ADD_SUPPLY(SaniBaukiste,TB_supply_all_medicbuilding);
+                        ADD_SUPPLY("HMGKit",TB_supply_all_hmg);
+                        ADD_SUPPLY("GMGKit",TB_supply_all_gmg);
+                        ADD_SUPPLY("TOWKit",TB_supply_all_tow);
+                        ADD_SUPPLY("FlaRakKit",TB_supply_all_flarak);
+                        ADD_SUPPLY("BauKiste",TB_supply_all_building);
+                        ADD_SUPPLY("SaniBaukiste",TB_supply_all_medicbuilding);
                     };
                 };
 
@@ -157,30 +157,30 @@ class CfgVehicles
                     displayName = "USA";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
-                    
-                    ADD_SUPPLY(Notfall,TB_supply_usa_notfall);
-                    ADD_SUPPLY(NachtKiste,TB_supply_usa_night);
-                    
+
+                    ADD_SUPPLY("Notfall",TB_supply_usa_notfall);
+                    ADD_SUPPLY("NachtKiste",TB_supply_usa_night);
+
                     class USAMunition
                     {
                         displayName = "Muntions Kisten";
 
-                        ADD_SUPPLY(Munition,TB_supply_usa_ammo);
-                        ADD_SUPPLY(KleinMunition,TB_supply_usa_ammoSmall);
-                        ADD_SUPPLY(SpezialMunition,TB_supply_usa_spezial);
-                        ADD_SUPPLY(Granaten,TB_supply_usa_grena);
-                        ADD_SUPPLY(Unterlauf,TB_supply_usa_unterlauf);
+                        ADD_SUPPLY("Munition",TB_supply_usa_ammo);
+                        ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
+                        ADD_SUPPLY("SpezialMunition",TB_supply_usa_spezial);
+                        ADD_SUPPLY("Granaten",TB_supply_usa_grena);
+                        ADD_SUPPLY("Unterlauf",TB_supply_usa_unterlauf);
                     };
 
                     class USAWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
 
-                        ADD_SUPPLY(Werfer,TB_supply_usa_launcher);
-                        ADD_SUPPLY(WerferMunition,TB_supply_usa_launcherAmmo);
-                        ADD_SUPPLY(JavlinMunition,TB_supply_usa_javlinAmmo);
-                        ADD_SUPPLY(MAAWSMunition,TB_supply_usa_MAAWSAmmo);
-                        ADD_SUPPLY(SMAWMunition,TB_supply_usa_SMAWAmmo);
+                        ADD_SUPPLY("Werfer",TB_supply_usa_launcher);
+                        ADD_SUPPLY("WerferMunition",TB_supply_usa_launcherAmmo);
+                        ADD_SUPPLY("JavlinMunition",TB_supply_usa_javlinAmmo);
+                        ADD_SUPPLY("MAAWSMunition",TB_supply_usa_MAAWSAmmo);
+                        ADD_SUPPLY("SMAWMunition",TB_supply_usa_SMAWAmmo);
                     };
                 };
 
@@ -190,41 +190,41 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                    ADD_SUPPLY(Notfall,TB_supply_uk_notfall);
-                    ADD_SUPPLY(Nacht Kiste,TB_supply_uk_night);
-                    
+                    ADD_SUPPLY("Notfall",TB_supply_uk_notfall);
+                    ADD_SUPPLY("Nacht Kiste",TB_supply_uk_night);
+
                     class UKMunition
                     {
                         displayName = "Munitions Kisten";
 
-                        ADD_SUPPLY(Munition,TB_supply_uk_ammo);
-                        ADD_SUPPLY(Klein Munition,TB_supply_uk_ammoSmall);
-                        ADD_SUPPLY(Spezial Munition,TB_supply_uk_spezial);
-                        ADD_SUPPLY(Granaten,TB_supply_uk_grena);
-                        ADD_SUPPLY(Unterlauf,TB_supply_uk_unterlauf);
+                        ADD_SUPPLY("Munition",TB_supply_uk_ammo);
+                        ADD_SUPPLY("KleinMunition",TB_supply_uk_ammoSmall);
+                        ADD_SUPPLY("SpezialMunition",TB_supply_uk_spezial);
+                        ADD_SUPPLY("Granaten",TB_supply_uk_grena);
+                        ADD_SUPPLY("Unterlauf",TB_supply_uk_unterlauf);
                     };
 
                     class UKWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
 
-                        ADD_SUPPLY(Werfer,TB_supply_uk_launcher);
-                        ADD_SUPPLY(Igla Munition,TB_supply_uk_IglaAmmo);
-                        ADD_SUPPLY(Javlin Munition,TB_supply_uk_javlinAmmo);
-                        ADD_SUPPLY(MAAWS Munition,TB_supply_uk_MAAWSAmmo);
-                        ADD_SUPPLY(SMAW Munition,TB_supply_uk_SMAWAmmo);
+                        ADD_SUPPLY("Werfer",TB_supply_uk_launcher);
+                        ADD_SUPPLY("Igla Munition",TB_supply_uk_IglaAmmo);
+                        ADD_SUPPLY("Javlin Munition",TB_supply_uk_javlinAmmo);
+                        ADD_SUPPLY("MAAWS Munition",TB_supply_uk_MAAWSAmmo);
+                        ADD_SUPPLY("SMAW Munition",TB_supply_uk_SMAWAmmo);
                     };
 
                     class UKFahrzeuge
                     {
                         displayName = "Fahrzeug Kisten";
 
-                        ADD_SUPPLY(9x Fahrzeug Magazine 12.7,TB_supply_uk_vehicles127);
-                        ADD_SUPPLY(9x Fahrzeug Magazine 7.62,TB_supply_uk_vehicles762);
-                        ADD_SUPPLY(5x Fahrzeug Magazine GMG,TB_supply_uk_vehiclesGMG);
-                        ADD_SUPPLY(9x Warrior Magazine APDS,TB_supply_uk_warriorAPDS);
-                        ADD_SUPPLY(9x Warrior Magazine HE,TB_supply_uk_warriorHE);
-                        ADD_SUPPLY(2x Warrior Magazine 800 MG,TB_supply_uk_warriorMG);
+                        ADD_SUPPLY("9x Fahrzeug Magazine 12.7",TB_supply_uk_vehicles127);
+                        ADD_SUPPLY("9x Fahrzeug Magazine 7.62",TB_supply_uk_vehicles762);
+                        ADD_SUPPLY("5x Fahrzeug Magazine GMG",TB_supply_uk_vehiclesGMG);
+                        ADD_SUPPLY("9x Warrior Magazine APDS",TB_supply_uk_warriorAPDS);
+                        ADD_SUPPLY("9x Warrior Magazine HE",TB_supply_uk_warriorHE);
+                        ADD_SUPPLY("2x Warrior Magazine 800 MG",TB_supply_uk_warriorMG);
                     };
                 };
 
@@ -234,15 +234,15 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_bw', 'TB_arsenal_predefined_custom'], []]) isEqualTo []) && isClass (configFile >> 'CfgPatches' >> 'bwa3_common')";
 
-                    ADD_SUPPLY(Munition,TB_supply_bw_ammo);
-                    ADD_SUPPLY(KleinMunition,TB_supply_bw_ammoSmall);
-                    ADD_SUPPLY(Granaten,TB_supply_bw_grena);
-                    ADD_SUPPLY(Unterlauf,TB_supply_bw_unterlauf);
-                    ADD_SUPPLY(SpezialMunition,TB_supply_bw_spezial);
-                    ADD_SUPPLY(Werfer,TB_supply_bw_launcher);
-                    ADD_SUPPLY(WerferMunition,TB_supply_bw_launcherAmmo);
-                    ADD_SUPPLY(NotfallG36,TB_supply_bw_notfallg36);
-                    ADD_SUPPLY(NachtKiste,TB_supply_bw_night);
+                    ADD_SUPPLY("Munition",TB_supply_bw_ammo);
+                    ADD_SUPPLY("KleinMunition",TB_supply_bw_ammoSmall);
+                    ADD_SUPPLY("Granaten",TB_supply_bw_grena);
+                    ADD_SUPPLY("Unterlauf",TB_supply_bw_unterlauf);
+                    ADD_SUPPLY("SpezialMunition",TB_supply_bw_spezial);
+                    ADD_SUPPLY("Werfer",TB_supply_bw_launcher);
+                    ADD_SUPPLY("WerferMunition",TB_supply_bw_launcherAmmo);
+                    ADD_SUPPLY("NotfallG36",TB_supply_bw_notfallg36);
+                    ADD_SUPPLY("NachtKiste",TB_supply_bw_night);
                 };
 
                 class nato
@@ -251,12 +251,12 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                    ADD_SUPPLY(Munition,TB_supply_nato_ammo);
-                    ADD_SUPPLY(Granaten,TB_supply_nato_grena);
-                    ADD_SUPPLY(Unterlauf,TB_supply_nato_unterlauf);
-                    ADD_SUPPLY(WerferMunition,TB_supply_nato_launcherAmmo);
-                    ADD_SUPPLY(ED-1D Drohne,TB_supply_nato_ED);
-                    ADD_SUPPLY(NachtKiste,TB_supply_nato_night);
+                    ADD_SUPPLY("Munition",TB_supply_nato_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_nato_grena);
+                    ADD_SUPPLY("Unterlauf",TB_supply_nato_unterlauf);
+                    ADD_SUPPLY("WerferMunition",TB_supply_nato_launcherAmmo);
+                    ADD_SUPPLY("ED-1D Drohne",TB_supply_nato_ED);
+                    ADD_SUPPLY("NachtKiste",TB_supply_nato_night);
                 };
 
                 class ldf
@@ -265,12 +265,12 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                    ADD_SUPPLY(Munition,TB_supply_ldf_ammo);
-                    ADD_SUPPLY(Granaten,TB_supply_ldf_grena);
-                    ADD_SUPPLY(Unterlauf,TB_supply_ldf_unterlauf);
-                    ADD_SUPPLY(WerferMunition,TB_supply_ldf_launcherAmmo);
-                    ADD_SUPPLY(ED-1D Drohne,TB_supply_ldf_ED);
-                    ADD_SUPPLY(NachtKiste,TB_supply_ldf_night);
+                    ADD_SUPPLY("Munition",TB_supply_ldf_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_ldf_grena);
+                    ADD_SUPPLY("Unterlauf",TB_supply_ldf_unterlauf);
+                    ADD_SUPPLY("WerferMunition",TB_supply_ldf_launcherAmmo);
+                    ADD_SUPPLY("ED-1D Drohne",TB_supply_ldf_ED);
+                    ADD_SUPPLY("NachtKiste",TB_supply_ldf_night);
                 };
 
                 class russ
@@ -279,15 +279,15 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_russ', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                    ADD_SUPPLY(Munition,TB_supply_russ_ammo);
-                    ADD_SUPPLY(KleinMunition,TB_supply_russ_ammoSmall);
-                    ADD_SUPPLY(Granaten,TB_supply_russ_grena);
-                    ADD_SUPPLY(Unterlauf,TB_supply_russ_unterlauf);
-                    ADD_SUPPLY(SpezialMunition,TB_supply_russ_spezial);
-                    ADD_SUPPLY(Werfer,TB_supply_russ_launcher);
-                    ADD_SUPPLY(WerferMunition,TB_supply_russ_launcherAmmo);
-                    ADD_SUPPLY(NotfallWaffen,TB_supply_russ_notfall);
-                    ADD_SUPPLY(NachtKiste,TB_supply_russ_night);
+                    ADD_SUPPLY("Munition",TB_supply_russ_ammo);
+                    ADD_SUPPLY("KleinMunition",TB_supply_russ_ammoSmall);
+                    ADD_SUPPLY("Granaten",TB_supply_russ_grena);
+                    ADD_SUPPLY("Unterlauf",TB_supply_russ_unterlauf);
+                    ADD_SUPPLY("SpezialMunition",TB_supply_russ_spezial);
+                    ADD_SUPPLY("Werfer",TB_supply_russ_launcher);
+                    ADD_SUPPLY("WerferMunition",TB_supply_russ_launcherAmmo);
+                    ADD_SUPPLY("NotfallWaffen",TB_supply_russ_notfall);
+                    ADD_SUPPLY("NachtKiste",TB_supply_russ_night);
                 };
 
                 class packBack
