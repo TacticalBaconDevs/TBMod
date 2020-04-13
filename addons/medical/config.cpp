@@ -20,6 +20,5 @@ class CfgPatches
 // Configs
 #include "configs\CfgFunctions.hpp"
 #include "configs\ACE_Medical_Treatments.hpp"
-#include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
