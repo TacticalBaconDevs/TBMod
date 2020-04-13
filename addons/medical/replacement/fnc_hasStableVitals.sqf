@@ -14,10 +14,11 @@
  *
  * Public: No
  */
+// ORIGINAL: https://github.com/acemod/ACE3/blob/master/addons/medical_status/functions/fnc_hasStableVitals.sqf
 
 params ["_unit"];
 
-if (GET_BLOOD_VOLUME(_unit) < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) exitWith { false };//BLOOD_VOLUME_CLASS_2_HEMORRHAGE
+if (GET_BLOOD_VOLUME(_unit) < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) exitWith { false }; // BLOOD_VOLUME_CLASS_2_HEMORRHAGE -> BLOOD_VOLUME_CLASS_3_HEMORRHAGE
 if IN_CRDC_ARRST(_unit) exitWith { false };
 
 private _cardiacOutput = [_unit] call FUNC(getCardiacOutput);

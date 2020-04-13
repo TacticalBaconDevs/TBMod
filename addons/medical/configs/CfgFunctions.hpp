@@ -5,15 +5,12 @@
 class CfgFunctions
 {
     // REPLACEMENT - ace
-    class ace
+    class ace_medical_status
     {
-        tag = "ace_medical_status";
         class medical_status
         {
-            tag = "ace_medical_status";
             class hasStableVitals
-            {   
-                tag = "ace_medical_status";
+            {
                 file = QPATHTOF(replacement\fnc_hasStableVitals.sqf);
             };
         };
