@@ -195,7 +195,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
                             [
                                 "",
                                 [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
-                                ASLToAGL getPosASL _x,
+                                getPosVisual _x,
                                 1,
                                 2,
                                 0,
@@ -223,11 +223,12 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, 5] call CBA_fnc_addPerFrameHandler;
 
 
+// TODO: gibts nicht mehr
 // ### CPR/HLW Stuff
-["adv_aceCPR_evh_CPR_local", {
-    params ["_caller", "_target"];
-    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
-}] call CBA_fnc_addEventHandler;
+//["adv_aceCPR_evh_CPR_local", {
+//    params ["_caller", "_target"];
+//    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
+//}] call CBA_fnc_addEventHandler;
 
 
 // ### block Codeexec
