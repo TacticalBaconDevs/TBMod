@@ -229,7 +229,7 @@ class CfgVehicles
     {
         class Components;
     };
-    class Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_base_F
+    class Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_base_F // A-164 Wipeout
     {
         class Components : Components
         {
@@ -593,23 +593,30 @@ class CfgVehicles
         camouflage = 4; // 8
     };
 
-    class VTOL_01_base_F;
-    class VTOL_01_armed_base_F : VTOL_01_base_F
+    class VTOL_Base_F;
+    class VTOL_01_base_F : VTOL_Base_F
     {
         class Turrets;
     };
-    class B_T_VTOL_01_armed_F : VTOL_01_armed_base_F
+    class VTOL_01_armed_base_F : VTOL_01_base_F
     {
         class Turrets : Turrets
         {
-            class GunnerTurret_01
+            class GunnerTurret_01;
+        };
+    };
+    class B_T_VTOL_01_armed_F : VTOL_01_armed_base_F // V-44 X Blackfish (Bewaffnet)
+    {
+        class Turrets : Turrets
+        {
+            class GunnerTurret_01 : GunnerTurret_01
             {
-                discreteDistance[] = {100,200,300,400,500,600,700,800,1000,1200,1500,1800,2100,2400,2700,3000,3300,3600,3900,4200,4500,4800,5100,5400,5700,6000};
+                discreteDistance[] = {100,200,300,400,500,600,700,800,1000,1200,1500,1800,2100,2400,2700,3000,3300,3600,3900,4200,4500,4800,5100,5400,5700,6000}; // Werte > 2400 hinzu
                 maxElev = 25; // 13
                 maxTurn = 214; // 107
                 minElev = -45; // -28
             };
         };
     };
-    
+
 };
