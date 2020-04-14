@@ -11,7 +11,9 @@ if (_shortName isEqualTo "") then {_shortName = ACE_player getVariable ["TB_roll
 private _missionVar = [];
 private _arsenalType = ACE_player getVariable ["TB_arsenalType", ""];
 if (_arsenalType == "CUSTOM") then {_missionVar = missionNamespace getVariable ["TB_customName", []]};
-if (_arsenalType == "Themen") then {_missionVar = missionNamespace getVariable ["TB_customName_themen", []]};
+if (_arsenalType == "THEMEN") then {_missionVar = missionNamespace getVariable ["TB_customName_themen", []]};
+if (_arsenalType == "SPEZIAL") then {_missionVar = missionNamespace getVariable ["TB_customName_spezial", []]};
+if (_missionVar isEqualTo []) then {_missionVar = missionNamespace getVariable ["TB_customName_main", []]};
 
 switch (_shortName) do
 {

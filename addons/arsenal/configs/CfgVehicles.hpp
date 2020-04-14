@@ -133,7 +133,7 @@ class CfgVehicles
     // ###################### SpezialArsenale ######################
     class TB_arsenal_themen : TB_arsenal_base
     {
-        MAKE_PUBLIC(Themen,Themen);
+        MAKE_PUBLIC(Themen,THEMEN);
 
         class ACE_Actions : ACE_Actions
         {
@@ -202,6 +202,47 @@ class CfgVehicles
                     ADD_ROLLE_CUSTOM(aaat);
                     ADD_ROLLE_CUSTOM(trag);
                     ADD_ROLLE_CUSTOM(dmr);
+                    ADD_ROLLE_CUSTOM(pilot);
+                    ADD_ROLLE_CUSTOM(sniper);
+                    ADD_ROLLE_CUSTOM(spotter);
+                    ADD_ROLLE_CUSTOM(jtac);
+                    ADD_ROLLE_CUSTOM(arzt);
+                    ADD_ROLLE_CUSTOM(rifle);
+                    ADD_ROLLE_CUSTOM(pionier);
+                };
+            };
+        };
+    };
+    class TB_arsenal_spezial : TB_arsenal_base
+    {
+        MAKE_PUBLIC(Spezial,SPEZIAL);
+
+        class ACE_Actions : ACE_Actions
+        {
+            class ACE_MainActions : ACE_MainActions
+            {
+                class openArsenal : openArsenal {};
+
+                class rollen : rollen
+                {
+                    #define ADD_ROLLE_SPEZIAL(ROLLEN_NAME) \
+                        class rolle##ROLLEN_NAME \
+                        { \
+                            displayName = ""; \
+                            condition = QUOTE(!('ROLLEN_NAME' in TB_customName_spezial)); \
+                            modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
+                            statement = QUOTE(['ROLLEN_NAME', getText (configFile >> 'CfgVehicles' >> typeOf _target >> 'arsenalType'), _target] call FUNC(changeRolle)); \
+                            exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
+                        }
+
+                    ADD_ROLLE_SPEZIAL(lead);
+                    ADD_ROLLE_SPEZIAL(grena);
+                    ADD_ROLLE_SPEZIAL(sani);
+                    ADD_ROLLE_SPEZIAL(mg);
+                    ADD_ROLLE_SPEZIAL(spreng);
+                    ADD_ROLLE_SPEZIAL(aaat);
+                    ADD_ROLLE_SPEZIAL(trag);
+                    ADD_ROLLE_SPEZIAL(dmr);
                     ADD_ROLLE_CUSTOM(pilot);
                     ADD_ROLLE_CUSTOM(sniper);
                     ADD_ROLLE_CUSTOM(spotter);
