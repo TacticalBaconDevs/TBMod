@@ -30,11 +30,13 @@ if (_unit getVariable [QEGVAR(medical,fatalDamageSource), EGVAR(medical,fatalDam
     if (_part == 0 && {_woundDamage >= HEAD_DAMAGE_THRESHOLD}) exitWith {
         // Fatal damage to the head is guaranteed death
         TRACE_1("determineIfFatal: lethal headshot",_woundDamage);
+        ["TBMod_medical_FatalInjuryHead", _unit] call CBA_fnc_globalEvent;
         true breakOut "main";
     };
     if (_part == 1 && {_woundDamage >= ORGAN_DAMAGE_THRESHOLD} && {random 1 < HEART_HIT_CHANCE}) exitWith {
         // Fatal damage to torso has various results based on organ hit - Heart shot is lethal
         TRACE_1("determineIfFatal: lethal heartshot",_woundDamage);
+        ["TBMod_medical_FatalInjuryBody", _unit] call CBA_fnc_globalEvent;
         true breakOut "main";
     };
 };
@@ -52,6 +54,7 @@ if (_unit getVariable [QEGVAR(medical,fatalDamageSource), EGVAR(medical,fatalDam
 
     if (_chanceFatal > random 1) exitWith {
         TRACE_1("determineIfFatal: lethal trauma",_woundDamage);
+        ["TBMod_medical_FatalInjuryTrauma", _unit] call CBA_fnc_globalEvent;
         true breakOut "main";
     };
 };
