@@ -1,3 +1,4 @@
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -34,6 +35,6 @@ private _time = (_inputTime * (_coef max 0.1)) max 1;
         _isSani,
         _isArzt,
         _inVehicle,
-        _inFacility] call TBMod_main_fnc_debug;
+        _inFacility] call EFUNC(main,debug);
 
 _time

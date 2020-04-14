@@ -15,4 +15,15 @@ class CfgFunctions
             };
         };
     };
+
+    class ace_medical_damage
+    {
+        class medical_damage
+        {
+            class determineIfFatal
+            {
+                file = QPATHTOF(replacement\fnc_determineIfFatal.sqf);
+            };
+        };
+    };
 };
