@@ -16,13 +16,12 @@ private _inputTime = if (_timeOrCode isEqualType {}) then {_this call _timeOrCod
 private _coef = GVAR(coef_global) + _manuellDiff;
 
 private _selfTreat = _medic == _patient;
-if (_selfTreat) then {_coef = _coef + 0.3}; // Selber dauert immer 30% länger
+if (_selfTreat) then {_coef = _coef + GVAR(selfTreatMalus)};
 
-if (_isSani) then {_coef = _coef - 0.1};    // Sani: 10% Boost
-if (_inVehicle) then {_coef = _coef - 0.1}; // MedicFahrzeug: 10% Boost
-
-if (_isArzt) then {_coef = _coef - 0.3};    // Arzt: 30% Boost
-if (_inFacility) then {_coef = _coef - 0.3};// MedicGebäude: 30% Boost
+if (_isSani) then {_coef = _coef - ([GVAR(saniBoost), GVAR(saniBoost) / 2] select _selfTreat)};
+if (_inVehicle) then {_coef = _coef - GVAR(vehicleBoost)};
+if (_isArzt) then {_coef = _coef - ([GVAR(arztBoost), GVAR(arztBoost) / 2] select _selfTreat)};
+if (_inFacility) then {_coef = _coef - GVAR(facilityBoost)};
 
 private _time = (_inputTime * (_coef max 0.1)) max 1;
 
