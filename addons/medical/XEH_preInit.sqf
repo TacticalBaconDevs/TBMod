@@ -113,7 +113,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
                 //} forEach (player getVariable ["ace_medical_openWounds", []]);
 
                 // Prellungen entfernen
-                private _openWounds = player getVariable ["ace_medical_openWounds", []];
+                private _openWounds = (player getVariable ["ace_medical_openWounds", []]) select {(_x # 2) > 0};
                 private _prellungsId = _openWounds findIf {(ace_medical_damage_woundClassNamesComplex select (_x # 0)) find "Contusion" != -1};
                 if (_prellungsId != -1) then
                 {
@@ -126,10 +126,37 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
                 private _stitched = _stitchedWounds deleteAt 0;
                 if (!isNil "_stitched") then {player setVariable ["ace_medical_stitchedWounds", _stitchedWounds, true]};
 
-                ["[healthRegen] Blut hinzu: %1ml | Prellung geheilt: %2 | Genähte geheilt: %3",
+                // ace_medical_bodyPartDamage updaten
+                private _updateBodyPartVisuals = false;
+                for "_i" from 0 to 5 do
+                {
+                    private _partIndex = _i;
+                    if ((_openWounds findIf {
+                                _x params ["", "_bodyPartN", "_amountOf"];
+                                (_partIndex ==_bodyPartN) && {_amountOf > 0}
+                            }) == -1) then {
+                        private _bodyPartDamage = player getVariable ["ace_medical_bodyPartDamage", [0,0,0,0,0,0]];
+                        _bodyPartDamage set [_partIndex, 0];
+                        player setVariable ["ace_medical_bodyPartDamage", _bodyPartDamage, true];
+
+                        switch (_partIndex) do
+                        {
+                            case 0: { [player, true, false, false, false] call ace_medical_engine_fnc_updateBodyPartVisuals; };
+                            case 1: { [player, false, true, false, false] call ace_medical_engine_fnc_updateBodyPartVisuals; };
+                            case 2;
+                            case 3: { [player, false, false, true, false] call ace_medical_engine_fnc_updateBodyPartVisuals; };
+                            default { [player, false, false, false, true] call ace_medical_engine_fnc_updateBodyPartVisuals; };
+                        };
+
+                        _updateBodyPartVisuals = true;
+                    };
+                };
+
+                ["[healthRegen] Blut hinzu: %1ml | Prellung geheilt: %2 | Genähte geheilt: %3 | updateBodyPartVisuals: %4",
                         ((player getVariable ["ace_medical_bloodVolume", 6]) - _volume) * 1000 toFixed 0,
                         _prellungsId != -1,
-                        !isNil "_stitched"] call EFUNC(main,debug);
+                        !isNil "_stitched",
+                        _updateBodyPartVisuals] call EFUNC(main,debug);
             }, 60] call CBA_fnc_addPerFrameHandler;
         };
     }
