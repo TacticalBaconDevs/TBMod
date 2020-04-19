@@ -69,15 +69,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["facilityBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein MedicalGebäude"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.1, 2]
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(facilityBoost),
-    "SLIDER",
-    ["facilityBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein MedicalGebäude"],
-    ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.1, 2]
+    [0, 2, 0.3, 2]
 ] call CBA_fnc_addSetting;
 
 [
