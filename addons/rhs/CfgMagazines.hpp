@@ -459,7 +459,6 @@ class CfgMagazines
         mass = 77.14; // 60
     };
 
-
     class ClaymoreDirectionalMine_Remote_Mag : CA_Magazine // Claymore
     {
         mass = 22.04; // 20
