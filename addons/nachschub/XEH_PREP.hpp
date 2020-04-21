@@ -5,3 +5,7 @@
 PREP(insertChildrenDeleteBox);
 PREP(modifierSupplyMain);
 PREP(createSupply);
+
+// Tests
+PREP_OTHERFOLDER(test,tests);
+PREP_OTHERFOLDER(kistenCheckTest,tests);

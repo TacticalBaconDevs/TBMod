@@ -8,8 +8,6 @@ class CfgWeapons
 {
     class ACE_ItemCore;
 
-    
-
     SET_NAME(ACE_bloodIV, ACE_ItemCore, "Blut IV (2800ml)");
     SET_NAME(ACE_bloodIV_500, ACE_bloodIV, "Blut IV (1400ml)");
     SET_NAME(ACE_bloodIV_250, ACE_bloodIV, "Blut IV (700ml)");
