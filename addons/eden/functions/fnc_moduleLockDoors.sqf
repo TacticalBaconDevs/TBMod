@@ -29,7 +29,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
             private _source = configName _x;
             private _content = _source splitString "_";
 
-            if (toLower (_content # 2) == "sound" && {floor (random 100) <= _percent}) then //TODO: in ARRAY und door und sound check ggf nur
+            if (toLower (_content param [2, ""]) == "sound" && {floor (random 100) <= _percent}) then //TODO: in ARRAY und door und sound check ggf nur
             {
                 private _doorName = "bis_disabled_" + ((_content select [0,2]) joinString "_");
                 _building animateSource [_source, 0, true];
