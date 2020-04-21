@@ -278,7 +278,6 @@ private _allgemein_uniformen = [
     "rhs_uniform_cu_ucp",
     "rhs_uniform_FROG01_d",
     "rhs_uniform_FROG01_wd",
-    "rhs_uniform_g3_mc",
 
     // experimentell
     "rhs_uniform_g3_blk",
@@ -297,7 +296,8 @@ private _allgemein_westen = [
     "SPC_Black_01",
     "UCP_Black_01",
     "MBAV_Black_01",
-    "MBAV_Black_02"
+    "MBAV_Black_02",
+    "TB_vest_sps_ucp"
 ];
 
 private _allgemein_kopfbedeckung = [
@@ -398,6 +398,7 @@ private _allgemein_kopfbedeckung = [
     "rhsusf_mich_helmet_marpatwd_norotos_arc",
     "rhsusf_mich_helmet_marpatwd_norotos_arc_headset",
     "rhsusf_mich_helmet_marpatwd_norotos_headset",
+    "TB_headgear_sps_ucp",
     "rhsusf_patrolcap_ocp",
     "rhsusf_patrolcap_ucp",
     "rhsusf_protech_helmet",
