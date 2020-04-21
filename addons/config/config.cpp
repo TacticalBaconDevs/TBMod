@@ -12,6 +12,11 @@ class CfgPatches
         requiredAddons[] = {
             "TBMod_main"
         };
+
+        vehicles[] = {
+            "TB_Vehicles_L159_Albatros"
+        };
+
         addonRootClass = "TBMod_main";
     };
 };

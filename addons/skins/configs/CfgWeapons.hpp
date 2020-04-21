@@ -93,6 +93,14 @@ class cfgWeapons
             mass = 40;
         };
     };
+
+    class H_ShemagOpen_khk;
+    class TB_Shemagh_black: H_ShemagOpen_khk
+    {
+        displayName = "Shemag Black";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_Shemagh_black.paa)};
+    };
 };
 
 ///////////////////////////////////
