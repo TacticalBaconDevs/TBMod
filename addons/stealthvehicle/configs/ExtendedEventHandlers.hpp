@@ -27,7 +27,7 @@ class Extended_GetOut_EventHandlers {
     };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_FiredBis_EventHandlers {
     class All {
         class GVAR(Fired) {
             fired = QUOTE(_this call FUNC(handleFired));
