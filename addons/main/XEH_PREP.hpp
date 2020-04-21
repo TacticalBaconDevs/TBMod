@@ -32,6 +32,7 @@ PREP(shortcuts);
 PREP(teleport);
 PREP(transfer);
 PREP(transferVar);
+PREP(uniqueArray);
 PREP(upDown);
 
 PREP_OTHERFOLDER(showGCAM,gcam);

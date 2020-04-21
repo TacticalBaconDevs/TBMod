@@ -32,7 +32,7 @@ class CfgPatches
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             // Arma3
-            "A3_Data_F_Enoch_Loadorder",
+            "A3_Data_F_Oldman_Loadorder",
             "A3_Data_F_Mod_Loadorder",
 
             // CBA
