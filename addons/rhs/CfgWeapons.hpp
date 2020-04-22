@@ -268,4 +268,57 @@ class CfgWeapons
     {
         aimTransitionSpeed = 0.26; // 0.5
     };
+
+    class rhsusf_ach_helmet_ocp;
+    class rhsusf_opscore_01: rhsusf_ach_helmet_ocp
+    {
+        class ItemInfo;
+    };
+    class rhsusf_hgu56p: rhsusf_opscore_01 // RHS Heli-Pilotenhelme
+    {
+        class ItemInfo: ItemInfo
+        {
+            mass = 55.1; // 40
+
+            class HitpointsProtectionInfo
+            {
+                class Head
+                {
+                    armor = 10; // 6
+                    hitpointName = "HitHead";
+                    passThrough = 0.1; // 0.5
+                };
+                class Face
+                {
+                    armor = 10;
+                    hitpointName = "HitFace";
+                    passThrough = 0.1;
+                };
+            };
+        };
+    };
+    class rhsusf_ihadss: rhsusf_opscore_01 // IHADSS Heli-Pilotenhelm
+    {
+        class ItemInfo: ItemInfo
+        {
+            mass = 55.1; // 40
+
+            class HitpointsProtectionInfo
+            {
+                class Head
+                {
+                    armor = 10; // 6
+                    hitpointName = "HitHead";
+                    passThrough = 0.1; // 0.5
+                };
+                class Face
+                {
+                    armor = 10;
+                    hitpointName = "HitFace";
+                    passThrough = 0.1;
+                };
+            };
+        };
+    };
+
 };
