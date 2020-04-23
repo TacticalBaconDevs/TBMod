@@ -41,15 +41,4 @@ if (GVAR(crashHelfer)) then {[true] spawn FUNC(crashHelferServer)};
     1800
 ] call CBA_fnc_addPerFrameHandler;
 
-// Admin Logging
-[
-    "TB_informAdminsAndZeus",
-    {
-        if (isServer && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtension)}) then
-        {
-            "TBModExtension" callExtension ["logger", ["adminlog", "ADMIN", if (_this isEqualType []) then {format _this} else {_this}]];
-        };
-    }
-] call CBA_fnc_addEventHandler;
-
 ["CBA_loadingScreenDone", {TB_init_done = true}] call CBA_fnc_addEventHandler;
