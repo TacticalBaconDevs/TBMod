@@ -240,7 +240,7 @@ class CfgVehicles
         audible = 16; // 14
     };
 
-        class LT_01_cannon_base_F;
+    class LT_01_cannon_base_F;
     class TB_Vehicles_BW_Wiesel_2 : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
     {
         audible = 4; // 18
