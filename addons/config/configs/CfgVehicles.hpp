@@ -4,17 +4,6 @@
 */
 class CfgVehicles
 {
-    // Skin FlaRak Kit
-    class AA_01_base_F;
-    class B_static_AA_F : AA_01_base_F
-    {
-        author = "Eron";
-        hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa),
-            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa)
-        };
-    };
-
     class Heli_Transport_03_base_F;
     class B_Heli_Transport_03_F : Heli_Transport_03_base_F // Vanilla Stealth CH-47
     {
@@ -27,9 +16,7 @@ class CfgVehicles
         camouflage = 110; // 100
         irTargetSize = 0.86; // 1.2
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.41; // 1.2
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_01_base_F;
@@ -41,9 +28,7 @@ class CfgVehicles
         camouflage = 78; // 100
         irTargetSize = 0.5; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.33; // 0.7
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Attack_01_dynamicLoadout_base_F;
@@ -58,47 +43,12 @@ class CfgVehicles
         camShakeCoef = 0.4; // 0
         irTargetSize = 0.48; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"}; // "240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 0.21; // 0.7
-        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
-    class Plane_Base_F;
-    class Plane_CAS_01_base_F: Plane_Base_F
-    {
-        class Components;
-    };
-    class Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_base_F // A-164 Wipeout
-    {
-        class Components : Components
-        {
-            class TransportPylonsComponent
-            {
-                class Pylons
-                {
-                    class Pylons1;
-                    class Pylons2 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons3 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons4 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons5 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                };
-            };
-        };
-    };
-    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F
+    class Plane_CAS_01_dynamicLoadout_base_F;
+    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
     {
         accuracyDarkNightLightsOff = 0.005; // 0.001
         accuracyNightLightsOff = 0.03; // 0.006
@@ -108,11 +58,9 @@ class CfgVehicles
         camouflage = 170; // 100
         camShakeCoef = 1.4; // 0
         irTargetSize = 1.65; // 1
-        magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
         thrustCoef[] = {1.1,1.14,1.18,1.21,1.2,1.19,1.17,1.15,0.8,0.3,0.2,0,0,0,0}; // {1.1,1.14,1.18,1.21,1.2,1.19,1.17,1.15,1.13,1.1,1.04,0.6,0.1,0,0}
-        weapons[] = {"Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","CMFlareLauncher"
     };
 
     class Plane_Fighter_01_Base_F;
@@ -128,11 +76,9 @@ class CfgVehicles
         camouflage = 150; // 100
         irScanRangeMin = 650; // 2000
         irTargetSize = 1.7; // 1
-        magazines[] = {"magazine_Fighter01_Gun20mm_AA_x450","magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 0.7; // 0.8
         thrustCoef[] = {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.8,1.75,1.6,1.4,1.2}; // {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.4,0.4,0,0,0}
-        weapons[] = {"weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","CMFlareLauncher_Singles"
     };
 
     class I_Plane_Fighter_03_dynamicLoadout_F;
@@ -146,11 +92,9 @@ class CfgVehicles
         camShakeCoef = 0.9; // 0
         camouflage = 105; // 100
         irTargetSize = 1.4; // 0.8
-        magazines[] = {"Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 0.8
         thrustCoef[] = {1.6,1.75,2,2.1,2.2,2.1,1.95,1.6,1.1,0,0,0,0,0,0,0,0}; // {1.42,1.38,1.34,1.3,1.25,1.2,1.19,1.18,1.17,1.17,1.16,1.16,0.1,0,0,0,0}
-        weapons[] = {"Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
     class UAV_01_base_F;
@@ -218,10 +162,8 @@ class CfgVehicles
         camouflage = 84; // 100
         irTargetSize = 0.8; // 1
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 1
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_02_base_F;
@@ -231,9 +173,7 @@ class CfgVehicles
         audible = 64; // 50
         camouflage = 95; // 100
         irTargetSize = 1; // 1.2
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 1; // 1.2
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class UAV_02_dynamicLoadout_base_F;
