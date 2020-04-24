@@ -38,21 +38,4 @@ class CfgWeapons
     {
         displayName = "HE Cluster";
     };
-
-    class RocketPods;
-    class Mk82BombLauncher : RocketPods // Mk-82
-    {
-        displayName = "Airburst Bomb";
-    };
-
-    class ACE_ItemCore;
-    class ACE_Clacker: ACE_ItemCore // M57 Firing Device
-    {
-        mass = 7.71; // 3
-    };
-
-    class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
-    {
-        mass = 27.55; // 3
-    };
 };

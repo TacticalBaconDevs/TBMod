@@ -5,7 +5,7 @@
 class CfgVehicles
 {
     class Heli_Transport_03_base_F;
-    class B_Heli_Transport_03_F : Heli_Transport_03_base_F // Vanilla Stealth CH-47
+    class B_Heli_Transport_03_F : Heli_Transport_03_base_F // Stealth CH-47
     {
         accuracy = 0.35; // 0.02
         accuracyDarkNightLightsOff = 0.0015; // 0.001
@@ -20,7 +20,7 @@ class CfgVehicles
     };
 
     class Heli_Transport_01_base_F;
-    class B_Heli_Transport_01_F : Heli_Transport_01_base_F // Vanilla Stealth UH-80
+    class B_Heli_Transport_01_F : Heli_Transport_01_base_F // Stealth UH-80
     {
         accuracy = 0.4; // 0.5
         armor = 45; // 40
@@ -32,7 +32,7 @@ class CfgVehicles
     };
 
     class Heli_Attack_01_dynamicLoadout_base_F;
-    class B_Heli_Attack_01_dynamicLoadout_F : Heli_Attack_01_dynamicLoadout_base_F // Vanilla Stealth RAH-66
+    class B_Heli_Attack_01_dynamicLoadout_F : Heli_Attack_01_dynamicLoadout_base_F // Stealth RAH-66
     {
         accuracy = 1.2; // 2.5
         accuracyDarkNightLightsOff = 0.0005; // 0.001
@@ -64,7 +64,7 @@ class CfgVehicles
     };
 
     class Plane_Fighter_01_Base_F;
-    class B_Plane_Fighter_01_F : Plane_Fighter_01_Base_F // Vanilla F/A-181
+    class B_Plane_Fighter_01_F : Plane_Fighter_01_Base_F // F/A-181
     {
         accuracy = 0.25; // 0.02
         accuracyDarkNightLightsOff = 0.003; // 0.001
@@ -98,7 +98,7 @@ class CfgVehicles
     };
 
     class UAV_01_base_F;
-    class B_UAV_01_F : UAV_01_base_F // Vanilla AR-2 Darter
+    class B_UAV_01_F : UAV_01_base_F // AR-2 Darter
     {
         accuracyDarkNightLightsOff = 0.00001; // 0.001
         accuracyNightLightsOff = 0.00006; // 0.006
@@ -112,7 +112,7 @@ class CfgVehicles
     };
 
     class UAV_06_base_F;
-    class B_UAV_06_F : UAV_06_base_F // Vanilla AL-6 Pelican
+    class B_UAV_06_F : UAV_06_base_F // AL-6 Pelican
     {
         accuracyDarkNightLightsOff = 0.0001; // 0.001
         accuracyNightLightsOff = 0.0006; // 0.006
@@ -126,7 +126,7 @@ class CfgVehicles
     };
 
     class Quadbike_01_base_F;
-    class B_Quadbike_01_F : Quadbike_01_base_F // Vanilla Quad
+    class B_Quadbike_01_F : Quadbike_01_base_F // Quad
     {
         accuracy = 1.25; // 0.25
         accuracyDarkNightLightsOff = 0.0005; // 0.001
@@ -139,7 +139,7 @@ class CfgVehicles
     };
 
     class MRAP_03_base_F;
-    class I_MRAP_03_F : MRAP_03_base_F // Vanilla Fennek
+    class I_MRAP_03_F : MRAP_03_base_F // Fennek
     {
         accuracy = 1.1; // 0.25
         armor = 190; // 200
@@ -151,7 +151,7 @@ class CfgVehicles
     };
 
     class Heli_light_03_base_F;
-    class Heli_light_03_unarmed_base_F : Heli_light_03_base_F // Vanilla AW-159 Hellcat
+    class Heli_light_03_unarmed_base_F : Heli_light_03_base_F // AW-159 Hellcat
     {
         accuracy = 0.42; // 1.5
         accuracyDarkNightLightsOff = 0.002; // 0.001
@@ -167,7 +167,7 @@ class CfgVehicles
     };
 
     class Heli_Transport_02_base_F;
-    class I_Heli_Transport_02_F : Heli_Transport_02_base_F // Vanilla CH-49 Mohawk
+    class I_Heli_Transport_02_F : Heli_Transport_02_base_F // CH-49 Mohawk
     {
         armor = 55; // 40
         audible = 64; // 50
@@ -177,7 +177,7 @@ class CfgVehicles
     };
 
     class UAV_02_dynamicLoadout_base_F;
-    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // Vanilla MQ-4A Greyhawk (MQ-1 Predator)
+    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // MQ-4A Greyhawk (MQ-1 Predator)
     {
         accuracy = 0.6; // 0.1
         camouflage = 45; // 150
@@ -190,7 +190,7 @@ class CfgVehicles
     };
 
     class UAV_05_Base_F;
-    class B_UAV_05_F : UAV_05_Base_F // Vanilla UCAV Sentinel
+    class B_UAV_05_F : UAV_05_Base_F // UCAV Sentinel
     {
         accuracy = 0.2; // 0.1
         fuelCapacity = 4000; // 1000
@@ -198,7 +198,7 @@ class CfgVehicles
     };
 
     class Rubber_duck_base_F;
-    class B_Boat_Transport_01_F : Rubber_duck_base_F // Vanilla Schlauchboot
+    class B_Boat_Transport_01_F : Rubber_duck_base_F // Schlauchboot
     {
         accuracy = 1.25; // 0.5
         ace_cargo_space = 1; // 0
@@ -208,7 +208,7 @@ class CfgVehicles
     };
 
     class Boat_Armed_01_minigun_base_F;
-    class B_Boat_Armed_01_minigun_F : Boat_Armed_01_minigun_base_F // Vanilla Schnellboot
+    class B_Boat_Armed_01_minigun_F : Boat_Armed_01_minigun_base_F // Schnellboot
     {
         accuracy = 0.9; // 1.5
         ace_cargo_space = 1; // 0
@@ -219,7 +219,7 @@ class CfgVehicles
     };
 
     class SDV_01_base_F;
-    class B_SDV_01_F : SDV_01_base_F // Vanilla SDV (Seal Delivery Vehicle)
+    class B_SDV_01_F : SDV_01_base_F // SDV (Seal Delivery Vehicle)
     {
         ace_cargo_space = 1; // 0
         audible = 0.1; // 6
@@ -227,7 +227,7 @@ class CfgVehicles
     };
 
     class I_APC_Wheeled_03_base_F;
-    class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Vanilla Pandur II
+    class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Pandur II
     {
         armor = 245; // 200
         audible = 16; // 5

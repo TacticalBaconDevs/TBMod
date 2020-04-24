@@ -246,12 +246,23 @@ class CfgMagazines
     class 24Rnd_PG_missiles;
     class rhs_mag_DAGR_4 : 24Rnd_PG_missiles // 4x DAGR RHS
     {
+        descriptionShort = "DAGR 4x"; // "SALH"
+        displayNameShort = "DAGR 4x"; // "SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_SINGLE","RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_SINGLE"
     };
 
     class rhs_mag_DAGR_8 : rhs_mag_DAGR_4 // 8x DAGR RHS
     {
+        descriptionShort = "DAGR 8x"; // "SALH"
+        displayNameShort = "DAGR 8x"; //"SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"
+    };
+
+    class rhs_mag_DAGR_16 : rhs_mag_DAGR_8 // 16x DAGR RHS
+    {
+        descriptionShort = "DAGR 16x"; // "SALH"
+        displayNameShort = "DAGR 16x"; //"SALH"
+        hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","B_MISSILE_PYLON"}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
 
     class Titan_AA;
@@ -300,5 +311,32 @@ class CfgMagazines
         displayname = "100rnd M62 AP (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
         displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
         tracersEvery = 1; // 5
+    };
+
+    class 300Rnd_20mm_shells;
+    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
+    {
+        hardpoints[] += {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
+    };
+
+    class 6Rnd_ACE_Hellfire_AGM114K;
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
+    {
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+    };
+
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K 3x
+    {
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+    };
+
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N
+    {
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+    };
+
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
+    {
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
     };
 };
