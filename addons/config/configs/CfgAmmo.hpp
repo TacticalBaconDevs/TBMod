@@ -8,18 +8,8 @@ class CfgAmmo
     class ammo_ShipCannon_120mm_HE_cluster : Cluster_155mm_AMOS // Mk45 Hammer HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_AP"}; // {"Mo_cluster_AP",0.93,"Mo_cluster_AP_UXO_deploy",0.07}
-        submunitionConeType[] = {"poissondisccenter",5}; // "randomcenter",35
-        triggerDistance = 150; // 200
-    };
-
-    class ShellBase;
-    class Mo_cluster_AP : ShellBase // Mk45 Hammer HE Cluster Submunition
-    {
-        caliber = 4; // 34
-        hit = 25; // 35
-        indirectHit = 19; // 25
-        indirectHitRange = 18; // 8
-        suppressionRadiusHit = 65; // 30
+        submunitionConeType[] = {"poissondisccenter",25}; // "randomcenter",35
+        triggerDistance = 300; // 200
     };
 
     class AT_Mine_155mm_AMOS_range;
@@ -177,11 +167,6 @@ class CfgAmmo
         indirectHitRange = 2; // 8
     };
 
-    class ammo_Penetrator_Scalpel : ammo_Penetrator_Base // AGM-114K Penetrator
-    {
-        cameraViewAvailable = 1; // 0
-    };
-
     class M_Scalpel_AT;
     class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
     {
@@ -235,15 +220,6 @@ class CfgAmmo
         hit = 100; // 150
     };
 
-    class DirectionalBombBase;
-    class ClaymoreDirectionalMine_Remote_Ammo : DirectionalBombBase // Claymore
-    {
-        indirectHit = 50; // 40
-        indirectHitRange = 80; // 30
-        /*mineTrigger = {"RemoteTrigger","TimeTrigger","ACE_MagneticTrigger","IRTrigger"};*/
-        mineTrigger = "IRTrigger";
-    };
-
     class PipeBombBase;
     class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
     {
@@ -254,9 +230,7 @@ class CfgAmmo
     class APERSMine_Range_Ammo;
     class APERSMineDispenser_Mine_Ammo : APERSMine_Range_Ammo // Submunition APERSMineDispenser
     {
-        hit = 9; // 7
-        indirectHitRange = 10; // 3
-        suppressionRadiusHit = 32; // 16
+        hit = 15; // 7
     };
 
 };

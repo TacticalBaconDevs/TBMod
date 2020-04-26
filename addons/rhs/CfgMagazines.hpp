@@ -170,6 +170,26 @@ class CfgMagazines
     };
 
     class rhs_mag_agm65;
+    class rhs_mag_agm65b : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
+    class rhs_mag_agm65d : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
+    class rhs_mag_agm65e : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
+    class rhs_mag_agm65f : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
     class rhs_mag_agm65h : rhs_mag_agm65 // AGM-65H CCD
     {
         hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"

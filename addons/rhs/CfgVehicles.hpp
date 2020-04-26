@@ -71,11 +71,9 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.84; // 0.9
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"}; // "240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
         radarType = 8; // 1
-        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
     class RHS_UH60_Base;
@@ -91,10 +89,8 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.86; // 0.9
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         nvScanner = 1; // 0
         radarTargetSize = 1.25; // 1
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ144"
     };
 
     class rhsusf_CH53E_USMC;
@@ -110,10 +106,8 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 2+8+16
         irTargetSize = 1.24; // 1.2
         LockDetectionSystem = "2 + 8 + 4"; // 8
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         radarTargetSize = 1.5; // 1.12
         radarType = 8; // 4
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANAAQ24"
     };
 
     class RHS_CH_47F_base;
@@ -127,7 +121,6 @@ class CfgVehicles
         audible = 74; // 50
         camouflage = 120; // 100
         irTargetSize = 1.14; // 1.2
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"
         radarTargetSize = 1.65; // 1.12
         radarType = 8; // 4
     };
