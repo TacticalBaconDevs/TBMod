@@ -274,7 +274,7 @@ class CfgMagazines
     class rhs_mag_DAGR_8 : rhs_mag_DAGR_4 // 8x DAGR RHS
     {
         descriptionShort = "DAGR 8x"; // "SALH"
-        displayNameShort = "DAGR 8x"; //"SALH"
+        displayNameShort = "DAGR 8x"; // "SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"
     };
 
