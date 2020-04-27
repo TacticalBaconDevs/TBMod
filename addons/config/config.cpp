@@ -22,14 +22,19 @@ class CfgPatches
 };
 
 // Configs
+#include "configs\ACE_detector.hpp"
+#include "configs\CBA_Stuff.hpp"
 #include "configs\CfgAmmo.hpp"
+#include "configs\CfgCommands.hpp"
 #include "configs\CfgEditorCategories.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
 #include "configs\CfgFactionClasses.hpp"
+#include "configs\CfgGesturesMale.hpp"
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgMagazineWells.hpp"
-#include "configs\CfgUnitInsignia.hpp"
-#include "configs\CfgVehicles.hpp"
-#include "configs\CfgMisc.hpp"
+#include "configs\CfgMovesBasic.hpp"
+#include "configs\cfgScriptPaths.hpp"
 #include "configs\CfgSounds.hpp"
+#include "configs\CfgVehicles.hpp"
 #include "configs\CfgWeapons.hpp"
+#include "configs\RscMapControl.hpp"

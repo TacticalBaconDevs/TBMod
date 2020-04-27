@@ -56,13 +56,6 @@ class CfgMagazines
         muzzleImpulseFactor[] = {0,5.1};
     };
 
-    class 2Rnd_Mk82;
-    class PylonMissile_1Rnd_Mk82_F : 2Rnd_Mk82 // Mk-82
-    {
-        displayName = "HE Airburst Bomb"; // "Mk82"
-        displayNameShort = "Unguided"; // "Bomb"
-    };
-
     class magazine_Bomb_GBU12_x1;
     class PylonMissile_Bomb_GBU12_x1 : magazine_Bomb_GBU12_x1 // GBU-12 HE F/A-18 Version - überflüssig/irritierend
     {
@@ -104,28 +97,34 @@ class CfgMagazines
     class 300Rnd_20mm_shells;
     class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
     {
-        hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
+        hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
     };
 
     class 6Rnd_ACE_Hellfire_AGM114K;
     class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
     {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+        hardpoints[] = {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
 
     class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K 3x
     {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+        hardpoints[] = {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
     };
 
     class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N
     {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+        hardpoints[] = {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
 
     class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
     {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+        hardpoints[] = {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+    };
+
+    class 24Rnd_PG_missiles;
+    class PylonRack_12Rnd_PG_missiles : 24Rnd_PG_missiles // Vanilla DAGR
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","DAGR"}
     };
 
     class 1Rnd_HE_Grenade_shell;
@@ -165,5 +164,44 @@ class CfgMagazines
     class ClaymoreDirectionalMine_Remote_Mag : CA_Magazine // Claymore
     {
         mass = 22.04; // 20
+    };
+
+    class 3Rnd_Smoke_Grenade_shell;
+    class 3Rnd_Smoke_Grenade_shell_precise : 3Rnd_Smoke_Grenade_shell
+    {
+        ammo = "G_40mm_Smoke_precise";
+        author = "TBMod";
+
+        displayName = "3-Schuss-AIM-Rauchmunition (weiß)";
+        displayNameShort = "Weißer AIM Rauch";
+        descriptionShort = "Typ: AIM-Rauchmunition - weiß <br />Patronen: 3<br />Eingesetzt von: 3GL";
+
+        mass = 20; // 12
+    };
+
+    class B_IR_Grenade;
+    class TB_rhs_mag_40mm_IR_Grenade : B_IR_Grenade // Umbenennung zu TB_40mm_IR_Grenade
+    {
+        ammo = "TB_rhs_40mm_IR_Grenade";
+        author = "TBMod";
+
+        descriptionShort = "TB IR Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";
+        displayName = "TB 40mm IR Grenade Round";
+        displaynameshort = "TB IR Grenade";
+
+        initSpeed = 80; // 18 (Granate)
+        mass = 5; // 8
+        picture = "\z\ace\addons\huntir\data\m_m1070_ca.paa";
+        tracersEvery = 1; // 0
+    };
+
+    class TB_Smoke_Grenades : 3Rnd_Smoke_Grenade_shell
+    {
+        ammo = "TB_G_40mm_Smoke";
+        displayName = "Smoke 40mm";
+        displayNameShort = "Smoke 40mm";
+
+        count = 24;
+        initSpeed = 241; // 80
     };
 };

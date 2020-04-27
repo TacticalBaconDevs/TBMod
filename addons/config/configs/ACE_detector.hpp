@@ -2,7 +2,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class ACE_detector
+// TODO: Sounds wurden im letzten Update gebuffed überprüfen
+/*class ACE_detector
 {
     class detectors
     {
@@ -14,4 +15,4 @@ class ACE_detector
 
         class ACE_VMH3: ACE_VMM3 {};
     };
-};
+};*/

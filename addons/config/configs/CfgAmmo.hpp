@@ -8,18 +8,8 @@ class CfgAmmo
     class ammo_ShipCannon_120mm_HE_cluster : Cluster_155mm_AMOS // Mk45 Hammer HE Cluster
     {
         submunitionAmmo[] = {"Mo_cluster_AP"}; // {"Mo_cluster_AP",0.93,"Mo_cluster_AP_UXO_deploy",0.07}
-        submunitionConeType[] = {"poissondisccenter",5}; // "randomcenter",35
-        triggerDistance = 150; // 200
-    };
-
-    class ShellBase;
-    class Mo_cluster_AP : ShellBase // Mk45 Hammer HE Cluster Submunition
-    {
-        caliber = 4; // 34
-        hit = 25; // 35
-        indirectHit = 19; // 25
-        indirectHitRange = 18; // 8
-        suppressionRadiusHit = 65; // 30
+        submunitionConeType[] = {"poissondisccenter",25}; // "randomcenter",35
+        triggerDistance = 300; // 200
     };
 
     class AT_Mine_155mm_AMOS_range;
@@ -177,11 +167,6 @@ class CfgAmmo
         indirectHitRange = 2; // 8
     };
 
-    class ammo_Penetrator_Scalpel : ammo_Penetrator_Base // AGM-114K Penetrator
-    {
-        cameraViewAvailable = 1; // 0
-    };
-
     class M_Scalpel_AT;
     class ACE_Hellfire_AGM114K : M_Scalpel_AT // AGM-114K
     {
@@ -235,15 +220,6 @@ class CfgAmmo
         hit = 100; // 150
     };
 
-    class DirectionalBombBase;
-    class ClaymoreDirectionalMine_Remote_Ammo : DirectionalBombBase // Claymore
-    {
-        indirectHit = 50; // 40
-        indirectHitRange = 80; // 30
-        /*mineTrigger = {"RemoteTrigger","TimeTrigger","ACE_MagneticTrigger","IRTrigger"};*/
-        mineTrigger = "IRTrigger";
-    };
-
     class PipeBombBase;
     class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
     {
@@ -254,9 +230,109 @@ class CfgAmmo
     class APERSMine_Range_Ammo;
     class APERSMineDispenser_Mine_Ammo : APERSMine_Range_Ammo // Submunition APERSMineDispenser
     {
-        hit = 9; // 7
-        indirectHitRange = 10; // 3
-        suppressionRadiusHit = 32; // 16
+        hit = 15; // 7
     };
 
+    // ###################### Unterlauf-IR Granate ######################
+    class B_IRStrobe;
+    class TB_rhs_40mm_IR_Grenade : B_IRStrobe
+    {
+        cost = 0; // 5000
+        dangerRadiusHit = 0; // -1
+        deflecting = 0; // 30
+        hit = 0; // 5
+        indirectHit = 0; // 2
+        indirectHitRange = 0; // 0.2
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; // \A3\Weapons_F_EPB\Ammo\B_IRstrobe_F.p3d
+        timeToLive = 120; // 300
+        tracerColor[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04};
+        tracerColorR[] = {0.9,0.9,0.1,1}; // {0.7,0.7,0.5,0.04};
+        visibleFire = 0; // 2
+
+        // in Reference und Original nicht vorhanden - https://community.bistudio.com/wiki/Arma_3_Targeting_config_reference
+        visualTarget = 1;
+        visualTargetSize = 2;
+        irTarget = 1;
+        irTargetSize = 2;
+        laserTarget = 1;
+
+        // in Reference und Original nicht vorhanden - https://community.bistudio.com/wiki/Weapons_settings
+        tracerEndTime = 6;
+        tracerScale= 1.2;
+        tracerStartTime = 0.04;
+    };
+
+    // ###################### FlareOverride ######################
+    class FlareCore;
+    class FlareBase: FlareCore
+    {
+        intensity = 250000;
+        flareSize = 12;
+        timeToLive = 180;
+    };
+
+    class F_20mm_White: FlareBase
+    {
+        intensity = 800000;
+        brightness = 1000000;
+
+        //flareSize = 12;
+        useFlare = 1;
+        timeToLive = 250;
+        coefGravity = 0.5;
+    };
+
+    class F_40mm_White: FlareBase
+    {
+        intensity = 1500000;
+        brightness = 2000000;
+
+        //flareSize = 12;
+        useFlare = 1;
+        timeToLive = 400;
+        coefGravity = 0.5;
+    };
+
+    class Flare_82mm_AMOS_White: FlareCore
+    {
+        intensity = 4000000;
+        brightness = 3000000;
+
+        flareSize = 20;
+        timeToLive = 600;
+        coefGravity = 0.3;
+    };
+
+
+    // ###################### AIM-Smokes ######################
+    # define ADD_PRECISE_SMOKE(TYPE) class TYPE; \
+        class TYPE##_precise : TYPE \
+        { \
+            simulation = "shotSmoke"; \
+            deflecting = 0; \
+            deflectionSlowDown = 0.1; \
+            deflectionDirDistribution = 0; \
+            timeToLive = 120; \
+        }
+    ADD_PRECISE_SMOKE(G_40mm_Smoke);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeBlue);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeGreen);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeOrange);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokePurple);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeRed);
+    // ADD_PRECISE_SMOKE(G_40mm_SmokeYellow);
+
+    // Smoke für Fahrzeuge, benötigt ClassEventhandler aus PreInit
+    class TB_G_40mm_Smoke : G_40mm_Smoke
+    {
+        simulation = "shotShell";
+        deflecting = 0;
+        deflectionSlowDown = 0.1;
+        deflectionDirDistribution = 0;
+        timeToLive = 100;
+        explosiontime = 0;
+        typicalspeed = 200;
+        airfriction = -0.001;
+        caliber = 2;
+    };
 };

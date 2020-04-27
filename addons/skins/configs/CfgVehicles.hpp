@@ -657,4 +657,15 @@ class CfgVehicles
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_T100.jpg);
     };
+
+    // Skin FlaRak Kit
+    class AA_01_base_F;
+    class B_static_AA_F : AA_01_base_F
+    {
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\statics\TB_stationäre_Luftabwehr.paa),
+            QPATHTOF(pictures\statics\TB_stationäre_Luftabwehr.paa)
+        };
+    };
 };
