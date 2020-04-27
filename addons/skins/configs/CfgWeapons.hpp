@@ -99,7 +99,7 @@ class cfgWeapons
     {
         displayName = "Shemag Black";
         author = "Eron";
-        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_Shemagh_black.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\headgear\TB_Shemagh_black.paa)};
     };
 };
 

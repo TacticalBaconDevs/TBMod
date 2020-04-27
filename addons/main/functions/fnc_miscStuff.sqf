@@ -142,7 +142,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, player] call TFAR_fnc_addEventHandler;
 
 
-// ### AddZeus
+// ### informAdminsAndZeus
 [
     "TB_informAdminsAndZeus",
     {

@@ -1,6 +1,7 @@
 *.zip
 *.rar
 *.dll
+*.pdb
 *.exe
 *.bat
 *.cmd

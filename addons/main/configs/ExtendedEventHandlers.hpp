@@ -25,6 +25,7 @@ class Extended_PostInit_EventHandlers
     {
         clientInit = QUOTE(call COMPILE_FILE(XEH_postClientInit));
         serverInit = QUOTE(call COMPILE_FILE(XEH_postServerInit));
+        init = QUOTE(call COMPILE_FILE(XEH_postInit));
     };
 };
 
@@ -58,11 +59,13 @@ class Extended_InitPost_EventHandlers
     EMPTY_VANILLA_INV(Ship);
 };
 
-class Extended_Killed_EventHandlers {
-    class CAManBase {
-        class TBModExt_statstracker {
+class Extended_Killed_EventHandlers
+{
+    class CAManBase
+    {
+        class TBModExt_statstracker
+        {
             killed = "['TB_Kill', [(_this # 0) getVariable ['ace_medical_lastDamageSource', objNull], _this # 0]] call CBA_fnc_globalEvent;";
         };
     };
 };
-

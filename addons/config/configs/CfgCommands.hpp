@@ -2,10 +2,10 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class CfgEditorCategories
+class CfgCommands
 {
-    class EdCat_TB_MainCat
-    {
-        displayName = "#TB - MainStuff";
+    allowedHTMLLoadURIs[] += {
+        "http://tacticalbacon.de*",
+        "https://tacticalbacon.de*"
     };
 };
