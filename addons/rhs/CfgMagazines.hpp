@@ -62,6 +62,33 @@ class CfgMagazines
         mass = 159.79; // 286.88
     };
 
+    class rhs_mag_smaw_HEAA : CA_LauncherMagazine // Mk.6 HEAA SMAW
+    {
+        mass = 88.16; // 136.4
+    };
+
+    class rhs_mag_smaw_HEDP : CA_LauncherMagazine // Mk.3 HEDP SMAW
+    {
+        mass = 49.59; // 129.8
+    };
+
+    class rhs_mag_maaws_HEAT : CA_LauncherMagazine // FFV751 HEAT MAAWS
+    {
+        mass = 126.73; // 88.2
+    };
+
+    class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
+    {
+        initSpeed = 290; // 230
+        mass = 88.16; // 72.77
+    };
+
+    class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
+    {
+        initSpeed = 290; // 255
+        mass = 44.08; // 68.36
+    };
+
     class rhs_mag_M433_HEDP;
     class TB_rhs_mag_40mm_HEDP : rhs_mag_M433_HEDP // Umbenennung zu TB_HEDP
     {
@@ -142,46 +169,27 @@ class CfgMagazines
         mass = 3; // 5.06
     };
 
-    class 2Rnd_155mm_Mo_Cluster;
-    class magazine_ShipCannon_120mm_HE_cluster_shells_x2 : 2Rnd_155mm_Mo_Cluster // Mk45 Hammer HE Cluster
-    {
-        count = 18; // 2
-    };
-
-    class 6Rnd_155mm_Mo_mine;
-    class magazine_ShipCannon_120mm_mine_shells_x6 : 6Rnd_155mm_Mo_mine // Mk45 Hammer HE Minen Cluster
-    {
-        count = 18; // 6
-    };
-
-    class 6Rnd_155mm_Mo_smoke;
-    class magazine_ShipCannon_120mm_smoke_shells_x6 : 6Rnd_155mm_Mo_smoke // Mk45 Hammer Rauchwand
-    {
-        count = 18; // 6
-    };
-
-    class 6Rnd_155mm_Mo_AT_mine;
-    class magazine_ShipCannon_120mm_AT_mine_shells_x6 : 6Rnd_155mm_Mo_AT_mine // Mk45 Hammer AT Minen Cluster
-    {
-        count = 18; // 6
-    };
-
-    class 2Rnd_155mm_Mo_LG;
-    class magazine_ShipCannon_120mm_HE_LG_shells_x2 : 2Rnd_155mm_Mo_LG // Mk45 Hammer AT Laserguided
-    {
-        count = 18; // 2
-    };
-
-    class magazine_Bomb_SDB_x1;
-    class PylonRack_Bomb_SDB_x4 : magazine_Bomb_SDB_x1 // SDB x4
-    {
-        hardpoints[] = {"B_SDB_QUAD_RAIL","B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_SDB_QUAD_RAIL"
-        descriptionShort = "[LG]"; // "250lb, high-explosive, infrared/laser-guided bomb"
-        displayName = "4x SDB [LG]"; // "GBU SDB x4"
-        displayNameShort = "[LG]"; // "Bomb"
-    };
-
     class rhs_mag_agm65;
+    class rhs_mag_agm65b : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
+    class rhs_mag_agm65d : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
+    class rhs_mag_agm65e : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
+    class rhs_mag_agm65f : rhs_mag_agm65
+    {
+        hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
+    };
+
     class rhs_mag_agm65h : rhs_mag_agm65 // AGM-65H CCD
     {
         hardpoints[] = {"B_BOMB_PYLON","RHS_HP_AGM65","B_GBU12","I_GBU12"}; // "RHS_HP_AGM65","RHS_HP_AGM65_3x"
@@ -236,64 +244,6 @@ class CfgMagazines
         mass = 14; // 16.24
     };
 
-    class VehicleMagazine;
-    class magazine_Missile_HARM_x1 : VehicleMagazine // AGM-88 HARM
-    {
-        descriptionShort = "Anti-Radar [SEAD]"; // "Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead"
-        displayName = "AGM-88 [SEAD]"; // "AGM-88C HARM x1"
-        displayNameShort = "Anti-Radar [SEAD]"; // "ARM"
-    };
-
-    class 2Rnd_Mk82;
-    class PylonMissile_1Rnd_Mk82_F : 2Rnd_Mk82 // Mk-82
-    {
-        displayName = "HE Airburst Bomb"; // "Mk82"
-        displayNameShort = "Unguided"; // "Bomb"
-    };
-
-    class 1000Rnd_Gatling_30mm_Plane_CAS_01_F : VehicleMagazine // A-10 GAU-8
-    {
-        muzzleImpulseFactor[] = {0,5.1};
-    };
-
-    class magazine_Bomb_GBU12_x1;
-    class PylonMissile_Bomb_GBU12_x1 : magazine_Bomb_GBU12_x1 // GBU-12 HE F/A-18 Version - überflüssig/irritierend
-    {
-        hardpoints[] = {""}; // "B_GBU12","I_GBU12"
-    };
-
-    class 4Rnd_Bomb_04_F;
-    class PylonMissile_1Rnd_Bomb_04_F : 4Rnd_Bomb_04_F // GBU-12 HE
-    {
-        descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
-        displayName = "HE Bomb [LG]"; // "GBU-12"
-        displayNameShort = "[LG]"; // "Bomb"
-        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_BOMB_PYLON"
-    };
-
-    class PylonMissile_1Rnd_BombCluster_01_F : PylonMissile_1Rnd_Bomb_04_F // CBU-85 HE Mines Cluster
-    {
-        descriptionShort = "[LG]"; // "750lb, laser-guided cluster bomb"
-        displayName = "HE-Mines Cluster [LG]"; // "CBU-85 Cluster x1"
-        displayNameShort = "[LG]"; // "Cluster Bomb"
-    };
-
-    class PylonMissile_1Rnd_BombCluster_02_F : PylonMissile_1Rnd_BombCluster_01_F // RBK-500F AT Mines Cluster
-    {
-        descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
-        displayName = "AT-Mines Cluster [LG]"; // "GBU-12"
-        displayNameShort = "[LG]"; // "Bomb"
-        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "O_BOMB_PYLON_HELI"
-        mass = 340; // 470
-    };
-
-    class PylonMissile_1Rnd_BombCluster_03_F : PylonMissile_1Rnd_BombCluster_01_F // BL-778 HE Cluster
-    {
-        descriptionShort = "[LG]"; // "580lb, laser-guided cluster bomb"
-        displayName = "HE Cluster [LG]"; // "BL778 Cluster x1"
-        displayNameShort = "[LG]"; // "Cluster Bomb"
-    };
-
     class rhs_mag_gau19_air_base;
     class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6 12.7x99mm Left
     {
@@ -307,33 +257,7 @@ class CfgMagazines
         displayname = "12.7x99mm SLAP Right"; // "12.7x99mm SLAP"
     };
 
-    class 300Rnd_20mm_shells;
-    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
-    {
-        hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
-    };
-
-    class 6Rnd_ACE_Hellfire_AGM114K;
-    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
-    {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
-    };
-
-    class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K 3x
-    {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
-    };
-
-    class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N
-    {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
-    };
-
-    class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
-    {
-        hardpoints[] = {"RHS_HP_MELB_M134","B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
-    };
-
+    class VehicleMagazine;
     class rhs_mag_ATAS_2 : VehicleMagazine // ATAS
     {
         hardpoints[] = {"RHS_HP_ATAS","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_FFAR_USMC"}; // "RHS_HP_ATAS","RHS_HP_MELB","RHS_HP_MELB_L"
@@ -342,39 +266,23 @@ class CfgMagazines
     class 24Rnd_PG_missiles;
     class rhs_mag_DAGR_4 : 24Rnd_PG_missiles // 4x DAGR RHS
     {
+        descriptionShort = "DAGR 4x"; // "SALH"
+        displayNameShort = "DAGR 4x"; // "SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_SINGLE","RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_SINGLE"
     };
 
     class rhs_mag_DAGR_8 : rhs_mag_DAGR_4 // 8x DAGR RHS
     {
+        descriptionShort = "DAGR 8x"; // "SALH"
+        displayNameShort = "DAGR 8x"; // "SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"
     };
 
-    class rhs_mag_smaw_HEAA : CA_LauncherMagazine // Mk.6 HEAA SMAW
+    class rhs_mag_DAGR_16 : rhs_mag_DAGR_8 // 16x DAGR RHS
     {
-        mass = 88.16; // 136.4
-    };
-
-    class rhs_mag_smaw_HEDP : CA_LauncherMagazine // Mk.3 HEDP SMAW
-    {
-        mass = 49.59; // 129.8
-    };
-
-    class rhs_mag_maaws_HEAT : CA_LauncherMagazine // FFV751 HEAT MAAWS
-    {
-        mass = 126.73; // 88.2
-    };
-
-    class rhs_mag_maaws_HEDP : CA_LauncherMagazine // FFV502 HEDP MAAWS
-    {
-        initSpeed = 290; // 230
-        mass = 88.16; // 72.77
-    };
-
-    class rhs_mag_maaws_HE : CA_LauncherMagazine // FFV441 HE MAAWS
-    {
-        initSpeed = 290; // 255
-        mass = 44.08; // 68.36
+        descriptionShort = "DAGR 16x"; // "SALH"
+        displayNameShort = "DAGR 16x"; //"SALH"
+        hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","B_MISSILE_PYLON"}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
 
     class Titan_AA;
@@ -395,12 +303,6 @@ class CfgMagazines
     {
         descriptionshort = "Type: High Explosive"; // "Type: High Explosive, Dual Purpose"
         displayName = "M72E10 (HE)"; // "M72 HEDP"
-    };
-
-    class 1Rnd_HE_Grenade_shell;
-    class ACE_HuntIR_M203 : 1Rnd_HE_Grenade_shell // HuntIR
-    {
-        initSpeed = 160; // 80
     };
 
     class rhsusf_100Rnd_556x45_M855_soft_pouch;
@@ -431,38 +333,30 @@ class CfgMagazines
         tracersEvery = 1; // 5
     };
 
-    class CA_Magazine;
-    class SatchelCharge_Remote_Mag : CA_Magazine // M183 Demolition Charge Assembly
+    class 300Rnd_20mm_shells;
+    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
     {
-        mass = 66.12; // 80
-        indirectHitRange = 14; // 5
+        hardpoints[] += {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
     };
 
-    class DemoCharge_Remote_Mag : SatchelCharge_Remote_Mag // M112 Demolition Block
+    class 6Rnd_ACE_Hellfire_AGM114K;
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
     {
-        mass = 11.02; // 20
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
 
-    class ATMine_Range_Mag;
-    class SLAMDirectionalMine_Wire_Mag : SatchelCharge_Remote_Mag // M4A1 SLAM
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K 3x
     {
-        mass = 22.04; // 20
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
     };
 
-    class AMP_Breaching_Charge_Mag : SLAMDirectionalMine_Wire_Mag // Breaching Charge
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N
     {
-        mass = 8.82; // 10
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
 
-    class APERSMineDispenser_Mag : SLAMDirectionalMine_Wire_Mag // APERS Mine Dispenser
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
     {
-        mass = 77.14; // 60
+        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
     };
-
-
-    class ClaymoreDirectionalMine_Remote_Mag : CA_Magazine // Claymore
-    {
-        mass = 22.04; // 20
-    };
-
 };

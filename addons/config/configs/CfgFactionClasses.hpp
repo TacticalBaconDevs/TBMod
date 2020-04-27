@@ -2,11 +2,11 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class CfgWeapons
+class CfgFactionClasses
 {
-    class GMG_F;
-    class GMG_40mm : GMG_F
+    class NO_CATEGORY;
+    class TB_categorie: NO_CATEGORY
     {
-        magazines[] += {"TB_Smoke_Grenades"};
+        displayName = "#TacticalBacon";
     };
 };

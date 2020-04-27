@@ -4,7 +4,8 @@
 */
 class CfgSounds
 {
-    class ace_detector_1
+    // TODO: Sounds wurden im letzten Update gebuffed überprüfen
+    /*class ace_detector_1
     {
         name = "ace_detector_1";
         sound[] = {"\z\ace\addons\minedetector\sounds\metal_detector.wss", "db+6", 1};
@@ -30,5 +31,5 @@ class CfgSounds
         name = "ace_detector_4";
         sound[] = {"\z\ace\addons\minedetector\sounds\metal_detector.wss", "db+6", 0.7};
         titles[] = {};
-    };
+    };*/
 };
