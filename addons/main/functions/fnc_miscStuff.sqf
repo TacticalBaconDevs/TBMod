@@ -142,7 +142,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, player] call TFAR_fnc_addEventHandler;
 
 
-// ### AddZeus
+// ### informAdminsAndZeus
 [
     "TB_informAdminsAndZeus",
     {
@@ -154,19 +154,6 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         };
     }
 ] call CBA_fnc_addEventHandler;
-
-
-// ### Piloten Spielerschaden updaten
-["CBA_SettingChanged", {
-    params ["_setting", "_value"];
-
-    if (_setting == "ace_medical_playerDamageThreshold") then
-    {
-        TB_origin_playerDamageThreshold = ace_medical_playerDamageThreshold;
-        if (ACE_player getVariable ["TB_rolle", ""] == "pilot") then {ace_medical_playerDamageThreshold = TB_origin_playerDamageThreshold + 10};
-    };
-}] call CBA_fnc_addEventHandler;
-
 
 // ### FPS Infos
 [{

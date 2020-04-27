@@ -4,19 +4,8 @@
 */
 class CfgVehicles
 {
-    // Skin FlaRak Kit
-    class AA_01_base_F;
-    class B_static_AA_F : AA_01_base_F
-    {
-        author = "Eron";
-        hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa),
-            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa)
-        };
-    };
-
     class Heli_Transport_03_base_F;
-    class B_Heli_Transport_03_F : Heli_Transport_03_base_F // Vanilla Stealth CH-47
+    class B_Heli_Transport_03_F : Heli_Transport_03_base_F // Stealth CH-47
     {
         accuracy = 0.35; // 0.02
         accuracyDarkNightLightsOff = 0.0015; // 0.001
@@ -27,13 +16,11 @@ class CfgVehicles
         camouflage = 110; // 100
         irTargetSize = 0.86; // 1.2
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.41; // 1.2
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_01_base_F;
-    class B_Heli_Transport_01_F : Heli_Transport_01_base_F // Vanilla Stealth UH-80
+    class B_Heli_Transport_01_F : Heli_Transport_01_base_F // Stealth UH-80
     {
         accuracy = 0.4; // 0.5
         armor = 45; // 40
@@ -41,13 +28,11 @@ class CfgVehicles
         camouflage = 78; // 100
         irTargetSize = 0.5; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.33; // 0.7
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Attack_01_dynamicLoadout_base_F;
-    class B_Heli_Attack_01_dynamicLoadout_F : Heli_Attack_01_dynamicLoadout_base_F // Vanilla Stealth RAH-66
+    class B_Heli_Attack_01_dynamicLoadout_F : Heli_Attack_01_dynamicLoadout_base_F // Stealth RAH-66
     {
         accuracy = 1.2; // 2.5
         accuracyDarkNightLightsOff = 0.0005; // 0.001
@@ -58,47 +43,12 @@ class CfgVehicles
         camShakeCoef = 0.4; // 0
         irTargetSize = 0.48; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
-        magazines[] = {"168Rnd_CMFlare_Chaff_Magazine"}; // "240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 0.21; // 0.7
-        weapons[] = {"rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
-    class Plane_Base_F;
-    class Plane_CAS_01_base_F: Plane_Base_F
-    {
-        class Components;
-    };
-    class Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_base_F // A-164 Wipeout
-    {
-        class Components : Components
-        {
-            class TransportPylonsComponent
-            {
-                class Pylons
-                {
-                    class Pylons1;
-                    class Pylons2 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons3 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons4 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                    class Pylons5 : Pylons1
-                    {
-                        maxweight = 5000; // 500
-                    };
-                };
-            };
-        };
-    };
-    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F
+    class Plane_CAS_01_dynamicLoadout_base_F;
+    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
     {
         accuracyDarkNightLightsOff = 0.005; // 0.001
         accuracyNightLightsOff = 0.03; // 0.006
@@ -108,15 +58,13 @@ class CfgVehicles
         camouflage = 170; // 100
         camShakeCoef = 1.4; // 0
         irTargetSize = 1.65; // 1
-        magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "1000Rnd_Gatling_30mm_Plane_CAS_01_F","Laserbatteries","120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
         thrustCoef[] = {1.1,1.14,1.18,1.21,1.2,1.19,1.17,1.15,0.8,0.3,0.2,0,0,0,0}; // {1.1,1.14,1.18,1.21,1.2,1.19,1.17,1.15,1.13,1.1,1.04,0.6,0.1,0,0}
-        weapons[] = {"Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "Gatling_30mm_Plane_CAS_01_F","Laserdesignator_pilotCamera","CMFlareLauncher"
     };
 
     class Plane_Fighter_01_Base_F;
-    class B_Plane_Fighter_01_F : Plane_Fighter_01_Base_F // Vanilla F/A-181
+    class B_Plane_Fighter_01_F : Plane_Fighter_01_Base_F // F/A-181
     {
         accuracy = 0.25; // 0.02
         accuracyDarkNightLightsOff = 0.003; // 0.001
@@ -128,11 +76,9 @@ class CfgVehicles
         camouflage = 150; // 100
         irScanRangeMin = 650; // 2000
         irTargetSize = 1.7; // 1
-        magazines[] = {"magazine_Fighter01_Gun20mm_AA_x450","magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "magazine_Fighter01_Gun20mm_AA_x450","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 0.7; // 0.8
         thrustCoef[] = {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.8,1.75,1.6,1.4,1.2}; // {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.4,0.4,0,0,0}
-        weapons[] = {"weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "weapon_Fighter_Gun20mm_AA","Laserdesignator_pilotCamera","CMFlareLauncher_Singles"
     };
 
     class I_Plane_Fighter_03_dynamicLoadout_F;
@@ -146,15 +92,13 @@ class CfgVehicles
         camShakeCoef = 0.9; // 0
         camouflage = 105; // 100
         irTargetSize = 1.4; // 0.8
-        magazines[] = {"Laserbatteries","300Rnd_CMFlare_Chaff_Magazine"}; // "120Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 0.8
         thrustCoef[] = {1.6,1.75,2,2.1,2.2,2.1,1.95,1.6,1.1,0,0,0,0,0,0,0,0}; // {1.42,1.38,1.34,1.3,1.25,1.2,1.19,1.18,1.17,1.17,1.16,1.16,0.1,0,0,0,0}
-        weapons[] = {"Laserdesignator_pilotCamera","rhsusf_weap_CMFlareLauncher"}; // "CMFlareLauncher"
     };
 
     class UAV_01_base_F;
-    class B_UAV_01_F : UAV_01_base_F // Vanilla AR-2 Darter
+    class B_UAV_01_F : UAV_01_base_F // AR-2 Darter
     {
         accuracyDarkNightLightsOff = 0.00001; // 0.001
         accuracyNightLightsOff = 0.00006; // 0.006
@@ -168,7 +112,7 @@ class CfgVehicles
     };
 
     class UAV_06_base_F;
-    class B_UAV_06_F : UAV_06_base_F // Vanilla AL-6 Pelican
+    class B_UAV_06_F : UAV_06_base_F // AL-6 Pelican
     {
         accuracyDarkNightLightsOff = 0.0001; // 0.001
         accuracyNightLightsOff = 0.0006; // 0.006
@@ -182,7 +126,7 @@ class CfgVehicles
     };
 
     class Quadbike_01_base_F;
-    class B_Quadbike_01_F : Quadbike_01_base_F // Vanilla Quad
+    class B_Quadbike_01_F : Quadbike_01_base_F // Quad
     {
         accuracy = 1.25; // 0.25
         accuracyDarkNightLightsOff = 0.0005; // 0.001
@@ -195,7 +139,7 @@ class CfgVehicles
     };
 
     class MRAP_03_base_F;
-    class I_MRAP_03_F : MRAP_03_base_F // Vanilla Fennek
+    class I_MRAP_03_F : MRAP_03_base_F // Fennek
     {
         accuracy = 1.1; // 0.25
         armor = 190; // 200
@@ -207,7 +151,7 @@ class CfgVehicles
     };
 
     class Heli_light_03_base_F;
-    class Heli_light_03_unarmed_base_F : Heli_light_03_base_F // Vanilla AW-159 Hellcat
+    class Heli_light_03_unarmed_base_F : Heli_light_03_base_F // AW-159 Hellcat
     {
         accuracy = 0.42; // 1.5
         accuracyDarkNightLightsOff = 0.002; // 0.001
@@ -218,26 +162,22 @@ class CfgVehicles
         camouflage = 84; // 100
         irTargetSize = 0.8; // 1
         LockDetectionSystem = "2 + 8 + 4"; // 0
-        magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 1
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class Heli_Transport_02_base_F;
-    class I_Heli_Transport_02_F : Heli_Transport_02_base_F // Vanilla CH-49 Mohawk
+    class I_Heli_Transport_02_F : Heli_Transport_02_base_F // CH-49 Mohawk
     {
         armor = 55; // 40
         audible = 64; // 50
         camouflage = 95; // 100
         irTargetSize = 1; // 1.2
-        magazines[] = {"300Rnd_CMFlare_Chaff_Magazine","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM","rhsusf_mag_DIRCM"}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 1; // 1.2
-        weapons[] = {"rhsusf_weap_CMFlareLauncher","rhsusf_weap_ANALQ212"}; // "CMFlareLauncher"
     };
 
     class UAV_02_dynamicLoadout_base_F;
-    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // Vanilla MQ-4A Greyhawk (MQ-1 Predator)
+    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // MQ-4A Greyhawk (MQ-1 Predator)
     {
         accuracy = 0.6; // 0.1
         camouflage = 45; // 150
@@ -250,7 +190,7 @@ class CfgVehicles
     };
 
     class UAV_05_Base_F;
-    class B_UAV_05_F : UAV_05_Base_F // Vanilla UCAV Sentinel
+    class B_UAV_05_F : UAV_05_Base_F // UCAV Sentinel
     {
         accuracy = 0.2; // 0.1
         fuelCapacity = 4000; // 1000
@@ -258,7 +198,7 @@ class CfgVehicles
     };
 
     class Rubber_duck_base_F;
-    class B_Boat_Transport_01_F : Rubber_duck_base_F // Vanilla Schlauchboot
+    class B_Boat_Transport_01_F : Rubber_duck_base_F // Schlauchboot
     {
         accuracy = 1.25; // 0.5
         ace_cargo_space = 1; // 0
@@ -268,7 +208,7 @@ class CfgVehicles
     };
 
     class Boat_Armed_01_minigun_base_F;
-    class B_Boat_Armed_01_minigun_F : Boat_Armed_01_minigun_base_F // Vanilla Schnellboot
+    class B_Boat_Armed_01_minigun_F : Boat_Armed_01_minigun_base_F // Schnellboot
     {
         accuracy = 0.9; // 1.5
         ace_cargo_space = 1; // 0
@@ -279,7 +219,7 @@ class CfgVehicles
     };
 
     class SDV_01_base_F;
-    class B_SDV_01_F : SDV_01_base_F // Vanilla SDV (Seal Delivery Vehicle)
+    class B_SDV_01_F : SDV_01_base_F // SDV (Seal Delivery Vehicle)
     {
         ace_cargo_space = 1; // 0
         audible = 0.1; // 6
@@ -287,7 +227,7 @@ class CfgVehicles
     };
 
     class I_APC_Wheeled_03_base_F;
-    class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Vanilla Pandur II
+    class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Pandur II
     {
         armor = 245; // 200
         audible = 16; // 5
@@ -300,7 +240,7 @@ class CfgVehicles
         audible = 16; // 14
     };
 
-        class LT_01_cannon_base_F;
+    class LT_01_cannon_base_F;
     class TB_Vehicles_BW_Wiesel_2 : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
     {
         audible = 4; // 18
@@ -329,6 +269,129 @@ class CfgVehicles
                 maxElev = 25; // 13
                 maxTurn = 214; // 107
                 minElev = -45; // -28
+            };
+        };
+    };
+
+    // ###################### ACE Defuse ######################
+    // class Items_base_F;
+    // class ACE_DefuseObject: Items_base_F
+    // {
+        // class EventHandlers
+        // {
+            // class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        // };
+
+        // author = "ACE-Team";
+        // _generalMacro = "ACE_DefuseObject";
+        // displayName = "ACE Defuse Helper";
+        // model = "\A3\Weapons_f\dummyweapon.p3d";
+        // scope = 1;
+
+        // class ACE_Actions
+        // {
+            // class ACE_Defuse
+            // {
+                // distance = 2;
+                // displayName = "Entschärfen";
+                // condition = "";
+                // statement = ";";
+                // exceptions[] = {"isNotSwimming"};
+                // icon = "";
+            // };
+        // };
+    // };
+    // class ACE_DefuseObject_Large: ACE_DefuseObject
+    // {
+        // class ACE_Actions: ACE_Actions
+        // {
+            // class ACE_Defuse: ACE_Defuse
+            // {
+                // distance = 3;
+            // };
+        // };
+    // };
+
+
+    // ###################### TFAR RADIOS leichter ######################
+    #define ADD_OVERRIDE(NAME,PARENT,LOAD,MASSE) class NAME : PARENT \
+        { \
+            maximumLoad = LOAD; \
+            mass = MASSE; \
+        }
+    class TFAR_Bag_Base;
+    ADD_OVERRIDE(TFAR_rt1523g,TFAR_Bag_Base,129,25); // 50, 80 - 5,16 - Russen kleines LR
+    ADD_OVERRIDE(tf_rt1523g,TFAR_rt1523g,129,25);
+    ADD_OVERRIDE(OPXT_aor1_117,tf_rt1523g,129,25);
+
+    ADD_OVERRIDE(TFAR_rt1523g_big,TFAR_rt1523g,160,30); // 160, 160 - 5,3 - USA großes LR
+    ADD_OVERRIDE(tf_rt1523g_big,TFAR_rt1523g_big,160,30);
+    ADD_OVERRIDE(OPXT_aor1_1523,tf_rt1523g_big,160,30);
+
+    ADD_OVERRIDE(TFAR_rt1523g_sage,TFAR_rt1523g,160,30); // 100, 120 - 5,3
+    ADD_OVERRIDE(tf_rt1523g_sage,TFAR_rt1523g_sage,160,30);
+
+    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50;
+    // OPXT_rf7800m: tf_anarc210 - maximumLoad = 300; mass = 60;
+
+
+    // ###################### ACE-Minedetector ######################
+    // TODO: CUP Abhängigkeit
+    /*#define SET_DETECTABLE(PARENT,CLASSES) class CLASSES : PARENT {ace_minedetector_detectable = 1;}
+
+    class Small_items_NoInteractive;
+    class Items_base_F;
+    class House_Small_F;
+    class House;
+    class Strategic;
+
+    //SET_DETECTABLE(Small_items_NoInteractive, Explosive);
+    SET_DETECTABLE(Items_base_F, Land_MetalBarrel_F);
+    SET_DETECTABLE(House_Small_F, Land_MetalBarrel_empty_F);
+    SET_DETECTABLE(House, Land_popelnice);
+    SET_DETECTABLE(House, Land_Kontejner);
+    SET_DETECTABLE(Strategic, Garbage_can);
+    SET_DETECTABLE(Strategic, Garbage_container);*/
+
+
+    // ###################### Rucksäcke ######################
+    class Bag_Base;
+    class B_AssaultPack_Base : Bag_Base
+    {
+        maximumLoad = 106;
+        mass = 13;
+    };
+
+
+    // ###################### MISC ######################
+    // UGV Stomper
+    class Car_F;
+    class UGV_01_base_F: Car_F
+    {
+        class Turrets;
+    };
+
+    class UGV_01_rcws_base_F: UGV_01_base_F
+    {
+        class Turrets: Turrets
+        {
+            class MainTurret;
+        };
+    };
+
+    class B_UGV_01_rcws_F: UGV_01_rcws_base_F {};
+
+    class TB_UGV_01_rcws_F: B_UGV_01_rcws_F
+    {
+        displayName = "TB UGV Stomper RCWS (Rauch)"; // UGV Stomper RCWS
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
+
+        class Turrets: Turrets
+        {
+            class MainTurret: MainTurret
+            {
+                magazines[] = {"200Rnd_127x99_mag_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
             };
         };
     };

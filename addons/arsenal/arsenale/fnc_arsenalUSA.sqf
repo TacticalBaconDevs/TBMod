@@ -861,8 +861,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_handfeuerwaffen +
-        _allgemein_uniformen +
-        _allgemein_westen +
         _lrFunken +
         _gepaeck_klein +
         _pilot_munition +
@@ -917,9 +915,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_ihadss",
             "H_PilotHelmetFighter_B",
 
+            // Westen
+            "rhsusf_iotv_ocp",
+            "rhsusf_iotv_ucp",
+
             // Uniform
             "U_B_PilotCoveralls",
             "U_B_HeliPilotCoveralls",
+            "rhs_uniform_cu_ocp",
+            "rhs_uniform_cu_ucp",
 
             // Items
             "ToolKit"

@@ -149,4 +149,10 @@ class CfgWeapons
         picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa";
     };
 
+    class GMG_F;
+    class GMG_40mm : GMG_F
+    {
+        magazines[] += {"TB_Smoke_Grenades"};
+    };
+
 };
