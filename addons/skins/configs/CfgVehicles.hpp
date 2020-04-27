@@ -664,8 +664,8 @@ class CfgVehicles
     {
         author = "Eron";
         hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa),
-            QPATHTOEF(skins,pictures\statics\TB_stationäre_Luftabwehr.paa)
+            QPATHTOF(pictures\statics\TB_stationäre_Luftabwehr.paa),
+            QPATHTOF(pictures\statics\TB_stationäre_Luftabwehr.paa)
         };
     };
 };
