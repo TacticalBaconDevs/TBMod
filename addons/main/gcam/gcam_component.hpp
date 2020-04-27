@@ -405,10 +405,10 @@ class GCam_DialogBase_ListBox
         color[] = {1, 1, 1, 0.6};
         colorActive[] = {1, 1, 1, 1};
         colorDisabled[] = {1, 1, 1, 0.3};
-        thumb = "\A3\ui_f\data\ui_scrollbar_thumb_ca.paa";
-        arrowEmpty = "\A3\ui_f\data\ui_arrow_top_ca.paa";
-        arrowFull = "\A3\ui_f\data\ui_arrow_top_active_ca.paa";
-        border = "\A3\ui_f\data\ui_border_scroll_ca.paa";
+        thumb="\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+	    arrowEmpty="\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+	    arrowFull="\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+	    border="\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
     };
 
     class ListScrollBar
@@ -571,10 +571,10 @@ class GCam_DialogBase_Combo
         color[] = {1, 1, 1, 0.6};
         colorActive[] = {1, 1, 1, 1};
         colorDisabled[] = {1, 1, 1, 0.3};
-        thumb = "\A3\ui_f\data\ui_scrollbar_thumb_ca.paa";
-        arrowEmpty = "\A3\ui_f\data\ui_arrow_top_ca.paa";
-        arrowFull = "\A3\ui_f\data\ui_arrow_top_active_ca.paa";
-        border = "\A3\ui_f\data\ui_border_scroll_ca.paa";
+        thumb="\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+        arrowEmpty="\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+        arrowFull="\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+        border="\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
     };
 
     class ComboScrollBar

@@ -272,4 +272,127 @@ class CfgVehicles
             };
         };
     };
+
+    // ###################### ACE Defuse ######################
+    // class Items_base_F;
+    // class ACE_DefuseObject: Items_base_F
+    // {
+        // class EventHandlers
+        // {
+            // class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        // };
+
+        // author = "ACE-Team";
+        // _generalMacro = "ACE_DefuseObject";
+        // displayName = "ACE Defuse Helper";
+        // model = "\A3\Weapons_f\dummyweapon.p3d";
+        // scope = 1;
+
+        // class ACE_Actions
+        // {
+            // class ACE_Defuse
+            // {
+                // distance = 2;
+                // displayName = "Entschärfen";
+                // condition = "";
+                // statement = ";";
+                // exceptions[] = {"isNotSwimming"};
+                // icon = "";
+            // };
+        // };
+    // };
+    // class ACE_DefuseObject_Large: ACE_DefuseObject
+    // {
+        // class ACE_Actions: ACE_Actions
+        // {
+            // class ACE_Defuse: ACE_Defuse
+            // {
+                // distance = 3;
+            // };
+        // };
+    // };
+
+
+    // ###################### TFAR RADIOS leichter ######################
+    #define ADD_OVERRIDE(NAME,PARENT,LOAD,MASSE) class NAME : PARENT \
+        { \
+            maximumLoad = LOAD; \
+            mass = MASSE; \
+        }
+    class TFAR_Bag_Base;
+    ADD_OVERRIDE(TFAR_rt1523g,TFAR_Bag_Base,129,25); // 50, 80 - 5,16 - Russen kleines LR
+    ADD_OVERRIDE(tf_rt1523g,TFAR_rt1523g,129,25);
+    ADD_OVERRIDE(OPXT_aor1_117,tf_rt1523g,129,25);
+
+    ADD_OVERRIDE(TFAR_rt1523g_big,TFAR_rt1523g,160,30); // 160, 160 - 5,3 - USA großes LR
+    ADD_OVERRIDE(tf_rt1523g_big,TFAR_rt1523g_big,160,30);
+    ADD_OVERRIDE(OPXT_aor1_1523,tf_rt1523g_big,160,30);
+
+    ADD_OVERRIDE(TFAR_rt1523g_sage,TFAR_rt1523g,160,30); // 100, 120 - 5,3
+    ADD_OVERRIDE(tf_rt1523g_sage,TFAR_rt1523g_sage,160,30);
+
+    // OPXT_aor1_210: tf_anarc210 - maximumLoad = 280; mass = 50;
+    // OPXT_rf7800m: tf_anarc210 - maximumLoad = 300; mass = 60;
+
+
+    // ###################### ACE-Minedetector ######################
+    // TODO: CUP Abhängigkeit
+    /*#define SET_DETECTABLE(PARENT,CLASSES) class CLASSES : PARENT {ace_minedetector_detectable = 1;}
+
+    class Small_items_NoInteractive;
+    class Items_base_F;
+    class House_Small_F;
+    class House;
+    class Strategic;
+
+    //SET_DETECTABLE(Small_items_NoInteractive, Explosive);
+    SET_DETECTABLE(Items_base_F, Land_MetalBarrel_F);
+    SET_DETECTABLE(House_Small_F, Land_MetalBarrel_empty_F);
+    SET_DETECTABLE(House, Land_popelnice);
+    SET_DETECTABLE(House, Land_Kontejner);
+    SET_DETECTABLE(Strategic, Garbage_can);
+    SET_DETECTABLE(Strategic, Garbage_container);*/
+
+
+    // ###################### Rucksäcke ######################
+    class Bag_Base;
+    class B_AssaultPack_Base : Bag_Base
+    {
+        maximumLoad = 106;
+        mass = 13;
+    };
+
+
+    // ###################### MISC ######################
+    // UGV Stomper
+    class Car_F;
+    class UGV_01_base_F: Car_F
+    {
+        class Turrets;
+    };
+
+    class UGV_01_rcws_base_F: UGV_01_base_F
+    {
+        class Turrets: Turrets
+        {
+            class MainTurret;
+        };
+    };
+
+    class B_UGV_01_rcws_F: UGV_01_rcws_base_F {};
+
+    class TB_UGV_01_rcws_F: B_UGV_01_rcws_F
+    {
+        displayName = "TB UGV Stomper RCWS (Rauch)"; // UGV Stomper RCWS
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
+
+        class Turrets: Turrets
+        {
+            class MainTurret: MainTurret
+            {
+                magazines[] = {"200Rnd_127x99_mag_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
+            };
+        };
+    };
 };

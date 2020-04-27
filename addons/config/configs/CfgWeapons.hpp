@@ -38,4 +38,10 @@ class CfgWeapons
     {
         displayName = "HE Cluster";
     };
+
+    class GMG_F;
+    class GMG_40mm : GMG_F
+    {
+        magazines[] += {"TB_Smoke_Grenades"};
+    };
 };

@@ -16,8 +16,6 @@ PREP(fastRope);
 PREP(fileExists);
 PREP(firstJoin);
 PREP(forceRagdoll);
-PREP(garage);
-PREP(garageGUI);
 PREP(insertChildrenFlaggen);
 PREP(insertChildrenFOB);
 PREP(insertChildrenGruppen);

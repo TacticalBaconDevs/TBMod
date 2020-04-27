@@ -8,7 +8,7 @@ class CfgMods
     class TBMod : Mod_Base
     {
         author = "TBMod-DevTeam";
-        authors[] = {"shukari", "Eric Ruhland", "IDarky", "Eron", "mordl", "BenZockt"};
+        authors[] = {"shukari", "Eric Ruhland", "Eron", "IDarky", "mordl", "BenZockt"};
 
         picture = QPATHTOF(pics\logo.paa);
         logo = QPATHTOF(pics\logo.paa);
