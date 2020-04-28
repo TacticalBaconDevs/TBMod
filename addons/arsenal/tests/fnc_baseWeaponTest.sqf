@@ -34,8 +34,9 @@ private _cfgWeapons = configfile >> "CfgWeapons";
             });
             
             {
-                private _base = toLower (getText (_cfgWeapons >> _x >> "baseweapon"));
-                if (_base != "" && _base != toLower _x) then {_log pushBack (format ["Check '%1' Fehler in defaultArsenal '%2' -> %3 ist keine BaseWeapon", _arsenalType, _rolle, _x])};
+                private _base = if (isClass (_cfgWeapons >> _x)) then {[_x] call BIS_fnc_baseWeapon} else {""};
+
+                if (_base != "" && toLower _base != toLower _x) then {_log pushBack (format ["Check '%1' Fehler in defaultArsenal '%2' -> %3 [%4] ist keine BaseWeapon", _arsenalType, _rolle, _x, _base])};
             }
             forEach _allItems;
         }

@@ -16,7 +16,7 @@ private _naschschubConfigs = configProperties [configFile >> "CfgVehicles", "isC
     if (configName _x find "_WL_" == -1) then
     {
         private _obj = createVehicle [configName _x, [0,0,0], [], 0, "CAN_COLLIDE"];
-        if ([_obj] call ace_dragging_fnc_getweight > ACE_maxWeightCarry) then {_log pushBack (format ["%1(%2)", configName _x, [_obj] call ace_dragging_fnc_getweight])};
+        if ([_obj] call ace_dragging_fnc_getweight > ACE_maxWeightCarry) then {_log pushBack (format ["zu schwer %1 (%2)", configName _x, [_obj] call ace_dragging_fnc_getweight])};
         deleteVehicle _obj;
     };
 }
