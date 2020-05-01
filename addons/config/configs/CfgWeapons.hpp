@@ -56,7 +56,6 @@ class CfgWeapons
         mass = 27.55; // 3
     };
 
-
     class H_HelmetB;
     class H_HelmetB_TI_tna_F : H_HelmetB
     {
