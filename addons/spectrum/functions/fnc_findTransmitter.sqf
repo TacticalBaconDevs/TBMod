@@ -4,8 +4,6 @@
     Developed by http://tacticalbacon.de
 */
 private _values = missionNamespace getVariable ["#EM_Values", []];
-private _cone = 30;
-private _weite = 300;
 private _min = missionNamespace getVariable ["#EM_SMin", -60];
 private _max = missionNamespace getVariable ["#EM_SMax", 0];
 

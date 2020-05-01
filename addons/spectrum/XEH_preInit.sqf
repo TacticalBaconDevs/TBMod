@@ -18,4 +18,20 @@ if (isServer) then
     publicVariable QGVAR(transmitters);
 };
 
+[
+    QGVAR(cone),
+    "SLIDER",
+    "spectrumDeviceCone",
+    ["TBMod", QUOTE(ADDON)],
+    [10, 90, 30, 0]
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(range),
+    "SLIDER",
+    "spectrumDeviceRange",
+    ["TBMod", QUOTE(ADDON)],
+    [10, 2000, 300, 0]
+] call CBA_fnc_addSetting;
+
 ADDON = true;

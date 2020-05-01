@@ -7,9 +7,9 @@ params ["_sender"];
 private _value = -100;
 
 private _relDir = abs ((((getPos ACE_player) vectorFromTo (getPos _sender)) call CBA_fnc_vectDir) - ((getCameraViewDirection ACE_player) call CBA_fnc_vectDir));
-_relDir = (linearConversion [0, _cone, _relDir, 1, 0, true]) max (linearConversion [360, 360 - _cone, _relDir, 1, 0, true]);
+_relDir = (linearConversion [0, GVAR(cone), _relDir, 1, 0, true]) max (linearConversion [360, 360 - GVAR(cone), _relDir, 1, 0, true]);
 
-private _dist = linearConversion [0, _weite, _sender distance ACE_player, 1, 0, true];
+private _dist = linearConversion [0, GVAR(range), _sender distance ACE_player, 1, 0, true];
 
 private _visi = linearConversion [0, 2, ([ACE_player, "VIEW"] checkVisibility [eyePos ACE_player, eyepos _sender]) + ([ACE_player, "VIEW"] checkVisibility [eyePos ACE_player, AGLToASL (unitAimPosition _sender)]), 0, 1, true];
 
