@@ -10,6 +10,15 @@ private _min = missionNamespace getVariable ["#EM_SMin", -60];
 private _max = missionNamespace getVariable ["#EM_SMax", 0];
 
 {
+    if !(_x getVariable ["hasFreq", false]) then
+    {
+        _x setVariable ["hasFreq", true, true];
+        GVAR(transmitters) setVariable [(random [420, 443, 480]) toFixed 2, _x];
+    };
+}
+forEach allUnitsUAV;
+
+{
     private _index = _values find (parseNumber _x);
     private _sender = GVAR(transmitters) getVariable [_x, objNull];
 
