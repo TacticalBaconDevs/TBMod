@@ -26,46 +26,43 @@ if (!is3DEN && {_mode == "init"}) then
         _x setBehaviour "CARELESS";
         _x setCombatMode "BLUE";
         _x setUnitPos "DOWN";
-        [_x, "MOVE"] remoteExecCall ["disableAI", _x];
-        _x spawn {uiSleep 1; [_this, "MOVE"] remoteExecCall ["disableAI", _this]};
+        [_x, true] remoteExecCall ["setCaptive", _x];
+        [_x, "PATH"] remoteExecCall ["disableAI", _x];
+        _x spawn {uiSleep 1; [_this, "PATH"] remoteExecCall ["disableAI", _this]};
         _x setVariable ["Vcm_Disable", true, true];
     }
     forEach _syncObjs;
 
     if (_isActivated) then
     {
-        private _bewusstlos = _logic getVariable ["bewusstlos", true];
+        private _strength = _logic getVariable ["strength", 0.75];
         private _anzahl = _logic getVariable ["anzahl", 1];
         private _schadenTyp = call compile (_logic getVariable ["schadenTyp", "[]"]);
         private _wundOrte = call compile (_logic getVariable ["wundOrte", "[]"]);
 
-        [_syncObjs, _bewusstlos, _anzahl, _schadenTyp, _wundOrte] spawn
+        [_syncObjs, _strength, _anzahl, _schadenTyp, _wundOrte] spawn
         {
-            params ["_syncObjs", "_bewusstlos", "_anzahl", "_schadenTyp", "_wundOrte"];
+            params ["_syncObjs", "_strength", "_anzahl", "_schadenTyp", "_wundOrte"];
 
             uiSleep 2; // etwas delay
 
             {
                 private _unit = _x;
 
+                {
+                    _x params ["_key", "_value"];
+                    _unit setVariable ["ace_medical_"+ _key, _value, true];
+                }
+                forEach [
+                    ["enableUnconsciousnessAI", 2],
+                    ["preventInstaDeath", true],
+                    ["amountOfReviveLives", 5],
+                    ["enableRevive", 2]
+                ];
+
                 for "_i" from 1 to _anzahl do
                 {
-                    {
-                        _x params ["_key", "_value"];
-                        _unit setVariable ["ace_medical_"+ _key, _value, true];
-                    }
-                    forEach [
-                        ["enableUnconsciousnessAI", 2],
-                        ["preventInstaDeath", true],
-                        ["amountOfReviveLives", 5],
-                        ["enableRevive", 2]
-                    ];
-
-                    private _array = [0, 0, 0, 0, 0, 0, 0.5 + random 1, 40 + random 20, 60 + random 20, _bewusstlos];
-                    _array set [["head", "body", "hand_r", "hand_l", "leg_r", "leg_l"] find (selectRandom _wundOrte), 1];
-
-                    //TODO: [_unit, selectRandom _schadenTyp, _array] spawn A chille s_fnc_setACEInjury;
-                    systemChat "Injured Module derzeit deaktiviert!";
+                    [_unit, _strength, selectRandom _wundOrte, selectRandom _schadenTyp] remoteExec ["ace_medical_fnc_addDamageToUnit", _unit];
                 };
             }
             forEach _syncObjs;

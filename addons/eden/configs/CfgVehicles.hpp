@@ -391,13 +391,13 @@ class CfgVehicles
 
         class Attributes: AttributesBase
         {
-            class bewusstlos: Checkbox
+            class strength: Edit
             {
-                property = QEGVAR(injured,bewusstlos);
-                displayName = "Bewusstlos";
-                tooltip = "Ob die Person bewusstlos ist";
+                property = QEGVAR(injured,strength);
+                displayName = "Stärke";
+                tooltip = "Wie stark ist jede Verwundung";
                 typeName = "NUMBER";
-                defaultValue = "true";
+                defaultValue = "0.75";
             };
             class anzahl: Edit
             {
@@ -421,7 +421,7 @@ class CfgVehicles
                 displayName = "Wundort";
                 tooltip = "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte";
                 typeName = "STRING";
-                defaultValue = """['head', 'body', 'hand_r', 'hand_l', 'leg_r', 'leg_l']""";
+                defaultValue = """['head', 'body', 'leftarm', 'rightarm', 'leftleg', 'rightleg']""";
             };
 
             class ModuleDescription: ModuleDescription {};
@@ -431,7 +431,7 @@ class CfgVehicles
         {
             description[] = {
                 "Dieses Modul mit Personen syncen und fertig!",
-                "Du kannst auch einen Trigger damit verbinden, dann musst du aber die Eigenschaften 'Auf Position bleiben' und unter Ki Optionen 'Path' deaktivieren.",
+                "Du kannst auch einen Trigger damit verbinden, dann musst du aber die Eigenschaften 'Auf Position bleiben' und/oder unter Ki Optionen 'Path' anhaken.",
                 "Mit einem wiederholenden Trigger werden Wunden dann mehrmals hinzugefügt... empfehlen tut sich ein Bereichstrigger ohne Wiederholung nur auf dem Server!"
             };
         };

@@ -4,22 +4,6 @@
 */
 class CfgWeapons
 {
-    class mortar_155mm_AMOS;
-    class weapon_ShipCannon_120mm : mortar_155mm_AMOS
-    {
-        magazines[] = {
-            "magazine_ShipCannon_120mm_HE_shells_x32",
-            "magazine_ShipCannon_120mm_HE_guided_shells_x2",
-            "magazine_ShipCannon_120mm_HE_LG_shells_x2",
-            "magazine_ShipCannon_120mm_HE_cluster_shells_x2",
-            "magazine_ShipCannon_120mm_mine_shells_x6",
-            "magazine_ShipCannon_120mm_smoke_shells_x6",
-            "magazine_ShipCannon_120mm_AT_mine_shells_x6"
-        };
-        dispersion = 0.0005; // 0.002
-        magazineReloadTime = 1; // 7
-    };
-
     // Skin schwarze Weste
     class rhsusf_spc_patchless_radio;
     class SPC_Black_01: rhsusf_spc_patchless_radio
@@ -118,40 +102,7 @@ class CfgWeapons
         modes[] = {"Far_AI","Single","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
 
-    class weapon_LGBLauncherBase;
-    class Bomb_04_Plane_CAS_01_F : weapon_LGBLauncherBase // GBU-12
-    {
-        displayName = "Laserguided Bomb";
-    };
 
-    class BombCluster_01_F : Bomb_04_Plane_CAS_01_F // CBU-85 HE Mines Cluster
-    {
-        displayName = "HE Minen Cluster";
-    };
-
-    class BombCluster_02_F : BombCluster_01_F // RBK-500F AT Mines Cluster
-    {
-        displayName = "AT Minen Cluster";
-    };
-
-    class BombCluster_03_F : BombCluster_01_F // BL-778 HE Cluster
-    {
-        displayName = "HE Cluster";
-    };
-
-    class Mk82BombLauncher : RocketPods // Mk-82
-    {
-        displayName = "Airburst Bomb";
-    };
-
-    // Skin schwarzes Shemagh
-    class H_ShemagOpen_khk;
-    class TB_Shemagh_black: H_ShemagOpen_khk
-    {
-        displayName = "Shemag Black";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_Shemagh_black.paa)};
-    };
 
     // Skin schwarzer Helm S.W.A.T.
     class rhsusf_opscore_bk_pelt;
@@ -318,14 +269,56 @@ class CfgWeapons
         aimTransitionSpeed = 0.26; // 0.5
     };
 
-    class ACE_ItemCore;
-    class ACE_Clacker: ACE_ItemCore // M57 Firing Device
+    class rhsusf_ach_helmet_ocp;
+    class rhsusf_opscore_01: rhsusf_ach_helmet_ocp
     {
-        mass = 7.71; // 3
+        class ItemInfo;
+    };
+    class rhsusf_hgu56p: rhsusf_opscore_01 // RHS Heli-Pilotenhelme
+    {
+        class ItemInfo: ItemInfo
+        {
+            mass = 55.1; // 40
+
+            class HitpointsProtectionInfo
+            {
+                class Head
+                {
+                    armor = 10; // 6
+                    hitpointName = "HitHead";
+                    passThrough = 0.1; // 0.5
+                };
+                class Face
+                {
+                    armor = 10;
+                    hitpointName = "HitFace";
+                    passThrough = 0.1;
+                };
+            };
+        };
+    };
+    class rhsusf_ihadss: rhsusf_opscore_01 // IHADSS Heli-Pilotenhelm
+    {
+        class ItemInfo: ItemInfo
+        {
+            mass = 55.1; // 40
+
+            class HitpointsProtectionInfo
+            {
+                class Head
+                {
+                    armor = 10; // 6
+                    hitpointName = "HitHead";
+                    passThrough = 0.1; // 0.5
+                };
+                class Face
+                {
+                    armor = 10;
+                    hitpointName = "HitFace";
+                    passThrough = 0.1;
+                };
+            };
+        };
     };
 
-    class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
-    {
-        mass = 27.55; // 3
-    };
 };
