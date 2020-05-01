@@ -14,7 +14,7 @@ _items append (switch (getPlayerUID player) do
     case "76561198053478498": {[]}; // Sponst
 
     case "76561198083373558": {[]}; // Jojo
-    case "76561198066861232": {[]}; // Darky
+    case "76561198066861232": {["H_Beret_EAF_01_F"]}; // Darky
 
     case "76561198032526435": {[]}; // Makuro
     case "76561198062497439": {[]}; // Pakowski

@@ -16,7 +16,35 @@ private _allgemein = [
     "BWA3_G_Combat_orange",
     "BWA3_G_Combat_black",
     // ### Vanilla
-    //"G_Aviator",
+    "G_Bandanna_beast",
+    "G_Bandanna_tan",
+    "G_Bandanna_khk",
+    "G_Bandanna_oli",
+    "G_Bandanna_aviator",
+    "G_Bandanna_blk",
+    "G_Aviator",
+
+    // Bärte
+    "SFG_Tac_smallBeardB",
+    "SFG_Tac_smallBeardD",
+    "SFG_Tac_smallBeardG",
+    "SFG_Tac_smallBeardO",
+    "SFG_Tac_BeardB",
+    "SFG_Tac_BeardD",
+    "SFG_Tac_BeardG",
+    "SFG_Tac_BeardO",
+    "SFG_Tac_chinlessbB",
+    "SFG_Tac_chinlessbD",
+    "SFG_Tac_chinlessbG",
+    "SFG_Tac_chinlessbO",
+    "SFG_Tac_moustacheB",
+    "SFG_Tac_moustacheD",
+    "SFG_Tac_moustacheG",
+    "SFG_Tac_moustacheO",
+    "SFG_Tac_ChopsB",
+    "SFG_Tac_ChopsD",
+    "SFG_Tac_ChopsG",
+    "SFG_Tac_ChopsO",
 
     // Nachtsichtgeräte
     "ACE_NVG_Gen4",
@@ -38,13 +66,19 @@ private _allgemein = [
     "ItemCompass",
 
     // Schalldämpfer
+    "bwa3_muzzle_snds_qdss",
+    "bwa3_muzzle_snds_qdss_green",
+    "bwa3_muzzle_snds_qdss_tan",
+    "bwa3_muzzle_snds_rotex_iiic",
+    "bwa3_muzzle_snds_rotex_iiic_green",
+    "bwa3_muzzle_snds_rotex_iiic_tan",
+    "muzzle_snds_m_khk_f",
+    "muzzle_snds_m_snd_f",
+    "muzzle_snds_m",
     "bwa3_muzzle_snds_rotex_iia",
     "muzzle_snds_b_khk_f",
     "muzzle_snds_b_snd_f",
     "muzzle_snds_b",
-    "bwa3_muzzle_snds_rotex_monoblock",
-    "bwa3_muzzle_snds_rotex_iic",
-    "bwa3_muzzle_snds_rotex_iic_tan",
 
     // Uhr
     "ItemWatch",
@@ -71,15 +105,14 @@ private _allgemein = [
     "TB_building_item_Land_BagFence_Round_F",
     "TB_building_item_ace_concertinawirecoil",
     // ### Granaten
-    "SmokeShell",
-    "SmokeShellRed",
-    "SmokeShellGreen",
-    "SmokeShellBlue",
     "BWA3_DM51A1",
-    "bwa3_dm25",
-    "bwa3_dm32_red",
-    "bwa3_dm32_green",
-
+    "BWA3_DM25",
+    "BWA3_DM32_Blue",
+    "BWA3_DM32_Yellow",
+    "BWA3_DM32_Green",
+    "BWA3_DM32_Orange",
+    "BWA3_DM32_Red",
+    "BWA3_DM32_Purple",
     "ACE_M84",
     // ### Spreng
     "AMP_Breaching_Charge_Mag"
@@ -135,7 +168,8 @@ private _allgemein_befestigungsschiene = [
 
 private _allgemein_zweibein = [
     "bwa3_bipod_harris",
-    "bwa3_bipod_atlas"
+    "bwa3_bipod_atlas",
+    "bwa3_bipod_mg3"
 ];
 
 private _allgemein_raketenwerfer = [
@@ -241,7 +275,11 @@ private _dmr_munition = [
 private _mg_munition = [
     "BWA3_30Rnd_556x45_G36",
     "BWA3_30Rnd_556x45_G36_Tracer",
-    "BWA3_200Rnd_556x45_Tracer"
+    "BWA3_200Rnd_556x45_Tracer",
+    "BWA3_120Rnd_762x51",
+    "BWA3_120Rnd_762x51_Tracer",
+    "BWA3_120Rnd_762x51_soft",
+    "BWA3_120Rnd_762x51_Tracer_soft"
 ];
 
 private _pilot_munition = [
@@ -354,6 +392,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "lerca_1200_tan",
             "Laserdesignator",
             "bwa3_vector",
+            "ACE_MX2A",
 
             // Items
             "B_UavTerminal",
@@ -495,6 +534,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehr
             "BWA3_MG4",
+            "BWA3_MG5_tan",
+            "BWA3_MG5",
+            "BWA3_MG3",
 
             // Weste
             "BWA3_Vest_MachineGunner_Tropen",

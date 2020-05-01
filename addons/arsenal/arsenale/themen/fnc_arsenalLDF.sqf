@@ -6,12 +6,36 @@
 */
 private _allgemein = [
     // Gesichtsbedeckung
+    // ### Vanilla
+    "G_Bandanna_beast",
     "G_Bandanna_tan",
     "G_Bandanna_khk",
     "G_Bandanna_oli",
-    "G_Bandanna_blk",
     "G_Bandanna_aviator",
-    "G_Bandanna_beast",
+    "G_Bandanna_blk",
+    "G_Aviator",
+
+    // Bärte
+    "SFG_Tac_smallBeardB",
+    "SFG_Tac_smallBeardD",
+    "SFG_Tac_smallBeardG",
+    "SFG_Tac_smallBeardO",
+    "SFG_Tac_BeardB",
+    "SFG_Tac_BeardD",
+    "SFG_Tac_BeardG",
+    "SFG_Tac_BeardO",
+    "SFG_Tac_chinlessbB",
+    "SFG_Tac_chinlessbD",
+    "SFG_Tac_chinlessbG",
+    "SFG_Tac_chinlessbO",
+    "SFG_Tac_moustacheB",
+    "SFG_Tac_moustacheD",
+    "SFG_Tac_moustacheG",
+    "SFG_Tac_moustacheO",
+    "SFG_Tac_ChopsB",
+    "SFG_Tac_ChopsD",
+    "SFG_Tac_ChopsG",
+    "SFG_Tac_ChopsO",
     "G_Blindfold_01_black_F",
     "G_Blindfold_01_white_F",
 
