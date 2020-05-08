@@ -34,4 +34,12 @@ if (isServer) then
     [10, 2000, 300, 0]
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(conversionModus),
+    "LIST",
+    "conversionModus",
+    ["TBMod", QUOTE(ADDON)],
+    [[0, 1], ["linear", "expo", "square"], 1]
+] call CBA_fnc_addSetting;
+
 ADDON = true;

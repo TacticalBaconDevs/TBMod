@@ -3,4 +3,7 @@
     Developed by http://tacticalbacon.de
 */
 PREP(calcSignal);
+PREP(conversion);
 PREP(findTransmitter);
+PREP(setDisplayValues);
+PREP(spectrumActions);
