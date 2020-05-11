@@ -16,8 +16,6 @@ PREP(fastRope);
 PREP(fileExists);
 PREP(firstJoin);
 PREP(forceRagdoll);
-PREP(garage);
-PREP(garageGUI);
 PREP(insertChildrenFlaggen);
 PREP(insertChildrenFOB);
 PREP(insertChildrenGruppen);
@@ -33,6 +31,7 @@ PREP(simManager);
 PREP(teleport);
 PREP(transfer);
 PREP(transferVar);
+PREP(uniqueArray);
 PREP(upDown);
 
 PREP_OTHERFOLDER(showGCAM,gcam);

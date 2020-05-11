@@ -2,14 +2,38 @@
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
+    FNC: TBMod_medical_fnc_calcTreatmentTime
 */
-params [["_input", -1, [0]]];
+params ["_this", ["_timeOrCode", 4, [0, {}]], ["_manuellDiff", 0]]; // WRAPPER PARAMS
+params ["_medic", "_patient", "_bodypart", "_bandage"];
 
-private _inFacility = [ACE_player] call ace_medical_fnc_isInMedicalFacility;
-private _inVehicle = [ACE_player] call ace_medical_fnc_isInMedicalVehicle;
-private _influence = ([0, 0.45] select _inVehicle) max ([0, 0.65] select _inFacility);
+private _inFacility = [_patient] call ace_medical_treatment_fnc_isInMedicalFacility;
+private _inVehicle = [_patient] call ace_medical_treatment_fnc_isInMedicalVehicle;
+private _isSani = [_medic, 1] call ace_medical_treatment_fnc_isMedic;
+private _isArzt = [_medic, 2] call ace_medical_treatment_fnc_isMedic;
 
-private _result = _input * (0.05 max (GVAR(coef) - _influence) min 2);
-["Treatmenttime -> Orig: %1 | Now: %2 | Coef: %3 | Influ: %4 | InFac: %5 | InVeh: %6", _input, _result, GVAR(coef), _influence, _inFacility, _inVehicle] call EFUNC(main,debug);
+private _inputTime = if (_timeOrCode isEqualType {}) then {_this call _timeOrCode} else {_timeOrCode};
+private _coef = GVAR(coef_global) + _manuellDiff;
 
-_result;
+private _selfTreat = _medic == _patient;
+if (_selfTreat) then {_coef = _coef + GVAR(selfTreatMalus)};
+
+if (_isSani) then {_coef = _coef - ([GVAR(saniBoost), GVAR(saniBoost) / 2] select _selfTreat)};
+if (_inVehicle) then {_coef = _coef - GVAR(vehicleBoost)};
+if (_isArzt) then {_coef = _coef - ([GVAR(arztBoost), GVAR(arztBoost) / 2] select _selfTreat)};
+if (_inFacility) then {_coef = _coef - GVAR(facilityBoost)};
+
+private _time = (_inputTime * (_coef max 0.1)) max 1;
+
+["Treatmenttime -> InputTime: %1, FinalTime: %2, Self: %3, GlobalCoef: %4, FinalCoef: %5 [Sa:%6|Ar:%7|Veh:%8|Fac:%9]",
+        _inputTime,
+        _time,
+        _selfTreat,
+        GVAR(coef_global),
+        _coef,
+        _isSani,
+        _isArzt,
+        _inVehicle,
+        _inFacility] call EFUNC(main,debug);
+
+_time

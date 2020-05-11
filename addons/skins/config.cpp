@@ -7,8 +7,7 @@ class CfgPatches
 {
     class ADDON
     {
-        name = "TBMod skins";
-
+        name = "TBMod Skins";
         author = "Eric";
 
         weapons[] = {
@@ -32,7 +31,10 @@ class CfgPatches
             "TB_Vehicles_T100"
         };
 
-        requiredAddons[] = {"TBMod_main"};
+        requiredAddons[] = {
+            "TBMod_main"//,
+            //"TBMod_config"
+        };
         addonRootClass = "TBMod_main";
     };
 };

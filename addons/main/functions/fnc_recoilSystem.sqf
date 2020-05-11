@@ -28,15 +28,15 @@ TB_recoilFreeze = -1;
     TB_cacheWeaponType = ([_newWeapon] call BIS_fnc_itemType) select 1;
 }] call CBA_fnc_addPlayerEventHandler;
 
-TB_recoilID = ["ace_firedPlayer", {
-    if (GVAR(recoilCoef) == -1) exitWith {["ace_firedPlayer", TB_recoilID] call CBA_fnc_removePlayerEventHandler};
+GVAR(recoilID) = ["ace_firedPlayer", {
+    if (GVAR(recoilCoef) == -1) exitWith {["ace_firedPlayer", GVAR(recoilID)] call CBA_fnc_removePlayerEventHandler};
     params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
     if (toLower _weapon in ["throw", "put"]) exitWith {};
     if (TB_recoilFreeze >= diag_tickTime) exitWith {};
     if (vehicle _unit != _unit) exitWith {_unit setUnitRecoilCoefficient 0.1};
 
-    private _recoil = (getCustomAimCoef _unit) + TB_recoilStart;
+    private _recoil = (getCustomAimCoef _unit) + GVAR(recoilStart);
     private _deploy = isWeaponDeployed _unit;
     private _rested = isWeaponRested _unit;
 

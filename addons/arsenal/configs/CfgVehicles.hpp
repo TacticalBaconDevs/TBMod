@@ -63,6 +63,7 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     priority = 1;
                 };
+
                 class rollen
                 {
                     displayName = "Rollen";
@@ -71,7 +72,7 @@ class CfgVehicles
                     priority = 3;
 
                     #define ADD_ROLLE(ROLLEN_NAME) \
-                        class rolle##ROLLEN_NAME \
+                        class rolle_##ROLLEN_NAME \
                         { \
                             displayName = ""; \
                             condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen)); \
@@ -105,7 +106,7 @@ class CfgVehicles
         MAKE_PUBLIC(USA,USA);
         hiddenSelectionsTextures[] = {QPATHTOF(pics\Arsenal_USA.paa)};
     };
-    
+
     class TB_arsenal_uk : TB_arsenal_base
     {
         MAKE_PUBLIC(UK,UK);
@@ -144,7 +145,7 @@ class CfgVehicles
                 class rollen : rollen
                 {
                     #define ADD_ROLLE_THEMEN(ROLLEN_NAME) \
-                        class rolle##ROLLEN_NAME \
+                        class rolle_##ROLLEN_NAME \
                         { \
                             displayName = ""; \
                             condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_themen)); \
@@ -185,7 +186,7 @@ class CfgVehicles
                 class rollen : rollen
                 {
                     #define ADD_ROLLE_CUSTOM(ROLLEN_NAME) \
-                        class rolle##ROLLEN_NAME \
+                        class rolle_##ROLLEN_NAME \
                         { \
                             displayName = ""; \
                             condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_custom)); \

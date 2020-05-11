@@ -130,7 +130,9 @@ private _allgemein_befestigungsschiene = [
 private _allgemein_geschuetzzubehoer = [
     "rhs_acc_tgpa",
     "rhs_acc_dtk3",
+    "rhs_acc_dtk",
     "rhs_acc_ak5",
+    "rhs_acc_uuk",
     "rhs_acc_dtk1983"
 ];
 
@@ -226,7 +228,8 @@ private _mg_munition = [
 
 private _pilot_munition = [
     "rhs_mag_9x19mm_7n31_44",
-    "rhs_mag_9x19mm_7n31_20"
+    "rhs_mag_9x19mm_7n31_20",
+    "rhs_mag_9x19mm_7n21_20"
 ];
 
 private _sniper_munition = [
