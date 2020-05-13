@@ -44,24 +44,30 @@ switch (_modus) do
         missionnamespace setVariable ["#EM_Transmit", _scanModus];
         missionNamespace setVariable ["#EM_Progress", 0];
 
-        if (isNil QGVAR(scanning) || {scriptDone GVAR(scanning)}) then
+        if (isNil QGVAR(scanning)) then
         {
-            GVAR(scanning) = _scanModus spawn
-            {
-                ((uiNamespace getVariable "rscweaponspectrumanalyzergeneric") displayctrl 5802) ctrlSetText (["SCANNING...", "TRANSMIT..."] select _this);
+            GVAR(scanning) = [{
+                params ["_arg", "_idPFH"];
 
-                waitUntil {
-                    uiSleep 0.1;
-                    private _prog = missionNamespace getVariable ["#EM_Progress", 0];
-                    missionNamespace setVariable ["#EM_Progress", _prog + 0.01];
-                    playSound (["ACE_Javelin_Locked", "ACE_Javelin_Locking"] select _this); //kestrel4500_exit_button_click
-                    _prog >= 1
+                // Text Überschrift
+                private _ctrl = (uiNamespace getVariable "rscweaponspectrumanalyzergeneric") displayctrl 5802;
+                private _text = ["SCANNING...", "TRANSMIT..."] select _arg;
+                if (ctrlText _ctrl != _text) then {_ctrl ctrlSetText _text};
+
+                // Progress
+                private _prog = missionNamespace getVariable ["#EM_Progress", 0];
+                if (_prog <= 1) exitWith
+                {
+                    missionNamespace setVariable ["#EM_Progress", _prog + (0.2 / 15)];
+                    playSound (["ACE_Javelin_Locked", "ACE_Javelin_Locking"] select _arg); //kestrel4500_exit_button_click
                 };
 
-                [["scanReturn", "transferReturn"] select _this] call FUNC(spectrumActions);
-
                 playSound "ACE_Sound_Click";
-            };
+                [["scanReturn", "transferReturn"] select _arg] call FUNC(spectrumActions);
+
+                [_idPFH] call CBA_fnc_removePerFrameHandler;
+                GVAR(scanning) = nil;
+            }, 0.2, _scanModus] call CBA_fnc_addPerFrameHandler;
         };
     };
 
@@ -100,11 +106,14 @@ switch (_modus) do
 
     case "resetScan":
     {
-        if (!isNil QGVAR(scanning) && {!scriptDone GVAR(scanning)}) then
+        if (!isNil QGVAR(scanning)) then
         {
-            terminate GVAR(scanning);
+            [GVAR(scanning)] call CBA_fnc_removePerFrameHandler;
+            GVAR(scanning) = nil;
+
             missionNamespace setVariable ["#EM_Progress", 0];
             missionnamespace setVariable ["#EM_Transmit", false];
+
             playSound "HintCollapse";
             ((uiNamespace getVariable "rscweaponspectrumanalyzergeneric") displayctrl 5802) ctrlSetText "";
         };

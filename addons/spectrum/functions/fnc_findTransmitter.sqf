@@ -3,22 +3,14 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-private _values = missionNamespace getVariable ["#EM_Values", []];
-
-// UAVs haben Dauerfunk
+// nicht aktiviert oder Gerät nicht als primär
+if (!GVAR(enable) || {!GVAR(receive)}) exitWith
 {
-    if !(_x getVariable ["hasFreq", false]) then
-    {
-        _x setVariable ["hasFreq", true, true];
+    [GVAR(transmitterPFH)] call CBA_fnc_removePerFrameHandler;
+    GVAR(transmitterPFH) = nil;
+};
 
-        private _freq = (random [420, 443, 480]) toFixed 2;
-        private _values = (GVAR(transmitters) getVariable [_freq, []]) select {!isNil "_x" && alive _x};
-        _values pushBackUnique _x;
-
-        [GVAR(transmitters), _freq, _values] call CBA_fnc_setVarNet;
-    };
-}
-forEach allUnitsUAV;
+private _values = missionNamespace getVariable ["#EM_Values", []];
 
 // Transmitter durchgehen
 {

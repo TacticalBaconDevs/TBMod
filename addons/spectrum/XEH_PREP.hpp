@@ -5,5 +5,8 @@
 PREP(calcSignal);
 PREP(conversion);
 PREP(findTransmitter);
+PREP(initInteractions);
+PREP(initUavs);
 PREP(setDisplayValues);
 PREP(spectrumActions);
+PREP(tfarTransmitter);
