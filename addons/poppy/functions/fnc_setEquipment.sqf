@@ -52,5 +52,6 @@ switch (toLower _slot) do
     case "vest": {_unit addVest _item};
     case "magazines": {[_unit, _array] call FUNC(addMagazines)};
     case "items": {[_unit, _array] call FUNC(addItems)};
+    case "face": {[_unit, _item] remoteExec ["setFace", 0, _unit]};
     default {_unit linkItem _item}; // Map, Headgear, Watch, Radio, NVG, Compass, GPS
 };
