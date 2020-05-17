@@ -13,6 +13,8 @@ params [
         ["_storagearray", [], []]
     ];
 
+if (!_save && {!isServer}) then {"[TBMod_persistence] persistenceTask kann nur auf dem Server geladen werden" remoteExecCall ["systemChat"]};
+
 if (_save) then
 {
     {
