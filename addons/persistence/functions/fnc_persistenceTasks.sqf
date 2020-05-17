@@ -13,39 +13,38 @@ params [
         ["_storagearray", [], []]
     ];
 
+if (!_save && {!isServer}) then {"[TBMod_persistence] persistenceTask kann nur auf dem Server geladen werden" remoteExecCall ["systemChat"]};
+
 if (_save) then
 {
     {
-        private _name = _x;
-        private _state = EGVAR(tasks,Namespace) getVariable [format["%1_state", _name], STATE_NotInitialised];
-        _storagearray pushBack [_name, _state];
-    } 
-    forEach EGVAR(tasks,loadedTasks);
+        _storagearray pushBack [_x, EGVAR(tasks,states) getVariable [_x, STATE_NotInitialised]];
+    }
+    forEach (allVariables EGVAR(tasks,states));
 }
 else // load
 {
     {
         _x params ["_name", "_state"];
-        private _currentState = EGVAR(tasks,Namespace) getVariable [format["%1_state", _name], STATE_NotInitialised];
-        if (_currentState == STATE_NotInitialised && _state != STATE_NotInitialised) then {
-            call (EGVAR(tasks,Namespace) getVariable [format["%1_initServer", _name], {}]);
-            [[], EGVAR(tasks,Namespace) getVariable [format["%1_init", _name], {}]] remoteExec ["call", 0];
-            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Initialised, true];
-            _currentState = STATE_Initialised;
+
+        private _currentState = EGVAR(tasks,states) getVariable [_name, STATE_NotInitialised];
+
+        if (_currentState == STATE_NotInitialised && _state != STATE_NotInitialised) then
+        {
+            (EGVAR(tasks,loadedTasks) getVariable [_name, []]) params ["", "_init", "_initServer"];
+            _currentState = [[_currentState, STATE_Initialised], [{true}, _init, _initServer]] call FUNC(execute);
         };
 
-        if (_currentState == STATE_Initialised && _state == STATE_Failed) then {
-            call (EGVAR(tasks,Namespace) getVariable [format["%1_failedServer", _name], {}]);
-            [[], EGVAR(tasks,Namespace) getVariable [format["%1_failed", _name], {}]] remoteExec ["call", 0];
-            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Failed, true];
-            _currentState = STATE_Failed;
+        if (_currentState == STATE_Initialised && _state == STATE_Failed) then
+        {
+            (EGVAR(tasks,loadedTasks) getVariable [_name, []]) params ["", "", "", "", "", "", "", "_failed", "_failedServer"];
+            _currentState = [[_currentState, STATE_Failed], [{true}, _failed, _failedServer]] call FUNC(execute);
         };
 
-        if (_currentState == STATE_Initialised && _state == STATE_Completed) then {
-            call (EGVAR(tasks,Namespace) getVariable [format["%1_completedServer", _name], {}]);
-            [[], EGVAR(tasks,Namespace) getVariable [format["%1_completed", _name], {}]] remoteExec ["call", 0];
-            EGVAR(tasks,Namespace) setVariable [format["%1_state", _name], STATE_Completed, true];
-            _currentState = STATE_Completed;
+        if (_currentState == STATE_Initialised && _state == STATE_Completed) then
+        {
+            (EGVAR(tasks,loadedTasks) getVariable [_name, []]) params ["", "", "", "", "_completed", "_completedServer"];
+            [[_currentState, STATE_Completed], [{true}, _completed, _completedServer]] call FUNC(execute);
         };
     }
     forEach _storagearray;
