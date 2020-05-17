@@ -58,7 +58,7 @@ switch (_modus) do
                 private _prog = missionNamespace getVariable ["#EM_Progress", 0];
                 if (_prog <= 1) exitWith
                 {
-                    missionNamespace setVariable ["#EM_Progress", _prog + (0.2 / 15)];
+                    missionNamespace setVariable ["#EM_Progress", _prog + (0.2 / ([15, 60] select _arg))];
                     playSound (["ACE_Javelin_Locked", "ACE_Javelin_Locking"] select _arg); //kestrel4500_exit_button_click
                 };
 

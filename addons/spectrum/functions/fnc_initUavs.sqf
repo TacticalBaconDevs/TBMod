@@ -5,17 +5,21 @@
 */
 if (!GVAR(enable)) exitWith {};
 
-// UAVs haben Dauerfunk
+// initPost Code
+private _obj = param [0, objNull];
+if (_obj isEqualTo objNull && {!isNull _obj}) exitWith
 {
-    if !(_x getVariable [QGVAR(hasFreq), false]) then
+    [_obj, random [420, 443, 480]] call FUNC(createTransmitter);
+};
+
+// Notfall, wenn nicht per InitPos abgefangen
+private _objs = (allVariables GVAR(transmitters)) apply {GVAR(transmitters) getVariable _x};
+{
+    private _uav = _x;
+    if (_objs findIf {_x find _uav != -1} != -1) then
     {
-        _x setVariable [QGVAR(hasFreq), true];
-
-        private _freq = (random [420, 443, 480]) toFixed 2;
-        private _values = (GVAR(transmitters) getVariable [_freq, []]) select {!isNil "_x" && alive _x};
-        _values pushBackUnique _x;
-
-        [GVAR(transmitters), _freq, _values] call CBA_fnc_setVarNet;
+        diag_log format ["ERROR ACHTUNG_uav: Notfallcode wurde benutzt für %1", typeOf _uav];
+        [_uav, random [420, 443, 480]] call FUNC(createTransmitter);
     };
 }
 forEach allUnitsUAV;

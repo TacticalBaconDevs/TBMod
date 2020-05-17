@@ -15,5 +15,7 @@ private _dist = [linearConversion [5, GVAR(range), _sender distance ACE_player, 
 
 private _visi = [[ACE_player, "VIEW", _sender] checkVisibility [eyePos ACE_player, AGLToASL (unitAimPosition _sender)]] call FUNC(conversion);
 
-private _value = if (_relDir <= 0 || _dist <= 0) then {0} else {_relDir + _dist + _visi};
-((linearConversion [1, 2, _value, _min, -30, false]) max _min) min _max;
+private _value = if (_relDir <= 0 || _dist <= 0) then {0} else {(_relDir + _dist) * (_visi max 0.5)};
+
+["calcSignal: %1 = (%2 + %3) * %4", _value, _relDir, _dist, _visi max 0.5] call EFUNC(main,debug);
+((linearConversion [0, 2, _value, _min, _max, true]) max _min) min _max;
