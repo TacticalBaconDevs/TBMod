@@ -29,6 +29,7 @@ class CfgLoadouts
             {"ACE_quikclot", 4},
             {"ACE_morphine", 1}
         };
+        face[] = {};
         postLoadout = "systemchat 'Hi'";
     };
 

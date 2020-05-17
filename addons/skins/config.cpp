@@ -32,8 +32,8 @@ class CfgPatches
         };
 
         requiredAddons[] = {
-            "TBMod_main",
-            "TBMod_config"
+            "TBMod_main"//,
+            //"TBMod_config"
         };
         addonRootClass = "TBMod_main";
     };
