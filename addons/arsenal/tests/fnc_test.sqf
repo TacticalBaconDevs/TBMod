@@ -7,6 +7,7 @@
 */
 private _log = ["TestSkript von Addon 'Arsenal' gestartet..."];
 
+_log append ([] call FUNC(baseWeaponTest));
 _log append ([] call FUNC(checkArsenalsTest));
 _log append ([] call FUNC(defaultLoadoutTest));
 
