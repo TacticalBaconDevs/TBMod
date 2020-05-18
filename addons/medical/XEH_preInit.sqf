@@ -17,7 +17,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["MedicSystemCoef", "Bestimmt die Zeiten für medizinische Aktionen (kleiner = weniger Zeit)"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0.1, 2, 1, 1]
+    [0.1, 2, 1, 1],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -26,7 +27,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "FatalDamageSource Player",
     ["TBMod", QUOTE(COMPONENT)],
     [[0, 1, 2, 3, 4], ["Only large hits to vital organs", "Sum of trauma", "Either", "No Fatals", "ACE_VALUE"], 4],
-    false,
+    1,
     {
         if (_this < 4 && !isDedicated) then {player setVariable ["ace_medical_fatalDamageSource", _this, true]};
     }
@@ -37,7 +38,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["selfTreatMalus", "Wie viel Prozent MEHR Zeit braucht eine Selbstbehandlung"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.4, 2]
+    [0, 2, 0.4, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -45,7 +47,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["saniBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein Sani"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.1, 2]
+    [0, 2, 0.1, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -53,7 +56,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["arztBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein Arzt"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.3, 2]
+    [0, 2, 0.3, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -61,7 +65,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["vehicleBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein MedicalFahrzeug"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.1, 2]
+    [0, 2, 0.1, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -69,16 +74,17 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["facilityBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein MedicalGebäude"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.3, 2]
+    [0, 2, 0.3, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(healthRegen),
     "CHECKBOX",
     ["healthRegen", "Wenn man volle Ausdauer hat und ruhig steht, regeniert man leicht Blut und genähte Wunden/Prellungen werden geschlossen"],
-    "TBMod",
+    ["TBMod", QUOTE(COMPONENT)],
     true,
-    false,
+    1,
     {
         if (_this) then
         {
