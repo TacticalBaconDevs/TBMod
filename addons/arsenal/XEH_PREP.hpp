@@ -35,5 +35,6 @@ PREP_OTHERFOLDER(arsenalVANILLACOP,arsenale\themen);
 PREP_OTHERFOLDER(test,tests);
 PREP_OTHERFOLDER(checkArsenalsTest,tests);
 PREP_OTHERFOLDER(defaultLoadoutTest,tests);
+PREP_OTHERFOLDER(baseWeaponTest,tests);
 // Test-FNCs
 PREP_OTHERFOLDER(checkItems,tests);
