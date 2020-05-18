@@ -10,7 +10,7 @@ _args params [["_can", {false}], ["_client", {}], ["_server", {}]];
 if (call _can) then
 {
     call _server;
-    [[], _client] remoteExecCall ["call"];
+    [[], _client] remoteExecCall ["call", 0, true];
 
     _curState = _newState;
     GVAR(states) setVariable [_x, _curState, true];
