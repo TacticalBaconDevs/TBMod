@@ -9,12 +9,7 @@ ace_microdagr_settingUseMils = true;
 // ### Gras entfernen - Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {
     private _zerschneider = createVehicle ["Land_ClutterCutter_medium_F", ACE_player modelToWorld [0, 2.7, 0], [], 0, "CAN_COLLIDE"];
-
-    [_zerschneider] spawn {
-        params ["_zerschneider"];
-        uiSleep 2;
-        deleteVehicle _zerschneider;
-    };
+    [{deleteVehicle _this}, _zerschneider, 2] call CBA_fnc_waitAndExecute;
 }, {true}] call ace_interact_menu_fnc_createAction;
 [ACE_player, 1, ["ACE_SelfActions", "ACE_Equipment"], _grasAction] call ace_interact_menu_fnc_addActionToObject;
 
@@ -42,7 +37,7 @@ forEach (configProperties [configFile >> "CfgVehicles", "isClass _x && {getNumbe
 
 
 // BuildAbfrage
-//waitUntil {!isNil "TB_serverBuild"};
+//waitUntil {!isNil "TB_serverBuild"}; // wenn dann CBA_fnc_waitUntilAndExecute
 productVersion params ["", "", "", "_buildNumber", "", "", "", "_architecture"];
 
 //if (_buildNumber < TB_serverBuild) then

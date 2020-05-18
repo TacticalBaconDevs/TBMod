@@ -17,6 +17,4 @@ private _attachPos = (abs (((_bbr select 1) select 1) - ((_bbr select 0) select 
 private _pos = AGLtoASL (player modelToWorld [0, _attachPos, 0]);
 _obj setPosASL _pos;
 
-waitUntil {_obj distance2D _pos < 5};
-
-[ACE_player, _obj] call ace_dragging_fnc_startCarry;
+[{(_this # 0) distance2D (_this # 1) < 5}, {[ACE_player, _this # 0] call ace_dragging_fnc_startCarry}, [_obj, _pos]] call CBA_fnc_waitUntilAndExecute;

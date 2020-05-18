@@ -91,4 +91,4 @@ private _vehicle = nil;
 }
 forEach _vehicles;
 
-systemChat format["[TBMod_persistence] Save mit Namen '%1' wurde in 3den geladen!", _name];
+systemChat format ["[TBMod_persistence] Save mit Namen '%1' wurde in 3den geladen!", _name];

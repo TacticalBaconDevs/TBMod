@@ -25,7 +25,7 @@ class CfgVehicles
         { \
             displayName = NAME; \
             condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
-            statement = QUOTE([_target, 'ITEM'] spawn FUNC(createSupply)); \
+            statement = QUOTE([_target, 'ITEM'] call FUNC(createSupply)); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \

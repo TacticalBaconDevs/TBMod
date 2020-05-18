@@ -43,9 +43,9 @@ if (_saves isEqualTo []) then {["Keine lokalen Saves vorhanden!", 1] call bis_fn
         params ["_values", "_args"];
         _values params ["_name"];
 
-        [_name] spawn FUNC(persistenceEDEN);
+        [_name] call FUNC(persistenceEDEN);
         ["Persistence wurde geladen", 0] call bis_fnc_3dennotification;
     }
-] spawn zen_dialog_fnc_create; // TODO: setzt sich selbst mit CBA_fnc_directCall wieder auf unscheduled, aber derzeit werden alle Tastatureingaben geblocked... ENTER drücken geht
+] call zen_dialog_fnc_create; // TODO: setzt sich selbst mit CBA_fnc_directCall wieder auf unscheduled, aber derzeit werden alle Tastatureingaben geblocked... ENTER drücken geht
 
 true;

@@ -8,7 +8,7 @@ if !(call FUNC(isTBMission)) exitWith {};
 enableEnvironment [false, true];
 enableSaving [false, false];
 
-if (GVAR(crashHelfer)) then {[true] spawn FUNC(crashHelferServer)};
+if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
 
 // Zeus im Spiel erstellen
 [

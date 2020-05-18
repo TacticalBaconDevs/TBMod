@@ -30,6 +30,29 @@ _grp deleteGroupWhenEmpty true;
 _grp allowFleeing 0;
 _grp setVariable ["acex_headless_blacklist", true, true];
 
+/*[
+    {(_this # 0) call (_this # 1)},
+    {
+        params ["", "", "_delay"];
+
+        // Delay
+        [
+            {
+                [
+                    {(_this # 0) call (_this # 1)},
+                    {
+
+                    },
+                    [_grp, _condition, _delay, _radiusPlayer, _checkPause]
+                ] call CBA_fnc_waitUntilAndExecute;
+            },
+            _this,
+            _delay
+        ] call CBA_fnc_waitAndExecute;
+    },
+    [_grp, _condition, _delay, _radiusPlayer, _checkPause]
+] call CBA_fnc_waitUntilAndExecute;*/
+
 waitUntil {uiSleep _checkPause; _grp call _condition};
 uiSleep _delay;
 
