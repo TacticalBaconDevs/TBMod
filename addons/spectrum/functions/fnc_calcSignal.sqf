@@ -4,14 +4,18 @@
     Developed by http://tacticalbacon.de
 */
 params ["_sender"];
-private _value = -100;
+
+private _min = missionNamespace getVariable ["#EM_SMin", -60];
+private _max = missionNamespace getVariable ["#EM_SMax", 0];
 
 private _relDir = abs ((((getPos ACE_player) vectorFromTo (getPos _sender)) call CBA_fnc_vectDir) - ((getCameraViewDirection ACE_player) call CBA_fnc_vectDir));
-_relDir = (linearConversion [0, GVAR(cone), _relDir, 1, 0, true]) max (linearConversion [360, 360 - GVAR(cone), _relDir, 1, 0, true]);
+_relDir = ([linearConversion [0, GVAR(cone), _relDir, 1, 0, true]] call FUNC(conversion)) max ([linearConversion [360, 360 - GVAR(cone), _relDir, 1, 0, true]] call FUNC(conversion));
 
-private _dist = linearConversion [0, GVAR(range), _sender distance ACE_player, 1, 0, true];
+private _dist = [linearConversion [5, GVAR(range), _sender distance ACE_player, 1, 0, true]] call FUNC(conversion);
 
-private _visi = linearConversion [0, 2, ([ACE_player, "VIEW"] checkVisibility [eyePos ACE_player, eyepos _sender]) + ([ACE_player, "VIEW"] checkVisibility [eyePos ACE_player, AGLToASL (unitAimPosition _sender)]), 0, 1, true];
+private _visi = [[ACE_player, "VIEW", _sender] checkVisibility [eyePos ACE_player, AGLToASL (unitAimPosition _sender)]] call FUNC(conversion);
 
-_value = if (_relDir <= 0) then {0} else {_relDir + _dist + _visi};
-linearConversion [1, 2, _value, _min, -30, false];
+private _value = if (_relDir <= 0 || _dist <= 0) then {0} else {(_relDir + _dist) * (_visi max 0.5)};
+
+["calcSignal: %1 = (%2 + %3) * %4", _value, _relDir, _dist, _visi max 0.5] call EFUNC(main,debug);
+((linearConversion [0, 2, _value, _min, _max, true]) max _min) min _max;
