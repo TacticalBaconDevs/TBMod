@@ -3,45 +3,29 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if(!isServer) exitWith {"[TBMod_tasks] loop wurde nicht auf dem Server gestartet" remoteExecCall ["systemChat"]};
+if (GVAR(pause)) exitWith {};
 
-if(GVAR(pause)) exitWith {[FUNC(loop), [], 1] call CBA_fnc_waitAndExecute};
-
+private _state = STATE_Completed;
 {
-    _name = _x;
-    _state = GVAR(Namespace) getVariable [format["%1_state", _name], STATE_Completed]; //if not found handle as wind
-
-    if(_state isEqualTo STATE_NotInitialised) then 
+    _state = GVAR(states) getVariable [_x, STATE_Completed];
+    ((_this # 0) getVariable[_x, []]) params ["_canInit", "_init", "_initServer", "_canComplete", "_completed", "_completedServer", "_canFail", "_failed", "_failedServer"];
+    if !(_state in [STATE_Completed, STATE_Failed]) then
     {
-        _canInit = call (GVAR(Namespace) getVariable [format["%1_canInit", _name], {false}]);
-        if (_canInit) then {
-            call (GVAR(Namespace) getVariable [format["%1_initServer", _name], {}]);
-            [[], GVAR(Namespace) getVariable [format["%1_init", _name], {}]] remoteExec ["call", 0];
-            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Initialised, true];
-        }
+        if (_state isEqualTo STATE_NotInitialised) then
+        {
+            _state = [[_state, STATE_Initialised], [_canInit, _init, _initServer]] call FUNC(execute);
+        };
+
+        if (_state isEqualTo STATE_Initialised) then
+        {
+            _state = [[_state, STATE_Failed], [_canFail, _failed, _failedServer]] call FUNC(execute);
+        };
+
+        // Dont complete if failed at the same time
+        if (_state isEqualTo STATE_Initialised) then
+        {
+            [[_state, STATE_Completed], [_canComplete, _completed, _completedServer]] call FUNC(execute);
+        };
     };
-
-    if(_state isEqualTo STATE_Initialised) then 
-    {
-        _canFail = call (GVAR(Namespace) getVariable [format["%1_canFail", _name], {false}]);
-        if (_canInit) then {
-            call (GVAR(Namespace) getVariable [format["%1_failedServer", _name], {}]);
-            [[], GVAR(Namespace) getVariable [format["%1_failed", _name], {}]] remoteExec ["call", 0];
-            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Failed, true];
-        }
-    };
-
-    //Dont complete if failed at the same time
-    if(_state isEqualTo STATE_Initialised) then 
-    {
-        _canComplete = call (GVAR(Namespace) getVariable [format["%1_canComplete", _name], {false}]);
-        if (_canComplete) then {
-            call (GVAR(Namespace) getVariable [format["%1_completedServer", _name], {}]);
-            [[], GVAR(Namespace) getVariable [format["%1_completed", _name], {}]] remoteExec ["call", 0];
-            GVAR(Namespace) setVariable [format["%1_state", _name], STATE_Completed, true];
-        }
-    };
-
-} forEach GVAR(loadedTasks);
-
-[FUNC(loop), [], 1] call CBA_fnc_waitAndExecute;
+}
+forEach (allVariables GVAR(states));
