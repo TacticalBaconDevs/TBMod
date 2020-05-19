@@ -226,6 +226,6 @@ ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
         "Time2Dance",
         "",
         {[player, [selectRandom ["Acts_Dance_01", "Acts_Dance_02"], ""] select (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")] remoteExecCall ["switchMove"]},
-        {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable ["TB_danceTime", false]} != -1 || (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")}
+        {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable [QGVAR(danceTime), false]} != -1 || (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")}
     ] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;

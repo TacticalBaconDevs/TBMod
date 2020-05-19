@@ -19,6 +19,7 @@ private _pingStart = CBA_missiontime;
     }
 ] remoteExecCall ["call", 2];
 
+//[{GVAR(ping)}, {systemChat format ["Ping was %1 ms", (CBA_missiontime - _this) * 1000]}, _pingStart, 1, {systemChat "Ping timed out after 1s"}] call CBA_fnc_waitUntilAndExecute;
 waitUntil {GVAR(ping) || (CBA_missiontime - _pingStart) >= 1};
 private _rtt = CBA_missiontime - _pingStart;
 

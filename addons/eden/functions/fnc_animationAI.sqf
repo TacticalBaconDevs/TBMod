@@ -11,37 +11,41 @@ if (!alive _unit || _value == "") exitWith {};
 [_unit, "PATH"] remoteExec ["disableAI", _unit];
 _unit setVariable ["acex_headless_blacklist", true, true];
 
-if (dynamicSimulationEnabled (group _unit) || !simulationEnabled _unit) then
+if (dynamicSimulationEnabled (group _unit) || !simulationEnabled _unit) exitWith
 {
-    uiSleep 10;
-    waitUntil {simulationEnabled _unit};
+    [{simulationEnabled (_this # 0)}, LINKFUNC(animationAI), _this] call CBA_fnc_waitUntilAndExecute;
 };
 
-uiSleep (random 5 + random 5);
+[{
+    params ["_unit", "_value"];
+    [_unit, _value, 2] call ace_common_fnc_doAnimation;
 
-[_unit, _value, 2] call ace_common_fnc_doAnimation;
+    if (_unit getVariable ["animDisableOverride", false]) exitWith {};
 
-if (_unit getVariable ["animDisableOverride", false]) exitWith {};
+    _unit setVariable [QGVAR(inAnim), true];
 
-_unit setVariable [QGVAR(inAnim), true];
+    if (isNil QGVAR(disableANIM)) then
+    {
+        GVAR(disableANIM) = {
+            params ["_unit", ["_chain", true]];
 
-TB_disableANIM = {
-    params ["_unit", ["_chain", true]];
+            // Selber kampffähig machen
+            if (_unit getVariable [QGVAR(inAnim), false]) then
+            {
+                [_unit, "ALL"] remoteExec ["enableAI", _unit];
+                [_unit, "", 1] call ace_common_fnc_doAnimation;
+                _unit setVariable [QGVAR(inAnim), false];
+            };
 
-    // Selber kampffähig machen
-    if (_unit getVariable [QGVAR(inAnim), false]) then {
-        [_unit, "ALL"] remoteExec ["enableAI", _unit];
-        [_unit, "", 1] call ace_common_fnc_doAnimation;
-        _unit setVariable [QGVAR(inAnim), false];
+            if (_chain isEqualType true && {!_chain}) exitWith {};
+
+            {
+                if (_unit getVariable [QGVAR(inAnim), false]) then {[_x, false] call GVAR(disableANIM)};
+            }
+            forEach (_unit nearEntities ["Man", 15]);
+        };
     };
 
-    if (_chain isEqualType true && {!_chain}) exitWith {};
-
-    {
-        if (_unit getVariable [QGVAR(inAnim), false]) then {[_x, false] call TB_disableANIM};
-    }
-    forEach (_unit nearEntities ["Man", 15]);
-};
-
-_unit addEventHandler ["HandleDamage", TB_disableANIM];
-_unit addEventHandler ["FiredNear", TB_disableANIM];
+    _unit addEventHandler ["HandleDamage", GVAR(disableANIM)];
+    _unit addEventHandler ["FiredNear", GVAR(disableANIM)];
+}, _this, random 5 + random 5] call CBA_fnc_waitAndExecute;

@@ -30,48 +30,33 @@ _grp deleteGroupWhenEmpty true;
 _grp allowFleeing 0;
 _grp setVariable ["acex_headless_blacklist", true, true];
 
-/*[
-    {(_this # 0) call (_this # 1)},
-    {
-        params ["", "", "_delay"];
+[{
+    params ["_grp", "_condition"];
+    _grp call _condition
+}, {
+    params ["", "", "_delay"];
 
-        // Delay
-        [
+    [{
+        params ["", "", "", "", "_checkPause"];
+
+        [{
+            params ["_args", "_idPFH"];
+            _args params ["_grp", "", "", "_radiusPlayer"];
+
+            private _units = units _grp;
+            if (count _units == {
+                    _ai = _x;
+                    allPlayers findIf {_x distance _ai >= _radiusPlayer && {(_x getRelDir _ai) > 50 && (_x getRelDir _ai) < 310 || {[objNull, "VIEW"] checkVisibility [eyePos _x, eyepos _ai] < 0.1}}} != -1
+                } count _units) then
             {
-                [
-                    {(_this # 0) call (_this # 1)},
-                    {
+                {deleteVehicle _x} forEach _units;
+            };
 
-                    },
-                    [_grp, _condition, _delay, _radiusPlayer, _checkPause]
-                ] call CBA_fnc_waitUntilAndExecute;
-            },
-            _this,
-            _delay
-        ] call CBA_fnc_waitAndExecute;
-    },
-    [_grp, _condition, _delay, _radiusPlayer, _checkPause]
-] call CBA_fnc_waitUntilAndExecute;*/
-
-waitUntil {uiSleep _checkPause; _grp call _condition};
-uiSleep _delay;
-
-private _units = [];
-private _ai = objNull;
-waitUntil
-{
-    uiSleep _checkPause;
-
-    _units = units _grp;
-    if (count _units == {
-            _ai = _x;
-            allPlayers findIf {_x distance _ai >= _radiusPlayer && {(_x getRelDir _ai) > 50 && (_x getRelDir _ai) < 310 || {[objNull, "VIEW"] checkVisibility [eyePos _x, eyepos _ai] < 0.1}}} != -1
-        } count _units) then
-    {
-        {deleteVehicle _x} forEach _units;
-    };
-
-    isNull _grp || {(units _grp) isEqualTo []}
-};
-
-if (!isNull _grp) then {[_grp] remoteExecCall ["deleteGroup", groupOwner _grp]};
+            if (isNull _grp || {(units _grp) isEqualTo []}) then
+            {
+                if (!isNull _grp) then {[_grp] remoteExecCall ["deleteGroup", groupOwner _grp]};
+                [_idPFH] call CBA_fnc_removePerFrameHandler;
+            };
+        }, _checkPause, _this] call CBA_fnc_addPerFrameHandler;
+    }, _this, _delay] call CBA_fnc_waitAndExecute;
+}, _this] call CBA_fnc_waitUntilAndExecute;

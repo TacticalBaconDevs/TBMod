@@ -31,7 +31,7 @@ class RscDisplayMain: RscStandardDisplay
             textIsQuote = 0;
             picture = PATHTOF(button.paa);
             //video = "\a3\Ui_f\Video\spotlight_1_Apex.ogv";
-            action = QUOTE([_this, 'server.tacticalbacon.de', '2302', 'tbm'] spawn COMPILE_FILE(joinServer)); // execVM QPATHTOF
+            action = QUOTE([_this, 'server.tacticalbacon.de', '2302', 'tbm'] call COMPILE_FILE(joinServer)); // execVM QPATHTOF
             actionText = "Join TacticalBacon Server";
             condition = "true";
         };

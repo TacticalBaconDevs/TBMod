@@ -46,7 +46,7 @@ if (!GVAR(crashHelfer)) exitWith {};
 
                     if (_id == 0) then
                     {
-                        if ({if (alive _x && {_x != player}) exitWith {[_x] spawn FUNC(teleport); 1}; false} count (units (group player)) == 0) then
+                        if ({if (alive _x && {_x != player}) exitWith {[_x] call FUNC(teleport); 1}; false} count (units (group player)) == 0) then
                         {
                             systemChat "Nicht möglich, keine lebenden Personen zum Teleporten da, zurück zur alten Pos!";
                             player setDir _dir;
@@ -60,11 +60,7 @@ if (!GVAR(crashHelfer)) exitWith {};
                         player setPosASL _pos;
                     };
 
-                    [] spawn
-                    {
-                        uiSleep 10;
-                        player allowDamage true;
-                    };
+                    [{player allowDamage true}, [], 10] call CBA_fnc_waitAndExecute;
                 },
                 {},
                 TB_disconnectCache select (_find select 0)

@@ -59,7 +59,7 @@ if (_mode) then
         }] call ace_common_fnc_addActionEventHandler;
     };
 
-    if (isNil QGVAR(safeInfo) && !_hideMessage) then {GVAR(safeInfo) = [] spawn {waitUntil {uiSleep 60; systemChat format ["[SafeWeapons] ist immer noch aktiv!"]; false}}};
+    if (isNil QGVAR(safeInfo) && !_hideMessage) then {GVAR(safeInfo) = [{systemChat "[SafeWeapons] ist immer noch aktiv!"}, 60] call CBA_fnc_addPerFrameHandler;};
 
     if (!_hideMessage) then {systemChat "[SafeWeapons] Deine Munition wurde aus Sicherheitsgründen durch Luft ersetzt!"};
 
@@ -77,7 +77,7 @@ else
 
     if (!isNil QGVAR(safeInfo)) then
     {
-        terminate GVAR(safeInfo);
+        [GVAR(safeInfo)] call CBA_fnc_removePerFrameHandler;
         GVAR(safeInfo) = nil;
     };
 
