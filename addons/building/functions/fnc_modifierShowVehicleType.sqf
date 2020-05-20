@@ -10,7 +10,7 @@ private _newActionName = [];
 
 if (_target getVariable [QGVAR(kranWagen), false]) then {_newActionName pushBack "Kra"};
 if (_target getVariable [QGVAR(resourcenCargo), -1] > 0) then {_newActionName pushBack "Res"};
-if ([_target] call ace_medical_fnc_isMedicalVehicle) then {_newActionName pushBack "Med"};
+if ([_target] call ace_medical_treatment_fnc_isInMedicalVehicle) then {_newActionName pushBack "Med"};
 if ([_target] call ace_repair_fnc_isRepairVehicle) then {_newActionName pushBack "Rep"};
 if ([_target] call ace_refuel_fnc_getFuel > 0) then {_newActionName pushBack "Tan"};
 if (_target getVariable ["ace_rearm_isSupplyVehicle", false] ||
