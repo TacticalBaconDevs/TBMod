@@ -3,6 +3,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+if (!GVAR(enable) || {!GVAR(receive)}) exitWith {};
+
 params ["_modus", "_values"];
 private _SELF = FUNC(spectrumActions);
 
