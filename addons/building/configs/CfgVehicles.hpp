@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -13,9 +13,12 @@ class CfgVehicles
     {
         class ACE_SelfActions
         {
-            class ACE_Equipment
+            class ADDON
             {
-                class TB_itemBuildPlaceables
+                displayName = "TB Building";
+                EXCEPTIONS;
+
+                class GVAR(itemBuildPlaceables)
                 {
                     displayName = "Plazierbare Items";
                     EXCEPTIONS;
@@ -58,7 +61,7 @@ class CfgVehicles
 
                 //-----------------------------------------------------------------------------------
 
-                class TB_buildingsBuildPlaceables
+                class GVAR(buildingsBuildPlaceables)
                 {
                     displayName = "Plazierbare Gebäude";
                     EXCEPTIONS;
@@ -121,6 +124,14 @@ class CfgVehicles
                         ADD_BIG_ITEM(TB_Land_TTowerSmall_1_F, "FUNK-Antenne (60 Resourcen)", 30, 60, true, true);
                         ADD_BIG_ITEM(Land_Cargo_House_V3_F, "Container (60 Resourcen)", 15, 60, true, false);
                     };
+                };
+
+                class GVAR(clearPlaceables)
+                {
+                    displayName = "Räumen";
+                    EXCEPTIONS;
+                    condition = QUOTE([cursorObject] call FUNC(canClearPlaceables));
+                    statement = QUOTE([cursorObject] call FUNC(clearPlaceables));
                 };
             };
         };

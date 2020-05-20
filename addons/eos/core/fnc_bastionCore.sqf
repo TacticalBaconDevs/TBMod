@@ -33,7 +33,7 @@ _lightVeh params ["_lvGroups", "_lvSize", ["_lvGroupsIncrease", 0], ["_lvSizeInc
 _armorVeh params ["_avGroups", ["_avGroupsIncrease", 0]];
 _helis params ["_hGroups", "_hSize", ["_hGroupsIncrease", 0], ["_hSizeIncrease", 0]];
 
-_settings params ["_faction", "_side", "_heightLimit", "_placementRadius", "_parachuteJump", "_helicopterHeight", "_angriffsRichtung", "_angriffsRichtungHeli"];
+_settings params ["_faction", "_side", "_heightLimit", "_placementRadius", "_parachuteJump", "_helicopterHeight", "_angriffsRichtung", "_angriffsRichtungHeli", "_lockVehicle", "_keyVehicle"];
 _basSettings params ["_pause", "_waves", "_timeout", "_eosZone", "_hints"];
 
 private _radius = _mkrX max _mkrY;
@@ -151,7 +151,7 @@ for "_i" from 1 to _piGroups do
         (_positions select 0) deleteAt 0;
     };
 
-    private _piGroup = [_pos, _piSize, _faction, _side] call TB_EOS_fnc_spawnGroup;
+    private _piGroup = [_pos, _piSize, _faction, _side] call FUNC(spawnGroup);
     if (!isNull _piGroup) then {_piZoneGroups pushBack _piGroup};
 };
 
@@ -182,13 +182,13 @@ for "_i" from 1 to _lvGroups do
         _cargoType = 10;
     };
 
-    private _lvGroup = [_pos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+    private _lvGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
     if !(_lvGroup isEqualTo []) then
     {
         if (_lvSize > 0) then
         {
-            private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_lvGroup select 0, _lvSize, _side, _faction, _cargoType] call FUNC(setCargo);
             if (!isNull _cargoGrp) then {_lvGroup pushBack _cargoGrp};
         };
 
@@ -215,7 +215,7 @@ for "_i" from 1 to _avGroups do
     };
 
     private _vehType = if (surfaceiswater _pos) then {8} else {2};
-    private _avGroup = [_pos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+    private _avGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
     if !(_avGroup isEqualTo []) then {_avZoneGroups pushBack _avGroup};
 };
@@ -240,17 +240,17 @@ for "_i" from 1 to _hGroups do
     };
 
     private _vehType = if (_hSize > 0) then {4} else {3};
-    private _hGroup = [_pos, _side, _faction, _vehType] call TB_EOS_fnc_spawnVehicle;
+    private _hGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
     if !(_hGroup isEqualTo []) then
     {
         if (_hSize > 0) then
         {
-            private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call TB_EOS_fnc_setCargo;
+            private _cargoGrp = [_hGroup select 0, _hSize, _side, _faction, 9] call FUNC(setCargo);
             if (!isNull _cargoGrp) then
             {
                 _hGroup pushBack _cargoGrp;
-                [_mkr, _hGroup, _parachuteJump] spawn TB_EOS_fnc_transportUnload;
+                [_mkr, _hGroup, _parachuteJump] spawn FUNC(transportUnload);
             };
         }
         else
@@ -350,7 +350,7 @@ for "_i" from 1 to _timeout do
                 [1, 0.1],       // Statics
                 _helis,
                 [_faction, 350, _side, _heightLimit]
-            ] spawn TB_EOS_fnc_core;
+            ] spawn FUNC(core);
         };
 
         _waves = 0;
@@ -378,7 +378,7 @@ else
             _settings,
             _basSettings,
             true
-        ] spawn TB_EOS_fnc_bastionCore;
+        ] spawn FUNC(bastionCore);
     };
 };
 

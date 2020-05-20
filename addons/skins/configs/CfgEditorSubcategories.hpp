@@ -19,8 +19,14 @@ class CfgEditorSubcategories
     {
         displayName = "Fluggeräte";
     };
+
     class EdSubcat_TB_skins_PMC
     {
         displayName = "PMC";
+    };
+
+    class EdSubcat_TB_skins_Arid
+    {
+        displayName = "Arid";
     };
 };

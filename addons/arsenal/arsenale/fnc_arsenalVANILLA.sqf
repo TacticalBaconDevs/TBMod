@@ -35,7 +35,7 @@ private _allgemein = [
     "16Rnd_9x21_green_Mag",
     "TB_mag_taser",
     "11Rnd_45ACP_Mag",
-    
+
     // Rucksäcke
     "ACE_TacticalLadder_Pack",
     "B_Kitbag_cbr",
@@ -200,6 +200,14 @@ private _allgemein_Westen = [
     "V_SmershVest_01_radio_F"
 ];
 
+private _mg_munition = [
+    "150Rnd_556x45_Drum_Mag_Tracer_F",
+    "200Rnd_556x45_Box_Tracer_F",
+    "200Rnd_556x45_Box_Tracer_Red_F",
+    "100Rnd_65x39_caseless_mag_Tracer",
+    "200rnd_556x45_box_f"
+];
+
 private _LR = [
     // schwarz
     "OPXT_blk_1523",
@@ -212,7 +220,7 @@ private _LR = [
     "OPXT_multicam_1523",
     "OPXT_wht_1523",
 
-    // Vanilla 
+    // Vanilla
     "B_RadioBag_01_mtp_F",
     "B_RadioBag_01_black_F",
     "B_RadioBag_01_tropic_F",
@@ -325,7 +333,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _allgemein_WaffeGL +
         [
-        
+
         ]
     };
 
@@ -360,6 +368,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Westen +
+        _mg_munition +
         [
             // Weapons
             "arifle_MX_SW_F",
@@ -368,12 +377,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_02_blk_F",
             "arifle_SPAR_02_snd_F",
             "arifle_SPAR_02_khk_F",
-            "LMG_03_F",
-            // ### Magazine
-            "150Rnd_556x45_Drum_Mag_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_Red_F",
-            "100Rnd_65x39_caseless_mag_Tracer"
+            "LMG_03_F"
+            
         ]
     };
 
@@ -385,6 +390,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _mg_munition +
         [
             // Backpack
             "B_Carryall_cbr",
@@ -395,11 +401,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "B_Carryall_oucamo",
             "B_Carryall_wdl_F",
             "B_Carryall_green_F",
-            // ### Magazine
-            "150Rnd_556x45_Drum_Mag_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_F",
-            "200Rnd_556x45_Box_Tracer_Red_F",
-            "20Rnd_762x51_Mag",
+            
+            //Munition
+            "20rnd_762x51_mag",
             
             // AT
             "Vorona_HEAT",
@@ -413,23 +417,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _LR +
-        _allgemein_magazine +
-        _pilot_munition +
-        _mg_munition +
-        _grenadier_munition +
-        _dmr_munition +
-        _pilot_munition +
-        _sniper_munition +
-        _aaat_munition +
+        _allgemein_Magazine +
         [
             // Head
             "H_HelmetCrew_I",
             "H_PilotHelmetFighter_B",
             "H_CrewHelmetHeli_B",
             "H_PilotHelmetFighter_I_E",
-            
+
             // Goggles
-            "G_Aviator",
+            //"G_Aviator",
 
             // Uniforms
             "U_B_HeliPilotCoveralls",
@@ -452,6 +449,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
             "30Rnd_9x21_Yellow_Mag",
+            "30rnd_45acp_mag_smg_01",
 
             // Items
             "ToolKit"

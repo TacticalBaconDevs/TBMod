@@ -43,9 +43,10 @@ class TB_supply_usa_grena : WRAPPER_NAME(Box_IND_Grenades_F)
         MACRO_ADDMAGAZINE(SmokeShellRed,5);
         MACRO_ADDMAGAZINE(SmokeShellBlue,5);
 
-        MACRO_ADDMAGAZINE(rhs_mag_m67,10);       // Splitternade
+        MACRO_ADDMAGAZINE(rhs_mag_m67,10);      // Splitternade
         MACRO_ADDMAGAZINE(rhs_mag_mk3a2,10);    // Offensivenade
-        MACRO_ADDMAGAZINE(rhs_mag_mk84,10);      // Stannade
+        MACRO_ADDMAGAZINE(rhs_mag_mk84,10);     // Stannade
+        MACRO_ADDMAGAZINE(B_IR_Grenade,6);      // IR-Granate
     };
 };
 
@@ -88,8 +89,9 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_East_Wps_F)
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
 
         // DMR7.62
-        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS,10);
-        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,10);
+        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS,8);
+        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,8);
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,32);
     };
 };
 
@@ -99,7 +101,7 @@ class TB_supply_usa_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 
     class TransportWeapons
     {
-        MACRO_ADDWEAPON(rhs_weap_M136_hp,1);
+        MACRO_ADDWEAPON(rhs_weap_M136,2);
         MACRO_ADDWEAPON(TB_rhs_weap_M136_CS,2);
         MACRO_ADDWEAPON(rhs_weap_M136_hedp,2);
         MACRO_ADDWEAPON(rhs_weap_m72a7,2);
@@ -183,6 +185,7 @@ class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
         MACRO_ADDITEM(Binocular,1);
         MACRO_ADDITEM(ItemCompass,1);
         MACRO_ADDITEM(ItemMap,1);
+        MACRO_ADDITEM(rhsusf_acc_aac_762sdn6_silencer,2);
     };
 };
 
@@ -196,14 +199,14 @@ class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
 
     class TransportItems
     {
-        MACRO_ADDITEM(rhsusf_ANPVS_14,5);
-        MACRO_ADDITEM(rhsusf_ANPVS_15,5);
+        MACRO_ADDITEM(rhsusf_ANPVS_14,20);
+        MACRO_ADDITEM(rhsusf_ANPVS_15,20);
 
         MACRO_ADDITEM(ACE_IR_Strobe_Item,20);
-        MACRO_ADDITEM(ACE_Flashlight_KSF1,10);
+        MACRO_ADDITEM(ACE_Flashlight_KSF1,20);
 
-        MACRO_ADDITEM(ACE_Chemlight_HiYellow,20);
-        MACRO_ADDITEM(ACE_Chemlight_HiRed,20);
+        MACRO_ADDITEM(ACE_Chemlight_HiYellow,40);
+        MACRO_ADDITEM(ACE_Chemlight_HiRed,40);
     };
 };
 

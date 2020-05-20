@@ -24,7 +24,7 @@ private _allgemein = [
     "UNS_Scarf_ARVN",
     "UNS_Band_H",
     // ### Vanilla
-    "G_Aviator",
+    //"G_Aviator",
     "G_Tactical_Clear",
 
     // Karte

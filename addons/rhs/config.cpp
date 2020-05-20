@@ -13,16 +13,19 @@ class CfgPatches
             "TBMod_main",
             "rhsusf_main",
             "rhsusf_main_loadorder",
-            "TBMod_skins",
-            "ace_advanced_ballistics",
-            "ace_compat_rhs_usf3"
+            "TBMod_skins"//,
+            //"TBMod_config"
+        };
+
+        vehicles[] = {
+            "TB_Vehicles_MH6_SWAT"
         };
 
         addonRootClass = "TBMod_main";
     };
 };
 
-// Ccnfigs
+// Configs
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"

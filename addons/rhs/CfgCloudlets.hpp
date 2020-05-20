@@ -8,6 +8,6 @@ class CfgCloudlets
     class RHS_flashbang_10;
     class RHS_flashbang_20: RHS_flashbang_10
     {
-        beforeDestroyScript = "TBMod_rhs\tb_flashbang_20m.sqf";
+        beforeDestroyScript = QPATHTOF(tb_flashbang_20m.sqf);
     };
 };

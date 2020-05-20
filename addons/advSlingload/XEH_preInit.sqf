@@ -17,16 +17,18 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     QGVAR(enableVanillaSlingload),
     "CHECKBOX",
     "Enable Vanilla Slingload",
-    "TBMod",
-    false
-] call CBA_Settings_fnc_init;
+    ["TBMod", QUOTE(COMPONENT)],
+    false,
+    1
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(maxWeight),
     "SLIDER",
     "Maximales Gewicht",
-    "TBMod",
-    [100, 20000, 12000, 0]
-] call CBA_Settings_fnc_init;
+    ["TBMod", QUOTE(COMPONENT)],
+    [100, 20000, 12000, 0],
+    1
+] call CBA_fnc_addSetting;
 
 ADDON = true;

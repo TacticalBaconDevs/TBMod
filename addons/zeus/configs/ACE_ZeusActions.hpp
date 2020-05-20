@@ -35,6 +35,7 @@ class ACE_ZeusActions
         class VCOM
         {
             displayName = "VCOM";
+            condition = "isClass (configfile >> ""CfgPatches"" >> ""VCOM_AI"")";
 
             #define ADD_OPTION(NAME,VAR) class off_##VAR \
                 { \

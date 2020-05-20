@@ -29,14 +29,14 @@ systemChat format ["Du bist nun: %1 (%2)", [_rolle] call FUNC(getRollenName), _a
 
 if (_loadGear) then
 {
-    removeAllWeapons player;
-    removeAllItems player;
-    removeAllAssignedItems player;
-    removeUniform player;
-    removeVest player;
-    removeBackpack player;
-    removeHeadgear player;
-    removeGoggles player;
+    removeAllWeapons ACE_player;
+    removeAllItems ACE_player;
+    removeAllAssignedItems ACE_player;
+    removeUniform ACE_player;
+    removeVest ACE_player;
+    removeBackpack ACE_player;
+    removeHeadgear ACE_player;
+    removeGoggles ACE_player;
 
     [] call FUNC(loadDefault);
 };

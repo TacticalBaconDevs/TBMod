@@ -94,7 +94,7 @@
         default
         {
             systemChat format ["SafeStart wurde global %1aktiviert!", ["de", ""] select (isNil QGVAR(safeInfo))];
-            [isNil "TB_safeInfo"] remoteExec [QFUNC(safe)];
+            [isNil QGVAR(safeInfo)] remoteExec [QFUNC(safe)];
         };
     };
 
@@ -142,6 +142,60 @@
     (group _unit) setGroupIdGlobal [_grpName];
 }, "all"] call CBA_fnc_registerChatCommand;
 
+["settings", {
+    if ((call BIS_fnc_admin) == 0 && isNull (getAssignedCuratorLogic player) && !((getPlayerUID player) in (call TB_lvl2))) exitWith {systemChat "Du hast keine Rechte für diesen Befehl!"};
+    if (serverTime >= (20 * 60)) exitWith
+    {
+        private _msg = format ["[BÖSE] %1 wollte %2min nach Serverrestart die Settings verändern", profileName, serverTime / 60];
+        ["[error pos]"+ _msg] remoteExecCall ["diag_log"];
+        [_msg] remoteExecCall ["systemChat"];
+        ["TB_informAdminsAndZeus", _msg] call CBA_fnc_globalEvent;
+    };
+
+    [
+        2,
+        {
+            (((["", "Hard", "WL", "WoMi"] apply {format ["stuff\defaultSettings%1.txt", _x]}) select {[_x] call FUNC(fileExists)}) apply {[_x, preprocessFile _x]}) select {_x # 1 != ""};
+        }, {
+            params ["_return"];
+
+            // TODO: ggf Hardcoded eine rein? ändere die aber zu oft ^^ ggf htmlload aus repo raus?
+            // TODO: profileNameSpace ist einen Option die ich aber nicht mag ;D
+            if (_return isEqualTo []) exitWith {systemChat "Die Mission hat keine Settings zum Laden!"};
+
+            [
+                "Settings laden",
+                [
+                    [
+                        "CHECKBOX",
+                        ["Bist du sicher das du das darfst?", "Wenn du diese Aktion ohne triftigen Grund ausführst, wird das ernste Konsequenzen haben!"],
+                        false,
+                        true
+                    ],
+                    [
+                        "LIST",
+                        ["Settings", "Settings aus der Mission"],
+                        [_return, _return apply {_x # 0}, 0, 4],
+                        true
+                    ]
+                ],
+                {
+                    params ["_values", "_args"];
+                    _values params ["_allowed", "_file"];
+
+                    if (!_allowed) exitWith {systemChat "Abbruch"};
+                    [_file # 1, ["mission", "server"] select isDedicated] call CBA_settings_fnc_import;
+
+                    systemChat format ["Settings aus '%1' wurden eingeladen!", _file # 0];
+                    ["TB_informAdminsAndZeus", ["%1 hat die Settings aus '%2' geladen!", profileName, _file # 0]] call CBA_fnc_globalEvent;
+                },
+                {},
+                []
+            ] call zen_dialog_fnc_create;
+        }
+    ] call FUNC(transfer);
+}, "all"] call CBA_fnc_registerChatCommand;
+
 if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
 ["spectator", {
@@ -182,109 +236,4 @@ if !(getPlayerUID player in (call TB_lvl3)) exitWith {};
     [] remoteExec [QEFUNC(persistence,clearCache), [player, 2] select (_target == "server")];
 
    ["TB_informAdminsAndZeus", ["%1 hat den Cache gecleared (%2)!", profileName, ["Lokal", "Server"] select (_target == "server")]] call CBA_fnc_globalEvent;
-}, "all"] call CBA_fnc_registerChatCommand;
-
-["fuckyou", {
-    TB_temp_uniqueArray =
-    {
-        params ["_arrayOrItem", "_type"];
-        private _return = [];
-
-        if (_arrayOrItem isEqualType []) then
-        {
-            {
-                if (_x isEqualType []) then
-                {
-                    _return append ([_x, _type] call TB_temp_uniqueArray);
-                }
-                else
-                {
-                    if (isNil "_type" || {_x isEqualType _type}) then {_return pushBackUnique _x};
-                };
-            }
-            forEach _arrayOrItem;
-        }
-        else
-        {
-            if (isNil "_type" || {_x isEqualType _type}) then {_return pushBackUnique _x};
-        };
-
-        _return arrayIntersect _return;
-    };
-    private _blacklist = ["tfar"];
-
-    {
-        private _msg = "";
-        private _loadout = (([getUnitLoadout _x, ""] call TB_temp_uniqueArray) select {_x != ""}) apply {toLower _x};
-        private _arsenalType = _x getVariable ["TB_arsenalType", ""];
-        private _rolle = _x getVariable ["TB_rolle", ""];
-        private _allItems = call (switch (_arsenalType) do
-        {
-            case "USA": {EFUNC(arsenal,arsenalUSA)};
-            case "RUSS": {EFUNC(arsenal,arsenalRUSS)};
-            case "BW": {EFUNC(arsenal,arsenalBW)};
-            case "VANILLA": {EFUNC(arsenal,arsenalVANILLA)};
-            case "Themen": {EFUNC(arsenal,arsenalThemen)};
-            default {{[]}};
-        });
-
-        // MEDIC STUFF
-        _allItems append [
-            "ACE_fieldDressing",
-
-            "ACE_atropine",
-            "ACE_adenosine",
-
-            "ACE_salineIV",
-            "ACE_salineIV_500",
-
-            "ACE_tourniquet"
-        ];
-
-        if (_rolle in ["sani", "arzt", "pilot"]) then
-        {
-            _allItems append [
-                "ACE_packingBandage",
-                "ACE_elasticBandage",
-                "ACE_quikclot",
-
-                "ACE_epinephrine",
-                "ACE_morphine",
-
-                "ACE_plasmaIV",
-                "ACE_plasmaIV_500",
-                "ACE_plasmaIV_250",
-
-                "ACE_bodyBag",
-                "ACE_surgicalKit",
-                "adv_aceCPR_AED"
-            ];
-        };
-
-        if (_rolle == "arzt") then
-        {
-            _allItems append [
-                "ACE_personalAidKit",
-
-                "ACE_bloodIV",
-                "ACE_bloodIV_500",
-                "ACE_bloodIV_250"
-            ];
-        };
-
-        [_allItems] call EFUNC(arsenal,whitelist);
-        _allItems = (_allItems arrayIntersect _allItems) apply {toLower _x};
-
-        if !(_arsenalType in ["", "CUSTOM"]) then
-        {
-            {
-                private _checkItem = _x;
-                if (({_checkItem find (toLower _x) != -1} count _blacklist) <= 0 && {!(_checkItem in _allItems)}) then {_msg = format ["%1, %3[%2]", _msg, _checkItem, [_checkItem] call FUNC(displayName)]};
-            }
-            forEach _loadout;
-
-            if !(_msg isEqualTo "") then {["TB_informAdminsAndZeus", ["%1 (%3) hat unerlaubte Gegenstände dabei (%2)", name _x, _msg select [2], _rolle]] call CBA_fnc_globalEvent};
-        };
-    }
-    forEach allPlayers;
 }, "all"] call CBA_fnc_registerChatCommand;

@@ -6,7 +6,7 @@
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
 // MISSION POOL
-if (isNil "TB_EOS_fnc_unitPools_custom" && {["unitPools.sqf"] call FUNC(fileExists)}) then
+if (isNil QFUNC(unitPools_custom) && {["unitPools.sqf"] call EFUNC(main,fileExists)}) then
 {
-    TB_EOS_fnc_unitPools_custom = compile preprocessFileLineNumbers "unitPools.sqf";
+    FUNC(unitPools_custom) = compile preprocessFileLineNumbers "unitPools.sqf";
 };

@@ -142,7 +142,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, player] call TFAR_fnc_addEventHandler;
 
 
-// ### AddZeus
+// ### informAdminsAndZeus
 [
     "TB_informAdminsAndZeus",
     {
@@ -154,19 +154,6 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         };
     }
 ] call CBA_fnc_addEventHandler;
-
-
-// ### Piloten Spielerschaden updaten
-["CBA_SettingChanged", {
-    params ["_setting", "_value"];
-
-    if (_setting == "ace_medical_playerDamageThreshold") then
-    {
-        TB_origin_playerDamageThreshold = ace_medical_playerDamageThreshold;
-        if (ACE_player getVariable ["TB_rolle", ""] == "pilot") then {ace_medical_playerDamageThreshold = TB_origin_playerDamageThreshold + 10};
-    };
-}] call CBA_fnc_addEventHandler;
-
 
 // ### FPS Infos
 [{
@@ -195,7 +182,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
                             [
                                 "",
                                 [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
-                                ASLToAGL getPosASL _x,
+                                getPosVisual _x,
                                 1,
                                 2,
                                 0,
@@ -223,15 +210,16 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, 5] call CBA_fnc_addPerFrameHandler;
 
 
+// TODO: gibts nicht mehr
 // ### CPR/HLW Stuff
-["adv_aceCPR_evh_CPR_local", {
-    params ["_caller", "_target"];
-    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
-}] call CBA_fnc_addEventHandler;
+//["adv_aceCPR_evh_CPR_local", {
+//    params ["_caller", "_target"];
+//    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
+//}] call CBA_fnc_addEventHandler;
 
 
 // ### block Codeexec
-Ares_Allow_Zeus_To_Execute_Code = false; //getPlayerUID player in (call TB_lvl3);
+ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
 
 // ### dance for me
 [

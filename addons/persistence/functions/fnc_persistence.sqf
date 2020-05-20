@@ -11,12 +11,15 @@
 params [
         ["_save", false, [false]],
         ["_name", "", [""]],
-        ["_transfer", false, [false]]
+        ["_transfer", false, [false]],
+        ["_overwriteLocal", false, [false]]
     ];
 
-if (!isServer) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
+if (!isServer && !_overwriteLocal) exitWith {"[TBMod_persistence] NUR auf dem Server ausführen" remoteExecCall ["systemChat"]};
 if (!canSuspend) exitWith {"[TBMod_persistence] Skript muss per SPAWN ausgeführt werden" remoteExecCall ["systemChat"]};
 if (_name == "") exitWith {"[TBMod_persistence] Kein Name angegeben" remoteExecCall ["systemChat"]};
+
+EGVAR(tasks,pause) = true;
 
 if (_save) then
 {
@@ -24,7 +27,8 @@ if (_save) then
         [],     // disconnectCache
         [],     // Markers
         [],     // Objects
-        []      // Vehicles
+        [],     // Vehicles
+        []      // Tasks
     ];
 
     // save current players
@@ -38,36 +42,36 @@ if (_save) then
 
     // save vehicles
     _saveArray set [3, [_save] call FUNC(persistenceVehicles)];
+    
+    // save tasks
+    _saveArray set [4, [_save] call FUNC(persistenceTasks)];
 
     // save storagearray
-
-    profileNamespace setVariable [format ["TB_persistence_%1", _name], _saveArray];
-
-    // save TBMod_building stuff
-    [true, _name] call FUNC(persistenceBuilding);
+    profileNamespace setVariable [format ["TBMod_persistence_%1", _name], _saveArray];
 
     private _names = profileNamespace getVariable [QGVAR(savedNames), []];
     _names pushBackUnique _name;
     profileNamespace setVariable [QGVAR(savedNames), _names];
 
     saveProfileNamespace;
-
-    if (_transfer) then {[_name, remoteExecutedOwner, true] call FUNC(transfer)};
+    if (_transfer && !_overwriteLocal && isDedicated) then {
+        [_name, false] call FUNC(transferManager);
+    };
 }
 else // load
 {
-    if (_transfer) then {[_name, remoteExecutedOwner, false] call FUNC(transfer)};
+    if (_overwriteLocal) exitwith {systemChat "[TBMod_persistence] Speicherstand kann nicht geladen werden. Grund: _overwriteLocal == true"};
+    if (_transfer && isDedicated) then {
+        [_name, true] call FUNC(transferManager);
+    };
 
-    private _loadArray = profileNamespace getVariable [format ["TB_persistence_%1", _name], [[], [], [], []]];
+    private _loadArray = profileNamespace getVariable [format ["TBMod_persistence_%1", _name], [[], [], [], [], []]];
 
     private _objArray = (allMissionObjects "Static") + (allMissionObjects "Thing") + vehicles;
     _objArray = _objArray arrayIntersect _objArray;
 
     // vorhandene nicht benannte Fahrzeuge löschen
     (_objArray select {vehicleVarName _x == "" && _x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []}) call CBA_fnc_deleteEntity;
-
-    // Benutzermarker löschen
-    (allMapMarkers select {(_x select [0, 13]) == "_USER_DEFINED"}) call CBA_fnc_deleteEntity;
 
     // benannte Fahrzeuge simulation temp deaktivieren
     TB_persistence_tempSimulationDisabled = [];
@@ -76,6 +80,14 @@ else // load
         TB_persistence_tempSimulationDisabled pushBackUnique _x;
     }
     forEach (_objArray select {vehicleVarName _x != "" && simulationEnabled _x});
+
+    // ki/units simulation deaktivieren
+    TB_persistence_tempSimulationDisabled = [];
+    {
+        _x enableSimulationGlobal false;
+        TB_persistence_tempSimulationDisabled pushBackUnique _x;
+    }
+    forEach (allunits select {simulationEnabled _x});
 
     // Marker laden
     [_save, _loadArray select 1] call FUNC(persistenceMarkers);
@@ -86,18 +98,26 @@ else // load
     // Objekte laden
     [_save, _loadArray select 2] call FUNC(persistenceObjects);
 
+    uiSleep 1;
+
     // Fahrzeuge organisieren
     [_save, _loadArray select 3] call FUNC(persistenceVehicles);
+
+    uiSleep 1;
+    
+    // Tasks laden
+    [_save, _loadArray select 4] call FUNC(persistenceTasks);
+
+    uiSleep 1;
 
     // temp silumlierte Objekte wieder zurücksetzen
     {_x enableSimulationGlobal true} forEach TB_persistence_tempSimulationDisabled;
 
+    uiSleep 1;
+
     // Teleport players
     [_save, _loadArray select 0] call FUNC(persistencePlayers);
-
-    // Load TBMod_building stuff
-    [false, _name] call FUNC(persistenceBuilding);
 };
+EGVAR(tasks,pause) = false;
 
 (format ["[TBMod_persistence] Es wurde Slot %1 ge%2.", _name, ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
-

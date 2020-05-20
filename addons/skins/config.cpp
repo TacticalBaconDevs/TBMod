@@ -7,15 +7,15 @@ class CfgPatches
 {
     class ADDON
     {
-        name = "TBMod skins";
-
+        name = "TBMod Skins";
         author = "Eric";
 
         weapons[] = {
             "TB_Uniform_SEK_U",
             "TB_Uniform_Kommissar_U",
             "TB_Uniform_Polizist_U",
-            "TB_Uniform_presi_U"
+            "TB_Uniform_presi_U",
+            "TB_Uniform_IS_1_black_U"
         };
 
         vehicles[] = {
@@ -23,13 +23,18 @@ class CfgPatches
             "TB_Uniform_Kommissar",
             "TB_Uniform_rekrut",
             "TB_Uniform_presi",
+            "TB_Soldier_IS_1_black",
             "TB_Vehicles_sek_light",
             "TB_Vehicles_polizei_hellcat",
             "TB_Vehicles_sek_hellcat",
-            "TB_Vehicles_polizei_hunter"
+            "TB_Vehicles_polizei_hunter",
+            "TB_Vehicles_T100"
         };
 
-        requiredAddons[] = {"TBMod_main"};
+        requiredAddons[] = {
+            "TBMod_main"//,
+            //"TBMod_config"
+        };
         addonRootClass = "TBMod_main";
     };
 };

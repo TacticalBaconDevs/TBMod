@@ -21,23 +21,18 @@ class CfgPatches
         versionAct = "";
 
         units[] = {
-            "TB_flag_base",
             "TB_flag_rufnamen",
             "TB_flag_teleport",
-            "TB_flag_fob",
-            "TB_zeus_base",
-            "TB_zeus_nachschubAbwurf",
-            "TB_zeus_disablePath",
-            "TB_zeus_prioSichtbarkeit",
-            "TB_zeus_handleAsPlayerMedical",
-            "TB_zeus_applyLoadout",
-            "TB_zeus_handleAsPlayerMedical"
+            "TB_spezial_fobBase",
+            "TB_editor_gBriefing",
+            "TB_editor_kBriefing",
+            "TB_UGV_01_rcws_F"
         };
 
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             // Arma3
-            "A3_Data_F_Enoch_Loadorder",
+            "A3_Data_F_Oldman_Loadorder",
             "A3_Data_F_Mod_Loadorder",
 
             // CBA
@@ -80,16 +75,9 @@ class CfgPatches
             "OPXT_TFAR_ITEMS",
 
             // 3rd PartyMods
-            "achilles_data_f_achilles",
-            "achilles_data_f_ares",
-            "achilles_functions_f_achilles",
-            "achilles_functions_f_ares",
-            "achilles_modules_f_achilles",
-            "achilles_settings_f",
-            "achilles_language_f",
-            "achilles_ui_f",
+            "zen_main",
             "3denEnhanced",
-            "adv_aceCPR",
+            //"adv_aceCPR", // TODO: wird mit ACE 3.13.* nicht mehr unterstützt
             "acex_main",
             "WarFXPE",
 
@@ -153,14 +141,15 @@ class CfgPatches
             "ace_medical",
             "ace_medical_ai",
             "ace_medical_blood",
-            /*"ace_medical_damage", // NEW Ace Version
+            "ace_medical_damage",
             "ace_medical_engine",
             "ace_medical_feedback",
             "ace_medical_gui",
             "ace_medical_statemachine",
             "ace_medical_status",
             "ace_medical_treatment",
-            "ace_medical_vitals",*/
+            "ace_medical_vitals",
+            "ace_metis",
             "ace_microdagr",
             "ace_minedetector",
             "ace_missileguidance",
@@ -220,22 +209,12 @@ class CfgPatches
 };
 
 // Configs
-#include "configs\Animations.hpp"
-#include "configs\CfgAmmo.hpp"
-#include "configs\CfgEditorCategories.hpp"
-#include "configs\CfgEditorSubcategories.hpp"
-#include "configs\CfgFactionClasses.hpp"
-#include "configs\CfgMagazines.hpp"
-#include "configs\CfgMagazineWells.hpp"
 #include "configs\CfgMods.hpp"
 #include "configs\CfgSettings.hpp"
 #include "configs\CfgUnitInsignia.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
-#include "configs\CBA_Stuff.hpp"
-#include "configs\CfgMisc.hpp"
-#include "configs\ACE_detector.hpp"
-#include "configs\CfgSounds.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
+#include "configs\TB_RscHTML.hpp"

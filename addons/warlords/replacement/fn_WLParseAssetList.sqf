@@ -153,6 +153,7 @@ _servicesArr pushBack ["FundsTransfer", BIS_WL_transferCost, [], localize "STR_A
 if (BIS_WLVotingResetEnabled == 1) then {_servicesArr pushBack ["VotingReset", BIS_WL_votingResetCost, [], localize "STR_A3_WL_menu_resetvoting", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_resetvoting_info", "Services"]};
 //_servicesArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_lock_all", "Services"];
 //_servicesArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_unlock_all", "Services"];
+_servicesArr pushBack ["RemoveUnits", 0, [], localize "STR_A3_WL_feature_dismiss_selected", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_dismiss_selected", "Services"];
 _totalArr pushBack _servicesArr;
 if (typeName _target == typeName sideUnknown) then {
     missionNamespace setVariable [format ["BIS_WL_purchasable%1", _target], _totalArr];

@@ -21,6 +21,7 @@ PREP_OTHERFOLDER(arsenalBW,arsenale);
 PREP_OTHERFOLDER(arsenalRUSS,arsenale);
 PREP_OTHERFOLDER(arsenalThemen,arsenale);
 PREP_OTHERFOLDER(arsenalUSA,arsenale);
+PREP_OTHERFOLDER(arsenalUK,arsenale);
 PREP_OTHERFOLDER(arsenalVANILLA,arsenale);
 
 // Themenarsenale
@@ -29,3 +30,11 @@ PREP_OTHERFOLDER(arsenalLDF,arsenale\themen);
 PREP_OTHERFOLDER(arsenalRUSSSimple,arsenale\themen);
 PREP_OTHERFOLDER(arsenalUSAVietnam,arsenale\themen);
 PREP_OTHERFOLDER(arsenalVANILLACOP,arsenale\themen);
+
+// Tests
+PREP_OTHERFOLDER(test,tests);
+PREP_OTHERFOLDER(checkArsenalsTest,tests);
+PREP_OTHERFOLDER(defaultLoadoutTest,tests);
+PREP_OTHERFOLDER(baseWeaponTest,tests);
+// Test-FNCs
+PREP_OTHERFOLDER(checkItems,tests);
