@@ -50,6 +50,8 @@ TB_StatstrackerStarted = false;
     publicVariable "TB_ReporterClient";
     (format ["[TBMod_statstracker] %1 is using the Statstracker", TB_ReporterClient]) remoteExecCall ["systemChat"];
 
+    
+
     //Send script
     [0,{
         if (isNil "TB_ReporterMedical") then
@@ -60,17 +62,6 @@ TB_StatstrackerStarted = false;
                 };
             }] call CBA_fnc_addEventHandler;
         };
-        /*
-        if (isNil "TB_ReporterKill") then
-        {
-            TB_ReporterKill = 
-            ["CAManBase", 
-            "Killed", 
-            {["TB_Kill", [(_this # 0) getVariable ["ace_medical_lastDamageSource", objNull], _this # 0]] call CBA_fnc_globalEvent;}, 
-            true, [], true
-            ] call CBA_fnc_addClassEventHandler;
-        };*/
-        
     }] remoteExec ["call", 0, true];
 
     private _hcs = entities "HeadlessClient_F";
@@ -83,31 +74,27 @@ TB_StatstrackerStarted = false;
             TB_ReporterCPS = 0 spawn {
                 waitUntil {TB_cps = TB_cps + 1; false};
             };
-            TB_ReporterCPS2 = 0 spawn {
-                waitUntil {
-                    uisleep 30;
+            TB_ReporterCPS2 = [
+                {
                     if (!isNil "TB_ReporterClient") then {
                         ["TB_CPSReport", [profileName,round (TB_CPS/30)], TB_ReporterClient] call CBA_fnc_targetEvent;
                     };
                     TB_cps = 0;
-                    false
-                };
-            };
+                }, 30
+            ] call CBA_fnc_addPerFrameHandler;
         };
     }] remoteExec ["spawn", _hcs];
 
     [0,{
         if (isNil "TB_ReporterFPS") then
         {
-            TB_ReporterFPS = 0 spawn {
-                waitUntil {
-                    uisleep 30;
-                    if (!isNil "TB_ReporterClient") then {
+            TB_ReporterFPS = [
+                {
+                    if (!isNil "TB_ReporterClient") then { 
                         ["TB_FPSReport", [profileName,round diag_fps], TB_ReporterClient] call CBA_fnc_targetEvent;
                     };
-                    false
-                }
-            };
+                }, 30
+            ] call CBA_fnc_addPerFrameHandler;
         };
     }] remoteExec ["spawn", _hcs];
 }, "all"] call CBA_fnc_registerChatCommand;
