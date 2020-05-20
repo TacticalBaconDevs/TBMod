@@ -60,6 +60,17 @@ TB_StatstrackerStarted = false;
                 };
             }] call CBA_fnc_addEventHandler;
         };
+        /*
+        if (isNil "TB_ReporterKill") then
+        {
+            TB_ReporterKill = 
+            ["CAManBase", 
+            "Killed", 
+            {["TB_Kill", [(_this # 0) getVariable ["ace_medical_lastDamageSource", objNull], _this # 0]] call CBA_fnc_globalEvent;}, 
+            true, [], true
+            ] call CBA_fnc_addClassEventHandler;
+        };*/
+        
     }] remoteExec ["call", 0, true];
 
     private _hcs = entities "HeadlessClient_F";
