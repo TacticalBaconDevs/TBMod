@@ -139,9 +139,13 @@ _allgemein_gewehre append _allgemein_magazine;
 
 private _allgemein_visiere = [
     "rksl_optic_eot552",        // Holo
-    "rksl_optic_lds_pip",       // ACOG vergleich
     "rksl_optic_lds",
-    "rksl_optic_rmr_rm33"      // Mini Holo
+    "rksl_optic_lds_c",
+    "rksl_optic_rmr_rm33",      // Mini Holo
+    "uk3cb_baf_ta31f",
+    "uk3cb_baf_ta31f_hornbill",
+    "uk3cb_baf_ta648",
+    "uk3cb_baf_ta648_308"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -552,9 +556,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "UK3CB_BAF_V_Osprey_DPMT3",
             "UK3CB_BAF_V_Osprey_DPMW3",
             "UK3CB_BAF_V_Osprey_Grenadier_B",
-
+            // Schneetarnung
+            "UK3CB_BAF_U_Smock_Arctic",
             // Items
             "ACE_HuntIR_monitor"
+
         ]
     };
 
