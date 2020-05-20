@@ -89,7 +89,7 @@ class CfgVehicles
 
         disableInventory = 1;
 
-        ace_rearm_defaultSupply = -1; // 1200
+        ace_rearm_defaultSupply = 5000; // 1200
         ace_cargo_canLoad = 0;
         ace_cargo_size = -1;
 
