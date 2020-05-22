@@ -150,6 +150,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
     }
 ] call CBA_fnc_addEventHandler;
 
+
 // ### FPS Infos
 [{
     if (GVAR(fpsMonitor_client)) then
@@ -161,41 +162,34 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
     };
 
-    if (GVAR(fpsMonitor_zeus)) then
+    if (GVAR(fpsMonitor_zeus) && {player in (call BIS_fnc_listCuratorPlayers)} && {!isNull (findDisplay 312)}) then
     {
-        if (player in (call BIS_fnc_listCuratorPlayers) && {!isNull (findDisplay 312)}) then
+        if (isNil "TB_fpsMonitor_id") then
         {
-            if (isNil "TB_fpsMonitor_id") then
-            {
-                TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+            TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+                {
+                    if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
                     {
-                        if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
-                        {
-                            private _playerFPS = _x getVariable ["TB_clientFPS", -1];
+                        private _playerFPS = _x getVariable ["TB_clientFPS", -1];
 
-                            drawIcon3D
-                            [
-                                "",
-                                [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
-                                getPosVisual _x,
-                                1,
-                                2,
-                                0,
-                                format ["FPS: %1", _playerFPS],
-                                0,
-                                [0.03, 0.05] select (_playerFPS < 20),
-                                "PuristaMedium",
-                                "center"
-                            ];
-                        };
-                    }
-                    forEach allPlayers;
-                }];
-            };
-        }
-        else
-        {
-            if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
+                        drawIcon3D
+                        [
+                            "",
+                            [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
+                            getPosVisual _x,
+                            1,
+                            2,
+                            0,
+                            format ["FPS: %1", _playerFPS],
+                            0,
+                            [0.04, 0.06] select (_playerFPS < 20),
+                            "PuristaMedium",
+                            "center"
+                        ];
+                    };
+                }
+                forEach allPlayers;
+            }];
         };
     }
     else
@@ -205,16 +199,9 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, 5] call CBA_fnc_addPerFrameHandler;
 
 
-// TODO: gibts nicht mehr
-// ### CPR/HLW Stuff
-//["adv_aceCPR_evh_CPR_local", {
-//    params ["_caller", "_target"];
-//    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
-//}] call CBA_fnc_addEventHandler;
-
-
 // ### block Codeexec
 ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
+
 
 // ### dance for me
 [
