@@ -431,7 +431,7 @@ class CfgVehicles
         {
             description[] = {
                 "Dieses Modul mit Personen syncen und fertig!",
-                "Du kannst auch einen Trigger damit verbinden, dann musst du aber die Eigenschaften 'Auf Position bleiben' und unter Ki Optionen 'Path' deaktivieren.",
+                "Du kannst auch einen Trigger damit verbinden, dann musst du aber die Eigenschaften 'Auf Position bleiben' und/oder unter Ki Optionen 'Path' anhaken.",
                 "Mit einem wiederholenden Trigger werden Wunden dann mehrmals hinzugefügt... empfehlen tut sich ein Bereichstrigger ohne Wiederholung nur auf dem Server!"
             };
         };

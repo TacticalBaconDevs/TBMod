@@ -26,12 +26,13 @@ if (!is3DEN && {_mode == "init"}) then
         _x setBehaviour "CARELESS";
         _x setCombatMode "BLUE";
         _x setUnitPos "DOWN";
-        [_x, "MOVE"] remoteExecCall ["disableAI", _x];
-        _x spawn {uiSleep 1; [_this, "MOVE"] remoteExecCall ["disableAI", _this]};
+        [_x, true] remoteExecCall ["setCaptive", _x];
+        [_x, "PATH"] remoteExecCall ["disableAI", _x];
+        _x spawn {uiSleep 1; [_this, "PATH"] remoteExecCall ["disableAI", _this]};
         _x setVariable ["Vcm_Disable", true, true];
     }
     forEach _syncObjs;
-    
+
     if (_isActivated) then
     {
         private _strength = _logic getVariable ["strength", 0.75];
@@ -58,7 +59,7 @@ if (!is3DEN && {_mode == "init"}) then
                     ["amountOfReviveLives", 5],
                     ["enableRevive", 2]
                 ];
-                
+
                 for "_i" from 1 to _anzahl do
                 {
                     [_unit, _strength, selectRandom _wundOrte, selectRandom _schadenTyp] remoteExec ["ace_medical_fnc_addDamageToUnit", _unit];

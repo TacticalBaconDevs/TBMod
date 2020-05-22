@@ -13,12 +13,12 @@ class CfgPatches
             "TBMod_main",
             "rhsusf_main",
             "rhsusf_main_loadorder",
-            "TBMod_skins"
+            "TBMod_skins",
+            "TBMod_config"
         };
 
         vehicles[] = {
-            "TB_Vehicles_MH6_SWAT",
-            "TB_Vehicles_L159_Albatros"
+            "TB_Vehicles_MH6_SWAT"
         };
 
         addonRootClass = "TBMod_main";

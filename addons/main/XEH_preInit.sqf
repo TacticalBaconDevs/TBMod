@@ -82,13 +82,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "TBMod",
     [[0, 1, 2, 3], ["aus", "RPT", "RPT+systemChat", "RPT+systemChat+Hint"], 0]
 ] call CBA_fnc_addSetting;
-[
-    QGVAR(debug_remote),
-    "CHECKBOX",
-    ["Debug Remote", "Zeigt remote Debuginformationen an"],
-    "TBMod",
-    false
-] call CBA_fnc_addSetting;
 
 [
     "TB_inkognitoSystem",
@@ -145,13 +138,3 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "TBMod",
     true
 ] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(medical,coef_global),
-    "SLIDER",
-    "medicalCoef Global",
-    "TBMod",
-    [0.1, 2, 1, 1]
-] call CBA_fnc_addSetting;
-
-ADDON = true;
