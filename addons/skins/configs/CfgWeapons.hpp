@@ -80,7 +80,7 @@ class cfgWeapons
     class TB_Uniform_IS_1_black_U: Uniform_Base
     {
         scope = 2;
-        picture = "\rhsgref\addons\rhsgref_inventoryicons\data\uniform\rhsgref_uniform_olive_ca.paa";
+        picture = "\A3\characters_f\data\ui\icon_U_B_CombatUniform_mcam_ca.paa"; // TODO: ERON DU SCHIEBER \rhsgref\addons\rhsgref_inventoryicons\data\uniform\rhsgref_uniform_olive_ca.paa
         displayName = "ISIS Uniform1 (Black)";
         author = "Eron";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";

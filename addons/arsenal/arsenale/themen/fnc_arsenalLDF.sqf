@@ -6,12 +6,36 @@
 */
 private _allgemein = [
     // Gesichtsbedeckung
+    // ### Vanilla
+    "G_Bandanna_beast",
     "G_Bandanna_tan",
     "G_Bandanna_khk",
     "G_Bandanna_oli",
-    "G_Bandanna_blk",
     "G_Bandanna_aviator",
-    "G_Bandanna_beast",
+    "G_Bandanna_blk",
+    "G_Aviator",
+
+    // Bärte
+    "SFG_Tac_smallBeardB",
+    "SFG_Tac_smallBeardD",
+    "SFG_Tac_smallBeardG",
+    "SFG_Tac_smallBeardO",
+    "SFG_Tac_BeardB",
+    "SFG_Tac_BeardD",
+    "SFG_Tac_BeardG",
+    "SFG_Tac_BeardO",
+    "SFG_Tac_chinlessbB",
+    "SFG_Tac_chinlessbD",
+    "SFG_Tac_chinlessbG",
+    "SFG_Tac_chinlessbO",
+    "SFG_Tac_moustacheB",
+    "SFG_Tac_moustacheD",
+    "SFG_Tac_moustacheG",
+    "SFG_Tac_moustacheO",
+    "SFG_Tac_ChopsB",
+    "SFG_Tac_ChopsD",
+    "SFG_Tac_ChopsG",
+    "SFG_Tac_ChopsO",
     "G_Blindfold_01_black_F",
     "G_Blindfold_01_white_F",
 
@@ -74,9 +98,35 @@ private _allgemein = [
     "acc_pointer_ir",
     "ace_acc_pointer_green",
     "acc_flashlight",
+    "ACE_muzzle_mzls_H",
+    "muzzle_snds_H",
+    "muzzle_snds_H_snd_F",
+    "bipod_01_F_snd",
+    "bipod_01_F_blk",
+    "ACE_muzzle_mzls_smg_01",
+    "muzzle_snds_acp",
+    "ACE_muzzle_mzls_smg_02",
+    "muzzle_snds_L",
+    "muzzle_snds_m",
+    "muzzle_snds_m_khk_f",
+    "muzzle_snds_m_snd_f",
+    "muzzle_snds_h_mg_blk_f",
+    "muzzle_snds_h_mg",
+    "muzzle_snds_h_mg_khk_f",
+    "muzzle_snds_b_khk_f",
+    "muzzle_snds_b_snd_f",
+    "muzzle_snds_b",
 
     // Granaten
+    "HandGrenade",
     "MiniGrenade",
+    "SmokeShell",
+    "SmokeShellYellow",
+    "SmokeShellRed",
+    "SmokeShellGreen",
+    "SmokeShellPurple",
+    "SmokeShellBlue",
+    "SmokeShellOrange",
 
     // SR-Funke
     "TFAR_anprc152"
@@ -158,7 +208,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
-        _LR +
         [
 
         ]
@@ -226,7 +275,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // AT
             "RPG32_F",
-            "RPG32_HE_F"
+            "RPG32_HE_F",
+            "Vorona_HEAT",
+            "Vorona_HE",
+            "MRAWS_HEAT_F",
+            "MRAWS_HE_F"
         ]
     };
 
@@ -305,10 +358,31 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // AT
             "launch_RPG32_green_F",
+            "launch_NLAW_F",
+            "launch_RPG32_F",
+            "launch_MRAWS_green_rail_F",
+            "launch_MRAWS_olive_rail_F",
+            "launch_MRAWS_sand_rail_F",
+            "launch_MRAWS_green_F",         // kann Entfernung messen (ungelenkt)
+            "launch_MRAWS_olive_F",
+            "launch_MRAWS_sand_F",
+            "launch_O_Vorona_brown_F",      // kabelgelenkt
+            "launch_O_Vorona_green_F",
+            "launch_B_Titan_F",
+            "launch_O_Titan_F",
+            "Titan_AA",
+            "launch_B_Titan_short_F",
+            "launch_I_Titan_short_F",
+            "Titan_AT",
+            "Titan_AP",
 
             // Magazine
             "RPG32_F",
-            "RPG32_HE_F"
+            "RPG32_HE_F",
+            "Vorona_HEAT",
+            "Vorona_HE",
+            "MRAWS_HEAT_F",
+            "MRAWS_HE_F"
         ]
     };
     
@@ -324,6 +398,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
+
+            
+            // Drohne 
+            "I_E_UGV_02_Demining_backpack_F",
+            "I_E_UGV_02_Science_backpack_F",
+            "I_E_UavTerminal",
 
             // Westen
             "V_CarrierRigKBT_01_heavy_EAF_F",

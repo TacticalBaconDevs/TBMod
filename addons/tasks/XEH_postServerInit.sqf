@@ -5,17 +5,14 @@
 */
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
-GVAR(Namespace) = true call CBA_fnc_createNamespace;
-publicVariable QGVAR(Namespace);
-GVAR(loadedTasks) = [];
-GVAR(pause) = false;
+// Warten auf Tasks
+[{!isNil QGVAR(tasks)}, {
+    GVAR(states) = true call CBA_fnc_createNamespace;
+    publicVariable QGVAR(states);
 
-[] spawn {
-    waitUntil {uiSleep 1; !isNil QGVAR(Tasks);};
-    {
-        [_x] call FUNC(loadTask);
-    } forEach GVAR(Tasks);
-};
+    GVAR(loaded) = [];
+    GVAR(pause) = false;
+    GVAR(loadedTasks) = [GVAR(tasks)] call FUNC(loadTask);
 
-
-[] spawn FUNC(loop);
+    GVAR(taskLoop) = [LINKFUNC(loop), 1, GVAR(loadedTasks)] call CBA_fnc_addPerFrameHandler;
+}] call CBA_fnc_waitUntilAndExecute;
