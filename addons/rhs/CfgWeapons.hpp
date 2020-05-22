@@ -206,7 +206,7 @@ class CfgWeapons
         mass = 55.1; // 15.8
     };
 
-    class rhs_weap_fim92: rhs_weap_M136 // FIM-92F
+    class rhs_weap_fim92: launch_O_Titan_F // FIM-92F
     {
         aimTransitionSpeed = 0.5; // 0.6
         mass = 132.25; // 92.35
