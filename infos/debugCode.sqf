@@ -213,6 +213,11 @@ private _building = objNull;
 private _maxLineSize = 1000;   
 private _maxSize = 0;   
 {   
+    if (is3DEN) then
+    {
+        _building = create3DENEntity ["Object", _x, [0,0,0]];
+        
+    };
     _building = createVehicle [_x, [0,0,0], [], 0, "CAN_COLLIDE"];   
     if !((_building buildingPos -1) isEqualTo []) then   
     {   
