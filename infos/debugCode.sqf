@@ -199,3 +199,82 @@ fnc_backpack = {
 };
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
+
+// freePos in grid
+TB_freePos = {
+    params [["_lineStart", [100,100,0]], ["_buildingPos", [100,100,0]], ["_maxLineSize", 1000], ["_maxSize", 0]];
+
+    private _freePos = [];
+
+    while {_freePos isEqualTo []} do
+    {
+        ((nearestObjects [_buildingPos, [], 30, true]) select {!((_x buildingPos -1) isEqualTo [])}) params [["_obj", objNull]];
+
+        if (isNull _obj) then
+        {
+            _freePos = _buildingPos;
+        }
+        else
+        {
+            _buildingPos set [0, (_buildingPos # 0) + ((sizeOf (typeOf _obj)) max 50)];
+            _maxSize = _maxSize max (sizeOf (typeOf _obj));
+        };
+
+        if (_lineStart distance2d _buildingPos > _maxLineSize) then
+        {
+            _buildingPos = [100, (_buildingPos # 1) + (_maxSize max 50), 0];
+            _lineStart = +_buildingPos;
+            _maxSize = 0;
+        };
+    };
+
+    [_freePos, [_lineStart, _buildingPos, _maxLineSize, _maxSize]]
+};
+
+// Create grid of all houses
+private _houses = ("getNumber (_x >> 'scope') == 2 && {(configName _x) isKindof 'Building' || (configName _x) isKindof 'House'}" configClasses (configFile >> "CfgVehicles")) apply {configName _x};
+private _allObjs = (allMissionObjects "") apply {toLower (typeOf _x)};
+_houses = _houses select {!((toLower _x) in _allObjs)}; // TODO: filter PathLODs ohne model p3d usw && !((configName _x) isKindof 'Ruin')
+_houses resize 1000;
+
+collect3DENHistory {
+    private _values = [];
+    {
+        private _building = create3DENEntity ["Object", _x, [0,0,0], true];
+        if !((_building buildingPos -1) isEqualTo []) then
+        {
+            private _return = _values call TB_freePos;
+            _building set3DENAttribute ["position", _return # 0];
+            _building set3DENAttribute ["rotation", [0,0,0]];
+            _values = _return # 1;
+
+            ["attributesChanged3DEN", [_building]] call TBMod_eden_fnc_moduleShowBuildingPos;
+        }
+        else
+        {
+            delete3DENEntities [_building];
+        };
+    }
+    forEach _houses;
+};
+
+
+// Kisten mit gleichem Namen gleich befüllen
+this spawn
+{
+    uiSleep 10;
+
+    missionNamespace setVariable [(typeOf _this) + "_loadout", [getWeaponCargo _this, getItemCargo _this, getMagazineCargo _this]];
+    [typeOf _this, "InitPost", {
+        (missionNamespace getVariable [(typeOf _this) + "_loadout", [[],[],[]]]) params ["_weaponCargo", "_itemCargo", "_magazineCargo"];
+
+        clearWeaponCargoGlobal _this;
+        {_this addWeaponCargoGlobal [_x, (_weaponCargo # 1) select _forEachIndex]} forEach (_weaponCargo # 0);
+
+        clearItemCargoGlobal _this;
+        {_this addItemCargoGlobal [_x, (_itemCargo # 1) select _forEachIndex]} forEach (_itemCargo # 0);
+
+        clearMagazineCargoGlobal _this;
+        {_this addMagazineCargoGlobal [_x, (_magazineCargo # 1) select _forEachIndex]} forEach (_magazineCargo # 0);
+    }, false] call CBA_fnc_addClassEventHandler;
+};

@@ -643,4 +643,24 @@ class CfgVehicles
             };
         };
     };
+
+
+    // ######################## DebugModules
+    class GVAR(showBuildingPos) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "ShowBuildingPos";
+        category = "TB_categorie_eden_debug";
+        function = QFUNC(moduleShowBuildingPos);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+    };
+
+    class GVAR(getCBABuildingPos) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "GetCBABuildingPos";
+        category = "TB_categorie_eden_debug";
+        function = QFUNC(moduleGetBuildingPos);
+        // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
+    };
 };

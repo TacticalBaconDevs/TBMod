@@ -9,4 +9,8 @@ class CfgFactionClasses
     {
         displayName = "#TacticalBacon - AtmoModule";
     };
+    class TB_categorie_eden_debug: TB_categorie
+    {
+        displayName = "#TacticalBacon - Debug";
+    };
 };

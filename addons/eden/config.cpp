@@ -24,7 +24,9 @@ class CfgPatches
             QGVAR(flares),
             QGVAR(injured),
             QGVAR(lockDoors),
-            QGVAR(clearPlaceables)
+            QGVAR(clearPlaceables),
+            QGVAR(showBuildingPos),
+            QGVAR(getCBABuildingPos)
         };
 
         requiredAddons[] = {"TBMod_main"};

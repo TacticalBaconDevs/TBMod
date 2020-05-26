@@ -6,10 +6,9 @@
 if !(call FUNC(isTBMission)) exitWith {};
 
 // ### DevAbfrage
-TB_serverBuild = productVersion select 3;
-publicVariable "TB_serverBuild";
+//TB_serverBuild = productVersion select 3;
+//publicVariable "TB_serverBuild";
 
 
 // ### CrashHelfer
-TB_disconnectCache = [];
-publicVariable "TB_disconnectCache";
+GVAR(disconnectCache) = [false] call CBA_fnc_createNamespace;
