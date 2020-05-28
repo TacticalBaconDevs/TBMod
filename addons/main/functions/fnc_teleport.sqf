@@ -19,23 +19,25 @@ if (_obj isKindOf "Man") then
         format ["Achtung, %1 teleportet zu Dir!", profileName] remoteExecCall ["systemChat", _obj];
     };
 
-    uiSleep _time;
+    [{
+        params ["_obj", "_time"];
 
-    private _vehicle = vehicle _obj;
-    if (_vehicle != _obj) then
-    {
-        if !(player moveInAny _vehicle) then
+        private _vehicle = vehicle _obj;
+        if (_vehicle != _obj) then
         {
-            "Das Fahrzeug beim Teleportspieler ist voll, warte etwas!" remoteExecCall ["systemChat", _obj];
-            uiSleep 5;
-            _this spawn FUNC(teleport);
+            if !(player moveInAny _vehicle) then
+            {
+                "Das Fahrzeug beim Ziel ist voll, warte etwas du wirst gleich teleportiert!" remoteExecCall ["systemChat", _obj];
+
+                [LINKFUNC(teleport), _this, _time] call CBA_fnc_waitAndExecute;
+            };
+        }
+        else
+        {
+            player setDir ((getDir _obj) + (10 - random 20));
+            player setPosASL (AGLtoASL (_obj modelToWorld [0, -1, 0]));
         };
-    }
-    else
-    {
-        player setDir ((getDir _obj) + (10 - random 20));
-        player setPosASL (AGLtoASL (_obj modelToWorld [0, -1, 0]));
-    };
+    }, _this, _time] call CBA_fnc_waitAndExecute;
 }
 else
 {

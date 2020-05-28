@@ -10,4 +10,4 @@ if (count _units <= 1) exitWith {systemChat "Du bist der einzige in der Gruppe!"
 _units = _units apply {[ACE_player distance2D _x, _x]};
 _units sort false;
 
-[(_units select 0) select 1] spawn FUNC(teleport);
+[(_units select 0) select 1] call FUNC(teleport);

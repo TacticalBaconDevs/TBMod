@@ -25,10 +25,12 @@ missionNamespace setVariable ["#EM_Values", []];
 }] call CBA_fnc_addPlayerEventHandler;
 
 ["weapon", {
+    if (!GVAR(enable)) exitWith {};
+
     GVAR(receive) = (_this # 1) isKindOf ["hgun_esd_01_base_F", configFile >> "CfgWeapons"];
 
-    if (GVAR(enable) && {GVAR(receive)} && {isNil QGVAR(transmitterPFH)}) then
+    if (GVAR(receive) && {isNil QGVAR(transmitterPFH)}) then
     {
-        GVAR(transmitterPFH) = [LINKFUNC(findTransmitter), 0.1] call CBA_fnc_addPerFrameHandler;
+        GVAR(transmitterPFH) = [LINKFUNC(findTransmitter), 0.5] call CBA_fnc_addPerFrameHandler;
     };
 }, true] call CBA_fnc_addPlayerEventHandler;

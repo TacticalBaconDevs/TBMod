@@ -28,7 +28,7 @@ if (!is3DEN && {_mode == "init"}) then
         _x setUnitPos "DOWN";
         [_x, true] remoteExecCall ["setCaptive", _x];
         [_x, "PATH"] remoteExecCall ["disableAI", _x];
-        _x spawn {uiSleep 1; [_this, "PATH"] remoteExecCall ["disableAI", _this]};
+        [{[_this, "PATH"] remoteExecCall ["disableAI", _this]}, _x, 1] call CBA_fnc_waitAndExecute;
         _x setVariable ["Vcm_Disable", true, true];
     }
     forEach _syncObjs;

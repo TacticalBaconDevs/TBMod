@@ -3,10 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params [
-    "_obj",
-    "_item"
-];
+params ["_obj", "_item"];
 
 _obj setVariable ["TB_building_addInfos", [_item], true];
 
@@ -16,17 +13,28 @@ private _pickupAction = [
     localize "STR_PLACE_PickUpAction",
     "",
     {
-        params ["_target", "_player", "_argumente"];
-        _argumente params ["_item"];
+        params ["_target", "_player", "_args"];
+        _args params ["_obj", "_item"];
 
-        deleteVehicle _target;
-        _player addItem _item;
+        [ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation;
+
+        [[8, 1] select ((ACE_player getVariable ['TB_rolle', '']) == 'pionier' || _item in ["TB_building_item_ace_concertinawirecoil"]), _args, {
+            (_this select 0) params ["_obj", "_item"];
+
+            [ACE_player, "", 1] call ace_common_fnc_doAnimation;
+
+            deleteVehicle _obj;
+            _player addItem _item;
+        },
+        {
+            [ACE_player, "", 1] call ace_common_fnc_doAnimation;
+        }, localize "STR_PLACE_Build"] call ace_common_fnc_progressBar;
     },
     {true},
     nil,
-    [_item],
+    _this,
     nil,
-    4
+    5
 ] call ace_interact_menu_fnc_createAction;
 
 [

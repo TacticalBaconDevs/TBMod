@@ -71,7 +71,7 @@ class CfgVehicles
                         { \
                             displayName = DISPLAY; \
                             EXCEPTIONS; \
-                            statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] spawn FUNC(placePlaceablesBig)); \
+                            statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] call FUNC(placePlaceablesBig)); \
                         }
 
                     class TB_cat_Wall

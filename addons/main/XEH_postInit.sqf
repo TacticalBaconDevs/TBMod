@@ -10,7 +10,6 @@ addMissionEventHandler ["ExtensionCallback", {
 
     if (_name isEqualTo "TBModExtension") then
     {
-        diag_log format ["RAW: %1", _this];
         _data = if (_data select [0,1] == "[" && _data select [(count _data) - 1] == "]") then {parseSimpleArray _data} else {_data};
 
         private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];

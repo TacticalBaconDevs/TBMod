@@ -5,8 +5,10 @@
 */
 if !(call FUNC(isTBMission)) exitWith {};
 
-// initalisiert die TB Rolle nach dem spawnen
-[] spawn FUNC(waitUntilLoaded);
+["CBA_loadingScreenDone", {
+    // initalisiert die TB Rolle nach dem spawnen
+    [] call FUNC(waitUntilLoaded);
+}] call CBA_fnc_addEventHandler;
 
 // Variablen
 if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};

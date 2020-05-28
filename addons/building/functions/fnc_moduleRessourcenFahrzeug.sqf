@@ -10,7 +10,6 @@ deleteVehicle _logic;
 
 if !(local _logic) exitWith {};
 if !(_activated) exitWith {};
-if !(canSuspend) exitWith {_this spawn EFUNC(zeus,moduleNachschubAbwurf)};
 
 [
     "Nachschubmenge",

@@ -215,14 +215,15 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["dancetime", {
-    private _prevStatus = player getVariable ["TB_danceTime", false];
-    player setVariable ["TB_danceTime", !_prevStatus, true];
+    private _prevStatus = player getVariable [QGVAR(danceTime), false];
+    player setVariable [QGVAR(danceTime), !_prevStatus, true];
 
     if (!_prevStatus) then
     {
-        [] spawn {
-            waitUntil {uiSleep 5; systemChat "Du hast DanceTime noch an!"; !(player getVariable ["TB_danceTime", false])};
-        };
+        [{
+            systemChat "Du hast DanceTime noch an!";
+            if !(player getVariable [QGVAR(danceTime), false]) then {[_this # 1] call CBA_fnc_removePerFrameHandler;};
+        }, 5] call CBA_fnc_addPerFrameHandler;
     };
 
     systemChat format ["Du hast die DanceTime %1aktiviert!", ["de", ""] select !_prevStatus];
