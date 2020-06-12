@@ -321,4 +321,10 @@ class CfgWeapons
         };
     };
 
+    class V_PlateCarrierIAGL_dgtl;
+    class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 4
+    {
+        picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa";
+    };
+
 };

@@ -144,8 +144,8 @@ class CfgWeapons
         };
         descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
         displayName = "SPS Tier 4 (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
-        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_01.paa),QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_02.paa)};
-        picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa";
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_01.paa), QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_02.paa)};
+        //picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa"; // wird in TBMod_rhs gesetzt
     };
 
     class GMG_F;
