@@ -27,32 +27,32 @@ private _wounds = 0;
         {
             case 0:
             {
-                for "_i" from 1 to _numOpenWounds do {["ace_medical_treatment_fnc_bandageLocal", [_unit, "head", "Bandage"], _unit] call CBA_fnc_targetEvent};
+                for "_i" from 1 to _numOpenWounds do {["ace_medical_treatment_bandageLocal", [_unit, "head", "Bandage"], _unit] call CBA_fnc_targetEvent};
             };
 
             case 1:
             {
-                for "_i" from 1 to _numOpenWounds do {["ace_medical_treatment_fnc_bandageLocal", [_unit, "body", "Bandage"], _unit] call CBA_fnc_targetEvent};
+                for "_i" from 1 to _numOpenWounds do {["ace_medical_treatment_bandageLocal", [_unit, "body", "Bandage"], _unit] call CBA_fnc_targetEvent};
             };
 
             case 2:
             {
-                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_fnc_bandageLocal", [_unit, "leftarm", "Bandage"], _unit] call CBA_fnc_targetEvent};
+                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_bandageLocal", [_unit, "leftarm", "Bandage"], _unit] call CBA_fnc_targetEvent};
             };
 
             case 3:
             {
-                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_fnc_bandageLocal", [_unit, "rightarm", "Bandage"], _unit] call CBA_fnc_targetEvent};
+                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_bandageLocal", [_unit, "rightarm", "Bandage"], _unit] call CBA_fnc_targetEvent};
             };
 
             case 4:
             {
-                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_fnc_bandageLocal", [_unit, "leftleg", "Bandage"], _unit] call CBA_fnc_targetEvent};
+                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_bandageLocal", [_unit, "leftleg", "Bandage"], _unit] call CBA_fnc_targetEvent};
             };
 
             case 5:
             {
-                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_fnc_bandageLocal", [_unit, "rightleg", "Bandage"], _unit] call CBA_fnc_targetEvent};
+                for "_i" from 1 to (random _numOpenWounds) do {["ace_medical_treatment_bandageLocal", [_unit, "rightleg", "Bandage"], _unit] call CBA_fnc_targetEvent};
             };
         };
     };
