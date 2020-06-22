@@ -42,7 +42,7 @@ if (_unit getVariable [QEGVAR(medical,fatalDamageSource), EGVAR(medical,fatalDam
 };
 if (_unit getVariable [QEGVAR(medical,fatalDamageSource), EGVAR(medical,fatalDamageSource)] in [1, 2]) then {
     // Sum of trauma to critical areas can be fatal (e.g. many small hits)
-    private _damageThreshold = if (isPlayer _unit) then { EGVAR(medical,playerDamageThreshold) } else { EGVAR(medical,AIDamageThreshold) };
+    private _damageThreshold = GET_DAMAGE_THRESHOLD(_unit);
     private _headThreshhold = 1.25 * _damageThreshold;
     private _bodyThreshhold = 1.5 * _damageThreshold;
 
