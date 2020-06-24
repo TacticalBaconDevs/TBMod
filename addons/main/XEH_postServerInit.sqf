@@ -41,4 +41,4 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
     1800
 ] call CBA_fnc_addPerFrameHandler;
 
-["CBA_loadingScreenDone", {TB_init_done = true}] call CBA_fnc_addEventHandler;
+["CBA_loadingScreenDone", {GVAR(initDone) = true}] call CBA_fnc_addEventHandler;

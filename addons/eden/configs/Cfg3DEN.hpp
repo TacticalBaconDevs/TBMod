@@ -71,7 +71,7 @@ class Cfg3DEN
                         property = QEGVAR(main,sitzen);
                         control = "Checkbox";
 
-                        expression =  QUOTE(if (!is3DEN && _value) then {[{time > 0 && !isNil "TB_init_done"}, {[_this] call FUNC(sitAI)}, _this] call CBA_fnc_waitUntilAndExecute});
+                        expression =  QUOTE(if (!is3DEN && _value) then {[{time > 0 && !isNil QEGVAR(main,initDone)}, {[_this] call FUNC(sitAI)}, _this] call CBA_fnc_waitUntilAndExecute});
 
                         defaultValue = "false";
 
@@ -85,7 +85,7 @@ class Cfg3DEN
                         property = QEGVAR(main,animation);
                         control = QEGVAR(main,animationControl);
 
-                        expression = QUOTE(_value = _value param [1, '']; if (!is3DEN && _value != '') then {[{time > 0 && !isNil "TB_init_done"}, {_this call FUNC(animationAI)}, [_this, _value]] call CBA_fnc_waitUntilAndExecute});
+                        expression = QUOTE(_value = _value param [1, '']; if (!is3DEN && _value != '') then {[{time > 0 && !isNil QEGVAR(main,initDone)}, {_this call FUNC(animationAI)}, [_this, _value]] call CBA_fnc_waitUntilAndExecute});
 
                         defaultValue = "";
 
@@ -114,7 +114,7 @@ class Cfg3DEN
                         control = "Edit";
                         typeName = "STRING";
 
-                        expression =  QUOTE(if (!is3DEN && _value != '[]' && _value != '') then {[{time > 0 && !isNil "TB_init_done"}, {_this call FUNC(keysForAI)}, [_this, _value]] call CBA_fnc_waitUntilAndExecute});
+                        expression =  QUOTE(if (!is3DEN && _value != '[]' && _value != '') then {[{time > 0 && !isNil QEGVAR(main,initDone)}, {_this call FUNC(keysForAI)}, [_this, _value]] call CBA_fnc_waitUntilAndExecute});
 
                         defaultValue = "[]";
 
