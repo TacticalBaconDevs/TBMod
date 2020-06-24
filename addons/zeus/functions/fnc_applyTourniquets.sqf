@@ -21,7 +21,7 @@ private _applyTo = [];
 {
     _x params ["", "_bodyPart", "_numOpenWounds", "_bloodLoss", ""];
 
-    if (_bloodLoss > 0) then
+    if (_bloodLoss > 0 && _numOpenWounds > 0) then
     {
         switch (_bodyPart) do
         {
@@ -36,4 +36,7 @@ private _applyTo = [];
 }
 forEach (_unit getVariable ["ace_medical_openWounds", []]);
 
-{["ace_medical_treatment_fnc_tourniquetLocal", [_unit, _x], _unit] call CBA_fnc_targetEvent} forEach _applyTo;
+{
+    ["ace_medical_treatment_tourniquetLocal", [_unit, _x], _unit] call CBA_fnc_targetEvent;
+}
+forEach _applyTo;
