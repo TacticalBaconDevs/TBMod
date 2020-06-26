@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -35,7 +35,7 @@ if (_arsenalType == "Themen") then
             // Vanilla-COP
             //TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
             //TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
-            
+
             // WoMi Polizei
             TB_blacklistRollen_themen = ["grena", "mg", "dmr", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "pionier"];
             TB_customName_themen = ["Polizist","","Polizist-Sani","","","","","","Polizeipilot","","","","SWAT-Sani","SWAT",""];

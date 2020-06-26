@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -989,7 +989,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Spezial
             "ACE_Kestrel4500",
             "ACE_RangeCard",
-            
+
             // Binocular
             "ace_vector"
         ]

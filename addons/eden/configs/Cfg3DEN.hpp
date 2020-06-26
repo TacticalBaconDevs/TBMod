@@ -1,4 +1,4 @@
-﻿#include "macros.inc"
+#include "macros.inc"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de

@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -447,7 +447,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Waffen
             "BWA3_MP7",
 
-            
+
 
             // Gepäck
             "BWA3_Kitbag_Fleck_Medic",

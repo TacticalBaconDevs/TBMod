@@ -1,4 +1,4 @@
-﻿### Info
+### Info
 Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verändern... was ein 100mal schnelleres entwickeln ermöglicht.
 
 ### Ablauf
