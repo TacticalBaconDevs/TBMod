@@ -13,7 +13,6 @@
  *
  * Example:
  * [_unit] call TBMod_zeus_fnc_bandageRandomWound
- *
  */
 params ["_unit", ["_full", true]];
 
@@ -23,7 +22,7 @@ private _wounds = 0;
 
     if (_bloodLoss > 0 && _numOpenWounds > 0) then
     {
-        private _anzahl = if (_full) then {(_numOpenWounds * 2) max 1} then {floor (random (_numOpenWounds + 1))};
+        private _anzahl = if (_full) then {(_numOpenWounds * 2) max 1} else {floor (random (_numOpenWounds + 1))};
 
         private _target = switch (_bodyPart) do
         {
