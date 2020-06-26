@@ -1,4 +1,4 @@
-﻿class Cfg3DEN
+class Cfg3DEN
 {
     class Mission
     {

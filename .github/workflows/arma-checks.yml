@@ -20,7 +20,7 @@ jobs:
       uses: arma-actions/bom-check@master
       continue-on-error: true
     - name: UTF8-Check
-      run: echo '! find $GITHUB_WORKSPACE -type f -exec file --mime {} \; | grep -v "charset=binary$" | grep -v "charset=utf-8$"' | bash
+      run: echo '! find $GITHUB_WORKSPACE -type f -exec file --mime {} \; | grep -v "charset=binary$" | grep -v "charset=us-ascii$" | grep -v "charset=utf-8$"' | bash
       continue-on-error: true
 
 #  lint:
