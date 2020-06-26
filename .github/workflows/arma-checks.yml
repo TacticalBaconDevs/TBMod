@@ -16,8 +16,12 @@ jobs:
       run: python3 tools/sqf_validator.py
     - name: Validate Config
       run: python3 tools/config_style_checker.py
-#    - name: Check for BOM
-#      uses: arma-actions/bom-check@master
+    - name: Check for BOM
+      uses: arma-actions/bom-check@master
+      continue-on-error: true
+    - name: list the directory
+      run: echo '! find $GITHUB_WORKSPACE -type f -exec file --mime {} \; | grep -v "charset=binary$" | grep -v "charset=us-ascii$" | grep -v "charset=utf-8$"' | bash
+      continue-on-error: true
 
 #  lint:
 #    runs-on: ubuntu-latest
@@ -37,9 +41,10 @@ jobs:
 #      uses: arma-actions/hemtt@master
 #      with:
 #        command: build --ci  # no --release due to https://github.com/synixebrett/HEMTT/issues/227
-    # https://github.com/actions/upload-artifact/issues/3#issuecomment-524442814
-    # - name: Upload Artifact
-    #   uses: actions/upload-artifact@master
-    #   with:
-    #     name: ace3-${{ github.sha }}-nobin
-    #     path: '@ace'
+
+# https://github.com/actions/upload-artifact/issues/3#issuecomment-524442814
+# - name: Upload Artifact
+#   uses: actions/upload-artifact@master
+#   with:
+#     name: ace3-${{ github.sha }}-nobin
+#     path: '@ace'
