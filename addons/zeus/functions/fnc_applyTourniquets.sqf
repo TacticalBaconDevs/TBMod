@@ -12,10 +12,9 @@
  * None
  *
  * Example:
- * _unit call tb_zeus_fnc_applyTourniquets
- *
+ * [_unit] call TBMod_zeus_fnc_applyTourniquets
  */
-params ["_unit"];
+params ["_unit", ["_full", true]];
 
 private _applyTo = [];
 {
@@ -36,7 +35,18 @@ private _applyTo = [];
 }
 forEach (_unit getVariable ["ace_medical_openWounds", []]);
 
+// wenn nicht genügend Tourniquets vorhanden, dann geben
+if (_cheat && {count _applyTo > [_unit, "ACE_tourniquet"] call ace_common_fnc_getCountOfItem}) then
 {
-    ["ace_medical_treatment_tourniquetLocal", [_unit, _x], _unit] call CBA_fnc_targetEvent;
+    for "_i" from ([_unit, "ACE_tourniquet"] call ace_common_fnc_getCountOfItem) to (count _applyTo) do {_unit addItem "ACE_tourniquet"};
+};
+
+{
+    if (_full || {floor (random 2) == 1}) then
+    {
+        ["ace_medical_treatment_tourniquetLocal", [_unit, _x], _unit] call CBA_fnc_targetEvent;
+    };
 }
 forEach _applyTo;
+
+count _applyTo

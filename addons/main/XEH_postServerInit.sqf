@@ -24,7 +24,7 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
             _player assignCurator _moderatorModule;
             _player setVariable ["TB_Admin_Zeus", _moderatorModule, true];
 
-            ["TB_informAdminsAndZeus", ["%1 wurde zum Zeus", name _player]] call CBA_fnc_globalEvent; // Admin Info Broadcast
+            ["TB_informAdminsAndZeus", ["%1 wurde zum Zeus", [_player] call ace_common_fnc_getName]] call CBA_fnc_globalEvent; // Admin Info Broadcast
             "Zeus wurde erstellt!" remoteExec ["systemChat", _player];
         };
     }

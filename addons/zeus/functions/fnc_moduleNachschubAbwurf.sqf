@@ -5,10 +5,9 @@
 */
 params ["_logic", "", "_activated"];
 
-if !(local _logic) exitWith {true};
+if (!local _logic || !_activated) exitWith {true};
 private _pos = getPos _logic;
 deleteVehicle _logic;
-if !(_activated) exitWith {true};
 
 private _nachschubsKistenNamen = TB_nachschubsKisten apply {[_x] call EFUNC(main,displayName)};
 [

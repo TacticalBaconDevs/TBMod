@@ -136,8 +136,8 @@
     if (!isPlayer _unit) then {_unit = objNull};
     if (isNull _unit) then {_unit = ACE_player};
 
-    systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, name (leader _unit)];
-    ["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, name (leader _unit)]] call CBA_fnc_globalEvent;
+    systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, [leader _unit] call ace_common_fnc_getName];
+    ["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, [leader _unit] call ace_common_fnc_getName]] call CBA_fnc_globalEvent;
 
     (group _unit) setGroupIdGlobal [_grpName];
 }, "all"] call CBA_fnc_registerChatCommand;

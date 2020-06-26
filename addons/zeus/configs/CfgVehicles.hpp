@@ -97,7 +97,7 @@ class CfgVehicles
 
     class TB_zeus_handleAsPlayerMedical : TB_zeus_base
     {
-        scopeCurator = 2;
+        //scopeCurator = 2; // TODO: erstmal deaktiviert!!!
         displayName = "HandlePlayerAsMedical";
         function = QFUNC(moduleHandleAsPlayerMedical);
         category = "TB_categorie_zeus_ki";

@@ -129,6 +129,7 @@ class CfgVehicles
                     class allgemeinMortar
                     {
                         displayName = "Mörser Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Mörserkit",TB_supply_all_mortar);
                         ADD_SUPPLY("Mörser Munnition",TB_supply_all_mortarAmmo);
@@ -142,6 +143,7 @@ class CfgVehicles
                     class allgemeinBaukisten
                     {
                         displayName = "Baukisten und Kits";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("HMGKit",TB_supply_all_hmg);
                         ADD_SUPPLY("GMGKit",TB_supply_all_gmg);
@@ -164,6 +166,7 @@ class CfgVehicles
                     class USAMunition
                     {
                         displayName = "Muntions Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_usa_ammo);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
@@ -175,6 +178,7 @@ class CfgVehicles
                     class USAWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Werfer",TB_supply_usa_launcher);
                         ADD_SUPPLY("WerferMunition",TB_supply_usa_launcherAmmo);
@@ -196,6 +200,7 @@ class CfgVehicles
                     class UKMunition
                     {
                         displayName = "Munitions Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_uk_ammo);
                         ADD_SUPPLY("KleinMunition",TB_supply_uk_ammoSmall);
@@ -207,6 +212,7 @@ class CfgVehicles
                     class UKWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Werfer",TB_supply_uk_launcher);
                         ADD_SUPPLY("Igla Munition",TB_supply_uk_IglaAmmo);
@@ -218,6 +224,7 @@ class CfgVehicles
                     class UKFahrzeuge
                     {
                         displayName = "Fahrzeug Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("9x Fahrzeug Magazine 12.7",TB_supply_uk_vehicles127);
                         ADD_SUPPLY("9x Fahrzeug Magazine 7.62",TB_supply_uk_vehicles762);

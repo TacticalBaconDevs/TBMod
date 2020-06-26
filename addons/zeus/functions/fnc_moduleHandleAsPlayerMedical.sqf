@@ -5,14 +5,14 @@
 */
 params ["_logic", "", "_activated"];
 
-if !(local _logic) exitWith {true};
-private _pos = getPos _logic;
+if (!local _logic || !_activated) exitWith {true};
 private _unit = attachedTo _logic;
 deleteVehicle _logic;
-if !(_activated) exitWith {true};
-if (isNull _unit) exitWith {true};
 
-{
+if (!alive _unit) exitWith {true};
+
+// TODO: ACE 3.13.* bietet derzeit nicht diese Funktionalität PRs sind nötig
+/*{
     _x params ["_key", "_value"];
     _unit setVariable ["ace_medical_"+ _key, _value, true];
 }
@@ -23,6 +23,6 @@ forEach [
         ["enableRevive", 2]
     ];
 
-systemChat "[TBMod_main] HandleAsPlayerMedical: KI wird nun als Spieler behandelt!";
+systemChat "[TBMod_main] HandleAsPlayerMedical: KI wird nun als Spieler behandelt!";*/
 
 true
