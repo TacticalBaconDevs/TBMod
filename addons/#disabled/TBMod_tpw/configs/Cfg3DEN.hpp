@@ -10,7 +10,7 @@
                 {
                     collapsed = 0;
                     displayName = "TB Missionwerte";
-                    
+
                     class Attributes
                     {
                         // TODO
@@ -23,7 +23,7 @@
                             // expression = "if (!is3DEN) then {TB_mission_tpw_civ = _value; publicVariable 'TB_mission_tpw_civ'};";
                             // defaultValue = "false";
                         // };
-                        
+
                         // class TB_mission_tpw_soap
                         // {
                             // displayName = "Dynamische Sounds (TPW)";

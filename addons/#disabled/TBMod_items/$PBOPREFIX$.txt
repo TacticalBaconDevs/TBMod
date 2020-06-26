@@ -1,4 +1,4 @@
-﻿///<'TBMod_items.pbo' properties via Mikero's dos tools, dll version 7.16>///
+///<'TBMod_items.pbo' properties via Mikero's dos tools, dll version 7.16>///
 prefix=TBMod_items
 Mikero=DePbo.dll
 version=00000000

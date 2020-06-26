@@ -1,11 +1,11 @@
-﻿class CfgVehicles
+class CfgVehicles
 {
     class Static;
     class TargetBase : Static
     {
         class EventHandlers;
     };
-    
+
     class TargetP_Inf_F : TargetBase
     {
         class Attributes
@@ -20,7 +20,7 @@
                 defaultValue = "true";
             };
         };
-        
+
         class EventHandlers : EventHandlers
         {
             hitPart = "(_this select 0) spawn TB_fnc_popUpTargets";

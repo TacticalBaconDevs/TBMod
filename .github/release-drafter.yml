@@ -19,10 +19,10 @@ change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
 template: |
   ## Changes
   $CHANGES
-  
+
   ## Contributors
   $CONTRIBUTORS
-  
+
 #replacers:
   # Category titles
   #- search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED|TRANSLATIONS):\*\*)/g'
