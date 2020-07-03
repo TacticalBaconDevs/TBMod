@@ -171,21 +171,24 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
                     if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
                     {
                         private _playerFPS = _x getVariable ["TB_clientFPS", -1];
-
-                        drawIcon3D
-                        [
-                            "",
-                            [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
-                            getPosVisual _x,
-                            1,
-                            2,
-                            0,
-                            format ["FPS: %1", _playerFPS],
-                            0,
-                            [0.04, 0.06] select (_playerFPS < 20),
-                            "PuristaMedium",
-                            "center"
-                        ];
+                        
+                        if (_playerFPS > 0) then
+                        {
+                            drawIcon3D
+                            [
+                                "",
+                                [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
+                                getPosVisual _x,
+                                1,
+                                2,
+                                0,
+                                format ["FPS: %1", _playerFPS],
+                                0,
+                                [0.05, 0.08] select (_playerFPS < 20),
+                                "PuristaMedium",
+                                "center"
+                            ];
+                        };
                     };
                 }
                 forEach allPlayers;
