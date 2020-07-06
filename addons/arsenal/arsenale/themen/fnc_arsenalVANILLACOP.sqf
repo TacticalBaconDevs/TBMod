@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -41,7 +41,7 @@ private _allgemein = [
 
     // SR-Funke
     "TFAR_anprc152",
-    
+
     // Sonstiges
     "ARP_Objects_moneya_m",
     "ARP_Objects_money_m",

@@ -1,4 +1,4 @@
-// TBModExtension_x64.dll und TBModExtension_Inheritance.dll neben Arma3.exe packen (ACHTUNG DANACH WIEDER LÖSCHEN, sonst wird nicht mehr aus TBMOd genutzt)
+// TBModExtension_x64.dll und TBModExtension_Inheritance.dll neben Arma3.exe packen (ACHTUNG DANACH WIEDER Lï¿½SCHEN, sonst wird nicht mehr aus TBMOd genutzt)
 // Wenn Vanilla Daten erfasst werden sollen ist der TBMod und die ExtensionCallback nicht da also Funktion selber reinladen:
 TBExt_addConfig = {
     params ['_config'];

@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )

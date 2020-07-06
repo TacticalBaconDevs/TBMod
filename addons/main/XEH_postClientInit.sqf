@@ -35,6 +35,6 @@ enableSaving [false, false];
     [] call FUNC(firstJoin);
     [nil, false] call FUNC(safe);
 
-    TB_init_done = true;
-    publicVariableServer "TB_init_done";
+    GVAR(initDone) = true;
+    publicVariableServer QGVAR(initDone);
 }] call CBA_fnc_addEventHandler;

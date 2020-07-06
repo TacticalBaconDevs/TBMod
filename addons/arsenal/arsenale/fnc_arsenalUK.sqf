@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -351,7 +351,7 @@ private _aaat_munition = [
     "rhs_mag_maaws_HE",
     "rhs_fgm148_magazine_AT",
     "rhs_fim92_mag",
-    "rhs_mag_smaw_SR"    
+    "rhs_mag_smaw_SR"
 ];
 
 private _gepaeck_mittel = [

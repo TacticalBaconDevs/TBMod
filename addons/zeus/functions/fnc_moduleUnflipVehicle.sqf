@@ -11,20 +11,14 @@
  * None
  *
  * Example:
- * _logic call TB_zeus_fnc_moduleUnflipVehicle
+ * _logic call TBMod_zeus_fnc_moduleUnflipVehicle
  */
 params ["_logic", "", "_activated"];
 
-if !(local _logic) exitWith {true};
-private _pos = getPos _logic;
+if (!local _logic || !_activated) exitWith {true};
 private _target = attachedTo _logic;
 deleteVehicle _logic;
-if !(_activated) exitWith {true};
-if (isNull _target) exitWith {systemChat "[TBMod_zeus] No vehicle selected"; true};
 
-switch (true) do
-{
-    case (isNull _target): {[objNull, "nothing selected"] call bis_fnc_showCuratorFeedbackMessage};
-    case (!alive _target): {[objNull, "target is destroyed"] call bis_fnc_showCuratorFeedbackMessage};
-    default {_target remoteExec [QFUNC(unflipVehicle), _target]};
-};
+if (!alive _target) exitWith {systemChat "[TBMod_zeus] No vehicle selected"; true};
+
+_target remoteExec [QFUNC(unflipVehicle), _target];

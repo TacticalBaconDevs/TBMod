@@ -1,11 +1,11 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 params ["_target", "_player", "_params"];
 
-private _items = (_target nearEntities [["ReammoBox_F", "ACE_Wheel", "ACE_Track"], 5]) select {!(_x isKindOf "TB_supply_base" || _x isKindOf "TB_arsenal_base")};
+private _items = (_target nearEntities [["ReammoBox_F", "ACE_Wheel", "ACE_Track", "TB_Land_PlasticCase_01_small_F", "TB_Land_PlasticCase_01_medium_F"], 7]) select {!(_x isKindOf "TB_supply_base" || _x isKindOf "TB_arsenal_base")};
 
 // Add children to this action
 private _actions = [];

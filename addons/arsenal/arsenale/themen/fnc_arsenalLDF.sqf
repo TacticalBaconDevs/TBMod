@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -45,13 +45,13 @@ private _allgemein = [
     "G_AirPurifyingRespirator_02_black_F",
     "G_AirPurifyingRespirator_01_F",
     "G_RegulatorMask_F",
-    
+
     // Pistole
     "hgun_Pistol_heavy_01_green_F",
     "optic_mrd_black",
     "muzzle_snds_acp",
     "11Rnd_45ACP_Mag",
-    
+
     // Rucksäcke
     "B_CombinationUnitRespirator_01_F",
     "B_SCBA_01_F",
@@ -73,13 +73,13 @@ private _allgemein = [
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
 
-    // NV 
+    // NV
     "O_NVGoggles_grn_F",
     "NVGoggles_tna_F",
     "ACE_NVG_Gen2",
     "NVGoggles_INDEP",
 
-    // Visire 
+    // Visire
     "optic_erco_snd_f",
     "optic_erco_khk_f",
     "optic_erco_blk_f",
@@ -91,7 +91,7 @@ private _allgemein = [
     "optic_ico_01_sand_f",
     "optic_ico_01_black_f",
     "optic_ico_01_camo_f",
-    
+
     // Attachments
     "muzzle_snds_65_ti_ghex_f",
     "muzzle_snds_65_ti_blk_f",
@@ -138,7 +138,7 @@ private _allgemein_Uniform = [
     "U_I_E_Uniform_01_officer_F",
     "U_I_E_Uniform_01_tanktop_F",
     "U_I_E_Uniform_01_shortsleeve_F",
-    "U_I_E_CBRN_Suit_01_EAF_F"    
+    "U_I_E_CBRN_Suit_01_EAF_F"
 ];
 
 private _allgemein_Westen = [
@@ -196,7 +196,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
-            
+
         ]
     };
 
@@ -221,12 +221,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Magazine +
         [
-            // Waffen 
+            // Waffen
             "arifle_MSBS65_GL_sand_F",
             "arifle_MSBS65_GL_black_F",
             "arifle_MSBS65_GL_camo_F",
 
-            // Munition 
+            // Munition
             "1Rnd_HE_Grenade_shell",
             "ACE_HuntIR_M203",
             "3Rnd_Smoke_Grenade_shell_precise"
@@ -249,7 +249,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "200Rnd_65x39_cased_Box_Tracer",
             "200Rnd_65x39_cased_Box_Red",
 
-            // Attachments 
+            // Attachments
             "bipod_01_f_khk",
             "bipod_03_f_blk"
         ]
@@ -310,7 +310,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
-            // Drohne 
+            // Drohne
             "I_E_UAV_01_backpack_F",
             "I_E_UGV_02_Demining_backpack_F",
             "I_E_UGV_02_Science_backpack_F",
@@ -337,7 +337,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_MSBS65_Mark_black_F",
             "arifle_MSBS65_Mark_camo_F",
 
-            // Magazine 
+            // Magazine
             "6Rnd_12Gauge_Pellets",
             "6Rnd_12Gauge_Slug",
 
@@ -385,7 +385,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "MRAWS_HE_F"
         ]
     };
-    
+
     case "pionier":
     {
         _allgemein +
@@ -394,13 +394,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
-        [   
+        [
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
 
-            
-            // Drohne 
+
+            // Drohne
             "I_E_UGV_02_Demining_backpack_F",
             "I_E_UGV_02_Science_backpack_F",
             "I_E_UavTerminal",
@@ -408,7 +408,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Westen
             "V_CarrierRigKBT_01_heavy_EAF_F",
             "V_CarrierRigKBT_01_heavy_Olive_F",
-            
+
             // Items
             "MineDetector",
             "ACE_wirecutter",
@@ -418,7 +418,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Minensucher
             "ACE_VMH3",
-            "ACE_VMM3"            
+            "ACE_VMM3"
         ]
     };
 
