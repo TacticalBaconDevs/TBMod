@@ -5,13 +5,21 @@
     Ansprechpartner: IDarky
 */
 private _allgemein = [
+
     // Gesichtsbedeckung
     "G_Bandanna_tan",
     "G_Bandanna_khk",
     "G_Bandanna_oli",
     "G_Bandanna_blk",
-    "gm_gc_army_facewear_schm41m",
     "gm_ge_facewear_m65",
+    "gm_headgear_foliage_summer_grass_01",
+    "gm_headgear_foliage_summer_grass_02",
+    "gm_headgear_foliage_summer_grass_03",
+    "gm_headgear_foliage_summer_grass_04",
+    "gm_headgear_foliage_summer_forest_01",
+    "gm_headgear_foliage_summer_forest_02",
+    "gm_headgear_foliage_summer_forest_03",
+    "gm_headgear_foliage_summer_forest_04",
 
     // Pistolen + Munition
     "gm_lp1_blk",
@@ -39,6 +47,8 @@ private _allgemein = [
     "ACE_wirecutter",
     //"ACE_Flashlight_XL50",
     "gm_df7x40_blk",
+    "gm_ferod16_oli",
+    "gm_ferod16_win",
     "ACE_MapTools",
     "ACE_RangeTable_82mm",
     "gm_watch_kosei_80",    // Uhr
@@ -58,6 +68,8 @@ private _allgemein = [
     // Visiere
     "gm_feroz24_blk",
     "gm_feroz24_des",
+    "gm_c79a1_oli",
+    "gm_c79a1_blk",
     //"gm_pgo7v_blk",
 
     //Granaten
@@ -80,9 +92,8 @@ private _allgemein_Uniform = [
     "gm_ge_army_uniform_soldier_parka_80_ols",
     "gm_ge_bgs_uniform_soldier_80_smp",
 
-    "gm_gc_army_uniform_soldier_80_win",
-    "gm_gc_army_uniform_soldier_80_str",
-    "gm_gc_army_uniform_soldier_80_blk",
+    "gm_xx_uniform_soldier_bdu_80_wdl",
+    "gm_xx_uniform_soldier_bdu_rolled_80_wdl",
 
     "gm_dk_army_uniform_soldier_84_oli",
     "gm_dk_army_uniform_soldier_84_win",
@@ -117,13 +128,25 @@ private _allgemein_Helm = [
 private _allgemein_Waffen = [
     "gm_g3a3_oli",
     "gm_g3a3_grn",
-    "gm_mpiak74n_brn"
+    "gm_g3a3_blk",
+    "gm_c7a1_oli",
+    "gm_c7a1_blk"
+
 ];
 
 private _allgemein_Magazine = [
-    "gm_30Rnd_545x39mm_B_7N6_ak74_prp",
     "gm_20Rnd_762x51mm_B_T_DM21A1_g3_blk",
-    "gm_20Rnd_762x51mm_AP_DM151_g3_blk"
+    "gm_20Rnd_762x51mm_AP_DM151_g3_blk",
+    "gm_30Rnd_556x45mm_B_T_M856_stanag_gry",
+    "gm_30Rnd_556x45mm_B_M855_stanag_gry"
+];
+
+private _Magazine_MP = [
+    "gm_30Rnd_9x19mm_B_DM51_mp5_blk",
+    "gm_30Rnd_9x19mm_B_DM51_mp5a3_blk",
+    "gm_30Rnd_9x19mm_B_DM11_mp5a3_blk",
+    "gm_30Rnd_9x19mm_B_DM11_mp5_blk",
+    "gm_25Rnd_9x18mm_B_pst_pm63_blk"
 ];
 
 private _items = [];
@@ -258,6 +281,38 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"
         ]
     };
+    case "pilot":
+    {
+        _allgemein +
+        _LR +
+        _Magazine_MP +
+        [
+            // Uniform
+           "gm_ge_pol_uniform_pilot_rolled_grn",
+           "gm_ge_pol_uniform_pilot_grn",
+
+           // Weste 
+           "gm_ge_army_vest_pilot_pads_oli",
+           "gm_ge_army_vest_pilot_oli",
+
+           // Helm
+           "gm_ge_headgear_sph4_oli",
+           "gm_ge_headgear_beret_crew_bdx_paratrooper",
+           "gm_ge_headgear_headset_crew_oli",
+           "gm_ge_headgear_beret_bdx_armyaviation",
+
+           // Waffen
+           "gm_pm63_blk",
+           "gm_mp5sd3_blk",
+           "gm_mp5sd2_blk",
+           "gm_mp5a2_blk",
+           "gm_mp5a3_blk",
+
+           // Schalldämpfer für pm63
+           "gm_suppressor_safloryt_blk"
+        ]
+    };
+
     case "pionier":
     {
         _allgemein +
@@ -269,6 +324,50 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Westen
            "gm_ge_army_vest_80_demolition",
+
+            // Items
+            "MineDetector",
+            "ACE_wirecutter",
+            "ACE_Clacker",
+            "ACE_M26_Clacker",
+            "ACE_DefusalKit",
+            "gm_repairkit_01",
+
+            // Minensucher
+            "ACE_VMH3",
+            "ACE_VMM3",
+
+            // Minen
+            "gm_mine_at_dm21",
+            "gm_mine_at_tm46",
+            "gm_explosive_petn_charge",
+            "gm_explosive_plnp_charge",
+            "gm_mine_ap_dm31"
+        ]
+    };
+
+    case "jtac":            // Panzer Besatzung
+    {
+        _allgemein +
+        _allgemein_Uniform +
+        _Magazine_MP +
+        _LR +
+        [
+            // Helme
+            "gm_ge_headgear_beret_blk_armor",
+            "gm_ge_headgear_crewhat_80_blk",
+            "gm_ge_headgear_beret_crew_blk_armor",
+
+            // Waffen
+           "gm_mp5sd3_blk",
+           "gm_mp5sd2_blk",
+           "gm_mp5a2_blk",
+           "gm_mp5a3_blk",
+
+
+            // Westen
+            "gm_ge_army_vest_pilot_oli",
+            "gm_ge_army_vest_pilot_pads_oli",
 
             // Items
             "MineDetector",
