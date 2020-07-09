@@ -8,7 +8,7 @@ if !(call FUNC(isTBMission)) exitWith {};
 enableEnvironment [false, true];
 enableSaving [false, false];
 
-if (GVAR(crashHelfer)) then {[true] spawn FUNC(crashHelferServer)};
+if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
 
 // Zeus im Spiel erstellen
 [
@@ -24,7 +24,7 @@ if (GVAR(crashHelfer)) then {[true] spawn FUNC(crashHelferServer)};
             _player assignCurator _moderatorModule;
             _player setVariable ["TB_Admin_Zeus", _moderatorModule, true];
 
-            ["TB_informAdminsAndZeus", ["%1 wurde zum Zeus", name _player]] call CBA_fnc_globalEvent; // Admin Info Broadcast
+            ["TB_informAdminsAndZeus", ["%1 wurde zum Zeus", [_player] call ace_common_fnc_getName]] call CBA_fnc_globalEvent; // Admin Info Broadcast
             "Zeus wurde erstellt!" remoteExec ["systemChat", _player];
         };
     }
@@ -41,4 +41,4 @@ if (GVAR(crashHelfer)) then {[true] spawn FUNC(crashHelferServer)};
     1800
 ] call CBA_fnc_addPerFrameHandler;
 
-["CBA_loadingScreenDone", {TB_init_done = true}] call CBA_fnc_addEventHandler;
+["CBA_loadingScreenDone", {GVAR(initDone) = true}] call CBA_fnc_addEventHandler;

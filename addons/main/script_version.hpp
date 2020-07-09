@@ -4,4 +4,4 @@
 */
 #define MAJOR 2
 #define MINOR 0
-#define PATCHLVL 22
+#define PATCHLVL 25

@@ -7,12 +7,12 @@
 */
 params ["_logic", "", "_activated"];
 
-if !(local _logic) exitWith {true};
+if (!local _logic || !_activated) exitWith {true};
 private _pos = getPos _logic;
 private _unit = attachedTo _logic;
 deleteVehicle _logic;
-if !(_activated) exitWith {true};
-if (isNull _unit) exitWith {systemChat "[TBMOD_zeus] No vehicle selected"; true};
+
+if (!alive _unit) exitWith {systemChat "[TBMOD_zeus] No vehicle selected"; true};
 
 private _cfg = configFile >> "CfgVehicles" >> (typeOf _unit) >> "ace_cargo_space";
 private _currentSpace = _unit getVariable ["ace_cargo_space", getNumber _cfg];

@@ -13,8 +13,7 @@ class CfgPatches
             "TBMod_main",
             "rhsusf_main",
             "rhsusf_main_loadorder",
-            "TBMod_skins",
-            "TBMod_config"
+            "TBMod_skins"
         };
 
         vehicles[] = {

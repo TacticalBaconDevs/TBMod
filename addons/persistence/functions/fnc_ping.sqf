@@ -8,7 +8,6 @@ if (!canSuspend) exitwith {"[TBMod_persistence] Ping muss mit spawn aufgerufen w
 if (isDedicated) exitwith {"[TBMod_persistence] Ping kann nicht vom Server aufgerufen werden" remoteExecCall ["systemChat"]; false};
 //if (!isDedicated && isServer) exitwith {false}; // lokal Server
 
-//systemChat "Ping started";
 GVAR(ping) = false;
 private _pingStart = CBA_missiontime;
 
@@ -20,6 +19,7 @@ private _pingStart = CBA_missiontime;
     }
 ] remoteExecCall ["call", 2];
 
+//[{GVAR(ping)}, {systemChat format ["Ping was %1 ms", (CBA_missiontime - _this) * 1000]}, _pingStart, 1, {systemChat "Ping timed out after 1s"}] call CBA_fnc_waitUntilAndExecute;
 waitUntil {GVAR(ping) || (CBA_missiontime - _pingStart) >= 1};
 private _rtt = CBA_missiontime - _pingStart;
 

@@ -1,4 +1,4 @@
-﻿class Cfg3DEN
+class Cfg3DEN
 {
     class Object
     {
@@ -8,7 +8,7 @@
             {
                 displayName = "TB Ausbildung";
                 collapsed = 1;
-                
+
                 class Attributes
                 {
                     class TB_ausbildung_popUpTargets

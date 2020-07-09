@@ -29,6 +29,7 @@ class CfgLoadouts
             {"ACE_quikclot", 4},
             {"ACE_morphine", 1}
         };
+        face[] = {};
         postLoadout = "systemchat 'Hi'";
     };
 
@@ -39,7 +40,7 @@ class CfgLoadouts
     class Allblufor : All {
         uniform[] = {"U_B_Protagonist_VR"};
     };
-    
+
     class Allind : All {
         uniform[] = {"U_I_Protagonist_VR"};
     };

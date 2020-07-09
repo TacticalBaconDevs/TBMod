@@ -17,7 +17,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["MedicSystemCoef", "Bestimmt die Zeiten für medizinische Aktionen (kleiner = weniger Zeit)"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0.1, 2, 1, 1]
+    [0.1, 2, 1, 1],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -26,7 +27,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "FatalDamageSource Player",
     ["TBMod", QUOTE(COMPONENT)],
     [[0, 1, 2, 3, 4], ["Only large hits to vital organs", "Sum of trauma", "Either", "No Fatals", "ACE_VALUE"], 4],
-    false,
+    1,
     {
         if (_this < 4 && !isDedicated) then {player setVariable ["ace_medical_fatalDamageSource", _this, true]};
     }
@@ -37,7 +38,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["selfTreatMalus", "Wie viel Prozent MEHR Zeit braucht eine Selbstbehandlung"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.4, 2]
+    [0, 2, 0.4, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -45,7 +47,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["saniBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein Sani"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.1, 2]
+    [0, 2, 0.1, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -53,7 +56,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["arztBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein Arzt"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.3, 2]
+    [0, 2, 0.3, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -61,7 +65,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["vehicleBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein MedicalFahrzeug"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.1, 2]
+    [0, 2, 0.1, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
@@ -69,16 +74,17 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     "SLIDER",
     ["facilityBoost", "Wie viel Prozent SCHNELLER von der Zeit her ist ein MedicalGebäude"],
     ["TBMod", QUOTE(COMPONENT)],
-    [0, 2, 0.3, 2]
+    [0, 2, 0.3, 2],
+    1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(healthRegen),
     "CHECKBOX",
     ["healthRegen", "Wenn man volle Ausdauer hat und ruhig steht, regeniert man leicht Blut und genähte Wunden/Prellungen werden geschlossen"],
-    "TBMod",
+    ["TBMod", QUOTE(COMPONENT)],
     true,
-    false,
+    1,
     {
         if (_this) then
         {
@@ -159,13 +165,13 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     call compile preprocessFileLineNumbers "z\ace\addons\medical\dev\debugDisplay.sqf";
     call compile preprocessFileLineNumbers "z\ace\addons\medical\dev\watchVariable.sqf";
 
-    ["ace_medical_FatalVitals", {(format ["%1 -> FatalVitals damit im %2", name _this, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState]) remoteExecCall ["systemChat"]}] call CBA_fnc_addEventHandler;
-    ["ace_medical_Bleedout", {(format ["%1 -> Bleedout damit im %2", name _this, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState]) remoteExecCall ["systemChat"]}] call CBA_fnc_addEventHandler;
-    ["ace_medical_FatalInjury", {(format ["%1 -> FatalInjury damit im %2", name _this, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState]) remoteExecCall ["systemChat"]}] call CBA_fnc_addEventHandler;
+    ["ace_medical_FatalVitals", {(format ["%1 -> FatalVitals damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState]) remoteExecCall ["systemChat"]}] call CBA_fnc_addEventHandler;
+    ["ace_medical_Bleedout", {(format ["%1 -> Bleedout damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState]) remoteExecCall ["systemChat"]}] call CBA_fnc_addEventHandler;
+    ["ace_medical_FatalInjury", {(format ["%1 -> FatalInjury damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState]) remoteExecCall ["systemChat"]}] call CBA_fnc_addEventHandler;
 
-    [QGVAR(FatalInjuryHead), {systemChat (format ["%1 -> FatalInjuryHead damit im %2", name _this, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
-    [QGVAR(FatalInjuryBody), {systemChat (format ["%1 -> FatalInjuryBody damit im %2", name _this, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
-    [QGVAR(FatalInjuryTrauma), {systemChat (format ["%1 -> FatalInjuryTrauma damit im %2", name _this, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
+    [QGVAR(FatalInjuryHead), {systemChat (format ["%1 -> FatalInjuryHead damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
+    [QGVAR(FatalInjuryBody), {systemChat (format ["%1 -> FatalInjuryBody damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
+    [QGVAR(FatalInjuryTrauma), {systemChat (format ["%1 -> FatalInjuryTrauma damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
 #endif
 
 ADDON = true;

@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -8,7 +8,6 @@ params ["_unit"];
 if (!alive _unit || !local _unit) exitWith {};
 
 _unit setVariable ["acex_headless_blacklist", true, true];
-waitUntil {time > 0 && !isNil "TB_init_done"};
 
 private _objs = (nearestObjects [_unit, [], 2]) select {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "acex_sitting_canSit") == 1};
 if (_objs isEqualTo []) then {(nearestTerrainObjects [_unit, [], 2]) select {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "acex_sitting_canSit") == 1}};

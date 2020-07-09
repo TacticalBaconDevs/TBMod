@@ -26,7 +26,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         _x setCombatMode "BLUE";
         _x setUnitPos (selectRandom ["UP", "MIDDLE"]);
         [_x, "MOVE"] remoteExecCall ["disableAI", _x];
-        _x spawn {uiSleep 1; [_this, "MOVE"] remoteExecCall ["disableAI", _this]};
+        [{[_this, "PATH"] remoteExecCall ["disableAI", _this]}, _x, 1] call CBA_fnc_waitAndExecute;
         _x setVariable ["Vcm_Disable", true, true];
     }
     forEach _syncObjs;

@@ -5,12 +5,11 @@
 */
 params ["_logic", "", "_activated"];
 
-if !(local _logic) exitWith {true};
-private _pos = getPos _logic;
+if (!local _logic || !_activated) exitWith {true};
 private _unit = attachedTo _logic;
 deleteVehicle _logic;
-if !(_activated) exitWith {true};
-if (isNull _unit || !alive _unit) exitWith {true};
+
+if (!alive _unit) exitWith {true};
 
 [_unit, ""] remoteExecCall ["switchMove"];
 

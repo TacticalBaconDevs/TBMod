@@ -2,8 +2,6 @@
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    based on ideas by: KokaKolaA3
 */
 params [
     ["_buildingName", "", [""]],
@@ -35,74 +33,79 @@ _building setPosASL (AGLToASL _pos);
 [_building, _resourcen] call FUNC(initItemBig);
 [_building, true, [0, _attachPos, 0], _specialDir, true] call ace_dragging_fnc_setCarryable;
 
-waitUntil {_building distance2D _pos < 10};
-[ACE_player, _building] call ace_dragging_fnc_startCarry;
-waitUntil {ACE_player getVariable ["ace_dragging_isCarrying", false]};
+[{
+    params ["_building", "_pos"];
+    _building distance2D _pos < 10
+}, {
+    params ["_building"];
+    [ACE_player, _building] call ace_dragging_fnc_startCarry;
 
-if (isNil "TB_building_displayEH") then
-{
-    TB_building_displayEH = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", {
-        params ["", "_key"];
-
-        private _carrayobj = ACE_player getVariable ["ace_dragging_carriedObject", objNull];
-        if (_key != 1 || isNull _carrayobj) exitWith {};
-
-        _carrayobj setVariable ["TB_building_abbruch", true, true];
-        [ACE_player, _carrayobj] call ace_dragging_fnc_dropObject_carry;
-    }];
-};
-
-[_building, _zeit, _truck, _resourcen] spawn
-{
-    params ["_building", "_zeit", "_truck", "_resourcen"];
-
-    ["Bauen", "Abbrechen", "Heben/Senken"] call ace_interaction_fnc_showMouseHint;
-    waitUntil {
-        if (ACE_player distance _truck > 20) then
+    [{ACE_player getVariable ["ace_dragging_isCarrying", false]}, {
+        if (isNil QGVAR(displayEH)) then
         {
-            private _carrayobj = ACE_player getVariable ["ace_dragging_carriedObject", objNull];
-            if (isNull _carrayobj) exitWith {};
+            // TODO: wieder deaktivieren?!?!?
+            GVAR(displayEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", {
+                params ["", "_key"];
 
-            _carrayobj setVariable ["TB_building_abbruch", true, true];
-            [ACE_player, _carrayobj] call ace_dragging_fnc_dropObject_carry;
+                private _carrayobj = ACE_player getVariable ["ace_dragging_carriedObject", objNull];
+                if (_key != 1 || isNull _carrayobj) exitWith {};
+
+                _carrayobj setVariable ["TB_building_abbruch", true, true];
+                [ACE_player, _carrayobj] call ace_dragging_fnc_dropObject_carry;
+            }];
         };
 
-        !(ACE_player getVariable ["ace_dragging_isCarrying", false])
-    };
+        ["Bauen", "Abbrechen", "Heben/Senken"] call ace_interaction_fnc_showMouseHint;
 
-    [_building, false] call ace_dragging_fnc_setCarryable;
-    [_building, true] remoteExecCall ["hideObjectGlobal", [0, -2] select isDedicated];
+        [{
+            params ["", "", "", "", "_truck"];
+            if (ACE_player distance _truck > 20) then
+            {
+                private _carrayobj = ACE_player getVariable ["ace_dragging_carriedObject", objNull];
+                if (isNull _carrayobj) exitWith {};
 
-    if !(_building getVariable ["TB_building_abbruch", false]) then {[ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation};
+                _carrayobj setVariable ["TB_building_abbruch", true, true];
+                [ACE_player, _carrayobj] call ace_dragging_fnc_dropObject_carry;
+            };
 
-    [
-        _zeit,
-        [_building, _truck, _resourcen],
-        {
-            (_this select 0) params ["_building", "_truck", "_resourcen"];
+            !(ACE_player getVariable ["ace_dragging_isCarrying", false])
+        }, {
+            params ["_building", "", "_zeit"];
+            [_building, false] call ace_dragging_fnc_setCarryable;
+            [_building, true] remoteExecCall ["hideObjectGlobal", [0, -2] select isDedicated];
 
-            [ACE_player, "", 1] call ace_common_fnc_doAnimation;
+            if !(_building getVariable ["TB_building_abbruch", false]) then {[ACE_player, "AinvPknlMstpSnonWrflDnon_medic"] call ace_common_fnc_doAnimation};
 
-            [_building, false] remoteExecCall ["hideObjectGlobal", [0, -2] select isDedicated];
+            [
+                _zeit,
+                _this,
+                {
+                    (_this # 0) params ["_building"];
 
-            if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
-            TB_persistent_buildings pushBack [_building, true];
-            publicVariable "TB_persistent_buildings";
-        },
-        {
-            (_this select 0) params ["_building", "_truck", "_resourcen"];
+                    [ACE_player, "", 1] call ace_common_fnc_doAnimation;
 
-            _truck setVariable ["TBMod_Building_resourcenCargo", (_truck getVariable ["TBMod_Building_resourcenCargo", 0]) + _resourcen, true];
+                    [_building, false] remoteExecCall ["hideObjectGlobal", [0, -2] select isDedicated];
 
-            [ACE_player, "", 1] call ace_common_fnc_doAnimation;
-            deleteVehicle _building;
-        },
-        "Baue",
-        {
-            (_this select 0) params ["_building", "_truck", "_resourcen"];
-            ACE_player distance _truck < 20 && !(_building getVariable ["TB_building_abbruch", false])
-        },
-        ["isnotdead", "isnotinside", "isnothandcuffed", "isnotsurrendering", "isnotswimming", "isnotonladder", "isnotunconscious", "isnotrefueling", "isnotescorting", "isnotdragging", "isnotsitting"]
-        // Alle Exceptions: ["isnotdead", "notonmap","isnotinside","isnotinzeus","isnotswimming","isnotonladder","isnotunconscious","isnotrefueling","isnotescorting","isnothandcuffed","isnotsurrendering","isnotdragging","isnotcarrying","isnotsitting"]
-    ] call ace_common_fnc_progressBar;
-};
+                    if (isNil "TB_persistent_buildings") then {TB_persistent_buildings = []};
+                    TB_persistent_buildings pushBack [_building, true];
+                    publicVariable "TB_persistent_buildings";
+                },
+                {
+                    (_this # 0) params ["_building", "", "", "_resourcen", "_truck"];
+
+                    _truck setVariable ["TBMod_Building_resourcenCargo", (_truck getVariable ["TBMod_Building_resourcenCargo", 0]) + _resourcen, true];
+
+                    [ACE_player, "", 1] call ace_common_fnc_doAnimation;
+                    deleteVehicle _building;
+                },
+                "Baue",
+                {
+                    (_this # 0) params ["_building", "", "", "", "_truck"];
+                    ACE_player distance _truck < 20 && !(_building getVariable ["TB_building_abbruch", false])
+                },
+                ["isnotdead", "isnotinside", "isnothandcuffed", "isnotsurrendering", "isnotswimming", "isnotonladder", "isnotunconscious", "isnotrefueling", "isnotescorting", "isnotdragging", "isnotsitting"]
+                // Alle Exceptions: ["isnotdead", "notonmap","isnotinside","isnotinzeus","isnotswimming","isnotonladder","isnotunconscious","isnotrefueling","isnotescorting","isnothandcuffed","isnotsurrendering","isnotdragging","isnotcarrying","isnotsitting"]
+            ] call ace_common_fnc_progressBar;
+        }, _this] call CBA_fnc_waitUntilAndExecute;
+    }, _this] call CBA_fnc_waitUntilAndExecute;
+}, [_building, _pos, _zeit, _resourcen, _truck]] call CBA_fnc_waitUntilAndExecute;

@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -9,12 +9,7 @@ ace_microdagr_settingUseMils = true;
 // ### Gras entfernen - Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {
     private _zerschneider = createVehicle ["Land_ClutterCutter_medium_F", ACE_player modelToWorld [0, 2.7, 0], [], 0, "CAN_COLLIDE"];
-
-    [_zerschneider] spawn {
-        params ["_zerschneider"];
-        uiSleep 2;
-        deleteVehicle _zerschneider;
-    };
+    [{deleteVehicle _this}, _zerschneider, 2] call CBA_fnc_waitAndExecute;
 }, {true}] call ace_interact_menu_fnc_createAction;
 [ACE_player, 1, ["ACE_SelfActions", "ACE_Equipment"], _grasAction] call ace_interact_menu_fnc_addActionToObject;
 
@@ -42,7 +37,7 @@ forEach (configProperties [configFile >> "CfgVehicles", "isClass _x && {getNumbe
 
 
 // BuildAbfrage
-//waitUntil {!isNil "TB_serverBuild"};
+//waitUntil {!isNil "TB_serverBuild"}; // wenn dann CBA_fnc_waitUntilAndExecute
 productVersion params ["", "", "", "_buildNumber", "", "", "", "_architecture"];
 
 //if (_buildNumber < TB_serverBuild) then
@@ -155,6 +150,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
     }
 ] call CBA_fnc_addEventHandler;
 
+
 // ### FPS Infos
 [{
     if (GVAR(fpsMonitor_client)) then
@@ -166,41 +162,37 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
     };
 
-    if (GVAR(fpsMonitor_zeus)) then
+    if (GVAR(fpsMonitor_zeus) && {player in (call BIS_fnc_listCuratorPlayers)} && {!isNull (findDisplay 312)}) then
     {
-        if (player in (call BIS_fnc_listCuratorPlayers) && {!isNull (findDisplay 312)}) then
+        if (isNil "TB_fpsMonitor_id") then
         {
-            if (isNil "TB_fpsMonitor_id") then
-            {
-                TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+            TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+                {
+                    if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
                     {
-                        if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
+                        private _playerFPS = _x getVariable ["TB_clientFPS", -1];
+                        
+                        if (_playerFPS > 0) then
                         {
-                            private _playerFPS = _x getVariable ["TB_clientFPS", -1];
-
                             drawIcon3D
                             [
                                 "",
-                                [1, 0, 0, [0.5, 0.7] select (_playerFPS < 20)],
+                                [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
                                 getPosVisual _x,
                                 1,
                                 2,
                                 0,
                                 format ["FPS: %1", _playerFPS],
                                 0,
-                                [0.03, 0.05] select (_playerFPS < 20),
+                                [0.05, 0.08] select (_playerFPS < 20),
                                 "PuristaMedium",
                                 "center"
                             ];
                         };
-                    }
-                    forEach allPlayers;
-                }];
-            };
-        }
-        else
-        {
-            if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
+                    };
+                }
+                forEach allPlayers;
+            }];
         };
     }
     else
@@ -210,16 +202,9 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 }, 5] call CBA_fnc_addPerFrameHandler;
 
 
-// TODO: gibts nicht mehr
-// ### CPR/HLW Stuff
-//["adv_aceCPR_evh_CPR_local", {
-//    params ["_caller", "_target"];
-//    if ([_target] call adv_aceCPR_fnc_isResurrectable) then {_target setVariable [QGVAR(cprBoost), (_target getVariable [QGVAR(cprBoost), 0]) + 5]};
-//}] call CBA_fnc_addEventHandler;
-
-
 // ### block Codeexec
 ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
+
 
 // ### dance for me
 [
@@ -231,6 +216,6 @@ ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
         "Time2Dance",
         "",
         {[player, [selectRandom ["Acts_Dance_01", "Acts_Dance_02"], ""] select (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")] remoteExecCall ["switchMove"]},
-        {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable ["TB_danceTime", false]} != -1 || (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")}
+        {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable [QGVAR(danceTime), false]} != -1 || (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")}
     ] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;

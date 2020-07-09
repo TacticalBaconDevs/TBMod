@@ -690,7 +690,7 @@ _SetFiredHandler =
         "FiredMan",
         {
             params ["_unit", "", "", "", "_a", "", "_projectile"];
-        
+
             if (0 != {_a isKindOf _x} count MISSLETYPES) then
             {
                 GCam_O = _projectile;
@@ -942,12 +942,12 @@ _ListObjects =
         {
             {
                 if (((crew(_ol select 0)) select 0) != _x) then { _tx_crewname = _tx_crewname + ", " };
-                _tx_crewname = _tx_crewname + format["%1", name _x];
+                _tx_crewname = _tx_crewname + format["%1", [_x] call ace_common_fnc_getName];
             } forEach (crew _x);
         }
         else
         {
-            _tx_crewname = name _x;
+            _tx_crewname = [_x] call ace_common_fnc_getName;
         };
 
         lbAdd[ 50, format[ "%3%1 : %2%4", getText( configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName" ), _tx_crewname, _tx_addspace, _tx_gn ] ];
@@ -995,7 +995,7 @@ _CreateGroupMarker =
     {
         if (alive _x) then
         {
-            _ma_mn = format["%1%2%3",typeOf _x, rankId _x, name _x];
+            _ma_mn = format["%1%2%3",typeOf _x, rankId _x, [_x] call ace_common_fnc_getName];
 
             createMarkerLocal[ _ma_mn, [ visiblePositionASL _x select 0, visiblePositionASL _x select 1 ] ];
             _ma_mn setMarkerShapeLocal "ICON";
@@ -1054,7 +1054,7 @@ _CreateGroupMarker2 =
         if (_x iskindof "Animal") then
         { _ma_gmn setMarkerTextLocal format["%1 : 1", getText( configFile >> "CfgVehicles" >> (typeOf(vehicle _x)) >> "displayName" )] }
         else
-        { _ma_gmn setMarkerTextLocal format["%1 : %2 : %3", getText( configFile >> "CfgVehicles" >> (typeOf(vehicle _x)) >> "displayName" ), name _x, count units group _x] };
+        { _ma_gmn setMarkerTextLocal format["%1 : %2 : %3", getText( configFile >> "CfgVehicles" >> (typeOf(vehicle _x)) >> "displayName" ), [_x] call ace_common_fnc_getName, count units group _x] };
 
         _ma_gmnl = _ma_gmnl + [_ma_gmn];
     } forEach _ma_ol;
@@ -1513,7 +1513,7 @@ _SmoothMove =
             {
                 if (alive _x) then
                 {
-                    _ma_mn = format["%1%2%3",typeOf _x, rankId _x, name _x];
+                    _ma_mn = format["%1%2%3",typeOf _x, rankId _x, [_x] call ace_common_fnc_getName];
                     _ma_op = visiblePositionASL _x;
                     _ma_mn setMarkerPosLocal [_ma_op select 0, _ma_op select 1];
 
@@ -1533,7 +1533,7 @@ _SmoothMove =
                 }
                 else
                 {
-                    deleteMarkerLocal format["%1%2%3",typeOf _x, rankId _x, name _x];
+                    deleteMarkerLocal format["%1%2%3",typeOf _x, rankId _x, [_x] call ace_common_fnc_getName];
                 };
             } forEach _ma_gu;
         };
@@ -2330,12 +2330,12 @@ _ResetCamera =
     {
         {
             if (((crew _o) select 0) != _x) then { _tx_crewname = _tx_crewname + ", " };
-            _tx_crewname = _tx_crewname + format["%1", name _x];
+            _tx_crewname = _tx_crewname + format["%1", [_x] call ace_common_fnc_getName];
         } forEach (crew _o);
     }
     else
     {
-        _tx_crewname = name _o;
+        _tx_crewname = [_o] call ace_common_fnc_getName;
     };
 
     if (SHOWUNITNAME) then { titleText[ format[ "%1 : %2\n%3", getText( configFile >> "CfgVehicles" >> (typeOf _o) >> "displayName" ), _tx_crewname, group _o], "plain down", _w*40 ] };
@@ -3273,7 +3273,7 @@ while {_l} do
             {
                 if (alive _x) then
                 {
-                    _ma_mn = format["%1%2%3",typeOf _x, rankId _x, name _x];
+                    _ma_mn = format["%1%2%3",typeOf _x, rankId _x, [_x] call ace_common_fnc_getName];
                     _ma_op = visiblePositionASL _x;
                     _ma_mn setMarkerPosLocal [_ma_op select 0, _ma_op select 1];
 
@@ -3293,7 +3293,7 @@ while {_l} do
                 }
                 else
                 {
-                    deleteMarkerLocal format["%1%2%3",typeOf _x, rankId _x, name _x];
+                    deleteMarkerLocal format["%1%2%3",typeOf _x, rankId _x, [_x] call ace_common_fnc_getName];
                 };
             } forEach _ma_gu;
         };
@@ -3317,7 +3317,7 @@ while {_l} do
 <t color='#8a8aff'>weaponDirection</t>: %35<br/>
 <t color='#8a8aff'>currentWeapon</t>: %36 <t color='#8a8aff'>currentMuzzle</t>: %37 <t color='#8a8aff'>currentWeaponMode</t>: %38 <t color='#8a8aff'>currentVisionMode</t>: %39<br/>
 <t color='#8a8aff'>ammo</t>: %40 <t color='#8a8aff'>someAmmo</t>: %41 <t color='#8a8aff'>reloadEnabled</t>: %42 <t color='#8a8aff'>needReload</t>: %43<br/>",
-                    name _o, getText( configFile >> "CfgVehicles" >> (typeOf _o) >> "displayName" ), typeOf _o, side _o, faction _o, score _o,
+                    [_o] call ace_common_fnc_getName, getText( configFile >> "CfgVehicles" >> (typeOf _o) >> "displayName" ), typeOf _o, side _o, faction _o, score _o,
                     rankId _o, rank _o, skill _o, morale _o, rating _o, simulationEnabled _o, isFormationLeader _o,
                     alive _o, lifeState _o, damage _o, handsHit _o, canStand _o,
                     unitPos _o, isWalking _o, isForcedWalk _o, isHidden _o, fleeing _o, captive _o, captiveNum _o,

@@ -34,3 +34,6 @@ PREP(uniqueArray);
 PREP(upDown);
 
 PREP_OTHERFOLDER(showGCAM,gcam);
+
+// Tests
+PREP_OTHERFOLDER(test,tests);

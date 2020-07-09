@@ -1,12 +1,14 @@
-﻿#include "script_component.hpp"
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 if !(call FUNC(isTBMission)) exitWith {};
 
-// initalisiert die TB Rolle nach dem spawnen
-[] spawn FUNC(waitUntilLoaded);
+["CBA_loadingScreenDone", {
+    // initalisiert die TB Rolle nach dem spawnen
+    [] call FUNC(waitUntilLoaded);
+}] call CBA_fnc_addEventHandler;
 
 // Variablen
 if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};

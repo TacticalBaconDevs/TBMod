@@ -146,7 +146,7 @@ class CfgMagazines
     };
 
     class ATMine_Range_Mag;
-    class SLAMDirectionalMine_Wire_Mag : SatchelCharge_Remote_Mag // M4A1 SLAM
+    class SLAMDirectionalMine_Wire_Mag : ATMine_Range_Mag // M4A1 SLAM
     {
         mass = 22.04; // 20
     };
@@ -156,7 +156,7 @@ class CfgMagazines
         mass = 8.82; // 10
     };
 
-    class APERSMineDispenser_Mag : SLAMDirectionalMine_Wire_Mag // APERS Mine Dispenser
+    class APERSMineDispenser_Mag : SatchelCharge_Remote_Mag // APERS Mine Dispenser
     {
         mass = 77.14; // 60
     };
