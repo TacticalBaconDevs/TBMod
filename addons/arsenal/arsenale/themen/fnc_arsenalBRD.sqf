@@ -80,6 +80,8 @@ private _allgemein = [
     //Granaten
     "gm_smokeshell_wht_dm25",
     "gm_smokeshell_blk_gc",
+    "gm_smokeshell_red_dm23",
+    "gm_smokeshell_org_dm32",
     "gm_handgrenade_frag_dm51a1",
     "gm_handgrenade_frag_rgd5",
     "gm_handgrenade_conc_dm51",
