@@ -8,6 +8,7 @@ class ace_medical_treatment_actions {
     class BasicBandage {
         treatmentTime = QUOTE([ARR_2(_this,ace_medical_treatment_fnc_getBandageTime)] call FUNC(calcTreatmentTime));
     };
+
     class ApplyTourniquet: BasicBandage {
         treatmentTime = 1;
     };
@@ -55,13 +56,32 @@ class ace_medical_treatment_actions {
     };
 
     class CPR: BasicBandage {
-        treatmentTime = QUOTE([ARR_2(_this,10)] call FUNC(calcTreatmentTime)); // wird vermutlich von adv_cpr überschrieben
+        treatmentTime = QUOTE([ARR_2(_this,10)] call FUNC(calcTreatmentTime));
     };
 
     class SurgicalKit: BasicBandage {
         treatmentTime = QUOTE([ARR_2(_this,ace_medical_treatment_fnc_getStitchTime)] call FUNC(calcTreatmentTime));
     };
+
     class PersonalAidKit: BasicBandage {
         treatmentTime = QUOTE([ARR_2(_this,ace_medical_treatment_fnc_getHealTime)] call FUNC(calcTreatmentTime));
+    };
+
+    class BloodPack: SurgicalKit {
+        displayName = "Blut abnehmen";
+        displayNameProgress = "Blut wird abgenommen...";
+
+        consumeItem = 0;
+        items[] = {"ACE_surgicalKit", "ACE_personalAidKit"};
+
+        medicRequired = 1;
+        allowSelfTreatment = 0;
+        allowedSelections[] = {"LeftArm", "RightArm"};
+        condition = "true";
+
+        treatmentTime = QUOTE([ARR_2(_this,60)] call FUNC(calcTreatmentTime));
+
+        callbackProgress = "";
+        callbackSuccess = QUOTE(params ['_medic', '_patient']; _patient setVariable ['ace_medical_bloodVolume', (_patient getVariable ['ace_medical_bloodVolume', 6]) - 1, true]; _medic addItem 'ACE_bloodIV_250');
     };
 };

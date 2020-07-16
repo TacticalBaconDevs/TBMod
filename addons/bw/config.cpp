@@ -19,6 +19,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"

@@ -111,6 +111,14 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(recoilSystem),
+    "CHECKBOX",
+    "RecoilSystem",
+    ["TBMod", QUOTE(COMPONENT)],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(recoilCoef),
     "SLIDER",
     "recoilCoef",

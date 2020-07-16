@@ -5,7 +5,7 @@
 */
 if !(call FUNC(isTBMission)) exitWith {};
 
-enableEnvironment [false, true];
+enableEnvironment [true, true];
 enableSaving [false, false];
 
 if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};

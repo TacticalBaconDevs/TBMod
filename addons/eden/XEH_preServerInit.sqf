@@ -161,3 +161,41 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         }, 10, _this] call CBA_fnc_addPerFrameHandler;
     };
 }] call CBA_fnc_addEventHandler;
+
+
+[
+    QGVAR(injured),
+    "init",
+    {
+        params ["_logic"];
+
+        // Check for Objects
+        private _syncObjs = (synchronizedObjects _logic) select {!(_x isKindOf "EmptyDetector") && _x isKindOf "CAManBase"};
+        if (_syncObjs isEqualTo []) exitWith {};
+
+        // prepair Module
+        {
+            doStop _x;
+            _x setVariable ["acex_headless_blacklist", true, true];
+            _x setBehaviour "CARELESS";
+            _x setCombatMode "BLUE";
+            _x setUnitPos "DOWN";
+            [_x, true] remoteExecCall ["setCaptive", _x];
+            [_x, "PATH"] remoteExecCall ["disableAI", _x];
+            [{[_this, "PATH"] remoteExecCall ["disableAI", _this]}, _x, 2] call CBA_fnc_waitAndExecute;
+
+            //_x move [0,0,0];
+            _x getVariable ["ace_captives_isHandcuffed", true, true];
+            _x setVariable ["ace_medical_fatalDamageSource", 3, true];
+        }
+        forEach _syncObjs;
+
+        // wenn noch bei bewusstsein, dann
+        /*
+            ggf alle Medical Items wegnehmen
+        */
+    },
+    false,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
