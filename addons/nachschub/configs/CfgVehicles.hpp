@@ -280,6 +280,17 @@ class CfgVehicles
                     ADD_SUPPLY("NachtKiste",TB_supply_ldf_night);
                 };
 
+                class brd
+                {
+                    displayName = "BRD";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY("Munition",TB_supply_brd_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_brd_grena);
+                    ADD_SUPPLY("WerferMunition",TB_supply_brd_launcherAmmo);
+                };
+
                 class russ
                 {
                     displayName = "RUSS";
@@ -612,5 +623,6 @@ class CfgVehicles
     #include "CfgVehicles_BW.hpp"
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
+    #include "CfgVehicles_BRD.hpp"
     #include "CfgVehicles_RUSS.hpp"
 };

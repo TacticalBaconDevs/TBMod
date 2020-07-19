@@ -27,8 +27,8 @@ if (_arsenalType == "Themen") then
         if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
         {
             // BRD
-            TB_blacklistRollen_themen = ["sani", "spreng", "dmr", "pilot", "sniper", "spotter", "jtac", "rifle"];
-            TB_customName_themen = ["Truppführer","Schütze + DM22A1","","MG3-Schütze","","Anti-Tank","Muniträger","","","","","","Feldarzt","","Sprengspezialist"];
+            TB_blacklistRollen_themen = ["spreng", "dmr", "sniper", "spotter", "rifle"];
+            TB_customName_themen = ["Truppführer","Schütze","Kampfsanitäter","MG3-Schütze","","Anti-Tank","Muniträger","","Pilot","","","Besatzung","Feldarzt","","Sprengspezialist"];
         }
         else
         {
