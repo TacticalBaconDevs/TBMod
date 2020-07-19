@@ -248,20 +248,27 @@ private _grenadier_gewehr = [
 ];
 
 private _grenadier_munition = [
-    "1Rnd_HE_Grenade_shell",
-    "ACE_HuntIR_M203",
-    "1Rnd_SmokeOrange_Grenade_shell",
-    "1Rnd_SmokeBlue_Grenade_shell",
-    "1Rnd_SmokePurple_Grenade_shell",
-    "1Rnd_SmokeYellow_Grenade_shell",
-    "1Rnd_SmokeGreen_Grenade_shell",
-    "1Rnd_SmokeRed_Grenade_shell",
-    "1Rnd_Smoke_Grenade_shell",
-    "UGL_FlareCIR_F",
-    "UGL_FlareYellow_F",
-    "UGL_FlareRed_F",
-    "UGL_FlareGreen_F",
-    "UGL_FlareWhite_F"
+        // Explosiv
+        "1Rnd_HE_Grenade_shell",
+        "TB_rhs_mag_40mm_HE",
+        "TB_rhs_mag_40mm_HEDP",
+
+        // AIM Smokes
+        "3Rnd_Smoke_Grenade_shell_precise",
+        "rhs_mag_m714_White_precise",
+        "rhs_mag_m713_Red_precise",
+        "rhs_mag_m715_Green_precise",
+        "rhs_mag_m716_Yellow_precise",
+
+        // Flares
+        "TB_rhs_mag_M585_white",
+        "TB_rhs_mag_m661_green",
+        "TB_rhs_mag_m662_red",
+
+        // IR + Slug
+        "TB_rhs_mag_40mm_IR_Grenade",
+        "TB_rhs_mag_40mm_Slugshot",
+        "ACE_HuntIR_M203"
 ];
 
 private _dmr_munition = [
