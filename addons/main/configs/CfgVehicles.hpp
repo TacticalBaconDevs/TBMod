@@ -121,6 +121,7 @@ class CfgVehicles
                     ADD_RUFNAME_DETAIL(Darky, Lunar);
                     ADD_RUFNAME_DETAIL(Eron, Manta);
                     ADD_RUFNAME_DETAIL(Pingu, Hammer);
+                    ADD_RUFNAME_DETAIL(wermut91, Wedge);
                 };
             };
         };
