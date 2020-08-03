@@ -5,7 +5,8 @@
 */
 params [["_shortName", ""], ["_custom", true]];
 
-if (!(_shortName isEqualType "") || _shortName isEqualTo "") then {_shortName = ACE_player getVariable ["TB_rolle", ""]};
+if !(_shortName isEqualType "") then {_shortName = ACE_player getVariable ["TB_rolle", ""]};
+if (_shortName isEqualTo "") then {_shortName = ACE_player getVariable ["TB_rolle", ""]};
 
 // Customnames
 private _missionVar = [];
