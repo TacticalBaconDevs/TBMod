@@ -959,6 +959,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m24sws",
             "rhs_weap_m24sws_d",
             "rhs_weap_m24sws_wd",
+            
             // ### Geschützzubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
@@ -970,6 +971,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_acc_m24_silencer_d",
             "rhsusf_acc_m24_silencer_wd",
             "rhsusf_acc_harris_swivel",
+
             // ### Visiere
             "optic_ams",
             "optic_ams_khk",
@@ -986,6 +988,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spc_marksman",
             "rhsusf_plateframe_marksman",
             "rhsusf_plateframe_rifleman",
+
             // Spezial
             "ACE_Kestrel4500",
             "ACE_RangeCard",
@@ -1018,6 +1021,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_mk17_CQC",
             "rhs_weap_mk17_LB",
             "rhs_weap_mk17_STD",
+            "rhs_weap_m24sws",
+            "rhs_weap_m24sws_d",
+            "rhs_weap_m24sws_wd",
+
             // ### Visiere
             "rhsusf_acc_premier_anpvs27",
             "rhsusf_acc_premier",
@@ -1029,12 +1036,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "optic_ams",
             "optic_ams_khk",
             "optic_ams_snd",
+
             // ### Geschützzubehör
             "muzzle_snds_b",
             "muzzle_snds_b_snd_f",
             "bipod_01_f_blk",
             "bipod_01_f_snd",
             "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_m24_silencer_black",
+            "rhsusf_acc_m24_silencer_d",
+            "rhsusf_acc_m24_silencer_wd",
 
             // Uniforms
             "U_B_FullGhillie_lsh",

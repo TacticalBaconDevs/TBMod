@@ -47,9 +47,25 @@ class TB_supply_bw_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,15);
-        MACRO_ADDMAGAZINE(1Rnd_Smoke_Grenade_shell,10);
-        MACRO_ADDMAGAZINE(UGL_FlareWhite_F,3);
+        // Explosiv
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,25);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,15);
+
+        // AIM Smokes
+        MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell_precise,4);
+        MACRO_ADDMAGAZINE(rhs_mag_m714_White_precise,4);
+        MACRO_ADDMAGAZINE(rhs_mag_m713_Red_precise,2);
+        MACRO_ADDMAGAZINE(rhs_mag_m715_Green_precise,2);
+        MACRO_ADDMAGAZINE(rhs_mag_m716_Yellow_precise,2);
+
+        // Flares
+        MACRO_ADDMAGAZINE(TB_rhs_mag_M585_white,4);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_m661_green,1);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_m662_red,1);
+
+        // IR + Slug
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_IR_Grenade,2);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot,6);
         MACRO_ADDMAGAZINE(ACE_HuntIR_M203,6);
     };
 };
@@ -72,16 +88,9 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 
     class TransportWeapons
     {
-        MACRO_ADDWEAPON(BWA3_RGW90,2);
+        MACRO_ADDWEAPON(BWA3_RGW90,5);
         MACRO_ADDWEAPON(BWA3_CarlGustav,1);
         MACRO_ADDWEAPON(BWA3_Fliegerfaust,1);
-    };
-
-    class TransportMagazines
-    {
-        MACRO_ADDMAGAZINE(BWA3_RGW90_HH,2);
-        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEAT,1);
-        MACRO_ADDMAGAZINE(BWA3_Fliegerfaust_Mag,1);
     };
 };
 
@@ -92,8 +101,11 @@ class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(BWA3_RGW90_HH,2);
-        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEAT,2);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEAT,5);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEDP,3);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HE,3);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_Smoke,3);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_Illum,1);
         MACRO_ADDMAGAZINE(BWA3_Fliegerfaust_Mag,2);
     };
 };
