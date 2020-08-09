@@ -146,6 +146,65 @@ class CfgWeapons
         //picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa"; // wird in TBMod_rhs gesetzt
     };
 
+    class V_PlateCarrierGL_rgr;
+    class V_PlateCarrierGL_mtp : V_PlateCarrierGL_rgr
+    {
+        class ItemInfo;
+    };
+    class TB_vest_sps_ocp : V_PlateCarrierGL_mtp // SPS Schutzweste in OCP Tier 4
+    {
+        class ItemInfo : ItemInfo
+        {
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 39; // 16
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.3
+                };
+                class Arms
+                {
+                    armor = 25; // 8
+                    hitpointName = "HitArms";
+                    passThrough = 0.3; // 0.5
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.1; // 0.6
+                };
+                class Chest
+                {
+                    armor = 39; // 78
+                    hitpointName = "HitChest";
+                    passThrough = 0.1; // 0.6
+                };
+                class Diaphragm
+                {
+                    armor = 39; // 78
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.1; // 0.6
+                };
+                class Neck
+                {
+                    armor = 28; // 8
+                    hitpointName = "HitNeck";
+                    passThrough = 0.3; // 0.5
+                };
+                class Pelvis
+                {
+                    armor = 31; // 16
+                    hitpointName = "HitPelvis";
+                    passThrough = 0.2; // 0.3
+                };
+            };
+            mass = 286.52; // 100
+        };
+        descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
+        displayName = "SPS Tier 4 (OCP)"; // "Carrier GL Rig (MTP)"
+    };
+
     class GMG_F;
     class GMG_40mm : GMG_F
     {

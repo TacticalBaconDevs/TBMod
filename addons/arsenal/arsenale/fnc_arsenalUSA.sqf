@@ -259,6 +259,7 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
     "tb_weap_taser",
+    "hgun_Pistol_heavy_02_F",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
     // ### Geschützzubehör
@@ -269,7 +270,8 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_mag_15Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
-    "TB_mag_taser"
+    "TB_mag_taser",
+    "TB_mag_45_FMJ"
 ];
 
 private _allgemein_uniformen = [
@@ -297,7 +299,8 @@ private _allgemein_westen = [
     "UCP_Black_01",
     "MBAV_Black_01",
     "MBAV_Black_02",
-    "TB_vest_sps_ucp"
+    "TB_vest_sps_ucp",
+    "TB_vest_sps_ocp"
 ];
 
 private _allgemein_kopfbedeckung = [
