@@ -296,7 +296,9 @@ private _pilot_munition = [
 
 private _sniper_munition = [
     "BWA3_10Rnd_127x99_G82_Raufoss",
-    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim"
+    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim",
+    "BWA3_10Rnd_86x70_G29",
+    "BWA3_10Rnd_86x70_G29_Tracer"
 ];
 
 private _aaat_munition = [
@@ -654,6 +656,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "BWA3_G82",
+            "BWA3_G29",
             "BWA3_MP7",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
@@ -664,6 +667,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "bwa3_optic_hensoldt",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
+            "bwa3_muzzle_snds_rotex_monoblock",
 
             // Uniforms
             "BWA3_Uniform_Ghillie_Tropen",

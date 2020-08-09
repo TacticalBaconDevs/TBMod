@@ -78,6 +78,8 @@ class TB_supply_bw_spezial : WRAPPER_NAME(Box_East_Wps_F)
     {
         MACRO_ADDMAGAZINE(BWA3_10Rnd_127x99_G82,10);
         MACRO_ADDMAGAZINE(BWA3_10Rnd_127x99_G82_AP,5);
+        MACRO_ADDMAGAZINE(BWA3_10Rnd_86x70_G29,10);
+        MACRO_ADDMAGAZINE(BWA3_10Rnd_86x70_G29_Tracer,10);
     };
 };
 
