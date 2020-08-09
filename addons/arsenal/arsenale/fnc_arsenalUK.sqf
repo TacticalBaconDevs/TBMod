@@ -460,7 +460,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _lrFunken +
         [
-
             // Handwaffen
             "rhs_weap_M320",
             // Ferngläser

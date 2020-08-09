@@ -155,7 +155,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
                         _prellungsId != -1,
                         !isNil "_stitched",
                         _updateBodyPartVisuals] call EFUNC(main,debug);
-            }, 3 * 60] call CBA_fnc_addPerFrameHandler;
+            }, 60] call CBA_fnc_addPerFrameHandler;
         };
     }
 ] call CBA_fnc_addSetting;
@@ -178,6 +178,8 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     //[false, 2] call ace_medical_feedback_fnc_effectUnconscious;
     //ace_common_OldIsCamera = true;
 
+    // ZEUS - Einheiten ignorieren
+
     // CamOverHead
     if (GVAR(unconsciousMode) == 1) then
     {
@@ -195,7 +197,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         else
         {
             _unit switchCamera "INTERNAL";
-            GVAR(cam) CameraEffect ["Terminate", "Back"];
+            GVAR(cam) cameraEffect ["Terminate", "Back"];
             camDestroy GVAR(cam);
             GVAR(cam) = null;
         };
@@ -206,6 +208,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     {
         if (_unconscious) then
         {
+            // TODO: sieht alles derzeit
             [[_unit], []] call ace_spectator_fnc_updateUnits;
             [[side _unit], _unit call BIS_fnc_enemySides] call ace_spectator_fnc_updateSides;
             [[2], [0,1]] call ace_spectator_fnc_updateCameraModes;
@@ -219,6 +222,15 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
         };
     };
 }] call CBA_fnc_addEventHandler;
+
+["unit", {
+    params ["_new"];
+
+    if (GVAR(unconsciousMode) == 2 && !(_new getVariable ["ACE_isUnconscious", false])) then
+    {
+        [false, false, false] call ace_spectator_fnc_setSpectator;
+    };
+}] call CBA_fnc_addPlayerEventHandler;
 
 
 // DEBUG Code
