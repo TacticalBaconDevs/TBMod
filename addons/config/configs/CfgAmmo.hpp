@@ -208,6 +208,13 @@ class CfgAmmo
         indirectHitRange = 4.5; // 3
     };
 
+    class B_45ACP_Ball;
+    class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
+    {
+        hit = 21; // 8
+        caliber = 1.4; // 1
+    };
+
     class B_30mm_HE;
     class B_40mm_GPR : B_30mm_HE // 40mm GPR
     {

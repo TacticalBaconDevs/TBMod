@@ -204,4 +204,12 @@ class CfgMagazines
         count = 24;
         initSpeed = 241; // 80
     };
+
+    class 6Rnd_45ACP_Cylinder;
+    class TB_mag_45_FMJ : 6Rnd_45ACP_Cylinder // 45. FMJ Magazin
+    {
+        ammo = "TB_45_FMJ";
+        displayName = "45. cal FMJ";
+        displayNameShort = "45. cal FMJ";
+    };
 };

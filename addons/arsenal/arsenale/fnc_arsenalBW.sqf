@@ -187,6 +187,7 @@ private _allgemein_handfeuerwaffen = [
     // Handfeuerwaffen
     "BWA3_P2A1",
     "BWA3_P8",
+    "hgun_Pistol_heavy_02_F",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -196,6 +197,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_1Rnd_Flare_Multistar_Green",
     "BWA3_1Rnd_Flare_Multistar_Red",
     "BWA3_15Rnd_9x19_P8",
+    "TB_mag_45_FMJ",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
