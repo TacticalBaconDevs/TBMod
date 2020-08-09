@@ -160,6 +160,79 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     }
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(unconsciousMode),
+    "LIST",
+    "unconsciousMode",
+    ["TBMod", QUOTE(COMPONENT)],
+    [[0, 1, 2], ["Vanilla", "CamOverHead", "Spectator"], 0],
+    1
+] call CBA_fnc_addSetting;
+
+["ace_unconscious", {
+    params ["_unit", "_unconscious"];
+
+    if (GVAR(unconsciousMode) == 0 || {_unit != ACE_player}) exitWith {};
+
+    //[true] call FUNC(handleEffects);
+    //[false, 2] call ace_medical_feedback_fnc_effectUnconscious;
+    //ace_common_OldIsCamera = true;
+
+    // ZEUS - Einheiten ignorieren
+
+    // CamOverHead
+    if (GVAR(unconsciousMode) == 1) then
+    {
+        if (_unconscious && isNil QGVAR(cam)) then
+        {
+            ACE_player setVariable ["ace_medical_feedback_effectUnconsciousTimeout", CBA_missionTime + (10 * 60)];
+
+            GVAR(cam) = "camera" camCreate (getPos _unit);
+            GVAR(cam) camSetTarget _unit;
+            GVAR(cam) cameraEffect ["internal", "BACK"];
+            GVAR(cam) camSetRelPos [0, 0, 3];
+            GVAR(cam) camCommit 0;
+            showCinemaBorder false;
+        }
+        else
+        {
+            _unit switchCamera "INTERNAL";
+            GVAR(cam) cameraEffect ["Terminate", "Back"];
+            camDestroy GVAR(cam);
+            GVAR(cam) = null;
+        };
+    };
+
+    // Spectator
+    if (GVAR(unconsciousMode) == 2) then
+    {
+        if (_unconscious) then
+        {
+            // TODO: sieht alles derzeit
+            [[_unit], []] call ace_spectator_fnc_updateUnits;
+            [[side _unit], _unit call BIS_fnc_enemySides] call ace_spectator_fnc_updateSides;
+            [[2], [0,1]] call ace_spectator_fnc_updateCameraModes;
+            [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
+            [2, _unit, -2] call ace_spectator_fnc_setCameraAttributes;
+            [true, true, false] call ace_spectator_fnc_setSpectator;
+        }
+        else
+        {
+            [false, false, false] call ace_spectator_fnc_setSpectator;
+        };
+    };
+}] call CBA_fnc_addEventHandler;
+
+["unit", {
+    params ["_new"];
+
+    if (GVAR(unconsciousMode) == 2 && !(_new getVariable ["ACE_isUnconscious", false])) then
+    {
+        [false, false, false] call ace_spectator_fnc_setSpectator;
+    };
+}] call CBA_fnc_addPlayerEventHandler;
+
+
 // DEBUG Code
 #ifdef DEBUG_MODE_FULL
     call compile preprocessFileLineNumbers "z\ace\addons\medical\dev\debugDisplay.sqf";

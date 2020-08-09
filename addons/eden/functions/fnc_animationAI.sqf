@@ -3,10 +3,18 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params ["_unit", "_value"];
+params ["_unit", ["_value", ""], ["_forceStart", false]];
 
 if (!alive _unit || _value == "") exitWith {};
+// Im 3den erste Position zeigen
+if (is3DEN) exitWith {_unit switchMove _value};
+// Auf Bereitschaft warten
+if (!_forceStart && isNil QEGVAR(main,initDone)) exitWith
+{
+    [{!isNil QEGVAR(main,initDone)}, {_this call FUNC(animationAI)}, [_unit, _value, true]] call CBA_fnc_waitUntilAndExecute;
+};
 
+// Funktionalitäten
 [_unit, "ANIM"] remoteExec ["disableAI", _unit];
 [_unit, "PATH"] remoteExec ["disableAI", _unit];
 _unit setVariable ["acex_headless_blacklist", true, true];

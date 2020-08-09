@@ -83,7 +83,6 @@ class CfgWeapons
             mass = 71.63; // 30
         };
         displayName = "SPS (UCP)"; // Tarn-Kampfhelm
-        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_headgear_sps_ucp.paa)}; // \A3\Characters_F_Exp\BLUFOR\Data\H_HelmetB_TI_tna_F_co.paa
         picture = "\A3\Characters_F\data\ui\icon_H_Crew_Helmet_Heli_B_CA.paa";
     };
 
@@ -144,7 +143,6 @@ class CfgWeapons
         };
         descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
         displayName = "SPS Tier 4 (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
-        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_01.paa), QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_02.paa)};
         //picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa"; // wird in TBMod_rhs gesetzt
     };
 

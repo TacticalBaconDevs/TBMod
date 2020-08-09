@@ -219,3 +219,25 @@ ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
         {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable [QGVAR(danceTime), false]} != -1 || (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")}
     ] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
+
+
+// ### Highlight
+if (isNil "TB_highlightLog") then {TB_highlightLog = true};
+if (TB_highlightLog && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtension)}) then
+{
+    GVAR(highlightLog) = 1 == ('TBModExtension' callExtension ['registerlogger', ['highlight', '#HighlightLog.log']]) param [1, 0];
+
+    if (GVAR(highlightLog)) then
+    {
+        ["ace_killed", {
+            params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
+
+            if (!isNull _killer && isNull _instigator) then {_instigator = effectiveCommander _killer};
+
+            if (hasInterface && {_instigator in [player, ace_player]}) then
+            {
+                "TBModExtension" callExtension ["logger", ["highlight", "KILLED", format ["%1 durch %2", typeOf _unit, _causeOfDeath]]];
+            };
+        }] call CBA_fnc_addEventHandler;
+    };
+};

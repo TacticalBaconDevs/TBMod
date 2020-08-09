@@ -16,6 +16,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgAISkill.hpp"
 #include "configs\CfgDifficulty.hpp"
