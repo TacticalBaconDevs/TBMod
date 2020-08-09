@@ -299,7 +299,8 @@ private _allgemein_westen = [
     "UCP_Black_01",
     "MBAV_Black_01",
     "MBAV_Black_02",
-    "TB_vest_sps_ucp"
+    "TB_vest_sps_ucp",
+    "TB_vest_sps_ocp"
 ];
 
 private _allgemein_kopfbedeckung = [
