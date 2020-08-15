@@ -12,8 +12,9 @@ if (_target getVariable ['TBMod_Nachschub_kisten', -1] != -1) then
 
 private _obj = createVehicle [_item, ACE_player, [], 0, "NONE"];
 [_obj, false] remoteExecCall ["allowDamage", _obj];
+_obj setPosAsl (getPosAsl ACE_player);
 
-if (ACE_player distance _target < 3) then // && ((ACE_player getRelDir _target) + 90) mod 360 < 180
+if (ACE_player distance2D _target < 3) then // && ((ACE_player getRelDir _target) + 90) mod 360 < 180
 {
     systemChat "Du stehst zu dicht am Vorratslager!";
     deleteVehicle _obj;
