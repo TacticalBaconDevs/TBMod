@@ -187,6 +187,7 @@ private _allgemein_handfeuerwaffen = [
     // Handfeuerwaffen
     "BWA3_P2A1",
     "BWA3_P8",
+    "hgun_Pistol_heavy_02_F",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -196,6 +197,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_1Rnd_Flare_Multistar_Green",
     "BWA3_1Rnd_Flare_Multistar_Red",
     "BWA3_15Rnd_9x19_P8",
+    "TB_mag_45_FMJ",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
@@ -296,7 +298,9 @@ private _pilot_munition = [
 
 private _sniper_munition = [
     "BWA3_10Rnd_127x99_G82_Raufoss",
-    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim"
+    "BWA3_10Rnd_127x99_G82_Raufoss_Tracer_Dim",
+    "BWA3_10Rnd_86x70_G29",
+    "BWA3_10Rnd_86x70_G29_Tracer"
 ];
 
 private _aaat_munition = [
@@ -654,6 +658,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gewehre
             "BWA3_G82",
+            "BWA3_G29",
             "BWA3_MP7",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
@@ -664,6 +669,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "bwa3_optic_hensoldt",
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
+            "bwa3_muzzle_snds_rotex_monoblock",
 
             // Uniforms
             "BWA3_Uniform_Ghillie_Tropen",
