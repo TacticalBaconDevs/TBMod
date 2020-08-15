@@ -244,7 +244,7 @@ if (TB_highlightLog && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtensio
 
 
 // ### Vehicle in Vehicle
-GVAR(vehicle2vehicle) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Air", "ReammoBox_F", "Cargo_base_F", "Land_CargoBox_V1_F", "StaticWeapon"];
+GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Air", "ReammoBox_F", "Cargo_base_F", "Land_CargoBox_V1_F", "StaticWeapon"];
 [
     "Car",
     "init",
@@ -284,7 +284,7 @@ GVAR(vehicle2vehicle) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Sh
                             _actions pushBack [_action, [], _target];
                         };
                     }
-                    forEach (nearestObjects [_target, GVAR(vehicle2vehicle), 100]);
+                    forEach (nearestObjects [_target, GVAR(vehicleTransport), 10]);
 
                     _actions
                 },
