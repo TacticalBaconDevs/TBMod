@@ -211,4 +211,27 @@ class CfgWeapons
         magazines[] += {"TB_Smoke_Grenades"};
     };
 
+    class HelmetBase;
+    class H_Watchcap_blk : HelmetBase
+    {
+        class ItemInfo;
+    };
+    class TB_headgear_beanie_eric : H_Watchcap_blk // Beanie (Eric)
+    {
+        class ItemInfo : ItemInfo
+        {
+            class HitpointsProtectionInfo
+            {
+                class Head
+                {
+                    armor = 6; // 0
+                    hitpointName = "HitHead";
+                    passThrough = 0.5; // 1
+                };
+            };
+            mass = 24; // 6
+        };
+        displayName = "Beanie (Eric)";
+    };
+
 };

@@ -199,3 +199,20 @@ fnc_backpack = {
 };
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
+
+// Check ob ein Fahrzeug per VehicleTransport transportiert werden kann
+private _vehicle = createVehicle ["---FILLME---", [0,0,0], [], 0, "CAN_COLLIDE"];
+if (true) then {_vehicle setMass 1};
+private _vehicles = ("getNumber (_x >> 'scope') == 2 && {isClass (_x >> 'VehicleTransport' >> 'Carrier')} && {(configName _x) isKindof 'AllVehicles'}" configClasses (configFile >> "CfgVehicles")) apply {configName _x};
+private _result = [];
+
+{
+    private _carrier = createVehicle [_x, [0,0,0], [], 0, "CAN_COLLIDE"];
+    if ((_carrier canVehicleCargo _vehicle) # 0) then {_result pushBack (typeOf _carrier)};
+    deleteVehicle _carrier;
+}
+forEach _vehicles;
+
+deleteVehicle _vehicle;
+[_result, count _vehicles]
+
