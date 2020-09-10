@@ -140,7 +140,6 @@ class CfgAmmo
     class B_762x51_Ball;
     class B_762x51_Minigun_Tracer_Red_splash : B_762x51_Ball // 7.62mm Miniguns Helis
     {
-        caliber = 5.04; // 3.6
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
         explosive = 0.2; // 0
         hit = 4.64; // 11.6

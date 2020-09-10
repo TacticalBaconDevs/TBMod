@@ -364,7 +364,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Items
             "MineDetector",
-            "ACE_wirecutter",
             "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
@@ -406,7 +405,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "MineDetector",
-            "ACE_wirecutter",
             "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",

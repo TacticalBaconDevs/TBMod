@@ -637,7 +637,6 @@ _items append (switch (_rolle) do
             "ACE_DefusalKit",
             "ToolKit",
             "UNS_TrapKit",
-            "ACE_wirecutter",
 
             // Rucksack
             "UNS_Alice_LRP2"

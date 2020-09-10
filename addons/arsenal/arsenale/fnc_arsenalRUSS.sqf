@@ -47,6 +47,7 @@ private _allgemein = [
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
     "ACE_IR_Strobe_Item",
+    "ACE_wirecutter",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
     "ACE_Chemlight_IR",
@@ -676,7 +677,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
-            "ACE_wirecutter",
             // ### Minen
             "DemoCharge_Remote_Mag",
             "SatchelCharge_Remote_Mag",
@@ -782,7 +782,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ACE_wirecutter",
             "ToolKit"
         ]
     };
