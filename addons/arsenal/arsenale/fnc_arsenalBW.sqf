@@ -235,7 +235,7 @@ private _allgemein_westen = [
     "BWA3_Vest_Rifleman_Multi",
     "BWA3_Vest_JPC_Rifleman_Fleck",
     "BWA3_Vest_JPC_Rifleman_Tropen",
-    "BWA3_Vest_JPC_Rifleman_Tropen",
+    "BWA3_Vest_JPC_Rifleman_Multi",
     "BWA3_Vest_JPC_Radioman_Fleck",
     "BWA3_Vest_JPC_Radioman_Tropen",
     "BWA3_Vest_JPC_Radioman_Multi"
@@ -291,14 +291,11 @@ private _dmr_munition = [
     "BWA3_20Rnd_762x51_G28", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_Tracer_Dim", //G27 und G28 Patrol
-    "BWA3_20Rnd_762x51_G28_AP", //G27 und G28 Patrol
     "BWA3_20Rnd_762x51_G28_SD", //G27 und G28 Patrol
     "BWA3_10Rnd_762x51_G28",
-    "BWA3_10Rnd_762x51_G28_AP",
     "BWA3_10Rnd_762x51_G28_Tracer_Dim",
     "BWA3_10Rnd_762x51_G28_Tracer",
-    "BWA3_10Rnd_762x51_G28_SD",
-    "BWA3_10Rnd_762x51_G28_LR"
+    "BWA3_10Rnd_762x51_G28_SD"
 ];
 
 private _mg_munition = [
@@ -394,6 +391,7 @@ private _items = [];
 // _aaat_munition                    - AtiTank Munition
 // _gepaeck_mittel                    - Seesack
 // _gepaeck_gross                    - Carryall
+// _gepaeck_sehrgross                  - Kampfrucksack
 // _lrFunken                         - LR Funken
 // _moerser_munition                 - Munition für Kommandomoerser
 
@@ -417,7 +415,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Waffen
             "rhs_weap_M320",
-            
+
             // Weste
             "BWA3_Vest_Leader_Fleck",
             "BWA3_Vest_Leader_Tropen",
@@ -690,7 +688,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_westen +
         _allgemein_uniformen +
         _allgemein_kopfbedeckung +
-        _lrFunken +
+        _gepaeck_mittel +
         _sniper_munition +
         _pilot_munition +
         [
@@ -790,6 +788,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_RangeCard",
             "Laserbatteries",
             "ACE_HuntIR_monitor",
+            "ACE_Clacker",
             // ### Minen
             "APERSTripMine_Wire_Mag",
             "APERSBoundingMine_Range_Mag",
@@ -817,11 +816,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Items
-            "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
+            "B_UavTerminal",
             // ### Minen
             "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
@@ -835,7 +834,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "APERSBoundingMine_Range_Mag",
             "SLAMDirectionalMine_Wire_Mag",
             "APERSMine_Range_Mag",
-            "APERSTripMine_Wire_Mag"
+            "APERSTripMine_Wire_Mag",
+
+            // Gepäck
+            "B_UGV_02_Demining_backpack_F"
         ]
     };
 
@@ -879,11 +881,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gepäck
             "B_UAV_01_backpack_F",
+            "B_UAV_06_backpack_F",
 
             // Ferngläser
             "lerca_1200_black",
             "lerca_1200_tan",
             "Laserdesignator",
+            "ACE_Vector",
 
             // Items
             "B_UavTerminal",
@@ -924,7 +928,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ToolKit"
+            "ToolKit",
+            "ACE_M26_Clacker"
         ]
     };
 

@@ -561,7 +561,6 @@ _items append (switch (_rolle) do
             "ACE_VMM3",
 
             // Items
-            "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DeadManSwitch",
             "ACE_DefusalKit",

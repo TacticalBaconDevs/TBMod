@@ -152,6 +152,16 @@ class CfgVehicles
                         ADD_SUPPLY("BauKiste",TB_supply_all_building);
                         ADD_SUPPLY("SaniBaukiste",TB_supply_all_medicbuilding);
                     };
+
+                    class allgemeinDrohnen
+                    {
+                        displayName = "Drohnen";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("Darter",B_UAV_01_backpack_F);
+                        ADD_SUPPLY("Pelican",B_UAV_06_backpack_F);
+                        ADD_SUPPLY("Pelter",B_UGV_02_Demining_backpack_F);
+                    };
                 };
 
                 class usa
@@ -612,8 +622,9 @@ class CfgVehicles
             MACRO_ADDITEM(SLAMDirectionalMine_Wire_Mag,5);
             MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
-            MACRO_ADDITEM(ACE_M26_Clacker,5);
+            MACRO_ADDITEM(ACE_M26_Clacker,2);
             MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
+            MACRO_ADDITEM(APERSMineDispenser_Mag,2);
         };
     };
 

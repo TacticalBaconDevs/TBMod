@@ -814,7 +814,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "UK3CB_BAF_B_Bergen_MTP_Engineer_L_A",  //                        Brechstange,   Multicam
             // Items
             "ACE_M26_Clacker",
-            "ACE_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",

@@ -190,8 +190,6 @@ private _allgemein_visiere = [
     "rhsusf_acc_acog_rmr",
     "rhsusf_acc_su230",
     "rhsusf_acc_su230_c",
-    "rhsusf_acc_su230_mrds",
-    "rhsusf_acc_su230_mrds_c",
     "rhsusf_acc_eotech_552",
     "rhsusf_acc_eotech_552_d",
     "rhsusf_acc_eotech_552_wd",
@@ -963,7 +961,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m24sws",
             "rhs_weap_m24sws_d",
             "rhs_weap_m24sws_wd",
-            
+
             // ### Geschützzubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
@@ -1011,7 +1009,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
-        _lrFunken +
+        _gepaeck_mittel +
         _sniper_munition +
         _dmr_munition +
         _allgemein_uniformen +
@@ -1175,10 +1173,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_M26_Clacker",
-            "ACE_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
+            "B_UavTerminal",
             // ### Minen
             "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
@@ -1192,7 +1190,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "APERSBoundingMine_Range_Mag",
             "SLAMDirectionalMine_Wire_Mag",
             "APERSMine_Range_Mag",
-            "APERSTripMine_Wire_Mag"
+            "APERSTripMine_Wire_Mag",
+
+            // Gepäck
+            "B_UGV_02_Demining_backpack_F"
         ]
     };
 
@@ -1249,6 +1250,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gepäck
             "B_UAV_01_backpack_F",
+            "B_UAV_06_backpack_F",
 
             // Ferngläser
             "lerca_1200_black",
@@ -1263,9 +1265,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
             "rhsusf_plateframe_rifleman",
-
-            // Experiment
-            "B_UAV_06_backpack_F", // UAV Bag (AL-6) [NATO]
 
             // Items
             "B_UavTerminal",
@@ -1306,7 +1305,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ToolKit"
+            "ToolKit",
+            "B_UavTerminal",
+
+            // Gepäck
+            "B_UGV_02_Demining_backpack_F"
         ]
     };
 

@@ -91,8 +91,8 @@ class TB_supply_bw_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 
     class TransportWeapons
     {
-        MACRO_ADDWEAPON(BWA3_RGW90,5);
-        MACRO_ADDWEAPON(BWA3_PzF3_Tandem_Loaded,5);
+        MACRO_ADDWEAPON(BWA3_RGW90,4);
+        MACRO_ADDWEAPON(BWA3_PzF3_Tandem_Loaded,2);
     };
 };
 
