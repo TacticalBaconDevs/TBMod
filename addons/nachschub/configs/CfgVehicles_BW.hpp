@@ -104,9 +104,10 @@ class TB_supply_bw_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEAT,5);
-        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEDP,3);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_HEDP,2);
         MACRO_ADDMAGAZINE(BWA3_CarlGustav_HE,2);
         MACRO_ADDMAGAZINE(BWA3_Fliegerfaust_Mag,4);
+        MACRO_ADDMAGAZINE(BWA3_CarlGustav_Smoke,2);
     };
 };
 
