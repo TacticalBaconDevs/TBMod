@@ -50,8 +50,8 @@ private _allgemein = [
     "SFG_Tac_ChopsO",
 
     // Nachtsichtgeräte
-    "NVGoggles",
-    "NVGoggles_INDEP",
+    "rhsusf_ANPVS_14",
+    "rhsusf_ANPVS_15",
 
     // Ferngläser
     "Binocular",
@@ -541,6 +541,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_HuntIR_monitor"
         ]
     };
+
+    case "dmr": {[]};
 
     case "mg":
     {
