@@ -212,7 +212,7 @@ class CfgAmmo
         explosionEffects = "MortarExplosion"; // "ATRocketExplosion"
         explosive = 1; // 0.65
         indirectHit = 30; // 19
-        indirectHitRange = 15; // 4.1
+        indirectHitRange = 8; // 4.1
         hit = 50; // 145
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
