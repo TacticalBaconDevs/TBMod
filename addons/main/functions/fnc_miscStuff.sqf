@@ -192,6 +192,30 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
                     };
                 }
                 forEach allPlayers;
+
+                /*{
+                    if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
+                    {
+                        if ((units _x) findIf {isPlayer _x} == -1) then
+                        {
+                            drawIcon3D
+                            [
+                                "",
+                                [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
+                                getPosVisual _x,
+                                1,
+                                2,
+                                0,
+                                format ["FPS: %1", _playerFPS],
+                                0,
+                                [0.05, 0.08] select (_playerFPS < 20),
+                                "PuristaMedium",
+                                "center"
+                            ];
+                        };
+                    };
+                }
+                forEach allGroups;*/
             }];
         };
     }
