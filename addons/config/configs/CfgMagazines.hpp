@@ -100,25 +100,68 @@ class CfgMagazines
         hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
     };
 
-    class 6Rnd_ACE_Hellfire_AGM114K;
-    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K
+    class ace_hot_1_6Rnd;
+    class ace_hot_1_PylonRack_1Rnd : ace_hot_1_6Rnd // HOT 1
     {
-        hardpoints[] = {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
     };
 
-    class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114K 3x
+    class ace_hot_1_PylonRack_3Rnd : ace_hot_1_6Rnd // HOT 1 x3
     {
-        hardpoints[] = {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
     };
 
-    class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N
+    class ace_hot_1_PylonRack_4Rnd : ace_hot_1_6Rnd // HOT 1 x4
     {
-        hardpoints[] = {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
     };
 
-    class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // AH-6 AGM-114N 3x
+    class ace_hot_2_6Rnd;
+    class ace_hot_2_PylonRack_1Rnd : ace_hot_2_6Rnd // HOT 2
     {
-        hardpoints[] = {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
+    };
+
+    class ace_hot_2_PylonRack_3Rnd : ace_hot_2_6Rnd // HOT 2 x3
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
+    };
+
+    class ace_hot_2_PylonRack_4Rnd : ace_hot_2_6Rnd // HOT 2 x4
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
+    };
+
+    class ace_hot_2MP_6Rnd;
+    class ace_hot_2MP_PylonRack_1Rnd : ace_hot_2MP_6Rnd // HOT 2MP
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
+    };
+
+    class ace_hot_2MP_PylonRack_3Rnd : ace_hot_2MP_6Rnd // HOT 2MP x3
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
+    };
+
+    class ace_hot_2MP_PylonRack_4Rnd : ace_hot_2MP_6Rnd // HOT 2MP x4
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
+    };
+
+    class ace_hot_3_6Rnd;
+    class ace_hot_3_PylonRack_1Rnd : ace_hot_3_6Rnd // HOT 3
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
+    };
+
+    class ace_hot_3_PylonRack_3Rnd : ace_hot_3_6Rnd // HOT 3 x3
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
+    };
+
+    class ace_hot_3_PylonRack_4Rnd : ace_hot_3_6Rnd // HOT 3 x4
+    {
+        hardpoints[] = {}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"};
     };
 
     class 24Rnd_PG_missiles;
