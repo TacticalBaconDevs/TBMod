@@ -578,8 +578,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "MineDetector",
-            "ACE_wirecutter",
-            "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
@@ -590,6 +588,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Minen
+            "APERSMineDispenser_Mag",
             "ATMine_Range_Mag",
             "APERSMine_Range_Mag",
             "APERSBoundingMine_Range_Mag",
@@ -673,7 +672,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "MineDetector",
             //"MCC_multiTool",
-            "ACE_wirecutter",
             "ACE_DefusalKit",
             "ToolKit",
 

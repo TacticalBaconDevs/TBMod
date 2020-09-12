@@ -127,7 +127,7 @@ class CfgWeapons
     class rhsusf_opscore_mar_fg_pelt;
     class TB_helmet_Sani_B_Grey: rhsusf_opscore_mar_fg_pelt
     {
-        displayName = "Sani USMC Urban";
+        displayName = "Sani Urban";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB01.paa),
@@ -139,7 +139,7 @@ class CfgWeapons
     //Skin Sanihelm Ranger Green
     class TB_helmet_Sani_C_Green: rhsusf_opscore_mar_fg_pelt
     {
-        displayName = "Sani Ranger Green";
+        displayName = "Sani Green";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC01.paa),

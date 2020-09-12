@@ -99,6 +99,7 @@ private _allgemein = [
     "ACE_CableTie",
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
+    "ACE_wirecutter",
     //"ACE_IR_Strobe_Item",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
@@ -116,7 +117,6 @@ private _allgemein = [
     "SmokeShellBlue",
     "rhs_mag_mk84",
     "rhs_mag_mk3a2",
-    "rhs_mag_m67",
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag"
 ];
@@ -783,7 +783,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserbatteries",
             "ACE_HuntIR_monitor",
             "ACE_DefusalKit",
-            "ACE_wirecutter",
             "ACE_Clacker", // 250m
 
             // ### Minen
@@ -815,12 +814,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "UK3CB_BAF_B_Bergen_MTP_Engineer_L_A",  //                        Brechstange,   Multicam
             // Items
             "ACE_M26_Clacker",
-            "ACE_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
-            "ACE_wirecutter",
             // ### Minen
+            "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
             "IEDUrbanBig_Remote_Mag",
             "IEDLandSmall_Remote_Mag",
@@ -917,8 +915,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ToolKit",
-            "ACE_wirecutter"
+            "ToolKit"
         ]
     };
 
