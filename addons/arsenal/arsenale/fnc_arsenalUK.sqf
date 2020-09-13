@@ -318,8 +318,7 @@ private _rifle_munition = [
     // 7.62
     "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr",
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
-    "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
-    "rhs_mag_20Rnd_SCAR_762x51_m61_ap"
+    "rhs_mag_20Rnd_SCAR_762x51_m80_ball"
 ];
 
 private _mg_munition = [
