@@ -120,10 +120,6 @@ private _allgemein_magazine = [
     "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan",
     "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
     "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_Mk262_PMAG",
-    "rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan",
-    "rhs_mag_30Rnd_556x45_Mk318_PMAG",
-    "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
 
     // Schrot
     "rhsusf_5Rnd_00Buck",
@@ -429,10 +425,7 @@ private _grenadier_gewehr = [
     "rhs_weap_m4a1_M203s",
     "rhs_weap_m4a1_M320",
     "rhs_weap_m4a1_M203s_wd",
-    "rhs_weap_mk18_m320",
-
-    // ### Handfeuerwaffe
-    "rhs_weap_M320"
+    "rhs_weap_mk18_m320"
 ];
 
 private _grenadier_munition = [
@@ -469,7 +462,6 @@ private _dmr_munition = [
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
     "rhs_mag_20Rnd_SCAR_762x51_m118_special",
-    "rhs_mag_20Rnd_SCAR_762x51_m61_ap",
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
     "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
     "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
@@ -1174,7 +1166,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
-            "ACE_DeadManSwitch",
             "ToolKit",
             "B_UavTerminal",
             // ### Minen
@@ -1306,10 +1297,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ACE_DefusalKit",
             "ToolKit",
-            "B_UavTerminal",
-
-            // Gepäck
-            "B_UGV_02_Demining_backpack_F"
+            "B_UavTerminal"
         ]
     };
 

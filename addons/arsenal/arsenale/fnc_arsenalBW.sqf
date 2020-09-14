@@ -701,7 +701,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Geschützzubehör
             "BWA3_muzzle_snds_Rotex_II",
             // ### Visiere
-            "bwa3_optic_m5xi_msr_microt2",
             "bwa3_optic_m5xi_msr",
             "bwa3_optic_hensoldt",
             "optic_yorris",
@@ -791,6 +790,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserbatteries",
             "ACE_HuntIR_monitor",
             "ACE_Clacker",
+            "ACE_DefusalKit",
             // ### Minen
             "APERSTripMine_Wire_Mag",
             "APERSBoundingMine_Range_Mag",
@@ -820,7 +820,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
-            "ACE_DeadManSwitch",
             "ToolKit",
             "B_UavTerminal",
             // ### Minen
