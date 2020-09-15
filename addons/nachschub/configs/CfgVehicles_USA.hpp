@@ -44,8 +44,7 @@ class TB_supply_usa_grena : WRAPPER_NAME(Box_IND_Grenades_F)
         MACRO_ADDMAGAZINE(SmokeShellRed,5);
         MACRO_ADDMAGAZINE(SmokeShellBlue,5);
 
-        MACRO_ADDMAGAZINE(rhs_mag_m67,10);      // Splitternade
-        MACRO_ADDMAGAZINE(rhs_mag_mk3a2,10);    // Offensivenade
+        MACRO_ADDMAGAZINE(rhs_mag_mk3a2,20);    // Offensivenade
         MACRO_ADDMAGAZINE(rhs_mag_mk84,10);     // Stannade
         MACRO_ADDMAGAZINE(B_IR_Grenade,6);      // IR-Granate
     };

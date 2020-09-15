@@ -89,6 +89,7 @@ private _allgemein = [
     "ACE_CableTie",
     "ACE_EntrenchingTool",
     "ACE_SpareBarrel",
+    "ACE_wirecutter",
     //"ACE_IR_Strobe_Item",
     // ### Chemlights
     "ACE_Chemlight_HiYellow",
@@ -106,7 +107,6 @@ private _allgemein = [
     "SmokeShellBlue",
     "rhs_mag_mk84",
     "rhs_mag_mk3a2",
-    "rhs_mag_m67",
     "B_IR_Grenade",
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag",
@@ -120,10 +120,6 @@ private _allgemein_magazine = [
     "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan",
     "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
     "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_Mk262_PMAG",
-    "rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan",
-    "rhs_mag_30Rnd_556x45_Mk318_PMAG",
-    "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
 
     // Schrot
     "rhsusf_5Rnd_00Buck",
@@ -190,14 +186,13 @@ private _allgemein_visiere = [
     "rhsusf_acc_acog_rmr",
     "rhsusf_acc_su230",
     "rhsusf_acc_su230_c",
-    "rhsusf_acc_su230_mrds",
-    "rhsusf_acc_su230_mrds_c",
     "rhsusf_acc_eotech_552",
     "rhsusf_acc_eotech_552_d",
     "rhsusf_acc_eotech_552_wd",
     "rhsusf_acc_compm4",
     "rhsusf_acc_ACOG_d",
-    "rhsusf_acc_ACOG_wd"
+    "rhsusf_acc_ACOG_wd",
+    "optic_yorris"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -430,10 +425,7 @@ private _grenadier_gewehr = [
     "rhs_weap_m4a1_M203s",
     "rhs_weap_m4a1_M320",
     "rhs_weap_m4a1_M203s_wd",
-    "rhs_weap_mk18_m320",
-
-    // ### Handfeuerwaffe
-    "rhs_weap_M320"
+    "rhs_weap_mk18_m320"
 ];
 
 private _grenadier_munition = [
@@ -470,7 +462,6 @@ private _dmr_munition = [
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
     "rhs_mag_20Rnd_SCAR_762x51_m118_special",
-    "rhs_mag_20Rnd_SCAR_762x51_m61_ap",
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
     "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
     "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
@@ -962,7 +953,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m24sws",
             "rhs_weap_m24sws_d",
             "rhs_weap_m24sws_wd",
-            
+
             // ### Geschützzubehör
             "rhsusf_acc_sr25s",
             "rhsusf_acc_sr25s_d",
@@ -1010,7 +1001,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
-        _lrFunken +
+        _gepaeck_mittel +
         _sniper_munition +
         _dmr_munition +
         _allgemein_uniformen +
@@ -1137,7 +1128,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserbatteries",
             "ACE_HuntIR_monitor",
             "ACE_DefusalKit",
-            "ACE_wirecutter",
             "ACE_Clacker", // 250m
 
             // ### Minen
@@ -1175,12 +1165,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_M26_Clacker",
-            "ACE_Clacker",
             "ACE_DefusalKit",
-            "ACE_DeadManSwitch",
             "ToolKit",
-            "ACE_wirecutter",
+            "B_UavTerminal",
             // ### Minen
+            "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
             "IEDUrbanBig_Remote_Mag",
             "IEDLandSmall_Remote_Mag",
@@ -1192,7 +1181,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "APERSBoundingMine_Range_Mag",
             "SLAMDirectionalMine_Wire_Mag",
             "APERSMine_Range_Mag",
-            "APERSTripMine_Wire_Mag"
+            "APERSTripMine_Wire_Mag",
+
+            // Gepäck
+            "B_UGV_02_Demining_backpack_F"
         ]
     };
 
@@ -1249,6 +1241,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Gepäck
             "B_UAV_01_backpack_F",
+            "B_UAV_06_backpack_F",
 
             // Ferngläser
             "lerca_1200_black",
@@ -1263,9 +1256,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
             "rhsusf_plateframe_rifleman",
-
-            // Experiment
-            "B_UAV_06_backpack_F", // UAV Bag (AL-6) [NATO]
 
             // Items
             "B_UavTerminal",
@@ -1307,7 +1297,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ACE_DefusalKit",
             "ToolKit",
-            "ACE_wirecutter"
+            "B_UavTerminal"
         ]
     };
 
