@@ -5,7 +5,7 @@
 */
 params [["_player", player]];
 
-private _blacklist = ["tfar", "used"];
+private _blacklist = ["tfar", "_used", "_pip"];
 private _msg = "";
 private _loadout = (([getUnitLoadout _player, ""] call EFUNC(main,uniqueArray)) select {_x != ""}) apply {toLower _x};
 private _arsenalType = _player getVariable ["TB_arsenalType", ""];
@@ -66,14 +66,19 @@ if (_rolle == "arzt") then
     ];
 };
 
-[_allItems] call FUNC(whitelist);
+//[_allItems] call FUNC(whitelist);
 _allItems = ((_allItems arrayIntersect _allItems) select {_x != ""}) apply {toLower _x};
 
 if !(_arsenalType in ["", "CUSTOM"]) then
 {
+    private _config = configFile >> "CfgWeapons";
     {
         private _checkItem = _x;
-        if (({_checkItem find (toLower _x) != -1} count _blacklist) <= 0 && {!(_checkItem in _allItems)}) then {_msg = format ["%1, %3[%2]", _msg, _checkItem, [_checkItem] call EFUNC(main,displayName)]};
+        if (({_checkItem find (toLower _x) != -1} count _blacklist) == 0 && {!(_checkItem in _allItems)}
+                && {({private _base = toLower (getText (_config >> _x >> "baseweapon")); _base != "" && {_base in _allItems}} count _configs) != 0}) then
+        {
+            _msg = format ["%1, %3[%2]", _msg, _checkItem, [_checkItem] call EFUNC(main,displayName)];
+        };
     }
     forEach _loadout;
 };

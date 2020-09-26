@@ -42,6 +42,7 @@ class CfgPatches
             "cba_common",
             "cba_diagnostic",
             "cba_disposable",
+            "cba_ee",
             "cba_events",
             "cba_hashes",
             "cba_help",
@@ -77,9 +78,15 @@ class CfgPatches
             // 3rd PartyMods
             "zen_main",
             "3denEnhanced",
-            //"adv_aceCPR", // TODO: wird mit ACE 3.13.* nicht mehr unterstützt
-            "acex_main",
+            "adv_aceCPR",
             "WarFXPE",
+            "acex_field_rations",
+            "acex_headless",
+            "acex_intelitems",
+            "acex_main",
+            "acex_sitting",
+            "acex_viewrestriction",
+            "acex_volume",
 
             // ACE3
             "ace_advanced_ballistics",
@@ -89,6 +96,7 @@ class CfgPatches
             "ace_aircraft",
             "ace_apl",
             "ace_arsenal",
+            "ace_artillerytables",
             "ace_atragmx",
             "ace_attach",
             "ace_backpacks",
@@ -99,11 +107,13 @@ class CfgPatches
             "ace_common",
             "ace_concertina_wire",
             "ace_cookoff",
+            "ace_csw",
             "ace_dagr",
             "ace_disarming",
             "ace_disposable",
             "ace_dogtags",
             "ace_dragging",
+            "ace_dragon",
             "ace_explosives",
             "ace_fastroping",
             "ace_fcs",
@@ -164,6 +174,7 @@ class CfgPatches
             "ace_noidle",
             "ace_noradio",
             "ace_norearm",
+            "ace_nouniformrestrictions",
             "ace_optics",
             "ace_optionsmenu",
             "ace_overheating",
@@ -207,6 +218,8 @@ class CfgPatches
         };
     };
 };
+
+PRELOAD_ADDONS;
 
 // Configs
 #include "configs\CfgMods.hpp"

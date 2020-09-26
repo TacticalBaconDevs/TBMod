@@ -16,4 +16,4 @@
     "magazines", "items", \
     "binoculars", "compass", "goggles", \
     "gps", "headgear", "map", \
-    "nvgs", "watch"]
+    "nvgs", "watch", "face"]

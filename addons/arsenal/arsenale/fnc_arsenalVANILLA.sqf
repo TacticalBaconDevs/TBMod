@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -378,7 +378,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_02_snd_F",
             "arifle_SPAR_02_khk_F",
             "LMG_03_F"
-            
+
         ]
     };
 
@@ -401,10 +401,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "B_Carryall_oucamo",
             "B_Carryall_wdl_F",
             "B_Carryall_green_F",
-            
+
             //Munition
             "20rnd_762x51_mag",
-            
+
             // AT
             "Vorona_HEAT",
             "Vorona_HE",
@@ -578,8 +578,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "MineDetector",
-            "ACE_wirecutter",
-            "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
@@ -590,6 +588,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Minen
+            "APERSMineDispenser_Mag",
             "ATMine_Range_Mag",
             "APERSMine_Range_Mag",
             "APERSBoundingMine_Range_Mag",
@@ -673,7 +672,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "MineDetector",
             //"MCC_multiTool",
-            "ACE_wirecutter",
             "ACE_DefusalKit",
             "ToolKit",
 

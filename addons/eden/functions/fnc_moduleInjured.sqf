@@ -20,18 +20,7 @@ if (!is3DEN && {_mode == "init"}) then
     if (_syncObjs isEqualTo []) exitWith {systemChat "ModuleInjured braucht gesyncte Soldaten!"};
 
     // prepair Module
-    {
-        doStop _x;
-        _x setVariable ["acex_headless_blacklist", true, true];
-        _x setBehaviour "CARELESS";
-        _x setCombatMode "BLUE";
-        _x setUnitPos "DOWN";
-        [_x, true] remoteExecCall ["setCaptive", _x];
-        [_x, "PATH"] remoteExecCall ["disableAI", _x];
-        _x spawn {uiSleep 1; [_this, "PATH"] remoteExecCall ["disableAI", _this]};
-        _x setVariable ["Vcm_Disable", true, true];
-    }
-    forEach _syncObjs;
+    // ServerPreInit -> InitPost Modul
 
     if (_isActivated) then
     {

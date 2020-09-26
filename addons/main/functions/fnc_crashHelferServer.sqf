@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -10,7 +10,7 @@ if (!GVAR(crashHelfer)) exitWith {};
 
 if (isNil "TB_disconnectCache") then
 {
-    TB_disconnectCache = []; 
+    TB_disconnectCache = [];
     publicVariable "TB_disconnectCache";
 };
 

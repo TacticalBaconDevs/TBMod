@@ -17,6 +17,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgVehicles.hpp"
 #include "configs\CfgEditorCategories.hpp"

@@ -1,17 +1,22 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params [["_shortName", ""]];
+params [["_shortName", ""], ["_custom", true]];
 
 if !(_shortName isEqualType "") then {_shortName = ACE_player getVariable ["TB_rolle", ""]};
 if (_shortName isEqualTo "") then {_shortName = ACE_player getVariable ["TB_rolle", ""]};
 
+// Customnames
 private _missionVar = [];
 private _arsenalType = ACE_player getVariable ["TB_arsenalType", ""];
-if (_arsenalType == "CUSTOM") then {_missionVar = missionNamespace getVariable ["TB_customName", []]};
-if (_arsenalType == "Themen") then {_missionVar = missionNamespace getVariable ["TB_customName_themen", []]};
+if (_custom) then
+{
+    _missionVar = missionNamespace getVariable ["TB_customName", []];
+    if (_arsenalType == "CUSTOM") then {_missionVar = missionNamespace getVariable ["TB_customName_custom", []]};
+    if (_arsenalType == "Themen") then {_missionVar = missionNamespace getVariable ["TB_customName_themen", []]};
+};
 
 switch (_shortName) do
 {
@@ -30,5 +35,4 @@ switch (_shortName) do
     case "arzt": {_missionVar param [12, "Arzt"]};
     case "rifle": {_missionVar param [13, "Waffenspezialist"]};
     case "pionier": {_missionVar param [14, "Pionier"]};
-    default {"FEHLER #201"};
 };

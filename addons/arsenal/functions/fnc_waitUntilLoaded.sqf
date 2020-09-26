@@ -1,11 +1,9 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-waitUntil {!isNull player && time > 0};
-
-private _rolle = ACE_player getVariable ['TB_rolle', ""];
+private _rolle = ACE_player getVariable ["TB_rolle", ""];
 
 if (_rolle == "") exitWith {};
 

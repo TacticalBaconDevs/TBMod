@@ -1,43 +1,39 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-private _values = missionNamespace getVariable ["#EM_Values", []];
-private _min = missionNamespace getVariable ["#EM_SMin", -60];
-private _max = missionNamespace getVariable ["#EM_SMax", 0];
-
+// nicht aktiviert oder Gerät nicht als primär
+if (!GVAR(enable) || {!GVAR(receive)}) exitWith
 {
-    if !(_x getVariable ["hasFreq", false]) then
-    {
-        _x setVariable ["hasFreq", true, true];
-        GVAR(transmitters) setVariable [(random [420, 443, 480]) toFixed 2, _x];
-    };
-}
-forEach allUnitsUAV;
+    [GVAR(transmitterPFH)] call CBA_fnc_removePerFrameHandler;
+    GVAR(transmitterPFH) = nil;
+};
 
+private _values = missionNamespace getVariable ["#EM_Values", []];
+
+// Transmitter durchgehen
 {
     private _index = _values find (parseNumber _x);
-    private _sender = GVAR(transmitters) getVariable [_x, objNull];
+    private _senders = (GVAR(transmitters) getVariable [_x, []]) select {!isNil "_x" && alive _x};
 
-    if (isNil "_sender" || isNull _sender) then
+    private _value = -100;
     {
-        GVAR(transmitters) setVariable [_x, nil];
-        if (_index != -1) then {_values set [_index + 1, -100]};
+        private _sender = _x;
+        if (_sender != ACE_player) then {_value = ([_sender] call FUNC(calcSignal)) max _value};
+    }
+    forEach _senders;
+
+    if (_index == -1) then
+    {
+        _values append [parseNumber _x, _value];
     }
     else
     {
-        _value = [_sender] call FUNC(calcSignal);
-
-        if (_index == -1) then
-        {
-            _values append [parseNumber _x, _value];
-        }
-        else
-        {
-            _values set [_index + 1, _value];
-        };
+        _values set [_index + 1, _value];
     };
+
+    [GVAR(transmitters), _x, _senders] call CBA_fnc_setVarNet;
 }
 forEach (allVariables GVAR(transmitters));
 

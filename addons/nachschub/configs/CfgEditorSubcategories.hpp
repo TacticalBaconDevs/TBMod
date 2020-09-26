@@ -41,4 +41,10 @@ class CfgEditorSubcategories
         displayName = "LDF";
         order = 93;
     };
+
+    class EdSubcat_TB_Supply_BRD
+    {
+        displayName = "BRD";
+        order = 92;
+    };
 };

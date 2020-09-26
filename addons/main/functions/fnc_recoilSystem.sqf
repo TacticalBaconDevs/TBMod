@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -6,7 +6,7 @@
 params [["_input", false, [false]]];
 
 if (GVAR(recoilCoef) == -1 && _input) then {GVAR(recoilCoef) = 1};
-if (GVAR(recoilCoef) == -1) exitWith {};
+if (GVAR(recoilCoef) == -1 || !GVAR(recoilSystem)) exitWith {};
 
 {
     ace_overheating_cacheSilencerData setVariable _x;
@@ -29,7 +29,7 @@ TB_recoilFreeze = -1;
 }] call CBA_fnc_addPlayerEventHandler;
 
 GVAR(recoilID) = ["ace_firedPlayer", {
-    if (GVAR(recoilCoef) == -1) exitWith {["ace_firedPlayer", GVAR(recoilID)] call CBA_fnc_removePlayerEventHandler};
+    if (GVAR(recoilCoef) == -1 || !GVAR(recoilSystem)) exitWith {["ace_firedPlayer", GVAR(recoilID)] call CBA_fnc_removePlayerEventHandler};
     params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
     if (toLower _weapon in ["throw", "put"]) exitWith {};

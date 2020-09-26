@@ -1,52 +1,36 @@
-﻿#include "script_component.hpp"
+#include "script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
 if !(call FUNC(isTBMission)) exitWith {};
+if (!hasInterface) exitWith {};
 
-missionNamespace setVariable ["#EM_FMin", 20];
-missionNamespace setVariable ["#EM_FMax", 530];
-
+// EM VALUES
+call FUNC(setDisplayValues);
 missionNamespace setVariable ["#EM_SMin", -60];
 missionNamespace setVariable ["#EM_SMax", 0];
-
-missionNamespace setVariable ["#EM_SelMin", 0];
-missionNamespace setVariable ["#EM_SelMax", 0];
-
 missionNamespace setVariable ["#EM_Values", []];
 
-[QUOTE(ADDON), "OnTangent", {
-    params ["_unit", "_class", "_transType", "_add", "_down"];
+// Eventhandler
+[QUOTE(ADDON), "OnTangent", LINKFUNC(tfarTransmitter), player] call TFAR_fnc_addEventHandler;
 
-    private _freq = "";
-
-    if (_transType == 0) then
-    {
-        _freq = [call TFAR_fnc_activeSwRadio, ([(call TFAR_fnc_activeSwRadio) call TFAR_fnc_getSwChannel, (call TFAR_fnc_activeSwRadio) call TFAR_fnc_getAdditionalSwChannel] select _add) + 1] call TFAR_fnc_GetChannelFrequency;
-    };
-
-    if (_transType == 1) then
-    {
-        _freq = [call TFAR_fnc_activeLrRadio, ([(call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrChannel, (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getAdditionalLrChannel] select _add) + 1] call TFAR_fnc_GetChannelFrequency;
-    };
-
-    if (_freq != "") then {GVAR(transmitters) setVariable [_freq, [nil, ACE_player] select _down]};
-}, ObjNull] call TFAR_fnc_addEventHandler;
+["MouseButtonDown", {["MouseButtonDown", _this] call FUNC(spectrumActions)}] call CBA_fnc_addDisplayHandler;
+["MouseButtonUp", {["MouseButtonUp", _this] call FUNC(spectrumActions)}] call CBA_fnc_addDisplayHandler;
+["MouseZChanged", {["MouseZChanged", _this] call FUNC(spectrumActions)}] call CBA_fnc_addDisplayHandler;
 
 ["cameraView", {
-    params ["_unit", "_mode"];
-
-    if (_mode == "GUNNER") then
-    {
-        diwako_dui_main_toggled_off = true;
-        [QGVAR(hudToggled), [diwako_dui_main_toggled_off]] call CBA_fnc_localEvent;
-    }
-    else
-    {
-        diwako_dui_main_toggled_off = false;
-        [QGVAR(hudToggled), [diwako_dui_main_toggled_off]] call CBA_fnc_localEvent;
-    };
+    diwako_dui_main_toggled_off = (_this # 1) == "GUNNER";
+    [QGVAR(hudToggled), [diwako_dui_main_toggled_off]] call CBA_fnc_localEvent;
 }] call CBA_fnc_addPlayerEventHandler;
 
-[{call FUNC(findTransmitter)}, 0] call CBA_fnc_addPerFrameHandler;
+["weapon", {
+    if (!GVAR(enable)) exitWith {};
+
+    GVAR(receive) = (_this # 1) isKindOf ["hgun_esd_01_base_F", configFile >> "CfgWeapons"];
+
+    if (GVAR(receive) && {isNil QGVAR(transmitterPFH)}) then
+    {
+        GVAR(transmitterPFH) = [LINKFUNC(findTransmitter), 0.5] call CBA_fnc_addPerFrameHandler;
+    };
+}, true] call CBA_fnc_addPlayerEventHandler;

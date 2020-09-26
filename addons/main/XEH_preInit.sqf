@@ -3,15 +3,11 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
 
 ADDON = false;
 PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
-
-// Default Values
-if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
 
 // ### RECHTE & ChatCommands
 TB_lvl3 = compileFinal (str [
@@ -27,6 +23,11 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "76561198127241859", /* Eric */
     "76561198049880123" /* Eron */
 ]));
+
+if !(call FUNC(isTBMission)) exitWith {};
+
+// Default Values
+if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
 
 // UGV Smoke Ammo
 [
@@ -79,7 +80,7 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     QGVAR(debug_lvl),
     "LIST",
     ["Debug Level", "Zeigt massig Debuginformationen an"],
-    "TBMod",
+    ["TBMod", QUOTE(COMPONENT)],
     [[0, 1, 2, 3], ["aus", "RPT", "RPT+systemChat", "RPT+systemChat+Hint"], 0]
 ] call CBA_fnc_addSetting;
 
@@ -87,23 +88,34 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "TB_inkognitoSystem",
     "CHECKBOX",
     ["Inkognito System", "Erlaubt mehre Ausrüstungen und wechsel zu zivilen Sachen"],
-    "TBMod",
-    false
+    ["TBMod", QUOTE(COMPONENT)],
+    false,
+    1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(crashHelfer),
     "CHECKBOX",
     "Crashhelfer",
-    "TBMod",
-    true
+    ["TBMod", QUOTE(COMPONENT)],
+    true,
+    1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(doorBreach),
     "CHECKBOX",
     "Door Breach",
-    "TBMod",
+    ["TBMod", QUOTE(COMPONENT)],
+    true,
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(recoilSystem),
+    "CHECKBOX",
+    "RecoilSystem",
+    ["TBMod", QUOTE(COMPONENT)],
     true
 ] call CBA_fnc_addSetting;
 
@@ -111,23 +123,25 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     QGVAR(recoilCoef),
     "SLIDER",
     "recoilCoef",
-    "TBMod",
-    [0.1, 2, 1, 1]
+    ["TBMod", QUOTE(COMPONENT)],
+    [0.1, 2, 1, 1],
+    1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(recoilStart),
     "SLIDER",
     "recoilStart",
-    "TBMod",
-    [0.1, 2, 0.5, 1]
+    ["TBMod", QUOTE(COMPONENT)],
+    [0.1, 2, 0.5, 1],
+    1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(fpsMonitor_client),
     "CHECKBOX",
     "fpsMonitor_client",
-    "TBMod",
+    ["TBMod", QUOTE(COMPONENT)],
     true
 ] call CBA_fnc_addSetting;
 
@@ -135,6 +149,8 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     QGVAR(fpsMonitor_zeus),
     "CHECKBOX",
     "fpsMonitor_zeus",
-    "TBMod",
+    ["TBMod", QUOTE(COMPONENT)],
     true
 ] call CBA_fnc_addSetting;
+
+ADDON = true;

@@ -5,7 +5,7 @@
 */
 if !(call FUNC(isTBMission)) exitWith {};
 
-enableEnvironment [false, true];
+enableEnvironment [true, true];
 enableSaving [false, false];
 
 //CBA_XEH_expectedLoadingScreens
@@ -61,15 +61,15 @@ if (GVAR(activeSimManager)) then
 ["CBA_loadingScreenDone", {
     [] call FUNC(doorBreach);
     [] call FUNC(recoilSystem);
-    [] spawn FUNC(crashHelferClient);
-    [] spawn FUNC(shortcuts);
+    [] call FUNC(crashHelferClient);
+    [] call FUNC(shortcuts);
     [] call FUNC(chatCommands);
     [] call FUNC(extremMedicMode);
-    [] spawn FUNC(miscStuff);
+    [] call FUNC(miscStuff);
     [] call FUNC(addBriefingEntries);
-    [] spawn FUNC(firstJoin);
+    [] call FUNC(firstJoin);
     [nil, false] call FUNC(safe);
 
-    TB_init_done = true;
-    publicVariableServer "TB_init_done";
+    GVAR(initDone) = true;
+    publicVariableServer QGVAR(initDone);
 }] call CBA_fnc_addEventHandler;

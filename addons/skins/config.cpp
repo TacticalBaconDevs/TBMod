@@ -32,12 +32,13 @@ class CfgPatches
         };
 
         requiredAddons[] = {
-            "TBMod_main"//,
-            //"TBMod_config"
+            "TBMod_main"
         };
         addonRootClass = "TBMod_main";
     };
 };
+
+PRELOAD_ADDONS;
 
 // Configs
 #include "configs\CfgVehicles.hpp"

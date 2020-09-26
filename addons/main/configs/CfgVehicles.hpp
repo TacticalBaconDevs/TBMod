@@ -121,6 +121,7 @@ class CfgVehicles
                     ADD_RUFNAME_DETAIL(Darky, Lunar);
                     ADD_RUFNAME_DETAIL(Eron, Manta);
                     ADD_RUFNAME_DETAIL(Pingu, Hammer);
+                    ADD_RUFNAME_DETAIL(wermut91, Wedge);
                 };
             };
         };
@@ -159,14 +160,14 @@ class CfgVehicles
                     class toLeader
                     {
                         displayName = "Truppführer";
-                        statement = QUOTE(if (leader ACE_player != ACE_player) then {[leader ACE_player] spawn FUNC(teleport)} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'});
+                        statement = QUOTE(if (leader ACE_player != ACE_player) then {[leader ACE_player] call FUNC(teleport)} else {systemChat 'Du bist Truppführer, deswegen ist das Teleporten nicht zu Dir möglich!'});
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     };
 
                     class toSpieler
                     {
                         displayName = "Kameraden";
-                        statement = QUOTE([] spawn FUNC(actionTeleportKamerad));
+                        statement = QUOTE(call FUNC(actionTeleportKamerad));
                         exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                         insertChildren = QUOTE(_this call FUNC(insertChildrenKameraden));
                     };

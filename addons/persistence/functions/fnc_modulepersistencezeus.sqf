@@ -5,9 +5,8 @@
 */
 params ["_logic", "", "_activated"];
 
-if !(local _logic) exitWith {true};
+if (!local _logic || !_activated) exitWith {true};
 deleteVehicle _logic;
-if !(_activated) exitWith {true};
 
 [
     "Persistence",
@@ -15,13 +14,13 @@ if !(_activated) exitWith {true};
         [
             "COMBO",
             ["Operation", "Auswahl ob gespeichert oder geladen werden soll."],
-            [[], ["Speichern", "Laden"], 0],
+            [[0, 1], ["Speichern", "Laden"], 0],
             true
         ],
         [
             "COMBO",
             ["Ort", "Auswahl wo gespeichert bzw her geladen werden soll."],
-            [[], ["Lokal", "Server"], 0],
+            [[0, 1], ["Lokal", "Server"], 0],
             true
         ]
     ],
@@ -32,7 +31,7 @@ if !(_activated) exitWith {true};
             _args params ["_ping"];
 
             private _save = _operation == 0;
-            private _server = _ort == 0;
+            private _server = _ort == 1;
 
             private _saves = if (_server) then
             {

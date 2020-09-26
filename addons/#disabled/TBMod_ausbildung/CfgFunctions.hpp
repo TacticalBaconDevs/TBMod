@@ -1,9 +1,9 @@
-﻿class CfgFunctions
+class CfgFunctions
 {
     class TBMod_ausbildung
     {
         tag = "TB";
-        
+
         class functions
         {
             file = "\TBMod_ausbildung\functions";

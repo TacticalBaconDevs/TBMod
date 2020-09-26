@@ -1,11 +1,9 @@
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-
-    Author: Eric
 */
 
-class cfgWeapons
+class CfgWeapons
 {
     class Uniform_Base;
     class UniformItem;
@@ -80,7 +78,7 @@ class cfgWeapons
     class TB_Uniform_IS_1_black_U: Uniform_Base
     {
         scope = 2;
-        picture = "\rhsgref\addons\rhsgref_inventoryicons\data\uniform\rhsgref_uniform_olive_ca.paa";
+        picture = "\A3\characters_f\data\ui\icon_U_B_CombatUniform_mcam_ca.paa"; // TODO: ERON DU SCHIEBER \rhsgref\addons\rhsgref_inventoryicons\data\uniform\rhsgref_uniform_olive_ca.paa
         displayName = "ISIS Uniform1 (Black)";
         author = "Eron";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
@@ -100,6 +98,21 @@ class cfgWeapons
         displayName = "Shemag Black";
         author = "Eron";
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\headgear\TB_Shemagh_black.paa)};
+    };
+
+    class H_HelmetB_TI_tna_F;
+    class TB_headgear_sps_ucp : H_HelmetB_TI_tna_F
+    {
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_headgear_sps_ucp.paa)}; // \A3\Characters_F_Exp\BLUFOR\Data\H_HelmetB_TI_tna_F_co.paa
+    };
+
+    class V_PlateCarrierIAGL_dgtl;
+    class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl
+    {
+        hiddenSelectionsTextures[] = {
+            QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_01.paa),
+            QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_02.paa)
+        };
     };
 };
 

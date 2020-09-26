@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -86,16 +86,16 @@ TB_condLaden = {
     !((nearestObjects [ACE_player, TB_inkognitoSystem_station, 7]) isEqualTo []) &&
         _currentMode != "" && !(_currentMode isEqualTo _mode)
 };
-private _actionLadenMil = ["Laden Militär", "Laden Militär", "", {["mil", false] spawn TB_umziehenFNC}, {["mil"] call TB_condLaden}] call ace_interact_menu_fnc_createAction;
+private _actionLadenMil = ["Laden Militär", "Laden Militär", "", {["mil", false] call TB_umziehenFNC}, {["mil"] call TB_condLaden}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionLadenMil] call ace_interact_menu_fnc_addActionToObject;
-private _actionLadenZivil = ["Laden Zivil", "Laden Zivil", "", {["zivil", false] spawn TB_umziehenFNC}, {["zivil"] call TB_condLaden}] call ace_interact_menu_fnc_createAction;
+private _actionLadenZivil = ["Laden Zivil", "Laden Zivil", "", {["zivil", false] call TB_umziehenFNC}, {["zivil"] call TB_condLaden}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionLadenZivil] call ace_interact_menu_fnc_addActionToObject;
 
 // Speichern
 private _condSpeichern = {!((nearestObjects [ACE_player, ["TB_arsenal_base"], 15]) isEqualTo [])};
-private _actionSpeichernMil = ["Speichern Militär", "Speichern Militär", "", {["mil", true] spawn TB_umziehenFNC}, _condSpeichern] call ace_interact_menu_fnc_createAction;
+private _actionSpeichernMil = ["Speichern Militär", "Speichern Militär", "", {["mil", true] call TB_umziehenFNC}, _condSpeichern] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionSpeichernMil] call ace_interact_menu_fnc_addActionToObject;
-private _actionSpeichernZivil = ["Speichern Zivil", "Speichern Zivil", "", {["zivil", true] spawn TB_umziehenFNC}, _condSpeichern] call ace_interact_menu_fnc_createAction;
+private _actionSpeichernZivil = ["Speichern Zivil", "Speichern Zivil", "", {["zivil", true] call TB_umziehenFNC}, _condSpeichern] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionSpeichernZivil] call ace_interact_menu_fnc_addActionToObject;
 
 systemChat "[Einstellungen] Inkognitosystem an!";

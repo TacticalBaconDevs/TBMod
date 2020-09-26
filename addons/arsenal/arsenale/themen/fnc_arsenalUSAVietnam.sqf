@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -561,7 +561,6 @@ _items append (switch (_rolle) do
             "ACE_VMM3",
 
             // Items
-            "ACE_Clacker",
             "ACE_M26_Clacker",
             "ACE_DeadManSwitch",
             "ACE_DefusalKit",
@@ -637,7 +636,6 @@ _items append (switch (_rolle) do
             "ACE_DefusalKit",
             "ToolKit",
             "UNS_TrapKit",
-            "ACE_wirecutter",
 
             // Rucksack
             "UNS_Alice_LRP2"

@@ -9,7 +9,7 @@ params ["_unit", "_array"];
 {
     _x params ["_item", "_amount"];
 
-    for "_i" from 0 to _amount do
+    for "_i" from 1 to _amount do
     {
         if (_unit canAdd _item) then {_unit addItem _item}
     };

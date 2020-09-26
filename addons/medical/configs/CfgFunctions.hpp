@@ -26,4 +26,15 @@ class CfgFunctions
             };
         };
     };
+
+    class A3
+    {
+        class Diagnostic
+        {
+            class diagAAR
+            {
+                file = QPATHTOF(replacement\fnc_diagAAR.sqf);
+            };
+        };
+    };
 };

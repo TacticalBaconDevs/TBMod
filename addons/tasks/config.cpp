@@ -16,5 +16,7 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\ExtendedEventHandlers.hpp"
