@@ -27,6 +27,7 @@ PREP(modifierFOBs);
 PREP(recoilSystem);
 PREP(safe);
 PREP(shortcuts);
+PREP(simManager);
 PREP(teleport);
 PREP(transfer);
 PREP(transferVar);
