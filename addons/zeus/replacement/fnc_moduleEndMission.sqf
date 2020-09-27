@@ -1,3 +1,4 @@
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Original by: Bohemia
@@ -17,7 +18,10 @@ if (_activated) then {
 
     
     //Add call to savestart here (maybe with setting option)
-
+    if (isNil QEGVAR(main,safeInfo)) then {
+        [true] remoteExec [QEFUNC(main,safe)];
+    };
+    
     //--- Use custom type
     _typeCustom = _logic getvariable ["TypeCustom",""];
     _win = _logic getvariable ["Win",true];
