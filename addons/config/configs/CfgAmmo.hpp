@@ -7,9 +7,9 @@ class CfgAmmo
     class Cluster_155mm_AMOS;
     class ammo_ShipCannon_120mm_HE_cluster : Cluster_155mm_AMOS // Mk45 Hammer HE Cluster
     {
-        submunitionAmmo[] = {"Mo_cluster_AP"}; // {"Mo_cluster_AP",0.93,"Mo_cluster_AP_UXO_deploy",0.07}
-        submunitionConeType[] = {"poissondisccenter",25}; // "randomcenter",35
-        triggerDistance = 300; // 200
+        submunitionAmmo[] = {"rhs_ammo_maaws_HE"}; // {"Mo_cluster_AP",0.93,"Mo_cluster_AP_UXO_deploy",0.07}
+        submunitionConeType[] = {"poissondisccenter",20}; // "randomcenter",35
+        triggerDistance = 320; // 200
     };
 
     class AT_Mine_155mm_AMOS_range;
@@ -29,42 +29,13 @@ class CfgAmmo
     class Sh_155mm_AMOS;
     class ammo_ShipCannon_120mm_HE : Sh_155mm_AMOS // Mk45 Hammer HE
     {
-        caliber = 4; // 10
-        hit = 300; // 340
-        indirectHit = 250; // 125
-        indirectHitRange = 17; // 30
-
-        class CamShakeExplode {
-            distance = 900; // 339.599
-            duration = 2; // 2.4
-            frequency = 15; //20
-            power = 28; // 31
-        };
-        class CamShakeFire {
-            distance = 700; // 99.5992;
-            duration = 2; // 2.4
-            frequency = 10; // 20
-            power = 8; // 3.52844
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.8;
-            frequency = 20;
-            power = 155;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 0.01;
-        };
     };
 
     class Smoke_120mm_AMOS_White;
     class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Rauchwand
     {
         submunitionConeAngle = 19; // 10
-        submunitionConeType[] = {"poissondisc",26}; // "poissondisc",5
+        submunitionConeType[] = {"poissondisc",20}; // "poissondisc",5
     };
 
     class Mine_155mm_AMOS_range;
@@ -84,33 +55,7 @@ class CfgAmmo
     class Bomb_04_F : ammo_Bomb_LaserGuidedBase // GBU-12 HE
     {
         cameraViewAvailable = 1; // 0
-        indirectHitRange = 32; // 12
         trackOversteer = 0.95; // 1
-
-        class CamShakeExplode {
-            distance = 1500;
-            duration = 0.75;
-            frequency = 10;
-            power = 35;
-        };
-        class CamShakeFire {
-            distance = 1200;
-            duration = 0.75;
-            frequency = 10;
-            power = 18;
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.35;
-            frequency = 40;
-            power = 180;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 0.01;
-        };
     };
 
     class BombCluster_01_Ammo_F : Bomb_04_F // CBU-85 HE Mines Cluster
@@ -145,12 +90,9 @@ class CfgAmmo
     };
 
     class BombCore;
-    class Bo_Mk82 : BombCore // Mk-82 Airburst
+    class Bo_Mk82 : BombCore // Mk-82
     {
         cameraViewAvailable = 1; // 0
-        indirectHit = 70; // 1100
-        indirectHitRange = 75; // 12
-        suppressionRadiusHit = 210; // 100
     };
 
     class ammo_Bomb_SmallDiameterBase;
@@ -173,31 +115,6 @@ class CfgAmmo
         cameraViewAvailable = 1; // 0
         indirectHitRange = 1; // 4
         trackOversteer = 0.95; // 1
-
-        class CamShakeExplode {
-            distance = 300;
-            duration = 1.5;
-            frequency = 18;
-            power = 16;
-        };
-        class CamShakeFire {
-            distance = 150;
-            duration = 1.5;
-            frequency = 18;
-            power = 4;
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.6;
-            frequency = 20;
-            power = 60;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 2;
-        };
     };
 
     class BulletBase;
@@ -213,6 +130,15 @@ class CfgAmmo
     {
         hit = 21; // 8
         caliber = 1.4; // 1
+    };
+
+    class Sh_125mm_HEAT;
+    class Sh_105mm_HEAT_MP : Sh_125mm_HEAT // VTOL 105mm
+    {
+        explosionEffects = "155mm_Explode";
+        explosive = 0.6; // 0.1
+        indirectHit = 35; // 26
+        indirectHitRange = 13; // 4.2
     };
 
     class B_30mm_HE;
@@ -244,7 +170,38 @@ class CfgAmmo
     class B_12Gauge_HD_Pellets_Submunition : B_12Gauge_Pellets_Submunition // Demining UGV Pelter
     {
         submunitionConeAngle = 0.5; // 1.3
-        submunitionConeType[] = {"poissondisc",16}; // {"poissondisc",9};
+        submunitionConeType[] = {"poissondisccenter",16}; // {"poissondisc",9};
+    };
+
+    class ammo_Missile_CruiseBase;
+    class ammo_Missile_Cruise_01 : ammo_Missile_CruiseBase // Mk41 VLS HE
+    {
+        CraterEffects = "MK82_Smoke";
+        effectsFire = "CannonFire";
+        explosionEffects = "MK82_Explode";
+        thrust = 95;
+
+        class Cruise
+        {
+            lockDistanceToTarget = 75;
+            preferredFlightAltitude = 65;
+        };
+    };
+
+    class ammo_Missile_Cruise_01_Cluster : ammo_Missile_Cruise_01 // Mk41 VLS HE Cluster
+    {
+        effectFly = "ArtilleryTrails";
+        submunitionAmmo[] = {"rhs_ammo_maaws_HE"};
+        submunitionConeAngle = 35;
+        submunitionConeType[] = {"poissondisccenter",20};
+        triggerDistance = 60;
+        thrust = 95;
+
+        class Cruise
+        {
+            lockDistanceToTarget = 75;
+            preferredFlightAltitude = 65;
+        };
     };
 
     // ###################### Unterlauf-IR Granate ######################

@@ -40,7 +40,24 @@ class CfgVehicles
     // audible: 0.05 = soldier, 3 = motorcycle, 6 = tank, 18 = vanilla merkava/rhs tank
     // camouflage: 1 = soldier, 4 = truck, 8 = tank
     // radarTargetSize: 0.1 = fully stealth, 0.7 = small aircraft/semi-stealth, 1 = mid sized aircraft/car, 1.2 = tank/truck, 2 = large bomber (max value)
-    class Helicopter_Base_H;
+    
+    class Air;
+    class Helicopter : Air
+    {
+        class Turrets;
+    };
+
+    class Helicopter_Base_F : Helicopter
+    {
+        class Turrets : Turrets
+        {
+            class CopilotTurret;
+            class RHS_MELB_MH6M;
+        };
+    };
+
+    class Helicopter_Base_H : Helicopter_Base_F {};
+
     class RHS_MELB_base : Helicopter_Base_H // RHS AH/MH/UH-6
     {
         accuracy = 1.1; // 0.5
@@ -54,8 +71,27 @@ class CfgVehicles
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.31; // 0.7
         LockDetectionSystem = "2 + 8 + 4"; // 0
+        magazines[] = {"SmokeLauncherMag_boat","rhsusf_mag_LWIRCM"};
         nvScanner = 1; // 0
         radarTargetSize = 0.65; // 0.8
+        smokeLauncherAngle = 360;
+        smokeLauncherGrenadeCount = 8;
+        smokeLauncherOnTurret = 0;
+        smokeLauncherVelocity = 19; // 14
+        weapons[] = {"SmokeLauncher","rhsusf_weap_LWIRCM"};
+        class RHS_MELB_MH6M : RHS_MELB_MH6M
+        {
+            magazines[] = {"SmokeLauncherMag_boat","rhsusf_mag_LWIRCM"};
+            weapons[] = {"SmokeLauncher","rhsusf_weap_LWIRCM"};
+        };
+        class Turrets : Turrets
+        {
+            class CopilotTurret : CopilotTurret
+            {
+                magazines[] = {"SmokeLauncherMag_boat","SmokeLauncherMag_boat","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhsusf_mag_LWIRCM","rhs_laserfcsmag","rhs_LaserMag_ai"};
+                weapons[] = {"SmokeLauncher","rhs_weap_laserDesignator_AI","rhs_weap_fcs_ah64","rhsusf_weap_LWIRCM"};
+            };
+        };
     };
 
     class Heli_Attack_01_base_F;

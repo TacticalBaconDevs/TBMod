@@ -4,20 +4,6 @@
 */
 class CfgWeapons
 {
-    class mortar_155mm_AMOS;
-    class weapon_ShipCannon_120mm : mortar_155mm_AMOS
-    {
-        magazines[] = {
-            "magazine_ShipCannon_120mm_HE_shells_x32",
-            "magazine_ShipCannon_120mm_HE_guided_shells_x2",
-            "magazine_ShipCannon_120mm_HE_LG_shells_x2",
-            "magazine_ShipCannon_120mm_HE_cluster_shells_x2",
-            "magazine_ShipCannon_120mm_mine_shells_x6",
-            "magazine_ShipCannon_120mm_smoke_shells_x6",
-            "magazine_ShipCannon_120mm_AT_mine_shells_x6"
-        };
-    };
-
     class weapon_LGBLauncherBase;
     class Bomb_04_Plane_CAS_01_F : weapon_LGBLauncherBase // GBU-12
     {
@@ -37,12 +23,6 @@ class CfgWeapons
     class BombCluster_03_F : BombCluster_01_F // BL-778 HE Cluster
     {
         displayName = "HE Cluster";
-    };
-
-    class RocketPods;
-    class Mk82BombLauncher : RocketPods // Mk-82
-    {
-        displayName = "Airburst Bomb";
     };
 
     class H_HelmetB;
@@ -223,4 +203,117 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
+    class weapon_VLSBase;
+    class weapon_VLS_01 : weapon_VLSBase // Mk41 VLS
+    {
+        displayName = "BGM-109 Tomahawk";
+        reloadTime = 2; // 10
+        magazineReloadTime = 2; // 120
+    };
+
+    class CannonCore;
+    class mortar_155mm_AMOS : CannonCore
+    {
+        class Burst1;
+        class Single1;
+    };
+    class weapon_ShipCannon_120mm : mortar_155mm_AMOS
+    {
+        magazines[] = {
+            "magazine_ShipCannon_120mm_HE_shells_x32",
+            "magazine_ShipCannon_120mm_HE_guided_shells_x2",
+            "magazine_ShipCannon_120mm_HE_LG_shells_x2",
+            "magazine_ShipCannon_120mm_HE_cluster_shells_x2",
+            "magazine_ShipCannon_120mm_mine_shells_x6",
+            "magazine_ShipCannon_120mm_smoke_shells_x6",
+            "magazine_ShipCannon_120mm_AT_mine_shells_x6"
+        };
+        class Burst1 : Burst1
+        {
+            reloadTime = 2; // 6
+        };
+        class Burst2 : Burst1
+        {
+            reloadTime = 2; // 6
+        };
+        class Burst3 : Burst1
+        {
+            reloadTime = 2; // 6
+        };
+        class Burst4 : Burst1
+        {
+            reloadTime = 2; // 6
+        };
+        class Burst5 : Burst1
+        {
+            reloadTime = 2; //  6
+        };
+        class Single1 : Single1
+        {
+            reloadTime = 2; // 6
+        };
+        class Single2 : Single1
+        {
+            reloadTime = 2; // 6
+        };
+        class Single3 : Single1
+        {
+            reloadTime = 2; // 6
+        };
+        class Single4 : Single1
+        {
+            reloadTime = 2; // 6
+        };
+        class Single5 : Single1
+        {
+            reloadTime = 2; //  6
+        };
+    };
+
+    class cannon_105mm: CannonCore
+    {
+        class player;
+    };
+    class cannon_105mm_VTOL_01 : cannon_105mm // VTOL 105mm
+    {
+        displayName = "Zorn der Athene";
+        class player : player
+        {
+            reloadTime = 2; // 5
+        };
+    };
+
+    class gatling_20mm;
+    class gatling_20mm_VTOL_01 : gatling_20mm // VTOL 20mm
+    {
+        displayName = "Zorn des Zeus"; // "Minigun 20Â mm"
+    };
+
+    class autocannon_Base_F;
+    class autocannon_40mm_CTWS : autocannon_Base_F
+    {
+        class player;
+    };
+    class autocannon_40mm_VTOL_01 : autocannon_40mm_CTWS // VTOL 40mm
+    {
+        displayName = "Zorn des Hephaistos";
+        class player : player
+        {
+            reloadTime = 0.02; // 0.3
+        };
+    };
+
+    class MGun;
+    class LMG_RCWS : MGun
+    {
+        class manual;
+    };
+    class LMG_Minigun : LMG_RCWS
+    {
+        class manual : manual
+        {
+            multiplier = 1; // 3
+            reloadTime = 0.05; // 0.075
+        };
+    };
 };

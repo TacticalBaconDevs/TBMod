@@ -146,8 +146,14 @@ class CfgVehicles
         audible = 2.25; // 5
         camouflage = 1.4; // 2
         irTargetSize = 0.3; // n.a.
+        magazines[] = {"rhs_mag_SMOKE_2a33"};
         maxOmega = 420; // 320
         visualTargetSize = 0.3; // n.a.
+        smokeLauncherAngle = 120;
+        smokeLauncherGrenadeCount = 8;
+        smokeLauncherOnTurret = 0;
+        smokeLauncherVelocity = 200; // 14
+        weapons[] = {"TruckHorn","rhs_weap_smokegen"};
     };
 
     class Heli_light_03_base_F;
@@ -174,6 +180,12 @@ class CfgVehicles
         camouflage = 95; // 100
         irTargetSize = 1; // 1.2
         radarTargetSize = 1; // 1.2
+        magazines[] = {"rhs_mag_smokegen","168Rnd_CMFlare_Chaff_Magazine"};
+        smokeLauncherAngle = 300;
+        smokeLauncherGrenadeCount = 8;
+        smokeLauncherOnTurret = 0;
+        smokeLauncherVelocity = 80; // 14
+        weapons[] = {"CMFlareLauncher","SmokeLauncher"};
     };
 
     class UAV_02_dynamicLoadout_base_F;
@@ -207,17 +219,6 @@ class CfgVehicles
         camouflage = 1.15; // 2
     };
 
-    class Boat_Armed_01_minigun_base_F;
-    class B_Boat_Armed_01_minigun_F : Boat_Armed_01_minigun_base_F // Schnellboot
-    {
-        accuracy = 0.9; // 1.5
-        ace_cargo_space = 1; // 0
-        armor = 250; // 400
-        audible = 3.2; // 6
-        camouflage = 1.45; // 2
-        magazines[] = {"SmokeLauncherMag_boat","SmokeLauncherMag_boat","SmokeLauncherMag_boat"}; // "SmokeLauncherMag_boat"
-    };
-
     class SDV_01_base_F;
     class B_SDV_01_F : SDV_01_base_F // SDV (Seal Delivery Vehicle)
     {
@@ -247,37 +248,44 @@ class CfgVehicles
         camouflage = 4; // 8
     };
 
-    class VTOL_Base_F;
-    class VTOL_01_base_F : VTOL_Base_F
-    {
-        class Turrets;
-    };
-    class VTOL_01_armed_base_F : VTOL_01_base_F
-    {
-        class Turrets : Turrets
-        {
-            class GunnerTurret_01;
-        };
-    };
-    class B_T_VTOL_01_armed_F : VTOL_01_armed_base_F // V-44 X Blackfish (Bewaffnet)
-    {
-        class Turrets : Turrets
-        {
-            class GunnerTurret_01 : GunnerTurret_01
-            {
-                discreteDistance[] = {100,200,300,400,500,600,700,800,1000,1200,1500,1800,2100,2400,2700,3000,3300,3600,3900,4200,4500,4800,5100,5400,5700,6000}; // Werte > 2400 hinzu
-                maxElev = 25; // 13
-                maxTurn = 214; // 107
-                minElev = -45; // -28
-            };
-        };
-    };
-
     class UGV_02_Demining_Base_F;
     class B_UGV_02_Demining_F : UGV_02_Demining_Base_F // Demining UGV Pelter
     {
         armor = 50; // 30
         fuelCapacity = 4; // 2
+    };
+
+    class Ship_F;
+    class Boat_F : Ship_F
+    {
+        class Turrets;
+    };
+
+    class Boat_Armed_01_base_F : Boat_F
+    {
+        class Turrets : Turrets
+        {
+            class RearTurret;
+        };
+    };
+
+    class Boat_Armed_01_minigun_base_F : Boat_Armed_01_base_F {};
+
+    class B_Boat_Armed_01_minigun_F : Boat_Armed_01_minigun_base_F  // Schnellboot
+    {
+        accuracy = 0.9; // 1.5
+        ace_cargo_space = 1; // 0
+        armor = 250; // 400
+        audible = 3.2; // 6
+        camouflage = 1.45; // 2
+        magazines[] = {"SmokeLauncherMag_boat","SmokeLauncherMag_boat","SmokeLauncherMag_boat"}; // "SmokeLauncherMag_boat"
+        class Turrets : Turrets
+        {
+            class RearTurret : RearTurret
+            {
+                magazines[] = {"2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Red"};
+            };
+        };
     };
 
     // ###################### ACE Defuse ######################

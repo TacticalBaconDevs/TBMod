@@ -255,4 +255,22 @@ class CfgMagazines
         displayName = "45. cal FMJ";
         displayNameShort = "45. cal FMJ";
     };
+
+    class 20Rnd_105mm_HEAT_MP;
+    class 100Rnd_105mm_HEAT_MP : 20Rnd_105mm_HEAT_MP // 105mm VTOL
+    {
+        tracersEvery = 1; // 0
+    };
+
+    class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
+    class 160Rnd_40mm_APFSDS_Tracer_Red_shells : 40Rnd_40mm_APFSDS_Tracer_Red_shells // 40mm VTOL APFSDS
+    {
+        initSpeed = 1600; // 1600
+    };
+
+    class 60Rnd_40mm_GPR_Tracer_Red_shells;
+    class 240Rnd_40mm_GPR_Tracer_Red_shells : 60Rnd_40mm_GPR_Tracer_Red_shells // 40mm VTOL GPR
+    {
+        initSpeed = 1600; // 1035  Angleichung an APFSDS Munition
+    };
 };
