@@ -10,6 +10,15 @@ PREP_RECOMPILE_END;
 
 if !(call EFUNC(main,isTBMission)) exitWith {};
 
+[
+    QGVAR(enableSafestartOnEndmission),
+    "CHECKBOX",
+    ["enableSafestartOnEndmission", "Soll bei beenden der Mission Safestart aktiviert werden?"],
+    ["TBMod", QUOTE(COMPONENT)],
+    true,
+    1
+] call CBA_fnc_addSetting;
+
 // Nachschubskisten automatisch aus der config lesen fürs Zeus Modul
 private _naschschubConfigs = configProperties [configFile >> "CfgVehicles", "isClass _x && {(configName _x) select [0, 3] == 'TB_'}
         && {getNumber (_x >> 'scope') == 2} && {(getText (_x >> 'editorCategory')) isEqualTo 'EdCat_TB_MainCat_supply'}", false];
