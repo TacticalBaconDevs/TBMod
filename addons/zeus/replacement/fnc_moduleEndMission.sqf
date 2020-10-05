@@ -17,8 +17,7 @@ if (_activated) then {
     if (isnull _logic) exitwith {};
 
     
-    //Add call to savestart here (maybe with setting option)
-    if (isNil QEGVAR(main,safeInfo)) then {
+    if (isNil QEGVAR(main,safeInfo) && GVAR(enableSafestartOnEndmission)) then {
         [true] remoteExec [QEFUNC(main,safe)];
     };
     
