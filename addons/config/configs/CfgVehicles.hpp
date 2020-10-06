@@ -24,7 +24,7 @@ class CfgVehicles
     {
         class Components;
     };
-    class TB_MH_60X_Stealth_Blackhawk : B_Heli_Transport_01_F // UH-80
+    class TB_MH_60_Silent_Hawk : B_Heli_Transport_01_F // UH-80
     {
         accuracy = 0.4; // 0.5
         displayName = "MH-60 Silent Hawk";
