@@ -96,6 +96,33 @@ class CfgAmmo
         maneuvrability = 22; // 14
     };
 
+    class ACE_Gatling_30mm_Sub_HEI;
+    class ACE_Gatling_30mm_Sub_CM51 : ACE_Gatling_30mm_Sub_HEI // 30mm Gatling GAU-8
+    {
+        submunitionAmmo[] = {"ACE_Gatling_30mm_AP_Plane_CAS_01_F",0.83,"Gatling_30mm_HE_Plane_CAS_01_F",0.17};
+        submunitionConeAngle = 0.056; // 0.056;
+        submunitionConeType[] = {"poissondisccenter",1}; // {"poissondisccenter",3};
+    };
+
+        class BulletBase;
+    class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // 30mm Gatling GAU-8 Sup HE
+    {
+        caliber = 1.4;
+        explosive = 0.4;
+        hit = 70;
+        indirectHit = 12;
+        indirectHitRange = 4;
+    };
+
+    class ACE_Gatling_30mm_AP_Plane_CAS_01_F : Gatling_30mm_HE_Plane_CAS_01_F // 30mm Gatling GAU-8 Sup AP
+    {
+        caliber = 5;
+        explosive = 0.05;
+        hit = 110;
+        indirectHit = 2.5;
+        indirectHitRange = 1;
+    };
+
     class B_127x99_Ball;
     class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
@@ -216,5 +243,48 @@ class CfgAmmo
         hit = 50; // 145
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
+    };
+
+    class Missile_AA_04_F;
+    class rhs_ammo_r27_base : Missile_AA_04_F // R27 Reihe
+    {
+        cmImmunity = 0.8; // 0.9 und 0.885
+    };
+
+    class rhs_ammo_r60_base : Missile_AA_04_F // R60 Reihe
+    {
+        cmImmunity = 0.8; // 0.9
+    };
+
+    class rhs_ammo_r73 : Missile_AA_04_F // R73 Reihe
+    {
+        cmImmunity = 0.8; // 0.9 und 0.92
+    };
+
+    class rhs_ammo_Sidewinder_AA : Missile_AA_04_F // AIM9
+    {
+        cmimmunity = 0.86; // 0.96
+    };
+
+    class rhs_ammo_aim120 : rhs_ammo_Sidewinder_AA // AIM120
+    {
+        cmimmunity = 0.82; // 0.92
+    };
+
+    class rhs_ammo_r77 : rhs_ammo_r73 // R77 Reihe
+    {
+        cmimmunity = 0.89; // 0.89 und 0.94
+    };
+
+    class rhs_ammo_r73m;
+    class rhs_ammo_r74 : rhs_ammo_r73m // R74 Reihe
+    {
+        cmimmunity = 0.83; // 0.92
+    };
+
+    class rhs_ammo_9k32;
+    class rhs_ammo_9k38 : rhs_ammo_9k32 // Igla
+    {
+        cmimmunity = 0.8; // 0.9
     };
 };

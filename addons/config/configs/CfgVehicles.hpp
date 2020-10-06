@@ -20,15 +20,80 @@ class CfgVehicles
     };
 
     class Heli_Transport_01_base_F;
-    class B_Heli_Transport_01_F : Heli_Transport_01_base_F // Stealth UH-80
+    class B_Heli_Transport_01_F : Heli_Transport_01_base_F
+    {
+        class Components;
+    };
+    class TB_MH_60X_Stealth_Blackhawk : B_Heli_Transport_01_F // UH-80
     {
         accuracy = 0.4; // 0.5
+        displayName = "MH-60 Silent Hawk";
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
         armor = 45; // 40
         audible = 39; // 50
         camouflage = 78; // 100
         irTargetSize = 0.5; // 0.8
-        LockDetectionSystem = "2 + 8 + 4"; // 8+4
+        LockDetectionSystem = "2 + 4 + 8"; // 8+4
+        magazines[] = {}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.33; // 0.7
+        weapons[] = {};
+
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                uiPicture = QPATHTOEF(skins,pictures\pylons\TB_Pylons_UH_80.paa);
+
+                class pylons
+                {
+                    class cmDispenser1
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_144Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_1"};
+                        maxweight = 800;
+                        priority = 5;
+                        UIposition[] = {0.33,0.1};
+                    };
+
+                    class cmDispenser2
+                    {
+                        attachment = "TB_mag_Smoke";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_2"};
+                        maxweight = 800;
+                        priority = 4;
+                        UIposition[] = {0.20,0.15};
+                    };
+
+                    class cmDispenser3
+                    {
+                        attachment = "TB_mag_LWIRCM_144_30";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_3"};
+                        maxweight = 800;
+                        priority = 3;
+                        UIposition[] = {0.46,0.15};
+                    };
+
+                    class cmDispenser4
+                    {
+                        attachment = "TB_mag_LWIRCM_144_30";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_4"};
+                        maxweight = 800;
+                        priority = 2;
+                        UIposition[] = {0.20,0.20};
+                    };
+
+                    class cmDispenser5
+                    {
+                        attachment = "TB_mag_LWIRCM_144_30";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_5"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.20};
+                    };
+                };
+            };
+        };
     };
 
     class Heli_Attack_01_dynamicLoadout_base_F;
@@ -40,7 +105,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.05; // 0.1
         audible = 24; // 50
         camouflage = 63; // 100
-        camShakeCoef = 0.4; // 0
+        camShakeCoef = 0.2; // 0
         irTargetSize = 0.48; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
         nvScanner = 1; // 0
@@ -48,7 +113,7 @@ class CfgVehicles
     };
 
     class Plane_CAS_01_dynamicLoadout_base_F;
-    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
+    class B_Plane_CAS_01_dynamicLoadout_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
     {
         accuracyDarkNightLightsOff = 0.005; // 0.001
         accuracyNightLightsOff = 0.03; // 0.006
@@ -56,7 +121,7 @@ class CfgVehicles
         armor = 115; // 80
         audible = 210; // 60
         camouflage = 170; // 100
-        camShakeCoef = 1.4; // 0
+        camShakeCoef = 0.2; // 0
         irTargetSize = 1.65; // 1
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
@@ -72,7 +137,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.3; // 0.1
         armor = 65; // 60
         audible = 190; // 60
-        camShakeCoef = 0.4; // 0
+        camShakeCoef = 0.2; // 0
         camouflage = 150; // 100
         irScanRangeMin = 650; // 2000
         irTargetSize = 1.7; // 1
@@ -89,8 +154,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.26; // 0.1
         armor = 50; // 55
         audible = 180; // 60
-        camShakeCoef = 0.9; // 0
-        camouflage = 105; // 100
+        camShakeCoef = 0.2; // 0
         irTargetSize = 1.4; // 0.8
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 0.8
