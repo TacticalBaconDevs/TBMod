@@ -223,31 +223,6 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
-    class Default;
-    class CannonCore : Default
-    {
-        class MGun;
-    };
-    class Gatling_30mm_Plane_CAS_01_F : CannonCore // A10 30mm Gatling
-    {
-        modes[] = {"LowROF","HighROF","close","short","medium","far"};
-            class LowROF : Mgun
-            {
-                displayName = "LO";
-                magazines[] = {"1000Rnd_Gatling_30mm_Plane_CAS_01_F"};
-                multiplier = 1; // 3
-                reloadtime = 0.03;
-                showToPlayer = 1;
-                textureType = "burst";
-            };
-            class HighROF : LowROF
-            {
-                displayName = "HI";
-                reloadtime = 0.0014;
-                textureType = "fullAuto";
-            };
-    };
-
     class LMG_RCWS;
     class LMG_Minigun : LMG_RCWS
     {
