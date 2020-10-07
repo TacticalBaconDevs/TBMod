@@ -53,15 +53,14 @@ forEach [
     (linearConversion [0, 1, GET_PAIN_PERCEIVED(ACE_player), 1, 5, true]) + (ACE_player getVariable [QEGVAR(medical_engine,aimFracture), 0])
 }] call EFUNC(common,arithmeticSetSource);*/
 
-TB_cacheWeaponType = ([currentWeapon player] call BIS_fnc_itemType) select 1;
-TB_recoilFreeze = -1;
+GVAR(cacheWeaponType) = ([currentWeapon player] call BIS_fnc_itemType) select 1;
+GVAR(recoilFreeze) = -1;
 
 ["weapon", {
     params ["_unit", "_newWeapon"];
-    TB_cacheWeaponType = ([_newWeapon] call BIS_fnc_itemType) select 1;
+    GVAR(cacheWeaponType) = ([_newWeapon] call BIS_fnc_itemType) select 1;
 }] call CBA_fnc_addPlayerEventHandler;
 
-<<<<<<< HEAD
 GVAR(recoilID) = ["ace_firedPlayer", {
     BEGIN_COUNTER(recoilFNC);
     if (GVAR(recoilCoef) == -1) exitWith
@@ -72,22 +71,33 @@ GVAR(recoilID) = ["ace_firedPlayer", {
 
     params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-    if (_muzzle != primaryWeapon _unit && _muzzle != handgunWeapon _unit) exitWith {END_COUNTER(recoilFNC)};
-    if (TB_recoilFreeze >= diag_tickTime) exitWith {END_COUNTER(recoilFNC)};
-    if (vehicle _unit != _unit) exitWith {_unit setUnitRecoilCoefficient 0.1; END_COUNTER(recoilFNC)};
+    if (GVAR(recoilFreeze) >= diag_tickTime) exitWith {END_COUNTER(recoilFNC)};
+    if ((toLower _weapon) in ["throw", "put"] || !(_muzzle in [primaryWeapon _unit, handgunWeapon _unit])) exitWith
+    {
+        TRACE_4("Reset setUnitRecoilCoefficient because _muzzle is not primary/handgun", _this, (toLower _weapon) in ["throw", "put"], primaryWeapon _unit, handgunWeapon _unit);
+        _unit setUnitRecoilCoefficient 1;
+        END_COUNTER(recoilFNC);
+    };
+    if (vehicle _unit != _unit) exitWith
+    {
+        TRACE_1("Set setUnitRecoilCoefficient 0.1 because in vehicle",_this);
+        _unit setUnitRecoilCoefficient 0.1;
+        END_COUNTER(recoilFNC);
+    };
 
     private _suppressed = linearConversion [0, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 1, true];
     private _customAimCoef = getCustomAimCoef _unit;
-    private _recoil = TB_recoilStart + _suppressed +  _customAimCoef;
+    private _recoil = GVAR(recoilStart) + _suppressed +  _customAimCoef;
 
-    private _einfluss = (getCustomAimCoef _unit) + GVAR(recoilStart);
+    /*private _einfluss = (getCustomAimCoef _unit) + GVAR(recoilStart);
     private _deploy = isWeaponDeployed _unit;
     private _rested = isWeaponRested _unit;
 
     // Spezielle WaffenStats
-    if (TB_cacheWeaponType == "MachineGun") then {ADD(_einfluss,100)};
-    if (TB_cacheWeaponType == "SniperRifle" && {_deploy}) then {ADD(_einfluss,-50)};
-    if ("rhs_weap_mk17" in toLower _weapon) then {
+    if (GVAR(cacheWeaponType) == "MachineGun") then {ADD(_einfluss,100)};
+    if (GVAR(cacheWeaponType) == "SniperRifle" && {_deploy}) then {ADD(_einfluss,-50)};
+    if ("rhs_weap_mk17" in (toLower _weapon)) then
+    {
         ADD(_einfluss,50);
         if !("rhsusf_20rnd_762x51_sr25" in toLower _magazine) then {ADD(_einfluss,50)};
     };
@@ -117,18 +127,10 @@ GVAR(recoilID) = ["ace_firedPlayer", {
         if (_silencer != "") then {ADD(_einfluss,-10)};
     };
 
-    //_einfluss = 1 + (_einfluss / 100);
-    /*["Recoil: %1 | Influ: %2 | AimCoef: %3 | Type: %4 | mode: %5 | deploy: %6 | rested: %7", // TODO Change
-            (_recoil max 0.5) * GVAR(recoilCoef),
-            _recoil max 0.5,
-            getCustomAimCoef _unit,
-            TB_cacheWeaponType,
-            _mode,
-            _deploy,
-            _rested
-        ] call FUNC(debug);*/
+    //_einfluss = 1 + (_einfluss / 100);*/
+
     _unit setUnitRecoilCoefficient (((_recoil max 0.5) * 1) * GVAR(recoilCoef));
 
-    TB_recoilFreeze = diag_tickTime + 1;
+    GVAR(recoilFreeze) = diag_tickTime + 1;
     END_COUNTER(recoilFNC);
 }] call CBA_fnc_addEventHandler;
