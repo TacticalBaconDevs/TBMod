@@ -287,46 +287,45 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR/Radar";
         displayName = "Flare/Chaff x144";
         displayNameShort = "Flare/Chaff";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4","TB_cm_dispenser_UH_80_5"};
+        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
         initSpeed = 18;
         pylonWeapon = "TB_weap_CMLauncher";
     };
 
-    class TB_mag_LWIRCM_144_90 : CA_Magazine // LWIRCM 90
+    class TB_mag_CMFlare_Chaff_144Rnd_Burst : TB_mag_CMFlare_Chaff_144Rnd // CM Flare Chaff Burst
     {
-        ammo = "TB_ammo_LWIRCM";
-        author = "TBMod";
-        count = 144;
-        descriptionShort = "Wirkung gegen IR, 90 Sekunden";
-        displayName = "LWIRCM x144/90";
-        displayNameShort = "LWIRCM";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4","TB_cm_dispenser_UH_80_5"};
-        initSpeed = 1;
-        pylonWeapon = "TB_weap_LWIRCM_144_90";
+        descriptionShort = "Wirkung gegen IR/Radar, Feuerstoß";
+        displayName = "B Flare/Chaff x144";
+        displayNameShort = "B Flare/Chaff";
+        pylonWeapon = "TB_weap_CMLauncher_Burst";
     };
 
-    class TB_mag_LWIRCM_144_60 : TB_mag_LWIRCM_144_90 // LWIRCM 60
+    class TB_mag_LWIRCM_144_60 : CA_Magazine // LWIRCM 60
     {
+        ammo = "TB_ammo_LWIRCM_60";
+        author = "TBMod";
+        count = 144;
         descriptionShort = "Wirkung gegen IR, 60 Sekunden";
         displayName = "LWIRCM x144/60";
+        displayNameShort = "LWIRCM";
+        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        initSpeed = 1;
         pylonWeapon = "TB_weap_LWIRCM_144_60";
     };
 
-    class TB_mag_LWIRCM_144_30 : TB_mag_LWIRCM_144_90 // LWIRCM 30
+    class TB_mag_LWIRCM_144_45 : TB_mag_LWIRCM_144_60 // LWIRCM 45
     {
+        ammo = "TB_ammo_LWIRCM_45";
+        descriptionShort = "Wirkung gegen IR, 45 Sekunden";
+        displayName = "LWIRCM x144/45";
+        pylonWeapon = "TB_weap_LWIRCM_144_45";
+    };
+
+    class TB_mag_LWIRCM_144_30 : TB_mag_LWIRCM_144_60 // LWIRCM 30
+    {
+        ammo = "TB_ammo_LWIRCM_30";
         descriptionShort = "Wirkung gegen IR, 30 Sekunden";
         displayName = "LWIRCM x144/30";
         pylonWeapon = "TB_weap_LWIRCM_144_30";
-    };
-
-    class SmokeLauncherMag_Single;
-    class TB_mag_Smoke : SmokeLauncherMag_Single // Smoke
-    {
-        count = 3;
-        descriptionShort = "Wirkung gegen Visual/Contrast/Laser";
-        displayName = "Rauchwand x3";
-        displayNameShort = "Rauchwand";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4","TB_cm_dispenser_UH_80_5"};
-        pylonWeapon = "TB_weap_Smoke";
     };
 };

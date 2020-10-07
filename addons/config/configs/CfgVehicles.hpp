@@ -52,44 +52,35 @@ class CfgVehicles
                         attachment = "TB_mag_CMFlare_Chaff_144Rnd";
                         hardpoints[] = {"TB_cm_dispenser_UH_80_1"};
                         maxweight = 800;
-                        priority = 5;
-                        UIposition[] = {0.33,0.1};
+                        priority = 4;
+                        UIposition[] = {0.20,0.1};
                     };
 
                     class cmDispenser2
                     {
-                        attachment = "TB_mag_Smoke";
+                        attachment = "TB_mag_CMFlare_Chaff_144Rnd";
                         hardpoints[] = {"TB_cm_dispenser_UH_80_2"};
                         maxweight = 800;
-                        priority = 4;
-                        UIposition[] = {0.20,0.15};
+                        priority = 3;
+                        UIposition[] = {0.46,0.1};
                     };
 
                     class cmDispenser3
                     {
-                        attachment = "TB_mag_LWIRCM_144_30";
+                        attachment = "TB_mag_LWIRCM_144_45";
                         hardpoints[] = {"TB_cm_dispenser_UH_80_3"};
                         maxweight = 800;
-                        priority = 3;
-                        UIposition[] = {0.46,0.15};
+                        priority = 2;
+                        UIposition[] = {0.20,0.15};
                     };
 
                     class cmDispenser4
                     {
-                        attachment = "TB_mag_LWIRCM_144_30";
+                        attachment = "TB_mag_LWIRCM_144_45";
                         hardpoints[] = {"TB_cm_dispenser_UH_80_4"};
                         maxweight = 800;
-                        priority = 2;
-                        UIposition[] = {0.20,0.20};
-                    };
-
-                    class cmDispenser5
-                    {
-                        attachment = "TB_mag_LWIRCM_144_30";
-                        hardpoints[] = {"TB_cm_dispenser_UH_80_5"};
-                        maxweight = 800;
                         priority = 1;
-                        UIposition[] = {0.46,0.20};
+                        UIposition[] = {0.46,0.15};
                     };
                 };
             };
