@@ -45,17 +45,6 @@ class CfgWeapons
         displayName = "Airburst Bomb";
     };
 
-    class ACE_ItemCore;
-    class ACE_Clacker: ACE_ItemCore // M57 Firing Device
-    {
-        mass = 7.71; // 3
-    };
-
-    class ACE_M26_Clacker: ACE_Clacker // M152 Firing Device
-    {
-        mass = 27.55; // 3
-    };
-
     class H_HelmetB;
     class H_HelmetB_TI_tna_F : H_HelmetB
     {

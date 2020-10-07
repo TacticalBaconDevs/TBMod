@@ -240,6 +240,13 @@ class CfgAmmo
         hit = 15; // 7
     };
 
+    class B_12Gauge_Pellets_Submunition;
+    class B_12Gauge_HD_Pellets_Submunition : B_12Gauge_Pellets_Submunition // Demining UGV Pelter
+    {
+        submunitionConeAngle = 0.5; // 1.3
+        submunitionConeType[] = {"poissondisc",16}; // {"poissondisc",9};
+    };
+
     // ###################### Unterlauf-IR Granate ######################
     class B_IRStrobe;
     class TB_rhs_40mm_IR_Grenade : B_IRStrobe

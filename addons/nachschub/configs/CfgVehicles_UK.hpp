@@ -42,8 +42,7 @@ class TB_supply_uk_grena : WRAPPER_NAME(Box_IND_Grenades_F)
         MACRO_ADDMAGAZINE(SmokeShellRed,7);
         MACRO_ADDMAGAZINE(SmokeShellBlue,7);
 
-        MACRO_ADDMAGAZINE(rhs_mag_m67,10);       // Splitternade
-        MACRO_ADDMAGAZINE(rhs_mag_mk3a2,10);    // Offensivenade
+        MACRO_ADDMAGAZINE(rhs_mag_mk3a2,20);    // Offensivenade
         MACRO_ADDMAGAZINE(rhs_mag_mk84,10);      // Stannade
     };
 };
