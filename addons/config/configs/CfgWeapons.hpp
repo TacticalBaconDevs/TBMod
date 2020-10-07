@@ -223,4 +223,171 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
+    class LMG_RCWS;
+    class LMG_Minigun : LMG_RCWS
+    {
+        class manual;
+    };
+    class LMG_Minigun_Transport : LMG_Minigun // M134 Minigun UH-80 links
+    {
+        modes[] = {"manual","close","short","medium","far"};
+        class manual : manual
+        {
+            multiplier = 1; // 3
+            reloadTime = 0.015; // 0.075
+        };
+    };
+    class LMG_Minigun_Transport2 : LMG_Minigun_Transport // M134 Minigun UH-80 rechts
+    {
+        modes[] = {"manual","close","short","medium","far"};
+        class manual : manual
+        {
+            multiplier = 1; // 3
+            reloadTime = 0.015; // 0.075
+        };
+    };
+
+    class SmokeLauncher;
+    class CMFlareLauncher : SmokeLauncher
+    {
+        class Burst;
+    };
+    class TB_weap_CMLauncher : CMFlareLauncher // CM Flare Chaff
+    {
+        baseWeapon = "TB_weap_CMLauncher";
+        magazines[] = {"TB_mag_CMFlare_Chaff_72Rnd"};
+        modes[] = {"Burst","Timed","AIBurst"};
+        class Burst : Burst // P(Treffer,0.85)= 5.36%
+        {
+            burst = 18;
+            dispersion = 0.75;
+            displayName = "Feuerstoß 18/1";
+            multiplier = 1;
+            reloadTime = 0.055;
+        };
+        class Timed : Burst // P(Treffer,0.85)= 85% auf 8,7% sinkend innerhalb von 5 Sek
+        {
+            burst = 36;
+            dispersion = 0.75;
+            displayName = "Verzögert 36/12";
+            multiplier = 1;
+            reloadTime = 0.333;
+        };
+        class AIBurst : Burst
+        {
+            showToPlayer = 0;
+        };
+    };
+
+    class TB_weap_CMLauncher_Burst : CMFlareLauncher // CM Flare Chaff Burst
+    {
+        baseWeapon = "TB_weap_CMLauncher_B";
+        magazines[] = {"TB_mag_CMFlare_Chaff_72Rnd_Burst"};
+        modes[] = {"Burst","AIBurst"};
+        class Burst : Burst // P(Treffer,0.85)= 5.36%
+        {
+            burst = 18;
+            dispersion = 0.75;
+            displayName = "nur Feuerstoß 18/1";
+            multiplier = 1;
+            reloadTime = 0.055;
+        };
+        class AIBurst : Burst
+        {
+            showToPlayer = 0;
+        };
+    };
+
+    class MGunCore;
+    class MGun : MGunCore
+    {
+        class Mode_Burst;
+    };
+    class TB_weap_LWIRCM_144_60 : MGun // LWIRCM 60
+    {
+        baseWeapon = "TB_weap_LWIRCM_144_60";
+        magazines[] = {"TB_mag_LWIRCM_144_60"};
+        modes[] = {"LWIRCM_60","AILWIRCM_60"};
+        scope = 2;
+        simulation = "cmlauncher";
+        class LWIRCM_60 : Mode_Burst // P(Treffer,0.85)= 85% auf 14,22% sinkend innerhalb von 5 Sek
+        {
+            aiDispersionCoefX = 1.9;
+            aiDispersionCoefY = 2.4;
+            aiRateOfFire = 2;
+            aiRateOfFireDispersion = 1;
+            aiRateOfFireDistance = 500;
+            artilleryCharge = 1;
+            artilleryDispersion = 1;
+            autoFire = 0;
+            burst = 144;
+            canShootInWater = 0;
+            dispersion = 0.1;
+            displayName = "LWIRCM 144/60";
+            ffCount = 1;
+            ffFrequency = 11;
+            ffMagnitude = 0.5;
+            flash = "gunfire";
+            flashSize = 0.1;
+            maxRange = 200;
+            maxRangeProbab = 0.04;
+            midRange = 60;
+            midRangeProbab = 0.58;
+            minRange = 0;
+            minRangeProbab = 0.3;
+            multiplier = 1;
+            recoil = "recoil_auto_primary_3outof10";
+            recoilProne = "recoil_auto_primary_prone_3outof10";
+            reloadTime = 0.416;
+            requiredOpticType = -1;
+            showToPlayer = 1;
+            soundBurst = 0;
+            soundContinuos = 0;
+            soundContinuous = 0;
+            textureType = "fullAuto";
+            useAction = 0;
+            useActionTitle = "";
+            weaponSoundEffect = "";
+        };
+        class AILWIRCM_60 : LWIRCM_60
+        {
+            showToPlayer = 0;
+        };
+    };
+    class TB_weap_LWIRCM_144_45 : TB_weap_LWIRCM_144_60 // LWIRCM 45
+    {
+        baseWeapon = "TB_weap_LWIRCM_144_45";
+        magazines[] = {"TB_mag_LWIRCM_144_45"};
+        modes[] = {"LWIRCM_45","AILWIRCM_45"};
+        class LWIRCM_45 : LWIRCM_60 // P(Treffer,0.85)= 85% auf 7,42% sinkend innerhalb von 5 Sek
+        {
+            burst = 144;
+            dispersion = 0.1;
+            displayName = "LWIRCM 144/45";
+            multiplier = 1;
+            reloadTime = 0.3125;
+        };
+        class AILWIRCM_45 : LWIRCM_45
+        {
+            showToPlayer = 0;
+        };
+    };
+    class TB_weap_LWIRCM_144_30 : TB_weap_LWIRCM_144_60 // LWIRCM 30
+    {
+        baseWeapon = "TB_weap_LWIRCM_144_30";
+        magazines[] = {"TB_mag_LWIRCM_144_30"};
+        modes[] = {"LWIRCM_30","AILWIRCM_30"};
+        class LWIRCM_30 : LWIRCM_60 // P(Treffer,0.85)= 85% auf 2,02% sinkend innerhalb von 5 Sek
+        {
+            burst = 144;
+            dispersion = 0.1;
+            displayName = "LWIRCM 144/30";
+            multiplier = 1;
+            reloadTime = 0.208;
+        };
+        class AILWIRCM_30 : LWIRCM_30
+        {
+            showToPlayer = 0;
+        };
+    };
 };
