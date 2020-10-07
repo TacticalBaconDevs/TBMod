@@ -3,7 +3,6 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-
 ADDON = false;
 PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
@@ -23,8 +22,6 @@ TB_lvl2 = compileFinal (str ((call TB_lvl3) + [
     "76561198127241859", /* Eric */
     "76561198049880123" /* Eron */
 ]));
-
-if !(call FUNC(isTBMission)) exitWith {};
 
 // Default Values
 if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
