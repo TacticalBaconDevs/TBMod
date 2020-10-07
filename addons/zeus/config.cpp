@@ -32,8 +32,11 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CfgFactionClasses.hpp"
 #include "configs\ACE_ZeusActions.hpp"
+#include "configs\CfgFunctions.hpp"

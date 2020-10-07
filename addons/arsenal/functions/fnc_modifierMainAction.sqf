@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -10,7 +10,7 @@ private _arsenalType = _player getVariable ["TB_arsenalType", ""];
 
 // Arsenale Rollen blockieren
 TB_blacklistRollen = [];
-if (_arsenalType in ["USA", "RUSS", "UK"]) then {TB_blacklistRollen = ["dmr"]};
+if (_arsenalType in ["USA", "BW", "RUSS", "UK"]) then {TB_blacklistRollen = ["dmr"]};
 
 TB_blacklistRollen_themen = [];
 // TB_customName_themen: ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]
@@ -27,15 +27,15 @@ if (_arsenalType == "Themen") then
         if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
         {
             // BRD
-            TB_blacklistRollen_themen = ["sani", "spreng", "dmr", "pilot", "sniper", "spotter", "jtac", "rifle"];
-            TB_customName_themen = ["Truppführer","Schütze + DM22A1","","MG3-Schütze","","Anti-Tank","Muniträger","","","","","","Feldarzt","","Sprengspezialist"];
+            TB_blacklistRollen_themen = ["spreng", "dmr", "sniper", "spotter", "rifle"];
+            TB_customName_themen = ["Truppführer","Schütze","Kampfsanitäter","MG3-Schütze","","Anti-Tank","Muniträger","","Pilot","","","Besatzung","Feldarzt","","Sprengspezialist"];
         }
         else
         {
             // Vanilla-COP
             //TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
             //TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
-            
+
             // WoMi Polizei
             TB_blacklistRollen_themen = ["grena", "mg", "dmr", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "pionier"];
             TB_customName_themen = ["Polizist","","Polizist-Sani","","","","","","Polizeipilot","","","","SWAT-Sani","SWAT",""];

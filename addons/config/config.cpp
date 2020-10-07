@@ -21,6 +21,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\ACE_detector.hpp"
 #include "configs\CBA_Stuff.hpp"

@@ -29,11 +29,17 @@ if !(call FUNC(isWLMission)) exitWith {};
 // AddonSettingsCheck
 if (isMultiplayer && ace_map_BFT_Enabled) then
 {
-    [] spawn {waitUntil {"Shukari hat vergessen die schweren AddonSettings zu laden!" remoteExecCall ["systemChat"]; uiSleep 60; !ace_map_BFT_Enabled}};
+    [{
+        "Shukari hat vergessen die schweren AddonSettings zu laden!" remoteExecCall ["systemChat"];
+        if (!ace_map_BFT_Enabled) then {[_this # 1] call CBA_fnc_removePerFrameHandler;};
+    }, 60] call CBA_fnc_addPerFrameHandler;
 };
 
 // ServerDifficulty
 if (isMultiplayer && (difficultyOption "commands") == 0) then
 {
-    [] spawn {waitUntil {"Shukari hat vergessen die ServerSchwierigkeits-Einstellungen zu laden!" remoteExecCall ["systemChat"]; uiSleep 60; (difficultyOption "commands") != 0}};
+    [{
+        "Shukari hat vergessen die ServerSchwierigkeits-Einstellungen zu laden!" remoteExecCall ["systemChat"];
+        if ((difficultyOption "commands") != 0) then {[_this # 1] call CBA_fnc_removePerFrameHandler;};
+    }, 60] call CBA_fnc_addPerFrameHandler;
 };

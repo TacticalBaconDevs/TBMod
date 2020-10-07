@@ -20,6 +20,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 class CfgGroups
 {

@@ -29,4 +29,4 @@ _grp setSpeedMode (selectRandom ["UNCHANGED", "LIMITED", "NORMAL", "FULL"]);
 private _wp = _grp addWaypoint [_pos , 0];
 _wp setWaypointStatements ["isNull objectParent this", "{deleteVehicle _x} forEach thislist"];
 
-[_grp, {({vehicle _x != _x} count (units _this)) <= 0}, 20, 200] spawn EFUNC(main,deleteIfNotSeen);
+[_grp, {({vehicle _x != _x} count (units _this)) <= 0}, 20, 200] call EFUNC(main,deleteIfNotSeen);

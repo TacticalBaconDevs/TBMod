@@ -49,8 +49,11 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
 #include "configs\CfgLoadouts.hpp"
+#include "configs\CfgGroups.hpp"

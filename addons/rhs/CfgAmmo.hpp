@@ -99,7 +99,7 @@ class CfgAmmo
     class B_127x99_Ball;
     class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
-        ACE_ballisticCoefficients[] = {2}; // {0.67}
+        ACE_ballisticCoefficients[] = {1.34}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.35
         deflecting = 0; // 15
         explosive = 0.1; // 0
@@ -110,25 +110,23 @@ class CfgAmmo
 
     class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
     {
-        ACE_ballisticCoefficients[] = {2}; // {0.67}
+        ACE_ballisticCoefficients[] = {1.34}; // {0.67}
         ACE_muzzleVelocityVariationSD = 0.01; // 0.4
-        caliber = 8.2; // 2.05761
-        hit = 39.7; // 24.8085
-        indirectHit = 24.8; // 4
-        indirectHitRange = 0.9; // 2.76
+        caliber = 3.4; // 2.05761
+        hit = 50; // 24.8085
     };
 
     class rhs_ammo_762x51_M118_Special_Ball;
     class rhs_ammo_762x51_M118_Special_Ball_LRS : rhs_ammo_762x51_M118_Special_Ball // 7.62mm Long-Range Sniper
     {
-        ACE_ballisticCoefficients[] = {2}; // {0.359}
+        ACE_ballisticCoefficients[] = {0.718}; // {0.359}
         tracerEndTime = 6; // 1.5
     };
 
     class rhs_ammo_762x51_M80_Ball;
     class rhs_ammo_762x51_M80A1EPR_Ball : rhs_ammo_762x51_M80_Ball // 7.62mm SDLV
     {
-        ACE_ballisticCoefficients[] = {1.439}; // {0.2}
+        ACE_ballisticCoefficients[] = {0.4}; // {0.2}
         audibleFire = 5; // 18
         dangerRadiusBulletClose = 1; // 8
         dangerRadiusHit = 1; // 12
@@ -140,7 +138,6 @@ class CfgAmmo
     class B_762x51_Ball;
     class B_762x51_Minigun_Tracer_Red_splash : B_762x51_Ball // 7.62mm Miniguns Helis
     {
-        caliber = 5.04; // 3.6
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
         explosive = 0.2; // 0
         hit = 4.64; // 11.6
@@ -215,7 +212,7 @@ class CfgAmmo
         explosionEffects = "MortarExplosion"; // "ATRocketExplosion"
         explosive = 1; // 0.65
         indirectHit = 30; // 19
-        indirectHitRange = 15; // 4.1
+        indirectHitRange = 8; // 4.1
         hit = 50; // 145
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30

@@ -1,4 +1,4 @@
-﻿### Info
+### Info
 Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verändern... was ein 100mal schnelleres entwickeln ermöglicht.
 
 ### Ablauf
@@ -28,19 +28,25 @@ Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verä
         mklink /J "[Pfad aus 7.1.1.]\TBMod" "[Ort des Gitprojekts]"
         mklink /J "P:\x\TBMod" "[Ort des Gitprojekts]"
     7.3. entweder du clonst nun CBA in den Ordner "P:\x\cba" oder machst eine Verlinkung per "mklink /J"
+    7.3.  Im Odner P:\x den Befehl "git clone https://github.com/CBATeam/CBA_A3.git" eingeben
+    7.4. Ordner nach von CBA_A3 nach cba umbenenen
 8. Gitordner optimieren
+    8.0. neues Profil für Arma 3 Sync anlegen und auswählen
     8.1. nun in Arma3Sync "-filePatching" als "Launcher Options" ankreuzen
     8.2. wenn du nun den TestMod starten willst, dann machst du das per "-mod=x\TBMod" in den "Additional Parameter" in Arma3Sync
     8.3. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod(Repo Original)\addons"  in das "Gitprojekt\addons" Folder
     8.4. dein Gitordner ist nun also der Mod und wird per "-mod=x\TBMod" durch die Verlinkung in 7.2. gestartet
+sollte das nicht nach 10 kommen?
 9. nun starte den TBMod_Builder.jar und schaue das in der ersten Zeile min. Version 1.0.4 ist, sonst geht es nicht (UPDATEN)
     9.1. die "builder.cfg" öffnen und schauen das unter "currentArgs" irgendwo "-@\=x\\TBMod\\addons\\<ADDON_NAME>" steht, wenn nicht hinzufügen
     9.2. den Placeholder "<ADDON_NAME>" stehen lassen, der Builder ersetzt das
 10. nun den TBMod_Builder.jar IN dem Ordner "P:\x\TBMod" starten
+    10.0. outputpath: [Ort des Gitprojekts]/addons
     10.1. sollte bereits einmal nicht dort gestartet worden sein... in der "Builder.cfg" bei "ExecDir" -> ExecDir=P\:\\x\\TBMod
 11. nun TBMod_Builder.jar ausführen, Arma3Sync ohne "@TBMod" und mit "-mod=x\TBMod" starten
 12. Spiel starten und staunen, es kann sein, das Skripte erst bei einem Mission neustart neu geladen werden (in Eden war es sofort)
     12.1. um den Mod dafür bereit zu machen, lese "Modanpassungen" unten
+13. Falls der TBMod_bw oder TBMos_rhs geändert wird, muss dieser zuerst aus den jeweiligen Ordnern löschen (@bwa3/addons bzw. @rhsusaf/addons)
 
 ### Modanpassungen
 1. entweder in "/addons/main/script_mod.hpp" die Zeilen auskommentieren (also die // wegnehmen) - das ist dann für ALLE addons:

@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
@@ -25,7 +25,7 @@ class CfgVehicles
         { \
             displayName = NAME; \
             condition = QUOTE(!('ITEM' in (_target getVariable ['TBMod_Nachschub_blacklist', []])) && _target getVariable ['TBMod_Nachschub_kisten', 1] > 0); \
-            statement = QUOTE([_target, 'ITEM'] spawn FUNC(createSupply)); \
+            statement = QUOTE([_target, 'ITEM'] call FUNC(createSupply)); \
             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
         }
     #define WRAPPER(CLASS_NAME) class CLASS_NAME; \
@@ -89,7 +89,7 @@ class CfgVehicles
 
         disableInventory = 1;
 
-        ace_rearm_defaultSupply = -1; // 1200
+        ace_rearm_defaultSupply = 5000; // 1200
         ace_cargo_canLoad = 0;
         ace_cargo_size = -1;
 
@@ -129,6 +129,7 @@ class CfgVehicles
                     class allgemeinMortar
                     {
                         displayName = "Mörser Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Mörserkit",TB_supply_all_mortar);
                         ADD_SUPPLY("Mörser Munnition",TB_supply_all_mortarAmmo);
@@ -142,6 +143,7 @@ class CfgVehicles
                     class allgemeinBaukisten
                     {
                         displayName = "Baukisten und Kits";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("HMGKit",TB_supply_all_hmg);
                         ADD_SUPPLY("GMGKit",TB_supply_all_gmg);
@@ -149,6 +151,16 @@ class CfgVehicles
                         ADD_SUPPLY("FlaRakKit",TB_supply_all_flarak);
                         ADD_SUPPLY("BauKiste",TB_supply_all_building);
                         ADD_SUPPLY("SaniBaukiste",TB_supply_all_medicbuilding);
+                    };
+
+                    class allgemeinDrohnen
+                    {
+                        displayName = "Drohnen";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("Darter",B_UAV_01_backpack_F);
+                        ADD_SUPPLY("Pelican",B_UAV_06_backpack_F);
+                        ADD_SUPPLY("Pelter",B_UGV_02_Demining_backpack_F);
                     };
                 };
 
@@ -164,6 +176,7 @@ class CfgVehicles
                     class USAMunition
                     {
                         displayName = "Muntions Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_usa_ammo);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
@@ -175,6 +188,7 @@ class CfgVehicles
                     class USAWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Werfer",TB_supply_usa_launcher);
                         ADD_SUPPLY("WerferMunition",TB_supply_usa_launcherAmmo);
@@ -196,6 +210,7 @@ class CfgVehicles
                     class UKMunition
                     {
                         displayName = "Munitions Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_uk_ammo);
                         ADD_SUPPLY("KleinMunition",TB_supply_uk_ammoSmall);
@@ -207,6 +222,7 @@ class CfgVehicles
                     class UKWerfer
                     {
                         displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Werfer",TB_supply_uk_launcher);
                         ADD_SUPPLY("Igla Munition",TB_supply_uk_IglaAmmo);
@@ -218,6 +234,7 @@ class CfgVehicles
                     class UKFahrzeuge
                     {
                         displayName = "Fahrzeug Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("9x Fahrzeug Magazine 12.7",TB_supply_uk_vehicles127);
                         ADD_SUPPLY("9x Fahrzeug Magazine 7.62",TB_supply_uk_vehicles762);
@@ -271,6 +288,17 @@ class CfgVehicles
                     ADD_SUPPLY("WerferMunition",TB_supply_ldf_launcherAmmo);
                     ADD_SUPPLY("ED-1D Drohne",TB_supply_ldf_ED);
                     ADD_SUPPLY("NachtKiste",TB_supply_ldf_night);
+                };
+
+                class brd
+                {
+                    displayName = "BRD";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY("Munition",TB_supply_brd_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_brd_grena);
+                    ADD_SUPPLY("WerferMunition",TB_supply_brd_launcherAmmo);
                 };
 
                 class russ
@@ -594,8 +622,9 @@ class CfgVehicles
             MACRO_ADDITEM(SLAMDirectionalMine_Wire_Mag,5);
             MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
-            MACRO_ADDITEM(ACE_M26_Clacker,5);
+            MACRO_ADDITEM(ACE_M26_Clacker,2);
             MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
+            MACRO_ADDITEM(APERSMineDispenser_Mag,2);
         };
     };
 
@@ -605,5 +634,6 @@ class CfgVehicles
     #include "CfgVehicles_BW.hpp"
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
+    #include "CfgVehicles_BRD.hpp"
     #include "CfgVehicles_RUSS.hpp"
 };

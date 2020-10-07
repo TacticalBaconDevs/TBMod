@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -136,8 +136,8 @@
     if (!isPlayer _unit) then {_unit = objNull};
     if (isNull _unit) then {_unit = ACE_player};
 
-    systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, name (leader _unit)];
-    ["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, name (leader _unit)]] call CBA_fnc_globalEvent;
+    systemChat format ["Gruppe '%1', mit Leader %3, heißt nun '%2'!", groupId (group _unit), _grpName, [leader _unit] call ace_common_fnc_getName];
+    ["TB_informAdminsAndZeus", ["%1 hat die Gruppe '%2' von %4 auf '%3' umbenannt!", profileName, groupId (group _unit), _grpName, [leader _unit] call ace_common_fnc_getName]] call CBA_fnc_globalEvent;
 
     (group _unit) setGroupIdGlobal [_grpName];
 }, "all"] call CBA_fnc_registerChatCommand;
@@ -215,14 +215,15 @@ if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["dancetime", {
-    private _prevStatus = player getVariable ["TB_danceTime", false];
-    player setVariable ["TB_danceTime", !_prevStatus, true];
+    private _prevStatus = player getVariable [QGVAR(danceTime), false];
+    player setVariable [QGVAR(danceTime), !_prevStatus, true];
 
     if (!_prevStatus) then
     {
-        [] spawn {
-            waitUntil {uiSleep 5; systemChat "Du hast DanceTime noch an!"; !(player getVariable ["TB_danceTime", false])};
-        };
+        [{
+            systemChat "Du hast DanceTime noch an!";
+            if !(player getVariable [QGVAR(danceTime), false]) then {[_this # 1] call CBA_fnc_removePerFrameHandler;};
+        }, 5] call CBA_fnc_addPerFrameHandler;
     };
 
     systemChat format ["Du hast die DanceTime %1aktiviert!", ["de", ""] select !_prevStatus];

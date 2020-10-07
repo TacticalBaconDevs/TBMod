@@ -1,4 +1,4 @@
-﻿#include "../script_component.hpp"
+#include "../script_component.hpp"
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
@@ -60,24 +60,8 @@ if (isNil "TB_origin_playerDamageThreshold") then {TB_origin_playerDamageThresho
 ace_medical_playerDamageThreshold = if (_rolle == "pilot") then {TB_origin_playerDamageThreshold + 10} else {TB_origin_playerDamageThreshold};
 
 // KompassStuff
-private _icon = switch (_rolle) do
+if (!isNil "TBMod_skins") then
 {
-    case "lead": {"TB_Truppführer"};
-    case "sani": {"TB_Kampfsanitäter"};
-    case "arzt": {"TB_Arzt"};
-    case "grena": {"TB_Grenadier"};
-    case "dmr": {"TB_Spotter"};
-    case "mg": {"TB_Unterstützungsschütze"};
-    case "trag": {"TB_Munitionsträger"};
-    case "pilot": {"TB_Pilot"};
-    case "rifle": {"TB_Waffenspezialist"};
-    case "sniper": {"TB_Scharfschütze"};
-    case "spotter": {"TB_Spotter"};
-    case "spreng": {"TB_Sprengstoffexperte"};
-    case "aaat": {"TB_Anti-Fahrzeug"};
-    case "jtac": {"TB_Drohnen-OP"};
-    case "pionier": {"TB_Pionier"};
-    default {"TB_Waffenspezialist"};
+    private _icon = [_rolle, false] call FUNC(getRollenName);
+    ACE_player setVariable ["diwako_dui_radar_customIcon", format [QPATHTOEF(skins,pictures\playericons\%1.paa), _icon], true];
 };
-
-ACE_player setVariable ["diwako_dui_radar_customIcon", format [QPATHTOEF(skins,pictures\playericons\%1.paa), _icon], true];

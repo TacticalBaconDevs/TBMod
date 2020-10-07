@@ -3,7 +3,6 @@
     Original idea/code: http://killzonekid.com/farewell-my-arma-friends/
     Modified for Spotlight: https://github.com/ampersand38/Server-Spotlight
 */
-
 params
 [
     ["_buttons", []],
@@ -35,7 +34,6 @@ ctrlactivate ((ctrlparent (_buttons select 0)) displayctrl 105);
 17    IDC_PASSWORD
 18    diag_tickTime + _TIMEOUT
 */
-
 onEachFrame format [
 "
     onEachFrame

@@ -1,4 +1,4 @@
-﻿/*
+/*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 
@@ -38,7 +38,7 @@ class Cfg3DEN
                         defaultValue = "false";
                         condition = "objectVehicle + objectHasInventoryCargo";
                     };
-                    
+
                     class GVAR(deactivateStealthOnFired)
                     {
                         displayName = "Stealth deaktivieren bei Schussabgabe";

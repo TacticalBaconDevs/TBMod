@@ -18,6 +18,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgAmmo.hpp"
 #include "configs\CfgMagazines.hpp"
