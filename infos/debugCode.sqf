@@ -226,10 +226,8 @@ deleteVehicle _vehicle;
 
         if (local _vehicle && {_ammo isEqualTo "B_12Gauge_Slug_NoCartridge"} && {!isNull _projectile}) then
         {
-            systemChat "1";
             [_projectile, _vehicle] spawn
             {
-                systemChat "2";
                 params ["_projectile", "_vehicle"];
                 private _pos = getPos _projectile;
                 private _time = diag_tickTime + 0.5;
@@ -239,10 +237,8 @@ deleteVehicle _vehicle;
                     !alive _projectile
                 };
 
-                systemChat "3";
                 if (_time <= diag_tickTime) then
                 {
-                    systemChat "4";
                     {deleteVehicle _x} forEach (_pos nearEntities ["MineBase", 0.5]);
                 };
             };
