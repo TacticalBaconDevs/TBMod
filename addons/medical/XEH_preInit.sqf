@@ -10,8 +10,6 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-if !(call EFUNC(main,isTBMission)) exitWith {};
-
 [
     QGVAR(coef_global),
     "SLIDER",
@@ -234,7 +232,7 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
 
 
 // DEBUG Code
-#ifdef DEBUG_MODE_FULL
+/*#ifdef DEBUG_MODE_FULL
     call compile preprocessFileLineNumbers "z\ace\addons\medical\dev\debugDisplay.sqf";
     call compile preprocessFileLineNumbers "z\ace\addons\medical\dev\watchVariable.sqf";
 
@@ -245,6 +243,6 @@ if !(call EFUNC(main,isTBMission)) exitWith {};
     [QGVAR(FatalInjuryHead), {systemChat (format ["%1 -> FatalInjuryHead damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
     [QGVAR(FatalInjuryBody), {systemChat (format ["%1 -> FatalInjuryBody damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
     [QGVAR(FatalInjuryTrauma), {systemChat (format ["%1 -> FatalInjuryTrauma damit im %2", [_this] call ace_common_fnc_getName, [_this, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState])}] call CBA_fnc_addEventHandler;
-#endif
+#endif*/
 
 ADDON = true;

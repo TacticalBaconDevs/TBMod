@@ -3,8 +3,6 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
-
 addMissionEventHandler ["ExtensionCallback", {
    params ["_name", "_function", "_data"];
 

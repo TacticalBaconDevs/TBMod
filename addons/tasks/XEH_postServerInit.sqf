@@ -3,8 +3,6 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call EFUNC(main,isTBMission)) exitWith {};
-
 // Warten auf Tasks
 [{!isNil QGVAR(tasks)}, {
     GVAR(states) = true call CBA_fnc_createNamespace;
