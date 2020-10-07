@@ -51,9 +51,35 @@ class CfgMagazines
         displayNameShort = "Anti-Radar [SEAD]"; // "ARM"
     };
 
-    class 1000Rnd_Gatling_30mm_Plane_CAS_01_F : VehicleMagazine // A-10 GAU-8
+    class magazine_Missile_AMRAAM_C_x1;
+    class PylonMissile_Missile_AMRAAM_C_x1 : magazine_Missile_AMRAAM_C_x1
     {
-        muzzleImpulseFactor[] = {0,5.1};
+        hardpoints[] = {"B_AMRAAM_C","I_AMRAAM_C"};
+    };
+
+    class magazine_Missile_AMRAAM_D_x1;
+    class PylonMissile_Missile_AMRAAM_D_x1 : magazine_Missile_AMRAAM_D_x1
+    {
+        hardpoints[] = {"B_AMRAAM_D"};
+    };
+
+    class magazine_Missile_BIM9X_x1;
+    class PylonMissile_Missile_BIM9X_x1 : magazine_Missile_BIM9X_x1
+    {
+        hardpoints[] = {"B_BIM9X","I_BIM9X","B_AMRAAM_C","I_AMRAAM_C","B_AMRAAM_D"}; // {"B_BIM9X","I_BIM9X"};
+    };
+
+    class 300Rnd_20mm_shells;
+    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
+    {
+        count = 600; // 300
+        hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
+        tracersEvery = 1; // 5
+    };
+
+    class 1000Rnd_Gatling_30mm_Plane_CAS_01_F : VehicleMagazine // 30mm Gatling GAU-8
+    {
+        muzzleImpulseFactor[] = {-0.1,1.8}; // {-0.1,1}
     };
 
     class magazine_Bomb_GBU12_x1;
@@ -92,12 +118,6 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "580lb, laser-guided cluster bomb"
         displayName = "HE Cluster [LG]"; // "BL778 Cluster x1"
         displayNameShort = "[LG]"; // "Cluster Bomb"
-    };
-
-    class 300Rnd_20mm_shells;
-    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
-    {
-        hardpoints[] = {"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
     };
 
     class ace_hot_1_6Rnd;
@@ -241,6 +261,7 @@ class CfgMagazines
     class TB_Smoke_Grenades : 3Rnd_Smoke_Grenade_shell
     {
         ammo = "TB_G_40mm_Smoke";
+        author = "TBMod";
         displayName = "Smoke 40mm";
         displayNameShort = "Smoke 40mm";
 
@@ -252,7 +273,60 @@ class CfgMagazines
     class TB_mag_45_FMJ : 6Rnd_45ACP_Cylinder // 45. FMJ Magazin
     {
         ammo = "TB_45_FMJ";
+        author = "TBMod";
         displayName = "45. cal FMJ";
         displayNameShort = "45. cal FMJ";
+    };
+
+    class 60Rnd_CMFlare_Chaff_Magazine;
+    class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
+    {
+        ammo = "TB_ammo_CMFlare_Chaff";
+        author = "TBMod";
+        count = 72;
+        descriptionShort = "Wirkung gegen IR/Radar";
+        displayName = "Flare/Chaff x72";
+        displayNameShort = "Flare/Chaff";
+        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        initSpeed = 18;
+        pylonWeapon = "TB_weap_CMLauncher";
+    };
+
+    class TB_mag_CMFlare_Chaff_72Rnd_Burst : TB_mag_CMFlare_Chaff_72Rnd // CM Flare Chaff Burst
+    {
+        ammo = "TB_ammo_CMFlare_Chaff_Burst";
+        descriptionShort = "Wirkung gegen IR/Radar, Feuerstoß";
+        displayName = "B Flare/Chaff x72";
+        displayNameShort = "B Flare/Chaff";
+        pylonWeapon = "TB_weap_CMLauncher_Burst";
+    };
+
+    class TB_mag_LWIRCM_144_60 : CA_Magazine // LWIRCM 60
+    {
+        ammo = "TB_ammo_LWIRCM_60";
+        author = "TBMod";
+        count = 144;
+        descriptionShort = "Wirkung gegen IR, 60 Sekunden";
+        displayName = "LWIRCM x144/60";
+        displayNameShort = "LWIRCM";
+        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        initSpeed = 1;
+        pylonWeapon = "TB_weap_LWIRCM_144_60";
+    };
+
+    class TB_mag_LWIRCM_144_45 : TB_mag_LWIRCM_144_60 // LWIRCM 45
+    {
+        ammo = "TB_ammo_LWIRCM_45";
+        descriptionShort = "Wirkung gegen IR, 45 Sekunden";
+        displayName = "LWIRCM x144/45";
+        pylonWeapon = "TB_weap_LWIRCM_144_45";
+    };
+
+    class TB_mag_LWIRCM_144_30 : TB_mag_LWIRCM_144_60 // LWIRCM 30
+    {
+        ammo = "TB_ammo_LWIRCM_30";
+        descriptionShort = "Wirkung gegen IR, 30 Sekunden";
+        displayName = "LWIRCM x144/30";
+        pylonWeapon = "TB_weap_LWIRCM_144_30";
     };
 };
