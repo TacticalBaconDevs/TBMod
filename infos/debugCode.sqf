@@ -216,3 +216,39 @@ forEach _vehicles;
 deleteVehicle _vehicle;
 [_result, count _vehicles]
 
+
+// Eron DefuseDrohne entschärfen
+[
+    "UGV_02_Demining_Base_F",
+    "fired",
+    {
+        params ["_vehicle", "", "", "", "_ammo", "", "_projectile", ""];
+
+        if (local _vehicle && {_ammo isEqualTo "B_12Gauge_Slug_NoCartridge"} && {!isNull _projectile}) then
+        {
+            systemChat "1";
+            [_projectile, _vehicle] spawn
+            {
+                systemChat "2";
+                params ["_projectile", "_vehicle"];
+                private _pos = getPos _projectile;
+                private _time = diag_tickTime + 0.5;
+
+                waitUntil {
+                    if !((getPos _projectile) isEqualTo [0,0,0]) then {_pos = getPos _projectile};
+                    !alive _projectile
+                };
+
+                systemChat "3";
+                if (_time <= diag_tickTime) then
+                {
+                    systemChat "4";
+                    {deleteVehicle _x} forEach (_pos nearEntities ["MineBase", 0.5]);
+                };
+            };
+        };
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
