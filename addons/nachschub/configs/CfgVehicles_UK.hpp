@@ -98,7 +98,7 @@ class TB_supply_uk_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 
     class TransportWeapons
     {
-        MACRO_ADDWEAPON(rhs_weap_M136_hp,2);
+        MACRO_ADDWEAPON(rhs_weap_M136,2);
         MACRO_ADDWEAPON(TB_rhs_weap_M136_CS,2);
         MACRO_ADDWEAPON(rhs_weap_M136_hedp,2);
         MACRO_ADDWEAPON(rhs_weap_m72a7,2);
@@ -190,6 +190,7 @@ class TB_supply_uk_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 class TB_supply_uk_night : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",UK);
+    
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -211,7 +212,8 @@ class TB_supply_uk_night : WRAPPER_NAME(Box_East_Support_F)
 
 class TB_supply_uk_vehicles127 : WRAPPER_NAME(Box_East_Support_F)
 {
-    PUBLIC_NAME_CAT("FahrzeugMunition12_7",UK);
+    PUBLIC_NAME_CAT("9x Fahrzeug Magazine 12.7",UK);
+    
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -225,7 +227,8 @@ class TB_supply_uk_vehicles127 : WRAPPER_NAME(Box_East_Support_F)
 
 class TB_supply_uk_vehicles762 : WRAPPER_NAME(Box_East_Support_F)
 {
-    PUBLIC_NAME_CAT("FahrzeugMunition7_62",UK);
+    PUBLIC_NAME_CAT("9x Fahrzeug Magazine 7.62",UK);
+    
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -236,3 +239,64 @@ class TB_supply_uk_vehicles762 : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDMAGAZINE(UK3CB_BAF_762_200Rnd_T,9);
     };
 };
+
+class TB_supply_uk_vehiclesGMG : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("5x Fahrzeug Magazine GMG",UK);
+    
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(UK3CB_BAF_32Rnd_40mm_G_Box,5);
+    };
+};
+
+class TB_supply_uk_warriorAPDS : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("9x Warrior Magazine APDS",UK);
+    
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(UK3CB_BAF_6Rnd_30mm_L21A1_APDS,9);
+    };
+};
+
+class TB_supply_uk_warriorHE : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("9x Warrior Magazine HE",UK);
+    
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(UK3CB_BAF_6Rnd_30mm_L21A1_HE,9);
+    };
+};
+
+class TB_supply_uk_warriorMG : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("2x Warrior Magazine 800 MG",UK);
+    
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(UK3CB_BAF_762_800Rnd_T,2);
+    };
+};
+

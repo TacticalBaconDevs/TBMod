@@ -2,6 +2,7 @@
 Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verändern... was ein 100mal schnelleres entwickeln ermöglicht.
 
 ### Ablauf
+0. MikeroTools installieren/updaten (siehe Punkt 1. https://github.com/TacticalBaconDevs/TBMod/wiki/PBOs-bauen)
 1. in Steam "Arma 3 Tools" starten (wenn nicht installiert, dann Unterpunkte nachen)
     1.1. Steam öffnen
     1.2. über "Bibliothek" hovern und "Werkzeuge" anklicken
@@ -13,7 +14,7 @@ Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verä
     3.2. dann unter "Path to your P Drive" den "Arma3Drive" (Schritt 2) auswählen
     3.3. per "Register" bestätigen
 4. nun ein paar Grundeinstellungen übernehmen (optional)
-    4.1. unter "Preferences" die Optionen unter "Buldozer Configurator" anklicken
+    4.1. unter "Preferences" nun die Optionen "Mount P drive..."/"Always hide..."/"Run steam on startup..." ggf nach belieben einstellen
 5. den Button "Mount the Project Drive" drücken
     5.1. überprüfen ob im FileExplorer nun ein Laufwerk P: existiert
     5.2. nun "Diagnostics" einmal durchlaufen lassen (Registry wird gesetzt)
@@ -28,10 +29,10 @@ Mit diesem Guide, lassen sich Funktionen in den Addons während des Spiels verä
         mklink /J "P:\x\TBMod" "[Ort des Gitprojekts]"
     7.3. entweder du clonst nun CBA in den Ordner "P:\x\cba" oder machst eine Verlinkung per "mklink /J"
 8. Gitordner optimieren
-    8.1. wenn du nun den TestMod starten willst, dann machst du das per "-mod=x\TBMod -filePatching" in den "Additional Parameter" in Arma3Sync
-    8.2. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod(Repo Original)\addons"  in das "Gitprojekt\addons" Folder
-    8.3. dein Gitordner ist nun also der Mod und wird per "-mod=x\TBMod" durch die Verlinkung in 7.2. gestartet
-    8.4. du brauchst "-filePatching" nicht als "Additional Parameter" wenn du es oben ankreuzt
+    8.1. nun in Arma3Sync "-filePatching" als "Launcher Options" ankreuzen
+    8.2. wenn du nun den TestMod starten willst, dann machst du das per "-mod=x\TBMod" in den "Additional Parameter" in Arma3Sync
+    8.3. desshalb jetzt den gesamten Inhalt, des jetztigen "@TBMod(Repo Original)\addons"  in das "Gitprojekt\addons" Folder
+    8.4. dein Gitordner ist nun also der Mod und wird per "-mod=x\TBMod" durch die Verlinkung in 7.2. gestartet
 9. nun starte den TBMod_Builder.jar und schaue das in der ersten Zeile min. Version 1.0.4 ist, sonst geht es nicht (UPDATEN)
     9.1. die "builder.cfg" öffnen und schauen das unter "currentArgs" irgendwo "-@\=x\\TBMod\\addons\\<ADDON_NAME>" steht, wenn nicht hinzufügen
     9.2. den Placeholder "<ADDON_NAME>" stehen lassen, der Builder ersetzt das

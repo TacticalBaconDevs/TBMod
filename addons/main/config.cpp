@@ -21,23 +21,18 @@ class CfgPatches
         versionAct = "";
 
         units[] = {
-            "TB_flag_base",
             "TB_flag_rufnamen",
             "TB_flag_teleport",
-            "TB_flag_fob",
-            "TB_zeus_base",
-            "TB_zeus_nachschubAbwurf",
-            "TB_zeus_disablePath",
-            "TB_zeus_prioSichtbarkeit",
-            "TB_zeus_handleAsPlayerMedical",
-            "TB_zeus_applyLoadout",
-            "TB_zeus_handleAsPlayerMedical"
+            "TB_spezial_fobBase",
+            "TB_editor_gBriefing",
+            "TB_editor_kBriefing",
+            "TB_UGV_01_rcws_F"
         };
 
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             // Arma3
-            "A3_Data_F_Enoch_Loadorder",
+            "A3_Data_F_Oldman_Loadorder",
             "A3_Data_F_Mod_Loadorder",
 
             // CBA
@@ -146,14 +141,15 @@ class CfgPatches
             "ace_medical",
             "ace_medical_ai",
             "ace_medical_blood",
-            /*"ace_medical_damage", // NEW Ace Version
+            "ace_medical_damage",
             "ace_medical_engine",
             "ace_medical_feedback",
             "ace_medical_gui",
             "ace_medical_statemachine",
             "ace_medical_status",
             "ace_medical_treatment",
-            "ace_medical_vitals",*/
+            "ace_medical_vitals",
+            "ace_metis",
             "ace_microdagr",
             "ace_minedetector",
             "ace_missileguidance",
@@ -213,39 +209,12 @@ class CfgPatches
 };
 
 // Configs
-#include "configs\Animations.hpp"
-#include "configs\CfgAmmo.hpp"
-#include "configs\CfgEditorCategories.hpp"
-#include "configs\CfgEditorSubcategories.hpp"
-#include "configs\CfgFactionClasses.hpp"
-#include "configs\CfgMagazines.hpp"
-#include "configs\CfgMagazineWells.hpp"
 #include "configs\CfgMods.hpp"
 #include "configs\CfgSettings.hpp"
 #include "configs\CfgUnitInsignia.hpp"
 #include "configs\CfgVehicles.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
-#include "configs\CBA_Stuff.hpp"
-#include "configs\CfgMisc.hpp"
-#include "configs\ACE_detector.hpp"
-#include "configs\CfgSounds.hpp"
 
 // Other config stuff
 #include "gcam\gcam_component.hpp"
-
-// TODO: Test, setzt das ACE3 nicht schon?!? und was sind Vanilla Werte?
-class RscMapControl
-{
-    maxSatelliteAlpha=0.5;
-    colorBackground[]={0.89999998,0.89999998,0.89999998,1};
-    colorCountlines[]={0.64999998,0.52999997,0.30000001,1};
-    colorMainCountlines[]={0.85000002,0,0};
-    colorLevels[]={0,0,0,1};
-    sizeExLevel=0.029999999;
-    colorTracks[]={1,0,0,1};
-    colorTracksFill[]={1,1,0,1};
-    colorRoads[]={0,0,0,1};
-    colorRoadsFill[]={1,1,0,1};
-    colorMainRoads[]={0,0,0,1};
-    colorMainRoadsFill[]={1,0.60000002,0.40000001,1};
-};
+#include "configs\TB_RscHTML.hpp"

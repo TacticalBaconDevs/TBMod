@@ -237,20 +237,20 @@ class CfgVehicles
     };
 
     class LT_01_cannon_base_F;
-    class TB_Vehicles_Wueste_Wiesel_2_MG : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    class TB_Vehicles_Wueste_Wiesel_2_Mk20 : LT_01_cannon_base_F // Wiesel 2 (Mk20)
     {
-        displayName = "Wiesel 2 (MG)";
+        displayName = "Wiesel 2 (Mk20)";
         author = "Eron";
         addCategoryBLU(Wueste);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa)
         };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_MG.jpg);
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_Mk20.jpg);
     };
 
     class I_LT_01_AT_F;
-    class TB_Vehicles_Wueste_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (ATGM)
+    class TB_Vehicles_Wueste_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (AT)
     {
         displayName = "Wiesel 2 (AT)";
         author = "Eron";
@@ -260,6 +260,32 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa)
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_AT.jpg);
+    };
+
+    class LT_01_scout_base_F;
+    class TB_Vehicles_Wueste_Wiesel_2_AFF : LT_01_scout_base_F // Wiesel 2 (AFF)
+    {
+        displayName = "Wiesel 2 (AFF)";
+        author = "Eron";
+        addCategoryBLU(Wueste);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_7.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_AFF.jpg);
+    };
+
+    class LT_01_AA_base_F;
+    class TB_Vehicles_Wueste_Wiesel_2_FlaRaWaTrg : LT_01_AA_base_F // Wiesel 2 (FlaRaWaTrg)
+    {
+        displayName = "Wiesel 2 (FlaRaWaTrg)";
+        author = "Eron";
+        addCategoryBLU(Wueste);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_FlaRaWaTrg.jpg);
     };
 
     ///////////////////////Fahrzeuge Camouflage Wald//////////////////////////
@@ -356,19 +382,19 @@ class CfgVehicles
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Strider_smg.jpg);
     };
 
-    class TB_Vehicles_Wald_Wiesel_2_MG : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
+    class TB_Vehicles_Wald_Wiesel_2_Mk20 : LT_01_cannon_base_F // Wiesel 2 (Mk20)
     {
-        displayName = "Wiesel 2 (MG)";
+        displayName = "Wiesel 2 (Mk20)";
         author = "Eron";
         addCategoryBLU(Wald);
         hiddenSelectionsTextures[] = {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_1.paa)
         };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_MG.jpg);
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_Mk20.jpg);
     };
 
-    class TB_Vehicles_Wald_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (ATGM)
+    class TB_Vehicles_Wald_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (AT)
     {
         displayName = "Wiesel 2 (AT)";
         author = "Eron";
@@ -378,6 +404,30 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa)
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AT.jpg);
+    };
+
+    class TB_Vehicles_Wald_Wiesel_2_AFF : LT_01_scout_base_F // Wiesel 2 (AFF)
+    {
+        displayName = "Wiesel 2 (AFF)";
+        author = "Eron";
+        addCategoryBLU(Wald);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_6.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AFF.jpg);
+    };
+
+    class TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg : LT_01_AA_base_F // Wiesel 2 (FlaRaWaTrg)
+    {
+        displayName = "Wiesel 2 (FlaRaWaTrg)";
+        author = "Eron";
+        addCategoryBLU(Wald);
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa)
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg.jpg);
     };
 
     ///////////////////////Fluggeräte//////////////////////////
@@ -561,6 +611,14 @@ class CfgVehicles
         picture = "\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_oucamo.paa"; // "\A3\Supplies_F_Exp\Bags\Data\UI\Icon_B_Bergen_tna_CA.paa"
     };
 
+    class TB_backpacks_bergen_multitarn : B_Bergen_tna_F
+    {
+        displayName = "Bergen (Multitarn)";
+        author = "Eron";
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_bergen_multitarn.paa)}; // "\A3\Supplies_F_Exp\Bags\Data\Bergen_tna_CO.paa"
+        picture = "\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa"; // "\A3\Supplies_F_Exp\Bags\Data\UI\Icon_B_Bergen_tna_CA.paa"
+    };
+
     class B_Bergen_hex_F;
     class TB_backpacks_bergen_marpad_d : B_Bergen_hex_F
     {
@@ -598,5 +656,16 @@ class CfgVehicles
             init = ""; // "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_T100.jpg);
+    };
+
+    // Skin FlaRak Kit
+    class AA_01_base_F;
+    class B_static_AA_F : AA_01_base_F
+    {
+        author = "Eron";
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(pictures\statics\TB_stationäre_Luftabwehr.paa),
+            QPATHTOF(pictures\statics\TB_stationäre_Luftabwehr.paa)
+        };
     };
 };

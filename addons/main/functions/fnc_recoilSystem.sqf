@@ -61,11 +61,12 @@ TB_recoilFreeze = -1;
     TB_cacheWeaponType = ([_newWeapon] call BIS_fnc_itemType) select 1;
 }] call CBA_fnc_addPlayerEventHandler;
 
-TB_recoilFNC = {
+<<<<<<< HEAD
+GVAR(recoilID) = ["ace_firedPlayer", {
     BEGIN_COUNTER(recoilFNC);
     if (GVAR(recoilCoef) == -1) exitWith
     {
-        ["ace_firedPlayer", TB_recoilID] call CBA_fnc_removePlayerEventHandler;
+        ["ace_firedPlayer", GVAR(recoilID)] call CBA_fnc_removePlayerEventHandler;
         END_COUNTER(recoilFNC);
     };
 
@@ -79,7 +80,7 @@ TB_recoilFNC = {
     private _customAimCoef = getCustomAimCoef _unit;
     private _recoil = TB_recoilStart + _suppressed +  _customAimCoef;
 
-    private _einfluss = 0;
+    private _einfluss = (getCustomAimCoef _unit) + GVAR(recoilStart);
     private _deploy = isWeaponDeployed _unit;
     private _rested = isWeaponRested _unit;
 
@@ -130,6 +131,4 @@ TB_recoilFNC = {
 
     TB_recoilFreeze = diag_tickTime + 1;
     END_COUNTER(recoilFNC);
-};
-
-TB_recoilID = ["ace_firedPlayer", {_this call TB_recoilFNC}] call CBA_fnc_addEventHandler;
+}] call CBA_fnc_addEventHandler;

@@ -16,13 +16,11 @@ if (TB_origin_medicClass == 0) then
     {
         ACE_player setVariable ["ace_medical_medicClass", [2, 1] select (_rolle == "sani"), true];
         ACE_player setUnitTrait ["medic", true];
-        EGVAR(medical,coef) = ([0.9, 0.55] select (_rolle == "arzt")) * EGVAR(medical,coef_global);
     }
     else
     {
         ACE_player setVariable ["ace_medical_medicClass", 0, true];
         ACE_player setUnitTrait ["medic", false];
-        EGVAR(medical,coef) = 1.1 * EGVAR(medical,coef_global);
     };
 };
 

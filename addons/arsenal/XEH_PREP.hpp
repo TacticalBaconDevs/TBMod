@@ -30,3 +30,10 @@ PREP_OTHERFOLDER(arsenalLDF,arsenale\themen);
 PREP_OTHERFOLDER(arsenalRUSSSimple,arsenale\themen);
 PREP_OTHERFOLDER(arsenalUSAVietnam,arsenale\themen);
 PREP_OTHERFOLDER(arsenalVANILLACOP,arsenale\themen);
+
+// Tests
+PREP_OTHERFOLDER(test,tests);
+PREP_OTHERFOLDER(checkArsenalsTest,tests);
+PREP_OTHERFOLDER(defaultLoadoutTest,tests);
+// Test-FNCs
+PREP_OTHERFOLDER(checkItems,tests);

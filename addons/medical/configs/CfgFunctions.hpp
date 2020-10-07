@@ -4,15 +4,25 @@
 */
 class CfgFunctions
 {
-    // REPLACEMENT - ace3
-    class ACE3
+    // REPLACEMENT - ace
+    class ace_medical_status
     {
-        tag = "ace_medical";
-        class ace_medical
+        class medical_status
         {
-            class getBloodVolumeChange
+            class hasStableVitals
             {
-                file = QPATHTOF(replacement\fn_getBloodVolumeChange.sqf);
+                file = QPATHTOF(replacement\fnc_hasStableVitals.sqf);
+            };
+        };
+    };
+
+    class ace_medical_damage
+    {
+        class medical_damage
+        {
+            class determineIfFatal
+            {
+                file = QPATHTOF(replacement\fnc_determineIfFatal.sqf);
             };
         };
     };
