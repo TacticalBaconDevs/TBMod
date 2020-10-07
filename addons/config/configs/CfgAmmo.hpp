@@ -200,14 +200,6 @@ class CfgAmmo
         };
     };
 
-    class BulletBase;
-    class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // A-10 GAU-8
-    {
-        caliber = 19; // 1.4
-        indirectHit = 35; // 12
-        indirectHitRange = 4.5; // 3
-    };
-
     class B_45ACP_Ball;
     class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
     {
@@ -245,6 +237,83 @@ class CfgAmmo
     {
         submunitionConeAngle = 0.5; // 1.3
         submunitionConeType[] = {"poissondisc",16}; // {"poissondisc",9};
+    };
+
+    class ammo_Missile_ShortRangeAABase;
+    class ammo_Missile_AA_R73 : ammo_Missile_ShortRangeAABase
+    {
+        cmimmunity = 0.82; // 0.92
+    };
+
+    class ammo_Missile_BIM9X : ammo_Missile_ShortRangeAABase
+    {
+        cmimmunity = 0.82; // 0.92
+    };
+
+    class ammo_Missile_MediumRangeAABase;
+    class ammo_Missile_AA_R77 : ammo_Missile_MediumRangeAABase
+    {
+        cmimmunity = 0.85; // 0.95
+    };
+
+    class ammo_Missile_AMRAAM_C : ammo_Missile_MediumRangeAABase
+    {
+        cmimmunity = 0.85; // 0.95
+    };
+
+    class ammo_Missile_AMRAAM_D : ammo_Missile_MediumRangeAABase
+    {
+        cmimmunity = 0.86; // 0.96
+    };
+
+    class ammo_Missile_mim145;
+    class ammo_Missile_s750 : ammo_Missile_mim145
+    {
+        cmimmunity = 0.85; // 0.95
+    };
+
+    class CMflare_Chaff_Ammo;
+    class TB_ammo_CMFlare_Chaff : CMflare_Chaff_Ammo
+    {
+        timeToLive = 5;
+    };
+
+    class TB_ammo_CMFlare_Chaff_Burst : CMflare_Chaff_Ammo
+    {
+        timeToLive = 5;
+    };
+
+    class TB_ammo_LWIRCM_60 : CMflare_Chaff_Ammo // LWIRCM 60
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
+    };
+
+    class TB_ammo_LWIRCM_45 : CMflare_Chaff_Ammo // LWIRCM 45
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
+    };
+
+    class TB_ammo_LWIRCM_30 : CMflare_Chaff_Ammo // LWIRCM 30
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
     };
 
     // ###################### Unterlauf-IR Granate ######################
