@@ -255,7 +255,7 @@ class CfgWeapons
     class TB_weap_CMLauncher : CMFlareLauncher // CM Flare Chaff
     {
         baseWeapon = "TB_weap_CMLauncher";
-        magazines[] = {"TB_mag_CMFlare_Chaff_144Rnd"};
+        magazines[] = {"TB_mag_CMFlare_Chaff_72Rnd"};
         modes[] = {"Burst","Timed","AIBurst"};
         class Burst : Burst // P(Treffer,0.85)= 5.36%
         {
@@ -282,13 +282,13 @@ class CfgWeapons
     class TB_weap_CMLauncher_Burst : CMFlareLauncher // CM Flare Chaff Burst
     {
         baseWeapon = "TB_weap_CMLauncher_B";
-        magazines[] = {"TB_mag_CMFlare_Chaff_144Rnd_Burst"};
+        magazines[] = {"TB_mag_CMFlare_Chaff_72Rnd_Burst"};
         modes[] = {"Burst","AIBurst"};
         class Burst : Burst // P(Treffer,0.85)= 5.36%
         {
             burst = 18;
             dispersion = 0.75;
-            displayName = "Burst 18/1";
+            displayName = "nur Feuerstoß 18/1";
             multiplier = 1;
             reloadTime = 0.055;
         };

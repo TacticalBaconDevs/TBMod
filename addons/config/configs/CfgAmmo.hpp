@@ -277,7 +277,35 @@ class CfgAmmo
     {
         timeToLive = 5;
     };
-    class TB_ammo_LWIRCM : CMflare_Chaff_Ammo // LWIRCM
+
+    class TB_ammo_CMFlare_Chaff_Burst : CMflare_Chaff_Ammo
+    {
+        timeToLive = 5;
+    };
+
+    class TB_ammo_LWIRCM_60 : CMflare_Chaff_Ammo // LWIRCM 60
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
+    };
+
+    class TB_ammo_LWIRCM_45 : CMflare_Chaff_Ammo // LWIRCM 45
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
+    };
+
+    class TB_ammo_LWIRCM_30 : CMflare_Chaff_Ammo // LWIRCM 30
     {
         airFriction = -0.1;
         audibleFire = 0;

@@ -49,7 +49,7 @@ class CfgVehicles
                 {
                     class cmDispenser1
                     {
-                        attachment = "TB_mag_CMFlare_Chaff_144Rnd";
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
                         hardpoints[] = {"TB_cm_dispenser_UH_80_1"};
                         maxweight = 800;
                         priority = 4;
@@ -58,7 +58,7 @@ class CfgVehicles
 
                     class cmDispenser2
                     {
-                        attachment = "TB_mag_CMFlare_Chaff_144Rnd";
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
                         hardpoints[] = {"TB_cm_dispenser_UH_80_2"};
                         maxweight = 800;
                         priority = 3;

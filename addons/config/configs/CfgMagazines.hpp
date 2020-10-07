@@ -279,23 +279,24 @@ class CfgMagazines
     };
 
     class 60Rnd_CMFlare_Chaff_Magazine;
-    class TB_mag_CMFlare_Chaff_144Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
+    class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
     {
         ammo = "TB_ammo_CMFlare_Chaff";
         author = "TBMod";
-        count = 144;
+        count = 72;
         descriptionShort = "Wirkung gegen IR/Radar";
-        displayName = "Flare/Chaff x144";
+        displayName = "Flare/Chaff x72";
         displayNameShort = "Flare/Chaff";
         hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
         initSpeed = 18;
         pylonWeapon = "TB_weap_CMLauncher";
     };
 
-    class TB_mag_CMFlare_Chaff_144Rnd_Burst : TB_mag_CMFlare_Chaff_144Rnd // CM Flare Chaff Burst
+    class TB_mag_CMFlare_Chaff_72Rnd_Burst : TB_mag_CMFlare_Chaff_72Rnd // CM Flare Chaff Burst
     {
+        ammo = "TB_ammo_CMFlare_Chaff_Burst";
         descriptionShort = "Wirkung gegen IR/Radar, Feuerstoß";
-        displayName = "B Flare/Chaff x144";
+        displayName = "B Flare/Chaff x72";
         displayNameShort = "B Flare/Chaff";
         pylonWeapon = "TB_weap_CMLauncher_Burst";
     };
