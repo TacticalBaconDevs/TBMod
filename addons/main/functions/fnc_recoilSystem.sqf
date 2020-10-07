@@ -21,7 +21,7 @@ if (GVAR(recoilCoef) == -1) exitWith {};
         private _stanceMod = [1, 0.5, 0, 0, 0] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find (stance ACE_player));
 
         private _return = [];
-        _return pushBack (format ["EngineRecoil: %1", (unitRecoilCoefficient ACE_player) toFixed 2]);
+        _return pushBack (format ["EngineRecoil: %1 | RecoilCalc: %2", (unitRecoilCoefficient ACE_player) toFixed 2, ([] call FUNC(recoilCalc)) toFixed 2]);
         _return pushBack (format ["Fatigue: %1", (getFatigue ACE_player) toFixed 2]);
         _return pushBack (format ["AlignStatus: %1", L_Align_Align_sys_currentAlignStatus toFixed 2]);
         _return pushBack (format ["Overheating: %1 - %2", _temperature toFixed 2, _scaledTemperature toFixed 2]);
@@ -55,125 +55,26 @@ forEach [
 
 GVAR(cacheWeaponType) = ([currentWeapon player] call BIS_fnc_itemType) select 1;
 GVAR(recoilFreeze) = -1;
-GVAR(fnc_recoil) = {
-    BEGIN_COUNTER(recoilFNC);
-    if (GVAR(recoilCoef) == -1) exitWith
-    {
-        ["ace_firedPlayer", GVAR(recoilID)] call CBA_fnc_removePlayerEventHandler;
-        END_COUNTER(recoilFNC);
-    };
 
-    //params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-    params ["_unit", "_weapon", "_muzzle", "_mode", "", "_magazine"];
-
-    if (GVAR(recoilFreeze) >= diag_tickTime) exitWith {END_COUNTER(recoilFNC)};
-    if ((toLower _weapon) in ["throw", "put"] || !(_muzzle in [primaryWeapon _unit, handgunWeapon _unit])) exitWith
-    {
-        TRACE_4("Reset setUnitRecoilCoefficient because _muzzle is not primary/handgun", _this, (toLower _weapon) in ["throw", "put"], primaryWeapon _unit, handgunWeapon _unit);
-        _unit setUnitRecoilCoefficient 1;
-        END_COUNTER(recoilFNC);
-    };
-    if (vehicle _unit != _unit) exitWith
-    {
-        TRACE_1("Set setUnitRecoilCoefficient 0.1 because in vehicle", _this);
-        _unit setUnitRecoilCoefficient 0.1;
-        END_COUNTER(recoilFNC);
-    };
-
-    /*
-        // Neuer Ansatz
-        private _einfluss = (getCustomAimCoef _unit) + GVAR(recoilStart);
-        private _deploy = isWeaponDeployed _unit;
-        private _rested = isWeaponRested _unit;
-        // Spezielle WaffenStats
-        if (GVAR(cacheWeaponType) == "MachineGun") then {ADD(_einfluss,100)};
-        if (GVAR(cacheWeaponType) == "SniperRifle" && {_deploy}) then {ADD(_einfluss,-50)};
-        if ("rhs_weap_mk17" in (toLower _weapon)) then
-        {
-            ADD(_einfluss,50);
-            if !("rhsusf_20rnd_762x51_sr25" in toLower _magazine) then {ADD(_einfluss,50)};
-        };
-        // Externe Einflüsse
-        if (_rested) then {ADD(_einfluss,-10)};
-        if (_deploy) then {ADD(_einfluss,-30)};
-        // Waffen Einflüsse
-        if (isClass (configfile >> "CfgPatches" >> "rhsusf_main") && _weapon == primaryWeapon _unit) then
-        {
-            (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
-            // Silencer
-            private _muzzleHider = (toLower _silencer) in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"];
-            if (_mode == "Single" && {_muzzleHider}) then {ADD(_einfluss,-20)};
-            if (_silencer != "" && {!_muzzleHider}) then {ADD(_einfluss,-10)};
-            // Grip
-            if (_bipod != "" && !_deploy && _bipod != "rhsusf_acc_harris_bipod") then {ADD(_einfluss,-10)};
-        };
-        if (_weapon == handgunWeapon _unit) then
-        {
-            (handgunItems _unit) params ["_silencer", "", "", "_bipod"];
-            if (_silencer != "") then {ADD(_einfluss,-10)};
-        };
-        //_einfluss = 1 + (_einfluss / 100);
-    */
-
-    /*
-        Noch umzusetzende Ideen:
-            - automatisch Sachen auf alle Schalldämpfer usw beziehen
-            - Supression weiter ausbauen
-            - Blut Faktor / Medizinische Faktoren rein
-            - Verwackelfaktor mit rein GGF diesen auch beeinflussen
-            - Munition bzw Kaliber Unterschiede
-            - Compatible Munition anders behandeln MK17 (andere Munition anderes behandeln)
-    */
-
-    private _recoil = GVAR(recoilStart) + (getCustomAimCoef _unit) + _suppressed;
-    private _deploy = isWeaponDeployed _unit;
-    private _rested = isWeaponRested _unit;
-
-    // Spezielle WaffenStats
-    if (GVAR(cacheWeaponType) == "MachineGun") then {ADD(_recoil, 2)};
-    if (GVAR(cacheWeaponType) == "SniperRifle" && {_deploy}) then {ADD(_recoil, -0.5)};
-    if ("rhs_weap_mk17" in (toLower _weapon)) then
-    {
-        ADD(_recoil, 1);
-        if !("rhsusf_20rnd_762x51_sr25" in (toLower _magazine)) then {ADD(_recoil, 1)};
-    };
-
-    // Externe Einflüsse
-    if (_rested) then {ADD(_recoil, -0.2)};
-    if (_deploy) then {ADD(_recoil, -0.3)};
-
-    // Waffen Einflüsse
-    if (isClass (configfile >> "CfgPatches" >> "rhsusf_main") && _weapon == primaryWeapon _unit) then // TODO: check ob waffe von RHS, sonst auch nicht
-    {
-        (primaryWeaponItems _unit) params ["_silencer", "", "", "_bipod"];
-
-        // Silencer
-        private _muzzleHider = (toLower _silencer) in ["rhsusf_acc_sf3p556", "rhsusf_acc_sfmb556"];
-        if (_mode == "Single" && {_muzzleHider}) then {ADD(_recoil, -0.2)};
-        if (_silencer != "" && {!_muzzleHider}) then {ADD(_recoil, -0.1)};
-
-        // Grip
-        if (_bipod != "" && !_deploy && _bipod != "rhsusf_acc_harris_bipod") then {ADD(_recoil, -0.1)};
-    };
-
-    if (_weapon == handgunWeapon _unit) then
-    {
-        (handgunItems _unit) params ["_silencer", "", "", "_bipod"];
-
-        if (_silencer != "") then {ADD(_recoil, -0.1)};
-    };
-
-    _unit setUnitRecoilCoefficient ((_recoil max 0.5) * GVAR(recoilCoef));
-
-    GVAR(recoilFreeze) = diag_tickTime + 1;
-};
+// nach Fahrzeugverlassen noch damit FFV 0.1 recoil weg kommt
 
 ["weapon", {
     params ["_unit", "_newWeapon"];
     GVAR(cacheWeaponType) = ([_newWeapon] call BIS_fnc_itemType) select 1;
-
-    // ["_unit", "_weapon", "_muzzle", "_mode", "", "_magazine"]
-    [_unit, _newWeapon, _newWeapon, "Single", nil, currentMagazine player] call FNC(recoil);
+    private _recoil = [] call FUNC(recoilCalc);
+    TRACE_1("Recoil nach Waffenwechsel", _recoil);
+    _unit setUnitRecoilCoefficient _recoil;
 }] call CBA_fnc_addPlayerEventHandler;
 
-GVAR(recoilID) = ["ace_firedPlayer", LINKFUNC(recoil)] call CBA_fnc_addEventHandler;
+GVAR(recoilID) = ["ace_firedPlayer", {
+    if (GVAR(recoilCoef) == -1 || !GVAR(recoilSystem)) exitWith {["ace_firedPlayer", GVAR(recoilID)] call CBA_fnc_removePlayerEventHandler};
+    if (GVAR(recoilFreeze) >= diag_tickTime) exitWith {};
+    BEGIN_COUNTER(recoilFiredPlayer);
+
+    private _recoil = _this call FUNC(recoilCalc);
+    TRACE_1("recoil nach Schuss", _recoil);
+    _unit setUnitRecoilCoefficient _recoil;
+
+    GVAR(recoilFreeze) = diag_tickTime + 1;
+    END_COUNTER(recoilFiredPlayer);
+}] call CBA_fnc_addEventHandler;

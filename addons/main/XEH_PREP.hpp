@@ -24,6 +24,7 @@ PREP(insertChildrenRufname);
 PREP(isTBMission);
 PREP(miscStuff);
 PREP(modifierFOBs);
+PREP(recoilCalc);
 PREP(recoilSystem);
 PREP(safe);
 PREP(shortcuts);
