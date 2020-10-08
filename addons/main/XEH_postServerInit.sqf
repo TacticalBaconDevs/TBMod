@@ -36,7 +36,7 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
         }
         forEach allGroups;
     },
-    1800
+    900
 ] call CBA_fnc_addPerFrameHandler;
 
 ["CBA_loadingScreenDone", {
