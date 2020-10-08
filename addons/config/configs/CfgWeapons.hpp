@@ -233,6 +233,7 @@ class CfgWeapons
         modes[] = {"manual","close","short","medium","far"};
         class manual : manual
         {
+            dispersion = 0.0049;
             multiplier = 1; // 3
             reloadTime = 0.015; // 0.075
         };
@@ -242,6 +243,7 @@ class CfgWeapons
         modes[] = {"manual","close","short","medium","far"};
         class manual : manual
         {
+            dispersion = 0.0049;
             multiplier = 1; // 3
             reloadTime = 0.015; // 0.075
         };
