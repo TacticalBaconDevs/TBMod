@@ -23,6 +23,7 @@ class CfgVehicles
     class B_Heli_Transport_01_F : Heli_Transport_01_base_F
     {
         class Components;
+        class TextureSources;
     };
     class TB_MH_60_Silent_Hawk : B_Heli_Transport_01_F // UH-80
     {
@@ -83,6 +84,26 @@ class CfgVehicles
                         UIposition[] = {0.46,0.15};
                     };
                 };
+            };
+        };
+        class TextureSources : TextureSources
+        {
+            class Black
+            {
+                displayName = "Schwarz";
+                textures[] = {"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_CO.paa","\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_CO.paa"};
+            };
+            class Green {
+                displayName = "Oliv";
+                textures[] = {"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_BLUFOR_CO.paa","\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_BLUFOR_CO.paa"};
+            };
+            class Olive {
+                displayName = "Oliv-Schwarz";
+                textures[] = {"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext01_tropic_CO.paa","\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext02_tropic_CO.paa"};
+            };
+            class Sand {
+                displayName = "Oliv-Sand";
+                textures[] = {"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext01_sand_CO.paa","\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext02_sand_CO.paa"};
             };
         };
     };
