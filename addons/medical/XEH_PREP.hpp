@@ -3,3 +3,4 @@
     Developed by http://tacticalbacon.de
 */
 PREP(calcTreatmentTime);
+PREP(getBlood);
