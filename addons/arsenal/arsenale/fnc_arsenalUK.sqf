@@ -808,7 +808,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Rucksack
-
             "UK3CB_BAF_B_Bergen_MTP_Sapper_L_A",    // Rucksack mit visuellem Minendetektor, Mulicam
             "UK3CB_BAF_B_Bergen_MTP_Engineer_L_A",  //                        Brechstange,   Multicam
             // Items
