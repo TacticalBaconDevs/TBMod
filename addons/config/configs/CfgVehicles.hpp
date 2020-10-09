@@ -280,6 +280,29 @@ class CfgVehicles
         fuelCapacity = 4; // 2
     };
 
+    class Tank_F;
+    class LT_01_base_F : Tank_F
+    {
+        class Turrets;
+    };
+    class LT_01_AT_base_F : LT_01_base_F
+    {
+        class Turrets : Turrets
+        {
+            class MainTurret;
+        };
+    };
+    class I_LT_01_AT_F : LT_01_AT_base_F // Wiesel 2 AT
+    {
+        class Turrets: Turrets
+        {
+            class MainTurret: MainTurret
+            {
+                magazines[] = {"SmokeLauncherMag","ace_hot_3_2Rnd","ace_hot_3_2Rnd","ace_hot_3_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"}; // {"SmokeLauncherMag","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2MP_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"};
+            };
+        };
+    };
+
     // ###################### ACE Defuse ######################
     // class Items_base_F;
     // class ACE_DefuseObject: Items_base_F
