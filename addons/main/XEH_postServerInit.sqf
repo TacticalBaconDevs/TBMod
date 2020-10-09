@@ -3,8 +3,6 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
-
 enableEnvironment [true, true];
 enableSaving [false, false];
 
@@ -38,7 +36,7 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
         }
         forEach allGroups;
     },
-    1800
+    900
 ] call CBA_fnc_addPerFrameHandler;
 
 ["CBA_loadingScreenDone", {

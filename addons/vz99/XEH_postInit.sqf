@@ -5,7 +5,6 @@
     Modified by http://tacticalbacon.de
 */
 if (!hasInterface) exitWith {};
-if !(call EFUNC(main,isTBMission)) exitWith {};
 
 TB_vz99_nextReload = "TB_vz99_HE";
 

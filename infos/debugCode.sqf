@@ -200,6 +200,101 @@ fnc_backpack = {
 ["rhsusf_assault_eagleaiii_coy"] call fnc_backpack;
 
 
+// Punkte Selections
+onEachFrame {
+    {
+        private _selName = _x;
+
+        {
+            _x params ["_lodName", "_color"];
+            drawIcon3D ["", _color, bob modelToWorldVisual (bob selectionPosition [_selName, _lodName]), 0, 0, 0, _selName];
+        }
+        forEach [
+            ["Memory", [1,1,1,1]], // White
+            ["Geometry", [1,0,1,1]], // Purple
+            ["FireGeometry", [1,1,0,1]], // Yellow
+            ["LandContact", [0,1,1,1]], // Turquoise
+            ["HitPoints", [0,0,1,1]] // Blue
+        ];
+    }
+    forEach (selectionNames bob);
+};
+
+
+// Punkte BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    {
+        drawIcon3D ["", [1,0,1,1], _x, 0, 0, 0, "X"];
+    }
+    forEach [
+        [_links, _vorne, _oben],
+        [_rechts, _vorne, _oben],
+        [_links, _vorne, _unten],
+        [_rechts, _vorne, _unten],
+        [_links, _hinten, _oben],
+        [_rechts, _hinten, _oben],
+        [_links, _hinten, _unten],
+        [_rechts, _hinten, _unten]
+    ];
+};
+
+
+// Strich BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    {
+        drawLine3D [_x # 0, _x # 1, [1,0,1,1]];
+    }
+    forEach [
+        // vorderes Viereck
+        [[_links, _vorne, _oben], [_rechts, _vorne, _oben]],
+        [[_rechts, _vorne, _oben], [_rechts, _vorne, _unten]],
+        [[_rechts, _vorne, _unten], [_links, _vorne, _unten]],
+        [[_links, _vorne, _unten], [_links, _vorne, _oben]],
+        // hinteres Viereck
+        [[_links, _hinten, _oben], [_rechts, _hinten, _oben]],
+        [[_rechts, _hinten, _oben], [_rechts, _hinten, _unten]],
+        [[_rechts, _hinten, _unten], [_links, _hinten, _unten]],
+        [[_links, _hinten, _unten], [_links, _hinten, _oben]],
+        // hinten und vorne verbinden
+        [[_links, _vorne, _oben], [_links, _hinten, _oben]],
+        [[_rechts, _vorne, _oben], [_rechts, _hinten, _oben]],
+        [[_links, _vorne, _unten], [_links, _hinten, _unten]],
+        [[_rechts, _vorne, _unten], [_rechts, _hinten, _unten]]
+    ];
+};
+
+
+// Mittelachsen BoundingBox
+onEachFrame {
+    (0 boundingBoxReal bob) params ["_minusPos", "_plusPos"];
+
+    (bob modelToWorldVisual _minusPos) params ["_rechts", "_hinten", "_unten"];
+    (bob modelToWorldVisual _plusPos) params ["_links", "_vorne", "_oben"];
+
+    private _mitteLR = _links - (abs (_links - _rechts) / 2);
+    private _mitteVH = _vorne - (abs (_vorne - _hinten) / 2);
+    private _mitteOU = _oben - (abs (_oben - _unten) / 2);
+
+    {
+        drawLine3D [_x # 0, _x # 1, [1,0,1,1]];
+    }
+    forEach [
+        [[_mitteLR, _mitteVH, _oben], [_mitteLR, _mitteVH, _unten]],
+        [[_rechts, _mitteVH, _mitteOU], [_links, _mitteVH, _mitteOU]]
+    ];
+};
+
+
 // Check ob ein Fahrzeug per VehicleTransport transportiert werden kann
 private _vehicle = createVehicle ["---FILLME---", [0,0,0], [], 0, "CAN_COLLIDE"];
 if (true) then {_vehicle setMass 1};
@@ -216,3 +311,35 @@ forEach _vehicles;
 deleteVehicle _vehicle;
 [_result, count _vehicles]
 
+
+// Eron DefuseDrohne entschärfen
+[
+    "UGV_02_Demining_Base_F",
+    "fired",
+    {
+        params ["_vehicle", "", "", "", "_ammo", "", "_projectile", ""];
+
+        if (local _vehicle && {_ammo isEqualTo "B_12Gauge_Slug_NoCartridge"} && {!isNull _projectile}) then
+        {
+            [_projectile, _vehicle] spawn
+            {
+                params ["_projectile", "_vehicle"];
+                private _pos = getPos _projectile;
+                private _time = diag_tickTime + 0.5;
+
+                waitUntil {
+                    if !((getPos _projectile) isEqualTo [0,0,0]) then {_pos = getPos _projectile};
+                    !alive _projectile
+                };
+
+                if (_time <= diag_tickTime) then
+                {
+                    {deleteVehicle _x} forEach (_pos nearEntities ["MineBase", 0.5]);
+                };
+            };
+        };
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
