@@ -530,6 +530,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _grenadier_gewehr +
         _grenadier_munition +
+        _gepaeck_mittel +
         [
 
             // Weste
