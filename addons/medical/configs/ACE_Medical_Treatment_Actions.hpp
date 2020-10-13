@@ -80,7 +80,7 @@ class ace_medical_treatment_actions {
         allowedSelections[] = {"LeftArm", "RightArm"};
         condition = "true";
 
-        treatmentTime = QUOTE(private _time = [180, 60] select (alive (_this # 1)); [ARR_2(_this,_time)] call FUNC(calcTreatmentTime));
+        treatmentTime = QUOTE(private _time = [ARR_2(180,60)] select (alive (_this select 1)); [ARR_2(_this,_time)] call FUNC(calcTreatmentTime));
 
         callbackProgress = "";
         callbackSuccess = QFUNC(getBlood);
