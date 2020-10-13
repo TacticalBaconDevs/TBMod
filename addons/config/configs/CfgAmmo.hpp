@@ -26,40 +26,6 @@ class CfgAmmo
         indirectHitRange = 2; // 1
     };
 
-    class Sh_155mm_AMOS;
-    class ammo_ShipCannon_120mm_HE : Sh_155mm_AMOS // Mk45 Hammer HE
-    {
-        caliber = 4; // 10
-        hit = 300; // 340
-        indirectHit = 250; // 125
-        indirectHitRange = 17; // 30
-
-        class CamShakeExplode {
-            distance = 900; // 339.599
-            duration = 2; // 2.4
-            frequency = 15; //20
-            power = 28; // 31
-        };
-        class CamShakeFire {
-            distance = 700; // 99.5992;
-            duration = 2; // 2.4
-            frequency = 10; // 20
-            power = 8; // 3.52844
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.8;
-            frequency = 20;
-            power = 155;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 0.01;
-        };
-    };
-
     class Smoke_120mm_AMOS_White;
     class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Rauchwand
     {
@@ -86,31 +52,6 @@ class CfgAmmo
         cameraViewAvailable = 1; // 0
         indirectHitRange = 32; // 12
         trackOversteer = 0.95; // 1
-
-        class CamShakeExplode {
-            distance = 1500;
-            duration = 0.75;
-            frequency = 10;
-            power = 35;
-        };
-        class CamShakeFire {
-            distance = 1200;
-            duration = 0.75;
-            frequency = 10;
-            power = 18;
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.35;
-            frequency = 40;
-            power = 180;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 0.01;
-        };
     };
 
     class BombCluster_01_Ammo_F : Bomb_04_F // CBU-85 HE Mines Cluster
