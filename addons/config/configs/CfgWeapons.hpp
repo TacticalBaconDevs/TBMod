@@ -4,7 +4,12 @@
 */
 class CfgWeapons
 {
-    class mortar_155mm_AMOS;
+    class CannonCore;
+    class mortar_155mm_AMOS : CannonCore
+    {
+        class Mode_Burst;
+        class Mode_SemiAuto;
+    };
     class weapon_ShipCannon_120mm : mortar_155mm_AMOS
     {
         magazines[] = {
@@ -15,6 +20,100 @@ class CfgWeapons
             "magazine_ShipCannon_120mm_mine_shells_x6",
             "magazine_ShipCannon_120mm_smoke_shells_x6",
             "magazine_ShipCannon_120mm_AT_mine_shells_x6"
+        };
+        modes[] = {"Single1","Single2","Single3","Single4","Single5","Burst1","Burst2","Burst3","Burst4","Burst5"};
+        class Burst1 : Mode_Burst
+        {
+            aiDispersionCoefX = 1.9;
+            aiDispersionCoefY = 2.4;
+            aiRateOfFire = 2;
+            aiRateOfFireDispersion = 1;
+            aiRateOfFireDistance = 500;
+            artilleryCharge = 0.18;
+            artilleryDispersion = 2.5;
+            autoFire = 0;
+            burst = 6;
+            burstRangeMax = -1;
+            canShootInWater = 0;
+            dispersion = 0.0005;
+            displayName = "Burst (close)";
+            ffCount = 1;
+            ffFrequency = 11;
+            ffMagnitude = 0.5;
+            flash = "gunfire";
+            flashSize = 0.1;
+            maxRange = 2000;
+            maxRangeProbab = 0.5;
+            midRange = 1500;
+            midRangeProbab = 0.7;
+            minRange = 800;
+            minRangeProbab = 0.5;
+            multiplier = 1;
+            recoil = "recoil_auto_primary_3outof10";
+            recoilProne = "recoil_auto_primary_prone_3outof10";
+            reloadSound[] = {"A3\sounds_f\dummysound",1,1,20};
+            reloadTime = 3; // 6
+            requiredOpticType = -1;
+            showToPlayer = 0;
+            sound[] = {"",10,1};
+            soundBegin[] = {"sound",1};
+            soundBeginWater[] = {"sound",1};
+            soundBurst = 0;
+            soundClosure[] = {"sound",1};
+            soundContinuous = 0;
+            soundEnd[] = {"sound",1};
+            soundLoop[] = {"sound",1};
+            sounds[] = {"StandardSound"};
+            class StandardSound
+            {
+                begin1[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_155mm\sochor_155mm_distant",2.51189,1,1500};
+                soundBegin[] = {"begin1",1};
+            };
+            textureType = "burst";
+            useAction = 0;
+            useActionTitle = "";
+            weaponSoundEffect = "";
+        };
+        class Single1 : Mode_SemiAuto
+        {
+            aiDispersionCoefX = 1.4;
+            aiDispersionCoefY = 1.7;
+            aiRateOfFire = 1;
+            aiRateOfFireDispersion = 1;
+            aiRateOfFireDistance = 10;
+            artilleryCharge = 0.18;
+            artilleryDispersion = 0.8;
+            autoFire = 0;
+            burst = 1;
+            burstRangeMax = -1;
+            canShootInWater = 0;
+            dispersion = 0.0002;
+            displayName = "Semi (close)";
+            multiplier = 1;
+            recoil = "recoil_single_primary_3outof10";
+            recoilProne = "recoil_single_primary_prone_3outof10";
+            reloadSound[] = {"A3\sounds_f\dummysound",1,1,20};
+            reloadTime = 1.75; // 8
+            requiredOpticType = -1;
+            showToPlayer = 1;
+            soundBurst = 0;
+            soundContinuous = 0;
+            sound[] = {"",10,1};
+            soundBegin[] = {"sound",1};
+            soundBeginWater[] = {"sound",1};
+            soundClosure[] = {"sound",1};
+            soundEnd[] = {};
+            soundLoop[] = {};
+            sounds[] = {"StandardSound"};
+            class StandardSound
+            {
+                begin1[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_155mm\sochor_155mm_distant",2.51189,1,1500};
+                soundBegin[] = {"begin1",1};
+            };
+            textureType = "semi";
+            useAction = 0;
+            useActionTitle = "";
+            weaponSoundEffect = "";
         };
     };
 
