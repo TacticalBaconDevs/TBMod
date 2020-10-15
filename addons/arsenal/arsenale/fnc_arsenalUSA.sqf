@@ -950,9 +950,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_sr25_ec_d",
             "rhs_weap_sr25_ec_wd",
             "rhs_weap_sr25_wd",
-            "rhs_weap_m24sws",
-            "rhs_weap_m24sws_d",
-            "rhs_weap_m24sws_wd",
 
             // ### Geschützzubehör
             "rhsusf_acc_sr25s",
@@ -961,9 +958,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "muzzle_snds_b",
             "muzzle_snds_b_snd_f",
             "rhsusf_acc_aac_762sdn6_silencer",
-            "rhsusf_acc_m24_silencer_black",
-            "rhsusf_acc_m24_silencer_d",
-            "rhsusf_acc_m24_silencer_wd",
             "rhsusf_acc_harris_swivel",
 
             // ### Visiere
