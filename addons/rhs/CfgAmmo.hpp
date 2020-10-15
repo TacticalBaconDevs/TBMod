@@ -116,25 +116,6 @@ class CfgAmmo
         hit = 50; // 24.8085
     };
 
-    class rhs_ammo_762x51_M118_Special_Ball;
-    class rhs_ammo_762x51_M118_Special_Ball_LRS : rhs_ammo_762x51_M118_Special_Ball // 7.62mm Long-Range Sniper
-    {
-        ACE_ballisticCoefficients[] = {0.718}; // {0.359}
-        tracerEndTime = 6; // 1.5
-    };
-
-    class rhs_ammo_762x51_M80_Ball;
-    class rhs_ammo_762x51_M80A1EPR_Ball : rhs_ammo_762x51_M80_Ball // 7.62mm SDLV
-    {
-        ACE_ballisticCoefficients[] = {0.4}; // {0.2}
-        audibleFire = 5; // 18
-        dangerRadiusBulletClose = 1; // 8
-        dangerRadiusHit = 1; // 12
-        explosionEffects = "ExplosionEffects";
-        visibleFire = 0.5; // 22
-        visibleFireTime = 0.5; // 3
-    };
-
     class B_762x51_Ball;
     class B_762x51_Minigun_Tracer_Red_splash : B_762x51_Ball // 7.62mm Miniguns Helis
     {
@@ -153,6 +134,7 @@ class CfgAmmo
         suppressionRadiusHit = 7; // 8
     };
 
+    class rhs_ammo_762x51_M80_Ball;
     class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
     {
         ACE_ballisticCoefficients[] = {0.35}; // {0.2}

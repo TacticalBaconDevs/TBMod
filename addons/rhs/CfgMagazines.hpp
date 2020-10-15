@@ -221,29 +221,6 @@ class CfgMagazines
         mass = 28; // 41.14
     };
 
-    class rhs_mag_20Rnd_SCAR_762x51_mk316_special;
-    class rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS : rhs_mag_20Rnd_SCAR_762x51_mk316_special // 7.62mm Long-Range Sniper
-    {
-        ammo = "rhs_ammo_762x51_M118_Special_Ball_LRS";
-        author = "TBMod";
-        descriptionShort = "7.62mm LRS"; // "Caliber: 7.62x51mm NATO (M993 AP)<br />Rounds: 20"
-        displayName = "7.62mm Long-Range Sniper Magazine"; // "7.62mm 20Rnd Mag (M993 AP)"
-        displayNameShort = "7.62mm LRS"; // "7.62mm AP"
-
-        mass = 14; // 16.24
-    };
-
-    class rhs_mag_20Rnd_SCAR_762x51_m80_ball;
-    class rhs_mag_20Rnd_SCAR_762x51_m80a1_epr : rhs_mag_20Rnd_SCAR_762x51_m80_ball // 7.62mm Subsonic Low Visible
-    {
-        author = "TBMod";
-        descriptionShort = "7.62mm SDLV"; // "Caliber: 7.62x51mm SD<br />Rounds: 20<br />Used in: Mk18 ABR"
-        displayName = "7.62mm Subsonic Low Visible Magazine"; // "7.62mm 20Rnd SD Mag"
-        displayNameShort = "7.62mm SDLV"; // "7.62mm SD"
-
-        mass = 14; // 16.24
-    };
-
     class rhs_mag_gau19_air_base;
     class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6 12.7x99mm Left
     {
