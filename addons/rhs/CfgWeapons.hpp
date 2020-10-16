@@ -223,8 +223,9 @@ class CfgWeapons
     class rhs_weap_SCAR_H_CQC_Base;
     class rhs_weap_mk17_CQC: rhs_weap_SCAR_H_CQC_Base // Mk17 CQC
     {
-        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        displayName = "Mk 16 Mod 0 (CQC)"; // Mk 17 Mod 0 (CQC)
+        magazineWell[] = {"AK_545x39","CBA_545x39_AK","CBA_545x39_RPK","STANAG_556x45","CBA_556x45_STANAG"};
+        magazines[] += {"rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger"};
         ACE_barrelLength = 330;
         ACE_barrelTwist = 177.8;
     };
@@ -232,8 +233,8 @@ class CfgWeapons
     class rhs_weap_SCAR_H_LB_Base;
     class rhs_weap_mk17_LB: rhs_weap_SCAR_H_LB_Base // Mk17 LB
     {
-        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazineWell[] = {"SVD_762x54R","Rahim_762x54","M14_762x51","CBA_762x54R_SVD","CBA_762x51_SCAR","AK_762x39","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
         ACE_barrelLength = 510;
         ACE_barrelTwist = 177.8;
         aimTransitionSpeed = 0.36; // 1
@@ -242,8 +243,8 @@ class CfgWeapons
     class rhs_weap_SCAR_H_STD_Base;
     class rhs_weap_mk17_STD: rhs_weap_SCAR_H_STD_Base // Mk17 STD
     {
-        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazineWell[] = {"CBA_762x51_SCAR","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
         ACE_barrelLength = 410;
         ACE_barrelTwist = 177.8;
         aimTransitionSpeed = 0.76; // 1

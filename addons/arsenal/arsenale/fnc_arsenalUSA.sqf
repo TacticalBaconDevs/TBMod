@@ -465,7 +465,9 @@ private _dmr_munition = [
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
     "rhs_mag_20Rnd_SCAR_762x51_m80_ball",
     "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
-    "rhsusf_5Rnd_762x51_m118_special_Mag"
+    "rhsusf_5Rnd_762x51_m118_special_Mag",
+    "rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger",
+    "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"
 ];
 
 private _rifle_munition = [
@@ -500,9 +502,7 @@ private _sniper_munition = [
     "rhsusf_mag_10Rnd_STD_50BMG_M33",
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
-    "rhsusf_mag_40Rnd_46x30_AP",
-    "rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS",
-    "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"
+    "rhsusf_mag_40Rnd_46x30_AP"
 ];
 
 private _aaat_munition = [
