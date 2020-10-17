@@ -500,6 +500,7 @@ private _pilot_munition = [
 private _sniper_munition = [
     "rhsusf_mag_10Rnd_STD_50BMG_mk211",
     "rhsusf_mag_10Rnd_STD_50BMG_M33",
+    "TB_mag_10_Rnd_338_LS",
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
     "rhsusf_mag_40Rnd_46x30_AP"
@@ -1009,13 +1010,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_mk17_CQC",
             "rhs_weap_mk17_LB",
             "rhs_weap_mk17_STD",
+            "TB_rhs_weap_mk22_ASR",
             "rhs_weap_m24sws",
             "rhs_weap_m24sws_d",
             "rhs_weap_m24sws_wd",
+            "rhs_weap_m40a5",
+            "rhs_weap_m40a5_d",
+            "rhs_weap_m40a5_wd",
 
             // ### Visiere
             "rhsusf_acc_premier_anpvs27",
             "rhsusf_acc_premier",
+            "rhsusf_acc_premier_mrds",
             "rhsusf_acc_LEUPOLDMK4_2",
             "rhsusf_acc_LEUPOLDMK4_2_d",
             "optic_lrps",

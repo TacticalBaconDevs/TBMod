@@ -21,6 +21,10 @@ class CfgPatches
         };
 
         addonRootClass = "TBMod_main";
+        
+        weapons[] = {
+            "TB_rhs_weap_mk22_ASR"
+        };
     };
 };
 

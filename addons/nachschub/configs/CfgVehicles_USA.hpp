@@ -87,10 +87,11 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_East_Wps_F)
     {
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,8);
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
+        MACRO_ADDMAGAZINE(TB_mag_10_Rnd_338_LS,8);
 
         // DMR7.62
         MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,8);
-        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,32);
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,16);
     };
 };
 
