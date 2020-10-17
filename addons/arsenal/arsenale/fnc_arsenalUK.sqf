@@ -704,6 +704,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Visiere
             "rhsusf_acc_premier_anpvs27",
             "rhsusf_acc_premier",
+            "rhsusf_acc_premier_mrds",
             "rhsusf_acc_LEUPOLDMK4_2",
             "rhsusf_acc_LEUPOLDMK4_2_d",
             "optic_lrps",

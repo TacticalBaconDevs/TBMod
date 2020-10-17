@@ -160,6 +160,20 @@ class CfgAmmo
         hit = 100; // 150
     };
 
+    class ACE_338_Ball;
+    class TB_ammo_338_LS : ACE_338_Ball // Lapua Scenar
+    {
+        ACE_ballisticCoefficients[] = {0.675};
+        ACE_barrelLengths[] = {508,660.4,711.2};
+        ACE_bulletLength = 39.573;
+        ACE_bulletMass = 16.2;
+        ACE_muzzleVelocities[] = {880,915,925};
+        airFriction = -0.00060841;
+        caliber = 2;
+        hit = 20;
+        typicalSpeed = 921;
+    };
+
     class PipeBombBase;
     class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
     {

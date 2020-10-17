@@ -278,6 +278,16 @@ class CfgMagazines
         displayNameShort = "45. cal FMJ";
     };
 
+    class ACE_10Rnd_338_300gr_HPBT_Mag;
+    class TB_mag_10_Rnd_338_LS : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
+    {
+        ammo = "TB_ammo_338_LS";
+        author = "TBMod";
+        displayName = ".338 Lapua Scenar";
+        displayNameShort = ".338 Lapua Scenar";
+    };
+
+
     class 60Rnd_CMFlare_Chaff_Magazine;
     class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
     {
