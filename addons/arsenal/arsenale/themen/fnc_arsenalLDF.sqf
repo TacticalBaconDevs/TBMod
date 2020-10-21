@@ -182,6 +182,7 @@ private _allgemein_geschuetzzubehoer = [
     "muzzle_snds_65_ti_ghex_f",
     "muzzle_snds_h",
     "muzzle_snds_b",
+    "muzzle_snds_m",
     "muzzle_snds_570"
 ];
 
@@ -264,7 +265,9 @@ private _aaat_munition = [
 Private _mg_muniton = [
     "ACE_200Rnd_65x39_cased_Box_Tracer_Dim",
     "200Rnd_65x39_cased_Box_Tracer",
-    "200Rnd_65x39_cased_Box"
+    "200Rnd_65x39_cased_Box",
+    "200Rnd_556x45_Box_Tracer_F",
+    "200Rnd_556x45_Box_F"
 ];
 
 Private _mp_muniton = [
@@ -383,7 +386,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _mg_muniton +
         [
             // Waffen
-            "LMG_Mk200_black_F"
+            "LMG_Mk200_black_F",
+            "LMG_03_F"
 
         ]
     };
@@ -401,6 +405,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         _mg_muniton +
+        _aaat_munition +
         [
             // Rucksack
             "B_Carryall_eaf_F",
