@@ -10,8 +10,6 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-if !(call EFUNC(main,isTBMission)) exitWith {};
-
 [
     QGVAR(enable),
     "CHECKBOX",

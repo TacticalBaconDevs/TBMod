@@ -3,8 +3,6 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
-
 ["CBA_loadingScreenDone", {
     // initalisiert die TB Rolle nach dem spawnen
     [] call FUNC(waitUntilLoaded);
@@ -40,3 +38,11 @@ if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
     true
 ] call CBA_fnc_addClassEventHandler;
 
+// Arsenal Extrabutton
+[
+    ["ACE_fieldDressing", "ACE_packingBandage", "ACE_elasticBandage", "ACE_tourniquet", "ACE_splint", "ACE_morphine", "ACE_adenosine", "ACE_atropine", "ACE_epinephrine", "ACE_plasmaIV",
+        "ACE_plasmaIV_500", "ACE_plasmaIV_250", "ACE_bloodIV", "ACE_bloodIV_500", "ACE_bloodIV_250", "ACE_salineIV", "ACE_salineIV_500", "ACE_salineIV_250", "ACE_quikclot", "ACE_personalAidKit",
+        "ACE_surgicalKit", "ACE_bodyBag", "adv_aceCPR_AED"],
+    "Medical",
+    QPATHTOF(pics\icon_medical.paa)
+] call ace_arsenal_fnc_addRightPanelButton;

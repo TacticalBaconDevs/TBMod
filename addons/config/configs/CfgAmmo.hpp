@@ -26,40 +26,6 @@ class CfgAmmo
         indirectHitRange = 2; // 1
     };
 
-    class Sh_155mm_AMOS;
-    class ammo_ShipCannon_120mm_HE : Sh_155mm_AMOS // Mk45 Hammer HE
-    {
-        caliber = 4; // 10
-        hit = 300; // 340
-        indirectHit = 250; // 125
-        indirectHitRange = 17; // 30
-
-        class CamShakeExplode {
-            distance = 900; // 339.599
-            duration = 2; // 2.4
-            frequency = 15; //20
-            power = 28; // 31
-        };
-        class CamShakeFire {
-            distance = 700; // 99.5992;
-            duration = 2; // 2.4
-            frequency = 10; // 20
-            power = 8; // 3.52844
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.8;
-            frequency = 20;
-            power = 155;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 0.01;
-        };
-    };
-
     class Smoke_120mm_AMOS_White;
     class ammo_ShipCannon_120mm_smoke : Smoke_120mm_AMOS_White // Mk45 Hammer Rauchwand
     {
@@ -86,31 +52,6 @@ class CfgAmmo
         cameraViewAvailable = 1; // 0
         indirectHitRange = 32; // 12
         trackOversteer = 0.95; // 1
-
-        class CamShakeExplode {
-            distance = 1500;
-            duration = 0.75;
-            frequency = 10;
-            power = 35;
-        };
-        class CamShakeFire {
-            distance = 1200;
-            duration = 0.75;
-            frequency = 10;
-            power = 18;
-        };
-        class CamShakeHit {
-            distance = 1;
-            duration = 0.35;
-            frequency = 40;
-            power = 180;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.1;
-            frequency = 20;
-            power = 0.01;
-        };
     };
 
     class BombCluster_01_Ammo_F : Bomb_04_F // CBU-85 HE Mines Cluster
@@ -200,12 +141,11 @@ class CfgAmmo
         };
     };
 
-    class BulletBase;
-    class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase // A-10 GAU-8
+    class B_45ACP_Ball;
+    class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
     {
-        caliber = 19; // 1.4
-        indirectHit = 35; // 12
-        indirectHitRange = 4.5; // 3
+        hit = 21; // 8
+        caliber = 1.4; // 1
     };
 
     class B_30mm_HE;
@@ -220,6 +160,20 @@ class CfgAmmo
         hit = 100; // 150
     };
 
+    class ACE_338_Ball;
+    class TB_ammo_338_LS : ACE_338_Ball // Lapua Scenar
+    {
+        ACE_ballisticCoefficients[] = {0.675};
+        ACE_barrelLengths[] = {508,660.4,711.2};
+        ACE_bulletLength = 39.573;
+        ACE_bulletMass = 16.2;
+        ACE_muzzleVelocities[] = {880,915,925};
+        airFriction = -0.00060841;
+        caliber = 2;
+        hit = 20;
+        typicalSpeed = 921;
+    };
+
     class PipeBombBase;
     class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
     {
@@ -231,6 +185,90 @@ class CfgAmmo
     class APERSMineDispenser_Mine_Ammo : APERSMine_Range_Ammo // Submunition APERSMineDispenser
     {
         hit = 15; // 7
+    };
+
+    class B_12Gauge_Pellets_Submunition;
+    class B_12Gauge_HD_Pellets_Submunition : B_12Gauge_Pellets_Submunition // Demining UGV Pelter
+    {
+        submunitionConeAngle = 0.5; // 1.3
+        submunitionConeType[] = {"poissondisc",16}; // {"poissondisc",9};
+    };
+
+    class ammo_Missile_ShortRangeAABase;
+    class ammo_Missile_AA_R73 : ammo_Missile_ShortRangeAABase
+    {
+        cmimmunity = 0.82; // 0.92
+    };
+
+    class ammo_Missile_BIM9X : ammo_Missile_ShortRangeAABase
+    {
+        cmimmunity = 0.82; // 0.92
+    };
+
+    class ammo_Missile_MediumRangeAABase;
+    class ammo_Missile_AA_R77 : ammo_Missile_MediumRangeAABase
+    {
+        cmimmunity = 0.85; // 0.95
+    };
+
+    class ammo_Missile_AMRAAM_C : ammo_Missile_MediumRangeAABase
+    {
+        cmimmunity = 0.85; // 0.95
+    };
+
+    class ammo_Missile_AMRAAM_D : ammo_Missile_MediumRangeAABase
+    {
+        cmimmunity = 0.86; // 0.96
+    };
+
+    class ammo_Missile_mim145;
+    class ammo_Missile_s750 : ammo_Missile_mim145
+    {
+        cmimmunity = 0.85; // 0.95
+    };
+
+    class CMflare_Chaff_Ammo;
+    class TB_ammo_CMFlare_Chaff : CMflare_Chaff_Ammo
+    {
+        timeToLive = 5;
+    };
+
+    class TB_ammo_CMFlare_Chaff_Burst : CMflare_Chaff_Ammo
+    {
+        timeToLive = 5;
+    };
+
+    class TB_ammo_LWIRCM_60 : CMflare_Chaff_Ammo // LWIRCM 60
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
+    };
+
+    class TB_ammo_LWIRCM_45 : CMflare_Chaff_Ammo // LWIRCM 45
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
+    };
+
+    class TB_ammo_LWIRCM_30 : CMflare_Chaff_Ammo // LWIRCM 30
+    {
+        airFriction = -0.1;
+        audibleFire = 0;
+        effectsSmoke = "EmptyEffect";
+        thrustTime = 1;
+        timeToLive = 5;
+        visibleFire = 0;
+        weaponLockSystem = "2";
     };
 
     // ###################### Unterlauf-IR Granate ######################

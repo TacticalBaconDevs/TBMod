@@ -99,48 +99,23 @@ class CfgAmmo
     class B_127x99_Ball;
     class rhsusf_ammo_127x99_M33_Ball : B_127x99_Ball // 50.cal Long-Range Sniper
     {
-        ACE_ballisticCoefficients[] = {2}; // {0.67}
-        ACE_muzzleVelocityVariationSD = 0.01; // 0.35
-        deflecting = 0; // 15
         explosive = 0.1; // 0
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
+        indirectHit = 30; // 0
+        indirectHitRange = 0.6; // 0
         tracerEndTime = 8; // 3
-        tracerStartTime = 0.85; // 0.05
+        tracerStartTime = 0.5; // 0.05
     };
 
     class rhsusf_ammo_127x99_mk211 : rhsusf_ammo_127x99_M33_Ball // 50.cal HEIAP-T
     {
-        ACE_ballisticCoefficients[] = {2}; // {0.67}
-        ACE_muzzleVelocityVariationSD = 0.01; // 0.4
-        caliber = 8.2; // 2.05761
-        hit = 39.7; // 24.8085
-        indirectHit = 24.8; // 4
-        indirectHitRange = 0.9; // 2.76
-    };
-
-    class rhs_ammo_762x51_M118_Special_Ball;
-    class rhs_ammo_762x51_M118_Special_Ball_LRS : rhs_ammo_762x51_M118_Special_Ball // 7.62mm Long-Range Sniper
-    {
-        ACE_ballisticCoefficients[] = {2}; // {0.359}
-        tracerEndTime = 6; // 1.5
-    };
-
-    class rhs_ammo_762x51_M80_Ball;
-    class rhs_ammo_762x51_M80A1EPR_Ball : rhs_ammo_762x51_M80_Ball // 7.62mm SDLV
-    {
-        ACE_ballisticCoefficients[] = {1.439}; // {0.2}
-        audibleFire = 5; // 18
-        dangerRadiusBulletClose = 1; // 8
-        dangerRadiusHit = 1; // 12
-        explosionEffects = "ExplosionEffects";
-        visibleFire = 0.5; // 22
-        visibleFireTime = 0.5; // 3
+        indirectHit = 30; // 6
+        indirectHitRange = 0.6; // 0.3
     };
 
     class B_762x51_Ball;
     class B_762x51_Minigun_Tracer_Red_splash : B_762x51_Ball // 7.62mm Miniguns Helis
     {
-        caliber = 5.04; // 3.6
         explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
         explosive = 0.2; // 0
         hit = 4.64; // 11.6
@@ -156,6 +131,7 @@ class CfgAmmo
         suppressionRadiusHit = 7; // 8
     };
 
+    class rhs_ammo_762x51_M80_Ball;
     class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
     {
         ACE_ballisticCoefficients[] = {0.35}; // {0.2}
@@ -215,9 +191,52 @@ class CfgAmmo
         explosionEffects = "MortarExplosion"; // "ATRocketExplosion"
         explosive = 1; // 0.65
         indirectHit = 30; // 19
-        indirectHitRange = 15; // 4.1
+        indirectHitRange = 8; // 4.1
         hit = 50; // 145
         submunitionAmmo = ""; // "rhs_ammo_M136_hedp_penetrator"
         suppressionRadiusHit = 65; // 30
+    };
+
+    class Missile_AA_04_F;
+    class rhs_ammo_r27_base : Missile_AA_04_F // R27 Reihe
+    {
+        cmImmunity = 0.8; // 0.9 und 0.885
+    };
+
+    class rhs_ammo_r60_base : Missile_AA_04_F // R60 Reihe
+    {
+        cmImmunity = 0.8; // 0.9
+    };
+
+    class rhs_ammo_r73 : Missile_AA_04_F // R73 Reihe
+    {
+        cmImmunity = 0.8; // 0.9 und 0.92
+    };
+
+    class rhs_ammo_Sidewinder_AA : Missile_AA_04_F // AIM9
+    {
+        cmimmunity = 0.86; // 0.96
+    };
+
+    class rhs_ammo_aim120 : rhs_ammo_Sidewinder_AA // AIM120
+    {
+        cmimmunity = 0.82; // 0.92
+    };
+
+    class rhs_ammo_r77 : rhs_ammo_r73 // R77 Reihe
+    {
+        cmimmunity = 0.89; // 0.89 und 0.94
+    };
+
+    class rhs_ammo_r73m;
+    class rhs_ammo_r74 : rhs_ammo_r73m // R74 Reihe
+    {
+        cmimmunity = 0.83; // 0.92
+    };
+
+    class rhs_ammo_9k32;
+    class rhs_ammo_9k38 : rhs_ammo_9k32 // Igla
+    {
+        cmimmunity = 0.8; // 0.9
     };
 };

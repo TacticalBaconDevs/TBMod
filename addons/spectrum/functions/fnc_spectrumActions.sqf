@@ -60,7 +60,7 @@ switch (_modus) do
                 private _prog = missionNamespace getVariable ["#EM_Progress", 0];
                 if (_prog <= 1) exitWith
                 {
-                    missionNamespace setVariable ["#EM_Progress", _prog + (0.2 / ([15, 60] select _arg))];
+                    missionNamespace setVariable ["#EM_Progress", _prog + (0.2 / ([15, 30] select _arg))];
                     playSound (["ACE_Javelin_Locked", "ACE_Javelin_Locking"] select _arg); //kestrel4500_exit_button_click
                 };
 
@@ -97,6 +97,24 @@ switch (_modus) do
     case "transferReturn":
     {
         ((uiNamespace getVariable "rscweaponspectrumanalyzergeneric") displayctrl 5802) ctrlSetText "TRANSMITTED";
+
+        private _values = missionNamespace getVariable ["#EM_Values", []];
+        private _max = -100;
+        private _maxFreq = -1;
+        {
+            private _strength = _values param [(_values find _x) + 1, 0];
+            if (_max < _strength) then
+            {
+                _max = _strength;
+                _maxFreq = _x;
+            };
+        }
+        forEach (_values select {_x >= (missionNamespace getVariable ["#EM_SelMin", 0]) && _x <= (missionNamespace getVariable ["#EM_SelMax", 1])});
+
+        if (_maxFreq != -1 && _max > -36) then
+        {
+            ["TB_informAdminsAndZeus", ["%1 auf der Frequenz %2 mit (%3) gesendet!", profileName, _maxFreq, _max]] call CBA_fnc_globalEvent;
+        };
     };
 
     case "MouseZChanged":

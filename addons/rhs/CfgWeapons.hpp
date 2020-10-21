@@ -127,7 +127,7 @@ class CfgWeapons
     class rhsusf_opscore_mar_fg_pelt;
     class TB_helmet_Sani_B_Grey: rhsusf_opscore_mar_fg_pelt
     {
-        displayName = "Sani USMC Urban";
+        displayName = "Sani Urban";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniB01.paa),
@@ -139,7 +139,7 @@ class CfgWeapons
     //Skin Sanihelm Ranger Green
     class TB_helmet_Sani_C_Green: rhsusf_opscore_mar_fg_pelt
     {
-        displayName = "Sani Ranger Green";
+        displayName = "Sani Green";
         author = "Eron";
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\headgear\TB_headgear_SaniC01.paa),
@@ -223,8 +223,9 @@ class CfgWeapons
     class rhs_weap_SCAR_H_CQC_Base;
     class rhs_weap_mk17_CQC: rhs_weap_SCAR_H_CQC_Base // Mk17 CQC
     {
-        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        displayName = "Mk 16 Mod 0 (CQC)"; // Mk 17 Mod 0 (CQC)
+        magazineWell[] = {"AK_545x39","CBA_545x39_AK","CBA_545x39_RPK","STANAG_556x45","CBA_556x45_STANAG"};
+        magazines[] += {"rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger"};
         ACE_barrelLength = 330;
         ACE_barrelTwist = 177.8;
     };
@@ -232,8 +233,8 @@ class CfgWeapons
     class rhs_weap_SCAR_H_LB_Base;
     class rhs_weap_mk17_LB: rhs_weap_SCAR_H_LB_Base // Mk17 LB
     {
-        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazineWell[] = {"SVD_762x54R","Rahim_762x54","M14_762x51","CBA_762x54R_SVD","CBA_762x51_SCAR","AK_762x39","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
         ACE_barrelLength = 510;
         ACE_barrelTwist = 177.8;
         aimTransitionSpeed = 0.36; // 1
@@ -242,8 +243,8 @@ class CfgWeapons
     class rhs_weap_SCAR_H_STD_Base;
     class rhs_weap_mk17_STD: rhs_weap_SCAR_H_STD_Base // Mk17 STD
     {
-        magazineWell[] = {"CBA_762x51_SCAR", "AK_545x39", "CBA_545x39_AK", "CBA_545x39_RPK","STANAG_556x45","STANAG_556x45_Large","CBA_556x45_STANAG","CBA_556x45_STANAG_L","CBA_556x45_STANAG_XL","CBA_556x45_STANAG_2D","CBA_556x45_STANAG_2D_XL","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS"};
+        magazineWell[] = {"CBA_762x51_SCAR","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
         ACE_barrelLength = 410;
         ACE_barrelTwist = 177.8;
         aimTransitionSpeed = 0.76; // 1
@@ -267,6 +268,79 @@ class CfgWeapons
     class rhs_weap_M107: rhs_weap_M107_Base_F // M107
     {
         aimTransitionSpeed = 0.26; // 0.5
+    };
+
+    class rhs_weap_orsis_Base_F;
+    class rhs_weap_t5000 : rhs_weap_orsis_Base_F
+    {
+        class Mode_SemiAuto;
+    };
+    class TB_rhs_weap_mk22_ASR : rhs_weap_t5000 // Mk22 ASR
+    {
+        ACE_barrelLength = 698.5;
+        ACE_barrelTwist = 254;
+        ace_overheating_mrbs = 3000;
+        ACE_RailHeightAboveBore = 2.12198;
+        author = "TBMod";
+        baseWeapon = "TB_rhs_weap_mk22_ASR";
+        displayName = "Mk22 ASR";
+        magazineWell[] = {"CBA_338LM_AI"};
+        magazines[] += {"TB_mag_10_Rnd_338_LS"};
+
+        class Single : Mode_SemiAuto
+            {
+                aiDispersionCoefX = 1.4;
+                aiDispersionCoefY = 1.7;
+                aiRateOfFire = 2;
+                aiRateOfFireDispersion = 1;
+                aiRateOfFireDistance = 500;
+                artilleryCharge = 1;
+                artilleryDispersion = 1;
+                autoFire = 0;
+                burst = 1;
+                burstRangeMax = -1;
+                canShootInWater = 0;
+                dispersion = 0.0001018;
+                displayName = "Semi";
+                ffCount = 1;
+                ffFrequency = 11;
+                ffMagnitude = 0.5;
+                flash = "gunfire";
+                flashSize = 0.1;
+                maxRange = 400;
+                maxRangeProbab = 0.04;
+                midRange = 250;
+                midRangeProbab = 0.7;
+                minRange = 2;
+                minRangeProbab = 0.3;
+                multiplier = 1;
+                recoil = "recoil_single_primary_3outof10";
+                recoilProne = "recoil_single_primary_prone_3outof10";
+                reloadTime = 1.6;
+                requiredOpticType = -1;
+                showToPlayer = 1;
+                class SilencedSound
+                    {
+                        soundSetShot[] = {"RHS_sd_orsis_Shot_SoundSet","RHS_sd_mmg1_Tail_SoundSet"};
+                    };
+                sound[] = {"",10,1};
+                soundBegin[] = {"sound",1};
+                soundBeginWater[] = {"sound",1};
+                soundBurst = 0;
+                soundClosure[] = {"sound",1};
+                soundContinuous = 0;
+                soundEnd[] = {};
+                soundLoop[] = {};
+                sounds[] = {"StandardSound","SilencedSound"};
+                class StandardSound
+                    {
+                        soundSetShot[] = {"RHS_orsis_Shot_SoundSet","RHS_rifle2_Tail_SoundSet"};
+                    };
+                textureType = "semi";
+                useAction = 0;
+                useActionTitle = "";
+                weaponSoundEffect = "";
+            };
     };
 
     class rhsusf_ach_helmet_ocp;

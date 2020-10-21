@@ -20,15 +20,92 @@ class CfgVehicles
     };
 
     class Heli_Transport_01_base_F;
-    class B_Heli_Transport_01_F : Heli_Transport_01_base_F // Stealth UH-80
+    class B_Heli_Transport_01_F : Heli_Transport_01_base_F
+    {
+        class Components;
+        class TextureSources;
+    };
+    class TB_MH_60_Silent_Hawk : B_Heli_Transport_01_F // UH-80
     {
         accuracy = 0.4; // 0.5
+        displayName = "MH-60 Silent Hawk";
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
         armor = 45; // 40
         audible = 39; // 50
         camouflage = 78; // 100
         irTargetSize = 0.5; // 0.8
-        LockDetectionSystem = "2 + 8 + 4"; // 8+4
+        LockDetectionSystem = "2 + 4 + 8"; // 8+4
+        magazines[] = {}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.33; // 0.7
+        weapons[] = {};
+
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                uiPicture = QPATHTOEF(skins,pictures\pylons\TB_Pylons_UH_80.paa);
+
+                class pylons
+                {
+                    class cmDispenser1
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_1"};
+                        maxweight = 800;
+                        priority = 4;
+                        UIposition[] = {0.20,0.1};
+                    };
+
+                    class cmDispenser2
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_2"};
+                        maxweight = 800;
+                        priority = 3;
+                        UIposition[] = {0.46,0.1};
+                    };
+
+                    class cmDispenser3
+                    {
+                        attachment = "TB_mag_LWIRCM_144_45";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_3"};
+                        maxweight = 800;
+                        priority = 2;
+                        UIposition[] = {0.20,0.15};
+                    };
+
+                    class cmDispenser4
+                    {
+                        attachment = "TB_mag_LWIRCM_144_45";
+                        hardpoints[] = {"TB_cm_dispenser_UH_80_4"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.15};
+                    };
+                };
+            };
+        };
+        class TextureSources : TextureSources
+        {
+            class Black
+            {
+                displayName = "Schwarz";
+                textures[] = {"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_CO.paa","\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_CO.paa"};
+            };
+            class Green {
+                displayName = "Oliv";
+                textures[] = {"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_BLUFOR_CO.paa","\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_BLUFOR_CO.paa"};
+            };
+            class Olive {
+                displayName = "Oliv-Schwarz";
+                textures[] = {"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext01_tropic_CO.paa","\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext02_tropic_CO.paa"};
+            };
+            class Sand {
+                displayName = "Oliv-Sand";
+                textures[] = {"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext01_sand_CO.paa","\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext02_sand_CO.paa"};
+            };
+        };
     };
 
     class Heli_Attack_01_dynamicLoadout_base_F;
@@ -40,7 +117,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.05; // 0.1
         audible = 24; // 50
         camouflage = 63; // 100
-        camShakeCoef = 0.4; // 0
+        camShakeCoef = 0.2; // 0
         irTargetSize = 0.48; // 0.8
         LockDetectionSystem = "2 + 8 + 4"; // 8+4
         nvScanner = 1; // 0
@@ -48,7 +125,7 @@ class CfgVehicles
     };
 
     class Plane_CAS_01_dynamicLoadout_base_F;
-    class B_Plane_CAS_01_dynamicLoadout_base_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
+    class B_Plane_CAS_01_dynamicLoadout_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
     {
         accuracyDarkNightLightsOff = 0.005; // 0.001
         accuracyNightLightsOff = 0.03; // 0.006
@@ -56,7 +133,7 @@ class CfgVehicles
         armor = 115; // 80
         audible = 210; // 60
         camouflage = 170; // 100
-        camShakeCoef = 1.4; // 0
+        camShakeCoef = 0.2; // 0
         irTargetSize = 1.65; // 1
         nvScanner = 1; // 0
         radarTargetSize = 1.05; // 1
@@ -72,7 +149,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.3; // 0.1
         armor = 65; // 60
         audible = 190; // 60
-        camShakeCoef = 0.4; // 0
+        camShakeCoef = 0.2; // 0
         camouflage = 150; // 100
         irScanRangeMin = 650; // 2000
         irTargetSize = 1.7; // 1
@@ -89,8 +166,7 @@ class CfgVehicles
         accuracyNightLightsOn = 0.26; // 0.1
         armor = 50; // 55
         audible = 180; // 60
-        camShakeCoef = 0.9; // 0
-        camouflage = 105; // 100
+        camShakeCoef = 0.2; // 0
         irTargetSize = 1.4; // 0.8
         nvScanner = 1; // 0
         radarTargetSize = 1.2; // 0.8
@@ -269,6 +345,36 @@ class CfgVehicles
                 maxElev = 25; // 13
                 maxTurn = 214; // 107
                 minElev = -45; // -28
+            };
+        };
+    };
+
+    class UGV_02_Demining_Base_F;
+    class B_UGV_02_Demining_F : UGV_02_Demining_Base_F // Demining UGV Pelter
+    {
+        armor = 50; // 30
+        fuelCapacity = 4; // 2
+    };
+
+    class Tank_F;
+    class LT_01_base_F : Tank_F
+    {
+        class Turrets;
+    };
+    class LT_01_AT_base_F : LT_01_base_F
+    {
+        class Turrets : Turrets
+        {
+            class MainTurret;
+        };
+    };
+    class I_LT_01_AT_F : LT_01_AT_base_F // Wiesel 2 AT
+    {
+        class Turrets: Turrets
+        {
+            class MainTurret: MainTurret
+            {
+                magazines[] = {"SmokeLauncherMag","ace_hot_3_2Rnd","ace_hot_3_2Rnd","ace_hot_3_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"}; // {"SmokeLauncherMag","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2MP_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"};
             };
         };
     };

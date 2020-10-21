@@ -221,29 +221,6 @@ class CfgMagazines
         mass = 28; // 41.14
     };
 
-    class rhs_mag_20Rnd_SCAR_762x51_mk316_special;
-    class rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS : rhs_mag_20Rnd_SCAR_762x51_mk316_special // 7.62mm Long-Range Sniper
-    {
-        ammo = "rhs_ammo_762x51_M118_Special_Ball_LRS";
-        author = "TBMod";
-        descriptionShort = "7.62mm LRS"; // "Caliber: 7.62x51mm NATO (M993 AP)<br />Rounds: 20"
-        displayName = "7.62mm Long-Range Sniper Magazine"; // "7.62mm 20Rnd Mag (M993 AP)"
-        displayNameShort = "7.62mm LRS"; // "7.62mm AP"
-
-        mass = 14; // 16.24
-    };
-
-    class rhs_mag_20Rnd_SCAR_762x51_m80_ball;
-    class rhs_mag_20Rnd_SCAR_762x51_m80a1_epr : rhs_mag_20Rnd_SCAR_762x51_m80_ball // 7.62mm Subsonic Low Visible
-    {
-        author = "TBMod";
-        descriptionShort = "7.62mm SDLV"; // "Caliber: 7.62x51mm SD<br />Rounds: 20<br />Used in: Mk18 ABR"
-        displayName = "7.62mm Subsonic Low Visible Magazine"; // "7.62mm 20Rnd SD Mag"
-        displayNameShort = "7.62mm SDLV"; // "7.62mm SD"
-
-        mass = 14; // 16.24
-    };
-
     class rhs_mag_gau19_air_base;
     class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6 12.7x99mm Left
     {
@@ -267,6 +244,7 @@ class CfgMagazines
     class rhs_mag_DAGR_4 : 24Rnd_PG_missiles // 4x DAGR RHS
     {
         descriptionShort = "DAGR 4x"; // "SALH"
+        displayName = "DAGR x4"; // "DAGR"
         displayNameShort = "DAGR 4x"; // "SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_SINGLE","RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_SINGLE"
     };
@@ -274,6 +252,7 @@ class CfgMagazines
     class rhs_mag_DAGR_8 : rhs_mag_DAGR_4 // 8x DAGR RHS
     {
         descriptionShort = "DAGR 8x"; // "SALH"
+        displayName = "DAGR x8"; // "DAGR (M310)"
         displayNameShort = "DAGR 8x"; // "SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB","RHS_HP_FFAR_USMC","B_MISSILE_PYLON"}; // "RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"
     };
@@ -281,6 +260,7 @@ class CfgMagazines
     class rhs_mag_DAGR_16 : rhs_mag_DAGR_8 // 16x DAGR RHS
     {
         descriptionShort = "DAGR 16x"; // "SALH"
+        displayName = "DAGR x16"; // "DAGR (M299)"
         displayNameShort = "DAGR 16x"; //"SALH"
         hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","B_MISSILE_PYLON"}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
@@ -333,14 +313,8 @@ class CfgMagazines
         tracersEvery = 1; // 5
     };
 
-    class 300Rnd_20mm_shells;
-    class PylonWeapon_300Rnd_20mm_shells : 300Rnd_20mm_shells // 20mm Twin Gun
-    {
-        hardpoints[] += {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON"
-    };
-
     class 6Rnd_ACE_Hellfire_AGM114K;
-    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // ACE AGM-114K 
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // ACE AGM-114K
     {
         hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
@@ -360,6 +334,22 @@ class CfgMagazines
         hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
     };
 
+    class PylonRack_1Rnd_ACE_Hellfire_AGM114L : PylonRack_1Rnd_ACE_Hellfire_AGM114K // ACE AGM-114L
+    {
+        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
+    };
+
+    class PylonRack_3Rnd_ACE_Hellfire_AGM114L : PylonRack_3Rnd_ACE_Hellfire_AGM114K // ACE AGM-114L 3x
+    {
+        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"}
+    };
+
+    class PylonRack_4Rnd_ACE_Hellfire_AGM114K;
+    class PylonRack_4Rnd_ACE_Hellfire_AGM114L : PylonRack_4Rnd_ACE_Hellfire_AGM114K // ACE AGM-114L 4x
+    {
+        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
+    };
+
     class rhs_mag_AGM114K;
     class rhs_mag_AGM114K_2 : rhs_mag_AGM114K
     {
@@ -369,17 +359,6 @@ class CfgMagazines
     class rhs_mag_AGM114K_4 : rhs_mag_AGM114K_2
     {
         hardpoints[] = {}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"}
-    };
-
-    class rhs_mag_AGM114L;
-    class rhs_mag_AGM114L_2 : rhs_mag_AGM114L
-    {
-        hardpoints[] = {}; // {"RHS_HP_LONGBOW_RACK"};
-    };
-
-    class rhs_mag_AGM114L_4 : rhs_mag_AGM114L_2
-    {
-        hardpoints[] = {}; // {"RHS_HP_LONGBOW_RACK"};
     };
 
     class rhs_mag_AGM114M;
@@ -400,6 +379,17 @@ class CfgMagazines
     };
 
     class rhs_mag_AGM114N_4 : rhs_mag_AGM114N_2
+    {
+        hardpoints[] = {}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"}
+    };
+
+    class rhs_mag_AGM114L;
+    class rhs_mag_AGM114L_2 : rhs_mag_AGM114L
+    {
+        hardpoints[] = {}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"}
+    };
+
+    class rhs_mag_AGM114L_4 : rhs_mag_AGM114L_2
     {
         hardpoints[] = {}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"}
     };

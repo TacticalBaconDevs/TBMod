@@ -17,6 +17,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgFunctions.hpp"
 #include "configs\ACE_Medical_Treatment.hpp"

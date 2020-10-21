@@ -3,9 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
-
-enableEnvironment [false, true];
+enableEnvironment [true, true];
 enableSaving [false, false];
 
 if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
@@ -38,7 +36,26 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
         }
         forEach allGroups;
     },
-    1800
+    900
 ] call CBA_fnc_addPerFrameHandler;
 
-["CBA_loadingScreenDone", {GVAR(initDone) = true}] call CBA_fnc_addEventHandler;
+["CBA_loadingScreenDone", {
+    GVAR(initDone) = true;
+
+    // ### DeadCauses
+    if (!isNil QGVAR(loggingExtension) && GVAR(loggingExtension)) then
+    {
+        GVAR(deadCauses) = 1 == ('TBModExtension' callExtension ["registerlogger", ["deadcauses", "#DeadCauses.log"]]) param [1, 0];
+
+        if (GVAR(deadCauses)) then
+        {
+            ["ace_killed", {
+                params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
+
+                if (!isNull _killer && isNull _instigator) then {_instigator = effectiveCommander _killer};
+
+                "TBModExtension" callExtension ["logger", ["deadcauses", "KILLED", format ["%1(%2) von %3(%4) durch %5  --->  %6", [_unit] call ace_common_fnc_getName, typeOf _unit, [_instigator] call ace_common_fnc_getName, typeOf _instigator, _causeOfDeath, _this]]];
+            }] call CBA_fnc_addEventHandler;
+        };
+    };
+}] call CBA_fnc_addEventHandler;

@@ -3,9 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-if !(call FUNC(isTBMission)) exitWith {};
-
-enableEnvironment [false, true];
+enableEnvironment [true, true];
 enableSaving [false, false];
 
 //CBA_XEH_expectedLoadingScreens

@@ -17,9 +17,17 @@ class CfgPatches
             "TB_Vehicles_L159_Albatros"
         };
 
+        weapons[] = {
+            "TB_weap_CMLauncher",
+            "TB_weap_LWIRCM",
+            "TB_SmokeLauncher_Heli"
+        };
+
         addonRootClass = "TBMod_main";
     };
 };
+
+PRELOAD_ADDONS;
 
 // Configs
 #include "configs\ACE_detector.hpp"

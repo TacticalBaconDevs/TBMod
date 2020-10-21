@@ -13,19 +13,20 @@ _items append (switch (getPlayerUID player) do
     case "76561198047437015": {[]}; // Mike Range
     case "76561198053478498": {[]}; // Sponst
 
-    case "76561198083373558": {[]}; // Jojo
     case "76561198066861232": {["H_Beret_EAF_01_F"]}; // Darky
+    case "76561198049880123": {[]}; // Eron
 
     case "76561198032526435": {[]}; // Makuro
-    case "76561198062497439": {[]}; // Pakowski
     case "76561198074489907": {["G_Goggles_VR"]}; // Mordl
     case "76561198139487000": {[]}; // HerrPinguin
     case "76561198089664421": {[]}; // Jaleck
     case "76561197986271628": {[]}; // Nimrod
-    case "76561198049880123": {[]}; // Eron
+    case "76561198807543909": {[]}; // wermu(t)91
     case "76561198203984875": {[]}; // TimeToPlay
+    case "76561198063263886": {[]}; // Rabbat
+    case "76561198060879499": {[]}; // Robert Merritt
     case "76561198067143167": {["G_Aviator"]}; // Thor
-    case "76561198127241859": {["G_Tactical_Clear", "LOP_H_Beanie_mtp", "H_Watchcap_blk", "rhs_xmas_antlers", "H_WirelessEarpiece_F"]}; // Eric
+    case "76561198127241859": {["G_Tactical_Clear", "TB_headgear_beanie_eric", "rhs_xmas_antlers", "H_WirelessEarpiece_F"]}; // Eric
 
     default {[]};
 });
@@ -44,14 +45,16 @@ private _ausbilder = [
 
 private _truppfuehrer = [
         "76561198032526435",
-        "76561198062497439",
         "76561198074489907",
+        "76561198063263886",
+        "76561198060879499",
         "76561198139487000",
         "76561198089664421",
         "76561197986271628",
         "76561198203984875",
         "76561198127241859",
-        "76561198067143167"
+        "76561198067143167",
+        "76561198807543909"
     ] + _ausbilder;
 
 // Generalstabs Whitelist

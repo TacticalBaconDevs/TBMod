@@ -171,7 +171,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
                     if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
                     {
                         private _playerFPS = _x getVariable ["TB_clientFPS", -1];
-                        
+
                         if (_playerFPS > 0) then
                         {
                             drawIcon3D
@@ -192,6 +192,30 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
                     };
                 }
                 forEach allPlayers;
+
+                /*{
+                    if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
+                    {
+                        if ((units _x) findIf {isPlayer _x} == -1) then
+                        {
+                            drawIcon3D
+                            [
+                                "",
+                                [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
+                                getPosVisual _x,
+                                1,
+                                2,
+                                0,
+                                format ["FPS: %1", _playerFPS],
+                                0,
+                                [0.05, 0.08] select (_playerFPS < 20),
+                                "PuristaMedium",
+                                "center"
+                            ];
+                        };
+                    };
+                }
+                forEach allGroups;*/
             }];
         };
     }
@@ -219,3 +243,85 @@ ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
         {(player nearEntities ["Man", 10]) findIf {isPlayer _x && _x getVariable [QGVAR(danceTime), false]} != -1 || (animationState player == "Acts_Dance_01" || animationState player == "Acts_Dance_02")}
     ] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
+
+
+// ### Highlight
+if (isNil "TB_highlightLog") then {TB_highlightLog = true};
+if (TB_highlightLog && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtension)}) then
+{
+    GVAR(highlightLog) = 1 == ('TBModExtension' callExtension ['registerlogger', ['highlight', '#HighlightLog.log']]) param [1, 0];
+
+    if (GVAR(highlightLog)) then
+    {
+        ["ace_killed", {
+            params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
+
+            if (!isNull _killer && isNull _instigator) then {_instigator = effectiveCommander _killer};
+
+            if (hasInterface && {_instigator in [player, ace_player]}) then
+            {
+                "TBModExtension" callExtension ["logger", ["highlight", "KILLED", format ["%1 durch %2", typeOf _unit, _causeOfDeath]]];
+            };
+        }] call CBA_fnc_addEventHandler;
+    };
+};
+
+
+// ### Vehicle in Vehicle
+GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Air", "ReammoBox_F", "Cargo_base_F", "Land_CargoBox_V1_F", "StaticWeapon"];
+[
+    "Car",
+    "init",
+    {
+        private _car = _this # 0;
+
+        if (isClass (configFile >> "CfgVehicles" >> typeOf _car >> "VehicleTransport" >> "Carrier")) then
+        {
+            private _action = [
+                "SetCarrier",
+                "VehicleTransport",
+                "",
+                {},
+                {vehicleCargoEnabled _target},
+                {
+                    params ["_target", "_player", "_params"];
+
+                    private _actions = [];
+                    {
+                        if (alive _x) then
+                        {
+                            private _action = [
+                                format ["vehicle_%1", random 999999],
+                                format ["%1%2 (%3m)", [_x] call FUNC(displayName), if (alive (driver _x)) then {format [" (%1)", [driver _x] call ace_common_fnc_getName]} else {""}, _target distance _x],
+                                "",
+                                {
+                                    params ["_target", "_player", "_params"];
+                                    _target setVehicleCargo _params;
+                                },
+                                {
+                                    params ["_target", "_player", "_params"];
+                                    (_target canVehicleCargo _params) # 0
+                                },
+                                {},
+                                _x
+                            ] call ace_interact_menu_fnc_createAction;
+                            _actions pushBack [_action, [], _target];
+                        };
+                    }
+                    forEach (nearestObjects [_target, GVAR(vehicleTransport), 10]);
+
+                    _actions
+                },
+                [],
+                {[0, 0, 0]},
+                5,
+                [false, true, false, true, false],
+                {}
+            ] call ace_interact_menu_fnc_createAction;
+            [_car, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+        };
+    },
+    true,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;

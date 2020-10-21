@@ -219,6 +219,8 @@ class CfgPatches
     };
 };
 
+PRELOAD_ADDONS;
+
 // Configs
 #include "configs\CfgMods.hpp"
 #include "configs\CfgSettings.hpp"
