@@ -54,8 +54,15 @@ private _allgemein = [
     "hgun_P07_F",
     "hgun_P07_blk_F",
     "hgun_P07_khk_F",
-    "hgun_esd_01_F",
     "tb_weap_taser",
+
+    // ESD
+    "hgun_esd_01_F",
+    "acc_esd_01_flashlight",
+    "muzzle_antenna_02_f",
+    "muzzle_antenna_01_f",
+    "muzzle_antenna_03_f",
+
 
     // Rucksäcke
     "B_CombinationUnitRespirator_01_F",
