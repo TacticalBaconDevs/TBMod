@@ -15,6 +15,13 @@ private _allgemein = [
     "G_Bandanna_blk",
     "G_Aviator",
 
+    // Atemschutz
+    "G_AirPurifyingRespirator_02_olive_F",
+    "G_AirPurifyingRespirator_02_sand_F",
+    "G_AirPurifyingRespirator_02_black_F",
+    "G_AirPurifyingRespirator_01_F",
+    "G_RegulatorMask_F",
+
     // Bärte
     "SFG_Tac_smallBeardB",
     "SFG_Tac_smallBeardD",
@@ -39,23 +46,22 @@ private _allgemein = [
     "G_Blindfold_01_black_F",
     "G_Blindfold_01_white_F",
 
-    // Atemschutz
-    "G_AirPurifyingRespirator_02_olive_F",
-    "G_AirPurifyingRespirator_02_sand_F",
-    "G_AirPurifyingRespirator_02_black_F",
-    "G_AirPurifyingRespirator_01_F",
-    "G_RegulatorMask_F",
-
     // Pistole
+    "hgun_Pistol_heavy_02_F",
+    "hgun_ACPC2_F",
     "hgun_Pistol_heavy_01_green_F",
-    "optic_mrd_black",
-    "muzzle_snds_acp",
-    "11Rnd_45ACP_Mag",
+    "hgun_Rook40_F",
+    "hgun_P07_F",
+    "hgun_P07_blk_F",
+    "hgun_P07_khk_F",
+    "hgun_esd_01_F",
+    "tb_weap_taser",
 
     // Rucksäcke
     "B_CombinationUnitRespirator_01_F",
     "B_SCBA_01_F",
     "B_Kitbag_sgg",
+    "B_Kitbag_rgr",
 
     // Items
     "ACE_CableTie",
@@ -72,50 +78,11 @@ private _allgemein = [
     "ACE_Sandbag_empty",
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
+    "ACE_rope36",
 
     // NV
     "O_NVGoggles_grn_F",
-    "NVGoggles_tna_F",
-    "ACE_NVG_Gen2",
-    "NVGoggles_INDEP",
-
-    // Visire
-    "optic_erco_snd_f",
-    "optic_erco_khk_f",
-    "optic_erco_blk_f",
-    "optic_arco_arid_f",
-    "optic_arco_lush_f",
-    "optic_holosight_arid_f",
-    "optic_holosight_lush_f",
-    "optic_ico_01_f",
-    "optic_ico_01_sand_f",
-    "optic_ico_01_black_f",
-    "optic_ico_01_camo_f",
-
-    // Attachments
-    "muzzle_snds_65_ti_ghex_f",
-    "muzzle_snds_65_ti_blk_f",
-    "acc_pointer_ir",
-    "ace_acc_pointer_green",
-    "acc_flashlight",
-    "ACE_muzzle_mzls_H",
-    "muzzle_snds_H",
-    "muzzle_snds_H_snd_F",
-    "bipod_01_F_snd",
-    "bipod_01_F_blk",
-    "ACE_muzzle_mzls_smg_01",
-    "muzzle_snds_acp",
-    "ACE_muzzle_mzls_smg_02",
-    "muzzle_snds_L",
-    "muzzle_snds_m",
-    "muzzle_snds_m_khk_f",
-    "muzzle_snds_m_snd_f",
-    "muzzle_snds_h_mg_blk_f",
-    "muzzle_snds_h_mg",
-    "muzzle_snds_h_mg_khk_f",
-    "muzzle_snds_b_khk_f",
-    "muzzle_snds_b_snd_f",
-    "muzzle_snds_b",
+    "ACE_NVG_Wide",
 
     // Granaten
     "HandGrenade",
@@ -127,6 +94,7 @@ private _allgemein = [
     "SmokeShellPurple",
     "SmokeShellBlue",
     "SmokeShellOrange",
+    "I_E_IR_Grenade",
 
     // SR-Funke
     "TFAR_anprc152"
@@ -138,31 +106,30 @@ private _allgemein_Uniform = [
     "U_I_E_Uniform_01_officer_F",
     "U_I_E_Uniform_01_tanktop_F",
     "U_I_E_Uniform_01_shortsleeve_F",
+    "U_B_CombatUniform_tshirt_mcam_wdL_f",
     "U_I_E_CBRN_Suit_01_EAF_F"
 ];
 
 private _allgemein_Westen = [
     "V_CarrierRigKBT_01_light_Olive_F",
-    "V_CarrierRigKBT_01_light_EAF_F"
+    "V_CarrierRigKBT_01_light_EAF_F",
+    "V_CarrierRigKBT_01_EAF_F",
+    "V_SmershVest_01_F"
 ];
 
 private _LR = [
-    "OPXT_scorpion_1523",
-    "OPXT_pen_grz_1523",
-    "OPXT_ogao_1523",
-    "OPXT_oga_1523",
-    "OPXT_multicamt_1523",
-    "OPXT_multicam_1523",
-    "OPXT_m81_1523",
-    "OPXT_at_ix_1523"
+    "B_RadioBag_01_digi_F",
+    "B_RadioBag_01_eaf_F",
+    "B_RadioBag_01_black_F",
+    "B_RadioBag_01_tropic_F",
+    "B_RadioBag_01_wdl_F"
 ];
 
 private _allgemein_Helm = [
     "H_HelmetHBK_headset_F",
     "H_HelmetHBK_chops_F",
     "H_HelmetHBK_ear_F",
-    "H_HelmetHBK_F",
-    "H_MilCap_eaf"
+    "H_HelmetHBK_F"
 ];
 
 private _allgemein_Waffen = [
@@ -173,8 +140,139 @@ private _allgemein_Waffen = [
 ];
 
 private _allgemein_Magazine = [
+    // Pistolen
+    "11Rnd_45ACP_Mag",
+    "TB_mag_taser",
+    "16Rnd_9x21_yellow_Mag",
+    "9Rnd_45ACP_Mag",
+    "TB_mag_45_FMJ",
+    "6Rnd_45ACP_Cylinder",
+    
+    // Waffen
     "30Rnd_65x39_caseless_msbs_mag_Tracer",
     "30Rnd_65x39_caseless_msbs_mag"
+];
+
+private _allgemein_zweibein = [
+    "bipod_02_f_tan",
+    "bipod_02_f_hex",
+    "bipod_01_f_khk",
+    "bipod_01_f_mtp",
+    "bipod_03_f_oli",
+    "bipod_01_f_snd",
+    "bipod_03_f_blk",
+    "bipod_02_f_blk",
+    "bipod_01_f_blk",
+    "bipod_02_f_arid",
+    "bipod_02_f_lush"
+];
+
+private _allgemein_geschuetzzubehoer = [
+    // Pistolen
+
+    "acc_flashlight_pistol",
+    "muzzle_snds_acp",
+    "muzzle_snds_l",
+
+    // Waffen
+    "acc_pointer_ir",
+    "acc_flashlight",
+    "ace_acc_pointer_green",
+
+    "muzzle_snds_65_ti_blk_f",
+    "muzzle_snds_65_ti_ghex_f",
+    "muzzle_snds_h",
+    "muzzle_snds_b",
+    "muzzle_snds_570"
+];
+
+private _allgemein_visire = [
+    // Pistolen
+    "optic_yorris",
+    "optic_mrd",
+    "optic_mrd_black",
+
+    // Waffen
+    "optic_aco_grn",
+    "optic_aco",
+    "optic_mrco",
+    "optic_erco_snd_f",
+    "optic_erco_khk_f",
+    "optic_erco_blk_f",
+    "optic_arco_ak_blk_f",
+    "optic_arco_ak_arid_f",
+    "optic_arco_ak_lush_f",
+    "optic_holosight_arid_f",
+    "optic_holosight_lush_f"
+]
+
+private _allgemein_kopfbedeckung = [
+    "H_Booniehat_mgrn",
+    "H_Booniehat_taiga",
+    "H_Booniehat_wdl",
+    "H_Booniehat_eaf",
+    "H_MilCap_grn",
+    "H_MilCap_taiga",
+    "H_MilCap_wdl",
+    "H_MilCap_eaf",
+    "H_Bandanna_camo",
+    "H_Bandanna_gry",
+    "H_Watchcap_khk",
+    "H_Watchcap_cbr",
+    "H_Watchcap_camo",
+    "H_Bandanna_khk_hs"
+];
+
+private _grenadier_munition = [
+    "3Rnd_Smoke_Grenade_shell_precise",
+    "1Rnd_HE_Grenade_shell",
+    "ACE_HuntIR_M203",
+    "UGL_FlareCIR_F",
+    "ACE_40mm_Flare_ir",
+    "TB_rhs_mag_40mm_IR_Grenade"
+];
+
+private _sniper_munition = [
+    "ACE_7Rnd_408_305gr_Mag",
+    "ACE_5Rnd_127x99_Mag",
+    "ACE_5Rnd_127x99_AMAX_Mag",
+    "ACE_5Rnd_127x99_API_Mag",
+    "5Rnd_127x108_APDS_Mag",
+    "ACE_20Rnd_762x51_Mag_SD",
+    "ACE_20Rnd_762x51_Mag_Tracer_Dim",
+    "ACE_20Rnd_762x51_Mag_Tracer"
+];
+
+private _aaat_munition = [
+    "RPG32_F",
+    "RPG32_HE_F",
+    "Vorona_HEAT",
+    "Vorona_HE",
+    "MRAWS_HEAT_F",
+    "Titan_AT",
+    "Titan_AP",
+    "Titan_AA",
+    "MRAWS_HE_F"
+];
+
+Private _mg_muniton = [
+    "ACE_200Rnd_65x39_cased_Box_Tracer_Dim",
+    "200Rnd_65x39_cased_Box_Tracer",
+    "200Rnd_65x39_cased_Box"
+];
+
+Private _mp_muniton = [
+    "30Rnd_45ACP_Mag_SMG_01_Tracer_Green",
+    "30Rnd_45ACP_Mag_SMG_01",
+    "50Rnd_570x28_SMG_03"
+];
+
+Private _mp = [
+    "SMG_03C_TR_camo",
+    "SMG_03C_TR_hex",
+    "SMG_03C_TR_khaki",
+    "SMG_03C_TR_black",
+    "SMG_01_F"
 ];
 
 private _items = [];
@@ -196,6 +294,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
+        
+        "U_I_E_Uniform_01_officer_F"
 
         ]
     };
@@ -222,14 +322,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         [
             // Waffen
+            "arifle_MSBS65_GL_F",
             "arifle_MSBS65_GL_sand_F",
             "arifle_MSBS65_GL_black_F",
-            "arifle_MSBS65_GL_camo_F",
-
-            // Munition
-            "1Rnd_HE_Grenade_shell",
-            "ACE_HuntIR_M203",
-            "3Rnd_Smoke_Grenade_shell_precise"
+            "arifle_MSBS65_GL_camo_F"
         ]
     };
 
@@ -240,18 +336,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Helm +
         _allgemein_Westen +
         _allgemein_Uniform +
+        _mg_muniton +
         [
             // Waffen
-            "LMG_Mk200_black_F",
+            "LMG_Mk200_black_F"
 
-            // Magazine
-            "200Rnd_65x39_cased_Box_Tracer_Red",
-            "200Rnd_65x39_cased_Box_Tracer",
-            "200Rnd_65x39_cased_Box_Red",
-
-            // Attachments
-            "bipod_01_f_khk",
-            "bipod_03_f_blk"
         ]
     };
 
@@ -263,23 +352,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _mg_muniton +
         [
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
-
-            // Magazine
-            "200Rnd_65x39_cased_Box_Tracer_Red",
-            "200Rnd_65x39_cased_Box_Tracer",
-            "200Rnd_65x39_cased_Box_Red",
-
-            // AT
-            "RPG32_F",
-            "RPG32_HE_F",
-            "Vorona_HEAT",
-            "Vorona_HE",
-            "MRAWS_HEAT_F",
-            "MRAWS_HE_F"
+            "TB_backpacks_bergen_m81",
+            "TB_backpacks_bergen_marpad_wd"
         ]
     };
 
@@ -297,7 +376,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "H_PilotHelmetHeli_I_E",
 
             // Uniform
-            "U_I_E_Uniform_01_coveralls_F"
+            "U_I_E_Uniform_01_coveralls_F",
+            "U_O_R_Gorka_01_black_F"
         ]
     };
 
@@ -315,7 +395,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "I_E_UGV_02_Demining_backpack_F",
             "I_E_UGV_02_Science_backpack_F",
             "I_E_UavTerminal"
-
         ]
     };
 
@@ -356,7 +435,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-            // AT
+            // Waffe
             "launch_RPG32_green_F",
             "launch_NLAW_F",
             "launch_RPG32_F",
@@ -370,19 +449,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "launch_O_Vorona_green_F",
             "launch_B_Titan_F",
             "launch_O_Titan_F",
-            "Titan_AA",
             "launch_B_Titan_short_F",
             "launch_I_Titan_short_F",
-            "Titan_AT",
-            "Titan_AP",
-
-            // Magazine
-            "RPG32_F",
-            "RPG32_HE_F",
-            "Vorona_HEAT",
-            "Vorona_HE",
-            "MRAWS_HEAT_F",
-            "MRAWS_HE_F"
         ]
     };
 
@@ -395,10 +463,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _LR +
         [
+            // Uniform
+            "U_I_E_Uniform_01_coveralls_F",
+            "U_O_R_Gorka_01_black_F"
+
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
-
 
             // Drohne
             "I_E_UGV_02_Demining_backpack_F",
@@ -417,6 +488,56 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Minensucher
             "ACE_VMH3",
             "ACE_VMM3"
+        ]
+    };
+
+    case "sniper":
+    {
+        _allgemein +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
+        _allgemein_westen +
+        _allgemein_kopfbedeckung +
+        _sniper_munition +
+        [
+            // Gewehre
+            "srifle_LRR_camo_F",
+            "srifle_LRR_F",
+            "srifle_LRR_tna_F",
+            "srifle_GM6_F",
+            "srifle_DMR_06_hunter_F",
+            "srifle_DMR_06_olive_F",
+
+            // ### Visiere
+            "optic_lrps",
+            "optic_lrps_tna_f"
+            "ace_optic_lrps_2d",
+            "ace_optic_sos_2d",
+            "optic_ams",
+            "optic_ams_khk",
+            "optic_ams_snd",
+            "optic_khs_blk",
+            "optic_khs_old",
+            "optic_khs_tan",
+
+
+            // Rucksäcke
+            "ace_gunbag_Tan",
+            "ace_gunbag",
+
+            // Ferngläser
+            "lerca_1200_black",
+            "lerca_1200_tan",
+            "Laserdesignator",
+            "ACE_Vector",
+
+            // Items
+            "ACE_SpottingScope",
+            "ACE_Tripod",
+            "ACE_ATragMX",
+            "ACE_Kestrel4500",
+            "ACE_RangeCard",
+            "Laserbatteries"
         ]
     };
 
