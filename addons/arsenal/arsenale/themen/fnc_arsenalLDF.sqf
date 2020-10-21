@@ -168,8 +168,8 @@ private _allgemein_zweibein = [
 ];
 
 private _allgemein_geschuetzzubehoer = [
-    // Pistolen
 
+    // Pistolen
     "acc_flashlight_pistol",
     "muzzle_snds_acp",
     "muzzle_snds_l",
@@ -178,7 +178,6 @@ private _allgemein_geschuetzzubehoer = [
     "acc_pointer_ir",
     "acc_flashlight",
     "ace_acc_pointer_green",
-
     "muzzle_snds_65_ti_blk_f",
     "muzzle_snds_65_ti_ghex_f",
     "muzzle_snds_h",
@@ -186,7 +185,7 @@ private _allgemein_geschuetzzubehoer = [
     "muzzle_snds_570"
 ];
 
-private _allgemein_visire = [
+private _allgemein_visiere = [
     // Pistolen
     "optic_yorris",
     "optic_mrd",
@@ -204,7 +203,7 @@ private _allgemein_visire = [
     "optic_arco_ak_lush_f",
     "optic_holosight_arid_f",
     "optic_holosight_lush_f"
-]
+];
 
 private _allgemein_kopfbedeckung = [
     "H_Booniehat_mgrn",
@@ -221,6 +220,13 @@ private _allgemein_kopfbedeckung = [
     "H_Watchcap_cbr",
     "H_Watchcap_camo",
     "H_Bandanna_khk_hs"
+];
+
+private _grenadier_gewehr = [
+    "arifle_MSBS65_GL_F",
+    "arifle_MSBS65_GL_sand_F",
+    "arifle_MSBS65_GL_black_F",
+    "arifle_MSBS65_GL_camo_F"
 ];
 
 private _grenadier_munition = [
@@ -288,6 +294,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Waffen +
@@ -304,6 +314,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Waffen +
@@ -313,13 +327,38 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
+    case "arzt":
+    {
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Waffen +
+        _allgemein_Magazine +
+        _LR +
+        [
+
+        ]
+    };
+
     case "grena":
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
+        _allgemein_Waffen +
         _allgemein_Magazine +
+        _grenadier_gewehr +
+        _grenadier_munition +
         [
             // Waffen
             "arifle_MSBS65_GL_F",
@@ -334,8 +373,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
-        _allgemein_Westen +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Magazine +
         _mg_muniton +
         [
             // Waffen
@@ -348,6 +392,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Waffen +
@@ -365,9 +413,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "pilot":
     {
         _allgemein +
+        _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
+        _allgemein_Uniform +
         _allgemein_Westen +
-        _allgemein_Waffen +
         _allgemein_Magazine +
+        _mp_muniton +
+        _mp +
         _LR +
         [
             // Helm
@@ -384,6 +439,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "JTAC":
     {
         _allgemein +
+        _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Waffen +
@@ -402,6 +462,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Magazine +
@@ -421,7 +485,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "6Rnd_12Gauge_Slug",
 
             // Attachments
-            "bipod_02_f_lush",
             "optic_dms_weathered_f"
         ]
     };
@@ -430,10 +493,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _aaat_munition +
+
         [
             // Waffe
             "launch_RPG32_green_F",
@@ -450,7 +519,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "launch_B_Titan_F",
             "launch_O_Titan_F",
             "launch_B_Titan_short_F",
-            "launch_I_Titan_short_F",
+            "launch_I_Titan_short_F"
         ]
     };
 
@@ -458,14 +527,21 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
         _allgemein_Uniform +
+        _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _mp_muniton +
+        _mp +
         _LR +
         [
             // Uniform
             "U_I_E_Uniform_01_coveralls_F",
-            "U_O_R_Gorka_01_black_F"
+            "U_O_R_Gorka_01_black_F",
 
             // Rucksack
             "B_Carryall_eaf_F",
@@ -494,12 +570,21 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "sniper":
     {
         _allgemein +
+        _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_westen +
-        _allgemein_kopfbedeckung +
+        _allgemein_Uniform +
+        _allgemein_Westen +
         _sniper_munition +
+        _grenadier_munition +
         [
+            // Uniform
+            "U_B_T_FullGhillie_tna_F",
+            "U_B_FullGhillie_lsh",
+            "U_B_FullGhillie_ard",
+
             // Gewehre
             "srifle_LRR_camo_F",
             "srifle_LRR_F",
@@ -510,7 +595,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // ### Visiere
             "optic_lrps",
-            "optic_lrps_tna_f"
+            "optic_lrps_tna_f",
             "ace_optic_lrps_2d",
             "ace_optic_sos_2d",
             "optic_ams",
@@ -538,6 +623,25 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_Kestrel4500",
             "ACE_RangeCard",
             "Laserbatteries"
+        ]
+    };
+
+    case "spotter":
+    {
+        _allgemein +
+        _allgemein_Helm +
+        _allgemein_kopfbedeckung +
+        _allgemein_visiere +
+        _allgemein_geschuetzzubehoer +
+        _allgemein_zweibein +
+        _allgemein_Uniform +
+        _allgemein_Westen +
+        _allgemein_Magazine +
+        _grenadier_gewehr +
+        _grenadier_munition +
+        _sniper_munition +
+        [
+            
         ]
     };
 
