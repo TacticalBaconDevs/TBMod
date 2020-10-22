@@ -13,4 +13,12 @@ class CfgMagazineWells
     {
         ADDON[] = {"TB_mag_45_FMJ"};
     };
+
+    class TB_magwell_10Rnd_338
+    {
+        TB_10Rnd_338[] =
+       {
+            "TB_mag_10_Rnd_338_LS"
+       };
+    };       
 };
