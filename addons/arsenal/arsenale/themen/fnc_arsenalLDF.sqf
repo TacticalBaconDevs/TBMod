@@ -269,7 +269,7 @@ private _aaat_munition = [
     "MRAWS_HE_F"
 ];
 
-Private _mg_muniton = [
+private _mg_muniton = [
     "ACE_200Rnd_65x39_cased_Box_Tracer_Dim",
     "200Rnd_65x39_cased_Box_Tracer",
     "200Rnd_65x39_cased_Box",
@@ -277,13 +277,13 @@ Private _mg_muniton = [
     "200Rnd_556x45_Box_F"
 ];
 
-Private _mp_muniton = [
+private _mp_muniton = [
     "30Rnd_45ACP_Mag_SMG_01_Tracer_Green",
     "30Rnd_45ACP_Mag_SMG_01",
     "50Rnd_570x28_SMG_03"
 ];
 
-Private _mp = [
+private _mp = [
     "SMG_03C_TR_camo",
     "SMG_03C_TR_hex",
     "SMG_03C_TR_khaki",
