@@ -111,7 +111,9 @@ private _allgemein = [
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag",
     // ### Fallschirme
-    "B_Parachute"
+    "B_Parachute",
+    // ### ITC Tablet
+    "itc_land_tablet_rover"
 ];
 
 private _allgemein_magazine = [
