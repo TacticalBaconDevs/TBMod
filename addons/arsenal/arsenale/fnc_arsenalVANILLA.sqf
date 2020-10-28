@@ -91,6 +91,8 @@ private _allgemein = [
     "ACE_HuntIR_M203",
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
+    // ### ITC Tablet
+    "itc_land_tablet_rover"
 
     // Visiere
     "optic_ACO_grn_smg",
