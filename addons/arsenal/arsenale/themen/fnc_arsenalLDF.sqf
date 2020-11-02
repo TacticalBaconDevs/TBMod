@@ -269,18 +269,22 @@ private _aaat_munition = [
     "MRAWS_HE_F"
 ];
 
-private _mg_muniton = [
+private _mg_munition = [
     "ACE_200Rnd_65x39_cased_Box_Tracer_Dim",
     "200Rnd_65x39_cased_Box_Tracer",
     "200Rnd_65x39_cased_Box",
     "200Rnd_556x45_Box_Tracer_F",
-    "200Rnd_556x45_Box_F"
+    "200Rnd_556x45_Box_F",
+    "130Rnd_338_Mag"
 ];
 
-private _mp_muniton = [
+private _mp_munition = [
     "30Rnd_45ACP_Mag_SMG_01_Tracer_Green",
     "30Rnd_45ACP_Mag_SMG_01",
-    "50Rnd_570x28_SMG_03"
+    "50Rnd_570x28_SMG_03",
+    "30Rnd_9x21_Red_Mag",
+    "30Rnd_9x21_Mag_SMG_02_Tracer_Red"
+
 ];
 
 private _mp = [
@@ -288,6 +292,9 @@ private _mp = [
     "SMG_03C_TR_hex",
     "SMG_03C_TR_khaki",
     "SMG_03C_TR_black",
+    "hgun_PDW2000_F",
+    "SMG_02_F",
+    "SMG_05_F",
     "SMG_01_F"
 ];
 
@@ -347,8 +354,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
-        _allgemein_Waffen +
-        _allgemein_Magazine +
+        _mp_munition +
+        _mp +
         _LR +
         [
 
@@ -365,16 +372,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
-        _allgemein_Waffen +
         _allgemein_Magazine +
         _grenadier_gewehr +
         _grenadier_munition +
         [
-            // Waffen
-            "arifle_MSBS65_GL_F",
-            "arifle_MSBS65_GL_sand_F",
-            "arifle_MSBS65_GL_black_F",
-            "arifle_MSBS65_GL_camo_F"
         ]
     };
 
@@ -390,12 +391,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Magazine +
-        _mg_muniton +
+        _mg_munition +
         [
             // Waffen
             "LMG_Mk200_black_F",
-            "LMG_03_F"
-
+            "LMG_03_F",
+            "MMG_02_camo_F",
+            "MMG_02_sand_F",
+            "MMG_02_black_F"
         ]
     };
 
@@ -411,7 +414,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
-        _mg_muniton +
+        _mg_munition +
         _aaat_munition +
         [
             // Rucksack
@@ -433,7 +436,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Uniform +
         _allgemein_Westen +
         _allgemein_Magazine +
-        _mp_muniton +
+        _mp_munition +
         _mp +
         _LR +
         [
@@ -547,7 +550,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
-        _mp_muniton +
+        _mp_munition +
         _mp +
         _LR +
         [
@@ -653,7 +656,28 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _grenadier_munition +
         _sniper_munition +
         [
-            
+            // Uniform
+            "U_B_T_FullGhillie_tna_F",
+            "U_B_FullGhillie_lsh",
+            "U_B_FullGhillie_ard",
+
+            // Rucksäcke
+            "ace_gunbag_Tan",
+            "ace_gunbag",
+
+            // Ferngläser
+            "lerca_1200_black",
+            "lerca_1200_tan",
+            "Laserdesignator",
+            "ACE_Vector",
+
+            // Items
+            "ACE_SpottingScope",
+            "ACE_Tripod",
+            "ACE_ATragMX",
+            "ACE_Kestrel4500",
+            "ACE_RangeCard",
+            "Laserbatteries"
         ]
     };
 
