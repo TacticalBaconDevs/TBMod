@@ -86,7 +86,6 @@ class TB_supply_uk_spezial : WRAPPER_NAME(Box_East_Wps_F)
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
 
         // DMR7.62
-        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_mk316_special_LRS,10);
         MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,10);
     };
 };

@@ -343,6 +343,24 @@ class CfgWeapons
             };
     };
 
+    class rhs_weap_m27iar;
+    class rhs_weap_m27iar_grip : rhs_weap_m27iar
+    {
+        class WeaponSlotsInfo;
+    };
+    class TB_weap_m27iar : rhs_weap_m27iar_grip
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weap_m27iar";
+        displayName = "M27 IAR";
+        magazines[] = {"TB_mag_100Rnd_556x45_Mk318_tracer"};
+        magazineWell[] = {"TB_magwell_100Rnd_556","CBA_556x45_STANAG_2D","CBA_556x45_STANAG"};
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            mass = 79.344;
+        };
+    };
+
     class rhsusf_ach_helmet_ocp;
     class rhsusf_opscore_01: rhsusf_ach_helmet_ocp
     {
