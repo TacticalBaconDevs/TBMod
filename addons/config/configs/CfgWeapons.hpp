@@ -322,6 +322,48 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
+    class LMG_03_base_F;
+    class LMG_03_F : LMG_03_base_F
+    {
+        class close;
+        class FullAutoSLow;
+        class WeaponSlotsInfo;
+    };
+    class TB_weap_Mk48 : LMG_03_F // Mk48 Mod 2
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weap_Mk48";
+        descriptionShort = "Medium Machine Gun<br />Caliber: 8.6x70 mm";
+        displayName = "Mk48 Mod 2";
+        magazines[] = {"TB_mag_100Rnd_338_LS_Tracer"};
+        magazineWell[] = {"TB_magwell_100Rnd_338"};
+        modes[] = {"FullAutoLow","FullAutoHigh","close","short","medium","far_optic1","far_optic2"};
+        class short : close
+        {
+            dispersion = 0.00073;
+            reloadTime = 0.3;
+            showToPlayer = 0;
+        };
+        class FullAutoLow : FullAutoSLow
+        {
+            dispersion = 0.00073;
+            multiplier = 1;
+            reloadTime = 0.3;
+            textureType = "burst";
+        };
+        class FullAutoHigh : FullAutoLow
+        {
+            dispersion = 0.00073;
+            multiplier = 1;
+            reloadTime = 0.15;
+            textureType = "fullAuto";
+        };
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            mass = 200.564;
+        };
+    };
+
     class LMG_RCWS;
     class LMG_Minigun : LMG_RCWS
     {

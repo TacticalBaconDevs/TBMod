@@ -18,7 +18,16 @@ class CfgMagazineWells
     {
         TB_10Rnd_338[] =
        {
-            "TB_mag_10_Rnd_338_LS"
+            "TB_mag_10Rnd_338_LS_Tracer",
+            "TB_mag_10Rnd_338_LS_DIM"
        };
-    };       
+    };
+    class TB_magwell_100Rnd_338
+    {
+        TB_100Rnd_338[] =
+        {
+            "TB_mag_100Rnd_338_LS_Tracer",
+            "TB_mag_100Rnd_338_LS_DIM"
+        };
+    };
 };

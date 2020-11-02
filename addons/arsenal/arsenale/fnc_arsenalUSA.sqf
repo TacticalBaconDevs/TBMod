@@ -480,6 +480,9 @@ private _rifle_munition = [
 ];
 
 private _mg_munition = [
+    // 8.6
+    "TB_mag_100Rnd_338_LS_Tracer",
+    "TB_mag_100Rnd_338_LS_DIM",
     // 7.62
     "rhsusf_100Rnd_762x51_m62_tracer",
     "rhsusf_100Rnd_762x51_m61_ap",
@@ -502,7 +505,8 @@ private _pilot_munition = [
 private _sniper_munition = [
     "rhsusf_mag_10Rnd_STD_50BMG_mk211",
     "rhsusf_mag_10Rnd_STD_50BMG_M33",
-    "TB_mag_10_Rnd_338_LS",
+    "TB_mag_10Rnd_338_LS_Tracer",
+    "TB_mag_10Rnd_338_LS_DIM",
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
     "rhsusf_mag_40Rnd_46x30_AP"
@@ -792,8 +796,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehre
             "rhs_weap_m240G",
             "rhs_weap_m249_light_S",
+            "TB_weap_Mk48",
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
+            "muzzle_snds_h_mg_blk_f",
             // ### Zweibein
             "rhsusf_acc_saw_lw_bipod",
 

@@ -279,14 +279,38 @@ class CfgMagazines
     };
 
     class ACE_10Rnd_338_300gr_HPBT_Mag;
-    class TB_mag_10_Rnd_338_LS : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
+    class TB_mag_10Rnd_338_LS_Tracer : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
     {
         ammo = "TB_ammo_338_LS";
         author = "TBMod";
-        displayName = ".338 Lapua Scenar";
-        displayNameShort = ".338 Lapua Scenar";
+        displayName = ".338 Lapua Scenar Tracer";
+        displayNameShort = ".338 Lapua Scenar Tracer";
+        mass = 8.816;
+        tracersEvery = 1;
     };
 
+    class TB_mag_10Rnd_338_LS_DIM : TB_mag_10Rnd_338_LS_Tracer // Lapua Scenar DIM
+    {
+        ammo = "TB_ammo_338_LS_DIM";
+        displayName = ".338 Lapua Scenar DIM";
+        displayNameShort = ".338 Lapua Scenar DIM";
+    };
+
+    class TB_mag_100Rnd_338_LS_Tracer : TB_mag_10Rnd_338_LS_Tracer // Lapua Scenar MG
+    {
+        count = 100;
+        mass = 61.712;
+        picture = "\A3\Weapons_F_Exp\Data\UI\icon_200Rnd_556x45_Box_Tracer_Red_F_ca.paa";
+        tracersEvery = 2;
+    };
+
+    class TB_mag_100Rnd_338_LS_DIM : TB_mag_100Rnd_338_LS_Tracer // Lapua Scenar MG DIM
+    {
+        ammo = "TB_ammo_338_LS_DIM";
+        displayName = ".338 Lapua Scenar DIM";
+        displayNameShort = ".338 Lapua Scenar DIM";
+        picture = "\A3\Weapons_F_Exp\Data\UI\icon_200Rnd_556x45_Box_F_ca.paa";
+    };
 
     class 60Rnd_CMFlare_Chaff_Magazine;
     class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff

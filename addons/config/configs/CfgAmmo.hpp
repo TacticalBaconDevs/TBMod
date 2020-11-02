@@ -171,7 +171,15 @@ class CfgAmmo
         airFriction = -0.00060841;
         caliber = 2;
         hit = 20;
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        tracerEndTime = 6;
+        tracerScale = 2.75;
+        tracerStartTime = 0.05;
         typicalSpeed = 921;
+    };
+    class TB_ammo_338_LS_DIM : TB_ammo_338_LS // Lapua Scenar DIM
+    {
+        nvgOnly = 1;
     };
 
     class PipeBombBase;

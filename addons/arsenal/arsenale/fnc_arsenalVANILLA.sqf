@@ -92,7 +92,7 @@ private _allgemein = [
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
     // ### ITC Tablet
-    "itc_land_tablet_rover"
+    "itc_land_tablet_rover",
 
     // Visiere
     "optic_ACO_grn_smg",
