@@ -800,6 +800,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m249_light_S",
             "TB_weap_Mk48",
             "TB_weap_m27iar",
+            
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
             "muzzle_snds_h_mg_blk_f",
