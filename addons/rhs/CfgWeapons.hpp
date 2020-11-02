@@ -285,7 +285,7 @@ class CfgWeapons
         baseWeapon = "TB_rhs_weap_mk22_ASR";
         displayName = "Mk22 ASR";
         magazineWell[] = {"TB_magwell_10Rnd_338"};
-        magazines[] += {"TB_mag_10_Rnd_338_LS"};
+        magazines[] += {"TB_mag_10Rnd_338_LS_Tracer"};
 
         class Single : Mode_SemiAuto
             {

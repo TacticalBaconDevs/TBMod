@@ -179,6 +179,7 @@ class CfgVehicles
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_usa_ammo);
+                        ADD_SUPPLY("MG-Munition",TB_supply_usa_ammo_mg);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
                         ADD_SUPPLY("SpezialMunition",TB_supply_usa_spezial);
                         ADD_SUPPLY("Granaten",TB_supply_usa_grena);
