@@ -78,7 +78,7 @@ class TB_supply_uk_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 
 class TB_supply_uk_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
-    PUBLIC_NAME_CAT("SpezialwaffenMunition",UK);
+    PUBLIC_NAME_CAT("PräzisionswaffenMunition",UK);
 
     class TransportMagazines
     {

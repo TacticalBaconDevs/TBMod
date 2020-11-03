@@ -122,7 +122,7 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 
 class TB_supply_usa_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
-    PUBLIC_NAME_CAT("SpezialwaffenMunition",USA);
+    PUBLIC_NAME_CAT("PräzisionswaffenMunition",USA);
 
     class TransportMagazines
     {
