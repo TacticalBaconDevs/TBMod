@@ -182,7 +182,7 @@ class CfgVehicles
                         ADD_SUPPLY("LMG-Munition",TB_supply_usa_ammo_lmg);
                         ADD_SUPPLY("MMG-Munition",TB_supply_usa_ammo_mmg);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
-                        ADD_SUPPLY("PräzisionsMunition",TB_supply_usa_spezial);
+                        ADD_SUPPLY("PräzisionsMunition",TB_supply_usa_praezision);
                         ADD_SUPPLY("Granaten",TB_supply_usa_grena);
                         ADD_SUPPLY("Unterlauf",TB_supply_usa_unterlauf);
                     };
@@ -216,7 +216,7 @@ class CfgVehicles
 
                         ADD_SUPPLY("Munition",TB_supply_uk_ammo);
                         ADD_SUPPLY("KleinMunition",TB_supply_uk_ammoSmall);
-                        ADD_SUPPLY("PräzisionsMunition",TB_supply_uk_spezial);
+                        ADD_SUPPLY("PräzisionsMunition",TB_supply_uk_praezision);
                         ADD_SUPPLY("Granaten",TB_supply_uk_grena);
                         ADD_SUPPLY("Unterlauf",TB_supply_uk_unterlauf);
                     };
@@ -257,7 +257,7 @@ class CfgVehicles
                     ADD_SUPPLY("KleinMunition",TB_supply_bw_ammoSmall);
                     ADD_SUPPLY("Granaten",TB_supply_bw_grena);
                     ADD_SUPPLY("Unterlauf",TB_supply_bw_unterlauf);
-                    ADD_SUPPLY("PräzisionsMunition",TB_supply_bw_spezial);
+                    ADD_SUPPLY("PräzisionsMunition",TB_supply_bw_praezision);
                     ADD_SUPPLY("Werfer",TB_supply_bw_launcher);
                     ADD_SUPPLY("WerferMunition",TB_supply_bw_launcherAmmo);
                     ADD_SUPPLY("NotfallG36",TB_supply_bw_notfallg36);
@@ -313,7 +313,7 @@ class CfgVehicles
                     ADD_SUPPLY("KleinMunition",TB_supply_russ_ammoSmall);
                     ADD_SUPPLY("Granaten",TB_supply_russ_grena);
                     ADD_SUPPLY("Unterlauf",TB_supply_russ_unterlauf);
-                    ADD_SUPPLY("PräzisionsMunition",TB_supply_russ_spezial);
+                    ADD_SUPPLY("PräzisionsMunition",TB_supply_russ_praezision);
                     ADD_SUPPLY("Werfer",TB_supply_russ_launcher);
                     ADD_SUPPLY("WerferMunition",TB_supply_russ_launcherAmmo);
                     ADD_SUPPLY("NotfallWaffen",TB_supply_russ_notfall);
