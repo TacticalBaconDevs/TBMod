@@ -118,7 +118,9 @@ private _allgemein = [
     "rhs_mag_mk84",
     "rhs_mag_mk3a2",
     // ### Sprengstoff
-    "AMP_Breaching_Charge_Mag"
+    "AMP_Breaching_Charge_Mag",
+    // ### ITC Tablet
+    "itc_land_tablet_rover"
 ];
 
 private _allgemein_magazine = [

@@ -119,7 +119,9 @@ private _allgemein = [
     "BWA3_DM32_Purple",
     "ACE_M84",
     // ### Spreng
-    "AMP_Breaching_Charge_Mag"
+    "AMP_Breaching_Charge_Mag",
+    // ### ITC Tablet
+    "itc_land_tablet_rover"
 ];
 
 private _allgemein_gewehre = [

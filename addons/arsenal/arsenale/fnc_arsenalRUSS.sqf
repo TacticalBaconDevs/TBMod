@@ -68,7 +68,9 @@ private _allgemein = [
     "rhs_mag_rdg2_white",
     "rhs_mag_nspd",         // orange smoke
     // ### Sprengstoff
-    "AMP_Breaching_Charge_Mag"
+    "AMP_Breaching_Charge_Mag",
+    // ### ITC Tablet
+    "itc_land_tablet_rover"
 ];
 
 private _allgemein_magazine = [

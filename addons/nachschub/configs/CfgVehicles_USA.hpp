@@ -9,15 +9,26 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,40);      // Standard GewehrMag
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,2);       // MGMag5.56
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,2); // MGMag5.56 Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,3);                   // MGMag7.62 AP Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,3);                       // MGMag7.62 AP
         MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,14);                 // DMRMag7.62
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,7);                                // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,7);                                  // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_00Buck,7);                                // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_Slug,7);                                  // Schrotflinte
+    };
+};
+
+class TB_supply_usa_ammo_mg : WRAPPER_NAME(Box_IND_Wps_F)
+{
+    PUBLIC_NAME_CAT("MG-Munition",USA);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,3);       // MGMag5.56
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,3); // MGMag5.56 Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,4);                   // MGMag7.62 AP Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,4);                       // MGMag7.62 AP
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_Tracer,4);                       // MGMag8.6 Tracer
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_DIM,4);                          // MGMag8.6 DIM
     };
 };
 
@@ -85,9 +96,12 @@ class TB_supply_usa_spezial : WRAPPER_NAME(Box_East_Wps_F)
 
     class TransportMagazines
     {
+        // 12.7
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,8);
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
-        MACRO_ADDMAGAZINE(TB_mag_10_Rnd_338_LS,8);
+        // 8.6
+        MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_Tracer,8);
+        MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_DIM,8);
 
         // DMR7.62
         MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,8);
