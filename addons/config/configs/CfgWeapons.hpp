@@ -396,6 +396,43 @@ class CfgWeapons
         };
     };
 
+    class cannon_105mm : CannonCore
+    {
+        class player;
+    };
+    class cannon_105mm_VTOL_01 : cannon_105mm // Gunship 105mm
+    {
+        class player : player
+        {
+            reloadTime = 1.5; // 5
+        };
+    };
+
+    class autocannon_Base_F;
+    class autocannon_40mm_CTWS : autocannon_Base_F
+    {
+        class Mode_FullAuto;
+    };
+    class autocannon_40mm_VTOL_01 : autocannon_40mm_CTWS // Gunship 40mm
+    {
+        class player : Mode_FullAuto
+        {
+            reloadTime = 0.1; // 0.3
+        };
+    };
+
+    class gatling_20mm : CannonCore
+    {
+        class manual;
+    };
+    class gatling_20mm_VTOL_01 : gatling_20mm // Gunship 20mm
+    {
+        class manual : manual
+        {
+            reloadTime = 0.01; // 0.03
+        };
+    };
+
     class SmokeLauncher;
     class CMFlareLauncher : SmokeLauncher
     {

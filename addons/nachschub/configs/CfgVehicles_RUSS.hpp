@@ -69,9 +69,9 @@ class TB_supply_russ_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     };
 };
 
-class TB_supply_russ_spezial : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+class TB_supply_russ_praezision : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
 {
-    PUBLIC_NAME_CAT("SpezialwaffenMunition",RUSS);
+    PUBLIC_NAME_CAT("PräzisionswaffenMunition",RUSS);
 
     class TransportMagazines
     {

@@ -313,6 +313,24 @@ class CfgMagazines
         displayNameShort = ".338 Lapua Scenar DIM";
         picture = "\A3\Weapons_F_Exp\Data\UI\icon_200Rnd_556x45_Box_F_ca.paa";
     };
+    
+    class 20Rnd_105mm_HEAT_MP;
+    class 100Rnd_105mm_HEAT_MP : 20Rnd_105mm_HEAT_MP // Gunship 105mm
+    {
+        initSpeed = 1800; // 1330
+    };
+
+    class 60Rnd_40mm_GPR_Tracer_Red_shells;
+    class 240Rnd_40mm_GPR_Tracer_Red_shells : 60Rnd_40mm_GPR_Tracer_Red_shells // Gunship 40mm GPR
+    {
+        initSpeed = 1800; // 1035
+    };
+
+    class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
+    class 160Rnd_40mm_APFSDS_Tracer_Red_shells : 40Rnd_40mm_APFSDS_Tracer_Red_shells // Gunship 40mm APFSDS
+    {
+        initSpeed = 1800; // 1600
+    };
 
     class 60Rnd_CMFlare_Chaff_Magazine;
     class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
