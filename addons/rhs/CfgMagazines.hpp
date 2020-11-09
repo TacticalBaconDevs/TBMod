@@ -309,8 +309,24 @@ class CfgMagazines
     class rhsusf_100Rnd_762x51_m62_tracer : rhsusf_50Rnd_762x51_m62_tracer // 100rnd M240 Box M62 AP Tracer
     {
         displayname = "100rnd M62 AP (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
-        displayNameShort = "M62 AP Tracer"; // "M62 Tracer"
+        displayNameShort = "M62 AP (Tracer)"; // "M62 Tracer"
         tracersEvery = 1; // 5
+    };
+
+    class rhs_mag_100Rnd_556x45_Mk318_cmag;
+    class TB_mag_100Rnd_556x45_Mk318_tracer : rhs_mag_100Rnd_556x45_Mk318_cmag // 100Rnd M27IAR Tracer
+    {
+        displayName = "100rnd Mk318 Mod 1 (Tracer)";
+        displaynameshort = "100rnd (Tracer)";
+        tracersEvery = 2;
+    };
+
+    class TB_mag_100Rnd_556x45_Mk318_dim : TB_mag_100Rnd_556x45_Mk318_tracer // 100Rnd M27IAR DIM
+    {
+        ammo = "TB_ammo_556x45_Mk318_DIM";
+        displayName = "100rnd Mk318 Mod 1 (DIM)";
+        displaynameshort = "100rnd (DIM)";
+        tracersEvery = 2;
     };
 
     class 6Rnd_ACE_Hellfire_AGM114K;
