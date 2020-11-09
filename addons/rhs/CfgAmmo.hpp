@@ -150,6 +150,12 @@ class CfgAmmo
         suppressionRadiusHit = 14; // 4
     };
 
+    class rhs_ammo_556x45_Mk318_Ball;
+    class TB_ammo_556x45_Mk318_DIM : rhs_ammo_556x45_Mk318_Ball // M27IAR DIM
+    {
+        nvgOnly = 1;
+    };
+
     class RocketBase;
     class rhs_ammo_maaws_HE : RocketBase // FFV441 HE MAAWS
     {
