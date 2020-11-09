@@ -149,7 +149,7 @@ class CfgWeapons
     {
         class ItemInfo;
     };
-    class TB_headgear_sps_ucp : H_HelmetB_TI_tna_F // SPS Helm
+    class TB_headgear_sps_ucp : H_HelmetB_TI_tna_F // SPS Helm UCP
     {
         class ItemInfo : ItemInfo
         {
@@ -159,19 +159,24 @@ class CfgWeapons
                 {
                     armor = 7; // 4
                     hitpointName = "HitFace";
-                    passThrough = 0.4; // 0.5
+                    passThrough = 0.3; // 0.5
                 };
                 class Head
                 {
                     armor = 9; // 6
                     hitpointName = "HitHead";
-                    passThrough = 0.3; // 0.5
+                    passThrough = 0.2; // 0.5
                 };
             };
             mass = 71.63; // 30
         };
-        displayName = "SPS (UCP)"; // Tarn-Kampfhelm
+        displayName = "SPS (UCP)";
         picture = "\A3\Characters_F\data\ui\icon_H_Crew_Helmet_Heli_B_CA.paa";
+    };
+
+    class TB_headgear_sps_ocp : TB_headgear_sps_ucp // SPS Helm OCP
+    {
+        displayName = "SPS (OCP)";
     };
 
     class V_PlateCarrierIA2_dgtl;
@@ -331,6 +336,7 @@ class CfgWeapons
     };
     class TB_weap_Mk48 : LMG_03_F // Mk48 Mod 2
     {
+        aimTransitionSpeed = 0.32; // 0.5
         author = "TBMod";
         baseWeapon = "TB_weap_Mk48";
         descriptionShort = "Medium Machine Gun<br />Caliber: 8.6x70 mm";

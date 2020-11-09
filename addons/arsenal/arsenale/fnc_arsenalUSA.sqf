@@ -399,6 +399,7 @@ private _allgemein_kopfbedeckung = [
     "rhsusf_mich_helmet_marpatwd_norotos_arc_headset",
     "rhsusf_mich_helmet_marpatwd_norotos_headset",
     "TB_headgear_sps_ucp",
+    "TB_headgear_sps_ocp",
     "rhsusf_patrolcap_ocp",
     "rhsusf_patrolcap_ucp",
     "rhsusf_protech_helmet",
