@@ -283,6 +283,7 @@ class CfgMagazines
     {
         ammo = "TB_ammo_338_LS";
         author = "TBMod";
+        descriptionShort = "Caliber: 8.6x70mm (250gr Lapua Scenar)<br />Rounds: 10"; // "Caliber: 8.6x70mm (300gr Lapua Scenar)<br />Rounds: 10";
         displayName = ".338 Lapua Scenar Tracer";
         displayNameShort = ".338 Lapua Scenar Tracer";
         mass = 8.816;
@@ -299,6 +300,7 @@ class CfgMagazines
     class TB_mag_100Rnd_338_LS_Tracer : TB_mag_10Rnd_338_LS_Tracer // Lapua Scenar MG
     {
         count = 100;
+        descriptionShort = "Caliber: 8.6x70mm (250gr Lapua Scenar)<br />Rounds: 100"; // "Caliber: 8.6x70mm (300gr Lapua Scenar)<br />Rounds: 10"
         mass = 61.712;
         picture = "\A3\Weapons_F_Exp\Data\UI\icon_200Rnd_556x45_Box_Tracer_Red_F_ca.paa";
         tracersEvery = 2;
