@@ -369,7 +369,7 @@ else
     if (_waves >= 1) then
     {
         if (_hints) then {hint "Feindliche Verstärkung ist auf dem Weg"};
-        //Updates waves in the settings before sending next wave 
+        // Updates waves in the settings before sending next wave 
         _basSettings set [1, _waves];
         [
             _mkr,
