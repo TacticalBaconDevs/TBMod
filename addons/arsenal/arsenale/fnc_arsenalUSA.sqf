@@ -399,6 +399,7 @@ private _allgemein_kopfbedeckung = [
     "rhsusf_mich_helmet_marpatwd_norotos_arc_headset",
     "rhsusf_mich_helmet_marpatwd_norotos_headset",
     "TB_headgear_sps_ucp",
+    "TB_headgear_sps_ocp",
     "rhsusf_patrolcap_ocp",
     "rhsusf_patrolcap_ucp",
     "rhsusf_protech_helmet",
@@ -493,7 +494,9 @@ private _mg_munition = [
     "rhsusf_200Rnd_556x45_M855_soft_pouch_ucp",
     "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote",
     "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp",
-    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"
+    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",
+    "TB_mag_100Rnd_556x45_Mk318_tracer",
+    "TB_mag_100Rnd_556x45_Mk318_dim"
 ];
 
 private _pilot_munition = [
@@ -797,6 +800,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_m240G",
             "rhs_weap_m249_light_S",
             "TB_weap_Mk48",
+            "TB_weap_m27iar",
+            
             // ### Geschützzubehör
             "rhsusf_acc_ARDEC_M240",
             "muzzle_snds_h_mg_blk_f",

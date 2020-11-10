@@ -106,6 +106,11 @@ class CfgWeapons
         hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_headgear_sps_ucp.paa)}; // \A3\Characters_F_Exp\BLUFOR\Data\H_HelmetB_TI_tna_F_co.paa
     };
 
+    class TB_headgear_sps_ocp : TB_headgear_sps_ucp
+    {
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\headgear\TB_headgear_sps_ocp.paa)};
+    };
+
     class V_PlateCarrierIAGL_dgtl;
     class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl
     {
