@@ -56,6 +56,14 @@ private _allgemein = [
     "hgun_P07_khk_F",
     "tb_weap_taser",
 
+    //#Munition
+    "11Rnd_45ACP_Mag",
+    "TB_mag_taser",
+    "16Rnd_9x21_yellow_Mag",
+    "9Rnd_45ACP_Mag",
+    "TB_mag_45_FMJ",
+    "6Rnd_45ACP_Cylinder",
+
     // ESD
     "hgun_esd_01_F",
     "acc_esd_01_flashlight",
@@ -76,6 +84,7 @@ private _allgemein = [
     "ACE_MapTools",
     "ACE_RangeTable_82mm",
     "ACE_Altimeter",
+    "Binocular",
     "ItemWatch",
     "ItemCompass",
     "ItemGPS",
@@ -86,6 +95,7 @@ private _allgemein = [
     "ACE_ConcertinaWireCoil",
     "AMP_Breaching_Charge_Mag",
     "ACE_rope36",
+    "APERSMineDispenser_Mag",
 
     // NV
     "O_NVGoggles_grn_F",
@@ -110,7 +120,6 @@ private _allgemein = [
 private _allgemein_Uniform = [
     "U_I_E_Uniform_01_F",
     "U_I_E_Uniform_01_sweater_F",
-    "U_I_E_Uniform_01_officer_F",
     "U_I_E_Uniform_01_tanktop_F",
     "U_I_E_Uniform_01_shortsleeve_F",
     "U_B_CombatUniform_tshirt_mcam_wdL_f",
@@ -146,16 +155,7 @@ private _allgemein_Waffen = [
     "arifle_MSBS65_camo_F"
 ];
 
-private _allgemein_Magazine = [
-    // Pistolen
-    "11Rnd_45ACP_Mag",
-    "TB_mag_taser",
-    "16Rnd_9x21_yellow_Mag",
-    "9Rnd_45ACP_Mag",
-    "TB_mag_45_FMJ",
-    "6Rnd_45ACP_Cylinder",
-    
-    // Waffen
+private _allgemein_Magazine = [ 
     "30Rnd_65x39_caseless_msbs_mag_Tracer",
     "30Rnd_65x39_caseless_msbs_mag"
 ];
@@ -322,7 +322,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _LR +
         [
         
-        "U_I_E_Uniform_01_officer_F"
+        "U_I_E_Uniform_01_officer_F",
+
+        // Ferngläser
+        "Laserdesignator_01_khk_F",
+        "Laserdesignator_03",
+        "Laserdesignator",
+        "ACE_MX2A", // Thermal
+        "ACE_Vector", // Tag/Nacht Version
+
+        // Items
+        "ACE_HuntIR_monitor",
+        "Laserbatteries"
 
         ]
     };
@@ -354,11 +365,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_Uniform +
         _allgemein_Westen +
+        _allgemein_Magazine +
         _mp_munition +
         _mp +
         _LR +
         [
-
         ]
     };
 
@@ -451,7 +462,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
-    case "JTAC":
+    case "jtac":
     {
         _allgemein +
         _allgemein_Helm +
@@ -578,7 +589,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Minensucher
             "ACE_VMH3",
-            "ACE_VMM3"
+            "ACE_VMM3",
+
+            // Minen
+            "ATMine_Range_Mag",
+            "APERSMine_Range_Mag",
+            "APERSBoundingMine_Range_Mag",
+            "SLAMDirectionalMine_Wire_Mag",
+            "APERSTripMine_Wire_Mag",
+            "ClaymoreDirectionalMine_Remote_Mag",
+            "DemoCharge_Remote_Mag"
         ]
     };
 
