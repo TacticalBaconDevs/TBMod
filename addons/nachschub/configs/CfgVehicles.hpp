@@ -283,12 +283,35 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                    ADD_SUPPLY("Munition",TB_supply_ldf_ammo);
-                    ADD_SUPPLY("Granaten",TB_supply_ldf_grena);
-                    ADD_SUPPLY("Unterlauf",TB_supply_ldf_unterlauf);
-                    ADD_SUPPLY("WerferMunition",TB_supply_ldf_launcherAmmo);
-                    ADD_SUPPLY("ED-1D Drohne",TB_supply_ldf_ED);
+                    class LDFMunition
+                    {
+                        displayName = "Muntions Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("Munition",TB_supply_ldf_ammo);
+                        ADD_SUPPLY("MG-Munition",TB_supply_ldf_ammo_mg);
+                        ADD_SUPPLY("MP/Pistolen Munition",TB_supply_ldf_ammo_small);
+                        ADD_SUPPLY("Spezial Munition",TB_supply_ldf_ammo_spezial);
+                        ADD_SUPPLY("Granaten",TB_supply_ldf_grena);
+                        ADD_SUPPLY("Unterlauf",TB_supply_ldf_unterlauf);
+                    };
+
+                    class LDFWerfer
+                    {
+                        displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("RPG-32 Munition",TB_supply_ldf_launcher_rpg);
+                        ADD_SUPPLY("MAAWS Muntion",TB_supply_ldf_launcher_maaws);
+                        ADD_SUPPLY("Mentis Munition",TB_supply_ldf_launcher_mentis);
+                        ADD_SUPPLY("NLAW Munition",TB_supply_ldf_launcher_nlaw);
+                        ADD_SUPPLY("Titan AA Muniton",TB_supply_ldf_launcher_titan_aa);
+                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_ldf_launcher_titan_at);
+                    };
+
+                    ADD_SUPPLY("Notfall Shotgun",TB_supply_ldf_shotgun);
                     ADD_SUPPLY("NachtKiste",TB_supply_ldf_night);
+                    ADD_SUPPLY("ED-1D Drohne",TB_supply_ldf_ED);
                 };
 
                 class brd
@@ -517,8 +540,8 @@ class CfgVehicles
 
         class TransportBackpacks
         {
-            MACRO_ADDBACKPACK(RHS_M2_Gun_Bag,1);
-            MACRO_ADDBACKPACK(RHS_M2_Tripod_Bag,1);
+            MACRO_ADDBACKPACK(I_HMG_02_support_high_F,1);
+            MACRO_ADDBACKPACK(I_HMG_02_high_weapon_F,1);
         };
     };
 

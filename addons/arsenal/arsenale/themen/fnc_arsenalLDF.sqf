@@ -262,11 +262,12 @@ private _aaat_munition = [
     "RPG32_HE_F",
     "Vorona_HEAT",
     "Vorona_HE",
-    "MRAWS_HEAT_F",
     "Titan_AT",
     "Titan_AP",
     "Titan_AA",
-    "MRAWS_HE_F"
+    "MRAWS_HEAT_F",
+    "MRAWS_HE_F",
+    "NLAW_F"
 ];
 
 private _mg_munition = [
