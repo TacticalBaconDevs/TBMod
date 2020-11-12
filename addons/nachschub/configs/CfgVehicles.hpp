@@ -304,7 +304,6 @@ class CfgVehicles
                         ADD_SUPPLY("RPG-32 Munition",TB_supply_ldf_launcher_rpg);
                         ADD_SUPPLY("MAAWS Muntion",TB_supply_ldf_launcher_maaws);
                         ADD_SUPPLY("Mentis Munition",TB_supply_ldf_launcher_mentis);
-                        ADD_SUPPLY("NLAW Munition",TB_supply_ldf_launcher_nlaw);
                         ADD_SUPPLY("Titan AA Muniton",TB_supply_ldf_launcher_titan_aa);
                         ADD_SUPPLY("Titan AT/AP Munition",TB_supply_ldf_launcher_titan_at);
                     };

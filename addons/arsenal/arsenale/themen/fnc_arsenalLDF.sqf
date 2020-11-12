@@ -266,8 +266,7 @@ private _aaat_munition = [
     "Titan_AP",
     "Titan_AA",
     "MRAWS_HEAT_F",
-    "MRAWS_HE_F",
-    "NLAW_F"
+    "MRAWS_HE_F"
 ];
 
 private _mg_munition = [
@@ -533,7 +532,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Waffe
             "launch_RPG32_green_F",
-            "launch_NLAW_F",
             "launch_RPG32_F",
             "launch_MRAWS_green_rail_F",
             "launch_MRAWS_olive_rail_F",

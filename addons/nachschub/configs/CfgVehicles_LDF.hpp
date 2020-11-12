@@ -126,16 +126,6 @@ class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_ldf_launcher_nlaw : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
-{
-    PUBLIC_NAME_CAT("NLAW Munition",LDF);
-
-    class TransportMagazines
-    {
-        MACRO_ADDMAGAZINE(NLAW_F,7);
-    };
-};
-
 class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Titan-AA Munition",LDF);
