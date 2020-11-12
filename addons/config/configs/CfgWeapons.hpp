@@ -149,7 +149,7 @@ class CfgWeapons
     {
         class ItemInfo;
     };
-    class TB_headgear_sps_ucp : H_HelmetB_TI_tna_F // SPS Helm
+    class TB_headgear_sps_ucp : H_HelmetB_TI_tna_F // SPS Helm UCP
     {
         class ItemInfo : ItemInfo
         {
@@ -159,19 +159,24 @@ class CfgWeapons
                 {
                     armor = 7; // 4
                     hitpointName = "HitFace";
-                    passThrough = 0.4; // 0.5
+                    passThrough = 0.3; // 0.5
                 };
                 class Head
                 {
                     armor = 9; // 6
                     hitpointName = "HitHead";
-                    passThrough = 0.3; // 0.5
+                    passThrough = 0.2; // 0.5
                 };
             };
             mass = 71.63; // 30
         };
-        displayName = "SPS (UCP)"; // Tarn-Kampfhelm
+        displayName = "SPS (UCP)";
         picture = "\A3\Characters_F\data\ui\icon_H_Crew_Helmet_Heli_B_CA.paa";
+    };
+
+    class TB_headgear_sps_ocp : TB_headgear_sps_ucp // SPS Helm OCP
+    {
+        displayName = "SPS (OCP)";
     };
 
     class V_PlateCarrierIA2_dgtl;
@@ -331,6 +336,7 @@ class CfgWeapons
     };
     class TB_weap_Mk48 : LMG_03_F // Mk48 Mod 2
     {
+        aimTransitionSpeed = 0.32; // 0.5
         author = "TBMod";
         baseWeapon = "TB_weap_Mk48";
         descriptionShort = "Medium Machine Gun<br />Caliber: 8.6x70 mm";
@@ -387,6 +393,43 @@ class CfgWeapons
             dispersion = 0.0049;
             multiplier = 1; // 3
             reloadTime = 0.015; // 0.075
+        };
+    };
+
+    class cannon_105mm : CannonCore
+    {
+        class player;
+    };
+    class cannon_105mm_VTOL_01 : cannon_105mm // Gunship 105mm
+    {
+        class player : player
+        {
+            reloadTime = 1.5; // 5
+        };
+    };
+
+    class autocannon_Base_F;
+    class autocannon_40mm_CTWS : autocannon_Base_F
+    {
+        class Mode_FullAuto;
+    };
+    class autocannon_40mm_VTOL_01 : autocannon_40mm_CTWS // Gunship 40mm
+    {
+        class player : Mode_FullAuto
+        {
+            reloadTime = 0.1; // 0.3
+        };
+    };
+
+    class gatling_20mm : CannonCore
+    {
+        class manual;
+    };
+    class gatling_20mm_VTOL_01 : gatling_20mm // Gunship 20mm
+    {
+        class manual : manual
+        {
+            reloadTime = 0.01; // 0.03
         };
     };
 
