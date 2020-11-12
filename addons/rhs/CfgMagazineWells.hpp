@@ -21,4 +21,12 @@ class CfgMagazineWells
             "TB_rhs_mag_m662_red"
        };
    };
+   class TB_magwell_100Rnd_556
+   {
+       TB_100Rnd_556_M27_IAR[] =
+       {
+           "TB_mag_100Rnd_556x45_Mk318_tracer",
+           "TB_mag_100Rnd_556x45_Mk318_dim"
+       };
+   };
 };
