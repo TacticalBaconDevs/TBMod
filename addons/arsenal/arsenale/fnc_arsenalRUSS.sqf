@@ -32,6 +32,7 @@ private _allgemein = [
 
     // Navigation
     "ItemCompass",
+    "ACE_microDAGR",
 
     // Uhr
     "ItemWatch",

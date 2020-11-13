@@ -65,6 +65,7 @@ private _allgemein = [
     "ACE_Altimeter",
     "ItemWatch",
     "ItemCompass",
+    "ACE_microDAGR",
     "ItemGPS",
     "ItemMap",
     "ACE_Flashlight_KSF1",

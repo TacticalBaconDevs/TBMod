@@ -79,6 +79,7 @@ private _allgemein = [
     "ACE_MapTools",
     "ACE_RangeTable_82mm",
     "Binocular",
+    "ACE_microDAGR",
     "ItemGPS",
     "ItemWatch",
     "ItemCompass",
