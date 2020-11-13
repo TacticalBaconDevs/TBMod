@@ -161,14 +161,13 @@ private _allgemein_Magazine = [
     "30Rnd_65x39_caseless_msbs_mag"
 ];
 
-<<<<<<< HEAD
 private _moerser_munition = [
     "TB_vz99_HE",
     "TB_vz99_HE_multi",
     "TB_vz99_smokeWhite",
     "TB_vz99_smokeRed",
     "TB_vz99_flare"
-=======
+
 private _allgemein_zweibein = [
     "bipod_02_f_tan",
     "bipod_02_f_hex",
@@ -305,7 +304,6 @@ private _mp = [
     "SMG_02_F",
     "SMG_05_F",
     "SMG_01_F"
->>>>>>> 33bffa7ad01c71d6851ecae640d44aa4acd9f036
 ];
 
 private _items = [];
@@ -435,17 +433,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
-<<<<<<< HEAD
         _moerser_munition +
-=======
         _mg_munition +
         _aaat_munition +
->>>>>>> 33bffa7ad01c71d6851ecae640d44aa4acd9f036
         [
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
-<<<<<<< HEAD
+            "TB_backpacks_bergen_m81",
+            "TB_backpacks_bergen_marpad_wd",
 
             // Magazine
             "200Rnd_65x39_cased_Box_Tracer_Red",
@@ -462,10 +458,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Waffen
             "TB_vz99_carryWeapon"
-=======
-            "TB_backpacks_bergen_m81",
-            "TB_backpacks_bergen_marpad_wd"
->>>>>>> 33bffa7ad01c71d6851ecae640d44aa4acd9f036
+
         ]
     };
 
