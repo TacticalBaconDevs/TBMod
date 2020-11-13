@@ -337,9 +337,6 @@ class CfgWeapons
         author = "TBMod";
         detectRange = 5;
         displayName = "Minensonde";
-        mineDetectorPitchEnd = 2;
-        mineDetectorPitchStart = 0.1;
-        mineDetectorSoundFrequency = 0.1;
 
         class ItemInfo : ItemInfo
         {
