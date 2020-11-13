@@ -167,6 +167,7 @@ private _moerser_munition = [
     "TB_vz99_smokeWhite",
     "TB_vz99_smokeRed",
     "TB_vz99_flare"
+];
 
 private _allgemein_zweibein = [
     "bipod_02_f_tan",
@@ -436,25 +437,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _moerser_munition +
         _mg_munition +
         _aaat_munition +
+        _sniper_munition +
         [
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
             "TB_backpacks_bergen_m81",
             "TB_backpacks_bergen_marpad_wd",
-
-            // Magazine
-            "200Rnd_65x39_cased_Box_Tracer_Red",
-            "200Rnd_65x39_cased_Box_Tracer",
-            "200Rnd_65x39_cased_Box_Red",
-
-            // AT
-            "RPG32_F",
-            "RPG32_HE_F",
-            "Vorona_HEAT",
-            "Vorona_HE",
-            "MRAWS_HEAT_F",
-            "MRAWS_HE_F",
 
             // Waffen
             "TB_vz99_carryWeapon"
