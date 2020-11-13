@@ -178,6 +178,14 @@ private _allgemein_Magazine = [
     "30Rnd_65x39_caseless_msbs_mag"
 ];
 
+private _moerser_munition = [
+    "TB_vz99_HE",
+    "TB_vz99_HE_multi",
+    "TB_vz99_smokeWhite",
+    "TB_vz99_smokeRed",
+    "TB_vz99_flare"
+];
+
 private _items = [];
 
 // #################################################################
@@ -264,6 +272,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _moerser_munition +
         [
             // Rucksack
             "B_Carryall_eaf_F",
@@ -280,7 +289,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Vorona_HEAT",
             "Vorona_HE",
             "MRAWS_HEAT_F",
-            "MRAWS_HE_F"
+            "MRAWS_HE_F",
+
+            // Waffen
+            "TB_vz99_carryWeapon"
         ]
     };
 

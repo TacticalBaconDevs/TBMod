@@ -613,7 +613,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _moerser_munition +
         [
             // Ferngläser
-            "ACE_Vector"
+            "ACE_Vector",
+
+            // Waffen
+            "TB_vz99_carryWeapon"
         ]
     };
 
