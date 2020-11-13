@@ -327,6 +327,26 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
+    class DetectorCore;
+    class MineDetector : DetectorCore
+    {
+        class ItemInfo;
+    };
+    class TB_MineDetector : MineDetector
+    {
+        author = "TBMod";
+        detectRange = 5;
+        displayName = "Minensonde";
+        mineDetectorPitchEnd = 2;
+        mineDetectorPitchStart = 0.1;
+        mineDetectorSoundFrequency = 0.1;
+
+        class ItemInfo : ItemInfo
+        {
+            mass = 66.12; 
+        };
+    };
+
     class LMG_03_base_F;
     class LMG_03_F : LMG_03_base_F
     {
