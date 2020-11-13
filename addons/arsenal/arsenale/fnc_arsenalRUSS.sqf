@@ -282,6 +282,14 @@ private _LR = [
     "OPXT_multicamt_117"
 ];
 
+private _moerser_munition = [
+    "TB_vz99_HE",
+    "TB_vz99_HE_multi",
+    "TB_vz99_smokeWhite",
+    "TB_vz99_smokeRed",
+    "TB_vz99_flare"
+];
+
 private _items = [];
 
 // #################################################################
@@ -457,6 +465,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         _gepaeck_gross +
         _gepaeck_sehrgross +
+        _moerser_munition +
         [
             // Weste
             "rhs_6b13_EMR_6sh92_vog",
@@ -464,6 +473,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_6b13_Flora_6sh92_vog",
             "rhs_6b23_6sh92_vog",
             "rhs_6b23_ML_6sh92_vog",
+
+            // Waffen
+            "TB_vz99_carryWeapon",
 
             // Ferngläser
             "rhs_pdu4"
