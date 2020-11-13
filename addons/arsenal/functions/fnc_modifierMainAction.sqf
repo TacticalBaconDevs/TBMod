@@ -44,7 +44,7 @@ if (_arsenalType == "Themen") then
     if (_side == independent) exitWith
     {
         // LDF
-        TB_blacklistRollen_themen = ["arzt", "spreng", "dmr", "sniper", "spotter"];
+        TB_blacklistRollen_themen = ["spreng", "dmr"];
     };
 
     if (_side == opfor) exitWith {};
