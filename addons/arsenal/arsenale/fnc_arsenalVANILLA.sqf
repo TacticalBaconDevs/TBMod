@@ -597,6 +597,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
+            "TB_MineDetector",
 
             // Minensucher
             "ACE_VMH3",
@@ -686,6 +687,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Items
             "MineDetector",
+            "B_UavTerminal",
+            "TB_MineDetector",
             //"MCC_multiTool",
             "ACE_DefusalKit",
             "ToolKit",
