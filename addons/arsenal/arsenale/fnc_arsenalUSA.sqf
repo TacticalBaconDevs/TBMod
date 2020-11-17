@@ -1181,6 +1181,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_DefusalKit",
             "ToolKit",
             "B_UavTerminal",
+            "TB_MineDetector",
             // ### Minen
             "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
@@ -1310,7 +1311,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ACE_DefusalKit",
             "ToolKit",
-            "B_UavTerminal"
+            "B_UavTerminal",
+            "TB_MineDetector"
         ]
     };
 
