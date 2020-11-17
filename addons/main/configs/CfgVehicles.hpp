@@ -122,6 +122,7 @@ class CfgVehicles
                     ADD_RUFNAME_DETAIL(Eron, Manta);
                     ADD_RUFNAME_DETAIL(Pingu, Hammer);
                     ADD_RUFNAME_DETAIL(wermut91, Wedge);
+                    ADD_RUFNAME_DETAIL(Rabbat, Demon);
                 };
             };
         };
