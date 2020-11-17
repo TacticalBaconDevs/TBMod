@@ -87,6 +87,7 @@ private _allgemein = [
     "Binocular",
     "ItemWatch",
     "ItemCompass",
+    "ACE_microDAGR",
     "ItemGPS",
     "ItemMap",
     "ACE_Flashlight_KSF1",
@@ -158,6 +159,14 @@ private _allgemein_Waffen = [
 private _allgemein_Magazine = [ 
     "30Rnd_65x39_caseless_msbs_mag_Tracer",
     "30Rnd_65x39_caseless_msbs_mag"
+];
+
+private _moerser_munition = [
+    "TB_vz99_HE",
+    "TB_vz99_HE_multi",
+    "TB_vz99_smokeWhite",
+    "TB_vz99_smokeRed",
+    "TB_vz99_flare"
 ];
 
 private _allgemein_zweibein = [
@@ -425,14 +434,20 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _moerser_munition +
         _mg_munition +
         _aaat_munition +
+        _sniper_munition +
         [
             // Rucksack
             "B_Carryall_eaf_F",
             "B_Carryall_green_F",
             "TB_backpacks_bergen_m81",
-            "TB_backpacks_bergen_marpad_wd"
+            "TB_backpacks_bergen_marpad_wd",
+
+            // Waffen
+            "TB_vz99_carryWeapon"
+
         ]
     };
 
