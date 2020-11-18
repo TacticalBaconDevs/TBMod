@@ -4,7 +4,7 @@
 
     Author: IDarky
 */
-class TB_supply_ldf_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_ldf_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 {
     PUBLIC_NAME_CAT("Munition",LDF);
 
@@ -18,7 +18,7 @@ class TB_supply_ldf_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_ldf_ammo_mg : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_ldf_ammo_mg : WRAPPER_NAME(Box_IND_Wps_F)
 {
     PUBLIC_NAME_CAT("MG-Munition",LDF);
 
@@ -30,7 +30,7 @@ class TB_supply_ldf_ammo_mg : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_ldf_ammo_small : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_ldf_ammo_small : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("MP/Pistolen Munition",LDF);
 
@@ -46,7 +46,7 @@ class TB_supply_ldf_ammo_small : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_ldf_ammo_spezial : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_ldf_ammo_spezial : WRAPPER_NAME(Box_East_Wps_F)
 {
     PUBLIC_NAME_CAT("Spezial Munition",LDF);
 
@@ -61,7 +61,7 @@ class TB_supply_ldf_ammo_spezial : WRAPPER_NAME(Box_NATO_Ammo_F)
     };
 };
 
-class TB_supply_ldf_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
+class TB_supply_ldf_grena : WRAPPER_NAME(Box_IND_Grenades_F)
 {
     PUBLIC_NAME_CAT("Granaten",LDF);
 
@@ -77,7 +77,7 @@ class TB_supply_ldf_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
     };
 };
 
-class TB_supply_ldf_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
+class TB_supply_ldf_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 {
     PUBLIC_NAME_CAT("Unterlauf",LDF);
 
@@ -93,7 +93,7 @@ class TB_supply_ldf_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     };
 };
 
-class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("RPG-32 Munition",LDF);
 
@@ -104,7 +104,7 @@ class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_ldf_launcher_maaws : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_ldf_launcher_maaws : WRAPPER_NAME(Box_East_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("MAAWS Munition",LDF);
 
@@ -115,7 +115,7 @@ class TB_supply_ldf_launcher_maaws : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("Mentis-M Munition",LDF);
 
@@ -126,7 +126,7 @@ class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
     };
 };
 
-class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Titan-AA Munition",LDF);
 
@@ -157,7 +157,7 @@ class TB_supply_ldf_ED : WRAPPER_NAME(Box_EAF_Uniforms_F)
     };
 };
 
-class TB_supply_ldf_shotgun : WRAPPER_NAME(Box_EAF_Uniforms_F)
+class TB_supply_ldf_shotgun : WRAPPER_NAME(Box_NATO_Wps_F)
 {
     PUBLIC_NAME_CAT("Notfall Shotgun",NATO);
 
@@ -173,7 +173,7 @@ class TB_supply_ldf_shotgun : WRAPPER_NAME(Box_EAF_Uniforms_F)
     };
 };
 
-class TB_supply_ldf_night : WRAPPER_NAME(Box_NATO_Equip_F)
+class TB_supply_ldf_night : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",NATO);
 

@@ -711,6 +711,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_ATragMX",
             "ACE_Kestrel4500",
             "ACE_RangeCard",
+            "ACE_M26_Clacker",
+            "ACE_DefusalKit",
+            "ACE_HuntIR_monitor",
+            "APERSTripMine_Wire_Mag",
             "Laserbatteries"
         ]
     };
