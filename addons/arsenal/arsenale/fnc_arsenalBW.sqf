@@ -172,8 +172,8 @@ private _allgemein_befestigungsschiene = [
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
     "BWA3_acc_LLM01_flash",
-    "ACE_acc_pointer_green",
-    "ACE_acc_pointer_green_IR"
+    "ace_acc_pointer_red",
+    "ace_acc_pointer_green"
 ];
 
 private _allgemein_zweibein = [

@@ -191,9 +191,9 @@ private _allgemein_geschuetzzubehoer = [
     "muzzle_snds_l",
 
     // Waffen
-    "acc_pointer_ir",
     "acc_flashlight",
     "ace_acc_pointer_green",
+    "ace_acc_pointer_red",
     "muzzle_snds_65_ti_blk_f",
     "muzzle_snds_65_ti_ghex_f",
     "muzzle_snds_h",

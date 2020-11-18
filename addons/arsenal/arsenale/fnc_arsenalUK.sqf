@@ -152,6 +152,8 @@ private _allgemein_visiere = [
 ];
 
 private _allgemein_befestigungsschiene = [
+    "ace_acc_pointer_green",
+    "ace_acc_pointer_red",
     "uk3cb_baf_llm_flashlight_black",
     "uk3cb_baf_llm_ir_black"
 ];

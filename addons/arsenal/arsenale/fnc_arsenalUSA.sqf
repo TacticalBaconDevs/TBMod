@@ -198,6 +198,8 @@ private _allgemein_visiere = [
 ];
 
 private _allgemein_befestigungsschiene = [
+    "ace_acc_pointer_red",
+    "ace_acc_pointer_green",    
     "rhsusf_acc_anpeq15side",
     "rhsusf_acc_anpeq15_top",
     "rhsusf_acc_anpeq15_wmx",
