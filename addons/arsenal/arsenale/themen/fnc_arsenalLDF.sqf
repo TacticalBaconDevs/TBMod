@@ -607,6 +607,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "MineDetector",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
+            "ToolKit",
 
             // Minensucher
             "ACE_VMH3",
