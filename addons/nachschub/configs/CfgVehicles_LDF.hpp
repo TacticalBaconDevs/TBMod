@@ -93,7 +93,7 @@ class TB_supply_ldf_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     };
 };
 
-class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_IND_WpsLaunch_F)
+class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("RPG-32 Munition",LDF);
 
@@ -126,7 +126,7 @@ class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
     };
 };
 
-class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
+class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Titan-AA Munition",LDF);
 
