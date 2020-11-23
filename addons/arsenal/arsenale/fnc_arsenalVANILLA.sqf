@@ -47,7 +47,7 @@ private _allgemein = [
     // Attachments
     "acc_flashlight",
     "ACE_acc_pointer_green",
-    "ACE_acc_pointer_green_IR",
+    "ace_acc_pointer_red",
     "ACE_muzzle_mzls_H",
     "muzzle_snds_H",
     "muzzle_snds_H_snd_F",

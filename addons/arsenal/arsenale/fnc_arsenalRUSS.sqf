@@ -123,6 +123,8 @@ private _allgemein_visiere = [
 ];
 
 private _allgemein_befestigungsschiene = [
+    "ace_acc_pointer_green",
+    "ace_acc_pointer_red",
     "rhs_acc_2dpzenit",
     "rhs_acc_perst1ik",
     "rhs_acc_perst3",
