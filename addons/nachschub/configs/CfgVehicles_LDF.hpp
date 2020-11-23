@@ -52,7 +52,8 @@ class TB_supply_ldf_ammo_spezial : WRAPPER_NAME(Box_East_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(ACE_7Rnd_408_305gr_Mag,20);
+        MACRO_ADDMAGAZINE(ACE_7Rnd_408_305gr_Mag,10);
+        MACRO_ADDMAGAZINE(TB_mag_7Rnd_M200_Tracer,10);
         MACRO_ADDMAGAZINE(ACE_5Rnd_127x99_Mag,10);
         MACRO_ADDMAGAZINE(ACE_5Rnd_127x99_AMAX_Mag,10);
         MACRO_ADDMAGAZINE(ACE_5Rnd_127x99_API_Mag,10);

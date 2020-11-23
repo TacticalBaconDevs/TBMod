@@ -313,6 +313,16 @@ class CfgMagazines
         displayNameShort = ".338 Lapua Scenar DIM";
         picture = "\A3\Weapons_F_Exp\Data\UI\icon_200Rnd_556x45_Box_F_ca.paa";
     };
+
+    class ACE_7Rnd_408_305gr_Mag;
+    class TB_mag_7Rnd_M200_Tracer : ACE_7Rnd_408_305gr_Mag // M200 Tracer
+    {
+        ammo = "TB_ammo_7Rnd_M200_Tracer";
+        author = "TBMod";
+        descriptionShort = "Caliber: .408 CheyTac Tracer(305gr)<br />Rounds: 7";
+        displayName = ".408 7Rnd Mag Tracer (305gr)";
+        tracersEvery = 1; 
+    };
     
     class 20Rnd_105mm_HEAT_MP;
     class 100Rnd_105mm_HEAT_MP : 20Rnd_105mm_HEAT_MP // Gunship 105mm
