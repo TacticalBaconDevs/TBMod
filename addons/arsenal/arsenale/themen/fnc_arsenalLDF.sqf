@@ -249,6 +249,13 @@ private _grenadier_gewehr = [
 private _grenadier_munition = [
     "3Rnd_Smoke_Grenade_shell_precise",
     "1Rnd_HE_Grenade_shell",
+    "1Rnd_SmokeBlue_Grenade_shell",
+    "1Rnd_SmokeYellow_Grenade_shell",
+    "1Rnd_SmokeGreen_Grenade_shell",
+    "1Rnd_SmokeOrange_Grenade_shell",
+    "1Rnd_SmokeRed_Grenade_shell",
+    "1Rnd_SmokePurple_Grenade_shell",
+    "1Rnd_Smoke_Grenade_shell",
     "ACE_HuntIR_M203",
     "UGL_FlareCIR_F",
     "ACE_40mm_Flare_ir",
@@ -471,6 +478,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "H_CrewHelmetHeli_I_E",
             "H_PilotHelmetHeli_I_E",
 
+            //items
+            "ToolKit",
+
             // Uniform
             "U_I_E_Uniform_01_coveralls_F",
             "U_O_R_Gorka_01_black_F"
@@ -600,6 +610,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "MineDetector",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
+            "ToolKit",
 
             // Minensucher
             "ACE_VMH3",
@@ -689,6 +700,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _grenadier_gewehr +
         _grenadier_munition +
         _sniper_munition +
+        _LR +
         [
             // Uniform
             "U_B_T_FullGhillie_tna_F",
@@ -711,6 +723,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_ATragMX",
             "ACE_Kestrel4500",
             "ACE_RangeCard",
+            "ACE_M26_Clacker",
+            "ACE_DefusalKit",
+            "ACE_HuntIR_monitor",
+            "APERSTripMine_Wire_Mag",
             "Laserbatteries"
         ]
     };
