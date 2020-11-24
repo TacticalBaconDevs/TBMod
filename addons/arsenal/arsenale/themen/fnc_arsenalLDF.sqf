@@ -264,6 +264,7 @@ private _grenadier_munition = [
 
 private _sniper_munition = [
     "ACE_7Rnd_408_305gr_Mag",
+    "TB_mag_7Rnd_M200_Tracer",
     "ACE_5Rnd_127x99_Mag",
     "ACE_5Rnd_127x99_AMAX_Mag",
     "ACE_5Rnd_127x99_API_Mag",

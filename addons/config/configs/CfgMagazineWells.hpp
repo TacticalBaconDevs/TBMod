@@ -30,4 +30,8 @@ class CfgMagazineWells
             "TB_mag_100Rnd_338_LS_DIM"
         };
     };
+    class CBA_408CT_Inter
+    {
+        ace_ballistics[] = {"ACE_7Rnd_408_305gr_Mag","TB_mag_7Rnd_M200_Tracer"}; // "ACE_7Rnd_408_305gr_Mag"
+    };
 };

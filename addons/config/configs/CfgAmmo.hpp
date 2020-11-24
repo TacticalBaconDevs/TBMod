@@ -182,6 +182,15 @@ class CfgAmmo
         nvgOnly = 1;
     };
 
+    class ACE_408_Ball;
+    class TB_ammo_7Rnd_M200_Tracer : ACE_408_Ball
+    {
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        tracerEndTime = 6;
+        tracerScale = 2.75;
+        tracerStartTime = 0.05;
+    };
+
     class PipeBombBase;
     class APERSMineDispenser_Ammo : PipeBombBase // APERSMineDispenser
     {
