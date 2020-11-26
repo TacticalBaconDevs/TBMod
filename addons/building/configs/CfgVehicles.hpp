@@ -130,6 +130,7 @@ class CfgVehicles
                 {
                     displayName = "Räumen";
                     EXCEPTIONS;
+
                     condition = QUOTE([cursorObject] call FUNC(canClearPlaceables));
                     statement = QUOTE([cursorObject] call FUNC(clearPlaceables));
                 };
@@ -162,9 +163,9 @@ class CfgVehicles
                 class ResourceTruck_getLoad \
                 { \
                     displayName = "Verbleibende Resourcen"; \
-                    condition = "alive _target && (_target getVariable ['TBMod_Building_resourcenCargo', -1]) >= 0"; \
+                    condition = "alive _target && (_target getVariable [QQGVAR(resourcenCargo), -1]) >= 0"; \
                     EXCEPTIONS; \
-                    statement = "hint format ['Das Fahrzeug hat noch %1 Resourcen', (_target getVariable ['TBMod_Building_resourcenCargo', 0]) max 0]"; \
+                    statement = "hint format ['Das Fahrzeug hat noch %1 Resourcen', (_target getVariable [QQGVAR(resourcenCargo), 0]) max 0]"; \
                 }; \
                 class truck_getFuel \
                 { \
