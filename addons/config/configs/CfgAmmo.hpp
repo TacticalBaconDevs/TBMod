@@ -182,8 +182,13 @@ class CfgAmmo
         nvgOnly = 1;
     };
 
-    class ACE_408_Ball;
-    class TB_ammo_7Rnd_M200_Tracer : ACE_408_Ball
+    class BulletBase;
+    class ACE_408_Ball : BulletBase // 408. CheyTac
+    {
+        caliber = 2.4; // 1
+        hit = 24; // 8
+    };
+    class TB_ammo_7Rnd_M200_Tracer : ACE_408_Ball // M200 Tracer
     {
         model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
         tracerEndTime = 6;
