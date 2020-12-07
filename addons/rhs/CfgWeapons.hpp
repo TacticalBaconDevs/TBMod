@@ -361,6 +361,39 @@ class CfgWeapons
         };
     };
 
+    class rhs_altyn;
+    class rhs_altyn_visordown : rhs_altyn
+    {
+        class ItemInfo;
+    };
+    class TB_headgear_bomb_suit : rhs_altyn_visordown // EOD Bomb Suit Headgear
+    {
+        class ItemInfo : ItemInfo
+        {
+            class HitpointsProtectionInfo
+            {
+                class Face
+                {
+                    armor = 10;
+                    explosionShielding	= 0.85;
+                    hitpointName = "HitFace";
+                    passThrough = 0.8;
+                };
+                class Head
+                {
+                    armor = 10;
+                    explosionShielding	= 0.85;
+                    hitpointName = "HitHead";
+                    passThrough = 0.4;
+                };
+            };
+            author = "TBMod";
+            mass = 110.2;
+        };
+        descriptionShort = "Explosive Resistant";
+        displayName = "Advanced Bomb Suit Headgear";
+    };
+
     class rhsusf_ach_helmet_ocp;
     class rhsusf_opscore_01: rhsusf_ach_helmet_ocp
     {
@@ -370,7 +403,7 @@ class CfgWeapons
     {
         class ItemInfo: ItemInfo
         {
-            mass = 55.1; // 40
+            mass = 77.14; // 40
 
             class HitpointsProtectionInfo
             {
@@ -378,13 +411,13 @@ class CfgWeapons
                 {
                     armor = 10; // 6
                     hitpointName = "HitHead";
-                    passThrough = 0.1; // 0.5
+                    passThrough = 0.4; // 0.5
                 };
                 class Face
                 {
                     armor = 10;
                     hitpointName = "HitFace";
-                    passThrough = 0.1;
+                    passThrough = 0.8;
                 };
             };
         };
@@ -393,7 +426,7 @@ class CfgWeapons
     {
         class ItemInfo: ItemInfo
         {
-            mass = 55.1; // 40
+            mass = 77.14; // 40
 
             class HitpointsProtectionInfo
             {

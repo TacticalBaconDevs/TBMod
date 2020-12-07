@@ -260,30 +260,30 @@ class CfgWeapons
                 {
                     armor = 25; // 8
                     hitpointName = "HitArms";
-                    passThrough = 0.3; // 0.5
+                    passThrough = 0.4; // 0.5
                 };
                 class Body
                 {
                     hitpointName = "HitBody";
-                    passThrough = 0.1; // 0.6
+                    passThrough = 0.2; // 0.6
                 };
                 class Chest
                 {
                     armor = 39; // 78
                     hitpointName = "HitChest";
-                    passThrough = 0.1; // 0.6
+                    passThrough = 0.2; // 0.6
                 };
                 class Diaphragm
                 {
                     armor = 39; // 78
                     hitpointName = "HitDiaphragm";
-                    passThrough = 0.1; // 0.6
+                    passThrough = 0.2; // 0.6
                 };
                 class Neck
                 {
                     armor = 28; // 8
                     hitpointName = "HitNeck";
-                    passThrough = 0.3; // 0.5
+                    passThrough = 0.4; // 0.5
                 };
                 class Pelvis
                 {
@@ -296,6 +296,105 @@ class CfgWeapons
         };
         descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
         displayName = "SPS Tier 4 (OCP)"; // "Carrier GL Rig (MTP)"
+    };
+
+    class V_EOD_base_F;
+    class V_EOD_olive_F : V_EOD_base_F
+    {
+        class ItemInfo;
+    };
+    class TB_vest_bomb_suit : V_EOD_olive_F // EOD Bomb Suit Vest
+    {
+        class ItemInfo : ItemInfo
+        {
+            class HitpointsProtectionInfo
+            {
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.1;
+                };
+                class Abdomen
+                {
+                    armor = 31;
+                    explosionShielding	= 0.7;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.5;
+                };
+                class Chest
+                {
+                    armor = 31;
+                    explosionShielding	= 0.7;
+                    hitpointName = "HitChest";
+                    passThrough = 0.5;
+                };
+                class Diaphragm
+                {
+                    armor = 31;
+                    explosionShielding	= 0.7;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.5;
+                };
+                class Pelvis
+                {
+                    armor = 31;
+                    explosionShielding	= 0.7;
+                    hitpointName = "HitPelvis";
+                    passThrough = 0.5;
+                };
+                class Neck
+                {
+                    armor = 5;
+                    explosionShielding	= 0.8;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.9;
+                };
+                class Legs
+                {
+                    armor = 5;
+                    explosionShielding	= 0.8;
+                    hitpointName = "HitLegs";
+                    passThrough = 0.9;
+                };
+                class Arms
+                {
+                    armor = 5;
+                    explosionShielding	= 0.8;
+                    hitpointName = "HitArms";
+                    passThrough = 0.9;
+                };
+                class Hands
+                {
+                    armor = 0;
+                    explosionShielding	= 1.1;
+                    hitpointName = "HitHands";
+                    passThrough = 1.1;
+                };
+            };
+            containerClass = "Supply0";
+            mass = 661.2;
+        };
+        author = "TBMod";
+        displayName = "Advanced Bomb Suit Vest";
+    };
+
+    class Uniform_Base;
+    class U_B_HeliPilotCoveralls : Uniform_Base
+    {
+        class ItemInfo;
+    };
+    class TB_uniform_bomb_suit : U_B_HeliPilotCoveralls // EOD Bomb Suit Uniform
+    {
+        ACE_GForceCoef = 0;
+        author = "TBMod";
+        displayName = "Advanced Bomb Suit";
+
+        class ItemInfo : ItemInfo
+        {
+            containerClass = "Supply120";
+            mass = 154.28;
+            scope = 2;
+        };
     };
 
     class GMG_F;
@@ -340,7 +439,7 @@ class CfgWeapons
 
         class ItemInfo : ItemInfo
         {
-            mass = 66.12; 
+            mass = 66.12;
         };
     };
 
