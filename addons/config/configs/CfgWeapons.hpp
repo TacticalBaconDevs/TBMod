@@ -317,56 +317,56 @@ class CfgWeapons
                 class Abdomen
                 {
                     armor = 31;
-                    explosionShielding	= 0.7;
+                    explosionShielding = 0.7;
                     hitpointName = "HitAbdomen";
                     passThrough = 0.5;
                 };
                 class Chest
                 {
                     armor = 31;
-                    explosionShielding	= 0.7;
+                    explosionShielding = 0.7;
                     hitpointName = "HitChest";
                     passThrough = 0.5;
                 };
                 class Diaphragm
                 {
                     armor = 31;
-                    explosionShielding	= 0.7;
+                    explosionShielding = 0.7;
                     hitpointName = "HitDiaphragm";
                     passThrough = 0.5;
                 };
                 class Pelvis
                 {
                     armor = 31;
-                    explosionShielding	= 0.7;
+                    explosionShielding = 0.7;
                     hitpointName = "HitPelvis";
                     passThrough = 0.5;
                 };
                 class Neck
                 {
                     armor = 5;
-                    explosionShielding	= 0.8;
+                    explosionShielding = 0.8;
                     hitpointName = "HitNeck";
                     passThrough = 0.9;
                 };
                 class Legs
                 {
                     armor = 5;
-                    explosionShielding	= 0.8;
+                    explosionShielding = 0.8;
                     hitpointName = "HitLegs";
                     passThrough = 0.9;
                 };
                 class Arms
                 {
                     armor = 5;
-                    explosionShielding	= 0.8;
+                    explosionShielding = 0.8;
                     hitpointName = "HitArms";
                     passThrough = 0.9;
                 };
                 class Hands
                 {
                     armor = 0;
-                    explosionShielding	= 1.1;
+                    explosionShielding = 1.1;
                     hitpointName = "HitHands";
                     passThrough = 1.1;
                 };
