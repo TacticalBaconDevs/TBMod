@@ -375,14 +375,14 @@ class CfgWeapons
                 class Face
                 {
                     armor = 10;
-                    explosionShielding	= 0.85;
+                    explosionShielding = 0.85;
                     hitpointName = "HitFace";
                     passThrough = 0.8;
                 };
                 class Head
                 {
                     armor = 10;
-                    explosionShielding	= 0.85;
+                    explosionShielding = 0.85;
                     hitpointName = "HitHead";
                     passThrough = 0.4;
                 };
