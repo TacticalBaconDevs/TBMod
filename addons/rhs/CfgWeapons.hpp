@@ -226,6 +226,7 @@ class CfgWeapons
         displayName = "Mk 16 Mod 0 (CQC)"; // Mk 17 Mod 0 (CQC)
         magazineWell[] = {"AK_545x39","CBA_545x39_AK","CBA_545x39_RPK","STANAG_556x45","CBA_556x45_STANAG"};
         magazines[] += {"rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger"};
+        recoil = "rhs_recoil_m4"; // "rhs_weap_scarh_recoil";
         ACE_barrelLength = 330;
         ACE_barrelTwist = 177.8;
     };
