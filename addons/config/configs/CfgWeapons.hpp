@@ -340,7 +340,7 @@ class CfgWeapons
 
         class ItemInfo : ItemInfo
         {
-            mass = 66.12; 
+            mass = 66.12;
         };
     };
 
@@ -384,6 +384,32 @@ class CfgWeapons
         class WeaponSlotsInfo : WeaponSlotsInfo
         {
             mass = 200.564;
+        };
+    };
+
+    class Pistol_Base_F;
+    class hgun_Pistol_heavy_02_F : Pistol_Base_F
+    {
+        class Single;
+    };
+    class TB_weapon_rhino60 : hgun_Pistol_heavy_02_F // .45 Revolver
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weapon_rhino60";
+        descriptionShort = "Tactical Revolver<br />Caliber: .45 FMJ";
+        displayName = "Rhino 60";
+        magazines[] = {"TB_mag_45_FMJ"};
+        magazineWell[] = {"TB_magwell_6Rnd_45_FMJ"};
+        modes[] = {"manual"};
+
+        class manual : Single
+        {
+            sounds[] = {"StandardSound"};
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType
+            {
+                soundsetshot[] = {"GM6Lynx_Shot_SoundSet","GM6Lynx_Tail_SoundSet","GM6Lynx_InteriorTail_SoundSet"};
+            };
         };
     };
 

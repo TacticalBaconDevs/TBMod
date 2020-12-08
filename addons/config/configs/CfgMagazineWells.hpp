@@ -9,7 +9,7 @@ class CfgMagazineWells
         ADDON[] = {"3Rnd_Smoke_Grenade_shell_precise"};
     };
 
-    class Cylinder_45ACP
+    class TB_magwell_6Rnd_45_FMJ
     {
         ADDON[] = {"TB_mag_45_FMJ"};
     };
