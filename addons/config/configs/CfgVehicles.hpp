@@ -2,6 +2,13 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class SensorTemplateActiveRadar;
+class SensorTemplatePassiveRadar;
+class SensorTemplateIR;
+class SensorTemplateVisual;
+class SensorTemplateLaser;
+class SensorTemplateNV;
+
 class CfgVehicles
 {
     class Heli_Transport_03_base_F;
@@ -38,6 +45,8 @@ class CfgVehicles
         LockDetectionSystem = "2 + 4 + 8"; // 8+4
         magazines[] = {}; // "168Rnd_CMFlare_Chaff_Magazine"
         radarTargetSize = 0.33; // 0.7
+        scope = 2;
+        scopeCurator = 2;
         weapons[] = {};
 
         class Components : Components
@@ -253,23 +262,306 @@ class CfgVehicles
     };
 
     class UAV_02_dynamicLoadout_base_F;
-    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F // MQ-4A Greyhawk (MQ-1 Predator)
+    class B_UAV_02_dynamicLoadout_F : UAV_02_dynamicLoadout_base_F
     {
-        accuracy = 0.6; // 0.1
-        camouflage = 45; // 150
-        displayName = "MQ-1 Predator"; //"YABHON-R3"
-        fuelCapacity = 3000; // 1000
-        irTargetSize = 0.3; // 0.5
-        nvScanner = 1; // 0
-        radarTargetSize = 0.3; // 0.5
-        visualTargetSize = 0.6; // 0.7
+        class Components;
+        class TextureSources;
+    };
+    class TB_MQ_9L_Sky_Guardian : B_UAV_02_dynamicLoadout_F // MQ-9L Sky Guardian
+    {
+        camouflage = 70;
+        displayName = "MQ-9L Sky Guardian";
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
+        fuelCapacity = 20000;
+        hiddenSelectionsTextures[] = {"A3\Drones_F\Air_F_Gamma\UAV_02\Data\UAV_02_INDP_CO.paa"};
+        scope = 2;
+        scopeCurator = 2;
+
+        class Components : Components
+        {
+            class SensorsManagerComponent
+            {
+                class Components
+                {
+                    class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+                    {
+                        aimDown = -22.5;
+                        class AirTarget
+                        {
+                            maxRange = 8000;
+                            minRange = 8000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 300;
+                        angleRangeVertical = 67.5;
+                        animDirection = "";
+                        color[] = {0,1,1,1};
+                        componentType = "ActiveRadarSensorComponent";
+                        groundNoiseDistanceCoef = 0.2;
+                        class GroundTarget
+                        {
+                            maxRange = 8000;
+                            minRange = 8000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = 200;
+                        maxSpeedThreshold = 27.7778;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 20.8333;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 8000;
+                    };
+                    class IRSensorComponent: SensorTemplateIR
+                    {
+                        aimDown = -22.5;
+                        class AirTarget
+                        {
+                        maxRange = 6000;
+                        minRange = 6000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = 1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 45;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainGun";
+                        color[] = {1,0,0,1};
+                        componentType = "IRSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                        maxRange = 6000;
+                        minRange = 6000;
+                        objectDistanceLimitCoef = 1;
+                        viewDistanceLimitCoef = 1;
+                        };
+                        maxFogSeeThrough = 0.995;
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 50;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 2000;
+                    };
+                    class LaserSensorComponent: SensorTemplateLaser
+                    {
+                        aimDown = -22.5;
+                        class AirTarget
+                        {
+                        maxRange = 8000;
+                        minRange = 8000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 360;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainGun";
+                        color[] = {1,1,1,0};
+                        componentType = "LaserSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                        maxRange = 8000;
+                        minRange = 8000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 0;
+                    };
+                    class NVSensorComponent: SensorTemplateNV
+                    {
+                        aimDown = -22.5;
+                        class AirTarget
+                        {
+                        maxRange = 8000;
+                        minRange = 8000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 360;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainGun";
+                        color[] = {1,1,1,0};
+                        componentType = "NVSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                        maxRange = 8000;
+                        minRange = 8000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 0;
+                    };
+                    class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+                    {
+                        aimDown = 0;
+                        class AirTarget
+                        {
+                        maxRange = 8000;
+                        minRange = 8000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 0;
+                        angleRangeHorizontal = 360;
+                        angleRangeVertical = 360;
+                        animDirection = "";
+                        color[] = {0.5,1,0.5,0.5};
+                        componentType = "PassiveRadarSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                        maxRange = 8000;
+                        minRange = 8000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 12000;
+                    };
+                    class VisualSensorComponent: SensorTemplateVisual
+                    {
+                        aimDown = -22.5;
+                        class AirTarget
+                        {
+                        maxRange = 6000;
+                        minRange = 6000;
+                        objectDistanceLimitCoef = -1;
+                        viewDistanceLimitCoef = 1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 45;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainGun";
+                        color[] = {1,1,0.5,0.8};
+                        componentType = "VisualSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                        maxRange = 6000;
+                        minRange = 6000;
+                        objectDistanceLimitCoef = 1;
+                        viewDistanceLimitCoef = 1;
+                        };
+                        maxFogSeeThrough = 0.94;
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 50;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        nightRangeCoef = 0;
+                        typeRecognitionDistance = 2000;
+                    };
+                };
+            };
+            class TransportPylonsComponent
+            {
+                class presets
+                {
+                    class Hellfire_K_N
+                    {
+                        attachment[] = {"PylonRack_4Rnd_ACE_Hellfire_AGM114K","PylonRack_4Rnd_ACE_Hellfire_AGM114N"};
+                        displayName = "Hellfire K - N";
+                    };
+                    class Hellfire_L
+                    {
+                        attachment[] = {"PylonRack_4Rnd_ACE_Hellfire_AGM114L","PylonRack_4Rnd_ACE_Hellfire_AGM114L"};
+                        displayName = "Hellfire L";
+                    };
+                    class Hellfire_GBU
+                    {
+                        attachment[] = {"PylonRack_4Rnd_ACE_Hellfire_AGM114L","PylonMissile_1Rnd_Bomb_04_F"};
+                        displayName = "Hellfire L - GBU-12";
+                    };
+                    class GBU
+                    {
+                        attachment[] = {"PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F"};
+                        displayName = "GBU-12";
+                    };
+                    class Air
+                    {
+                        attachment[] = {"rhs_mag_aim9m_2","rhs_mag_aim9m_2"};
+                        displayName = "Air to Air";
+                    };
+                };
+                class pylons
+                {
+                    class pylons1
+                    {
+                        attachment = "PylonRack_4Rnd_ACE_Hellfire_AGM114L";
+                        hardpoints[] = {"TB_Pylon_MQ_9_Sky_Guardian"};
+                        maxweight = 500;
+                        priority = 2;
+                        turret[] = {0};
+                        UIposition[] = {0.33,0.4};
+                    };
+                    class pylons2: pylons1
+                    {
+                        attachment = "PylonRack_4Rnd_ACE_Hellfire_AGM114L";
+                        hardpoints[] = {"TB_Pylon_MQ_9_Sky_Guardian"};
+                        maxweight = 500;
+                        mirroredMissilePos = 1;
+                        priority = 1;
+                        turret[] = {0};
+                        UIposition[] = {0.33,0.15};
+                    };
+                };
+                UIPicture = "\a3\Drones_F\Air_F_Gamma\UAV_02\data\ui\UAV_02_base_EDEN_F.paa";
+            };
+        };
+        class TextureSources : TextureSources
+        {
+            class Grau
+            {
+                displayName = "Kachel";
+                textures[] = {"A3\Drones_F\Air_F_Gamma\UAV_02\Data\UAV_02_INDP_CO.paa"};
+            };
+            class Hex
+            {
+                displayName = "Hex";
+                textures[] = {"a3\Drones_F\Air_F_Gamma\UAV_02\Data\UAV_02_OPFOR_CO.paa"};
+            };
+        };
     };
 
     class UAV_05_Base_F;
     class B_UAV_05_F : UAV_05_Base_F // UCAV Sentinel
     {
         accuracy = 0.2; // 0.1
-        fuelCapacity = 4000; // 1000
+        fuelCapacity = 5000; // 1000
         nvScanner = 1; // 0
     };
 
@@ -466,6 +758,8 @@ class CfgVehicles
         displayName = "TB UGV Stomper RCWS (Rauch)"; // UGV Stomper RCWS
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
+        scope = 2;
+        scopeCurator = 2;
 
         class Turrets: Turrets
         {

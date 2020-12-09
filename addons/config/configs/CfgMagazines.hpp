@@ -94,7 +94,7 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
         displayName = "HE Bomb [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
-        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_BOMB_PYLON"
+        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12","TB_Pylon_MQ_9_Sky_Guardian"}; // "B_BOMB_PYLON"
     };
 
     class PylonMissile_1Rnd_BombCluster_01_F : PylonMissile_1Rnd_Bomb_04_F // CBU-85 HE Mines Cluster
@@ -118,6 +118,7 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "580lb, laser-guided cluster bomb"
         displayName = "HE Cluster [LG]"; // "BL778 Cluster x1"
         displayNameShort = "[LG]"; // "Cluster Bomb"
+        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12","TB_Pylon_MQ_9_Sky_Guardian"}; // "B_BOMB_PYLON","B_GBU12","I_GBU12"
     };
 
     class ace_hot_1_6Rnd;
@@ -321,9 +322,9 @@ class CfgMagazines
         author = "TBMod";
         descriptionShort = "Caliber: .408 CheyTac Tracer(305gr)<br />Rounds: 7";
         displayName = ".408 7Rnd Mag Tracer (305gr)";
-        tracersEvery = 1; 
+        tracersEvery = 1;
     };
-    
+
     class 20Rnd_105mm_HEAT_MP;
     class 100Rnd_105mm_HEAT_MP : 20Rnd_105mm_HEAT_MP // Gunship 105mm
     {
