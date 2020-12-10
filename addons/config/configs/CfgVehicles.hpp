@@ -124,6 +124,12 @@ class CfgVehicles
         radarTargetSize = 0.21; // 0.7
     };
 
+    class UAV_03_dynamicLoadout_base_F;
+    class B_T_UAV_03_dynamicLoadout_F : UAV_03_dynamicLoadout_base_F // Falcon
+    {
+        fuelCapacity = 3500; // 100
+    };
+
     class Plane_CAS_01_dynamicLoadout_base_F;
     class B_Plane_CAS_01_dynamicLoadout_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
     {
