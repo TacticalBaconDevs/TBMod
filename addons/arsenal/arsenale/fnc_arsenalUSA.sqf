@@ -258,7 +258,7 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
     "tb_weap_taser",
-    "hgun_Pistol_heavy_02_F",
+    "TB_weapon_rhino60",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
     // ### Geschützzubehör

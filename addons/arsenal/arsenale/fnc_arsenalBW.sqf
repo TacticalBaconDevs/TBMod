@@ -201,7 +201,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_P2A1",
     "BWA3_P8",
     "tb_weap_taser",
-    "hgun_Pistol_heavy_02_F",
+    "TB_weapon_rhino60",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",

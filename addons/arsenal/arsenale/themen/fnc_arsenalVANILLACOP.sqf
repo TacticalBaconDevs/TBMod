@@ -73,7 +73,7 @@ private _allgemein_Waffen = [
     "rhsusf_weap_glock17g4",
     "tb_weap_taser",
     "rhsusf_weap_m9",
-    "hgun_Pistol_heavy_02_F"
+    "TB_weapon_rhino60"
 ];
 
 private _allgemein_Magazine = [
