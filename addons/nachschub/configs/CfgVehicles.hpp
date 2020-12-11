@@ -124,6 +124,7 @@ class CfgVehicles
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
+                    ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
                     ADD_SUPPLY("Sprengstoff",TB_supply_all_mines);
 
                     class allgemeinMortar
@@ -602,6 +603,25 @@ class CfgVehicles
         };
     };
 
+    class TB_supply_all_eod : WRAPPER_NAME(Box_NATO_Equip_F)
+    {
+        PUBLIC_NAME("EOD Ausrüstung");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(ACE_wirecutter,1);
+            MACRO_ADDITEM(TB_uniform_bomb_suit,1);
+            MACRO_ADDITEM(TB_vest_bomb_suit,1);
+            MACRO_ADDITEM(TB_headgear_bomb_suit,1);
+            MACRO_ADDITEM(ACE_M26_Clacker,1);
+            MACRO_ADDITEM(TB_MineDetector,1);
+            MACRO_ADDITEM(ACE_DefusalKit,1);
+            MACRO_ADDITEM(rhsusf_weap_glock17g4,1);
+            MACRO_ADDITEM(rhsusf_mag_17Rnd_9x19_JHP,10);
+            MACRO_ADDITEM(B_UavTerminal,1);
+        };
+    };
+
     class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F)
     {
         PUBLIC_NAME("BauKiste");
@@ -647,7 +667,6 @@ class CfgVehicles
             MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
             MACRO_ADDITEM(ACE_M26_Clacker,2);
-            MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
             MACRO_ADDITEM(APERSMineDispenser_Mag,2);
         };
     };

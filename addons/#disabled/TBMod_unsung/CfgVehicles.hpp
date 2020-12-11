@@ -125,6 +125,7 @@ class CfgVehicles
                     delete TB_supply_all_mp5;
                     delete TB_supply_all_mines;
                     delete TB_supply_all_hmg;
+                    delete TB_supply_all_eod;
                 };
                 delete usa;
                 delete bw;

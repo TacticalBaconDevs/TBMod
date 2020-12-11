@@ -160,6 +160,15 @@ class CfgAmmo
         hit = 100; // 150
     };
 
+    class BulletBase;
+    class B_20mm : BulletBase // 20mm Kanonen (Helikopter-Flugzeuge)
+    {
+        caliber = 2.33; // 1.4
+        explosive = 0.6; // 1.8
+        hit = 40; // 80
+        indirectHit = 10; // 12
+    };
+
     class ACE_338_Ball;
     class TB_ammo_338_LS : ACE_338_Ball // Lapua Scenar
     {
@@ -182,7 +191,6 @@ class CfgAmmo
         nvgOnly = 1;
     };
 
-    class BulletBase;
     class ACE_408_Ball : BulletBase // 408. CheyTac
     {
         caliber = 2.4; // 1
