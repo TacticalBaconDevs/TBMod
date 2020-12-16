@@ -47,7 +47,7 @@ private _allgemein = [
     "G_Blindfold_01_white_F",
 
     // Pistole
-    "hgun_Pistol_heavy_02_F",
+    "TB_weapon_rhino60",
     "hgun_ACPC2_F",
     "hgun_Pistol_heavy_01_green_F",
     "hgun_Rook40_F",

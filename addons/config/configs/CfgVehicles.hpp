@@ -133,6 +133,12 @@ class CfgVehicles
         radarTargetSize = 0.21; // 0.7
     };
 
+    class UAV_03_dynamicLoadout_base_F;
+    class B_T_UAV_03_dynamicLoadout_F : UAV_03_dynamicLoadout_base_F // Falcon
+    {
+        fuelCapacity = 3500; // 100
+    };
+
     class Plane_CAS_01_dynamicLoadout_base_F;
     class B_Plane_CAS_01_dynamicLoadout_F : Plane_CAS_01_dynamicLoadout_base_F // A-164 Wipeout
     {
@@ -322,10 +328,10 @@ class CfgVehicles
                         aimDown = 22.5;
                         class AirTarget
                         {
-                        maxRange = 6000;
-                        minRange = 6000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = 1;
+                          maxRange = 6000;
+                          minRange = 6000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = 1;
                         };
                         allowsMarking = 1;
                         angleRangeHorizontal = 45;
@@ -336,10 +342,10 @@ class CfgVehicles
                         groundNoiseDistanceCoef = -1;
                         class GroundTarget
                         {
-                        maxRange = 6000;
-                        minRange = 6000;
-                        objectDistanceLimitCoef = 1;
-                        viewDistanceLimitCoef = 1;
+                          maxRange = 6000;
+                          minRange = 6000;
+                          objectDistanceLimitCoef = 1;
+                          viewDistanceLimitCoef = 1;
                         };
                         maxFogSeeThrough = 0.995;
                         maxGroundNoiseDistance = -1;
@@ -356,10 +362,10 @@ class CfgVehicles
                         aimDown = 22.5;
                         class AirTarget
                         {
-                        maxRange = 8000;
-                        minRange = 8000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = -1;
+                          maxRange = 8000;
+                          minRange = 8000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = -1;
                         };
                         allowsMarking = 1;
                         angleRangeHorizontal = 360;
@@ -370,10 +376,10 @@ class CfgVehicles
                         groundNoiseDistanceCoef = -1;
                         class GroundTarget
                         {
-                        maxRange = 8000;
-                        minRange = 8000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = -1;
+                          maxRange = 8000;
+                          minRange = 8000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = -1;
                         };
                         maxGroundNoiseDistance = -1;
                         maxSpeedThreshold = 0;
@@ -389,10 +395,10 @@ class CfgVehicles
                         aimDown = 22.5;
                         class AirTarget
                         {
-                        maxRange = 8000;
-                        minRange = 8000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = -1;
+                          maxRange = 8000;
+                          minRange = 8000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = -1;
                         };
                         allowsMarking = 1;
                         angleRangeHorizontal = 360;
@@ -403,10 +409,10 @@ class CfgVehicles
                         groundNoiseDistanceCoef = -1;
                         class GroundTarget
                         {
-                        maxRange = 8000;
-                        minRange = 8000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = -1;
+                          maxRange = 8000;
+                          minRange = 8000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = -1;
                         };
                         maxGroundNoiseDistance = -1;
                         maxSpeedThreshold = 0;
@@ -422,10 +428,10 @@ class CfgVehicles
                         aimDown = 0;
                         class AirTarget
                         {
-                        maxRange = 8000;
-                        minRange = 8000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = -1;
+                          maxRange = 8000;
+                          minRange = 8000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = -1;
                         };
                         allowsMarking = 0;
                         angleRangeHorizontal = 360;
@@ -436,10 +442,10 @@ class CfgVehicles
                         groundNoiseDistanceCoef = -1;
                         class GroundTarget
                         {
-                        maxRange = 8000;
-                        minRange = 8000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = -1;
+                          maxRange = 8000;
+                          minRange = 8000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = -1;
                         };
                         maxGroundNoiseDistance = -1;
                         maxSpeedThreshold = 0;
@@ -455,10 +461,10 @@ class CfgVehicles
                         aimDown = 22.5;
                         class AirTarget
                         {
-                        maxRange = 6000;
-                        minRange = 6000;
-                        objectDistanceLimitCoef = -1;
-                        viewDistanceLimitCoef = 1;
+                          maxRange = 6000;
+                          minRange = 6000;
+                          objectDistanceLimitCoef = -1;
+                          viewDistanceLimitCoef = 1;
                         };
                         allowsMarking = 1;
                         angleRangeHorizontal = 45;
@@ -469,10 +475,10 @@ class CfgVehicles
                         groundNoiseDistanceCoef = -1;
                         class GroundTarget
                         {
-                        maxRange = 6000;
-                        minRange = 6000;
-                        objectDistanceLimitCoef = 1;
-                        viewDistanceLimitCoef = 1;
+                          maxRange = 6000;
+                          minRange = 6000;
+                          objectDistanceLimitCoef = 1;
+                          viewDistanceLimitCoef = 1;
                         };
                         maxFogSeeThrough = 0.94;
                         maxGroundNoiseDistance = -1;
