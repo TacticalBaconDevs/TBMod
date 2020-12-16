@@ -47,7 +47,7 @@ private _allgemein = [
     // Attachments
     "acc_flashlight",
     "ACE_acc_pointer_green",
-    "ACE_acc_pointer_green_IR",
+    "ace_acc_pointer_red",
     "ACE_muzzle_mzls_H",
     "muzzle_snds_H",
     "muzzle_snds_H_snd_F",
@@ -79,6 +79,7 @@ private _allgemein = [
     "ACE_MapTools",
     "ACE_RangeTable_82mm",
     "Binocular",
+    "ACE_microDAGR",
     "ItemGPS",
     "ItemWatch",
     "ItemCompass",
@@ -271,6 +272,14 @@ private _allgemein_WaffeGL = [
     "arifle_SPAR_01_GL_khk_F"
 ];
 
+private _moerser_munition = [
+    "TB_vz99_HE",
+    "TB_vz99_HE_multi",
+    "TB_vz99_smokeWhite",
+    "TB_vz99_smokeRed",
+    "TB_vz99_flare"
+];
+
 private _items = [];
 
 // #################################################################
@@ -393,6 +402,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         _mg_munition +
+        _moerser_munition +
         [
             // Backpack
             "B_Carryall_cbr",
@@ -406,6 +416,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             //Munition
             "20rnd_762x51_mag",
+
+            // Waffen
+            "TB_vz99_carryWeapon",
 
             // AT
             "Vorona_HEAT",
@@ -584,6 +597,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
+            "TB_MineDetector",
 
             // Minensucher
             "ACE_VMH3",
@@ -673,6 +687,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Items
             "MineDetector",
+            "B_UavTerminal",
+            "TB_MineDetector",
             //"MCC_multiTool",
             "ACE_DefusalKit",
             "ToolKit",

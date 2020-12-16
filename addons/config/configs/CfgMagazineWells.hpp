@@ -9,7 +9,7 @@ class CfgMagazineWells
         ADDON[] = {"3Rnd_Smoke_Grenade_shell_precise"};
     };
 
-    class Cylinder_45ACP
+    class TB_magwell_6Rnd_45_FMJ
     {
         ADDON[] = {"TB_mag_45_FMJ"};
     };
@@ -29,5 +29,9 @@ class CfgMagazineWells
             "TB_mag_100Rnd_338_LS_Tracer",
             "TB_mag_100Rnd_338_LS_DIM"
         };
+    };
+    class CBA_408CT_Inter
+    {
+        ace_ballistics[] = {"ACE_7Rnd_408_305gr_Mag","TB_mag_7Rnd_M200_Tracer"}; // "ACE_7Rnd_408_305gr_Mag"
     };
 };

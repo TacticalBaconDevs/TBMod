@@ -124,6 +124,7 @@ class CfgVehicles
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
+                    ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
                     ADD_SUPPLY("Sprengstoff",TB_supply_all_mines);
 
                     class allgemeinMortar
@@ -179,9 +180,10 @@ class CfgVehicles
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_usa_ammo);
-                        ADD_SUPPLY("MG-Munition",TB_supply_usa_ammo_mg);
+                        ADD_SUPPLY("LMG-Munition",TB_supply_usa_ammo_lmg);
+                        ADD_SUPPLY("MMG-Munition",TB_supply_usa_ammo_mmg);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
-                        ADD_SUPPLY("SpezialMunition",TB_supply_usa_spezial);
+                        ADD_SUPPLY("PräzisionsMunition",TB_supply_usa_praezision);
                         ADD_SUPPLY("Granaten",TB_supply_usa_grena);
                         ADD_SUPPLY("Unterlauf",TB_supply_usa_unterlauf);
                     };
@@ -215,7 +217,7 @@ class CfgVehicles
 
                         ADD_SUPPLY("Munition",TB_supply_uk_ammo);
                         ADD_SUPPLY("KleinMunition",TB_supply_uk_ammoSmall);
-                        ADD_SUPPLY("SpezialMunition",TB_supply_uk_spezial);
+                        ADD_SUPPLY("PräzisionsMunition",TB_supply_uk_praezision);
                         ADD_SUPPLY("Granaten",TB_supply_uk_grena);
                         ADD_SUPPLY("Unterlauf",TB_supply_uk_unterlauf);
                     };
@@ -256,7 +258,7 @@ class CfgVehicles
                     ADD_SUPPLY("KleinMunition",TB_supply_bw_ammoSmall);
                     ADD_SUPPLY("Granaten",TB_supply_bw_grena);
                     ADD_SUPPLY("Unterlauf",TB_supply_bw_unterlauf);
-                    ADD_SUPPLY("SpezialMunition",TB_supply_bw_spezial);
+                    ADD_SUPPLY("PräzisionsMunition",TB_supply_bw_praezision);
                     ADD_SUPPLY("Werfer",TB_supply_bw_launcher);
                     ADD_SUPPLY("WerferMunition",TB_supply_bw_launcherAmmo);
                     ADD_SUPPLY("NotfallG36",TB_supply_bw_notfallg36);
@@ -283,12 +285,34 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
 
-                    ADD_SUPPLY("Munition",TB_supply_ldf_ammo);
-                    ADD_SUPPLY("Granaten",TB_supply_ldf_grena);
-                    ADD_SUPPLY("Unterlauf",TB_supply_ldf_unterlauf);
-                    ADD_SUPPLY("WerferMunition",TB_supply_ldf_launcherAmmo);
-                    ADD_SUPPLY("ED-1D Drohne",TB_supply_ldf_ED);
+                    class LDFMunition
+                    {
+                        displayName = "Muntions Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("Munition",TB_supply_ldf_ammo);
+                        ADD_SUPPLY("MG-Munition",TB_supply_ldf_ammo_mg);
+                        ADD_SUPPLY("MP/Pistolen Munition",TB_supply_ldf_ammo_small);
+                        ADD_SUPPLY("Spezial Munition",TB_supply_ldf_ammo_spezial);
+                        ADD_SUPPLY("Granaten",TB_supply_ldf_grena);
+                        ADD_SUPPLY("Unterlauf",TB_supply_ldf_unterlauf);
+                    };
+
+                    class LDFWerfer
+                    {
+                        displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("RPG-32 Munition",TB_supply_ldf_launcher_rpg);
+                        ADD_SUPPLY("MAAWS Muntion",TB_supply_ldf_launcher_maaws);
+                        ADD_SUPPLY("Mentis Munition",TB_supply_ldf_launcher_mentis);
+                        ADD_SUPPLY("Titan AA Muniton",TB_supply_ldf_launcher_titan_aa);
+                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_ldf_launcher_titan_at);
+                    };
+
+                    ADD_SUPPLY("Notfall Shotgun",TB_supply_ldf_shotgun);
                     ADD_SUPPLY("NachtKiste",TB_supply_ldf_night);
+                    ADD_SUPPLY("ED-1D Drohne",TB_supply_ldf_ED);
                 };
 
                 class brd
@@ -312,7 +336,7 @@ class CfgVehicles
                     ADD_SUPPLY("KleinMunition",TB_supply_russ_ammoSmall);
                     ADD_SUPPLY("Granaten",TB_supply_russ_grena);
                     ADD_SUPPLY("Unterlauf",TB_supply_russ_unterlauf);
-                    ADD_SUPPLY("SpezialMunition",TB_supply_russ_spezial);
+                    ADD_SUPPLY("PräzisionsMunition",TB_supply_russ_praezision);
                     ADD_SUPPLY("Werfer",TB_supply_russ_launcher);
                     ADD_SUPPLY("WerferMunition",TB_supply_russ_launcherAmmo);
                     ADD_SUPPLY("NotfallWaffen",TB_supply_russ_notfall);
@@ -517,8 +541,8 @@ class CfgVehicles
 
         class TransportBackpacks
         {
-            MACRO_ADDBACKPACK(RHS_M2_Gun_Bag,1);
-            MACRO_ADDBACKPACK(RHS_M2_Tripod_Bag,1);
+            MACRO_ADDBACKPACK(I_HMG_02_support_high_F,1);
+            MACRO_ADDBACKPACK(I_HMG_02_high_weapon_F,1);
         };
     };
 
@@ -579,6 +603,25 @@ class CfgVehicles
         };
     };
 
+    class TB_supply_all_eod : WRAPPER_NAME(Box_NATO_Equip_F)
+    {
+        PUBLIC_NAME("EOD Ausrüstung");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(ACE_wirecutter,1);
+            MACRO_ADDITEM(TB_uniform_bomb_suit,1);
+            MACRO_ADDITEM(TB_vest_bomb_suit,1);
+            MACRO_ADDITEM(TB_headgear_bomb_suit,1);
+            MACRO_ADDITEM(ACE_M26_Clacker,1);
+            MACRO_ADDITEM(TB_MineDetector,1);
+            MACRO_ADDITEM(ACE_DefusalKit,1);
+            MACRO_ADDITEM(rhsusf_weap_glock17g4,1);
+            MACRO_ADDITEM(rhsusf_mag_17Rnd_9x19_JHP,10);
+            MACRO_ADDITEM(B_UavTerminal,1);
+        };
+    };
+
     class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F)
     {
         PUBLIC_NAME("BauKiste");
@@ -624,7 +667,6 @@ class CfgVehicles
             MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
             MACRO_ADDITEM(ACE_M26_Clacker,2);
-            MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
             MACRO_ADDITEM(APERSMineDispenser_Mag,2);
         };
     };

@@ -226,6 +226,7 @@ class CfgWeapons
         displayName = "Mk 16 Mod 0 (CQC)"; // Mk 17 Mod 0 (CQC)
         magazineWell[] = {"AK_545x39","CBA_545x39_AK","CBA_545x39_RPK","STANAG_556x45","CBA_556x45_STANAG"};
         magazines[] += {"rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger"};
+        recoil = "rhs_recoil_m4"; // "rhs_weap_scarh_recoil";
         ACE_barrelLength = 330;
         ACE_barrelTwist = 177.8;
     };
@@ -343,6 +344,57 @@ class CfgWeapons
             };
     };
 
+    class rhs_weap_m27iar;
+    class rhs_weap_m27iar_grip : rhs_weap_m27iar
+    {
+        class WeaponSlotsInfo;
+    };
+    class TB_weap_m27iar : rhs_weap_m27iar_grip
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weap_m27iar";
+        displayName = "M27 IAR";
+        magazines[] = {"TB_mag_100Rnd_556x45_Mk318_tracer"};
+        magazineWell[] = {"TB_magwell_100Rnd_556","CBA_556x45_STANAG_2D","CBA_556x45_STANAG"};
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            mass = 79.344;
+        };
+    };
+
+    class rhs_altyn;
+    class rhs_altyn_visordown : rhs_altyn
+    {
+        class ItemInfo;
+    };
+    class TB_headgear_bomb_suit : rhs_altyn_visordown // EOD Bomb Suit Headgear
+    {
+        class ItemInfo : ItemInfo
+        {
+            class HitpointsProtectionInfo
+            {
+                class Face
+                {
+                    armor = 10;
+                    explosionShielding = 0.85;
+                    hitpointName = "HitFace";
+                    passThrough = 0.8;
+                };
+                class Head
+                {
+                    armor = 10;
+                    explosionShielding = 0.85;
+                    hitpointName = "HitHead";
+                    passThrough = 0.4;
+                };
+            };
+            author = "TBMod";
+            mass = 110.2;
+        };
+        descriptionShort = "Explosive Resistant";
+        displayName = "Advanced Bomb Suit Headgear";
+    };
+
     class rhsusf_ach_helmet_ocp;
     class rhsusf_opscore_01: rhsusf_ach_helmet_ocp
     {
@@ -352,7 +404,7 @@ class CfgWeapons
     {
         class ItemInfo: ItemInfo
         {
-            mass = 55.1; // 40
+            mass = 77.14; // 40
 
             class HitpointsProtectionInfo
             {
@@ -360,13 +412,13 @@ class CfgWeapons
                 {
                     armor = 10; // 6
                     hitpointName = "HitHead";
-                    passThrough = 0.1; // 0.5
+                    passThrough = 0.4; // 0.5
                 };
                 class Face
                 {
                     armor = 10;
                     hitpointName = "HitFace";
-                    passThrough = 0.1;
+                    passThrough = 0.8;
                 };
             };
         };
@@ -375,7 +427,7 @@ class CfgWeapons
     {
         class ItemInfo: ItemInfo
         {
-            mass = 55.1; // 40
+            mass = 77.14; // 40
 
             class HitpointsProtectionInfo
             {

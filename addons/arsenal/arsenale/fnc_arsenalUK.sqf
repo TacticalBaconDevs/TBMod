@@ -85,6 +85,7 @@ private _allgemein = [
 
     // Navigation
     "ItemCompass",
+    "ACE_microDAGR",
 
     // Uhr
     "ItemWatch",
@@ -151,6 +152,8 @@ private _allgemein_visiere = [
 ];
 
 private _allgemein_befestigungsschiene = [
+    "ace_acc_pointer_green",
+    "ace_acc_pointer_red",
     "uk3cb_baf_llm_flashlight_black",
     "uk3cb_baf_llm_ir_black"
 ];
@@ -473,7 +476,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_HuntIR_monitor",
-            "ACE_microDAGR",
             "TB_rhs_mag_40mm_IR_Grenade",
             "Laserbatteries"
         ]
@@ -613,7 +615,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _moerser_munition +
         [
             // Ferngläser
-            "ACE_Vector"
+            "ACE_Vector",
+
+            // Waffen
+            "TB_vz99_carryWeapon"
         ]
     };
 
@@ -818,6 +823,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_DefusalKit",
             "ACE_DeadManSwitch",
             "ToolKit",
+            "TB_MineDetector",
             // ### Minen
             "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
@@ -916,7 +922,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Items
             "ACE_DefusalKit",
-            "ToolKit"
+            "ToolKit",
+            "B_UavTerminal",
+            "TB_MineDetector"
         ]
     };
 

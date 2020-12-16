@@ -19,7 +19,7 @@ _items = [
     // Items
     "ACE_CableTie",
     "ACE_acc_pointer_green",
-    "ACE_acc_pointer_green_IR",
+    "ace_acc_pointer_red",
     "ACE_MapTools",
     "ItemWatch",
     "ItemCompass",

@@ -172,8 +172,8 @@ private _allgemein_befestigungsschiene = [
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
     "BWA3_acc_LLM01_flash",
-    "ACE_acc_pointer_green",
-    "ACE_acc_pointer_green_IR"
+    "ace_acc_pointer_red",
+    "ace_acc_pointer_green"
 ];
 
 private _allgemein_zweibein = [
@@ -201,7 +201,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_P2A1",
     "BWA3_P8",
     "tb_weap_taser",
-    "hgun_Pistol_heavy_02_F",
+    "TB_weapon_rhino60",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -825,6 +825,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_DefusalKit",
             "ToolKit",
             "B_UavTerminal",
+            "TB_MineDetector",
             // ### Minen
             "APERSMineDispenser_Mag",
             "IEDLandBig_Remote_Mag",
@@ -933,7 +934,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Items
             "ACE_DefusalKit",
             "ToolKit",
-            "ACE_M26_Clacker"
+            "ACE_M26_Clacker",
+            "B_UavTerminal",
+            "TB_MineDetector"
         ]
     };
 

@@ -160,6 +160,15 @@ class CfgAmmo
         hit = 100; // 150
     };
 
+    class BulletBase;
+    class B_20mm : BulletBase // 20mm Kanonen (Helikopter-Flugzeuge)
+    {
+        caliber = 2.33; // 1.4
+        explosive = 0.6; // 1.8
+        hit = 40; // 80
+        indirectHit = 10; // 12
+    };
+
     class ACE_338_Ball;
     class TB_ammo_338_LS : ACE_338_Ball // Lapua Scenar
     {
@@ -180,6 +189,19 @@ class CfgAmmo
     class TB_ammo_338_LS_DIM : TB_ammo_338_LS // Lapua Scenar DIM
     {
         nvgOnly = 1;
+    };
+
+    class ACE_408_Ball : BulletBase // 408. CheyTac
+    {
+        caliber = 2.4; // 1
+        hit = 24; // 8
+    };
+    class TB_ammo_7Rnd_M200_Tracer : ACE_408_Ball // M200 Tracer
+    {
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        tracerEndTime = 6;
+        tracerScale = 2.75;
+        tracerStartTime = 0.05;
     };
 
     class PipeBombBase;
