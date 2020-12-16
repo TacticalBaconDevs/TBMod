@@ -286,7 +286,7 @@ class CfgVehicles
                 {
                     class ActiveRadarSensorComponent: SensorTemplateActiveRadar
                     {
-                        aimDown = -22.5;
+                        aimDown = 22.5;
                         class AirTarget
                         {
                             maxRange = 8000;
@@ -319,7 +319,7 @@ class CfgVehicles
                     };
                     class IRSensorComponent: SensorTemplateIR
                     {
-                        aimDown = -22.5;
+                        aimDown = 22.5;
                         class AirTarget
                         {
                         maxRange = 6000;
@@ -353,7 +353,7 @@ class CfgVehicles
                     };
                     class LaserSensorComponent: SensorTemplateLaser
                     {
-                        aimDown = -22.5;
+                        aimDown = 22.5;
                         class AirTarget
                         {
                         maxRange = 8000;
@@ -386,7 +386,7 @@ class CfgVehicles
                     };
                     class NVSensorComponent: SensorTemplateNV
                     {
-                        aimDown = -22.5;
+                        aimDown = 22.5;
                         class AirTarget
                         {
                         maxRange = 8000;
@@ -452,7 +452,7 @@ class CfgVehicles
                     };
                     class VisualSensorComponent: SensorTemplateVisual
                     {
-                        aimDown = -22.5;
+                        aimDown = 22.5;
                         class AirTarget
                         {
                         maxRange = 6000;
