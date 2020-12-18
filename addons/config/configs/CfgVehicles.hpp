@@ -60,7 +60,7 @@ class CfgVehicles
                     class cmDispenser1
                     {
                         attachment = "TB_mag_CMFlare_Chaff_72Rnd";
-                        hardpoints[] = {"TB_cm_dispenser_UH_80_1"};
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_1"};
                         maxweight = 800;
                         priority = 4;
                         UIposition[] = {0.20,0.1};
@@ -69,7 +69,7 @@ class CfgVehicles
                     class cmDispenser2
                     {
                         attachment = "TB_mag_CMFlare_Chaff_72Rnd";
-                        hardpoints[] = {"TB_cm_dispenser_UH_80_2"};
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_2"};
                         maxweight = 800;
                         priority = 3;
                         UIposition[] = {0.46,0.1};
@@ -78,7 +78,7 @@ class CfgVehicles
                     class cmDispenser3
                     {
                         attachment = "TB_mag_LWIRCM_144_45";
-                        hardpoints[] = {"TB_cm_dispenser_UH_80_3"};
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_3"};
                         maxweight = 800;
                         priority = 2;
                         UIposition[] = {0.20,0.15};
@@ -87,7 +87,7 @@ class CfgVehicles
                     class cmDispenser4
                     {
                         attachment = "TB_mag_LWIRCM_144_45";
-                        hardpoints[] = {"TB_cm_dispenser_UH_80_4"};
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_4"};
                         maxweight = 800;
                         priority = 1;
                         UIposition[] = {0.46,0.15};

@@ -8,33 +8,17 @@
             side = 1;\
             scope = 2;\
             scopeCurator = 2
+
+class SensorTemplateDataLink;
+class SensorTemplatePassiveRadar;
+class SensorTemplateIR;
+class SensorTemplateLaser;
+class SensorTemplateNV;
+class DefaultVehicleSystemsDisplayManagerLeft;
+class DefaultVehicleSystemsDisplayManagerRight;
+
 class CfgVehicles
 {
-    // ExtraSkin
-    class RHS_UH60M;
-    class TB_Vehicles_USA_UH60_MEV : RHS_UH60M
-    {
-        displayName = "UH-60 MEV";
-        author = "Eron";
-        addCategory(Fluggeraete);
-        hiddenSelectionsTextures[] = {
-            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_fuselage_mev_co.paa",
-            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_engine_mev_co.paa",
-            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
-            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
-        };
-    };
-
-    // Skin
-    class RHS_MELB_MH6M;
-    class TB_Vehicles_MH6_SWAT : RHS_MELB_MH6M
-    {
-        displayName = "MH-6 S.W.A.T.";
-        author = "Eron";
-        addCategory(Fluggeraete);
-        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa)};
-    };
-
     // accuracy: 3.5 = sniper, 1.5 = soldier, 0.9 = truck, 0.5 = small vehicle 0.2 = building
     // armor: 3 = soldier, 20 = car, 150 = building, 150-300 = bmp, 300 = boat, 400-900 = tank, 10000 = ship
     // audible: 0.05 = soldier, 3 = motorcycle, 6 = tank, 18 = vanilla merkava/rhs tank
@@ -58,6 +42,291 @@ class CfgVehicles
         radarTargetSize = 0.65; // 0.8
     };
 
+    class RHS_MELB_MH6M : RHS_MELB_base
+    {
+        class Components;
+    };
+    class TB_Vehicles_MH6 : RHS_MELB_MH6M
+    {
+        displayName = "MH-6M MELB";
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                uiPicture = "\A3\Air_F\Heli_Light_01\Data\UI\Heli_Light_01_3DEN_CA.paa";
+                class pylons
+                {
+                    class cmDispenser
+                    {
+                        attachment = "TB_mag_LWIRCM_144_60";
+                        hardpoints[] = {"TB_cm_dispenser_MH_6_1"};
+                        maxweight = 800;
+                        priority = 2;
+                        UIposition[] = {0.20,0.1};
+                    };
+                    class cmDispenser2 : cmDispenser
+                    {
+                        attachment = "TB_mag_LWIRCM_144_60";
+                        hardpoints[] = {"TB_cm_dispenser_MH_6_2"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.1};
+                    };
+                };
+            };
+
+            class SensorsManagerComponent
+            {
+                class Components
+                {
+                    class NVSensorComponent : SensorTemplateNV
+                    {
+                        aimDown = 22.5;
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 90;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainTurret";
+                        color[] = {1,0,0,1};
+                        componentType = "NVSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        maxFogSeeThrough = 0.995;
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 400;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 2000;
+                        class AirTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = 1;
+                        };
+                        class GroundTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = 1;
+                            viewDistanceLimitCoef = 1;
+                        };
+                    };
+                    class IRSensorComponent : SensorTemplateIR
+                    {
+                        aimDown = 22.5;
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 45;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainTurret";
+                        color[] = {1,0,0,1};
+                        componentType = "IRSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        maxFogSeeThrough = 0.995;
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 400;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 2000;
+                        class AirTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = 1;
+                        };
+                        class GroundTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = 1;
+                            viewDistanceLimitCoef = 1;
+                        };
+                    };
+                    class DataLinkSensorComponent: SensorTemplateDataLink
+                    {
+                        aimDown = 0;
+                        class AirTarget
+                        {
+                            maxRange = 16000;
+                            minRange = 16000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 360;
+                        angleRangeVertical = 360;
+                        animDirection = "";
+                        color[] = {1,1,1,0};
+                        componentType = "DataLinkSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                            maxRange = 16000;
+                            minRange = 16000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 0;
+                    };
+                    class LaserSensorComponent: SensorTemplateLaser
+                    {
+                        aimDown = 22.5;
+                        class AirTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 45;
+                        angleRangeVertical = 67.5;
+                        animDirection = "mainTurret";
+                        color[] = {1,1,1,0};
+                        componentType = "LaserSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 0;
+                    };
+                    class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+                    {
+                        aimDown = 0;
+                        class AirTarget
+                        {
+                            maxRange = 8000;
+                            minRange = 8000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 0;
+                        angleRangeHorizontal = 360;
+                        angleRangeVertical = 360;
+                        animDirection = "";
+                        color[] = {0.5,1,0.5,0.5};
+                        componentType = "PassiveRadarSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                            maxRange = 8000;
+                            minRange = 8000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e+10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 12000;
+                    };
+                };
+            };
+            class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft
+            {
+                class Components
+                {
+                    class EmptyDisplay
+                    {
+                        componentType = "EmptyDisplayComponent";
+                    };
+                    class MinimapDisplay
+                    {
+                        componentType = "MinimapDisplayComponent";
+                        resource = "RscCustomInfoMiniMap";
+                    };
+                    class SensorDisplay
+                    {
+                        componentType = "SensorsDisplayComponent";
+                        range[] = {8000,4000,2000};
+                        resource = "RscCustomInfoSensors";
+                    };
+                    class SlingLoadDisplay
+                    {
+                        componentType = "SlingLoadDisplayComponent";
+                        resource = "RscCustomInfoSlingLoad";
+                    };
+                    class VehicleDriverDisplay {
+                        componentType = "TransportFeedDisplayComponent";
+                        source = "PrimaryGunner";
+                    };
+                };
+            };
+
+            class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight
+            {
+                class Components
+                {
+                    class EmptyDisplay
+                    {
+                        componentType = "EmptyDisplayComponent";
+                    };
+                    class MinimapDisplay
+                    {
+                        componentType = "MinimapDisplayComponent";
+                        resource = "RscCustomInfoMiniMap";
+                    };
+                    class SensorDisplay
+                    {
+                        componentType = "SensorsDisplayComponent";
+                        range[] = {8000,4000,2000};
+                        resource = "RscCustomInfoSensors";
+                    };
+                    class SlingLoadDisplay
+                    {
+                        componentType = "SlingLoadDisplayComponent";
+                        resource = "RscCustomInfoSlingLoad";
+                    };
+                    class VehicleDriverDisplay {
+                        componentType = "TransportFeedDisplayComponent";
+                        source = "PrimaryGunner";
+                    };
+                };
+            };
+        };
+    };
+
+    // Skin
+    class TB_Vehicles_MH6_SWAT : RHS_MELB_MH6M
+    {
+        displayName = "MH-6 S.W.A.T.";
+        author = "Eron";
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa)};
+    };
+
     class Heli_Attack_01_base_F;
     class RHS_AH64_base : Heli_Attack_01_base_F // RHS AH-64
     {
@@ -76,7 +345,11 @@ class CfgVehicles
         radarType = 8; // 1
     };
 
-    class RHS_UH60_Base;
+    class Heli_Transport_01_base_F;
+    class RHS_UH60_Base : Heli_Transport_01_base_F
+    {
+        class Components;
+    };
     class RHS_UH60M_base : RHS_UH60_Base // RHS UH-60
     {
         accuracy = 0.42; // 0.5
@@ -91,6 +364,192 @@ class CfgVehicles
         LockDetectionSystem = "2 + 8 + 4"; // 0
         nvScanner = 1; // 0
         radarTargetSize = 1.25; // 1
+
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                class pylons
+                {
+                    class cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd"; // attachment = "rhsusf_M130_CMFlare_Chaff_Magazine_x2";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_1"}; // hardpoints[] = {"RHSUSF_cm_M130","RHSUSF_cm_M130_x2"};
+                        maxweight = 800;
+                        priority = 4; // priority = 1;
+                        UIposition[] = {0.20,0.1}; // UIposition[] = {0.33,0};
+                    };
+
+                    class cmDispenser2 : cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_2"};
+                        maxweight = 800;
+                        priority = 3;
+                        UIposition[] = {0.46,0.1};
+                    };
+
+                    class cmDispenser3 : cmDispenser
+                    {
+                        attachment = "TB_mag_LWIRCM_144_45";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_3"};
+                        maxweight = 800;
+                        priority = 2;
+                        UIposition[] = {0.20,0.15};
+                    };
+
+                    class cmDispenser4 : cmDispenser
+                    {
+                        attachment = "TB_mag_LWIRCM_144_45";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_4"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.15};
+                    };
+                };
+            };
+        };
+    };
+
+    class RHS_UH60M_US_base;
+    class RHS_UH60M : RHS_UH60M_US_base
+    {
+        class Components;
+    };
+    class RHS_UH60M_MEV : RHS_UH60M
+    {
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                class pylons
+                {
+                    class cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd"; // attachment = "rhsusf_M130_CMFlare_Chaff_Magazine_x2";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_1"}; // hardpoints[] = {"RHSUSF_cm_M130","RHSUSF_cm_M130_x2"};
+                        maxweight = 800;
+                        priority = 2; // priority = 1;
+                        UIposition[] = {0.20,0.1}; // UIposition[] = {0.33,0};
+                    };
+
+                    class cmDispenser2 : cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_2"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.1};
+                    };
+                };
+            };
+        };
+    };
+
+    class RHS_UH60M_MEV2 : RHS_UH60M_MEV
+    {
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                class pylons
+                {
+                    class cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd"; // attachment = "rhsusf_M130_CMFlare_Chaff_Magazine_x2";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_1"}; // hardpoints[] = {"RHSUSF_cm_M130","RHSUSF_cm_M130_x2"};
+                        maxweight = 800;
+                        priority = 2; // priority = 1;
+                        UIposition[] = {0.20,0.1}; // UIposition[] = {0.33,0};
+                    };
+
+                    class cmDispenser2 : cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_2"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.1};
+                    };
+                };
+            };
+        };
+    };
+
+    class TB_Vehicles_USA_UH60_MEV : RHS_UH60M // ExtraSkin
+    {
+        displayName = "UH-60 MEV";
+        author = "Eron";
+        addCategory(Fluggeraete);
+        hiddenSelectionsTextures[] = {
+            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_fuselage_mev_co.paa",
+            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_engine_mev_co.paa",
+            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
+            "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
+        };
+    };
+
+    class RHS_UH60M2 : RHS_UH60M
+    {
+        class Components;
+    };
+    class RHS_UH60M_ESSS : RHS_UH60M2
+    {
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                class pylons
+                {
+                    class cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd"; // attachment = "rhsusf_M130_CMFlare_Chaff_Magazine_x2";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_1"}; // hardpoints[] = {"RHSUSF_cm_M130","RHSUSF_cm_M130_x2"};
+                        maxweight = 800;
+                        priority = 2; // priority = 1;
+                        UIposition[] = {0.20,0.1}; // UIposition[] = {0.33,0};
+                    };
+
+                    class cmDispenser2 : cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_2"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.46,0.1};
+                    };
+                };
+            };
+        };
+    };
+    class RHS_UH60M_ESSS2 : RHS_UH60M_ESSS
+    {
+        class Components : Components
+        {
+            class TransportPylonsComponent
+            {
+                class pylons
+                {
+                    class cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd"; // attachment = "rhsusf_M130_CMFlare_Chaff_Magazine_x2";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_1"}; // hardpoints[] = {"RHSUSF_cm_M130","RHSUSF_cm_M130_x2"};
+                        maxweight = 800;
+                        priority = 1;
+                        UIposition[] = {0.20,0.1}; // UIposition[] = {0.33,0};
+                    };
+
+                    class cmDispenser2 : cmDispenser
+                    {
+                        attachment = "TB_mag_CMFlare_Chaff_72Rnd";
+                        hardpoints[] = {"TB_cm_dispenser_UH_60_2"};
+                        maxweight = 800;
+                        priority = 2;
+                        UIposition[] = {0.46,0.1};
+                    };
+                };
+            };
+        };
     };
 
     class rhsusf_CH53E_USMC;

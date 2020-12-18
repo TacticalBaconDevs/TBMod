@@ -352,7 +352,7 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR/Radar";
         displayName = "Flare/Chaff x72";
         displayNameShort = "Flare/Chaff";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4"};
         initSpeed = 18;
         pylonWeapon = "TB_weap_CMLauncher";
     };
@@ -374,7 +374,7 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR, 60 Sekunden";
         displayName = "LWIRCM x144/60";
         displayNameShort = "LWIRCM";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4","TB_cm_dispenser_MH_6_1","TB_cm_dispenser_MH_6_2"};
         initSpeed = 1;
         pylonWeapon = "TB_weap_LWIRCM_144_60";
     };
