@@ -113,17 +113,6 @@ class CfgAmmo
         indirectHitRange = 0.6; // 0.3
     };
 
-    class B_762x51_Ball;
-    class B_762x51_Minigun_Tracer_Red_splash : B_762x51_Ball // 7.62mm Miniguns Helis
-    {
-        explosionEffects = "RHS_ExploSmallAmmoExplosion"; // "ExplosionEffects"
-        explosive = 0.2; // 0
-        hit = 4.64; // 11.6
-        indirectHit = 3.24; // 1.2
-        indirectHitRange = 3.6; // 2
-        tracerScale = 0.4; // 1.2
-    };
-
     class B_556x45_Ball;
     class rhs_ammo_556x45_M855_Ball : B_556x45_Ball // 200rnd 5.56x45mm
     {
@@ -132,13 +121,24 @@ class CfgAmmo
     };
 
     class rhs_ammo_762x51_M80_Ball;
-    class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP
+    class rhs_ammo_762x51_M61_AP : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M61 AP + AH-6 7.62mm Minigun
     {
         ACE_ballisticCoefficients[] = {0.35}; // {0.2}
         caliber = 0.8; // 0.65
         hit = 20; // 12.55
-        suppressionRadiusBulletClose = 8; // 2
-        suppressionRadiusHit = 14; // 4
+        indirectHit = 3; // 0
+        indirectHitRange = 0.25; // 0
+        suppressionRadiusBulletClose = 6; // 2
+        suppressionRadiusHit = 10; // 4
+    };
+
+    class rhs_ammo_762x51_M80A1EPR_Ball : rhs_ammo_762x51_M80_Ball // Minigun UH-60
+    {
+        hit = 17.95; // 10.5
+        indirectHit = 3; // 0
+        indirectHitRange = 0.25; // 0
+        suppressionRadiusBulletClose = 6; // 2
+        suppressionRadiusHit = 10; // 4
     };
 
     class rhs_ammo_762x51_M62_tracer : rhs_ammo_762x51_M80_Ball // 100rnd M240 Box M62 AP Tracer
@@ -146,8 +146,8 @@ class CfgAmmo
         ACE_ballisticCoefficients[] = {0.35}; // {0.2}
         caliber = 0.8; // 0.45
         hit = 20; // 11
-        suppressionRadiusBulletClose = 8; // 2
-        suppressionRadiusHit = 14; // 4
+        suppressionRadiusBulletClose = 6; // 2
+        suppressionRadiusHit = 10; // 4
     };
 
     class rhs_ammo_556x45_Mk318_Ball;

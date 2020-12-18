@@ -349,7 +349,7 @@ class CfgWeapons
     {
         class WeaponSlotsInfo;
     };
-    class TB_weap_m27iar : rhs_weap_m27iar_grip
+    class TB_weap_m27iar : rhs_weap_m27iar_grip // M27IAR
     {
         author = "TBMod";
         baseWeapon = "TB_weap_m27iar";
@@ -359,6 +359,24 @@ class CfgWeapons
         class WeaponSlotsInfo : WeaponSlotsInfo
         {
             mass = 79.344;
+        };
+    };
+
+    class M134_minigun;
+    class rhs_weap_m134_minigun_1 : M134_minigun
+    {
+        class HighROF;
+    };
+    class RHS_weap_m134_pylon: rhs_weap_m134_minigun_1 // AH-6 7.62mm Minigun
+    {
+        modes[] = {"manual","close","short","medium","far"};        
+        class manual : HighROF
+        {  
+            dispersion = 0.008;
+            displayName = "6000 rpm";
+            reloadTime = 0.01;
+            showToPlayer = 1;
+            textureType = "fastAuto";
         };
     };
 

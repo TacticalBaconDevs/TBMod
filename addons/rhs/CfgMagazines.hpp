@@ -234,6 +234,12 @@ class CfgMagazines
         displayname = "12.7x99mm SLAP Right"; // "12.7x99mm SLAP"
     };
 
+    class rhs_mag_m134_pylon_base;
+    class rhs_mag_m134_pylon_3000 : rhs_mag_m134_pylon_base // AH-6 7.62mm Minigun
+    {
+        tracersEvery = 1; // 3
+    };
+
     class VehicleMagazine;
     class rhs_mag_ATAS_2 : VehicleMagazine // ATAS
     {
