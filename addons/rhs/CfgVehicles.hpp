@@ -31,7 +31,6 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.0005; // 0.001
         accuracyNightLightsOff = 0.003; // 0.006
         accuracyNightLightsOn = 0.05; // 0.1
-        armor = 25; // 35
         audible = 48; // 50
         camouflage = 45; // 100
         camShakeCoef = 0.8; // 0
