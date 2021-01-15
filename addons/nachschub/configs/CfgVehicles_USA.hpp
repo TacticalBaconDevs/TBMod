@@ -22,44 +22,47 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
     };
 };
 
-class TB_supply_usa_ammo_lmg : WRAPPER_NAME(Box_IND_Wps_F)
+class TB_supply_usa_ammo_m249_lmg : WRAPPER_NAME(Box_IND_Wps_F)
 {
-    PUBLIC_NAME_CAT("LMG-Munition",USA);
+    PUBLIC_NAME_CAT("M249 Munition",USA);
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,5);       // MGMag5.56
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,5); // MGMag5.56 Tracer
-        MACRO_ADDMAGAZINE(TB_mag_100Rnd_556x45_Mk318_tracer,10);                 // MGMag5.56 C-Mag Tracer
-        MACRO_ADDMAGAZINE(TB_mag_100Rnd_556x45_Mk318_dim,10);                    // MGMag5.56 C-Mag DIM
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,12);       // MGMag5.56
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,12); // MGMag5.56 Tracer
     };
 };
 
-class TB_supply_usa_ammo_mmg : WRAPPER_NAME(Box_IND_Wps_F)
+class TB_supply_usa_ammo_m27_lmg : WRAPPER_NAME(Box_IND_Wps_F)
 {
-    PUBLIC_NAME_CAT("MMG-Munition",USA);
+    PUBLIC_NAME_CAT("M27 IAR Munition",USA);
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,7);                   // MGMag7.62 AP Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,7);                       // MGMag7.62 AP
-        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_Tracer,5);                       // MGMag8.6 Tracer
-        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_DIM,5);                          // MGMag8.6 DIM
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_556x45_Mk318_tracer,15);                 // MGMag5.56 C-Mag Tracer
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_556x45_Mk318_dim,15);                    // MGMag5.56 C-Mag DIM
     };
 };
 
-class TB_supply_usa_ammo_mg : WRAPPER_NAME(Box_IND_Wps_F)
+class TB_supply_usa_ammo_mk48_mmg : WRAPPER_NAME(Box_IND_Wps_F)
 {
-    PUBLIC_NAME_CAT("MG-Munition",USA);
+    PUBLIC_NAME_CAT("Mk48 Munition",USA);
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,3);       // MGMag5.56
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,3); // MGMag5.56 Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,4);                   // MGMag7.62 AP Tracer
-        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,4);                       // MGMag7.62 AP
-        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_Tracer,4);                       // MGMag8.6 Tracer
-        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_DIM,4);                          // MGMag8.6 DIM
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_Tracer,7);                       // MGMag8.6 Tracer
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_DIM,7);                          // MGMag8.6 DIM
+    };
+};
+
+class TB_supply_usa_ammo_m240_mmg : WRAPPER_NAME(Box_IND_Wps_F)
+{
+    PUBLIC_NAME_CAT("M240 Munition",USA);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,15);                   // MGMag7.62 AP Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,15);                       // MGMag7.62 AP
     };
 };
 
@@ -130,7 +133,7 @@ class TB_supply_usa_praezision : WRAPPER_NAME(Box_East_Wps_F)
         // 12.7
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,8);
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
-      
+
         // 8.6
         MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_Tracer,8);
         MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_DIM,8);
@@ -143,27 +146,14 @@ class TB_supply_usa_praezision : WRAPPER_NAME(Box_East_Wps_F)
 
 class TB_supply_usa_launcher : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
-    PUBLIC_NAME_CAT("Werfer",USA);
+    PUBLIC_NAME_CAT("O-U Werfer",USA);
 
     class TransportWeapons
     {
         MACRO_ADDWEAPON(rhs_weap_M136,2);
         MACRO_ADDWEAPON(TB_rhs_weap_M136_CS,2);
         MACRO_ADDWEAPON(rhs_weap_M136_hedp,2);
-        MACRO_ADDWEAPON(rhs_weap_m72a7,2);
-    };
-};
-
-class TB_supply_usa_launcherAmmo : WRAPPER_NAME(Box_IND_WpsLaunch_F)
-{
-    PUBLIC_NAME_CAT("WerferMunition",USA);
-
-    class TransportMagazines
-    {
-        MACRO_ADDMAGAZINE(rhs_fgm148_magazine_AT,1);    // Javlin
-        MACRO_ADDMAGAZINE(rhs_fim92_mag,4);             // AA
-        MACRO_ADDMAGAZINE(rhs_mag_maaws_HEAT,2);        // MAAWS
-        MACRO_ADDMAGAZINE(rhs_mag_smaw_HEAA,2);         // HEAA
+        MACRO_ADDWEAPON(rhs_weap_m72a7,4);
     };
 };
 
@@ -173,7 +163,7 @@ class TB_supply_usa_javlinAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_fgm148_magazine_AT,4);
+        MACRO_ADDMAGAZINE(rhs_fgm148_magazine_AT,5);
     };
 };
 
@@ -198,6 +188,16 @@ class TB_supply_usa_SMAWAmmo : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
         MACRO_ADDMAGAZINE(rhs_mag_smaw_HEAA,6);
         MACRO_ADDMAGAZINE(rhs_mag_smaw_HEDP,6);
         MACRO_ADDMAGAZINE(rhs_mag_smaw_SR,4);
+    };
+};
+
+class TB_supply_usa_FIM92Ammo : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+{
+    PUBLIC_NAME_CAT("StingerMunition",USA);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(rhs_fim92_mag,12);
     };
 };
 

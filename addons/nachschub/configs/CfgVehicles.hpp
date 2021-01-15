@@ -180,8 +180,10 @@ class CfgVehicles
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_usa_ammo);
-                        ADD_SUPPLY("LMG-Munition",TB_supply_usa_ammo_lmg);
-                        ADD_SUPPLY("MMG-Munition",TB_supply_usa_ammo_mmg);
+                        ADD_SUPPLY("M249 Munition",TB_supply_usa_ammo_m249_lmg);
+                        ADD_SUPPLY("M27 IAR Munition",TB_supply_usa_ammo_m27_lmg);
+                        ADD_SUPPLY("Mk48 Munition",TB_supply_usa_ammo_mk48_mmg);
+                        ADD_SUPPLY("M240 Munition",TB_supply_usa_ammo_m240_mmg);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
                         ADD_SUPPLY("PräzisionsMunition",TB_supply_usa_praezision);
                         ADD_SUPPLY("Granaten",TB_supply_usa_grena);
@@ -193,11 +195,11 @@ class CfgVehicles
                         displayName = "Raktenwerfer Kisten";
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
-                        ADD_SUPPLY("Werfer",TB_supply_usa_launcher);
-                        ADD_SUPPLY("WerferMunition",TB_supply_usa_launcherAmmo);
+                        ADD_SUPPLY("O-U Werfer",TB_supply_usa_launcher);
                         ADD_SUPPLY("JavlinMunition",TB_supply_usa_javlinAmmo);
                         ADD_SUPPLY("MAAWSMunition",TB_supply_usa_MAAWSAmmo);
                         ADD_SUPPLY("SMAWMunition",TB_supply_usa_SMAWAmmo);
+                        ADD_SUPPLY("StingerMunition",TB_supply_usa_FIM92Ammo);
                     };
                 };
 

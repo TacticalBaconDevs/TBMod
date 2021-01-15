@@ -194,6 +194,8 @@ private _allgemein_visiere = [
     "rhsusf_acc_compm4",
     "rhsusf_acc_ACOG_d",
     "rhsusf_acc_ACOG_wd",
+    "optic_mrco",
+    "ace_optic_mrco_2d",
     "optic_yorris"
 ];
 
