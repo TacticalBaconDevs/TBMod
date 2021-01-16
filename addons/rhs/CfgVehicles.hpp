@@ -31,7 +31,6 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.0005; // 0.001
         accuracyNightLightsOff = 0.003; // 0.006
         accuracyNightLightsOn = 0.05; // 0.1
-        armor = 25; // 35
         audible = 48; // 50
         camouflage = 45; // 100
         camShakeCoef = 0.8; // 0
@@ -48,6 +47,7 @@ class CfgVehicles
     };
     class TB_Vehicles_MH6 : RHS_MELB_MH6M
     {
+        author = "TBMod";
         displayName = "MH-6M MELB";
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Spezial";
@@ -322,7 +322,7 @@ class CfgVehicles
     class TB_Vehicles_MH6_SWAT : RHS_MELB_MH6M
     {
         displayName = "MH-6 S.W.A.T.";
-        author = "Eron";
+        author = "TBMod";
         addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {QPATHTOEF(skins,pictures\vehicles\TB_Vehicles_MH_6_SWAT.paa)};
     };
@@ -479,7 +479,7 @@ class CfgVehicles
     class TB_Vehicles_USA_UH60_MEV : RHS_UH60M // ExtraSkin
     {
         displayName = "UH-60 MEV";
-        author = "Eron";
+        author = "TBMod";
         addCategory(Fluggeraete);
         hiddenSelectionsTextures[] = {
             "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_fuselage_mev_co.paa",
