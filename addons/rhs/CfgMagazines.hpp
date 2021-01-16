@@ -221,6 +221,24 @@ class CfgMagazines
         mass = 28; // 41.14
     };
 
+    class rhsusf_mag_17Rnd_9x19_FMJ;
+    class TB_mag_33Rnd_9x19_FMJ : rhsusf_mag_17Rnd_9x19_FMJ
+    {
+        count = 33;
+        descriptionShort = "Caliber: 9x19mm Parabellum<br/>Rounds: 33<br/>Used in: Glock 18";
+        displayName = "33rnd Glock M882 FMJ";
+        mass = 11.63;
+    };
+
+    class rhsusf_mag_17Rnd_9x19_JHP;
+    class TB_mag_33Rnd_9x19_JHP : rhsusf_mag_17Rnd_9x19_JHP
+    {
+        count = 33;
+        descriptionShort = "Caliber: 9x19mm Parabellum<br/>Rounds: 33<br/>Used in: Glock 18";
+        displayName = "33rnd Glock M882 JHP";
+        mass = 11.63;
+    };
+
     class rhs_mag_gau19_air_base;
     class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6 12.7x99mm Left
     {

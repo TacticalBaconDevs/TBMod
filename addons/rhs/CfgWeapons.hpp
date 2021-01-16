@@ -362,6 +362,34 @@ class CfgWeapons
         };
     };
 
+    class hgun_P07_F;
+    class rhsusf_weap_glock17g4 : hgun_P07_F
+    {
+        class Single;
+    };
+    class TB_weap_glock18 : rhsusf_weap_glock17g4
+    {
+        aimTransitionSpeed = 1.9;
+        author = "TBMod";
+        baseWeapon = "TB_weap_glock18";
+        displayName = "Glock 18";
+        modes[] = {"Single","FullAuto"};
+        magazines[] = {"rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_FMJ","UK3CB_BAF_9_17Rnd","TB_mag_33Rnd_9x19_JHP","TB_mag_33Rnd_9x19_FMJ"};
+        magazineWell[] = {"CBA_9x19_Glock_Full","TB_magwell_33Rnd_9x19"};
+        recoil = "TB_recoil_glock18";
+
+        class FullAuto : Single
+        {
+            autoFire = 1;
+            burst = 0;
+            dispersion = 0.0029;
+            displayName = "Auto";
+            reloadTime = 0.05;
+            showToPlayer = 1;
+            textureType = "fullAuto";
+        };
+    };
+
     class M134_minigun;
     class rhs_weap_m134_minigun_1 : M134_minigun
     {

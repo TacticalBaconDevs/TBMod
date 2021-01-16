@@ -257,6 +257,7 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_weap_m1911a1",
     "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
+    "TB_weap_glock18",
     "tb_weap_taser",
     "TB_weapon_rhino60",
     // ### Befestigungsschiene
@@ -269,6 +270,8 @@ private _allgemein_handfeuerwaffen = [
     "rhsusf_mag_15Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
+    "TB_mag_33Rnd_9x19_FMJ",
+    "TB_mag_33Rnd_9x19_JHP",
     "TB_mag_taser",
     "TB_mag_45_FMJ"
 ];
