@@ -172,6 +172,7 @@ private _allgemein_raketenwerfer = [
     "rhs_weap_M136_hedp",
     "rhs_weap_m72a7",
     "rhs_weap_M136",
+    "launch_NLAW_F",
     // ### Befestigungsschiene
     "rhs_acc_at4_handler",
     // ### Munition
@@ -599,7 +600,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +

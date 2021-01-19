@@ -184,6 +184,7 @@ private _allgemein_zweibein = [
 
 private _AT_raketenwerfer = [
     "BWA3_PzF3_Tandem_Loaded",
+    "launch_NLAW_F",
     // ### Visiere
     "bwa3_optic_nsa80",
     // ### Munition
@@ -577,8 +578,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_magazine +
         _allgemein_gewehre +
-        _AT_raketenwerfer +
-        _HEDP_raketenwerfer +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
@@ -663,6 +662,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         _gepaeck_mittel +
         _dmr_munition +
 
