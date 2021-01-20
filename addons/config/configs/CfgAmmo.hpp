@@ -144,8 +144,16 @@ class CfgAmmo
     class B_45ACP_Ball;
     class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
     {
-        hit = 21; // 8
         caliber = 1.4; // 1
+        hit = 21; // 8        
+    };
+
+    class BulletBase;
+    class B_570x28_Ball : BulletBase // 5.7mm Munition
+    {
+        caliber = 1.4; // 0.559441
+        indirectHit = 4; // 0
+        indirectHitRange = 0.25; // 0
     };
 
     class B_30mm_HE;
@@ -160,7 +168,6 @@ class CfgAmmo
         hit = 100; // 150
     };
 
-    class BulletBase;
     class B_20mm : BulletBase // 20mm Kanonen (Helikopter-Flugzeuge)
     {
         caliber = 2.33; // 1.4

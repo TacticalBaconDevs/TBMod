@@ -512,6 +512,24 @@ class CfgWeapons
         };
     };
 
+    class DMR_02_base_F;
+    class srifle_DMR_02_F : DMR_02_base_F // Noreen "Bad News" ULR
+    {
+        magazines[] = {"TB_mag_10Rnd_338_LS_Tracer"}; // {"10Rnd_338_Mag"}
+        magazineWell[] = {"MAR10_338","TB_magwell_10Rnd_338"}; // {"MAR10_338"}
+    };
+
+    class hgun_ACPC2_F;
+    class TB_FN_Five_Seven : hgun_ACPC2_F // 5.7mm FN Five-Seven Pistole
+    {
+        author = "TBMod";
+        baseWeapon = "TB_FN_Five_Seven";
+        descriptionShort = "Handgun<br />Caliber: 5.7x28mm"; // "Handgun<br />Caliber: .45 ACP"
+        displayName = "FN Five-Seven";
+        magazines[] = {"TB_20Rnd_570x28"};
+        magazineWell[] = {"TB_magwell_20Rnd_570x28"};
+    };
+
     class LMG_RCWS;
     class LMG_Minigun : LMG_RCWS
     {
