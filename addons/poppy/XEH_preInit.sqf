@@ -12,7 +12,7 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 {
-    [_x, "InitPost", {
+    [_x, "Init", {
         params ["_unit"];
         if (local _unit) then {[_unit, typeOf _unit] call FUNC(applyLoadout)};
     }, true, [], true] call CBA_fnc_addClassEventHandler;
