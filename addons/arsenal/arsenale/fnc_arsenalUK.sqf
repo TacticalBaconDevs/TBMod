@@ -190,6 +190,7 @@ private _allgemein_handfeuerwaffen = [
     "UK3CB_BAF_L117A2",
     "UK3CB_BAF_L131A1",
     "UK3CB_BAF_L9A1",
+    "TB_weap_glock18",
 
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
@@ -207,7 +208,9 @@ private _allgemein_handfeuerwaffen = [
     "UK3CB_BAF_9_15Rnd",
     "UK3CB_BAF_9_17Rnd",
     "UK3CB_BAF_9_13Rnd",
-    "30Rnd_9x21_Green_Mag"
+    "30Rnd_9x21_Green_Mag",
+    "TB_mag_33Rnd_9x19_JHP",
+    "TB_mag_33Rnd_9x19_FMJ"
 ];
 
 private _allgemein_uniformen = [

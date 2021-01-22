@@ -24,6 +24,7 @@ class TB_supply_bw_ammoSmall : WRAPPER_NAME(Box_East_Grenades_F)
     {
         MACRO_ADDMAGAZINE(BWA3_15Rnd_9x19_P8,15);
         MACRO_ADDMAGAZINE(TB_mag_45_FMJ,30);
+        MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
     };
 };
 

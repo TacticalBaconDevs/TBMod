@@ -203,6 +203,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_P8",
     "tb_weap_taser",
     "TB_weapon_rhino60",
+    "TB_weap_glock18",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -214,6 +215,8 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_15Rnd_9x19_P8",
     "TB_mag_taser",
     "TB_mag_45_FMJ",
+    "TB_mag_33Rnd_9x19_JHP",
+    "TB_mag_33Rnd_9x19_FMJ",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
