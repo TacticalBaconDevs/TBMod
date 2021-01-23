@@ -148,8 +148,8 @@ class CfgAmmo
         hit = 21; // 8        
     };
 
-    class BulletBase;
-    class B_570x28_Ball : BulletBase // 5.7mm Munition
+    class B_570x28_Ball;
+    class TB_ammo_570 : B_570x28_Ball // 5.7mm Munition
     {
         caliber = 1.4; // 0.559441
         indirectHit = 4; // 0
@@ -168,6 +168,7 @@ class CfgAmmo
         hit = 100; // 150
     };
 
+    class BulletBase;
     class B_20mm : BulletBase // 20mm Kanonen (Helikopter-Flugzeuge)
     {
         caliber = 2.33; // 1.4

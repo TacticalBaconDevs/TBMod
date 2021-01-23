@@ -282,6 +282,7 @@ class CfgMagazines
     class 50Rnd_570x28_SMG_03;
     class TB_20Rnd_570x28 : 50Rnd_570x28_SMG_03 // 5.7mm Magazin
     {
+        ammo = "TB_ammo_570";
         count = 20;
         descriptionShort = "Caliber: 5.7mm<br />Rounds: 20<br />Used in: FN Five-Seven";
         displayName = "5.7mm 20Rnd Mag";

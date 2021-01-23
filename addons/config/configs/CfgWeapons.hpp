@@ -512,11 +512,11 @@ class CfgWeapons
         };
     };
 
-    class DMR_02_base_F;
-    class srifle_DMR_02_F : DMR_02_base_F // Noreen "Bad News" ULR
+    class srifle_DMR_02_F;
+    class TB_weapon_338_noreen : srifle_DMR_02_F // Noreen "Bad News" ULR
     {
         magazines[] = {"TB_mag_10Rnd_338_LS_Tracer"}; // {"10Rnd_338_Mag"}
-        magazineWell[] = {"MAR10_338","TB_magwell_10Rnd_338"}; // {"MAR10_338"}
+        magazineWell[] = {"TB_magwell_10Rnd_338"}; // {"MAR10_338"}
     };
 
     class hgun_ACPC2_F;
