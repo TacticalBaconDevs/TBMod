@@ -15,6 +15,7 @@ if (GVAR(recoilCoef) == -1) exitWith {};
         private _suppressed = linearConversion [0, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 1, true];
         private _customAimCoef = getCustomAimCoef ACE_player;
         private _weapon = currentWeapon ACE_player;
+        if (_weapon isEqualTo "") then {_weapon = "KEINE"};
         private _temperature = ACE_player getVariable [format ["ace_overheating_%1_temp", _weapon], 0];
         private _scaledTemperature = linearConversion [0, 1000, _temperature, 0, 1, true];
         ([_weapon] call ace_overheating_fnc_getWeaponData) params ["_dispersion", "_slowdownFactor", "_jamChance"];

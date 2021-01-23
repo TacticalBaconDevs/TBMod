@@ -222,6 +222,7 @@ class CfgPatches
 PRELOAD_ADDONS;
 
 // Configs
+#include "configs\CfgFunctions.hpp"
 #include "configs\CfgMods.hpp"
 #include "configs\CfgSettings.hpp"
 #include "configs\CfgUnitInsignia.hpp"
