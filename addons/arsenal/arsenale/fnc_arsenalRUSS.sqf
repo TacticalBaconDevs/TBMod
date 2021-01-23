@@ -455,7 +455,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +

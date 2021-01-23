@@ -240,6 +240,7 @@ private _allgemein_zweibein = [
 private _AT_raketenwerfer = [
     "TB_rhs_weap_M136_CS",
     "rhs_weap_M136",
+    "launch_NLAW_F",
     // ### Befestigungsschiene
     "rhs_acc_at4_handler",
     // ### Munition
@@ -837,8 +838,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _AT_raketenwerfer +
-        _HEDP_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
@@ -957,6 +956,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         _gepaeck_mittel +
         _dmr_munition +
         _rifle_munition +

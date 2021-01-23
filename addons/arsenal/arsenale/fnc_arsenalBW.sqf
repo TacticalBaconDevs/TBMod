@@ -184,6 +184,7 @@ private _allgemein_zweibein = [
 
 private _AT_raketenwerfer = [
     "BWA3_PzF3_Tandem_Loaded",
+    "launch_NLAW_F",
     // ### Visiere
     "bwa3_optic_nsa80",
     // ### Munition
@@ -202,6 +203,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_P8",
     "tb_weap_taser",
     "TB_weapon_rhino60",
+    "TB_weap_glock18",
     // ### Munition
     "BWA3_1Rnd_Flare_Singlestar_White",
     "BWA3_1Rnd_Flare_Singlestar_Green",
@@ -213,6 +215,8 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_15Rnd_9x19_P8",
     "TB_mag_taser",
     "TB_mag_45_FMJ",
+    "TB_mag_33Rnd_9x19_JHP",
+    "TB_mag_33Rnd_9x19_FMJ",
     // ### Befestigungsschiene
     "BWA3_acc_LLM01_irlaser",
     "BWA3_acc_LLM01_laser",
@@ -577,8 +581,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_magazine +
         _allgemein_gewehre +
-        _AT_raketenwerfer +
-        _HEDP_raketenwerfer +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
         _allgemein_zweibein +
@@ -663,6 +665,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
+        _AT_raketenwerfer +
+        _HEDP_raketenwerfer +
         _gepaeck_mittel +
         _dmr_munition +
 
