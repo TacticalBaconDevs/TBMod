@@ -255,20 +255,21 @@ class CfgWeapons
     class rhs_weap_m240G: rhs_weap_m240_base // M240G
     {
         ace_overheating_mrbs = 750; // 3000
-        aimTransitionSpeed = 0.16; // 0.5
+        aimTransitionSpeed = 0.25; // 0.5
     };
 
     class rhs_weap_m249_pip_S;
     class rhs_weap_m249_light_S: rhs_weap_m249_pip_S // M249
     {
         ace_overheating_mrbs = 750; // 3000
-        aimTransitionSpeed = 0.36; // 0.5
+        aimTransitionSpeed = 0.4; // 0.5
+        recoil = "TB_recoil_m249";
     };
 
     class rhs_weap_M107_Base_F;
     class rhs_weap_M107: rhs_weap_M107_Base_F // M107
     {
-        aimTransitionSpeed = 0.26; // 0.5
+        aimTransitionSpeed = 0.3; // 0.5
     };
 
     class rhs_weap_orsis_Base_F;
@@ -367,7 +368,7 @@ class CfgWeapons
     {
         class Single;
     };
-    class TB_weap_glock18 : rhsusf_weap_glock17g4
+    class TB_weap_glock18 : rhsusf_weap_glock17g4 // Glock 18
     {
         aimTransitionSpeed = 1.9;
         author = "TBMod";
