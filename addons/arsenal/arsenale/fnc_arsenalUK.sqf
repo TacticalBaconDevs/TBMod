@@ -172,6 +172,7 @@ private _allgemein_raketenwerfer = [
     "rhs_weap_M136_hedp",
     "rhs_weap_m72a7",
     "rhs_weap_M136",
+    "launch_NLAW_F",
     // ### Befestigungsschiene
     "rhs_acc_at4_handler",
     // ### Munition
@@ -189,6 +190,7 @@ private _allgemein_handfeuerwaffen = [
     "UK3CB_BAF_L117A2",
     "UK3CB_BAF_L131A1",
     "UK3CB_BAF_L9A1",
+    "TB_weap_glock18",
 
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
@@ -206,7 +208,9 @@ private _allgemein_handfeuerwaffen = [
     "UK3CB_BAF_9_15Rnd",
     "UK3CB_BAF_9_17Rnd",
     "UK3CB_BAF_9_13Rnd",
-    "30Rnd_9x21_Green_Mag"
+    "30Rnd_9x21_Green_Mag",
+    "TB_mag_33Rnd_9x19_JHP",
+    "TB_mag_33Rnd_9x19_FMJ"
 ];
 
 private _allgemein_uniformen = [
@@ -599,7 +603,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_befestigungsschiene +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +

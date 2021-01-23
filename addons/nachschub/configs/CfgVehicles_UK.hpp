@@ -29,6 +29,7 @@ class TB_supply_uk_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDMAGAZINE(UK3CB_BAF_9_15Rnd,15);
         MACRO_ADDMAGAZINE(UK3CB_BAF_9_17Rnd,15);
         MACRO_ADDMAGAZINE(TB_mag_taser,7);
+        MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
     };
 };
 
