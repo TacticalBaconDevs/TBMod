@@ -36,5 +36,4 @@ PRELOAD_ADDONS;
 #include "CfgVehicles.hpp"
 #include "CfgMagazineWells.hpp"
 #include "CfgCloudlets.hpp"
-#include "CfgRecoils.hpp"
 #include "CfgWeapons.hpp"
