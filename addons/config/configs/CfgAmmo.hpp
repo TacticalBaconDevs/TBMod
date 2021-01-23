@@ -144,8 +144,16 @@ class CfgAmmo
     class B_45ACP_Ball;
     class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
     {
-        hit = 21; // 8
         caliber = 1.4; // 1
+        hit = 21; // 8        
+    };
+
+    class B_570x28_Ball;
+    class TB_ammo_570 : B_570x28_Ball // 5.7mm Munition
+    {
+        caliber = 1.4; // 0.559441
+        indirectHit = 4; // 0
+        indirectHitRange = 0.25; // 0
     };
 
     class B_30mm_HE;

@@ -279,6 +279,16 @@ class CfgMagazines
         displayNameShort = "45. cal FMJ";
     };
 
+    class 50Rnd_570x28_SMG_03;
+    class TB_20Rnd_570x28 : 50Rnd_570x28_SMG_03 // 5.7mm Magazin
+    {
+        ammo = "TB_ammo_570";
+        count = 20;
+        descriptionShort = "Caliber: 5.7mm<br />Rounds: 20<br />Used in: FN Five-Seven";
+        displayName = "5.7mm 20Rnd Mag";
+        picture = "\A3\weapons_f\data\ui\M_30Rnd_9x21_CA.paa";
+    };
+
     class ACE_10Rnd_338_300gr_HPBT_Mag;
     class TB_mag_10Rnd_338_LS_Tracer : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
     {

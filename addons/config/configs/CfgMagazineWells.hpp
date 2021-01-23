@@ -34,4 +34,8 @@ class CfgMagazineWells
     {
         ace_ballistics[] = {"ACE_7Rnd_408_305gr_Mag","TB_mag_7Rnd_M200_Tracer"}; // "ACE_7Rnd_408_305gr_Mag"
     };
+    class TB_magwell_20Rnd_570x28
+    {
+        TB_20Rnd_570x28[] = {"TB_20Rnd_570x28"};
+    };
 };
