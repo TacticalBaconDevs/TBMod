@@ -1,6 +1,9 @@
 # TBMod Spectrum
 ## Info
-SpectrumDevice Stuff
+Skript, damit das Spectrum-Gerät auch außerhalb von dem Contact-DLC funktioniert.
+
+## Wiki
+https://github.com/TacticalBaconDevs/TBMod/wiki/Spectrum-System
 
 ## Maintainer
 - [shukari](https://github.com/shukari)
