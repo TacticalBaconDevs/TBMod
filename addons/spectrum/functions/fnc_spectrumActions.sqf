@@ -91,6 +91,11 @@ switch (_modus) do
         if (_maxFreq != -1) then
         {
             ((uiNamespace getVariable "rscweaponspectrumanalyzergeneric") displayctrl 5802) ctrlSetText (["TO WEAK", format [">>> %1 <<<", _maxFreq]] select (_max > -36));
+
+            if (_max > -36) then
+            {
+                [QGVAR(scanEvent), [ACE_player, _maxFreq, linearConversion [-36, 0, _max, 0, 1, true]]] call CBA_fnc_globalEvent;
+            };
         };
     };
 
@@ -111,9 +116,16 @@ switch (_modus) do
         }
         forEach (_values select {_x >= (missionNamespace getVariable ["#EM_SelMin", 0]) && _x <= (missionNamespace getVariable ["#EM_SelMax", 1])});
 
-        if (_maxFreq != -1 && _max > -36) then
+        if (_maxFreq != -1) then
         {
-            ["TB_informAdminsAndZeus", ["%1 auf der Frequenz %2 mit (%3) gesendet!", profileName, _maxFreq, _max]] call CBA_fnc_globalEvent;
+            ((uiNamespace getVariable "rscweaponspectrumanalyzergeneric") displayctrl 5802) ctrlSetText (["TO WEAK", "> Übertragen <"] select (_max > -36));
+
+            if (_max > -36) then
+            {
+                ["TB_informAdminsAndZeus", ["%1 auf der Frequenz %2 mit (%3) gesendet!", profileName, _maxFreq, _max]] call CBA_fnc_globalEvent;
+                [QGVAR(transferEvent), [ACE_player, _maxFreq, linearConversion [-36, 0, _max, 0, 1, true]]] call CBA_fnc_globalEvent;
+            };
+
         };
     };
 
