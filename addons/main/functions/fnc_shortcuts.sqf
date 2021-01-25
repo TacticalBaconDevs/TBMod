@@ -85,10 +85,8 @@ if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
         diag_log "### RECOMPILE ###";
         [] call ACE_PREP_RECOMPILE;
 
-        #ifdef ENABLE_PERFORMANCE_COUNTERS
         [] call ace_common_fnc_dumpPerformanceCounters;
         systemChat "### PerformanceCounters in RPT ###";
-        #endif
 
         false
     },

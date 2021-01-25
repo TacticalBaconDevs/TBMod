@@ -36,6 +36,7 @@ class CfgVehicles
         author = "shukari";
         category = "TB_categorie_zeus_allgemein";
     };
+    class GVAR(base) : TB_zeus_base {};
 
     class TB_zeus_nachschubAbwurf : TB_zeus_base
     {
@@ -85,6 +86,21 @@ class CfgVehicles
         displayName = "Define Ammo";
         function = QFUNC(moduleDefineAmmo);
     };
+
+    class GVAR(createTransmitter) : GVAR(base)
+    {
+        scopeCurator = 2;
+        displayName = "Erstelle Transmitter";
+        function = QFUNC(moduleCreateTransmitter);
+    };
+
+    class GVAR(setViewDistance) : GVAR(base)
+    {
+        scopeCurator = 2;
+        displayName = "Setze Viewdistance";
+        function = QFUNC(moduleSetViewDistance);
+    };
+
 
     // ### Zeus KI
     class TB_zeus_disablePath : TB_zeus_base

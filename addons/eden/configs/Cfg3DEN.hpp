@@ -85,7 +85,7 @@ class Cfg3DEN
                         property = QEGVAR(main,animation);
                         control = QEGVAR(main,animationControl);
 
-                        expression = QUOTE([_this, _value param [1, '']] call FUNC(animationAI));
+                        expression = QUOTE([ARR_2(_this, _value param [ARR_2(1, '')])] call FUNC(animationAI));
 
                         defaultValue = "";
 
