@@ -42,7 +42,7 @@ deleteVehicle _logic;
                 profileNamespace getVariable [QGVAR(savedNames), []];
             };
 
-            if (_save && {_saves isEqualTo []}) exitWith {systemChat "Keine Saves zum Laden verfügbar!"};
+            if (!_save && {_saves isEqualTo []}) exitWith {systemChat "Keine Saves zum Laden verfügbar!"};
 
             private _diagType = if (_save) then
             {

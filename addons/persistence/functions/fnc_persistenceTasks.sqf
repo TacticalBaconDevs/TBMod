@@ -13,6 +13,9 @@ params [
         ["_storagearray", [], []]
     ];
 
+// nicht aktiv
+if (isNil QEGVAR(tasks,states)) exitWith {_storagearray};
+
 if (_save) then
 {
     {
