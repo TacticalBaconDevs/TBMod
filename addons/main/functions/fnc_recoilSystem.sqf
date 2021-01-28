@@ -42,7 +42,7 @@ if (GVAR(recoilCoef) == -1) exitWith {};
 }] call EFUNC(common,arithmeticSetSource);*/
 
 // TODO: Automatisch
-{
+/*{
     ace_overheating_cacheSilencerData setVariable _x;
 }
 forEach [
@@ -52,12 +52,12 @@ forEach [
     ["rhsusf_acc_rotex5_grey", 4],  //2.4
     ["rhsusf_acc_sfmb556", 1.25],   //1.25
     ["rhsusf_acc_sf3p556", 1.25]    //1.25
-];
+];*/
 
 GVAR(cacheWeaponType) = ([currentWeapon player] call BIS_fnc_itemType) select 1;
 GVAR(recoilFreeze) = -1;
 
-// nach Fahrzeugverlassen noch damit FFV 0.1 recoil weg kommt
+// nach Fahrzeug verlassen noch damit FFV 0.1 recoil weg kommt
 
 ["weapon", {
     params ["_unit", "_newWeapon"];
