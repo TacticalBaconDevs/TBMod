@@ -343,3 +343,14 @@ deleteVehicle _vehicle;
     [],
     true
 ] call CBA_fnc_addClassEventHandler;
+
+
+// FeidTeamleader funken
+["CAManBase", "InitPost", {
+    params ["_unit"];
+
+    if (!isPlayer _unit && side _unit == opfor && leader _unit == _unit) then
+    {
+        [_unit, [100, 150, 200]] call TBMod_spectrum_fnc_createTransmitter;
+    };
+}, true] call CBA_fnc_addClassEventHandler;
