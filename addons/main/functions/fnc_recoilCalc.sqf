@@ -10,16 +10,8 @@ if (_this isEqualTo []) then
 };
 params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-if ((toLower _weapon) in ["throw", "put"] || !(_muzzle in [primaryWeapon _unit, handgunWeapon _unit])) exitWith
-{
-    TRACE_4("recoilCalc: Reset setUnitRecoilCoefficient because _muzzle is not primary/handgun", (toLower _weapon) in ["throw", "put"], primaryWeapon _unit, handgunWeapon _unit, _this);
-    1
-};
-if (vehicle _unit != _unit) exitWith
-{
-    TRACE_1("recoilCalc: Set setUnitRecoilCoefficient 0.1 because in vehicle", _this);
-    0.1
-};
+if ((toLower _weapon) in ["throw", "put"] || !(_muzzle in [primaryWeapon _unit, handgunWeapon _unit])) exitWith {1};
+if (vehicle _unit != _unit) exitWith {0.1};
 
 private _suppressed = linearConversion [0, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 1, true];
 private _recoil = GVAR(recoilStart) + (getCustomAimCoef _unit) + _suppressed;
