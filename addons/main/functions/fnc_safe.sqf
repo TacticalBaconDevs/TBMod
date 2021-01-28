@@ -21,8 +21,8 @@ if (_mode) then
 
             if (!weaponLowered player && !(_weapon in (player getVariable ["ace_safemode_safedWeapons", []])) && _weapon != "" && (GVAR(FiredMan_last) # 0 != _weapon || GVAR(FiredMan_last) # 1 <= diag_tickTime)) then
             {
-                (format ["[SafeWeapons] %1 hat mit %2 geschossen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
-                GVAR(FiredMan_last) = [_weapon, diag_tickTime + 2];
+                (format ["[SafeWeapons] %1 hat versucht zu schießen!", profileName]) remoteExecCall ["systemChat"];
+                GVAR(FiredMan_last) = [_weapon, diag_tickTime + 5];
             };
 
             deleteVehicle _obj;
@@ -37,8 +37,8 @@ if (_mode) then
             {
                 if (GVAR(firedPlayer_last) # 0 != _ammo || GVAR(firedPlayer_last) # 1 <= diag_tickTime) then
                 {
-                    (format ["[SafeWeapons] %1 hat mit %2 geworfen!", profileName, [_ammo] call FUNC(displayName)]) remoteExecCall ["systemChat"];
-                    GVAR(firedPlayer_last) = [_ammo, diag_tickTime + 2];
+                    (format ["[SafeWeapons] %1 hat versucht eine Granate zu werfen!", profileName]) remoteExecCall ["systemChat"];
+                    GVAR(firedPlayer_last) = [_ammo, diag_tickTime + 5];
                 };
                 deleteVehicle _projectile;
             };
@@ -53,10 +53,27 @@ if (_mode) then
 
             if (!weaponLowered player && !(_weapon in (player getVariable ["ace_safemode_safedWeapons", []])) && _weapon != "" && (GVAR(blockFire_last) # 0 != _weapon || GVAR(blockFire_last) # 1 <= diag_tickTime)) then
             {
-                (format ["[SafeWeapons] %1 hat mit %2 versucht zu schießen!", profileName, [_weapon] call FUNC(displayName)]) remoteExecCall ["systemChat"];
-                GVAR(blockFire_last) = [_weapon, diag_tickTime + 2];
+                (format ["[SafeWeapons] %1 hat versucht zu schießen!", profileName]) remoteExecCall ["systemChat"];
+                GVAR(blockFire_last) = [_weapon, diag_tickTime + 5];
             };
         }] call ace_common_fnc_addActionEventHandler;
+    };
+
+    if (isNil QGVAR(blockExplosion)) then
+    {
+        GVAR(blockExplosion) = [{
+            params ["_unit", "_range", "_explosive", "_fuzeTime", "_triggerItem"];
+
+            // Code needs to return BOOL: true(allowed) / false(blocked)
+            private _result = isNil QGVAR(safeInfo) || isNil QGVAR(safeJIP);
+
+            if (!_result) then
+            {
+                (format ["[SafeWeapons] %1 hat versucht etwas hochzujagen!", profileName]) remoteExecCall ["systemChat"];
+            };
+
+            _result
+        }] call ace_explosives_fnc_addDetonateHandler;
     };
 
     if (isNil QGVAR(safeInfo) && !_hideMessage) then {GVAR(safeInfo) = [{systemChat "[SafeWeapons] ist immer noch aktiv!"}, 60] call CBA_fnc_addPerFrameHandler;};

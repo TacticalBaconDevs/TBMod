@@ -21,7 +21,10 @@ class CfgPatches
             "TB_zeus_adjustAceCargo",
             "TB_zeus_limitDamage",
             "TB_zeus_switchMove",
-            "TB_zeus_defineAmmo"
+            "TB_zeus_defineAmmo",
+            QGVAR(base),
+            QGVAR(createTransmitter),
+            QGVAR(setViewDistance)
         };
 
         requiredAddons[] = {
