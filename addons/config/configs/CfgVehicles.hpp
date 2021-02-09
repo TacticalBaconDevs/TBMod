@@ -673,7 +673,8 @@ class CfgVehicles
     class B_UGV_02_Demining_F : UGV_02_Demining_Base_F // Demining UGV Pelter
     {
         armor = 50; // 30
-        fuelCapacity = 4; // 2
+        cost = 1000; // 20000
+        fuelCapacity = 8; // 2
     };
 
     // ###################### ACE Defuse ######################
