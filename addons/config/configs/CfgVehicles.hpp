@@ -4,7 +4,6 @@
 */
 class SensorTemplateActiveRadar;
 class SensorTemplatePassiveRadar;
-class SensorTemplateIR;
 class SensorTemplateVisual;
 class SensorTemplateLaser;
 class SensorTemplateNV;
@@ -600,25 +599,74 @@ class CfgVehicles
         camouflage = 1; // 2
     };
 
-    class I_APC_Wheeled_03_base_F;
-    class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F // Pandur II
+    class Tank;
+    class Tank_F : Tank
     {
-        armor = 245; // 200
-        audible = 16; // 5
+        class AnimationSources;
     };
-
-    class B_APC_Wheeled_01_base_F;
-    class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F // Patria AMW
+    class LT_01_base_F : Tank_F // Wiesel 2 Baseclass
     {
-        armor = 215; // 320
-        audible = 16; // 14
-    };
-
-    class LT_01_cannon_base_F;
-    class TB_Vehicles_BW_Wiesel_2 : LT_01_cannon_base_F // Wiesel 2 (Autocannon)
-    {
-        audible = 4; // 18
-        camouflage = 4; // 8
+        class AnimationSources : AnimationSources
+        {
+            class showSLATHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Slat-Käfig anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetPlates1
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetPlates2
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showTools
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Werkzeug anzeigen";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Rucksäcke anzeigen (Rumpf)";
+                forceAnimate[] = {"showBags2",1};
+                forceAnimate2[] = {"showBags2",0};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags2
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+        };
     };
 
     class UGV_02_Demining_Base_F;
@@ -626,29 +674,6 @@ class CfgVehicles
     {
         armor = 50; // 30
         fuelCapacity = 4; // 2
-    };
-
-    class Tank_F;
-    class LT_01_base_F : Tank_F
-    {
-        class Turrets;
-    };
-    class LT_01_AT_base_F : LT_01_base_F
-    {
-        class Turrets : Turrets
-        {
-            class MainTurret;
-        };
-    };
-    class I_LT_01_AT_F : LT_01_AT_base_F // Wiesel 2 AT
-    {
-        class Turrets: Turrets
-        {
-            class MainTurret: MainTurret
-            {
-                magazines[] = {"SmokeLauncherMag","ace_hot_3_2Rnd","ace_hot_3_2Rnd","ace_hot_3_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"}; // {"SmokeLauncherMag","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2MP_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"};
-            };
-        };
     };
 
     // ###################### ACE Defuse ######################

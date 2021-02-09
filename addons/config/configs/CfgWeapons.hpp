@@ -568,6 +568,18 @@ class CfgWeapons
         };
     };
 
+    class gatling_20mm : CannonCore
+    {
+        class manual;
+    };
+    class gatling_20mm_VTOL_01 : gatling_20mm // Gunship 20mm
+    {
+        class manual : manual
+        {
+            reloadTime = 0.01; // 0.03
+        };
+    };
+
     class autocannon_Base_F;
     class autocannon_40mm_CTWS : autocannon_Base_F
     {
@@ -581,15 +593,102 @@ class CfgWeapons
         };
     };
 
-    class gatling_20mm : CannonCore
+    class autocannon_30mm_CTWS :autocannon_Base_F
+    {
+        class AP;
+        class HE;
+    };
+    class autocannon_30mm : autocannon_30mm_CTWS
+    {
+        class AP : AP
+        {
+            class player;
+        };
+        class HE : HE
+        {
+            class player;
+        };
+    };
+    class TB_autocannon_CT40 : autocannon_30mm // 40mm Cannon FV510 Warrior
+    {
+        author = "TBMod";
+        baseWeapon = "TB_autocannon_CT40";
+        muzzles[] = {"HE","AP"};
+        magazineWell[] = {"TB_magwell_40mm_FV510"};
+        reloadMagazineSound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",2.51189,1,10};
+        reloadSound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",2.51189,1,10};
+        class AP : AP
+        {
+            displayName = "CTAS40 AP";
+            magazineReloadTime = 1.5;
+            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS","TB_mag_20Rnd_40mm_IR_Loal_missiles"};
+            modes[] = {"player","burst","close","short","medium","far"};
+            class player : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Halb";
+                multiplier = 1;
+                reloadTime = 0.6;
+                textureType = "burst";
+            };
+            class burst : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Voll";
+                multiplier = 1;
+                reloadTime = 0.3;
+                textureType = "fullAuto";
+            };
+        };
+        class HE : HE
+        {
+            displayName = "CTAS40 HE";
+            magazineReloadTime = 1.5;
+            magazines[] = {"TB_mag_40Rnd_40mm_GPR"};
+            modes[] = {"player","burst","close","short","medium","far"};
+
+            class player : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Halb";
+                multiplier = 1;
+                reloadTime = 0.6;
+                textureType = "burst";
+            };
+            class burst : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Voll";
+                multiplier = 1;
+                reloadTime = 0.3;
+                textureType = "fullAuto";
+            };
+        };
+    };
+
+    class LMG_coax;
+    class ACE_LMG_coax_L94A1_mem3 : LMG_coax
     {
         class manual;
     };
-    class gatling_20mm_VTOL_01 : gatling_20mm // Gunship 20mm
+    class TB_coax_L94A1 : ACE_LMG_coax_L94A1_mem3 // Coaxial FV510 Warrior
     {
+        baseWeapon = "TB_coax_L94A1";
+        magazineReloadTime = 4;
+        magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
+        modes[] = {"manual","close","short","medium","far"};
         class manual : manual
         {
-            reloadTime = 0.01; // 0.03
+            burst = 1;
+            dispersion = 0.0011;
+            displayName = "L94A1 coaxial 7.62mm";
+            multiplier = 1;
+            reloadTime = 0.11;
+            textureType = "fullAuto";
         };
     };
 

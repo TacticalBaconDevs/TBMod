@@ -34,13 +34,8 @@ class CfgVehicles
     class I_Heli_light_03_dynamicLoadout_F;
     class B_MRAP_01_F;
     class B_MRAP_01_hmg_F;
-    class B_MBT_01_TUSK_F;
-    class I_MBT_03_cannon_F;
-    class I_MRAP_03_F;
-    class I_APC_Wheeled_03_cannon_F;
     class I_Heli_Transport_02_F;
     class I_MRAP_03_hmg_F;
-    class B_APC_Wheeled_01_cannon_F;
 
     class I_G_Offroad_01_F;
     class SUV_01_base_F;
@@ -153,281 +148,1087 @@ class CfgVehicles
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_polizei_hunter.jpg);
     };
 
-    ///////////////////////Fahrzeuge Camouflage Wüste//////////////////////////
+    /////////////////////// Panzer //////////////////////////
 
-    class TB_Vehicles_hunter: B_MRAP_01_F
+    class B_MBT_01_cannon_F;
+    class B_MBT_01_TUSK_F : B_MBT_01_cannon_F
     {
-        displayName = "M-ATV";
-        author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
-            ""
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_hunter.jpg);
+        class TextureSources;
+        class AnimationSources;
     };
-
-    class TB_Vehicles_hunter_smg: B_MRAP_01_hmg_F
-    {
-        displayName = "M-ATV (smg)";
-        author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_hunter_smg_2.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_hunter_smg.jpg);
-    };
-
-    class TB_Vehicles_Merkava: B_MBT_01_TUSK_F
+    class TB_Vehicles_Wueste_Merkava : B_MBT_01_TUSK_F // Merkava Mk4
     {
         displayName = "Merkava Mk4";
         author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Merkava.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_1.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Merkava_2.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+                };
+            };
+            class Olive
+            {
+                displayName = "Oliv";
+                textures[] =
+                {
+                    "A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
+                    "A3\Armor_F_Exp\MBT_01\data\MBT_01_tow_olive_CO.paa",
+                    "A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
+                    "a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+                };
+            };
+            class Sand
+            {
+                displayName = "Sand";
+                textures[] =
+                {
+                    "A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
+                    "A3\armor_f_gamma\MBT_01\Data\MBT_01_tow_CO.paa",
+                    "a3\armor_f_epc\mbt_01\data\mbt_addons_co.paa",
+                    "a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+                };
+            };
+        };
+        class AnimationSources : AnimationSources
+        {
+            class showBags
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Rucksäcke anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                forceAnimate[] = {"showCamonetPlates1",1,"showCamonetPlates2",1};
+                forceAnimate2[] = {"showCamonetPlates1",0,"showCamonetPlates2",0};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetCannon
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetPlates1
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetPlates2
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetTurret
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                forceAnimate[] = {"showCamonetCannon",1};
+                forceAnimate2[] = {"showCamonetCannon",0};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+        };
     };
 
-    class TB_Vehicles_Leopard: I_MBT_03_cannon_F
+    class TB_Vehicles_Wald_Merkava : TB_Vehicles_Wueste_Merkava // Merkava Mk4
+    {
+        displayName = "Merkava Mk4";
+        author = "Eron";
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
+            "A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
+            "A3\Armor_F_Exp\MBT_01\data\MBT_01_tow_olive_CO.paa",
+            "A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
+            "a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Merkava_2.jpg);
+    };
+
+    class I_MBT_03_base_F;
+    class I_MBT_03_cannon_F : I_MBT_03_base_F
+    {
+        class TextureSources;
+        class AnimationSources;
+    };
+    class TB_Vehicles_Wald_Leopard_2 : I_MBT_03_cannon_F // Leopard 2A7+
     {
         displayName = "Leopard 2A7+";
         author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_3.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_4.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_5.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Leopard_2.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Olive
+            {
+                displayName = "Oliv";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_3.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_4.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_5.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+                };
+            };
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_1.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_2.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+                };
+            };
+        };
+
+        class AnimationSources : AnimationSources
+        {
+            class showCamonetCannon
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetCannon1
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetTurret
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Geschützturm)";
+                forceAnimate[] = {"showCamonetCannon",1,"showCamonetCannon1",1};
+                forceAnimate2[] = {"showCamonetCannon",0,"showCamonetCannon1",0};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+        };
+    };
+
+    class TB_Vehicles_Wueste_Leopard_2 : TB_Vehicles_Wald_Leopard_2 // Leopard 2A7+
+    {
+        displayName = "Leopard 2A7+";
+        author = "Eron";
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_2.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_2.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Leopard.jpg);
     };
 
-    class TB_Vehicles_Pandur: I_APC_Wheeled_03_cannon_F
-    {
-        displayName = "Pandur IFV";
-        author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa),
-            "",
-            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Pandur.jpg);
-    };
-
-    class TB_Vehicles_Wueste_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
-    {
-        displayName = "Badger IFV";
-        author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Patria_AMW.jpg);
-    };
-
     class LT_01_cannon_base_F;
-    class TB_Vehicles_Wueste_Wiesel_2_Mk20 : LT_01_cannon_base_F // Wiesel 2 (Mk20)
+    class I_LT_01_cannon_F : LT_01_cannon_base_F
+    {
+        class TextureSources;
+    };
+    class TB_Vehicles_Wald_Wiesel_2_Mk20 : I_LT_01_cannon_F // Wiesel 2 (Mk20)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+        displayName = "Wiesel 2 (Mk20)";
+        author = "Eron";
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_1.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            "\A3\armor_f\data\cage_olive_co.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_Mk20.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Green
+            {
+                displayName = "Wald";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_1.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    "\A3\armor_f\data\cage_olive_co.paa"
+                };
+            };
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    "\a3\Armor_F\Data\cage_sand_CO.paa"
+                };
+            };
+        };
+    };
+
+    class TB_Vehicles_Wueste_Wiesel_2_Mk20 : TB_Vehicles_Wald_Wiesel_2_Mk20 // Wiesel 2 (Mk20)
     {
         displayName = "Wiesel 2 (Mk20)";
         author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "\a3\Armor_F\Data\cage_sand_CO.paa"
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_Mk20.jpg);
     };
 
-    class I_LT_01_AT_F;
-    class TB_Vehicles_Wueste_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (AT)
+    class LT_01_base_F;
+    class LT_01_AT_base_F : LT_01_base_F
+    {
+        class Turrets;
+    };
+    class I_LT_01_AT_F : LT_01_AT_base_F
+    {
+        class TextureSources;
+        class Turrets : Turrets
+        {
+            class MainTurret;
+        };
+    };
+    class TB_Vehicles_Wald_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (AT)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+        displayName = "Wiesel 2 (AT)";
+        author = "Eron";
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            "\A3\armor_f\data\cage_olive_co.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AT.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Green
+            {
+                displayName = "Wald";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    "\A3\armor_f\data\cage_olive_co.paa"
+                };
+            };
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    "\a3\Armor_F\Data\cage_sand_CO.paa"
+                };
+            };
+        };
+        class Turrets: Turrets
+        {
+            class MainTurret: MainTurret
+            {
+                magazines[] =
+                {
+                    "SmokeLauncherMag","ace_hot_3_2Rnd","ace_hot_3_2Rnd","ace_hot_3_2Rnd",
+                    "100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red",
+                    "100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"
+                }; // {"SmokeLauncherMag","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2_2Rnd","ace_hot_2MP_2Rnd","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red","100Rnd_127x99_mag_Tracer_Red"};
+            };
+        };
+    };
+
+    class TB_Vehicles_Wueste_Wiesel_2_AT : TB_Vehicles_Wald_Wiesel_2_AT // Wiesel 2 (AT)
     {
         displayName = "Wiesel 2 (AT)";
         author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "\a3\Armor_F\Data\cage_sand_CO.paa"
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_AT.jpg);
     };
 
     class LT_01_scout_base_F;
-    class TB_Vehicles_Wueste_Wiesel_2_AFF : LT_01_scout_base_F // Wiesel 2 (AFF)
+    class I_LT_01_scout_F : LT_01_scout_base_F
+    {
+        class TextureSources;
+    };
+    class TB_Vehicles_Wald_Wiesel_2_AFF : I_LT_01_scout_F // Wiesel 2 (AFF)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+        displayName = "Wiesel 2 (AFF)";
+        author = "Eron";
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_6.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            "\A3\armor_f\data\cage_olive_co.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AFF.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Green
+            {
+                displayName = "Wald";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_6.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    "\A3\armor_f\data\cage_olive_co.paa"
+                };
+            };
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    "\a3\Armor_F\Data\cage_sand_CO.paa"
+                };
+            };
+        };
+    };
+
+    class TB_Vehicles_Wueste_Wiesel_2_AFF : TB_Vehicles_Wald_Wiesel_2_AFF // Wiesel 2 (AFF)
     {
         displayName = "Wiesel 2 (AFF)";
         author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_7.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_7.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "\a3\Armor_F\Data\cage_sand_CO.paa"
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_AFF.jpg);
     };
 
     class LT_01_AA_base_F;
-    class TB_Vehicles_Wueste_Wiesel_2_FlaRaWaTrg : LT_01_AA_base_F // Wiesel 2 (FlaRaWaTrg)
+    class I_LT_01_AA_F : LT_01_AA_base_F
+    {
+        class TextureSources;
+    };
+    class TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg : I_LT_01_AA_F // Wiesel 2 (FlaRaWaTrg)
+    {
+        audible = 4; // 18
+        camouflage = 4; // 8
+        displayName = "Wiesel 2 (FlaRaWaTrg)";
+        author = "Eron";
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            "\A3\armor_f\data\cage_olive_co.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Green
+            {
+                displayName = "Wald";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    "\A3\armor_f\data\cage_olive_co.paa"
+                };
+            };
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    "\a3\Armor_F\Data\cage_sand_CO.paa"
+                };
+            };
+        };
+    };
+
+    class TB_Vehicles_Wueste_Wiesel_2_FlaRaWaTrg : TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg // Wiesel 2 (FlaRaWaTrg)
     {
         displayName = "Wiesel 2 (FlaRaWaTrg)";
         author = "Eron";
-        addCategoryBLU(Wueste);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Panzer);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_4.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "\a3\Armor_F\Data\cage_sand_CO.paa"
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Wiesel_2_FlaRaWaTrg.jpg);
     };
 
-    ///////////////////////Fahrzeuge Camouflage Wald//////////////////////////
+    /////////////////////// Truppentransporter//////////////////////////
 
-    class TB_Vehicles_BW_Pandur: I_APC_Wheeled_03_cannon_F
+    class APC_Tracked_03_base_F;
+    class I_APC_tracked_03_base_F : APC_Tracked_03_base_F
     {
-        displayName = "Pandur IFV";
+        class Turrets;
+    };
+    class I_APC_tracked_03_cannon_F :I_APC_tracked_03_base_F
+    {
+        class TextureSources;
+        class AnimationSources;
+        class Turrets : Turrets
+        {
+            class MainTurret;
+        };
+    };
+    class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F // FV510 Warrior
+    {
+        displayName = "FV510 Warrior IFV";
         author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_3.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            "\A3\armor_f\data\cage_olive_co.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_FV510.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Green
+            {
+                displayName = "Grün";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    "\A3\armor_f\data\cage_olive_co.paa"
+                };
+            };
+            class Sand
+            {
+                displayName = "Sand";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_1.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    "\a3\Armor_F\Data\cage_sand_CO.paa"
+                };
+            };
+        };
+        class AnimationSources : AnimationSources
+        {
+            class showSLATHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Slat-Käfig anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showSLATTurret
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Slat-Käfig anzeigen (Geschützturm)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Rucksäcke anzeigen (Rumpf)";
+                forceAnimate[] = {"showCamonetTurret",0};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags2
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Plane anzeigen (Rumpf)";
+                forceAnimate[] = {"showCamonetHull",0};
+                forceAnimatePhase = 1; // 0
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                forceAnimate[] = {"showBags2",1};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetTurret
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Geschützturm)";
+                forceAnimate[] = {"showBags",0};
+                forceAnimatePhase = 1;
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showTools
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Werkzeug anzeigen";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+        };
+        class Turrets : Turrets
+        {
+            class MainTurret : MainTurret
+            {
+                discreteDistance[] =
+                {
+                    100,200,300,400,500,600,700,800,900,1000,
+                    1100,1200,1300,1400,1500,1600,1700,1800,
+                    1900,2000,2100,2200,2300,2400,2500,2600,
+                    2700,2800,2900,3000,3100,3200,3300,3400,
+                    3500,3600,3700,3800,3900,4000
+                };
+                magazines[] =
+                {
+                    "TB_mag_40Rnd_40mm_GPR",
+                    "TB_mag_40Rnd_40mm_GPR",
+                    "TB_mag_40Rnd_40mm_GPR",
+                    "TB_mag_40Rnd_40mm_APFSDS",
+                    "TB_mag_40Rnd_40mm_APFSDS",
+                    "TB_mag_20Rnd_40mm_IR_Loal_missiles",
+                    "2000Rnd_762x51_Belt_T_Red"
+                };
+                maxHorizontalRotSpeed = 1;
+                maxVerticalRotSpeed = 1;
+                weapons[] = {"TB_autocannon_CT40","TB_coax_L94A1"};
+            };
+        };
+        class TransportItems
+        {
+            class ACE_quikclot
+            {
+                count = 20;
+                name = "ACE_quikclot";
+            };
+            class ACE_morphine
+            {
+                count = 10;
+                name = "ACE_morphine";
+            };
+            class ACE_salineIV
+            {
+                count = 4;
+                name = "ACE_salineIV";
+            };
+            class ToolKit
+            {
+                count = 1;
+                name = "ToolKit";
+            };
+            class ACE_EntrenchingTool
+            {
+                count = 1;
+                name = "ACE_EntrenchingTool";
+            };
+            class ACE_wirecutter
+            {
+                count = 1;
+                name = "ACE_wirecutter";
+            };
+            class ACE_UAVBattery
+            {
+                count = 1;
+                name = "ACE_UAVBattery";
+            };
+        };
+        class TransportMagazines
+        {
+            class rhsusf_100Rnd_762x51_m62_tracer
+            {
+                count = 20;
+                magazine = "rhsusf_100Rnd_762x51_m62_tracer";
+            };
+            class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote
+            {
+                count = 10;
+                magazine = "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote";
+            };
+            class TB_mag_100Rnd_338_LS_Tracer
+            {
+                count = 20;
+                magazine = "TB_mag_100Rnd_338_LS_Tracer";
+            };
+            class rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red
+            {
+                count = 55;
+                magazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
+            };            
+            class rhs_mag_mk3a2
+            {
+                count = 10;
+                magazine = "rhs_mag_mk3a2";
+            };
+            class SmokeShell
+            {
+                count = 8;
+                magazine = "SmokeShell";
+            };
+            class SmokeShellBlue
+            {
+                count = 2;
+                magazine = "SmokeShellBlue";
+            };
+            class ACE_HuntIR_M203
+            {
+                count = 4;
+                magazine = "ACE_HuntIR_M203";
+            };
+            class AMP_Breaching_Charge_Mag
+            {
+                count = 4;
+                magazine = "AMP_Breaching_Charge_Mag";
+            };
+            class TB_rhs_mag_40mm_Slugshot
+            {
+                count = 10;
+                magazine = "TB_rhs_mag_40mm_Slugshot";
+            };
+            class TB_rhs_mag_40mm_HE
+            {
+                count = 18;
+                magazine = "TB_rhs_mag_40mm_HE";
+            };
+            class TB_rhs_mag_40mm_HEDP
+            {
+                count = 18;
+                magazine = "TB_rhs_mag_40mm_HEDP";
+            };
+            class Laserbatteries
+            {
+                count = 1;
+                magazine = "Laserbatteries";
+            };
+            class rhs_fim92_mag
+            {
+                count = 4;
+                magazine = "rhs_fim92_mag";
+            };
+        };
+        class TransportWeapons
+        {
+            class TB_rhs_weap_M136_CS
+            {
+                count = 4;
+                weapon = "TB_rhs_weap_M136_CS";
+            };
+            class rhs_weap_fim92
+            {
+                count = 1;
+                weapon = "rhs_weap_fim92";
+            };
+        };
+    };
+
+    class TB_Vehicles_Wueste_Warrior : TB_Vehicles_Wald_Warrior // FV510 Warrior
+    {
+        displayName = "FV510 Warrior IFV";
+        author = "Eron";
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_1.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "\a3\Armor_F\Data\cage_sand_CO.paa"
+        };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_FV510.jpg);
+    };
+
+    class I_APC_Wheeled_03_base_F;
+    class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F
+    {
+        class TextureSources;
+        class AnimationSources;
+    };
+    class TB_Vehicles_Wald_Pandur : I_APC_Wheeled_03_cannon_F // Pandur II APC
+    {
+        armor = 245; // 200
+        audible = 16; // 5
+        displayName = "Pandur II APC";
+        author = "Eron";
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_2.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
-            "",
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Pandur.jpg);
-    };
 
-    class TB_Vehicles_Leopard_2: I_MBT_03_cannon_F
-    {
-        displayName = "Leopard 2A7+";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_3.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_4.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Leopard_5.paa)
+        class TextureSources : TextureSources
+        {
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa)
+                };
+            };
+            class Green
+            {
+                displayName = "3-Farb-Flecktarn";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_0.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_1.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
+                };
+            };
         };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Leopard_2.jpg);
-    };
 
-    class TB_Vehicles_BW_hunter: B_MRAP_01_F
-    {
-        displayName = "M-ATV";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
-            ""
+        class AnimationSources : AnimationSources
+        {
+            class showSLATHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Slat-Käfig anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Rucksäcke anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags2
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Rucksäcke anzeigen (Geschützturm)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showTools
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Werkzeug anzeigen";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
         };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_hunter.jpg);
     };
 
-    class TB_Vehicles_BW_hunter_smg: B_MRAP_01_hmg_F
+    class TB_Vehicles_Wueste_Pandur : TB_Vehicles_Wald_Pandur // Pandur II APC
     {
-        displayName = "M-ATV (smg)";
+        displayName = "Pandur II APC";
         author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_hunter_smg_2.paa)
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_0.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_1.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_3.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa)
         };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_hunter_smg.jpg);
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Pandur.jpg);
     };
 
-    class TB_Vehicles_Wald_Patria_AMW: B_APC_Wheeled_01_cannon_F // Patria AMW (Badger Version)
+    class B_APC_Wheeled_01_base_F;
+    class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F
     {
-        displayName = "Badger IFV";
+        class TextureSources;
+        class AnimationSources;
+    };
+    class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
+    {
+        armor = 215; // 320
+        audible = 16; // 14
+        displayName = "Badger APC";
         author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] =
+        {
             QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
             QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa)
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Patria_AMW.jpg);
+
+        class TextureSources : TextureSources
+        {
+            class Desert
+            {
+                displayName = "Wüste";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+                    "\a3\Armor_F\Data\cage_sand_CO.paa"
+                };
+            };
+            class Green
+            {
+                displayName = "3-Farb-Flecktarn";
+                textures[] =
+                {
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
+                };
+            };
+            class Olive
+            {
+                displayName = "Oliv";
+                textures[] = {"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa","A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa","A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa","a3\Armor_F\Data\camonet_NATO_Green_CO.paa","a3\Armor_F\Data\cage_olive_CO.paa"};
+            };
+            class Sand
+            {
+                displayName = "Sand";
+                textures[] = {"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa","a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa","a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa","a3\Armor_F\Data\camonet_NATO_Desert_CO.paa","a3\Armor_F\Data\cage_sand_CO.paa"};
+            };
+        };
+
+        class AnimationSources : AnimationSources
+        {
+            class showSLATHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Slat-Käfig anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showSLATTurret
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Slat-Käfig anzeigen (Geschützturm)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showBags
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Rucksäcke anzeigen (Geschützturm)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetCannon
+            {
+                animPeriod = 0.001;
+                initPhase = 1; // 0
+                source = "user";
+            };
+            class showCamonetHull
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Rumpf)";
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+            class showCamonetTurret
+            {
+                animPeriod = 0.001;
+                author = "Bohemia Interactive";
+                displayName = "Tarnnetz anzeigen (Geschützturm)";
+                forceAnimate[] = {"showCamonetCannon",1};
+                forceAnimate2[] = {"showCamonetCannon",0};
+                initPhase = 1; // 0
+                mass = -50;
+                source = "user";
+            };
+        };
     };
 
-    class TB_Vehicles_Strider: I_MRAP_03_F
+    class TB_Vehicles_Wueste_Badger : TB_Vehicles_Wald_Badger // Badger APC
     {
-        displayName = "Strider";
+        displayName = "Badger APC";
         author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),
-            ""
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
+            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
+            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "\a3\Armor_F\Data\cage_sand_CO.paa"
         };
+        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Patria_AMW.jpg);
+    };
+
+    class MRAP_03_base_F;
+    class I_MRAP_03_F : MRAP_03_base_F
+    {
+        class TextureSources;
+    };
+    class TB_Vehicles_Strider: I_MRAP_03_F // Fennek
+    {
+        displayName = "Fennek";
+        author = "Eron";
+        addCategoryBLU(Truppentransporter);
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa)};
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Strider.jpg);
-    };
 
-    class TB_Vehicles_Strider_smg: I_MRAP_03_hmg_F
-    {
-        displayName = "Strider (smg)";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_1.paa)
+        class TextureSources : TextureSources
+        {
+            class Green
+            {
+                displayName = "3-Farb-Flecktarn";
+                textures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa),QPATHTOF(pictures\vehicles\TB_Vehicles_Strider_0.paa)};
+            };
+            class Blufor
+            {
+                author = "Bohemia Interactive";
+                displayName = "BLUFOR";
+                factions[] = {"BLU_F"};
+                textures[] = {"\a3\soft_f_beta\MRAP_03\Data\mrap_03_ext_co.paa","\a3\data_f\vehicles\turret_co.paa"};
+            };
         };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Strider_smg.jpg);
-    };
-
-    class TB_Vehicles_Wald_Wiesel_2_Mk20 : LT_01_cannon_base_F // Wiesel 2 (Mk20)
-    {
-        displayName = "Wiesel 2 (Mk20)";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_1.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_Mk20.jpg);
-    };
-
-    class TB_Vehicles_Wald_Wiesel_2_AT : I_LT_01_AT_F // Wiesel 2 (AT)
-    {
-        displayName = "Wiesel 2 (AT)";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AT.jpg);
-    };
-
-    class TB_Vehicles_Wald_Wiesel_2_AFF : LT_01_scout_base_F // Wiesel 2 (AFF)
-    {
-        displayName = "Wiesel 2 (AFF)";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_6.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_AFF.jpg);
-    };
-
-    class TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg : LT_01_AA_base_F // Wiesel 2 (FlaRaWaTrg)
-    {
-        displayName = "Wiesel 2 (FlaRaWaTrg)";
-        author = "Eron";
-        addCategoryBLU(Wald);
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Wiesel2_5.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Wiesel_2_FlaRaWaTrg.jpg);
     };
 
     ///////////////////////Fluggeräte//////////////////////////

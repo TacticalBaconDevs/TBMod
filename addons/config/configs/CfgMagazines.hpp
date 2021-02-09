@@ -353,6 +353,29 @@ class CfgMagazines
         initSpeed = 1800; // 1600
     };
 
+    class TB_mag_40Rnd_40mm_GPR : 60Rnd_40mm_GPR_Tracer_Red_shells // 40mm GPR Magazine FV510 Warrior
+    {
+        ammo = "TB_ammo_40mm_GPR";
+        count = 40;
+    };
+
+    class TB_mag_40Rnd_40mm_APFSDS : 40Rnd_40mm_APFSDS_Tracer_Red_shells // 40mm APFSDS Magazine FV510 Warrior
+    {
+        ammo = "TB_ammo_40mm_APFSDS";
+        count = 40;
+    };
+
+    class 4Rnd_120mm_LG_cannon_missiles;
+    class TB_mag_20Rnd_40mm_IR_Loal_missiles : 4Rnd_120mm_LG_cannon_missiles // 40mm IR Loal Magazine FV510 Warrior
+    {
+        ammo = "TB_ammo_40mm_IR_Loal_missiles";
+        count = 20;
+        displayName = "40mm ATGM Loal";
+        displayNameMFDFormat = "InfraRed";
+        displayNameShort = "IR ATGM";
+        initspeed = 1035;
+    };
+
     class 60Rnd_CMFlare_Chaff_Magazine;
     class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
     {
