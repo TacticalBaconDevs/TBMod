@@ -172,34 +172,31 @@ class CfgAmmo
     {
         class CamShakeExplode
         {
-            distance = 23;
-            duration = 0.3;
-            frequency = 5;
-            power = 2;
+            distance = 23; // 82.5964
+            duration = 0.3; // 0.3
+            frequency = 5; // 20
+            power = 2; // 8
         };
         class CamShakeFire {
-            distance = 6;
-            duration = 0.3;
-            frequency = 5;
-            power = 1;
+            distance = 6; // 50.5961
+            duration = 0.3; // 1.2
+            frequency = 5; // 20
+            power = 1; // 2.51487
         };
         class CamShakeHit
         {
             distance = 1;
-            duration = 0.3;
-            frequency = 5;
-            power = 2;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 2; // 2.51487
         };
         class CamShakePlayerFire {
             distance = 1;
-            duration = 0.3;
-            frequency = 5;
-            power = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 1; // 0.01
         };
-        caliber = 2.2;
-        hit = 70;
-        indirectHit = 8;
-        indirectHitRange = 4;
+        caliber = 2.2; // 4.6
     };
 
     class B_40mm_APFSDS_Tracer_Red;
@@ -207,34 +204,33 @@ class CfgAmmo
     {
         class CamShakeExplode
         {
-            distance = 23;
-            duration = 0.3;
-            frequency = 5;
-            power = 2;
+            distance = 23; // 23.2379
+            duration = 0.3; // 1.6
+            frequency = 5; // 20
+            power = 2; // 7.74597
         };
         class CamShakeFire {
-            distance = 6;
-            duration = 0.3;
-            frequency = 5;
-            power = 1;
+            distance = 6; // 50.5964
+            duration = 0.3; // 1.2
+            frequency = 5; // 20
+            power = 1; // 2.51487
         };
         class CamShakeHit
         {
             distance = 1;
-            duration = 0.3;
-            frequency = 5;
-            power = 2;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 2; // 60
         };
         class CamShakePlayerFire {
             distance = 1;
-            duration = 0.3;
-            frequency = 5;
-            power = 1;
+            duration = 0.3; // 0.1
+            frequency = 5; // 20
+            power = 1; // 0.01
         };
-        caliber = 4;
-        hit = 110;
-        indirectHit = 10;
-        indirectHitRange = 2;
+        caliber = 4; // 5
+        hit = 110; // 100
+        indirectHit = 10; // 8
     };
 
     class M_120mm_cannon_ATGM;

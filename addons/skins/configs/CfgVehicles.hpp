@@ -654,6 +654,7 @@ class CfgVehicles
     class I_APC_tracked_03_base_F : APC_Tracked_03_base_F
     {
         class Turrets;
+        class HitPoints;
     };
     class I_APC_tracked_03_cannon_F :I_APC_tracked_03_base_F
     {
@@ -663,12 +664,17 @@ class CfgVehicles
         {
             class MainTurret;
         };
+        class HitPoints : HitPoints
+        {
+            class HitHull;
+        };
     };
     class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F // FV510 Warrior
     {
         displayName = "FV510 Warrior IFV";
         author = "Eron";
         addCategoryBLU(Truppentransporter);
+        crewCrashProtection = 0.1; // 0.25
         hiddenSelectionsTextures[] =
         {
             QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
@@ -777,6 +783,21 @@ class CfgVehicles
                 source = "user";
             };
         };
+        class HitPoints : HitPoints
+        {
+            class HitHull : HitHull
+            {
+                armor = 0.57; // 0.3   neuer Wert entspricht 513 HP
+                armorComponent = "hit_hull";
+                explosionShielding = 0.35; // 0.2
+                material = -1;
+                minimalHit = 0.05; // 0.1
+                name = "hit_hull_point";
+                passThrough = 1;
+                radius = 0.35;
+                visual = "zbytek";
+            };
+        };
         class Turrets : Turrets
         {
             class MainTurret : MainTurret
@@ -795,12 +816,11 @@ class CfgVehicles
                     "TB_mag_40Rnd_40mm_GPR",
                     "TB_mag_40Rnd_40mm_GPR",
                     "TB_mag_40Rnd_40mm_APFSDS",
-                    "TB_mag_40Rnd_40mm_APFSDS",
                     "TB_mag_20Rnd_40mm_IR_Loal_missiles",
                     "2000Rnd_762x51_Belt_T_Red"
                 };
-                maxHorizontalRotSpeed = 1;
-                maxVerticalRotSpeed = 1;
+                maxHorizontalRotSpeed = 1; // 1.2
+                maxVerticalRotSpeed = 1; // 1.2
                 weapons[] = {"TB_autocannon_CT40","TB_coax_L94A1"};
             };
         };
@@ -863,7 +883,7 @@ class CfgVehicles
             {
                 count = 55;
                 magazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
-            };            
+            };
             class rhs_mag_mk3a2
             {
                 count = 10;
