@@ -674,6 +674,11 @@ class CfgVehicles
         displayName = "FV510 Warrior IFV";
         author = "Eron";
         addCategoryBLU(Truppentransporter);
+        clutchStrength = 85; // 40
+        enginePower = 544; // 485
+        normalSpeedForwardCoef = 0.82; // 0.6
+        peakTorque = 2000; // 2610
+        redRpm = 2050; // 2600
         crewCrashProtection = 0.1; // 0.25
         hiddenSelectionsTextures[] =
         {
@@ -787,7 +792,7 @@ class CfgVehicles
         {
             class HitHull : HitHull
             {
-                armor = 0.57; // 0.3   neuer Wert entspricht 513 HP
+                armor = 0.57; // 0.3 neuer Wert entspricht 513 HP
                 armorComponent = "hit_hull";
                 explosionShielding = 0.35; // 0.2
                 material = -1;
@@ -819,8 +824,6 @@ class CfgVehicles
                     "TB_mag_20Rnd_40mm_IR_Loal_missiles",
                     "2000Rnd_762x51_Belt_T_Red"
                 };
-                maxHorizontalRotSpeed = 1; // 1.2
-                maxVerticalRotSpeed = 1; // 1.2
                 weapons[] = {"TB_autocannon_CT40","TB_coax_L94A1"};
             };
         };
