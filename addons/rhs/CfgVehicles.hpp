@@ -278,7 +278,8 @@ class CfgVehicles
                         componentType = "SlingLoadDisplayComponent";
                         resource = "RscCustomInfoSlingLoad";
                     };
-                    class VehicleDriverDisplay {
+                    class VehiclePrimaryGunnerDisplay
+                    {
                         componentType = "TransportFeedDisplayComponent";
                         source = "PrimaryGunner";
                     };
@@ -309,7 +310,8 @@ class CfgVehicles
                         componentType = "SlingLoadDisplayComponent";
                         resource = "RscCustomInfoSlingLoad";
                     };
-                    class VehicleDriverDisplay {
+                    class VehiclePrimaryGunnerDisplay
+                    {
                         componentType = "TransportFeedDisplayComponent";
                         source = "PrimaryGunner";
                     };

@@ -19,6 +19,10 @@
             scope = 2;\
             scopeCurator = 2
 
+class SensorTemplateMan;
+class DefaultVehicleSystemsDisplayManagerLeft;
+class DefaultVehicleSystemsDisplayManagerRight;
+
 class CfgVehicles
 {
     // Uniformen
@@ -655,6 +659,7 @@ class CfgVehicles
     {
         class Turrets;
         class HitPoints;
+        class Components;
     };
     class I_APC_tracked_03_cannon_F :I_APC_tracked_03_base_F
     {
@@ -667,6 +672,10 @@ class CfgVehicles
         class HitPoints : HitPoints
         {
             class HitHull;
+        };
+        class Components : Components
+        {
+            class SensorsManagerComponent;
         };
     };
     class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F // FV510 Warrior
@@ -786,6 +795,113 @@ class CfgVehicles
                 initPhase = 1; // 0
                 mass = -50;
                 source = "user";
+            };
+        };
+        class Components : Components
+        {
+            class SensorsManagerComponent : SensorsManagerComponent
+            {
+                class Components
+                {
+                    class ManSensorComponent : SensorTemplateMan
+                    {
+                        aimDown = 22.5;
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 360;
+                        angleRangeVertical = 67.5;
+                        animDirection = "";
+                        color[] = {1,0,0,1};
+                        componentType = "ManSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        maxFogSeeThrough = 0.995;
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 400;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        minTrackableSpeed = -1e+10;
+                        typeRecognitionDistance = 20;
+                        class GroundTarget
+                        {
+                            maxRange = 20;
+                            minRange = 20;
+                            objectDistanceLimitCoef = 1;
+                            viewDistanceLimitCoef = 1;
+                        };
+                    };
+                };
+            };
+            class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft
+            {
+                class Components
+                {
+                    class EmptyDisplay
+                    {
+                        componentType = "EmptyDisplayComponent";
+                    };
+                    class MinimapDisplay
+                    {
+                        componentType = "MinimapDisplayComponent";
+                        resource = "RscCustomInfoMiniMap";
+                    };
+                    class SensorDisplay
+                    {
+                        componentType = "SensorsDisplayComponent";
+                        range[] = {20};
+                        resource = "RscCustomInfoSensors";
+                    };
+                    class VehicleCommanderDisplay
+                    {
+                        componentType = "TransportFeedDisplayComponent";
+                        source = "Commander";
+                    };
+                    class VehiclePrimaryGunnerDisplay
+                    {
+                        componentType = "TransportFeedDisplayComponent";
+                        source = "PrimaryGunner";
+                    };
+                    class UAVDisplay
+                    {
+                        componentType = "UAVFeedDisplayComponent";
+                    };
+                };
+            };
+
+            class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight
+            {
+                class Components
+                {
+                    class EmptyDisplay
+                    {
+                        componentType = "EmptyDisplayComponent";
+                    };
+                    class MinimapDisplay
+                    {
+                        componentType = "MinimapDisplayComponent";
+                        resource = "RscCustomInfoMiniMap";
+                    };
+                    class SensorDisplay
+                    {
+                        componentType = "SensorsDisplayComponent";
+                        range[] = {20};
+                        resource = "RscCustomInfoSensors";
+                    };
+                    class VehicleCommanderDisplay
+                    {
+                        componentType = "TransportFeedDisplayComponent";
+                        source = "Commander";
+                    };
+                    class VehiclePrimaryGunnerDisplay
+                    {
+                        componentType = "TransportFeedDisplayComponent";
+                        source = "PrimaryGunner";
+                    };
+                    class UAVDisplay
+                    {
+                        componentType = "UAVFeedDisplayComponent";
+                    };
+                };
             };
         };
         class HitPoints : HitPoints
