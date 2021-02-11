@@ -941,6 +941,16 @@ class CfgVehicles
                     "2000Rnd_762x51_Belt_T_Red"
                 };
                 weapons[] = {"TB_autocannon_CT40","TB_coax_L94A1"};
+                /* class Turrets : Turrets ############################## Kommentar ab hier stellt das zweite Problem der Vererbung für mich da. Variablenänderung soll thermalMode[] sein
+                {   
+                    class CommanderOptics : CommanderOptics
+                    {
+                        class ViewOptics
+                        {
+                            thermalMode[] = {4,5}; // {2,3}
+                        };
+                    };
+                };*/ 
             };
         };
         class TransportItems
