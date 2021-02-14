@@ -102,6 +102,7 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                         maxRange = 20; // 500
                         minRange = 20; // 500
                     };
+                    delete AirTarget;
                 };
             };
         };
