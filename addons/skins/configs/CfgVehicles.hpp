@@ -19,9 +19,47 @@
             scope = 2;\
             scopeCurator = 2
 
-class SensorTemplateMan;
-class DefaultVehicleSystemsDisplayManagerLeft;
-class DefaultVehicleSystemsDisplayManagerRight;
+class SensorTemplateIR;
+class SensorTemplateMan : SensorTemplateIR
+{
+    class GroundTarget;
+};
+class DefaultVehicleSystemsDisplayManagerRight
+{
+    class Components;
+};
+class VehicleSystemsTemplateLeftDriver : DefaultVehicleSystemsDisplayManagerRight
+{
+    class Components : Components
+    {
+        class CrewDisplay;
+        class EmptyDisplay;
+        class MineDetectorDisplay;
+        class MinimapDisplay;
+        class SlingLoadDisplay;
+        class UAVDisplay;
+        class VehicleCommanderDisplay;
+        class VehiclePrimaryGunnerDisplay;
+    };
+};
+class DefaultVehicleSystemsDisplayManagerLeft
+{
+    class Components;
+};
+class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerLeft
+{
+    class Components : Components
+    {
+        class CrewDisplay;
+        class EmptyDisplay;
+        class MineDetectorDisplay;
+        class MinimapDisplay;
+        class SlingLoadDisplay;
+        class UAVDisplay;
+        class VehicleCommanderDisplay;
+        class VehiclePrimaryGunnerDisplay;
+    };
+};
 
 class CfgVehicles
 {
@@ -654,445 +692,63 @@ class CfgVehicles
 
     /////////////////////// Truppentransporter//////////////////////////
 
-    class APC_Tracked_03_base_F;
-    class I_APC_tracked_03_base_F : APC_Tracked_03_base_F
+    class Tank;
+    class Tank_F : Tank
     {
         class Turrets;
-        class HitPoints;
-        class Components;
     };
-    class I_APC_tracked_03_cannon_F :I_APC_tracked_03_base_F
+    class APC_Tracked_03_base_F : Tank_F
     {
-        class TextureSources;
-        class AnimationSources;
         class Turrets : Turrets
         {
             class MainTurret;
+        };
+    };
+    class I_APC_tracked_03_base_F : APC_Tracked_03_base_F
+    {
+        class AnimationSources;
+        class Turrets : Turrets
+        {
+            class MainTurret : MainTurret
+            {
+                class CommanderOptics;
+            };
+        };
+        class HitPoints;
+    };
+    class I_APC_tracked_03_cannon_F : I_APC_tracked_03_base_F
+    {
+        class TextureSources;
+        class AnimationSources : AnimationSources
+        {
+            class showSLATHull;
+            class showSLATTurret;
+            class showBags;
+            class showBags2;
+            class showCamonetHull;
+            class showCamonetTurret;
+            class showTools;
+        };
+
+        class Turrets : Turrets
+        {
+            class MainTurret : MainTurret
+            {
+                class CommanderOptics : CommanderOptics
+                {
+                    class ViewOptics;
+                };
+            };
         };
         class HitPoints : HitPoints
         {
             class HitHull;
         };
-        class Components : Components
-        {
-            class SensorsManagerComponent;
-        };
-    };
-    class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F // FV510 Warrior
-    {
-        displayName = "FV510 Warrior IFV";
-        author = "Eron";
-        addCategoryBLU(Truppentransporter);
-        clutchStrength = 85; // 40
-        enginePower = 544; // 485
-        normalSpeedForwardCoef = 0.82; // 0.6
-        peakTorque = 2000; // 2610
-        redRpm = 2050; // 2600
-        crewCrashProtection = 0.1; // 0.25
-        hiddenSelectionsTextures[] =
-        {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_3.paa),
-            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-            "\A3\armor_f\data\cage_olive_co.paa"
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_FV510.jpg);
-
-        class TextureSources : TextureSources
-        {
-            class Green
-            {
-                displayName = "Grün";
-                textures[] =
-                {
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_3.paa),
-                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-                    "\A3\armor_f\data\cage_olive_co.paa"
-                };
-            };
-            class Sand
-            {
-                displayName = "Sand";
-                textures[] =
-                {
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_0.paa),
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_1.paa),
-                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
-                    "\a3\Armor_F\Data\cage_sand_CO.paa"
-                };
-            };
-        };
-        class AnimationSources : AnimationSources
-        {
-            class showSLATHull
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Slat-Käfig anzeigen (Rumpf)";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showSLATTurret
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Slat-Käfig anzeigen (Geschützturm)";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showBags
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Rucksäcke anzeigen (Rumpf)";
-                forceAnimate[] = {"showCamonetTurret",0};
-                forceAnimatePhase = 1;
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showBags2
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Plane anzeigen (Rumpf)";
-                forceAnimate[] = {"showCamonetHull",0};
-                forceAnimatePhase = 1; // 0
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showCamonetHull
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Tarnnetz anzeigen (Rumpf)";
-                forceAnimate[] = {"showBags2",1};
-                forceAnimatePhase = 1;
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showCamonetTurret
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Tarnnetz anzeigen (Geschützturm)";
-                forceAnimate[] = {"showBags",0};
-                forceAnimatePhase = 1;
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showTools
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Werkzeug anzeigen";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-        };
-        class Components : Components
-        {
-            class SensorsManagerComponent : SensorsManagerComponent
-            {
-                class Components
-                {
-                    class ManSensorComponent : SensorTemplateMan
-                    {
-                        aimDown = 22.5;
-                        allowsMarking = 1;
-                        angleRangeHorizontal = 360;
-                        angleRangeVertical = 67.5;
-                        animDirection = "";
-                        color[] = {1,0,0,1};
-                        componentType = "ManSensorComponent";
-                        groundNoiseDistanceCoef = -1;
-                        maxFogSeeThrough = 0.995;
-                        maxGroundNoiseDistance = -1;
-                        maxSpeedThreshold = 0;
-                        maxTrackableATL = 1e+10;
-                        maxTrackableSpeed = 400;
-                        minSpeedThreshold = 0;
-                        minTrackableATL = -1e+10;
-                        minTrackableSpeed = -1e+10;
-                        typeRecognitionDistance = 20;
-                        class GroundTarget
-                        {
-                            maxRange = 20;
-                            minRange = 20;
-                            objectDistanceLimitCoef = 1;
-                            viewDistanceLimitCoef = 1;
-                        };
-                    };
-                };
-            };
-            class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft
-            {
-                class Components
-                {
-                    class EmptyDisplay
-                    {
-                        componentType = "EmptyDisplayComponent";
-                    };
-                    class MinimapDisplay
-                    {
-                        componentType = "MinimapDisplayComponent";
-                        resource = "RscCustomInfoMiniMap";
-                    };
-                    class SensorDisplay
-                    {
-                        componentType = "SensorsDisplayComponent";
-                        range[] = {20};
-                        resource = "RscCustomInfoSensors";
-                    };
-                    class VehicleCommanderDisplay
-                    {
-                        componentType = "TransportFeedDisplayComponent";
-                        source = "Commander";
-                    };
-                    class VehiclePrimaryGunnerDisplay
-                    {
-                        componentType = "TransportFeedDisplayComponent";
-                        source = "PrimaryGunner";
-                    };
-                    class UAVDisplay
-                    {
-                        componentType = "UAVFeedDisplayComponent";
-                    };
-                };
-            };
-
-            class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight
-            {
-                class Components
-                {
-                    class EmptyDisplay
-                    {
-                        componentType = "EmptyDisplayComponent";
-                    };
-                    class MinimapDisplay
-                    {
-                        componentType = "MinimapDisplayComponent";
-                        resource = "RscCustomInfoMiniMap";
-                    };
-                    class SensorDisplay
-                    {
-                        componentType = "SensorsDisplayComponent";
-                        range[] = {20};
-                        resource = "RscCustomInfoSensors";
-                    };
-                    class VehicleCommanderDisplay
-                    {
-                        componentType = "TransportFeedDisplayComponent";
-                        source = "Commander";
-                    };
-                    class VehiclePrimaryGunnerDisplay
-                    {
-                        componentType = "TransportFeedDisplayComponent";
-                        source = "PrimaryGunner";
-                    };
-                    class UAVDisplay
-                    {
-                        componentType = "UAVFeedDisplayComponent";
-                    };
-                };
-            };
-        };
-        class HitPoints : HitPoints
-        {
-            class HitHull : HitHull
-            {
-                armor = 0.57; // 0.3 neuer Wert entspricht 513 HP
-                armorComponent = "hit_hull";
-                explosionShielding = 0.35; // 0.2
-                material = -1;
-                minimalHit = 0.05; // 0.1
-                name = "hit_hull_point";
-                passThrough = 1;
-                radius = 0.35;
-                visual = "zbytek";
-            };
-        };
-        class Turrets : Turrets
-        {
-            class MainTurret : MainTurret
-            {
-                discreteDistance[] =
-                {
-                    100,200,300,400,500,600,700,800,900,1000,
-                    1100,1200,1300,1400,1500,1600,1700,1800,
-                    1900,2000,2100,2200,2300,2400,2500,2600,
-                    2700,2800,2900,3000,3100,3200,3300,3400,
-                    3500,3600,3700,3800,3900,4000
-                };
-                magazines[] =
-                {
-                    "TB_mag_40Rnd_40mm_GPR",
-                    "TB_mag_40Rnd_40mm_GPR",
-                    "TB_mag_40Rnd_40mm_GPR",
-                    "TB_mag_40Rnd_40mm_APFSDS",
-                    "TB_mag_20Rnd_40mm_IR_Loal_missiles",
-                    "2000Rnd_762x51_Belt_T_Red"
-                };
-                weapons[] = {"TB_autocannon_CT40","TB_coax_L94A1"};
-                /* class Turrets : Turrets ############################## Kommentar ab hier stellt das zweite Problem der Vererbung für mich da. Variablenänderung soll thermalMode[] sein
-                {   
-                    class CommanderOptics : CommanderOptics
-                    {
-                        class ViewOptics
-                        {
-                            thermalMode[] = {4,5}; // {2,3}
-                        };
-                    };
-                };*/ 
-            };
-        };
-        class TransportItems
-        {
-            class ACE_quikclot
-            {
-                count = 20;
-                name = "ACE_quikclot";
-            };
-            class ACE_morphine
-            {
-                count = 10;
-                name = "ACE_morphine";
-            };
-            class ACE_salineIV
-            {
-                count = 4;
-                name = "ACE_salineIV";
-            };
-            class ToolKit
-            {
-                count = 1;
-                name = "ToolKit";
-            };
-            class ACE_EntrenchingTool
-            {
-                count = 1;
-                name = "ACE_EntrenchingTool";
-            };
-            class ACE_wirecutter
-            {
-                count = 1;
-                name = "ACE_wirecutter";
-            };
-            class ACE_UAVBattery
-            {
-                count = 1;
-                name = "ACE_UAVBattery";
-            };
-        };
-        class TransportMagazines
-        {
-            class rhsusf_100Rnd_762x51_m62_tracer
-            {
-                count = 20;
-                magazine = "rhsusf_100Rnd_762x51_m62_tracer";
-            };
-            class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote
-            {
-                count = 10;
-                magazine = "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote";
-            };
-            class TB_mag_100Rnd_338_LS_Tracer
-            {
-                count = 20;
-                magazine = "TB_mag_100Rnd_338_LS_Tracer";
-            };
-            class rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red
-            {
-                count = 55;
-                magazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
-            };
-            class rhs_mag_mk3a2
-            {
-                count = 10;
-                magazine = "rhs_mag_mk3a2";
-            };
-            class SmokeShell
-            {
-                count = 8;
-                magazine = "SmokeShell";
-            };
-            class SmokeShellBlue
-            {
-                count = 2;
-                magazine = "SmokeShellBlue";
-            };
-            class ACE_HuntIR_M203
-            {
-                count = 4;
-                magazine = "ACE_HuntIR_M203";
-            };
-            class AMP_Breaching_Charge_Mag
-            {
-                count = 4;
-                magazine = "AMP_Breaching_Charge_Mag";
-            };
-            class TB_rhs_mag_40mm_Slugshot
-            {
-                count = 10;
-                magazine = "TB_rhs_mag_40mm_Slugshot";
-            };
-            class TB_rhs_mag_40mm_HE
-            {
-                count = 18;
-                magazine = "TB_rhs_mag_40mm_HE";
-            };
-            class TB_rhs_mag_40mm_HEDP
-            {
-                count = 18;
-                magazine = "TB_rhs_mag_40mm_HEDP";
-            };
-            class Laserbatteries
-            {
-                count = 1;
-                magazine = "Laserbatteries";
-            };
-            class rhs_fim92_mag
-            {
-                count = 4;
-                magazine = "rhs_fim92_mag";
-            };
-        };
-        class TransportWeapons
-        {
-            class TB_rhs_weap_M136_CS
-            {
-                count = 4;
-                weapon = "TB_rhs_weap_M136_CS";
-            };
-            class rhs_weap_fim92
-            {
-                count = 1;
-                weapon = "rhs_weap_fim92";
-            };
-        };
+        class Components;
     };
 
-    class TB_Vehicles_Wueste_Warrior : TB_Vehicles_Wald_Warrior // FV510 Warrior
-    {
-        displayName = "FV510 Warrior IFV";
-        author = "Eron";
-        addCategoryBLU(Truppentransporter);
-        hiddenSelectionsTextures[] =
-        {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_0.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_1.paa),
-            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
-            "\a3\Armor_F\Data\cage_sand_CO.paa"
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_FV510.jpg);
-    };
+    #include "CfgVehicles_FV510Warrior.hpp"
+
 
     class I_APC_Wheeled_03_base_F;
     class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F
@@ -1104,7 +760,7 @@ class CfgVehicles
     {
         armor = 245; // 200
         audible = 16; // 5
-        displayName = "Pandur II APC";
+        displayName = "Pandur II APC (Wald)";
         author = "Eron";
         addCategoryBLU(Truppentransporter);
         hiddenSelectionsTextures[] =
@@ -1200,7 +856,7 @@ class CfgVehicles
 
     class TB_Vehicles_Wueste_Pandur : TB_Vehicles_Wald_Pandur // Pandur II APC
     {
-        displayName = "Pandur II APC";
+        displayName = "Pandur II APC (Wüste)";
         author = "Eron";
         addCategoryBLU(Truppentransporter);
         hiddenSelectionsTextures[] =

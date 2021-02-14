@@ -5,15 +5,6 @@
 */
 class CfgVehicles
 {
-    #define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
-            magazine = #MAGAZINE; \
-            count = COUNT; \
-        }
-    #define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
-            weapon = #WEAPON; \
-            count = COUNT; \
-        }
-
     class Box_NATO_WpsLaunch_F;
     class TB_vz99_box : Box_NATO_WpsLaunch_F
     {
