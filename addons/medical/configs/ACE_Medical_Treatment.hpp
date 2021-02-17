@@ -36,4 +36,18 @@ class ace_medical_treatment {
             volume = 125; // 250
         };
     };
+    class Medication
+    {
+        class Adenosin
+        {
+            hrIncreaseLow[] = {-7, -10};
+            hrIncreaseNormal[] = {-15, -30};
+            hrIncreaseHigh[] = {-15, -35};
+            maxDose = 1;
+            painReduce = 2;
+            timeInSystem = 900; // 120
+            timeTillMaxEffect = 20; // 15
+            viscosityChange = -99.9999;
+        };
+    };
 };
