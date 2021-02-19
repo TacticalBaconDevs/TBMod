@@ -61,6 +61,14 @@ class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerLef
     };
 };
 
+class Optics_Armored;
+class Optics_Gunner_APC_02 : Optics_Armored
+{
+    class Wide;
+    class Medium;
+    class Narrow;
+};
+
 class CfgVehicles
 {
     // Uniformen
@@ -707,16 +715,9 @@ class CfgVehicles
     class I_APC_tracked_03_base_F : APC_Tracked_03_base_F
     {
         class AnimationSources;
-        class Turrets : Turrets
-        {
-            class MainTurret : MainTurret
-            {
-                class CommanderOptics;
-            };
-        };
         class HitPoints;
     };
-    class I_APC_tracked_03_cannon_F : I_APC_tracked_03_base_F
+    class I_APC_tracked_03_cannon_F : I_APC_tracked_03_base_F // FV510 Warrior
     {
         class TextureSources;
         class AnimationSources : AnimationSources
@@ -728,17 +729,6 @@ class CfgVehicles
             class showCamonetHull;
             class showCamonetTurret;
             class showTools;
-        };
-
-        class Turrets : Turrets
-        {
-            class MainTurret : MainTurret
-            {
-                class CommanderOptics : CommanderOptics
-                {
-                    class ViewOptics;
-                };
-            };
         };
         class HitPoints : HitPoints
         {

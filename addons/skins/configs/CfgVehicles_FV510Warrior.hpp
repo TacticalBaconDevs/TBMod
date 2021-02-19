@@ -173,15 +173,19 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                 "TB_mag_20Rnd_40mm_IR_Loal_missiles",
                 "2000Rnd_762x51_Belt_T_Red"
             };
-
-            class Turrets : Turrets
+            class OpticsIn : Optics_Gunner_APC_02
             {
-                class CommanderOptics : CommanderOptics
+                class Wide : Wide
                 {
-                    class ViewOptics : ViewOptics
-                    {
-                        thermalMode[] = {4,5}; // {2,3}
-                    };
+                    thermalMode[] = {0,1}; // {"2,3"}
+                };
+                class Medium : Medium
+                {
+                    thermalMode[] = {0,1}; // {"2,3"}
+                };
+                class Narrow : Narrow
+                {
+                    thermalMode[] = {0,1}; // {"2,3"}
                 };
             };
         };
