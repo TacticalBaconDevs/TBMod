@@ -20,10 +20,19 @@ class CfgWeapons
     SET_NAME(ACE_salineIV_500, ACE_salineIV,  "Kochsalzlösung (350ml)");
     SET_NAME(ACE_salineIV_250, ACE_salineIV,  "Kochsalzlösung (125ml)");
 
-    class ACE_adenosine : ACE_ItemCore
+    class ACE_adenosine;
+    class TB_med_thrombin : ACE_adenosine
     {
-        descriptionShort = "Erhöhung der Blutgerinnung"; // "Used to counter effects of Epinephrine"
-        descriptionUse = "Bei drohendem Ausbluten zu verwenden"; //"A drug used to counter the effects of Epinephrine"
-        displayName = "Thrombin"; //"Adenosine autoinjector"
+        descriptionShort = "Bei drohendem Ausbluten zu verwenden";
+        descriptionUse = "Bei drohendem Ausbluten zu verwenden";
+        displayName = "Thrombin-Autoinjektor";
+    };
+
+    class TB_med_venenkatheter : ACE_adenosine
+    {
+        descriptionShort = "Patienten Blut abnehmen";
+        descriptionUse = "Patienten Blut abnehmen";
+        displayName = "Venenkatheter";
+        picture = "\z\ace\addons\chemlights\UI\ace_chemlight_shield_x_ca.paa";
     };
 };

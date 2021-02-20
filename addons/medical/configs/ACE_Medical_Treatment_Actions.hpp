@@ -10,10 +10,19 @@ class ace_medical_treatment_actions {
     };
 
     class ApplyTourniquet: BasicBandage {
-        treatmentTime = 1;
+        treatmentTime = 2;
     };
 
     class Morphine: BasicBandage {
+        treatmentTime = QUOTE([ARR_2(_this,5)] call FUNC(calcTreatmentTime));
+    };
+
+    class TB_med_thrombin: Morphine
+    {
+        displayName = "Thrombin";
+        displayNameProgress = "Thrombin wird injiziert...";
+        items[] = {"TB_med_thrombin"};
+        litter[] = {{"ACE_MedicalLitter_adenosine"}};
         treatmentTime = QUOTE([ARR_2(_this,5)] call FUNC(calcTreatmentTime));
     };
 
@@ -84,5 +93,18 @@ class ace_medical_treatment_actions {
 
         callbackProgress = "";
         callbackSuccess = QFUNC(getBlood);
+    };
+
+    class TB_med_venenkatheter : SurgicalKit
+    {
+        allowedSelections[] = {"LeftArm", "RightArm"};
+        animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
+        consumeItem = QGVAR(consumeTB_med_venenkatheter);
+        displayName = "Venenkatheter";
+        displayNameProgress = "Blut wird abgenommen...";
+        items[] = {"TB_med_venenkatheter"};
+        litter[] = {{"ACE_MedicalLitter_adenosine"}};
+        medicRequired = 1;
+        treatmentTime = QUOTE([ARR_2(_this,8)] call FUNC(calcTreatmentTime));
     };
 };

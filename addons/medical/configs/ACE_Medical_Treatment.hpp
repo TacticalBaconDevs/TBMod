@@ -38,16 +38,18 @@ class ace_medical_treatment {
     };
     class Medication
     {
-        class Adenosin
+        class Adenosine;
+        class TB_med_thrombin : Adenosine
         {
-            hrIncreaseLow[] = {-7, -10};
-            hrIncreaseNormal[] = {-15, -30};
-            hrIncreaseHigh[] = {-15, -35};
+            hrIncreaseLow[] = {};
+            hrIncreaseNormal[] = {};
+            hrIncreaseHigh[] = {};
+            incompatibleMedication[] = {};
             maxDose = 1;
-            painReduce = 2;
-            timeInSystem = 900; // 120
-            timeTillMaxEffect = 20; // 15
-            viscosityChange = -99.9999;
+            painReduce = 0;
+            timeInSystem = 900;
+            timeTillMaxEffect = 5;
+            viscosityChange = 100;
         };
     };
 };

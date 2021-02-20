@@ -177,6 +177,7 @@ class TB_supply_uk_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
         MACRO_ADDITEM(ACE_quikclot,20);
         MACRO_ADDITEM(ACE_tourniquet,8);
         MACRO_ADDITEM(ACE_adenosine,4);
+        MACRO_ADDITEM(TB_med_thrombin,4);
 
         MACRO_ADDITEM(TFAR_anprc152,1);
 
