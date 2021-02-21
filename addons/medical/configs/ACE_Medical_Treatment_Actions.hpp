@@ -76,35 +76,21 @@ class ace_medical_treatment_actions {
         treatmentTime = QUOTE([ARR_3(_this,'ace_medical_treatment_fnc_getHealTime',0.5)] call FUNC(calcTreatmentTime));
     };
 
-    // TODO: eigenes Item IV Kit wie bei DayZ damit nicht unendlich bei Toten
     class BloodPack: SurgicalKit {
         displayName = "Blut abnehmen";
         displayNameProgress = "Blut wird abgenommen...";
 
-        consumeItem = 0;
-        items[] = {"ACE_surgicalKit", "ACE_personalAidKit"};
+        consumeItem = 1;
+        items[] = {"TB_med_venenkatheter"};
 
         medicRequired = 1;
         allowSelfTreatment = 0;
-        allowedSelections[] = {"LeftArm", "RightArm"};
+        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = "true";
 
-        treatmentTime = QUOTE(private _time = [ARR_2(180,60)] select (alive (_this select 1)); [ARR_2(_this,_time)] call FUNC(calcTreatmentTime));
+        treatmentTime = QUOTE(private _time = [ARR_2(120,60)] select (alive (_this select 1)); [ARR_2(_this,_time)] call FUNC(calcTreatmentTime));
 
         callbackProgress = "";
         callbackSuccess = QFUNC(getBlood);
-    };
-
-    class TB_med_venenkatheter : SurgicalKit
-    {
-        allowedSelections[] = {"LeftArm", "RightArm"};
-        animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
-        consumeItem = QGVAR(consumeTB_med_venenkatheter);
-        displayName = "Venenkatheter";
-        displayNameProgress = "Blut wird abgenommen...";
-        items[] = {"TB_med_venenkatheter"};
-        litter[] = {{"ACE_MedicalLitter_adenosine"}};
-        medicRequired = 1;
-        treatmentTime = QUOTE([ARR_2(_this,8)] call FUNC(calcTreatmentTime));
     };
 };
