@@ -29,7 +29,6 @@ _allItems append [
     "ACE_quikclot",
 
     "ACE_morphine",
-    "TB_med_thrombin",
 
     "ACE_salineIV_250",
     "ACE_salineIV_500",

@@ -404,7 +404,6 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,40);
             MACRO_ADDITEM(ACE_epinephrine,16);
             MACRO_ADDITEM(ACE_adenosine,16);
-            MACRO_ADDITEM(TB_med_thrombin,16);
 
             MACRO_ADDITEM(ACE_surgicalKit,2);
         };
@@ -435,7 +434,6 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,40);
             MACRO_ADDITEM(ACE_epinephrine,20);
             MACRO_ADDITEM(ACE_adenosine,16);
-            MACRO_ADDITEM(TB_med_thrombin,16);
 
             MACRO_ADDITEM(ACE_surgicalKit,5);
         };

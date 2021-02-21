@@ -21,13 +21,6 @@ class CfgWeapons
     SET_NAME(ACE_salineIV_250, ACE_salineIV,  "Kochsalzlösung (125ml)");
 
     class ACE_adenosine;
-    class TB_med_thrombin : ACE_adenosine
-    {
-        descriptionShort = "Bei drohendem Ausbluten zu verwenden";
-        descriptionUse = "Bei drohendem Ausbluten zu verwenden";
-        displayName = "Thrombin-Autoinjektor";
-    };
-
     class TB_med_venenkatheter : ACE_adenosine
     {
         descriptionShort = "Patienten Blut abnehmen";

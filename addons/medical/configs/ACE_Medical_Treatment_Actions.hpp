@@ -17,15 +17,6 @@ class ace_medical_treatment_actions {
         treatmentTime = QUOTE([ARR_2(_this,5)] call FUNC(calcTreatmentTime));
     };
 
-    class TB_med_thrombin: Morphine
-    {
-        displayName = "Thrombin";
-        displayNameProgress = "Thrombin wird injiziert...";
-        items[] = {"TB_med_thrombin"};
-        litter[] = {{"ACE_MedicalLitter_adenosine"}};
-        treatmentTime = QUOTE([ARR_2(_this,5)] call FUNC(calcTreatmentTime));
-    };
-
     class BloodIV: BasicBandage {
         treatmentTime = QUOTE([ARR_2(_this,12)] call FUNC(calcTreatmentTime));
         displayName = "Bluttransfusion (2800ml)";

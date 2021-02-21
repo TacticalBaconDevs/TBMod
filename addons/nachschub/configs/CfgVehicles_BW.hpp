@@ -135,7 +135,6 @@ class TB_supply_bw_notfallg36 : WRAPPER_NAME(Box_East_AmmoOrd_F)
         MACRO_ADDITEM(ACE_quikclot,20);
         MACRO_ADDITEM(ACE_tourniquet,8);
         MACRO_ADDITEM(ACE_adenosine,4);
-        MACRO_ADDITEM(TB_med_thrombin,4);
 
         MACRO_ADDITEM(TFAR_anprc152,1);
 
