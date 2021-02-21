@@ -2,6 +2,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class SensorTemplateIR;
+
 class CfgAmmo
 {
     class Cluster_155mm_AMOS;
@@ -145,7 +147,7 @@ class CfgAmmo
     class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
     {
         caliber = 1.4; // 1
-        hit = 21; // 8        
+        hit = 21; // 8
     };
 
     class B_570x28_Ball;
@@ -156,18 +158,6 @@ class CfgAmmo
         indirectHitRange = 0.25; // 0
     };
 
-    class B_30mm_HE;
-    class B_40mm_GPR : B_30mm_HE // 40mm GPR
-    {
-        hit = 40; // 70
-    };
-
-    class B_30mm_APFSDS;
-    class B_40mm_APFSDS : B_30mm_APFSDS // 40mm APFSDS
-    {
-        hit = 100; // 150
-    };
-
     class BulletBase;
     class B_20mm : BulletBase // 20mm Kanonen (Helikopter-Flugzeuge)
     {
@@ -175,6 +165,174 @@ class CfgAmmo
         explosive = 0.6; // 1.8
         hit = 40; // 80
         indirectHit = 10; // 12
+    };
+
+    class B_40mm_GPR_Tracer_Red;
+    class TB_ammo_40mm_GPR : B_40mm_GPR_Tracer_Red // 40mm GPR Munition FV510 Warrior
+    {
+        class CamShakeExplode
+        {
+            distance = 23; // 82.5964
+            duration = 0.3; // 0.3
+            frequency = 5; // 20
+            power = 2; // 8
+        };
+        class CamShakeFire {
+            distance = 6; // 50.5961
+            duration = 0.3; // 1.2
+            frequency = 5; // 20
+            power = 1; // 2.51487
+        };
+        class CamShakeHit
+        {
+            distance = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 2; // 2.51487
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 1; // 0.01
+        };
+        caliber = 2.2; // 4.6
+    };
+
+    class B_40mm_APFSDS_Tracer_Red;
+    class TB_ammo_40mm_APFSDS : B_40mm_APFSDS_Tracer_Red // 40mm APFSDS Munition FV510 Warrior
+    {
+        class CamShakeExplode
+        {
+            distance = 23; // 23.2379
+            duration = 0.3; // 1.6
+            frequency = 5; // 20
+            power = 2; // 7.74597
+        };
+        class CamShakeFire {
+            distance = 6; // 50.5964
+            duration = 0.3; // 1.2
+            frequency = 5; // 20
+            power = 1; // 2.51487
+        };
+        class CamShakeHit
+        {
+            distance = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 2; // 60
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.3; // 0.1
+            frequency = 5; // 20
+            power = 1; // 0.01
+        };
+        caliber = 4; // 5
+        hit = 110; // 100
+        indirectHit = 10; // 8
+    };
+
+    class M_120mm_cannon_ATGM;
+    class M_120mm_cannon_ATGM_LG : M_120mm_cannon_ATGM
+    {
+        class Components;
+    };
+    class TB_ammo_40mm_IR_Loal_missiles : M_120mm_cannon_ATGM_LG // 40mm IR Loal Missiles FV510 Warrior
+    {
+        class CamShakeExplode
+        {
+            distance = 23;
+            duration = 0.3;
+            frequency = 5;
+            power = 2;
+        };
+        class CamShakeFire {
+            distance = 6;
+            duration = 0.3;
+            frequency = 5;
+            power = 1;
+        };
+        class CamShakeHit
+        {
+            distance = 1;
+            duration = 0.3;
+            frequency = 5;
+            power = 2;
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.3;
+            frequency = 5;
+            power = 1;
+        };
+        airLock = 1;
+        autoSeekTarget = 1;
+        caliber = 4;
+        CraterEffects = "30mmSmoke";
+        explosionEffects = "30mmExplode";
+        flightProfiles[] = {"LoalDistance"};
+        class LoalDistance
+        {
+            lockSeekDistanceFromParent = 10;
+        };
+        fuseDistance = 10;
+        hit = 110;
+        indirectHit = 10;
+        indirectHitRange = 2;
+        irLock = 1;
+        lockSeekRadius = 1000;
+        maneuvrability = 18;
+        missileLockMaxSpeed = 150; // (540km/h)
+        missileLockMinDistance = 10;
+        model = "\A3\Weapons_F\Ammo\Rocket_01_fly_F";
+        sideAirFriction = 5;
+        submunitionAmmo = "";
+        thrust = 100;
+        thrustTime = 6;
+        timeToLive = 6;
+        weaponLockSystem = "2 + 16";
+        class Components : Components
+        {
+            class SensorsManagerComponent
+            {
+                class Components
+                {
+                    class IRSensorComponent : SensorTemplateIR
+                    {
+                        aimDown = 0;
+                        class AirTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        allowsMarking = 1;
+                        angleRangeHorizontal = 10;
+                        angleRangeVertical = 10;
+                        animDirection = "";
+                        color[] = {1,1,1,0};
+                        componentType = "IRSensorComponent";
+                        groundNoiseDistanceCoef = -1;
+                        class GroundTarget
+                        {
+                            maxRange = 4000;
+                            minRange = 4000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        maxGroundNoiseDistance = -1;
+                        maxSpeedThreshold = 0;
+                        maxTrackableATL = 1e+10;
+                        maxTrackableSpeed = 1e10;
+                        minSpeedThreshold = 0;
+                        minTrackableATL = -1e+10;
+                        typeRecognitionDistance = 0;
+                    };
+                };
+            };
+        };
     };
 
     class ACE_338_Ball;

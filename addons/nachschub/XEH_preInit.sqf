@@ -10,20 +10,26 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-// Munition aus FahrzeugMunikisten direkt ins ArmaInventar
-["ace_cargoLoaded", {
-    params ["_item", "_vehicle"];
+// Kisteninhalt direkt ins ArmaInventar
+if (isServer) then
+{
+    ["ace_cargoLoaded", {
+        params ["_item", "_vehicle"];
 
-    if ((toLower (typeOf _item)) select [0, 20] in ["tb_supply_uk_vehicle", "tb_supply_uk_warrior"]) then
-    {
+        private _config = configOf _item;
+        if (!isNumber (_config >> QGVAR(isTB)) || {!isNumber (_config >> QGVAR(directly2Inv))}) exitWith {};
+
+        if (getNumber (_config >> QGVAR(directly2Inv)) == 1) then
         {
-            _vehicle addMagazineCargoGlobal [_x, 1];
-        }
-        forEach (magazineCargo _item);
+            {_vehicle addItemCargoGlobal [_x, 1]} forEach (itemCargo _item);
+            {_vehicle addWeaponCargoGlobal [_x, 1]} forEach (weaponCargo _item);
+            {_vehicle addBackpackCargoGlobal [_x, 1]} forEach (backpackCargo _item);
+            {_vehicle addMagazineCargoGlobal [_x, 1]} forEach (magazineCargo _item);
 
-        deletevehicle _item;
-        //systemChat "Kisteninhalt wurde ins Inventar geladen";
-    };
-}] call CBA_fnc_addEventHandler;
+            deleteVehicle _item;
+        };
+    }] call CBA_fnc_addEventHandler;
+};
+
 
 ADDON = true;
