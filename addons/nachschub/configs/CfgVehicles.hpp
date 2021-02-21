@@ -16,6 +16,7 @@ class CfgVehicles
         class TB_##CLASS_NAME : CLASS_NAME \
         { \
             author = "shukari"; \
+            GVAR(isTB) = 1; \
             ace_cargo_canLoad = 1; \
             ace_cargo_size = 1; \
             ace_dragging_canCarry = 1; \
@@ -34,6 +35,7 @@ class CfgVehicles
         class TB_##CLASS_NAME : CLASS_NAME \
         { \
             author = "shukari"; \
+            GVAR(isTB) = 1; \
             ace_cargo_canLoad = 1; \
             ace_cargo_size = 1; \
             ace_dragging_canCarry = 1; \
