@@ -52,7 +52,8 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
 
         "ACE_bodyBag",
         "ACE_surgicalKit",
-        "adv_aceCPR_AED"
+        "adv_aceCPR_AED",
+        "TB_med_venenkatheter"
     ];
 };
 

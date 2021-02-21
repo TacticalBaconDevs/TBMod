@@ -19,4 +19,13 @@ class CfgWeapons
     SET_NAME(ACE_salineIV, ACE_ItemCore, "Kochsalzlösung (700ml)");
     SET_NAME(ACE_salineIV_500, ACE_salineIV,  "Kochsalzlösung (350ml)");
     SET_NAME(ACE_salineIV_250, ACE_salineIV,  "Kochsalzlösung (125ml)");
+
+    class ACE_adenosine;
+    class TB_med_venenkatheter : ACE_adenosine
+    {
+        descriptionShort = "Patienten Blut abnehmen";
+        descriptionUse = "Patienten Blut abnehmen";
+        displayName = "Venenkatheter";
+        picture = "\z\ace\addons\chemlights\UI\ace_chemlight_shield_x_ca.paa";
+    };
 };
