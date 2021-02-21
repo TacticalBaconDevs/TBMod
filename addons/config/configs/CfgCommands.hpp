@@ -6,6 +6,7 @@ class CfgCommands
 {
     allowedHTMLLoadURIs[] += {
         "http://tacticalbacon.de*",
-        "https://tacticalbacon.de*"
+        "https://tacticalbacon.de*",
+        "https://github.com/TacticalBaconDevs/*"
     };
 };

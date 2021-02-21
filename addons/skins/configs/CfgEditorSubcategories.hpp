@@ -5,19 +5,19 @@ class CfgEditorSubcategories
         displayName = "Polizei";
     };
 
-    class EdSubcat_TB_skins_Wald
+    class EdSubcat_TB_skins_Truppentransporter
     {
-        displayName = "Wald";
+        displayName = "Truppentransporter (TB)";
     };
 
-    class EdSubcat_TB_skins_Wueste
+    class EdSubcat_TB_skins_Panzer
     {
-        displayName = "Wüste";
+        displayName = "Panzer (TB)";
     };
 
     class EdSubcat_TB_skins_Fluggeraete
     {
-        displayName = "Fluggeräte";
+        displayName = "Fluggeräte (TB)";
     };
 
     class EdSubcat_TB_skins_PMC

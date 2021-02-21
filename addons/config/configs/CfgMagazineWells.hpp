@@ -38,4 +38,13 @@ class CfgMagazineWells
     {
         TB_20Rnd_570x28[] = {"TB_20Rnd_570x28"};
     };
+    class TB_magwell_40mm_FV510
+    {
+        TB_magwell_40mm_FV510[] =
+        {
+            "TB_mag_40Rnd_40mm_APFSDS",
+            "TB_mag_40Rnd_40mm_GPR",
+            "TB_mag_20Rnd_40mm_IR_Loal_missiles"
+        };
+    };
 };
