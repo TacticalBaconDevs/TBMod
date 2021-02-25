@@ -33,6 +33,7 @@ PRELOAD_ADDONS;
 #include "configs\ACE_detector.hpp"
 #include "configs\CBA_Stuff.hpp"
 #include "configs\CfgAmmo.hpp"
+#include "configs\CfgCloudlets.hpp"
 #include "configs\CfgCommands.hpp"
 #include "configs\CfgEditorCategories.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
