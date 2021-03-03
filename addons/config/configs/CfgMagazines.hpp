@@ -357,12 +357,14 @@ class CfgMagazines
     {
         ammo = "TB_ammo_40mm_GPR";
         count = 40;
+        muzzleImpulseFactor[] = {1,2}; // {1,6}
     };
 
     class TB_mag_40Rnd_40mm_APFSDS : 40Rnd_40mm_APFSDS_Tracer_Red_shells // 40mm APFSDS Magazine FV510 Warrior
     {
         ammo = "TB_ammo_40mm_APFSDS";
         count = 40;
+        muzzleImpulseFactor[] = {1,2}; // {0.5,2}
     };
 
     class 4Rnd_120mm_LG_cannon_missiles;

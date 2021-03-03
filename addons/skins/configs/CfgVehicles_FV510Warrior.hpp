@@ -144,9 +144,8 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
     {
         class HitHull : HitHull
         {
-            armor = 0.57; // 0.3 neuer Wert entspricht 513 HP
+            armor = 0.69; // 0.3 neuer Wert entspricht 621 HP
             explosionShielding = 0.35; // 0.2
-            minimalHit = 0.05; // 0.1
         };
     };
 
@@ -169,6 +168,7 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                 "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_GPR",
+                "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_20Rnd_40mm_IR_Loal_missiles",
                 "2000Rnd_762x51_Belt_T_Red"

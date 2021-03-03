@@ -668,6 +668,21 @@ class CfgWeapons
                 textureType = "fullAuto";
             };
         };
+        class GunParticles
+        {
+            class Effect
+            {
+                directionName = "Konec hlavne";
+                effectName = "AutoCannonFired";
+                positionName = "Usti hlavne";
+            };
+            class Shell
+            {
+                directionName = "gunnerview"; // "shell_eject_dir"
+                effectName = "TB_cloudlets_40mm_FV510"; // "MachineGun1"
+                positionName = "Konec hlavne"; // "shell_eject_pos"   Neu: End of Barrel
+            };
+        };
     };
 
     class LMG_coax;
@@ -689,6 +704,15 @@ class CfgWeapons
             multiplier = 1;
             reloadTime = 0.11;
             textureType = "fullAuto";
+        };
+        class GunParticles
+        {
+            class effect1
+            {
+                directionName = "konec hlavne3";
+                effectName = ""; // "MachineGunCloud"
+                positionName = "usti hlavne3";
+            };
         };
     };
 
