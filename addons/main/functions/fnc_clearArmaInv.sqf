@@ -10,7 +10,7 @@
 params ["_vehicle"];
 
 if !(alive _vehicle) exitWith {};
-if !(_vehicle getVariable [QGVAR(disableCargoCleanup), false]) exitWith {};
+if (_vehicle getVariable [QGVAR(disableCargoCleanup), false]) exitWith {};
 if (getNumber (configOf _vehicle >> QGVAR(disableCargoCleanup)) == 1) exitWith {};
 
 clearBackpackCargoGlobal _vehicle;
