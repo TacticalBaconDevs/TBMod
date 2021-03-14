@@ -108,6 +108,7 @@ class CfgVehicles
                     ADD_SUPPLY("Arztkiste",TB_supply_all_arzt);
                     ADD_SUPPLY("Ersatzreifen",ACE_Wheel);
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
+                    ADD_SUPPLY("Ersatztank",Land_CanisterFuel_F);
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
                     ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
