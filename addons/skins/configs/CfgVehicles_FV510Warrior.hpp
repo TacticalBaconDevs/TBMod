@@ -171,6 +171,7 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                 "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_20Rnd_40mm_IR_Loal_missiles",
+                "2000Rnd_762x51_Belt_T_Red",
                 "2000Rnd_762x51_Belt_T_Red"
             };
             class OpticsIn : Optics_Gunner_APC_02
