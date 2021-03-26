@@ -8,9 +8,9 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red,35);      // Standard GewehrMag
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,9);                 // DMRMag7.62 SR25
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m993_Mag,9);                     // DMRMag7.62 M14
+        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red,35);  // Standard GewehrMag
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,9);                  // DMRMag7.62 SR25
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m993_Mag,9);                      // DMRMag7.62 M14
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,7);                                // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,7);                                  // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_00Buck,7);                                // Schrotflinte
@@ -212,7 +212,7 @@ class TB_supply_usa_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan,12);
+        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull,12);
         MACRO_ADDMAGAZINE(SmokeShellBlue,1);
         MACRO_ADDMAGAZINE(SmokeShell,2);
     };

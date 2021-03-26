@@ -232,10 +232,11 @@ class CfgWeapons
                     passThrough = 0.2; // 0.3
                 };
             };
-            mass = 286.52; // 100
+            containerClass = "Supply160"; // "Supply120"
+            mass = 308.56; // 80
         };
-        descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
-        displayName = "SPS Tier 4 (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
+        descriptionShort = "Panzerungsstufe V"; // "Sprengstoffresistent"
+        displayName = "SPS (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
         //picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa"; // wird in TBMod_rhs gesetzt
     };
 
@@ -292,10 +293,11 @@ class CfgWeapons
                     passThrough = 0.2; // 0.3
                 };
             };
-            mass = 286.52; // 100
+            containerClass = "Supply160"; // "Supply140"
+            mass = 308.56; // 100
         };
-        descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
-        displayName = "SPS Tier 4 (OCP)"; // "Carrier GL Rig (MTP)"
+        descriptionShort = "Panzerungsstufe V"; // "Sprengstoffresistent"
+        displayName = "SPS (OCP)"; // "Carrier GL Rig (MTP)"
     };
 
     class V_EOD_base_F;
@@ -430,8 +432,8 @@ class CfgWeapons
     class TB_NVG_widescreen : ACE_NVG_Wide
     {
         author = "TBMod";
-        descriptionShort = "NVG Widescreen<br />Permission for use needed";
-        displayName = "NVG Widescreen<br />Permission for use needed";
+        descriptionShort = "NVG Wide (Permission for use needed)";
+        displayName = "NVG Wide (Permission for use needed)";
     };
 
     class DetectorCore;
