@@ -27,10 +27,10 @@ class CfgRecoils
     };
     class TB_recoil_mk48
     {
-        kickBack[] = {0.02,0.02};
-        muzzleOuter[] = {0,0.8,0.4,0.05};
-        permanent = 0.04;
-        temporary = 0.0025;
+        kickBack[] = {0.02,0.02}; // {0.01,0.03}
+        muzzleOuter[] = {0,0.8,0.4,0.05}; // {0.1,0.3,0.2,0.2}
+        permanent = 0.04; // "0.1*0.4"
+        temporary = 0.0025; // 0.005
     };
     class TB_recoil_mk16
     {

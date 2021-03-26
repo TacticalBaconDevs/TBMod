@@ -235,8 +235,8 @@ class CfgWeapons
             containerClass = "Supply160"; // "Supply120"
             mass = 308.56; // 80
         };
-        descriptionShort = "Panzerungsstufe V"; // "Sprengstoffresistent"
-        displayName = "SPS (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
+        descriptionShort = "Armor Level V D"; // "Sprengstoffresistent"
+        displayName = "SPS V D (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
         //picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa"; // wird in TBMod_rhs gesetzt
     };
 
@@ -296,8 +296,8 @@ class CfgWeapons
             containerClass = "Supply160"; // "Supply140"
             mass = 308.56; // 100
         };
-        descriptionShort = "Panzerungsstufe V"; // "Sprengstoffresistent"
-        displayName = "SPS (OCP)"; // "Carrier GL Rig (MTP)"
+        descriptionShort = "Armor Level V D"; // "Sprengstoffresistent"
+        displayName = "SPS V D (OCP)"; // "Carrier GL Rig (MTP)"
     };
 
     class V_EOD_base_F;
@@ -377,7 +377,8 @@ class CfgWeapons
             mass = 661.2;
         };
         author = "TBMod";
-        displayName = "Advanced Bomb Suit Vest";
+        descriptionShort = "Armor Level V E";
+        displayName = "Bomb Suit Vest V E";
     };
 
     class Uniform_Base;
@@ -389,7 +390,7 @@ class CfgWeapons
     {
         ACE_GForceCoef = 0;
         author = "TBMod";
-        displayName = "Advanced Bomb Suit";
+        displayName = "Bomb Suit";
 
         class ItemInfo : ItemInfo
         {
