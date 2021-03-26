@@ -23,7 +23,7 @@ if (GVAR(cacheWeaponType) == "MachineGun") then {ADD(_recoil, 2)};
 if (GVAR(cacheWeaponType) == "SniperRifle" && {_deploy}) then {ADD(_recoil, -0.5)};
 if ("rhs_weap_mk17" in (toLower _weapon)) then
 {
-    if (!"rhs_mag_20Rnd_SCAR_762x51_" in (toLower _magazine) && !"rhs_mag_30Rnd_556x45_Mk318_SCAR_" in (toLower _magazine)) then {ADD(_recoil, 0.5)};
+    if (!("rhs_mag_20Rnd_SCAR_762x51_" in (toLower _magazine) && !("rhs_mag_30Rnd_556x45_Mk318_SCAR_" in (toLower _magazine)))) then {ADD(_recoil, 0.5)};
 };
 
 // Externe Einflüsse

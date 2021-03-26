@@ -426,6 +426,14 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
+    class ACE_NVG_Wide;
+    class TB_NVG_widescreen : ACE_NVG_Wide
+    {
+        author = "TBMod";
+        descriptionShort = "NVG Widescreen<br />Permission for use needed";
+        displayName = "NVG Widescreen<br />Permission for use needed";
+    };
+
     class DetectorCore;
     class MineDetector : DetectorCore
     {
@@ -460,6 +468,7 @@ class CfgWeapons
         magazines[] = {"TB_mag_100Rnd_338_LS_Tracer"};
         magazineWell[] = {"TB_magwell_100Rnd_338"};
         modes[] = {"FullAutoLow","FullAutoHigh","close","short","medium","far_optic1","far_optic2"};
+        recoil = "TB_recoil_mk48";
         class short : close
         {
             dispersion = 0.00073;

@@ -67,6 +67,7 @@ private _allgemein = [
     "rhsusf_ANPVS_14",
     "rhsusf_ANPVS_15",
     "rhsusf_Rhino",
+    "TB_NVG_widescreen",
     "UK3CB_ANPVS7",
     "UK3CB_BAF_HMNVS",
 

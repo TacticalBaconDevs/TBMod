@@ -58,6 +58,7 @@ private _allgemein = [
     "rhsusf_ANPVS_14",
     "rhsusf_ANPVS_15",
     "rhsusf_Rhino",
+    "TB_NVG_widescreen",
 
     // Ferngläser
     "m24_bino",
@@ -233,8 +234,9 @@ private _allgemein_zweibein = [
     "rhsusf_acc_grip2_wd",
     "rhsusf_acc_grip1",
     "rhsusf_acc_harris_bipod",
-    "rhsusf_acc_grip3",
-    "rhsusf_acc_grip3_tan"
+    "rhsusf_acc_kac_grip",
+    "rhsusf_acc_rvg_blk",
+    "rhsusf_acc_rvg_de"
 ];
 
 private _AT_raketenwerfer = [
@@ -805,8 +807,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Gewehre
-            "rhs_weap_m240G",
-            "rhs_weap_m249_light_S",
+            "TB_weap_m240G",
+            "TB_weap_m240B",
+            "TB_weap_m249_light_S",
             "TB_weap_Mk48",
             "TB_weap_m27iar",
             
