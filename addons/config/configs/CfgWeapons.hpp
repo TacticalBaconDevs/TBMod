@@ -377,8 +377,8 @@ class CfgWeapons
             mass = 661.2;
         };
         author = "TBMod";
-        descriptionShort = "Armor Level V E";
-        displayName = "Bomb Suit Vest V E";
+        descriptionShort = "Armor Level IV E";
+        displayName = "Bomb Suit Vest IV E";
     };
 
     class Uniform_Base;
