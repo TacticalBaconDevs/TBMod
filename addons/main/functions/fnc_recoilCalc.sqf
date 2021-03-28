@@ -13,8 +13,9 @@ params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projecti
 if ((toLower _weapon) in ["throw", "put"] || !(_muzzle in [primaryWeapon _unit, handgunWeapon _unit])) exitWith {1};
 if (vehicle _unit != _unit) exitWith {0.1};
 
-private _suppressed = linearConversion [0, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 1, true];
-private _recoil = GVAR(recoilStart) + (getCustomAimCoef _unit) + _suppressed;
+private _suppressed = linearConversion [L_Suppress_Suppress_sys_intensity / 3, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 0.5, true];
+private _aimCoef = linearConversion [0, 5, getCustomAimCoef _unit, 0, 1, true];
+private _recoil = GVAR(recoilStart) + _aimCoef + _suppressed;
 private _deploy = isWeaponDeployed _unit;
 private _rested = isWeaponRested _unit;
 
@@ -23,7 +24,7 @@ if (GVAR(cacheWeaponType) == "MachineGun") then {ADD(_recoil, 2)};
 if (GVAR(cacheWeaponType) == "SniperRifle" && {_deploy}) then {ADD(_recoil, -0.5)};
 if ("rhs_weap_mk17" in (toLower _weapon)) then
 {
-    if (!"rhs_mag_20Rnd_SCAR_762x51_" in (toLower _magazine) && !"rhs_mag_30Rnd_556x45_Mk318_SCAR_" in (toLower _magazine)) then {ADD(_recoil, 0.5)};
+    if !("rhs_mag_20Rnd_SCAR_762x51_" in (toLower _magazine) || "rhs_mag_30Rnd_556x45_Mk318_SCAR_" in (toLower _magazine)) then {ADD(_recoil, 0.5)};
 };
 
 // Externe Einflüsse

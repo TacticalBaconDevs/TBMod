@@ -3,7 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-ace_microdagr_settingUseMils = true;
+// ace_microdagr_settingUseMils = true;
 
 
 // ### Gras entfernen - Von [14.JgKp]Ben@Arms
@@ -325,3 +325,22 @@ GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "S
     [],
     true
 ] call CBA_fnc_addClassEventHandler;
+
+
+// ### ACE Fehler überschreiben
+[missionNamespace, "ACE_setCustomAimCoef", "ACE_advanced_fatigue", {
+    private _unit = ACE_player;
+    private _fatigue = _unit getVariable ["ACE_advanced_fatigue_aimFatigue", 0];
+
+    switch (stance _unit) do {
+        case "PRONE": {
+            (1.0 + _fatigue ^ 2 * 0.1) * ACE_advanced_fatigue_swayFactor
+        };
+        case "CROUCH": {
+            (1.0 + _fatigue ^ 2 * 2.0) * ACE_advanced_fatigue_swayFactor
+        };
+        default {
+            (1.5 + _fatigue ^ 2 * 3.0) * ACE_advanced_fatigue_swayFactor
+        };
+    };
+}] call ace_common_fnc_arithmeticSetSource;

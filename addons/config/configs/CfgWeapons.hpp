@@ -232,10 +232,11 @@ class CfgWeapons
                     passThrough = 0.2; // 0.3
                 };
             };
-            mass = 286.52; // 100
+            containerClass = "Supply160"; // "Supply120"
+            mass = 308.56; // 80
         };
-        descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
-        displayName = "SPS Tier 4 (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
+        descriptionShort = "Armor Level V D"; // "Sprengstoffresistent"
+        displayName = "SPS V D (UCP)"; // "Boden-Luft-Granatwerfer-Tragegurt (Tarnfarbe)"
         //picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa"; // wird in TBMod_rhs gesetzt
     };
 
@@ -292,10 +293,11 @@ class CfgWeapons
                     passThrough = 0.2; // 0.3
                 };
             };
-            mass = 286.52; // 100
+            containerClass = "Supply160"; // "Supply140"
+            mass = 308.56; // 100
         };
-        descriptionShort = "Panzerungsstufe IV"; // "Sprengstoffresistent"
-        displayName = "SPS Tier 4 (OCP)"; // "Carrier GL Rig (MTP)"
+        descriptionShort = "Armor Level V D"; // "Sprengstoffresistent"
+        displayName = "SPS V D (OCP)"; // "Carrier GL Rig (MTP)"
     };
 
     class V_EOD_base_F;
@@ -375,7 +377,8 @@ class CfgWeapons
             mass = 661.2;
         };
         author = "TBMod";
-        displayName = "Advanced Bomb Suit Vest";
+        descriptionShort = "Armor Level IV E";
+        displayName = "Bomb Suit Vest IV E";
     };
 
     class Uniform_Base;
@@ -387,7 +390,7 @@ class CfgWeapons
     {
         ACE_GForceCoef = 0;
         author = "TBMod";
-        displayName = "Advanced Bomb Suit";
+        displayName = "Bomb Suit";
 
         class ItemInfo : ItemInfo
         {
@@ -426,6 +429,14 @@ class CfgWeapons
         displayName = "Beanie (Eric)";
     };
 
+    class ACE_NVG_Wide;
+    class TB_NVG_widescreen : ACE_NVG_Wide
+    {
+        author = "TBMod";
+        descriptionShort = "NVG Wide (Permission for use needed)";
+        displayName = "NVG Wide (Permission for use needed)";
+    };
+
     class DetectorCore;
     class MineDetector : DetectorCore
     {
@@ -460,6 +471,7 @@ class CfgWeapons
         magazines[] = {"TB_mag_100Rnd_338_LS_Tracer"};
         magazineWell[] = {"TB_magwell_100Rnd_338"};
         modes[] = {"FullAutoLow","FullAutoHigh","close","short","medium","far_optic1","far_optic2"};
+        recoil = "TB_recoil_mk48";
         class short : close
         {
             dispersion = 0.00073;
