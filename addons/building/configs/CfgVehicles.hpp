@@ -131,13 +131,6 @@ class CfgVehicles
                         EXCEPTIONS;
                         condition = "isClass (configfile >> 'CfgPatches' >> 'uns_main')";
 
-                        /*#define ADD_BIG_ITEM(BUILDING, DISPLAY, ZEIT, KOSTEN, KRAN, ROTATE) class TB_buildBig_##BUILDING \
-                            { \
-                                displayName = DISPLAY; \
-                                EXCEPTIONS; \
-                                statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] call FUNC(placePlaceablesBig)); \
-                            }*/
-
                         class TB_cat_uns_bunkers
                         {
                             displayName = "Bunker";
