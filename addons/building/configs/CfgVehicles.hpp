@@ -124,6 +124,51 @@ class CfgVehicles
                         ADD_BIG_ITEM(TB_Land_TTowerSmall_1_F, "FUNK-Antenne (60 Resourcen)", 30, 60, true, true);
                         ADD_BIG_ITEM(Land_Cargo_House_V3_F, "Container (60 Resourcen)", 15, 60, true, false);
                     };
+
+                    class GVAR(buildingsBuildPlaceablesUNS)
+                    {
+                        displayName = "Vietnam";
+                        EXCEPTIONS;
+                        condition = "isClass (configfile >> 'CfgPatches' >> 'uns_main')";
+
+                        /*#define ADD_BIG_ITEM(BUILDING, DISPLAY, ZEIT, KOSTEN, KRAN, ROTATE) class TB_buildBig_##BUILDING \
+                            { \
+                                displayName = DISPLAY; \
+                                EXCEPTIONS; \
+                                statement = QUOTE(['BUILDING', [ZEIT, KOSTEN], KRAN, ROTATE] call FUNC(placePlaceablesBig)); \
+                            }*/
+
+                        class TB_cat_uns_bunkers
+                        {
+                            displayName = "Bunker";
+
+                            ADD_BIG_ITEM(Land_Wood_Tower, "Wachturm (100 Resourcen)", 30, 100, true, true);
+                            ADD_BIG_ITEM(Land_Wood_Tower2, "Wachturm (geschützt) (150 Resourcen)", 40, 150, true, true);
+                            ADD_BIG_ITEM(LAND_CSJ_gunpit, "Sandsackstellung (150 Resourcen)", 30, 150, true, true);
+                            ADD_BIG_ITEM(LAND_uns_weapon_pit, "Kampfstand (300 Resourcen)", 50, 300, true, true);
+                            ADD_BIG_ITEM(LAND_sb_bunker_small, "Kleiner Bunker (50 Resourcen)", 15, 50, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_bunker2, "Großer Bunker (500 Resourcen)", 60, 500, true, true);
+                        };
+
+                        class TB_cat_uns_trench
+                        {
+                            displayName = "Sandsackgräben";
+
+                            ADD_BIG_ITEM(LAND_t_sb_20, "Langer Graben (300 Resourcen)", 50, 300, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_20_half, "Langer Graben (Hälfte) (150 Resourcen)", 30, 150, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_5, "Kurzer Graben (100 Resourcen)", 20, 100, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_5_half, "Kurzer Graben (Hälfte) (50 Resourcen)", 15, 50, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_5_covered, "Kurzer Graben (Abgedeckt) (125 Resourcen)", 25, 125, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_45, "45 Grad Ecke (250 Resourcen)", 40, 250, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_45_half, "45 Grad Ecke (Hälfte) (250 Resourcen)", 25, 125, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_cnr, "90 Grad Ecke (250 Resourcen)", 40, 250, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_cnr_half, "90 Grad Ecke (Hälfte) (125 Resourcen)", 25, 125, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_pit2, "Endstück (Abgedeckt) (100 Resourcen)", 30, 100, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_pit3, "Endstück (Groß) (300 Resourcen)", 40, 300, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_Cross, "Kreuzung (350 Resourcen)", 50, 350, true, true);
+                            ADD_BIG_ITEM(LAND_t_sb_Cross_half, "Kreuzung (Hälfte) (200 Resourcen)", 30, 200, true, true);
+                        };
+                    };
                 };
 
                 class GVAR(clearPlaceables)
