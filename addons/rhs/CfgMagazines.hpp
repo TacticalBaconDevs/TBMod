@@ -320,6 +320,7 @@ class CfgMagazines
     {
         displayname = "200rnd 5.56x45mm"; // "200rnd M249 Box M855"
         displaynameshort = "200rnd M249"; // "M855"
+        lastRoundsTracer = 10;
     };
 
     class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch : rhsusf_200Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855 Tracer
@@ -327,11 +328,13 @@ class CfgMagazines
         ammo = "rhs_ammo_556x45_M855_Ball_Red"; // "rhs_ammo_556x45_M855A1_Ball_Red"
         displayname = "200rnd 5.56x45mm (Tracer)"; // "200rnd M249 Box M855 (Mixed)"
         displaynameshort = "200rnd (Tracer)"; // "M855 (Mixed)"
+        lastRoundsTracer = 10; // 0
     };
 
     class rhsusf_50Rnd_762x51_m61_ap;
     class rhsusf_100Rnd_762x51_m61_ap : rhsusf_50Rnd_762x51_m61_ap // 100rnd M240 Box M61 AP
     {
+        lastRoundsTracer = 10;
         tracersEvery = 0; // 5
     };
 
@@ -340,7 +343,8 @@ class CfgMagazines
     {
         displayname = "100rnd M62 AP (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
         displayNameShort = "M62 AP (Tracer)"; // "M62 Tracer"
-        tracersEvery = 1; // 5
+        tracersEvery = 5; // 5
+        lastRoundsTracer = 10; // 0
     };
 
     class rhs_mag_100Rnd_556x45_Mk318_cmag;
@@ -348,7 +352,8 @@ class CfgMagazines
     {
         displayName = "100rnd Mk318 Mod 1 (Tracer)";
         displaynameshort = "100rnd (Tracer)";
-        tracersEvery = 2;
+        tracersEvery = 5;
+        lastRoundsTracer = 10; // 0
     };
 
     class TB_mag_100Rnd_556x45_Mk318_dim : TB_mag_100Rnd_556x45_Mk318_tracer // 100Rnd M27IAR DIM
@@ -356,7 +361,14 @@ class CfgMagazines
         ammo = "TB_ammo_556x45_Mk318_DIM";
         displayName = "100rnd Mk318 Mod 1 (DIM)";
         displaynameshort = "100rnd (DIM)";
-        tracersEvery = 2;
+        tracersEvery = 5;
+        lastRoundsTracer = 10; // 0
+    };
+
+    class 30Rnd_556x45_Stanag;
+    class rhs_mag_30Rnd_556x45_M855A1_Stanag : 30Rnd_556x45_Stanag // 30Rnd STANAG M855A1 alle Magazine
+    {
+        lastRoundsTracer = 5; // 0
     };
 
     class 6Rnd_ACE_Hellfire_AGM114K;
