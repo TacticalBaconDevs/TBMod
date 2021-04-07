@@ -371,6 +371,12 @@ class CfgMagazines
         lastRoundsTracer = 5; // 0
     };
 
+    class rhs_mag_30Rnd_556x45_Mk318_SCAR;
+    class rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull : rhs_mag_30Rnd_556x45_Mk318_SCAR // Mk16 Standardmunition
+    {
+        lastRoundsTracer = 5; // 0
+    };
+
     class 6Rnd_ACE_Hellfire_AGM114K;
     class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // ACE AGM-114K
     {
