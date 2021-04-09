@@ -128,7 +128,6 @@ class CfgVehicles
                     class GVAR(buildingsBuildPlaceablesUNS)
                     {
                         displayName = "Vietnam";
-                        EXCEPTIONS;
                         condition = "isClass (configfile >> 'CfgPatches' >> 'uns_main')";
 
                         class TB_cat_uns_bunkers
