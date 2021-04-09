@@ -479,7 +479,6 @@ private _dmr_munition = [
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
-    "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
     "rhsusf_5Rnd_762x51_m118_special_Mag",
     "rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull",
     "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"
