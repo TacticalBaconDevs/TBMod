@@ -17,6 +17,7 @@ PREP(fastRope);
 PREP(fileExists);
 PREP(firstJoin);
 PREP(forceRagdoll);
+PREP(html);
 PREP(initFOB);
 PREP(insertChildrenFlaggen);
 PREP(insertChildrenFOB);

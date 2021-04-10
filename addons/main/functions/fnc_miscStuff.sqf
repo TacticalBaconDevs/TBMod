@@ -246,10 +246,10 @@ ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
 
 
 // ### Highlight
-if (isNil "TB_highlightLog") then {TB_highlightLog = true};
+/*if (isNil "TB_highlightLog") then {TB_highlightLog = false};
 if (TB_highlightLog && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtension)}) then
 {
-    GVAR(highlightLog) = 1 == ('TBModExtension' callExtension ['registerlogger', ['highlight', '#HighlightLog.log']]) param [1, 0];
+    GVAR(highlightLog) = 1 == ('TBModExtensionHost' callExtension ['registerlogger', ['highlight', '#HighlightLog.log']]) param [1, 0];
 
     if (GVAR(highlightLog)) then
     {
@@ -260,11 +260,11 @@ if (TB_highlightLog && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtensio
 
             if (hasInterface && {_instigator in [player, ace_player]}) then
             {
-                "TBModExtension" callExtension ["logger", ["highlight", "KILLED", format ["%1 durch %2", typeOf _unit, _causeOfDeath]]];
+                "TBModExtensionHost" callExtension ["logger", ["highlight", "KILLED", format ["%1 durch %2", typeOf _unit, _causeOfDeath]]];
             };
         }] call CBA_fnc_addEventHandler;
     };
-};
+};*/
 
 
 // ### Vehicle in Vehicle

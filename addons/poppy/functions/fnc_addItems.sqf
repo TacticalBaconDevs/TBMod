@@ -11,7 +11,7 @@ params ["_unit", "_array"];
 
     for "_i" from 1 to _amount do
     {
-        if (_unit canAdd _item) then {_unit addItem _item}
+        if ([_unit, _item] call CBA_fnc_canAddItem) then {_unit addItem _item};
     };
 }
 forEach _array;

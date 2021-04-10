@@ -39,13 +39,13 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
     900
 ] call CBA_fnc_addPerFrameHandler;
 
-["CBA_loadingScreenDone", {
+/*["CBA_loadingScreenDone", {
     GVAR(initDone) = true;
 
     // ### DeadCauses
     if (!isNil QGVAR(loggingExtension) && GVAR(loggingExtension)) then
     {
-        GVAR(deadCauses) = 1 == ('TBModExtension' callExtension ["registerlogger", ["deadcauses", "#DeadCauses.log"]]) param [1, 0];
+        GVAR(deadCauses) = 1 == ('TBModExtensionHost' callExtension ["registerlogger", ["deadcauses", "#DeadCauses.log"]]) param [1, 0];
 
         if (GVAR(deadCauses)) then
         {
@@ -54,8 +54,8 @@ if (GVAR(crashHelfer)) then {[true] call FUNC(crashHelferServer)};
 
                 if (!isNull _killer && isNull _instigator) then {_instigator = effectiveCommander _killer};
 
-                "TBModExtension" callExtension ["logger", ["deadcauses", "KILLED", format ["%1(%2) von %3(%4) durch %5  --->  %6", [_unit] call ace_common_fnc_getName, typeOf _unit, [_instigator] call ace_common_fnc_getName, typeOf _instigator, _causeOfDeath, _this]]];
+                "TBModExtensionHost" callExtension ["logger", ["deadcauses", "KILLED", format ["%1(%2) von %3(%4) durch %5  --->  %6", [_unit] call ace_common_fnc_getName, typeOf _unit, [_instigator] call ace_common_fnc_getName, typeOf _instigator, _causeOfDeath, _this]]];
             }] call CBA_fnc_addEventHandler;
         };
     };
-}] call CBA_fnc_addEventHandler;
+}] call CBA_fnc_addEventHandler;*/

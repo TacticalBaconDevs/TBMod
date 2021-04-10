@@ -13,10 +13,11 @@ addMissionEventHandler ["ExtensionCallback", {
         private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
         diag_log _msg; // nur für Übergangsphase alles loggen
 
-        switch (_function) do
+        switch (toLower _function) do
         {
             case "spawn": {[] spawn (compile _data)};
             case "call": {[] call (compile _data)};
+            case "task"; // nur Tests
             case "log";
             case "error": {systemChat _msg};
         };
@@ -24,15 +25,18 @@ addMissionEventHandler ["ExtensionCallback", {
 }];
 
 // Extension laden
-private _return = "TBModExtension" callExtension "-";
+private _return = "TBModExtensionHost" callExtension "-";
 if (_return != "") then
 {
     diag_log format ["TBModExtensionInit: %1", _return];
 
-    GVAR(loggingExtension) = 1 == ("TBModExtension" callExtension ["check", ["TBModExtension_Logging"]]) param [1, 0];
+    GVAR(loggingExtension) = 1 == ("TBModExtensionHost" callExtension ["host", ["check", "Logging"]]) param [1, 0];
 
-    // Logger Module erstellen
-    GVAR(adminLog) = 1 == ('TBModExtension' callExtension ['registerlogger', ['adminlog', '#AdminLog.log']]) param [1, 0];
+    if (GVAR(loggingExtension)) then
+    {
+        // Logger Module erstellen
+        GVAR(adminLog) = 1 == ('TBModExtensionHost' callExtension ["logging", ["register", ["adminlog", "#AdminLog.log"]]]) param [1, 0];
+    };
 }
 else
 {
@@ -45,7 +49,7 @@ else
     {
         if (!isNil QGVAR(loggingExtension) && {GVAR(loggingExtension)} && {GVAR(adminLog)} && {isServer}) then
         {
-            "TBModExtension" callExtension ["logger", ["adminlog", "LOG", if (_this isEqualType []) then {format _this} else {_this}]];
+            "TBModExtensionHost" callExtension ["logging", ["#log", ["adminlog", "LOG", if (_this isEqualType []) then {format _this} else {_this}]]];
         };
     }
 ] call CBA_fnc_addEventHandler;

@@ -30,21 +30,13 @@ class CfgLoadouts
             {"ACE_morphine", 1}
         };
         face[] = {};
-        postLoadout = "systemchat 'Hi'";
+        postLoadout = "";
     };
 
-    class Allopfor : All {
+    class Allopfor : All
+    {
         uniform[] = {"U_O_Protagonist_VR"};
     };
-
-    class Allblufor : All {
-        uniform[] = {"U_B_Protagonist_VR"};
-    };
-
-    class Allind : All {
-        uniform[] = {"U_I_Protagonist_VR"};
-    };
-
     ADDCLASSLOADOUT(opfor,01);
     ADDCLASSLOADOUT(opfor,02);
     ADDCLASSLOADOUT(opfor,03);
@@ -56,6 +48,10 @@ class CfgLoadouts
     ADDCLASSLOADOUT(opfor,09);
     ADDCLASSLOADOUT(opfor,10);
 
+    class Allblufor : All
+    {
+        uniform[] = {"U_B_Protagonist_VR"};
+    };
     ADDCLASSLOADOUT(blufor,01);
     ADDCLASSLOADOUT(blufor,02);
     ADDCLASSLOADOUT(blufor,03);
@@ -67,6 +63,10 @@ class CfgLoadouts
     ADDCLASSLOADOUT(blufor,09);
     ADDCLASSLOADOUT(blufor,10);
 
+    class Allind : All
+    {
+        uniform[] = {"U_I_Protagonist_VR"};
+    };
     ADDCLASSLOADOUT(ind,01);
     ADDCLASSLOADOUT(ind,02);
     ADDCLASSLOADOUT(ind,03);
@@ -77,5 +77,20 @@ class CfgLoadouts
     ADDCLASSLOADOUT(ind,08);
     ADDCLASSLOADOUT(ind,09);
     ADDCLASSLOADOUT(ind,10);
+
+    class Allciv : All
+    {
+        uniform[] = {"U_C_Protagonist_VR"};
+    };
+    ADDCLASSLOADOUT(civ,01);
+    ADDCLASSLOADOUT(civ,02);
+    ADDCLASSLOADOUT(civ,03);
+    ADDCLASSLOADOUT(civ,04);
+    ADDCLASSLOADOUT(civ,05);
+    ADDCLASSLOADOUT(civ,06);
+    ADDCLASSLOADOUT(civ,07);
+    ADDCLASSLOADOUT(civ,08);
+    ADDCLASSLOADOUT(civ,09);
+    ADDCLASSLOADOUT(civ,10);
 
 };
