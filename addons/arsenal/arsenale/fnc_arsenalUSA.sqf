@@ -651,8 +651,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _HEDP_raketenwerfer +
         [
             // Weste
-            "rhsusf_iotv_ocp_Squadleader",
-            "rhsusf_iotv_ocp_Teamleader",
+            "TB_vest_iotv_ocp_teamleader_classIV",
             "TB_vest_iotv_ucp_teamleader_classIV",
             "rhsusf_mbav_mg",
             "rhsusf_spc_teamleader",
@@ -779,7 +778,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Westen
-            "rhsusf_iotv_ocp_Grenadier",
+            "TB_vest_iotv_ocp_grenadier_classIV",
             "TB_vest_iotv_ucp_grenadier_classIV",
             "rhsusf_mbav_Grenadier",
             "rhsusf_spc_rifleman",
@@ -824,7 +823,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_acc_saw_lw_bipod",
 
             // Westen
-            "rhsusf_iotv_ocp_SAW",
+            "TB_vest_iotv_ocp_mg_classIV",
             "TB_vest_iotv_ucp_mg_classIV",
             "rhsusf_mbav_mg",
             "rhsusf_spc_iar",
@@ -863,7 +862,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _moerser_munition +
         [
             // Westen
-            "rhsusf_iotv_ocp_SAW",
+            "TB_vest_iotv_ocp_mg_classIV",
             "TB_vest_iotv_ucp_mg_classIV",
             "rhsusf_mbav_mg",
             "rhsusf_spc_iar",
@@ -994,7 +993,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "optic_sos",
 
             // Weste
-            "rhsusf_iotv_ocp_Rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "TB_vest_iotv_ucp_rifleman_classIV",
             "rhsusf_mbav_Rifleman",
             "rhsusf_spc_rifleman",
@@ -1076,8 +1075,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_T_FullGhillie_tna_F",
 
             // Westen
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
             "rhsusf_mbav_rifleman",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_sniper",
@@ -1134,7 +1133,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_T_FullGhillie_tna_F",
 
             // Weste
-            "rhsusf_iotv_ocp_Grenadier",
+            "TB_vest_iotv_ocp_grenadier_classIV",
             "TB_vest_iotv_ucp_grenadier_classIV",
             "rhsusf_mbav_Grenadier",
             "rhsusf_spc_iar",
@@ -1189,7 +1188,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Westen
             "rhsusf_mbav_rifleman",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
@@ -1251,7 +1250,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Vesten
             "rhsusf_mbav_mg",
             "TB_vest_iotv_ucp_mg_classIV",
-            "rhsusf_iotv_ocp_SAW",
+            "TB_vest_iotv_ocp_mg_classIV",
             "rhsusf_spc_iar",
             "rhsusf_spcs_ocp_saw",
             "rhsusf_spcs_ucp_saw",
@@ -1286,7 +1285,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Vesten
             "rhsusf_mbav_rifleman",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
@@ -1324,7 +1323,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Weste
             "rhsusf_mbav_rifleman",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "rhsusf_spc_rifleman",
             "rhsusf_spcs_ocp_rifleman",
             "rhsusf_spcs_ucp_rifleman",
