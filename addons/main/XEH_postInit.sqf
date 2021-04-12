@@ -8,9 +8,26 @@ addMissionEventHandler ["ExtensionCallback", {
 
     if (_name isEqualTo "TBModExtension") then
     {
-        _data = if (_data select [0,1] == "[" && _data select [(count _data) - 1] == "]") then {parseSimpleArray _data} else {_data};
+        // underscore = multipart
+        private _multipartFind = _function find "_";
+        if (_multipartFind != -1) then
+        {
+            private _multipartId = _function select [_multipartFind + 1];
+            _function = _function select [0, _multipartFind];
 
-        private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
+            private _cache = missionNamespace getVariable [_multipartId, ""];
+            _data = _cache + _data;
+
+            if (_function != "multipart") exitWith {missionNamespace setVariable [_multipartId, nil]};
+
+            missionNamespace setVariable [_multipartId, _data];
+        };
+        if (_function == "multipart") exitWith {};
+
+        // parse with parseSimpleArray if _data is array
+        _data = if (_data select [0, 1] == "[" && _data select [(count _data) - 1] == "]") then {parseSimpleArray _data} else {_data};
+
+        private _msg = format ["[ExtensionCallback] %1 - %2", _function, _data];
         diag_log _msg; // nur für Übergangsphase alles loggen
 
         switch (toLower _function) do
