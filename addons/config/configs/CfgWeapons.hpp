@@ -184,7 +184,7 @@ class CfgWeapons
     {
         class ItemInfo;
     };
-    class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 4
+    class TB_vest_sps_ucp_classV : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 5
     {
         class ItemInfo : ItemInfo
         {
@@ -245,7 +245,7 @@ class CfgWeapons
     {
         class ItemInfo;
     };
-    class TB_vest_sps_ocp : V_PlateCarrierGL_mtp // SPS Schutzweste in OCP Tier 4
+    class TB_vest_sps_ocp_classV : V_PlateCarrierGL_mtp // SPS Schutzweste in OCP Tier 5
     {
         class ItemInfo : ItemInfo
         {
@@ -298,6 +298,94 @@ class CfgWeapons
         };
         descriptionShort = "Armor Level V D"; // "Sprengstoffresistent"
         displayName = "SPS V D (OCP)"; // "Carrier GL Rig (MTP)"
+    };
+
+    class Vest_Camo_Base;
+    class V_PlateCarrier1_blk : Vest_Camo_Base
+    {
+        class ItemInfo;
+    };
+    class TB_platecarrier_light_black_classIII : V_PlateCarrier1_blk
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply140"
+            mass = 114.608; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 16
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.3
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.3
+                };
+                class Chest
+                {
+                    armor = 22.5; // 16
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.3
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 16
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.3
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B"; // "Armor Level III"
+        displayName = "Platecarrier III B"; // "Carrier Lite (Black)"
+    };
+
+    class Vest_NoCamo_Base;
+    class V_TacVestIR_blk : Vest_NoCamo_Base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_tactical_black_classII : V_TacVestIR_blk
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply140"
+            mass = 35.264; // 50
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 8;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6; // 0.5
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.5
+                };
+                class Chest
+                {
+                    armor = 8;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.5
+                };
+                class Diaphragm
+                {
+                    armor = 8;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.5
+                };
+            };
+        };
+        descriptionShort = "Armor Level II B";
+        displayName = "Tactical Vest II B";
     };
 
     class V_EOD_base_F;
