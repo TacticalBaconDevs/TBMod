@@ -285,10 +285,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-        
             // Westen
             "gm_ge_vest_armor_90_medic_flk"
-
         ]
     };
 
