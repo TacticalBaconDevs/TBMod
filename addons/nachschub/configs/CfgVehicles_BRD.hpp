@@ -11,6 +11,7 @@ class TB_supply_BRD_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(gm_30Rnd_556x45mm_B_T_M856_stanag_gry,20);
+        MACRO_ADDMAGAZINE(gm_30Rnd_556x45mm_B_T_DM21_g36_blk,20);
         MACRO_ADDMAGAZINE(gm_20Rnd_762x51mm_B_T_DM21A2_g3_blk,20);
         MACRO_ADDMAGAZINE(gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn,6);
     };
@@ -37,7 +38,9 @@ class TB_supply_BRD_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf,5);
+        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm32_pzf3,5);
+        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm12_pzf3,5);
+        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm22_pzf3,5);
         MACRO_ADDMAGAZINE(gm_1Rnd_44x537mm_heat_dm32_pzf44_2,5);
     };
 };
