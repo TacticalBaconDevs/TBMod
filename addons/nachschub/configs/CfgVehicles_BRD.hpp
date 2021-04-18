@@ -34,13 +34,33 @@ class TB_supply_BRD_grena : WRAPPER_NAME(Box_NATO_Grenades_F)
 
 class TB_supply_BRD_launcherAmmo : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
-    PUBLIC_NAME_CAT("WerferMunition",BRD);
+    PUBLIC_NAME_CAT("Panzerfaust Munition",BRD);
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm32_pzf3,5);
-        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm12_pzf3,5);
-        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm22_pzf3,5);
+        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm32_pzf3,2);
+        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm12_pzf3,2);
+        MACRO_ADDMAGAZINE(gm_1Rnd_60mm_heat_dm22_pzf3,2);
         MACRO_ADDMAGAZINE(gm_1Rnd_44x537mm_heat_dm32_pzf44_2,5);
+    };
+};
+
+class TB_supply_BRD_oneUse_AA : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
+{
+    PUBLIC_NAME_CAT("O-U Werfer AA",BRD);
+
+    class TransportWeapons
+    {
+        MACRO_ADDWEAPON(gm_fim43_oli,10);
+    };
+};
+
+class TB_supply_BRD_oneUse_AT : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
+{
+    PUBLIC_NAME_CAT("O-U Werfer AT",BRD);
+
+    class TransportWeapons
+    {
+        MACRO_ADDWEAPON(gm_m72a3_oli,10);
     };
 };
