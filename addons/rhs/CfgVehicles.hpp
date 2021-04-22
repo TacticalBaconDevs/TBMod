@@ -926,16 +926,19 @@ class CfgVehicles
         accuracyDarkNightLightsOff = 0.0011; // 0.001
         accuracyNightLightsOff = 0.007; // 0.006
         accuracyNightLightsOn = 0.12; // 0.1
-        editorCategory = "EdCat_TB_MainCat";
-        editorSubcategory = "EdSubcat_TB_Spezial";
         armor = 55; // 50
         author = "TBMod";
         camouflage = 63; // 100
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";        
         incomingMissileDetectionSystem = 16; // 0
         irTargetSize = 0.74; // 0.9
         LockDetectionSystem = "2 + 8 + 4"; // 0
         nvScanner = 1; // 0
         radarTargetSize = 0.8; // 1
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
 
         class Components : Components
         {
