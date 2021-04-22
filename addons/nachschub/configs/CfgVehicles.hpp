@@ -312,7 +312,9 @@ class CfgVehicles
 
                     ADD_SUPPLY("Munition",TB_supply_brd_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_brd_grena);
-                    ADD_SUPPLY("WerferMunition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("Panzerfaust Munition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("O-U Werfer AA",TB_supply_BRD_oneUse_AA);
+                    ADD_SUPPLY("O-U Werfer AT",TB_supply_BRD_oneUse_AT);
                 };
 
                 class russ
