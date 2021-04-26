@@ -10,7 +10,7 @@ private _allgemein = [
     "rhs_balaclava1_olive",
     "rhs_balaclava",
     "rhs_facewear_6m2",
-    "rhs_facewear_6m2",
+    "rhs_facewear_6m2_1",
     // ### Vanilla
     //"G_Aviator",
 
