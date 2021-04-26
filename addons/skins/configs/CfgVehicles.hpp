@@ -1181,16 +1181,6 @@ class CfgVehicles
 
     ////////// Skins für Rucksäcke
 
-    // Skin schwarzer Rucksack Mittelgroß
-    class B_Kitbag_sgg;
-    class TB_backpacks_kitbag_black : B_Kitbag_sgg
-    {
-        displayName = "Ranzen (schwarz)";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_kitbag_black.paa)};
-        picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperHarness_blk_F_ca.paa"; // "\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_sgg"
-    };
-
     class B_Bergen_tna_F;
     class TB_backpacks_bergen_m81 : B_Bergen_tna_F
     {

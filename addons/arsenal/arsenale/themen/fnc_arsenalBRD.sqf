@@ -20,7 +20,7 @@ private _allgemein = [
     "gm_headgear_foliage_summer_forest_02",
     "gm_headgear_foliage_summer_forest_03",
     "gm_headgear_foliage_summer_forest_04",
-    "gm_gc_army_facewear_dustglasses",
+    "gm_ge_facewear_dustglasses",
 
     // Pistolen + Munition
     "gm_lp1_blk",
@@ -67,8 +67,6 @@ private _allgemein = [
     "AMP_Breaching_Charge_Mag",
 
     // Visiere
-    "gm_feroz24_blk",
-    "gm_feroz24_des",
     "gm_c79a1_oli",
     "gm_c79a1_blk",
     // ### AT Visire
@@ -78,69 +76,104 @@ private _allgemein = [
     "gm_feroz2x17_pzf44_2_win",
 
     //Granaten
-    "gm_smokeshell_wht_dm25",
-    "gm_smokeshell_blk_gc",
+    "gm_smokeshell_grn_dm21",
     "gm_smokeshell_red_dm23",
+    "gm_smokeshell_wht_dm25",
+    "gm_smokeshell_yel_dm26",
     "gm_smokeshell_org_dm32",
+    "gm_smokeshell_wht_dm25",
+    "gm_handgrenade_frag_dm51",
     "gm_handgrenade_frag_dm51a1",
-    "gm_handgrenade_frag_rgd5",
     "gm_handgrenade_conc_dm51",
+    "gm_handgrenade_conc_dm51a1",
 
     // SR-Funke
     "TFAR_anprc152"
 ];
 
 private _allgemein_Helm = [
-    "gm_ge_bgs_headgear_m35_53_net_blk",
+    /*"gm_ge_bgs_headgear_m35_53_net_blk",
     "gm_ge_headgear_m62_net",
     "gm_ge_headgear_m62_win_pap_01",
     "gm_dk_headgear_m52_net_win",
-    "gm_dk_headgear_m52_net_oli"
+    "gm_dk_headgear_m52_net_oli",*/
+
+    // 90 er
+    "gm_dk_headgear_m96_oli",
+    "gm_dk_headgear_m96_cover_m84",
+    "gm_dk_headgear_m96_cover_wht",
+    "gm_dk_headgear_m96_cover_wdl",
+    "gm_ge_headgear_m92_flk",
+    "gm_ge_headgear_m92_trp",
+    "gm_ge_headgear_m92_glasses_trp",
+    "gm_ge_headgear_m92_glasses_flk",
+    "gm_ge_headgear_m92_cover_win",
+    "gm_ge_headgear_m92_cover_glasses_win"
 ];
 
 private _allgemein_Uniform = [
-    "gm_ge_army_uniform_soldier_80_oli",
+    /*"gm_ge_army_uniform_soldier_80_oli",
     "gm_ge_army_uniform_soldier_80_ols",
     "gm_ge_army_uniform_soldier_parka_80_win",
     "gm_ge_army_uniform_soldier_parka_80_oli",
     "gm_ge_army_uniform_soldier_parka_80_ols",
-    "gm_ge_bgs_uniform_soldier_80_smp",
+    "gm_ge_bgs_uniform_soldier_80_smp",*/
 
+    // 90 er
+    "gm_ge_uniform_soldier_90_flk",
+    "gm_ge_uniform_soldier_90_trp",
+    "gm_ge_uniform_soldier_tshirt_90_trp",
+    "gm_ge_uniform_soldier_rolled_90_flk",
+    "gm_ge_uniform_soldier_rolled_90_trp",
+    "gm_ge_uniform_soldier_tshirt_90_flk",
+
+    // DK Army
     "gm_dk_army_uniform_soldier_84_oli",
     "gm_dk_army_uniform_soldier_84_win",
     "gm_dk_army_uniform_soldier_84_m84"
 ];
 
 private _allgemein_Westen = [
-    "gm_ge_bgs_vest_80_rifleman",
+    /*"gm_ge_bgs_vest_80_rifleman",
     "gm_dk_army_vest_54_rifleman",
     "gm_dk_army_vest_m00_win_rifleman",
     "gm_dk_army_vest_m00_m84_rifleman",
-    "gm_dk_army_vest_m00_wdl_rifleman"
+    "gm_dk_army_vest_m00_wdl_rifleman",*/
+
+    "gm_ge_vest_armor_90_rifleman_flk"
 ];
 
 private _allgemein_Rucksack = [
-    "gm_ge_army_backpack_80_oli",
-    "gm_dk_army_backpack_73_oli"
+    /*"gm_ge_army_backpack_80_oli",
+    "gm_dk_army_backpack_73_oli",*/
+    "gm_ge_army_backpack_90_flk",
+    "gm_ge_army_backpack_90_trp"
 ];
 
 private _allgemein_Waffen = [
-    "gm_g3a3_oli",
+    /*"gm_g3a3_oli",
     "gm_g3a3_grn",
-    "gm_g3a3_blk",
+    "gm_g3a3_blk",*/
     "gm_c7a1_oli",
-    "gm_c7a1_blk"
+    "gm_c7a1_blk",
+    "gm_g36a1_blk",
+    "gm_g36a1_des",
+    "gm_g36e_blk"
 
 ];
 
 private _allgemein_Magazine = [
-    "gm_20Rnd_762x51mm_B_T_DM21A1_g3_blk",
-    "gm_20Rnd_762x51mm_AP_DM151_g3_blk",
+    /*"gm_20Rnd_762x51mm_B_T_DM21A1_g3_blk",
+    "gm_20Rnd_762x51mm_AP_DM151_g3_blk",*/
+    "gm_30Rnd_556x45mm_B_T_DM21_g36_blk",
+    "gm_30Rnd_556x45mm_B_DM11_g36_blk",
     "gm_30Rnd_556x45mm_B_T_M856_stanag_gry",
-    "gm_30Rnd_556x45mm_B_M855_stanag_gry"
+    "gm_30Rnd_556x45mm_B_M855_stanag_gry",
+    "gm_30Rnd_556x45mm_B_T_DM21_g36_des",
+    "gm_30Rnd_556x45mm_B_DM11_g36_des"
 ];
 
-private _crew_Waffen = [
+private _crew_Munition = [
     "gm_30Rnd_9x19mm_B_DM51_mp5_blk",
     "gm_30Rnd_9x19mm_B_DM51_mp5a3_blk",
     "gm_30Rnd_9x19mm_B_DM11_mp5a3_blk",
@@ -149,8 +182,7 @@ private _crew_Waffen = [
     "gm_32Rnd_9x19mm_B_DM51_mp2_blk",
     "gm_32Rnd_9x19mm_B_DM11_mp2_blk"
 ];
-private _crew_Munition = [
-
+private _crew_Waffen = [
     "gm_pm63_blk",
     "gm_mp5sd3_blk",
     "gm_mp5sd2_blk",
@@ -163,9 +195,29 @@ private _crew_Munition = [
 ];
 
 private _aaat_munition = [
+    // PzF 84
     "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
     "gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf",
-    "gm_1Rnd_44x537mm_heat_dm32_pzf44_2"
+
+    // PzF 3
+    "gm_1Rnd_60mm_heat_dm32_pzf3",
+    "gm_1Rnd_60mm_heat_dm12_pzf3",
+    "gm_1Rnd_60mm_heat_dm22_pzf3",
+
+    //FIM-43
+    "gm_1Rnd_70mm_he_m585_fim43"
+];
+
+private _rifle_munition = [
+    // Unterlauf
+    "1Rnd_HE_Grenade_shell",
+    "3Rnd_Smoke_Grenade_shell_precise",
+
+    // 7,52
+    "gm_20Rnd_762x51mm_B_T_DM21A1_g3_blk",
+    "gm_20Rnd_762x51mm_B_T_DM21A1_g3_des",
+    "gm_20Rnd_762x51mm_AP_DM151_g3_blk",
+    "gm_20Rnd_762x51mm_AP_DM151_g3_des"
 ];
 
 private _LR = [
@@ -174,6 +226,7 @@ private _LR = [
     "OPXT_ogag_210",
     "OPXT_multicamt_210",
     "OPXT_oga_210",
+    "gm_ge_backpack_sem35_oli",
     // Winter
     "OPXT_multicama_210"
 ];
@@ -199,7 +252,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _LR +
         [
             // Kopf
-            "gm_ge_headgear_beret_crew_red_opcom"
+            "gm_ge_headgear_beret_crew_red_opcom",
+
+            // Weste
+            "gm_ge_vest_armor_90_leader_flk"
         ]
     };
 
@@ -214,7 +270,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _crew_Munition +
         _LR +
         [
-        
+            // Weste
+            "gm_ge_vest_armor_90_medic_flk"
         ]
     };
 
@@ -228,22 +285,30 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Waffen +
         _allgemein_Magazine +
         [
-        
+            // Westen
+            "gm_ge_vest_armor_90_medic_flk"
         ]
     };
 
     
 
-    case "grena":
+    case "rifle":      
     {
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Rucksack +
         _allgemein_Westen +
-        _allgemein_Waffen +
         _allgemein_Magazine +
+        _rifle_munition +
         [
+
+            // Waffen
+            "gm_g3a4_ebr_oli",
+            "gm_g3a4_ebr_des",
+            "gm_g3a4_ebr_blk",
+            "gm_hk69a1_blk",
+
             // Munition
             "gm_1rnd_67mm_heat_dm22a1_g3"
         ]
@@ -263,13 +328,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Magazine
             "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
             "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
-            "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
 
             // Westen
-            "gm_ge_army_vest_80_machinegunner",
+            /*"gm_ge_army_vest_80_machinegunner",
             "gm_dk_army_vest_54_machinegunner",
             "gm_dk_army_vest_m00_m84_machinegunner",
-            "gm_dk_army_vest_m00_win_machinegunner",
+            "gm_dk_army_vest_m00_win_machinegunner",*/
+
+            "gm_ge_vest_armor_90_machinegunner_flk",
 
             // Dreibein
             "gm_mg3_aatripod_weaponBag"
@@ -281,25 +347,19 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
-        _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _aaat_munition +
+        _rifle_munition +
         [
             // Magazine
             "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
             "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
-            "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
-            "gm_100Rnd_762x54mm_B_T_T46_pk_grn",
-            "gm_100Rnd_762x54mm_API_B32_pk_grn",
 
-            // AT
-            "gm_1Rnd_40mm_heat_pg7v_rpg7",
-            "gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf",
-            "gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf",
-            "gm_1Rnd_44x537mm_heat_dm32_pzf44_2",
+            // Westen
+            "gm_ge_vest_armor_90_machinegunner_flk",
 
             // Rucksack
-            "TB_backpacks_bergen_urban",
             "TB_backpacks_bergen_m81"
         ]
     };
@@ -310,14 +370,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Westen +
+        _allgemein_Rucksack +
         _allgemein_Waffen +
         _allgemein_Magazine +
+        _aaat_munition +
         [
             // AT
             "gm_pzf84_oli",
             "gm_pzf84_win",
-            "gm_pzf44_2_win",
-            "gm_pzf44_2_oli",
+            "gm_pzf3_blk",
+            "gm_fim43_oli",
 
             // Rucksack TOW
             "gm_fagot_launcher_weaponBag",
@@ -325,6 +387,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
         ]
     };
+
     case "pilot":
     {
         _allgemein +
@@ -357,13 +420,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
-        _allgemein_Westen +
+        _allgemein_Rucksack +
         _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
         [
             // Items
-            "MineDetector",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ToolKit",
@@ -371,6 +433,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Minensucher
             "ACE_VMH3",
             "ACE_VMM3",
+            "TB_MineDetector",
+
+            // Westen
+            "gm_ge_vest_armor_90_demolition_flk",
 
             // Minen
             "gm_mine_at_dm21",
@@ -395,16 +461,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Uniformen
             "gm_ge_army_uniform_crew_80_oli",
-            "gm_xx_uniform_soldier_bdu_80_wdl",
-            "gm_xx_uniform_soldier_bdu_rolled_80_wdl",
+            "gm_ge_army_uniform_crew_90_trp",
+            "gm_ge_army_uniform_crew_90_flk",
 
             // Westen
             "gm_ge_army_vest_pilot_oli",
             "gm_ge_army_vest_pilot_pads_oli",
 
-            // Items
-            "MineDetector",
+            "gm_ge_vest_armor_90_crew_flk",
 
+            // Items
+            "TB_MineDetector",
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ToolKit",
