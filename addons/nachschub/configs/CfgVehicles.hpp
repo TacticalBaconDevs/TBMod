@@ -108,7 +108,7 @@ class CfgVehicles
                     ADD_SUPPLY("Arztkiste",TB_supply_all_arzt);
                     ADD_SUPPLY("Ersatzreifen",ACE_Wheel);
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
-                    ADD_SUPPLY("Ersatztank",Land_CanisterFuel_F);
+                    ADD_SUPPLY("Ersatztank",GVAR(CanisterFuel));
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
                     ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
@@ -670,4 +670,21 @@ class CfgVehicles
     #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_BRD.hpp"
     #include "CfgVehicles_RUSS.hpp"
+
+    // ###################### KanisterFix ######################
+    class Land_CanisterFuel_F;
+    class GVAR(CanisterFuel) : Land_CanisterFuel_F
+    {
+        ace_dragging_canCarry = 1;
+        ace_dragging_carryDirection = 0;
+        ace_dragging_carryPosition[] = {0,1,1};
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 1;
+
+        destrType = "DestructNo";
+        transportFuel = 300;
+
+        class DestructionEffects {delete HouseDestr;};
+    };
+
 };

@@ -22,7 +22,7 @@ class CfgVehicles
             class AnyBrain;
         };
     };
-    class TB_zeus_base : Module_F
+    class GVAR(base) : Module_F
     {
         scope = 1;
         scopeCurator = 1;
@@ -36,51 +36,50 @@ class CfgVehicles
         author = "shukari";
         category = "TB_categorie_zeus_allgemein";
     };
-    class GVAR(base) : TB_zeus_base {};
 
-    class TB_zeus_nachschubAbwurf : TB_zeus_base
+    class GVAR(nachschubAbwurf) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "NachschubAbwurf";
         function = QFUNC(moduleNachschubAbwurf);
     };
 
-    class TB_zeus_prioSichtbarkeit : TB_zeus_base
+    class GVAR(prioSichtbarkeit) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "PrioSichtbarkeit";
         function = QFUNC(modulePrioSichtbarkeit);
     };
 
-    class TB_zeus_moduleUnflipVehicle : TB_zeus_base
+    class GVAR(moduleUnflipVehicle) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "Unflip Vehicle";
         function = QFUNC(moduleUnflipVehicle);
     };
 
-    class TB_zeus_adjustAceCargo : TB_zeus_base
+    class GVAR(adjustAceCargo) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "Adjust Ace Cargo space Loadout";
         function = QFUNC(moduleAdjustCargoSpace);
     };
 
-    class TB_zeus_limitDamage : TB_zeus_base
+    class GVAR(limitDamage) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "Limit Damage";
         function = QFUNC(moduleLimitDamage);
     };
 
-    class TB_zeus_switchMove : TB_zeus_base
+    class GVAR(switchMove) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "Animation abbrechen";
         function = QFUNC(moduleSwitchMove);
     };
 
-    class TB_zeus_defineAmmo : TB_zeus_base
+    class GVAR(defineAmmo) : GVAR(base)
     {
         scopeCurator = 2;
         displayName = "Define Ammo";
@@ -101,30 +100,38 @@ class CfgVehicles
         function = QFUNC(moduleSetViewDistance);
     };
 
-
     // ### Zeus KI
-    class TB_zeus_disablePath : TB_zeus_base
+    class GVAR(base_ki) : GVAR(base)
+    {
+        category = "TB_categorie_zeus_ki";
+    };
+
+    class GVAR(ki_disablePath) : GVAR(base_ki)
     {
         scopeCurator = 2;
         displayName = "DisablePath 4 Group";
         function = QFUNC(moduleDisablePath);
-        category = "TB_categorie_zeus_ki";
     };
 
-    class TB_zeus_handleAsPlayerMedical : TB_zeus_base
+    class GVAR(ki_handleAsPlayerMedical) : GVAR(base_ki)
     {
-        //scopeCurator = 2; // TODO: erstmal deaktiviert!!!
+        scopeCurator = 2;
         displayName = "HandlePlayerAsMedical";
         function = QFUNC(moduleHandleAsPlayerMedical);
-        category = "TB_categorie_zeus_ki";
     };
 
-    class TB_zeus_applyLoadout : TB_zeus_base
+    class GVAR(ki_applyLoadout) : GVAR(base_ki)
     {
         scopeCurator = 2;
         displayName = "Apply Loadout";
         function = QFUNC(moduleApplyLoadout);
-        category = "TB_categorie_zeus_ki";
+    };
+
+    class GVAR(ki_injured) : GVAR(base_ki)
+    {
+        scopeCurator = 2;
+        displayName = "Verletzten";
+        function = QEFUNC(eden,moduleInjured);
     };
 
 };

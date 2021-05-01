@@ -262,15 +262,15 @@ class CfgVehicles
 
 
     // ###################### Zeus Module ######################
-    class TB_zeus_base;
-    class TB_zeus_ressourcenFahrzeug : TB_zeus_base
+    class EGVAR(zeus,base);
+    class TB_zeus_ressourcenFahrzeug : EGVAR(zeus,base)
     {
         scopeCurator = 2;
         displayName = "Ressourcentruck setzen";
         function = QFUNC(moduleRessourcenFahrzeug);
         category = "TB_categorie_zeus_building";
     };
-    class TB_zeus_kranFahrzeug : TB_zeus_base
+    class TB_zeus_kranFahrzeug : EGVAR(zeus,base)
     {
         scopeCurator = 2;
         displayName = "Krantruck setzen";

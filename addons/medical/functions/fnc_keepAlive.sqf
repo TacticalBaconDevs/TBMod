@@ -1,0 +1,36 @@
+#include "../script_component.hpp"
+/*
+    Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
+    Developed by http://tacticalbacon.de
+
+    FNC: TBMod_medical_fnc_keepAlive
+    Example: ["add", _unit] call TBMod_medical_fnc_keepAlive
+*/
+params ["_mode", ["_args", []]];
+private _SELF = FUNC(keepAlive);
+
+switch (_mode) do
+{
+    case "init":
+    {
+        GVAR(keepAlive_units) = [];
+        GVAR(keepAlivePEFH) = [{
+            params ["_arg", "_idPFH"];
+
+            {
+                private _volume = _x getVariable ["ace_medical_bloodVolume", 6];
+                if (_volume < 4) then {_x setVariable ["ace_medical_bloodVolume", 4.5]};
+            }
+            forEach (GVAR(keepAlive_units) select {alive _x && "Unconscious" == [_x, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState});
+        }, 5] call CBA_fnc_addPerFrameHandler;
+    };
+
+    case "add":
+    {
+        if (isNil QGVAR(keepAlivePEFH)) then {["init"] call _SELF};
+
+        private _units = GVAR(keepAlive_units) select {alive _x};
+        _units pushBackUnique _args;
+        GVAR(keepAlive_units) = _units;
+    };
+};
