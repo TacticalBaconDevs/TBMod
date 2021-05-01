@@ -32,7 +32,7 @@ class ACE_ZeusActions
             };
         };
 
-        class VCOM
+        /*class VCOM
         {
             displayName = "VCOM";
             condition = "isClass (configfile >> ""CfgPatches"" >> ""VCOM_AI"")";
@@ -56,7 +56,7 @@ class ACE_ZeusActions
             ADD_OPTION(Unterstützung rufen, VCM_TOUGHSQUAD);
             ADD_OPTION(Formationswechsel, VCM_DisableForm);
             ADD_OPTION(Skillwechsel, VCM_Skilldisable);
-        };
+        };*/
     };
 
     class ZeusUnits {};

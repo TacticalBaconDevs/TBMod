@@ -19,7 +19,10 @@ switch (_mode) do
 
             {
                 private _volume = _x getVariable ["ace_medical_bloodVolume", 6];
-                if (_volume < 4) then {_x setVariable ["ace_medical_bloodVolume", 4.5]};
+                if (_volume < 4.2) then {_x setVariable ["ace_medical_bloodVolume", 4.7, true]};
+
+                private _cardiacArrestTimeLeft = _x getVariable ["ace_medical_statemachine_cardiacArrestTimeLeft", 0];
+                if (_cardiacArrestTimeLeft > 0) then {_x setVariable ["ace_medical_statemachine_cardiacArrestTimeLeft", 10 * 60, true]};
             }
             forEach (GVAR(keepAlive_units) select {alive _x && "Unconscious" == [_x, ace_medical_STATE_MACHINE] call CBA_statemachine_fnc_getCurrentState});
         }, 5] call CBA_fnc_addPerFrameHandler;
