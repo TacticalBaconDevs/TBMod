@@ -14,7 +14,7 @@ if (isClass (_patches >> "uns_main")) exitWith {call FUNC(arsenalUSAVietnam)};
 
 if (_side == blufor) exitWith
 {
-    call (switch (worldname) do
+    call (switch (worldName) do
     {
     case "gm_weferlingen_summer":{FUNC(arsenalBRD)};
     case "gm_weferlingen_winter":{FUNC(arsenalBRD)};

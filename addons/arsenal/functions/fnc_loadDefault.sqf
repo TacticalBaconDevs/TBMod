@@ -167,15 +167,14 @@ if (_arsenalType == "Themen") exitWith
             }
             else
             {
+                // SOG
                 private _layout = switch (_rolle) do
                 {
                     case "lead": {[]};
                     case "rifle": {[]};
                     case "arzt": {[]};
                     case "pilot": {[]};
-                    case "jtac": {[]};
                     case "mg": {[]};
-                    case "aaat": {[]};
                     case "trag": {[]};
                     case "pionier" : {[]};
                     default {[]};

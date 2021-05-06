@@ -24,11 +24,20 @@ if (_arsenalType == "Themen") then
 
     if (_side == blufor) exitWith
     {
-        if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
+        if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter", "Cam_Lao_Nam"]) then
         {
-            // BRD
-            TB_blacklistRollen_themen = ["spreng", "dmr", "sniper", "spotter", "grena"];
-            TB_customName_themen = ["Truppführer","","Kampfsanitäter","MG3-Schütze","","Anti-Tank","Muniträger","","Pilot","","","Besatzung","Feldarzt","Waffenspez","Sprengspezialist"];
+            if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
+                {
+                    // BRD
+                    TB_blacklistRollen_themen = ["spreng", "dmr", "sniper", "spotter", "grena"];
+                    TB_customName_themen = ["Truppführer","","Kampfsanitäter","MG3-Schütze","","Anti-Tank","Muniträger","","Pilot","","","Besatzung","Feldarzt","Waffenspez","Sprengspezialist"];
+                }
+                else
+                {
+                    // SOG
+                    TB_blacklistRollen_themen = ["spreng","aaat", "dmr", "sniper", "spotter", "jtac"];
+                    TB_customName_themen = ["Truppführer","Grenadier","Kampfsanitäter","MG3-Schütze","","","Muniträger","","Pilot","","","","Feldarzt","Waffenspez","Sprengspezialist"];
+                };
         }
         else
         {

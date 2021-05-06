@@ -256,6 +256,16 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         ]
     };
 
+    case "grena":
+    {
+        _allgemein +
+        _allgemein_magazine +
+        _allgemein_westen +
+        _allgemein_Rucksack +
+        [
+        ]
+    };
+
     
 
     case "rifle":      
