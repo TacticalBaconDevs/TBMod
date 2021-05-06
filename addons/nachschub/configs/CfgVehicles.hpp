@@ -317,6 +317,15 @@ class CfgVehicles
                     ADD_SUPPLY("O-U Werfer AT",TB_supply_BRD_oneUse_AT);
                 };
 
+                class sog
+                {
+                    displayName = "SOG";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY("Munition",TB_supply_sog_ammo);
+                };
+
                 class russ
                 {
                     displayName = "RUSS";
