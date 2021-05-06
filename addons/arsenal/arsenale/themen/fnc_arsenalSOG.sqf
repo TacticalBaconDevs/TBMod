@@ -39,6 +39,7 @@ private _allgemein = [
     "vn_c_headband_04",
     "vn_b_headband_04",
     "vn_b_headband_02",
+    "G_Bandanna_beast",
 
     // Pistolen + Munition + Zubehör
     "vn_p38s",
@@ -59,13 +60,15 @@ private _allgemein = [
     "vn_m1911_mag",
     "vn_m712_mag",
     "vn_mk22",
+    "vn_mk22_mag",
     "vn_tt33_mag",
 
     "vn_s_mk22",
     "vn_s_m1911",
     "vn_s_m1895",
 
-    // Fallschirme
+    // One Use
+    "vn_m72",
 
     // Items
     "ItemMap",
@@ -103,7 +106,6 @@ private _allgemein = [
     "ACE_M84",
 
     // SR-Funke
-    "TFAR_anprc152",
     "vn_b_item_radio_urc10"
 ];
 
@@ -183,12 +185,19 @@ private _mp_Munition = [
     "vn_mc10_t_mag"
 ];
 
+private _grenadier_munition = [
+    "vn_40mm_m381_he_mag",
+    "vn_40mm_m397_ab_mag",
+    "vn_40mm_m406_he_mag",
+    "vn_40mm_m433_hedp_mag",
+    "vn_40mm_m651_cs_mag",
+    "vn_40mm_m680_smoke_w_mag",
+    "vn_40mm_m682_smoke_r_mag",
+    "vn_40mm_m583_flare_w_mag"
+];
+
 private _LR = [
     // Sommer
-    "OPXT_ogao_210",
-    "OPXT_ogag_210",
-    "OPXT_multicamt_210",
-    "OPXT_oga_210",
     "vn_b_pack_lw_06",
     "vn_b_pack_prc77_01"
 ];
@@ -207,7 +216,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein +
         _allgemein_Helm +
         _allgemein_Uniform +
-        _allgemein_Rucksack +
         _allgemein_Westen +
         _allgemein_Waffen +
         _allgemein_Magazine +
@@ -259,10 +267,21 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "grena":
     {
         _allgemein +
-        _allgemein_magazine +
-        _allgemein_westen +
+        _allgemein_Helm +
+        _allgemein_Uniform +
+        _allgemein_Westen +
         _allgemein_Rucksack +
+        _allgemein_Magazine +
+        _grenadier_munition +
         [
+            // Waffen
+            "vn_m16_xm148",
+            "vn_xm177_xm148",
+            "vn_xm177_xm148_camo",
+
+            // Weste
+            "vn_b_vest_usarmy_05"
+
         ]
     };
 
@@ -291,7 +310,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Munition
             "vn_m40a1_t_mag",
-            "vn_m14_mag"
+            "vn_m14_mag",
+
+            // Weste
+            "vn_b_vest_usarmy_04"
 
         ]
     };
@@ -345,7 +367,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     case "pilot":
     {
         _allgemein +
-        _LR +
         _mp_Waffen +
         _mp_Munition +
         [
@@ -380,9 +401,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "vn_b_helmet_t56_02_02",
             "vn_b_helmet_t56_01_03",
             "vn_b_helmet_t56_02_03",
+            "vn_b_acc_ms22001_01",
             
-             // items
-            "ToolKit"
+             // items + LR
+            "ToolKit",
+            "vn_b_pack_prc77_01"
         ]
     };
 
@@ -400,6 +423,22 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_M26_Clacker",
             "ACE_DefusalKit",
             "ToolKit",
+            // ### Minen
+            "vn_mine_m112_remote_mag",
+            "vn_mine_m15_mag",
+            "vn_mine_m16_mag",
+            "vn_mine_tripwire_m49_04_mag",
+            "vn_mine_tripwire_f1_04_mag",
+            "vn_mine_satchel_remote_02_mag",
+            "vn_mine_tm57_mag",
+            "vn_mine_m18_x3_range_mag",
+            "vn_mine_m18_x3_mag",
+            "vn_mine_m14_mag",
+            
+
+
+            // Weste
+            "vn_b_vest_sog_03",
 
             // Minensucher
             "ACE_VMH3",

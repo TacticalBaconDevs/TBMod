@@ -36,7 +36,7 @@ if (_arsenalType == "Themen") then
                 {
                     // SOG
                     TB_blacklistRollen_themen = ["spreng","aaat", "dmr", "sniper", "spotter", "jtac"];
-                    TB_customName_themen = ["Truppführer","Grenadier","Kampfsanitäter","MG3-Schütze","","","Muniträger","","Pilot","","","","Feldarzt","Waffenspez","Sprengspezialist"];
+                    TB_customName_themen = ["Truppführer","Grenadier","Kampfsanitäter","MG-Schütze","","","Muniträger","","Pilot","","","","Feldarzt","Heckenschütze","Sprengspezialist"];
                 };
         }
         else
