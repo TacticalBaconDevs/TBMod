@@ -14,13 +14,13 @@ if (isClass (_patches >> "uns_main")) exitWith {call FUNC(arsenalUSAVietnam)};
 
 if (_side == blufor) exitWith
 {
-    call (switch (worldName) do
+    switch (worldName) do
     {
-    case "gm_weferlingen_summer":{FUNC(arsenalBRD)};
-    case "gm_weferlingen_winter":{FUNC(arsenalBRD)};
-    case "Cam_Lao_Nam": {FUNC(arsenalSOG)};
-    default {FUNC(arsenalVANILLACOP)};
-    });
+        case "gm_weferlingen_summer":{call FUNC(arsenalBRD)};
+        case "gm_weferlingen_winter":{call FUNC(arsenalBRD)};
+        case "Cam_Lao_Nam": {call FUNC(arsenalSOG)};
+        default {call FUNC(arsenalVANILLACOP)};
+    };
 };
 
 if (_side == independent) exitWith {call FUNC(arsenalLDF)};
