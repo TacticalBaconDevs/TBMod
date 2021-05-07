@@ -16,8 +16,8 @@ if (_side == blufor) exitWith
 {
     switch (worldName) do
     {
-        case "gm_weferlingen_summer":{call FUNC(arsenalBRD)};
-        case "gm_weferlingen_winter":{call FUNC(arsenalBRD)};
+        case "gm_weferlingen_summer";
+        case "gm_weferlingen_winter": {call FUNC(arsenalBRD)};
         case "Cam_Lao_Nam": {call FUNC(arsenalSOG)};
         default {call FUNC(arsenalVANILLACOP)};
     };
