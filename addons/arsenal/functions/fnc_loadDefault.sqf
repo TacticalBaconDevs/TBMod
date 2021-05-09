@@ -142,10 +142,10 @@ if (_arsenalType == "Themen") exitWith
 
     if (_side == blufor) exitWith
     {
-        if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter", "Cam_Lao_Nam"]) then
+        private _worldName = toLower worldName;
+        if (_worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter", "cam_lao_nam"]) then
         {
-            
-            if (worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
+            if (_worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
             {
                 // BRD
                 private _layout = switch (_rolle) do
