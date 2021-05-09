@@ -170,6 +170,7 @@ private _allgemein_Magazine = [
     "vn_m16_40_t_mag",
     "vn_m16_20_t_mag",
     "vn_m16_30_t_mag",
+    "vn_m63a_30_t_mag",
     "vn_m1897_fl_mag",
     "vn_m1897_buck_mag"
 ];
@@ -199,7 +200,7 @@ private _grenadier_munition = [
     "vn_40mm_m682_smoke_r_mag",
     "vn_40mm_m583_flare_w_mag",
 
-    // Gewehrgranate
+    // Gewehrgranate für Waffenspez
     "vn_22mm_lume_mag",
     "vn_22mm_cs_mag",
     "vn_22mm_m17_frag_mag",
@@ -294,7 +295,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Weste
             "vn_b_vest_usarmy_05"
-
         ]
     };
 
@@ -308,14 +308,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Rucksack +
         _allgemein_Westen +
         _allgemein_Magazine +
+        _grenadier_munition +
         [
-
             // Waffen
             "vn_m40a1_camo",
             "vn_o_9x_m40a1",
             "vn_b_camo_m40a1",
 
             "vn_m1carbine_gl",
+            "vn_o_3x_m84",
 
             "vn_m14_camo",
             "vn_b_m14",
@@ -330,7 +331,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Weste
             "vn_b_vest_usarmy_04"
-
         ]
     };
 
@@ -451,8 +451,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "vn_mine_m18_x3_mag",
             "vn_mine_m14_mag",
             
-
-
             // Weste
             "vn_b_vest_sog_03",
 

@@ -10,9 +10,13 @@ class TB_supply_sog_ammo : WRAPPER_NAME(Box_IND_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red,35);  // Standard GewehrMag
-        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,9);                  // DMR Mag
-        MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,7);                                // Schrotflinte
+        MACRO_ADDMAGAZINE(vn_m16_30_t_mag,25);       // Standard GewehrMag
+        MACRO_ADDMAGAZINE(vn_m63a_30_t_mag,25);
+        MACRO_ADDMAGAZINE(vn_mat49_vc_mag,15);       // MP Mag
+        MACRO_ADDMAGAZINE(vn_mat49_t_mag,15);
+        MACRO_ADDMAGAZINE(vn_mc10_t_mag,15);
+        MACRO_ADDMAGAZINE(vn_m1897_fl_mag,20);       // Schrotflinte
+        MACRO_ADDMAGAZINE(vn_m1897_buck_mag,20);                          
     };
 };
 
@@ -22,7 +26,7 @@ class TB_supply_sog_ammo_m60 : WRAPPER_NAME(Box_IND_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,12);       // MG Mag
+        MACRO_ADDMAGAZINE(vn_m60_100_mag,12);       // MG Mag
     };
 };
 
@@ -32,10 +36,14 @@ class TB_supply_sog_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
-        MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(TB_mag_45_FMJ,15);
+        MACRO_ADDMAGAZINE(vn_m10_mag,15);
+        MACRO_ADDMAGAZINE(vn_hp_mag,15);
+        MACRO_ADDMAGAZINE(vn_izh54_so_mag,15);
+        MACRO_ADDMAGAZINE(vn_m1895_mag,15);
+        MACRO_ADDMAGAZINE(vn_m1911_mag,15);
+        MACRO_ADDMAGAZINE(vn_m712_mag,15);
+        MACRO_ADDMAGAZINE(vn_mk22_mag,15);
+        MACRO_ADDMAGAZINE(vn_tt33_mag,15);
     };
 };
 
@@ -45,7 +53,13 @@ class TB_supply_sog_grena : WRAPPER_NAME(Box_IND_Grenades_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(SmokeShell,15);
+        MACRO_ADDMAGAZINE(vn_f1_grenade_mag,15);
+        MACRO_ADDMAGAZINE(vn_m18_white_mag,15);
+        MACRO_ADDMAGAZINE(vn_m18_red_mag,15);
+        MACRO_ADDMAGAZINE(vn_m18_green_mag,15);
+        MACRO_ADDMAGAZINE(vn_m34_grenade_mag,15);
+        MACRO_ADDMAGAZINE(vn_m61_grenade_mag,15);
+        MACRO_ADDMAGAZINE(ACE_M84,15);
 
     };
 };
@@ -57,14 +71,19 @@ class TB_supply_sog_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     class TransportMagazines
     {
         // Unterlauf
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,25);
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,15);
+        MACRO_ADDMAGAZINE(vn_40mm_m381_he_mag,25);
+        MACRO_ADDMAGAZINE(vn_40mm_m397_ab_mag,15);
+        MACRO_ADDMAGAZINE(vn_40mm_m433_hedp_mag,15);
 
         // Rauch
-        MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell_precise,4);
+        MACRO_ADDMAGAZINE(vn_40mm_m680_smoke_w_mag,6);
+        MACRO_ADDMAGAZINE(vn_40mm_m682_smoke_r_mag,6);
 
         // Gewehrgranaten
-        MACRO_ADDMAGAZINE(TB_rhs_mag_M585_white,4);
+        MACRO_ADDMAGAZINE(vn_22mm_m9_heat_mag,8);
+        MACRO_ADDMAGAZINE(vn_22mm_m22_smoke_mag,8);
+        MACRO_ADDMAGAZINE(vn_22mm_m19_wp_mag,8);
+        MACRO_ADDMAGAZINE(vn_22mm_m1a2_frag_mag,8);
 
     };
 };
@@ -75,17 +94,12 @@ class TB_supply_sog_praezision : WRAPPER_NAME(Box_East_Wps_F)
 
     class TransportMagazines
     {
-        // 12.7
-        MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,8);
-        MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,8);
+        // 7,62 x 33
+        MACRO_ADDMAGAZINE(vn_carbine_30_t_mag,15);
 
-        // 8.6
-        MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_Tracer,8);
-        MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_DIM,8);
-
-        // DMR7.62
-        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,8);
-        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,16);
+        // 7,62 x 51
+        MACRO_ADDMAGAZINE(vn_m14_mag,15);
+        MACRO_ADDMAGAZINE(vn_m40a1_t_mag,15);
     };
 };
 
