@@ -161,13 +161,17 @@ private _allgemein_Waffen = [
     "vn_xm177_stock",
     "vn_xm177_stock_camo",
     "vn_xm177_camo",
-    "vn_xm177_fg"
+    "vn_xm177_fg",
+    "vn_m1897",
+    "vn_b_m1897"
 ];
 
 private _allgemein_Magazine = [
     "vn_m16_40_t_mag",
     "vn_m16_20_t_mag",
-    "vn_m16_30_t_mag"
+    "vn_m16_30_t_mag",
+    "vn_m1897_fl_mag",
+    "vn_m1897_buck_mag"
 ];
 
 private _mp_Waffen = [
@@ -193,7 +197,16 @@ private _grenadier_munition = [
     "vn_40mm_m651_cs_mag",
     "vn_40mm_m680_smoke_w_mag",
     "vn_40mm_m682_smoke_r_mag",
-    "vn_40mm_m583_flare_w_mag"
+    "vn_40mm_m583_flare_w_mag",
+
+    // Gewehrgranate
+    "vn_22mm_lume_mag",
+    "vn_22mm_cs_mag",
+    "vn_22mm_m17_frag_mag",
+    "vn_22mm_m19_wp_mag",
+    "vn_22mm_m1a2_frag_mag",
+    "vn_22mm_m22_smoke_mag",
+    "vn_22mm_m9_heat_mag"
 ];
 
 private _LR = [
@@ -302,6 +315,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "vn_o_9x_m40a1",
             "vn_b_camo_m40a1",
 
+            "vn_m1carbine_gl",
+
             "vn_m14_camo",
             "vn_b_m14",
             "vn_o_9x_m14",
@@ -311,6 +326,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Munition
             "vn_m40a1_t_mag",
             "vn_m14_mag",
+            "vn_carbine_30_t_mag",
 
             // Weste
             "vn_b_vest_usarmy_04"
