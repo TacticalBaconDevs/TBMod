@@ -331,6 +331,7 @@ class CfgVehicles
                     ADD_SUPPLY("Pistolen Munition",TB_supply_sog_ammoSmall);
                     ADD_SUPPLY("Präzisions Munition",TB_supply_sog_praezision);
                     ADD_SUPPLY("One Use Law",TB_supply_sog_oneUse_AT);
+                    ADD_SUPPLY("Nachtkiste",TB_supply_sog_night);
                 };
 
                 class russ

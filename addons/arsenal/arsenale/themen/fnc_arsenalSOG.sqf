@@ -200,6 +200,8 @@ private _grenadier_munition = [
     "vn_40mm_m680_smoke_w_mag",
     "vn_40mm_m682_smoke_r_mag",
     "vn_40mm_m583_flare_w_mag",
+    "vn_40mm_m661_flare_g_mag",
+    "vn_40mm_m662_flare_r_mag",
 
     // Gewehrgranate für Waffenspez
     "vn_22mm_lume_mag",

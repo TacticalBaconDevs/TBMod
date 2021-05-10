@@ -127,3 +127,24 @@ class TB_supply_sog_oneUse_AT : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
         MACRO_ADDWEAPON(vn_m72,6);
     };
 };
+
+class TB_supply_sog_night : WRAPPER_NAME(Box_East_Support_F)
+{
+    PUBLIC_NAME_CAT("Nachtkiste",SOG);
+    hiddenSelectionsTextures[] = {
+        QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
+        QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
+    };
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(vn_40mm_m583_flare_w_mag,30);
+        MACRO_ADDMAGAZINE(vn_40mm_m661_flare_g_mag,15);
+        MACRO_ADDMAGAZINE(vn_40mm_m662_flare_r_mag,15);
+    };
+
+    class TransportWeapons
+    {
+        MACRO_ADDWEAPON(vn_m79_p,8);
+    };
+};
