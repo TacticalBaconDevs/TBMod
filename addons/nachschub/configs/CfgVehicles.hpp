@@ -317,6 +317,23 @@ class CfgVehicles
                     ADD_SUPPLY("O-U Werfer AT",TB_supply_BRD_oneUse_AT);
                 };
 
+                class sog
+                {
+                    displayName = "SOG";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY("Munition",TB_supply_sog_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_sog_grena);
+                    ADD_SUPPLY("MG-Munition",TB_supply_sog_ammo_m60);
+                    ADD_SUPPLY("Unterlauf",TB_supply_sog_unterlauf);
+                    ADD_SUPPLY("Stinger",TB_supply_sog_9K32_Strela);
+                    ADD_SUPPLY("Pistolen Munition",TB_supply_sog_ammoSmall);
+                    ADD_SUPPLY("Präzisions Munition",TB_supply_sog_praezision);
+                    ADD_SUPPLY("One Use Law",TB_supply_sog_oneUse_AT);
+                    ADD_SUPPLY("Nachtkiste",TB_supply_sog_night);
+                };
+
                 class russ
                 {
                     displayName = "RUSS";
@@ -669,6 +686,7 @@ class CfgVehicles
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_BRD.hpp"
+    #include "CfgVehicles_SOG.hpp"
     #include "CfgVehicles_RUSS.hpp"
 
     // ###################### KanisterFix ######################
