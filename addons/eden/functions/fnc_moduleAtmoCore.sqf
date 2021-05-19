@@ -16,12 +16,12 @@ _input params [
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {
     // Check for LZ Module
-    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "TB_eden_atmoReinforcementLZ"};
+    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf QGVAR(atmoReinforcementLZ)};
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoCore-Modul braucht ein AtmoLZ-Modul gesynct!"};
     private _lzLogic = selectRandom _syncObjs;
 
     // Check for EndPoints Module
-    _syncObjs = ((synchronizedObjects _lzLogic) + (synchronizedObjects _logic)) select {_x isKindOf "TB_eden_atmoReinforcementEndpoint"};
+    _syncObjs = ((synchronizedObjects _lzLogic) + (synchronizedObjects _logic)) select {_x isKindOf QGVAR(atmoReinforcementEndpoint)};
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoCore-Modul braucht mindestens ein AtmoEndpoint-Modul gesynct!"};
     private _endPoint = selectRandom _syncObjs;
 
@@ -60,7 +60,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
     // Setup Waypoints
     private _wp = _grp addWaypoint [getPos _logic, 50];
     _wp setWaypointType "MOVE";
-    _wp setWaypointStatements ["true", format ["[this, %1] call TB_eden_fnc_atmoCoreAction", getPos _endPoint]];
+    _wp setWaypointStatements ["true", format ["[this, %1] call TBMod_eden_fnc_atmoCoreAction", getPos _endPoint]];
 
     _wp = _grp addWaypoint [getPos _lzLogic, 5];
     _wp setWaypointType "TR UNLOAD";

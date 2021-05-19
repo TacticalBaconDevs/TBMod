@@ -52,6 +52,7 @@ private _allgemein = [
     // Nachtsichtgeräte
     "rhsusf_ANPVS_14",
     "rhsusf_ANPVS_15",
+    "TB_NVG_widescreen",
 
     // Ferngläser
     "Binocular",

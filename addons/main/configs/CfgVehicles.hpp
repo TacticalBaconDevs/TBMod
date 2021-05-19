@@ -285,4 +285,5 @@ class CfgVehicles
     ADD_SIGN(OneTeam);
     ADD_SIGN(Rufnamen);
     ADD_SIGN(Trupp);
+
 };

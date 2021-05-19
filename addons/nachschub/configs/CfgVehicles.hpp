@@ -108,7 +108,7 @@ class CfgVehicles
                     ADD_SUPPLY("Arztkiste",TB_supply_all_arzt);
                     ADD_SUPPLY("Ersatzreifen",ACE_Wheel);
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
-                    ADD_SUPPLY("Ersatztank",Land_CanisterFuel_F);
+                    ADD_SUPPLY("Ersatztank",GVAR(CanisterFuel));
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
                     ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
@@ -312,7 +312,26 @@ class CfgVehicles
 
                     ADD_SUPPLY("Munition",TB_supply_brd_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_brd_grena);
-                    ADD_SUPPLY("WerferMunition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("Panzerfaust Munition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("O-U Werfer AA",TB_supply_BRD_oneUse_AA);
+                    ADD_SUPPLY("O-U Werfer AT",TB_supply_BRD_oneUse_AT);
+                };
+
+                class sog
+                {
+                    displayName = "SOG";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY("Munition",TB_supply_sog_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_sog_grena);
+                    ADD_SUPPLY("MG-Munition",TB_supply_sog_ammo_m60);
+                    ADD_SUPPLY("Unterlauf",TB_supply_sog_unterlauf);
+                    ADD_SUPPLY("Stinger",TB_supply_sog_9K32_Strela);
+                    ADD_SUPPLY("Pistolen Munition",TB_supply_sog_ammoSmall);
+                    ADD_SUPPLY("Präzisions Munition",TB_supply_sog_praezision);
+                    ADD_SUPPLY("One Use Law",TB_supply_sog_oneUse_AT);
+                    ADD_SUPPLY("Nachtkiste",TB_supply_sog_night);
                 };
 
                 class russ
@@ -667,5 +686,23 @@ class CfgVehicles
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_BRD.hpp"
+    #include "CfgVehicles_SOG.hpp"
     #include "CfgVehicles_RUSS.hpp"
+
+    // ###################### KanisterFix ######################
+    class Land_CanisterFuel_F;
+    class GVAR(CanisterFuel) : Land_CanisterFuel_F
+    {
+        ace_dragging_canCarry = 1;
+        ace_dragging_carryDirection = 0;
+        ace_dragging_carryPosition[] = {0,1,1};
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 1;
+
+        destrType = "DestructNo";
+        transportFuel = 300;
+
+        class DestructionEffects {delete HouseDestr;};
+    };
+
 };

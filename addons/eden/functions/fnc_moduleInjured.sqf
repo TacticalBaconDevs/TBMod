@@ -2,59 +2,96 @@
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
-*/
-params [
-        ["_mode", "", [""]],
-        ["_input", [], [[]]]
-    ];
-_input params [
-        ["_logic", objNull, [objNull]],
-        ["_isActivated", true, [true]],
-        ["_isCuratorPlaced", false, [true]]
-    ];
 
-if (!is3DEN && {_mode == "init"}) then
+    prepair Module
+    ServerPreInit -> InitPost Modul
+*/
+private _isEdenModule = (param [0]) isEqualType "";
+
+if (_isEdenModule) then
 {
-    // Check for Objects
+    params [["_mode", "", [""]], ["_input", [], [[]]]];
+    _input params [["_logic", objNull, [objNull]], ["_isActivated", true, [true]], ["_isCuratorPlaced", false, [true]]];
+    if (is3DEN || {_mode != "init"} || {!_isActivated}) exitWith {};
+
     private _syncObjs = (synchronizedObjects _logic) select {!(_x isKindOf "EmptyDetector") && _x isKindOf "CAManBase"};
     if (_syncObjs isEqualTo []) exitWith {systemChat "ModuleInjured braucht gesyncte Soldaten!"};
 
-    // prepair Module
-    // ServerPreInit -> InitPost Modul
+    [_logic, _syncObjs] spawn EFUNC(medical,injureModule);
+}
+else
+{
+    params ["_logic", "_units", "_activated"];
 
-    if (_isActivated) then
-    {
-        private _strength = _logic getVariable ["strength", 0.75];
-        private _anzahl = _logic getVariable ["anzahl", 1];
-        private _schadenTyp = call compile (_logic getVariable ["schadenTyp", "[]"]);
-        private _wundOrte = call compile (_logic getVariable ["wundOrte", "[]"]);
+    if (!local _logic || !_activated) exitWith {true};
+    private _unit = attachedTo _logic;
+    if (!alive _unit) exitWith {deleteVehicle _logic};
 
-        [_syncObjs, _strength, _anzahl, _schadenTyp, _wundOrte] spawn
+    [
+        "Verwundete",
+        [
+            [
+                "CHECKBOX",
+                ["Ganze Gruppe", "Für dieses Modul auf die gesamte Gruppe aus"],
+                true
+            ],
+            [
+                "SLIDER",
+                ["Stärke", "Wie stark ist jede Verwundung"],
+                [0, 1, 0.75, 2]
+            ],
+            [
+                "SLIDER",
+                ["Anzahl der Quellen", "Es geht um die Schadensquellen, also Schuss oder Explosion"],
+                [0, 100, 5, 0]
+            ],
+            [
+                "EDIT",
+                ["Schadensquellen", "Welche Quellen random genutzt werden sollen"],
+                ["['bullet', 'grenade', 'explosive', 'shell', 'stab', 'vehiclecrash']"],
+                true
+            ],
+            [
+                "EDIT",
+                ["Wundort", "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte"],
+                ["['head', 'body', 'leftarm', 'rightarm', 'leftleg', 'rightleg']"],
+                true
+            ],
+            [
+                "CHECKBOX",
+                ["Bewusstlos", "Alle Bewusstlos machen"],
+                false
+            ],
+            [
+                "CHECKBOX",
+                ["Nicht sterben lassen", "Verhindert den Tod durch verbluten, geht nur wenn auch bewusstlos!"],
+                true
+            ],
+            [
+                "CHECKBOX",
+                ["KI heilt sich nicht selber", "Verhindert das die KI sich verbindet"],
+                true
+            ]
+        ],
         {
-            params ["_syncObjs", "_strength", "_anzahl", "_schadenTyp", "_wundOrte"];
+            params ["_values", "_args"];
+            _values params ["_holeGroup", "_strength", "_anzahl", "_schadenTyp", "_wundOrte", "_bewusstlos", "_keepAlive", "_preventHealing"];
+            _args params ["_logic", "_unit"];
 
-            uiSleep 2; // etwas delay
+            _logic setVariable ["strength", _strength, true];
+            _logic setVariable ["anzahl", _anzahl, true];
+            _logic setVariable ["schadenTyp", _schadenTyp, true];
+            _logic setVariable ["wundOrte", _wundOrte, true];
+            _logic setVariable ["bewusstlos", _bewusstlos, true];
+            _logic setVariable ["keepAlive", _keepAlive, true];
+            _logic setVariable ["preventHealing", _preventHealing, true];
 
-            {
-                private _unit = _x;
-
-                {
-                    _x params ["_key", "_value"];
-                    _unit setVariable ["ace_medical_"+ _key, _value, true];
-                }
-                forEach [
-                    ["enableUnconsciousnessAI", 2],
-                    ["preventInstaDeath", true],
-                    ["amountOfReviveLives", 5],
-                    ["enableRevive", 2]
-                ];
-
-                for "_i" from 1 to _anzahl do
-                {
-                    [_unit, _strength, selectRandom _wundOrte, selectRandom _schadenTyp] remoteExec ["ace_medical_fnc_addDamageToUnit", _unit];
-                };
-            }
-            forEach _syncObjs;
-        };
-    };
+            [_logic, [[_unit], units _unit] select _holeGroup] call EFUNC(medical,injureModule);
+            deleteVehicle _logic;
+        },
+        {},
+        [_logic, _unit]
+    ] call zen_dialog_fnc_create;
 };
+
+true
