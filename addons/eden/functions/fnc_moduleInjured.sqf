@@ -33,7 +33,7 @@ else
             [
                 "CHECKBOX",
                 ["Ganze Gruppe", "Für dieses Modul auf die gesamte Gruppe aus"],
-                true
+                false
             ],
             [
                 "SLIDER",

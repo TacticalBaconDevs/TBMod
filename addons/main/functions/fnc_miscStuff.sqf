@@ -6,6 +6,10 @@
 // ace_microdagr_settingUseMils = true;
 
 
+// ### Reload geschreie verhindern
+UVO_main_reloadBuffer = 9e30;
+
+
 // ### Gras entfernen - Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {
     private _zerschneider = createVehicle ["Land_ClutterCutter_medium_F", ACE_player modelToWorld [0, 2.7, 0], [], 0, "CAN_COLLIDE"];
