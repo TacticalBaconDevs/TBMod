@@ -79,7 +79,7 @@ class CfgPatches
             "zen_main",
             "3denEnhanced",
             "adv_aceCPR",
-            "WarFXPE",
+            //"WarFXPE", // Blastcore ist clientside
             "acex_field_rations",
             "acex_headless",
             "acex_intelitems",
