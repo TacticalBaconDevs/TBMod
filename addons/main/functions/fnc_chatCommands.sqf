@@ -49,7 +49,7 @@
     _s_map = format ["<t color='#3388ff' align='left'>Map:</t> <t align='right'> %1 </t><br/>", worldName];
     _s_Lat = format ["<t color='#3388ff' align='left'>Latitude:</t> <t align='right'> %1° </t><br/>", ace_common_maplatitude];
     _s_weapon = format ["<t color='#3388ff' align='left'>Weapon:</t> <t align='right'> %1 </t><br/>", _weapon];
-    _s_Bore = format ["<t color='#3388ff' align='left'>Bore:</t> <t align='right'> %1 inch </t><br/>", [ACE_player, 0] call ace_scopes_fnc_getBoreHeight];
+    _s_bore = format ["<t color='#3388ff' align='left'>Bore:</t> <t align='right'> %1 cm </t><br/>", [ACE_player, 0] call ace_scopes_fnc_getBoreHeight];
     _s_twist = format ["<t color='#3388ff' align='left'>Barrel Twist:</t> <t align='right'> %1 inch </t><br/>", (getNumber (configFile >> "CfgWeapons" >> _weapon >> "ACE_barrelTwist")) / 25.4];
     _s_bullet = format ["<t color='#3388ff' align='left'>Bullet:</t> <t align='right'> %1</t><br/>", _ammo];
     _s_bullet_mass = format ["<t color='#3388ff' align='left'>Bullet Mass:</t> <t align='right'> %1 grains</t><br/>", getNumber (_ammoCFG >> "ACE_bulletMass")];
