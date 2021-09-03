@@ -50,7 +50,7 @@
     _msg pushBack (format [_valueFormat, "Latitude", ace_common_maplatitude, "°"]);
     _msg pushBack (format [_valueFormat, "Weapon", _weapon]);
     _msg pushBack (format [_valueFormat, "Bore", [ACE_player, 0] call ace_scopes_fnc_getBoreHeight, " cm"]);
-    _msg pushBack (format [_valueFormat, "Barrel Twist", (getNumber (configFile >> "CfgWeapons" >> _weapon >> "ACE_barrelTwist")) / 25.4, "inch"]);
+    _msg pushBack (format [_valueFormat, "Barrel Twist", (getNumber (configFile >> "CfgWeapons" >> _weapon >> "ACE_barrelTwist")) / 25.4, " inch"]);
     _msg pushBack (format [_valueFormat, "Bullet", _ammo]);
     _msg pushBack (format [_valueFormat, "Bullet Mass", getNumber (_ammoCFG >> "ACE_bulletMass"), " grains"]);
     _msg pushBack (format [_valueFormat, "Bullet Diam", getNumber (_ammoCFG >> "ACE_caliber"), " inch"]);
