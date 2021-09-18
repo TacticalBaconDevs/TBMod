@@ -110,11 +110,12 @@ while {GVAR(CRAM_active)} do
         };
     } else {
         _search = if (_search >= 360) then {0} else {_search + 1};
-        //_cram animateSource ["maingun", rad 30, true];
-        showpos = _cram getPos [20, _search];
-        showpos set [2, (showpos select 2) + 20];
 
-        _cram lookAt showpos;
+        //_cram animateSource ["maingun", rad 30, true];
+        private _pos = _cram getPos [20, _search];
+        _pos set [2, (_pos select 2) + 20];
+
+        _cram lookAt _pos;
     };
 
     uiSleep 0.1;
