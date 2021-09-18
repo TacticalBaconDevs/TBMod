@@ -10,7 +10,7 @@ _items append (switch (getPlayerUID player) do
 {
     case "76561198029318101": {["G_Aviator"]}; // shukari
     case "76561198040057152": {[]}; // Culli
-    case "76561198047437015": {[]}; // Mike Range
+    case "76561198047437015": {["G_Aviator"]}; // Mike Range
     case "76561198053478498": {[]}; // Sponst
 
     case "76561198066861232": {["H_Beret_EAF_01_F"]}; // Darky
