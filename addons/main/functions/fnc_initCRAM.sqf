@@ -57,7 +57,7 @@ while {GVAR(CRAM_active)} do
 
     if (alive _target) then
     {
-        _cram reveal [_target, 4];
+        //_cram reveal [_target, 4];
 
         // drauf zielen
         private _iter = 25;
@@ -106,7 +106,7 @@ while {GVAR(CRAM_active)} do
             };
 
             _adding = _adding + GVAR(CRAM_dauerAdd);
-            uiSleep 0.001;
+            uiSleep 0.01;
         };
     } else {
         _search = if (_search >= 360) then {0} else {_search + 1};
