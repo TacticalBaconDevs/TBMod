@@ -10,5 +10,6 @@ private _log = {systemChat _this; diag_log _this};
 
 call TBMod_arsenal_fnc_test;
 call TBMod_nachschub_fnc_test;
+call TBMod_extension_fnc_test;
 
 "TestSkript vom TBMod beendet." call _log;

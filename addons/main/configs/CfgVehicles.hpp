@@ -116,13 +116,13 @@ class CfgVehicles
 
                     ADD_RUFNAME_DETAIL(shukari, Atlas);
                     ADD_RUFNAME_DETAIL(Mike, Bazinga);
-                    ADD_RUFNAME_DETAIL(Jojo, Foxy);
+                    ADD_RUFNAME_DETAIL(Jaleck, Foxy);
                     ADD_RUFNAME_DETAIL(Sponst, Badger);
                     ADD_RUFNAME_DETAIL(Darky, Lunar);
                     ADD_RUFNAME_DETAIL(Eron, Manta);
                     ADD_RUFNAME_DETAIL(Pingu, Hammer);
                     ADD_RUFNAME_DETAIL(wermut91, Wedge);
-                    ADD_RUFNAME_DETAIL(Lugopa, Lynx);
+                    ADD_RUFNAME_DETAIL(Brain, Omega);
                     ADD_RUFNAME_DETAIL(Rabbat, Demon);
                 };
             };

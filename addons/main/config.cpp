@@ -29,8 +29,11 @@ class CfgPatches
             "TB_UGV_01_rcws_F"
         };
 
+        addonRootClass = "TBMod_common";
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
+            "TBMod_common",
+
             // Arma3
             "A3_Data_F_Oldman_Loadorder",
             "A3_Data_F_Mod_Loadorder",
