@@ -373,6 +373,7 @@ class CfgVehicles
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
     WRAPPER(Box_EAF_Uniforms_F);
+    WRAPPER(B_supplyCrate_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOEF(skins,pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
@@ -676,6 +677,31 @@ class CfgVehicles
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
             MACRO_ADDITEM(ACE_M26_Clacker,2);
             MACRO_ADDITEM(APERSMineDispenser_Mag,2);
+        };
+    };
+
+    class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
+    {
+        PUBLIC_NAME("vz99 MörserMunition");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_vz99_HE_multi,10);
+            MACRO_ADDITEM(TB_vz99_HE,8);
+            MACRO_ADDITEM(TB_vz99_smokeWhite,3);
+            MACRO_ADDITEM(TB_vz99_smokeRed,3);
+            MACRO_ADDITEM(TB_vz99_flare,2);
+        };
+    };
+
+    class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
+    {
+        PUBLIC_NAME("vz99 MörserMunitionHE");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_vz99_HE_multi,20);
+            MACRO_ADDITEM(TB_vz99_HE,15);
         };
     };
 

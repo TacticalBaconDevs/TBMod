@@ -256,12 +256,9 @@ class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
     };
 };
 
-class B_supplyCrate_F;
-class TB_supply_usa_airdrop : B_supplyCrate_F
+class TB_supply_usa_airdrop : WRAPPER_NAME(B_supplyCrate_F)
 {
-    PUBLIC_NAME("US Airdrop");
-    editorCategory = "EdCat_TB_MainCat_supply";
-    editorSubcategory = "EdSubcat_TB_Supply_ALL";
+    PUBLIC_NAME_CAT("Airdrop",USA);
 
     class TransportWeapons
     {
@@ -340,35 +337,5 @@ class TB_supply_usa_airdrop : B_supplyCrate_F
 
         MACRO_ADDITEM(ACE_morphine,20);
         MACRO_ADDITEM(ACE_epinephrine,10);
-    };
-
-    class TransportBackpack
-    {
-        MACRO_ADDBACKPACK(B_Kitbag_mcamo,4);
-    };    
-};
-
-class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
-{
-    PUBLIC_NAME("vz99 MörserMunition");
-
-    class TransportItems
-    {
-        MACRO_ADDITEM(TB_vz99_HE_multi,10);
-        MACRO_ADDITEM(TB_vz99_HE,8);
-        MACRO_ADDITEM(TB_vz99_smokeWhite,3);
-        MACRO_ADDITEM(TB_vz99_smokeRed,3);
-        MACRO_ADDITEM(TB_vz99_flare,2);
-    };
-};
-
-class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
-{
-    PUBLIC_NAME("vz99 MörserMunitionHE");
-
-    class TransportItems
-    {
-        MACRO_ADDITEM(TB_vz99_HE_multi,20);
-        MACRO_ADDITEM(TB_vz99_HE,15);
     };
 };
