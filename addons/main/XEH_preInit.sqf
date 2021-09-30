@@ -82,6 +82,14 @@ if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(debug_global),
+    "CHECKBOX",
+    ["Debug Global", "Alle Ausgaben werden global ausgegeben"],
+    ["TBMod", QUOTE(COMPONENT)],
+    false
+] call CBA_fnc_addSetting;
+
+[
     "TB_inkognitoSystem",
     "CHECKBOX",
     ["Inkognito System", "Erlaubt mehre Ausrüstungen und wechsel zu zivilen Sachen"],

@@ -33,7 +33,8 @@ if (isNil QFUNC(Radar_getTargetPos)) then
     };
 };
 
-GVAR(arty_seekers) pushBackUnique [_radar, GVAR(Radar_range)];
+GVAR(arty_seekers) pushBackUnique ["RADAR", _radar, GVAR(Radar_range)];
+[QGVAR(arty_seekers), GVAR(arty_seekers)] call CBA_fnc_publicVariable;
 
 // make dumb
 private _group = group (gunner _radar);
@@ -60,7 +61,7 @@ while {GVAR(Radar_active)} do
 
     if (alive _target) then
     {
-        //_radar reveal [_target, 4];
+        _radar reveal [_target, 4];
 
         private _shotParent = (getShotParents _target) param [0, objNull];
         if (alive _shotParent) then
