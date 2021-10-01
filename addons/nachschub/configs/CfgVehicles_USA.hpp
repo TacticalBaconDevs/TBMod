@@ -256,27 +256,86 @@ class TB_supply_usa_night : WRAPPER_NAME(Box_East_Support_F)
     };
 };
 
-class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
+class TB_supply_usa_airdrop : WRAPPER_NAME(B_supplyCrate_F)
 {
-    PUBLIC_NAME("vz99 MörserMunition");
+    PUBLIC_NAME_CAT("Airdrop",USA);
 
-    class TransportItems
+    class TransportWeapons
     {
-        MACRO_ADDITEM(TB_vz99_HE_multi,10);
-        MACRO_ADDITEM(TB_vz99_HE,8);
-        MACRO_ADDITEM(TB_vz99_smokeWhite,3);
-        MACRO_ADDITEM(TB_vz99_smokeRed,3);
-        MACRO_ADDITEM(TB_vz99_flare,2);
+        MACRO_ADDWEAPON(TB_rhs_weap_M136_CS,3);
+        MACRO_ADDWEAPON(launch_NLAW_F,1);
     };
-};
 
-class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
-{
-    PUBLIC_NAME("vz99 MörserMunitionHE");
+    class TransportMagazines
+    {
+        // Explosiv
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,20);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,10);
+
+        // AIM Smokes
+        MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell_precise,2);
+        MACRO_ADDMAGAZINE(rhs_mag_m714_White_precise,2);
+        MACRO_ADDMAGAZINE(rhs_mag_m713_Red_precise,2);
+        MACRO_ADDMAGAZINE(rhs_mag_m715_Green_precise,2);
+
+        // HuntIR
+        MACRO_ADDMAGAZINE(ACE_HuntIR_M203,4);
+
+        // Grenades
+        MACRO_ADDMAGAZINE(SmokeShell,20);
+        MACRO_ADDMAGAZINE(SmokeShellRed,4);
+        MACRO_ADDMAGAZINE(SmokeShellBlue,4);
+
+        MACRO_ADDMAGAZINE(rhs_mag_mk3a2,20);    // Offensivenade
+        MACRO_ADDMAGAZINE(B_IR_Grenade,4);      // IR-Granate
+
+        // 5.56
+        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red,40);  // Standard GewehrMag
+
+        // MGs
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote,3); // MGMag5.56 Tracer
+        MACRO_ADDMAGAZINE(rhsusf_200Rnd_556x45_M855_soft_pouch_coyote,3);       // MGMag5.56
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_556x45_Mk318_tracer,6);                 // MGMag5.56 C-Mag Tracer
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_Tracer,6);                       // MGMag8.6 Tracer
+        MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_DIM,6);                          // MGMag8.6 DIM
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,6);                  // MGMag7.62 AP Tracer
+        MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m61_ap,6);                      // MGMag7.62 AP
+
+        // Secondary
+        MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
+        MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
+        MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
+        MACRO_ADDMAGAZINE(TB_mag_45_FMJ,15);
+
+        // 12.7
+        MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,6);
+        MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_mk211,6);
+
+        // 8.6
+        MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_Tracer,6);
+        MACRO_ADDMAGAZINE(TB_mag_10Rnd_338_LS_DIM,6);
+
+        // DMR7.62
+        MACRO_ADDMAGAZINE(rhs_mag_20Rnd_SCAR_762x51_m80a1_epr,8);               // SCAR TPR
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_762x51_m118_special_Mag,32);              // M24
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_SR25_m62_Mag,8);                  // DMRMag7.62 SR25
+        MACRO_ADDMAGAZINE(rhsusf_20Rnd_762x51_m993_Mag,8);                      // DMRMag7.62 M14
+
+        // Shotgun
+        MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,7);                                // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,7);                                  // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_00Buck,7);                                // Schrotflinte
+        MACRO_ADDMAGAZINE(rhsusf_5Rnd_Slug,7);                                  // Schrotflinte
+    };
 
     class TransportItems
     {
-        MACRO_ADDITEM(TB_vz99_HE_multi,20);
-        MACRO_ADDITEM(TB_vz99_HE,15);
+        MACRO_ADDITEM(ACE_quikclot,50);
+        MACRO_ADDITEM(ACE_elasticBandage,50);
+
+        MACRO_ADDITEM(ACE_salineIV,4);
+
+        MACRO_ADDITEM(ACE_morphine,20);
+        MACRO_ADDITEM(ACE_epinephrine,10);
     };
 };
