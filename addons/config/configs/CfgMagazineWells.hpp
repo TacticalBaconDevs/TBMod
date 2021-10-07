@@ -47,4 +47,8 @@ class CfgMagazineWells
             "TB_mag_20Rnd_40mm_IR_Loal_missiles"
         };
     };
+    class TB_magwell_MPR
+    {
+        TB_magwell_MPR[] = {"TB_mag_MPR_10Rnd_Antimateriel","TB_mag_MPR_10Rnd_Slug","TB_mag_MPR_10Rnd_Buckshot","TB_mag_MPR_10Rnd_Underwater"};
+    };
 };

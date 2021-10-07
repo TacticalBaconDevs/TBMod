@@ -335,6 +335,36 @@ class CfgAmmo
         };
     };
 
+    class B_50BW_Ball_F;
+    class TB_ammo_MPR_antimateriel : B_50BW_Ball_F // MPR Antimateriel Munition
+    {
+        caliber = 4.2;
+        hit = 42;
+        indirectHit = 4;
+        indirectHitRange = 0.15;
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        simulation = "shotBullet";
+        tracerEndTime = 6;
+        tracerScale = 7;
+        tracerStartTime = 0.05;
+        typicalSpeed = 921;
+    };
+
+    class B_12Gauge_Slug_NoCartridge;
+    class TB_ammo_Slug : B_12Gauge_Slug_NoCartridge // MPR Slugshot Munition
+    {
+        caliber = 1;
+        hit = 30;
+    };
+
+    class B_556x45_dual;
+    class TB_ammo_MPR_UW : B_556x45_dual // MPR Underwater Munition
+    {
+        caliber = 1.6;
+        hit = 20;
+        waterFriction = -0.01;
+    };
+
     class ACE_338_Ball;
     class TB_ammo_338_LS : ACE_338_Ball // Lapua Scenar
     {
