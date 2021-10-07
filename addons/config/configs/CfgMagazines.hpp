@@ -289,6 +289,52 @@ class CfgMagazines
         picture = "\A3\weapons_f\data\ui\M_30Rnd_9x21_CA.paa";
     };
 
+    class 10Rnd_50BW_Mag_F;
+    class TB_mag_MPR_10Rnd_Antimateriel : 10Rnd_50BW_Mag_F // MPR Antimateriel
+    {
+        ammo = "TB_ammo_MPR_antimateriel";
+        count = 10;
+        descriptionShort = "Caliber: 12.7x99mm<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Antimateriel";
+        displayNameShort = "10Rnd Antimateriel";
+        initSpeed = 549;
+        mass = 14;
+    };
+
+    class 6Rnd_12Gauge_Slug;
+    class TB_mag_MPR_10Rnd_Slug : 6Rnd_12Gauge_Slug  // MPR Slugshot
+    {
+        ammo = "TB_ammo_Slug";
+        count = 10;
+        descriptionShort = "20-Gauge Slugshot<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Slugshot";
+        displayNameShort = "10Rnd Slugshot";
+        initSpeed = 450;
+        mass = 14;
+    };
+
+    class ACE_6Rnd_12Gauge_Pellets_No4_Buck;
+    class TB_mag_MPR_10Rnd_Buckshot : ACE_6Rnd_12Gauge_Pellets_No4_Buck // MPR Buckshot
+    {
+        count = 10;
+        descriptionShort = "20-Gauge Buckshot<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Buckshot";
+        displayNameShort = "10Rnd Buckshot";
+        initSpeed = 380;
+        mass = 14;
+    };
+
+    class 20Rnd_556x45_UW_mag;
+    class TB_mag_MPR_10Rnd_Underwater : 20Rnd_556x45_UW_mag // MPR Underwater Magazin
+    {
+        author = "TBMod";
+        count = 10;
+        descriptionShort = "Caliber: 12.7x99mm<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Underwater Ammunition";
+        displayNameShort = "Underwater Ammunition";
+        mass = 14;
+    };
+
     class ACE_10Rnd_338_300gr_HPBT_Mag;
     class TB_mag_10Rnd_338_LS_Tracer : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
     {
