@@ -10,5 +10,3 @@ publicVariable "TB_serverBuild";
 // ### CrashHelfer
 TB_disconnectCache = [];
 publicVariable "TB_disconnectCache";
-
-[] spawn FUNC(initArtyLogic);
