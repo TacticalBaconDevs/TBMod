@@ -1,6 +1,6 @@
 # TBMod Ares Compositions
 ## Info
-Compositionen aus dem Mod ['Ares'](https://github.com/astruyk/Ares)
+Compositionen aus dem Mod ['Ares'](https://github.com/astruyk/Ares)  
 TBMod Ares Composition has the same licencens like 'Ares': https://github.com/astruyk/Ares/wiki/License
 
 ## Original Creator
