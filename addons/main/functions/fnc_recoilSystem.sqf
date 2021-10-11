@@ -12,7 +12,11 @@ if (GVAR(recoilCoef) == -1) exitWith {};
 [
     "RecoilSystem",
     {
-        private _suppressed = linearConversion [0, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 1, true];
+        private _suppressed = 0;
+        if (!isNil "L_Suppress_Suppress_sys_intensity") then
+        {
+            _suppressed = linearConversion [L_Suppress_Suppress_sys_intensity / 3, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 0.5, true];
+        };
         private _customAimCoef = getCustomAimCoef ACE_player;
         private _weapon = currentWeapon ACE_player;
         if (_weapon isEqualTo "") then {_weapon = "KEINE"};

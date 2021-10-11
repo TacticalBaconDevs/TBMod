@@ -74,9 +74,9 @@ class CfgPatches
             "tfar_handhelds",
             "tfar_static_radios",
             // Reskins
-            "OPXT_TFAR",
-            "opxt_tfar_backpacks",
-            "OPXT_TFAR_ITEMS",
+            //"OPXT_TFAR",
+            //"opxt_tfar_backpacks",
+            //"OPXT_TFAR_ITEMS",
 
             // 3rd PartyMods
             "zen_main",
