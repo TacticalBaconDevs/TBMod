@@ -2,8 +2,11 @@
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
+
+    Func: [this] spawn TBMod_main_fnc_initCRAM
 */
-if (isMultiplayer && !isServer && !isRemoteExecuted) exitWith {_this remoteExec [QFUNC(initCRAM), 2]};
+if (!canSuspend) exitWith {systemChat "Need to be executed in suspended context!"};
+//if (isMultiplayer && !isServer && !isRemoteExecuted) exitWith {_this remoteExec [QFUNC(initCRAM), 2]};
 
 params ["_cram", "_truck"];
 
@@ -14,7 +17,7 @@ if (isNil QGVAR(CRAM_range)) then {GVAR(CRAM_range) = 1000};
 if (isNil QGVAR(CRAM_chance)) then {GVAR(CRAM_chance) = 30};
 if (isNil QGVAR(CRAM_check)) then {GVAR(CRAM_check) = 0.5};
 if (isNil QGVAR(CRAM_dauerAdd)) then {GVAR(CRAM_dauerAdd) = 0.1};
-if (isNil QGVAR(CRAM_loopSpeed)) then {GVAR(CRAM_loopSpeed) = 0.01};
+if (isNil QGVAR(CRAM_loopSpeed)) then {GVAR(CRAM_loopSpeed) = 0.1};
 
 if (isNil QFUNC(activeTarget)) then
 {
@@ -63,23 +66,29 @@ forEach (units _group);
 
 _group setVariable ["lambs_danger_disableGroupAI", true, true];
 
-private _search = 0;
+//private _search = 0;
 while {GVAR(CRAM_active)} do
 {
-    scopeName "getTarget";
+    //scopeName "getTarget";
 
     for "_i" from 0 to 3 do
     {
         private _targets = _cram nearObjects [["ShellCore", "RocketCore", "MissileCore", "SubmunitionCore"] select _i, GVAR(CRAM_range)];
-        private _target = _targets param [_targets findIf {[_x, _cram] call FUNC(getBestTarget)}, objNull];
+        {_x addCuratorEditableObjects [_targets, true]} forEach allCurators;
+        //private _target = _targets param [_targets findIf {[_x, _cram] call FUNC(getBestTarget)}, objNull];
+        _targets params [["_target", objNull, [objNull]]];
+        ["CRAM7: Cram: %1 - Target: %2 (%3)", _cram, _target, typeOf _target] call TBMod_main_fnc_debug;
 
         if (alive _target) then
         {
-            _cram reveal [_target, 4];
-            ["CRAM: Target recived: %1 - Target: %2 (%3)", _cram, _target, typeOf _target] call TBMod_main_fnc_debug;
+            _target setDamage 1;
+            deleteVehicle _target;
+
+            //_cram reveal [_target, 4];
+            ["CRAM7: Target recived: %1 - Target: %2 (%3)", _cram, _target, typeOf _target] call TBMod_main_fnc_debug;
 
             // drauf zielen
-            private _iter = 10;
+            /*private _iter = 10;
             for "_i" from 1 to _iter do
             {
                 if !([_cram, _target] call FUNC(activeTarget)) exitWith {};
@@ -88,62 +97,62 @@ while {GVAR(CRAM_active)} do
                 _cram doWatch _target;
 
                 uiSleep (1 / _iter);
-            };
+            };*/
 
-            ["CRAM: Target anvisiert: %1 - Target: %2 (%3)", _cram, _target, typeOf _target] call TBMod_main_fnc_debug;
+            //["CRAM: Target anvisiert: %1 - Target: %2 (%3)", _cram, _target, typeOf _target] call TBMod_main_fnc_debug;
 
             // bekämpfen
-            private _adding = 0;
-            while {[_cram, _target] call FUNC(activeTarget)} do
-            {
+            //private _adding = 0;
+            //while {[_cram, _target] call FUNC(activeTarget)} do
+            //{
                 //_cram lookAt _target;
-                private _posVor = _target call FUNC(getTargetPos);
-                _cram lookAt _posVor;
-                _cram doWatch _posVor;
+                //private _posVor = _target call FUNC(getTargetPos);
+                //_cram lookAt _posVor;
+                //_cram doWatch _posVor;
 
-                private _value = 0;
-                if (deg (_cram animationSourcePhase "maingun") > 1) then //&& (_cram getRelDir _target) < 50 || (_cram getRelDir _target) > 310*/) then {
-                {
-                    _cram fireAtTarget [_target];
+                //private _value = 0;
+                //if (deg (_cram animationSourcePhase "maingun") > 1) then //&& (_cram getRelDir _target) < 50 || (_cram getRelDir _target) > 310*/) then {
+                //{
+                    //_cram fireAtTarget [_target];
 
-                    _value = _adding + (linearConversion [GVAR(CRAM_range), 0, _target distance _cram, 1, GVAR(CRAM_chance), true]);
-                    _value = _value + (linearConversion [300, 0, (getPosATL _target) param [2, 0], 0, GVAR(CRAM_chance), true]);
-                    private _random = floor (random 100);
+                    //_value = _adding + (linearConversion [GVAR(CRAM_range), 0, _target distance _cram, 1, GVAR(CRAM_chance), true]);
+                    //_value = _value + (linearConversion [300, 0, (getPosATL _target) param [2, 0], 0, GVAR(CRAM_chance), true]);
+                    //private _random = floor (random 100);
 
-                    if (diag_tickTime % GVAR(CRAM_check) <= 0.01) then
-                    {
-                        if (diag_tickTime % 1 <= 0.01) then {playSound3D ["a3\sounds_f\sfx\alarm_3.wss", _cram, false, getPosASL _cram, 2, 1, 300]};
+                    //if (diag_tickTime % GVAR(CRAM_check) <= 0.01) then
+                    //{
+                        //if (diag_tickTime % 3 <= 0.01) then {playSound3D ["a3\sounds_f\sfx\alarm_3.wss", _cram, false, getPosASL _cram, 2, 1, 300]};
 
                         //["Chance: %1 - DauerBonus: %2 - Random: %3", _value, _adding, _random] call TBMod_main_fnc_debug;
 
-                        if (_random < _value) then
-                        {
-                            createVehicle [selectRandomWeighted ["HelicopterExploSmall", 0.8, "HelicopterExploBig", 0.2], getPosATL _target, [], 0, "FLY"];
-                            _target setDamage 1;
-                            deleteVehicle _target;
+                        //if (_random < _value) then
+                        //{
+                            //createVehicle [selectRandomWeighted ["HelicopterExploSmall", 0.8, "HelicopterExploBig", 0.2], getPosATL _target, [], 0, "FLY"];
+                            //_target setDamage 1;
+                            //deleteVehicle _target;
 
-                            breakTo "getTarget"
-                        };
-                    };
-                };
+                            //breakTo "getTarget"
+                        //};
+                    //};
+                //};
 
-                _adding = _adding + GVAR(CRAM_dauerAdd);
-                uiSleep GVAR(CRAM_loopSpeed);
-            };
+                //_adding = _adding + GVAR(CRAM_dauerAdd);
+                //uiSleep GVAR(CRAM_loopSpeed);
+            //};
 
-            ["CRAM: Target bekämpft / weg: %1", _cram] call TBMod_main_fnc_debug;
-        } else {
-            _search = if (_search >= 360) then {0} else {_search + 1};
+            //["CRAM: Target bekämpft / weg: %1", _cram] call TBMod_main_fnc_debug;
+        //} else {
+            //_search = if (_search >= 360) then {0} else {_search + 1};
 
             //_cram animateSource ["maingun", rad 30, true];
-            private _pos = _cram getPos [20, _search];
-            _pos set [2, (_pos select 2) + 20];
+            //private _pos = _cram getPos [20, _search];
+            //_pos set [2, (_pos select 2) + 20];
 
-            _cram lookAt _pos;
+            //_cram lookAt _pos;
         };
     };
 
-    uiSleep 0.1;
+    uiSleep 0.5; //0.1
 };
 
 /*
@@ -168,4 +177,44 @@ while {GVAR(CRAM_active)} do
             drawIcon3D ["", [1,1,0,1], _pos vectorAdd (_velocity vectorMultiply 1.3), 0, 0, 0, "X3"];
         };
     };
+*/
+
+/*
+Test geht
+
+test = false;
+
+[] spawn
+{
+    uiSleep 5;
+    test = true;
+    private _cram = zeus1;
+    systemChat "neu geladen";
+
+    while {test} do
+    {
+        for "_i" from 0 to 3 do
+        {
+            private _targets = _cram nearObjects [["ShellCore", "RocketCore", "MissileCore", "SubmunitionCore"] select _i, 2000];
+            //private _target = _targets param [_targets findIf {[_x, _cram] call FUNC(getBestTarget)}, objNull];
+            _targets params [["_target", objNull, [objNull]]];
+            //["TEST0: target: %1 -> %2 -> %3", _target, isNull _target, alive _target] call TBMod_main_fnc_debug;
+            {_x addCuratorEditableObjects [_targets, true]} forEach allCurators;
+
+            if (alive _target) then
+            {
+                uiSleep 1;
+                ["TEST1: zerstöre target: %1 -> %2 -> %3", _target, isNull _target, alive _target] call TBMod_main_fnc_debug;
+                //createVehicle [selectRandomWeighted ["HelicopterExploSmall", 0.8, "HelicopterExploBig", 0.2], getPosATL _target, [], 0, "FLY"];
+                _target setDamage 1;
+                deleteVehicle _target;
+                ["TEST2: zerstörtes target: %1 -> %2 -> %3", _target, isNull _target, alive _target] call TBMod_main_fnc_debug;
+            };
+        };
+
+        uiSleep 2;
+    };
+    systemChat "entladen";
+};
+
 */
