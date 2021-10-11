@@ -10,6 +10,8 @@ params [
     ["_codeReturn", false, [false]]
 ];
 
+if (!canSuspend) exitWith {"ERROR: Suspending not allowed in this contex"};
+
 private _array = [_cmd];
 if (!isNil {_data}) then {_array pushBack _data};
 
@@ -25,18 +27,7 @@ if (_errorCode < 0 || {_returnCode < 0}) then
 
 if (_returnCode > 1) then
 {
-    waitUntil
-    {
-        ("TBModExtensionHost" callExtension ["host", ["status", _cacheId]]) params ["_status"];
-        _status != "QUEUE"
-    };
-
-    waitUntil
-    {
-        ("TBModExtensionHost" callExtension ["network", ["getDownloadString", _cacheId]]) params ["_urlContent", "_anzahl"];
-        _result = _result + _urlContent;
-        _anzahl <= 1
-    };
+    _result = [_returnCode] call FUNC(getFromCache);
 };
 
 if (_codeReturn) then {_returnCode} else {_result};

@@ -4,6 +4,7 @@
 */
 PREP(callExtension);
 PREP(extensionCallback);
+PREP(getFromCache);
 
 // Tests
 PREP_OTHERFOLDER(test,tests);
