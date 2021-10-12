@@ -732,7 +732,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Waffen
             "rhsusf_weap_MP7A2",
-			"optic_yorris",
+            "optic_yorris",
             "rhsusf_weap_MP7A2_grip3",
             "rhs_weap_M590_8RD",
             "rhs_weap_M590_5RD",
