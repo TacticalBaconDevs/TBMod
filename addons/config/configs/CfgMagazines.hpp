@@ -301,16 +301,16 @@ class CfgMagazines
         mass = 14;
     };
 
-    class 6Rnd_12Gauge_Slug;
-    class TB_mag_MPR_10Rnd_Slug : 6Rnd_12Gauge_Slug  // MPR Slugshot
+    class rhsusf_8Rnd_Slug;
+    class TB_mag_MPR_10Rnd_Slug : rhsusf_8Rnd_Slug  // MPR Slugshot
     {
-        ammo = "TB_ammo_Slug";
+        ammo = "TB_ammo_MPR_Slug";
         count = 10;
         descriptionShort = "20-Gauge Slugshot<br />Rounds: 10<br />Used in: MPR";
         displayName = "10Rnd Slugshot";
         displayNameShort = "10Rnd Slugshot";
-        initSpeed = 450;
         mass = 14;
+        picture = "\a3\Weapons_F_Enoch\MagazineProxies\data\UI\icon_6Rnd_12Gauge_Slug_ca.paa";
     };
 
     class ACE_6Rnd_12Gauge_Pellets_No4_Buck;
@@ -399,29 +399,24 @@ class CfgMagazines
         initSpeed = 1800; // 1600
     };
 
-    class TB_mag_40Rnd_40mm_GPR : 60Rnd_40mm_GPR_Tracer_Red_shells // 40mm GPR Magazine FV510 Warrior
+    class TB_mag_40Rnd_40mm_GPR : 60Rnd_40mm_GPR_Tracer_Red_shells // 40mm GPR Magazine
     {
         ammo = "TB_ammo_40mm_GPR";
         count = 40;
         muzzleImpulseFactor[] = {1,2}; // {1,6}
     };
 
-    class TB_mag_40Rnd_40mm_APFSDS : 40Rnd_40mm_APFSDS_Tracer_Red_shells // 40mm APFSDS Magazine FV510 Warrior
+    class TB_mag_40Rnd_40mm_APFSDS : 40Rnd_40mm_APFSDS_Tracer_Red_shells // 40mm APFSDS Magazine
     {
         ammo = "TB_ammo_40mm_APFSDS";
         count = 40;
         muzzleImpulseFactor[] = {1,2}; // {0.5,2}
     };
 
-    class 4Rnd_120mm_LG_cannon_missiles;
-    class TB_mag_20Rnd_40mm_IR_Loal_missiles : 4Rnd_120mm_LG_cannon_missiles // 40mm IR Loal Magazine FV510 Warrior
+    class 200Rnd_127x99_mag_Tracer_Red;
+    class TB_mag_200Rnd_127x99_Tracer_Red : 200Rnd_127x99_mag_Tracer_Red // HMG Tracer
     {
-        ammo = "TB_ammo_40mm_IR_Loal_missiles";
-        count = 20;
-        displayName = "40mm ATGM Loal";
-        displayNameMFDFormat = "InfraRed";
-        displayNameShort = "IR ATGM";
-        initspeed = 1035;
+        tracersEvery = 1; // 3
     };
 
     class 60Rnd_CMFlare_Chaff_Magazine;
