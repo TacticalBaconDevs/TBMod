@@ -102,8 +102,8 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     class TransportMagazines
     {
         // Explosiv
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,25);
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,15);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE,20);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP,10);
 
         // AIM Smokes
         MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell_precise,4);
@@ -121,6 +121,11 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_IR_Grenade,2);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot,6);
         MACRO_ADDMAGAZINE(ACE_HuntIR_M203,6);
+
+        // 12.7mm UL
+        MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Antimateriel,3);
+        MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Slug,3);
+        MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Buckshot,3);
     };
 };
 
@@ -326,16 +331,23 @@ class TB_supply_usa_airdrop : WRAPPER_NAME(B_supplyCrate_F)
         MACRO_ADDMAGAZINE(rhsusf_8Rnd_Slug,7);                                  // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_00Buck,7);                                // Schrotflinte
         MACRO_ADDMAGAZINE(rhsusf_5Rnd_Slug,7);                                  // Schrotflinte
+
+        // 12.7mm UL
+        MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Antimateriel,5);
+        MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Slug,5);
+        MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Buckshot,5);
     };
 
     class TransportItems
     {
         MACRO_ADDITEM(ACE_quikclot,50);
         MACRO_ADDITEM(ACE_elasticBandage,50);
+        MACRO_ADDITEM(ACE_packingBandage,50);
 
-        MACRO_ADDITEM(ACE_salineIV,4);
+        MACRO_ADDITEM(ACE_plasmaIV_500,6);
 
         MACRO_ADDITEM(ACE_morphine,20);
         MACRO_ADDITEM(ACE_epinephrine,10);
+        MACRO_ADDITEM(TB_med_venenkatheter,10);
     };
 };

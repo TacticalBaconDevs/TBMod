@@ -14,14 +14,14 @@
 inheritance_*.data
 *.sqfc
 
+/Changelog.txt
+/builder.cfg
+
 statstracker/TBModExt_Statistics/.vs/
 statstracker/TBModExt_Statistics/packages/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/bin/
 statstracker/TBModExt_Statistics/TBModExt_Statistics/obj/
-
 /#localStuff
-/Changelog.txt
-/builder.cfg
 .vscode
 .vs
 #old
