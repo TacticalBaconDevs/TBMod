@@ -42,13 +42,20 @@ class CfgMagazineWells
     {
         TB_magwell_40mm_FV510[] =
         {
-            "TB_mag_40Rnd_40mm_APFSDS",
             "TB_mag_40Rnd_40mm_GPR",
-            "TB_mag_20Rnd_40mm_IR_Loal_missiles"
+            "TB_mag_40Rnd_40mm_APFSDS"
         };
     };
     class TB_magwell_MPR
     {
         TB_magwell_MPR[] = {"TB_mag_MPR_10Rnd_Antimateriel","TB_mag_MPR_10Rnd_Slug","TB_mag_MPR_10Rnd_Buckshot","TB_mag_MPR_10Rnd_Underwater"};
+    };
+    class TB_magwell_40mm_CTWS
+    {
+        TB_magwell_40mm_CTWS[] =
+        {
+            "TB_mag_40Rnd_40mm_GPR",
+            "TB_mag_40Rnd_40mm_APFSDS"
+        };
     };
 };

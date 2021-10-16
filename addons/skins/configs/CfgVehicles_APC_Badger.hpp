@@ -3,83 +3,117 @@
     Developed by http://tacticalbacon.de
 */
 
-class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
+class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
 {
-    displayName = "FV510 Warrior IFV (Wald)";
+    armor = 320; // 215 zuvor durch Eron generft
     author = "Eron";
+    audible = 6; // 14
+    crewCrashProtection = 0.25; // 1.25
+    displayName = "Badger APC (Wald)";
+    enginePower = 600; // 506.25
+    normalSpeedForwardCoef = 0.9; // 0.52
     addCategoryBLU(Truppentransporter);
-    clutchStrength = 85; // 40
-    enginePower = 544; // 485
-    normalSpeedForwardCoef = 0.82; // 0.6
-    peakTorque = 2000; // 2610
-    redRpm = 2050; // 2600
-    crewCrashProtection = 0.1; // 0.25
     hiddenSelectionsTextures[] =
     {
-        QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
-        QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_3.paa),
+        QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+        QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
+        QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
         "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-        "\A3\armor_f\data\cage_olive_co.paa"
+        QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
     };
-    editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_FV510.jpg);
-
+    editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Patria_AMW.jpg);
     class TextureSources : TextureSources
     {
-        class Green
+        class Desert
         {
-            displayName = "Grün";
+            displayName = "Wüste";
             textures[] =
             {
-                QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_2.paa),
-                QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_3.paa),
-                "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-                "\A3\armor_f\data\cage_olive_co.paa"
-            };
-        };
-        class Sand
-        {
-            displayName = "Sand";
-            textures[] =
-            {
-                QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_0.paa),
-                QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_1.paa),
+                QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
+                QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
+                QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
                 "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
                 "\a3\Armor_F\Data\cage_sand_CO.paa"
             };
         };
+        class Green
+        {
+            displayName = "3-Farb-Flecktarn";
+            textures[] =
+            {
+                QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+                QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
+                QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
+                "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+                QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
+            };
+        };
+        class Olive
+        {
+            displayName = "Oliv";
+            textures[] = {"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa","A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa","A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa","a3\Armor_F\Data\camonet_NATO_Green_CO.paa","a3\Armor_F\Data\cage_olive_CO.paa"};
+        };
+        class Sand
+        {
+            displayName = "Sand";
+            textures[] = {"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa","a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa","a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa","a3\Armor_F\Data\camonet_NATO_Desert_CO.paa","a3\Armor_F\Data\cage_sand_CO.paa"};
+        };
     };
 
-    animationList[] = {"showBags",1,"showBags2",1,"showCamonetHull",1,"showCamonetTurret",1,"showTools",1,"showSLATHull",1,"showSLATTurret",1};
     class AnimationSources : AnimationSources
     {
-        class showSLATHull : showSLATHull
+        class showSLATHull
         {
+            animPeriod = 0.001;
+            author = "Bohemia Interactive";
+            displayName = "Slat-Käfig anzeigen (Rumpf)";
             initPhase = 1; // 0
+            mass = -50;
+            source = "user";
         };
-        class showSLATTurret : showSLATTurret
+        class showSLATTurret
         {
+            animPeriod = 0.001;
+            author = "Bohemia Interactive";
+            displayName = "Slat-Käfig anzeigen (Geschützturm)";
             initPhase = 1; // 0
+            mass = -50;
+            source = "user";
         };
-        class showBags : showBags
+        class showBags
         {
+            animPeriod = 0.001;
+            author = "Bohemia Interactive";
+            displayName = "Rucksäcke anzeigen (Geschützturm)";
             initPhase = 1; // 0
+            mass = -50;
+            source = "user";
         };
-        class showBags2 : showBags2
+        class showCamonetCannon
         {
-            forceAnimatePhase = 1; // 0
+            animPeriod = 0.001;
             initPhase = 1; // 0
+            source = "user";
         };
-        class showCamonetHull : showCamonetHull
+        class showCamonetHull
         {
+            animPeriod = 0.001;
+            author = "Bohemia Interactive";
+            displayName = "Tarnnetz anzeigen (Rumpf)";
             initPhase = 1; // 0
+            mass = -50;
+            source = "user";
         };
-        class showCamonetTurret : showCamonetTurret
+        class showCamonetTurret
         {
+            animPeriod = 0.001;
+            author = "Bohemia Interactive";
+            displayName = "Tarnnetz anzeigen (Geschützturm)";
+            forceAnimate[] = {"showCamonetCannon",1};
+            forceAnimate2[] = {"showCamonetCannon",0};
             initPhase = 1; // 0
-        };
-        class showTools : showTools
-        {
-            initPhase = 1; // 0
+            mass = -50;
+            source = "user";
         };
     };
     class Components : Components
@@ -139,21 +173,11 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
             };
         };
     };
-
-    class HitPoints : HitPoints
-    {
-        class HitHull : HitHull
-        {
-            armor = 0.69; // 0.3 neuer Wert entspricht 621 HP
-            explosionShielding = 0.35; // 0.2
-        };
-    };
-
     class Turrets : Turrets
     {
         class MainTurret : MainTurret
         {
-            weapons[] = {"TB_autocannon_CT40", "TB_coax_L94A1"};
+            weapons[] = {"TB_weapon_40mm_CTWS", "TB_weapon_127_coax"};
 
             discreteDistance[] =
             {
@@ -167,25 +191,47 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
             {
                 "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_GPR",
-                "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_40Rnd_40mm_APFSDS",
-                "2000Rnd_762x51_Belt_T_Red",
-                "2000Rnd_762x51_Belt_T_Red"
+                "TB_mag_200Rnd_127x99_Tracer_Red",
+                "TB_mag_200Rnd_127x99_Tracer_Red",
+                "TB_mag_200Rnd_127x99_Tracer_Red",
+                "TB_mag_200Rnd_127x99_Tracer_Red"
             };
-            class OpticsIn : Optics_Gunner_APC_02
+            class OpticsIn : Optics_Gunner_APC_01
             {
                 class Wide : Wide
                 {
-                    thermalMode[] = {0,1}; // {"2,3"}
+                    thermalMode[] = {0,1};
                 };
                 class Medium : Medium
                 {
-                    thermalMode[] = {0,1}; // {"2,3"}
+                    thermalMode[] = {0,1};
                 };
                 class Narrow : Narrow
                 {
-                    thermalMode[] = {0,1}; // {"2,3"}
+                    thermalMode[] = {0,1};
+                };
+            };
+            class Turrets : Turrets
+            {
+                class CommanderOptics : CommanderOptics
+                {
+                    class OpticsIn: Optics_Commander_01
+                        {
+                        class Wide: Wide
+                        {
+                            thermalMode[] = {0,1};
+                        };
+                        class Medium: Medium
+                        {
+                            thermalMode[] = {0,1};
+                        };
+                        class Narrow: Narrow
+                        {
+                            thermalMode[] = {0,1};
+                        };
+                    };
                 };
             };
         };
@@ -227,17 +273,18 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
     };
 };
 
-class TB_Vehicles_Wueste_Warrior : TB_Vehicles_Wald_Warrior // FV510 Warrior
+class TB_Vehicles_Wueste_Badger : TB_Vehicles_Wald_Badger // Badger APC
 {
-    displayName = "FV510 Warrior IFV (Wüste)";
+    displayName = "Badger APC (Wüste)";
     author = "Eron";
     addCategoryBLU(Truppentransporter);
     hiddenSelectionsTextures[] =
     {
-        QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_0.paa),
-        QPATHTOF(pictures\vehicles\TB_Vehicles_FV510_1.paa),
+        QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
+        QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
+        QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
         "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
         "\a3\Armor_F\Data\cage_sand_CO.paa"
     };
-    editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_FV510.jpg);
+    editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Patria_AMW.jpg);
 };
