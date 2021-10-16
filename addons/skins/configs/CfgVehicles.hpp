@@ -62,6 +62,12 @@ class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerLef
 };
 
 class Optics_Armored;
+class Optics_Commander_01 : Optics_Armored
+{
+    class Wide;
+    class Medium;
+    class Narrow;
+};
 class Optics_Gunner_APC_01 : Optics_Armored
 {
     class Wide;
@@ -748,13 +754,17 @@ class CfgVehicles
     class Car_F;
     class Wheeled_APC_F : Car_F
     {
+        class NewTurret;
         class Turrets;
     };
     class APC_Wheeled_01_base_F : Wheeled_APC_F
     {
         class Turrets : Turrets
         {
-            class MainTurret;
+            class MainTurret : NewTurret
+            {
+                class CommanderOptics;
+            };
         };
     };
     class B_APC_Wheeled_01_base_F : APC_Wheeled_01_base_F

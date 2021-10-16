@@ -752,24 +752,15 @@ class CfgWeapons
             displayName = "CTWS AP";
             magazineReloadTime = 3;
             magazines[] = {"TB_mag_40Rnd_40mm_APFSDS"};
-            modes[] = {"player","full","close","short","medium","far"};
+            modes[] = {"player","close","short","medium","far"};
             class player : player
             {
                 burst = 1;
                 dispersion = 0.0002;
                 displayName = "Halb";
                 multiplier = 1;
-                reloadTime = 1.2;
-                textureType = "burst";
-            };
-            class full : player
-            {
-                burst = 1;
-                dispersion = 0.0002;
-                displayName = "Voll";
-                multiplier = 1;
                 reloadTime = 0.6;
-                textureType = "fullAuto";
+                textureType = "burst";
             };
         };
         class HE : autocannon_Base_F
@@ -777,7 +768,7 @@ class CfgWeapons
             displayName = "CTWS HE";
             magazineReloadTime = 3;
             magazines[] = {"TB_mag_40Rnd_40mm_GPR"};
-            modes[] = {"player","full","close","short","medium","far"};
+            modes[] = {"player","close","short","medium","far"};
 
             class player : player
             {
@@ -785,17 +776,8 @@ class CfgWeapons
                 dispersion = 0.0002;
                 displayName = "Halb";
                 multiplier = 1;
-                reloadTime = 1.2;
-                textureType = "burst";
-            };
-            class full : player
-            {
-                burst = 1;
-                dispersion = 0.0002;
-                displayName = "Voll";
-                multiplier = 1;
                 reloadTime = 0.6;
-                textureType = "fullAuto";
+                textureType = "burst";
             };
         };
     };
@@ -808,13 +790,13 @@ class CfgWeapons
     class TB_weapon_127_coax : HMG_127_AFV // 12.7mm Coaxial
     {
         baseWeapon = "TB_weapon_coax_Badger";
-        magazineReloadTime = 10;
+        magazineReloadTime = 6;
         magazines[] = {"TB_mag_200Rnd_127x99_Tracer_Red"};
         modes[] = {"manual","close","short","medium","far"};
         class manual : manual
         {
             burst = 1;
-            dispersion = 0.001;
+            dispersion = 0.0006;
             displayName = "12.7mm HMG Tracer (Red)";
             multiplier = 1;
             reloadTime = 0.1;

@@ -192,6 +192,7 @@ class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
                 "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_APFSDS",
+                "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_200Rnd_127x99_Tracer_Red",
                 "TB_mag_200Rnd_127x99_Tracer_Red",
                 "TB_mag_200Rnd_127x99_Tracer_Red",
@@ -210,6 +211,27 @@ class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
                 class Narrow : Narrow
                 {
                     thermalMode[] = {0,1};
+                };
+            };
+            class Turrets : Turrets
+            {
+                class CommanderOptics : CommanderOptics
+                {
+                    class OpticsIn: Optics_Commander_01
+                        {
+                        class Wide: Wide
+                        {
+                            thermalMode[] = {0,1};
+                        };
+                        class Medium: Medium
+                        {
+                            thermalMode[] = {0,1};
+                        };
+                        class Narrow: Narrow
+                        {
+                            thermalMode[] = {0,1};
+                        };
+                    };
                 };
             };
         };
