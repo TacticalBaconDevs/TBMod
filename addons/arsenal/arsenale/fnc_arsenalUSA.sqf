@@ -133,7 +133,13 @@ private _allgemein_magazine = [
     "rhsusf_5Rnd_00Buck",
     "rhsusf_5Rnd_Slug",
     "rhsusf_8Rnd_00Buck",
-    "rhsusf_8Rnd_Slug"
+    "rhsusf_8Rnd_Slug",
+
+    // 12.7 UL
+    "TB_mag_MPR_10Rnd_Antimateriel",
+    "TB_mag_MPR_10Rnd_Slug",
+    "TB_mag_MPR_10Rnd_Buckshot",
+    "TB_mag_MPR_10Rnd_Underwater"
 ];
 
 private _allgemein_gewehre = [
@@ -183,7 +189,8 @@ private _allgemein_gewehre = [
     "rhs_weap_mk18_KAC_bk",
     "rhs_weap_mk18_KAC",
     "rhs_weap_mk18_wd",
-    "rhs_weap_mk18_KAC_wd"
+    "rhs_weap_mk18_KAC_wd",
+    "TB_weapon_MPR"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
@@ -230,7 +237,8 @@ private _allgemein_geschuetzzubehoer = [
     "rhsusf_acc_rotex5_grey",
     "rhsusf_acc_rotex5_tan",
     "rhsusf_acc_SF3P556",
-    "rhsusf_acc_SFMB556"
+    "rhsusf_acc_SFMB556",
+    "rhsusf_acc_aac_762sdn6_silencer"
 ];
 
 private _allgemein_zweibein = [
@@ -733,6 +741,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_5Rnd_00Buck",
             "rhsusf_5Rnd_Slug",
 
+            // ### Visiere
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_compm4",
+            "optic_yorris",
+            "rhsusf_acc_eotech_552",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_anpeq15a",
+
             // Westen
             "TB_vest_iotv_ocp_medic_classIV",
             "TB_vest_iotv_ucp_medic_classIV",
@@ -886,6 +905,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
 
+            // ### Visiere
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_compm4",
+            "optic_yorris",
+            "rhsusf_acc_eotech_552",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_anpeq15a",
+
             // Kopfbedeckung
             "rhsusf_hgu56p_black",
             "rhsusf_hgu56p_mask_black",
@@ -929,6 +959,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_HeliPilotCoveralls",
             "rhs_uniform_cu_ocp",
             "rhs_uniform_cu_ucp",
+
+            // Westen
+            "TB_vest_iotv_ocp_mg_classIV",
+            "TB_vest_iotv_ucp_mg_classIV",
+            "TB_vest_spcs_ocp_mg_classIII",
+            "TB_vest_spcs_ucp_mg_classIII",
+            "TB_vest_plateframe_mg_classIII",
+            "TB_vest_plateframe_mg_classIV",
 
             // Items
             "ToolKit"
