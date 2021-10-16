@@ -13,7 +13,11 @@ params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projecti
 if ((toLower _weapon) in ["throw", "put"] || !(_muzzle in [primaryWeapon _unit, handgunWeapon _unit])) exitWith {1};
 if (vehicle _unit != _unit) exitWith {0.1};
 
-private _suppressed = linearConversion [L_Suppress_Suppress_sys_intensity / 3, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 0.5, true];
+private _suppressed = 0;
+if (!isNil "L_Suppress_Suppress_sys_intensity") then
+{
+    _suppressed = linearConversion [L_Suppress_Suppress_sys_intensity / 3, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 0.5, true];
+};
 private _aimCoef = linearConversion [0, 5, getCustomAimCoef _unit, 0, 1, true];
 private _recoil = GVAR(recoilStart) + _aimCoef + _suppressed;
 private _deploy = isWeaponDeployed _unit;

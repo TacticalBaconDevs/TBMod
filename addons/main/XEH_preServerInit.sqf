@@ -4,8 +4,8 @@
     Developed by http://tacticalbacon.de
 */
 // ### DevAbfrage
-TB_serverBuild = productVersion select 3;
-publicVariable "TB_serverBuild";
+//TB_serverBuild = productVersion select 3;
+//publicVariable "TB_serverBuild";
 
 // ### CrashHelfer
 TB_disconnectCache = [];

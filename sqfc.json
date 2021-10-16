@@ -1,0 +1,14 @@
+{
+    "inputDirs": [
+        "P:/x/TBMod/addons"
+    ],
+    "includePaths": [
+        "P:/"
+    ],
+    "excludeList": [
+        "#disabled",
+        "#old"
+    ],
+    "outputDir": "P:/",
+    "workerThreads": 6
+}

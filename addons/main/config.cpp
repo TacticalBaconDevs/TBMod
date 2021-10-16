@@ -74,14 +74,14 @@ class CfgPatches
             "tfar_handhelds",
             "tfar_static_radios",
             // Reskins
-            "OPXT_TFAR",
-            "opxt_tfar_backpacks",
-            "OPXT_TFAR_ITEMS",
+            //"OPXT_TFAR",
+            //"opxt_tfar_backpacks",
+            //"OPXT_TFAR_ITEMS",
 
             // 3rd PartyMods
             "zen_main",
-            "3denEnhanced",
-            "adv_aceCPR",
+            //"3denEnhanced",
+            //"adv_aceCPR",
             //"WarFXPE", // Blastcore ist clientside
             "acex_field_rations",
             "acex_headless",
@@ -177,7 +177,6 @@ class CfgPatches
             "ace_noidle",
             "ace_noradio",
             "ace_norearm",
-            "ace_nouniformrestrictions",
             "ace_optics",
             "ace_optionsmenu",
             "ace_overheating",
