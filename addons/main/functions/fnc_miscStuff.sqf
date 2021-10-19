@@ -275,7 +275,7 @@ GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "S
 
                     private _actions = [];
                     {
-                        if (alive _x) then
+                        if (alive _x && isNull (isVehicleCargo _x)) then
                         {
                             private _action = [
                                 format ["vehicle_%1", random 999999],
