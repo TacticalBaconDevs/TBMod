@@ -10,7 +10,8 @@ params [
     ["_codeReturn", false, [false]]
 ];
 
-if (!canSuspend) exitWith {"ERROR: Suspending not allowed in this contex"};
+// Darf nicht <Suspend> dann kommt nichts zurück
+//if (!canSuspend) exitWith {"ERROR: Suspending not allowed in this contex"};
 
 private _array = [_cmd];
 if (!isNil {_data}) then {_array pushBack _data};
@@ -25,9 +26,10 @@ if (_errorCode < 0 || {_returnCode < 0}) then
     systemChat _msg;
 };
 
-if (_returnCode > 1) then
+// TODO: Darf nicht <Suspend> dann kommt nichts zurück
+/*if (_returnCode > 1) then
 {
     _result = [_returnCode] call FUNC(getFromCache);
-};
+};*/
 
 if (_codeReturn) then {_returnCode} else {_result};
