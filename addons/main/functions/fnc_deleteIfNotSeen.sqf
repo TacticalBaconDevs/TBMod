@@ -21,8 +21,8 @@
 params [
         "_grp",
         ["_condition", {true}],
-        ["_delay", 10],
-        ["_radiusPlayer", 100],
+        ["_delay", 60],
+        ["_radiusPlayer", 200],
         ["_checkPause", 15]
     ];
 

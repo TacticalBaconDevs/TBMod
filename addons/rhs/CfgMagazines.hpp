@@ -221,6 +221,24 @@ class CfgMagazines
         mass = 28; // 41.14
     };
 
+    class rhsusf_mag_17Rnd_9x19_FMJ;
+    class TB_mag_33Rnd_9x19_FMJ : rhsusf_mag_17Rnd_9x19_FMJ
+    {
+        count = 33;
+        descriptionShort = "Caliber: 9x19mm Parabellum<br/>Rounds: 33<br/>Used in: Glock 18";
+        displayName = "33rnd Glock M882 FMJ";
+        mass = 11.63;
+    };
+
+    class rhsusf_mag_17Rnd_9x19_JHP;
+    class TB_mag_33Rnd_9x19_JHP : rhsusf_mag_17Rnd_9x19_JHP
+    {
+        count = 33;
+        descriptionShort = "Caliber: 9x19mm Parabellum<br/>Rounds: 33<br/>Used in: Glock 18";
+        displayName = "33rnd Glock M882 JHP";
+        mass = 11.63;
+    };
+
     class rhs_mag_gau19_air_base;
     class rhsusf_mag_gau19_melb_left : rhs_mag_gau19_air_base // AH-6 12.7x99mm Left
     {
@@ -232,6 +250,12 @@ class CfgMagazines
     {
         hardpoints[] = {"RHS_HP_MELB_R","RHS_HP_MELB_M134"}; // "RHS_HP_MELB_R"
         displayname = "12.7x99mm SLAP Right"; // "12.7x99mm SLAP"
+    };
+
+    class rhs_mag_m134_pylon_base;
+    class rhs_mag_m134_pylon_3000 : rhs_mag_m134_pylon_base // AH-6 7.62mm Minigun
+    {
+        tracersEvery = 1; // 3
     };
 
     class VehicleMagazine;
@@ -265,6 +289,12 @@ class CfgMagazines
         hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","B_MISSILE_PYLON"}; // {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
 
+    class rhs_mag_Sidewinder_2;
+    class rhs_mag_aim9m_2 : rhs_mag_Sidewinder_2 // AIM-9
+    {
+        hardpoints[] = {"RHS_HP_AIM9_2x","TB_Pylon_MQ_9_Sky_Guardian"}; // "RHS_HP_AIM9_2x"
+    };
+
     class Titan_AA;
     class rhs_fim92_mag : Titan_AA // FIM-92F Stinger
     {
@@ -290,6 +320,7 @@ class CfgMagazines
     {
         displayname = "200rnd 5.56x45mm"; // "200rnd M249 Box M855"
         displaynameshort = "200rnd M249"; // "M855"
+        lastRoundsTracer = 10;
     };
 
     class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch : rhsusf_200Rnd_556x45_M855_soft_pouch // 200rnd M249 Softpack M855 Tracer
@@ -297,11 +328,13 @@ class CfgMagazines
         ammo = "rhs_ammo_556x45_M855_Ball_Red"; // "rhs_ammo_556x45_M855A1_Ball_Red"
         displayname = "200rnd 5.56x45mm (Tracer)"; // "200rnd M249 Box M855 (Mixed)"
         displaynameshort = "200rnd (Tracer)"; // "M855 (Mixed)"
+        lastRoundsTracer = 10; // 0
     };
 
     class rhsusf_50Rnd_762x51_m61_ap;
     class rhsusf_100Rnd_762x51_m61_ap : rhsusf_50Rnd_762x51_m61_ap // 100rnd M240 Box M61 AP
     {
+        lastRoundsTracer = 10;
         tracersEvery = 0; // 5
     };
 
@@ -310,7 +343,8 @@ class CfgMagazines
     {
         displayname = "100rnd M62 AP (Tracer)"; // "100rnd M240 Box M62 (Tracer)"
         displayNameShort = "M62 AP (Tracer)"; // "M62 Tracer"
-        tracersEvery = 1; // 5
+        tracersEvery = 5; // 5
+        lastRoundsTracer = 10; // 0
     };
 
     class rhs_mag_100Rnd_556x45_Mk318_cmag;
@@ -318,7 +352,8 @@ class CfgMagazines
     {
         displayName = "100rnd Mk318 Mod 1 (Tracer)";
         displaynameshort = "100rnd (Tracer)";
-        tracersEvery = 2;
+        tracersEvery = 5;
+        lastRoundsTracer = 10; // 0
     };
 
     class TB_mag_100Rnd_556x45_Mk318_dim : TB_mag_100Rnd_556x45_Mk318_tracer // 100Rnd M27IAR DIM
@@ -326,44 +361,66 @@ class CfgMagazines
         ammo = "TB_ammo_556x45_Mk318_DIM";
         displayName = "100rnd Mk318 Mod 1 (DIM)";
         displaynameshort = "100rnd (DIM)";
-        tracersEvery = 2;
+        tracersEvery = 5;
+        lastRoundsTracer = 10; // 0
+    };
+
+    class 30Rnd_556x45_Stanag;
+    class rhs_mag_30Rnd_556x45_M855A1_Stanag : 30Rnd_556x45_Stanag // 30Rnd STANAG M855A1 alle Magazine
+    {
+        lastRoundsTracer = 5; // 0
+    };
+
+    class rhs_mag_30Rnd_556x45_Mk318_SCAR;
+    class rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull : rhs_mag_30Rnd_556x45_Mk318_SCAR // Mk16 Standardmunition
+    {
+        lastRoundsTracer = 5; // 0
     };
 
     class 6Rnd_ACE_Hellfire_AGM114K;
     class PylonRack_1Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // ACE AGM-114K
     {
-        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+        hardpoints[] = {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
 
     class PylonRack_3Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // ACE AGM-114K 3x
     {
-        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+        hardpoints[] = {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+    };
+
+    class PylonRack_4Rnd_ACE_Hellfire_AGM114K : 6Rnd_ACE_Hellfire_AGM114K // ACE AGM-114K 4x
+    {
+        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","TB_Pylon_MQ_9_Sky_Guardian"}; // {"UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
 
     class PylonRack_1Rnd_ACE_Hellfire_AGM114N : PylonRack_1Rnd_ACE_Hellfire_AGM114K // ACE AGM-114N
     {
-        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
+        hardpoints[] = {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"
     };
 
     class PylonRack_3Rnd_ACE_Hellfire_AGM114N : PylonRack_3Rnd_ACE_Hellfire_AGM114K // ACE AGM-114N 3x
     {
-        hardpoints[] += {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+        hardpoints[] = {"RHS_HP_MELB_M134","RHS_HP_LONGBOW_RACK","RHS_HP_FFAR_USMC"}; // "B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"
+    };
+
+    class PylonRack_4Rnd_ACE_Hellfire_AGM114N : PylonRack_4Rnd_ACE_Hellfire_AGM114K // ACE AGM-114N 4x
+    {
+        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","TB_Pylon_MQ_9_Sky_Guardian"}; // {"UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
 
     class PylonRack_1Rnd_ACE_Hellfire_AGM114L : PylonRack_1Rnd_ACE_Hellfire_AGM114K // ACE AGM-114L
     {
-        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
+        hardpoints[] = {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC","RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"B_MISSILE_PYLON","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","UNI_SCALPEL","CUP_NATO_HELO_SMALL","CUP_NATO_HELO_LARGE","RHS_HP_MELB"}
     };
 
     class PylonRack_3Rnd_ACE_Hellfire_AGM114L : PylonRack_3Rnd_ACE_Hellfire_AGM114K // ACE AGM-114L 3x
     {
-        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"}
+        hardpoints[] = {"RHS_HP_MELB_M134","RHS_HP_MELB","RHS_HP_FFAR_USMC","RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"B_MISSILE_PYLON","UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_LONGBOW_RACK"}
     };
 
-    class PylonRack_4Rnd_ACE_Hellfire_AGM114K;
     class PylonRack_4Rnd_ACE_Hellfire_AGM114L : PylonRack_4Rnd_ACE_Hellfire_AGM114K // ACE AGM-114L 4x
     {
-        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK"}; // {"UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
+        hardpoints[] = {"RHS_HP_LONGBOW_RACK","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","TB_Pylon_MQ_9_Sky_Guardian"}; // {"UNI_SCALPEL","CUP_NATO_HELO_LARGE","RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK"}
     };
 
     class rhs_mag_AGM114K;

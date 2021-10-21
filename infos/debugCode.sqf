@@ -43,7 +43,7 @@ TB_vergleich = {
         {
             private _valueFirst = (_first >> _x) call BIS_fnc_getCfgData;
             private _valueSecond = (_second >> _x) call BIS_fnc_getCfgData;
-            if !(_valueFirst isEqualTo _valueSecond) then {diag_log text format ["%4%1 -> %2 | %3", _x, _valueFirst, _valueSecond, _indentation select [4]]};
+            if !(_valueFirst isEqualTo _valueSecond) then {diag_log text format ["%4-*- %1 -> %2 | %3", _x, _valueFirst, _valueSecond, _indentation select [4]]};
         };
     }
     forEach _attribute;
@@ -343,3 +343,20 @@ deleteVehicle _vehicle;
     [],
     true
 ] call CBA_fnc_addClassEventHandler;
+
+
+// FeidTeamleader funken
+["CAManBase", "InitPost", {
+    params ["_unit"];
+
+    if (!isPlayer _unit && side _unit == opfor && leader _unit == _unit) then
+    {
+        [_unit, [100, 150, 200]] call TBMod_spectrum_fnc_createTransmitter;
+    };
+}, true] call CBA_fnc_addClassEventHandler;
+
+
+// Name ändern (nicht JIP)
+private _name = "Der Diktator";
+player setVariable ["ACE_Name", [_name, true] call ace_common_fnc_sanitizeString, true];
+player setVariable ["ACE_NameRaw", [_name, false] call ace_common_fnc_sanitizeString, true];

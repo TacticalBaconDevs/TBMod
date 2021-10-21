@@ -94,7 +94,7 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "500lb, high-explosive, laser-guided bomb"
         displayName = "HE Bomb [LG]"; // "GBU-12"
         displayNameShort = "[LG]"; // "Bomb"
-        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12"}; // "B_BOMB_PYLON"
+        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12","TB_Pylon_MQ_9_Sky_Guardian"}; // "B_BOMB_PYLON"
     };
 
     class PylonMissile_1Rnd_BombCluster_01_F : PylonMissile_1Rnd_Bomb_04_F // CBU-85 HE Mines Cluster
@@ -118,6 +118,7 @@ class CfgMagazines
         descriptionShort = "[LG]"; // "580lb, laser-guided cluster bomb"
         displayName = "HE Cluster [LG]"; // "BL778 Cluster x1"
         displayNameShort = "[LG]"; // "Cluster Bomb"
+        hardpoints[] = {"B_BOMB_PYLON","B_GBU12","I_GBU12","TB_Pylon_MQ_9_Sky_Guardian"}; // "B_BOMB_PYLON","B_GBU12","I_GBU12"
     };
 
     class ace_hot_1_6Rnd;
@@ -278,6 +279,62 @@ class CfgMagazines
         displayNameShort = "45. cal FMJ";
     };
 
+    class 50Rnd_570x28_SMG_03;
+    class TB_20Rnd_570x28 : 50Rnd_570x28_SMG_03 // 5.7mm Magazin
+    {
+        ammo = "TB_ammo_570";
+        count = 20;
+        descriptionShort = "Caliber: 5.7mm<br />Rounds: 20<br />Used in: FN Five-Seven";
+        displayName = "5.7mm 20Rnd Mag";
+        picture = "\A3\weapons_f\data\ui\M_30Rnd_9x21_CA.paa";
+    };
+
+    class 10Rnd_50BW_Mag_F;
+    class TB_mag_MPR_10Rnd_Antimateriel : 10Rnd_50BW_Mag_F // MPR Antimateriel
+    {
+        ammo = "TB_ammo_MPR_antimateriel";
+        count = 10;
+        descriptionShort = "Caliber: 12.7x99mm<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Antimateriel";
+        displayNameShort = "10Rnd Antimateriel";
+        initSpeed = 549;
+        mass = 14;
+    };
+
+    class rhsusf_8Rnd_Slug;
+    class TB_mag_MPR_10Rnd_Slug : rhsusf_8Rnd_Slug  // MPR Slugshot
+    {
+        ammo = "TB_ammo_MPR_Slug";
+        count = 10;
+        descriptionShort = "20-Gauge Slugshot<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Slugshot";
+        displayNameShort = "10Rnd Slugshot";
+        mass = 14;
+        picture = "\a3\Weapons_F_Enoch\MagazineProxies\data\UI\icon_6Rnd_12Gauge_Slug_ca.paa";
+    };
+
+    class ACE_6Rnd_12Gauge_Pellets_No4_Buck;
+    class TB_mag_MPR_10Rnd_Buckshot : ACE_6Rnd_12Gauge_Pellets_No4_Buck // MPR Buckshot
+    {
+        count = 10;
+        descriptionShort = "20-Gauge Buckshot<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Buckshot";
+        displayNameShort = "10Rnd Buckshot";
+        initSpeed = 380;
+        mass = 14;
+    };
+
+    class 20Rnd_556x45_UW_mag;
+    class TB_mag_MPR_10Rnd_Underwater : 20Rnd_556x45_UW_mag // MPR Underwater Magazin
+    {
+        author = "TBMod";
+        count = 10;
+        descriptionShort = "Caliber: 12.7x99mm<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Underwater Ammunition";
+        displayNameShort = "Underwater Ammunition";
+        mass = 14;
+    };
+
     class ACE_10Rnd_338_300gr_HPBT_Mag;
     class TB_mag_10Rnd_338_LS_Tracer : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
     {
@@ -321,9 +378,9 @@ class CfgMagazines
         author = "TBMod";
         descriptionShort = "Caliber: .408 CheyTac Tracer(305gr)<br />Rounds: 7";
         displayName = ".408 7Rnd Mag Tracer (305gr)";
-        tracersEvery = 1; 
+        tracersEvery = 1;
     };
-    
+
     class 20Rnd_105mm_HEAT_MP;
     class 100Rnd_105mm_HEAT_MP : 20Rnd_105mm_HEAT_MP // Gunship 105mm
     {
@@ -342,6 +399,26 @@ class CfgMagazines
         initSpeed = 1800; // 1600
     };
 
+    class TB_mag_40Rnd_40mm_GPR : 60Rnd_40mm_GPR_Tracer_Red_shells // 40mm GPR Magazine
+    {
+        ammo = "TB_ammo_40mm_GPR";
+        count = 40;
+        muzzleImpulseFactor[] = {1,2}; // {1,6}
+    };
+
+    class TB_mag_40Rnd_40mm_APFSDS : 40Rnd_40mm_APFSDS_Tracer_Red_shells // 40mm APFSDS Magazine
+    {
+        ammo = "TB_ammo_40mm_APFSDS";
+        count = 40;
+        muzzleImpulseFactor[] = {1,2}; // {0.5,2}
+    };
+
+    class 200Rnd_127x99_mag_Tracer_Red;
+    class TB_mag_200Rnd_127x99_Tracer_Red : 200Rnd_127x99_mag_Tracer_Red // HMG Tracer
+    {
+        tracersEvery = 1; // 3
+    };
+
     class 60Rnd_CMFlare_Chaff_Magazine;
     class TB_mag_CMFlare_Chaff_72Rnd : 60Rnd_CMFlare_Chaff_Magazine // CM Flare Chaff
     {
@@ -351,7 +428,7 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR/Radar";
         displayName = "Flare/Chaff x72";
         displayNameShort = "Flare/Chaff";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4"};
         initSpeed = 18;
         pylonWeapon = "TB_weap_CMLauncher";
     };
@@ -373,7 +450,7 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR, 60 Sekunden";
         displayName = "LWIRCM x144/60";
         displayNameShort = "LWIRCM";
-        hardpoints[] = {"TB_cm_dispenser_UH_80_1","TB_cm_dispenser_UH_80_2","TB_cm_dispenser_UH_80_3","TB_cm_dispenser_UH_80_4"};
+        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4","TB_cm_dispenser_MH_6_1","TB_cm_dispenser_MH_6_2"};
         initSpeed = 1;
         pylonWeapon = "TB_weap_LWIRCM_144_60";
     };

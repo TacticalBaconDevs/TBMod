@@ -12,10 +12,14 @@ if (GVAR(recoilCoef) == -1) exitWith {};
 [
     "RecoilSystem",
     {
-        private _suppressed = linearConversion [0, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 1, true];
+        private _suppressed = 0;
+        if (!isNil "L_Suppress_Suppress_sys_intensity") then
+        {
+            _suppressed = linearConversion [L_Suppress_Suppress_sys_intensity / 3, L_Suppress_Suppress_sys_intensity, L_Suppress_Suppress_sys_intensity * (L_Suppress_Suppress_sys_Threshold / 30), 0, 0.5, true];
+        };
         private _customAimCoef = getCustomAimCoef ACE_player;
         private _weapon = currentWeapon ACE_player;
-        if (_weapon isEqualTo "") exitWith {""};
+        if (_weapon isEqualTo "") then {_weapon = "KEINE"};
         private _temperature = ACE_player getVariable [format ["ace_overheating_%1_temp", _weapon], 0];
         private _scaledTemperature = linearConversion [0, 1000, _temperature, 0, 1, true];
         ([_weapon] call ace_overheating_fnc_getWeaponData) params ["_dispersion", "_slowdownFactor", "_jamChance"];
@@ -42,7 +46,7 @@ if (GVAR(recoilCoef) == -1) exitWith {};
 }] call EFUNC(common,arithmeticSetSource);*/
 
 // TODO: Automatisch
-{
+/*{
     ace_overheating_cacheSilencerData setVariable _x;
 }
 forEach [
@@ -52,12 +56,12 @@ forEach [
     ["rhsusf_acc_rotex5_grey", 4],  //2.4
     ["rhsusf_acc_sfmb556", 1.25],   //1.25
     ["rhsusf_acc_sf3p556", 1.25]    //1.25
-];
+];*/
 
 GVAR(cacheWeaponType) = ([currentWeapon player] call BIS_fnc_itemType) select 1;
 GVAR(recoilFreeze) = -1;
 
-// nach Fahrzeugverlassen noch damit FFV 0.1 recoil weg kommt
+// nach Fahrzeug verlassen noch damit FFV 0.1 recoil weg kommt
 
 ["weapon", {
     params ["_unit", "_newWeapon"];

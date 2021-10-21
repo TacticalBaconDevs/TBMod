@@ -29,6 +29,7 @@ class TB_supply_uk_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDMAGAZINE(UK3CB_BAF_9_15Rnd,15);
         MACRO_ADDMAGAZINE(UK3CB_BAF_9_17Rnd,15);
         MACRO_ADDMAGAZINE(TB_mag_taser,7);
+        MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
     };
 };
 
@@ -188,7 +189,7 @@ class TB_supply_uk_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 class TB_supply_uk_night : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("Nachtkiste",UK);
-    
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -211,7 +212,8 @@ class TB_supply_uk_night : WRAPPER_NAME(Box_East_Support_F)
 class TB_supply_uk_vehicles127 : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("9x Fahrzeug Magazine 12.7",UK);
-    
+    GVAR(directly2Inv) = 1;
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -226,7 +228,8 @@ class TB_supply_uk_vehicles127 : WRAPPER_NAME(Box_East_Support_F)
 class TB_supply_uk_vehicles762 : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("9x Fahrzeug Magazine 7.62",UK);
-    
+    GVAR(directly2Inv) = 1;
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -241,7 +244,8 @@ class TB_supply_uk_vehicles762 : WRAPPER_NAME(Box_East_Support_F)
 class TB_supply_uk_vehiclesGMG : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("5x Fahrzeug Magazine GMG",UK);
-    
+    GVAR(directly2Inv) = 1;
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -256,7 +260,8 @@ class TB_supply_uk_vehiclesGMG : WRAPPER_NAME(Box_East_Support_F)
 class TB_supply_uk_warriorAPDS : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("9x Warrior Magazine APDS",UK);
-    
+    GVAR(directly2Inv) = 1;
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -271,7 +276,8 @@ class TB_supply_uk_warriorAPDS : WRAPPER_NAME(Box_East_Support_F)
 class TB_supply_uk_warriorHE : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("9x Warrior Magazine HE",UK);
-    
+    GVAR(directly2Inv) = 1;
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)
@@ -286,7 +292,8 @@ class TB_supply_uk_warriorHE : WRAPPER_NAME(Box_East_Support_F)
 class TB_supply_uk_warriorMG : WRAPPER_NAME(Box_East_Support_F)
 {
     PUBLIC_NAME_CAT("2x Warrior Magazine 800 MG",UK);
-    
+    GVAR(directly2Inv) = 1;
+
     hiddenSelectionsTextures[] = {
         QPATHTOEF(skins,pictures\statics\AmmoBox_signs_CA_0_1.paa),
         QPATHTOEF(skins,pictures\statics\Box_T_East_Wps_F_co_1.paa)

@@ -26,7 +26,10 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         _x setCombatMode "BLUE";
         _x lock 2;
         //_x setFuel 0;
-        _x addEventHandler ["Fired", {(_this # 6) setPos [0,0,0]; deleteVehicle (_this # 6)}];
+        _x addEventHandler ["Fired", {
+            (_this # 6) setPos [0, 0, 1000];
+            deleteVehicle (_this # 6),
+        }];
     }
     forEach _syncObjs;
 

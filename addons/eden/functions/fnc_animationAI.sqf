@@ -11,7 +11,7 @@ if (is3DEN) exitWith {_unit switchMove _value};
 // Auf Bereitschaft warten
 if (!_forceStart && isNil QEGVAR(main,initDone)) exitWith
 {
-    [{!isNil QEGVAR(main,initDone)}, {_this call FUNC(animationAI)}, [_unit, _value, true]] call CBA_fnc_waitUntilAndExecute;
+    [{!isNil QEGVAR(main,initDone)}, LINKFUNC(animationAI), [_unit, _value, true]] call CBA_fnc_waitUntilAndExecute;
 };
 
 // Funktionalitäten
@@ -19,9 +19,9 @@ if (!_forceStart && isNil QEGVAR(main,initDone)) exitWith
 [_unit, "PATH"] remoteExec ["disableAI", _unit];
 _unit setVariable ["acex_headless_blacklist", true, true];
 
-if (dynamicSimulationEnabled (group _unit) || !simulationEnabled _unit) exitWith
+if (!simulationEnabled _unit) exitWith
 {
-    [{simulationEnabled (_this # 0)}, LINKFUNC(animationAI), _this] call CBA_fnc_waitUntilAndExecute;
+    [{simulationEnabled (_this # 0)}, LINKFUNC(animationAI), [_unit, _value, true]] call CBA_fnc_waitUntilAndExecute;
 };
 
 [{

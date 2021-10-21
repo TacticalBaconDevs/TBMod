@@ -112,7 +112,7 @@ class CfgWeapons
     };
 
     class V_PlateCarrierIAGL_dgtl;
-    class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl
+    class TB_vest_sps_ucp_classV : V_PlateCarrierIAGL_dgtl
     {
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_01.paa),

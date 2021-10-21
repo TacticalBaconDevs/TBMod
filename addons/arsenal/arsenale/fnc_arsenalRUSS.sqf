@@ -5,13 +5,12 @@
     Ansprechpartner: mordl, Darky, Nikuga
 */
 private _allgemein = [
-    // Gepäck
-    "rhs_sidor",            // maximumLoad = 129; mass = 20; Quotient = 6,45
-
     // Gesichtsbedeckung
     "rhs_scarf",
     "rhs_balaclava1_olive",
     "rhs_balaclava",
+    "rhs_facewear_6m2",
+    "rhs_facewear_6m2_1",
     // ### Vanilla
     //"G_Aviator",
 
@@ -65,9 +64,10 @@ private _allgemein = [
     "rhs_mag_rgn",
     "rhs_mag_rgo",
     "rhs_mag_zarya2",       // Stunnade
-    "rhs_mag_rdg2_black",
-    "rhs_mag_rdg2_white",
-    "rhs_mag_nspd",         // orange smoke
+    "SmokeShell",
+    "SmokeShellRed",
+    "SmokeShellGreen",
+    "SmokeShellBlue",
     // ### Sprengstoff
     "AMP_Breaching_Charge_Mag",
     // ### ITC Tablet
@@ -75,9 +75,6 @@ private _allgemein = [
 ];
 
 private _allgemein_magazine = [
-    "rhs_30Rnd_545x39_7N6M_AK",
-    "rhs_30Rnd_545x39_AK_green",
-    "rhs_30Rnd_545x39_7N6M_green_AK",
     "rhs_30Rnd_545x39_7N10_plum_AK",
     "rhs_30Rnd_545x39_AK_plum_green",
     "rhs_30Rnd_545x39_7N10_camo_AK",
@@ -90,9 +87,6 @@ private _allgemein_magazine = [
 ];
 
 private _allgemein_gewehre = [
-    "rhs_weap_ak74n",
-    "rhs_weap_ak74n_npz",
-    "rhs_weap_ak74n_2_npz",
     "rhs_weap_ak74mr",
     "rhs_weap_ak74m_npz",
     "rhs_weap_ak74m",
@@ -100,7 +94,6 @@ private _allgemein_gewehre = [
     "rhs_weap_ak74m_zenitco01_b33",
     "rhs_weap_ak74m_desert",
     "rhs_weap_ak74m_desert_npz",
-    "rhs_weap_ak74_3",
     "rhs_weap_ak105",
     "rhs_weap_ak105_npz",
 
@@ -136,10 +129,10 @@ private _allgemein_befestigungsschiene = [
 private _allgemein_geschuetzzubehoer = [
     "rhs_acc_tgpa",
     "rhs_acc_dtk3",
-    "rhs_acc_dtk",
+    "rhs_acc_dtk4screws",
     "rhs_acc_ak5",
-    "rhs_acc_uuk",
-    "rhs_acc_dtk1983"
+    "rhs_acc_tgpv2",
+    "rhs_acc_pbs1"
 ];
 
 private _allgemein_zweibein = [
@@ -177,19 +170,16 @@ private _allgemein_uniformen = [
     "rhs_uniform_emr_patchless",
     "rhs_uniform_vdv_emr",
     "rhs_uniform_emr_des_patchless",
-    "rhs_uniform_flora_patchless",
-    "rhs_uniform_flora_patchless_alt",
-    "rhs_uniform_mflora_patchless",
     "rhs_uniform_gorka_r_g",
-    "rhs_uniform_gorka_r_y"
+    "rhs_uniform_gorka_r_y",
+    "rhs_uniform_vkpo",
+    "rhs_uniform_vkpo_gloves"
 ];
 
 private _allgemein_westen = [
-    "rhs_6b13_EMR_6sh92",
-    "rhs_6b23_digi_6sh92",
-    "rhs_6b13_Flora_6sh92",
-    "rhs_6b23_6sh92",
-    "rhs_6b23_ML_6sh92"
+    "rhs_6b45_rifleman",    // schwer und viel Panzerung
+    "rhs_6sh117_rifleman",  // leicht und keine Panzerung
+    "rhs_6b45_desert"
 ];
 
 private _allgemein_kopfbedeckung = [
@@ -200,20 +190,23 @@ private _allgemein_kopfbedeckung = [
     "rhs_fieldcap_digi",
     "rhs_fieldcap_khk",
     "rhs_fieldcap",
-    "rhs_6b27m_digi",
-    "rhs_6b27m_digi_ess",
-    "rhs_6b27m",
-    "rhs_6b27m_ess",
-    "rhs_6b27m_ml",
-    "rhs_6b27m_ml_ess",
+    "rhs_6b47_bare",
     "rhs_6b47",
-    "rhs_6b47_ess"
+    "rhs_6b47_6m2_1",
+    "rhs_6b47_6m2",
+    "rhs_6b47_bala",
+    "rhs_6b47_emr",
+    "rhs_6b47_emr_2",
+    "rhs_6b47_emr_1",
+    "rhs_6b47_6B50",
+    "rhs_6b47_ess",
+    "rhs_6b47_ess_bala",
+    "rhs_6b47_bare_d"
 ];
 
 private _grenadier_gewehr = [
     "rhs_weap_ak74mr_gp25",
-    "rhs_weap_ak74m_gp25",
-    "rhs_weap_ak74n_gp25_npz"
+    "rhs_weap_ak74m_gp25"
 ];
 
 private _grenadier_munition = [
@@ -255,13 +248,14 @@ private _aaat_munition = [
 ];
 
 private _gepaeck_mittel = [
-    "rhs_assault_umbts"    // maximumLoad = 140; mass = 20; Quotient = 7
+    "rhs_rk_sht_30_emr",    // maximumLoad = 140; mass = 20; Quotient = 7
+    "rhs_rk_sht_30_olive"
 ];
 
 private _gepaeck_gross = [
-    "B_Carryall_cbr",       // maximumLoad = 320; mass = 60; Quotient = 5,3
-    "B_Carryall_oli",
-    "B_Carryall_khk"
+    "rhs_tortila_emr",       // maximumLoad = 320; mass = 60; Quotient = 5,3
+    "rhs_tortila_olive",
+    "rhs_tortila_khaki"
 ];
 
 private _gepaeck_sehrgross = [
@@ -280,9 +274,9 @@ private _rifle_munition = [
 ];
 
 private _LR = [
-    "OPXT_ogao_117",
-    "OPXT_pen_bad_117",
-    "OPXT_multicamt_117"
+    "OPXT_pen_bad_1523",
+    "OPXT_ogao_1523",
+    "OPXT_at_ix_1523"
 ];
 
 private _moerser_munition = [
@@ -322,11 +316,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Handfeuerwaffen
 
             // Weste
-            "rhs_6b13_EMR_6sh92_radio",
-            "rhs_6b23_digi_6sh92_radio",
-            "rhs_6b13_Flora_6sh92_radio",
-            "rhs_6b23_6sh92_radio",
-            "rhs_6b23_ML_6sh92_radio",
+            "rhs_6b45_off",
+            "rhs_6sh117_nco",
 
             // Ferngläser
             "rhs_pdu4",
@@ -348,10 +339,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_kopfbedeckung +
         _gepaeck_mittel +
         [
-            // Weste
-            "rhs_6b23_digi_medic",
-            "rhs_6b23_medic",
-            "rhs_6b23_ML_medic"
         ]
     };
 
@@ -375,12 +362,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Uniform
             "rhs_uniform_df15",
-            "rhs_uniform_df15_tan",
-
-            // Weste
-            "rhs_6b23_digi_medic",
-            "rhs_6b23_medic",
-            "rhs_6b23_ML_medic"
+            "rhs_uniform_df15_tan"
         ]
     };
 
@@ -402,11 +384,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
 
             // Weste
-            "rhs_6b13_EMR_6sh92_vog",
-            "rhs_6b23_6sh116_vog",
-            "rhs_6b13_Flora_6sh92_vog",
-            "rhs_6b23_6sh92_vog",
-            "rhs_6b23_ML_6sh92_vog"
+            "rhs_6b45_grn",
+            "rhs_6sh117_grn"
         ]
     };
 
@@ -436,11 +415,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_pkm",
 
             // Weste
-            "rhs_6b13_EMR_6sh92_vog",
-            "rhs_6b23_6sh116_vog",
-            "rhs_6b13_Flora_6sh92_vog",
-            "rhs_6b23_6sh92_vog",
-            "rhs_6b23_ML_6sh92_vog"
+            "rhs_6sh117_mg",
+            "rhs_6b45_mg"
         ]
     };
 
@@ -455,7 +431,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_zweibein +
         _allgemein_geschuetzzubehoer +
         _allgemein_zweibein +
-        _allgemein_raketenwerfer +
         _allgemein_uniformen +
         _allgemein_westen +
         _allgemein_kopfbedeckung +
@@ -471,11 +446,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _moerser_munition +
         [
             // Weste
-            "rhs_6b13_EMR_6sh92_vog",
-            "rhs_6b23_6sh116_vog",
-            "rhs_6b13_Flora_6sh92_vog",
-            "rhs_6b23_6sh92_vog",
-            "rhs_6b23_ML_6sh92_vog",
+            "rhs_6sh117_mg",
+            "rhs_6b45_mg",
 
             // Waffen
             "TB_vz99_carryWeapon",
@@ -515,11 +487,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_uniform_df15",
             "rhs_uniform_df15_tan",
 
-            // Weste
-            "rhs_vest_commander",
-            "rhs_vest_pistol_holster",
-            "rhs_6sh46",
-
             // Großes LR mit viel Platz
 
             "OPXT_scorpion_210",
@@ -557,17 +524,13 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehre
             "rhs_weap_svdp",
             "rhs_weap_svdp_wd",
-            "rhs_weap_akms",         // 7,62 keine Visierung möglich
+            "rhs_weap_ak103_zenitco01_b33",
+            "rhs_weap_ak104_zenitco01_b33",
             // ### Visiere
             "rhs_acc_pso1m2",
             "rhs_acc_pso1m21",
-            // ### Geschützzubehör
-            "rhs_acc_tgpv",
-            "rhs_acc_tgpv2",
-
-            // Weste
-            "rhs_6b23_digi_sniper",
-            "rhs_6b23_sniper",
+            "optic_dms",
+            "optic_ams",
 
             // Spetznas
             "rhs_weap_vss",
@@ -600,15 +563,18 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // ### Visier
             "rhs_acc_dh520x56",
             "rhs_acc_pso1m2",
-            "rhs_acc_tgpv2",
+            "rhs_acc_pso1m21",
+            "optic_lrps",
+            "ace_optic_lrps_2d",
+            "ace_optic_sos_2d",
+            "optic_ams",
+            "optic_ams_khk",
+            "optic_ams_snd",
             // ### Kopfbedeckung
             "rhs_fieldcap_khk",
             "rhs_fieldcap_vsr",
-
-            // Weste
-            "rhs_6b23_digi_sniper",
-            "rhs_6b23_sniper",
-
+            // Westen
+            "rhs_6sh117_svd",
             // Ferngläser
             "rhs_pdu4",
             "Laserdesignator",
@@ -642,10 +608,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_fieldcap_khk",
             "rhs_fieldcap_vsr",
 
-            // Weste
-            "rhs_6b23_digi_sniper",
-            "rhs_6b23_sniper",
-
             // Ferngläser
             "rhs_pdu4",
             "Laserdesignator",
@@ -678,15 +640,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMH3",
             "ACE_VMM3",
 
-            // Weste
-            "rhs_6b13_EMR_6sh92_vog",
-            "rhs_6b23_6sh116_vog",
-            "rhs_6b13_Flora_6sh92_vog",
-            "rhs_6b23_6sh92_vog",
-            "rhs_6b23_ML_6sh92_vog",
+            // Westen
+            "rhs_6b45_rifleman_2",
 
             // Gepäck
-            "rhs_assault_umbts_engineer_empty",
+            "rhs_rk_sht_30_olive_engineer_empty",
+            "rhs_rk_sht_30_emr_engineer_empty",
 
             // Items
             "ACE_M26_Clacker",
@@ -718,13 +677,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         _gepaeck_gross +
         [
-            // Weste
-            "rhs_6b23_digi_vydra_3m",
-            "rhs_6b23_vydra_3m",
-            "rhs_6b23_ML_vydra_3m",
-
             // Gepäck
-            "rhs_rpg_empty",
+            "rhs_rpg_2",
 
             // Raketenwerfer
             "rhs_weap_rpg7",
@@ -745,15 +699,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _allgemein_uniformen +
         _allgemein_westen +
+        _gepaeck_mittel +
         _allgemein_kopfbedeckung +
         [
-            // Weste
-            "rhs_6b13_EMR_6sh92_headset_mapcase",
-            "rhs_6b23_digi_6sh92_headset_mapcase",
-            "rhs_6b13_Flora_6sh92_headset_mapcase",
-            "rhs_6b23_6sh92_headset_mapcase",
-            "rhs_6b23_ML_6sh92_headset_mapcase",
-
             // Gepäck
             "O_UAV_01_backpack_F",
 
@@ -790,12 +738,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Weste
-            "rhs_6b23_digi_engineer",
-            "rhs_6b23_engineer",
-            "rhs_6b23_ML_engineer",
+            "rhs_6b45_rifleman_2",
 
             // Gepäck
-            "rhs_assault_umbts_engineer_empty",
+            "rhs_rk_sht_30_olive_engineer_empty",
+            "rhs_rk_sht_30_emr_engineer_empty",
 
             // Items
             "ACE_DefusalKit",

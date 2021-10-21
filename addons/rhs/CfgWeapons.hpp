@@ -4,66 +4,6 @@
 */
 class CfgWeapons
 {
-    // Skin schwarze Weste
-    class rhsusf_spc_patchless_radio;
-    class SPC_Black_01: rhsusf_spc_patchless_radio
-    {
-        displayName = "SPC Black";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_spc_01.paa)
-        };
-        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
-    };
-
-    // Skin schwarze Weste
-    class rhsusf_spcs_ucp_rifleman;
-    class UCP_Black_01: rhsusf_spcs_ucp_rifleman
-    {
-        displayName = "UCP Black";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_ucp_01.paa)
-        };
-        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
-    };
-
-    // Skin schwarze Weste
-    class rhsusf_mbav_mg;
-    class MBAV_Black_01: rhsusf_mbav_mg
-    {
-        displayName = "MBAV Black";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa)
-        };
-        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
-    };
-
-    // Skin schwarze Weste
-    class rhsusf_mbav_medic;
-    class MBAV_Black_02: rhsusf_mbav_medic
-    {
-        displayName = "MBAV Black";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa),
-            QPATHTOEF(skins,pictures\vests\TB_black_vest_mbav_01.paa)
-        };
-        picture = "\A3\Characters_F_Mark\Data\UI\icon_carrier_spec_rig_blk.paa";
-    };
-
     // Skin S.W.A.T. Weste
     class rhsusf_mbav_light;
     class TB_vest_SWAT: rhsusf_mbav_light
@@ -101,8 +41,6 @@ class CfgWeapons
     {
         modes[] = {"Far_AI","Single","Burst"}; // "Far_AI","Single","Two","Four","Eight","Twelve","TwentyFour","Burst"
     };
-
-
 
     // Skin schwarzer Helm S.W.A.T.
     class rhsusf_opscore_bk_pelt;
@@ -223,51 +161,109 @@ class CfgWeapons
     class rhs_weap_SCAR_H_CQC_Base;
     class rhs_weap_mk17_CQC: rhs_weap_SCAR_H_CQC_Base // Mk17 CQC
     {
-        displayName = "Mk 16 Mod 0 (CQC)"; // Mk 17 Mod 0 (CQC)
-        magazineWell[] = {"AK_545x39","CBA_545x39_AK","CBA_545x39_RPK","STANAG_556x45","CBA_556x45_STANAG"};
-        magazines[] += {"rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger"};
         ACE_barrelLength = 330;
         ACE_barrelTwist = 177.8;
+        descriptionShort = "Assault rifle<br/>Caliber: 5.56x45mm / 5.45x39mm"; //"Assault rifle<br/>Caliber: 7.62x51mm NATO";
+        displayName = "Mk 16 Mod 0 (CQC)"; // Mk 17 Mod 0 (CQC)
+        magazineWell[] = {"AK_545x39","CBA_545x39_AK","CBA_545x39_RPK","STANAG_556x45","CBA_556x45_STANAG"};
+        magazines[] += {"rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull"};
+        recoil = "TB_recoil_mk16"; // "rhs_weap_scarl_recoil";
     };
 
-    class rhs_weap_SCAR_H_LB_Base;
+    class rhs_weap_SCAR_H_LB_Base : rhs_weap_SCAR_H_Base
+    {
+        class WeaponSlotsInfo;
+    };
     class rhs_weap_mk17_LB: rhs_weap_SCAR_H_LB_Base // Mk17 LB
     {
-        magazineWell[] = {"SVD_762x54R","Rahim_762x54","M14_762x51","CBA_762x54R_SVD","CBA_762x51_SCAR","AK_762x39","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
         ACE_barrelLength = 510;
         ACE_barrelTwist = 177.8;
         aimTransitionSpeed = 0.36; // 1
+        descriptionShort = "Tactical Precision Rifle<br/>Caliber: 7.62x51mm / 7.62x39mm"; // "Assault rifle<br/>Caliber: 7.62x51mm NATO";
+        displayName = "Mk 17 (TPR)";
+        magazineWell[] = {"SVD_762x54R","Rahim_762x54","M14_762x51","CBA_762x54R_SVD","CBA_762x51_SCAR","AK_762x39","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
+        modes[] = {"Single","Single_AI","single_medium_optics1","single_far_optics2","fullauto_medium"}; // {"Single","Single_AI","FullAuto","single_medium_optics1","single_far_optics2","fullauto_medium"}
+        recoil = "TB_recoil_mk17"; // "recoil_ebr";
+
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            mass = 111.9632; // 81.84
+        };
     };
 
     class rhs_weap_SCAR_H_STD_Base;
     class rhs_weap_mk17_STD: rhs_weap_SCAR_H_STD_Base // Mk17 STD
     {
-        magazineWell[] = {"CBA_762x51_SCAR","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
-        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
         ACE_barrelLength = 410;
         ACE_barrelTwist = 177.8;
         aimTransitionSpeed = 0.76; // 1
+        descriptionShort = "Assault rifle<br/>Caliber: 7.62x51mm / 7.62x39mm"; // "Assault rifle<br/>Caliber: 7.62x51mm NATO"
+        displayName = "Mk 17 Mod 0 (STD)";
+        magazineWell[] = {"CBA_762x51_SCAR","AK_762x39","CBA_762x39_AK","CBA_762x39_RPK","CBA_762x51_AR10","CBA_762x51_AR10_L","CBA_762x51_AR10_XL"};
+        magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"};
+        recoil = "TB_recoil_mk17"; // "recoil_ebr";
     };
 
     class rhs_weap_m240_base;
-    class rhs_weap_m240G: rhs_weap_m240_base // M240G
+    class rhs_weap_m240G : rhs_weap_m240_base
     {
-        ace_overheating_mrbs = 750; // 3000
-        aimTransitionSpeed = 0.16; // 0.5
+        class WeaponSlotsInfo;
+        class manual;
+    };
+    class TB_weap_m240G: rhs_weap_m240G // M240G
+    {
+        ace_overheating_mrbs = 3500; // 3000
+        author = "TBMod";
+        baseWeapon = "TB_weap_m240G";
+        displayName = "M240L"; // "M240G"
+        recoil = "TB_recoil_m240";
+
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            mass = 222.604; // 255.2
+        };
     };
 
-    class rhs_weap_m249_pip_S;
-    class rhs_weap_m249_light_S: rhs_weap_m249_pip_S // M249
+    class rhs_weap_m240B : rhs_weap_m240_base
     {
-        ace_overheating_mrbs = 750; // 3000
-        aimTransitionSpeed = 0.36; // 0.5
+        class WeaponSlotsInfo;
+        class manual;
+    };
+    class TB_weap_m240B : rhs_weap_m240B // M240B
+    {
+        ace_overheating_mrbs = 5000; // 3000
+        author = "TBMod";
+        baseWeapon = "TB_weap_m240B";
+        ace_overheating_slowdownFactor = 0.75; // 1;
+        modes[] = {"manual","fast","close","short","medium","far"}; // {"manual","close","short","medium","far"}
+        recoil = "TB_recoil_m240";
+
+        class fast : manual
+        {
+            autoFire = 1;
+            burst = 1;
+            dispersion = 0.0008;
+            displayName = "Fast";
+            reloadTime = 0.063157;
+            showToPlayer = 1;
+            textureType = "fastAuto";
+        };
+    };
+
+    class rhs_weap_m249_light_S;
+    class TB_weap_m249_light_S : rhs_weap_m249_light_S // M249
+    {
+        aimTransitionSpeed = 0.4; // 0.5
+        author = "TBMod";
+        baseWeapon = "TB_weap_m249_light_S";
+        recoil = "TB_recoil_m249";
     };
 
     class rhs_weap_M107_Base_F;
     class rhs_weap_M107: rhs_weap_M107_Base_F // M107
     {
-        aimTransitionSpeed = 0.26; // 0.5
+        aimTransitionSpeed = 0.3; // 0.5
     };
 
     class rhs_weap_orsis_Base_F;
@@ -348,7 +344,7 @@ class CfgWeapons
     {
         class WeaponSlotsInfo;
     };
-    class TB_weap_m27iar : rhs_weap_m27iar_grip
+    class TB_weap_m27iar : rhs_weap_m27iar_grip // M27IAR
     {
         author = "TBMod";
         baseWeapon = "TB_weap_m27iar";
@@ -357,8 +353,87 @@ class CfgWeapons
         magazineWell[] = {"TB_magwell_100Rnd_556","CBA_556x45_STANAG_2D","CBA_556x45_STANAG"};
         class WeaponSlotsInfo : WeaponSlotsInfo
         {
-            mass = 79.344;
+            mass = 79.34;
         };
+    };
+
+    class hgun_P07_F;
+    class rhsusf_weap_glock17g4 : hgun_P07_F
+    {
+        class Single;
+    };
+    class TB_weap_glock18 : rhsusf_weap_glock17g4 // Glock 18
+    {
+        aimTransitionSpeed = 1.9;
+        author = "TBMod";
+        baseWeapon = "TB_weap_glock18";
+        displayName = "Glock 18";
+        modes[] = {"Single","FullAuto"};
+        magazines[] = {"rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_FMJ","UK3CB_BAF_9_17Rnd","TB_mag_33Rnd_9x19_JHP","TB_mag_33Rnd_9x19_FMJ"};
+        magazineWell[] = {"CBA_9x19_Glock_Full","TB_magwell_33Rnd_9x19"};
+        recoil = "TB_recoil_glock18";
+
+        class FullAuto : Single
+        {
+            autoFire = 1;
+            burst = 0;
+            dispersion = 0.0029;
+            displayName = "Auto";
+            reloadTime = 0.05;
+            showToPlayer = 1;
+            textureType = "fullAuto";
+        };
+    };
+
+    class M134_minigun;
+    class rhs_weap_m134_minigun_1 : M134_minigun
+    {
+        class HighROF;
+    };
+    class RHS_weap_m134_pylon: rhs_weap_m134_minigun_1 // AH-6 7.62mm Minigun
+    {
+        modes[] = {"manual","close","short","medium","far"};
+        class manual : HighROF
+        {
+            dispersion = 0.008;
+            displayName = "6000 rpm";
+            reloadTime = 0.01;
+            showToPlayer = 1;
+            textureType = "fastAuto";
+        };
+    };
+
+    class rhs_altyn;
+    class rhs_altyn_visordown : rhs_altyn
+    {
+        class ItemInfo;
+    };
+    class TB_headgear_bomb_suit : rhs_altyn_visordown // EOD Bomb Suit Headgear
+    {
+        class ItemInfo : ItemInfo
+        {
+            class HitpointsProtectionInfo
+            {
+                class Face
+                {
+                    armor = 10;
+                    explosionShielding = 0.85;
+                    hitpointName = "HitFace";
+                    passThrough = 0.8;
+                };
+                class Head
+                {
+                    armor = 10;
+                    explosionShielding = 0.85;
+                    hitpointName = "HitHead";
+                    passThrough = 0.4;
+                };
+            };
+            author = "TBMod";
+            mass = 110.2;
+        };
+        descriptionShort = "Explosive Resistant";
+        displayName = "Advanced Bomb Suit Headgear";
     };
 
     class rhsusf_ach_helmet_ocp;
@@ -370,7 +445,7 @@ class CfgWeapons
     {
         class ItemInfo: ItemInfo
         {
-            mass = 55.1; // 40
+            mass = 77.14; // 40
 
             class HitpointsProtectionInfo
             {
@@ -378,13 +453,13 @@ class CfgWeapons
                 {
                     armor = 10; // 6
                     hitpointName = "HitHead";
-                    passThrough = 0.1; // 0.5
+                    passThrough = 0.4; // 0.5
                 };
                 class Face
                 {
                     armor = 10;
                     hitpointName = "HitFace";
-                    passThrough = 0.1;
+                    passThrough = 0.8;
                 };
             };
         };
@@ -393,7 +468,7 @@ class CfgWeapons
     {
         class ItemInfo: ItemInfo
         {
-            mass = 55.1; // 40
+            mass = 77.14; // 40
 
             class HitpointsProtectionInfo
             {
@@ -413,10 +488,1746 @@ class CfgWeapons
         };
     };
 
+    //////////////////////////////////////////// Westen ////////////////////////////////////////////
+
     class V_PlateCarrierIAGL_dgtl;
-    class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 4
+    class TB_vest_sps_ucp_classV : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 5
     {
         picture = "\rhsusf\addons\rhsusf_inventoryicons\data\vests\rhsusf_spcs_ucp_saw_ca.paa";
     };
 
+    //////////// Plateframe //////////// 1.82kg SAPI - 2.5kg ESAPI
+
+    class rhsusf_plateframe_sapi;
+    class rhsusf_plateframe_light : rhsusf_plateframe_sapi
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_light_classIII : rhsusf_plateframe_light
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply30"; // "Supply20"
+            mass = 79.34; // 80
+
+            class HitpointsProtectionInfo
+            {
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A (L)";
+        displayName = "Plateframe III A (L)";
+    };
+
+    class rhsusf_plateframe_rifleman : rhsusf_plateframe_sapi
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_rifleman_classIII : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 90.36; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A";
+        displayName = "Plateframe III A";
+    };
+
+    class rhsusf_plateframe_machinegunner : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_mg_classIII : rhsusf_plateframe_machinegunner
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply160"
+            mass = 96.97; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A";
+        displayName = "Plateframe III A";
+    };
+
+    class rhsusf_plateframe_grenadier : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_grenadier_classIII : rhsusf_plateframe_grenadier
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply160"
+            mass = 96.97; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A";
+        displayName = "Plateframe III A";
+    };
+
+    class rhsusf_plateframe_marksman : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_marksman_classIII : rhsusf_plateframe_marksman
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 90.36; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A";
+        displayName = "Plateframe III A";
+    };
+
+    class rhsusf_plateframe_medic : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_medic_classIII : rhsusf_plateframe_medic
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply180"; // "Supply160"
+            mass = 103.58; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A";
+        displayName = "Plateframe III A";
+    };
+
+    class rhsusf_plateframe_teamleader : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo;
+    };
+    class TB_vest_plateframe_teamleader_classIII : rhsusf_plateframe_teamleader
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 90.36; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 22.5; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level III A";
+        displayName = "Plateframe III A";
+    };
+
+    class TB_vest_plateframe_light_classIV : TB_vest_plateframe_light_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply30";
+            mass = 110.2;
+
+            class HitpointsProtectionInfo
+            {
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A (L)";
+        displayName = "Plateframe IV A (L)";
+    };
+
+    class TB_vest_plateframe_rifleman_classIV : TB_vest_plateframe_rifleman_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120";
+            mass = 121.22;
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A";
+        displayName = "Plateframe IV A";
+    };
+
+    class TB_vest_plateframe_mg_classIV : TB_vest_plateframe_mg_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170";
+            mass = 127.832;
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A";
+        displayName = "Plateframe IV A";
+    };
+
+    class TB_vest_plateframe_grenadier_classIV : TB_vest_plateframe_grenadier_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170";
+            mass = 127.832;
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A";
+        displayName = "Plateframe IV A";
+    };
+
+    class TB_vest_plateframe_marksman_classIV : TB_vest_plateframe_marksman_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120";
+            mass = 121.22;
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A";
+        displayName = "Plateframe IV A";
+    };
+
+    class TB_vest_plateframe_medic_classIV : TB_vest_plateframe_medic_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply180";
+            mass = 134.444;
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A";
+        displayName = "Plateframe IV A";
+    };
+
+    class TB_vest_plateframe_teamleader_classIV : TB_vest_plateframe_teamleader_classIII
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120";
+            mass = 121.22;
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 31.25;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 31.25;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV A";
+        displayName = "Plateframe IV A";
+    };
+
+    //////////// Plateframe //////////// Klasse II
+
+    class TB_vest_plateframe_marksman_classII : rhsusf_plateframe_marksman
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 33.06; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 3;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6;
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 8; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 8; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level II A";
+        displayName = "Plateframe II A";
+    };
+
+    class TB_vest_plateframe_rifleman_classII : rhsusf_plateframe_rifleman
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 33.06; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+                class Chest
+                {
+                    armor = 8; // 22
+                    hitpointName = "HitChest";
+                    passThrough = 0.2;
+                };
+                class Diaphragm
+                {
+                    armor = 8; // 22+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2;
+                };
+            };
+        };
+        descriptionShort = "Armor Level II A";
+        displayName = "Plateframe II A";
+    };
+
+    //////////// IOTV UCP //////////// 2.09kg SAPI - 2.85kg ESAPI
+
+    class rhsusf_iotv_ucp_base;
+    class rhsusf_iotv_ucp_Rifleman : rhsusf_iotv_ucp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ucp_rifleman_classIV : rhsusf_iotv_ucp_Rifleman
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply140";
+            mass = 176.32; // 140
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.1; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ucp_SAW : rhsusf_iotv_ucp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ucp_mg_classIV : rhsusf_iotv_ucp_SAW
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply190"; // "Supply150"
+            mass = 180.728; // 140
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ucp_Grenadier : rhsusf_iotv_ucp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ucp_grenadier_classIV : rhsusf_iotv_ucp_Grenadier
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply140";
+            mass = 176.32; // 120
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ucp_Medic : rhsusf_iotv_ucp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ucp_medic_classIV : rhsusf_iotv_ucp_Medic
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply180"; // "Supply120"
+            mass = 178.524; // 120
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ucp_Teamleader : rhsusf_iotv_ucp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ucp_teamleader_classIV : rhsusf_iotv_ucp_Teamleader
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply140"; // "Supply150"
+            mass = 176.32; // 140
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    //////////// IOTV OCP //////////// 2.09kg SAPI - 2.85kg ESAPI
+
+    class rhsusf_iotv_ocp_base;
+    class rhsusf_iotv_ocp_Rifleman : rhsusf_iotv_ocp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ocp_rifleman_classIV : rhsusf_iotv_ocp_Rifleman
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply140";
+            mass = 176.32; // 140
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ocp_SAW : rhsusf_iotv_ocp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ocp_mg_classIV : rhsusf_iotv_ocp_SAW
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply190"; // "Supply150"
+            mass = 180.728; // 140
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ocp_Grenadier : rhsusf_iotv_ocp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ocp_grenadier_classIV : rhsusf_iotv_ocp_Grenadier
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply140";
+            mass = 176.32; // 120
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ocp_Medic : rhsusf_iotv_ocp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ocp_medic_classIV : rhsusf_iotv_ocp_Medic
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply180"; // "Supply120"
+            mass = 178.524; // 120
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    class rhsusf_iotv_ocp_Teamleader : rhsusf_iotv_ocp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_iotv_ocp_teamleader_classIV : rhsusf_iotv_ocp_Teamleader
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply140"; // "Supply150"
+            mass = 176.32; // 140
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.1
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.1
+                };
+                class Chest
+                {
+                    armor = 31.25; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 31.25; // 28+3
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+                class Neck
+                {
+                    armor = 12;
+                    hitpointName = "HitNeck";
+                    passThrough = 0.4;
+                };
+            };
+        };
+        descriptionShort = "Armor Level IV C";
+        displayName = "IOTV IV C";
+    };
+
+    //////////// SPCS OCP //////////// 1.82kg SAPI - 2.5kg ESAPI /// Plateframe + 750g/16.53
+
+    class rhsusf_spcs_ocp : rhsusf_iotv_ocp_base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_light_classIII : rhsusf_spcs_ocp
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply30"; // "Supply140"
+            mass = 95.874; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B (L)";
+        displayName = "SPCS III B (L)";
+    };
+
+    class rhsusf_spcs_ocp_rifleman_alt : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_rifleman_classIII : rhsusf_spcs_ocp_rifleman_alt
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 106.89; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ocp_machinegunner : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_mg_classIII : rhsusf_spcs_ocp_machinegunner
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply160"
+            mass = 113.5; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ocp_grenadier : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_grenadier_classIII : rhsusf_spcs_ocp_grenadier
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply160"
+            mass = 113.5; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ocp_sniper : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_marksman_classIII : rhsusf_spcs_ocp_sniper
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 106.89; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ocp_medic : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_medic_classIII : rhsusf_spcs_ocp_medic
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply180"; // "Supply160"
+            mass = 120.11; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ocp_teamleader_alt : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ocp_teamleader_classIII : rhsusf_spcs_ocp_teamleader_alt
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 106.89; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    //////////// SPCS UCP //////////// 1.82kg SAPI - 2.5kg ESAPI /// Plateframe + 750g/16.53
+
+    class rhsusf_spcs_ucp : rhsusf_spcs_ocp
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_light_classIII : rhsusf_spcs_ucp
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply30"; // "Supply140"
+            mass = 95.874; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B (L)";
+        displayName = "SPCS III B (L)";
+    };
+
+    class rhsusf_spcs_ucp_rifleman_alt : rhsusf_spcs_ocp_rifleman_alt
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_rifleman_classIII : rhsusf_spcs_ucp_rifleman_alt
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 106.89; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ucp_machinegunner : rhsusf_spcs_ocp_machinegunner
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_mg_classIII : rhsusf_spcs_ucp_machinegunner
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply160"
+            mass = 113.5; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ucp_grenadier : rhsusf_spcs_ocp_grenadier
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_grenadier_classIII : rhsusf_spcs_ucp_grenadier
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply160"
+            mass = 113.5; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ucp_sniper : rhsusf_spcs_ocp_sniper
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_marksman_classIII : rhsusf_spcs_ucp_sniper
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 106.89; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ucp_medic : rhsusf_spcs_ocp_medic
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_medic_classIII : rhsusf_spcs_ucp_medic
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply180"; // "Supply160"
+            mass = 120.11; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
+
+    class rhsusf_spcs_ucp_teamleader_alt : rhsusf_spcs_ocp_teamleader_alt
+    {
+        class ItemInfo;
+    };
+    class TB_vest_spcs_ucp_teamleader_classIII : rhsusf_spcs_ucp_teamleader_alt
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply160"
+            mass = 106.89; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 12
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.4
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.4
+                };
+                class Chest
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.1
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 28
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.1
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B";
+        displayName = "SPCS III B";
+    };
 };

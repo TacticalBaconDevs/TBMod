@@ -387,6 +387,7 @@ class CfgVehicles
         scope = 2;
         displayName = "Verletzte";
         function = QFUNC(moduleInjured);
+        // is3DEN = 0;
         // icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa";
 
         class Attributes: AttributesBase
@@ -405,7 +406,7 @@ class CfgVehicles
                 displayName = "Anzahl der Quellen";
                 tooltip = "Es geht um die Schadensquellen, also Schuss oder Explosion";
                 typeName = "NUMBER";
-                defaultValue = "1";
+                defaultValue = "5";
             };
             class schadenTyp: Edit
             {
@@ -422,6 +423,30 @@ class CfgVehicles
                 tooltip = "Wo die Quelle PRIMÄR wirken soll, es geht trotzdem auch auf benachbarte Orte";
                 typeName = "STRING";
                 defaultValue = """['head', 'body', 'leftarm', 'rightarm', 'leftleg', 'rightleg']""";
+            };
+            class bewusstlos: Checkbox
+            {
+                property = QEGVAR(injured,bewusstlos);
+                displayName = "Bewusstlos";
+                tooltip = "Alle Bewusstlos machen";
+                typeName = "BOOL";
+                defaultValue = "false";
+            };
+            class keepAlive: Checkbox
+            {
+                property = QEGVAR(injured,keepAlive);
+                displayName = "Nicht sterben lassen";
+                tooltip = "Verhindert den Tod durch verbluten, geht nur wenn auch bewusstlos!";
+                typeName = "BOOL";
+                defaultValue = "false";
+            };
+            class preventHealing: Checkbox
+            {
+                property = QEGVAR(injured,preventHealing);
+                displayName = "KI heilt sich nicht selber";
+                tooltip = "Verhindert das die KI sich verbindet";
+                typeName = "BOOL";
+                defaultValue = "false";
             };
 
             class ModuleDescription: ModuleDescription {};

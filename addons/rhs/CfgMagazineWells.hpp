@@ -29,4 +29,8 @@ class CfgMagazineWells
            "TB_mag_100Rnd_556x45_Mk318_dim"
        };
    };
+   class TB_magwell_33Rnd_9x19
+   {
+       TB_33Rnd_9x19_Glock18[] = {"TB_mag_33Rnd_9x19_FMJ","TB_mag_33Rnd_9x19_JHP"};
+   }; 
 };

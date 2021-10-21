@@ -4,8 +4,8 @@
 */
 class CfgVehicles
 {
-    class TB_zeus_base;
-    class TB_zeus_persistence : TB_zeus_base
+    class EGVAR(zeus,base);
+    class TB_zeus_persistence : EGVAR(zeus,base)
     {
         author = "Eric";
         scopeCurator = 2;

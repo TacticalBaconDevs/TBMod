@@ -5,22 +5,6 @@
 class CfgVehicles
 {
     // ###################### Makros ######################
-    #define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
-            weapon = #WEAPON; \
-            count = COUNT; \
-        }
-    #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
-            name = #ITEM; \
-            count = COUNT; \
-        }
-    #define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
-            magazine = #MAGAZINE; \
-            count = COUNT; \
-        }
-    #define MACRO_ADDBACKPACK(BACKPACK,COUNT) class _xx_##BACKPACK { \
-            backpack = #BACKPACK; \
-            count = COUNT; \
-        }
     #define ADD_SUPPLY(NAME,ITEM) class ITEM \
         { \
             displayName = NAME; \
@@ -32,6 +16,7 @@ class CfgVehicles
         class TB_##CLASS_NAME : CLASS_NAME \
         { \
             author = "shukari"; \
+            GVAR(isTB) = 1; \
             ace_cargo_canLoad = 1; \
             ace_cargo_size = 1; \
             ace_dragging_canCarry = 1; \
@@ -50,6 +35,7 @@ class CfgVehicles
         class TB_##CLASS_NAME : CLASS_NAME \
         { \
             author = "shukari"; \
+            GVAR(isTB) = 1; \
             ace_cargo_canLoad = 1; \
             ace_cargo_size = 1; \
             ace_dragging_canCarry = 1; \
@@ -122,8 +108,10 @@ class CfgVehicles
                     ADD_SUPPLY("Arztkiste",TB_supply_all_arzt);
                     ADD_SUPPLY("Ersatzreifen",ACE_Wheel);
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
+                    ADD_SUPPLY("Ersatztank",GVAR(CanisterFuel));
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
+                    ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
                     ADD_SUPPLY("Sprengstoff",TB_supply_all_mines);
 
                     class allgemeinMortar
@@ -179,8 +167,10 @@ class CfgVehicles
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
                         ADD_SUPPLY("Munition",TB_supply_usa_ammo);
-                        ADD_SUPPLY("LMG-Munition",TB_supply_usa_ammo_lmg);
-                        ADD_SUPPLY("MMG-Munition",TB_supply_usa_ammo_mmg);
+                        ADD_SUPPLY("M249 Munition",TB_supply_usa_ammo_m249_lmg);
+                        ADD_SUPPLY("M27 IAR Munition",TB_supply_usa_ammo_m27_lmg);
+                        ADD_SUPPLY("Mk48 Munition",TB_supply_usa_ammo_mk48_mmg);
+                        ADD_SUPPLY("M240 Munition",TB_supply_usa_ammo_m240_mmg);
                         ADD_SUPPLY("KleinMunition",TB_supply_usa_ammoSmall);
                         ADD_SUPPLY("PräzisionsMunition",TB_supply_usa_praezision);
                         ADD_SUPPLY("Granaten",TB_supply_usa_grena);
@@ -192,11 +182,11 @@ class CfgVehicles
                         displayName = "Raktenwerfer Kisten";
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
-                        ADD_SUPPLY("Werfer",TB_supply_usa_launcher);
-                        ADD_SUPPLY("WerferMunition",TB_supply_usa_launcherAmmo);
+                        ADD_SUPPLY("O-U Werfer",TB_supply_usa_launcher);
                         ADD_SUPPLY("JavlinMunition",TB_supply_usa_javlinAmmo);
                         ADD_SUPPLY("MAAWSMunition",TB_supply_usa_MAAWSAmmo);
                         ADD_SUPPLY("SMAWMunition",TB_supply_usa_SMAWAmmo);
+                        ADD_SUPPLY("StingerMunition",TB_supply_usa_FIM92Ammo);
                     };
                 };
 
@@ -322,7 +312,26 @@ class CfgVehicles
 
                     ADD_SUPPLY("Munition",TB_supply_brd_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_brd_grena);
-                    ADD_SUPPLY("WerferMunition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("Panzerfaust Munition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("O-U Werfer AA",TB_supply_BRD_oneUse_AA);
+                    ADD_SUPPLY("O-U Werfer AT",TB_supply_BRD_oneUse_AT);
+                };
+
+                class sog
+                {
+                    displayName = "SOG";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+
+                    ADD_SUPPLY("Munition",TB_supply_sog_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_sog_grena);
+                    ADD_SUPPLY("MG-Munition",TB_supply_sog_ammo_m60);
+                    ADD_SUPPLY("Unterlauf",TB_supply_sog_unterlauf);
+                    ADD_SUPPLY("Stinger",TB_supply_sog_9K32_Strela);
+                    ADD_SUPPLY("Pistolen Munition",TB_supply_sog_ammoSmall);
+                    ADD_SUPPLY("Präzisions Munition",TB_supply_sog_praezision);
+                    ADD_SUPPLY("One Use Law",TB_supply_sog_oneUse_AT);
+                    ADD_SUPPLY("Nachtkiste",TB_supply_sog_night);
                 };
 
                 class russ
@@ -364,6 +373,7 @@ class CfgVehicles
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
     WRAPPER(Box_EAF_Uniforms_F);
+    WRAPPER(B_supplyCrate_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOEF(skins,pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
@@ -415,6 +425,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,40);
             MACRO_ADDITEM(ACE_epinephrine,16);
             MACRO_ADDITEM(ACE_adenosine,16);
+            MACRO_ADDITEM(TB_med_venenkatheter,16);
 
             MACRO_ADDITEM(ACE_surgicalKit,2);
         };
@@ -445,6 +456,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,40);
             MACRO_ADDITEM(ACE_epinephrine,20);
             MACRO_ADDITEM(ACE_adenosine,16);
+            MACRO_ADDITEM(TB_med_venenkatheter,16);
 
             MACRO_ADDITEM(ACE_surgicalKit,5);
         };
@@ -602,6 +614,25 @@ class CfgVehicles
         };
     };
 
+    class TB_supply_all_eod : WRAPPER_NAME(Box_NATO_Equip_F)
+    {
+        PUBLIC_NAME("EOD Ausrüstung");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(ACE_wirecutter,1);
+            MACRO_ADDITEM(TB_uniform_bomb_suit,1);
+            MACRO_ADDITEM(TB_vest_bomb_suit,1);
+            MACRO_ADDITEM(TB_headgear_bomb_suit,1);
+            MACRO_ADDITEM(ACE_M26_Clacker,1);
+            MACRO_ADDITEM(TB_MineDetector,1);
+            MACRO_ADDITEM(ACE_DefusalKit,1);
+            MACRO_ADDITEM(rhsusf_weap_glock17g4,1);
+            MACRO_ADDITEM(rhsusf_mag_17Rnd_9x19_JHP,10);
+            MACRO_ADDITEM(B_UavTerminal,1);
+        };
+    };
+
     class TB_supply_all_building : WRAPPER_NAME(Box_NATO_Uniforms_F)
     {
         PUBLIC_NAME("BauKiste");
@@ -647,8 +678,32 @@ class CfgVehicles
             MACRO_ADDITEM(APERSBoundingMine_Range_Mag,5);
             MACRO_ADDITEM(APERSMine_Range_Mag,5);
             MACRO_ADDITEM(ACE_M26_Clacker,2);
-            MACRO_ADDITEM(IEDLandBig_Remote_Mag,2);
             MACRO_ADDITEM(APERSMineDispenser_Mag,2);
+        };
+    };
+
+    class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
+    {
+        PUBLIC_NAME("vz99 MörserMunition");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_vz99_HE_multi,10);
+            MACRO_ADDITEM(TB_vz99_HE,8);
+            MACRO_ADDITEM(TB_vz99_smokeWhite,3);
+            MACRO_ADDITEM(TB_vz99_smokeRed,3);
+            MACRO_ADDITEM(TB_vz99_flare,2);
+        };
+    };
+
+    class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
+    {
+        PUBLIC_NAME("vz99 MörserMunitionHE");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_vz99_HE_multi,20);
+            MACRO_ADDITEM(TB_vz99_HE,15);
         };
     };
 
@@ -659,5 +714,23 @@ class CfgVehicles
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_BRD.hpp"
+    #include "CfgVehicles_SOG.hpp"
     #include "CfgVehicles_RUSS.hpp"
+
+    // ###################### KanisterFix ######################
+    class Land_CanisterFuel_F;
+    class GVAR(CanisterFuel) : Land_CanisterFuel_F
+    {
+        ace_dragging_canCarry = 1;
+        ace_dragging_carryDirection = 0;
+        ace_dragging_carryPosition[] = {0,1,1};
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 1;
+
+        destrType = "DestructNo";
+        transportFuel = 300;
+
+        class DestructionEffects {delete HouseDestr;};
+    };
+
 };

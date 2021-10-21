@@ -50,9 +50,9 @@ class Cfg3DEN
                         tooltip = "Normalerweise werden alle Inventare gelöscht, wenn diese Option an ist nicht!";
                         property = QEGVAR(main,disableCargoCleanup);
                         control = "Checkbox";
-                        expression = "if (!is3DEN && _value) then {_this setVariable ['TB_main_disableCargoCleanup', true, true]}";
+                        expression = QUOTE(if (!is3DEN && _value) then {_this setVariable [ARR_3(QQEGVAR(main,disableCargoCleanup), true, true)]});
                         condition = "objectVehicle + objectSimulated + objectHasInventoryCargo";
-                        defaultValue = "false";
+                        defaultValue = QUOTE(getNumber (configOf _this >> QQEGVAR(main,disableCargoCleanup)) == 1);
                     };
                 };
             };
@@ -85,7 +85,7 @@ class Cfg3DEN
                         property = QEGVAR(main,animation);
                         control = QEGVAR(main,animationControl);
 
-                        expression = QUOTE([_this, _value param [1, '']] call FUNC(animationAI));
+                        expression = QUOTE([ARR_2(_this, _value param [ARR_2(1, '')])] call FUNC(animationAI));
 
                         defaultValue = "";
 

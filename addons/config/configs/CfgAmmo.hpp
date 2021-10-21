@@ -2,6 +2,9 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class SensorTemplateLaser;
+class SensorTemplateDataLink;
+
 class CfgAmmo
 {
     class Cluster_155mm_AMOS;
@@ -144,20 +147,121 @@ class CfgAmmo
     class B_45ACP_Ball;
     class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
     {
-        hit = 21; // 8
         caliber = 1.4; // 1
+        hit = 21; // 8
     };
 
-    class B_30mm_HE;
-    class B_40mm_GPR : B_30mm_HE // 40mm GPR
+    class B_570x28_Ball;
+    class TB_ammo_570 : B_570x28_Ball // 5.7mm Munition
     {
-        hit = 40; // 70
+        caliber = 1.4; // 0.559441
+        indirectHit = 4; // 0
+        indirectHitRange = 0.25; // 0
     };
 
-    class B_30mm_APFSDS;
-    class B_40mm_APFSDS : B_30mm_APFSDS // 40mm APFSDS
+    class BulletBase;
+    class B_20mm : BulletBase // 20mm Kanonen (Helikopter-Flugzeuge)
     {
-        hit = 100; // 150
+        caliber = 2.33; // 1.4
+        explosive = 0.6; // 1.8
+        hit = 40; // 80
+        indirectHit = 10; // 12
+    };
+
+    class B_40mm_GPR_Tracer_Red;
+    class TB_ammo_40mm_GPR : B_40mm_GPR_Tracer_Red // 40mm GPR Munition
+    {
+        class CamShakeExplode
+        {
+            distance = 23; // 82.5964
+            duration = 0.3; // 0.3
+            frequency = 5; // 20
+            power = 2; // 8
+        };
+        class CamShakeFire {
+            distance = 6; // 50.5961
+            duration = 0.3; // 1.2
+            frequency = 5; // 20
+            power = 1; // 2.51487
+        };
+        class CamShakeHit
+        {
+            distance = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 2; // 2.51487
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 1; // 0.01
+        };
+        caliber = 2.2; // 4.6
+    };
+
+    class B_40mm_APFSDS_Tracer_Red;
+    class TB_ammo_40mm_APFSDS : B_40mm_APFSDS_Tracer_Red // 40mm APFSDS Munition
+    {
+        class CamShakeExplode
+        {
+            distance = 23; // 23.2379
+            duration = 0.3; // 1.6
+            frequency = 5; // 20
+            power = 2; // 7.74597
+        };
+        class CamShakeFire {
+            distance = 6; // 50.5964
+            duration = 0.3; // 1.2
+            frequency = 5; // 20
+            power = 1; // 2.51487
+        };
+        class CamShakeHit
+        {
+            distance = 1;
+            duration = 0.3; // 0.6
+            frequency = 5; // 20
+            power = 2; // 60
+        };
+        class CamShakePlayerFire {
+            distance = 1;
+            duration = 0.3; // 0.1
+            frequency = 5; // 20
+            power = 1; // 0.01
+        };
+        caliber = 5; // 8
+        hit = 110; // 150
+        indirectHit = 10; // 8
+    };
+
+    class B_50BW_Ball_F;
+    class TB_ammo_MPR_antimateriel : B_50BW_Ball_F // MPR Antimateriel Munition
+    {
+        caliber = 4.2;
+        hit = 42;
+        indirectHit = 4;
+        indirectHitRange = 0.15;
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        simulation = "shotBullet";
+        tracerEndTime = 6;
+        tracerScale = 7;
+        tracerStartTime = 0.05;
+        typicalSpeed = 921;
+    };
+
+    class rhs_ammo_12g_slug;
+    class TB_ammo_MPR_Slug : rhs_ammo_12g_slug // MPR Slugshot Munition
+    {
+        caliber = 0.25; // 0.3048
+        hit = 30; // 34.51
+    };
+
+    class B_556x45_dual;
+    class TB_ammo_MPR_UW : B_556x45_dual // MPR Underwater Munition
+    {
+        caliber = 1.6;
+        hit = 20;
+        waterFriction = -0.01;
     };
 
     class ACE_338_Ball;
@@ -182,7 +286,6 @@ class CfgAmmo
         nvgOnly = 1;
     };
 
-    class BulletBase;
     class ACE_408_Ball : BulletBase // 408. CheyTac
     {
         caliber = 2.4; // 1

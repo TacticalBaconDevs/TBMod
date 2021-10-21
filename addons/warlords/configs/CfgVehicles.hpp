@@ -3,22 +3,6 @@
     Developed by http://tacticalbacon.de
 */
 // ###################### Makros ######################
-#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
-        name = #ITEM; \
-        count = COUNT; \
-    }
-#define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
-        magazine = #MAGAZINE; \
-        count = COUNT; \
-    }
-#define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
-        weapon = #WEAPON; \
-        count = COUNT; \
-    }
-#define MACRO_ADDBACKPACK(BACKPACK,COUNT) class _xx_##BACKPACK { \
-        backpack = #BACKPACK; \
-        count = COUNT; \
-    }
 #define WRAPPER_NAME(CLASS_NAME) TB_##CLASS_NAME
 #define PUBLIC_NAME(D_NAME) \
     displayName = D_NAME; \

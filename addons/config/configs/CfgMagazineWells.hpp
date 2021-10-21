@@ -9,7 +9,7 @@ class CfgMagazineWells
         ADDON[] = {"3Rnd_Smoke_Grenade_shell_precise"};
     };
 
-    class Cylinder_45ACP
+    class TB_magwell_6Rnd_45_FMJ
     {
         ADDON[] = {"TB_mag_45_FMJ"};
     };
@@ -33,5 +33,29 @@ class CfgMagazineWells
     class CBA_408CT_Inter
     {
         ace_ballistics[] = {"ACE_7Rnd_408_305gr_Mag","TB_mag_7Rnd_M200_Tracer"}; // "ACE_7Rnd_408_305gr_Mag"
+    };
+    class TB_magwell_20Rnd_570x28
+    {
+        TB_20Rnd_570x28[] = {"TB_20Rnd_570x28"};
+    };
+    class TB_magwell_40mm_FV510
+    {
+        TB_magwell_40mm_FV510[] =
+        {
+            "TB_mag_40Rnd_40mm_GPR",
+            "TB_mag_40Rnd_40mm_APFSDS"
+        };
+    };
+    class TB_magwell_MPR
+    {
+        TB_magwell_MPR[] = {"TB_mag_MPR_10Rnd_Antimateriel","TB_mag_MPR_10Rnd_Slug","TB_mag_MPR_10Rnd_Buckshot","TB_mag_MPR_10Rnd_Underwater"};
+    };
+    class TB_magwell_40mm_CTWS
+    {
+        TB_magwell_40mm_CTWS[] =
+        {
+            "TB_mag_40Rnd_40mm_GPR",
+            "TB_mag_40Rnd_40mm_APFSDS"
+        };
     };
 };

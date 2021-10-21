@@ -7,7 +7,7 @@
     Examples:
         [cursorObject] call TBMod_spectrum_fnc_createTransmitter
             - Dauersender auf random Freq
-        [cursorObject, random [420, 443, 480]] call TBMod_spectrum_fnc_createTransmitter
+        [cursorObject, [420, 443, 480]] call TBMod_spectrum_fnc_createTransmitter
             - Dauersender auf eigener RandomFreq
         [cursorObject, "412.21", {}] call TBMod_spectrum_fnc_createTransmitter
             - auf Freq "412.21" mit Standardwerten: Delay=random [45, 60, 90], Dauer=random [5, 10, 20], Delete=false
@@ -17,12 +17,12 @@
     _condition return: [next delay, dauer des an seins, entfernen]
         Conditioncheck ist jede Sekunde, wenn dauer kleiner wird nach der Sekunde erst ausgeführt
 */
-params ["_obj", ["_freq", [1, 200, 450]], "_condition"];
+params ["_obj", ["_freq", [100, 300, 500]], "_condition"];
 
 if (_freq isEqualType []) then {_freq = random _freq};
 if (_freq isEqualType 0) then {_freq = _freq toFixed 2};
 
-if (isNil "_condition") then
+if (isNil "_condition" || {_condition isEqualTo {[]}}) then
 {
     private _values = (GVAR(transmitters) getVariable [_freq, []]) select {!isNil "_x" && alive _x};
     _values pushBackUnique _obj;

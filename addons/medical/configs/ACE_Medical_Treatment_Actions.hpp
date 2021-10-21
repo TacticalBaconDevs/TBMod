@@ -10,7 +10,7 @@ class ace_medical_treatment_actions {
     };
 
     class ApplyTourniquet: BasicBandage {
-        treatmentTime = 1;
+        treatmentTime = 2;
     };
 
     class Morphine: BasicBandage {
@@ -67,20 +67,19 @@ class ace_medical_treatment_actions {
         treatmentTime = QUOTE([ARR_3(_this,'ace_medical_treatment_fnc_getHealTime',0.5)] call FUNC(calcTreatmentTime));
     };
 
-    // TODO: eigenes Item IV Kit wie bei DayZ damit nicht unendlich bei Toten
     class BloodPack: SurgicalKit {
         displayName = "Blut abnehmen";
         displayNameProgress = "Blut wird abgenommen...";
 
-        consumeItem = 0;
-        items[] = {"ACE_surgicalKit", "ACE_personalAidKit"};
+        consumeItem = 1;
+        items[] = {"TB_med_venenkatheter"};
 
         medicRequired = 1;
         allowSelfTreatment = 0;
-        allowedSelections[] = {"LeftArm", "RightArm"};
+        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = "true";
 
-        treatmentTime = QUOTE(private _time = [ARR_2(180,60)] select (alive (_this select 1)); [ARR_2(_this,_time)] call FUNC(calcTreatmentTime));
+        treatmentTime = QUOTE(private _time = [ARR_2(120,60)] select (alive (_this select 1)); [ARR_2(_this,_time)] call FUNC(calcTreatmentTime));
 
         callbackProgress = "";
         callbackSuccess = QFUNC(getBlood);
