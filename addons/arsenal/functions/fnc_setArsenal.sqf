@@ -83,7 +83,7 @@ ACE_player setVariable [QGVAR(arsenalCargo), _tbCargo];
 
 // Arsenale syncen
 {
-    if ([_x] call FUNC(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
+    if ([_x] call FUNC(isArsenalType) && {_tbCargo isNotEqualTo (_x getVariable ["ace_arsenal_virtualItems", []])}) then
     {
         _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
     };

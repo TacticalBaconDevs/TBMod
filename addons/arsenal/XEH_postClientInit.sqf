@@ -28,7 +28,7 @@ if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
     {
         params ["_unit", "_container", "_item"];
 
-        if (local _unit && {!((_unit nearEntities ["TB_arsenal_base", 6]) isEqualTo [])}) then
+        if (local _unit && {(_unit nearEntities ["TB_arsenal_base", 6]) isNotEqualTo []}) then
         {
             if (typeOf _container == "GroundWeaponHolder") then {deleteVehicle _container};
         };

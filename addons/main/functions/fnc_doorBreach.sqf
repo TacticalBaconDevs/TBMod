@@ -17,7 +17,7 @@ player addEventHandler ["FIRED", {
     {
         private _objs = [cursorObject, "GEOM"] intersect [ASLToAGL (eyePos player), screenToWorld [0.5, 0.5]];
 
-        if !(_objs isEqualTo []) then
+        if (_objs isNotEqualTo []) then
         {
             (_objs select 0) params ["_door", "_distance"];
 

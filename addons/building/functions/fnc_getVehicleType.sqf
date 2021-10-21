@@ -13,4 +13,4 @@ if ([_target] call ace_refuel_fnc_getFuel > 0) then {_info pushBack "Tankwagen"}
 if (_target getVariable ["ace_rearm_isSupplyVehicle", false] ||
     getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "ace_rearm_defaultSupply") > 0) then {_info pushBack "Munitionswagen"};
 
-if !(_info isEqualTo []) then {hint (_info joinString "\n")};
+if (_info isNotEqualTo []) then {hint (_info joinString "\n")};
