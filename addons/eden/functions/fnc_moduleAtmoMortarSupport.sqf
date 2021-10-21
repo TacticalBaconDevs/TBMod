@@ -16,7 +16,7 @@ _input params [
 if (!is3DEN && {_mode == "init"} && {_isActivated}) then
 {
     // Check for Mortars
-    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "Mortar_01_base_F"}; //"Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _x >> "availableForSupportTypes"))
+    private _syncObjs = (synchronizedObjects _logic) select {_x isKindOf "Mortar_01_base_F"}; //"Artillery" in (getArray (configOf _x >> "availableForSupportTypes"))
     if (_syncObjs isEqualTo []) exitWith {systemChat "AtmoMortarSupport braucht gesyncte Mortars!"};
 
     {

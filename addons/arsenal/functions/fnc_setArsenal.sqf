@@ -8,7 +8,7 @@ params ["_ammoBox", ["_rolle", ""]];
 if (isNull _ammoBox) exitWith {};
 
 // Check zum Überspringen
-private _type = getText (configFile >> "CfgVehicles" >> typeOf _ammoBox >> "arsenalType");
+private _type = getText (configOf _ammoBox >> "arsenalType");
 if (_type in ["", "CUSTOM"]) exitWith {};
 
 // Arsenalitems laden
