@@ -8,7 +8,7 @@
     https://github.com/CBATeam/CBA_A3/blob/master/addons/keybinding/fnc_addKeybind.sqf
     https://community.bistudio.com/wiki/DIK_KeyCodes
 */
-TRACE_1("shortcutStart",_this);
+
 [
     "TBMod",
     QEGVAR(key,hideGUI),
@@ -41,10 +41,8 @@ TRACE_1("shortcutStart",_this);
     [DIK_END, [true, false, false]] // SHIFT + ENDE
 ] call CBA_fnc_addKeybind;
 
-TRACE_2("shortcutVorLVL2",call TB_lvl2,getPlayerUID ACE_player in (call TB_lvl2));
 // Shortcuts für LVL2
 if !(getPlayerUID ACE_player in (call TB_lvl2)) exitWith {};
-TRACE_2("shortcutAfterLVL2",call TB_lvl2,getPlayerUID ACE_player in (call TB_lvl2));
 
 [
     "TBMod",
@@ -101,10 +99,8 @@ TRACE_2("shortcutAfterLVL2",call TB_lvl2,getPlayerUID ACE_player in (call TB_lvl
 ] call CBA_fnc_addKeybind;
 #endif
 
-TRACE_2("shortcutVorLVL3",call TB_lvl3,getPlayerUID ACE_player in (call TB_lvl3));
 // Shortcuts für LVL 3
 if !(getPlayerUID ACE_player in (call TB_lvl3)) exitWith {};
-TRACE_2("shortcutAfterLVL3",call TB_lvl3,getPlayerUID ACE_player in (call TB_lvl3));
 
 [
     "TBMod",
@@ -130,4 +126,3 @@ TRACE_2("shortcutAfterLVL3",call TB_lvl3,getPlayerUID ACE_player in (call TB_lvl
     [DIK_END, [false, false, true]] // ALT + ENDE
 ] call CBA_fnc_addKeybind;
 
-TRACE_1("shortcutEnde",_this);
