@@ -7,11 +7,11 @@
 params ["_mortarVeh", "_player"];
 
 // If we have a round loaded, exit
-if (!((magazinesAmmoFull _mortarVeh) isEqualTo [])) exitWith {};
+if ((magazinesAmmoFull _mortarVeh) isNotEqualTo []) exitWith {};
 
 // Make sure empty mag is removed so it "autoloads"
 private _loadedEmpty = _mortarVeh magazinesTurret [0];
-if !(_loadedEmpty isEqualTo []) then
+if (_loadedEmpty isNotEqualTo []) then
 {
     _mortarVeh removeMagazinesTurret [_loadedEmpty select 0, [0]];
 };

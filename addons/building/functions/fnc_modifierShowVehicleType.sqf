@@ -14,7 +14,7 @@ if ([_target] call ace_medical_treatment_fnc_isMedicalVehicle) then {_newActionN
 if ([_target] call ace_repair_fnc_isRepairVehicle) then {_newActionName pushBack "Rep"};
 if ([_target] call ace_refuel_fnc_getFuel > 0) then {_newActionName pushBack "Tan"};
 if (_target getVariable ["ace_rearm_isSupplyVehicle", false] ||
-    getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "ace_rearm_defaultSupply") > 0) then {_newActionName pushBack "Mun"};
+    getNumber (configOf _target >> "ace_rearm_defaultSupply") > 0) then {_newActionName pushBack "Mun"};
 
 if (count _newActionName > 2) then {_newActionName = ["Utils"]};
 

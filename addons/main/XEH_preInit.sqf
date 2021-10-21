@@ -49,7 +49,7 @@ if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
                 private _time = time + 4;
 
                 waitUntil {
-                    if !((getPos _projectile) isEqualTo [0,0,0]) then {_pos = getPos _projectile};
+                    if ((getPos _projectile) isNotEqualTo [0,0,0]) then {_pos = getPos _projectile};
                     TRACE_3("Smoke waitUntil",alive _projectile,_pos,_vehicle distance _projectile);
                     !alive _projectile
                 };

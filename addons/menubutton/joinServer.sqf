@@ -53,7 +53,7 @@ onEachFrame format [
                     {
                         onEachFrame {};
                     };
-                    if !(_this isEqualTo '') then
+                    if (_this isNotEqualTo '') then
                     {
                         findDisplay %8 displayCtrl %13 lbSetCurSel 0;
                         onEachFrame

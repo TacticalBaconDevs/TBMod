@@ -11,12 +11,16 @@ params [
 ];
 _zusatz params ["_zeit", "_resourcen"];
 
-if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler (TB_building_fnc_placePlaceablesBig)"};
+if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler in "+ QFUNC(placePlaceablesBig)};
 
-if (_kran && {((nearestObjects [ACE_player, [], 15]) select {_x getVariable [GVAR(kranWagen), false]}) isEqualTo []}) exitWith {systemChat "Kein Kranwagen in der Nähe"};
+private _kranTruck = objNull;
+if (_kran) then {_kranTruck = ((nearestObjects [ACE_player, [], 20]) select {_x getVariable [QGVAR(kranWagen), false]}) param [0, objNull]};
+if (_kran && {isNull _kranTruck}) exitWith {systemChat "Kein Kranwagen in der Nähe von 20m"};
 
-((nearestObjects [ACE_player, [], 20]) select {(_x getVariable [QGVAR(resourcenCargo), -1]) >= _resourcen}) params [["_truck", objNull]];
-if (isNull _truck) exitWith {systemChat "Kein Resourcentruck mit genügend Resourcen in der Nähe"};
+private _truck = objNull;
+if (!isNull _kranTruck) then {_truck = ((nearestObjects [_kranTruck, [], 25]) select {(_x getVariable [QGVAR(resourcenCargo), -1]) >= _resourcen}) param [0, objNull]};
+if (isNull _truck) then {_truck = ((nearestObjects [ACE_player, [], 25]) select {(_x getVariable [QGVAR(resourcenCargo), -1]) >= _resourcen}) param [0, objNull]};
+if (isNull _truck) exitWith {systemChat "Kein Resourcentruck mit genügend Resourcen in der Nähe von 25m"};
 
 private _resc = _truck getVariable [QGVAR(resourcenCargo), -1];
 _truck setVariable [QGVAR(resourcenCargo), _resc - _resourcen, true];

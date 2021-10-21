@@ -201,7 +201,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         };
 
         private _lvGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
-        if !(_lvGroup isEqualTo []) then
+        if (_lvGroup isNotEqualTo []) then
         {
             if (_lvSize > 0) then
             {
@@ -236,7 +236,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _vehType = if (surfaceiswater _pos) then {8} else {2};
         private _avGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
-        if !(_avGroup isEqualTo []) then
+        if (_avGroup isNotEqualTo []) then
         {
             [_avGroup select 2, _mkr] call FUNC(shk_patrol);
             _avZoneGroups pushBack _avGroup;
@@ -266,7 +266,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
 
         private _stGroup = [_pos, _side, _faction, 5, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
-        if !(_stGroup isEqualTo []) then {_stZoneGroups pushBack _stGroup};
+        if (_stGroup isNotEqualTo []) then {_stZoneGroups pushBack _stGroup};
     };
 
     uiSleep 1; // TODO: temp solution
@@ -287,7 +287,7 @@ if (getMarkerColor _mkr != "ColorBlack") then
         private _pos = [_mPos, 3000 + ((random 500) - 250), _baseDirHeli + ((random _randomDirHeli) - (_randomDirHeli / 2))] call BIS_fnc_relPos;
         private _hGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
-        if !(_hGroup isEqualTo []) then
+        if (_hGroup isNotEqualTo []) then
         {
             if (_hSize > 0) then
             {

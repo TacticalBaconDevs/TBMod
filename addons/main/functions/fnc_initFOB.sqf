@@ -7,7 +7,7 @@ params ["_fob"];
 
 // bereits gesetzte löschen
 {
-    if !(_x isEqualTo _fob) then {deleteVehicle _x};
+    if (_x isNotEqualTo _fob) then {deleteVehicle _x};
 } forEach (entities (typeOf _fob));
 
 if (isNil "TB_main_fobs") then {TB_main_fobs = []};

@@ -84,7 +84,7 @@ else // load
         }
         forEach _aceCargo;
 
-        if !(_dmg isEqualTo []) then
+        if (_dmg isNotEqualTo []) then
         {
             {
                 _vehicle setHitPointDamage [_x, (_dmg select 1) select _forEachIndex];

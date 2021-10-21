@@ -13,7 +13,7 @@ if (isNull _target) then {
     if (_arsenalType in ["", "CUSTOM"]) exitWith {};
 
     {
-        if (_arsenalType isEqualTo getText (configFile >> "CfgVehicles" >> typeOf _x >> "arsenalType")) exitWith
+        if (_arsenalType isEqualTo getText (configOf _x >> "arsenalType")) exitWith
         {
             _target = _x;
         };
