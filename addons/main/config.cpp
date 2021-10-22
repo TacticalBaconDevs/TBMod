@@ -83,8 +83,14 @@ class CfgPatches
             //"3denEnhanced",
             //"adv_aceCPR",
             //"WarFXPE", // Blastcore ist clientside,
-
+        
             // ACE3
+            "ace_field_rations",
+            "ace_headless",
+            "ace_intelitems",
+            "ace_sitting",
+            "ace_viewrestriction",
+            "ace_volume",
             "ace_advanced_ballistics",
             "ace_advanced_fatigue",
             "ace_advanced_throwing",
