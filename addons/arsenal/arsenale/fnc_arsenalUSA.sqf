@@ -598,7 +598,15 @@ private _lrFunken = [
     "OPXT_m81_1523",
     "OPXT_multicam_1523",
     "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523"    //grau2
+    "OPXT_ogag_1523",    //grau2
+    // Workshop Funk
+    "tfw_ilbe_blade_arid",
+    "tfw_ilbe_blade_black",
+    "tfw_ilbe_blade_mct",
+    "tfw_ilbe_blade_mc",
+    "tfw_ilbe_blade_ocp",
+    "tfw_ilbe_blade_wd2",
+    "tfw_ilbe_blade_coy"
 ];
 
 private _moerser_munition = [
