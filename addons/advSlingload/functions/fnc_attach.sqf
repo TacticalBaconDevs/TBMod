@@ -32,7 +32,7 @@ if (_source == _target) exitWith {systemChat "Warum versuchst du das?"};
 private _attachedVehicle = _source getVariable [QGVAR(attachedVehicle), objNull];
 if (!isNull _attachedVehicle && _attachedVehicle != _target) exitWith {systemChat "Es kann nur ein Fahrzeug verbunden werden"};
 
-private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
+private _selection = getText (configOf _source >> "slingLoadMemoryPoint");
 if (_selection == "") exitWith {ERROR_MSG_1("no Slingloadposition found on _source: %1", _source)};
 
 private _posToAttach = ASLToAGL ([ACE_player, _ray] call FUNC(calculateAttachPoint));

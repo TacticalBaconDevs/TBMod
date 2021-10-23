@@ -184,7 +184,7 @@ for "_i" from 1 to _lvGroups do
 
     private _lvGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
-    if !(_lvGroup isEqualTo []) then
+    if (_lvGroup isNotEqualTo []) then
     {
         if (_lvSize > 0) then
         {
@@ -217,7 +217,7 @@ for "_i" from 1 to _avGroups do
     private _vehType = if (surfaceiswater _pos) then {8} else {2};
     private _avGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
-    if !(_avGroup isEqualTo []) then {_avZoneGroups pushBack _avGroup};
+    if (_avGroup isNotEqualTo []) then {_avZoneGroups pushBack _avGroup};
 };
 
 uiSleep 1; // TODO: temp solution
@@ -242,7 +242,7 @@ for "_i" from 1 to _hGroups do
     private _vehType = if (_hSize > 0) then {4} else {3};
     private _hGroup = [_pos, _side, _faction, _vehType, _lockVehicle, _keyVehicle] call FUNC(spawnVehicle);
 
-    if !(_hGroup isEqualTo []) then
+    if (_hGroup isNotEqualTo []) then
     {
         if (_hSize > 0) then
         {
@@ -369,7 +369,7 @@ else
     if (_waves >= 1) then
     {
         if (_hints) then {hint "Feindliche Verstärkung ist auf dem Weg"};
-        // Updates waves in the settings before sending next wave 
+        // Updates waves in the settings before sending next wave
         _basSettings set [1, _waves];
         [
             _mkr,
