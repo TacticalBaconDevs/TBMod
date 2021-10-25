@@ -22,10 +22,10 @@ private _pickupAction = [
         params ["_target", "_player", "_argumente"];
         _argumente params ["_building", "_resourcen"];
 
-        ((nearestObjects [ACE_player, [], 50]) select {(_x getVariable ["TBMod_Building_resourcenCargo", -1]) >= 0}) params [["_truck", objNull]];
+        ((nearestObjects [ACE_player, [], 50]) select {(_x getVariable [QGVAR(resourcenCargo), -1]) >= 0}) params [["_truck", objNull]];
         if (isNull _truck) exitWith {systemChat "Kein Resourcentruck in der Nähe"};
 
-        _truck setVariable ["TBMod_Building_resourcenCargo", (_truck getVariable ["TBMod_Building_resourcenCargo", 0]) + round (_resourcen / 2), true];
+        _truck setVariable [QGVAR(resourcenCargo), (_truck getVariable [QGVAR(resourcenCargo), 0]) + round (_resourcen / 2), true];
 
         deleteVehicle _target;
     },
