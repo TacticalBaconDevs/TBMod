@@ -148,11 +148,11 @@ PREP_RECOMPILE_END;
                     };
                 };
 
-                ["[healthRegen] Blut hinzu: %1ml | Prellung geheilt: %2 | Genähte geheilt: %3 | updateBodyPartVisuals: %4",
+                /*["[healthRegen] Blut hinzu: %1ml | Prellung geheilt: %2 | Genähte geheilt: %3 | updateBodyPartVisuals: %4",
                         ((player getVariable ["ace_medical_bloodVolume", 6]) - _volume) * 1000 toFixed 0,
                         _prellungsId != -1,
                         !isNil "_stitched",
-                        _updateBodyPartVisuals] call EFUNC(main,debug);
+                        _updateBodyPartVisuals] call EFUNC(main,debug);*/
             }, 60] call CBA_fnc_addPerFrameHandler;
         };
     }

@@ -13,11 +13,11 @@ player addEventHandler ["FIRED", {
 
     if (!GVAR(doorBreach)) exitWith {player removeEventHandler ["FIRED", _thisEventHandler]};
 
-    if (_ammo in ["rhs_ammo_12g_slug","B_12Gauge_Slug_NoCartridge", "TB_rhs_ammo_40mm_Slugshot"]) then
+    if (_ammo in ["rhs_ammo_12g_slug","B_12Gauge_Slug_NoCartridge", "TB_rhs_ammo_40mm_Slugshot", "TB_ammo_MPR_Slug"]) then
     {
         private _objs = [cursorObject, "GEOM"] intersect [ASLToAGL (eyePos player), screenToWorld [0.5, 0.5]];
 
-        if !(_objs isEqualTo []) then
+        if (_objs isNotEqualTo []) then
         {
             (_objs select 0) params ["_door", "_distance"];
 

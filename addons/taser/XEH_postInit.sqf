@@ -9,7 +9,15 @@
 
         if (typeOf _projectile == "tb_ammo_taser") exitWith
         {
-            if (_target != _shooter) then {[_target, [2, 0] select (isPlayer _target), 1] remoteExec ["rhs_fnc_flashbang_effect", _target]};
+            private _isKI = !isPlayer _target;
+            if (_target != _shooter) then {[_target, [2, 0] select _isKI, 1] remoteExec ["rhs_fnc_flashbang_effect", _target]};
+
+            if (_isKI && !(_target getVariable ["ace_medical_statemachine_AIUnconsciousness", ace_medical_statemachine_AIUnconsciousness])) then
+            {
+                _target setVariable ["ace_medical_statemachine_AIUnconsciousness", true, true];
+                [{_x setVariable ["ace_medical_statemachine_AIUnconsciousness", false, true]}, _target, 21] call CBA_fnc_waitAndExecute;
+            };
+
             [_target, true, 20, true] call ace_medical_fnc_setUnconscious;
 
             ["TB_informAdminsAndZeus", ["%1 hat %2 getasert!", [_shooter] call ace_common_fnc_getName, [_target] call ace_common_fnc_getName]] call CBA_fnc_globalEvent;

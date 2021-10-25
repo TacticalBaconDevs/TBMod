@@ -83,8 +83,8 @@ TB_umziehenFNC = {
 TB_condLaden = {
     params ["_mode"];
     (profileNamespace getVariable ["TB_umziehen", []]) params ["", "", ["_currentMode", ""]];
-    !((nearestObjects [ACE_player, TB_inkognitoSystem_station, 7]) isEqualTo []) &&
-        _currentMode != "" && !(_currentMode isEqualTo _mode)
+    (nearestObjects [ACE_player, TB_inkognitoSystem_station, 7]) isNotEqualTo [] &&
+        _currentMode != "" && _currentMode isNotEqualTo _mode
 };
 private _actionLadenMil = ["Laden Militär", "Laden Militär", "", {["mil", false] call TB_umziehenFNC}, {["mil"] call TB_condLaden}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionLadenMil] call ace_interact_menu_fnc_addActionToObject;
@@ -92,7 +92,7 @@ private _actionLadenZivil = ["Laden Zivil", "Laden Zivil", "", {["zivil", false]
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionLadenZivil] call ace_interact_menu_fnc_addActionToObject;
 
 // Speichern
-private _condSpeichern = {!((nearestObjects [ACE_player, ["TB_arsenal_base"], 15]) isEqualTo [])};
+private _condSpeichern = {(nearestObjects [ACE_player, ["TB_arsenal_base"], 15]) isNotEqualTo []};
 private _actionSpeichernMil = ["Speichern Militär", "Speichern Militär", "", {["mil", true] call TB_umziehenFNC}, _condSpeichern] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "Anziehsachen"], _actionSpeichernMil] call ace_interact_menu_fnc_addActionToObject;
 private _actionSpeichernZivil = ["Speichern Zivil", "Speichern Zivil", "", {["zivil", true] call TB_umziehenFNC}, _condSpeichern] call ace_interact_menu_fnc_createAction;

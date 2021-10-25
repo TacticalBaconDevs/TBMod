@@ -25,3 +25,5 @@ PRELOAD_ADDONS;
 #include "configs\ACE_Medical_Treatment_Actions.hpp"
 #include "configs\CfgWeapons.hpp"
 #include "configs\ExtendedEventHandlers.hpp"
+
+#include "replacement\ACE_Medical_StateMachine.hpp"

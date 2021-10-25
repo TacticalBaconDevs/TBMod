@@ -6,6 +6,10 @@
 // ace_microdagr_settingUseMils = true;
 
 
+// ### Reload geschreie verhindern
+UVO_main_reloadBuffer = 9e30;
+
+
 // ### Gras entfernen - Von [14.JgKp]Ben@Arms
 private _grasAction = ["TB_cutGras", "Gras entfernen", "", {
     private _zerschneider = createVehicle ["Land_ClutterCutter_medium_F", ACE_player modelToWorld [0, 2.7, 0], [], 0, "CAN_COLLIDE"];
@@ -245,54 +249,37 @@ ZEN_disableCodeExecution = true; //getPlayerUID player in (call TB_lvl3);
 ] call ace_interact_menu_fnc_addActionToObject;
 
 
-// ### Highlight
-/*if (isNil "TB_highlightLog") then {TB_highlightLog = false};
-if (TB_highlightLog && {!isNil QGVAR(loggingExtension)} && {GVAR(loggingExtension)}) then
-{
-    GVAR(highlightLog) = 1 == ('TBModExtensionHost' callExtension ['registerlogger', ['highlight', '#HighlightLog.log']]) param [1, 0];
-
-    if (GVAR(highlightLog)) then
-    {
-        ["ace_killed", {
-            params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
-
-            if (!isNull _killer && isNull _instigator) then {_instigator = effectiveCommander _killer};
-
-            if (hasInterface && {_instigator in [player, ace_player]}) then
-            {
-                "TBModExtensionHost" callExtension ["logger", ["highlight", "KILLED", format ["%1 durch %2", typeOf _unit, _causeOfDeath]]];
-            };
-        }] call CBA_fnc_addEventHandler;
-    };
-};*/
-
-
 // ### Vehicle in Vehicle
-GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Air", "ReammoBox_F", "Cargo_base_F", "Land_CargoBox_V1_F", "StaticWeapon"];
+GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "Ship", "Air", "ReammoBox_F", "Cargo_base_F", "Land_CargoBox_V1_F", "StaticWeapon", "PlasticCase_01_base_F", "ACE_Wheel",
+        "ACE_Track", QEGVAR(nachschub,CanisterFuel)];
 [
     "Car",
     "init",
     {
         private _car = _this # 0;
 
-        if (isClass (configFile >> "CfgVehicles" >> typeOf _car >> "VehicleTransport" >> "Carrier")) then
+        if (isClass (configOf _car >> "VehicleTransport" >> "Carrier")) then
         {
+            private _action = ["VehicleTransport", "VehicleTransport", "", {}, {vehicleCargoEnabled _target}] call ace_interact_menu_fnc_createAction;
+            [_car, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+            // Aufladen
             private _action = [
-                "SetCarrier",
-                "VehicleTransport",
+                "loadIn",
+                "Aufladen",
                 "",
                 {},
-                {vehicleCargoEnabled _target},
+                {},
                 {
                     params ["_target", "_player", "_params"];
 
                     private _actions = [];
                     {
-                        if (alive _x) then
+                        if (alive _x && isNull (isVehicleCargo _x)) then
                         {
                             private _action = [
                                 format ["vehicle_%1", random 999999],
-                                format ["%1%2 (%3m)", [_x] call FUNC(displayName), if (alive (driver _x)) then {format [" (%1)", [driver _x] call ace_common_fnc_getName]} else {""}, _target distance _x],
+                                format ["%1%2 (%3m)", [_x] call FUNC(displayName), if (alive (driver _x)) then {format [" (%1)", [driver _x] call ace_common_fnc_getName]} else {""}, round (_target distance _x)],
                                 "",
                                 {
                                     params ["_target", "_player", "_params"];
@@ -305,6 +292,7 @@ GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "S
                                 {},
                                 _x
                             ] call ace_interact_menu_fnc_createAction;
+
                             _actions pushBack [_action, [], _target];
                         };
                     }
@@ -318,7 +306,47 @@ GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "S
                 [false, true, false, true, false],
                 {}
             ] call ace_interact_menu_fnc_createAction;
-            [_car, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            [_car, 0, ["ACE_MainActions", "VehicleTransport"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+            // Entladen
+            _action = [
+                "loadOff",
+                "Abladen",
+                "",
+                {_target setVehicleCargo objNull},
+                {(getVehicleCargo _target) isNotEqualTo []},
+                {
+                    params ["_target", "_player", "_params"];
+
+                    private _actions = [];
+                    {
+                        private _action = [
+                            format ["vehicleOff_%1", random 999999],
+                            format ["%1%2", [_x] call FUNC(displayName), if (alive (driver _x)) then {format [" (%1)", [driver _x] call ace_common_fnc_getName]} else {""}],
+                            "",
+                            {
+                                params ["_target", "_player", "_params"];
+                                TRACE_2("vehicleOff_setVehicleCargo",_params,_this);
+                                objNull setVehicleCargo _params;
+                            },
+                            {true},
+                            {},
+                            _x
+                        ] call ace_interact_menu_fnc_createAction;
+
+                        _actions pushBack [_action, [], _target];
+                    }
+                    forEach (getVehicleCargo _target);
+
+                    _actions
+                },
+                [],
+                {[0, 0, 0]},
+                5,
+                [false, true, false, false, false],
+                {}
+            ] call ace_interact_menu_fnc_createAction;
+            [_car, 0, ["ACE_MainActions", "VehicleTransport"], _action] call ace_interact_menu_fnc_addActionToObject;
         };
     },
     true,
@@ -344,3 +372,14 @@ GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "S
         };
     };
 }] call ace_common_fnc_arithmeticSetSource;
+
+
+// Enforce latest TFAR plugin version
+["TFAR_ConfigRefresh", {
+    // TFAR just updated its plugin config, shove in a new min version after the fact.
+    // Next frame because there is a TFAR bug where it can process plugin messages in reverse order.
+    // Meaning the version that the TFAR script sent first, could arrive after our message and overwrite ours.
+    [{
+        ["minimumPluginVersion", 328] call TFAR_fnc_setPluginSetting;
+    }] call CBA_fnc_execNextFrame;
+}] call CBA_fnc_addEventHandler;

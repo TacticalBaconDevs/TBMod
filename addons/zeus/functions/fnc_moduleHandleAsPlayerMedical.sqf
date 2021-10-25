@@ -3,7 +3,7 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-params ["_logic", "", "_activated"];
+params ["_logic", "_units", "_activated"];
 
 if (!local _logic || !_activated) exitWith {true};
 private _unit = attachedTo _logic;
@@ -11,18 +11,28 @@ deleteVehicle _logic;
 
 if (!alive _unit) exitWith {true};
 
-// TODO: ACE 3.13.* bietet derzeit nicht diese Funktionalität PRs sind nötig
-/*{
-    _x params ["_key", "_value"];
-    _unit setVariable ["ace_medical_"+ _key, _value, true];
-}
-forEach [
-        ["enableUnconsciousnessAI", 2],
-        ["preventInstaDeath", true],
-        ["amountOfReviveLives", 5],
-        ["enableRevive", 2]
-    ];
+[
+    "HandleAsPlayer",
+    [
+        [
+            "CHECKBOX",
+            ["Am Leben erhalten", "Es wird dafür gesorgt, dass die KI nicht stirbt"],
+            true
+        ]
+    ],
+    {
+        params ["_values", "_unit"];
+        _values params ["_keepAlive"];
 
-systemChat "[TBMod_main] HandleAsPlayerMedical: KI wird nun als Spieler behandelt!";*/
+        // Handle keepAlive and ACE states
+        if (_keepAlive) then {["add", _unit] call TBMod_medical_fnc_keepAlive};
+        _unit setVariable ["ace_medical_fatalDamageSource", 3, true];
+        _unit setVariable ["ace_medical_statemachine_AIUnconsciousness", true, true];
+
+        systemChat "[TBMod] HandleAsPlayerMedical: KI wird nun als Spieler behandelt!";
+    },
+    {},
+    _unit
+] call zen_dialog_fnc_create;
 
 true

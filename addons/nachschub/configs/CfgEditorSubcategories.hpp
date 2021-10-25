@@ -47,4 +47,10 @@ class CfgEditorSubcategories
         displayName = "BRD";
         order = 92;
     };
+
+    class EdSubcat_TB_Supply_SOG
+    {
+        displayName = "SOG";
+        order = 91;
+    };
 };

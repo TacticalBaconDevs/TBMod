@@ -41,7 +41,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
                 #endif
             };
         }
-        forEach ([configFile >> "CfgVehicles" >> typeOf _building >> "AnimationSources", 0] call BIS_fnc_returnChildren);
+        forEach ([configOf _building >> "AnimationSources", 0] call BIS_fnc_returnChildren);
     }
     forEach ((nearestObjects [_logic, ["House", "Building"], _width max _height]) inAreaArray _area);
 };

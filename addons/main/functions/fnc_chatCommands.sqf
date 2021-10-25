@@ -39,29 +39,35 @@
     private _weapon = currentWeapon ACE_player;
     private _magazine = currentMagazine ACE_player;
     if (_weapon == "" || _magazine == "") exitwith {systemChat "Habe eine Waffe mit Magazin ausgerüstet."};
+
     private _ammo = getText (configfile >> "CfgMagazines" >> _magazine >> "ammo");
     private _ammoCFG = configFile >> "CfgAmmo" >> _ammo;
-
-    systemChat "Sniper Informationen MET";
-    systemChat format ["Map: %1", worldName];
-    systemChat format ["Map Latitude: %1°", ace_common_maplatitude];
-    systemChat format ["Weapon: %1", _weapon];
-    systemChat format ["Bore: %1cm", [ACE_player, 0] call ace_scopes_fnc_getBoreHeight];
-    systemChat format ["Barrel Twist: %1cm", (getNumber (configFile >> "CfgWeapons" >> _weapon >> "ACE_barrelTwist")) / 25.4];
-    systemChat format ["Bullet: %1", _ammo];
-    systemChat format ["Bullet Mass: %1g", getNumber (_ammoCFG >> "ACE_bulletMass")];
-    systemChat format ["Bullet Diam: %1mm", getNumber (_ammoCFG >> "ACE_caliber")];
-    systemChat format ["Bullet C1 Coef: %1", getArray (_ammoCFG >> "ACE_ballisticCoefficients") # 0];
     private _muzzleVelocity = getArray (_ammoCFG >> "ACE_muzzleVelocities") # 0;
-    systemChat format ["Bullet Muzzle Velocity: %1m/s", _muzzleVelocity];
 
+    private _valueFormat = "<t color='#3388ff' align='left'>%1:</t> <t align='right'>%2%3</t>";
+    private _msg = ["<t color='#dea412' size='1.6' align='center'>Informationen für Sniper</t><br/>"];
+    _msg pushBack (format [_valueFormat, "Map", worldName]);
+    _msg pushBack (format [_valueFormat, "Latitude", ace_common_maplatitude, "°"]);
+    _msg pushBack (format [_valueFormat, "Weapon", _weapon]);
+    _msg pushBack (format [_valueFormat, "Bore", [ACE_player, 0] call ace_scopes_fnc_getBoreHeight, " cm"]);
+    _msg pushBack (format [_valueFormat, "Barrel Twist", (getNumber (configFile >> "CfgWeapons" >> _weapon >> "ACE_barrelTwist")) / 25.4, " inch"]);
+    _msg pushBack (format [_valueFormat, "Bullet", _ammo]);
+    _msg pushBack (format [_valueFormat, "Bullet Mass", getNumber (_ammoCFG >> "ACE_bulletMass"), " grains"]);
+    _msg pushBack (format [_valueFormat, "Bullet Diam", getNumber (_ammoCFG >> "ACE_caliber"), " inch"]);
+    _msg pushBack (format [_valueFormat, "C1 Coefficient", getArray (_ammoCFG >> "ACE_ballisticCoefficients") # 0]);
+    _msg pushBack (format [_valueFormat, "Muzzle velocity", _muzzleVelocity, " m/s"]);
+
+    _msg pushBack "<br/><t color='#dea412' size='1.6' align='center'>Muzzle velocity table</t><br/>";
+    _valueFormat = "<t color='#3388ff'>%1°C</t> : %2m/s";
     private _tempLookup = [-15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35];
     private _shifts = getArray (_ammoCFG >> "ACE_ammoTempMuzzleVelocityShifts");
-    systemChat "Muzzle velocity table:";
+
     for "_i" from 0 to 10 do
     {
-        systemChat format ["%1°C  :  %2m/s", _tempLookup # _i, _muzzleVelocity + _shifts # _i];
+        _msg pushBack (format [_valueFormat, _tempLookup # _i, _muzzleVelocity + _shifts # _i]);
     };
+
+    hint parsetext (_msg joinString "<br/>");
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["fps", {

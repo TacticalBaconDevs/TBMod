@@ -108,7 +108,7 @@ class CfgVehicles
                     ADD_SUPPLY("Arztkiste",TB_supply_all_arzt);
                     ADD_SUPPLY("Ersatzreifen",ACE_Wheel);
                     ADD_SUPPLY("Ersatzkette",ACE_Track);
-                    ADD_SUPPLY("Ersatztank",Land_CanisterFuel_F);
+                    ADD_SUPPLY("Ersatztank",GVAR(CanisterFuel));
                     ADD_SUPPLY("Funkgeräte",TB_supply_all_funk);
                     ADD_SUPPLY("EquipmentKiste",TB_supply_all_misc);
                     ADD_SUPPLY("EOD Ausrüstung",TB_supply_all_eod);
@@ -156,7 +156,7 @@ class CfgVehicles
                 {
                     displayName = "USA";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Notfall",TB_supply_usa_notfall);
                     ADD_SUPPLY("NachtKiste",TB_supply_usa_night);
@@ -194,7 +194,7 @@ class CfgVehicles
                 {
                     displayName = "UK";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Notfall",TB_supply_uk_notfall);
                     ADD_SUPPLY("Nacht Kiste",TB_supply_uk_night);
@@ -241,7 +241,7 @@ class CfgVehicles
                 {
                     displayName = "BW";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_bw', 'TB_arsenal_predefined_custom'], []]) isEqualTo []) && isClass (configFile >> 'CfgPatches' >> 'bwa3_common')";
+                    condition = "(entities [['TB_arsenal_bw', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo [] && isClass (configFile >> 'CfgPatches' >> 'bwa3_common')";
 
                     ADD_SUPPLY("Munition",TB_supply_bw_ammo);
                     ADD_SUPPLY("KleinMunition",TB_supply_bw_ammoSmall);
@@ -258,7 +258,7 @@ class CfgVehicles
                 {
                     displayName = "NATO";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_nato_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_nato_grena);
@@ -272,7 +272,7 @@ class CfgVehicles
                 {
                     displayName = "LDF";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     class LDFMunition
                     {
@@ -308,18 +308,37 @@ class CfgVehicles
                 {
                     displayName = "BRD";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_brd_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_brd_grena);
-                    ADD_SUPPLY("WerferMunition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("Panzerfaust Munition",TB_supply_brd_launcherAmmo);
+                    ADD_SUPPLY("O-U Werfer AA",TB_supply_BRD_oneUse_AA);
+                    ADD_SUPPLY("O-U Werfer AT",TB_supply_BRD_oneUse_AT);
+                };
+
+                class sog
+                {
+                    displayName = "SOG";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
+                    condition = "(entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
+
+                    ADD_SUPPLY("Munition",TB_supply_sog_ammo);
+                    ADD_SUPPLY("Granaten",TB_supply_sog_grena);
+                    ADD_SUPPLY("MG-Munition",TB_supply_sog_ammo_m60);
+                    ADD_SUPPLY("Unterlauf",TB_supply_sog_unterlauf);
+                    ADD_SUPPLY("Stinger",TB_supply_sog_9K32_Strela);
+                    ADD_SUPPLY("Pistolen Munition",TB_supply_sog_ammoSmall);
+                    ADD_SUPPLY("Präzisions Munition",TB_supply_sog_praezision);
+                    ADD_SUPPLY("One Use Law",TB_supply_sog_oneUse_AT);
+                    ADD_SUPPLY("Nachtkiste",TB_supply_sog_night);
                 };
 
                 class russ
                 {
                     displayName = "RUSS";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_russ', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_russ', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_russ_ammo);
                     ADD_SUPPLY("KleinMunition",TB_supply_russ_ammoSmall);
@@ -354,6 +373,7 @@ class CfgVehicles
     // WRAPPER(Box_NATO_Support_F); // nicht benutzt
     WRAPPER(Box_NATO_Equip_F);
     WRAPPER(Box_EAF_Uniforms_F);
+    WRAPPER(B_supplyCrate_F);
     WRAPPER_SKIN2(Box_NATO_Ammo_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_NATO_Wps_F, SKIN_GRP1);
     WRAPPER_SKIN2(Box_IDAP_Equip_F, QPATHTOEF(skins,pictures\statics\equipment_box_idap_co_1.paa), SUPPORT_SKIN);
@@ -405,6 +425,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,40);
             MACRO_ADDITEM(ACE_epinephrine,16);
             MACRO_ADDITEM(ACE_adenosine,16);
+            MACRO_ADDITEM(TB_med_venenkatheter,16);
 
             MACRO_ADDITEM(ACE_surgicalKit,2);
         };
@@ -435,6 +456,7 @@ class CfgVehicles
             MACRO_ADDITEM(ACE_morphine,40);
             MACRO_ADDITEM(ACE_epinephrine,20);
             MACRO_ADDITEM(ACE_adenosine,16);
+            MACRO_ADDITEM(TB_med_venenkatheter,16);
 
             MACRO_ADDITEM(ACE_surgicalKit,5);
         };
@@ -660,6 +682,31 @@ class CfgVehicles
         };
     };
 
+    class TB_supply_all_commandMortarAmmo : WRAPPER_NAME(Box_NATO_Grenades_F)
+    {
+        PUBLIC_NAME("vz99 MörserMunition");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_vz99_HE_multi,10);
+            MACRO_ADDITEM(TB_vz99_HE,8);
+            MACRO_ADDITEM(TB_vz99_smokeWhite,3);
+            MACRO_ADDITEM(TB_vz99_smokeRed,3);
+            MACRO_ADDITEM(TB_vz99_flare,2);
+        };
+    };
+
+    class TB_supply_all_commandMortarAmmoHE : WRAPPER_NAME(Box_NATO_Grenades_F)
+    {
+        PUBLIC_NAME("vz99 MörserMunitionHE");
+
+        class TransportItems
+        {
+            MACRO_ADDITEM(TB_vz99_HE_multi,20);
+            MACRO_ADDITEM(TB_vz99_HE,15);
+        };
+    };
+
     // ###################### Fraktionskisten ########################
     #include "CfgVehicles_USA.hpp"
     #include "CfgVehicles_UK.hpp"
@@ -667,5 +714,23 @@ class CfgVehicles
     #include "CfgVehicles_NATO.hpp"
     #include "CfgVehicles_LDF.hpp"
     #include "CfgVehicles_BRD.hpp"
+    #include "CfgVehicles_SOG.hpp"
     #include "CfgVehicles_RUSS.hpp"
+
+    // ###################### KanisterFix ######################
+    class Land_CanisterFuel_F;
+    class GVAR(CanisterFuel) : Land_CanisterFuel_F
+    {
+        ace_dragging_canCarry = 1;
+        ace_dragging_carryDirection = 0;
+        ace_dragging_carryPosition[] = {0,1,1};
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 1;
+
+        destrType = "DestructNo";
+        transportFuel = 300;
+
+        class DestructionEffects {delete HouseDestr;};
+    };
+
 };

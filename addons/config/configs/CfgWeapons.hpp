@@ -2,6 +2,10 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class Mode_SemiAuto;
+class Mode_FullAuto;
+class player;
+
 class CfgWeapons
 {
     class CannonCore;
@@ -184,7 +188,7 @@ class CfgWeapons
     {
         class ItemInfo;
     };
-    class TB_vest_sps_ucp : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 4
+    class TB_vest_sps_ucp_classV : V_PlateCarrierIAGL_dgtl // SPS Schutzweste in UCP Tier 5
     {
         class ItemInfo : ItemInfo
         {
@@ -245,7 +249,7 @@ class CfgWeapons
     {
         class ItemInfo;
     };
-    class TB_vest_sps_ocp : V_PlateCarrierGL_mtp // SPS Schutzweste in OCP Tier 4
+    class TB_vest_sps_ocp_classV : V_PlateCarrierGL_mtp // SPS Schutzweste in OCP Tier 5
     {
         class ItemInfo : ItemInfo
         {
@@ -298,6 +302,94 @@ class CfgWeapons
         };
         descriptionShort = "Armor Level V D"; // "Sprengstoffresistent"
         displayName = "SPS V D (OCP)"; // "Carrier GL Rig (MTP)"
+    };
+
+    class Vest_Camo_Base;
+    class V_PlateCarrier1_blk : Vest_Camo_Base
+    {
+        class ItemInfo;
+    };
+    class TB_platecarrier_light_black_classIII : V_PlateCarrier1_blk
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply170"; // "Supply140"
+            mass = 114.608; // 100
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 22.5; // 16
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.2; // 0.3
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.3
+                };
+                class Chest
+                {
+                    armor = 22.5; // 16
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.3
+                };
+                class Diaphragm
+                {
+                    armor = 22.5; // 16
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.3
+                };
+            };
+        };
+        descriptionShort = "Armor Level III B"; // "Armor Level III"
+        displayName = "Platecarrier III B"; // "Carrier Lite (Black)"
+    };
+
+    class Vest_NoCamo_Base;
+    class V_TacVestIR_blk : Vest_NoCamo_Base
+    {
+        class ItemInfo;
+    };
+    class TB_vest_tactical_black_classII : V_TacVestIR_blk
+    {
+        class ItemInfo : ItemInfo
+        {
+            author = "TBMod";
+            containerClass = "Supply120"; // "Supply140"
+            mass = 35.264; // 50
+
+            class HitpointsProtectionInfo
+            {
+                class Abdomen
+                {
+                    armor = 8;
+                    hitpointName = "HitAbdomen";
+                    passThrough = 0.6; // 0.5
+                };
+                class Body
+                {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2; // 0.5
+                };
+                class Chest
+                {
+                    armor = 8;
+                    hitpointName = "HitChest";
+                    passThrough = 0.2; // 0.5
+                };
+                class Diaphragm
+                {
+                    armor = 8;
+                    hitpointName = "HitDiaphragm";
+                    passThrough = 0.2; // 0.5
+                };
+            };
+        };
+        descriptionShort = "Armor Level II B";
+        displayName = "Tactical Vest II B";
     };
 
     class V_EOD_base_F;
@@ -542,6 +634,48 @@ class CfgWeapons
         magazineWell[] = {"TB_magwell_20Rnd_570x28"};
     };
 
+    class Rifle_Base_F;
+    class arifle_ARX_base_F : Rifle_Base_F
+    {
+        canShootInWater = 1; // 0
+        magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG"}; // {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer"};
+        magazineWell[] = {"STANAG_556x45","CBA_556x45_STANAG"}; // {"Katiba_65x39","CBA_65x39_Katiba"};
+        modes[] = {"FullAuto","Single","single_medium_optics1","single_far_optics2","fullauto_medium"};
+        class Single : Mode_SemiAuto
+        {
+            dispersion = 0.00116;
+            textureType = "burst";
+        };
+        class FullAuto : Mode_FullAuto
+        {
+            autoFire = 1;
+            burst = 1;
+            dispersion = 0.00116;
+            reloadTime = 0.067;
+            textureType = "fullAuto";
+        };
+        class Secondary : Rifle_Base_F
+        {
+            canShootInWater = 1;
+            magazines[] = {"TB_mag_10Rnd_50BW_Mag_F"};
+            magazineWell[] = {"TB_magwell_MPR"};
+            modes[] = {"Single"};
+            class Single : Mode_SemiAuto
+            {
+                reloadTime = 0.15; // 0.3
+                dispersion = 0.00145;
+            };
+        };
+    };
+    class arifle_ARX_blk_F : arifle_ARX_base_F {};
+    class TB_weapon_MPR : arifle_ARX_blk_F // Multi Purpose Rifle
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weapon_MPR"; // "arifle_ARX_blk_F"
+        descriptionShort = "Multi Purpose Rifle<br />Caliber: 5.56mm / 12.7mm"; // "Sturmgewehr<br />Kaliber: 6,5x39 mm / 0,50 BW"
+        displayName = "MPR"; // "Typ 115 6,5 mm (Schwarz)"
+    };
+
     class LMG_RCWS;
     class LMG_Minigun : LMG_RCWS
     {
@@ -596,7 +730,80 @@ class CfgWeapons
     class autocannon_40mm_CTWS : autocannon_Base_F
     {
         class Mode_FullAuto;
+        class AP : autocannon_Base_F
+        {
+            class player;
+        };
+        class HE : autocannon_Base_F
+        {
+            class player;
+        };
     };
+    class TB_weapon_40mm_CTWS : autocannon_40mm_CTWS // 40mm Cannon Badger
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weapon_40mm_CTWS";
+        muzzles[] = {"HE","AP"};
+        magazineWell[] = {"TB_magwell_40mm_CTWS"};
+        reloadMagazineSound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",2.51189,1,10};
+        reloadSound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",2.51189,1,10};
+        class AP : autocannon_Base_F
+        {
+            displayName = "CTWS AP";
+            magazineReloadTime = 3;
+            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS"};
+            modes[] = {"player","close","short","medium","far"};
+            class player : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Halb";
+                multiplier = 1;
+                reloadTime = 0.6;
+                textureType = "burst";
+            };
+        };
+        class HE : autocannon_Base_F
+        {
+            displayName = "CTWS HE";
+            magazineReloadTime = 3;
+            magazines[] = {"TB_mag_40Rnd_40mm_GPR"};
+            modes[] = {"player","close","short","medium","far"};
+
+            class player : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Halb";
+                multiplier = 1;
+                reloadTime = 0.6;
+                textureType = "burst";
+            };
+        };
+    };
+
+    class HMG_127;
+    class HMG_127_AFV : HMG_127
+    {
+        class manual;
+    };
+    class TB_weapon_127_coax : HMG_127_AFV // 12.7mm Coaxial
+    {
+        baseWeapon = "TB_weapon_coax_Badger";
+        magazineReloadTime = 6;
+        magazines[] = {"TB_mag_200Rnd_127x99_Tracer_Red"};
+        modes[] = {"manual","close","short","medium","far"};
+        class manual : manual
+        {
+            burst = 1;
+            dispersion = 0.0006;
+            displayName = "12.7mm HMG Tracer (Red)";
+            multiplier = 1;
+            reloadTime = 0.1;
+            textureType = "fullAuto";
+        };
+    };
+
     class autocannon_40mm_VTOL_01 : autocannon_40mm_CTWS // Gunship 40mm
     {
         class player : Mode_FullAuto
@@ -605,7 +812,7 @@ class CfgWeapons
         };
     };
 
-    class autocannon_30mm_CTWS :autocannon_Base_F
+    class autocannon_30mm_CTWS : autocannon_Base_F
     {
         class AP;
         class HE;
@@ -633,7 +840,7 @@ class CfgWeapons
         {
             displayName = "CTAS40 AP";
             magazineReloadTime = 1.5;
-            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS","TB_mag_20Rnd_40mm_IR_Loal_missiles"};
+            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS","TB_mag_40Rnd_40mm_HVEP"};
             modes[] = {"player","burst","close","short","medium","far"};
             class player : player
             {

@@ -133,7 +133,13 @@ private _allgemein_magazine = [
     "rhsusf_5Rnd_00Buck",
     "rhsusf_5Rnd_Slug",
     "rhsusf_8Rnd_00Buck",
-    "rhsusf_8Rnd_Slug"
+    "rhsusf_8Rnd_Slug",
+
+    // 12.7 UL
+    "TB_mag_MPR_10Rnd_Antimateriel",
+    "TB_mag_MPR_10Rnd_Slug",
+    "TB_mag_MPR_10Rnd_Buckshot",
+    "TB_mag_MPR_10Rnd_Underwater"
 ];
 
 private _allgemein_gewehre = [
@@ -183,7 +189,8 @@ private _allgemein_gewehre = [
     "rhs_weap_mk18_KAC_bk",
     "rhs_weap_mk18_KAC",
     "rhs_weap_mk18_wd",
-    "rhs_weap_mk18_KAC_wd"
+    "rhs_weap_mk18_KAC_wd",
+    "TB_weapon_MPR"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
@@ -230,7 +237,8 @@ private _allgemein_geschuetzzubehoer = [
     "rhsusf_acc_rotex5_grey",
     "rhsusf_acc_rotex5_tan",
     "rhsusf_acc_SF3P556",
-    "rhsusf_acc_SFMB556"
+    "rhsusf_acc_SFMB556",
+    "rhsusf_acc_aac_762sdn6_silencer"
 ];
 
 private _allgemein_zweibein = [
@@ -302,16 +310,16 @@ private _allgemein_uniformen = [
 ];
 
 private _allgemein_westen = [
-    "rhsusf_spcs_ocp",
-    "rhsusf_spcs_ucp",
-    "SPC_Black_01",
-    "UCP_Black_01",
-    "MBAV_Black_01",
-    "MBAV_Black_02",
-    "TB_vest_sps_ucp",
-    "TB_vest_sps_ocp",
+    "TB_vest_spcs_ocp_light_classIII",
+    "TB_vest_spcs_ucp_light_classIII",
+    "TB_vest_sps_ucp_classV",
+    "TB_vest_sps_ocp_classV",
     "TB_vest_plateframe_light_classIII",
-    "TB_vest_plateframe_light_classIV"
+    "TB_vest_plateframe_light_classIV",
+    "TB_vest_tactical_black_classII",
+    "TB_platecarrier_light_black_classIII",
+    "TB_vest_plateframe_marksman_classII",
+    "TB_vest_plateframe_rifleman_classII"
 ];
 
 private _allgemein_kopfbedeckung = [
@@ -479,7 +487,6 @@ private _dmr_munition = [
     "rhsusf_10Rnd_762x51_m62_Mag",
     "rhsusf_10Rnd_762x51_m993_Mag",
     "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
-    "rhs_mag_20Rnd_SCAR_762x51_mk316_special",
     "rhsusf_5Rnd_762x51_m118_special_Mag",
     "rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull",
     "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr"
@@ -558,7 +565,7 @@ private _gepaeck_mittel = [
     "B_Kitbag_rgr",
     "B_Kitbag_mcamo",
     "B_Kitbag_tan",
-    "TB_backpacks_kitbag_black",
+    "TB_viper_light_black",
     "rhsusf_assault_eagleaiii_coy", // maximumLoad = 280; mass = 50; Quotient = 5,6
     "rhsusf_assault_eagleaiii_ocp",
     "rhsusf_assault_eagleaiii_ucp"
@@ -570,7 +577,8 @@ private _gepaeck_gross = [
     "B_Carryall_khk",
     "B_Carryall_mcamo",
     "B_Carryall_oli",
-    "B_Carryall_oucamo"
+    "B_Carryall_oucamo",
+    "TB_viper_heavy_black"
 ];
 
 private _gepaeck_sehrgross = [
@@ -590,7 +598,15 @@ private _lrFunken = [
     "OPXT_m81_1523",
     "OPXT_multicam_1523",
     "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523"    //grau2
+    "OPXT_ogag_1523",    //grau2
+    // Workshop Funk
+    "tfw_ilbe_blade_arid",
+    "tfw_ilbe_blade_black",
+    "tfw_ilbe_blade_mct",
+    "tfw_ilbe_blade_mc",
+    "tfw_ilbe_blade_ocp",
+    "tfw_ilbe_blade_wd2",
+    "tfw_ilbe_blade_coy"
 ];
 
 private _moerser_munition = [
@@ -652,15 +668,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _HEDP_raketenwerfer +
         [
             // Weste
-            "rhsusf_iotv_ocp_Squadleader",
-            "rhsusf_iotv_ocp_Teamleader",
+            "TB_vest_iotv_ocp_teamleader_classIV",
             "TB_vest_iotv_ucp_teamleader_classIV",
-            "rhsusf_mbav_mg",
-            "rhsusf_spc_teamleader",
-            "rhsusf_spcs_ocp_squadleader",
-            "rhsusf_spcs_ocp_teamleader",
-            "rhsusf_spcs_ucp_squadleader",
-            "rhsusf_spcs_ucp_teamleader",
+            "TB_vest_spcs_ocp_teamleader_classIII",
+            "TB_vest_spcs_ucp_teamleader_classIII",
             "TB_vest_plateframe_teamleader_classIII",
             "TB_vest_plateframe_teamleader_classIV",
 
@@ -699,12 +710,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Westen
-            "rhsusf_iotv_ocp_Medic",
-            "rhsusf_iotv_ucp_Medic",
-            "rhsusf_mbav_Medic",
-            "rhsusf_spc_iar",
-            "rhsusf_spcs_ocp_medic",
-            "rhsusf_spcs_ucp_medic",
+            "TB_vest_iotv_ocp_medic_classIV",
+            "TB_vest_iotv_ucp_medic_classIV",
+            "TB_vest_spcs_ocp_medic_classIII",
+            "TB_vest_spcs_ucp_medic_classIII",
             "TB_vest_plateframe_medic_classIII",
             "TB_vest_plateframe_medic_classIV",
 
@@ -740,13 +749,22 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_5Rnd_00Buck",
             "rhsusf_5Rnd_Slug",
 
+            // ### Visiere
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_compm4",
+            "optic_yorris",
+            "rhsusf_acc_eotech_552",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_anpeq15a",
+
             // Westen
-            "rhsusf_iotv_ocp_Medic",
-            "rhsusf_iotv_ucp_Medic",
-            "rhsusf_mbav_Medic",
-            "rhsusf_spc_iar",
-            "rhsusf_spcs_ocp_medic",
-            "rhsusf_spcs_ucp_medic",
+            "TB_vest_iotv_ocp_medic_classIV",
+            "TB_vest_iotv_ucp_medic_classIV",
+            "TB_vest_spcs_ocp_medic_classIII",
+            "TB_vest_spcs_ucp_medic_classIII",
             "TB_vest_plateframe_medic_classIII",
             "TB_vest_plateframe_medic_classIV",
 
@@ -780,12 +798,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _gepaeck_mittel +
         [
             // Westen
-            "rhsusf_iotv_ocp_Grenadier",
+            "TB_vest_iotv_ocp_grenadier_classIV",
             "TB_vest_iotv_ucp_grenadier_classIV",
-            "rhsusf_mbav_Grenadier",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_grenadier",
-            "rhsusf_spcs_ucp_grenadier",
+            "TB_vest_spcs_ocp_grenadier_classIII",
+            "TB_vest_spcs_ucp_grenadier_classIII",
             "TB_vest_plateframe_grenadier_classIII",
             "TB_vest_plateframe_grenadier_classIV",
 
@@ -825,12 +841,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_acc_saw_lw_bipod",
 
             // Westen
-            "rhsusf_iotv_ocp_SAW",
+            "TB_vest_iotv_ocp_mg_classIV",
             "TB_vest_iotv_ucp_mg_classIV",
-            "rhsusf_mbav_mg",
-            "rhsusf_spc_iar",
-            "rhsusf_spcs_ocp_machinegunner",
-            "rhsusf_spcs_ucp_machinegunner",
+            "TB_vest_spcs_ocp_mg_classIII",
+            "TB_vest_spcs_ucp_mg_classIII",
             "TB_vest_plateframe_mg_classIII",
             "TB_vest_plateframe_mg_classIV",
 
@@ -864,12 +878,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _moerser_munition +
         [
             // Westen
-            "rhsusf_iotv_ocp_SAW",
+            "TB_vest_iotv_ocp_mg_classIV",
             "TB_vest_iotv_ucp_mg_classIV",
-            "rhsusf_mbav_mg",
-            "rhsusf_spc_iar",
-            "rhsusf_spcs_ocp_machinegunner",
-            "rhsusf_spcs_ucp_machinegunner",
+            "TB_vest_spcs_ocp_mg_classIII",
+            "TB_vest_spcs_ucp_mg_classIII",
             "TB_vest_plateframe_mg_classIII",
             "TB_vest_plateframe_mg_classIV",
 
@@ -900,6 +912,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
+
+            // ### Visiere
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_compm4",
+            "optic_yorris",
+            "rhsusf_acc_eotech_552",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_anpeq15a",
 
             // Kopfbedeckung
             "rhsusf_hgu56p_black",
@@ -944,6 +967,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_HeliPilotCoveralls",
             "rhs_uniform_cu_ocp",
             "rhs_uniform_cu_ucp",
+
+            // Westen
+            "TB_vest_iotv_ocp_mg_classIV",
+            "TB_vest_iotv_ucp_mg_classIV",
+            "TB_vest_spcs_ocp_mg_classIII",
+            "TB_vest_spcs_ucp_mg_classIII",
+            "TB_vest_plateframe_mg_classIII",
+            "TB_vest_plateframe_mg_classIV",
 
             // Items
             "ToolKit"
@@ -995,13 +1026,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "optic_sos",
 
             // Weste
-            "rhsusf_iotv_ocp_Rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_mbav_Rifleman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman",
-            "rhsusf_spc_marksman",
+            "TB_vest_spcs_ocp_rifleman_classIII",
+            "TB_vest_spcs_ucp_rifleman_classIII",
             "TB_vest_plateframe_marksman_classIII",
             "TB_vest_plateframe_marksman_classIV",
             "TB_vest_plateframe_rifleman_classIII",
@@ -1077,12 +1105,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_T_FullGhillie_tna_F",
 
             // Westen
+            "TB_vest_iotv_ocp_rifleman_classIV",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
-            "rhsusf_mbav_rifleman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_sniper",
-            "rhsusf_spcs_ucp_sniper",
+            "TB_vest_spcs_ocp_marksman_classIII",
+            "TB_vest_spcs_ucp_marksman_classIII",
             "TB_vest_plateframe_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIV",
             "TB_vest_plateframe_marksman_classIII",
@@ -1135,12 +1161,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_T_FullGhillie_tna_F",
 
             // Weste
-            "rhsusf_iotv_ocp_Grenadier",
+            "TB_vest_iotv_ocp_grenadier_classIV",
             "TB_vest_iotv_ucp_grenadier_classIV",
-            "rhsusf_mbav_Grenadier",
-            "rhsusf_spc_iar",
-            "rhsusf_spcs_ocp_sniper",
-            "rhsusf_spcs_ucp_sniper",
+            "TB_vest_spcs_ocp_marksman_classIII",
+            "TB_vest_spcs_ucp_marksman_classIII",
             "TB_vest_plateframe_marksman_classIII",
             "TB_vest_plateframe_marksman_classIV",
             "TB_vest_plateframe_rifleman_classIII",
@@ -1188,12 +1212,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Westen
-            "rhsusf_mbav_rifleman",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
+            "TB_vest_spcs_ocp_rifleman_classIII",
+            "TB_vest_spcs_ucp_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIV",
 
@@ -1250,12 +1272,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_weap_optic_smaw",
 
             // Vesten
-            "rhsusf_mbav_mg",
             "TB_vest_iotv_ucp_mg_classIV",
-            "rhsusf_iotv_ocp_SAW",
-            "rhsusf_spc_iar",
-            "rhsusf_spcs_ocp_saw",
-            "rhsusf_spcs_ucp_saw",
+            "TB_vest_iotv_ocp_mg_classIV",
+            "TB_vest_spcs_ocp_mg_classIII",
+            "TB_vest_spcs_ucp_mg_classIII",
             "TB_vest_plateframe_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIV"
         ]
@@ -1285,12 +1305,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "Laserdesignator",
 
             // Vesten
-            "rhsusf_mbav_rifleman",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
+            "TB_vest_spcs_ocp_rifleman_classIII",
+            "TB_vest_spcs_ucp_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIV",
 
@@ -1323,12 +1341,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "ACE_VMM3",
 
             // Weste
-            "rhsusf_mbav_rifleman",
             "TB_vest_iotv_ucp_rifleman_classIV",
-            "rhsusf_iotv_ocp_Rifleman",
-            "rhsusf_spc_rifleman",
-            "rhsusf_spcs_ocp_rifleman",
-            "rhsusf_spcs_ucp_rifleman",
+            "TB_vest_iotv_ocp_rifleman_classIV",
+            "TB_vest_spcs_ocp_rifleman_classIII",
+            "TB_vest_spcs_ucp_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIII",
             "TB_vest_plateframe_rifleman_classIV",
 

@@ -201,8 +201,8 @@ switch _mode do
 
             if (_value in [STATE_DAMAGED1,STATE_DAMAGED2,STATE_DAMAGED3]) then
             {
-                private _noHitzone1 = !isClass(configfile >> "CfgVehicles" >> typeOf _building >> "HitPoints" >> "Hitzone_1_hitpoint");
-                private _noHitzone2 = !isClass(configfile >> "CfgVehicles" >> typeOf _building >> "HitPoints" >> "Hitzone_2_hitpoint");
+                private _noHitzone1 = !isClass(configOf _building >> "HitPoints" >> "Hitzone_1_hitpoint");
+                private _noHitzone2 = !isClass(configOf _building >> "HitPoints" >> "Hitzone_2_hitpoint");
 
                 switch (_value) do
                 {
@@ -531,7 +531,7 @@ switch _mode do
         if (isNull _building) exitWith {[]};
 
         //configfile >> "CfgVehicles" >> "Land_i_House_Small_01_b_blue_F" >> "UserActions" >> "OpenDoor_1"
-        private _cfg = configfile >> "CfgVehicles" >> typeOf _building >> "UserActions";
+        private _cfg = configOf _building >> "UserActions";
 
         if !(isClass _cfg) exitWith {[]};
 
@@ -702,7 +702,7 @@ switch _mode do
         }
         else
         {
-            getNumber(configfile >> "CfgVehicles" >> typeOf _building >> "numberOfDoors")
+            getNumber(configOf _building >> "numberOfDoors")
         };
 
         _available = _available min DOOR_INDEX_MAX;
@@ -783,8 +783,8 @@ switch _mode do
 
         private _building = ["getBuilding",[_module]] call bis_fnc_moduleEditTerrainObject;
 
-        private _noHitzone1 = !isClass(configfile >> "CfgVehicles" >> typeOf _building >> "HitPoints" >> "Hitzone_1_hitpoint");
-        private _noHitzone2 = !isClass(configfile >> "CfgVehicles" >> typeOf _building >> "HitPoints" >> "Hitzone_2_hitpoint");
+        private _noHitzone1 = !isClass(configOf _building >> "HitPoints" >> "Hitzone_1_hitpoint");
+        private _noHitzone2 = !isClass(configOf _building >> "HitPoints" >> "Hitzone_2_hitpoint");
 
         if (_noHitzone1) then
         {

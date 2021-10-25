@@ -178,13 +178,15 @@
             _x setBehaviour "CARELESS";
             _x setCombatMode "BLUE";
             _x setUnitPos "DOWN";
+
             [_x, true] remoteExecCall ["setCaptive", _x];
             [_x, "PATH"] remoteExecCall ["disableAI", _x];
             [{[_this, "PATH"] remoteExecCall ["disableAI", _this]}, _x, 2] call CBA_fnc_waitAndExecute;
 
             //_x move [0,0,0];
-            _x getVariable ["ace_captives_isHandcuffed", true, true];
+            //_x setVariable ["ace_medical_ai_lastHit", 1e+10, true];
             _x setVariable ["ace_medical_fatalDamageSource", 3, true];
+            _x setVariable ["ace_medical_statemachine_AIUnconsciousness", true, true];
         }
         forEach _syncObjs;
 

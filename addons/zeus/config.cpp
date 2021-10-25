@@ -10,21 +10,24 @@ class CfgPatches
         name = "TBMod ZeusModules";
 
         units[] = {
-            "TB_zeus_base",
-            "TB_zeus_nachschubAbwurf",
-            "TB_zeus_disablePath",
-            "TB_zeus_prioSichtbarkeit",
-            "TB_zeus_handleAsPlayerMedical",
-            "TB_zeus_applyLoadout",
-            "TB_zeus_handleAsPlayerMedical",
-            "TB_zeus_moduleUnflipVehicle",
-            "TB_zeus_adjustAceCargo",
-            "TB_zeus_limitDamage",
-            "TB_zeus_switchMove",
-            "TB_zeus_defineAmmo",
             QGVAR(base),
+            QGVAR(nachschubAbwurf),
+            QGVAR(disablePath),
+            QGVAR(prioSichtbarkeit),
+            QGVAR(handleAsPlayerMedical),
+            QGVAR(applyLoadout),
+            QGVAR(moduleUnflipVehicle),
+            QGVAR(adjustAceCargo),
+            QGVAR(limitDamage),
+            QGVAR(switchMove),
+            QGVAR(defineAmmo),
             QGVAR(createTransmitter),
-            QGVAR(setViewDistance)
+            QGVAR(setViewDistance),
+            QGVAR(base_ki),
+            QGVAR(ki_disablePath),
+            QGVAR(ki_handleAsPlayerMedical),
+            QGVAR(ki_applyLoadout),
+            QGVAR(ki_injured)
         };
 
         requiredAddons[] = {

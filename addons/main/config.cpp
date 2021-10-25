@@ -29,8 +29,11 @@ class CfgPatches
             "TB_UGV_01_rcws_F"
         };
 
+        addonRootClass = "TBMod_common";
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
+            "TBMod_common",
+
             // Arma3
             "A3_Data_F_Oldman_Loadorder",
             "A3_Data_F_Mod_Loadorder",
@@ -71,24 +74,23 @@ class CfgPatches
             "tfar_handhelds",
             "tfar_static_radios",
             // Reskins
-            "OPXT_TFAR",
-            "opxt_tfar_backpacks",
-            "OPXT_TFAR_ITEMS",
+            //"OPXT_TFAR",
+            //"opxt_tfar_backpacks",
+            //"OPXT_TFAR_ITEMS",
 
             // 3rd PartyMods
             "zen_main",
-            "3denEnhanced",
-            "adv_aceCPR",
-            "WarFXPE",
-            "acex_field_rations",
-            "acex_headless",
-            "acex_intelitems",
-            "acex_main",
-            "acex_sitting",
-            "acex_viewrestriction",
-            "acex_volume",
-
+            //"3denEnhanced",
+            //"adv_aceCPR",
+            //"WarFXPE", // Blastcore ist clientside,
+        
             // ACE3
+            "ace_field_rations",
+            "ace_headless",
+            "ace_intelitems",
+            "ace_sitting",
+            "ace_viewrestriction",
+            "ace_volume",
             "ace_advanced_ballistics",
             "ace_advanced_fatigue",
             "ace_advanced_throwing",
@@ -174,7 +176,6 @@ class CfgPatches
             "ace_noidle",
             "ace_noradio",
             "ace_norearm",
-            "ace_nouniformrestrictions",
             "ace_optics",
             "ace_optionsmenu",
             "ace_overheating",

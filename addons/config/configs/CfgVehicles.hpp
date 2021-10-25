@@ -5,7 +5,7 @@
 class SensorTemplateActiveRadar;
 class SensorTemplatePassiveRadar;
 class SensorTemplateVisual;
-class SensorTemplateLaser;
+class SensorTemplateIR;
 class SensorTemplateNV;
 
 class CfgVehicles
@@ -766,6 +766,20 @@ class CfgVehicles
         mass = 13;
     };
 
+    class B_ViperLightHarness_blk_F;
+    class TB_viper_light_black : B_ViperLightHarness_blk_F
+    {
+        maximumLoad = 280; // 260
+        mass = 50; // 45
+    };
+
+    class B_ViperHarness_blk_F;
+    class TB_viper_heavy_black : B_ViperHarness_blk_F
+    {
+        maximumLoad = 320; // 300
+        mass = 60; // 55
+    };
+
 
     // ###################### MISC ######################
     // UGV Stomper
@@ -796,7 +810,7 @@ class CfgVehicles
         {
             class MainTurret: MainTurret
             {
-                magazines[] = {"200Rnd_127x99_mag_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
+                magazines[] = {"TB_mag_200Rnd_127x99_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
             };
         };
     };

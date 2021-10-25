@@ -62,6 +62,18 @@ class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerLef
 };
 
 class Optics_Armored;
+class Optics_Commander_01 : Optics_Armored
+{
+    class Wide;
+    class Medium;
+    class Narrow;
+};
+class Optics_Gunner_APC_01 : Optics_Armored
+{
+    class Wide;
+    class Medium;
+    class Narrow;
+};
 class Optics_Gunner_APC_02 : Optics_Armored
 {
     class Wide;
@@ -739,6 +751,42 @@ class CfgVehicles
 
     #include "CfgVehicles_FV510Warrior.hpp"
 
+    class Car_F;
+    class Wheeled_APC_F : Car_F
+    {
+        class NewTurret;
+        class Turrets;
+    };
+    class APC_Wheeled_01_base_F : Wheeled_APC_F
+    {
+        class Turrets : Turrets
+        {
+            class MainTurret : NewTurret
+            {
+                class CommanderOptics;
+            };
+        };
+    };
+    class B_APC_Wheeled_01_base_F : APC_Wheeled_01_base_F
+    {
+        class AnimationSources;
+    };
+    class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F // Badger APC
+    {
+        class TextureSources;
+        class Components;
+        class AnimationSources : AnimationSources
+        {
+            class showSLATHull;
+            class showSLATTurret;
+            class showBags;
+            class showCamonetCannon;
+            class showCamonetHull;
+            class showCamonetTurret;
+        };
+    };
+
+    #include "CfgVehicles_APC_Badger.hpp"
 
     class I_APC_Wheeled_03_base_F;
     class I_APC_Wheeled_03_cannon_F : I_APC_Wheeled_03_base_F
@@ -859,141 +907,6 @@ class CfgVehicles
             QPATHTOF(pictures\vehicles\TB_Vehicles_USA_Pandur_5.paa)
         };
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Pandur.jpg);
-    };
-
-    class B_APC_Wheeled_01_base_F;
-    class B_APC_Wheeled_01_cannon_F : B_APC_Wheeled_01_base_F
-    {
-        class TextureSources;
-        class AnimationSources;
-    };
-    class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
-    {
-        armor = 215; // 320
-        audible = 16; // 14
-        displayName = "Badger APC";
-        author = "Eron";
-        addCategoryBLU(Truppentransporter);
-        hiddenSelectionsTextures[] =
-        {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
-            "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-            QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wald_Patria_AMW.jpg);
-
-        class TextureSources : TextureSources
-        {
-            class Desert
-            {
-                displayName = "Wüste";
-                textures[] =
-                {
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
-                    "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
-                    "\a3\Armor_F\Data\cage_sand_CO.paa"
-                };
-            };
-            class Green
-            {
-                displayName = "3-Farb-Flecktarn";
-                textures[] =
-                {
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_3.paa),
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_3.paa),
-                    "\a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-                    QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Pandur_5.paa)
-                };
-            };
-            class Olive
-            {
-                displayName = "Oliv";
-                textures[] = {"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa","A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa","A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa","a3\Armor_F\Data\camonet_NATO_Green_CO.paa","a3\Armor_F\Data\cage_olive_CO.paa"};
-            };
-            class Sand
-            {
-                displayName = "Sand";
-                textures[] = {"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa","a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa","a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa","a3\Armor_F\Data\camonet_NATO_Desert_CO.paa","a3\Armor_F\Data\cage_sand_CO.paa"};
-            };
-        };
-
-        class AnimationSources : AnimationSources
-        {
-            class showSLATHull
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Slat-Käfig anzeigen (Rumpf)";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showSLATTurret
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Slat-Käfig anzeigen (Geschützturm)";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showBags
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Rucksäcke anzeigen (Geschützturm)";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showCamonetCannon
-            {
-                animPeriod = 0.001;
-                initPhase = 1; // 0
-                source = "user";
-            };
-            class showCamonetHull
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Tarnnetz anzeigen (Rumpf)";
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-            class showCamonetTurret
-            {
-                animPeriod = 0.001;
-                author = "Bohemia Interactive";
-                displayName = "Tarnnetz anzeigen (Geschützturm)";
-                forceAnimate[] = {"showCamonetCannon",1};
-                forceAnimate2[] = {"showCamonetCannon",0};
-                initPhase = 1; // 0
-                mass = -50;
-                source = "user";
-            };
-        };
-    };
-
-    class TB_Vehicles_Wueste_Badger : TB_Vehicles_Wald_Badger // Badger APC
-    {
-        displayName = "Badger APC";
-        author = "Eron";
-        addCategoryBLU(Truppentransporter);
-        hiddenSelectionsTextures[] =
-        {
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_2.paa),
-            QPATHTOF(pictures\vehicles\TB_Vehicles_Patria_AMW_1.paa),
-            "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
-            "\a3\Armor_F\Data\cage_sand_CO.paa"
-        };
-        editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_Wueste_Patria_AMW.jpg);
     };
 
     class MRAP_03_base_F;
@@ -1180,16 +1093,6 @@ class CfgVehicles
     };
 
     ////////// Skins für Rucksäcke
-
-    // Skin schwarzer Rucksack Mittelgroß
-    class B_Kitbag_sgg;
-    class TB_backpacks_kitbag_black : B_Kitbag_sgg
-    {
-        displayName = "Ranzen (schwarz)";
-        author = "Eron";
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\backpacks\TB_backpacks_kitbag_black.paa)};
-        picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperHarness_blk_F_ca.paa"; // "\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_sgg"
-    };
 
     class B_Bergen_tna_F;
     class TB_backpacks_bergen_m81 : B_Bergen_tna_F
