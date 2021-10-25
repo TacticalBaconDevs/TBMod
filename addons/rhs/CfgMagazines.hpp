@@ -116,9 +116,9 @@ class CfgMagazines
     };
 
     class rhsusf_8Rnd_Slug;
-    class TB_rhs_mag_40mm_Slugshot : rhsusf_8Rnd_Slug // Umbenennung zu TB_Slugshot
+    class TB_rhs_mag_40mm_Slug : rhsusf_8Rnd_Slug // Umbenennung zu TB_Slugshot
     {
-        ammo = "TB_rhs_ammo_40mm_Slugshot";
+        ammo = "TB_rhs_ammo_40mm_Slug";
         author = "TBMod";
 
         descriptionShort = "Type: TB Slugshot Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: M203, M320, M79";

@@ -71,7 +71,7 @@ class CfgAmmo
     };
 
     class rhs_ammo_12g_slug;
-    class TB_rhs_ammo_40mm_Slugshot : rhs_ammo_12g_slug // Unterlauf-Slug
+    class TB_rhs_ammo_40mm_Slug : rhs_ammo_12g_slug // Unterlauf-Slug
     {
         caliber = 2; // 0.3048;
         deflecting = 0; // 30

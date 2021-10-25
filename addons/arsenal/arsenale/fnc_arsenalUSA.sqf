@@ -473,7 +473,7 @@ private _grenadier_munition = [
     // Sondermunition
     "TB_rhs_mag_40mm_Delay",
     "TB_rhs_mag_40mm_IR_Grenade",
-    "TB_rhs_mag_40mm_Slugshot",
+    "TB_rhs_mag_40mm_Slug",
 
     "ACE_HuntIR_M203"
 ];

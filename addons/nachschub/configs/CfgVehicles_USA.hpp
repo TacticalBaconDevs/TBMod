@@ -119,7 +119,7 @@ class TB_supply_usa_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
 
         // IR + Slug
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_IR_Grenade,2);
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot,6);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slug,6);
         MACRO_ADDMAGAZINE(ACE_HuntIR_M203,6);
 
         // 12.7mm UL

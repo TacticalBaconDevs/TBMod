@@ -214,7 +214,7 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
         MACRO_ADDMAGAZINE(SmokeShell, 8);
         MACRO_ADDMAGAZINE(ACE_HuntIR_M203, 2);
         MACRO_ADDMAGAZINE(AMP_Breaching_Charge_Mag, 4);
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot, 4);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slug, 4);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE, 8);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP, 8);
         MACRO_ADDMAGAZINE(Laserbatteries, 1);

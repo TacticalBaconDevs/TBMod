@@ -260,7 +260,7 @@ class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
         MACRO_ADDMAGAZINE(SmokeShell, 8);
         MACRO_ADDMAGAZINE(ACE_HuntIR_M203, 2);
         MACRO_ADDMAGAZINE(AMP_Breaching_Charge_Mag, 4);
-        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slugshot, 4);
+        MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_Slug, 4);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HE, 8);
         MACRO_ADDMAGAZINE(TB_rhs_mag_40mm_HEDP, 8);
         MACRO_ADDMAGAZINE(Laserbatteries, 1);
