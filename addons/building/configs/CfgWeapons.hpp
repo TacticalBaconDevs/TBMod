@@ -53,7 +53,6 @@ class CfgWeapons
     ADD_ITEM(Land_Pallet_vertical_F,"\A3\structures_f\Civ\Constructions\Pallet_vertical_F.p3d",22);
     ADD_ITEM(Land_BagFence_Long_F,"A3\Structures_F\Mil\BagFence\BagFence_Long_F.p3d",44);
     ADD_ITEM(Land_BagFence_Round_F,"\A3\structures_f\mil\BagFence\BagFence_Round_F.p3d",40);
-
     class TB_building_item_ace_concertinawirecoil : TB_itemcore
     {
         scope = 2;
@@ -66,7 +65,6 @@ class CfgWeapons
             mass = 5;
         };
     };
-
     ADD_ITEM(Land_SandbagBarricade_01_hole_F,"\A3\Structures_F_Argo\Military\Fortifications\SandbagBarricade_01_hole_F.p3d",66);
 
 };
