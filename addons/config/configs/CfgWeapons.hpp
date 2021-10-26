@@ -595,14 +595,14 @@ class CfgWeapons
     {
         class Single;
     };
-    class TB_weapon_rhino60 : hgun_Pistol_heavy_02_F // .45 Revolver
+    class TB_weapon_rhino60 : hgun_Pistol_heavy_02_F // .500 Revolver
     {
         author = "TBMod";
         baseWeapon = "TB_weapon_rhino60";
-        descriptionShort = "Tactical Revolver<br />Caliber: .45 FMJ";
+        descriptionShort = "Tactical Revolver<br />Caliber: .500 FMJ";
         displayName = "Rhino 60";
-        magazines[] = {"TB_mag_45_FMJ"};
-        magazineWell[] = {"TB_magwell_6Rnd_45_FMJ"};
+        magazines[] = {"TB_mag_6Rnd_500_FMJ"};
+        magazineWell[] = {"TB_magwell_6Rnd_500_FMJ"};
         modes[] = {"manual"};
 
         class manual : Single

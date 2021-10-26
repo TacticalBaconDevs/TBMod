@@ -2,6 +2,11 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class Mode_SemiAuto;
+class Mode_Burst;
+class Mode_FullAuto;
+class CowsSlot;
+class MuzzleSlot;
 
 class CfgWeapons
 {
@@ -117,6 +122,101 @@ class CfgWeapons
         hiddenSelectionsTextures[] = {
             QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_01.paa),
             QPATHTOEF(skins,pictures\vests\TB_vest_sps_ucp_02.paa)
+        };
+    };
+
+    class SMG_01_Base;
+    class SMG_01_F : SMG_01_Base
+    {
+        class WeaponSlotsInfo;
+    };
+    class TB_weap_Vector : SMG_01_F  // Vector
+    {
+        ace_overheating_mrbs = 6000;
+        author = "TBMod";
+        aimTransitionSpeed = 1.7;
+        baseWeapon = "TB_weap_Vector";
+        descriptionShort = "Submachine Gun<br />Caliber: .45";
+        displayName = "Vector G2 Grey";
+        hiddenSelectionsTextures[] =
+        {
+            QPATHTOF(pictures\weapons\TB_weap_vector_grey.paa),
+            "\a3\weapons_f\data\vectoratt_co.paa",
+            "\a3\weapons_f\acc\data\battlesight_co.paa"
+        };
+        modes[] = {"Single","Burst","FastAuto"};
+        magazines[] = {"TB_mag_40Rnd_45_JHP_Tracer_Red"};
+        magazineWell[] = {"TB_magwell_40Rnd_45"};
+        recoil="TB_recoil_Vector_G2";
+        class Single : Mode_SemiAuto
+        {
+            dispersion = 0.00131;
+            multiplier = 1;
+            reloadTime = 0.05;
+            textureType = "semi";
+            class BaseSoundModeType;
+            class SilencedSound: BaseSoundModeType
+            {
+                SoundSetShot[] = {"SMGVermin_silencerShot_SoundSet","SMGVermin_silencerTail_SoundSet","SMGVermin_silencerInteriorTail_SoundSet"};
+            };
+            class StandardSound: BaseSoundModeType
+            {
+                soundsetshot[] = {"SMGVermin_Shot_SoundSet","SMGVermin_Tail_SoundSet","SMGVermin_InteriorTail_SoundSet"};
+            };
+        };
+        class Burst : Mode_Burst
+        {
+            burst = 2;
+            dispersion = 0.00131;
+            multiplier = 1;
+            reloadTime = 0.04;
+            textureType = "dual";
+            class BaseSoundModeType;
+            class SilencedSound: BaseSoundModeType
+            {
+                SoundSetShot[] = {"SMGVermin_silencerShot_SoundSet","SMGVermin_silencerTail_SoundSet","SMGVermin_silencerInteriorTail_SoundSet"};
+            };
+            class StandardSound: BaseSoundModeType
+            {
+                soundsetshot[] = {"SMGVermin_Shot_SoundSet","SMGVermin_Tail_SoundSet","SMGVermin_InteriorTail_SoundSet"};
+            };
+        };
+        class FastAuto : Mode_FullAuto
+        {
+            dispersion = 0.00131;
+            multiplier = 1;
+            reloadTime = 0.04;
+            textureType = "fastAuto";
+            class BaseSoundModeType;
+            class SilencedSound: BaseSoundModeType
+            {
+                SoundSetShot[] = {"SMGVermin_silencerShot_SoundSet","SMGVermin_silencerTail_SoundSet","SMGVermin_silencerInteriorTail_SoundSet"};
+            };
+            class StandardSound: BaseSoundModeType
+            {
+                soundsetshot[] = {"SMGVermin_Shot_SoundSet","SMGVermin_Tail_SoundSet","SMGVermin_InteriorTail_SoundSet"};
+            };
+        };
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            class CowsSlot : CowsSlot
+            {
+                class compatibleItems
+                {
+                    optic_yorris = 1;
+                    optic_aco_smg = 1;
+                    rhsusf_acc_rm05 = 1;
+                    rhsusf_acc_t1_low = 1;
+                    rhsusf_acc_eotech_552 = 1;
+                };
+            };
+            class MuzzleSlot : MuzzleSlot
+            {
+                class compatibleItems
+                {
+                    rhsusf_acc_rotex5_grey = 1;
+                };
+            };
         };
     };
 };

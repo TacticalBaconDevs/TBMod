@@ -139,7 +139,13 @@ private _allgemein_magazine = [
     "TB_mag_MPR_10Rnd_Antimateriel",
     "TB_mag_MPR_10Rnd_Slug",
     "TB_mag_MPR_10Rnd_Buckshot",
-    "TB_mag_MPR_10Rnd_Underwater"
+    "TB_mag_MPR_10Rnd_Underwater",
+
+    // .45 Cal
+    "TB_mag_40Rnd_45_FMJ",
+    "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+    "TB_mag_40Rnd_45_JHP",
+    "TB_mag_40Rnd_45_JHP_Tracer_Red"
 ];
 
 private _allgemein_gewehre = [
@@ -190,7 +196,8 @@ private _allgemein_gewehre = [
     "rhs_weap_mk18_KAC",
     "rhs_weap_mk18_wd",
     "rhs_weap_mk18_KAC_wd",
-    "TB_weapon_MPR"
+    "TB_weapon_MPR",
+    "TB_weap_Vector"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
@@ -207,9 +214,10 @@ private _allgemein_visiere = [
     "rhsusf_acc_compm4",
     "rhsusf_acc_ACOG_d",
     "rhsusf_acc_ACOG_wd",
-    "optic_mrco",
-    "ace_optic_mrco_2d",
-    "optic_yorris"
+    "rhsusf_acc_rm05",
+    "rhsusf_acc_t1_low",
+    "optic_yorris",
+    "optic_aco_smg"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -291,7 +299,7 @@ private _allgemein_handfeuerwaffen = [
     "TB_mag_33Rnd_9x19_FMJ",
     "TB_mag_33Rnd_9x19_JHP",
     "TB_mag_taser",
-    "TB_mag_45_FMJ"
+    "TB_mag_6Rnd_500_FMJ"
 ];
 
 private _allgemein_uniformen = [

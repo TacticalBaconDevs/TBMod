@@ -145,10 +145,22 @@ class CfgAmmo
     };
 
     class B_45ACP_Ball;
-    class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
+    class TB_ammo_500_FMJ : B_45ACP_Ball // .500 FMJ Munition
     {
         caliber = 1.4; // 1
         hit = 21; // 8
+    };
+
+    class TB_ammo_45_FMJ : B_45ACP_Ball // .45 FMJ Munition
+    {
+        caliber = 0.715; // 1
+        hit = 5; // 8
+    };
+
+    class TB_ammo_45_JHP : B_45ACP_Ball // .45 JHP Munition
+    {
+        caliber = 0.415; // 1
+        hit = 7; // 8
     };
 
     class B_570x28_Ball;

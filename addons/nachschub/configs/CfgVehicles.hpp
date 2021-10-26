@@ -158,6 +158,7 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
+                    ADD_SUPPLY("Airdrop",TB_supply_usa_airdrop);
                     ADD_SUPPLY("Notfall",TB_supply_usa_notfall);
                     ADD_SUPPLY("NachtKiste",TB_supply_usa_night);
 
