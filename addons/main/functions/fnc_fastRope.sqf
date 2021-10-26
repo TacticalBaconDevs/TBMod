@@ -78,7 +78,7 @@ switch (_mode) do
 
         if (_group isEqualType objNull) then {_group = group _group};
 
-        [_vehicle, "SSS_fastropeUnits", _ropeUnits select {(group _x) isNotEqualTo _group}] call CBA_fnc_setVarNet;
+        [_vehicle, "SSS_fastropeUnits", _ropeUnits select {!((group _x) isEqualTo _group)}] call CBA_fnc_setVarNet;
 
         systemChat format ["Die Gruppe '%1' wurde vom Abseilen entfernt!", groupId _group];
     };
@@ -94,7 +94,7 @@ switch (_mode) do
         private _ropes = _vehicle getVariable [QGVAR(ropes), []];
         _ropes = _ropes select {count _x == 3 && alive (_x # 0) && alive (_x # 1) && alive (_x # 2)};
 
-        if (_ropes isNotEqualTo []) exitWith {true};
+        if !(_ropes isEqualTo []) exitWith {true};
 
         private _centerOfMass = getCenterOfMass _vehicle;
 
@@ -130,7 +130,7 @@ switch (_mode) do
         private _copilots = _copilotTurrets apply {_vehicle turretUnit _x};
 
         (driver _vehicle == _player || currentPilot _vehicle == _player || gunner _vehicle == _player || commander _vehicle == _player && _player in _copilots)
-            && _ropeUnits isNotEqualTo [] && _height < 50 && _height > 5 && speed _vehicle < 10
+            && !(_ropeUnits isEqualTo []) && _height < 50 && _height > 5 && speed _vehicle < 10
     };
 
     case "checkUnits":

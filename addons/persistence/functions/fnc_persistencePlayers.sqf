@@ -51,13 +51,13 @@ else // load
 
     {
         private _find = [TB_disconnectCache, getPlayerUID _x] call BIS_fnc_findNestedElement;
-        if (_find isNotEqualTo []) then
+        if !(_find isEqualTo []) then
         {
             (TB_disconnectCache select (_find select 0)) params ["_uid", "_gear", "_pos", "_dir", "_arsenalType", "_rolle", "_group", "_team"];
 
             [_x] joinSilent _group;
 
-            if (_rolle isNotEqualTo "" && _arsenalType isNotEqualTo "") then
+            if !(_rolle isEqualTo "" || _arsenalType isEqualTo "") then
             {
                 _x setVariable ["TB_arsenalType", _arsenalType, true];
                 [_rolle, _arsenalType, objNull, false] remoteExec [QEFUNC(arsenal,changeRolle), _x];

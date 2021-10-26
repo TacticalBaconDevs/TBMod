@@ -11,6 +11,6 @@ if ([_target] call ace_medical_treatment_fnc_isMedicalVehicle) then {_info pushB
 if ([_target] call ace_repair_fnc_isRepairVehicle) then {_info pushBack "Reparaturfahrzeug"};
 if ([_target] call ace_refuel_fnc_getFuel > 0) then {_info pushBack "Tankwagen"};
 if (_target getVariable ["ace_rearm_isSupplyVehicle", false] ||
-    getNumber (configOf _target >> "ace_rearm_defaultSupply") > 0) then {_info pushBack "Munitionswagen"};
+    getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "ace_rearm_defaultSupply") > 0) then {_info pushBack "Munitionswagen"};
 
-if (_info isNotEqualTo []) then {hint (_info joinString "\n")};
+if !(_info isEqualTo []) then {hint (_info joinString "\n")};

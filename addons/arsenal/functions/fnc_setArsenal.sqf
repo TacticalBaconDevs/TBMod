@@ -8,7 +8,7 @@ params ["_ammoBox", ["_rolle", ""]];
 if (isNull _ammoBox) exitWith {};
 
 // Check zum Überspringen
-private _type = getText (configOf _ammoBox >> "arsenalType");
+private _type = getText (configFile >> "CfgVehicles" >> typeOf _ammoBox >> "arsenalType");
 if (_type in ["", "CUSTOM"]) exitWith {};
 
 // Arsenalitems laden
@@ -83,7 +83,7 @@ ACE_player setVariable [QGVAR(arsenalCargo), _tbCargo];
 
 // Arsenale syncen
 {
-    if ([_x] call FUNC(isArsenalType) && {_tbCargo isNotEqualTo (_x getVariable ["ace_arsenal_virtualItems", []])}) then
+    if ([_x] call FUNC(isArsenalType) && {!(_tbCargo isEqualTo (_x getVariable ["ace_arsenal_virtualItems", []]))}) then
     {
         _x setVariable ["ace_arsenal_virtualItems", _tbCargo];
     };

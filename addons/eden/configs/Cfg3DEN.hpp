@@ -154,7 +154,7 @@ class Cfg3DEN
                         property = QEGVAR(main,defineAmmo);
                         control = "Edit";
 
-                        expression =  "private _compValue = call compile _value; if (!is3DEN && _value != '[]' && _value != '' && (magazines _this) isNotEqualTo _compValue) then {_this setVehicleAmmoDef 0; {_x params ['_ammo', ['_amount', 999999]]; _this addMagazine [_ammo, _amount]} forEach _compValue; reload _this}";
+                        expression =  "private _compValue = call compile _value; if (!is3DEN && _value != '[]' && _value != '' && !((magazines _this) isEqualTo _compValue)) then {_this setVehicleAmmoDef 0; {_x params ['_ammo', ['_amount', 999999]]; _this addMagazine [_ammo, _amount]} forEach _compValue; reload _this}";
 
                         defaultValue = "magazines _this";
 

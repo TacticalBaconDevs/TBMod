@@ -258,7 +258,7 @@ GVAR(vehicleTransport) = ["Car", "Tank", "Motorcycle", "Helicopter", "Plane", "S
     {
         private _car = _this # 0;
 
-        if (isClass (configOf _car >> "VehicleTransport" >> "Carrier")) then
+        if (isClass (configFile >> "CfgVehicles" >> typeOf _car >> "VehicleTransport" >> "Carrier")) then
         {
             private _action = ["VehicleTransport", "VehicleTransport", "", {}, {vehicleCargoEnabled _target}] call ace_interact_menu_fnc_createAction;
             [_car, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;

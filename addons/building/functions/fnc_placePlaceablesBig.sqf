@@ -11,19 +11,15 @@ params [
 ];
 _zusatz params ["_zeit", "_resourcen"];
 
-if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler in "+ QFUNC(placePlaceablesBig)};
+if (_buildingName isEqualTo "") exitWith {systemChat "Schwerer Fehler (TB_building_fnc_placePlaceablesBig)"};
 
-private _kranTruck = objNull;
-if (_kran) then {_kranTruck = ((nearestObjects [ACE_player, [], 20]) select {_x getVariable [QGVAR(kranWagen), false]}) param [0, objNull]};
-if (_kran && {isNull _kranTruck}) exitWith {systemChat "Kein Kranwagen in der Nähe von 20m"};
+if (_kran && {((nearestObjects [ACE_player, [], 15]) select {_x getVariable ["TBMod_Building_kranWagen", false]}) isEqualTo []}) exitWith {systemChat "Kein Kranwagen in der Nähe"};
 
-private _truck = objNull;
-if (!isNull _kranTruck) then {_truck = ((nearestObjects [_kranTruck, [], 25]) select {(_x getVariable [QGVAR(resourcenCargo), -1]) >= _resourcen}) param [0, objNull]};
-if (isNull _truck) then {_truck = ((nearestObjects [ACE_player, [], 25]) select {(_x getVariable [QGVAR(resourcenCargo), -1]) >= _resourcen}) param [0, objNull]};
-if (isNull _truck) exitWith {systemChat "Kein Resourcentruck mit genügend Resourcen in der Nähe von 25m"};
+((nearestObjects [ACE_player, [], 20]) select {(_x getVariable ["TBMod_Building_resourcenCargo", -1]) >= _resourcen}) params [["_truck", objNull]];
+if (isNull _truck) exitWith {systemChat "Kein Resourcentruck mit genügend Resourcen in der Nähe"};
 
-private _resc = _truck getVariable [QGVAR(resourcenCargo), -1];
-_truck setVariable [QGVAR(resourcenCargo), _resc - _resourcen, true];
+private _resc = _truck getVariable ["TBMod_Building_resourcenCargo", -1];
+_truck setVariable ["TBMod_Building_resourcenCargo", _resc - _resourcen, true];
 
 private _building = createVehicle [_buildingName, ACE_player modelToWorld [0, 5, 0], [], 0, "CAN_COLLIDE"];
 private _specialDir = [0, 180] select _spiegeln;
@@ -97,7 +93,7 @@ _building setPosASL (AGLToASL _pos);
                 {
                     (_this # 0) params ["_building", "", "", "_resourcen", "_truck"];
 
-                    _truck setVariable [QGVAR(resourcenCargo), (_truck getVariable [QGVAR(resourcenCargo), 0]) + _resourcen, true];
+                    _truck setVariable ["TBMod_Building_resourcenCargo", (_truck getVariable ["TBMod_Building_resourcenCargo", 0]) + _resourcen, true];
 
                     [ACE_player, "", 1] call ace_common_fnc_doAnimation;
                     deleteVehicle _building;

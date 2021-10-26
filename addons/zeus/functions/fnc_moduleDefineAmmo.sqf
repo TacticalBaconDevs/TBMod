@@ -30,7 +30,7 @@ if (_mags isEqualTo []) exitWith {true};
         _args params ["_unit", "_mags"];
 
         private _compValue = call compile _value;
-        if (_value != '[]' && _value != '' && _mags isNotEqualTo _compValue) then
+        if (_value != '[]' && _value != '' && !(_mags isEqualTo _compValue)) then
         {
             _unit setVehicleAmmoDef 0;
 

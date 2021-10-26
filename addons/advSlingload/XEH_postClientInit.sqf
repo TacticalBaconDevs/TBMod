@@ -44,7 +44,7 @@
                     "Lastenseil abtrennen",
                     "",
                     {_target call FUNC(detach)},
-                    {(ropes _target) isNotEqualTo []}
+                    {!((ropes _target) isEqualTo [])}
                 ] call ace_interact_menu_fnc_createAction
             ],
             [

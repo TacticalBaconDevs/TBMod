@@ -6,4 +6,4 @@
 params ["_args", ""];
 _args params ["_target", "_player", "_params", "_actionData"];
 
-_actionData set [1, getText (configOf _target >> "displayName")];
+_actionData set [1, getText (configFile >> "CfgVehicles" >> typeOf _target >> "displayName")];

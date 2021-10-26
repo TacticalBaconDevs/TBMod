@@ -18,7 +18,7 @@ params ["_target"];
 if (isNull _target) exitWith {systemChat format ["ERROR(dropRopefromChopper): no Target"]};
 if (!alive _target) exitWith {systemChat "Was zerstört ist sollte nicht benutzt werden"};
 
-private _selection = getText (configOf _target >> "slingLoadMemoryPoint");
+private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "slingLoadMemoryPoint");
 if (_selection == "") exitWith {systemChat format ["ERROR(dropRopefromChopper): no Slingloadposition found on _target %1", _target]};
 
 private _posSlingload = _target modelToWorld (_target selectionPosition _selection);

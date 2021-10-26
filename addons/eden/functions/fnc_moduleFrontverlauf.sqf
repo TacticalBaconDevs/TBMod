@@ -70,7 +70,7 @@ if (!is3DEN && {_mode == "init"} && {_isActivated}) then
         private _mostFactionColor = 'empty';
         private _player = (call CBA_fnc_players) param [0, objNull];
 
-        if (_list isNotEqualTo [] && !isNull _player) then
+        if (!(_list isEqualTo []) && !isNull _player) then
         {
     ";
 

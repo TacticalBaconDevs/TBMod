@@ -10,7 +10,7 @@ if (!local _mortarVeh) exitWith {};
 
 // Remove the empty magazine, so a new one will load correctly
 private _loadedEmpty = _mortarVeh magazinesTurret [0];
-if (_loadedEmpty isNotEqualTo []) then
+if !(_loadedEmpty isEqualTo []) then
 {
     _mortarVeh removeMagazinesTurret [_loadedEmpty select 0, [0]];
 };

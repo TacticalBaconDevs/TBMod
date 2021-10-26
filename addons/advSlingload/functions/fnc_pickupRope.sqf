@@ -23,7 +23,7 @@ if (_fromGround) then //_target = helper
 {
     private _rope = _target getVariable [QGVAR(ropeObj), objNull];
     private _source = _rope getVariable [QGVAR(ropeSource), objNull];
-    private _selection = getText (configOf _source >> "slingLoadMemoryPoint");
+    private _selection = getText (configfile >> "CfgVehicles" >> typeOf _source >> "slingLoadMemoryPoint");
     if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _source %1", _source]};
 
     _target attachTo [ACE_player, [-0.02, -0.04, -0.0], "righthandmiddle1"];
@@ -36,7 +36,7 @@ else  //_target = helicopter
 {
     private _helper = createVehicle [QGVAR(ropeInvisibleObject), position ACE_player, [], 0, "CAN_COLLIDE"];
 
-    private _selection = getText (configOf _target >> "slingLoadMemoryPoint");
+    private _selection = getText (configfile >> "CfgVehicles" >> typeOf _target >> "slingLoadMemoryPoint");
     if (_selection == "") exitWith {systemChat format ["ERROR(pickupRope): no Slingloadposition found on _target %1", _target]};
 
     [QGVAR(addPickupActionEvent), [_helper]] call CBA_fnc_globalEvent;
