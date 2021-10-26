@@ -82,15 +82,16 @@ class CfgPatches
             "zen_main",
             //"3denEnhanced",
             //"adv_aceCPR",
-            //"WarFXPE", // Blastcore ist clientside,
-        
+            //"WarFXPE", // Blastcore ist clientside
+            "acex_field_rations",
+            "acex_headless",
+            "acex_intelitems",
+            "acex_main",
+            "acex_sitting",
+            "acex_viewrestriction",
+            "acex_volume",
+
             // ACE3
-            "ace_field_rations",
-            "ace_headless",
-            "ace_intelitems",
-            "ace_sitting",
-            "ace_viewrestriction",
-            "ace_volume",
             "ace_advanced_ballistics",
             "ace_advanced_fatigue",
             "ace_advanced_throwing",

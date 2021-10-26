@@ -13,6 +13,7 @@ class CfgPatches
             "A3_Data_F_Tank_Loadorder",
             "ace_main",
             "cba_main",
+            "acex_main",
             "TBMod_main"
         };
         addonRootClass = "TBMod_main";
