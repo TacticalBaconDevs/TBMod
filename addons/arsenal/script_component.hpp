@@ -3,12 +3,12 @@
     Developed by http://tacticalbacon.de
 */
 #define COMPONENT arsenal
-#include "\x\TBMod\addons\common\script_mod.hpp"
+#include "\x\TBMod\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 
-#include "\x\TBMod\addons\common\script_macros.hpp"
+#include "\x\TBMod\addons\main\script_macros.hpp"
 
 /*
     Addon spezifisch
