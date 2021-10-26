@@ -8,6 +8,7 @@
     https://github.com/CBATeam/CBA_A3/blob/master/addons/keybinding/fnc_addKeybind.sqf
     https://community.bistudio.com/wiki/DIK_KeyCodes
 */
+
 [
     "TBMod",
     QEGVAR(key,hideGUI),
@@ -124,3 +125,4 @@ if !(getPlayerUID ACE_player in (call TB_lvl3)) exitWith {};
     {},
     [DIK_END, [false, false, true]] // ALT + ENDE
 ] call CBA_fnc_addKeybind;
+

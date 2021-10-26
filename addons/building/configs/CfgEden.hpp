@@ -17,11 +17,11 @@ class Cfg3DEN
 
                 class Attributes
                 {
-                    class TBMod_Building_resourcenCargo
+                    class GVAR(resourcenCargo)
                     {
-                        displayName = "Resourcentruck Ladung:";
+                        displayName = "Resourcentruckladung";
                         tooltip = "Resourcen fürs Bauen von Gebäuden";
-                        property = "TBMod_Building_resourcenCargo";
+                        property = QGVAR(resourcenCargo);
                         control = "Edit";
 
                         expression = "_this setVariable ['%s', _value, true];";
@@ -34,11 +34,11 @@ class Cfg3DEN
                         typeName = "NUMBER";
                     };
 
-                    class TBMod_Building_kranWagen
+                    class GVAR(kranWagen)
                     {
                         displayName = "Kranwagen";
                         tooltip = "Für größere Bauwerke brauchst du Kranwagen zur Unterstützung!";
-                        property = "TBMod_Building_kranWagen";
+                        property = QGVAR(kranWagen);
                         control = "Checkbox";
 
                         expression = "_this setVariable ['%s', _value, true];";
