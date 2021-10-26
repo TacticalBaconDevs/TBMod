@@ -9,9 +9,20 @@ class CfgMagazineWells
         ADDON[] = {"3Rnd_Smoke_Grenade_shell_precise"};
     };
 
-    class TB_magwell_6Rnd_45_FMJ
+    class TB_magwell_6Rnd_500_FMJ
     {
-        ADDON[] = {"TB_mag_45_FMJ"};
+        ADDON[] = {"TB_mag_6Rnd_500_FMJ"};
+    };
+
+    class TB_magwell_40Rnd_45
+    {
+        TB_40Rnd_45[] =
+        {
+            "TB_mag_40Rnd_45_FMJ",
+            "TB_mag_40Rnd_45_JHP",
+            "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+            "TB_mag_40Rnd_45_JHP_Tracer_Red"
+        };
     };
 
     class TB_magwell_10Rnd_338

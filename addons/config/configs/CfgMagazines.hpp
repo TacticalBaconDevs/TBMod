@@ -271,12 +271,50 @@ class CfgMagazines
     };
 
     class 6Rnd_45ACP_Cylinder;
-    class TB_mag_45_FMJ : 6Rnd_45ACP_Cylinder // 45. FMJ Magazin
+    class TB_mag_6Rnd_500_FMJ : 6Rnd_45ACP_Cylinder // .500 FMJ Magazin Revolver
     {
-        ammo = "TB_45_FMJ";
+        ammo = "TB_ammo_500_FMJ";
         author = "TBMod";
-        displayName = "45. cal FMJ";
-        displayNameShort = "45. cal FMJ";
+        displayName = "6Rnd .500 FMJ";
+        displayNameShort = "6Rnd .500 FMJ";
+    };
+
+    class 30Rnd_45ACP_Mag_SMG_01;
+    class TB_mag_40Rnd_45_FMJ : 30Rnd_45ACP_Mag_SMG_01 // .45 FMJ Magazin Vector
+    {
+        ammo = "TB_ammo_45_FMJ";
+        author = "TBMod";
+        count = 40;
+        displayName = "40Rnd .45 FMJ";
+        displayNameShort = "40Rnd .45 FMJ";
+    };
+
+    class 30Rnd_45ACP_Mag_SMG_01_Tracer_Red;
+    class TB_mag_40Rnd_45_FMJ_Tracer_Red : 30Rnd_45ACP_Mag_SMG_01_Tracer_Red   // .45 FMJ Magazin Tracer Vector
+    {
+        ammo = "TB_ammo_45_FMJ";
+        author = "TBMod";
+        count = 40;
+        displayName = "40Rnd .45 FMJ Tracer";
+        displayNameShort = "40Rnd .45 FMJ Tracer";
+    };
+
+    class TB_mag_40Rnd_45_JHP : 30Rnd_45ACP_Mag_SMG_01 // .45 JHP Magazin Vector
+    {
+        ammo = "TB_ammo_45_JHP";
+        author = "TBMod";
+        count = 40;
+        displayName = "40Rnd .45 JHP";
+        displayNameShort = "40Rnd .45 JHP";
+    };
+
+    class TB_mag_40Rnd_45_JHP_Tracer_Red : 30Rnd_45ACP_Mag_SMG_01_Tracer_Red  // .45 JHP Magazin Tracer Vector
+    {
+        ammo = "TB_ammo_45_JHP";
+        author = "TBMod";
+        count = 40;
+        displayName = "40Rnd .45 JHP Tracer";
+        displayNameShort = "40Rnd .45 JHP Tracer";
     };
 
     class 50Rnd_570x28_SMG_03;

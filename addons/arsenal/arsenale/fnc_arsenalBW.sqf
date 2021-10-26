@@ -215,7 +215,7 @@ private _allgemein_handfeuerwaffen = [
     "BWA3_1Rnd_Flare_Multistar_Red",
     "BWA3_15Rnd_9x19_P8",
     "TB_mag_taser",
-    "TB_mag_45_FMJ",
+    "TB_mag_6Rnd_500_FMJ",
     "TB_mag_33Rnd_9x19_JHP",
     "TB_mag_33Rnd_9x19_FMJ",
     // ### Befestigungsschiene

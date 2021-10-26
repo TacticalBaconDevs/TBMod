@@ -46,4 +46,11 @@ class CfgRecoils
         permanent = 0.04;
         temporary = 0.02;
     };
+    class TB_recoil_Vector_G2
+    {
+        kickBack[] = {0.015,0.04};
+        muzzleOuter[] = {0,0,0.03,0.03};
+        permanent = 0.025;
+        temporary = 0.02;
+    };
 };
