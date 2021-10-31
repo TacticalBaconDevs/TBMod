@@ -748,12 +748,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Waffen
             "rhsusf_weap_MP7A2",
-			"TB_weap_Vector",
-			
-			// MP7 zubehör
+	    "TB_weap_Vector",
+	    
+	    // MP7 zubehör
             "rhsusf_weap_MP7A2_grip3",
-			
-			// Pistolen
+	    
+	    // Pistolen
             "rhs_weap_M590_8RD",
             "rhs_weap_M590_5RD",
 			
@@ -913,9 +913,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _lrFunken +
         _gepaeck_klein +
-        _pilot_munition +
         _allgemein_magazine +
-        _pilot_munition +
         _mg_munition +
         _grenadier_munition +
         _dmr_munition +
@@ -926,7 +924,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
-			"TB_weap_Vector",
+	    "TB_weap_Vector",
 
             // ### Visiere
             "rhsusf_acc_mrds",
