@@ -19,6 +19,7 @@ class TB_supply_usa_ammo : WRAPPER_NAME(Box_IND_Wps_F)
         MACRO_ADDMAGAZINE(TB_mag_100Rnd_556x45_Mk318_tracer,2);                 // MGMag5.56 C-Mag Tracer
         MACRO_ADDMAGAZINE(rhsusf_100Rnd_762x51_m62_tracer,2);                   // MGMag7.62 AP Tracer
         MACRO_ADDMAGAZINE(TB_mag_100Rnd_338_LS_Tracer,2);                       // MGMag8.6 Tracer
+        MACRO_ADDMAGAZINE(TB_mag_40Rnd_45_JHP_Tracer_Red,3);                    // Vector.45 Tracer
     };
 };
 
@@ -75,7 +76,7 @@ class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(TB_mag_45_FMJ,15);
+        MACRO_ADDMAGAZINE(TB_mag_6Rnd_500_FMJ,15);
     };
 };
 
@@ -310,7 +311,7 @@ class TB_supply_usa_airdrop : WRAPPER_NAME(B_supplyCrate_F)
         MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(TB_mag_45_FMJ,15);
+        MACRO_ADDMAGAZINE(TB_mag_6Rnd_500_FMJ,15);
 
         // 12.7
         MACRO_ADDMAGAZINE(rhsusf_mag_10Rnd_STD_50BMG_M33,6);
@@ -336,6 +337,9 @@ class TB_supply_usa_airdrop : WRAPPER_NAME(B_supplyCrate_F)
         MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Antimateriel,5);
         MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Slug,5);
         MACRO_ADDMAGAZINE(TB_mag_MPR_10Rnd_Buckshot,5);
+
+        // .45
+        MACRO_ADDMAGAZINE(TB_mag_40Rnd_45_JHP_Tracer_Red,10);                    // Vector.45 Tracer
     };
 
     class TransportItems

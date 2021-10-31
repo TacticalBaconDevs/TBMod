@@ -42,7 +42,7 @@ else // load
         private _newMarker = createMarker [_marker, _pos];
         _newMarker setMarkerColor _color;
         _newMarker setMarkerSize _size;
-        if !(_type isEqualTo "") then {_newMarker setMarkerType _type};
+        if (_type isNotEqualTo "") then {_newMarker setMarkerType _type};
         _newMarker setMarkerAlpha _alpha;
         _newMarker setMarkerBrush _brush;
         _newMarker setMarkerDir _dir;

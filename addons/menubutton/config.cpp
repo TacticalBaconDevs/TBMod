@@ -14,9 +14,9 @@ class CfgPatches
         name = "TBMod MenuButton";
 
         requiredAddons[] = {
-            "TBMod_main"
+            "TBMod_common"
         };
-        addonRootClass = "TBMod_main";
+        addonRootClass = "TBMod_common";
     };
 };
 
@@ -27,13 +27,12 @@ class RscDisplayMain: RscStandardDisplay
 {
     class Spotlight
     {
-        class TB_missionServer
+        class GVAR(missionServer)
         {
-            text = "";
-            textIsQuote = 0;
+            text = "TacticalBacon Server";
             picture = PATHTOF(button.paa);
-            //video = "\a3\Ui_f\Video\spotlight_1_Apex.ogv";
-            action = QUOTE([_this, 'server.tacticalbacon.de', '2302', 'tbm'] call COMPILE_FILE(joinServer)); // execVM QPATHTOF
+            //action = QUOTE([_this, 'server.tacticalbacon.de', '2302', 'tbm'] call COMPILE_SCRIPT(joinServer)); // execVM QPATHTOF
+            action = "connectToServer ['server.tacticalbacon.de', 2302, 'tbm']";
             actionText = "Join TacticalBacon Server";
             condition = "true";
         };

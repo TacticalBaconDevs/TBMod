@@ -5,7 +5,7 @@
 class SensorTemplateActiveRadar;
 class SensorTemplatePassiveRadar;
 class SensorTemplateVisual;
-class SensorTemplateLaser;
+class SensorTemplateIR;
 class SensorTemplateNV;
 
 class CfgVehicles
@@ -810,7 +810,7 @@ class CfgVehicles
         {
             class MainTurret: MainTurret
             {
-                magazines[] = {"200Rnd_127x99_mag_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
+                magazines[] = {"TB_mag_200Rnd_127x99_Tracer_Red","TB_Smoke_Grenades","TB_Smoke_Grenades"};
             };
         };
     };

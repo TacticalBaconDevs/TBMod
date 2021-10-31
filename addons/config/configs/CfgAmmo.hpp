@@ -2,7 +2,8 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-class SensorTemplateIR;
+class SensorTemplateLaser;
+class SensorTemplateDataLink;
 
 class CfgAmmo
 {
@@ -144,10 +145,22 @@ class CfgAmmo
     };
 
     class B_45ACP_Ball;
-    class TB_45_FMJ : B_45ACP_Ball // 45. FMJ Munition
+    class TB_ammo_500_FMJ : B_45ACP_Ball // .500 FMJ Munition
     {
         caliber = 1.4; // 1
         hit = 21; // 8
+    };
+
+    class TB_ammo_45_FMJ : B_45ACP_Ball // .45 FMJ Munition
+    {
+        caliber = 0.715; // 1
+        hit = 5; // 8
+    };
+
+    class TB_ammo_45_JHP : B_45ACP_Ball // .45 JHP Munition
+    {
+        caliber = 0.415; // 1
+        hit = 7; // 8
     };
 
     class B_570x28_Ball;
@@ -168,7 +181,7 @@ class CfgAmmo
     };
 
     class B_40mm_GPR_Tracer_Red;
-    class TB_ammo_40mm_GPR : B_40mm_GPR_Tracer_Red // 40mm GPR Munition FV510 Warrior
+    class TB_ammo_40mm_GPR : B_40mm_GPR_Tracer_Red // 40mm GPR Munition
     {
         class CamShakeExplode
         {
@@ -200,7 +213,7 @@ class CfgAmmo
     };
 
     class B_40mm_APFSDS_Tracer_Red;
-    class TB_ammo_40mm_APFSDS : B_40mm_APFSDS_Tracer_Red // 40mm APFSDS Munition FV510 Warrior
+    class TB_ammo_40mm_APFSDS : B_40mm_APFSDS_Tracer_Red // 40mm APFSDS Munition
     {
         class CamShakeExplode
         {
@@ -228,111 +241,9 @@ class CfgAmmo
             frequency = 5; // 20
             power = 1; // 0.01
         };
-        caliber = 4; // 5
-        hit = 110; // 100
+        caliber = 5; // 8
+        hit = 110; // 150
         indirectHit = 10; // 8
-    };
-
-    class M_120mm_cannon_ATGM;
-    class M_120mm_cannon_ATGM_LG : M_120mm_cannon_ATGM
-    {
-        class Components;
-    };
-    class TB_ammo_40mm_IR_Loal_missiles : M_120mm_cannon_ATGM_LG // 40mm IR Loal Missiles FV510 Warrior
-    {
-        class CamShakeExplode
-        {
-            distance = 23;
-            duration = 0.3;
-            frequency = 5;
-            power = 2;
-        };
-        class CamShakeFire {
-            distance = 6;
-            duration = 0.3;
-            frequency = 5;
-            power = 1;
-        };
-        class CamShakeHit
-        {
-            distance = 1;
-            duration = 0.3;
-            frequency = 5;
-            power = 2;
-        };
-        class CamShakePlayerFire {
-            distance = 1;
-            duration = 0.3;
-            frequency = 5;
-            power = 1;
-        };
-        airLock = 1;
-        autoSeekTarget = 1;
-        caliber = 4;
-        CraterEffects = "30mmSmoke";
-        explosionEffects = "30mmExplode";
-        flightProfiles[] = {"LoalDistance"};
-        class LoalDistance
-        {
-            lockSeekDistanceFromParent = 10;
-        };
-        fuseDistance = 10;
-        hit = 110;
-        indirectHit = 10;
-        indirectHitRange = 2;
-        irLock = 1;
-        lockSeekRadius = 1000;
-        maneuvrability = 18;
-        missileLockMaxSpeed = 150; // (540km/h)
-        missileLockMinDistance = 10;
-        model = "\A3\Weapons_F\Ammo\Rocket_01_fly_F";
-        sideAirFriction = 5;
-        submunitionAmmo = "";
-        thrust = 100;
-        thrustTime = 6;
-        timeToLive = 6;
-        weaponLockSystem = "2 + 16";
-        class Components : Components
-        {
-            class SensorsManagerComponent
-            {
-                class Components
-                {
-                    class IRSensorComponent : SensorTemplateIR
-                    {
-                        aimDown = 0;
-                        class AirTarget
-                        {
-                            maxRange = 4000;
-                            minRange = 4000;
-                            objectDistanceLimitCoef = -1;
-                            viewDistanceLimitCoef = -1;
-                        };
-                        allowsMarking = 1;
-                        angleRangeHorizontal = 10;
-                        angleRangeVertical = 10;
-                        animDirection = "";
-                        color[] = {1,1,1,0};
-                        componentType = "IRSensorComponent";
-                        groundNoiseDistanceCoef = -1;
-                        class GroundTarget
-                        {
-                            maxRange = 4000;
-                            minRange = 4000;
-                            objectDistanceLimitCoef = -1;
-                            viewDistanceLimitCoef = -1;
-                        };
-                        maxGroundNoiseDistance = -1;
-                        maxSpeedThreshold = 0;
-                        maxTrackableATL = 1e+10;
-                        maxTrackableSpeed = 1e10;
-                        minSpeedThreshold = 0;
-                        minTrackableATL = -1e+10;
-                        typeRecognitionDistance = 0;
-                    };
-                };
-            };
-        };
     };
 
     class B_50BW_Ball_F;
@@ -350,11 +261,11 @@ class CfgAmmo
         typicalSpeed = 921;
     };
 
-    class B_12Gauge_Slug_NoCartridge;
-    class TB_ammo_Slug : B_12Gauge_Slug_NoCartridge // MPR Slugshot Munition
+    class rhs_ammo_12g_slug;
+    class TB_ammo_MPR_Slug : rhs_ammo_12g_slug // MPR Slugshot Munition
     {
-        caliber = 1;
-        hit = 30;
+        caliber = 0.25; // 0.3048
+        hit = 30; // 34.51
     };
 
     class B_556x45_dual;

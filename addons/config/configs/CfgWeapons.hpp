@@ -4,6 +4,7 @@
 */
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class player;
 
 class CfgWeapons
 {
@@ -594,14 +595,14 @@ class CfgWeapons
     {
         class Single;
     };
-    class TB_weapon_rhino60 : hgun_Pistol_heavy_02_F // .45 Revolver
+    class TB_weapon_rhino60 : hgun_Pistol_heavy_02_F // .500 Revolver
     {
         author = "TBMod";
         baseWeapon = "TB_weapon_rhino60";
-        descriptionShort = "Tactical Revolver<br />Caliber: .45 FMJ";
+        descriptionShort = "Tactical Revolver<br />Caliber: .500 FMJ";
         displayName = "Rhino 60";
-        magazines[] = {"TB_mag_45_FMJ"};
-        magazineWell[] = {"TB_magwell_6Rnd_45_FMJ"};
+        magazines[] = {"TB_mag_6Rnd_500_FMJ"};
+        magazineWell[] = {"TB_magwell_6Rnd_500_FMJ"};
         modes[] = {"manual"};
 
         class manual : Single
@@ -729,7 +730,80 @@ class CfgWeapons
     class autocannon_40mm_CTWS : autocannon_Base_F
     {
         class Mode_FullAuto;
+        class AP : autocannon_Base_F
+        {
+            class player;
+        };
+        class HE : autocannon_Base_F
+        {
+            class player;
+        };
     };
+    class TB_weapon_40mm_CTWS : autocannon_40mm_CTWS // 40mm Cannon Badger
+    {
+        author = "TBMod";
+        baseWeapon = "TB_weapon_40mm_CTWS";
+        muzzles[] = {"HE","AP"};
+        magazineWell[] = {"TB_magwell_40mm_CTWS"};
+        reloadMagazineSound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",2.51189,1,10};
+        reloadSound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",2.51189,1,10};
+        class AP : autocannon_Base_F
+        {
+            displayName = "CTWS AP";
+            magazineReloadTime = 3;
+            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS"};
+            modes[] = {"player","close","short","medium","far"};
+            class player : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Halb";
+                multiplier = 1;
+                reloadTime = 0.6;
+                textureType = "burst";
+            };
+        };
+        class HE : autocannon_Base_F
+        {
+            displayName = "CTWS HE";
+            magazineReloadTime = 3;
+            magazines[] = {"TB_mag_40Rnd_40mm_GPR"};
+            modes[] = {"player","close","short","medium","far"};
+
+            class player : player
+            {
+                burst = 1;
+                dispersion = 0.0002;
+                displayName = "Halb";
+                multiplier = 1;
+                reloadTime = 0.6;
+                textureType = "burst";
+            };
+        };
+    };
+
+    class HMG_127;
+    class HMG_127_AFV : HMG_127
+    {
+        class manual;
+    };
+    class TB_weapon_127_coax : HMG_127_AFV // 12.7mm Coaxial
+    {
+        baseWeapon = "TB_weapon_coax_Badger";
+        magazineReloadTime = 6;
+        magazines[] = {"TB_mag_200Rnd_127x99_Tracer_Red"};
+        modes[] = {"manual","close","short","medium","far"};
+        class manual : manual
+        {
+            burst = 1;
+            dispersion = 0.0006;
+            displayName = "12.7mm HMG Tracer (Red)";
+            multiplier = 1;
+            reloadTime = 0.1;
+            textureType = "fullAuto";
+        };
+    };
+
     class autocannon_40mm_VTOL_01 : autocannon_40mm_CTWS // Gunship 40mm
     {
         class player : Mode_FullAuto
@@ -738,7 +812,7 @@ class CfgWeapons
         };
     };
 
-    class autocannon_30mm_CTWS :autocannon_Base_F
+    class autocannon_30mm_CTWS : autocannon_Base_F
     {
         class AP;
         class HE;
@@ -766,7 +840,7 @@ class CfgWeapons
         {
             displayName = "CTAS40 AP";
             magazineReloadTime = 1.5;
-            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS","TB_mag_20Rnd_40mm_IR_Loal_missiles"};
+            magazines[] = {"TB_mag_40Rnd_40mm_APFSDS","TB_mag_40Rnd_40mm_HVEP"};
             modes[] = {"player","burst","close","short","medium","far"};
             class player : player
             {

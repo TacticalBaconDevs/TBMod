@@ -156,8 +156,9 @@ class CfgVehicles
                 {
                     displayName = "USA";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_usa', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
+                    ADD_SUPPLY("Airdrop",TB_supply_usa_airdrop);
                     ADD_SUPPLY("Notfall",TB_supply_usa_notfall);
                     ADD_SUPPLY("NachtKiste",TB_supply_usa_night);
 
@@ -194,7 +195,7 @@ class CfgVehicles
                 {
                     displayName = "UK";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_uk', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Notfall",TB_supply_uk_notfall);
                     ADD_SUPPLY("Nacht Kiste",TB_supply_uk_night);
@@ -241,7 +242,7 @@ class CfgVehicles
                 {
                     displayName = "BW";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_bw', 'TB_arsenal_predefined_custom'], []]) isEqualTo []) && isClass (configFile >> 'CfgPatches' >> 'bwa3_common')";
+                    condition = "(entities [['TB_arsenal_bw', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo [] && isClass (configFile >> 'CfgPatches' >> 'bwa3_common')";
 
                     ADD_SUPPLY("Munition",TB_supply_bw_ammo);
                     ADD_SUPPLY("KleinMunition",TB_supply_bw_ammoSmall);
@@ -258,7 +259,7 @@ class CfgVehicles
                 {
                     displayName = "NATO";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_nato_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_nato_grena);
@@ -272,7 +273,7 @@ class CfgVehicles
                 {
                     displayName = "LDF";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     class LDFMunition
                     {
@@ -308,7 +309,7 @@ class CfgVehicles
                 {
                     displayName = "BRD";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_brd_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_brd_grena);
@@ -321,7 +322,7 @@ class CfgVehicles
                 {
                     displayName = "SOG";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_themen', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_sog_ammo);
                     ADD_SUPPLY("Granaten",TB_supply_sog_grena);
@@ -338,7 +339,7 @@ class CfgVehicles
                 {
                     displayName = "RUSS";
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                    condition = "!((entities [['TB_arsenal_russ', 'TB_arsenal_predefined_custom'], []]) isEqualTo [])";
+                    condition = "(entities [['TB_arsenal_russ', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
                     ADD_SUPPLY("Munition",TB_supply_russ_ammo);
                     ADD_SUPPLY("KleinMunition",TB_supply_russ_ammoSmall);

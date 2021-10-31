@@ -61,7 +61,7 @@ private _allgemein = [
     "TB_mag_taser",
     "16Rnd_9x21_yellow_Mag",
     "9Rnd_45ACP_Mag",
-    "TB_mag_45_FMJ",
+    "TB_mag_6Rnd_500_FMJ",
     "6Rnd_45ACP_Cylinder",
 
     // ESD

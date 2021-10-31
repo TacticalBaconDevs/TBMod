@@ -139,7 +139,13 @@ private _allgemein_magazine = [
     "TB_mag_MPR_10Rnd_Antimateriel",
     "TB_mag_MPR_10Rnd_Slug",
     "TB_mag_MPR_10Rnd_Buckshot",
-    "TB_mag_MPR_10Rnd_Underwater"
+    "TB_mag_MPR_10Rnd_Underwater",
+
+    // .45 Cal
+    "TB_mag_40Rnd_45_FMJ",
+    "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+    "TB_mag_40Rnd_45_JHP",
+    "TB_mag_40Rnd_45_JHP_Tracer_Red"
 ];
 
 private _allgemein_gewehre = [
@@ -190,7 +196,8 @@ private _allgemein_gewehre = [
     "rhs_weap_mk18_KAC",
     "rhs_weap_mk18_wd",
     "rhs_weap_mk18_KAC_wd",
-    "TB_weapon_MPR"
+    "TB_weapon_MPR",
+    "TB_weap_Vector"
 ];
 _allgemein_gewehre append _allgemein_magazine;
 
@@ -207,9 +214,10 @@ private _allgemein_visiere = [
     "rhsusf_acc_compm4",
     "rhsusf_acc_ACOG_d",
     "rhsusf_acc_ACOG_wd",
-    "optic_mrco",
-    "ace_optic_mrco_2d",
-    "optic_yorris"
+    "rhsusf_acc_rm05",
+    "rhsusf_acc_t1_low",
+    "optic_yorris",
+    "optic_aco_smg"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -291,7 +299,7 @@ private _allgemein_handfeuerwaffen = [
     "TB_mag_33Rnd_9x19_FMJ",
     "TB_mag_33Rnd_9x19_JHP",
     "TB_mag_taser",
-    "TB_mag_45_FMJ"
+    "TB_mag_6Rnd_500_FMJ"
 ];
 
 private _allgemein_uniformen = [
@@ -598,7 +606,15 @@ private _lrFunken = [
     "OPXT_m81_1523",
     "OPXT_multicam_1523",
     "OPXT_at_au_1523",  // grau1
-    "OPXT_ogag_1523"    //grau2
+    "OPXT_ogag_1523",    //grau2
+    // Workshop Funk
+    "tfw_ilbe_blade_arid",
+    "tfw_ilbe_blade_black",
+    "tfw_ilbe_blade_mct",
+    "tfw_ilbe_blade_mc",
+    "tfw_ilbe_blade_ocp",
+    "tfw_ilbe_blade_wd2",
+    "tfw_ilbe_blade_coy"
 ];
 
 private _moerser_munition = [
@@ -741,6 +757,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_8Rnd_Slug",
             "rhsusf_5Rnd_00Buck",
             "rhsusf_5Rnd_Slug",
+
+            // ### Visiere
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_compm4",
+            "optic_yorris",
+            "rhsusf_acc_eotech_552",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_anpeq15a",
 
             // Westen
             "TB_vest_iotv_ocp_medic_classIV",
@@ -895,6 +922,17 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
 
+            // ### Visiere
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_mrds",
+            "rhsusf_acc_compm4",
+            "optic_yorris",
+            "rhsusf_acc_eotech_552",
+
+            // ### Geschützzubehör
+            "rhsusf_acc_rotex_mp7",
+            "rhsusf_acc_anpeq15a",
+
             // Kopfbedeckung
             "rhsusf_hgu56p_black",
             "rhsusf_hgu56p_mask_black",
@@ -938,6 +976,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "U_B_HeliPilotCoveralls",
             "rhs_uniform_cu_ocp",
             "rhs_uniform_cu_ucp",
+
+            // Westen
+            "TB_vest_iotv_ocp_mg_classIV",
+            "TB_vest_iotv_ucp_mg_classIV",
+            "TB_vest_spcs_ocp_mg_classIII",
+            "TB_vest_spcs_ucp_mg_classIII",
+            "TB_vest_plateframe_mg_classIII",
+            "TB_vest_plateframe_mg_classIV",
 
             // Items
             "ToolKit"

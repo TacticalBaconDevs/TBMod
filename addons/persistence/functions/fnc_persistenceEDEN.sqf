@@ -70,7 +70,7 @@ private _vehicle = nil;
         _vehicle set3DENAttribute ["fuel", _fuel];
         _vehicle set3DENAttribute ["enableSimulation", _sim];
 
-        if !(_dmg isEqualTo []) then
+        if (_dmg isNotEqualTo []) then
         {
             _dmg params ["_hitNames", "_dmgValues"];
 

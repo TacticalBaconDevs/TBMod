@@ -95,12 +95,12 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                     angleRangeVertical = 67.5; // 60
                     color[] = {1,0,0,1}; // {1,0.5,1,1};
                     maxTrackableSpeed = 400; // 1e+010;
-                    typeRecognitionDistance = 20; // 0
+                    typeRecognitionDistance = 40; // 0
 
                     class GroundTarget : GroundTarget
                     {
-                        maxRange = 20; // 500
-                        minRange = 20; // 500
+                        maxRange = 40; // 500
+                        minRange = 40; // 500
                     };
                     delete AirTarget;
                 };
@@ -113,7 +113,7 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                 class SensorDisplay
                 {
                     componentType = "SensorsDisplayComponent";
-                    range[] = {20};
+                    range[] = {40};
                     resource = "RscCustomInfoSensors";
                 };
                 class MinimapDisplay : MinimapDisplay
@@ -129,7 +129,7 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                 class SensorDisplay
                 {
                     componentType = "SensorsDisplayComponent";
-                    range[] = {20};
+                    range[] = {40};
                     resource = "RscCustomInfoSensors";
                 };
                 class MinimapDisplay : MinimapDisplay
@@ -170,7 +170,6 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                 "TB_mag_40Rnd_40mm_GPR",
                 "TB_mag_40Rnd_40mm_APFSDS",
                 "TB_mag_40Rnd_40mm_APFSDS",
-                "TB_mag_20Rnd_40mm_IR_Loal_missiles",
                 "2000Rnd_762x51_Belt_T_Red",
                 "2000Rnd_762x51_Belt_T_Red"
             };

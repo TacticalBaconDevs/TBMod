@@ -61,5 +61,5 @@ if (_arsenalType == "Themen") then
 };
 
 private _rolle = _player getVariable ["TB_rolle", ""];
-private _condition = (_rolle != "") && ((getText (configFile >> "CfgVehicles" >> typeOf _target >> "arsenalType")) == _player getVariable ["TB_arsenalType", ""]);
+private _condition = (_rolle != "") && ((getText (configOf _target >> "arsenalType")) == _player getVariable ["TB_arsenalType", ""]);
 _actionData set [1, ["TB-Arsenal", [_rolle] call FUNC(getRollenName)] select _condition];

@@ -6,7 +6,7 @@ class Extended_PreStart_EventHandlers
 {
     class ADDON
     {
-        init = QUOTE(call COMPILE_FILE(XEH_preStart));
+        init = QUOTE(call COMPILE_SCRIPT(XEH_preStart));
     };
 };
 
@@ -14,9 +14,9 @@ class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
-        init = QUOTE(call COMPILE_FILE(XEH_preInit));
-        clientInit = QUOTE(call COMPILE_FILE(XEH_preClientInit));
-        serverInit = QUOTE(call COMPILE_FILE(XEH_preServerInit));
+        init = QUOTE(call COMPILE_SCRIPT(XEH_preInit));
+        clientInit = QUOTE(call COMPILE_SCRIPT(XEH_preClientInit));
+        serverInit = QUOTE(call COMPILE_SCRIPT(XEH_preServerInit));
     };
 };
 

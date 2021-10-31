@@ -42,7 +42,7 @@ class TB_supply_ldf_ammo_small : WRAPPER_NAME(Box_East_Support_F)
         MACRO_ADDMAGAZINE(30Rnd_9x21_Red_Mag,10);
         MACRO_ADDMAGAZINE(11Rnd_45ACP_Mag,10);
         MACRO_ADDMAGAZINE(9Rnd_45ACP_Mag,10);
-        MACRO_ADDMAGAZINE(TB_mag_45_FMJ,10);
+        MACRO_ADDMAGAZINE(TB_mag_6Rnd_500_FMJ,10);
     };
 };
 
