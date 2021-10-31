@@ -648,7 +648,7 @@ private _items = [];
 // _grenadier_munition               - Grenadier Unterlauf
 // _dmr_munition                     - DMR Munition
 // _mg_munition                      - MG Munition
-// _pilot_munition                   - Piloten MP7 Munition
+// _pilot_munition                   - Piloten MP7/Vector Munition
 // _sniper_munition                  - Sniper Munition
 // _aaat_munition                    - AntiTank Munition
 // _gepaeck_mittel                   - Seesack
@@ -748,10 +748,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Waffen
             "rhsusf_weap_MP7A2",
-            "optic_yorris",
+			"TB_weap_Vector",
+			
+			// MP7 zubehör
             "rhsusf_weap_MP7A2_grip3",
+			
+			// Pistolen
             "rhs_weap_M590_8RD",
             "rhs_weap_M590_5RD",
+			
             // ### Munition
             "rhsusf_8Rnd_00Buck",
             "rhsusf_8Rnd_Slug",
@@ -921,6 +926,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
+			"TB_weap_Vector",
 
             // ### Visiere
             "rhsusf_acc_mrds",
