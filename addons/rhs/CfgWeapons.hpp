@@ -345,43 +345,19 @@ class CfgWeapons
     class Rifle_Base_F;
     class arifle_ARX_base_F : Rifle_Base_F
     {
-        canShootInWater = 1; // 0
         magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG"}; // {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer"};
-        magazineWell[] = {"STANAG_556x45","CBA_556x45_STANAG"}; // {"Katiba_65x39","CBA_65x39_Katiba"};
-        modes[] = {"FullAuto","Single","single_medium_optics1","single_far_optics2","fullauto_medium"};
-        class Single : Mode_SemiAuto
-        {
-            dispersion = 0.00116;
-            textureType = "burst";
-        };
-        class FullAuto : Mode_FullAuto
-        {
-            autoFire = 1;
-            burst = 1;
-            dispersion = 0.00116;
-            reloadTime = 0.067;
-            textureType = "fullAuto";
-        };
         class Secondary : Rifle_Base_F
         {
             canShootInWater = 1;
-            magazines[] = {"TB_mag_10Rnd_50BW_Mag_F"};
-            magazineWell[] = {"TB_magwell_MPR"};
+            magazines[] = {"TB_mag_MPR_10Rnd_Antimateriel"};
+            magazineWell[] = {"TB_magwell_MPR","TB_magwell_MPR_RHS"};
             modes[] = {"Single"};
             class Single : Mode_SemiAuto
             {
                 reloadTime = 0.15; // 0.3
                 dispersion = 0.00145;
             };
-        };
-    };
-    class arifle_ARX_blk_F : arifle_ARX_base_F {};
-    class TB_weapon_MPR : arifle_ARX_blk_F // Multi Purpose Rifle
-    {
-        author = "TBMod";
-        baseWeapon = "TB_weapon_MPR"; // "arifle_ARX_blk_F"
-        descriptionShort = "Multi Purpose Rifle<br />Caliber: 5.56mm / 12.7mm"; // "Sturmgewehr<br />Kaliber: 6,5x39 mm / 0,50 BW"
-        displayName = "MPR"; // "Typ 115 6,5 mm (Schwarz)"
+        }; 
     };
 
     class rhs_weap_m27iar;
