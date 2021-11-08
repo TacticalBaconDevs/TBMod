@@ -120,7 +120,7 @@ if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
     QGVAR(recoilSystem),
     "CHECKBOX",
     "RecoilSystem",
-    ["TBMod", QUOTE(COMPONENT)],
+    ["TBMod", "Rückstoß"],
     true
 ] call CBA_fnc_addSetting;
 
@@ -128,7 +128,7 @@ if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
     QGVAR(recoilCoef),
     "SLIDER",
     "recoilCoef",
-    ["TBMod", QUOTE(COMPONENT)],
+    ["TBMod", "Rückstoß"],
     [0.1, 2, 1, 1],
     1
 ] call CBA_fnc_addSetting;
@@ -137,24 +137,35 @@ if (isNil QEGVAR(medical,coef)) then {EGVAR(medical,coef) = 1};
     QGVAR(recoilStart),
     "SLIDER",
     "recoilStart",
-    ["TBMod", QUOTE(COMPONENT)],
+    ["TBMod", "Rückstoß"],
     [0.1, 2, 0.5, 1],
     1
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(fpsMonitor_enabled),
+    "CHECKBOX",
+    ["Aktiviert", "Gibt an ob das System zum anzeigen der FPS der Spieler im Zeus grundlegend an ist."],
+    ["TBMod", "FPS Monitor"],
+    true,
+    0,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(fpsMonitor_client),
     "CHECKBOX",
-    "fpsMonitor_client",
-    ["TBMod", QUOTE(COMPONENT)],
+    ["Client FPS übertragen", "Gibt an ob die Client FPS mit dem Zeus geteilt werden sollen"],
+    ["TBMod", "FPS Monitor"],
     true
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(fpsMonitor_zeus),
     "CHECKBOX",
-    "fpsMonitor_zeus",
-    ["TBMod", QUOTE(COMPONENT)],
+    ["FPS im Zeus anzeigen", "Gibt an ob der Zeus die FPS der Clients sehen möchte"],
+    ["TBMod", "FPS Monitor"],
     true
 ] call CBA_fnc_addSetting;
 
