@@ -9,9 +9,9 @@
 }] call CBA_fnc_addEventHandler;
 
 // Variablen
-if (isNil "TB_blacklistRollen") then {TB_blacklistRollen = []};
-if (isNil "TB_blacklistRollen_custom") then {TB_blacklistRollen_custom = []};
-if (isNil "TB_blacklistRollen_themen") then {TB_blacklistRollen_themen = []};
+if (isNil QGVAR(blacklistRollen)) then {GVAR(blacklistRollen) = []};
+if (isNil QGVAR(blacklistRollen_custom)) then {GVAR(blacklistRollen_custom) = []};
+if (isNil QGVAR(blacklistRollen_themen)) then {GVAR(blacklistRollen_themen) = []};
 
 ["ace_arsenal_displayClosed", {
     if (!isNil QGVAR(kiste)) then {GVAR(kiste) hideObject false};
