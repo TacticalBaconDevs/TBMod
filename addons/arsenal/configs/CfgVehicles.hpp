@@ -75,7 +75,7 @@ class CfgVehicles
                         class rolle_##ROLLEN_NAME \
                         { \
                             displayName = ""; \
-                            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen)); \
+                            condition = QUOTE(!('ROLLEN_NAME' in GVAR(blacklistRollen))); \
                             modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
                             statement = QUOTE(['ROLLEN_NAME', getText (configOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
                             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
@@ -148,7 +148,7 @@ class CfgVehicles
                         class rolle_##ROLLEN_NAME \
                         { \
                             displayName = ""; \
-                            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_themen)); \
+                            condition = QUOTE(!('ROLLEN_NAME' in GVAR(blacklistRollen_themen))); \
                             modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
                             statement = QUOTE(['ROLLEN_NAME', getText (configOf _target >> 'arsenalType'), _target] call FUNC(changeRolle); [_target, _player] call ace_arsenal_fnc_openBox;); \
                             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \
@@ -189,7 +189,7 @@ class CfgVehicles
                         class rolle_##ROLLEN_NAME \
                         { \
                             displayName = ""; \
-                            condition = QUOTE(!('ROLLEN_NAME' in TB_blacklistRollen_custom)); \
+                            condition = QUOTE(!('ROLLEN_NAME' in GVAR(blacklistRollen_custom))); \
                             modifierFunction = QUOTE([_this, 'ROLLEN_NAME'] call FUNC(modifierRollenname)); \
                             statement = QUOTE(['ROLLEN_NAME', getText (configOf _target >> 'arsenalType'), _target] call FUNC(changeRolle)); \
                             exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"}; \

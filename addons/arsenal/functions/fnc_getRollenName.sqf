@@ -9,11 +9,10 @@ if !(_shortName isEqualType "") then {_shortName = ACE_player getVariable ["TB_r
 if (_shortName isEqualTo "") then {_shortName = ACE_player getVariable ["TB_rolle", ""]};
 
 // Customnames
-private _missionVar = [];
+private _missionVar = missionNamespace getVariable ["TB_customName", []];
 private _arsenalType = ACE_player getVariable ["TB_arsenalType", ""];
 if (_custom) then
 {
-    _missionVar = missionNamespace getVariable ["TB_customName", []];
     if (_arsenalType == "CUSTOM") then {_missionVar = missionNamespace getVariable ["TB_customName_custom", []]};
     if (_arsenalType == "Themen") then {_missionVar = missionNamespace getVariable ["TB_customName_themen", []]};
 };
