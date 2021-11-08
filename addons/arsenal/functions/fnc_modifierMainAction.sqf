@@ -9,18 +9,18 @@ _args params ["_target", "_player", "_params", "_actionData"];
 private _arsenalType = _player getVariable ["TB_arsenalType", ""];
 
 // Arsenale Rollen blockieren
-TB_blacklistRollen = [];
-if (_arsenalType in ["USA", "BW", "RUSS", "UK"]) then {TB_blacklistRollen = ["dmr"]};
+GVAR(blacklistRollen) = [];
+if (_arsenalType in ["USA", "BW", "RUSS", "UK"]) then {GVAR(blacklistRollen) = ["dmr"]};
 
-TB_blacklistRollen_themen = [];
-// TB_customName_themen: ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]
-TB_customName_themen = [];
+GVAR(blacklistRollen_themen) = [];
+// GVAR(customName_themen): ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]
+GVAR(customName_themen) = [];
 if (_arsenalType == "Themen") then
 {
     private _patches = configfile >> "CfgPatches";
     private _side = side ACE_player;
 
-    if (isClass (_patches >> "uns_main")) exitWith {TB_blacklistRollen_themen = ["jtac", "sniper", "spotter", "rifle"]};
+    if (isClass (_patches >> "uns_main")) exitWith {GVAR(blacklistRollen_themen) = ["jtac", "sniper", "spotter", "rifle"]};
 
     if (_side == blufor) exitWith
     {
@@ -30,34 +30,47 @@ if (_arsenalType == "Themen") then
             if (_worldName in ["gm_weferlingen_summer", "gm_weferlingen_winter"]) then
             {
                 // BRD
-                TB_blacklistRollen_themen = ["spreng", "dmr", "sniper", "spotter", "grena"];
-                TB_customName_themen = ["Truppführer","","Kampfsanitäter","MG3-Schütze","","Anti-Tank","Muniträger","","Pilot","","","Besatzung","Feldarzt","Waffenspez","Sprengspezialist"];
+                GVAR(blacklistRollen_themen) = ["spreng", "dmr", "sniper", "spotter", "grena"];
+                GVAR(customName_themen) = ["Truppführer","","Kampfsanitäter","MG3-Schütze","","Anti-Tank","Muniträger","","Pilot","","","Besatzung","Feldarzt","Waffenspez","Sprengspezialist"];
             }
             else
             {
                 // SOG
-                TB_blacklistRollen_themen = ["spreng","aaat", "dmr", "sniper", "spotter", "jtac"];
-                TB_customName_themen = ["Truppführer","Grenadier","Kampfsanitäter","MG-Schütze","","","Muniträger","","Pilot","","","","Feldarzt","Waffenspez","Sprengspezialist"];
+                GVAR(blacklistRollen_themen) = ["spreng","aaat", "dmr", "sniper", "spotter", "jtac"];
+                GVAR(customName_themen) = ["Truppführer","Grenadier","Kampfsanitäter","MG-Schütze","","","Muniträger","","Pilot","","","","Feldarzt","Waffenspez","Sprengspezialist"];
             };
         }
         else
         {
             // Vanilla-COP
-            //TB_blacklistRollen_themen = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
-            //TB_customName_themen = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
+            //GVAR(blacklistRollen_themen) = ["grena", "mg", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "arzt", "pionier"];
+            //GVAR(customName_themen) = ["Hauptkommissar","","Kommissar-Sani","","","","","Oberkommissar","Polizeiobermeister-Flug","","","","","Polizeimeister",""];
 
             // WoMi Polizei
-            TB_blacklistRollen_themen = ["grena", "mg", "dmr", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "pionier"];
-            TB_customName_themen = ["Polizist","","Polizist-Sani","","","","","","Polizeipilot","","","","SWAT-Sani","SWAT",""];
+            GVAR(blacklistRollen_themen) = ["grena", "mg", "dmr", "spreng", "aaat", "trag", "sniper", "spotter", "jtac", "pionier"];
+            GVAR(customName_themen) = ["Polizist","","Polizist-Sani","","","","","","Polizeipilot","","","","SWAT-Sani","SWAT",""];
         };
     };
     if (_side == independent) exitWith
     {
         // LDF
-        TB_blacklistRollen_themen = ["spreng", "dmr"];
+        GVAR(blacklistRollen_themen) = ["spreng", "dmr"];
     };
 
     if (_side == opfor) exitWith {};
+};
+
+// Missionbauer Blacklists
+if (!isNil "TB_blacklistRollen" && {TB_blacklistRollen isEqualType []}) then
+{
+    GVAR(blacklistRollen) append TB_blacklistRollen;
+    GVAR(blacklistRollen) arrayIntersect GVAR(blacklistRollen);
+
+    GVAR(blacklistRollen_themen) append TB_blacklistRollen;
+    GVAR(blacklistRollen_themen) arrayIntersect GVAR(blacklistRollen_themen);
+
+    GVAR(customName_themen) append TB_blacklistRollen;
+    GVAR(customName_themen) arrayIntersect GVAR(customName_themen);
 };
 
 private _rolle = _player getVariable ["TB_rolle", ""];

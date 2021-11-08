@@ -156,78 +156,66 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 
 
 // ### FPS Infos
-[{
-    if (GVAR(fpsMonitor_client)) then
-    {
-        player setVariable ["TB_clientFPS", floor diag_fps, true];
-    }
-    else
-    {
-        if ((player getVariable ["TB_clientFPS", -1]) != -1) then {player setVariable ["TB_clientFPS", nil, true]};
-    };
+// TODO: richtig umarbeiten, setVar nur auf Server und variablen dann per remoteExec holen oder Kellerkompanie-Ansatz
+if (GVAR(fpsMonitor_enabled)) then
+{
+    [{
+        if !(GVAR(fpsMonitor_enabled)) exitWith {};
 
-    if (GVAR(fpsMonitor_zeus) && {player in (call BIS_fnc_listCuratorPlayers)} && {!isNull (findDisplay 312)}) then
-    {
-        if (isNil "TB_fpsMonitor_id") then
+        // Spieler FPS
+        if (GVAR(fpsMonitor_client)) then
         {
-            TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
-                {
-                    if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
-                    {
-                        private _playerFPS = _x getVariable ["TB_clientFPS", -1];
-
-                        if (_playerFPS > 0) then
-                        {
-                            drawIcon3D
-                            [
-                                "",
-                                [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
-                                getPosVisual _x,
-                                1,
-                                2,
-                                0,
-                                format ["FPS: %1", _playerFPS],
-                                0,
-                                [0.05, 0.08] select (_playerFPS < 20),
-                                "PuristaMedium",
-                                "center"
-                            ];
-                        };
-                    };
-                }
-                forEach allPlayers;
-
-                /*{
-                    if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
-                    {
-                        if ((units _x) findIf {isPlayer _x} == -1) then
-                        {
-                            drawIcon3D
-                            [
-                                "",
-                                [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
-                                getPosVisual _x,
-                                1,
-                                2,
-                                0,
-                                format ["FPS: %1", _playerFPS],
-                                0,
-                                [0.05, 0.08] select (_playerFPS < 20),
-                                "PuristaMedium",
-                                "center"
-                            ];
-                        };
-                    };
-                }
-                forEach allGroups;*/
-            }];
+            [player, QGVAR(clientFPS), floor diag_fps] call CBA_fnc_setVarNet;
+        }
+        else
+        {
+            if ((player getVariable [QGVAR(clientFPS), -1]) != -1) then {[player, QGVAR(clientFPS), nil] call CBA_fnc_setVarNet};
         };
-    }
-    else
-    {
-        if (!isNil "TB_fpsMonitor_id") then {removeMissionEventHandler ["Draw3D", TB_fpsMonitor_id]; TB_fpsMonitor_id = nil;};
-    };
-}, 5] call CBA_fnc_addPerFrameHandler;
+
+        // Zeus Anzeige
+        if (GVAR(fpsMonitor_zeus) && {player in (call BIS_fnc_listCuratorPlayers)} && {!isNull (findDisplay 312)}) then
+        {
+            if (isNil QGVAR(fpsMonitor_id)) then
+            {
+                TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+                    {
+                        if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
+                        {
+                            private _playerFPS = _x getVariable [QGVAR(clientFPS), -1];
+
+                            if (_playerFPS > 0) then
+                            {
+                                drawIcon3D
+                                [
+                                    "",
+                                    [1, 0, 0, [0.6, 0.9] select (_playerFPS < 20)],
+                                    getPosVisual _x,
+                                    1,
+                                    2,
+                                    0,
+                                    format ["FPS: %1", _playerFPS],
+                                    0,
+                                    [0.05, 0.08] select (_playerFPS < 20),
+                                    "PuristaMedium",
+                                    "center"
+                                ];
+                            };
+                        };
+                    }
+                    forEach allPlayers;
+                }];
+            };
+        }
+        else
+        {
+            if (!isNil QGVAR(fpsMonitor_id)) then
+            {
+                removeMissionEventHandler ["Draw3D", GVAR(fpsMonitor_id)];
+                GVAR(fpsMonitor_id) = nil;
+            };
+        };
+    }, 15] call CBA_fnc_addPerFrameHandler;
+};
 
 
 // ### block Codeexec
