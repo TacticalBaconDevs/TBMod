@@ -754,7 +754,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // MP7 zubehör
             "rhsusf_weap_MP7A2_grip3",
 
-            // Pistolen
+            // Schrotflinte
             "rhs_weap_M590_8RD",
             "rhs_weap_M590_5RD",
 
