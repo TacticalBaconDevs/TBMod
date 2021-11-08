@@ -217,7 +217,8 @@ private _allgemein_visiere = [
     "rhsusf_acc_rm05",
     "rhsusf_acc_t1_low",
     "optic_yorris",
-    "optic_aco_smg"
+    "optic_aco_smg",
+    "optic_mrco"
 ];
 
 private _allgemein_befestigungsschiene = [
