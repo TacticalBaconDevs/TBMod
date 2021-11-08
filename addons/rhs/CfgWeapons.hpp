@@ -488,6 +488,33 @@ class CfgWeapons
         };
     };
 
+    class NVGoggles;
+    class NVGogglesB_blk_F : NVGoggles
+    {
+        class ItemInfo;
+    };
+    class TB_weap_goggles_thermal : NVGogglesB_blk_F // Thermal Monogoggle
+    {
+        ace_nightvision_bluRadius = 0;
+        author = "TBMod";
+        baseWeapon = "TB_weap_goggles_thermal";
+        displayName = "ETI-M";
+        descriptionShort = "ETI-M";
+        descriptionUse = "ETI-M";
+        model = "\rhsusf\addons\rhsusf_infantry\gear\nvg\ANPVS_14_UP";
+        picture = "\rhsusf\addons\rhsusf_inventoryicons\data\headgear\rhsusf_ANPVS_14_ca.paa";
+        thermalMode[] = {1};
+        visionMode[] = {"Normal","TI"};
+        class ItemInfo :ItemInfo
+        {
+            hmdType = 0;
+            mass = 35.264;
+            modelOff = "\rhsusf\addons\rhsusf_infantry\gear\nvg\ANPVS_14_UP";
+            type = 616;
+            uniformModel = "\rhsusf\addons\rhsusf_infantry\gear\nvg\ANPVS_14_DOWN";
+        };
+    };
+
     //////////////////////////////////////////// Westen ////////////////////////////////////////////
 
     class V_PlateCarrierIAGL_dgtl;
