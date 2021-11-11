@@ -2,6 +2,9 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class Mode_SemiAuto;
+class Mode_FullAuto;
+
 class CfgWeapons
 {
     // Skin S.W.A.T. Weste
@@ -337,6 +340,24 @@ class CfgWeapons
                 useActionTitle = "";
                 weaponSoundEffect = "";
             };
+    };
+
+    class Rifle_Base_F;
+    class arifle_ARX_base_F : Rifle_Base_F
+    {
+        magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG"}; // {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer"};
+        class Secondary : Rifle_Base_F
+        {
+            canShootInWater = 1;
+            magazines[] = {"TB_mag_MPR_10Rnd_Antimateriel"};
+            magazineWell[] = {"TB_magwell_MPR","TB_magwell_MPR_RHS"};
+            modes[] = {"Single"};
+            class Single : Mode_SemiAuto
+            {
+                reloadTime = 0.15; // 0.3
+                dispersion = 0.00145;
+            };
+        }; 
     };
 
     class rhs_weap_m27iar;

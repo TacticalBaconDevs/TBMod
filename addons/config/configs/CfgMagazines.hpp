@@ -339,18 +339,6 @@ class CfgMagazines
         mass = 14;
     };
 
-    class rhsusf_8Rnd_Slug;
-    class TB_mag_MPR_10Rnd_Slug : rhsusf_8Rnd_Slug  // MPR Slugshot
-    {
-        ammo = "TB_ammo_MPR_Slug";
-        count = 10;
-        descriptionShort = "20-Gauge Slugshot<br />Rounds: 10<br />Used in: MPR";
-        displayName = "10Rnd Slugshot";
-        displayNameShort = "10Rnd Slugshot";
-        mass = 14;
-        picture = "\a3\Weapons_F_Enoch\MagazineProxies\data\UI\icon_6Rnd_12Gauge_Slug_ca.paa";
-    };
-
     class ACE_6Rnd_12Gauge_Pellets_No4_Buck;
     class TB_mag_MPR_10Rnd_Buckshot : ACE_6Rnd_12Gauge_Pellets_No4_Buck // MPR Buckshot
     {

@@ -638,7 +638,7 @@ class CfgWeapons
     class arifle_ARX_base_F : Rifle_Base_F
     {
         canShootInWater = 1; // 0
-        magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG"}; // {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer"};
+        magazines[] = {"30Rnd_556x45_Stanag_Tracer_Red"}; // {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer"};
         magazineWell[] = {"STANAG_556x45","CBA_556x45_STANAG"}; // {"Katiba_65x39","CBA_65x39_Katiba"};
         modes[] = {"FullAuto","Single","single_medium_optics1","single_far_optics2","fullauto_medium"};
         class Single : Mode_SemiAuto
@@ -657,7 +657,7 @@ class CfgWeapons
         class Secondary : Rifle_Base_F
         {
             canShootInWater = 1;
-            magazines[] = {"TB_mag_10Rnd_50BW_Mag_F"};
+            magazines[] = {"TB_mag_MPR_10Rnd_Antimateriel"};
             magazineWell[] = {"TB_magwell_MPR"};
             modes[] = {"Single"};
             class Single : Mode_SemiAuto
