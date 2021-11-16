@@ -19,10 +19,16 @@
             scope = 2;\
             scopeCurator = 2
 
+class SensorTemplateDataLink;
+class SensorTemplateActiveRadar;
+class SensorTemplatePassiveRadar;
 class SensorTemplateIR;
+class SensorTemplateLaser;
+class SensorTemplateNV;
 class SensorTemplateMan : SensorTemplateIR
 {
     class GroundTarget;
+    class AirTarget;
 };
 class DefaultVehicleSystemsDisplayManagerRight
 {
@@ -42,6 +48,10 @@ class VehicleSystemsTemplateLeftDriver : DefaultVehicleSystemsDisplayManagerRigh
         class VehiclePrimaryGunnerDisplay;
     };
 };
+class VehicleSystemsTemplateRightPilot : DefaultVehicleSystemsDisplayManagerRight
+{
+    class Components;
+};
 class DefaultVehicleSystemsDisplayManagerLeft
 {
     class Components;
@@ -59,6 +69,10 @@ class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerLef
         class VehicleCommanderDisplay;
         class VehiclePrimaryGunnerDisplay;
     };
+};
+class VehicleSystemsTemplateLeftPilot : DefaultVehicleSystemsDisplayManagerLeft
+{
+    class Components;
 };
 
 class Optics_Armored;
@@ -93,7 +107,6 @@ class CfgVehicles
     class I_Plane_Fighter_03_dynamicLoadout_F;
     class B_Heli_Light_01_F;
     class I_Heli_light_03_unarmed_F;
-    class I_Heli_light_03_dynamicLoadout_F;
     class B_MRAP_01_F;
     class B_MRAP_01_hmg_F;
     class I_Heli_Transport_02_F;
@@ -941,19 +954,35 @@ class CfgVehicles
 
     ///////////////////////Fluggeräte//////////////////////////
 
+    class Heli_light_03_base_F;
+    class Heli_light_03_dynamicLoadout_base_F : Heli_light_03_base_F
+    {
+        class Turrets;
+    };
+    class I_Heli_light_03_dynamicLoadout_F : Heli_light_03_dynamicLoadout_base_F
+    {
+        class Turrets : Turrets
+        {
+            class MainTurret;
+        };
+        class Components;
+    };
+
+    #include "CfgVehicles_AW159Wildcat.hpp"
+
     class TB_Vehicles_BW_Hellcat: I_Heli_light_03_unarmed_F
     {
         displayName = "Hellcat BW (unbewaffnet)";
-        author = "Eron";
+        author = "TBMod";
         addCategoryBLU(Fluggeraete);
-        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_AW159_Wildcat.paa)};
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Hellcat.jpg);
     };
 
-    class TB_Vehicles_BW_Hellcat_2: I_Heli_light_03_dynamicLoadout_F
+    class TB_Vehicles_BW_Hellcat_2: TB_Vehicles_AW159_Wildcat
     {
         displayName = "Hellcat BW (bewaffnet)";
-        author = "Eron";
+        author = "TBMod";
         addCategoryBLU(Fluggeraete);
         hiddenSelectionsTextures[] = {QPATHTOF(pictures\vehicles\TB_Vehicles_BW_Hellcat.paa)};
         editorPreview = QPATHTOF(pictures\editorPreview\TB_Vehicles_BW_Hellcat_2.jpg);
