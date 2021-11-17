@@ -32,15 +32,15 @@ class TB_Vehicles_AW159_Wildcat : I_Heli_light_03_dynamicLoadout_F // AW159 Wild
             {
                 class PylonLeft1
                 {
-                    attachment = "rhs_mag_DAGR_16";
-                    hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "DAR","DAGR","B_SHIEKER","UNI_SCALPEL","20MM_TWIN_CANNON","B_ASRRAM_EJECTOR"
+                    attachment = "";
+                    hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC","B_ASRRAM_EJECTOR","UNI_SCALPEL"}; // "DAR","DAGR","B_SHIEKER","20MM_TWIN_CANNON"
                     priority = 5;
                     UIposition[] = {0.07,0.4};
                 };
                 class PylonRight1: PylonLeft1
                 {
-                    attachment = "rhs_mag_DAGR_16";
-                    hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC"}; // "DAR","DAGR","B_SHIEKER","UNI_SCALPEL","20MM_TWIN_CANNON","B_ASRRAM_EJECTOR"
+                    attachment = "";
+                    hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_FFAR_USMC","B_ASRRAM_EJECTOR","UNI_SCALPEL"}; // "DAR","DAGR","B_SHIEKER","20MM_TWIN_CANNON"
                     mirroredMissilePos = 1;
                     UIposition[] = {0.64,0.4};
                 };
