@@ -361,6 +361,13 @@ class CfgMagazines
         mass = 14;
     };
 
+    class 5000Rnd_762x51_Yellow_Belt;
+    class TB_mag_6000Rnd_762x51_Red_Tracer : 5000Rnd_762x51_Yellow_Belt
+    {
+        ammo = "B_762x51_Minigun_Tracer_Red_splash"; // B_762x51_Minigun_Tracer_Yellow_splash
+        count = 6000; // 5000
+    };
+
     class ACE_10Rnd_338_300gr_HPBT_Mag;
     class TB_mag_10Rnd_338_LS_Tracer : ACE_10Rnd_338_300gr_HPBT_Mag // Lapua Scenar
     {
@@ -454,7 +461,7 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR/Radar";
         displayName = "Flare/Chaff x72";
         displayNameShort = "Flare/Chaff";
-        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4"};
+        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4","TB_cm_dispenser_AW159_1","TB_cm_dispenser_AW159_2"};
         initSpeed = 18;
         pylonWeapon = "TB_weap_CMLauncher";
     };
@@ -476,7 +483,12 @@ class CfgMagazines
         descriptionShort = "Wirkung gegen IR, 60 Sekunden";
         displayName = "LWIRCM x144/60";
         displayNameShort = "LWIRCM";
-        hardpoints[] = {"TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3","TB_cm_dispenser_UH_60_4","TB_cm_dispenser_MH_6_1","TB_cm_dispenser_MH_6_2"};
+        hardpoints[] =
+        {
+            "TB_cm_dispenser_UH_60_1","TB_cm_dispenser_UH_60_2","TB_cm_dispenser_UH_60_3",
+            "TB_cm_dispenser_UH_60_4","TB_cm_dispenser_MH_6_1","TB_cm_dispenser_MH_6_2",
+            "TB_cm_dispenser_AW159_1","TB_cm_dispenser_AW159_2"
+        };
         initSpeed = 1;
         pylonWeapon = "TB_weap_LWIRCM_144_60";
     };

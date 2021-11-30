@@ -677,6 +677,12 @@ class CfgWeapons
         displayName = "MPR"; // "Typ 115 6,5 mm (Schwarz)"
     };
 
+    class MGunCore;
+    class M134_minigun : MGunCore
+    {
+        magazines[] = {"TB_mag_6000Rnd_762x51_Red_Tracer","5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt"}; // {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt"}
+    };
+
     class LMG_RCWS;
     class LMG_Minigun : LMG_RCWS
     {
@@ -987,7 +993,6 @@ class CfgWeapons
         };
     };
 
-    class MGunCore;
     class MGun : MGunCore
     {
         class Mode_Burst;
