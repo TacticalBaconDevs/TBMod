@@ -643,13 +643,14 @@ class CfgWeapons
         modes[] = {"FullAuto","Single","single_medium_optics1","single_far_optics2","fullauto_medium"};
         class Single : Mode_SemiAuto
         {
+            autoFire = 0;
+            burst = 2;
             dispersion = 0.00116;
-            textureType = "burst";
+            textureType = "dual";
         };
         class FullAuto : Mode_FullAuto
         {
             autoFire = 1;
-            burst = 1;
             dispersion = 0.00116;
             reloadTime = 0.067;
             textureType = "fullAuto";
