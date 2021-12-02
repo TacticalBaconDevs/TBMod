@@ -163,7 +163,7 @@
 
 [
     QGVAR(injured),
-    "init",
+    "initPost", // muss *Post sein damit synchronizedObjects was zurück gibt
     {
         params ["_logic"];
 
@@ -194,6 +194,24 @@
         /*
             ggf alle Medical Items wegnehmen
         */
+    },
+    false,
+    [],
+    true
+] call CBA_fnc_addClassEventHandler;
+
+[
+    QGVAR(showHide),
+    "initPost", // muss *Post sein damit synchronizedObjects was zurück gibt
+    {
+        params ["_logic"];
+
+        // Check for Objects
+        private _syncObjs = (synchronizedObjects _logic) select {!(_x isKindOf "EmptyDetector")};
+        if (_syncObjs isEqualTo []) exitWith {};
+
+        // prepair Module
+        [nil, _syncObjs, false] call FUNC(moduleShowHide);
     },
     false,
     [],

@@ -20,5 +20,6 @@ PREP(moduleFrontverlauf);
 PREP(moduleInjured);
 PREP(moduleLockDoors);
 PREP(moduleRadio);
+PREP(moduleShowHide);
 PREP(schauspieler);
 PREP(sitAI);
