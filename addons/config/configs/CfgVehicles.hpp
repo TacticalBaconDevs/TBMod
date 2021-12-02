@@ -240,22 +240,6 @@ class CfgVehicles
         visualTargetSize = 0.3; // n.a.
     };
 
-    class Heli_light_03_base_F;
-    class Heli_light_03_unarmed_base_F : Heli_light_03_base_F // AW-159 Hellcat
-    {
-        accuracy = 0.42; // 1.5
-        accuracyDarkNightLightsOff = 0.002; // 0.001
-        accuracyNightLightsOff = 0.012; // 0.006
-        accuracyNightLightsOn = 0.2; // 0.1
-        armor = 50; // 40
-        audible = 62; // 50
-        camouflage = 84; // 100
-        irTargetSize = 0.8; // 1
-        LockDetectionSystem = "2 + 8 + 4"; // 0
-        nvScanner = 1; // 0
-        radarTargetSize = 1.2; // 1
-    };
-
     class Heli_Transport_02_base_F;
     class I_Heli_Transport_02_F : Heli_Transport_02_base_F // CH-49 Mohawk
     {

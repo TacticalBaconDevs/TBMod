@@ -2,6 +2,9 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
+class Mode_SemiAuto;
+class Mode_FullAuto;
+
 class CfgWeapons
 {
     // Skin S.W.A.T. Weste
@@ -339,6 +342,24 @@ class CfgWeapons
             };
     };
 
+    class Rifle_Base_F;
+    class arifle_ARX_base_F : Rifle_Base_F
+    {
+        magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG"}; // {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer"};
+        class Secondary : Rifle_Base_F
+        {
+            canShootInWater = 1;
+            magazines[] = {"TB_mag_MPR_10Rnd_Antimateriel"};
+            magazineWell[] = {"TB_magwell_MPR","TB_magwell_MPR_RHS"};
+            modes[] = {"Single"};
+            class Single : Mode_SemiAuto
+            {
+                reloadTime = 0.15; // 0.3
+                dispersion = 0.00145;
+            };
+        }; 
+    };
+
     class rhs_weap_m27iar;
     class rhs_weap_m27iar_grip : rhs_weap_m27iar
     {
@@ -485,6 +506,33 @@ class CfgWeapons
                     passThrough = 0.1;
                 };
             };
+        };
+    };
+
+    class NVGoggles;
+    class NVGogglesB_blk_F : NVGoggles
+    {
+        class ItemInfo;
+    };
+    class TB_weap_goggles_thermal : NVGogglesB_blk_F // Thermal Monogoggle
+    {
+        ace_nightvision_bluRadius = 0;
+        author = "TBMod";
+        baseWeapon = "TB_weap_goggles_thermal";
+        displayName = "ETI-M";
+        descriptionShort = "ETI-M";
+        descriptionUse = "ETI-M";
+        model = "\rhsusf\addons\rhsusf_infantry\gear\nvg\ANPVS_14_UP";
+        picture = "\rhsusf\addons\rhsusf_inventoryicons\data\headgear\rhsusf_ANPVS_14_ca.paa";
+        thermalMode[] = {1};
+        visionMode[] = {"Normal","TI"};
+        class ItemInfo :ItemInfo
+        {
+            hmdType = 0;
+            mass = 35.264;
+            modelOff = "\rhsusf\addons\rhsusf_infantry\gear\nvg\ANPVS_14_UP";
+            type = 616;
+            uniformModel = "\rhsusf\addons\rhsusf_infantry\gear\nvg\ANPVS_14_DOWN";
         };
     };
 

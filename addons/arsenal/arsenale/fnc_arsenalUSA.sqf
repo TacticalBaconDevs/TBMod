@@ -217,7 +217,8 @@ private _allgemein_visiere = [
     "rhsusf_acc_rm05",
     "rhsusf_acc_t1_low",
     "optic_yorris",
-    "optic_aco_smg"
+    "optic_aco_smg",
+    "optic_mrco"
 ];
 
 private _allgemein_befestigungsschiene = [
@@ -648,7 +649,7 @@ private _items = [];
 // _grenadier_munition               - Grenadier Unterlauf
 // _dmr_munition                     - DMR Munition
 // _mg_munition                      - MG Munition
-// _pilot_munition                   - Piloten MP7 Munition
+// _pilot_munition                   - Piloten MP7/Vector Munition
 // _sniper_munition                  - Sniper Munition
 // _aaat_munition                    - AntiTank Munition
 // _gepaeck_mittel                   - Seesack
@@ -748,9 +749,15 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Waffen
             "rhsusf_weap_MP7A2",
+            "TB_weap_Vector",
+
+            // MP7 zubehör
             "rhsusf_weap_MP7A2_grip3",
+
+            // Schrotflinte
             "rhs_weap_M590_8RD",
             "rhs_weap_M590_5RD",
+
             // ### Munition
             "rhsusf_8Rnd_00Buck",
             "rhsusf_8Rnd_Slug",
@@ -907,9 +914,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_handfeuerwaffen +
         _lrFunken +
         _gepaeck_klein +
-        _pilot_munition +
         _allgemein_magazine +
-        _pilot_munition +
         _mg_munition +
         _grenadier_munition +
         _dmr_munition +
@@ -920,6 +925,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Gewehr
             "rhsusf_weap_MP7A2",
             "rhsusf_weap_MP7A2_grip3",
+            "TB_weap_Vector",
 
             // ### Visiere
             "rhsusf_acc_mrds",

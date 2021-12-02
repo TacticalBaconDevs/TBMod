@@ -560,6 +560,15 @@ class CfgVehicles
         };
     };
 
+    class GVAR(showHide) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "Show/Hide";
+        function = QFUNC(moduleShowHide);
+
+        is3DEN = 0;
+    };
+
     // ######################## ATMO Module
     class GVAR(atmoBase) : GVAR(base)
     {
