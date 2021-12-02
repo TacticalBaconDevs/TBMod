@@ -199,6 +199,18 @@ class CfgMagazines
         displayNameShort = "[AUTOSEEK]"; // "TV"
     };
 
+    class TB_mag_MPR_10Rnd_Slug : rhsusf_8Rnd_Slug  // MPR Slugshot
+    {
+        ammo = "TB_ammo_MPR_Slug";
+        author = "TBMod";
+        count = 10;
+        descriptionShort = "20-Gauge Slugshot<br />Rounds: 10<br />Used in: MPR";
+        displayName = "10Rnd Slugshot";
+        displayNameShort = "10Rnd Slugshot";
+        mass = 14;
+        picture = "\a3\Weapons_F_Enoch\MagazineProxies\data\UI\icon_6Rnd_12Gauge_Slug_ca.paa";
+    };
+
     class 10Rnd_RHS_50BMG_Box;
     class rhsusf_mag_10Rnd_STD_50BMG_M33 : 10Rnd_RHS_50BMG_Box // 50.cal Long-Range Sniper
     {
@@ -206,7 +218,6 @@ class CfgMagazines
         descriptionShort = ".50Cal LRS"; // "10RD .50BMG M33 Ball M107 Magazine"
         displayName = ".50Cal Long-Range Sniper Magazine"; // "10rnd M107 M33"
         displayNameShort = ".50Cal LRS"; // "M33 Ball"
-
         mass = 17; // 41.14
         tracersEvery = 1; // 0
     };
@@ -217,7 +228,6 @@ class CfgMagazines
         descriptionShort = ".50Cal HEIAP-T Magazine"; // "10RD .50BMG Mk 211 HEIAP M107 Magazine"
         displayName = "High-Explosive Incendiary/Armor-Piercing Ammunition Tracer"; // "10rnd M107 M33"
         displayNameShort = ".50Cal HEIAP-T"; // "M33 Ball"
-
         mass = 28; // 41.14
     };
 
