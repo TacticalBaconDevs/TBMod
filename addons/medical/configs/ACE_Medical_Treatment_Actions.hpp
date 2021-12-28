@@ -13,7 +13,7 @@ class ace_medical_treatment_actions {
         treatmentTime = 2;
     };
 
-    class Morphine: BasicBandage {
+    class Morphine: FieldDressing {
         treatmentTime = QUOTE([ARR_2(_this,5)] call FUNC(calcTreatmentTime));
     };
 
@@ -47,7 +47,7 @@ class ace_medical_treatment_actions {
         displayName = "Kochsalztransfusion (125ml)";
     };
 
-    class Diagnose : BasicBandage {
+    class Diagnose: BasicBandage {
         treatmentTime = QUOTE([ARR_2(_this,2.5)] call FUNC(calcTreatmentTime));
     };
 
@@ -59,7 +59,7 @@ class ace_medical_treatment_actions {
         treatmentTime = QUOTE([ARR_2(_this,10)] call FUNC(calcTreatmentTime));
     };
 
-    class SurgicalKit: BasicBandage {
+    class SurgicalKit: FieldDressing {
         treatmentTime = QUOTE([ARR_2(_this,'ace_medical_treatment_fnc_getStitchTime')] call FUNC(calcTreatmentTime));
     };
 

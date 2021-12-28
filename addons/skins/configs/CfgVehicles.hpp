@@ -22,19 +22,21 @@
 class SensorTemplateDataLink;
 class SensorTemplateActiveRadar;
 class SensorTemplatePassiveRadar;
-class SensorTemplateIR;
 class SensorTemplateLaser;
 class SensorTemplateNV;
+
+class SensorTemplateIR;
 class SensorTemplateMan : SensorTemplateIR
 {
     class GroundTarget;
     class AirTarget;
 };
+
 class DefaultVehicleSystemsDisplayManagerRight
 {
     class Components;
 };
-class VehicleSystemsTemplateLeftDriver : DefaultVehicleSystemsDisplayManagerRight
+class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerRight
 {
     class Components : Components
     {
@@ -52,11 +54,12 @@ class VehicleSystemsTemplateRightPilot : DefaultVehicleSystemsDisplayManagerRigh
 {
     class Components;
 };
+
 class DefaultVehicleSystemsDisplayManagerLeft
 {
     class Components;
 };
-class VehicleSystemsTemplateRightDriver : DefaultVehicleSystemsDisplayManagerLeft
+class VehicleSystemsTemplateLeftDriver : DefaultVehicleSystemsDisplayManagerLeft
 {
     class Components : Components
     {
@@ -765,16 +768,18 @@ class CfgVehicles
     #include "CfgVehicles_FV510Warrior.hpp"
 
     class Car_F;
-    class Wheeled_APC_F : Car_F
-    {
-        class NewTurret;
-        class Turrets;
-    };
+    class Wheeled_APC_F: Car_F
+	{
+		class Turrets
+		{
+			class MainTurret;
+		};
+	};
     class APC_Wheeled_01_base_F : Wheeled_APC_F
     {
         class Turrets : Turrets
         {
-            class MainTurret : NewTurret
+            class MainTurret : MainTurret
             {
                 class CommanderOptics;
             };

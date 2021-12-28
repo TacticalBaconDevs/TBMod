@@ -32,7 +32,7 @@ class RscDisplayMain: RscStandardDisplay
             text = "TacticalBacon Server";
             picture = PATHTOF(button.paa);
             //action = QUOTE([_this, 'server.tacticalbacon.de', '2302', 'tbm'] call COMPILE_SCRIPT(joinServer)); // execVM QPATHTOF
-            action = "connectToServer ['server.tacticalbacon.de', 2302, 'tbm']";
+            action = "connectToServer ['195.201.168.197', 2302, 'tbm']";
             actionText = "Join TacticalBacon Server";
             condition = "true";
         };
