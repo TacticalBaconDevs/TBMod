@@ -534,7 +534,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
 
             // Spetznas
             "rhs_weap_vss",
-            "rhs_10rnd_9x39mm_SP6",w
+            "rhs_10rnd_9x39mm_SP6",
 
             // Ferngläser
             "rhs_pdu4",
