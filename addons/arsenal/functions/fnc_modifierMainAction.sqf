@@ -11,6 +11,7 @@ private _arsenalType = _player getVariable ["TB_arsenalType", ""];
 // Arsenale Rollen blockieren
 GVAR(blacklistRollen) = [];
 if (_arsenalType in ["USA", "BW", "RUSS", "UK"]) then {GVAR(blacklistRollen) = ["dmr"]};
+if (_arsenalType in ["VANILLA"]) then {GVAR(blacklistRollen) = ["rifle"]};
 
 GVAR(blacklistRollen_themen) = [];
 // GVAR(customName_themen): ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]

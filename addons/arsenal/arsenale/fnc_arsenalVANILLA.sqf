@@ -229,14 +229,42 @@ private _allgemein_Westen = [
     "V_lxWS_PlateCarrierSpec_desert",
     "V_lxWS_PlateCarrier2_desert"
 ];
+private _mg_waffen = [
+    
+    "arifle_MX_SW_F",
+    "arifle_MX_SW_Black_F",
+    "arifle_MX_SW_khk_F",
+    "arifle_SPAR_02_blk_F",
+    "arifle_SPAR_02_snd_F",
+    "arifle_SPAR_02_khk_F",
+    "LMG_03_F",
+    "LMG_Mk200_F",
+    "LMG_Mk200_black_F",
+    "LMG_Zafir_F",
+    "TB_weap_Mk48"
+];
 
 private _mg_munition = [
+
     "150Rnd_556x45_Drum_Mag_Tracer_F",
-    "200Rnd_556x45_Box_Tracer_F",
-    "200Rnd_556x45_Box_Tracer_Red_F",
     "100Rnd_65x39_caseless_mag_Tracer",
-    "200rnd_556x45_box_f",
-    "75Rnd_556x45_Stanag_lxWS"
+    "75Rnd_556x45_Stanag_lxWS",
+
+    // MK 200
+    "200Rnd_65x39_cased_Box_Red",
+    "200Rnd_65x39_cased_Box_Tracer",
+
+    // Zafir
+    "150Rnd_762x54_Box",
+    "150Rnd_762x54_Box_Tracer",
+
+    // Minimi (Apex)
+    "200Rnd_556x45_Box_Tracer_F",
+    "200Rnd_556x45_Box_F",
+
+    // Mk 48 (TB) .338
+    "TB_mag_100Rnd_338_LS_DIM",
+    "TB_mag_100Rnd_338_LS_Tracer"
 ];
 
 private _LR = [
@@ -295,7 +323,9 @@ private _allgemein_Waffen = [
     "arifle_XMS_Base_Sand_lxWS",
     "arifle_XMS_M_lxWS",
     "arifle_XMS_M_khk_lxWS",
-    "arifle_XMS_M_Sand_lxWS"
+    "arifle_XMS_M_Sand_lxWS",
+    "TB_weapon_MPR",
+    "TB_weap_Vector"
 ];
 
 private _allgemein_Magazine = [
@@ -306,7 +336,14 @@ private _allgemein_Magazine = [
     "30Rnd_556x45_Stanag_Tracer_Yellow",
     "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
     "ACE_30Rnd_556x45_Stanag_Mk218_mag",
-    "ACE_30Rnd_556x45_Stanag_Mk318_mag"
+    "ACE_30Rnd_556x45_Stanag_Mk318_mag",
+    "TB_mag_40Rnd_45_FMJ",
+    "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+    "TB_mag_40Rnd_45_JHP",
+    "TB_mag_40Rnd_45_JHP_Tracer_Red",
+    "TB_mag_MPR_10Rnd_Antimateriel",
+    "TB_mag_MPR_10Rnd_Buckshot",
+    "TB_mag_MPR_10Rnd_Underwater"
 ];
 
 private _allgemein_WaffeGL = [
@@ -382,11 +419,12 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Westen +
-        _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
         [
-            "TB_Item_liveMonitor"
+            "TB_Item_liveMonitor",
+            "TB_weap_Vector"
+
         ]
     };
 
@@ -437,16 +475,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Uniform +
         _allgemein_Westen +
         _mg_munition +
+        _mg_waffen +
         [
-            // Weapons
-            "arifle_MX_SW_F",
-            "arifle_MX_SW_Black_F",
-            "arifle_MX_SW_khk_F",
-            "arifle_SPAR_02_blk_F",
-            "arifle_SPAR_02_snd_F",
-            "arifle_SPAR_02_khk_F",
-            "LMG_03_F"
-
         ]
     };
 
@@ -521,6 +551,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SMG_01_F",
             "SMG_05_F",
             "hgun_PDW2000_F",
+            "TB_weap_Vector",
             // ### Magazine
             "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
@@ -688,9 +719,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // AT
             "launch_NLAW_F",
             "launch_RPG32_F",
-            "launch_MRAWS_green_rail_F",
-            "launch_MRAWS_olive_rail_F",
-            "launch_MRAWS_sand_rail_F",
             "launch_MRAWS_green_F",         // kann Entfernung messen (ungelenkt)
             "launch_MRAWS_olive_F",
             "launch_MRAWS_sand_F",
@@ -728,6 +756,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Backpacks
             "B_UAV_01_backpack_F",
+            "B_UAV_02_backpack_lxWS",
+            "ION_UAV_02_backpack_lxWS",
+            "ION_UAV_01_backpack_lxWS",
+            "CIV_UAV_01_backpack_lxWS",
 
             // Items
             "B_UavTerminal",
@@ -761,6 +793,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "V_PlateCarrierGL_mtp",
             "V_PlateCarrierGL_blk",
             "V_PlateCarrierGL_rgr",
+
+            // Uniforms
+            "U_lxWS_UN_Pilot",
 
             // Minensucher
             "ACE_VMH3",
