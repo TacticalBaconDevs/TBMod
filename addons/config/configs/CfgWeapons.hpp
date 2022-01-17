@@ -8,12 +8,7 @@ class player;
 
 class CfgWeapons
 {
-    class CannonCore;
-    class mortar_155mm_AMOS : CannonCore
-    {
-        class Mode_Burst;
-        class Mode_SemiAuto;
-    };
+    class mortar_155mm_AMOS;
     class weapon_ShipCannon_120mm : mortar_155mm_AMOS
     {
         magazines[] = {

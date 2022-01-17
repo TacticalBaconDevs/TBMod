@@ -177,7 +177,7 @@ if (GVAR(fpsMonitor_enabled)) then
         {
             if (isNil QGVAR(fpsMonitor_id)) then
             {
-                TB_fpsMonitor_id = addMissionEventHandler ["Draw3D", {
+                GVAR(fpsMonitor_id) = addMissionEventHandler ["Draw3D", {
                     {
                         if ((positionCameraToWorld [0, 0, 0]) distance2D _x < 1000) then
                         {
