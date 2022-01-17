@@ -149,7 +149,15 @@ private _allgemein_visiere = [
     "uk3cb_baf_ta31f",
     "uk3cb_baf_ta31f_hornbill",
     "uk3cb_baf_ta648",
-    "uk3cb_baf_ta648_308"
+    "uk3cb_baf_ta648_308",
+    "optic_erco_snd_f",
+    "optic_erco_khk_f",
+    "optic_erco_blk_f",
+    "optic_mrco",
+    "rhsusf_acc_ACOG",
+    "rhsusf_acc_acog_rmr",
+    "rhsusf_acc_ACOG_d",
+    "rhsusf_acc_ACOG_wd"
 ];
 
 private _allgemein_befestigungsschiene = [

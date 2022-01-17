@@ -559,9 +559,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // Waffe
             "launch_RPG32_green_F",
             "launch_RPG32_F",
-            "launch_MRAWS_green_rail_F",
-            "launch_MRAWS_olive_rail_F",
-            "launch_MRAWS_sand_rail_F",
             "launch_MRAWS_green_F",         // kann Entfernung messen (ungelenkt)
             "launch_MRAWS_olive_F",
             "launch_MRAWS_sand_F",
