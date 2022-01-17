@@ -164,7 +164,6 @@ private _allgemein = [
     "ACE_6Rnd_12Gauge_Pellets_No4_Bird",
     "3Rnd_Smoke_Grenade_shell_precise",
     "TB_rhs_mag_40mm_IR_Grenade",
-    
 
     // SR-Funke
     "TFAR_anprc152",
@@ -424,7 +423,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             "TB_Item_liveMonitor",
             "TB_weap_Vector"
-
         ]
     };
 
@@ -437,7 +435,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _allgemein_WaffeGL +
         [
-
         ]
     };
 

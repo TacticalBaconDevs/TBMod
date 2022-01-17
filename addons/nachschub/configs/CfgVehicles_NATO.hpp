@@ -97,6 +97,7 @@ class TB_supply_nato_night : WRAPPER_NAME(Box_NATO_Equip_F)
         MACRO_ADDITEM(ACE_Chemlight_HiRed,10);
     };
 };
+
 class TB_supply_nato_ammo_zafir : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
     PUBLIC_NAME_CAT("Zafir 7,62",NATO);
@@ -118,6 +119,7 @@ class TB_supply_nato_ammo_mk200 : WRAPPER_NAME(Box_NATO_Ammo_F)
         MACRO_ADDMAGAZINE(200Rnd_65x39_cased_Box_Tracer,10);
     };
 };
+
 class TB_supply_nato_ammo_minimi : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
     PUBLIC_NAME_CAT("FN Minimi 5,56",NATO);
@@ -128,6 +130,7 @@ class TB_supply_nato_ammo_minimi : WRAPPER_NAME(Box_NATO_Ammo_F)
         MACRO_ADDMAGAZINE(200Rnd_556x45_Box_F,10);
     };
 };
+
 class TB_supply_nato_ammo_big : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
     PUBLIC_NAME_CAT("MX/HK/XMS große Magazine",NATO);
