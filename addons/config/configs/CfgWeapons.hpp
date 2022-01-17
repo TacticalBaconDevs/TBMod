@@ -4,6 +4,7 @@
 */
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class Mode_Burst;
 class player;
 
 class CfgWeapons
@@ -704,6 +705,7 @@ class CfgWeapons
         };
     };
 
+    class CannonCore;
     class cannon_105mm : CannonCore
     {
         class player;

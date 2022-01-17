@@ -13,6 +13,7 @@ class ace_medical_treatment_actions {
         treatmentTime = 2;
     };
 
+    class FieldDressing;
     class Morphine: FieldDressing {
         treatmentTime = QUOTE([ARR_2(_this,5)] call FUNC(calcTreatmentTime));
     };
