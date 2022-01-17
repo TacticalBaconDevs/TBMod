@@ -769,12 +769,12 @@ class CfgVehicles
 
     class Car_F;
     class Wheeled_APC_F: Car_F
-	{
-		class Turrets
-		{
-			class MainTurret;
-		};
-	};
+    {
+        class Turrets
+        {
+            class MainTurret;
+        };
+    };
     class APC_Wheeled_01_base_F : Wheeled_APC_F
     {
         class Turrets : Turrets
