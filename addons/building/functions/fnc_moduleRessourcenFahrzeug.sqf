@@ -6,8 +6,10 @@
 params ["_logic", "", "_activated"];
 
 if (!local _logic || !_activated) exitWith {true};
-private _pos = getPos _logic;
 deleteVehicle _logic;
+
+(missionnamespace getvariable ["bis_fnc_curatorObjectPlaced_mouseOver", [""]]) params ["_mouseOverType", "_mouseOverUnit"];
+if (_mouseOverType != "OBJECT") exitWith {systemChat "Resoucenfahrzeug muss ein Objekt sein!"};
 
 [
     "Nachschubmenge",
@@ -15,7 +17,7 @@ deleteVehicle _logic;
         [
             "SLIDER",
             ["Nachschubmenge", "Die Menge, die an Ressourcen zum Bauen im Fahrzeug ist."],
-            [100, 10000, 2000, 0],
+            [100, 10000, _mouseOverUnit getVariable [QGVAR(resourcenCargo), 2000], 0],
             true
         ]
     ],

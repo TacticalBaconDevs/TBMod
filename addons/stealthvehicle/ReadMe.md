@@ -11,3 +11,9 @@ Stealth Helis von TB
 
 ## Contributors:
 [Contributors](https://github.com/TacticalBaconDevs/TBMod/graphs/contributors)
+
+### Deaktivieren in der Mission
+(vehicle player) setVariable ["TBmod_stealthvehicle_activateStealth", false, true];
+{
+    [_x, false] remoteExecCall ["setCaptive", _x];
+} forEach (crew (vehicle player));

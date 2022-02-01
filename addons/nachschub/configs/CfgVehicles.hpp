@@ -149,6 +149,9 @@ class CfgVehicles
                         ADD_SUPPLY("Darter",B_UAV_01_backpack_F);
                         ADD_SUPPLY("Pelican",B_UAV_06_backpack_F);
                         ADD_SUPPLY("Pelter",B_UGV_02_Demining_backpack_F);
+                        ADD_SUPPLY("AP-5 Bustard mit MX",B_UAV_02_backpack_lxWS);
+                        ADD_SUPPLY("AP-5 Bustard mit LMG",ION_UAV_02_backpack_lxWS);
+                        ADD_SUPPLY("Minenräumungs Drohne",TB_supply_nato_ED);
                     };
                 };
 
@@ -261,12 +264,36 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
-                    ADD_SUPPLY("Munition",TB_supply_nato_ammo);
+                    ADD_SUPPLY("5,56 Munition",TB_supply_nato_ammo_556);
+                    ADD_SUPPLY("6,5 Munition",TB_supply_nato_ammo_65);
                     ADD_SUPPLY("Granaten",TB_supply_nato_grena);
                     ADD_SUPPLY("Unterlauf",TB_supply_nato_unterlauf);
-                    ADD_SUPPLY("WerferMunition",TB_supply_nato_launcherAmmo);
-                    ADD_SUPPLY("ED-1D Drohne",TB_supply_nato_ED);
                     ADD_SUPPLY("NachtKiste",TB_supply_nato_night);
+
+                    class NatoWerfer
+                    {
+                        displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("RPG-32 Munition",TB_supply_nato_launcher_rpg);
+                        ADD_SUPPLY("MAAWS Muntion",TB_supply_nato_launcher_maaws);
+                        ADD_SUPPLY("Mentis Munition",TB_supply_nato_launcher_mentis);
+                        ADD_SUPPLY("Titan AA Muniton",TB_supply_nato_launcher_titan_aa);
+                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_nato_launcher_titan_at);
+                    };
+
+                    class NATOMunitionMG
+                    {
+                        displayName = "MG Munition";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+                        
+                        ADD_SUPPLY("Zafir 7,62",TB_supply_nato_ammo_zafir);
+                        ADD_SUPPLY("MK 200 5,56",TB_supply_nato_ammo_mk200);
+                        ADD_SUPPLY("FN Minimi 5,56",TB_supply_nato_ammo_minimi);
+                        ADD_SUPPLY("Mk48 Munition .338",TB_supply_usa_ammo_mk48_mmg);
+                        ADD_SUPPLY("MX/HK/XMS große Magazine",TB_supply_nato_ammo_big);
+
+                    };
                 };
 
                 class ldf
@@ -293,11 +320,11 @@ class CfgVehicles
                         displayName = "Raktenwerfer Kisten";
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
-                        ADD_SUPPLY("RPG-32 Munition",TB_supply_ldf_launcher_rpg);
-                        ADD_SUPPLY("MAAWS Muntion",TB_supply_ldf_launcher_maaws);
-                        ADD_SUPPLY("Mentis Munition",TB_supply_ldf_launcher_mentis);
-                        ADD_SUPPLY("Titan AA Muniton",TB_supply_ldf_launcher_titan_aa);
-                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_ldf_launcher_titan_at);
+                        ADD_SUPPLY("RPG-32 Munition",TB_supply_nato_launcher_rpg);
+                        ADD_SUPPLY("MAAWS Muntion",TB_supply_nato_launcher_maaws);
+                        ADD_SUPPLY("Mentis Munition",TB_supply_nato_launcher_mentis);
+                        ADD_SUPPLY("Titan AA Muniton",TB_supply_nato_launcher_titan_aa);
+                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_nato_launcher_titan_at);
                     };
 
                     ADD_SUPPLY("Notfall Shotgun",TB_supply_ldf_shotgun);

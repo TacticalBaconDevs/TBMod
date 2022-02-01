@@ -59,7 +59,7 @@ class CfgMagazineWells
     };
     class TB_magwell_MPR
     {
-        TB_magwell_MPR[] = {"TB_mag_MPR_10Rnd_Antimateriel","TB_mag_MPR_10Rnd_Slug","TB_mag_MPR_10Rnd_Buckshot","TB_mag_MPR_10Rnd_Underwater"};
+        TB_magwell_MPR[] = {"TB_mag_MPR_10Rnd_Antimateriel","TB_mag_MPR_10Rnd_Buckshot","TB_mag_MPR_10Rnd_Underwater"};
     };
     class TB_magwell_40mm_CTWS
     {
