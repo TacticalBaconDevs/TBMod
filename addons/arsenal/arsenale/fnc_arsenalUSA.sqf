@@ -531,8 +531,8 @@ private _pilot_munition = [
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
     "rhsusf_mag_40Rnd_46x30_AP",
-	
-	// .45 Cal
+
+    // .45 Cal
     "TB_mag_40Rnd_45_FMJ",
     "TB_mag_40Rnd_45_FMJ_Tracer_Red",
     "TB_mag_40Rnd_45_JHP",
