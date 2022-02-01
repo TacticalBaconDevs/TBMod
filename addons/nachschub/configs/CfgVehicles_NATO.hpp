@@ -5,19 +5,25 @@
     Author: IDarky
 */
 
-class TB_supply_nato_ammo : WRAPPER_NAME(Box_NATO_Ammo_F)
+class TB_supply_nato_ammo_556 : WRAPPER_NAME(Box_NATO_Ammo_F)
 {
-    PUBLIC_NAME_CAT("Munition",NATO);
+    PUBLIC_NAME_CAT("5,56 Munition",NATO);
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,13);
-        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,13);
-        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,13);
-        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,13);
-        MACRO_ADDMAGAZINE(200Rnd_556x45_Box_Tracer_Red_F,5);
-        MACRO_ADDMAGAZINE(150Rnd_556x45_Drum_Mag_Tracer_F,5);
-        MACRO_ADDMAGAZINE(20Rnd_762x51_Mag,13);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag_Tracer_Yellow,40);
+        MACRO_ADDMAGAZINE(30Rnd_556x45_Stanag,40);
+    };
+};
+
+class TB_supply_nato_ammo_65 : WRAPPER_NAME(Box_NATO_Ammo_F)
+{
+    PUBLIC_NAME_CAT("6,5 Munition",NATO);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag,40);
+        MACRO_ADDMAGAZINE(30Rnd_65x39_caseless_mag_Tracer,40);
     };
 };
 
@@ -44,9 +50,12 @@ class TB_supply_nato_unterlauf : WRAPPER_NAME(Box_NATO_AmmoOrd_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,15);
-        MACRO_ADDMAGAZINE(1Rnd_Smoke_Grenade_shell,15);
+        MACRO_ADDMAGAZINE(3Rnd_Smoke_Grenade_shell_precise,15);
         MACRO_ADDMAGAZINE(UGL_FlareWhite_F,5);
         MACRO_ADDMAGAZINE(ACE_HuntIR_M203,5);
+        MACRO_ADDMAGAZINE(6rnd_HE_Mag_lxWS,10);
+        MACRO_ADDMAGAZINE(6rnd_Smoke_Mag_lxWS,10);
+        MACRO_ADDMAGAZINE(6Rnd_12Gauge_Slug,10);
     };
 };
 
@@ -86,5 +95,50 @@ class TB_supply_nato_night : WRAPPER_NAME(Box_NATO_Equip_F)
 
         MACRO_ADDITEM(ACE_Chemlight_HiYellow,10);
         MACRO_ADDITEM(ACE_Chemlight_HiRed,10);
+    };
+};
+
+class TB_supply_nato_ammo_zafir : WRAPPER_NAME(Box_NATO_Ammo_F)
+{
+    PUBLIC_NAME_CAT("Zafir 7,62",NATO);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(150Rnd_762x54_Box,10);
+        MACRO_ADDMAGAZINE(150Rnd_762x54_Box_Tracer,10);
+    };
+};
+
+class TB_supply_nato_ammo_mk200 : WRAPPER_NAME(Box_NATO_Ammo_F)
+{
+    PUBLIC_NAME_CAT("MK 200 5,56",NATO);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(200Rnd_65x39_cased_Box_Red,10);
+        MACRO_ADDMAGAZINE(200Rnd_65x39_cased_Box_Tracer,10);
+    };
+};
+
+class TB_supply_nato_ammo_minimi : WRAPPER_NAME(Box_NATO_Ammo_F)
+{
+    PUBLIC_NAME_CAT("FN Minimi 5,56",NATO);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(200Rnd_556x45_Box_Tracer_F,10);
+        MACRO_ADDMAGAZINE(200Rnd_556x45_Box_F,10);
+    };
+};
+
+class TB_supply_nato_ammo_big : WRAPPER_NAME(Box_NATO_Ammo_F)
+{
+    PUBLIC_NAME_CAT("MX/HK/XMS große Magazine",NATO);
+
+    class TransportMagazines
+    {
+        MACRO_ADDMAGAZINE(75Rnd_556x45_Stanag_lxWS,17);
+        MACRO_ADDMAGAZINE(150Rnd_556x45_Drum_Mag_Tracer_F,17);
+        MACRO_ADDMAGAZINE(100Rnd_65x39_caseless_mag_Tracer,17);
     };
 };

@@ -100,7 +100,10 @@ if (getPlayerUID player in _truppfuehrer) then
         "rhs_beret_vdv2",
         "rhs_beret_vdv3",
         "rhs_beret_milp",
-        "rhsgref_un_beret"
+        "rhsgref_un_beret",
+
+        // Barrets (CDLC)
+        "lxWS_H_Beret_Colonel"
     ];
 };
 

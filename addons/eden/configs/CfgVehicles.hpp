@@ -7,7 +7,7 @@
 class CfgVehicles
 {
     class Logic;
-    class Module_F: Logic
+    class Module_F : Logic
     {
         class AttributesBase
         {
@@ -558,6 +558,15 @@ class CfgVehicles
                 "Im Bereich dieses Modules werden der angegebene Prozentsatz der Türen alle enthaltenen Häuser verschlossen"
             };
         };
+    };
+
+    class GVAR(showHide) : GVAR(base)
+    {
+        scope = 2;
+        displayName = "Show/Hide";
+        function = QFUNC(moduleShowHide);
+
+        is3DEN = 0;
     };
 
     // ######################## ATMO Module

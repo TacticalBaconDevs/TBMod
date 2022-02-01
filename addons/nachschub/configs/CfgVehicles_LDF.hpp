@@ -94,7 +94,7 @@ class TB_supply_ldf_unterlauf : WRAPPER_NAME(Box_IND_Support_F)
     };
 };
 
-class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
+class TB_supply_nato_launcher_rpg : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("RPG-32 Munition",LDF);
 
@@ -105,7 +105,7 @@ class TB_supply_ldf_launcher_rpg : WRAPPER_NAME(Box_EAST_WpsLaunch_F)
     };
 };
 
-class TB_supply_ldf_launcher_maaws : WRAPPER_NAME(Box_East_WpsSpecial_F)
+class TB_supply_nato_launcher_maaws : WRAPPER_NAME(Box_East_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("MAAWS Munition",LDF);
 
@@ -116,7 +116,7 @@ class TB_supply_ldf_launcher_maaws : WRAPPER_NAME(Box_East_WpsSpecial_F)
     };
 };
 
-class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
+class TB_supply_nato_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
 {
     PUBLIC_NAME_CAT("Mentis-M Munition",LDF);
 
@@ -127,7 +127,7 @@ class TB_supply_ldf_launcher_mentis : WRAPPER_NAME(Box_NATO_WpsSpecial_F)
     };
 };
 
-class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_IND_WpsLaunch_F)
+class TB_supply_nato_launcher_titan_aa : WRAPPER_NAME(Box_IND_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Titan-AA Munition",LDF);
 
@@ -137,7 +137,7 @@ class TB_supply_ldf_launcher_titan_aa : WRAPPER_NAME(Box_IND_WpsLaunch_F)
     };
 };
 
-class TB_supply_ldf_launcher_titan_at : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
+class TB_supply_nato_launcher_titan_at : WRAPPER_NAME(Box_NATO_WpsLaunch_F)
 {
     PUBLIC_NAME_CAT("Titan AT/AP Munition",LDF);
 
