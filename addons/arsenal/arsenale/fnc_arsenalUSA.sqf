@@ -530,7 +530,13 @@ private _mg_munition = [
 private _pilot_munition = [
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
-    "rhsusf_mag_40Rnd_46x30_AP"
+    "rhsusf_mag_40Rnd_46x30_AP",
+
+    // .45 Cal
+    "TB_mag_40Rnd_45_FMJ",
+    "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+    "TB_mag_40Rnd_45_JHP",
+    "TB_mag_40Rnd_45_JHP_Tracer_Red"
 ];
 
 private _sniper_munition = [
