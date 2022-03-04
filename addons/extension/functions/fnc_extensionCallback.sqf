@@ -17,6 +17,7 @@ if (_name isEqualTo "TBModExtension") then
     {
         case "spawn": {[] spawn (compile _data)};
         case "call": {[] call (compile _data)};
+        //case "debug": {diag_log _msg}; // nicht gebraucht solange alles im debug
         case "log";
         case "error": {systemChat _msg};
     };
