@@ -261,12 +261,13 @@ class CfgAmmo
         typicalSpeed = 921;
     };
 
-    class rhs_ammo_12g_slug;
+    // Fix Me: ERON... Abhängigkeit zu RHS hier in Configs = BÖSE
+    /*class rhs_ammo_12g_slug;
     class TB_ammo_MPR_Slug : rhs_ammo_12g_slug // MPR Slugshot Munition
     {
         caliber = 0.25; // 0.3048
         hit = 30; // 34.51
-    };
+    };*/
 
     class B_556x45_dual;
     class TB_ammo_MPR_UW : B_556x45_dual // MPR Underwater Munition
