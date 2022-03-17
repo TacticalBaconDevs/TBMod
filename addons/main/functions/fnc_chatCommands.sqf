@@ -218,7 +218,7 @@
             [
                 "SLIDER",
                 ["Buffertime aus OBS", "Damit die Mitte bestimmt werden kann"],
-                [10, 120, 20, 0],
+                [10, 300, if (isNil QGVAR(highlight_buffertime)) then {20} else {GVAR(highlight_buffertime)}, 0],
                 true
             ],
             [
@@ -229,7 +229,7 @@
             ],
             [
                 "CHECKBOX",
-                ["Multikills", "Wenn ein Fahrzeug zerstört wird, wird ein Highlight erstellt"],
+                ["Multikills", "Wenn mehrere Leute in der Buffertime getötet werden, wird ein Highlight erstellt"],
                 !isNil QGVAR(highlight_multiEnabled) && GVAR(highlight_multiEnabled),
                 true
             ],
