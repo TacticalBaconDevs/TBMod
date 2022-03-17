@@ -640,7 +640,7 @@ class CfgWeapons
         class Single : Mode_SemiAuto
         {
             autoFire = 0;
-            burst = 2;
+            burst = 1;
             dispersion = 0.00116;
             textureType = "dual";
         };
