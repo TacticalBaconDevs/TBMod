@@ -11,7 +11,6 @@ private _patches = configfile >> "CfgPatches";
 private _side = side ACE_player;
 
 if (isClass (_patches >> "uns_main")) exitWith {call FUNC(arsenalUSAVietnam)};
-if (isClass (_patches >> "SWOP_Main")) exitWith {call FUNC(arsenaSW_Clone)};
 
 if (_side == blufor) exitWith
 {
