@@ -78,6 +78,12 @@ class CfgAmmo
         hit = 25; // 34.51
     };
 
+    class TB_ammo_MPR_Slug : rhs_ammo_12g_slug // MPR Slugshot Munition
+    {
+        caliber = 0.25; // 0.3048
+        hit = 30; // 34.51
+    };
+
     // Flare Time2Life
     #define CHANGETIMETOLIFE(NAME) class NAME; class TB_##NAME : NAME {timeToLive = 180;}
     CHANGETIMETOLIFE(rhsusf_40mm_white);
