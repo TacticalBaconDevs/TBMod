@@ -6,7 +6,7 @@
 params [
     ["_alias", "host", [""]],
     ["_cmd", "", [""]],
-    ["_data", nil, [[], ""]],
+    ["_data", nil], // vorher default: [[], ""]
     ["_codeReturn", false, [false]]
 ];
 
@@ -19,11 +19,15 @@ if (!isNil {_data}) then {_array pushBack _data};
 ("TBModExtensionHost" callExtension [_alias, _array]) params ["_result", "_returnCode", "_errorCode"];
 _result = if (_result select [0,1] == "[" && _result select [(count _result) - 1] == "]") then {parseSimpleArray _result} else {_result};
 
-if (_errorCode < 0 || {_returnCode < 0}) then
+if (_errorCode < 0 || {_returnCode < 0 && !_codeReturn}) then
 {
     private _msg = format ["[TBMod_Extension][ERROR] Etwas ist schief gelaufen: %1 [%2 | %3] -> %4", _result, _errorCode, _returnCode, _this];
     diag_log _msg;
+
+#ifdef DISABLE_COMPILE_CACHE
+    // Nur im DevEnviroment
     systemChat _msg;
+#endif
 };
 
 // TODO: Darf nicht <Suspend> dann kommt nichts zurück

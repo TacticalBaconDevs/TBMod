@@ -15,6 +15,8 @@ addMissionEventHandler ["ExtensionCallback", {call FUNC(extensionCallback)}];
 private _return = "TBModExtensionHost" callExtension "-";
 if (_return != "") then
 {
+    GVAR(enabled) = true;
+
     diag_log format ["TBModExtensionHost Init: %1", _return];
     diag_log format ["TBModExtensionHost AllCmds: %1", ["host", "allCmds"] call FUNC(callExtension)];
 
@@ -26,13 +28,12 @@ if (_return != "") then
     {
         GVAR(adminLog) = 1 == ["logging", "register", ["adminlog", "#AdminLog.log"], true] call FUNC(callExtension);
         diag_log format ["adminLog: %1", GVAR(adminLog)];
-        GVAR(deadCauses) = 1 == ["logging", "register", ["deadcauses", "#DeadCauses.log"], true] call FUNC(callExtension);
-        diag_log format ["deadCauses: %1", GVAR(deadCauses)];
     };
 }
 else
 {
     diag_log "TBModExtensionHost Init: <nicht vorhanden>";
+    GVAR(enabled) = false;
 };
 
 ADDON = true;
