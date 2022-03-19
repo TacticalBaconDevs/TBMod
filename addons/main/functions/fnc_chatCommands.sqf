@@ -202,6 +202,50 @@
     ] call FUNC(transfer);
 }, "all"] call CBA_fnc_registerChatCommand;
 
+["highlights", {
+    private _highlightExtension = 1 == ["host", "check", "highlight", true] call FUNC(callExtension);
+    if (!_highlightExtension) exitWith {systemChat "Es ist nicht die Highlight Extension geladen"};
+
+    [
+        "Highlight Settings",
+        [
+            [
+                "CHECKBOX",
+                ["Aktivieren", "Es muss das Skript im OBS laufen"],
+                !isNil QGVAR(highlight_enabled) && GVAR(highlight_enabled),
+                true
+            ],
+            [
+                "SLIDER",
+                ["Buffertime aus OBS", "Damit die Mitte bestimmt werden kann"],
+                [10, 300, if (isNil QGVAR(highlight_buffertime)) then {20} else {GVAR(highlight_buffertime)}, 0],
+                true
+            ],
+            [
+                "CHECKBOX",
+                ["Fahrzeugkills", "Wenn ein Fahrzeug zerstört wird, wird ein Highlight erstellt"],
+                !isNil QGVAR(highlight_vehEnabled) && GVAR(highlight_vehEnabled),
+                true
+            ],
+            [
+                "CHECKBOX",
+                ["Multikills", "Wenn mehrere Leute in der Buffertime getötet werden, wird ein Highlight erstellt"],
+                !isNil QGVAR(highlight_multiEnabled) && GVAR(highlight_multiEnabled),
+                true
+            ],
+            [
+                "SLIDER",
+                ["Killanzahl", "Wieviele Kills in der Buffertime benötigt werden"],
+                [2, 10, if (isNil QGVAR(highlight_multiCount)) then {5} else {GVAR(highlight_multiCount)}, 0],
+                true
+            ]
+        ],
+        FUNC(highlight),
+        {},
+        []
+    ] call zen_dialog_fnc_create;
+}, "all"] call CBA_fnc_registerChatCommand;
+
 if !(getPlayerUID player in (call TB_lvl2)) exitWith {};
 
 ["spectator", {
