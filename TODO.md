@@ -1,0 +1,4 @@
+- CBA_fnc_publicVariable nutzen
+  - ["somefish", 50] call CBA_fnc_publicVariable
+- CBA_fnc_setVarNet
+  - [player, "somefish", 50] call CBA_fnc_setVarNet

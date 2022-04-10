@@ -3,6 +3,9 @@
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
 */
-// ### DevAbfrage
-//TB_serverBuild = productVersion select 3;
-//publicVariable "TB_serverBuild";
+ADDON = false;
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
+
+ADDON = true;
