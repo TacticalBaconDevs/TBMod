@@ -22,6 +22,7 @@ if (_arsenalType == "Themen") then
     private _side = side ACE_player;
 
     if (isClass (_patches >> "uns_main")) exitWith {GVAR(blacklistRollen_themen) = ["jtac", "sniper", "spotter", "rifle"]};
+    if (isClass (_patches >> "SWOP_Main")) exitWith {GVAR(blacklistRollen_themen) = ["jtac", "sniper", "spotter", "pionier", "dmr"]};
 
     if (_side == blufor) exitWith
     {
