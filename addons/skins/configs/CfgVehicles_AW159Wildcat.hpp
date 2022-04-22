@@ -75,7 +75,12 @@ class TB_Vehicles_AW159_Wildcat : I_Heli_light_03_dynamicLoadout_F // AW159 Wild
                     color[] = {1,0,0,1};
                     maxTrackableSpeed = 400;
                     typeRecognitionDistance = 500;
-                    class GroundTarget : GroundTarget
+
+                    #ifdef GroundTarget
+                        class GroundTarget : GroundTarget
+                    #else
+                        class GroundTarget // Problem mit StarWars, desswegen ohne Parent
+                    #endif
                     {
                         maxRange = 500;
                         minRange = 500;

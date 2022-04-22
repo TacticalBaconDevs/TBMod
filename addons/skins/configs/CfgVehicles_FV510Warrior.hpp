@@ -97,11 +97,16 @@ class TB_Vehicles_Wald_Warrior : I_APC_tracked_03_cannon_F
                     maxTrackableSpeed = 400; // 1e+010;
                     typeRecognitionDistance = 40; // 0
 
-                    class GroundTarget : GroundTarget
+                    #ifdef GroundTarget
+                        class GroundTarget : GroundTarget
+                    #else
+                        class GroundTarget // Problem mit StarWars, desswegen ohne Parent
+                    #endif
                     {
                         maxRange = 40; // 500
                         minRange = 40; // 500
                     };
+
                     delete AirTarget;
                 };
             };
