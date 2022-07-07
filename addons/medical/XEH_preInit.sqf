@@ -163,7 +163,7 @@ PREP_RECOMPILE_END;
     "LIST",
     "unconsciousMode",
     ["TBMod", QUOTE(COMPONENT)],
-    [[0, 1, 2], ["Vanilla", "CamOverHead", "Spectator"], 0],
+    [[0, 1, 2], ["Vanilla", "CamOverHead", "SpectatorSelf", "SpectatorTeam"], 0],
     1
 ] call CBA_fnc_addSetting;
 
@@ -176,7 +176,7 @@ PREP_RECOMPILE_END;
     //[false, 2] call ace_medical_feedback_fnc_effectUnconscious;
     //ace_common_OldIsCamera = true;
 
-    // ZEUS - Einheiten ignorieren
+    // TODO: ZEUS - Einheiten ignorieren
 
     // CamOverHead
     if (GVAR(unconsciousMode) == 1) then
@@ -201,15 +201,33 @@ PREP_RECOMPILE_END;
         };
     };
 
-    // Spectator
+    // Spectator nur selber
     if (GVAR(unconsciousMode) == 2) then
     {
         if (_unconscious) then
         {
-            // TODO: sieht alles derzeit
+            [[_unit], allUnits] call ace_spectator_fnc_updateUnits;
+            [[2], [0,1]] call ace_spectator_fnc_updateCameraModes;
+
+            [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
+            [2, _unit, -2] call ace_spectator_fnc_setCameraAttributes;
+            [true, true, false] call ace_spectator_fnc_setSpectator;
+        }
+        else
+        {
+            [false, false, false] call ace_spectator_fnc_setSpectator;
+        };
+    };
+
+    // Spectator ganzes Team
+    if (GVAR(unconsciousMode) == 3) then
+    {
+        if (_unconscious) then
+        {
             [[_unit], []] call ace_spectator_fnc_updateUnits;
             [[side _unit], _unit call BIS_fnc_enemySides] call ace_spectator_fnc_updateSides;
-            [[2], [0,1]] call ace_spectator_fnc_updateCameraModes;
+            [[1,2], [0]] call ace_spectator_fnc_updateCameraModes;
+
             [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
             [2, _unit, -2] call ace_spectator_fnc_setCameraAttributes;
             [true, true, false] call ace_spectator_fnc_setSpectator;
@@ -224,7 +242,7 @@ PREP_RECOMPILE_END;
 ["unit", {
     params ["_new"];
 
-    if (GVAR(unconsciousMode) == 2 && !(_new getVariable ["ACE_isUnconscious", false])) then
+    if (GVAR(unconsciousMode) in [2, 3] && !(_new getVariable ["ACE_isUnconscious", false])) then
     {
         [false, false, false] call ace_spectator_fnc_setSpectator;
     };

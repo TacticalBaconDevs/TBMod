@@ -23,6 +23,12 @@ private _allItems = call (switch (_type) do
     default {hint "Schwerer Fehler #300 | Arsenaltyp unbekannt"; {[]}};
 });
 
+// COLLING
+_allItems append [
+    "ACE_WaterBottle",
+    "ACE_Canteen"
+];
+
 // MEDIC STUFF
 _allItems append [
     "ACE_packingBandage",
