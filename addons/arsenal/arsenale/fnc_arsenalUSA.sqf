@@ -114,7 +114,9 @@ private _allgemein = [
     // ### Fallschirme
     "B_Parachute",
     // ### ITC Tablet
-    "itc_land_tablet_rover"
+    "itc_land_tablet_rover",
+    // ### Wasser zur Waffenkühlung
+    "ACE_WaterBottle"
 ];
 
 private _allgemein_magazine = [
