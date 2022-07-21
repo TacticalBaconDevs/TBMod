@@ -28,10 +28,14 @@ _allItems append [
     "ACE_packingBandage",
     "ACE_quikclot",
 
-    "ACE_morphine",
+    "kat_Painkiller",
+    "kat_Carbonate",
 
     "ACE_salineIV_250",
     "ACE_salineIV_500",
+
+    "ACE_bodyBag",
+    "kat_guedel",
 
     "ACE_tourniquet"
 ];
@@ -43,6 +47,7 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         "ACE_packingBandage",
         "ACE_elasticBandage",
 
+        "ACE_morphine",
         "ACE_epinephrine",
         "ACE_adenosine",
 
@@ -53,7 +58,24 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         "ACE_bodyBag",
         "ACE_surgicalKit",
         "adv_aceCPR_AED",
-        "TB_med_venenkatheter"
+        "TB_med_venenkatheter",
+        "kat_IV_16",
+        "kat_aatKit",
+        "kat_accuvac",
+        "kat_AED ",
+        "kat_X_AED",
+        "kat_amiodarone",
+        "kat_atropine",
+        "kat_chestSeal",
+        "kat_IO_FAST",
+        "kat_larynx",
+        "kat_lidocaine",
+        "kat_naloxone",
+        "kat_nitroglycerin",
+        "kat_norepinephrine",
+        "kat_phenylephrine",
+        "kat_stethoscope",
+        "kat_TXA"
     ];
 };
 

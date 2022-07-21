@@ -670,6 +670,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_gewehre +
+        _grenadier_gewehr +
         _grenadier_munition +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +
