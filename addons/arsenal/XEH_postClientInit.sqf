@@ -48,3 +48,10 @@ if (isNil QGVAR(blacklistRollen_themen)) then {GVAR(blacklistRollen_themen) = []
     "Medical",
     QPATHTOF(pics\icon_medical.paa)
 ] call ace_arsenal_fnc_addRightPanelButton;
+
+// Cooling Extrabutton
+[
+    ["ACE_SpareBarrel_Item", "ACE_WaterBottle", "ACE_Canteen"],
+    "Cooling",
+    QPATHTOF(pics\icon_cooling.paa)
+] call ace_arsenal_fnc_addRightPanelButton;

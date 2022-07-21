@@ -1,0 +1,6 @@
+Festgenommen boden: Acts_ExecutionVictim_Loop
+Reden: Acts_CivilTalking_1, Acts_CivilTalking_2
+Idle: Acts_CivilIdle_1, Acts_CivilIdle_2
+Listening: Acts_CivilListening_1, Acts_CivilListening_2
+sitting: ACE_HandcuffedFFV
+KATA: AmovPercMstpSnonWnonDnon_exerciseKata
