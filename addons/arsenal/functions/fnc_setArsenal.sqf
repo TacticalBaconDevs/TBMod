@@ -64,6 +64,8 @@ if (_rolle in ["sani", "arzt", "pilot"]) then
         "ACE_bodyBag",
         "ACE_surgicalKit",
         "adv_aceCPR_AED",
+        "kat_Pulseoximeter",
+
         "TB_med_venenkatheter",
         "kat_IV_16",
         "kat_aatKit",
