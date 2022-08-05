@@ -163,7 +163,7 @@ PREP_RECOMPILE_END;
     "LIST",
     "unconsciousMode",
     ["TBMod", QUOTE(COMPONENT)],
-    [[0, 1, 2], ["Vanilla", "CamOverHead", "SpectatorSelf", "SpectatorTeam"], 0],
+    [[0, 1, 2, 3], ["Vanilla", "CamOverHead", "SpectatorSelf", "SpectatorTeam"], 0],
     1
 ] call CBA_fnc_addSetting;
 
