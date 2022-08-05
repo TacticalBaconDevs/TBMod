@@ -164,7 +164,7 @@ class TB_supply_uk_notfall : WRAPPER_NAME(Box_NATO_Wps_F)
 
     class TransportMagazines
     {
-        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan,12);
+        MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull,12);
         MACRO_ADDMAGAZINE(SmokeShellBlue,1);
         MACRO_ADDMAGAZINE(SmokeShell,2);
     };

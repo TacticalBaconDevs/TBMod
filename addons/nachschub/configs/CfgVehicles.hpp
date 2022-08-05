@@ -437,39 +437,36 @@ class CfgVehicles
 
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,30);
-            MACRO_ADDITEM(ACE_elasticBandage,30);
-            MACRO_ADDITEM(ACE_fieldDressing,30);
-            MACRO_ADDITEM(ACE_packingBandage,60);
+            MACRO_ADDITEM(ACE_quikclot,60);
+            MACRO_ADDITEM(ACE_elasticBandage,60);
+            MACRO_ADDITEM(ACE_packingBandage,80);
 
-            MACRO_ADDITEM(ACE_tourniquet,4);
+            MACRO_ADDITEM(ACE_tourniquet,10);
 
-            MACRO_ADDITEM(ACE_plasmaIV_250,8);
-            MACRO_ADDITEM(ACE_plasmaIV_500,4);
-            MACRO_ADDITEM(ACE_plasmaIV,2);
+            MACRO_ADDITEM(ACE_plasmaIV_500,10);
+            MACRO_ADDITEM(ACE_plasmaIV,4);
             MACRO_ADDITEM(ACE_salineIV_500,4);
-            MACRO_ADDITEM(ACE_salineIV,2);
 
-            MACRO_ADDITEM(ACE_morphine,10);
-            MACRO_ADDITEM(ACE_epinephrine,10);
+            MACRO_ADDITEM(ACE_morphine,4);
+            MACRO_ADDITEM(ACE_epinephrine,8);
             MACRO_ADDITEM(ACE_adenosine,2);
             MACRO_ADDITEM(kat_Carbonate,10);
             MACRO_ADDITEM(kat_Painkiller,20);
-            MACRO_ADDITEM(kat_IV_16,10);
-            MACRO_ADDITEM(kat_amiodarone,5);
-            MACRO_ADDITEM(kat_atropine,5);
+            MACRO_ADDITEM(kat_IV_16,30);
+            MACRO_ADDITEM(kat_amiodarone,6);
+            MACRO_ADDITEM(kat_atropine,6);
             MACRO_ADDITEM(kat_chestSeal,10);
             MACRO_ADDITEM(kat_IO_FAST,10);
-            MACRO_ADDITEM(kat_lidocaine,5);
-            MACRO_ADDITEM(kat_naloxone,10);
-            MACRO_ADDITEM(kat_nitroglycerin,10);
-            MACRO_ADDITEM(kat_norepinephrine,10);
-            MACRO_ADDITEM(kat_phenylephrine,10);
-            MACRO_ADDITEM(kat_TXA,20);
+            MACRO_ADDITEM(kat_lidocaine,6);
+            MACRO_ADDITEM(kat_naloxone,4);
+            MACRO_ADDITEM(kat_nitroglycerin,6);
+            MACRO_ADDITEM(kat_norepinephrine,6);
+            MACRO_ADDITEM(kat_phenylephrine,6);
+            MACRO_ADDITEM(kat_TXA,10);
 
             MACRO_ADDITEM(TB_med_venenkatheter,10);
             MACRO_ADDITEM(kat_guedel,5);
-            MACRO_ADDITEM(kat_larynx,5);
+            MACRO_ADDITEM(kat_larynx,10);
             MACRO_ADDITEM(kat_aatKit,5);
 
             MACRO_ADDITEM(ACE_surgicalKit,2);
@@ -482,42 +479,39 @@ class CfgVehicles
 
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,50);
-            MACRO_ADDITEM(ACE_elasticBandage,50);
-            MACRO_ADDITEM(ACE_fieldDressing,50);
+            MACRO_ADDITEM(ACE_quikclot,60);
+            MACRO_ADDITEM(ACE_elasticBandage,90);
             MACRO_ADDITEM(ACE_packingBandage,90);
 
-            MACRO_ADDITEM(ACE_tourniquet,4);
+            MACRO_ADDITEM(ACE_tourniquet,10);
 
             MACRO_ADDITEM(ACE_bloodIV_250,8);
             MACRO_ADDITEM(ACE_bloodIV_500,4);
             MACRO_ADDITEM(ACE_bloodIV,2);
-            MACRO_ADDITEM(ACE_plasmaIV_250,16);
-            MACRO_ADDITEM(ACE_plasmaIV_500,8);
-            MACRO_ADDITEM(ACE_plasmaIV,4);
-            MACRO_ADDITEM(ACE_salineIV_500,8);
-            MACRO_ADDITEM(ACE_salineIV,4);
+            MACRO_ADDITEM(ACE_plasmaIV_500,12);
+            MACRO_ADDITEM(ACE_plasmaIV,6);
+            MACRO_ADDITEM(ACE_salineIV,8);
 
-            MACRO_ADDITEM(ACE_morphine,20);
+            MACRO_ADDITEM(ACE_morphine,10);
             MACRO_ADDITEM(ACE_epinephrine,20);
             MACRO_ADDITEM(ACE_adenosine,5);
             MACRO_ADDITEM(kat_Carbonate,20);
             MACRO_ADDITEM(kat_Painkiller,40);
-            MACRO_ADDITEM(kat_IV_16,20);
+            MACRO_ADDITEM(kat_IV_16,40);
             MACRO_ADDITEM(kat_amiodarone,10);
             MACRO_ADDITEM(kat_atropine,10);
-            MACRO_ADDITEM(kat_chestSeal,20);
-            MACRO_ADDITEM(kat_IO_FAST,20);
+            MACRO_ADDITEM(kat_chestSeal,10);
+            MACRO_ADDITEM(kat_IO_FAST,10);
             MACRO_ADDITEM(kat_lidocaine,10);
-            MACRO_ADDITEM(kat_naloxone,20);
-            MACRO_ADDITEM(kat_nitroglycerin,20);
-            MACRO_ADDITEM(kat_norepinephrine,20);
-            MACRO_ADDITEM(kat_phenylephrine,20);
+            MACRO_ADDITEM(kat_naloxone,10);
+            MACRO_ADDITEM(kat_nitroglycerin,10);
+            MACRO_ADDITEM(kat_norepinephrine,10);
+            MACRO_ADDITEM(kat_phenylephrine,10);
             MACRO_ADDITEM(kat_TXA,40);
 
             MACRO_ADDITEM(TB_med_venenkatheter,20);
             MACRO_ADDITEM(kat_guedel,10);
-            MACRO_ADDITEM(kat_larynx,10);
+            MACRO_ADDITEM(kat_larynx,20);
             MACRO_ADDITEM(kat_aatKit,10);
 
             MACRO_ADDITEM(ACE_surgicalKit,5);
