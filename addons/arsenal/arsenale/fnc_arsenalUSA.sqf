@@ -119,14 +119,8 @@ private _allgemein = [
 
 private _allgemein_magazine = [
     // M855 vs. M855A1 -> https://www.americanrifleman.org/wp-content/uploads/2014/05/Comparison-Chart.jpg
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
     "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull",
     "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red",
 
 
     // Schrot
