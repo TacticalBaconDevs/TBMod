@@ -259,7 +259,7 @@ class TB_Vehicles_Wueste_Merkava : B_MBT_01_TUSK_F // Merkava Mk4
                     "200Rnd_762x51_Belt_Red",
                     "200Rnd_762x51_Belt_Red",
                     "200Rnd_762x51_Belt_Red",
-                    
+
                 };
 
                 class OpticsIn : Optics_Gunner_MBT_01
@@ -280,40 +280,40 @@ class TB_Vehicles_Wueste_Merkava : B_MBT_01_TUSK_F // Merkava Mk4
                 class Components : Components
                 {
                     class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftGunner
-					{
-						class Components: components
-						{
-							class VehicleMissileDisplay
-							{
-								componentType = "TransportFeedDisplayComponent";
-								source = "Missile";
-							};
-							class SensorDisplay
-							{
-								componentType = "SensorsDisplayComponent";
-								range[] = {2000,4000,8000};
-								resource = "RscCustomInfoSensors";
-							};
-						};
-					};
-					class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightGunner
-					{
-						defaultDisplay = "SensorDisplay";
-						class Components: components
-						{
-							class VehicleMissileDisplay
-							{
-								componentType = "TransportFeedDisplayComponent";
-								source = "Missile";
-							};
-							class SensorDisplay
-							{
-								componentType = "SensorsDisplayComponent";
-								range[] = {2000,4000,8000};
-								resource = "RscCustomInfoSensors";
-							};
-						};
-					};
+                    {
+                        class Components: components
+                        {
+                            class VehicleMissileDisplay
+                            {
+                                componentType = "TransportFeedDisplayComponent";
+                                source = "Missile";
+                            };
+                            class SensorDisplay
+                            {
+                                componentType = "SensorsDisplayComponent";
+                                range[] = {2000,4000,8000};
+                                resource = "RscCustomInfoSensors";
+                            };
+                        };
+                    };
+                    class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightGunner
+                    {
+                        defaultDisplay = "SensorDisplay";
+                        class Components: components
+                        {
+                            class VehicleMissileDisplay
+                            {
+                                componentType = "TransportFeedDisplayComponent";
+                                source = "Missile";
+                            };
+                            class SensorDisplay
+                            {
+                                componentType = "SensorsDisplayComponent";
+                                range[] = {2000,4000,8000};
+                                resource = "RscCustomInfoSensors";
+                            };
+                        };
+                    };
                 };
                 class Turrets : Turrets
                 {
