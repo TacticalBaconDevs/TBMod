@@ -661,6 +661,15 @@ class CfgVehicles
         fuelCapacity = 8; // 2
     };
 
+    class B_Slingload_01_Repair_F;
+    class TB_Slingload_Cargo_Ammo : B_Slingload_01_Repair_F
+    {
+        ace_repair_canRepair = 1;
+        ace_rearm_defaultSupply = 10000; // 1200
+        ace_refuel_fuelCargo = 10000;
+        displayName = "Huron-All-in-One-Container"; // "Huron-Munitionscontainer"
+    };
+
     // ###################### ACE Defuse ######################
     // class Items_base_F;
     // class ACE_DefuseObject: Items_base_F
