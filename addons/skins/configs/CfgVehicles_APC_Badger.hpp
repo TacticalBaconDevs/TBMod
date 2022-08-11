@@ -134,7 +134,7 @@ class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
                     #ifdef GroundTarget
                         class GroundTarget : GroundTarget
                     #else
-                        class GroundTarget // Problem mit StarWars, desswegen ohne Parent
+                        class GroundTarget // Problem mit StarWars, deswegen ohne Parent
                     #endif
                     {
                         maxRange = 40; // 500
