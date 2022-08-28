@@ -90,8 +90,6 @@ private _allgemein_Magazine = [
     "TB_mag_taser",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
-    "rhsusf_mag_15Rnd_9x19_JHP",
-    "rhsusf_mag_15Rnd_9x19_FMJ",
     "6Rnd_45ACP_Cylinder"
 ];
 

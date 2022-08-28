@@ -242,8 +242,6 @@ private _allgemein_handfeuerwaffen = [
     // ### Geschützzubehör
     "rhsusf_acc_omega9k",
     // ### Munition
-    "rhsusf_mag_15Rnd_9x19_FMJ",
-    "rhsusf_mag_15Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
     "TB_mag_taser"

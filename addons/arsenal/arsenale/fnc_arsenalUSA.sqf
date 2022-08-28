@@ -121,6 +121,7 @@ private _allgemein_magazine = [
     // M855 vs. M855A1 -> https://www.americanrifleman.org/wp-content/uploads/2014/05/Comparison-Chart.jpg
     "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull",
     "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red",
+    "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
 
 
     // Schrot
@@ -275,25 +276,23 @@ private _HEDP_raketenwerfer = [
 ];
 
 private _allgemein_handfeuerwaffen = [
-    "rhsusf_weap_m1911a1",
-    "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
     "TB_weap_glock18",
     "tb_weap_taser",
     "TB_weapon_rhino60",
+    "TB_FN_Five_Seven",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
+    "muzzle_snds_acp",
     // ### Geschützzubehör
     "rhsusf_acc_omega9k",
     // ### Munition
-    "rhsusf_mag_7x45acp_MHP",
-    "rhsusf_mag_15Rnd_9x19_FMJ",
-    "rhsusf_mag_15Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
     "TB_mag_33Rnd_9x19_FMJ",
     "TB_mag_33Rnd_9x19_JHP",
     "TB_mag_taser",
+    "TB_20Rnd_570x28",
     "TB_mag_6Rnd_500_FMJ"
 ];
 
