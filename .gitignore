@@ -25,3 +25,4 @@ statstracker/TBModExt_Statistics/TBModExt_Statistics/obj/
 .vscode
 .vs
 #old
+tools/compile_sqf.bat
