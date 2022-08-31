@@ -13,11 +13,19 @@ if (_name isEqualTo "TBModExtension") then
     private _msg = format ["[ExtensionCallback] %1 - %2 - %3", _name, _function, _data];
     diag_log _msg; // nur für Übergangsphase alles loggen
 
+    // spawn/call wird nur String erwartet
+    if ((_function == "spawn" || _function == "call") && {!(_data isEqualType "")}) then
+    {
+        _function = "error";
+        _msg = _msg + " | Rückgabe war kein String!"
+    };
+
     switch (_function) do
     {
         case "spawn": {[] spawn (compile _data)};
         case "call": {[] call (compile _data)};
         case "log";
-        case "error": {systemChat _msg};
+        case "error": {systemChat _msg; /*diag_log _msg;*/};
+        //case "debug": {diag_log _msg}; // nicht gebraucht solange alles im debug
     };
 };

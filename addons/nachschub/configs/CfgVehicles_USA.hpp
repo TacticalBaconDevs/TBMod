@@ -74,9 +74,9 @@ class TB_supply_usa_ammoSmall : WRAPPER_NAME(Box_East_Support_F)
     class TransportMagazines
     {
         MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
         MACRO_ADDMAGAZINE(TB_mag_6Rnd_500_FMJ,15);
+        MACRO_ADDMAGAZINE(TB_20Rnd_570x28,15);
     };
 };
 
@@ -309,8 +309,8 @@ class TB_supply_usa_airdrop : WRAPPER_NAME(B_supplyCrate_F)
 
         // Secondary
         MACRO_ADDMAGAZINE(rhsusf_mag_17Rnd_9x19_JHP,15);
-        MACRO_ADDMAGAZINE(rhsusf_mag_7x45acp_MHP,15);
         MACRO_ADDMAGAZINE(rhsusf_mag_15Rnd_9x19_JHP,15);
+        MACRO_ADDMAGAZINE(TB_20Rnd_570x28,15);
         MACRO_ADDMAGAZINE(TB_mag_6Rnd_500_FMJ,15);
 
         // 12.7

@@ -537,7 +537,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "rhs_10rnd_9x39mm_SP6",
 
             // Ferngläser
-            "rhs_pdu4"
+            "rhs_pdu4",
+            "ace_vector"
         ]
     };
 

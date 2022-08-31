@@ -119,14 +119,9 @@ private _allgemein = [
 
 private _allgemein_magazine = [
     // M855 vs. M855A1 -> https://www.americanrifleman.org/wp-content/uploads/2014/05/Comparison-Chart.jpg
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
     "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull",
     "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull",
-    "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red",
+    "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
 
 
     // Schrot
@@ -206,14 +201,14 @@ private _allgemein_visiere = [
     "rhsusf_acc_g33_xps3_tan",
     "rhsusf_acc_ACOG",
     "rhsusf_acc_acog_rmr",
+    "rhsusf_acc_ACOG_d",
+    "rhsusf_acc_ACOG_wd",
     "rhsusf_acc_su230",
     "rhsusf_acc_su230_c",
     "rhsusf_acc_eotech_552",
     "rhsusf_acc_eotech_552_d",
     "rhsusf_acc_eotech_552_wd",
     "rhsusf_acc_compm4",
-    "rhsusf_acc_ACOG_d",
-    "rhsusf_acc_ACOG_wd",
     "rhsusf_acc_rm05",
     "rhsusf_acc_t1_low",
     "optic_yorris",
@@ -281,25 +276,23 @@ private _HEDP_raketenwerfer = [
 ];
 
 private _allgemein_handfeuerwaffen = [
-    "rhsusf_weap_m1911a1",
-    "rhsusf_weap_m9",
     "rhsusf_weap_glock17g4",
     "TB_weap_glock18",
     "tb_weap_taser",
     "TB_weapon_rhino60",
+    "TB_FN_Five_Seven",
     // ### Befestigungsschiene
     "acc_flashlight_pistol",
+    "muzzle_snds_acp",
     // ### Geschützzubehör
     "rhsusf_acc_omega9k",
     // ### Munition
-    "rhsusf_mag_7x45acp_MHP",
-    "rhsusf_mag_15Rnd_9x19_FMJ",
-    "rhsusf_mag_15Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_JHP",
     "rhsusf_mag_17Rnd_9x19_FMJ",
     "TB_mag_33Rnd_9x19_FMJ",
     "TB_mag_33Rnd_9x19_JHP",
     "TB_mag_taser",
+    "TB_20Rnd_570x28",
     "TB_mag_6Rnd_500_FMJ"
 ];
 
@@ -530,7 +523,13 @@ private _mg_munition = [
 private _pilot_munition = [
     "rhsusf_mag_40Rnd_46x30_FMJ",
     "rhsusf_mag_40Rnd_46x30_JHP",
-    "rhsusf_mag_40Rnd_46x30_AP"
+    "rhsusf_mag_40Rnd_46x30_AP",
+
+    // .45 Cal
+    "TB_mag_40Rnd_45_FMJ",
+    "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+    "TB_mag_40Rnd_45_JHP",
+    "TB_mag_40Rnd_45_JHP_Tracer_Red"
 ];
 
 private _sniper_munition = [
@@ -664,6 +663,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
     {
         _allgemein +
         _allgemein_gewehre +
+        _grenadier_gewehr +
         _grenadier_munition +
         _allgemein_visiere +
         _allgemein_befestigungsschiene +

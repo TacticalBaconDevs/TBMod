@@ -2,6 +2,10 @@
 /*
     Part of the TBMod ( https://github.com/TacticalBaconDevs/TBMod )
     Developed by http://tacticalbacon.de
+
+    Usage:
+        [player] call TBMod_fnc_sitAi
+        [cursorObject] remoteExecCall ["TBMod_fnc_sitAi", cursorObject]
 */
 params ["_unit"];
 

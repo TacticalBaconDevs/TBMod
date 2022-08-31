@@ -11,6 +11,7 @@ private _arsenalType = _player getVariable ["TB_arsenalType", ""];
 // Arsenale Rollen blockieren
 GVAR(blacklistRollen) = [];
 if (_arsenalType in ["USA", "BW", "RUSS", "UK"]) then {GVAR(blacklistRollen) = ["dmr"]};
+if (_arsenalType in ["VANILLA"]) then {GVAR(blacklistRollen) = ["rifle"]};
 
 GVAR(blacklistRollen_themen) = [];
 // GVAR(customName_themen): ["Truppführer", "Grenadier", "Kampfsanitäter", "Unterstützungsschütze", "Sprengmeister", "Anti-Fahrzeug", "Munitionsträger", "Gruppenaufklärer", "Pilot", "AufklärerSniper", "AufklärerSpotter", "DrohnenOP", "Arzt", "Schütze", "Pionier"]
@@ -21,6 +22,8 @@ if (_arsenalType == "Themen") then
     private _side = side ACE_player;
 
     if (isClass (_patches >> "uns_main")) exitWith {GVAR(blacklistRollen_themen) = ["jtac", "sniper", "spotter", "rifle"]};
+    if (isClass (_patches >> "ASZ_PersoneIT_A3")) exitWith {GVAR(blacklistRollen_themen) = ["dmr"]};
+    if (isClass (_patches >> "SWOP_Main")) exitWith {GVAR(blacklistRollen_themen) = ["jtac", "sniper", "spotter", "pionier", "dmr"]};
 
     if (_side == blufor) exitWith
     {

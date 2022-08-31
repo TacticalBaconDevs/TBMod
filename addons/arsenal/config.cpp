@@ -21,8 +21,8 @@ class CfgPatches
         };
 
         requiredAddons[] = {
-            "TBMod_main",
-            "TBMod_skins"
+            "TBMod_main"
+            //"TBMod_skins" // warum braucht es skins
         };
         addonRootClass = "TBMod_main";
     };

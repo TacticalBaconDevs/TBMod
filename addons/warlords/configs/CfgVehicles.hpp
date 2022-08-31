@@ -31,7 +31,7 @@ class CfgVehicles
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG,2);
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG_Tan,2);
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red,2);
-            MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red,2);
+            MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red,2);
         };
         class TransportWeapons
         {
@@ -93,7 +93,7 @@ class CfgVehicles
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG,2);
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG_Tan,2);
             MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red,2);
-            MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red,2);
+            MACRO_ADDMAGAZINE(rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red,2);
             MACRO_ADDMAGAZINE(rhs_mag_m714_White,3);
             MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,3);
         };

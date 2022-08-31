@@ -149,6 +149,9 @@ class CfgVehicles
                         ADD_SUPPLY("Darter",B_UAV_01_backpack_F);
                         ADD_SUPPLY("Pelican",B_UAV_06_backpack_F);
                         ADD_SUPPLY("Pelter",B_UGV_02_Demining_backpack_F);
+                        ADD_SUPPLY("AP-5 Bustard mit MX",B_UAV_02_backpack_lxWS);
+                        ADD_SUPPLY("AP-5 Bustard mit LMG",ION_UAV_02_backpack_lxWS);
+                        ADD_SUPPLY("Minenräumungs Drohne",TB_supply_nato_ED);
                     };
                 };
 
@@ -261,12 +264,36 @@ class CfgVehicles
                     exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
                     condition = "(entities [['TB_arsenal_vanilla', 'TB_arsenal_predefined_custom'], []]) isNotEqualTo []";
 
-                    ADD_SUPPLY("Munition",TB_supply_nato_ammo);
+                    ADD_SUPPLY("5,56 Munition",TB_supply_nato_ammo_556);
+                    ADD_SUPPLY("6,5 Munition",TB_supply_nato_ammo_65);
                     ADD_SUPPLY("Granaten",TB_supply_nato_grena);
                     ADD_SUPPLY("Unterlauf",TB_supply_nato_unterlauf);
-                    ADD_SUPPLY("WerferMunition",TB_supply_nato_launcherAmmo);
-                    ADD_SUPPLY("ED-1D Drohne",TB_supply_nato_ED);
                     ADD_SUPPLY("NachtKiste",TB_supply_nato_night);
+
+                    class NatoWerfer
+                    {
+                        displayName = "Raktenwerfer Kisten";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+
+                        ADD_SUPPLY("RPG-32 Munition",TB_supply_nato_launcher_rpg);
+                        ADD_SUPPLY("MAAWS Muntion",TB_supply_nato_launcher_maaws);
+                        ADD_SUPPLY("Mentis Munition",TB_supply_nato_launcher_mentis);
+                        ADD_SUPPLY("Titan AA Muniton",TB_supply_nato_launcher_titan_aa);
+                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_nato_launcher_titan_at);
+                    };
+
+                    class NATOMunitionMG
+                    {
+                        displayName = "MG Munition";
+                        icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
+                        
+                        ADD_SUPPLY("Zafir 7,62",TB_supply_nato_ammo_zafir);
+                        ADD_SUPPLY("MK 200 5,56",TB_supply_nato_ammo_mk200);
+                        ADD_SUPPLY("FN Minimi 5,56",TB_supply_nato_ammo_minimi);
+                        ADD_SUPPLY("Mk48 Munition .338",TB_supply_usa_ammo_mk48_mmg);
+                        ADD_SUPPLY("MX/HK/XMS große Magazine",TB_supply_nato_ammo_big);
+
+                    };
                 };
 
                 class ldf
@@ -293,11 +320,11 @@ class CfgVehicles
                         displayName = "Raktenwerfer Kisten";
                         icon = "A3\ui_f\data\map\diary\icons\unitPlayable_ca.paa";
 
-                        ADD_SUPPLY("RPG-32 Munition",TB_supply_ldf_launcher_rpg);
-                        ADD_SUPPLY("MAAWS Muntion",TB_supply_ldf_launcher_maaws);
-                        ADD_SUPPLY("Mentis Munition",TB_supply_ldf_launcher_mentis);
-                        ADD_SUPPLY("Titan AA Muniton",TB_supply_ldf_launcher_titan_aa);
-                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_ldf_launcher_titan_at);
+                        ADD_SUPPLY("RPG-32 Munition",TB_supply_nato_launcher_rpg);
+                        ADD_SUPPLY("MAAWS Muntion",TB_supply_nato_launcher_maaws);
+                        ADD_SUPPLY("Mentis Munition",TB_supply_nato_launcher_mentis);
+                        ADD_SUPPLY("Titan AA Muniton",TB_supply_nato_launcher_titan_aa);
+                        ADD_SUPPLY("Titan AT/AP Munition",TB_supply_nato_launcher_titan_at);
                     };
 
                     ADD_SUPPLY("Notfall Shotgun",TB_supply_ldf_shotgun);
@@ -410,23 +437,37 @@ class CfgVehicles
 
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,30);
-            MACRO_ADDITEM(ACE_elasticBandage,30);
-            MACRO_ADDITEM(ACE_fieldDressing,30);
-            MACRO_ADDITEM(ACE_packingBandage,60);
+            MACRO_ADDITEM(ACE_quikclot,60);
+            MACRO_ADDITEM(ACE_elasticBandage,60);
+            MACRO_ADDITEM(ACE_packingBandage,80);
 
-            MACRO_ADDITEM(ACE_tourniquet,4);
+            MACRO_ADDITEM(ACE_tourniquet,10);
 
-            MACRO_ADDITEM(ACE_plasmaIV_250,8);
-            MACRO_ADDITEM(ACE_plasmaIV_500,4);
-            MACRO_ADDITEM(ACE_plasmaIV,2);
+            MACRO_ADDITEM(ACE_plasmaIV_500,10);
+            MACRO_ADDITEM(ACE_plasmaIV,4);
             MACRO_ADDITEM(ACE_salineIV_500,4);
-            MACRO_ADDITEM(ACE_salineIV,2);
 
-            MACRO_ADDITEM(ACE_morphine,40);
-            MACRO_ADDITEM(ACE_epinephrine,16);
-            MACRO_ADDITEM(ACE_adenosine,16);
-            MACRO_ADDITEM(TB_med_venenkatheter,16);
+            MACRO_ADDITEM(ACE_morphine,4);
+            MACRO_ADDITEM(ACE_epinephrine,8);
+            MACRO_ADDITEM(ACE_adenosine,2);
+            MACRO_ADDITEM(kat_Carbonate,10);
+            MACRO_ADDITEM(kat_Painkiller,20);
+            MACRO_ADDITEM(kat_IV_16,30);
+            MACRO_ADDITEM(kat_amiodarone,6);
+            MACRO_ADDITEM(kat_atropine,6);
+            MACRO_ADDITEM(kat_chestSeal,10);
+            MACRO_ADDITEM(kat_IO_FAST,10);
+            MACRO_ADDITEM(kat_lidocaine,6);
+            MACRO_ADDITEM(kat_naloxone,4);
+            MACRO_ADDITEM(kat_nitroglycerin,6);
+            MACRO_ADDITEM(kat_norepinephrine,6);
+            MACRO_ADDITEM(kat_phenylephrine,6);
+            MACRO_ADDITEM(kat_TXA,10);
+
+            MACRO_ADDITEM(TB_med_venenkatheter,10);
+            MACRO_ADDITEM(kat_guedel,5);
+            MACRO_ADDITEM(kat_larynx,10);
+            MACRO_ADDITEM(kat_aatKit,5);
 
             MACRO_ADDITEM(ACE_surgicalKit,2);
         };
@@ -438,26 +479,40 @@ class CfgVehicles
 
         class TransportItems
         {
-            MACRO_ADDITEM(ACE_quikclot,50);
-            MACRO_ADDITEM(ACE_elasticBandage,50);
-            MACRO_ADDITEM(ACE_fieldDressing,50);
+            MACRO_ADDITEM(ACE_quikclot,60);
+            MACRO_ADDITEM(ACE_elasticBandage,90);
             MACRO_ADDITEM(ACE_packingBandage,90);
 
-            MACRO_ADDITEM(ACE_tourniquet,4);
+            MACRO_ADDITEM(ACE_tourniquet,10);
 
             MACRO_ADDITEM(ACE_bloodIV_250,8);
             MACRO_ADDITEM(ACE_bloodIV_500,4);
             MACRO_ADDITEM(ACE_bloodIV,2);
-            MACRO_ADDITEM(ACE_plasmaIV_250,16);
-            MACRO_ADDITEM(ACE_plasmaIV_500,8);
-            MACRO_ADDITEM(ACE_plasmaIV,4);
-            MACRO_ADDITEM(ACE_salineIV_500,8);
-            MACRO_ADDITEM(ACE_salineIV,4);
+            MACRO_ADDITEM(ACE_plasmaIV_500,12);
+            MACRO_ADDITEM(ACE_plasmaIV,6);
+            MACRO_ADDITEM(ACE_salineIV,8);
 
-            MACRO_ADDITEM(ACE_morphine,40);
+            MACRO_ADDITEM(ACE_morphine,10);
             MACRO_ADDITEM(ACE_epinephrine,20);
-            MACRO_ADDITEM(ACE_adenosine,16);
-            MACRO_ADDITEM(TB_med_venenkatheter,16);
+            MACRO_ADDITEM(ACE_adenosine,5);
+            MACRO_ADDITEM(kat_Carbonate,20);
+            MACRO_ADDITEM(kat_Painkiller,40);
+            MACRO_ADDITEM(kat_IV_16,40);
+            MACRO_ADDITEM(kat_amiodarone,10);
+            MACRO_ADDITEM(kat_atropine,10);
+            MACRO_ADDITEM(kat_chestSeal,10);
+            MACRO_ADDITEM(kat_IO_FAST,10);
+            MACRO_ADDITEM(kat_lidocaine,10);
+            MACRO_ADDITEM(kat_naloxone,10);
+            MACRO_ADDITEM(kat_nitroglycerin,10);
+            MACRO_ADDITEM(kat_norepinephrine,10);
+            MACRO_ADDITEM(kat_phenylephrine,10);
+            MACRO_ADDITEM(kat_TXA,40);
+
+            MACRO_ADDITEM(TB_med_venenkatheter,20);
+            MACRO_ADDITEM(kat_guedel,10);
+            MACRO_ADDITEM(kat_larynx,20);
+            MACRO_ADDITEM(kat_aatKit,10);
 
             MACRO_ADDITEM(ACE_surgicalKit,5);
         };
@@ -706,6 +761,19 @@ class CfgVehicles
             MACRO_ADDITEM(TB_vz99_HE_multi,20);
             MACRO_ADDITEM(TB_vz99_HE,15);
         };
+    };
+
+    class B_Slingload_01_Repair_F;
+    class TB_Slingload_Cargo_Ammo : B_Slingload_01_Repair_F
+    {
+        ace_repair_canRepair = 1;
+        ace_rearm_defaultSupply = 10000; // 1200
+        ace_refuel_fuelCargo = 10000;
+        displayName = "Huron-All-in-One-Container"; // "Huron-Munitionscontainer"
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Spezial";
+        scope = 2;
+        scopeCurator = 2;
     };
 
     // ###################### Fraktionskisten ########################

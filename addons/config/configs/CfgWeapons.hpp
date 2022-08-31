@@ -4,16 +4,12 @@
 */
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class Mode_Burst;
 class player;
 
 class CfgWeapons
 {
-    class CannonCore;
-    class mortar_155mm_AMOS : CannonCore
-    {
-        class Mode_Burst;
-        class Mode_SemiAuto;
-    };
+    class mortar_155mm_AMOS;
     class weapon_ShipCannon_120mm : mortar_155mm_AMOS
     {
         magazines[] = {
@@ -644,7 +640,7 @@ class CfgWeapons
         class Single : Mode_SemiAuto
         {
             autoFire = 0;
-            burst = 2;
+            burst = 1;
             dispersion = 0.00116;
             textureType = "dual";
         };
@@ -709,6 +705,7 @@ class CfgWeapons
         };
     };
 
+    class CannonCore;
     class cannon_105mm : CannonCore
     {
         class player;

@@ -131,7 +131,11 @@ class TB_Vehicles_Wald_Badger : B_APC_Wheeled_01_cannon_F // Badger APC
                     maxTrackableSpeed = 400; // 1e+010;
                     typeRecognitionDistance = 40; // 0
 
-                    class GroundTarget : GroundTarget
+                    #ifdef GroundTarget
+                        class GroundTarget : GroundTarget
+                    #else
+                        class GroundTarget // Problem mit StarWars, deswegen ohne Parent
+                    #endif
                     {
                         maxRange = 40; // 500
                         minRange = 40; // 500

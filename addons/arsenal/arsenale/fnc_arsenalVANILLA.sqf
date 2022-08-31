@@ -25,6 +25,11 @@ private _allgemein = [
     "G_Balaclava_blk",
     "G_Tactical_Clear",
     "G_Tactical_Black",
+    "G_Headset_lxWS",
+    "G_Combat_lxWS",
+    "G_Balaclava_snd_lxWS",
+    "G_Balaclava_blk_lxWS",
+    "G_Balaclava_oli_lxWS",
 
     // Pistolen + Munition
     "hgun_Pistol_heavy_01_F",
@@ -43,6 +48,8 @@ private _allgemein = [
     "B_Kitbag_rgr",
     "B_Kitbag_mcamo",
     "B_Parachute",
+    "B_Kitbag_desert_lxWS",
+    "B_shield_backpack_lxWS",
 
     // Attachments
     "acc_flashlight",
@@ -125,6 +132,7 @@ private _allgemein = [
     "SmokeShellPurple",
     "SmokeShellBlue",
     "SmokeShellOrange",
+    "ACE_M84",
 
     // Unterlaufgranten
     "1Rnd_HE_Grenade_shell",
@@ -148,6 +156,14 @@ private _allgemein = [
     "UGL_FlareRed_F",
     "UGL_FlareYellow_F",
     "UGL_FlareCIR_F",
+    "6rnd_Smoke_Mag_lxWS",
+    "6rnd_HE_Mag_lxWS",
+    "6Rnd_12Gauge_Slug",
+    "6Rnd_12Gauge_Pellets",
+    "ACE_6Rnd_12Gauge_Pellets_No0_Buck",
+    "ACE_6Rnd_12Gauge_Pellets_No4_Bird",
+    "3Rnd_Smoke_Grenade_shell_precise",
+    "TB_rhs_mag_40mm_IR_Grenade",
 
     // SR-Funke
     "TFAR_anprc152",
@@ -184,7 +200,12 @@ private _allgemein_Uniform = [
     "U_B_T_Soldier_SL_F",
     "U_B_CBRN_Suit_01_Wdl_F",
     "U_B_CBRN_Suit_01_MTP_F",
-    "U_B_CBRN_Suit_01_Tropic_F"
+    "U_B_CBRN_Suit_01_Tropic_F",
+    "U_lxWS_B_CombatUniform_desert_vest",
+    "U_lxWS_B_CombatUniform_desert",
+    "U_lxWS_B_CombatUniform_desert_tshirt",
+    "U_lxWS_UN_Camo2",
+    "U_lxWS_UN_Camo3"
 ];
 
 private _allgemein_Westen = [
@@ -200,15 +221,49 @@ private _allgemein_Westen = [
     "V_CarrierRigKBT_01_Olive_F",
     "V_CarrierRigKBT_01_light_Olive_F",
     "V_SmershVest_01_F",
-    "V_SmershVest_01_radio_F"
+    "V_SmershVest_01_radio_F",
+    "V_lxWS_PlateCarrierGL_desert",
+    "V_lxWS_UN_Vest_Lite_F",
+    "V_lxWS_PlateCarrier1_desert",
+    "V_lxWS_PlateCarrierSpec_desert",
+    "V_lxWS_PlateCarrier2_desert"
+];
+private _mg_waffen = [
+    
+    "arifle_MX_SW_F",
+    "arifle_MX_SW_Black_F",
+    "arifle_MX_SW_khk_F",
+    "arifle_SPAR_02_blk_F",
+    "arifle_SPAR_02_snd_F",
+    "arifle_SPAR_02_khk_F",
+    "LMG_03_F",
+    "LMG_Mk200_F",
+    "LMG_Mk200_black_F",
+    "LMG_Zafir_F",
+    "TB_weap_Mk48"
 ];
 
 private _mg_munition = [
+
     "150Rnd_556x45_Drum_Mag_Tracer_F",
-    "200Rnd_556x45_Box_Tracer_F",
-    "200Rnd_556x45_Box_Tracer_Red_F",
     "100Rnd_65x39_caseless_mag_Tracer",
-    "200rnd_556x45_box_f"
+    "75Rnd_556x45_Stanag_lxWS",
+
+    // MK 200
+    "200Rnd_65x39_cased_Box_Red",
+    "200Rnd_65x39_cased_Box_Tracer",
+
+    // Zafir
+    "150Rnd_762x54_Box",
+    "150Rnd_762x54_Box_Tracer",
+
+    // Minimi (Apex)
+    "200Rnd_556x45_Box_Tracer_F",
+    "200Rnd_556x45_Box_F",
+
+    // Mk 48 (TB) .338
+    "TB_mag_100Rnd_338_LS_DIM",
+    "TB_mag_100Rnd_338_LS_Tracer"
 ];
 
 private _LR = [
@@ -227,7 +282,11 @@ private _LR = [
     "B_RadioBag_01_mtp_F",
     "B_RadioBag_01_black_F",
     "B_RadioBag_01_tropic_F",
-    "B_RadioBag_01_wdl_F"
+    "B_RadioBag_01_wdl_F",
+
+    // Wüste
+    "OPXT_aor1_1523",
+    "OPXT_oga_1523"
 ];
 
 private _allgemein_Helm = [
@@ -240,7 +299,15 @@ private _allgemein_Helm = [
     "H_HelmetB_Enh_tna_F",
     "H_HelmetSpecB_paint2",
     "H_HelmetB_light_wdl",
-    "H_HelmetSpecB_wdl"
+    "H_HelmetSpecB_wdl",
+    "lxWS_H_PASGT_basic_UN_F",
+    "lxWS_H_PASGT_goggles_UN_F",
+    "lxWS_H_PASGT_goggles_olive_F",
+    "lxWS_H_PASGT_goggles_black_F",
+    "lxWS_H_PASGT_goggles_white_F",
+    "lxWS_H_Booniehat_desert",
+    "lxWS_H_CapB_rvs_blk_ION",
+    "lxWS_H_MilCap_desert"
 ];
 
 private _allgemein_Waffen = [
@@ -249,7 +316,15 @@ private _allgemein_Waffen = [
     "arifle_MX_khk_F",
     "arifle_SPAR_01_blk_F",
     "arifle_SPAR_01_snd_F",
-    "arifle_SPAR_01_khk_F"
+    "arifle_SPAR_01_khk_F",
+    "arifle_XMS_Base_lxWS",
+    "arifle_XMS_Base_khk_lxWS",
+    "arifle_XMS_Base_Sand_lxWS",
+    "arifle_XMS_M_lxWS",
+    "arifle_XMS_M_khk_lxWS",
+    "arifle_XMS_M_Sand_lxWS",
+    "TB_weapon_MPR",
+    "TB_weap_Vector"
 ];
 
 private _allgemein_Magazine = [
@@ -260,7 +335,14 @@ private _allgemein_Magazine = [
     "30Rnd_556x45_Stanag_Tracer_Yellow",
     "ACE_30Rnd_556x45_Stanag_M995_AP_mag",
     "ACE_30Rnd_556x45_Stanag_Mk218_mag",
-    "ACE_30Rnd_556x45_Stanag_Mk318_mag"
+    "ACE_30Rnd_556x45_Stanag_Mk318_mag",
+    "TB_mag_40Rnd_45_FMJ",
+    "TB_mag_40Rnd_45_FMJ_Tracer_Red",
+    "TB_mag_40Rnd_45_JHP",
+    "TB_mag_40Rnd_45_JHP_Tracer_Red",
+    "TB_mag_MPR_10Rnd_Antimateriel",
+    "TB_mag_MPR_10Rnd_Buckshot",
+    "TB_mag_MPR_10Rnd_Underwater"
 ];
 
 private _allgemein_WaffeGL = [
@@ -269,7 +351,13 @@ private _allgemein_WaffeGL = [
     "arifle_MX_GL_khk_F",
     "arifle_SPAR_01_GL_blk_F",
     "arifle_SPAR_01_GL_snd_F",
-    "arifle_SPAR_01_GL_khk_F"
+    "arifle_SPAR_01_GL_khk_F",
+    "arifle_XMS_GL_lxWS",
+    "arifle_XMS_GL_khk_lxWS",
+    "arifle_XMS_GL_Sand_lxWS",
+    "arifle_XMS_Shot_lxWS",
+    "arifle_XMS_Shot_khk_lxWS",
+    "arifle_XMS_Shot_Sand_lxWS"
 ];
 
 private _moerser_munition = [
@@ -303,7 +391,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "B_UavTerminal",
             "ACE_UAVBattery",
             "Laserdesignator",
-            "Laserbatteries"
+            "Laserbatteries",
+
+            // Uniform
+            "U_lxWS_UN_Camo1"
         ]
     };
 
@@ -327,11 +418,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Helm +
         _allgemein_Uniform +
         _allgemein_Westen +
-        _allgemein_Waffen +
         _allgemein_Magazine +
         _LR +
         [
-            "TB_Item_liveMonitor"
+            "TB_Item_liveMonitor",
+            "TB_weap_Vector"
         ]
     };
 
@@ -344,7 +435,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Magazine +
         _allgemein_WaffeGL +
         [
-
         ]
     };
 
@@ -366,8 +456,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "arifle_SPAR_03_khk_F",
             "srifle_DMR_06_olive_F",
             "srifle_DMR_06_camo_F",
+            "srifle_EBR_blk_lxWS",
             // ### Magazine
             "20Rnd_762x51_Mag",
+            "ACE_20Rnd_762x51_Mag_Tracer",
             // ### Attachments
             "optic_DMS"
         ]
@@ -380,16 +472,8 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         _allgemein_Uniform +
         _allgemein_Westen +
         _mg_munition +
+        _mg_waffen +
         [
-            // Weapons
-            "arifle_MX_SW_F",
-            "arifle_MX_SW_Black_F",
-            "arifle_MX_SW_khk_F",
-            "arifle_SPAR_02_blk_F",
-            "arifle_SPAR_02_snd_F",
-            "arifle_SPAR_02_khk_F",
-            "LMG_03_F"
-
         ]
     };
 
@@ -413,9 +497,11 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "B_Carryall_oucamo",
             "B_Carryall_wdl_F",
             "B_Carryall_green_F",
+            "B_Carryall_desert_lxWS",
 
             //Munition
             "20rnd_762x51_mag",
+            "ACE_20Rnd_762x51_Mag_Tracer",
 
             // Waffen
             "TB_vz99_carryWeapon",
@@ -439,12 +525,14 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "H_PilotHelmetFighter_B",
             "H_CrewHelmetHeli_B",
             "H_PilotHelmetFighter_I_E",
+            "lxWS_H_HelmetCrew_I",
 
             // Goggles
             //"G_Aviator",
 
             // Uniforms
             "U_B_HeliPilotCoveralls",
+            "U_lxWS_UN_Pilot",
 
             // Westen
             "V_DeckCrew_blue_F",
@@ -460,6 +548,7 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "SMG_01_F",
             "SMG_05_F",
             "hgun_PDW2000_F",
+            "TB_weap_Vector",
             // ### Magazine
             "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
@@ -627,9 +716,6 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             // AT
             "launch_NLAW_F",
             "launch_RPG32_F",
-            "launch_MRAWS_green_rail_F",
-            "launch_MRAWS_olive_rail_F",
-            "launch_MRAWS_sand_rail_F",
             "launch_MRAWS_green_F",         // kann Entfernung messen (ungelenkt)
             "launch_MRAWS_olive_F",
             "launch_MRAWS_sand_F",
@@ -667,6 +753,10 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
         [
             // Backpacks
             "B_UAV_01_backpack_F",
+            "B_UAV_02_backpack_lxWS",
+            "ION_UAV_02_backpack_lxWS",
+            "ION_UAV_01_backpack_lxWS",
+            "CIV_UAV_01_backpack_lxWS",
 
             // Items
             "B_UavTerminal",
@@ -700,6 +790,9 @@ _items append (switch (ACE_player getVariable ["TB_rolle", ""]) do
             "V_PlateCarrierGL_mtp",
             "V_PlateCarrierGL_blk",
             "V_PlateCarrierGL_rgr",
+
+            // Uniforms
+            "U_lxWS_UN_Pilot",
 
             // Minensucher
             "ACE_VMH3",
