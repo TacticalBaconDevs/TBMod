@@ -5,7 +5,7 @@
 */
 ["help", {
     systemChat ("TB-Mod Version: "+ getText (configfile >> "CfgPatches" >> "TBMod_main" >> "versionStr"));
-    systemChat "#tasten, #rechte, #zeus, #fps, #safe, #hideGroup, #setGroup, #kompass, #clearCache, #hideGUI, #spectator(s), #sniper";
+    systemChat "#tasten, #rechte, #zeus, #mfd, #fps, #safe, #hideGroup, #setGroup, #clearCache, #hideGUI, #spectator(s), #sniper";
 }, "all"] call CBA_fnc_registerChatCommand;
 
 ["tasten", {
@@ -243,6 +243,39 @@
         FUNC(highlight),
         {},
         []
+    ] call zen_dialog_fnc_create;
+}, "all"] call CBA_fnc_registerChatCommand;
+
+["mfd", {
+    private _vehicle = vehicle player;
+    if (_vehicle == player) exitWith {systemChat "Du sitzt in keinem Fahrzeug"};
+
+    private _mfd = (getUserMFDValue _vehicle) select {_x != -1};
+    if (count _mfd < 3) exitWith {systemChat "Das Fahrzeug unterstützt keine MFD Anpassungen!"};
+
+    [
+        "MFD anpassen",
+        [
+            [
+                "COLOR",
+                ["Farbe", "Wähle die Farbe und den Alphawert!"],
+                _mfd,
+                true
+            ]
+        ],
+        {
+            params ["_values", "_args"];
+            _values params ["_color"];
+
+            {
+                _args setUserMFDValue [_forEachIndex, _x];
+            }
+            forEach _color;
+
+            systemChat "Neuer Wert für das MFD wurde gesetzt!";
+        },
+        {},
+        _vehicle
     ] call zen_dialog_fnc_create;
 }, "all"] call CBA_fnc_registerChatCommand;
 
