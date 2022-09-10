@@ -163,7 +163,7 @@ PREP_RECOMPILE_END;
     "LIST",
     "unconsciousMode",
     ["TBMod", QUOTE(COMPONENT)],
-    [[0, 1, 2, 3], ["Vanilla", "CamOverHead", "SpectatorSelf", "SpectatorTeam"], 0],
+    [[0, 1, 2], ["Vanilla", "SpectatorSelf", "SpectatorTeam"], 1],
     1
 ] call CBA_fnc_addSetting;
 
@@ -172,37 +172,8 @@ PREP_RECOMPILE_END;
 
     if (GVAR(unconsciousMode) == 0 || {_unit != ACE_player}) exitWith {};
 
-    //[true] call FUNC(handleEffects);
-    //[false, 2] call ace_medical_feedback_fnc_effectUnconscious;
-    //ace_common_OldIsCamera = true;
-
-    // TODO: ZEUS - Einheiten ignorieren
-
-    // CamOverHead
-    if (GVAR(unconsciousMode) == 1) then
-    {
-        if (_unconscious && isNil QGVAR(cam)) then
-        {
-            ACE_player setVariable ["ace_medical_feedback_effectUnconsciousTimeout", CBA_missionTime + (10 * 60)];
-
-            GVAR(cam) = "camera" camCreate (getPos _unit);
-            GVAR(cam) camSetTarget _unit;
-            GVAR(cam) cameraEffect ["internal", "BACK"];
-            GVAR(cam) camSetRelPos [0, 0, 3];
-            GVAR(cam) camCommit 0;
-            showCinemaBorder false;
-        }
-        else
-        {
-            _unit switchCamera "INTERNAL";
-            GVAR(cam) cameraEffect ["Terminate", "Back"];
-            camDestroy GVAR(cam);
-            GVAR(cam) = null;
-        };
-    };
-
     // Spectator nur selber
-    if (GVAR(unconsciousMode) == 2) then
+    if (GVAR(unconsciousMode) == 1) then
     {
         if (_unconscious) then
         {
@@ -220,7 +191,7 @@ PREP_RECOMPILE_END;
     };
 
     // Spectator ganzes Team
-    if (GVAR(unconsciousMode) == 3) then
+    if (GVAR(unconsciousMode) == 2) then
     {
         if (_unconscious) then
         {
