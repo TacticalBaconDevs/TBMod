@@ -1,2 +1,2 @@
-python compile_sqf.py cleanup build verbose
+py compile_sqf.py cleanup build verbose
 pause

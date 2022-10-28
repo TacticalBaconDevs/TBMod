@@ -177,11 +177,14 @@ PREP_RECOMPILE_END;
     {
         if (_unconscious) then
         {
-            [[_unit], allUnits] call ace_spectator_fnc_updateUnits;
-            [[2], [0,1]] call ace_spectator_fnc_updateCameraModes;
+            // [[_unit], []] call ace_spectator_fnc_updateUnits
+            ace_spectator_unitWhitelist = [_unit];
+            ace_spectator_unitBlacklist = [];
 
+            [[2], [0,1]] call ace_spectator_fnc_updateCameraModes;
             [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
             [2, _unit, -2] call ace_spectator_fnc_setCameraAttributes;
+
             [true, true, false] call ace_spectator_fnc_setSpectator;
         }
         else
@@ -195,12 +198,14 @@ PREP_RECOMPILE_END;
     {
         if (_unconscious) then
         {
-            [[_unit], []] call ace_spectator_fnc_updateUnits;
+            ace_spectator_unitWhitelist = [];
+            ace_spectator_unitBlacklist = [];
+
             [[side _unit], _unit call BIS_fnc_enemySides] call ace_spectator_fnc_updateSides;
             [[1,2], [0]] call ace_spectator_fnc_updateCameraModes;
-
             [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
             [2, _unit, -2] call ace_spectator_fnc_setCameraAttributes;
+
             [true, true, false] call ace_spectator_fnc_setSpectator;
         }
         else

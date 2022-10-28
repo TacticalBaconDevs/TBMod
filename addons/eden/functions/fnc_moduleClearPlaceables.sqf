@@ -26,5 +26,6 @@ if (!is3DEN && {_mode == "init"}) then
         EGVAR(building,clearPlaceables) append _syncObjs;
 
         EGVAR(building,clearPlaceables) = EGVAR(building,clearPlaceables) arrayIntersect EGVAR(building,clearPlaceables);
+        publicVariable QEGVAR(building,clearPlaceables);
     };
 };
