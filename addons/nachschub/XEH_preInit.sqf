@@ -31,5 +31,47 @@ if (isServer) then
     }] call CBA_fnc_addEventHandler;
 };
 
+// Based on: https://github.com/kellerkompanie/kellerkompanie-mods/blob/master/addons/loot/XEH_postInitClient.sqf
+GVAR(transferAction_statement) = {
+    params ["_target", "_player", "_vehicle"];
+    {_vehicle addItemCargoGlobal [_x, 1]} forEach (itemCargo _target);
+    {_vehicle addWeaponCargoGlobal [_x, 1]} forEach (weaponCargo _target);
+    {_vehicle addBackpackCargoGlobal [_x, 1]} forEach (backpackCargo _target);
+    {_vehicle addMagazineCargoGlobal [_x, 1]} forEach (magazineCargo _target);
+    deleteVehicle _target;
+};
+
+GVAR(transferAction_nearestObjects) = {
+    params ["_target", "_player"];
+
+    (nearestObjects [_player, ace_cargo_cargoHolderTypes, 10]) select {
+        (_x != _target) && {([_target, _x] call ace_interaction_fnc_getInteractionDistance) < 10}
+    }
+};
+
+// Based on: https://github.com/kellerkompanie/kellerkompanie-mods/blob/master/addons/loot/XEH_postInitClient.sqf
+GVAR(transferAction) = [
+    QGVAR(transferAction), "Transfer ins Inventar", "a3\ui_f\data\IGUI\Cfg\Actions\loadVehicle_ca.paa",
+    {
+        params ["_target", "_player"];
+
+        ([_target, _player] call GVAR(transferAction_nearestObjects)) params [["_nearestVehicle", objNull]];
+        if !(isNull _nearestVehicle) then {[_target, _player, _nearestVehicle] call GVAR(transferAction_statement)};
+    },
+    {
+        alive _target &&
+        {locked _target < 2} &&
+        {[_player, _target, ["isNotSwimming"]] call ace_common_fnc_canInteractWith} &&
+        {
+            ((nearestObjects [_player, ace_cargo_cargoHolderTypes, 10]) findIf {
+                (_x != _target) && {([_target, _x] call ace_interaction_fnc_getInteractionDistance) < 10}
+            }) != -1
+        }
+    },
+    {
+        private _vehicles = [_target, _player] call GVAR(transferAction_nearestObjects);
+        [_vehicles, GVAR(transferAction_statement), _target] call ace_interact_menu_fnc_createVehiclesActions;
+    }
+] call ace_interact_menu_fnc_createAction;
 
 ADDON = true;

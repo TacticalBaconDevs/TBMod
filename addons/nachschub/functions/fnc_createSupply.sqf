@@ -20,5 +20,8 @@ if (ACE_player distance2D _target < 3) then // && ((ACE_player getRelDir _target
     deleteVehicle _obj;
 };
 
+// Transfer to ArmaInventar Aktion
+[_obj, 0, ["ACE_MainActions"], GVAR(transferAction)] call ace_interact_menu_fnc_addActionToObject;
+
 [_obj, true] remoteExecCall ["allowDamage", _obj];
 [ACE_player, _obj] call ace_dragging_fnc_startCarry;

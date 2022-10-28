@@ -5,13 +5,15 @@
 */
 params [
         ["_save", false, [false]],
-        ["_storagearray", [], []]
+        ["_input", vehicles, []]
     ];
+
+private _result = [];
 
 if (_save) then
 {
     // sorting
-    _vehiclearray = (vehicles select {_x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []});
+    _vehiclearray = (_input select {_x getVariable ["ace_arsenal_virtualitems", []] isEqualTo []});
     _vehiclearray = _vehiclearray apply {[(getPosASL _X) select 2, _x]};
     _vehiclearray sort true;
     _vehiclearray = _vehiclearray apply {_x select 1};
@@ -49,7 +51,7 @@ if (_save) then
 
             if (vehicleVarName _veh != "") then {_array pushBack (vehicleVarName _x)};
 
-            _storagearray pushBack _array;
+            _result pushBack _array;
         };
     }
     forEach _vehiclearray;
@@ -107,8 +109,8 @@ else // load
             _vehicle enableSimulationGlobal _sim;
         };
     }
-    forEach _storagearray;
+    forEach _input;
 };
 
 (format ["[TBMod_persistence] Fahrzeuge wurden ge%1.", ["laden", "speichert"] select _save]) remoteExecCall ["systemChat"];
-_storagearray;
+_result;
