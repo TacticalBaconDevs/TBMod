@@ -12,8 +12,6 @@
 class CfgVehicles
 {
     class O_Survivor_F;
-    class B_Survivor_F;
-    class I_Survivor_F;
     class GVAR(opfor_01) : O_Survivor_F
     {
         displayname = "Poppy 01";
@@ -21,23 +19,6 @@ class CfgVehicles
         editorCategory = "EdCat_TB_MainCat";
         editorSubcategory = "EdSubcat_TB_Poppy";
     };
-
-    class GVAR(blufor_01) : B_Survivor_F
-    {
-        displayname = "Poppy 01";
-
-        editorCategory = "EdCat_TB_MainCat";
-        editorSubcategory = "EdSubcat_TB_Poppy";
-    };
-
-    class GVAR(ind_01) : I_Survivor_F
-    {
-        displayname = "Poppy 01";
-
-        editorCategory = "EdCat_TB_MainCat";
-        editorSubcategory = "EdSubcat_TB_Poppy";
-    };
-
     ADDCLASSVEHICLES(opfor,02);
     ADDCLASSVEHICLES(opfor,03);
     ADDCLASSVEHICLES(opfor,04);
@@ -48,6 +29,14 @@ class CfgVehicles
     ADDCLASSVEHICLES(opfor,09);
     ADDCLASSVEHICLES(opfor,10);
 
+    class B_Survivor_F;
+    class GVAR(blufor_01) : B_Survivor_F
+    {
+        displayname = "Poppy 01";
+
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Poppy";
+    };
     ADDCLASSVEHICLES(blufor,02);
     ADDCLASSVEHICLES(blufor,03);
     ADDCLASSVEHICLES(blufor,04);
@@ -58,6 +47,14 @@ class CfgVehicles
     ADDCLASSVEHICLES(blufor,09);
     ADDCLASSVEHICLES(blufor,10);
 
+    class I_Survivor_F;
+    class GVAR(ind_01) : I_Survivor_F
+    {
+        displayname = "Poppy 01";
+
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Poppy";
+    };
     ADDCLASSVEHICLES(ind,02);
     ADDCLASSVEHICLES(ind,03);
     ADDCLASSVEHICLES(ind,04);
@@ -67,5 +64,23 @@ class CfgVehicles
     ADDCLASSVEHICLES(ind,08);
     ADDCLASSVEHICLES(ind,09);
     ADDCLASSVEHICLES(ind,10);
+
+    class C_man_1;
+    class GVAR(civ_01) : C_man_1
+    {
+        displayname = "Poppy 01";
+
+        editorCategory = "EdCat_TB_MainCat";
+        editorSubcategory = "EdSubcat_TB_Poppy";
+    };
+    ADDCLASSVEHICLES(civ,02);
+    ADDCLASSVEHICLES(civ,03);
+    ADDCLASSVEHICLES(civ,04);
+    ADDCLASSVEHICLES(civ,05);
+    ADDCLASSVEHICLES(civ,06);
+    ADDCLASSVEHICLES(civ,07);
+    ADDCLASSVEHICLES(civ,08);
+    ADDCLASSVEHICLES(civ,09);
+    ADDCLASSVEHICLES(civ,10);
 
 };
