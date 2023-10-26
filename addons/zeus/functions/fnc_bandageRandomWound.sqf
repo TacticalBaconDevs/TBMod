@@ -9,48 +9,30 @@
  * 0: Unit to be bandaged <OBJECT>
  *
  * Return Value:
- * None
+ * Number of bandange treatments
  *
  * Example:
  * [_unit] call TBMod_zeus_fnc_bandageRandomWound
  */
 params ["_unit", ["_full", true]];
 
+// get all wounded bodyparts with bleeding open wounds
+(_unit call FUNC(getNumOpenWounds)) params ["", "", "_openWoundMap"];
+
 private _wounds = 0;
 {
-    _x params ["", "_bodyPart", "_numOpenWounds", "_bloodLoss", ""];
+    private _bodyPart = _x;
+    private _openWounds = _y;
 
-    if (_bloodLoss > 0 && _numOpenWounds > 0) then
+    // if full healing is on or head and body multiply by two to be sure
+    private _anzahl = if (_full || _bodyPart in ["head", "body"]) then {(_openWounds * 2) max 1} else {floor (random (_openWounds + 1))};
+
+    for "_i" from 1 to _anzahl do
     {
-        private _anzahl = if (_full) then {(_numOpenWounds * 2) max 1} else {floor (random (_numOpenWounds + 1))};
-
-        private _target = switch (_bodyPart) do
-        {
-            case 0:
-            {
-                _anzahl = (_numOpenWounds * 2) max 1;
-                "head"
-            };
-
-            case 1:
-            {
-                _anzahl = (_numOpenWounds * 2) max 1;
-                "body"
-            };
-
-            case 2: {"leftarm"};
-            case 3: {"rightarm"};
-            case 4: {"leftleg"};
-            case 5: {"rightleg"};
-        };
-
-        for "_i" from 1 to _anzahl do
-        {
-            ["ace_medical_treatment_bandageLocal", [_unit, _target, "FieldDressing"], _unit] call CBA_fnc_targetEvent;
-            _wounds = _wounds + 1;
-        };
+        ["ace_medical_treatment_bandageLocal", [_unit, _bodyPart, "FieldDressing"], _unit] call CBA_fnc_targetEvent;
+        _wounds = _wounds + 1;
     };
 }
-forEach (_unit getVariable ["ace_medical_openWounds", []]);
+forEach _openWoundMap;
 
 _wounds

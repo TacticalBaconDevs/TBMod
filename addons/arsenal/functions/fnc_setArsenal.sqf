@@ -98,6 +98,21 @@ if (_rolle == "arzt") then
     ];
 };
 
+#ifdef DEBUG_MODE_FULL
+    // check all items
+    /*
+        TFAR ILBE Assault Pack: tfw_
+    */
+    private _ignore = {{(toLower _this) find _x == 0} count (["tfw_"] apply {toLower _x}) == 0};
+    private _missingItems = _allItems select {([_x] call ace_common_fnc_getConfigName) == "" && {_x call _ignore}};
+    if (count _missingItems > 0) then
+    {
+        systemChat format ["MissingItems: %1 | %2 | %3 -> %4", count _missingItems, _rolle, _type, _missingItems];
+        diag_log format ["MissingItems: %1 | %2 | %3 -> %4", count _missingItems, _rolle, _type, _missingItems];
+    };
+    
+#endif
+
 [_allItems] call FUNC(whitelist);
 
 ace_arsenal_cameraPosition = [4, -8, 15, [0, 0, 1]];

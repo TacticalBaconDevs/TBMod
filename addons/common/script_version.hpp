@@ -3,5 +3,5 @@
     Developed by http://tacticalbacon.de
 */
 #define MAJOR 2
-#define MINOR 1
-#define PATCHLVL 15
+#define MINOR 2
+#define PATCHLVL 1

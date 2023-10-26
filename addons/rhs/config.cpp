@@ -8,6 +8,7 @@ class CfgPatches
     class ADDON
     {
         name = "TBMod RHS";
+        skipWhenMissingDependencies = 1;
 
         requiredAddons[] = {
             "TBMod_main",

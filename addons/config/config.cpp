@@ -38,10 +38,10 @@ PRELOAD_ADDONS;
 #include "configs\CfgEditorCategories.hpp"
 #include "configs\CfgEditorSubcategories.hpp"
 #include "configs\CfgFactionClasses.hpp"
-#include "configs\CfgGesturesMale.hpp"
+//#include "configs\CfgGesturesMale.hpp" // TFAR Funkanim, siehe miscStuff
 #include "configs\CfgMagazines.hpp"
 #include "configs\CfgMagazineWells.hpp"
-#include "configs\CfgMovesBasic.hpp"
+//#include "configs\CfgMovesBasic.hpp" // TFAR Funkanim, siehe miscStuff
 #include "configs\CfgRecoils.hpp"
 #include "configs\cfgScriptPaths.hpp"
 #include "configs\CfgSounds.hpp"

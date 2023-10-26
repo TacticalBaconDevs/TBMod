@@ -89,7 +89,11 @@ else
             [_logic, [[_unit], units _unit] select _holeGroup] call EFUNC(medical,injureModule);
             deleteVehicle _logic;
         },
-        {},
+        {
+            params ["_values", "_args"];
+            _args params ["_logic"];
+            deleteVehicle _logic;
+        },
         [_logic, _unit]
     ] call zen_dialog_fnc_create;
 };

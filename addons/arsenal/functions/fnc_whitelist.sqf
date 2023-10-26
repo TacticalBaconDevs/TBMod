@@ -83,16 +83,6 @@ if (getPlayerUID player in _truppfuehrer) then
         "H_Beret_gen_F",
         "H_Beret_02",
 
-        // Barrets (BWA3)
-        "BWA3_Beret_Falli",
-        "BWA3_Beret_HFlieger",
-        "BWA3_Beret_Jaeger",
-        "BWA3_Beret_PzAufkl",
-        "BWA3_Beret_PzGren",
-        "BWA3_Beret_Pz",
-        "BWA3_Beret_Wach_Blau",
-        "BWA3_Beret_Wach_Gruen",
-
         // Barrets (RHS)
         "rhs_beret_mp1",
         "rhs_beret_mp2",
@@ -105,6 +95,21 @@ if (getPlayerUID player in _truppfuehrer) then
         // Barrets (CDLC)
         "lxWS_H_Beret_Colonel"
     ];
+
+    if (["bwa3_common"] call ace_common_fnc_isModLoaded) then
+    {
+        _items append [
+            // Barrets (BWA3)
+            "BWA3_Beret_Falli",
+            "BWA3_Beret_HFlieger",
+            "BWA3_Beret_Jaeger",
+            "BWA3_Beret_PzAufkl",
+            "BWA3_Beret_PzGren",
+            "BWA3_Beret_Pz",
+            "BWA3_Beret_Wach_Blau",
+            "BWA3_Beret_Wach_Gruen"
+        ];
+    };
 };
 
 _items

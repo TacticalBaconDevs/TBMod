@@ -4,5 +4,6 @@
 */
 PREP(calcTreatmentTime);
 PREP(getBlood);
+PREP(healthRegenPEFH);
 PREP(injureModule);
 PREP(keepAlive);

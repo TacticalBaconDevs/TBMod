@@ -120,7 +120,8 @@ forEach allCurators;
 
 
 // ### TFAR Funkanim
-if (isNil "TB_funkAnim") then {TB_funkAnim = true};
+// disabled testen: https://steamcommunity.com/sharedfiles/filedetails/?id=2141020863
+/*if (isNil "TB_funkAnim") then {TB_funkAnim = true};
 if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
 ["TB_funkAnim", "OnTangent", {
     params ["_unit", "_activRadio", "_isLR", "_additional", "_buttonDown"];
@@ -138,7 +139,7 @@ if (isNil "TB_funkAnim_on") then {TB_funkAnim_on = false};
         TB_funkAnim_on = false;
         player playActionNow "tb_radioStop";
     };
-}, player] call TFAR_fnc_addEventHandler;
+}, player] call TFAR_fnc_addEventHandler;*/
 
 
 // ### informAdminsAndZeus

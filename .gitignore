@@ -17,12 +17,10 @@ inheritance_*.data
 /Changelog.txt
 /builder.cfg
 
-statstracker/TBModExt_Statistics/.vs/
-statstracker/TBModExt_Statistics/packages/
-statstracker/TBModExt_Statistics/TBModExt_Statistics/bin/
-statstracker/TBModExt_Statistics/TBModExt_Statistics/obj/
+/statstracker
 /#localStuff
+
 .vscode
 .vs
+
 #old
-tools/compile_sqf.bat

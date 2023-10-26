@@ -72,8 +72,8 @@ private _allgemein = [
     "UK3CB_BAF_HMNVS",
 
     // Ferngläser
-    "m24_bino",
-    "Leupold_Mk4",
+    "rhsusf_bino_m24",
+    "rhsusf_bino_leopold_mk4",
 
     // Karte
     "ItemMap",
@@ -322,7 +322,6 @@ private _grenadier_munition = [
     "rhs_mag_m716_Yellow_precise",
 
     // Sondermunition
-    "TB_rhs_mag_40mm_Delay",
     "TB_rhs_mag_40mm_IR_Grenade",
     "TB_rhs_mag_40mm_Slugshot",
 
